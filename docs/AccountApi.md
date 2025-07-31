@@ -4,22 +4,22 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAccountDetail**](AccountApi.md#getaccountdetail) | **GET** /account/detail | Get account detail.
-[**GetAccountRateLimit**](AccountApi.md#getaccountratelimit) | **GET** /account/rate_limit | Get user transaction rate limit information.
-[**ListSTPGroups**](AccountApi.md#liststpgroups) | **GET** /account/stp_groups | List STP Groups.
-[**CreateSTPGroup**](AccountApi.md#createstpgroup) | **POST** /account/stp_groups | Create STP Group.
-[**ListSTPGroupsUsers**](AccountApi.md#liststpgroupsusers) | **GET** /account/stp_groups/{stp_id}/users | List users of the STP group.
-[**AddSTPGroupUsers**](AccountApi.md#addstpgroupusers) | **POST** /account/stp_groups/{stp_id}/users | Add users to the STP group.
-[**DeleteSTPGroupUsers**](AccountApi.md#deletestpgroupusers) | **DELETE** /account/stp_groups/{stp_id}/users | Delete the user in the STP group.
-[**GetDebitFee**](AccountApi.md#getdebitfee) | **GET** /account/debit_fee | Query GT deduction configuration.
-[**SetDebitFee**](AccountApi.md#setdebitfee) | **POST** /account/debit_fee | Set GT deduction.
+[**GetAccountDetail**](AccountApi.md#getaccountdetail) | **GET** /account/detail | Retrieve user account information
+[**GetAccountRateLimit**](AccountApi.md#getaccountratelimit) | **GET** /account/rate_limit | Get user transaction rate limit information
+[**ListSTPGroups**](AccountApi.md#liststpgroups) | **GET** /account/stp_groups | Query STP user groups created by the user
+[**CreateSTPGroup**](AccountApi.md#createstpgroup) | **POST** /account/stp_groups | Create STP user group
+[**ListSTPGroupsUsers**](AccountApi.md#liststpgroupsusers) | **GET** /account/stp_groups/{stp_id}/users | Query users in the STP user group
+[**AddSTPGroupUsers**](AccountApi.md#addstpgroupusers) | **POST** /account/stp_groups/{stp_id}/users | Add users to the STP user group
+[**DeleteSTPGroupUsers**](AccountApi.md#deletestpgroupusers) | **DELETE** /account/stp_groups/{stp_id}/users | Delete users from the STP user group
+[**GetDebitFee**](AccountApi.md#getdebitfee) | **GET** /account/debit_fee | Query GT fee deduction configuration
+[**SetDebitFee**](AccountApi.md#setdebitfee) | **POST** /account/debit_fee | Configure GT fee deduction
 
 
 <a name="getaccountdetail"></a>
 # **GetAccountDetail**
 > AccountDetail GetAccountDetail ()
 
-Get account detail.
+Retrieve user account information
 
 ### Example
 ```csharp
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // Get account detail.
+                // Retrieve user account information
                 AccountDetail result = apiInstance.GetAccountDetail();
                 Debug.WriteLine(result);
             }
@@ -78,7 +78,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful. |  -  |
+| **200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -86,7 +86,7 @@ This endpoint does not need any parameter.
 # **GetAccountRateLimit**
 > List&lt;AccountRateLimit&gt; GetAccountRateLimit ()
 
-Get user transaction rate limit information.
+Get user transaction rate limit information
 
 ### Example
 ```csharp
@@ -110,7 +110,7 @@ namespace Example
 
             try
             {
-                // Get user transaction rate limit information.
+                // Get user transaction rate limit information
                 List<AccountRateLimit> result = apiInstance.GetAccountRateLimit();
                 Debug.WriteLine(result);
             }
@@ -145,7 +145,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful. |  -  |
+| **200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -153,9 +153,9 @@ This endpoint does not need any parameter.
 # **ListSTPGroups**
 > List&lt;StpGroup&gt; ListSTPGroups (string name = null)
 
-List STP Groups.
+Query STP user groups created by the user
 
-Retrieve the list of STP groups created by the main account user only.
+Only query STP user groups created by the current main account
 
 ### Example
 ```csharp
@@ -176,11 +176,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new AccountApi(config);
-            var name = "group";  // string | Perform a fuzzy search based on the name. (optional) 
+            var name = "group";  // string | Fuzzy search by name (optional) 
 
             try
             {
-                // List STP Groups.
+                // Query STP user groups created by the user
                 List<StpGroup> result = apiInstance.ListSTPGroups(name);
                 Debug.WriteLine(result);
             }
@@ -200,7 +200,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string**| Perform a fuzzy search based on the name. | [optional] 
+ **name** | **string**| Fuzzy search by name | [optional] 
 
 ### Return type
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -226,9 +226,9 @@ Name | Type | Description  | Notes
 # **CreateSTPGroup**
 > StpGroup CreateSTPGroup (StpGroup stpGroup)
 
-Create STP Group.
+Create STP user group
 
-Only the main account is allowed to create a new STP user group.
+Only the main account is allowed to create a new STP user group
 
 ### Example
 ```csharp
@@ -253,7 +253,7 @@ namespace Example
 
             try
             {
-                // Create STP Group.
+                // Create STP user group
                 StpGroup result = apiInstance.CreateSTPGroup(stpGroup);
                 Debug.WriteLine(result);
             }
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | User added successfully. Returning the current users within the STP group. |  -  |
+| **200** | User added successfully, returning current users in the STP group |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -299,9 +299,9 @@ Name | Type | Description  | Notes
 # **ListSTPGroupsUsers**
 > List&lt;StpGroupUser&gt; ListSTPGroupsUsers (long stpId)
 
-List users of the STP group.
+Query users in the STP user group
 
-Only the main account that created this STP group can query the account.
+Only the main account that created this STP group can query the account ID list in the current STP group
 
 ### Example
 ```csharp
@@ -322,11 +322,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new AccountApi(config);
-            var stpId = 1;  // long | STP Group ID.
+            var stpId = 1;  // long | STP Group ID
 
             try
             {
-                // List users of the STP group.
+                // Query users in the STP user group
                 List<StpGroupUser> result = apiInstance.ListSTPGroupsUsers(stpId);
                 Debug.WriteLine(result);
             }
@@ -346,7 +346,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stpId** | **long**| STP Group ID. | 
+ **stpId** | **long**| STP Group ID | 
 
 ### Return type
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -372,9 +372,9 @@ Name | Type | Description  | Notes
 # **AddSTPGroupUsers**
 > List&lt;StpGroupUser&gt; AddSTPGroupUsers (long stpId, List<long> requestBody)
 
-Add users to the STP group.
+Add users to the STP user group
 
-- Only the master account that created the STP user group is allowed to add users group.- Only accounts under the main account are allowed to be added. Cross-account is not permitted
+- Only the main account that created this STP group can add users to the STP user group - Only accounts under the current main account are allowed, cross-main account is not permitted
 
 ### Example
 ```csharp
@@ -395,12 +395,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new AccountApi(config);
-            var stpId = 1;  // long | STP Group ID.
-            var requestBody = new List<long>(); // List<long> | User ID.
+            var stpId = 1;  // long | STP Group ID
+            var requestBody = new List<long>(); // List<long> | User ID
 
             try
             {
-                // Add users to the STP group.
+                // Add users to the STP user group
                 List<StpGroupUser> result = apiInstance.AddSTPGroupUsers(stpId, requestBody);
                 Debug.WriteLine(result);
             }
@@ -420,8 +420,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stpId** | **long**| STP Group ID. | 
- **requestBody** | [**List&lt;long&gt;**](long.md)| User ID. | 
+ **stpId** | **long**| STP Group ID | 
+ **requestBody** | [**List&lt;long&gt;**](long.md)| User ID | 
 
 ### Return type
 
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | User added successfully. Returning the current users within the STP group. |  -  |
+| **200** | User added successfully, returning current users in the STP group |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 # **DeleteSTPGroupUsers**
 > List&lt;StpGroupUser&gt; DeleteSTPGroupUsers (long stpId, long userId)
 
-Delete the user in the STP group.
+Delete users from the STP user group
 
 - Only the main account that created this STP group is allowed to delete users from the STP user group - Deletion is limited to accounts under the current main account; cross-account deletion is not permitted
 
@@ -470,12 +470,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new AccountApi(config);
-            var stpId = 1;  // long | STP Group ID.
-            var userId = 1;  // long | STP user ID, multiple can be separated by commas.
+            var stpId = 1;  // long | STP Group ID
+            var userId = 1;  // long | STP user IDs, multiple IDs can be separated by commas
 
             try
             {
-                // Delete the user in the STP group.
+                // Delete users from the STP user group
                 List<StpGroupUser> result = apiInstance.DeleteSTPGroupUsers(stpId, userId);
                 Debug.WriteLine(result);
             }
@@ -495,8 +495,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stpId** | **long**| STP Group ID. | 
- **userId** | **long**| STP user ID, multiple can be separated by commas. | 
+ **stpId** | **long**| STP Group ID | 
+ **userId** | **long**| STP user IDs, multiple IDs can be separated by commas | 
 
 ### Return type
 
@@ -514,7 +514,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success. |  -  |
+| **200** | Users deleted successfully, returns current users in the STP group |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -522,9 +522,9 @@ Name | Type | Description  | Notes
 # **GetDebitFee**
 > DebitFee GetDebitFee ()
 
-Query GT deduction configuration.
+Query GT fee deduction configuration
 
-Query the current GT deduction configuration for the account.
+Query the GT fee deduction configuration for the current account
 
 ### Example
 ```csharp
@@ -548,7 +548,7 @@ namespace Example
 
             try
             {
-                // Query GT deduction configuration.
+                // Query GT fee deduction configuration
                 DebitFee result = apiInstance.GetDebitFee();
                 Debug.WriteLine(result);
             }
@@ -583,7 +583,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success. |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -591,9 +591,9 @@ This endpoint does not need any parameter.
 # **SetDebitFee**
 > void SetDebitFee (DebitFee debitFee)
 
-Set GT deduction.
+Configure GT fee deduction
 
-Enable or disable GT deduction for the current account.
+Enable or disable GT fee deduction for the current account
 
 ### Example
 ```csharp
@@ -618,7 +618,7 @@ namespace Example
 
             try
             {
-                // Set GT deduction.
+                // Configure GT fee deduction
                 apiInstance.SetDebitFee(debitFee);
             }
             catch (GateApiException e)
@@ -655,7 +655,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success. |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

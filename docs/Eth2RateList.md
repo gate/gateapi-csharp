@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DateTime** | **long** | Date and Time Stamp. | [optional] 
-**Date** | **string** | Date. | [optional] 
-**Rate** | **string** | percentage. | [optional] 
+**DateTime** | **long** | Date Timestamp | [optional] 
+**Date** | **string** | Date | [optional] 
+**Rate** | **string** | Percentage Rate | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

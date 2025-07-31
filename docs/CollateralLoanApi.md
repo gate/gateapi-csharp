@@ -4,23 +4,23 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListCollateralLoanOrders**](CollateralLoanApi.md#listcollateralloanorders) | **GET** /loan/collateral/orders | List Orders.
-[**CreateCollateralLoan**](CollateralLoanApi.md#createcollateralloan) | **POST** /loan/collateral/orders | Place order.
-[**GetCollateralLoanOrderDetail**](CollateralLoanApi.md#getcollateralloanorderdetail) | **GET** /loan/collateral/orders/{order_id} | Get a single order.
-[**RepayCollateralLoan**](CollateralLoanApi.md#repaycollateralloan) | **POST** /loan/collateral/repay | Repayment.
-[**ListRepayRecords**](CollateralLoanApi.md#listrepayrecords) | **GET** /loan/collateral/repay_records | Repayment history.
-[**ListCollateralRecords**](CollateralLoanApi.md#listcollateralrecords) | **GET** /loan/collateral/collaterals | Query collateral adjustment records.
-[**OperateCollateral**](CollateralLoanApi.md#operatecollateral) | **POST** /loan/collateral/collaterals | Increase or redeem collateral.
-[**GetUserTotalAmount**](CollateralLoanApi.md#getusertotalamount) | **GET** /loan/collateral/total_amount | Query the total borrowing and collateral amount for the user.
-[**GetUserLtvInfo**](CollateralLoanApi.md#getuserltvinfo) | **GET** /loan/collateral/ltv | Query user&#39;s collateralization ratio.
-[**ListCollateralCurrencies**](CollateralLoanApi.md#listcollateralcurrencies) | **GET** /loan/collateral/currencies | Query supported borrowing and collateral currencies.
+[**ListCollateralLoanOrders**](CollateralLoanApi.md#listcollateralloanorders) | **GET** /loan/collateral/orders | Query collateral loan order list
+[**CreateCollateralLoan**](CollateralLoanApi.md#createcollateralloan) | **POST** /loan/collateral/orders | Place collateral loan order
+[**GetCollateralLoanOrderDetail**](CollateralLoanApi.md#getcollateralloanorderdetail) | **GET** /loan/collateral/orders/{order_id} | Query single order details
+[**RepayCollateralLoan**](CollateralLoanApi.md#repaycollateralloan) | **POST** /loan/collateral/repay | Collateral loan repayment
+[**ListRepayRecords**](CollateralLoanApi.md#listrepayrecords) | **GET** /loan/collateral/repay_records | Query collateral loan repayment records
+[**ListCollateralRecords**](CollateralLoanApi.md#listcollateralrecords) | **GET** /loan/collateral/collaterals | Query collateral adjustment records
+[**OperateCollateral**](CollateralLoanApi.md#operatecollateral) | **POST** /loan/collateral/collaterals | Increase or redeem collateral
+[**GetUserTotalAmount**](CollateralLoanApi.md#getusertotalamount) | **GET** /loan/collateral/total_amount | Query user&#39;s total borrowing and collateral amount
+[**GetUserLtvInfo**](CollateralLoanApi.md#getuserltvinfo) | **GET** /loan/collateral/ltv | Query user&#39;s collateralization ratio and remaining borrowable currencies
+[**ListCollateralCurrencies**](CollateralLoanApi.md#listcollateralcurrencies) | **GET** /loan/collateral/currencies | Query supported borrowing and collateral currencies
 
 
 <a name="listcollateralloanorders"></a>
 # **ListCollateralLoanOrders**
 > List&lt;CollateralOrder&gt; ListCollateralLoanOrders (int? page = null, int? limit = null, string collateralCurrency = null, string borrowCurrency = null)
 
-List Orders.
+Query collateral loan order list
 
 ### Example
 ```csharp
@@ -41,14 +41,14 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CollateralLoanApi(config);
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. (optional)  (default to 100)
-            var collateralCurrency = "BTC";  // string | Collateral. (optional) 
-            var borrowCurrency = "USDT";  // string | Borrowed currency. (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var collateralCurrency = "BTC";  // string | Collateral currency (optional) 
+            var borrowCurrency = "USDT";  // string | Borrowed currency (optional) 
 
             try
             {
-                // List Orders.
+                // Query collateral loan order list
                 List<CollateralOrder> result = apiInstance.ListCollateralLoanOrders(page, limit, collateralCurrency, borrowCurrency);
                 Debug.WriteLine(result);
             }
@@ -68,10 +68,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **collateralCurrency** | **string**| Collateral. | [optional] 
- **borrowCurrency** | **string**| Borrowed currency. | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **collateralCurrency** | **string**| Collateral currency | [optional] 
+ **borrowCurrency** | **string**| Borrowed currency | [optional] 
 
 ### Return type
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 # **CreateCollateralLoan**
 > OrderResp CreateCollateralLoan (CreateCollateralOrder createCollateralOrder)
 
-Place order.
+Place collateral loan order
 
 ### Example
 ```csharp
@@ -122,7 +122,7 @@ namespace Example
 
             try
             {
-                // Place order.
+                // Place collateral loan order
                 OrderResp result = apiInstance.CreateCollateralLoan(createCollateralOrder);
                 Debug.WriteLine(result);
             }
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success. |  -  |
+| **200** | Order placed successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 # **GetCollateralLoanOrderDetail**
 > CollateralOrder GetCollateralLoanOrderDetail (long orderId)
 
-Get a single order.
+Query single order details
 
 ### Example
 ```csharp
@@ -189,11 +189,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CollateralLoanApi(config);
-            var orderId = 100001;  // long | Order ID returned on successful order creation.
+            var orderId = 100001;  // long | Order ID returned when order is successfully created
 
             try
             {
-                // Get a single order.
+                // Query single order details
                 CollateralOrder result = apiInstance.GetCollateralLoanOrderDetail(orderId);
                 Debug.WriteLine(result);
             }
@@ -213,7 +213,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **long**| Order ID returned on successful order creation. | 
+ **orderId** | **long**| Order ID returned when order is successfully created | 
 
 ### Return type
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success. |  -  |
+| **200** | Order details queried successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 # **RepayCollateralLoan**
 > RepayResp RepayCollateralLoan (RepayLoan repayLoan)
 
-Repayment.
+Collateral loan repayment
 
 ### Example
 ```csharp
@@ -264,7 +264,7 @@ namespace Example
 
             try
             {
-                // Repayment.
+                // Collateral loan repayment
                 RepayResp result = apiInstance.RepayCollateralLoan(repayLoan);
                 Debug.WriteLine(result);
             }
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Operated successfully. |  -  |
+| **200** | Operation successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 # **ListRepayRecords**
 > List&lt;RepayRecord&gt; ListRepayRecords (string source, string borrowCurrency = null, string collateralCurrency = null, int? page = null, int? limit = null, long? from = null, long? to = null)
 
-Repayment history.
+Query collateral loan repayment records
 
 ### Example
 ```csharp
@@ -331,17 +331,17 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CollateralLoanApi(config);
-            var source = "repay";  // string | Operation type: repay - Regular repayment, liquidate - Liquidation.
-            var borrowCurrency = "USDT";  // string | Borrowed currency. (optional) 
-            var collateralCurrency = "BTC";  // string | Collateral. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. (optional)  (default to 100)
-            var from = 1609459200;  // long? | Start timestamp of the query. (optional) 
-            var to = 1609459200;  // long? | Time range ending, default to current time. (optional) 
+            var source = "repay";  // string | Operation type: repay - Regular repayment, liquidate - Liquidation
+            var borrowCurrency = "USDT";  // string | Borrowed currency (optional) 
+            var collateralCurrency = "BTC";  // string | Collateral currency (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var from = 1609459200;  // long? | Start timestamp for the query (optional) 
+            var to = 1609459200;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
 
             try
             {
-                // Repayment history.
+                // Query collateral loan repayment records
                 List<RepayRecord> result = apiInstance.ListRepayRecords(source, borrowCurrency, collateralCurrency, page, limit, from, to);
                 Debug.WriteLine(result);
             }
@@ -361,13 +361,13 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **source** | **string**| Operation type: repay - Regular repayment, liquidate - Liquidation. | 
- **borrowCurrency** | **string**| Borrowed currency. | [optional] 
- **collateralCurrency** | **string**| Collateral. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **from** | **long?**| Start timestamp of the query. | [optional] 
- **to** | **long?**| Time range ending, default to current time. | [optional] 
+ **source** | **string**| Operation type: repay - Regular repayment, liquidate - Liquidation | 
+ **borrowCurrency** | **string**| Borrowed currency | [optional] 
+ **collateralCurrency** | **string**| Collateral currency | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **from** | **long?**| Start timestamp for the query | [optional] 
+ **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
 
 ### Return type
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 # **ListCollateralRecords**
 > List&lt;CollateralRecord&gt; ListCollateralRecords (int? page = null, int? limit = null, long? from = null, long? to = null, string borrowCurrency = null, string collateralCurrency = null)
 
-Query collateral adjustment records.
+Query collateral adjustment records
 
 ### Example
 ```csharp
@@ -414,16 +414,16 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CollateralLoanApi(config);
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. (optional)  (default to 100)
-            var from = 1609459200;  // long? | Start timestamp of the query. (optional) 
-            var to = 1609459200;  // long? | Time range ending, default to current time. (optional) 
-            var borrowCurrency = "USDT";  // string | Borrowed currency. (optional) 
-            var collateralCurrency = "BTC";  // string | Collateral. (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var from = 1609459200;  // long? | Start timestamp for the query (optional) 
+            var to = 1609459200;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
+            var borrowCurrency = "USDT";  // string | Borrowed currency (optional) 
+            var collateralCurrency = "BTC";  // string | Collateral currency (optional) 
 
             try
             {
-                // Query collateral adjustment records.
+                // Query collateral adjustment records
                 List<CollateralRecord> result = apiInstance.ListCollateralRecords(page, limit, from, to, borrowCurrency, collateralCurrency);
                 Debug.WriteLine(result);
             }
@@ -443,12 +443,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **from** | **long?**| Start timestamp of the query. | [optional] 
- **to** | **long?**| Time range ending, default to current time. | [optional] 
- **borrowCurrency** | **string**| Borrowed currency. | [optional] 
- **collateralCurrency** | **string**| Collateral. | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **from** | **long?**| Start timestamp for the query | [optional] 
+ **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
+ **borrowCurrency** | **string**| Borrowed currency | [optional] 
+ **collateralCurrency** | **string**| Collateral currency | [optional] 
 
 ### Return type
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 # **OperateCollateral**
 > void OperateCollateral (CollateralAlign collateralAlign)
 
-Increase or redeem collateral.
+Increase or redeem collateral
 
 ### Example
 ```csharp
@@ -499,7 +499,7 @@ namespace Example
 
             try
             {
-                // Increase or redeem collateral.
+                // Increase or redeem collateral
                 apiInstance.OperateCollateral(collateralAlign);
             }
             catch (GateApiException e)
@@ -536,7 +536,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Operated successfully. |  -  |
+| **204** | Operation successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -544,7 +544,7 @@ void (empty response body)
 # **GetUserTotalAmount**
 > UserTotalAmount GetUserTotalAmount ()
 
-Query the total borrowing and collateral amount for the user.
+Query user's total borrowing and collateral amount
 
 ### Example
 ```csharp
@@ -568,7 +568,7 @@ namespace Example
 
             try
             {
-                // Query the total borrowing and collateral amount for the user.
+                // Query user's total borrowing and collateral amount
                 UserTotalAmount result = apiInstance.GetUserTotalAmount();
                 Debug.WriteLine(result);
             }
@@ -603,7 +603,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -611,7 +611,7 @@ This endpoint does not need any parameter.
 # **GetUserLtvInfo**
 > UserLtvInfo GetUserLtvInfo (string collateralCurrency, string borrowCurrency)
 
-Query user's collateralization ratio.
+Query user's collateralization ratio and remaining borrowable currencies
 
 ### Example
 ```csharp
@@ -632,12 +632,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CollateralLoanApi(config);
-            var collateralCurrency = "BTC";  // string | Collateral.
-            var borrowCurrency = "USDT";  // string | Borrowed currency.
+            var collateralCurrency = "BTC";  // string | Collateral currency
+            var borrowCurrency = "USDT";  // string | Borrowed currency
 
             try
             {
-                // Query user's collateralization ratio.
+                // Query user's collateralization ratio and remaining borrowable currencies
                 UserLtvInfo result = apiInstance.GetUserLtvInfo(collateralCurrency, borrowCurrency);
                 Debug.WriteLine(result);
             }
@@ -657,8 +657,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collateralCurrency** | **string**| Collateral. | 
- **borrowCurrency** | **string**| Borrowed currency. | 
+ **collateralCurrency** | **string**| Collateral currency | 
+ **borrowCurrency** | **string**| Borrowed currency | 
 
 ### Return type
 
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 # **ListCollateralCurrencies**
 > List&lt;CollateralLoanCurrency&gt; ListCollateralCurrencies (string loanCurrency = null)
 
-Query supported borrowing and collateral currencies.
+Query supported borrowing and collateral currencies
 
 ### Example
 ```csharp
@@ -703,11 +703,11 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new CollateralLoanApi(config);
-            var loanCurrency = "BTC";  // string | The parameter loan_currency is used to specify the borrowing currency. If loan_currency is not provided, the API will return all supported borrowing currencies. (optional) 
+            var loanCurrency = "BTC";  // string | Parameter loan_currency. If omitted, returns all supported borrowing currencies; if provided, returns the array of collateral currencies supported for that borrowing currency (optional) 
 
             try
             {
-                // Query supported borrowing and collateral currencies.
+                // Query supported borrowing and collateral currencies
                 List<CollateralLoanCurrency> result = apiInstance.ListCollateralCurrencies(loanCurrency);
                 Debug.WriteLine(result);
             }
@@ -727,7 +727,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loanCurrency** | **string**| The parameter loan_currency is used to specify the borrowing currency. If loan_currency is not provided, the API will return all supported borrowing currencies. | [optional] 
+ **loanCurrency** | **string**| Parameter loan_currency. If omitted, returns all supported borrowing currencies; if provided, returns the array of collateral currencies supported for that borrowing currency | [optional] 
 
 ### Return type
 
@@ -745,7 +745,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

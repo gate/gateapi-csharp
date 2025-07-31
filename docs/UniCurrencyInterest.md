@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Currency** | **string** | Currency. | [optional] [readonly] 
+**Currency** | **string** | Currency | [optional] [readonly] 
 **InterestStatus** | **string** | Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

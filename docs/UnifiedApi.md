@@ -4,37 +4,37 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListUnifiedAccounts**](UnifiedApi.md#listunifiedaccounts) | **GET** /unified/accounts | Get unified account information.
-[**GetUnifiedBorrowable**](UnifiedApi.md#getunifiedborrowable) | **GET** /unified/borrowable | Query about the maximum borrowing for the unified account.
-[**GetUnifiedTransferable**](UnifiedApi.md#getunifiedtransferable) | **GET** /unified/transferable | Query about the maximum transferable for the unified account.
-[**GetUnifiedTransferables**](UnifiedApi.md#getunifiedtransferables) | **GET** /unified/transferables | Batch query can be transferred out at most for unified accounts; each currency is the maximum value. After the user withdraws the currency, the amount of transferable currency will be changed.
-[**GetUnifiedBorrowableList**](UnifiedApi.md#getunifiedborrowablelist) | **GET** /unified/batch_borrowable | Batch query unified account can be borrowed up to a maximum.
-[**ListUnifiedLoans**](UnifiedApi.md#listunifiedloans) | **GET** /unified/loans | List loans.
-[**CreateUnifiedLoan**](UnifiedApi.md#createunifiedloan) | **POST** /unified/loans | Borrow or repay.
-[**ListUnifiedLoanRecords**](UnifiedApi.md#listunifiedloanrecords) | **GET** /unified/loan_records | Get load records.
-[**ListUnifiedLoanInterestRecords**](UnifiedApi.md#listunifiedloaninterestrecords) | **GET** /unified/interest_records | List interest records.
-[**GetUnifiedRiskUnits**](UnifiedApi.md#getunifiedriskunits) | **GET** /unified/risk_units | Get user risk unit details.
-[**GetUnifiedMode**](UnifiedApi.md#getunifiedmode) | **GET** /unified/unified_mode | Query mode of the unified account.
-[**SetUnifiedMode**](UnifiedApi.md#setunifiedmode) | **PUT** /unified/unified_mode | Set mode of the unified account.
-[**GetUnifiedEstimateRate**](UnifiedApi.md#getunifiedestimaterate) | **GET** /unified/estimate_rate | Get unified estimate rate.
-[**ListCurrencyDiscountTiers**](UnifiedApi.md#listcurrencydiscounttiers) | **GET** /unified/currency_discount_tiers | List currency discount tiers.
-[**ListLoanMarginTiers**](UnifiedApi.md#listloanmargintiers) | **GET** /unified/loan_margin_tiers | List loan margin tiers.
-[**CalculatePortfolioMargin**](UnifiedApi.md#calculateportfoliomargin) | **POST** /unified/portfolio_calculator | Portfolio margin calculator.
-[**GetUserLeverageCurrencyConfig**](UnifiedApi.md#getuserleveragecurrencyconfig) | **GET** /unified/leverage/user_currency_config | Minimum currency leverage that can be set.
-[**GetUserLeverageCurrencySetting**](UnifiedApi.md#getuserleveragecurrencysetting) | **GET** /unified/leverage/user_currency_setting | Get the leverage multiple of the user currency.
-[**SetUserLeverageCurrencySetting**](UnifiedApi.md#setuserleveragecurrencysetting) | **POST** /unified/leverage/user_currency_setting | Set the loan currency leverage.
-[**ListUnifiedCurrencies**](UnifiedApi.md#listunifiedcurrencies) | **GET** /unified/currencies | List of loan currencies supported by unified account.
-[**GetHistoryLoanRate**](UnifiedApi.md#gethistoryloanrate) | **GET** /unified/history_loan_rate | get historical lending rates.
-[**SetUnifiedCollateral**](UnifiedApi.md#setunifiedcollateral) | **POST** /unified/collateral_currencies | Set Collateral Currency.
+[**ListUnifiedAccounts**](UnifiedApi.md#listunifiedaccounts) | **GET** /unified/accounts | Get unified account information
+[**GetUnifiedBorrowable**](UnifiedApi.md#getunifiedborrowable) | **GET** /unified/borrowable | Query maximum borrowable amount for unified account
+[**GetUnifiedTransferable**](UnifiedApi.md#getunifiedtransferable) | **GET** /unified/transferable | Query maximum transferable amount for unified account
+[**GetUnifiedTransferables**](UnifiedApi.md#getunifiedtransferables) | **GET** /unified/transferables | Batch query maximum transferable amount for unified accounts. Each currency shows the maximum value. After user withdrawal, the transferable amount for all currencies will change
+[**GetUnifiedBorrowableList**](UnifiedApi.md#getunifiedborrowablelist) | **GET** /unified/batch_borrowable | Batch query unified account maximum borrowable amount
+[**ListUnifiedLoans**](UnifiedApi.md#listunifiedloans) | **GET** /unified/loans | Query loans
+[**CreateUnifiedLoan**](UnifiedApi.md#createunifiedloan) | **POST** /unified/loans | Borrow or repay
+[**ListUnifiedLoanRecords**](UnifiedApi.md#listunifiedloanrecords) | **GET** /unified/loan_records | Query loan records
+[**ListUnifiedLoanInterestRecords**](UnifiedApi.md#listunifiedloaninterestrecords) | **GET** /unified/interest_records | Query interest deduction records
+[**GetUnifiedRiskUnits**](UnifiedApi.md#getunifiedriskunits) | **GET** /unified/risk_units | Get user risk unit details
+[**GetUnifiedMode**](UnifiedApi.md#getunifiedmode) | **GET** /unified/unified_mode | Query mode of the unified account
+[**SetUnifiedMode**](UnifiedApi.md#setunifiedmode) | **PUT** /unified/unified_mode | Set unified account mode
+[**GetUnifiedEstimateRate**](UnifiedApi.md#getunifiedestimaterate) | **GET** /unified/estimate_rate | Query unified account estimated interest rate
+[**ListCurrencyDiscountTiers**](UnifiedApi.md#listcurrencydiscounttiers) | **GET** /unified/currency_discount_tiers | Query unified account tiered discount
+[**ListLoanMarginTiers**](UnifiedApi.md#listloanmargintiers) | **GET** /unified/loan_margin_tiers | Query unified account tiered loan margin
+[**CalculatePortfolioMargin**](UnifiedApi.md#calculateportfoliomargin) | **POST** /unified/portfolio_calculator | Portfolio margin calculator
+[**GetUserLeverageCurrencyConfig**](UnifiedApi.md#getuserleveragecurrencyconfig) | **GET** /unified/leverage/user_currency_config | Maximum and minimum currency leverage that can be set
+[**GetUserLeverageCurrencySetting**](UnifiedApi.md#getuserleveragecurrencysetting) | **GET** /unified/leverage/user_currency_setting | Get user currency leverage
+[**SetUserLeverageCurrencySetting**](UnifiedApi.md#setuserleveragecurrencysetting) | **POST** /unified/leverage/user_currency_setting | Set loan currency leverage
+[**ListUnifiedCurrencies**](UnifiedApi.md#listunifiedcurrencies) | **GET** /unified/currencies | List of loan currencies supported by unified account
+[**GetHistoryLoanRate**](UnifiedApi.md#gethistoryloanrate) | **GET** /unified/history_loan_rate | Get historical lending rates
+[**SetUnifiedCollateral**](UnifiedApi.md#setunifiedcollateral) | **POST** /unified/collateral_currencies | Set collateral currency
 
 
 <a name="listunifiedaccounts"></a>
 # **ListUnifiedAccounts**
 > UnifiedAccount ListUnifiedAccounts (string currency = null, string subUid = null)
 
-Get unified account information.
+Get unified account information
 
-The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  You can refer to the [Formula](#portfolio-account) in the documentation
+The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  For specific formulas, please refer to [Margin Formula](#margin-formula)
 
 ### Example
 ```csharp
@@ -55,12 +55,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
-            var subUid = "10001";  // string | Sub account user ID. (optional) 
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
+            var subUid = "10001";  // string | Sub account user ID (optional) 
 
             try
             {
-                // Get unified account information.
+                // Get unified account information
                 UnifiedAccount result = apiInstance.ListUnifiedAccounts(currency, subUid);
                 Debug.WriteLine(result);
             }
@@ -80,8 +80,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
- **subUid** | **string**| Sub account user ID. | [optional] 
+ **currency** | **string**| Query by specified currency name | [optional] 
+ **subUid** | **string**| Sub account user ID | [optional] 
 
 ### Return type
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 # **GetUnifiedBorrowable**
 > UnifiedBorrowable GetUnifiedBorrowable (string currency)
 
-Query about the maximum borrowing for the unified account.
+Query maximum borrowable amount for unified account
 
 ### Example
 ```csharp
@@ -128,11 +128,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency.
+            var currency = "BTC";  // string | Query by specified currency name
 
             try
             {
-                // Query about the maximum borrowing for the unified account.
+                // Query maximum borrowable amount for unified account
                 UnifiedBorrowable result = apiInstance.GetUnifiedBorrowable(currency);
                 Debug.WriteLine(result);
             }
@@ -152,7 +152,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | 
+ **currency** | **string**| Query by specified currency name | 
 
 ### Return type
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 # **GetUnifiedTransferable**
 > UnifiedTransferable GetUnifiedTransferable (string currency)
 
-Query about the maximum transferable for the unified account.
+Query maximum transferable amount for unified account
 
 ### Example
 ```csharp
@@ -199,11 +199,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency.
+            var currency = "BTC";  // string | Query by specified currency name
 
             try
             {
-                // Query about the maximum transferable for the unified account.
+                // Query maximum transferable amount for unified account
                 UnifiedTransferable result = apiInstance.GetUnifiedTransferable(currency);
                 Debug.WriteLine(result);
             }
@@ -223,7 +223,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | 
+ **currency** | **string**| Query by specified currency name | 
 
 ### Return type
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 # **GetUnifiedTransferables**
 > List&lt;TransferablesResult&gt; GetUnifiedTransferables (string currencies)
 
-Batch query can be transferred out at most for unified accounts; each currency is the maximum value. After the user withdraws the currency, the amount of transferable currency will be changed.
+Batch query maximum transferable amount for unified accounts. Each currency shows the maximum value. After user withdrawal, the transferable amount for all currencies will change
 
 ### Example
 ```csharp
@@ -270,11 +270,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var currencies = "BTC,ETH";  // string | Specify the currency name to query in batches, and support up to 100 pass parameters at a time.
+            var currencies = "BTC,ETH";  // string | Specify the currency name to query in batches, and support up to 100 pass parameters at a time
 
             try
             {
-                // Batch query can be transferred out at most for unified accounts; each currency is the maximum value. After the user withdraws the currency, the amount of transferable currency will be changed.
+                // Batch query maximum transferable amount for unified accounts. Each currency shows the maximum value. After user withdrawal, the transferable amount for all currencies will change
                 List<TransferablesResult> result = apiInstance.GetUnifiedTransferables(currencies);
                 Debug.WriteLine(result);
             }
@@ -294,7 +294,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencies** | **string**| Specify the currency name to query in batches, and support up to 100 pass parameters at a time. | 
+ **currencies** | **string**| Specify the currency name to query in batches, and support up to 100 pass parameters at a time | 
 
 ### Return type
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 # **GetUnifiedBorrowableList**
 > List&lt;UnifiedBorrowable1&gt; GetUnifiedBorrowableList (List<string> currencies)
 
-Batch query unified account can be borrowed up to a maximum.
+Batch query unified account maximum borrowable amount
 
 ### Example
 ```csharp
@@ -341,11 +341,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var currencies = new List<string>(); // List<string> | Specify the currency names for querying in an array, separated by commas, with a maximum of 10 currencies.
+            var currencies = new List<string>(); // List<string> | Specify currency names for querying in an array, separated by commas, maximum 10 currencies
 
             try
             {
-                // Batch query unified account can be borrowed up to a maximum.
+                // Batch query unified account maximum borrowable amount
                 List<UnifiedBorrowable1> result = apiInstance.GetUnifiedBorrowableList(currencies);
                 Debug.WriteLine(result);
             }
@@ -365,7 +365,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencies** | [**List&lt;string&gt;**](string.md)| Specify the currency names for querying in an array, separated by commas, with a maximum of 10 currencies. | 
+ **currencies** | [**List&lt;string&gt;**](string.md)| Specify currency names for querying in an array, separated by commas, maximum 10 currencies | 
 
 ### Return type
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 # **ListUnifiedLoans**
 > List&lt;UniLoan&gt; ListUnifiedLoans (string currency = null, int? page = null, int? limit = null, string type = null)
 
-List loans.
+Query loans
 
 ### Example
 ```csharp
@@ -412,14 +412,14 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum response items. Default: 100, minimum: 1, Maximum: 100. (optional)  (default to 100)
-            var type = "platform";  // string | Loan type, platform - platform, margin - margin. (optional) 
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional)  (default to 100)
+            var type = "platform";  // string | Loan type: platform borrowing - platform, margin borrowing - margin (optional) 
 
             try
             {
-                // List loans.
+                // Query loans
                 List<UniLoan> result = apiInstance.ListUnifiedLoans(currency, page, limit, type);
                 Debug.WriteLine(result);
             }
@@ -439,10 +439,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum response items. Default: 100, minimum: 1, Maximum: 100. | [optional] [default to 100]
- **type** | **string**| Loan type, platform - platform, margin - margin. | [optional] 
+ **currency** | **string**| Query by specified currency name | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 | [optional] [default to 100]
+ **type** | **string**| Loan type: platform borrowing - platform, margin borrowing - margin | [optional] 
 
 ### Return type
 
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -468,9 +468,9 @@ Name | Type | Description  | Notes
 # **CreateUnifiedLoan**
 > UnifiedLoanResult CreateUnifiedLoan (UnifiedLoan unifiedLoan)
 
-Borrow or repay.
+Borrow or repay
 
-When borrowing, it is essential to ensure that the borrowed amount is not below the minimum borrowing threshold for the specific cryptocurrency and does not exceed the maximum borrowing limit set by the platform and the user.  The interest on the loan will be automatically deducted from the account at regular intervals. It is the user's responsibility to manage the repayment of the borrowed amount.  For repayment, the option to repay the available by setting the parameter `repaid_all=true`
+When borrowing, ensure the borrowed amount is not below the minimum borrowing threshold for the specific cryptocurrency and does not exceed the maximum borrowing limit set by the platform and user.  Loan interest will be automatically deducted from the account at regular intervals. Users are responsible for managing repayment of borrowed amounts.  For repayment, use `repaid_all=true` to repay all available amounts
 
 ### Example
 ```csharp
@@ -495,7 +495,7 @@ namespace Example
 
             try
             {
-                // Borrow or repay.
+                // Borrow or repay
                 UnifiedLoanResult result = apiInstance.CreateUnifiedLoan(unifiedLoan);
                 Debug.WriteLine(result);
             }
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Operated successfully. |  -  |
+| **200** | Operation successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 # **ListUnifiedLoanRecords**
 > List&lt;UnifiedLoanRecord&gt; ListUnifiedLoanRecords (string type = null, string currency = null, int? page = null, int? limit = null)
 
-Get load records.
+Query loan records
 
 ### Example
 ```csharp
@@ -562,14 +562,14 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var type = "type_example";  // string | The types of lending records, borrow - indicates the action of borrowing funds, repaying the borrowed funds (optional) 
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum response items. Default: 100, minimum: 1, Maximum: 100. (optional)  (default to 100)
+            var type = "type_example";  // string | Loan record type: borrow - borrowing, repay - repayment (optional) 
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional)  (default to 100)
 
             try
             {
-                // Get load records.
+                // Query loan records
                 List<UnifiedLoanRecord> result = apiInstance.ListUnifiedLoanRecords(type, currency, page, limit);
                 Debug.WriteLine(result);
             }
@@ -589,10 +589,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **string**| The types of lending records, borrow - indicates the action of borrowing funds, repaying the borrowed funds | [optional] 
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum response items. Default: 100, minimum: 1, Maximum: 100. | [optional] [default to 100]
+ **type** | **string**| Loan record type: borrow - borrowing, repay - repayment | [optional] 
+ **currency** | **string**| Query by specified currency name | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 | [optional] [default to 100]
 
 ### Return type
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -618,7 +618,7 @@ Name | Type | Description  | Notes
 # **ListUnifiedLoanInterestRecords**
 > List&lt;UniLoanInterestRecord&gt; ListUnifiedLoanInterestRecords (string currency = null, int? page = null, int? limit = null, long? from = null, long? to = null, string type = null)
 
-List interest records.
+Query interest deduction records
 
 ### Example
 ```csharp
@@ -639,16 +639,16 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum response items. Default: 100, minimum: 1, Maximum: 100. (optional)  (default to 100)
-            var from = 1627706330;  // long? | Start timestamp of the query. (optional) 
-            var to = 1635329650;  // long? | Time range ending, default to current time. (optional) 
-            var type = "platform";  // string | Loan type, platform loan - platform, leverage loan - margin, if not passed, defaults to margin (optional) 
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional)  (default to 100)
+            var from = 1627706330;  // long? | Start timestamp for the query (optional) 
+            var to = 1635329650;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
+            var type = "platform";  // string | Loan type: platform borrowing - platform, margin borrowing - margin. Defaults to margin if not specified (optional) 
 
             try
             {
-                // List interest records.
+                // Query interest deduction records
                 List<UniLoanInterestRecord> result = apiInstance.ListUnifiedLoanInterestRecords(currency, page, limit, from, to, type);
                 Debug.WriteLine(result);
             }
@@ -668,12 +668,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum response items. Default: 100, minimum: 1, Maximum: 100. | [optional] [default to 100]
- **from** | **long?**| Start timestamp of the query. | [optional] 
- **to** | **long?**| Time range ending, default to current time. | [optional] 
- **type** | **string**| Loan type, platform loan - platform, leverage loan - margin, if not passed, defaults to margin | [optional] 
+ **currency** | **string**| Query by specified currency name | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 | [optional] [default to 100]
+ **from** | **long?**| Start timestamp for the query | [optional] 
+ **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
+ **type** | **string**| Loan type: platform borrowing - platform, margin borrowing - margin. Defaults to margin if not specified | [optional] 
 
 ### Return type
 
@@ -691,7 +691,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -699,9 +699,9 @@ Name | Type | Description  | Notes
 # **GetUnifiedRiskUnits**
 > UnifiedRiskUnits GetUnifiedRiskUnits ()
 
-Get user risk unit details.
+Get user risk unit details
 
-Retrieve user risk unit details, only valid in portfolio margin mode.
+Get user risk unit details, only valid in portfolio margin mode
 
 ### Example
 ```csharp
@@ -725,7 +725,7 @@ namespace Example
 
             try
             {
-                // Get user risk unit details.
+                // Get user risk unit details
                 UnifiedRiskUnits result = apiInstance.GetUnifiedRiskUnits();
                 Debug.WriteLine(result);
             }
@@ -760,7 +760,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -768,7 +768,7 @@ This endpoint does not need any parameter.
 # **GetUnifiedMode**
 > UnifiedModeSet GetUnifiedMode ()
 
-Query mode of the unified account.
+Query mode of the unified account
 
 Unified account mode: - `classic`: Classic account mode - `multi_currency`: Cross-currency margin mode - `portfolio`: Portfolio margin mode - `single_currency`: Single-currency margin mode
 
@@ -794,7 +794,7 @@ namespace Example
 
             try
             {
-                // Query mode of the unified account.
+                // Query mode of the unified account
                 UnifiedModeSet result = apiInstance.GetUnifiedMode();
                 Debug.WriteLine(result);
             }
@@ -829,7 +829,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -837,7 +837,7 @@ This endpoint does not need any parameter.
 # **SetUnifiedMode**
 > void SetUnifiedMode (UnifiedModeSet unifiedModeSet)
 
-Set mode of the unified account.
+Set unified account mode
 
 Each account mode switch only requires passing the corresponding account mode parameter, and also supports turning on or off the configuration switches under the corresponding account mode during the switch. - When enabling the classic account mode, mode=classic ```  PUT /unified/unified_mode  {  \"mode\": \"classic\"  } ``` - When enabling the cross-currency margin \"multi_currency\",  \"settings\": {  \"usdt_futures\": true  }  } ``` - When enabling the portfolio margin mode, mode=portfolio ```  PUT /unified/unified_mode  {  \"mode\": \"portfolio\",  \"settings\": {  \"spot_hedge\": true  }  } ``` - When enabling the single-currency margin mode, mode=single_currency ```  PUT /unified/unified_mode  {  \"mode\": \"single_currency\"  } ```
 
@@ -864,7 +864,7 @@ namespace Example
 
             try
             {
-                // Set mode of the unified account.
+                // Set unified account mode
                 apiInstance.SetUnifiedMode(unifiedModeSet);
             }
             catch (GateApiException e)
@@ -901,7 +901,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success. |  -  |
+| **204** | Set successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -909,9 +909,9 @@ void (empty response body)
 # **GetUnifiedEstimateRate**
 > Dictionary&lt;string, string&gt; GetUnifiedEstimateRate (List<string> currencies)
 
-Get unified estimate rate.
+Query unified account estimated interest rate
 
-Due to fluctuations in lending depth, hourly interest rates may vary, and thus, I cannot provide exact rates. When a currency is not supported, the interest rate returned will be an empty string.
+Interest rates fluctuate hourly based on lending depth, so exact rates cannot be provided. When a currency is not supported, the interest rate returned will be an empty string
 
 ### Example
 ```csharp
@@ -932,11 +932,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var currencies = new List<string>(); // List<string> | Specify the currency names for querying in an array, separated by commas, with a maximum of 10 currencies.
+            var currencies = new List<string>(); // List<string> | Specify currency names for querying in an array, separated by commas, maximum 10 currencies
 
             try
             {
-                // Get unified estimate rate.
+                // Query unified account estimated interest rate
                 Dictionary<string, string> result = apiInstance.GetUnifiedEstimateRate(currencies);
                 Debug.WriteLine(result);
             }
@@ -956,7 +956,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencies** | [**List&lt;string&gt;**](string.md)| Specify the currency names for querying in an array, separated by commas, with a maximum of 10 currencies. | 
+ **currencies** | [**List&lt;string&gt;**](string.md)| Specify currency names for querying in an array, separated by commas, maximum 10 currencies | 
 
 ### Return type
 
@@ -974,7 +974,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -982,7 +982,7 @@ Name | Type | Description  | Notes
 # **ListCurrencyDiscountTiers**
 > List&lt;UnifiedDiscount&gt; ListCurrencyDiscountTiers ()
 
-List currency discount tiers.
+Query unified account tiered discount
 
 ### Example
 ```csharp
@@ -1004,7 +1004,7 @@ namespace Example
 
             try
             {
-                // List currency discount tiers.
+                // Query unified account tiered discount
                 List<UnifiedDiscount> result = apiInstance.ListCurrencyDiscountTiers();
                 Debug.WriteLine(result);
             }
@@ -1039,7 +1039,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1047,7 +1047,7 @@ No authorization required
 # **ListLoanMarginTiers**
 > List&lt;UnifiedMarginTiers&gt; ListLoanMarginTiers ()
 
-List loan margin tiers.
+Query unified account tiered loan margin
 
 ### Example
 ```csharp
@@ -1069,7 +1069,7 @@ namespace Example
 
             try
             {
-                // List loan margin tiers.
+                // Query unified account tiered loan margin
                 List<UnifiedMarginTiers> result = apiInstance.ListLoanMarginTiers();
                 Debug.WriteLine(result);
             }
@@ -1104,7 +1104,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1112,9 +1112,9 @@ No authorization required
 # **CalculatePortfolioMargin**
 > UnifiedPortfolioOutput CalculatePortfolioMargin (UnifiedPortfolioInput unifiedPortfolioInput)
 
-Portfolio margin calculator.
+Portfolio margin calculator
 
-Portfolio Margin Calculator When inputting a simulated position portfolio, each position includes the position name and quantity held, supporting markets within the range of BTC and ETH perpetual contracts, options, and spot markets. When inputting simulated orders, each order includes the market identifier, order price, and order of BTC and ETH perpetual contracts, options, and spot markets. Market orders are not included.
+Portfolio Margin Calculator  When inputting simulated position portfolios, each position includes the position name and quantity held, supporting markets within the range of BTC and ETH perpetual contracts, options, and spot markets. When inputting simulated orders, each order includes the market identifier, order price, and order quantity, supporting markets within the range of BTC and ETH perpetual contracts, options, and spot markets. Market orders are not included.
 
 ### Example
 ```csharp
@@ -1137,7 +1137,7 @@ namespace Example
 
             try
             {
-                // Portfolio margin calculator.
+                // Portfolio margin calculator
                 UnifiedPortfolioOutput result = apiInstance.CalculatePortfolioMargin(unifiedPortfolioInput);
                 Debug.WriteLine(result);
             }
@@ -1175,7 +1175,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1183,7 +1183,7 @@ No authorization required
 # **GetUserLeverageCurrencyConfig**
 > UnifiedLeverageConfig GetUserLeverageCurrencyConfig (string currency)
 
-Minimum currency leverage that can be set.
+Maximum and minimum currency leverage that can be set
 
 ### Example
 ```csharp
@@ -1204,11 +1204,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var currency = "BTC";  // string | Currency.
+            var currency = "BTC";  // string | Currency
 
             try
             {
-                // Minimum currency leverage that can be set.
+                // Maximum and minimum currency leverage that can be set
                 UnifiedLeverageConfig result = apiInstance.GetUserLeverageCurrencyConfig(currency);
                 Debug.WriteLine(result);
             }
@@ -1228,7 +1228,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Currency. | 
+ **currency** | **string**| Currency | 
 
 ### Return type
 
@@ -1246,17 +1246,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getuserleveragecurrencysetting"></a>
 # **GetUserLeverageCurrencySetting**
-> UnifiedLeverageSetting GetUserLeverageCurrencySetting (string currency = null)
+> List&lt;UnifiedLeverageSetting&gt; GetUserLeverageCurrencySetting (string currency = null)
 
-Get the leverage multiple of the user currency.
+Get user currency leverage
 
-Get the user's currency leverage. If currency is not passed, query all currencies.
+Get user currency leverage. If currency is not specified, query all currencies
 
 ### Example
 ```csharp
@@ -1277,12 +1277,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new UnifiedApi(config);
-            var currency = "BTC";  // string | Currency. (optional) 
+            var currency = "BTC";  // string | Currency (optional) 
 
             try
             {
-                // Get the leverage multiple of the user currency.
-                UnifiedLeverageSetting result = apiInstance.GetUserLeverageCurrencySetting(currency);
+                // Get user currency leverage
+                List<UnifiedLeverageSetting> result = apiInstance.GetUserLeverageCurrencySetting(currency);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1301,11 +1301,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Currency. | [optional] 
+ **currency** | **string**| Currency | [optional] 
 
 ### Return type
 
-[**UnifiedLeverageSetting**](UnifiedLeverageSetting.md)
+[**List&lt;UnifiedLeverageSetting&gt;**](UnifiedLeverageSetting.md)
 
 ### Authorization
 
@@ -1319,7 +1319,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1327,7 +1327,7 @@ Name | Type | Description  | Notes
 # **SetUserLeverageCurrencySetting**
 > void SetUserLeverageCurrencySetting (UnifiedLeverageSetting unifiedLeverageSetting)
 
-Set the loan currency leverage.
+Set loan currency leverage
 
 ### Example
 ```csharp
@@ -1352,7 +1352,7 @@ namespace Example
 
             try
             {
-                // Set the loan currency leverage.
+                // Set loan currency leverage
                 apiInstance.SetUserLeverageCurrencySetting(unifiedLeverageSetting);
             }
             catch (GateApiException e)
@@ -1389,7 +1389,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success. |  -  |
+| **204** | Set successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1397,7 +1397,7 @@ void (empty response body)
 # **ListUnifiedCurrencies**
 > List&lt;UnifiedCurrency&gt; ListUnifiedCurrencies (string currency = null)
 
-List of loan currencies supported by unified account.
+List of loan currencies supported by unified account
 
 ### Example
 ```csharp
@@ -1416,11 +1416,11 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new UnifiedApi(config);
-            var currency = "BTC";  // string | Currency. (optional) 
+            var currency = "BTC";  // string | Currency (optional) 
 
             try
             {
-                // List of loan currencies supported by unified account.
+                // List of loan currencies supported by unified account
                 List<UnifiedCurrency> result = apiInstance.ListUnifiedCurrencies(currency);
                 Debug.WriteLine(result);
             }
@@ -1440,7 +1440,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Currency. | [optional] 
+ **currency** | **string**| Currency | [optional] 
 
 ### Return type
 
@@ -1458,7 +1458,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1466,7 +1466,7 @@ No authorization required
 # **GetHistoryLoanRate**
 > UnifiedHistoryLoanRate GetHistoryLoanRate (string currency, string tier = null, int? page = null, int? limit = null)
 
-get historical lending rates.
+Get historical lending rates
 
 ### Example
 ```csharp
@@ -1485,14 +1485,14 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new UnifiedApi(config);
-            var currency = "USDT";  // string | Currency.
-            var tier = "1";  // string | The VIP level of the floating rate that needs to be queried. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum response items. Default: 100, minimum: 1, Maximum: 100. (optional)  (default to 100)
+            var currency = "USDT";  // string | Currency
+            var tier = "1";  // string | VIP level for the floating rate to be queried (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional)  (default to 100)
 
             try
             {
-                // get historical lending rates.
+                // Get historical lending rates
                 UnifiedHistoryLoanRate result = apiInstance.GetHistoryLoanRate(currency, tier, page, limit);
                 Debug.WriteLine(result);
             }
@@ -1512,10 +1512,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Currency. | 
- **tier** | **string**| The VIP level of the floating rate that needs to be queried. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum response items. Default: 100, minimum: 1, Maximum: 100. | [optional] [default to 100]
+ **currency** | **string**| Currency | 
+ **tier** | **string**| VIP level for the floating rate to be queried | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 | [optional] [default to 100]
 
 ### Return type
 
@@ -1533,7 +1533,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1541,7 +1541,7 @@ No authorization required
 # **SetUnifiedCollateral**
 > UnifiedCollateralRes SetUnifiedCollateral (UnifiedCollateralReq unifiedCollateralReq)
 
-Set Collateral Currency.
+Set collateral currency
 
 ### Example
 ```csharp
@@ -1566,7 +1566,7 @@ namespace Example
 
             try
             {
-                // Set Collateral Currency.
+                // Set collateral currency
                 UnifiedCollateralRes result = apiInstance.SetUnifiedCollateral(unifiedCollateralReq);
                 Debug.WriteLine(result);
             }
@@ -1604,7 +1604,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | UpdateSuccess. |  -  |
+| **200** | Updated successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

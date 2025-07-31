@@ -4,18 +4,18 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListFlashSwapCurrencyPair**](FlashSwapApi.md#listflashswapcurrencypair) | **GET** /flash_swap/currency_pairs | List All Supported Currency Pairs In Flash Swap.
-[**ListFlashSwapOrders**](FlashSwapApi.md#listflashswaporders) | **GET** /flash_swap/orders | List all flash swap orders.
-[**CreateFlashSwapOrder**](FlashSwapApi.md#createflashswaporder) | **POST** /flash_swap/orders | Create a flash swap order.
-[**GetFlashSwapOrder**](FlashSwapApi.md#getflashswaporder) | **GET** /flash_swap/orders/{order_id} | Get a single flash swap order&#39;s detail.
-[**PreviewFlashSwapOrder**](FlashSwapApi.md#previewflashswaporder) | **POST** /flash_swap/orders/preview | Initiate a flash swap order preview.
+[**ListFlashSwapCurrencyPair**](FlashSwapApi.md#listflashswapcurrencypair) | **GET** /flash_swap/currency_pairs | List All Supported Currency Pairs In Flash Swap
+[**ListFlashSwapOrders**](FlashSwapApi.md#listflashswaporders) | **GET** /flash_swap/orders | Query flash swap order list
+[**CreateFlashSwapOrder**](FlashSwapApi.md#createflashswaporder) | **POST** /flash_swap/orders | Create a flash swap order
+[**GetFlashSwapOrder**](FlashSwapApi.md#getflashswaporder) | **GET** /flash_swap/orders/{order_id} | Query single flash swap order
+[**PreviewFlashSwapOrder**](FlashSwapApi.md#previewflashswaporder) | **POST** /flash_swap/orders/preview | Flash swap order preview
 
 
 <a name="listflashswapcurrencypair"></a>
 # **ListFlashSwapCurrencyPair**
 > List&lt;FlashSwapCurrencyPair&gt; ListFlashSwapCurrencyPair (string currency = null, int? page = null, int? limit = null)
 
-List All Supported Currency Pairs In Flash Swap.
+List All Supported Currency Pairs In Flash Swap
 
 `BTC_GT` represents selling BTC and buying GT. The limits for each currency may vary across different currency pairs.  It is not necessary that two currencies that can be swapped instantaneously can be exchanged with each other. For example, it is possible to sell BTC and buy GT, but it does not necessarily mean that GT can be sold to buy BTC.
 
@@ -36,13 +36,13 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FlashSwapApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 1000;  // int? | Maximum response items. Default: 100, minimum: 1, Maximum: 1000. (optional)  (default to 1000)
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 1000;  // int? | Maximum number of items returned. Default: 1000, minimum: 1, maximum: 1000 (optional)  (default to 1000)
 
             try
             {
-                // List All Supported Currency Pairs In Flash Swap.
+                // List All Supported Currency Pairs In Flash Swap
                 List<FlashSwapCurrencyPair> result = apiInstance.ListFlashSwapCurrencyPair(currency, page, limit);
                 Debug.WriteLine(result);
             }
@@ -62,9 +62,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum response items. Default: 100, minimum: 1, Maximum: 1000. | [optional] [default to 1000]
+ **currency** | **string**| Query by specified currency name | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of items returned. Default: 1000, minimum: 1, maximum: 1000 | [optional] [default to 1000]
 
 ### Return type
 
@@ -82,7 +82,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -90,7 +90,7 @@ No authorization required
 # **ListFlashSwapOrders**
 > List&lt;FlashSwapOrder&gt; ListFlashSwapOrders (int? status = null, string sellCurrency = null, string buyCurrency = null, bool? reverse = null, int? limit = null, int? page = null)
 
-List all flash swap orders.
+Query flash swap order list
 
 ### Example
 ```csharp
@@ -111,16 +111,16 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FlashSwapApi(config);
-            var status = 1;  // int? | Flash swap order status  `1` - success `2` - failure (optional) 
-            var sellCurrency = "BTC";  // string | Currency to sell which can be retrieved from supported currency list API `GET /flash_swap/currencies` (optional) 
-            var buyCurrency = "BTC";  // string | Currency to buy which can be retrieved from supported currency list API `GET /flash_swap/currencies` (optional) 
-            var reverse = true;  // bool? | If results are sorted by id in reverse order. Default to `true`  - `true`: sort by id in descending order(recent first) - ascending order(oldest first) (optional) 
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. (optional)  (default to 100)
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
+            var status = 1;  // int? | Flash swap order status  `1` - success `2` - failed (optional) 
+            var sellCurrency = "BTC";  // string | Asset name to sell - Retrieved from API `GET /flash_swap/currencies` for supported flash swap currencies (optional) 
+            var buyCurrency = "BTC";  // string | Asset name to buy - Retrieved from API `GET /flash_swap/currencies` for supported flash swap currencies (optional) 
+            var reverse = true;  // bool? | Sort by ID in ascending or descending order, default `true` - `true`: ID descending order (most recent data first) - `false`: ID ascending order (oldest data first) (optional) 
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var page = 1;  // int? | Page number (optional)  (default to 1)
 
             try
             {
-                // List all flash swap orders.
+                // Query flash swap order list
                 List<FlashSwapOrder> result = apiInstance.ListFlashSwapOrders(status, sellCurrency, buyCurrency, reverse, limit, page);
                 Debug.WriteLine(result);
             }
@@ -140,12 +140,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **int?**| Flash swap order status  &#x60;1&#x60; - success &#x60;2&#x60; - failure | [optional] 
- **sellCurrency** | **string**| Currency to sell which can be retrieved from supported currency list API &#x60;GET /flash_swap/currencies&#x60; | [optional] 
- **buyCurrency** | **string**| Currency to buy which can be retrieved from supported currency list API &#x60;GET /flash_swap/currencies&#x60; | [optional] 
- **reverse** | **bool?**| If results are sorted by id in reverse order. Default to &#x60;true&#x60;  - &#x60;true&#x60;: sort by id in descending order(recent first) - ascending order(oldest first) | [optional] 
- **limit** | **int?**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **page** | **int?**| Page number. | [optional] [default to 1]
+ **status** | **int?**| Flash swap order status  &#x60;1&#x60; - success &#x60;2&#x60; - failed | [optional] 
+ **sellCurrency** | **string**| Asset name to sell - Retrieved from API &#x60;GET /flash_swap/currencies&#x60; for supported flash swap currencies | [optional] 
+ **buyCurrency** | **string**| Asset name to buy - Retrieved from API &#x60;GET /flash_swap/currencies&#x60; for supported flash swap currencies | [optional] 
+ **reverse** | **bool?**| Sort by ID in ascending or descending order, default &#x60;true&#x60; - &#x60;true&#x60;: ID descending order (most recent data first) - &#x60;false&#x60;: ID ascending order (oldest data first) | [optional] 
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **page** | **int?**| Page number | [optional] [default to 1]
 
 ### Return type
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 # **CreateFlashSwapOrder**
 > FlashSwapOrder CreateFlashSwapOrder (FlashSwapOrderRequest flashSwapOrderRequest)
 
-Create a flash swap order.
+Create a flash swap order
 
 Initiate a flash swap preview in advance because order creation requires a preview result
 
@@ -198,7 +198,7 @@ namespace Example
 
             try
             {
-                // Create a flash swap order.
+                // Create a flash swap order
                 FlashSwapOrder result = apiInstance.CreateFlashSwapOrder(flashSwapOrderRequest);
                 Debug.WriteLine(result);
             }
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | The flash swap order is created successfully. |  -  |
+| **201** | Flash swap order created successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 # **GetFlashSwapOrder**
 > FlashSwapOrder GetFlashSwapOrder (int orderId)
 
-Get a single flash swap order's detail.
+Query single flash swap order
 
 ### Example
 ```csharp
@@ -265,11 +265,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FlashSwapApi(config);
-            var orderId = 1;  // int | Flash swap order ID.
+            var orderId = 1;  // int | Flash swap order ID
 
             try
             {
-                // Get a single flash swap order's detail.
+                // Query single flash swap order
                 FlashSwapOrder result = apiInstance.GetFlashSwapOrder(orderId);
                 Debug.WriteLine(result);
             }
@@ -289,7 +289,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **int**| Flash swap order ID. | 
+ **orderId** | **int**| Flash swap order ID | 
 
 ### Return type
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 # **PreviewFlashSwapOrder**
 > FlashSwapOrderPreview PreviewFlashSwapOrder (FlashSwapPreviewRequest flashSwapPreviewRequest)
 
-Initiate a flash swap order preview.
+Flash swap order preview
 
 ### Example
 ```csharp
@@ -340,7 +340,7 @@ namespace Example
 
             try
             {
-                // Initiate a flash swap order preview.
+                // Flash swap order preview
                 FlashSwapOrderPreview result = apiInstance.PreviewFlashSwapOrder(flashSwapPreviewRequest);
                 Debug.WriteLine(result);
             }
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | The flash swap order successfully previewed. |  -  |
+| **200** | Flash swap order preview successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

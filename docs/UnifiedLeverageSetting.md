@@ -1,14 +1,14 @@
 
 # Io.Gate.GateApi.Model.UnifiedLeverageSetting
 
-Loan currency leverage.
+Leverage multiplier for borrowing currency
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Currency** | **string** | Currency name. | 
-**Leverage** | **string** | multiple. | 
+**Currency** | **string** | Currency name | 
+**Leverage** | **string** | Multiplier | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

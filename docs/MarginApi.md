@@ -4,25 +4,25 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListMarginAccounts**](MarginApi.md#listmarginaccounts) | **GET** /margin/accounts | Margin account list.
-[**ListMarginAccountBook**](MarginApi.md#listmarginaccountbook) | **GET** /margin/account_book | List margin account balance change history.
-[**ListFundingAccounts**](MarginApi.md#listfundingaccounts) | **GET** /margin/funding_accounts | Funding account list.
-[**GetAutoRepayStatus**](MarginApi.md#getautorepaystatus) | **GET** /margin/auto_repay | Retrieve user auto repayment setting.
-[**SetAutoRepay**](MarginApi.md#setautorepay) | **POST** /margin/auto_repay | Update user&#39;s auto repayment setting.
-[**GetMarginTransferable**](MarginApi.md#getmargintransferable) | **GET** /margin/transferable | Get the max transferable amount for a specific margin currency.
-[**GetUserMarginTier**](MarginApi.md#getusermargintier) | **GET** /margin/user/loan_margin_tiers | Check the user&#39;s own leverage lending gradient in the current market.
-[**GetMarketMarginTier**](MarginApi.md#getmarketmargintier) | **GET** /margin/loan_margin_tiers | Query the current market leverage lending gradient.
-[**SetUserMarketLeverage**](MarginApi.md#setusermarketleverage) | **POST** /margin/leverage/user_market_setting | Set the user market leverage multiple.
-[**ListMarginUserAccount**](MarginApi.md#listmarginuseraccount) | **GET** /margin/user/account | Query the user&#39;s leverage account list.
-[**ListCrossMarginLoans**](MarginApi.md#listcrossmarginloans) | **GET** /margin/cross/loans | List cross margin borrow history. (deprecated).
-[**ListCrossMarginRepayments**](MarginApi.md#listcrossmarginrepayments) | **GET** /margin/cross/repayments | Retrieve cross margin repayments. (deprecated).
+[**ListMarginAccounts**](MarginApi.md#listmarginaccounts) | **GET** /margin/accounts | Margin account list
+[**ListMarginAccountBook**](MarginApi.md#listmarginaccountbook) | **GET** /margin/account_book | Query margin account balance change history
+[**ListFundingAccounts**](MarginApi.md#listfundingaccounts) | **GET** /margin/funding_accounts | Funding account list
+[**GetAutoRepayStatus**](MarginApi.md#getautorepaystatus) | **GET** /margin/auto_repay | Query user auto repayment settings
+[**SetAutoRepay**](MarginApi.md#setautorepay) | **POST** /margin/auto_repay | Update user auto repayment settings
+[**GetMarginTransferable**](MarginApi.md#getmargintransferable) | **GET** /margin/transferable | Get maximum transferable amount for isolated margin
+[**GetUserMarginTier**](MarginApi.md#getusermargintier) | **GET** /margin/user/loan_margin_tiers | Query user&#39;s own leverage lending tiers in current market
+[**GetMarketMarginTier**](MarginApi.md#getmarketmargintier) | **GET** /margin/loan_margin_tiers | Query current market leverage lending tiers
+[**SetUserMarketLeverage**](MarginApi.md#setusermarketleverage) | **POST** /margin/leverage/user_market_setting | Set user market leverage multiplier
+[**ListMarginUserAccount**](MarginApi.md#listmarginuseraccount) | **GET** /margin/user/account | Query user&#39;s isolated margin account list
+[**ListCrossMarginLoans**](MarginApi.md#listcrossmarginloans) | **GET** /margin/cross/loans | Query cross margin borrow history (deprecated)
+[**ListCrossMarginRepayments**](MarginApi.md#listcrossmarginrepayments) | **GET** /margin/cross/repayments | Retrieve cross margin repayments. (deprecated)
 
 
 <a name="listmarginaccounts"></a>
 # **ListMarginAccounts**
 > List&lt;MarginAccount&gt; ListMarginAccounts (string currencyPair = null)
 
-Margin account list.
+Margin account list
 
 ### Example
 ```csharp
@@ -43,11 +43,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair. (optional) 
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
 
             try
             {
-                // Margin account list.
+                // Margin account list
                 List<MarginAccount> result = apiInstance.ListMarginAccounts(currencyPair);
                 Debug.WriteLine(result);
             }
@@ -67,7 +67,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | [optional] 
+ **currencyPair** | **string**| Currency pair | [optional] 
 
 ### Return type
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -93,9 +93,9 @@ Name | Type | Description  | Notes
 # **ListMarginAccountBook**
 > List&lt;MarginAccountBook&gt; ListMarginAccountBook (string currency = null, string currencyPair = null, string type = null, long? from = null, long? to = null, int? page = null, int? limit = null)
 
-List margin account balance change history.
+Query margin account balance change history
 
-Only transferals from and to margin account are provided for now. Time range allows 30 days at most
+Currently only provides transfer history to and from margin accounts. Query time range cannot exceed 30 days
 
 ### Example
 ```csharp
@@ -116,17 +116,17 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginApi(config);
-            var currency = "currency_example";  // string | List records related to specified currency only. If specified, `currency_pair` is also required. (optional) 
-            var currencyPair = "currencyPair_example";  // string | List records related to specified currency pair. Used in combination with `currency`. Ignored if `currency` is not provided (optional) 
-            var type = "lend";  // string | Only retrieve changes of the specified type. All types will be returned if not specified. (optional) 
-            var from = 1627706330;  // long? | Start timestamp of the query. (optional) 
-            var to = 1635329650;  // long? | Time range ending, default to current time. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. (optional)  (default to 100)
+            var currency = "currency_example";  // string | Query history for specified currency. If `currency` is specified, `currency_pair` must also be specified. (optional) 
+            var currencyPair = "currencyPair_example";  // string | Specify margin account currency pair. Used in combination with `currency`. Ignored if `currency` is not specified (optional) 
+            var type = "lend";  // string | Query by specified account change type. If not specified, all change types will be included. (optional) 
+            var from = 1627706330;  // long? | Start timestamp for the query (optional) 
+            var to = 1635329650;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
 
             try
             {
-                // List margin account balance change history.
+                // Query margin account balance change history
                 List<MarginAccountBook> result = apiInstance.ListMarginAccountBook(currency, currencyPair, type, from, to, page, limit);
                 Debug.WriteLine(result);
             }
@@ -146,13 +146,13 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| List records related to specified currency only. If specified, &#x60;currency_pair&#x60; is also required. | [optional] 
- **currencyPair** | **string**| List records related to specified currency pair. Used in combination with &#x60;currency&#x60;. Ignored if &#x60;currency&#x60; is not provided | [optional] 
- **type** | **string**| Only retrieve changes of the specified type. All types will be returned if not specified. | [optional] 
- **from** | **long?**| Start timestamp of the query. | [optional] 
- **to** | **long?**| Time range ending, default to current time. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
+ **currency** | **string**| Query history for specified currency. If &#x60;currency&#x60; is specified, &#x60;currency_pair&#x60; must also be specified. | [optional] 
+ **currencyPair** | **string**| Specify margin account currency pair. Used in combination with &#x60;currency&#x60;. Ignored if &#x60;currency&#x60; is not specified | [optional] 
+ **type** | **string**| Query by specified account change type. If not specified, all change types will be included. | [optional] 
+ **from** | **long?**| Start timestamp for the query | [optional] 
+ **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
 
 ### Return type
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 # **ListFundingAccounts**
 > List&lt;FundingAccount&gt; ListFundingAccounts (string currency = null)
 
-Funding account list.
+Funding account list
 
 ### Example
 ```csharp
@@ -199,11 +199,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
 
             try
             {
-                // Funding account list.
+                // Funding account list
                 List<FundingAccount> result = apiInstance.ListFundingAccounts(currency);
                 Debug.WriteLine(result);
             }
@@ -223,7 +223,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
+ **currency** | **string**| Query by specified currency name | [optional] 
 
 ### Return type
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 # **GetAutoRepayStatus**
 > AutoRepaySetting GetAutoRepayStatus ()
 
-Retrieve user auto repayment setting.
+Query user auto repayment settings
 
 ### Example
 ```csharp
@@ -273,7 +273,7 @@ namespace Example
 
             try
             {
-                // Retrieve user auto repayment setting.
+                // Query user auto repayment settings
                 AutoRepaySetting result = apiInstance.GetAutoRepayStatus();
                 Debug.WriteLine(result);
             }
@@ -308,7 +308,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Current auto repayment setting. |  -  |
+| **200** | User&#39;s current auto repayment settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -316,7 +316,7 @@ This endpoint does not need any parameter.
 # **SetAutoRepay**
 > AutoRepaySetting SetAutoRepay (string status)
 
-Update user's auto repayment setting.
+Update user auto repayment settings
 
 ### Example
 ```csharp
@@ -337,11 +337,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginApi(config);
-            var status = "on";  // string | New auto repayment status. `on` - enabled, `off` - disabled.
+            var status = "on";  // string | Whether to enable auto repayment: `on` - enabled, `off` - disabled
 
             try
             {
-                // Update user's auto repayment setting.
+                // Update user auto repayment settings
                 AutoRepaySetting result = apiInstance.SetAutoRepay(status);
                 Debug.WriteLine(result);
             }
@@ -361,7 +361,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **string**| New auto repayment status. &#x60;on&#x60; - enabled, &#x60;off&#x60; - disabled. | 
+ **status** | **string**| Whether to enable auto repayment: &#x60;on&#x60; - enabled, &#x60;off&#x60; - disabled | 
 
 ### Return type
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Current auto repayment setting. |  -  |
+| **200** | User&#39;s current auto repayment settings |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 # **GetMarginTransferable**
 > MarginTransferable GetMarginTransferable (string currency, string currencyPair = null)
 
-Get the max transferable amount for a specific margin currency.
+Get maximum transferable amount for isolated margin
 
 ### Example
 ```csharp
@@ -408,12 +408,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency.
-            var currencyPair = "BTC_USDT";  // string | Currency pair. (optional) 
+            var currency = "BTC";  // string | Query by specified currency name
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
 
             try
             {
-                // Get the max transferable amount for a specific margin currency.
+                // Get maximum transferable amount for isolated margin
                 MarginTransferable result = apiInstance.GetMarginTransferable(currency, currencyPair);
                 Debug.WriteLine(result);
             }
@@ -433,8 +433,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | 
- **currencyPair** | **string**| Currency pair. | [optional] 
+ **currency** | **string**| Query by specified currency name | 
+ **currencyPair** | **string**| Currency pair | [optional] 
 
 ### Return type
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 # **GetUserMarginTier**
 > List&lt;MarginLeverageTier&gt; GetUserMarginTier (string currencyPair)
 
-Check the user's own leverage lending gradient in the current market.
+Query user's own leverage lending tiers in current market
 
 ### Example
 ```csharp
@@ -481,11 +481,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair.
+            var currencyPair = "BTC_USDT";  // string | Currency pair
 
             try
             {
-                // Check the user's own leverage lending gradient in the current market.
+                // Query user's own leverage lending tiers in current market
                 List<MarginLeverageTier> result = apiInstance.GetUserMarginTier(currencyPair);
                 Debug.WriteLine(result);
             }
@@ -505,7 +505,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | 
+ **currencyPair** | **string**| Currency pair | 
 
 ### Return type
 
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 # **GetMarketMarginTier**
 > List&lt;MarginLeverageTier&gt; GetMarketMarginTier (string currencyPair)
 
-Query the current market leverage lending gradient.
+Query current market leverage lending tiers
 
 ### Example
 ```csharp
@@ -550,11 +550,11 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new MarginApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair.
+            var currencyPair = "BTC_USDT";  // string | Currency pair
 
             try
             {
-                // Query the current market leverage lending gradient.
+                // Query current market leverage lending tiers
                 List<MarginLeverageTier> result = apiInstance.GetMarketMarginTier(currencyPair);
                 Debug.WriteLine(result);
             }
@@ -574,7 +574,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | 
+ **currencyPair** | **string**| Currency pair | 
 
 ### Return type
 
@@ -592,7 +592,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -600,7 +600,7 @@ No authorization required
 # **SetUserMarketLeverage**
 > void SetUserMarketLeverage (MarginMarketLeverage marginMarketLeverage)
 
-Set the user market leverage multiple.
+Set user market leverage multiplier
 
 ### Example
 ```csharp
@@ -625,7 +625,7 @@ namespace Example
 
             try
             {
-                // Set the user market leverage multiple.
+                // Set user market leverage multiplier
                 apiInstance.SetUserMarketLeverage(marginMarketLeverage);
             }
             catch (GateApiException e)
@@ -662,7 +662,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Success. |  -  |
+| **204** | Set successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -670,9 +670,9 @@ void (empty response body)
 # **ListMarginUserAccount**
 > List&lt;MarginAccount&gt; ListMarginUserAccount (string currencyPair = null)
 
-Query the user's leverage account list.
+Query user's isolated margin account list
 
-Support querying risk rate per position account and margin rate per position account
+Supports querying risk ratio isolated accounts and margin ratio isolated accounts
 
 ### Example
 ```csharp
@@ -693,11 +693,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair. (optional) 
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
 
             try
             {
-                // Query the user's leverage account list.
+                // Query user's isolated margin account list
                 List<MarginAccount> result = apiInstance.ListMarginUserAccount(currencyPair);
                 Debug.WriteLine(result);
             }
@@ -717,7 +717,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | [optional] 
+ **currencyPair** | **string**| Currency pair | [optional] 
 
 ### Return type
 
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -743,9 +743,9 @@ Name | Type | Description  | Notes
 # **ListCrossMarginLoans**
 > List&lt;CrossMarginLoan&gt; ListCrossMarginLoans (int status, string currency = null, int? limit = null, int? offset = null, bool? reverse = null)
 
-List cross margin borrow history. (deprecated).
+Query cross margin borrow history (deprecated)
 
-Sort by creation time in descending order by default. Set `reverse=false` to return ascending results.
+Sorted by creation time in descending order by default. Set `reverse=false` for ascending order
 
 ### Example
 ```csharp
@@ -766,15 +766,15 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginApi(config);
-            var status = 56;  // int | Filter by status. Supported values are 2 and 3. (deprecated.).
-            var currency = "currency_example";  // string | Filter by currency. (optional) 
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. (optional)  (default to 100)
-            var offset = 0;  // int? | List offset, starting from 0. (optional)  (default to 0)
+            var status = 56;  // int | Filter by status. Supported values are 2 and 3. (deprecated.)
+            var currency = "currency_example";  // string | Query by specified currency, includes all currencies if not specified (optional) 
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
             var reverse = true;  // bool? | Whether to sort in descending order, which is the default. Set `reverse=false` to return ascending results (optional)  (default to true)
 
             try
             {
-                // List cross margin borrow history. (deprecated).
+                // Query cross margin borrow history (deprecated)
                 List<CrossMarginLoan> result = apiInstance.ListCrossMarginLoans(status, currency, limit, offset, reverse);
                 Debug.WriteLine(result);
             }
@@ -794,10 +794,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **int**| Filter by status. Supported values are 2 and 3. (deprecated.). | 
- **currency** | **string**| Filter by currency. | [optional] 
- **limit** | **int?**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int?**| List offset, starting from 0. | [optional] [default to 0]
+ **status** | **int**| Filter by status. Supported values are 2 and 3. (deprecated.) | 
+ **currency** | **string**| Query by specified currency, includes all currencies if not specified | [optional] 
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
  **reverse** | **bool?**| Whether to sort in descending order, which is the default. Set &#x60;reverse&#x3D;false&#x60; to return ascending results | [optional] [default to true]
 
 ### Return type
@@ -816,7 +816,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -824,9 +824,9 @@ Name | Type | Description  | Notes
 # **ListCrossMarginRepayments**
 > List&lt;CrossMarginRepayment&gt; ListCrossMarginRepayments (string currency = null, string loanId = null, int? limit = null, int? offset = null, bool? reverse = null)
 
-Retrieve cross margin repayments. (deprecated).
+Retrieve cross margin repayments. (deprecated)
 
-Sort by creation time in descending order by default. Set `reverse=false` to return ascending results.
+Sorted by creation time in descending order by default. Set `reverse=false` for ascending order
 
 ### Example
 ```csharp
@@ -849,13 +849,13 @@ namespace Example
             var apiInstance = new MarginApi(config);
             var currency = "BTC";  // string |  (optional) 
             var loanId = "12345";  // string |  (optional) 
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. (optional)  (default to 100)
-            var offset = 0;  // int? | List offset, starting from 0. (optional)  (default to 0)
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
             var reverse = true;  // bool? | Whether to sort in descending order, which is the default. Set `reverse=false` to return ascending results (optional)  (default to true)
 
             try
             {
-                // Retrieve cross margin repayments. (deprecated).
+                // Retrieve cross margin repayments. (deprecated)
                 List<CrossMarginRepayment> result = apiInstance.ListCrossMarginRepayments(currency, loanId, limit, offset, reverse);
                 Debug.WriteLine(result);
             }
@@ -877,8 +877,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency** | **string**|  | [optional] 
  **loanId** | **string**|  | [optional] 
- **limit** | **int?**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int?**| List offset, starting from 0. | [optional] [default to 0]
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
  **reverse** | **bool?**| Whether to sort in descending order, which is the default. Set &#x60;reverse&#x3D;false&#x60; to return ascending results | [optional] [default to true]
 
 ### Return type
@@ -897,7 +897,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

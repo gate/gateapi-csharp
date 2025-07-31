@@ -4,21 +4,21 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListUniCurrencyPairs**](MarginUniApi.md#listunicurrencypairs) | **GET** /margin/uni/currency_pairs | List lending markets.
-[**GetUniCurrencyPair**](MarginUniApi.md#getunicurrencypair) | **GET** /margin/uni/currency_pairs/{currency_pair} | Get detail of lending market.
-[**GetMarginUniEstimateRate**](MarginUniApi.md#getmarginuniestimaterate) | **GET** /margin/uni/estimate_rate | Estimate interest Rate.
-[**ListUniLoans**](MarginUniApi.md#listuniloans) | **GET** /margin/uni/loans | List loans.
-[**CreateUniLoan**](MarginUniApi.md#createuniloan) | **POST** /margin/uni/loans | Borrow or repay.
-[**ListUniLoanRecords**](MarginUniApi.md#listuniloanrecords) | **GET** /margin/uni/loan_records | Get load records.
-[**ListUniLoanInterestRecords**](MarginUniApi.md#listuniloaninterestrecords) | **GET** /margin/uni/interest_records | List interest records.
-[**GetUniBorrowable**](MarginUniApi.md#getuniborrowable) | **GET** /margin/uni/borrowable | Get maximum borrowable.
+[**ListUniCurrencyPairs**](MarginUniApi.md#listunicurrencypairs) | **GET** /margin/uni/currency_pairs | List lending markets
+[**GetUniCurrencyPair**](MarginUniApi.md#getunicurrencypair) | **GET** /margin/uni/currency_pairs/{currency_pair} | Get lending market details
+[**GetMarginUniEstimateRate**](MarginUniApi.md#getmarginuniestimaterate) | **GET** /margin/uni/estimate_rate | Estimate interest rate for isolated margin currencies
+[**ListUniLoans**](MarginUniApi.md#listuniloans) | **GET** /margin/uni/loans | Query loans
+[**CreateUniLoan**](MarginUniApi.md#createuniloan) | **POST** /margin/uni/loans | Borrow or repay
+[**ListUniLoanRecords**](MarginUniApi.md#listuniloanrecords) | **GET** /margin/uni/loan_records | Query loan records
+[**ListUniLoanInterestRecords**](MarginUniApi.md#listuniloaninterestrecords) | **GET** /margin/uni/interest_records | Query interest deduction records
+[**GetUniBorrowable**](MarginUniApi.md#getuniborrowable) | **GET** /margin/uni/borrowable | Query maximum borrowable amount by currency
 
 
 <a name="listunicurrencypairs"></a>
 # **ListUniCurrencyPairs**
 > List&lt;UniCurrencyPair&gt; ListUniCurrencyPairs ()
 
-List lending markets.
+List lending markets
 
 ### Example
 ```csharp
@@ -40,7 +40,7 @@ namespace Example
 
             try
             {
-                // List lending markets.
+                // List lending markets
                 List<UniCurrencyPair> result = apiInstance.ListUniCurrencyPairs();
                 Debug.WriteLine(result);
             }
@@ -75,7 +75,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -83,7 +83,7 @@ No authorization required
 # **GetUniCurrencyPair**
 > UniCurrencyPair GetUniCurrencyPair (string currencyPair)
 
-Get detail of lending market.
+Get lending market details
 
 ### Example
 ```csharp
@@ -102,11 +102,11 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new MarginUniApi(config);
-            var currencyPair = "AE_USDT";  // string | Currency pair.
+            var currencyPair = "AE_USDT";  // string | Currency pair
 
             try
             {
-                // Get detail of lending market.
+                // Get lending market details
                 UniCurrencyPair result = apiInstance.GetUniCurrencyPair(currencyPair);
                 Debug.WriteLine(result);
             }
@@ -126,7 +126,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | 
+ **currencyPair** | **string**| Currency pair | 
 
 ### Return type
 
@@ -144,7 +144,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -152,9 +152,9 @@ No authorization required
 # **GetMarginUniEstimateRate**
 > Dictionary&lt;string, string&gt; GetMarginUniEstimateRate (List<string> currencies)
 
-Estimate interest Rate.
+Estimate interest rate for isolated margin currencies
 
-Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.
+Interest rates change hourly based on lending depth, so completely accurate rates cannot be provided.
 
 ### Example
 ```csharp
@@ -175,11 +175,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginUniApi(config);
-            var currencies = new List<string>(); // List<string> | An array of up to 10 specifying the currency name.
+            var currencies = new List<string>(); // List<string> | Array of currency names to query, maximum 10
 
             try
             {
-                // Estimate interest Rate.
+                // Estimate interest rate for isolated margin currencies
                 Dictionary<string, string> result = apiInstance.GetMarginUniEstimateRate(currencies);
                 Debug.WriteLine(result);
             }
@@ -199,7 +199,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencies** | [**List&lt;string&gt;**](string.md)| An array of up to 10 specifying the currency name. | 
+ **currencies** | [**List&lt;string&gt;**](string.md)| Array of currency names to query, maximum 10 | 
 
 ### Return type
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 # **ListUniLoans**
 > List&lt;UniLoan&gt; ListUniLoans (string currencyPair = null, string currency = null, int? page = null, int? limit = null)
 
-List loans.
+Query loans
 
 ### Example
 ```csharp
@@ -246,14 +246,14 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginUniApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair. (optional) 
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum response items. Default: 100, minimum: 1, Maximum: 100. (optional)  (default to 100)
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional)  (default to 100)
 
             try
             {
-                // List loans.
+                // Query loans
                 List<UniLoan> result = apiInstance.ListUniLoans(currencyPair, currency, page, limit);
                 Debug.WriteLine(result);
             }
@@ -273,10 +273,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | [optional] 
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum response items. Default: 100, minimum: 1, Maximum: 100. | [optional] [default to 100]
+ **currencyPair** | **string**| Currency pair | [optional] 
+ **currency** | **string**| Query by specified currency name | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 | [optional] [default to 100]
 
 ### Return type
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 # **CreateUniLoan**
 > void CreateUniLoan (CreateUniLoan createUniLoan)
 
-Borrow or repay.
+Borrow or repay
 
 ### Example
 ```csharp
@@ -327,7 +327,7 @@ namespace Example
 
             try
             {
-                // Borrow or repay.
+                // Borrow or repay
                 apiInstance.CreateUniLoan(createUniLoan);
             }
             catch (GateApiException e)
@@ -364,7 +364,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Operated successfully. |  -  |
+| **204** | Operation successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -372,7 +372,7 @@ void (empty response body)
 # **ListUniLoanRecords**
 > List&lt;UniLoanRecord&gt; ListUniLoanRecords (string type = null, string currency = null, string currencyPair = null, int? page = null, int? limit = null)
 
-Get load records.
+Query loan records
 
 ### Example
 ```csharp
@@ -393,15 +393,15 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginUniApi(config);
-            var type = "type_example";  // string | type: borrow - borrow, repay - repay. (optional) 
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
-            var currencyPair = "BTC_USDT";  // string | Currency pair. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum response items. Default: 100, minimum: 1, Maximum: 100. (optional)  (default to 100)
+            var type = "type_example";  // string | Type: `borrow` - borrow, `repay` - repay (optional) 
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional)  (default to 100)
 
             try
             {
-                // Get load records.
+                // Query loan records
                 List<UniLoanRecord> result = apiInstance.ListUniLoanRecords(type, currency, currencyPair, page, limit);
                 Debug.WriteLine(result);
             }
@@ -421,11 +421,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **string**| type: borrow - borrow, repay - repay. | [optional] 
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
- **currencyPair** | **string**| Currency pair. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum response items. Default: 100, minimum: 1, Maximum: 100. | [optional] [default to 100]
+ **type** | **string**| Type: &#x60;borrow&#x60; - borrow, &#x60;repay&#x60; - repay | [optional] 
+ **currency** | **string**| Query by specified currency name | [optional] 
+ **currencyPair** | **string**| Currency pair | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 | [optional] [default to 100]
 
 ### Return type
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 # **ListUniLoanInterestRecords**
 > List&lt;UniLoanInterestRecord&gt; ListUniLoanInterestRecords (string currencyPair = null, string currency = null, int? page = null, int? limit = null, long? from = null, long? to = null)
 
-List interest records.
+Query interest deduction records
 
 ### Example
 ```csharp
@@ -472,16 +472,16 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginUniApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair. (optional) 
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. (optional)  (default to 100)
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var from = 1547706332;  // long? | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional) 
             var to = 1547706332;  // long? | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional) 
 
             try
             {
-                // List interest records.
+                // Query interest deduction records
                 List<UniLoanInterestRecord> result = apiInstance.ListUniLoanInterestRecords(currencyPair, currency, page, limit, from, to);
                 Debug.WriteLine(result);
             }
@@ -501,10 +501,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | [optional] 
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
+ **currencyPair** | **string**| Currency pair | [optional] 
+ **currency** | **string**| Query by specified currency name | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **from** | **long?**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **long?**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
 
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 # **GetUniBorrowable**
 > MaxUniBorrowable GetUniBorrowable (string currency, string currencyPair)
 
-Get maximum borrowable.
+Query maximum borrowable amount by currency
 
 ### Example
 ```csharp
@@ -553,12 +553,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new MarginUniApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency.
-            var currencyPair = "BTC_USDT";  // string | Currency pair.
+            var currency = "BTC";  // string | Query by specified currency name
+            var currencyPair = "BTC_USDT";  // string | Currency pair
 
             try
             {
-                // Get maximum borrowable.
+                // Query maximum borrowable amount by currency
                 MaxUniBorrowable result = apiInstance.GetUniBorrowable(currency, currencyPair);
                 Debug.WriteLine(result);
             }
@@ -578,8 +578,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | 
- **currencyPair** | **string**| Currency pair. | 
+ **currency** | **string**| Query by specified currency name | 
+ **currencyPair** | **string**| Currency pair | 
 
 ### Return type
 
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

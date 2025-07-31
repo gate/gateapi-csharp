@@ -4,47 +4,47 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListCurrencies**](SpotApi.md#listcurrencies) | **GET** /spot/currencies | List all currencies&#39; details.
-[**GetCurrency**](SpotApi.md#getcurrency) | **GET** /spot/currencies/{currency} | Get details of a specific currency.
-[**ListCurrencyPairs**](SpotApi.md#listcurrencypairs) | **GET** /spot/currency_pairs | List all currency pairs supported.
-[**GetCurrencyPair**](SpotApi.md#getcurrencypair) | **GET** /spot/currency_pairs/{currency_pair} | Get details of a specifc currency pair.
-[**ListTickers**](SpotApi.md#listtickers) | **GET** /spot/tickers | Retrieve ticker information.
-[**ListOrderBook**](SpotApi.md#listorderbook) | **GET** /spot/order_book | Retrieve order book.
-[**ListTrades**](SpotApi.md#listtrades) | **GET** /spot/trades | Retrieve market trades.
-[**ListCandlesticks**](SpotApi.md#listcandlesticks) | **GET** /spot/candlesticks | Market candlesticks.
-[**GetFee**](SpotApi.md#getfee) | **GET** /spot/fee | Query user trading fee rates.
-[**GetBatchSpotFee**](SpotApi.md#getbatchspotfee) | **GET** /spot/batch_fee | Query a batch of user trading fee rates.
-[**ListSpotAccounts**](SpotApi.md#listspotaccounts) | **GET** /spot/accounts | List spot accounts.
-[**ListSpotAccountBook**](SpotApi.md#listspotaccountbook) | **GET** /spot/account_book | Query account book.
-[**CreateBatchOrders**](SpotApi.md#createbatchorders) | **POST** /spot/batch_orders | Create a batch of orders.
-[**ListAllOpenOrders**](SpotApi.md#listallopenorders) | **GET** /spot/open_orders | List all open orders.
-[**CreateCrossLiquidateOrder**](SpotApi.md#createcrossliquidateorder) | **POST** /spot/cross_liquidate_orders | close position when cross-currency is disabled.
-[**ListOrders**](SpotApi.md#listorders) | **GET** /spot/orders | List orders.
-[**CreateOrder**](SpotApi.md#createorder) | **POST** /spot/orders | Create an order.
-[**CancelOrders**](SpotApi.md#cancelorders) | **DELETE** /spot/orders | Cancel all &#x60;open&#x60; orders in specified currency pair.
-[**CancelBatchOrders**](SpotApi.md#cancelbatchorders) | **POST** /spot/cancel_batch_orders | Cancel a batch of orders with an ID list.
-[**GetOrder**](SpotApi.md#getorder) | **GET** /spot/orders/{order_id} | Get a single order.
-[**CancelOrder**](SpotApi.md#cancelorder) | **DELETE** /spot/orders/{order_id} | Cancel a single order.
-[**AmendOrder**](SpotApi.md#amendorder) | **PATCH** /spot/orders/{order_id} | Amend an order.
-[**ListMyTrades**](SpotApi.md#listmytrades) | **GET** /spot/my_trades | List personal trading history.
-[**GetSystemTime**](SpotApi.md#getsystemtime) | **GET** /spot/time | Get server current time.
-[**CountdownCancelAllSpot**](SpotApi.md#countdowncancelallspot) | **POST** /spot/countdown_cancel_all | Countdown cancel orders.
-[**AmendBatchOrders**](SpotApi.md#amendbatchorders) | **POST** /spot/amend_batch_orders | Batch modification of orders.
-[**GetSpotInsuranceHistory**](SpotApi.md#getspotinsurancehistory) | **GET** /spot/insurance_history | Query spot insurance fund historical data.
-[**ListSpotPriceTriggeredOrders**](SpotApi.md#listspotpricetriggeredorders) | **GET** /spot/price_orders | Retrieve running auto order list.
-[**CreateSpotPriceTriggeredOrder**](SpotApi.md#createspotpricetriggeredorder) | **POST** /spot/price_orders | Create a price-triggered order.
-[**CancelSpotPriceTriggeredOrderList**](SpotApi.md#cancelspotpricetriggeredorderlist) | **DELETE** /spot/price_orders | Cancel All Price-triggered Orders.
-[**GetSpotPriceTriggeredOrder**](SpotApi.md#getspotpricetriggeredorder) | **GET** /spot/price_orders/{order_id} | Get a price-triggered order.
-[**CancelSpotPriceTriggeredOrder**](SpotApi.md#cancelspotpricetriggeredorder) | **DELETE** /spot/price_orders/{order_id} | cancel a price-triggered order.
+[**ListCurrencies**](SpotApi.md#listcurrencies) | **GET** /spot/currencies | Query all currency information
+[**GetCurrency**](SpotApi.md#getcurrency) | **GET** /spot/currencies/{currency} | Query single currency information
+[**ListCurrencyPairs**](SpotApi.md#listcurrencypairs) | **GET** /spot/currency_pairs | Query all supported currency pairs
+[**GetCurrencyPair**](SpotApi.md#getcurrencypair) | **GET** /spot/currency_pairs/{currency_pair} | Query single currency pair details
+[**ListTickers**](SpotApi.md#listtickers) | **GET** /spot/tickers | Get currency pair ticker information
+[**ListOrderBook**](SpotApi.md#listorderbook) | **GET** /spot/order_book | Get market depth information
+[**ListTrades**](SpotApi.md#listtrades) | **GET** /spot/trades | Query market transaction records
+[**ListCandlesticks**](SpotApi.md#listcandlesticks) | **GET** /spot/candlesticks | Market K-line chart
+[**GetFee**](SpotApi.md#getfee) | **GET** /spot/fee | Query account fee rates
+[**GetBatchSpotFee**](SpotApi.md#getbatchspotfee) | **GET** /spot/batch_fee | Batch query account fee rates
+[**ListSpotAccounts**](SpotApi.md#listspotaccounts) | **GET** /spot/accounts | List spot trading accounts
+[**ListSpotAccountBook**](SpotApi.md#listspotaccountbook) | **GET** /spot/account_book | Query spot account transaction history
+[**CreateBatchOrders**](SpotApi.md#createbatchorders) | **POST** /spot/batch_orders | Batch place orders
+[**ListAllOpenOrders**](SpotApi.md#listallopenorders) | **GET** /spot/open_orders | List all open orders
+[**CreateCrossLiquidateOrder**](SpotApi.md#createcrossliquidateorder) | **POST** /spot/cross_liquidate_orders | Close position when cross-currency is disabled
+[**ListOrders**](SpotApi.md#listorders) | **GET** /spot/orders | List orders
+[**CreateOrder**](SpotApi.md#createorder) | **POST** /spot/orders | Create an order
+[**CancelOrders**](SpotApi.md#cancelorders) | **DELETE** /spot/orders | Cancel all &#x60;open&#x60; orders in specified currency pair
+[**CancelBatchOrders**](SpotApi.md#cancelbatchorders) | **POST** /spot/cancel_batch_orders | Cancel batch orders by specified ID list
+[**GetOrder**](SpotApi.md#getorder) | **GET** /spot/orders/{order_id} | Query single order details
+[**CancelOrder**](SpotApi.md#cancelorder) | **DELETE** /spot/orders/{order_id} | Cancel single order
+[**AmendOrder**](SpotApi.md#amendorder) | **PATCH** /spot/orders/{order_id} | Amend single order
+[**ListMyTrades**](SpotApi.md#listmytrades) | **GET** /spot/my_trades | Query personal trading records
+[**GetSystemTime**](SpotApi.md#getsystemtime) | **GET** /spot/time | Get server current time
+[**CountdownCancelAllSpot**](SpotApi.md#countdowncancelallspot) | **POST** /spot/countdown_cancel_all | Countdown cancel orders
+[**AmendBatchOrders**](SpotApi.md#amendbatchorders) | **POST** /spot/amend_batch_orders | Batch modification of orders
+[**GetSpotInsuranceHistory**](SpotApi.md#getspotinsurancehistory) | **GET** /spot/insurance_history | Query spot insurance fund historical data
+[**ListSpotPriceTriggeredOrders**](SpotApi.md#listspotpricetriggeredorders) | **GET** /spot/price_orders | Query running auto order list
+[**CreateSpotPriceTriggeredOrder**](SpotApi.md#createspotpricetriggeredorder) | **POST** /spot/price_orders | Create price-triggered order
+[**CancelSpotPriceTriggeredOrderList**](SpotApi.md#cancelspotpricetriggeredorderlist) | **DELETE** /spot/price_orders | Cancel all auto orders
+[**GetSpotPriceTriggeredOrder**](SpotApi.md#getspotpricetriggeredorder) | **GET** /spot/price_orders/{order_id} | Query single auto order details
+[**CancelSpotPriceTriggeredOrder**](SpotApi.md#cancelspotpricetriggeredorder) | **DELETE** /spot/price_orders/{order_id} | Cancel single auto order
 
 
 <a name="listcurrencies"></a>
 # **ListCurrencies**
 > List&lt;Currency&gt; ListCurrencies ()
 
-List all currencies' details.
+Query all currency information
 
-When a currency corresponds to multiple chains, you can query the information of multiple chains through the `chains` field, such as the charging and recharge status, identification, etc. of the chain.
+When a currency corresponds to multiple chains, you can query the information of multiple chains through the `chains` field, such as the charging and recharge status, identification, etc. of the chain
 
 ### Example
 ```csharp
@@ -66,7 +66,7 @@ namespace Example
 
             try
             {
-                // List all currencies' details.
+                // Query all currency information
                 List<Currency> result = apiInstance.ListCurrencies();
                 Debug.WriteLine(result);
             }
@@ -101,7 +101,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -109,7 +109,7 @@ No authorization required
 # **GetCurrency**
 > Currency GetCurrency (string currency)
 
-Get details of a specific currency.
+Query single currency information
 
 ### Example
 ```csharp
@@ -128,11 +128,11 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new SpotApi(config);
-            var currency = "GT";  // string | Currency name.
+            var currency = "GT";  // string | Currency name
 
             try
             {
-                // Get details of a specific currency.
+                // Query single currency information
                 Currency result = apiInstance.GetCurrency(currency);
                 Debug.WriteLine(result);
             }
@@ -152,7 +152,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Currency name. | 
+ **currency** | **string**| Currency name | 
 
 ### Return type
 
@@ -170,7 +170,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -178,7 +178,7 @@ No authorization required
 # **ListCurrencyPairs**
 > List&lt;CurrencyPair&gt; ListCurrencyPairs ()
 
-List all currency pairs supported.
+Query all supported currency pairs
 
 ### Example
 ```csharp
@@ -200,7 +200,7 @@ namespace Example
 
             try
             {
-                // List all currency pairs supported.
+                // Query all supported currency pairs
                 List<CurrencyPair> result = apiInstance.ListCurrencyPairs();
                 Debug.WriteLine(result);
             }
@@ -235,7 +235,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | All currency pairs retrieved. |  -  |
+| **200** | All currency pairs retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -243,7 +243,7 @@ No authorization required
 # **GetCurrencyPair**
 > CurrencyPair GetCurrencyPair (string currencyPair)
 
-Get details of a specifc currency pair.
+Query single currency pair details
 
 ### Example
 ```csharp
@@ -262,11 +262,11 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new SpotApi(config);
-            var currencyPair = "ETH_BTC";  // string | Currency pair.
+            var currencyPair = "ETH_BTC";  // string | Currency pair
 
             try
             {
-                // Get details of a specifc currency pair.
+                // Query single currency pair details
                 CurrencyPair result = apiInstance.GetCurrencyPair(currencyPair);
                 Debug.WriteLine(result);
             }
@@ -286,7 +286,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | 
+ **currencyPair** | **string**| Currency pair | 
 
 ### Return type
 
@@ -304,7 +304,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -312,9 +312,9 @@ No authorization required
 # **ListTickers**
 > List&lt;Ticker&gt; ListTickers (string currencyPair = null, string timezone = null)
 
-Retrieve ticker information.
+Get currency pair ticker information
 
-Return only related data if `currency_pair` is specified; otherwise return all of them
+If `currency_pair` is specified, only query that currency pair; otherwise return all information
 
 ### Example
 ```csharp
@@ -333,12 +333,12 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new SpotApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair. (optional) 
-            var timezone = "utc0";  // string | Timezone. (optional) 
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
+            var timezone = "utc0";  // string | Timezone (optional) 
 
             try
             {
-                // Retrieve ticker information.
+                // Get currency pair ticker information
                 List<Ticker> result = apiInstance.ListTickers(currencyPair, timezone);
                 Debug.WriteLine(result);
             }
@@ -358,8 +358,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | [optional] 
- **timezone** | **string**| Timezone. | [optional] 
+ **currencyPair** | **string**| Currency pair | [optional] 
+ **timezone** | **string**| Timezone | [optional] 
 
 ### Return type
 
@@ -377,7 +377,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -385,9 +385,9 @@ No authorization required
 # **ListOrderBook**
 > OrderBook ListOrderBook (string currencyPair, string interval = null, int? limit = null, bool? withId = null)
 
-Retrieve order book.
+Get market depth information
 
-Market depth buy orders are sorted by price from high to low, sell orders are reversed
+Market depth buy orders are sorted by price from high to low, sell orders are sorted from low to high
 
 ### Example
 ```csharp
@@ -406,14 +406,14 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new SpotApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair.
-            var interval = "\"0\"";  // string | Order depth. 0 means no aggregation is applied. default to 0. (optional)  (default to "0")
-            var limit = 10;  // int? | Maximum number of order depth data in asks or bids. (optional)  (default to 10)
-            var withId = false;  // bool? | Return order book ID. (optional)  (default to false)
+            var currencyPair = "BTC_USDT";  // string | Currency pair
+            var interval = "\"0\"";  // string | Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional)  (default to "0")
+            var limit = 10;  // int? | Number of depth levels (optional)  (default to 10)
+            var withId = false;  // bool? | Return order book update ID (optional)  (default to false)
 
             try
             {
-                // Retrieve order book.
+                // Get market depth information
                 OrderBook result = apiInstance.ListOrderBook(currencyPair, interval, limit, withId);
                 Debug.WriteLine(result);
             }
@@ -433,10 +433,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | 
- **interval** | **string**| Order depth. 0 means no aggregation is applied. default to 0. | [optional] [default to &quot;0&quot;]
- **limit** | **int?**| Maximum number of order depth data in asks or bids. | [optional] [default to 10]
- **withId** | **bool?**| Return order book ID. | [optional] [default to false]
+ **currencyPair** | **string**| Currency pair | 
+ **interval** | **string**| Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified | [optional] [default to &quot;0&quot;]
+ **limit** | **int?**| Number of depth levels | [optional] [default to 10]
+ **withId** | **bool?**| Return order book update ID | [optional] [default to false]
 
 ### Return type
 
@@ -454,7 +454,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -462,9 +462,9 @@ No authorization required
 # **ListTrades**
 > List&lt;Trade&gt; ListTrades (string currencyPair, int? limit = null, string lastId = null, bool? reverse = null, long? from = null, long? to = null, int? page = null)
 
-Retrieve market trades.
+Query market transaction records
 
-Supports `from` and `to` by time range query or page-turn query based on `last_id`. By default, is the last 30 days.  The query method based on `last_id` page turn is no longer recommended. If `last_id` is specified, the time range query parameters will be ignored.  The maximum number of pages when searching data using limit&page paging function is 100,0, that is, limit * (page - 1) <= 100,0.
+Supports querying by time range using `from` and `to` parameters or pagination based on `last_id`. By default, queries the last 30 days.  Pagination based on `last_id` is no longer recommended. If `last_id` is specified, the time range query parameters will be ignored.  When using limit&page pagination to retrieve data, the maximum number of pages is 100,000, that is, limit * (page - 1) <= 100,000.
 
 ### Example
 ```csharp
@@ -483,17 +483,17 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new SpotApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair.
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. Default: 100, Minimum: 1, Maximum: 1000 (optional)  (default to 100)
-            var lastId = "12345";  // string | Specify the currency name to query in batches, and support up to 100 pass parameters at a time. (optional) 
-            var reverse = false;  // bool? | Whether the id of records to be retrieved should be less than the last_id specified. Default to false.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified. (optional)  (default to false)
-            var from = 1627706330;  // long? | Start timestamp of the query. (optional) 
-            var to = 1635329650;  // long? | Time range ending, default to current time. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
+            var currencyPair = "BTC_USDT";  // string | Currency pair
+            var limit = 100;  // int? | Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional)  (default to 100)
+            var lastId = "12345";  // string | Specify the currency name to query in batches, and support up to 100 pass parameters at a time (optional) 
+            var reverse = false;  // bool? | Whether to retrieve data less than `last_id`. Default returns records greater than `last_id`.  Set to `true` to trace back market trade records, `false` to get latest trades.  No effect when `last_id` is not set. (optional)  (default to false)
+            var from = 1627706330;  // long? | Start timestamp for the query (optional) 
+            var to = 1635329650;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
 
             try
             {
-                // Retrieve market trades.
+                // Query market transaction records
                 List<Trade> result = apiInstance.ListTrades(currencyPair, limit, lastId, reverse, from, to, page);
                 Debug.WriteLine(result);
             }
@@ -513,13 +513,13 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | 
- **limit** | **int?**| Maximum number of records to be returned in a single list. Default: 100, Minimum: 1, Maximum: 1000 | [optional] [default to 100]
- **lastId** | **string**| Specify the currency name to query in batches, and support up to 100 pass parameters at a time. | [optional] 
- **reverse** | **bool?**| Whether the id of records to be retrieved should be less than the last_id specified. Default to false.  When &#x60;last_id&#x60; is specified. Set &#x60;reverse&#x60; to &#x60;true&#x60; to trace back trading history; &#x60;false&#x60; to retrieve latest tradings.  No effect if &#x60;last_id&#x60; is not specified. | [optional] [default to false]
- **from** | **long?**| Start timestamp of the query. | [optional] 
- **to** | **long?**| Time range ending, default to current time. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
+ **currencyPair** | **string**| Currency pair | 
+ **limit** | **int?**| Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 | [optional] [default to 100]
+ **lastId** | **string**| Specify the currency name to query in batches, and support up to 100 pass parameters at a time | [optional] 
+ **reverse** | **bool?**| Whether to retrieve data less than &#x60;last_id&#x60;. Default returns records greater than &#x60;last_id&#x60;.  Set to &#x60;true&#x60; to trace back market trade records, &#x60;false&#x60; to get latest trades.  No effect when &#x60;last_id&#x60; is not set. | [optional] [default to false]
+ **from** | **long?**| Start timestamp for the query | [optional] 
+ **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
 
 ### Return type
 
@@ -537,7 +537,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -545,7 +545,7 @@ No authorization required
 # **ListCandlesticks**
 > List&lt;List&lt;string&gt;&gt; ListCandlesticks (string currencyPair, int? limit = null, long? from = null, long? to = null, string interval = null)
 
-Market candlesticks.
+Market K-line chart
 
 Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
 
@@ -566,15 +566,15 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new SpotApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair.
-            var limit = 100;  // int? | Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional)  (default to 100)
+            var currencyPair = "BTC_USDT";  // string | Currency pair
+            var limit = 100;  // int? | Maximum number of recent data points to return. `limit` conflicts with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional)  (default to 100)
             var from = 1546905600;  // long? | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional) 
-            var to = 1546935600;  // long? | Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision specified (optional) 
-            var interval = "30m";  // string | Interval time between data points. Note that `30d` means 1 natual month, not 30 days (optional)  (default to 30m)
+            var to = 1546935600;  // long? | Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional) 
+            var interval = "30m";  // string | Time interval between data points. Note that `30d` represents a calendar month, not aligned to 30 days (optional)  (default to 30m)
 
             try
             {
-                // Market candlesticks.
+                // Market K-line chart
                 List<List<string>> result = apiInstance.ListCandlesticks(currencyPair, limit, from, to, interval);
                 Debug.WriteLine(result);
             }
@@ -594,11 +594,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | 
- **limit** | **int?**| Maximum recent data points to return. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
+ **currencyPair** | **string**| Currency pair | 
+ **limit** | **int?**| Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
  **from** | **long?**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
- **to** | **long?**| Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision specified | [optional] 
- **interval** | **string**| Interval time between data points. Note that &#x60;30d&#x60; means 1 natual month, not 30 days | [optional] [default to 30m]
+ **to** | **long?**| Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision | [optional] 
+ **interval** | **string**| Time interval between data points. Note that &#x60;30d&#x60; represents a calendar month, not aligned to 30 days | [optional] [default to 30m]
 
 ### Return type
 
@@ -616,7 +616,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -624,9 +624,9 @@ No authorization required
 # **GetFee**
 > SpotFee GetFee (string currencyPair = null)
 
-Query user trading fee rates.
+Query account fee rates
 
-This API is deprecated in favour of new fee retrieving API `/wallet/fee`.
+This API is deprecated. The new fee query API is `/wallet/fee`
 
 ### Example
 ```csharp
@@ -647,11 +647,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var currencyPair = "BTC_USDT";  // string | Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs (optional) 
+            var currencyPair = "BTC_USDT";  // string | Specify currency pair to get more accurate fee settings.  This field is optional. Usually fee settings are the same for all currency pairs. (optional) 
 
             try
             {
-                // Query user trading fee rates.
+                // Query account fee rates
                 SpotFee result = apiInstance.GetFee(currencyPair);
                 Debug.WriteLine(result);
             }
@@ -671,7 +671,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs | [optional] 
+ **currencyPair** | **string**| Specify currency pair to get more accurate fee settings.  This field is optional. Usually fee settings are the same for all currency pairs. | [optional] 
 
 ### Return type
 
@@ -689,7 +689,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -697,7 +697,7 @@ Name | Type | Description  | Notes
 # **GetBatchSpotFee**
 > Dictionary&lt;string, SpotFee&gt; GetBatchSpotFee (string currencyPairs)
 
-Query a batch of user trading fee rates.
+Batch query account fee rates
 
 ### Example
 ```csharp
@@ -718,11 +718,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var currencyPairs = "BTC_USDT,ETH_USDT";  // string | A request can only query up to 50 currency pairs.
+            var currencyPairs = "BTC_USDT,ETH_USDT";  // string | Maximum 50 currency pairs per request
 
             try
             {
-                // Query a batch of user trading fee rates.
+                // Batch query account fee rates
                 Dictionary<string, SpotFee> result = apiInstance.GetBatchSpotFee(currencyPairs);
                 Debug.WriteLine(result);
             }
@@ -742,7 +742,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPairs** | **string**| A request can only query up to 50 currency pairs. | 
+ **currencyPairs** | **string**| Maximum 50 currency pairs per request | 
 
 ### Return type
 
@@ -760,7 +760,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 # **ListSpotAccounts**
 > List&lt;SpotAccount&gt; ListSpotAccounts (string currency = null)
 
-List spot accounts.
+List spot trading accounts
 
 ### Example
 ```csharp
@@ -789,11 +789,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
 
             try
             {
-                // List spot accounts.
+                // List spot trading accounts
                 List<SpotAccount> result = apiInstance.ListSpotAccounts(currency);
                 Debug.WriteLine(result);
             }
@@ -813,7 +813,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
+ **currency** | **string**| Query by specified currency name | [optional] 
 
 ### Return type
 
@@ -831,7 +831,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -839,9 +839,9 @@ Name | Type | Description  | Notes
 # **ListSpotAccountBook**
 > List&lt;SpotAccountBook&gt; ListSpotAccountBook (string currency = null, long? from = null, long? to = null, int? page = null, int? limit = null, string type = null, string code = null)
 
-Query account book.
+Query spot account transaction history
 
-Record query time range is not allowed to exceed 30 days.  The maximum number of pages when searching data using limit&page paging function is 100,0, that is, limit * (page - 1) <= 100,0.
+Record query time range cannot exceed 30 days.  When using limit&page pagination to retrieve data, the maximum number of pages is 100,000, that is, limit * (page - 1) <= 100,000.
 
 ### Example
 ```csharp
@@ -862,17 +862,17 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var currency = "BTC";  // string | Retrieve data of the specified currency. (optional) 
-            var from = 1627706330;  // long? | Start timestamp of the query. (optional) 
-            var to = 1635329650;  // long? | Time range ending, default to current time. (optional) 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. (optional)  (default to 100)
-            var type = "lend";  // string | Only retrieve changes of the specified type. All types will be returned if not specified. (optional) 
-            var code = "code_example";  // string | Specify account change code query, if not specified, all change types are included, and the priority is higher than `type` (optional) 
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
+            var from = 1627706330;  // long? | Start timestamp for the query (optional) 
+            var to = 1635329650;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var type = "lend";  // string | Query by specified account change type. If not specified, all change types will be included. (optional) 
+            var code = "code_example";  // string | Specify account change code for query. If not specified, all change types are included. This parameter has higher priority than `type` (optional) 
 
             try
             {
-                // Query account book.
+                // Query spot account transaction history
                 List<SpotAccountBook> result = apiInstance.ListSpotAccountBook(currency, from, to, page, limit, type, code);
                 Debug.WriteLine(result);
             }
@@ -892,13 +892,13 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Retrieve data of the specified currency. | [optional] 
- **from** | **long?**| Start timestamp of the query. | [optional] 
- **to** | **long?**| Time range ending, default to current time. | [optional] 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **type** | **string**| Only retrieve changes of the specified type. All types will be returned if not specified. | [optional] 
- **code** | **string**| Specify account change code query, if not specified, all change types are included, and the priority is higher than &#x60;type&#x60; | [optional] 
+ **currency** | **string**| Query by specified currency name | [optional] 
+ **from** | **long?**| Start timestamp for the query | [optional] 
+ **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **type** | **string**| Query by specified account change type. If not specified, all change types will be included. | [optional] 
+ **code** | **string**| Specify account change code for query. If not specified, all change types are included. This parameter has higher priority than &#x60;type&#x60; | [optional] 
 
 ### Return type
 
@@ -916,7 +916,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -924,9 +924,9 @@ Name | Type | Description  | Notes
 # **CreateBatchOrders**
 > List&lt;BatchOrder&gt; CreateBatchOrders (List<Order> order, string xGateExptime = null)
 
-Create a batch of orders.
+Batch place orders
 
-Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 10 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, i.e. `account` must be identical for all orders 
+Batch order requirements:  1. Custom order field `text` must be specified 2. Up to 4 currency pairs per request, with up to 10 orders per currency pair 3. Spot orders and margin orders cannot be mixed; all `account` fields in the same request must be identical
 
 ### Example
 ```csharp
@@ -952,7 +952,7 @@ namespace Example
 
             try
             {
-                // Create a batch of orders.
+                // Batch place orders
                 List<BatchOrder> result = apiInstance.CreateBatchOrders(order, xGateExptime);
                 Debug.WriteLine(result);
             }
@@ -991,7 +991,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Request is completed. |  -  |
+| **200** | Request execution completed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -999,7 +999,7 @@ Name | Type | Description  | Notes
 # **ListAllOpenOrders**
 > List&lt;OpenOrders&gt; ListAllOpenOrders (int? page = null, int? limit = null, string account = null)
 
-List all open orders.
+List all open orders
 
 Query the current order list of all trading pairs. Please note that the paging parameter controls the number of pending orders in each trading pair. There is no paging control trading pairs. All trading pairs with pending orders will be returned.
 
@@ -1022,13 +1022,13 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 100;  // int? | Maximum number of records returned in one page in each currency pair. (optional)  (default to 100)
-            var account = "spot";  // string | Specify query account. (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of records returned in one page in each currency pair (optional)  (default to 100)
+            var account = "spot";  // string | Specify query account (optional) 
 
             try
             {
-                // List all open orders.
+                // List all open orders
                 List<OpenOrders> result = apiInstance.ListAllOpenOrders(page, limit, account);
                 Debug.WriteLine(result);
             }
@@ -1048,9 +1048,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| Maximum number of records returned in one page in each currency pair. | [optional] [default to 100]
- **account** | **string**| Specify query account. | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of records returned in one page in each currency pair | [optional] [default to 100]
+ **account** | **string**| Specify query account | [optional] 
 
 ### Return type
 
@@ -1068,7 +1068,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1076,9 +1076,9 @@ Name | Type | Description  | Notes
 # **CreateCrossLiquidateOrder**
 > Order CreateCrossLiquidateOrder (LiquidateOrder liquidateOrder)
 
-close position when cross-currency is disabled.
+Close position when cross-currency is disabled
 
-Currently, only cross-margin accounts are supported to close position when cross currencies are disabled.  Maximum buy quantity = (unpaid principal and interest - currency balance - the amount of the currency in the order book) / 0.998
+Currently, only cross-margin accounts are supported to place buy orders for disabled currencies. Maximum buy quantity = (unpaid principal and interest - currency balance - the amount of the currency in pending orders) / 0.998
 
 ### Example
 ```csharp
@@ -1103,7 +1103,7 @@ namespace Example
 
             try
             {
-                // close position when cross-currency is disabled.
+                // Close position when cross-currency is disabled
                 Order result = apiInstance.CreateCrossLiquidateOrder(liquidateOrder);
                 Debug.WriteLine(result);
             }
@@ -1141,7 +1141,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | order created. |  -  |
+| **201** | Order created successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1149,9 +1149,9 @@ Name | Type | Description  | Notes
 # **ListOrders**
 > List&lt;Order&gt; ListOrders (string currencyPair, string status, int? page = null, int? limit = null, string account = null, long? from = null, long? to = null, string side = null)
 
-List orders.
+List orders
 
-Note that the query results are spot order lists for spot, unified account and warehouse-by-site leverage accounts by default.  `status` is set to `open`, that is, when querying the pending order list, only pagination control of `page` and `limit` is supported. `limit` Maximum setting is only allowed to 100 . The `side` and `from`, `to` parameters for time range query are not supported.  `status` when querying historical delegations, in addition to pagination queries, `from` and `to` are also supported by time range queries. In addition, it supports setting the `side` parameter to filter one-side history.  The parameters of the time range filtering are processed according to the order end time.
+Note that query results default to spot order lists for spot, unified account, and isolated margin accounts.  When `status` is set to `open` (i.e., when querying pending order lists), only `page` and `limit` pagination controls are supported. `limit` can only be set to a maximum of 100. The `side` parameter and time range query parameters `from` and `to` are not supported.  When `status` is set to `finished` (i.e., when querying historical orders), in addition to pagination queries, `from` and `to` time range queries are also supported. Additionally, the `side` parameter can be set to filter one-sided history.  Time range filter parameters are processed according to the order end time.
 
 ### Example
 ```csharp
@@ -1172,18 +1172,18 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var currencyPair = "BTC_USDT";  // string | Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones.
+            var currencyPair = "BTC_USDT";  // string | Query by specified currency pair. Required for open orders, optional for filled orders
             var status = "open";  // string | List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled 
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
+            var page = 1;  // int? | Page number (optional)  (default to 1)
             var limit = 100;  // int? | Maximum number of records to be returned. If `status` is `open`, maximum of `limit` is 100 (optional)  (default to 100)
-            var account = "spot";  // string | Specify query account. (optional) 
-            var from = 1627706330;  // long? | Start timestamp of the query. (optional) 
-            var to = 1635329650;  // long? | Time range ending, default to current time. (optional) 
-            var side = "sell";  // string | All bids or asks. Both included if not specified. (optional) 
+            var account = "spot";  // string | Specify query account (optional) 
+            var from = 1627706330;  // long? | Start timestamp for the query (optional) 
+            var to = 1635329650;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
+            var side = "sell";  // string | Specify all bids or all asks, both included if not specified (optional) 
 
             try
             {
-                // List orders.
+                // List orders
                 List<Order> result = apiInstance.ListOrders(currencyPair, status, page, limit, account, from, to, side);
                 Debug.WriteLine(result);
             }
@@ -1203,14 +1203,14 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones. | 
+ **currencyPair** | **string**| Query by specified currency pair. Required for open orders, optional for filled orders | 
  **status** | **string**| List orders based on status  &#x60;open&#x60; - order is waiting to be filled &#x60;finished&#x60; - order has been filled or cancelled  | 
- **page** | **int?**| Page number. | [optional] [default to 1]
+ **page** | **int?**| Page number | [optional] [default to 1]
  **limit** | **int?**| Maximum number of records to be returned. If &#x60;status&#x60; is &#x60;open&#x60;, maximum of &#x60;limit&#x60; is 100 | [optional] [default to 100]
- **account** | **string**| Specify query account. | [optional] 
- **from** | **long?**| Start timestamp of the query. | [optional] 
- **to** | **long?**| Time range ending, default to current time. | [optional] 
- **side** | **string**| All bids or asks. Both included if not specified. | [optional] 
+ **account** | **string**| Specify query account | [optional] 
+ **from** | **long?**| Start timestamp for the query | [optional] 
+ **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
+ **side** | **string**| Specify all bids or all asks, both included if not specified | [optional] 
 
 ### Return type
 
@@ -1228,7 +1228,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1236,9 +1236,9 @@ Name | Type | Description  | Notes
 # **CreateOrder**
 > Order CreateOrder (Order order, string xGateExptime = null)
 
-Create an order.
+Create an order
 
-Support spot, margin, leverage, and full-position leverage orders. Use different accounts through the `account` field, default is `spot`, that is, use the spot account to place an order if the user is `unified` account, default is to place an order with a unified account  When using leveraged account trading, that is, when `account` is set to `margin`, you can set `auto_borrow` to `true`, In the case of insufficient account balance, the system will automatically execute the `POST /margin/uni/loans` to borrow the insufficient part. Whether the assets obtained after the leveraged order is automatically used to return the borrowing orders of the leveraged account in a position-by-store leverage account depends on the automatic repayment settings of the user's position-by-store leverage account**, The account automatic repayment settings can be queried and set through `/margin/auto_repay`.  Use unified is set to `unified`, `auto_borrow` \" can also be enableTo realize the insufficient part of automatic borrowing, but unlike the leverage account, whether the entrustment of a unified account is automatically repayable depends on the   when placing an order`auto_repay` setting, this setting is only effective for the current entrustment, that is, only the assets obtained after the entrustment transaction will be used to repay the borrowing orders of the full-position leverage account. Unified account ordering currently supports `auto_borrow` and `auto_repay` at the same time.  Auto repayment will be triggered at the end of the order, i.e. `status` is `cancelled` or `closed` .  **Delegation Status**  The entrustment status in the pending order is `open`, which remains at `open` until all the quantity is traded. If it is eaten, the order ends and the status becomes `closed`. If the order is cancelled before all transactions are completed, regardless of whether there are partial transactions, the status will become `cancelled`  **Iceberg Entrustment**  `iceberg` is used to set the number of iceberg delegations displayed, and does not support complete hiding. Note that when hidden part of the transaction is charged according to the taker's handling rate.  **Restrict user transactions**  Set `stp_act` to decide to use strategies that limit user transactions
+Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the `account` field. Default is `spot`, which means using the spot account to place orders. If the user has a `unified` account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when `account` is set to `margin`), you can set `auto_borrow` to `true`. In case of insufficient account balance, the system will automatically execute `POST /margin/uni/loans` to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user's isolated margin account. Account automatic repayment settings can be queried and set through `/margin/auto_repay`.  When using unified account trading (i.e., when `account` is set to `unified`), `auto_borrow` can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the `auto_repay` setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both `auto_borrow` and `auto_repay` simultaneously.  Auto repayment will be triggered when the order ends, i.e., when `status` is `cancelled` or `closed`.  **Order Status**  The order status in pending orders is `open`, which remains `open` until all quantity is filled. If fully filled, the order ends and status becomes `closed`. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become `cancelled`.  **Iceberg Orders**  `iceberg` is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker's fee rate.  **Self-Trade Prevention**  Set `stp_act` to determine the self-trade prevention strategy to use
 
 ### Example
 ```csharp
@@ -1264,7 +1264,7 @@ namespace Example
 
             try
             {
-                // Create an order.
+                // Create an order
                 Order result = apiInstance.CreateOrder(order, xGateExptime);
                 Debug.WriteLine(result);
             }
@@ -1303,7 +1303,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Order created. |  -  |
+| **201** | Order created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1311,9 +1311,9 @@ Name | Type | Description  | Notes
 # **CancelOrders**
 > List&lt;OrderCancel&gt; CancelOrders (string currencyPair = null, string side = null, string account = null, string actionMode = null, string xGateExptime = null)
 
-Cancel all `open` orders in specified currency pair.
+Cancel all `open` orders in specified currency pair
 
-When the `account` parameter is not specified, all pending orders including spot, unified account, and position-by-position leverage will be cancelled. When transaction pairs are revoked You can specify a certain account separately to cancel all orders under the specified account
+When the `account` parameter is not specified, all pending orders including spot, unified account, and isolated margin will be cancelled. When `currency_pair` is not specified, all trading pair pending orders will be cancelled. You can specify a particular account to cancel all pending orders under that account
 
 ### Example
 ```csharp
@@ -1334,15 +1334,15 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var currencyPair = "BTC_USDT";  // string | Currency pair. (optional) 
-            var side = "sell";  // string | All bids or asks. Both included if not specified. (optional) 
-            var account = "spot";  // string | Specify account type  Classic account: All are included if not specified Unified account: Specify unified (optional) 
-            var actionMode = "ACK";  // string | Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) (optional) 
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
+            var side = "sell";  // string | Specify all bids or all asks, both included if not specified (optional) 
+            var account = "spot";  // string | Specify account type  Classic account: All are included if not specified Unified account: Specify `unified` (optional) 
+            var actionMode = "ACK";  // string | Processing Mode  When placing an order, different fields are returned based on the action_mode  - `ACK`: Asynchronous mode, returns only key order fields - `RESULT`: No clearing information - `FULL`: Full mode (default) (optional) 
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
 
             try
             {
-                // Cancel all `open` orders in specified currency pair.
+                // Cancel all `open` orders in specified currency pair
                 List<OrderCancel> result = apiInstance.CancelOrders(currencyPair, side, account, actionMode, xGateExptime);
                 Debug.WriteLine(result);
             }
@@ -1362,10 +1362,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Currency pair. | [optional] 
- **side** | **string**| All bids or asks. Both included if not specified. | [optional] 
- **account** | **string**| Specify account type  Classic account: All are included if not specified Unified account: Specify unified | [optional] 
- **actionMode** | **string**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) | [optional] 
+ **currencyPair** | **string**| Currency pair | [optional] 
+ **side** | **string**| Specify all bids or all asks, both included if not specified | [optional] 
+ **account** | **string**| Specify account type  Classic account: All are included if not specified Unified account: Specify &#x60;unified&#x60; | [optional] 
+ **actionMode** | **string**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) | [optional] 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
@@ -1384,7 +1384,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Batch cancellation request accepted. Query order status by listing orders. |  -  |
+| **200** | Batch cancellation request accepted and processed, success determined by order list |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1392,7 +1392,7 @@ Name | Type | Description  | Notes
 # **CancelBatchOrders**
 > List&lt;CancelOrderResult&gt; CancelBatchOrders (List<CancelBatchOrder> cancelBatchOrder, string xGateExptime = null)
 
-Cancel a batch of orders with an ID list.
+Cancel batch orders by specified ID list
 
 Multiple currency pairs can be specified, but maximum 20 orders are allowed per request
 
@@ -1420,7 +1420,7 @@ namespace Example
 
             try
             {
-                // Cancel a batch of orders with an ID list.
+                // Cancel batch orders by specified ID list
                 List<CancelOrderResult> result = apiInstance.CancelBatchOrders(cancelBatchOrder, xGateExptime);
                 Debug.WriteLine(result);
             }
@@ -1459,7 +1459,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Batch cancellation completed. |  -  |
+| **200** | Batch cancellation completed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1467,9 +1467,9 @@ Name | Type | Description  | Notes
 # **GetOrder**
 > Order GetOrder (string orderId, string currencyPair, string account = null)
 
-Get a single order.
+Query single order details
 
-By default, orders for spot, unified account and warehouse-by-site leverage account are checked.
+By default, queries orders for spot, unified account, and isolated margin accounts.
 
 ### Example
 ```csharp
@@ -1491,12 +1491,12 @@ namespace Example
 
             var apiInstance = new SpotApi(config);
             var orderId = "12345";  // string | The order ID returned when the order was successfully created or the custom ID specified by the user's creation (i.e. the `text` field). Operations based on custom IDs can only be checked in pending orders. Only order ID can be used after the order is finished (transaction/cancel)
-            var currencyPair = "BTC_USDT";  // string | Specify the transaction pair to query. If you are querying pending order records, this field is traded records, this field can be left blank.
-            var account = "spot";  // string | Specify query account. (optional) 
+            var currencyPair = "BTC_USDT";  // string | Specify the trading pair to query. This field is required when querying pending order records. This field can be omitted when querying filled order records.
+            var account = "spot";  // string | Specify query account (optional) 
 
             try
             {
-                // Get a single order.
+                // Query single order details
                 Order result = apiInstance.GetOrder(orderId, currencyPair, account);
                 Debug.WriteLine(result);
             }
@@ -1517,8 +1517,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **string**| The order ID returned when the order was successfully created or the custom ID specified by the user&#39;s creation (i.e. the &#x60;text&#x60; field). Operations based on custom IDs can only be checked in pending orders. Only order ID can be used after the order is finished (transaction/cancel) | 
- **currencyPair** | **string**| Specify the transaction pair to query. If you are querying pending order records, this field is traded records, this field can be left blank. | 
- **account** | **string**| Specify query account. | [optional] 
+ **currencyPair** | **string**| Specify the trading pair to query. This field is required when querying pending order records. This field can be omitted when querying filled order records. | 
+ **account** | **string**| Specify query account | [optional] 
 
 ### Return type
 
@@ -1536,7 +1536,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Detail retrieved. |  -  |
+| **200** | Detail retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1544,7 +1544,7 @@ Name | Type | Description  | Notes
 # **CancelOrder**
 > Order CancelOrder (string orderId, string currencyPair, string account = null, string actionMode = null, string xGateExptime = null)
 
-Cancel a single order.
+Cancel single order
 
 By default, orders for spot, unified accounts and leveraged accounts are revoked.
 
@@ -1568,14 +1568,14 @@ namespace Example
 
             var apiInstance = new SpotApi(config);
             var orderId = "12345";  // string | The order ID returned when the order was successfully created or the custom ID specified by the user's creation (i.e. the `text` field). Operations based on custom IDs can only be checked in pending orders. Only order ID can be used after the order is finished (transaction/cancel)
-            var currencyPair = "BTC_USDT";  // string | Currency pair.
-            var account = "spot";  // string | Specify query account. (optional) 
-            var actionMode = "ACK";  // string | Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) (optional) 
+            var currencyPair = "BTC_USDT";  // string | Currency pair
+            var account = "spot";  // string | Specify query account (optional) 
+            var actionMode = "ACK";  // string | Processing Mode  When placing an order, different fields are returned based on the action_mode  - `ACK`: Asynchronous mode, returns only key order fields - `RESULT`: No clearing information - `FULL`: Full mode (default) (optional) 
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
 
             try
             {
-                // Cancel a single order.
+                // Cancel single order
                 Order result = apiInstance.CancelOrder(orderId, currencyPair, account, actionMode, xGateExptime);
                 Debug.WriteLine(result);
             }
@@ -1596,9 +1596,9 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **string**| The order ID returned when the order was successfully created or the custom ID specified by the user&#39;s creation (i.e. the &#x60;text&#x60; field). Operations based on custom IDs can only be checked in pending orders. Only order ID can be used after the order is finished (transaction/cancel) | 
- **currencyPair** | **string**| Currency pair. | 
- **account** | **string**| Specify query account. | [optional] 
- **actionMode** | **string**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) | [optional] 
+ **currencyPair** | **string**| Currency pair | 
+ **account** | **string**| Specify query account | [optional] 
+ **actionMode** | **string**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) | [optional] 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
@@ -1617,7 +1617,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Order cancelled. |  -  |
+| **200** | Order cancelled |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1625,7 +1625,7 @@ Name | Type | Description  | Notes
 # **AmendOrder**
 > Order AmendOrder (string orderId, OrderPatch orderPatch, string currencyPair = null, string account = null, string xGateExptime = null)
 
-Amend an order.
+Amend single order
 
 Modify orders in spot, unified account and isolated margin account by default.  Currently both request body and query support currency_pair and account parameters, but request body has higher priority.  currency_pair must be filled in one of the request body or query parameters.  About rate limit: Order modification and order creation share the same rate limit rules.  About matching priority: Only reducing the quantity does not affect the matching priority. Modifying the price or increasing the quantity will adjust the priority to the end of the new price level.  Note: Modifying the quantity to be less than the filled quantity will trigger a cancellation and isolated margin account by default.  Currently both request body and query support currency_pair and account parameters, but request body has higher priority.  currency_pair must be filled in one of the request body or query parameters.  About rate limit: Order modification and order creation share the same rate limit rules.  About matching priority: Only reducing the quantity does not affect the matching priority. Modifying the price or increasing the quantity will adjust the priority to the end of the new price level.  Note: Modifying the quantity to be less than the filled quantity will trigger a cancellation operation.
 
@@ -1650,13 +1650,13 @@ namespace Example
             var apiInstance = new SpotApi(config);
             var orderId = "12345";  // string | The order ID returned when the order was successfully created or the custom ID specified by the user's creation (i.e. the `text` field). Operations based on custom IDs can only be checked in pending orders. Only order ID can be used after the order is finished (transaction/cancel)
             var orderPatch = new OrderPatch(); // OrderPatch | 
-            var currencyPair = "BTC_USDT";  // string | Currency pair. (optional) 
-            var account = "spot";  // string | Specify query account. (optional) 
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
+            var account = "spot";  // string | Specify query account (optional) 
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
 
             try
             {
-                // Amend an order.
+                // Amend single order
                 Order result = apiInstance.AmendOrder(orderId, orderPatch, currencyPair, account, xGateExptime);
                 Debug.WriteLine(result);
             }
@@ -1678,8 +1678,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **string**| The order ID returned when the order was successfully created or the custom ID specified by the user&#39;s creation (i.e. the &#x60;text&#x60; field). Operations based on custom IDs can only be checked in pending orders. Only order ID can be used after the order is finished (transaction/cancel) | 
  **orderPatch** | [**OrderPatch**](OrderPatch.md)|  | 
- **currencyPair** | **string**| Currency pair. | [optional] 
- **account** | **string**| Specify query account. | [optional] 
+ **currencyPair** | **string**| Currency pair | [optional] 
+ **account** | **string**| Specify query account | [optional] 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
@@ -1698,7 +1698,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Updated. |  -  |
+| **200** | Updated successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1706,7 +1706,7 @@ Name | Type | Description  | Notes
 # **ListMyTrades**
 > List&lt;Trade&gt; ListMyTrades (string currencyPair = null, int? limit = null, int? page = null, string orderId = null, string account = null, long? from = null, long? to = null)
 
-List personal trading history.
+Query personal trading records
 
 By default query of transaction records for spot, unified account and warehouse-by-site leverage accounts.  The history within a specified time range can be queried by specifying `from` or (and) `to`.  - If no time parameters are specified, only data for the last 7 days can be obtained. - If only any parameter of `from` or `to` is specified, only 7-day data from the start (or end) of the specified time is returned. - The range not allowed to exceed 30 days.  The parameters of the time range filter are processed according to the order end time.  The maximum number of pages when searching data using limit&page paging function is 100,0, that is, limit * (page - 1) <= 100,0.
 
@@ -1729,17 +1729,17 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var currencyPair = "BTC_USDT";  // string | Retrieve results with specified currency pair. (optional) 
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. Default: 100, Minimum: 1, Maximum: 1000 (optional)  (default to 100)
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
+            var currencyPair = "BTC_USDT";  // string | Retrieve results with specified currency pair (optional) 
+            var limit = 100;  // int? | Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional)  (default to 100)
+            var page = 1;  // int? | Page number (optional)  (default to 1)
             var orderId = "12345";  // string | Filter trades with specified order ID. `currency_pair` is also required if this field is present (optional) 
-            var account = "spot";  // string | Specify query account. (optional) 
-            var from = 1627706330;  // long? | Start timestamp of the query. (optional) 
-            var to = 1635329650;  // long? | Time range ending, default to current time. (optional) 
+            var account = "spot";  // string | Specify query account (optional) 
+            var from = 1627706330;  // long? | Start timestamp for the query (optional) 
+            var to = 1635329650;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
 
             try
             {
-                // List personal trading history.
+                // Query personal trading records
                 List<Trade> result = apiInstance.ListMyTrades(currencyPair, limit, page, orderId, account, from, to);
                 Debug.WriteLine(result);
             }
@@ -1759,13 +1759,13 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencyPair** | **string**| Retrieve results with specified currency pair. | [optional] 
- **limit** | **int?**| Maximum number of records to be returned in a single list. Default: 100, Minimum: 1, Maximum: 1000 | [optional] [default to 100]
- **page** | **int?**| Page number. | [optional] [default to 1]
+ **currencyPair** | **string**| Retrieve results with specified currency pair | [optional] 
+ **limit** | **int?**| Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 | [optional] [default to 100]
+ **page** | **int?**| Page number | [optional] [default to 1]
  **orderId** | **string**| Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present | [optional] 
- **account** | **string**| Specify query account. | [optional] 
- **from** | **long?**| Start timestamp of the query. | [optional] 
- **to** | **long?**| Time range ending, default to current time. | [optional] 
+ **account** | **string**| Specify query account | [optional] 
+ **from** | **long?**| Start timestamp for the query | [optional] 
+ **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
 
 ### Return type
 
@@ -1783,7 +1783,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1791,7 +1791,7 @@ Name | Type | Description  | Notes
 # **GetSystemTime**
 > SystemTime GetSystemTime ()
 
-Get server current time.
+Get server current time
 
 ### Example
 ```csharp
@@ -1813,7 +1813,7 @@ namespace Example
 
             try
             {
-                // Get server current time.
+                // Get server current time
                 SystemTime result = apiInstance.GetSystemTime();
                 Debug.WriteLine(result);
             }
@@ -1848,7 +1848,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1856,7 +1856,7 @@ No authorization required
 # **CountdownCancelAllSpot**
 > TriggerTime CountdownCancelAllSpot (CountdownCancelAllSpotTask countdownCancelAllSpotTask)
 
-Countdown cancel orders.
+Countdown cancel orders
 
 Spot order heartbeat detection. If there is no \"cancel existing countdown\" or \"set new countdown\" when the user-set `timeout` time is reached, the related `spot pending orders` will be automatically cancelled. This interface can be called repeatedly to set a new countdown or cancel the countdown. Usage example: Repeat this interface at 30s intervals, setting the countdown `timeout` to `30 (seconds)` each time. If this interface is not called again within 30 seconds, all pending orders on the `market` you specified will be automatically cancelled. If no `market` is specified, all market cancelled. If the `timeout` is set to 0 within 30 seconds, the countdown timer will be terminated and the automatic order cancellation function will be cancelled.
 
@@ -1883,7 +1883,7 @@ namespace Example
 
             try
             {
-                // Countdown cancel orders.
+                // Countdown cancel orders
                 TriggerTime result = apiInstance.CountdownCancelAllSpot(countdownCancelAllSpotTask);
                 Debug.WriteLine(result);
             }
@@ -1921,7 +1921,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Set countdown successfully. |  -  |
+| **200** | Countdown set successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1929,9 +1929,9 @@ Name | Type | Description  | Notes
 # **AmendBatchOrders**
 > List&lt;BatchOrder&gt; AmendBatchOrders (List<BatchAmendItem> batchAmendItem, string xGateExptime = null)
 
-Batch modification of orders.
+Batch modification of orders
 
-Modify orders in spot, unified account and isolated margin account by default. Modify uncompleted orders, up to 5 orders can be modified at a time. Request parameters should be passed in array format. If there are order modification failures during the batch modification process, the modification of the next order will continue to be executed, and the execution will return with the corresponding order failure information. The call order of batch modification orders is consistent with the order list order. The return is consistent with the order list order.
+Modify orders in spot, unified account and isolated margin account by default. Modify uncompleted orders, up to 5 orders can be modified at a time. Request parameters should be passed in array format. If there are order modification failures during the batch modification process, the modification of the next order will continue to be executed, and the execution will return with the corresponding order failure information. The call order of batch modification orders is consistent with the order list order. The return content order of batch modification orders is consistent with the order list order.
 
 ### Example
 ```csharp
@@ -1957,7 +1957,7 @@ namespace Example
 
             try
             {
-                // Batch modification of orders.
+                // Batch modification of orders
                 List<BatchOrder> result = apiInstance.AmendBatchOrders(batchAmendItem, xGateExptime);
                 Debug.WriteLine(result);
             }
@@ -1996,7 +1996,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Order modification executed successfully. |  -  |
+| **200** | Order modification executed successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2004,7 +2004,7 @@ Name | Type | Description  | Notes
 # **GetSpotInsuranceHistory**
 > List&lt;SpotInsuranceHistory&gt; GetSpotInsuranceHistory (string business, string currency, long from, long to, int? page = null, int? limit = null)
 
-Query spot insurance fund historical data.
+Query spot insurance fund historical data
 
 ### Example
 ```csharp
@@ -2024,15 +2024,15 @@ namespace Example
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new SpotApi(config);
             var business = "margin";  // string | Leverage business, margin - position by position; unified - unified account
-            var currency = "BTC";  // string | Currency.
-            var from = 1547706332;  // long | Start timestamp, seconds.
-            var to = 1547706332;  // long | End timestamp, in seconds.
-            var page = 1;  // int? | Page number. (optional)  (default to 1)
-            var limit = 30;  // int? | The maximum number of items returned in the list, the default value is 30. (optional)  (default to 30)
+            var currency = "BTC";  // string | Currency
+            var from = 1547706332;  // long | Start timestamp in seconds
+            var to = 1547706332;  // long | End timestamp in seconds
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 30;  // int? | The maximum number of items returned in the list, the default value is 30 (optional)  (default to 30)
 
             try
             {
-                // Query spot insurance fund historical data.
+                // Query spot insurance fund historical data
                 List<SpotInsuranceHistory> result = apiInstance.GetSpotInsuranceHistory(business, currency, from, to, page, limit);
                 Debug.WriteLine(result);
             }
@@ -2053,11 +2053,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **business** | **string**| Leverage business, margin - position by position; unified - unified account | 
- **currency** | **string**| Currency. | 
- **from** | **long**| Start timestamp, seconds. | 
- **to** | **long**| End timestamp, in seconds. | 
- **page** | **int?**| Page number. | [optional] [default to 1]
- **limit** | **int?**| The maximum number of items returned in the list, the default value is 30. | [optional] [default to 30]
+ **currency** | **string**| Currency | 
+ **from** | **long**| Start timestamp in seconds | 
+ **to** | **long**| End timestamp in seconds | 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| The maximum number of items returned in the list, the default value is 30 | [optional] [default to 30]
 
 ### Return type
 
@@ -2075,7 +2075,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successfully retrieved. |  -  |
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2083,7 +2083,7 @@ No authorization required
 # **ListSpotPriceTriggeredOrders**
 > List&lt;SpotPriceTriggeredOrder&gt; ListSpotPriceTriggeredOrders (string status, string market = null, string account = null, int? limit = null, int? offset = null)
 
-Retrieve running auto order list.
+Query running auto order list
 
 ### Example
 ```csharp
@@ -2104,15 +2104,15 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var status = "status_example";  // string | Only list the orders with this status.
-            var market = "BTC_USDT";  // string | Currency pair. (optional) 
-            var account = "account_example";  // string | Trading account type. Portfolio margin account must set to `unified`. (optional) 
-            var limit = 100;  // int? | Maximum number of records to be returned in a single list. (optional)  (default to 100)
-            var offset = 0;  // int? | List offset, starting from 0. (optional)  (default to 0)
+            var status = "status_example";  // string | Query order list based on status
+            var market = "BTC_USDT";  // string | Trading market (optional) 
+            var account = "account_example";  // string | Trading account type. Unified account must be set to `unified` (optional) 
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
 
             try
             {
-                // Retrieve running auto order list.
+                // Query running auto order list
                 List<SpotPriceTriggeredOrder> result = apiInstance.ListSpotPriceTriggeredOrders(status, market, account, limit, offset);
                 Debug.WriteLine(result);
             }
@@ -2132,11 +2132,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **string**| Only list the orders with this status. | 
- **market** | **string**| Currency pair. | [optional] 
- **account** | **string**| Trading account type. Portfolio margin account must set to &#x60;unified&#x60;. | [optional] 
- **limit** | **int?**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int?**| List offset, starting from 0. | [optional] [default to 0]
+ **status** | **string**| Query order list based on status | 
+ **market** | **string**| Trading market | [optional] 
+ **account** | **string**| Trading account type. Unified account must be set to &#x60;unified&#x60; | [optional] 
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
 
@@ -2154,7 +2154,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List retrieved. |  -  |
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2162,7 +2162,7 @@ Name | Type | Description  | Notes
 # **CreateSpotPriceTriggeredOrder**
 > TriggerOrderResponse CreateSpotPriceTriggeredOrder (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
 
-Create a price-triggered order.
+Create price-triggered order
 
 ### Example
 ```csharp
@@ -2187,7 +2187,7 @@ namespace Example
 
             try
             {
-                // Create a price-triggered order.
+                // Create price-triggered order
                 TriggerOrderResponse result = apiInstance.CreateSpotPriceTriggeredOrder(spotPriceTriggeredOrder);
                 Debug.WriteLine(result);
             }
@@ -2225,7 +2225,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Order created. |  -  |
+| **201** | Order created successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2233,7 +2233,7 @@ Name | Type | Description  | Notes
 # **CancelSpotPriceTriggeredOrderList**
 > List&lt;SpotPriceTriggeredOrder&gt; CancelSpotPriceTriggeredOrderList (string market = null, string account = null)
 
-Cancel All Price-triggered Orders.
+Cancel all auto orders
 
 ### Example
 ```csharp
@@ -2254,12 +2254,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var market = "BTC_USDT";  // string | Currency pair. (optional) 
-            var account = "account_example";  // string | Trading account type. Portfolio margin account must set to `unified`. (optional) 
+            var market = "BTC_USDT";  // string | Trading market (optional) 
+            var account = "account_example";  // string | Trading account type. Unified account must be set to `unified` (optional) 
 
             try
             {
-                // Cancel All Price-triggered Orders.
+                // Cancel all auto orders
                 List<SpotPriceTriggeredOrder> result = apiInstance.CancelSpotPriceTriggeredOrderList(market, account);
                 Debug.WriteLine(result);
             }
@@ -2279,8 +2279,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **market** | **string**| Currency pair. | [optional] 
- **account** | **string**| Trading account type. Portfolio margin account must set to &#x60;unified&#x60;. | [optional] 
+ **market** | **string**| Trading market | [optional] 
+ **account** | **string**| Trading account type. Unified account must be set to &#x60;unified&#x60; | [optional] 
 
 ### Return type
 
@@ -2298,7 +2298,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Batch cancellation request accepted. Query order status by listing orders. |  -  |
+| **200** | Batch cancellation request accepted and processed, success determined by order list |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2306,7 +2306,7 @@ Name | Type | Description  | Notes
 # **GetSpotPriceTriggeredOrder**
 > SpotPriceTriggeredOrder GetSpotPriceTriggeredOrder (string orderId)
 
-Get a price-triggered order.
+Query single auto order details
 
 ### Example
 ```csharp
@@ -2327,11 +2327,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var orderId = "orderId_example";  // string | Retrieve the data of the order with the specified ID.
+            var orderId = "orderId_example";  // string | ID returned when order is successfully created
 
             try
             {
-                // Get a price-triggered order.
+                // Query single auto order details
                 SpotPriceTriggeredOrder result = apiInstance.GetSpotPriceTriggeredOrder(orderId);
                 Debug.WriteLine(result);
             }
@@ -2351,7 +2351,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **string**| Retrieve the data of the order with the specified ID. | 
+ **orderId** | **string**| ID returned when order is successfully created | 
 
 ### Return type
 
@@ -2369,7 +2369,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Auto order detail. |  -  |
+| **200** | Auto order details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2377,7 +2377,7 @@ Name | Type | Description  | Notes
 # **CancelSpotPriceTriggeredOrder**
 > SpotPriceTriggeredOrder CancelSpotPriceTriggeredOrder (string orderId)
 
-cancel a price-triggered order.
+Cancel single auto order
 
 ### Example
 ```csharp
@@ -2398,11 +2398,11 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new SpotApi(config);
-            var orderId = "orderId_example";  // string | Retrieve the data of the order with the specified ID.
+            var orderId = "orderId_example";  // string | ID returned when order is successfully created
 
             try
             {
-                // cancel a price-triggered order.
+                // Cancel single auto order
                 SpotPriceTriggeredOrder result = apiInstance.CancelSpotPriceTriggeredOrder(orderId);
                 Debug.WriteLine(result);
             }
@@ -2422,7 +2422,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **string**| Retrieve the data of the order with the specified ID. | 
+ **orderId** | **string**| ID returned when order is successfully created | 
 
 ### Return type
 
@@ -2440,7 +2440,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Auto order detail. |  -  |
+| **200** | Auto order details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

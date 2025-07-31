@@ -1,14 +1,14 @@
 
 # Io.Gate.GateApi.Model.StructuredBuy
 
-Dual Investment Purchase.
+Dual Investment Buy
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Pid** | **string** | Plan ID. | [optional] 
-**Amount** | **string** | Purchase Amount. | [optional] 
+**Pid** | **string** | Product ID | [optional] 
+**Amount** | **string** | Buy Quantity | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

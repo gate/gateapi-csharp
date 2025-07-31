@@ -1,14 +1,14 @@
 
 # Io.Gate.GateApi.Model.MockOptionsPosition
 
-Options positions.
+Options positions
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OptionsName** | **string** | Option name, currently only supports options for BTC and ETH with USDT. | 
-**Size** | **string** | Position size, measured in contract units. | 
+**OptionsName** | **string** | Option name, currently only supports USDT options for BTC and ETH | 
+**Size** | **string** | Position size, measured in contract quantity | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
