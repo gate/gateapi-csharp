@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// ETH2 Mining
+    /// ETH Mining
     /// </summary>
     [DataContract]
     public partial class Eth2Swap :  IEquatable<Eth2Swap>, IValidatableObject
@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Eth2Swap" /> class.
         /// </summary>
-        /// <param name="side">1-Forward Swap (ETH -&gt; ETH2), 2-Reverse Swap (ETH2 -&gt; ETH) (required).</param>
+        /// <param name="side">1-Forward Swap (ETH -&gt; GTETH), 2-Reverse Swap (GTETH -&gt; ETH) (required).</param>
         /// <param name="amount">Swap Amount (required).</param>
         public Eth2Swap(string side = default(string), string amount = default(string))
         {
@@ -49,9 +49,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 1-Forward Swap (ETH -&gt; ETH2), 2-Reverse Swap (ETH2 -&gt; ETH)
+        /// 1-Forward Swap (ETH -&gt; GTETH), 2-Reverse Swap (GTETH -&gt; ETH)
         /// </summary>
-        /// <value>1-Forward Swap (ETH -&gt; ETH2), 2-Reverse Swap (ETH2 -&gt; ETH)</value>
+        /// <value>1-Forward Swap (ETH -&gt; GTETH), 2-Reverse Swap (GTETH -&gt; ETH)</value>
         [DataMember(Name="side")]
         public string Side { get; set; }
 

@@ -588,7 +588,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="orderId">Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present (optional)</param>
-        /// <param name="account">Specify query account (optional)</param>
+        /// <param name="account">The accountparameter has been deprecated. The interface supports querying all transaction records of the account. (optional)</param>
         /// <param name="from">Start timestamp for the query (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <returns>List&lt;Trade&gt;</returns>
@@ -605,7 +605,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="orderId">Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present (optional)</param>
-        /// <param name="account">Specify query account (optional)</param>
+        /// <param name="account">The accountparameter has been deprecated. The interface supports querying all transaction records of the account. (optional)</param>
         /// <param name="from">Start timestamp for the query (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <returns>ApiResponse of List&lt;Trade&gt;</returns>
@@ -1389,7 +1389,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="orderId">Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present (optional)</param>
-        /// <param name="account">Specify query account (optional)</param>
+        /// <param name="account">The accountparameter has been deprecated. The interface supports querying all transaction records of the account. (optional)</param>
         /// <param name="from">Start timestamp for the query (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <returns>Task of List&lt;Trade&gt;</returns>
@@ -1406,7 +1406,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="orderId">Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present (optional)</param>
-        /// <param name="account">Specify query account (optional)</param>
+        /// <param name="account">The accountparameter has been deprecated. The interface supports querying all transaction records of the account. (optional)</param>
         /// <param name="from">Start timestamp for the query (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Trade&gt;)</returns>
@@ -4820,7 +4820,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="orderId">Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present (optional)</param>
-        /// <param name="account">Specify query account (optional)</param>
+        /// <param name="account">The accountparameter has been deprecated. The interface supports querying all transaction records of the account. (optional)</param>
         /// <param name="from">Start timestamp for the query (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <returns>List&lt;Trade&gt;</returns>
@@ -4838,7 +4838,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="orderId">Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present (optional)</param>
-        /// <param name="account">Specify query account (optional)</param>
+        /// <param name="account">The accountparameter has been deprecated. The interface supports querying all transaction records of the account. (optional)</param>
         /// <param name="from">Start timestamp for the query (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <returns>ApiResponse of List&lt;Trade&gt;</returns>
@@ -4912,7 +4912,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="orderId">Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present (optional)</param>
-        /// <param name="account">Specify query account (optional)</param>
+        /// <param name="account">The accountparameter has been deprecated. The interface supports querying all transaction records of the account. (optional)</param>
         /// <param name="from">Start timestamp for the query (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <returns>Task of List&lt;Trade&gt;</returns>
@@ -4931,7 +4931,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="orderId">Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present (optional)</param>
-        /// <param name="account">Specify query account (optional)</param>
+        /// <param name="account">The accountparameter has been deprecated. The interface supports querying all transaction records of the account. (optional)</param>
         /// <param name="from">Start timestamp for the query (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Trade&gt;)</returns>

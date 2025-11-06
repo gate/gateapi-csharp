@@ -25,32 +25,32 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// DepositRecord
+    /// WithdrawalsDel
     /// </summary>
     [DataContract]
-    public partial class DepositRecord :  IEquatable<DepositRecord>, IValidatableObject
+    public partial class WithdrawalsDel :  IEquatable<WithdrawalsDel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DepositRecord" /> class.
+        /// Initializes a new instance of the <see cref="WithdrawalsDel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected DepositRecord() { }
+        protected WithdrawalsDel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="DepositRecord" /> class.
+        /// Initializes a new instance of the <see cref="WithdrawalsDel" /> class.
         /// </summary>
         /// <param name="amount">Token amount (required).</param>
         /// <param name="currency">Currency name (required).</param>
         /// <param name="address">Withdrawal address. Required for withdrawals.</param>
         /// <param name="memo">Additional remarks with regards to the withdrawal.</param>
         /// <param name="chain">Name of the chain used in withdrawals (required).</param>
-        public DepositRecord(string amount = default(string), string currency = default(string), string address = default(string), string memo = default(string), string chain = default(string))
+        public WithdrawalsDel(string amount = default(string), string currency = default(string), string address = default(string), string memo = default(string), string chain = default(string))
         {
             // to ensure "amount" is required (not null)
-            this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for DepositRecord and cannot be null");
+            this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for WithdrawalsDel and cannot be null");
             // to ensure "currency" is required (not null)
-            this.Currency = currency ?? throw new ArgumentNullException("currency", "currency is a required property for DepositRecord and cannot be null");
+            this.Currency = currency ?? throw new ArgumentNullException("currency", "currency is a required property for WithdrawalsDel and cannot be null");
             // to ensure "chain" is required (not null)
-            this.Chain = chain ?? throw new ArgumentNullException("chain", "chain is a required property for DepositRecord and cannot be null");
+            this.Chain = chain ?? throw new ArgumentNullException("chain", "chain is a required property for WithdrawalsDel and cannot be null");
             this.Address = address;
             this.Memo = memo;
         }
@@ -105,9 +105,9 @@ namespace Io.Gate.GateApi.Model
         public string Memo { get; set; }
 
         /// <summary>
-        /// Transaction Status  - BLOCKED: Deposit Blocked - DEP_CREDITED: Deposit Credited, Withdrawal Pending Unlock - DONE: Awaiting Fund Unlock - FINAL: Funds Credited to Spot Account - INVALID: Invalid Transaction - MANUAL: Manual Review Required - PEND: Processing - REVIEW: Under Compliance Review - TRACK: Tracking Block Confirmations, Pending Spot Account Credit
+        /// 交易状态  - BCODE: 充值码操作 - CANCEL: 已取消 - CANCELPEND: 取消提现中 - DMOVE: 待人工审核 - DONE: 完成 (block_number &gt; 0 才算真的上链完成) - EXTPEND: 已经发送等待确认 - FAIL: 链上失败等待确认 - FVERIFY: 人脸审核处理中 - LOCKED: 钱包侧锁单 - MANUAL: 待人工审核 - REJECT: 拒绝 - REQUEST: 请求中 - REVIEW: 审核中
         /// </summary>
-        /// <value>Transaction Status  - BLOCKED: Deposit Blocked - DEP_CREDITED: Deposit Credited, Withdrawal Pending Unlock - DONE: Awaiting Fund Unlock - FINAL: Funds Credited to Spot Account - INVALID: Invalid Transaction - MANUAL: Manual Review Required - PEND: Processing - REVIEW: Under Compliance Review - TRACK: Tracking Block Confirmations, Pending Spot Account Credit</value>
+        /// <value>交易状态  - BCODE: 充值码操作 - CANCEL: 已取消 - CANCELPEND: 取消提现中 - DMOVE: 待人工审核 - DONE: 完成 (block_number &gt; 0 才算真的上链完成) - EXTPEND: 已经发送等待确认 - FAIL: 链上失败等待确认 - FVERIFY: 人脸审核处理中 - LOCKED: 钱包侧锁单 - MANUAL: 待人工审核 - REJECT: 拒绝 - REQUEST: 请求中 - REVIEW: 审核中</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; private set; }
 
@@ -125,7 +125,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DepositRecord {\n");
+            sb.Append("class WithdrawalsDel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Txid: ").Append(Txid).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
@@ -155,15 +155,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DepositRecord);
+            return this.Equals(input as WithdrawalsDel);
         }
 
         /// <summary>
-        /// Returns true if DepositRecord instances are equal
+        /// Returns true if WithdrawalsDel instances are equal
         /// </summary>
-        /// <param name="input">Instance of DepositRecord to be compared</param>
+        /// <param name="input">Instance of WithdrawalsDel to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DepositRecord input)
+        public bool Equals(WithdrawalsDel input)
         {
             if (input == null)
                 return false;

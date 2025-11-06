@@ -38,13 +38,15 @@ namespace Io.Gate.GateApi.Model
         /// <param name="paymentId">Notes that some currencies required(e.g., Tag, Memo) when depositing.</param>
         /// <param name="paymentName">Note type, &#x60;Tag&#x60; or &#x60;Memo&#x60;.</param>
         /// <param name="obtainFailed">The obtain failed status- 0: address successfully obtained- 1: failed to obtain address.</param>
-        public MultiChainAddressItem(string chain = default(string), string address = default(string), string paymentId = default(string), string paymentName = default(string), int obtainFailed = default(int))
+        /// <param name="minConfirms">Minimum Confirmation Count.</param>
+        public MultiChainAddressItem(string chain = default(string), string address = default(string), string paymentId = default(string), string paymentName = default(string), int obtainFailed = default(int), int minConfirms = default(int))
         {
             this.Chain = chain;
             this.Address = address;
             this.PaymentId = paymentId;
             this.PaymentName = paymentName;
             this.ObtainFailed = obtainFailed;
+            this.MinConfirms = minConfirms;
         }
 
         /// <summary>
@@ -83,6 +85,13 @@ namespace Io.Gate.GateApi.Model
         public int ObtainFailed { get; set; }
 
         /// <summary>
+        /// Minimum Confirmation Count
+        /// </summary>
+        /// <value>Minimum Confirmation Count</value>
+        [DataMember(Name="min_confirms")]
+        public int MinConfirms { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -95,6 +104,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  PaymentId: ").Append(PaymentId).Append("\n");
             sb.Append("  PaymentName: ").Append(PaymentName).Append("\n");
             sb.Append("  ObtainFailed: ").Append(ObtainFailed).Append("\n");
+            sb.Append("  MinConfirms: ").Append(MinConfirms).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -152,6 +162,10 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.ObtainFailed == input.ObtainFailed ||
                     this.ObtainFailed.Equals(input.ObtainFailed)
+                ) && 
+                (
+                    this.MinConfirms == input.MinConfirms ||
+                    this.MinConfirms.Equals(input.MinConfirms)
                 );
         }
 
@@ -173,6 +187,7 @@ namespace Io.Gate.GateApi.Model
                 if (this.PaymentName != null)
                     hashCode = hashCode * 59 + this.PaymentName.GetHashCode();
                 hashCode = hashCode * 59 + this.ObtainFailed.GetHashCode();
+                hashCode = hashCode * 59 + this.MinConfirms.GetHashCode();
                 return hashCode;
             }
         }

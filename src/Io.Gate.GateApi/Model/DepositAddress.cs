@@ -40,13 +40,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="currency">Currency detail (required).</param>
         /// <param name="address">Deposit address (required).</param>
+        /// <param name="minDepositAmount">Minimum Deposit Amount.</param>
         /// <param name="multichainAddresses">multichainAddresses.</param>
-        public DepositAddress(string currency = default(string), string address = default(string), List<MultiChainAddressItem> multichainAddresses = default(List<MultiChainAddressItem>))
+        public DepositAddress(string currency = default(string), string address = default(string), string minDepositAmount = default(string), List<MultiChainAddressItem> multichainAddresses = default(List<MultiChainAddressItem>))
         {
             // to ensure "currency" is required (not null)
             this.Currency = currency ?? throw new ArgumentNullException("currency", "currency is a required property for DepositAddress and cannot be null");
             // to ensure "address" is required (not null)
             this.Address = address ?? throw new ArgumentNullException("address", "address is a required property for DepositAddress and cannot be null");
+            this.MinDepositAmount = minDepositAmount;
             this.MultichainAddresses = multichainAddresses;
         }
 
@@ -65,6 +67,13 @@ namespace Io.Gate.GateApi.Model
         public string Address { get; set; }
 
         /// <summary>
+        /// Minimum Deposit Amount
+        /// </summary>
+        /// <value>Minimum Deposit Amount</value>
+        [DataMember(Name="min_deposit_amount")]
+        public string MinDepositAmount { get; set; }
+
+        /// <summary>
         /// Gets or Sets MultichainAddresses
         /// </summary>
         [DataMember(Name="multichain_addresses")]
@@ -80,6 +89,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class DepositAddress {\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  MinDepositAmount: ").Append(MinDepositAmount).Append("\n");
             sb.Append("  MultichainAddresses: ").Append(MultichainAddresses).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -126,6 +136,11 @@ namespace Io.Gate.GateApi.Model
                     this.Address.Equals(input.Address))
                 ) && 
                 (
+                    this.MinDepositAmount == input.MinDepositAmount ||
+                    (this.MinDepositAmount != null &&
+                    this.MinDepositAmount.Equals(input.MinDepositAmount))
+                ) && 
+                (
                     this.MultichainAddresses == input.MultichainAddresses ||
                     this.MultichainAddresses != null &&
                     input.MultichainAddresses != null &&
@@ -146,6 +161,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Currency.GetHashCode();
                 if (this.Address != null)
                     hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.MinDepositAmount != null)
+                    hashCode = hashCode * 59 + this.MinDepositAmount.GetHashCode();
                 if (this.MultichainAddresses != null)
                     hashCode = hashCode * 59 + this.MultichainAddresses.GetHashCode();
                 return hashCode;

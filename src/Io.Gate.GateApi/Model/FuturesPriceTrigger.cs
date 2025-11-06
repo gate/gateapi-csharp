@@ -106,21 +106,27 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price Condition Type  - 1: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is greater than or equal to &#x60;Trigger.Price&#x60;, while Trigger.Price must &gt; last_price - 2: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is less than or equal to &#x60;Trigger.Price&#x60;, and Trigger.Price must &lt; last_price</value>
         [DataMember(Name="rule")]
-        public RuleEnum? Rule { get; set; }
+        public RuleEnum Rule { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FuturesPriceTrigger" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected FuturesPriceTrigger() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesPriceTrigger" /> class.
         /// </summary>
         /// <param name="strategyType">Trigger Strategy   - 0: Price trigger, triggered when price meets conditions  - 1: Price spread trigger, i.e. the difference between the latest price specified in &#x60;price_type&#x60; and the second-last price Currently only supports 0 (latest transaction price).</param>
         /// <param name="priceType">Reference price type. 0 - Latest trade price, 1 - Mark price, 2 - Index price.</param>
-        /// <param name="price">Price value for price trigger, or spread value for spread trigger.</param>
-        /// <param name="rule">Price Condition Type  - 1: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is greater than or equal to &#x60;Trigger.Price&#x60;, while Trigger.Price must &gt; last_price - 2: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is less than or equal to &#x60;Trigger.Price&#x60;, and Trigger.Price must &lt; last_price.</param>
+        /// <param name="price">Price value for price trigger, or spread value for spread trigger (required).</param>
+        /// <param name="rule">Price Condition Type  - 1: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is greater than or equal to &#x60;Trigger.Price&#x60;, while Trigger.Price must &gt; last_price - 2: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is less than or equal to &#x60;Trigger.Price&#x60;, and Trigger.Price must &lt; last_price (required).</param>
         /// <param name="expiration">Maximum wait time for trigger condition (in seconds). Order will be cancelled if timeout.</param>
-        public FuturesPriceTrigger(StrategyTypeEnum? strategyType = default(StrategyTypeEnum?), PriceTypeEnum? priceType = default(PriceTypeEnum?), string price = default(string), RuleEnum? rule = default(RuleEnum?), int expiration = default(int))
+        public FuturesPriceTrigger(StrategyTypeEnum? strategyType = default(StrategyTypeEnum?), PriceTypeEnum? priceType = default(PriceTypeEnum?), string price = default(string), RuleEnum rule = default(RuleEnum), int expiration = default(int))
         {
+            // to ensure "price" is required (not null)
+            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for FuturesPriceTrigger and cannot be null");
+            this.Rule = rule;
             this.StrategyType = strategyType;
             this.PriceType = priceType;
-            this.Price = price;
-            this.Rule = rule;
             this.Expiration = expiration;
         }
 

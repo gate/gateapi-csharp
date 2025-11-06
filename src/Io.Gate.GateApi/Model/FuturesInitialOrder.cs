@@ -68,11 +68,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="contract">Futures contract (required).</param>
         /// <param name="size">Represents the number of contracts that need to be closed, full closing: size&#x3D;0 Partial closing: plan-close-short-position size&gt;0  Partial closing: plan-close-long-position size&lt;0.</param>
         /// <param name="price">Order price. Set to 0 to use market price (required).</param>
-        /// <param name="close">When all positions are closed in a single position mode, it must be set to true to perform the closing operation When partially closed positions in single-store mode/double-store mode, you can not set close, or close&#x3D;false (default to false).</param>
+        /// <param name="close">In One-way Mode, when closing all positions, this must be set to true to perform the closing operation When partially closing positions in One-way Mode or Hedge Mode, you can omit close or set close&#x3D;false (default to false).</param>
         /// <param name="tif">Time in force strategy, default is gtc, market orders currently only support ioc mode  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled (default to TifEnum.Gtc).</param>
         /// <param name="text">The source of the order, including: - web: Web - api: API call - app: Mobile app.</param>
         /// <param name="reduceOnly">When set to true, perform automatic position reduction operation. Set to true to ensure that the order will not open a new position, and is only used to close or reduce positions (default to false).</param>
-        /// <param name="autoSize">Single position mode: auto_size is not required Dual position mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions Dual position mode partial closing (size≠0): auto_size is not required.</param>
+        /// <param name="autoSize">One-way Mode: auto_size is not required Hedge Mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions Hedge Mode partial closing (size≠0): auto_size is not required.</param>
         public FuturesInitialOrder(string contract = default(string), long size = default(long), string price = default(string), bool close = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), bool reduceOnly = false, string autoSize = default(string))
         {
             // to ensure "contract" is required (not null)
@@ -109,9 +109,9 @@ namespace Io.Gate.GateApi.Model
         public string Price { get; set; }
 
         /// <summary>
-        /// When all positions are closed in a single position mode, it must be set to true to perform the closing operation When partially closed positions in single-store mode/double-store mode, you can not set close, or close&#x3D;false
+        /// In One-way Mode, when closing all positions, this must be set to true to perform the closing operation When partially closing positions in One-way Mode or Hedge Mode, you can omit close or set close&#x3D;false
         /// </summary>
-        /// <value>When all positions are closed in a single position mode, it must be set to true to perform the closing operation When partially closed positions in single-store mode/double-store mode, you can not set close, or close&#x3D;false</value>
+        /// <value>In One-way Mode, when closing all positions, this must be set to true to perform the closing operation When partially closing positions in One-way Mode or Hedge Mode, you can omit close or set close&#x3D;false</value>
         [DataMember(Name="close")]
         public bool Close { get; set; }
 
@@ -130,9 +130,9 @@ namespace Io.Gate.GateApi.Model
         public bool ReduceOnly { get; set; }
 
         /// <summary>
-        /// Single position mode: auto_size is not required Dual position mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions Dual position mode partial closing (size≠0): auto_size is not required
+        /// One-way Mode: auto_size is not required Hedge Mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions Hedge Mode partial closing (size≠0): auto_size is not required
         /// </summary>
-        /// <value>Single position mode: auto_size is not required Dual position mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions Dual position mode partial closing (size≠0): auto_size is not required</value>
+        /// <value>One-way Mode: auto_size is not required Hedge Mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions Hedge Mode partial closing (size≠0): auto_size is not required</value>
         [DataMember(Name="auto_size")]
         public string AutoSize { get; set; }
 

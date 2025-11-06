@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 <a name="cancelwithdrawal"></a>
 # **CancelWithdrawal**
-> LedgerRecord CancelWithdrawal (string withdrawalId)
+> WithdrawalsDel CancelWithdrawal (string withdrawalId)
 
 Cancel withdrawal with specified ID
 
@@ -185,7 +185,7 @@ namespace Example
             try
             {
                 // Cancel withdrawal with specified ID
-                LedgerRecord result = apiInstance.CancelWithdrawal(withdrawalId);
+                WithdrawalsDel result = apiInstance.CancelWithdrawal(withdrawalId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LedgerRecord**](LedgerRecord.md)
+[**WithdrawalsDel**](WithdrawalsDel.md)
 
 ### Authorization
 

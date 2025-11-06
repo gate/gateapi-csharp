@@ -41,7 +41,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="isDepositDisabled">Is deposit disabled. 0 means not disabled.</param>
         /// <param name="isWithdrawDisabled">Is withdrawal disabled. 0 means not disabled.</param>
         /// <param name="_decimal">Withdrawal precision.</param>
-        public CurrencyChain(string chain = default(string), string nameCn = default(string), string nameEn = default(string), string contractAddress = default(string), int isDisabled = default(int), int isDepositDisabled = default(int), int isWithdrawDisabled = default(int), string _decimal = default(string))
+        /// <param name="isTag">Whether to Include Tag.</param>
+        public CurrencyChain(string chain = default(string), string nameCn = default(string), string nameEn = default(string), string contractAddress = default(string), int isDisabled = default(int), int isDepositDisabled = default(int), int isWithdrawDisabled = default(int), string _decimal = default(string), int isTag = default(int))
         {
             this.Chain = chain;
             this.NameCn = nameCn;
@@ -51,6 +52,7 @@ namespace Io.Gate.GateApi.Model
             this.IsDepositDisabled = isDepositDisabled;
             this.IsWithdrawDisabled = isWithdrawDisabled;
             this.Decimal = _decimal;
+            this.IsTag = isTag;
         }
 
         /// <summary>
@@ -110,6 +112,13 @@ namespace Io.Gate.GateApi.Model
         public string Decimal { get; set; }
 
         /// <summary>
+        /// Whether to Include Tag
+        /// </summary>
+        /// <value>Whether to Include Tag</value>
+        [DataMember(Name="is_tag")]
+        public int IsTag { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -125,6 +134,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  IsDepositDisabled: ").Append(IsDepositDisabled).Append("\n");
             sb.Append("  IsWithdrawDisabled: ").Append(IsWithdrawDisabled).Append("\n");
             sb.Append("  Decimal: ").Append(Decimal).Append("\n");
+            sb.Append("  IsTag: ").Append(IsTag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,6 +205,10 @@ namespace Io.Gate.GateApi.Model
                     this.Decimal == input.Decimal ||
                     (this.Decimal != null &&
                     this.Decimal.Equals(input.Decimal))
+                ) && 
+                (
+                    this.IsTag == input.IsTag ||
+                    this.IsTag.Equals(input.IsTag)
                 );
         }
 
@@ -220,6 +234,7 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.IsWithdrawDisabled.GetHashCode();
                 if (this.Decimal != null)
                     hashCode = hashCode * 59 + this.Decimal.GetHashCode();
+                hashCode = hashCode * 59 + this.IsTag.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,7 +77,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="baseName">Base currency name.</param>
         /// <param name="quote">Quote currency.</param>
         /// <param name="quoteName">Quote currency name.</param>
-        /// <param name="fee">Trading fee rate.</param>
+        /// <param name="fee">Trading fee rate(deprecated).</param>
         /// <param name="minBaseAmount">Minimum amount of base currency to trade, &#x60;null&#x60; means no limit.</param>
         /// <param name="minQuoteAmount">Minimum amount of quote currency to trade, &#x60;null&#x60; means no limit.</param>
         /// <param name="maxBaseAmount">Maximum amount of base currency to trade, &#x60;null&#x60; means no limit.</param>
@@ -150,9 +150,9 @@ namespace Io.Gate.GateApi.Model
         public string QuoteName { get; set; }
 
         /// <summary>
-        /// Trading fee rate
+        /// Trading fee rate(deprecated)
         /// </summary>
-        /// <value>Trading fee rate</value>
+        /// <value>Trading fee rate(deprecated)</value>
         [DataMember(Name="fee")]
         public string Fee { get; set; }
 

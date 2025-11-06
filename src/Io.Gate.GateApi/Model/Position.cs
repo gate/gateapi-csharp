@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class Position :  IEquatable<Position>, IValidatableObject
     {
         /// <summary>
-        /// Position mode, including:  - &#x60;single&#x60;: Single position mode - &#x60;dual_long&#x60;: Long position in dual position mode - &#x60;dual_short&#x60;: Short position in dual position mode
+        /// Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode
         /// </summary>
-        /// <value>Position mode, including:  - &#x60;single&#x60;: Single position mode - &#x60;dual_long&#x60;: Long position in dual position mode - &#x60;dual_short&#x60;: Short position in dual position mode</value>
+        /// <value>Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ModeEnum
         {
@@ -58,9 +58,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Position mode, including:  - &#x60;single&#x60;: Single position mode - &#x60;dual_long&#x60;: Long position in dual position mode - &#x60;dual_short&#x60;: Short position in dual position mode
+        /// Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode
         /// </summary>
-        /// <value>Position mode, including:  - &#x60;single&#x60;: Single position mode - &#x60;dual_long&#x60;: Long position in dual position mode - &#x60;dual_short&#x60;: Short position in dual position mode</value>
+        /// <value>Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode</value>
         [DataMember(Name="mode")]
         public ModeEnum? Mode { get; set; }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="riskLimit">Position risk limit.</param>
         /// <param name="margin">Position margin.</param>
         /// <param name="closeOrder">closeOrder.</param>
-        /// <param name="mode">Position mode, including:  - &#x60;single&#x60;: Single position mode - &#x60;dual_long&#x60;: Long position in dual position mode - &#x60;dual_short&#x60;: Short position in dual position mode.</param>
+        /// <param name="mode">Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode.</param>
         /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0).</param>
         /// <param name="openTime">First Open Time.</param>
         public Position(string leverage = default(string), string riskLimit = default(string), string margin = default(string), PositionCloseOrder closeOrder = default(PositionCloseOrder), ModeEnum? mode = default(ModeEnum?), string crossLeverageLimit = default(string), long openTime = default(long))

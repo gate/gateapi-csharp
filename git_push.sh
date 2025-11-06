@@ -14,7 +14,7 @@ if [ "$git_host" = "" ]; then
 fi
 
 if [ "$git_user_id" = "" ]; then
-    git_user_id="gateio"
+    git_user_id="gate"
     echo "[INFO] No command line input provided. Set \$git_user_id to $git_user_id"
 fi
 
@@ -24,7 +24,7 @@ if [ "$git_repo_id" = "" ]; then
 fi
 
 if [ "$release_note" = "" ]; then
-    release_note="Refer to https://github.com/gateio/gateapi-csharp/releases"
+    release_note="Refer to https://github.com/gate/gateapi-csharp/releases"
     echo "[INFO] No command line input provided. Set \$release_note to $release_note"
 fi
 

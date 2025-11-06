@@ -4,8 +4,8 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SwapETH2**](EarnApi.md#swapeth2) | **POST** /earn/staking/eth2/swap | ETH2 swap
-[**RateListETH2**](EarnApi.md#ratelisteth2) | **GET** /earn/staking/eth2/rate_records | ETH2 historical return rate query
+[**SwapETH2**](EarnApi.md#swapeth2) | **POST** /earn/staking/eth2/swap | ETH swap
+[**RateListETH2**](EarnApi.md#ratelisteth2) | **GET** /earn/staking/eth2/rate_records | GTETH historical return rate query
 [**ListDualInvestmentPlans**](EarnApi.md#listdualinvestmentplans) | **GET** /earn/dual/investment_plan | Dual Investment product list
 [**ListDualOrders**](EarnApi.md#listdualorders) | **GET** /earn/dual/orders | Dual Investment order list
 [**PlaceDualOrder**](EarnApi.md#placedualorder) | **POST** /earn/dual/orders | Place Dual Investment order
@@ -14,13 +14,16 @@ Method | HTTP request | Description
 [**PlaceStructuredOrder**](EarnApi.md#placestructuredorder) | **POST** /earn/structured/orders | Place Structured Product Order
 [**FindCoin**](EarnApi.md#findcoin) | **GET** /earn/staking/coins | Staking coins
 [**SwapStakingCoin**](EarnApi.md#swapstakingcoin) | **POST** /earn/staking/swap | On-chain token swap for earned coins
+[**OrderList**](EarnApi.md#orderlist) | **GET** /earn/staking/order_list | List of on-chain coin-earning orders
+[**AwardList**](EarnApi.md#awardlist) | **GET** /earn/staking/award_list | On-chain coin-earning dividend records
+[**AssetList**](EarnApi.md#assetlist) | **GET** /earn/staking/assets | On-chain coin-earning assets
 
 
 <a name="swapeth2"></a>
 # **SwapETH2**
 > void SwapETH2 (Eth2Swap eth2Swap)
 
-ETH2 swap
+ETH swap
 
 ### Example
 ```csharp
@@ -45,7 +48,7 @@ namespace Example
 
             try
             {
-                // ETH2 swap
+                // ETH swap
                 apiInstance.SwapETH2(eth2Swap);
             }
             catch (GateApiException e)
@@ -90,7 +93,7 @@ void (empty response body)
 # **RateListETH2**
 > List&lt;Eth2RateList&gt; RateListETH2 ()
 
-ETH2 historical return rate query
+GTETH historical return rate query
 
 Query ETH earnings rate records for the last 31 days
 
@@ -116,7 +119,7 @@ namespace Example
 
             try
             {
-                // ETH2 historical return rate query
+                // GTETH historical return rate query
                 List<Eth2RateList> result = apiInstance.RateListETH2();
                 Debug.WriteLine(result);
             }
@@ -595,7 +598,7 @@ void (empty response body)
 
 <a name="findcoin"></a>
 # **FindCoin**
-> Object FindCoin (FindCoin findCoin)
+> List&lt;Object&gt; FindCoin (FindCoin findCoin)
 
 Staking coins
 
@@ -623,7 +626,7 @@ namespace Example
             try
             {
                 // Staking coins
-                Object result = apiInstance.FindCoin(findCoin);
+                List<Object> result = apiInstance.FindCoin(findCoin);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -646,7 +649,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**List<Object>**
 
 ### Authorization
 
@@ -732,6 +735,229 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Swap successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="orderlist"></a>
+# **OrderList**
+> OrderListStruct OrderList (int? pid = null, string coin = null, int? type = null, int? page = null)
+
+List of on-chain coin-earning orders
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class OrderListExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var pid = 7;  // int? | Product ID (optional) 
+            var coin = "ETH";  // string | Currency name (optional) 
+            var type = 0;  // int? | Type 0-staking 1-redemption (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+
+            try
+            {
+                // List of on-chain coin-earning orders
+                OrderListStruct result = apiInstance.OrderList(pid, coin, type, page);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.OrderList: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pid** | **int?**| Product ID | [optional] 
+ **coin** | **string**| Currency name | [optional] 
+ **type** | **int?**| Type 0-staking 1-redemption | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+
+### Return type
+
+[**OrderListStruct**](OrderListStruct.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="awardlist"></a>
+# **AwardList**
+> AwardListStruct AwardList (int? pid = null, string coin = null, int? page = null)
+
+On-chain coin-earning dividend records
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class AwardListExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var pid = 7;  // int? | Product ID (optional) 
+            var coin = "ETH";  // string | Currency name (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+
+            try
+            {
+                // On-chain coin-earning dividend records
+                AwardListStruct result = apiInstance.AwardList(pid, coin, page);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.AwardList: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pid** | **int?**| Product ID | [optional] 
+ **coin** | **string**| Currency name | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+
+### Return type
+
+[**AwardListStruct**](AwardListStruct.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="assetlist"></a>
+# **AssetList**
+> List&lt;Object&gt; AssetList (string coin = null)
+
+On-chain coin-earning assets
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class AssetListExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var coin = "ETH";  // string | Currency name (optional) 
+
+            try
+            {
+                // On-chain coin-earning assets
+                List<Object> result = apiInstance.AssetList(coin);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.AssetList: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **coin** | **string**| Currency name | [optional] 
+
+### Return type
+
+**List<Object>**
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

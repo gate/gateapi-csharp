@@ -617,11 +617,11 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode
         /// </summary>
         /// <remarks>
-        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// The prerequisite for changing mode is that there are no open positions and no open orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="dualMode">Whether to enable dual mode</param>
+        /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>FuturesAccount</returns>
         FuturesAccount SetDualMode (string settle, bool dualMode);
 
@@ -629,15 +629,15 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode
         /// </summary>
         /// <remarks>
-        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// The prerequisite for changing mode is that there are no open positions and no open orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="dualMode">Whether to enable dual mode</param>
+        /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>ApiResponse of FuturesAccount</returns>
         ApiResponse<FuturesAccount> SetDualModeWithHttpInfo (string settle, bool dualMode);
         /// <summary>
-        /// Get position information in dual mode
+        /// Get position information in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -649,7 +649,7 @@ namespace Io.Gate.GateApi.Api
         List<Position> GetDualModePosition (string settle, string contract);
 
         /// <summary>
-        /// Get position information in dual mode
+        /// Get position information in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -660,7 +660,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
         ApiResponse<List<Position>> GetDualModePositionWithHttpInfo (string settle, string contract);
         /// <summary>
-        /// Update position margin in dual mode
+        /// Update position margin in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -674,7 +674,7 @@ namespace Io.Gate.GateApi.Api
         List<Position> UpdateDualModePositionMargin (string settle, string contract, string change, string dualSide);
 
         /// <summary>
-        /// Update position margin in dual mode
+        /// Update position margin in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -687,7 +687,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
         ApiResponse<List<Position>> UpdateDualModePositionMarginWithHttpInfo (string settle, string contract, string change, string dualSide);
         /// <summary>
-        /// Update position leverage in dual mode
+        /// Update position leverage in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -701,7 +701,7 @@ namespace Io.Gate.GateApi.Api
         List<Position> UpdateDualModePositionLeverage (string settle, string contract, string leverage, string crossLeverageLimit = default(string));
 
         /// <summary>
-        /// Update position leverage in dual mode
+        /// Update position leverage in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -714,7 +714,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
         ApiResponse<List<Position>> UpdateDualModePositionLeverageWithHttpInfo (string settle, string contract, string leverage, string crossLeverageLimit = default(string));
         /// <summary>
-        /// Update position risk limit in dual mode
+        /// Update position risk limit in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -727,7 +727,7 @@ namespace Io.Gate.GateApi.Api
         List<Position> UpdateDualModePositionRiskLimit (string settle, string contract, string riskLimit);
 
         /// <summary>
-        /// Update position risk limit in dual mode
+        /// Update position risk limit in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -1241,6 +1241,31 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;FuturesRiskLimitTier&gt;</returns>
         ApiResponse<List<FuturesRiskLimitTier>> GetFuturesRiskLimitTableWithHttpInfo (string settle, string tableId);
         /// <summary>
+        /// Level-based BBO Contract Order Placement
+        /// </summary>
+        /// <remarks>
+        /// Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="futuresBBOOrder"></param>
+        /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <returns>FuturesOrder</returns>
+        FuturesOrder CreateFuturesBBOOrder (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = default(string));
+
+        /// <summary>
+        /// Level-based BBO Contract Order Placement
+        /// </summary>
+        /// <remarks>
+        /// Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="futuresBBOOrder"></param>
+        /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <returns>ApiResponse of FuturesOrder</returns>
+        ApiResponse<FuturesOrder> CreateFuturesBBOOrderWithHttpInfo (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = default(string));
+        /// <summary>
         /// Query auto order list
         /// </summary>
         /// <remarks>
@@ -1338,6 +1363,31 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
         ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, string orderId);
+        /// <summary>
+        /// Modify a Single Auto Order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>TriggerOrderResponse</returns>
+        TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+
+        /// <summary>
+        /// Modify a Single Auto Order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>ApiResponse of TriggerOrderResponse</returns>
+        ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
         /// <summary>
         /// Cancel single auto order
         /// </summary>
@@ -1960,11 +2010,11 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode
         /// </summary>
         /// <remarks>
-        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// The prerequisite for changing mode is that there are no open positions and no open orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="dualMode">Whether to enable dual mode</param>
+        /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>Task of FuturesAccount</returns>
         Task<FuturesAccount> SetDualModeAsync (string settle, bool dualMode);
 
@@ -1972,15 +2022,15 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode
         /// </summary>
         /// <remarks>
-        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// The prerequisite for changing mode is that there are no open positions and no open orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="dualMode">Whether to enable dual mode</param>
+        /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>Task of ApiResponse (FuturesAccount)</returns>
         Task<ApiResponse<FuturesAccount>> SetDualModeAsyncWithHttpInfo (string settle, bool dualMode);
         /// <summary>
-        /// Get position information in dual mode
+        /// Get position information in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -1992,7 +2042,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<Position>> GetDualModePositionAsync (string settle, string contract);
 
         /// <summary>
-        /// Get position information in dual mode
+        /// Get position information in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -2003,7 +2053,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
         Task<ApiResponse<List<Position>>> GetDualModePositionAsyncWithHttpInfo (string settle, string contract);
         /// <summary>
-        /// Update position margin in dual mode
+        /// Update position margin in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -2017,7 +2067,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<Position>> UpdateDualModePositionMarginAsync (string settle, string contract, string change, string dualSide);
 
         /// <summary>
-        /// Update position margin in dual mode
+        /// Update position margin in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -2030,7 +2080,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
         Task<ApiResponse<List<Position>>> UpdateDualModePositionMarginAsyncWithHttpInfo (string settle, string contract, string change, string dualSide);
         /// <summary>
-        /// Update position leverage in dual mode
+        /// Update position leverage in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -2044,7 +2094,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<Position>> UpdateDualModePositionLeverageAsync (string settle, string contract, string leverage, string crossLeverageLimit = default(string));
 
         /// <summary>
-        /// Update position leverage in dual mode
+        /// Update position leverage in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -2057,7 +2107,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
         Task<ApiResponse<List<Position>>> UpdateDualModePositionLeverageAsyncWithHttpInfo (string settle, string contract, string leverage, string crossLeverageLimit = default(string));
         /// <summary>
-        /// Update position risk limit in dual mode
+        /// Update position risk limit in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -2070,7 +2120,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<Position>> UpdateDualModePositionRiskLimitAsync (string settle, string contract, string riskLimit);
 
         /// <summary>
-        /// Update position risk limit in dual mode
+        /// Update position risk limit in Hedge Mode
         /// </summary>
         /// <remarks>
         /// 
@@ -2584,6 +2634,31 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;FuturesRiskLimitTier&gt;)</returns>
         Task<ApiResponse<List<FuturesRiskLimitTier>>> GetFuturesRiskLimitTableAsyncWithHttpInfo (string settle, string tableId);
         /// <summary>
+        /// Level-based BBO Contract Order Placement
+        /// </summary>
+        /// <remarks>
+        /// Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="futuresBBOOrder"></param>
+        /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <returns>Task of FuturesOrder</returns>
+        Task<FuturesOrder> CreateFuturesBBOOrderAsync (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = default(string));
+
+        /// <summary>
+        /// Level-based BBO Contract Order Placement
+        /// </summary>
+        /// <remarks>
+        /// Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="futuresBBOOrder"></param>
+        /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <returns>Task of ApiResponse (FuturesOrder)</returns>
+        Task<ApiResponse<FuturesOrder>> CreateFuturesBBOOrderAsyncWithHttpInfo (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = default(string));
+        /// <summary>
         /// Query auto order list
         /// </summary>
         /// <remarks>
@@ -2681,6 +2756,31 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
         Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId);
+        /// <summary>
+        /// Modify a Single Auto Order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>Task of TriggerOrderResponse</returns>
+        Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+
+        /// <summary>
+        /// Modify a Single Auto Order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
+        Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
         /// <summary>
         /// Cancel single auto order
         /// </summary>
@@ -6129,11 +6229,11 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// Set position mode The prerequisite for changing mode is that there are no open positions and no open orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="dualMode">Whether to enable dual mode</param>
+        /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>FuturesAccount</returns>
         public FuturesAccount SetDualMode (string settle, bool dualMode)
         {
@@ -6142,11 +6242,11 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// Set position mode The prerequisite for changing mode is that there are no open positions and no open orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="dualMode">Whether to enable dual mode</param>
+        /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>ApiResponse of FuturesAccount</returns>
         public ApiResponse<FuturesAccount> SetDualModeWithHttpInfo (string settle, bool dualMode)
         {
@@ -6189,11 +6289,11 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// Set position mode The prerequisite for changing mode is that there are no open positions and no open orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="dualMode">Whether to enable dual mode</param>
+        /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>Task of FuturesAccount</returns>
         public async Task<FuturesAccount> SetDualModeAsync (string settle, bool dualMode)
         {
@@ -6203,11 +6303,11 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// Set position mode The prerequisite for changing mode is that there are no open positions and no open orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="dualMode">Whether to enable dual mode</param>
+        /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>Task of ApiResponse (FuturesAccount)</returns>
         public async Task<ApiResponse<FuturesAccount>> SetDualModeAsyncWithHttpInfo (string settle, bool dualMode)
         {
@@ -6252,7 +6352,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get position information in dual mode 
+        /// Get position information in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6265,7 +6365,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get position information in dual mode 
+        /// Get position information in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6316,7 +6416,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get position information in dual mode 
+        /// Get position information in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6330,7 +6430,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get position information in dual mode 
+        /// Get position information in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6383,7 +6483,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position margin in dual mode 
+        /// Update position margin in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6398,7 +6498,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position margin in dual mode 
+        /// Update position margin in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6461,7 +6561,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position margin in dual mode 
+        /// Update position margin in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6477,7 +6577,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position margin in dual mode 
+        /// Update position margin in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6542,7 +6642,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position leverage in dual mode 
+        /// Update position leverage in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6557,7 +6657,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position leverage in dual mode 
+        /// Update position leverage in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6619,7 +6719,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position leverage in dual mode 
+        /// Update position leverage in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6635,7 +6735,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position leverage in dual mode 
+        /// Update position leverage in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6699,7 +6799,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit in dual mode 
+        /// Update position risk limit in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6713,7 +6813,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit in dual mode 
+        /// Update position risk limit in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6770,7 +6870,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit in dual mode 
+        /// Update position risk limit in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6785,7 +6885,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit in dual mode 
+        /// Update position risk limit in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9726,6 +9826,151 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
+        /// Level-based BBO Contract Order Placement Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="futuresBBOOrder"></param>
+        /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <returns>FuturesOrder</returns>
+        public FuturesOrder CreateFuturesBBOOrder (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = default(string))
+        {
+             ApiResponse<FuturesOrder> localVarResponse = CreateFuturesBBOOrderWithHttpInfo(settle, futuresBBOOrder, xGateExptime);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Level-based BBO Contract Order Placement Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="futuresBBOOrder"></param>
+        /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <returns>ApiResponse of FuturesOrder</returns>
+        public ApiResponse<FuturesOrder> CreateFuturesBBOOrderWithHttpInfo (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = default(string))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->CreateFuturesBBOOrder");
+
+            // verify the required parameter 'futuresBBOOrder' is set
+            if (futuresBBOOrder == null)
+                throw new ApiException(400, "Missing required parameter 'futuresBBOOrder' when calling FuturesApi->CreateFuturesBBOOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            if (xGateExptime != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-gate-exptime", ClientUtils.ParameterToString(xGateExptime)); // header parameter
+            }
+            localVarRequestOptions.Data = futuresBBOOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<FuturesOrder>("/futures/{settle}/bbo_orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateFuturesBBOOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Level-based BBO Contract Order Placement Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="futuresBBOOrder"></param>
+        /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <returns>Task of FuturesOrder</returns>
+        public async Task<FuturesOrder> CreateFuturesBBOOrderAsync (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FuturesOrder> localVarResponse = await CreateFuturesBBOOrderAsyncWithHttpInfo(settle, futuresBBOOrder, xGateExptime);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Level-based BBO Contract Order Placement Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="futuresBBOOrder"></param>
+        /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <returns>Task of ApiResponse (FuturesOrder)</returns>
+        public async Task<ApiResponse<FuturesOrder>> CreateFuturesBBOOrderAsyncWithHttpInfo (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = default(string))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->CreateFuturesBBOOrder");
+
+            // verify the required parameter 'futuresBBOOrder' is set
+            if (futuresBBOOrder == null)
+                throw new ApiException(400, "Missing required parameter 'futuresBBOOrder' when calling FuturesApi->CreateFuturesBBOOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            if (xGateExptime != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-gate-exptime", ClientUtils.ParameterToString(xGateExptime)); // header parameter
+            }
+            localVarRequestOptions.Data = futuresBBOOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FuturesOrder>("/futures/{settle}/bbo_orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateFuturesBBOOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Query auto order list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
@@ -10279,6 +10524,153 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetPriceTriggeredOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Modify a Single Auto Order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>TriggerOrderResponse</returns>
+        public TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        {
+             ApiResponse<TriggerOrderResponse> localVarResponse = UpdatePriceTriggeredOrderWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Modify a Single Auto Order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>ApiResponse of TriggerOrderResponse</returns>
+        public ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+            // verify the required parameter 'futuresUpdatePriceTriggeredOrder' is set
+            if (futuresUpdatePriceTriggeredOrder == null)
+                throw new ApiException(400, "Missing required parameter 'futuresUpdatePriceTriggeredOrder' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+            localVarRequestOptions.Data = futuresUpdatePriceTriggeredOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<TriggerOrderResponse>("/futures/{settle}/price_orders/{order_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdatePriceTriggeredOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Modify a Single Auto Order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>Task of TriggerOrderResponse</returns>
+        public async Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse> localVarResponse = await UpdatePriceTriggeredOrderAsyncWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Modify a Single Auto Order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
+        public async Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+            // verify the required parameter 'futuresUpdatePriceTriggeredOrder' is set
+            if (futuresUpdatePriceTriggeredOrder == null)
+                throw new ApiException(400, "Missing required parameter 'futuresUpdatePriceTriggeredOrder' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+            localVarRequestOptions.Data = futuresUpdatePriceTriggeredOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TriggerOrderResponse>("/futures/{settle}/price_orders/{order_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdatePriceTriggeredOrder", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

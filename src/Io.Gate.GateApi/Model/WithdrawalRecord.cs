@@ -42,11 +42,12 @@ namespace Io.Gate.GateApi.Model
         /// <param name="amount">Token amount (required).</param>
         /// <param name="currency">Currency name (required).</param>
         /// <param name="address">Withdrawal address.</param>
+        /// <param name="type">Business Type.</param>
         /// <param name="failReason">Reason for withdrawal failure. Has a value when status &#x3D; CANCEL, empty for all other statuses.</param>
         /// <param name="timestamp2">Withdrawal final time, i.e.: withdrawal cancellation time or withdrawal success time When status &#x3D; CANCEL, corresponds to cancellation time When status &#x3D; DONE and block_number &gt; 0, it is the withdrawal success time.</param>
         /// <param name="memo">Additional remarks with regards to the withdrawal.</param>
         /// <param name="chain">Name of the chain used in withdrawals (required).</param>
-        public WithdrawalRecord(string withdrawOrderId = default(string), string amount = default(string), string currency = default(string), string address = default(string), string failReason = default(string), string timestamp2 = default(string), string memo = default(string), string chain = default(string))
+        public WithdrawalRecord(string withdrawOrderId = default(string), string amount = default(string), string currency = default(string), string address = default(string), string type = default(string), string failReason = default(string), string timestamp2 = default(string), string memo = default(string), string chain = default(string))
         {
             // to ensure "amount" is required (not null)
             this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for WithdrawalRecord and cannot be null");
@@ -56,6 +57,7 @@ namespace Io.Gate.GateApi.Model
             this.Chain = chain ?? throw new ArgumentNullException("chain", "chain is a required property for WithdrawalRecord and cannot be null");
             this.WithdrawOrderId = withdrawOrderId;
             this.Address = address;
+            this.Type = type;
             this.FailReason = failReason;
             this.Timestamp2 = timestamp2;
             this.Memo = memo;
@@ -125,6 +127,13 @@ namespace Io.Gate.GateApi.Model
         public string Address { get; set; }
 
         /// <summary>
+        /// Business Type
+        /// </summary>
+        /// <value>Business Type</value>
+        [DataMember(Name="type")]
+        public string Type { get; set; }
+
+        /// <summary>
         /// Reason for withdrawal failure. Has a value when status &#x3D; CANCEL, empty for all other statuses
         /// </summary>
         /// <value>Reason for withdrawal failure. Has a value when status &#x3D; CANCEL, empty for all other statuses</value>
@@ -146,9 +155,9 @@ namespace Io.Gate.GateApi.Model
         public string Memo { get; set; }
 
         /// <summary>
-        /// Transaction status  - DONE: Completed (block_number &gt; 0 is considered to be truly completed) - CANCEL: Canceled - REQUEST: Requesting - MANUAL: Pending manual review - BCODE: Recharge code operation - EXTPEND: Sent awaiting confirmation - FAIL: Failure on the chain awaiting confirmation - INVALID: Invalid order - VERIFY: Verifying - PROCES: Processing - PEND: Processing - DMOVE: pending manual review - REVIEW: Under review
+        /// Transaction Status  - BCODE: Deposit Code Operation - CANCEL: Cancelled - CANCELPEND: Withdrawal Cancellation Pending - DONE: Completed (Only considered truly on-chain when block_number &gt; 0) - EXTPEND: Sent and Waiting for Confirmation - FAIL: On-Chain Failure Pending Confirmation - FVERIFY: Facial Verification in Progress - LOCKED: Wallet-Side Order Locked - MANUAL: Pending Manual Review - REJECT: Rejected - REQUEST: Request in Progress - REVIEW: Under Review 
         /// </summary>
-        /// <value>Transaction status  - DONE: Completed (block_number &gt; 0 is considered to be truly completed) - CANCEL: Canceled - REQUEST: Requesting - MANUAL: Pending manual review - BCODE: Recharge code operation - EXTPEND: Sent awaiting confirmation - FAIL: Failure on the chain awaiting confirmation - INVALID: Invalid order - VERIFY: Verifying - PROCES: Processing - PEND: Processing - DMOVE: pending manual review - REVIEW: Under review</value>
+        /// <value>Transaction Status  - BCODE: Deposit Code Operation - CANCEL: Cancelled - CANCELPEND: Withdrawal Cancellation Pending - DONE: Completed (Only considered truly on-chain when block_number &gt; 0) - EXTPEND: Sent and Waiting for Confirmation - FAIL: On-Chain Failure Pending Confirmation - FVERIFY: Facial Verification in Progress - LOCKED: Wallet-Side Order Locked - MANUAL: Pending Manual Review - REJECT: Rejected - REQUEST: Request in Progress - REVIEW: Under Review </value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; private set; }
 
@@ -176,6 +185,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Fee: ").Append(Fee).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  FailReason: ").Append(FailReason).Append("\n");
             sb.Append("  Timestamp2: ").Append(Timestamp2).Append("\n");
             sb.Append("  Memo: ").Append(Memo).Append("\n");
@@ -261,6 +271,11 @@ namespace Io.Gate.GateApi.Model
                     this.Address.Equals(input.Address))
                 ) && 
                 (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
                     this.FailReason == input.FailReason ||
                     (this.FailReason != null &&
                     this.FailReason.Equals(input.FailReason))
@@ -314,6 +329,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Currency.GetHashCode();
                 if (this.Address != null)
                     hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.FailReason != null)
                     hashCode = hashCode * 59 + this.FailReason.GetHashCode();
                 if (this.Timestamp2 != null)

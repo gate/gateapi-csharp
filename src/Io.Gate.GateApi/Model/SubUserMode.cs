@@ -35,7 +35,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="userId">User ID.</param>
         /// <param name="isUnified">Whether it is a unified account.</param>
-        /// <param name="mode">Unified account mode: - &#x60;classic&#x60;: Classic account mode - &#x60;multi_currency&#x60;: Multi-currency margin mode - &#x60;portfolio&#x60;: Portfolio margin mode.</param>
+        /// <param name="mode">Unified account mode: - &#x60;classic&#x60;: Classic account mode - &#x60;multi_currency&#x60;: Cross-currency margin mode - &#x60;portfolio&#x60;: Portfolio margin mode - &#x60;single_currency&#x60;: Single-currency margin mode.</param>
         public SubUserMode(long userId = default(long), bool isUnified = default(bool), string mode = default(string))
         {
             this.UserId = userId;
@@ -58,9 +58,9 @@ namespace Io.Gate.GateApi.Model
         public bool IsUnified { get; set; }
 
         /// <summary>
-        /// Unified account mode: - &#x60;classic&#x60;: Classic account mode - &#x60;multi_currency&#x60;: Multi-currency margin mode - &#x60;portfolio&#x60;: Portfolio margin mode
+        /// Unified account mode: - &#x60;classic&#x60;: Classic account mode - &#x60;multi_currency&#x60;: Cross-currency margin mode - &#x60;portfolio&#x60;: Portfolio margin mode - &#x60;single_currency&#x60;: Single-currency margin mode
         /// </summary>
-        /// <value>Unified account mode: - &#x60;classic&#x60;: Classic account mode - &#x60;multi_currency&#x60;: Multi-currency margin mode - &#x60;portfolio&#x60;: Portfolio margin mode</value>
+        /// <value>Unified account mode: - &#x60;classic&#x60;: Classic account mode - &#x60;multi_currency&#x60;: Cross-currency margin mode - &#x60;portfolio&#x60;: Portfolio margin mode - &#x60;single_currency&#x60;: Single-currency margin mode</value>
         [DataMember(Name="mode")]
         public string Mode { get; set; }
 

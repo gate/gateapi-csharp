@@ -77,8 +77,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="withdrawalId"></param>
-        /// <returns>LedgerRecord</returns>
-        LedgerRecord CancelWithdrawal (string withdrawalId);
+        /// <returns>WithdrawalsDel</returns>
+        WithdrawalsDel CancelWithdrawal (string withdrawalId);
 
         /// <summary>
         /// Cancel withdrawal with specified ID
@@ -88,8 +88,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="withdrawalId"></param>
-        /// <returns>ApiResponse of LedgerRecord</returns>
-        ApiResponse<LedgerRecord> CancelWithdrawalWithHttpInfo (string withdrawalId);
+        /// <returns>ApiResponse of WithdrawalsDel</returns>
+        ApiResponse<WithdrawalsDel> CancelWithdrawalWithHttpInfo (string withdrawalId);
         #endregion Synchronous Operations
     }
 
@@ -149,8 +149,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="withdrawalId"></param>
-        /// <returns>Task of LedgerRecord</returns>
-        Task<LedgerRecord> CancelWithdrawalAsync (string withdrawalId);
+        /// <returns>Task of WithdrawalsDel</returns>
+        Task<WithdrawalsDel> CancelWithdrawalAsync (string withdrawalId);
 
         /// <summary>
         /// Cancel withdrawal with specified ID
@@ -160,8 +160,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="withdrawalId"></param>
-        /// <returns>Task of ApiResponse (LedgerRecord)</returns>
-        Task<ApiResponse<LedgerRecord>> CancelWithdrawalAsyncWithHttpInfo (string withdrawalId);
+        /// <returns>Task of ApiResponse (WithdrawalsDel)</returns>
+        Task<ApiResponse<WithdrawalsDel>> CancelWithdrawalAsyncWithHttpInfo (string withdrawalId);
         #endregion Asynchronous Operations
     }
 
@@ -525,10 +525,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="withdrawalId"></param>
-        /// <returns>LedgerRecord</returns>
-        public LedgerRecord CancelWithdrawal (string withdrawalId)
+        /// <returns>WithdrawalsDel</returns>
+        public WithdrawalsDel CancelWithdrawal (string withdrawalId)
         {
-             ApiResponse<LedgerRecord> localVarResponse = CancelWithdrawalWithHttpInfo(withdrawalId);
+             ApiResponse<WithdrawalsDel> localVarResponse = CancelWithdrawalWithHttpInfo(withdrawalId);
              return localVarResponse.Data;
         }
 
@@ -537,8 +537,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="withdrawalId"></param>
-        /// <returns>ApiResponse of LedgerRecord</returns>
-        public ApiResponse<LedgerRecord> CancelWithdrawalWithHttpInfo (string withdrawalId)
+        /// <returns>ApiResponse of WithdrawalsDel</returns>
+        public ApiResponse<WithdrawalsDel> CancelWithdrawalWithHttpInfo (string withdrawalId)
         {
             // verify the required parameter 'withdrawalId' is set
             if (withdrawalId == null)
@@ -566,7 +566,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<LedgerRecord>("/withdrawals/{withdrawal_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<WithdrawalsDel>("/withdrawals/{withdrawal_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -582,10 +582,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="withdrawalId"></param>
-        /// <returns>Task of LedgerRecord</returns>
-        public async Task<LedgerRecord> CancelWithdrawalAsync (string withdrawalId)
+        /// <returns>Task of WithdrawalsDel</returns>
+        public async Task<WithdrawalsDel> CancelWithdrawalAsync (string withdrawalId)
         {
-             Io.Gate.GateApi.Client.ApiResponse<LedgerRecord> localVarResponse = await CancelWithdrawalAsyncWithHttpInfo(withdrawalId);
+             Io.Gate.GateApi.Client.ApiResponse<WithdrawalsDel> localVarResponse = await CancelWithdrawalAsyncWithHttpInfo(withdrawalId);
              return localVarResponse.Data;
 
         }
@@ -595,8 +595,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="withdrawalId"></param>
-        /// <returns>Task of ApiResponse (LedgerRecord)</returns>
-        public async Task<ApiResponse<LedgerRecord>> CancelWithdrawalAsyncWithHttpInfo (string withdrawalId)
+        /// <returns>Task of ApiResponse (WithdrawalsDel)</returns>
+        public async Task<ApiResponse<WithdrawalsDel>> CancelWithdrawalAsyncWithHttpInfo (string withdrawalId)
         {
             // verify the required parameter 'withdrawalId' is set
             if (withdrawalId == null)
@@ -626,7 +626,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<LedgerRecord>("/withdrawals/{withdrawal_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<WithdrawalsDel>("/withdrawals/{withdrawal_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

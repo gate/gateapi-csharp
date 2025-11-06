@@ -47,6 +47,25 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of AccountDetail</returns>
         ApiResponse<AccountDetail> GetAccountDetailWithHttpInfo ();
         /// <summary>
+        /// Query All Main Account Key Information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Key</returns>
+        Key GetAccountMainKeys ();
+
+        /// <summary>
+        /// Query All Main Account Key Information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Key</returns>
+        ApiResponse<Key> GetAccountMainKeysWithHttpInfo ();
+        /// <summary>
         /// Get user transaction rate limit information
         /// </summary>
         /// <remarks>
@@ -242,6 +261,25 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (AccountDetail)</returns>
         Task<ApiResponse<AccountDetail>> GetAccountDetailAsyncWithHttpInfo ();
+        /// <summary>
+        /// Query All Main Account Key Information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of Key</returns>
+        Task<Key> GetAccountMainKeysAsync ();
+
+        /// <summary>
+        /// Query All Main Account Key Information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (Key)</returns>
+        Task<ApiResponse<Key>> GetAccountMainKeysAsyncWithHttpInfo ();
         /// <summary>
         /// Get user transaction rate limit information
         /// </summary>
@@ -627,6 +665,109 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAccountDetail", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query All Main Account Key Information 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Key</returns>
+        public Key GetAccountMainKeys ()
+        {
+             ApiResponse<Key> localVarResponse = GetAccountMainKeysWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query All Main Account Key Information 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Key</returns>
+        public ApiResponse<Key> GetAccountMainKeysWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<Key>("/account/main_keys", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAccountMainKeys", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query All Main Account Key Information 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of Key</returns>
+        public async Task<Key> GetAccountMainKeysAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<Key> localVarResponse = await GetAccountMainKeysAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query All Main Account Key Information 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (Key)</returns>
+        public async Task<ApiResponse<Key>> GetAccountMainKeysAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Key>("/account/main_keys", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAccountMainKeys", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

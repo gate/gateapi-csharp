@@ -37,10 +37,10 @@ namespace Io.Gate.GateApi.Model
         /// <param name="unrealisedPnl">Unrealized PNL.</param>
         /// <param name="positionMargin">Position margin.</param>
         /// <param name="orderMargin">Order margin of unfinished orders.</param>
-        /// <param name="available">Available balance for transferring or trading (including bonus. Bonus cannot be withdrawn, so transfer amount needs to deduct bonus).</param>
+        /// <param name="available">Refers to the available withdrawal or trading amount in per-position, specifically the per-position available balance under the unified account that includes the credit line (which incorporates trial funds; since trial funds cannot be withdrawn, the actual withdrawal amount needs to deduct the trial fund portion when processing withdrawals).</param>
         /// <param name="point">Point card amount.</param>
         /// <param name="currency">Settlement currency.</param>
-        /// <param name="inDualMode">Whether dual mode is enabled.</param>
+        /// <param name="inDualMode">Whether Hedge Mode is enabled.</param>
         /// <param name="positionMode">Position mode: single - one-way, dual - dual-side, split - sub-positions (in_dual_mode is deprecated).</param>
         /// <param name="enableCredit">Whether portfolio margin account mode is enabled.</param>
         /// <param name="positionInitialMargin">Initial margin occupied by positions, applicable to unified account mode.</param>
@@ -120,9 +120,9 @@ namespace Io.Gate.GateApi.Model
         public string OrderMargin { get; set; }
 
         /// <summary>
-        /// Available balance for transferring or trading (including bonus. Bonus cannot be withdrawn, so transfer amount needs to deduct bonus)
+        /// Refers to the available withdrawal or trading amount in per-position, specifically the per-position available balance under the unified account that includes the credit line (which incorporates trial funds; since trial funds cannot be withdrawn, the actual withdrawal amount needs to deduct the trial fund portion when processing withdrawals)
         /// </summary>
-        /// <value>Available balance for transferring or trading (including bonus. Bonus cannot be withdrawn, so transfer amount needs to deduct bonus)</value>
+        /// <value>Refers to the available withdrawal or trading amount in per-position, specifically the per-position available balance under the unified account that includes the credit line (which incorporates trial funds; since trial funds cannot be withdrawn, the actual withdrawal amount needs to deduct the trial fund portion when processing withdrawals)</value>
         [DataMember(Name="available")]
         public string Available { get; set; }
 
@@ -141,9 +141,9 @@ namespace Io.Gate.GateApi.Model
         public string Currency { get; set; }
 
         /// <summary>
-        /// Whether dual mode is enabled
+        /// Whether Hedge Mode is enabled
         /// </summary>
-        /// <value>Whether dual mode is enabled</value>
+        /// <value>Whether Hedge Mode is enabled</value>
         [DataMember(Name="in_dual_mode")]
         public bool InDualMode { get; set; }
 

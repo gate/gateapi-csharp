@@ -33,6 +33,8 @@ Method | HTTP request | Description
 
 Query chains supported for specified currency
 
+API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -715,6 +717,8 @@ Name | Type | Description  | Notes
 > List&lt;WithdrawStatus&gt; ListWithdrawStatus (string currency = null)
 
 Query withdrawal status
+
+API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
 
 ### Example
 ```csharp

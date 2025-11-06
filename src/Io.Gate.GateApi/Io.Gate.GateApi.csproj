@@ -12,11 +12,11 @@
     <Description>C# client SDK for Gate API</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>Io.Gate.GateApi</RootNamespace>
-    <Version>7.105.8</Version>
+    <Version>7.105.25</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Io.Gate.GateApi.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/gateio/gateapi-csharp.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/gate/gateapi-csharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Refer to https://github.com/gateio/gateapi-csharp/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>Refer to https://github.com/gate/gateapi-csharp/releases</PackageReleaseNotes>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 

@@ -5,6 +5,7 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAccountDetail**](AccountApi.md#getaccountdetail) | **GET** /account/detail | Retrieve user account information
+[**GetAccountMainKeys**](AccountApi.md#getaccountmainkeys) | **GET** /account/main_keys | Query All Main Account Key Information
 [**GetAccountRateLimit**](AccountApi.md#getaccountratelimit) | **GET** /account/rate_limit | Get user transaction rate limit information
 [**ListSTPGroups**](AccountApi.md#liststpgroups) | **GET** /account/stp_groups | Query STP user groups created by the user
 [**CreateSTPGroup**](AccountApi.md#createstpgroup) | **POST** /account/stp_groups | Create STP user group
@@ -65,6 +66,73 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**AccountDetail**](AccountDetail.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getaccountmainkeys"></a>
+# **GetAccountMainKeys**
+> Key GetAccountMainKeys ()
+
+Query All Main Account Key Information
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetAccountMainKeysExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new AccountApi(config);
+
+            try
+            {
+                // Query All Main Account Key Information
+                Key result = apiInstance.GetAccountMainKeys();
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling AccountApi.GetAccountMainKeys: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Key**](Key.md)
 
 ### Authorization
 

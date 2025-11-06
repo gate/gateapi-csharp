@@ -27,10 +27,10 @@ Method | HTTP request | Description
 [**UpdateDualCompPositionCrossMode**](FuturesApi.md#updatedualcomppositioncrossmode) | **POST** /futures/{settle}/dual_comp/positions/cross_mode | Switch Between Cross and Isolated Margin Modes Under Hedge Mode
 [**UpdatePositionRiskLimit**](FuturesApi.md#updatepositionrisklimit) | **POST** /futures/{settle}/positions/{contract}/risk_limit | Update position risk limit
 [**SetDualMode**](FuturesApi.md#setdualmode) | **POST** /futures/{settle}/dual_mode | Set position mode
-[**GetDualModePosition**](FuturesApi.md#getdualmodeposition) | **GET** /futures/{settle}/dual_comp/positions/{contract} | Get position information in dual mode
-[**UpdateDualModePositionMargin**](FuturesApi.md#updatedualmodepositionmargin) | **POST** /futures/{settle}/dual_comp/positions/{contract}/margin | Update position margin in dual mode
-[**UpdateDualModePositionLeverage**](FuturesApi.md#updatedualmodepositionleverage) | **POST** /futures/{settle}/dual_comp/positions/{contract}/leverage | Update position leverage in dual mode
-[**UpdateDualModePositionRiskLimit**](FuturesApi.md#updatedualmodepositionrisklimit) | **POST** /futures/{settle}/dual_comp/positions/{contract}/risk_limit | Update position risk limit in dual mode
+[**GetDualModePosition**](FuturesApi.md#getdualmodeposition) | **GET** /futures/{settle}/dual_comp/positions/{contract} | Get position information in Hedge Mode
+[**UpdateDualModePositionMargin**](FuturesApi.md#updatedualmodepositionmargin) | **POST** /futures/{settle}/dual_comp/positions/{contract}/margin | Update position margin in Hedge Mode
+[**UpdateDualModePositionLeverage**](FuturesApi.md#updatedualmodepositionleverage) | **POST** /futures/{settle}/dual_comp/positions/{contract}/leverage | Update position leverage in Hedge Mode
+[**UpdateDualModePositionRiskLimit**](FuturesApi.md#updatedualmodepositionrisklimit) | **POST** /futures/{settle}/dual_comp/positions/{contract}/risk_limit | Update position risk limit in Hedge Mode
 [**ListFuturesOrders**](FuturesApi.md#listfuturesorders) | **GET** /futures/{settle}/orders | Query futures order list
 [**CreateFuturesOrder**](FuturesApi.md#createfuturesorder) | **POST** /futures/{settle}/orders | Place futures order
 [**CancelFuturesOrders**](FuturesApi.md#cancelfuturesorders) | **DELETE** /futures/{settle}/orders | Cancel all orders with &#39;open&#39; status
@@ -49,10 +49,12 @@ Method | HTTP request | Description
 [**CancelBatchFutureOrders**](FuturesApi.md#cancelbatchfutureorders) | **POST** /futures/{settle}/batch_cancel_orders | Cancel batch orders by specified ID list
 [**AmendBatchFutureOrders**](FuturesApi.md#amendbatchfutureorders) | **POST** /futures/{settle}/batch_amend_orders | Batch modify orders by specified IDs
 [**GetFuturesRiskLimitTable**](FuturesApi.md#getfuturesrisklimittable) | **GET** /futures/{settle}/risk_limit_table | Query risk limit table by table_id
+[**CreateFuturesBBOOrder**](FuturesApi.md#createfuturesbboorder) | **POST** /futures/{settle}/bbo_orders | Level-based BBO Contract Order Placement
 [**ListPriceTriggeredOrders**](FuturesApi.md#listpricetriggeredorders) | **GET** /futures/{settle}/price_orders | Query auto order list
 [**CreatePriceTriggeredOrder**](FuturesApi.md#createpricetriggeredorder) | **POST** /futures/{settle}/price_orders | Create price-triggered order
 [**CancelPriceTriggeredOrderList**](FuturesApi.md#cancelpricetriggeredorderlist) | **DELETE** /futures/{settle}/price_orders | Cancel all auto orders
 [**GetPriceTriggeredOrder**](FuturesApi.md#getpricetriggeredorder) | **GET** /futures/{settle}/price_orders/{order_id} | Query single auto order details
+[**UpdatePriceTriggeredOrder**](FuturesApi.md#updatepricetriggeredorder) | **PUT** /futures/{settle}/price_orders/{order_id} | Modify a Single Auto Order
 [**CancelPriceTriggeredOrder**](FuturesApi.md#cancelpricetriggeredorder) | **DELETE** /futures/{settle}/price_orders/{order_id} | Cancel single auto order
 
 
@@ -1734,7 +1736,7 @@ Name | Type | Description  | Notes
 
 Set position mode
 
-The prerequisite for changing mode is that all positions have no holdings and no pending orders
+The prerequisite for changing mode is that there are no open positions and no open orders
 
 ### Example
 ```csharp
@@ -1756,7 +1758,7 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
-            var dualMode = true;  // bool | Whether to enable dual mode
+            var dualMode = true;  // bool | Whether to enable Hedge Mode
 
             try
             {
@@ -1781,7 +1783,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
- **dualMode** | **bool**| Whether to enable dual mode | 
+ **dualMode** | **bool**| Whether to enable Hedge Mode | 
 
 ### Return type
 
@@ -1807,7 +1809,7 @@ Name | Type | Description  | Notes
 # **GetDualModePosition**
 > List&lt;Position&gt; GetDualModePosition (string settle, string contract)
 
-Get position information in dual mode
+Get position information in Hedge Mode
 
 ### Example
 ```csharp
@@ -1833,7 +1835,7 @@ namespace Example
 
             try
             {
-                // Get position information in dual mode
+                // Get position information in Hedge Mode
                 List<Position> result = apiInstance.GetDualModePosition(settle, contract);
                 Debug.WriteLine(result);
             }
@@ -1880,7 +1882,7 @@ Name | Type | Description  | Notes
 # **UpdateDualModePositionMargin**
 > List&lt;Position&gt; UpdateDualModePositionMargin (string settle, string contract, string change, string dualSide)
 
-Update position margin in dual mode
+Update position margin in Hedge Mode
 
 ### Example
 ```csharp
@@ -1908,7 +1910,7 @@ namespace Example
 
             try
             {
-                // Update position margin in dual mode
+                // Update position margin in Hedge Mode
                 List<Position> result = apiInstance.UpdateDualModePositionMargin(settle, contract, change, dualSide);
                 Debug.WriteLine(result);
             }
@@ -1957,7 +1959,7 @@ Name | Type | Description  | Notes
 # **UpdateDualModePositionLeverage**
 > List&lt;Position&gt; UpdateDualModePositionLeverage (string settle, string contract, string leverage, string crossLeverageLimit = null)
 
-Update position leverage in dual mode
+Update position leverage in Hedge Mode
 
 ### Example
 ```csharp
@@ -1985,7 +1987,7 @@ namespace Example
 
             try
             {
-                // Update position leverage in dual mode
+                // Update position leverage in Hedge Mode
                 List<Position> result = apiInstance.UpdateDualModePositionLeverage(settle, contract, leverage, crossLeverageLimit);
                 Debug.WriteLine(result);
             }
@@ -2034,7 +2036,7 @@ Name | Type | Description  | Notes
 # **UpdateDualModePositionRiskLimit**
 > List&lt;Position&gt; UpdateDualModePositionRiskLimit (string settle, string contract, string riskLimit)
 
-Update position risk limit in dual mode
+Update position risk limit in Hedge Mode
 
 ### Example
 ```csharp
@@ -2061,7 +2063,7 @@ namespace Example
 
             try
             {
-                // Update position risk limit in dual mode
+                // Update position risk limit in Hedge Mode
                 List<Position> result = apiInstance.UpdateDualModePositionRiskLimit(settle, contract, riskLimit);
                 Debug.WriteLine(result);
             }
@@ -3525,6 +3527,83 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="createfuturesbboorder"></a>
+# **CreateFuturesBBOOrder**
+> FuturesOrder CreateFuturesBBOOrder (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = null)
+
+Level-based BBO Contract Order Placement
+
+Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the `level` and `direction` parameters.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateFuturesBBOOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var futuresBBOOrder = new FuturesBBOOrder(); // FuturesBBOOrder | 
+            var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
+
+            try
+            {
+                // Level-based BBO Contract Order Placement
+                FuturesOrder result = apiInstance.CreateFuturesBBOOrder(settle, futuresBBOOrder, xGateExptime);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.CreateFuturesBBOOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **futuresBBOOrder** | [**FuturesBBOOrder**](FuturesBBOOrder.md)|  | 
+ **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
+
+### Return type
+
+[**FuturesOrder**](FuturesOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Order details |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="listpricetriggeredorders"></a>
 # **ListPriceTriggeredOrders**
 > List&lt;FuturesPriceTriggeredOrder&gt; ListPriceTriggeredOrders (string settle, string status, string contract = null, int? limit = null, int? offset = null)
@@ -3820,6 +3899,81 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Auto order details |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatepricetriggeredorder"></a>
+# **UpdatePriceTriggeredOrder**
+> TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+
+Modify a Single Auto Order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class UpdatePriceTriggeredOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var orderId = "orderId_example";  // string | ID returned when order is successfully created
+            var futuresUpdatePriceTriggeredOrder = new FuturesUpdatePriceTriggeredOrder(); // FuturesUpdatePriceTriggeredOrder | 
+
+            try
+            {
+                // Modify a Single Auto Order
+                TriggerOrderResponse result = apiInstance.UpdatePriceTriggeredOrder(settle, orderId, futuresUpdatePriceTriggeredOrder);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.UpdatePriceTriggeredOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **orderId** | **string**| ID returned when order is successfully created | 
+ **futuresUpdatePriceTriggeredOrder** | [**FuturesUpdatePriceTriggeredOrder**](FuturesUpdatePriceTriggeredOrder.md)|  | 
+
+### Return type
+
+[**TriggerOrderResponse**](TriggerOrderResponse.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Order created successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

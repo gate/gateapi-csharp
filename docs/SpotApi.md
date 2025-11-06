@@ -1733,7 +1733,7 @@ namespace Example
             var limit = 100;  // int? | Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 (optional)  (default to 100)
             var page = 1;  // int? | Page number (optional)  (default to 1)
             var orderId = "12345";  // string | Filter trades with specified order ID. `currency_pair` is also required if this field is present (optional) 
-            var account = "spot";  // string | Specify query account (optional) 
+            var account = "spot";  // string | The accountparameter has been deprecated. The interface supports querying all transaction records of the account. (optional) 
             var from = 1627706330;  // long? | Start timestamp for the query (optional) 
             var to = 1635329650;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
 
@@ -1763,7 +1763,7 @@ Name | Type | Description  | Notes
  **limit** | **int?**| Maximum number of items returned in list. Default: 100, minimum: 1, maximum: 1000 | [optional] [default to 100]
  **page** | **int?**| Page number | [optional] [default to 1]
  **orderId** | **string**| Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present | [optional] 
- **account** | **string**| Specify query account | [optional] 
+ **account** | **string**| The accountparameter has been deprecated. The interface supports querying all transaction records of the account. | [optional] 
  **from** | **long?**| Start timestamp for the query | [optional] 
  **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
 

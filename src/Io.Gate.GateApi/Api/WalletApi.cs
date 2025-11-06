@@ -31,7 +31,7 @@ namespace Io.Gate.GateApi.Api
         /// Query chains supported for specified currency
         /// </summary>
         /// <remarks>
-        /// 
+        /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -42,7 +42,7 @@ namespace Io.Gate.GateApi.Api
         /// Query chains supported for specified currency
         /// </summary>
         /// <remarks>
-        /// 
+        /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -252,7 +252,7 @@ namespace Io.Gate.GateApi.Api
         /// Query withdrawal status
         /// </summary>
         /// <remarks>
-        /// 
+        /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -263,7 +263,7 @@ namespace Io.Gate.GateApi.Api
         /// Query withdrawal status
         /// </summary>
         /// <remarks>
-        /// 
+        /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -535,7 +535,7 @@ namespace Io.Gate.GateApi.Api
         /// Query chains supported for specified currency
         /// </summary>
         /// <remarks>
-        /// 
+        /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -546,7 +546,7 @@ namespace Io.Gate.GateApi.Api
         /// Query chains supported for specified currency
         /// </summary>
         /// <remarks>
-        /// 
+        /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -756,7 +756,7 @@ namespace Io.Gate.GateApi.Api
         /// Query withdrawal status
         /// </summary>
         /// <remarks>
-        /// 
+        /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -767,7 +767,7 @@ namespace Io.Gate.GateApi.Api
         /// Query withdrawal status
         /// </summary>
         /// <remarks>
-        /// 
+        /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -1147,7 +1147,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query chains supported for specified currency 
+        /// Query chains supported for specified currency API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -1159,7 +1159,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query chains supported for specified currency 
+        /// Query chains supported for specified currency API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -1202,7 +1202,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query chains supported for specified currency 
+        /// Query chains supported for specified currency API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -1215,7 +1215,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query chains supported for specified currency 
+        /// Query chains supported for specified currency API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -2386,7 +2386,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query withdrawal status 
+        /// Query withdrawal status API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -2398,7 +2398,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query withdrawal status 
+        /// Query withdrawal status API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -2442,7 +2442,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query withdrawal status 
+        /// Query withdrawal status API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -2455,7 +2455,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query withdrawal status 
+        /// Query withdrawal status API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>

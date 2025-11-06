@@ -28,7 +28,7 @@ namespace Io.Gate.GateApi.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// ETH2 swap
+        /// ETH swap
         /// </summary>
         /// <remarks>
         /// 
@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Api
         void SwapETH2 (Eth2Swap eth2Swap);
 
         /// <summary>
-        /// ETH2 swap
+        /// ETH swap
         /// </summary>
         /// <remarks>
         /// 
@@ -49,7 +49,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> SwapETH2WithHttpInfo (Eth2Swap eth2Swap);
         /// <summary>
-        /// ETH2 historical return rate query
+        /// GTETH historical return rate query
         /// </summary>
         /// <remarks>
         /// Query ETH earnings rate records for the last 31 days
@@ -59,7 +59,7 @@ namespace Io.Gate.GateApi.Api
         List<Eth2RateList> RateListETH2 ();
 
         /// <summary>
-        /// ETH2 historical return rate query
+        /// GTETH historical return rate query
         /// </summary>
         /// <remarks>
         /// Query ETH earnings rate records for the last 31 days
@@ -219,8 +219,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="findCoin"></param>
-        /// <returns>Object</returns>
-        Object FindCoin (FindCoin findCoin);
+        /// <returns>List&lt;Object&gt;</returns>
+        List<Object> FindCoin (FindCoin findCoin);
 
         /// <summary>
         /// Staking coins
@@ -230,8 +230,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="findCoin"></param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> FindCoinWithHttpInfo (FindCoin findCoin);
+        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
+        ApiResponse<List<Object>> FindCoinWithHttpInfo (FindCoin findCoin);
         /// <summary>
         /// On-chain token swap for earned coins
         /// </summary>
@@ -253,6 +253,79 @@ namespace Io.Gate.GateApi.Api
         /// <param name="swapCoin"></param>
         /// <returns>ApiResponse of SwapCoinStruct</returns>
         ApiResponse<SwapCoinStruct> SwapStakingCoinWithHttpInfo (SwapCoin swapCoin);
+        /// <summary>
+        /// List of on-chain coin-earning orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="type">Type 0-staking 1-redemption (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>OrderListStruct</returns>
+        OrderListStruct OrderList (int? pid = default(int?), string coin = default(string), int? type = default(int?), int? page = default(int?));
+
+        /// <summary>
+        /// List of on-chain coin-earning orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="type">Type 0-staking 1-redemption (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>ApiResponse of OrderListStruct</returns>
+        ApiResponse<OrderListStruct> OrderListWithHttpInfo (int? pid = default(int?), string coin = default(string), int? type = default(int?), int? page = default(int?));
+        /// <summary>
+        /// On-chain coin-earning dividend records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>AwardListStruct</returns>
+        AwardListStruct AwardList (int? pid = default(int?), string coin = default(string), int? page = default(int?));
+
+        /// <summary>
+        /// On-chain coin-earning dividend records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>ApiResponse of AwardListStruct</returns>
+        ApiResponse<AwardListStruct> AwardListWithHttpInfo (int? pid = default(int?), string coin = default(string), int? page = default(int?));
+        /// <summary>
+        /// On-chain coin-earning assets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <returns>List&lt;Object&gt;</returns>
+        List<Object> AssetList (string coin = default(string));
+
+        /// <summary>
+        /// On-chain coin-earning assets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
+        ApiResponse<List<Object>> AssetListWithHttpInfo (string coin = default(string));
         #endregion Synchronous Operations
     }
 
@@ -263,7 +336,7 @@ namespace Io.Gate.GateApi.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// ETH2 swap
+        /// ETH swap
         /// </summary>
         /// <remarks>
         /// 
@@ -274,7 +347,7 @@ namespace Io.Gate.GateApi.Api
         Task SwapETH2Async (Eth2Swap eth2Swap);
 
         /// <summary>
-        /// ETH2 swap
+        /// ETH swap
         /// </summary>
         /// <remarks>
         /// 
@@ -284,7 +357,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse</returns>
         Task<ApiResponse<Object>> SwapETH2AsyncWithHttpInfo (Eth2Swap eth2Swap);
         /// <summary>
-        /// ETH2 historical return rate query
+        /// GTETH historical return rate query
         /// </summary>
         /// <remarks>
         /// Query ETH earnings rate records for the last 31 days
@@ -294,7 +367,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<Eth2RateList>> RateListETH2Async ();
 
         /// <summary>
-        /// ETH2 historical return rate query
+        /// GTETH historical return rate query
         /// </summary>
         /// <remarks>
         /// Query ETH earnings rate records for the last 31 days
@@ -454,8 +527,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="findCoin"></param>
-        /// <returns>Task of Object</returns>
-        Task<Object> FindCoinAsync (FindCoin findCoin);
+        /// <returns>Task of List&lt;Object&gt;</returns>
+        Task<List<Object>> FindCoinAsync (FindCoin findCoin);
 
         /// <summary>
         /// Staking coins
@@ -465,8 +538,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="findCoin"></param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<Object>> FindCoinAsyncWithHttpInfo (FindCoin findCoin);
+        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
+        Task<ApiResponse<List<Object>>> FindCoinAsyncWithHttpInfo (FindCoin findCoin);
         /// <summary>
         /// On-chain token swap for earned coins
         /// </summary>
@@ -488,6 +561,79 @@ namespace Io.Gate.GateApi.Api
         /// <param name="swapCoin"></param>
         /// <returns>Task of ApiResponse (SwapCoinStruct)</returns>
         Task<ApiResponse<SwapCoinStruct>> SwapStakingCoinAsyncWithHttpInfo (SwapCoin swapCoin);
+        /// <summary>
+        /// List of on-chain coin-earning orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="type">Type 0-staking 1-redemption (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>Task of OrderListStruct</returns>
+        Task<OrderListStruct> OrderListAsync (int? pid = default(int?), string coin = default(string), int? type = default(int?), int? page = default(int?));
+
+        /// <summary>
+        /// List of on-chain coin-earning orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="type">Type 0-staking 1-redemption (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>Task of ApiResponse (OrderListStruct)</returns>
+        Task<ApiResponse<OrderListStruct>> OrderListAsyncWithHttpInfo (int? pid = default(int?), string coin = default(string), int? type = default(int?), int? page = default(int?));
+        /// <summary>
+        /// On-chain coin-earning dividend records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>Task of AwardListStruct</returns>
+        Task<AwardListStruct> AwardListAsync (int? pid = default(int?), string coin = default(string), int? page = default(int?));
+
+        /// <summary>
+        /// On-chain coin-earning dividend records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>Task of ApiResponse (AwardListStruct)</returns>
+        Task<ApiResponse<AwardListStruct>> AwardListAsyncWithHttpInfo (int? pid = default(int?), string coin = default(string), int? page = default(int?));
+        /// <summary>
+        /// On-chain coin-earning assets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <returns>Task of List&lt;Object&gt;</returns>
+        Task<List<Object>> AssetListAsync (string coin = default(string));
+
+        /// <summary>
+        /// On-chain coin-earning assets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
+        Task<ApiResponse<List<Object>>> AssetListAsyncWithHttpInfo (string coin = default(string));
         #endregion Asynchronous Operations
     }
 
@@ -609,7 +755,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// ETH2 swap 
+        /// ETH swap 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eth2Swap"></param>
@@ -620,7 +766,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// ETH2 swap 
+        /// ETH swap 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eth2Swap"></param>
@@ -665,7 +811,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// ETH2 swap 
+        /// ETH swap 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eth2Swap"></param>
@@ -677,7 +823,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// ETH2 swap 
+        /// ETH swap 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="eth2Swap"></param>
@@ -724,7 +870,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// ETH2 historical return rate query Query ETH earnings rate records for the last 31 days
+        /// GTETH historical return rate query Query ETH earnings rate records for the last 31 days
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Eth2RateList&gt;</returns>
@@ -735,7 +881,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// ETH2 historical return rate query Query ETH earnings rate records for the last 31 days
+        /// GTETH historical return rate query Query ETH earnings rate records for the last 31 days
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Eth2RateList&gt;</returns>
@@ -774,7 +920,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// ETH2 historical return rate query Query ETH earnings rate records for the last 31 days
+        /// GTETH historical return rate query Query ETH earnings rate records for the last 31 days
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;Eth2RateList&gt;</returns>
@@ -786,7 +932,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// ETH2 historical return rate query Query ETH earnings rate records for the last 31 days
+        /// GTETH historical return rate query Query ETH earnings rate records for the last 31 days
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;Eth2RateList&gt;)</returns>
@@ -1623,10 +1769,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="findCoin"></param>
-        /// <returns>Object</returns>
-        public Object FindCoin (FindCoin findCoin)
+        /// <returns>List&lt;Object&gt;</returns>
+        public List<Object> FindCoin (FindCoin findCoin)
         {
-             ApiResponse<Object> localVarResponse = FindCoinWithHttpInfo(findCoin);
+             ApiResponse<List<Object>> localVarResponse = FindCoinWithHttpInfo(findCoin);
              return localVarResponse.Data;
         }
 
@@ -1635,8 +1781,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="findCoin"></param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> FindCoinWithHttpInfo (FindCoin findCoin)
+        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
+        public ApiResponse<List<Object>> FindCoinWithHttpInfo (FindCoin findCoin)
         {
             // verify the required parameter 'findCoin' is set
             if (findCoin == null)
@@ -1665,7 +1811,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/earn/staking/coins", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Object>>("/earn/staking/coins", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1681,10 +1827,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="findCoin"></param>
-        /// <returns>Task of Object</returns>
-        public async Task<Object> FindCoinAsync (FindCoin findCoin)
+        /// <returns>Task of List&lt;Object&gt;</returns>
+        public async Task<List<Object>> FindCoinAsync (FindCoin findCoin)
         {
-             Io.Gate.GateApi.Client.ApiResponse<Object> localVarResponse = await FindCoinAsyncWithHttpInfo(findCoin);
+             Io.Gate.GateApi.Client.ApiResponse<List<Object>> localVarResponse = await FindCoinAsyncWithHttpInfo(findCoin);
              return localVarResponse.Data;
 
         }
@@ -1694,8 +1840,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="findCoin"></param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<Object>> FindCoinAsyncWithHttpInfo (FindCoin findCoin)
+        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
+        public async Task<ApiResponse<List<Object>>> FindCoinAsyncWithHttpInfo (FindCoin findCoin)
         {
             // verify the required parameter 'findCoin' is set
             if (findCoin == null)
@@ -1726,7 +1872,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/earn/staking/coins", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Object>>("/earn/staking/coins", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1850,6 +1996,411 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SwapStakingCoin", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List of on-chain coin-earning orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="type">Type 0-staking 1-redemption (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>OrderListStruct</returns>
+        public OrderListStruct OrderList (int? pid = default(int?), string coin = default(string), int? type = default(int?), int? page = default(int?))
+        {
+             ApiResponse<OrderListStruct> localVarResponse = OrderListWithHttpInfo(pid, coin, type, page);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List of on-chain coin-earning orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="type">Type 0-staking 1-redemption (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>ApiResponse of OrderListStruct</returns>
+        public ApiResponse<OrderListStruct> OrderListWithHttpInfo (int? pid = default(int?), string coin = default(string), int? type = default(int?), int? page = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (pid != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pid", pid));
+            }
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<OrderListStruct>("/earn/staking/order_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OrderList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List of on-chain coin-earning orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="type">Type 0-staking 1-redemption (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>Task of OrderListStruct</returns>
+        public async Task<OrderListStruct> OrderListAsync (int? pid = default(int?), string coin = default(string), int? type = default(int?), int? page = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OrderListStruct> localVarResponse = await OrderListAsyncWithHttpInfo(pid, coin, type, page);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List of on-chain coin-earning orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="type">Type 0-staking 1-redemption (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>Task of ApiResponse (OrderListStruct)</returns>
+        public async Task<ApiResponse<OrderListStruct>> OrderListAsyncWithHttpInfo (int? pid = default(int?), string coin = default(string), int? type = default(int?), int? page = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (pid != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pid", pid));
+            }
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OrderListStruct>("/earn/staking/order_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OrderList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// On-chain coin-earning dividend records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>AwardListStruct</returns>
+        public AwardListStruct AwardList (int? pid = default(int?), string coin = default(string), int? page = default(int?))
+        {
+             ApiResponse<AwardListStruct> localVarResponse = AwardListWithHttpInfo(pid, coin, page);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// On-chain coin-earning dividend records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>ApiResponse of AwardListStruct</returns>
+        public ApiResponse<AwardListStruct> AwardListWithHttpInfo (int? pid = default(int?), string coin = default(string), int? page = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (pid != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pid", pid));
+            }
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<AwardListStruct>("/earn/staking/award_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AwardList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// On-chain coin-earning dividend records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>Task of AwardListStruct</returns>
+        public async Task<AwardListStruct> AwardListAsync (int? pid = default(int?), string coin = default(string), int? page = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<AwardListStruct> localVarResponse = await AwardListAsyncWithHttpInfo(pid, coin, page);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// On-chain coin-earning dividend records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pid">Product ID (optional)</param>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <returns>Task of ApiResponse (AwardListStruct)</returns>
+        public async Task<ApiResponse<AwardListStruct>> AwardListAsyncWithHttpInfo (int? pid = default(int?), string coin = default(string), int? page = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (pid != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pid", pid));
+            }
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AwardListStruct>("/earn/staking/award_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AwardList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// On-chain coin-earning assets 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <returns>List&lt;Object&gt;</returns>
+        public List<Object> AssetList (string coin = default(string))
+        {
+             ApiResponse<List<Object>> localVarResponse = AssetListWithHttpInfo(coin);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// On-chain coin-earning assets 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
+        public ApiResponse<List<Object>> AssetListWithHttpInfo (string coin = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<Object>>("/earn/staking/assets", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AssetList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// On-chain coin-earning assets 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <returns>Task of List&lt;Object&gt;</returns>
+        public async Task<List<Object>> AssetListAsync (string coin = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<Object>> localVarResponse = await AssetListAsyncWithHttpInfo(coin);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// On-chain coin-earning assets 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency name (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
+        public async Task<ApiResponse<List<Object>>> AssetListAsyncWithHttpInfo (string coin = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Object>>("/earn/staking/assets", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AssetList", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
