@@ -6,8 +6,10 @@ on:
       - "*"
     
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # enable GitHub OIDC token issuance for this job
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -16,5 +18,10 @@ jobs:
         dotnet-version: 6.0.x
     - name: pack nuget packages
       run: dotnet pack
+    - name: NuGet login OIDC
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: ${{ secrets.NUGET_USER }}
     - name: upload nuget package
-      run: dotnet nuget push src/Io.Gate.GateApi/bin/Debug/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push src/Io.Gate.GateApi/bin/Debug/*.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
