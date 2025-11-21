@@ -1,0 +1,804 @@
+# Io.Gate.GateApi.Api.SubAccountApi
+
+All URIs are relative to *https://api.gateio.ws/api/v4*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**ListSubAccounts**](SubAccountApi.md#listsubaccounts) | **GET** /sub_accounts | List sub-accounts
+[**CreateSubAccounts**](SubAccountApi.md#createsubaccounts) | **POST** /sub_accounts | Create a new sub-account
+[**GetSubAccount**](SubAccountApi.md#getsubaccount) | **GET** /sub_accounts/{user_id} | Get sub-account
+[**ListSubAccountKeys**](SubAccountApi.md#listsubaccountkeys) | **GET** /sub_accounts/{user_id}/keys | List all API key pairs of the sub-account
+[**CreateSubAccountKeys**](SubAccountApi.md#createsubaccountkeys) | **POST** /sub_accounts/{user_id}/keys | Create new sub-account API key pair
+[**GetSubAccountKey**](SubAccountApi.md#getsubaccountkey) | **GET** /sub_accounts/{user_id}/keys/{key} | Get specific API key pair of the sub-account
+[**UpdateSubAccountKeys**](SubAccountApi.md#updatesubaccountkeys) | **PUT** /sub_accounts/{user_id}/keys/{key} | Update sub-account API key pair
+[**DeleteSubAccountKeys**](SubAccountApi.md#deletesubaccountkeys) | **DELETE** /sub_accounts/{user_id}/keys/{key} | Delete sub-account API key pair
+[**LockSubAccount**](SubAccountApi.md#locksubaccount) | **POST** /sub_accounts/{user_id}/lock | Lock sub-account
+[**UnlockSubAccount**](SubAccountApi.md#unlocksubaccount) | **POST** /sub_accounts/{user_id}/unlock | Unlock sub-account
+[**ListUnifiedMode**](SubAccountApi.md#listunifiedmode) | **GET** /sub_accounts/unified_mode | Get sub-account mode
+
+
+<a name="listsubaccounts"></a>
+# **ListSubAccounts**
+> List&lt;SubAccount&gt; ListSubAccounts (string type = null)
+
+List sub-accounts
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListSubAccountsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+            var type = "0";  // string | Enter `0` to list all types of sub-accounts (currently supporting cross-margin sub-accounts and regular sub-accounts). Enter `1` to query regular sub-accounts only. If no parameter is passed, only regular sub-accounts will be queried by default. (optional) 
+
+            try
+            {
+                // List sub-accounts
+                List<SubAccount> result = apiInstance.ListSubAccounts(type);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.ListSubAccounts: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **string**| Enter &#x60;0&#x60; to list all types of sub-accounts (currently supporting cross-margin sub-accounts and regular sub-accounts). Enter &#x60;1&#x60; to query regular sub-accounts only. If no parameter is passed, only regular sub-accounts will be queried by default. | [optional] 
+
+### Return type
+
+[**List&lt;SubAccount&gt;**](SubAccount.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | List retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createsubaccounts"></a>
+# **CreateSubAccounts**
+> SubAccount CreateSubAccounts (SubAccount subAccount)
+
+Create a new sub-account
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateSubAccountsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+            var subAccount = new SubAccount(); // SubAccount | 
+
+            try
+            {
+                // Create a new sub-account
+                SubAccount result = apiInstance.CreateSubAccounts(subAccount);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.CreateSubAccounts: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subAccount** | [**SubAccount**](SubAccount.md)|  | 
+
+### Return type
+
+[**SubAccount**](SubAccount.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Created successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getsubaccount"></a>
+# **GetSubAccount**
+> SubAccount GetSubAccount (long userId)
+
+Get sub-account
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetSubAccountExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+            var userId = 56;  // long | Sub-account user ID
+
+            try
+            {
+                // Get sub-account
+                SubAccount result = apiInstance.GetSubAccount(userId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.GetSubAccount: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **long**| Sub-account user ID | 
+
+### Return type
+
+[**SubAccount**](SubAccount.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listsubaccountkeys"></a>
+# **ListSubAccountKeys**
+> List&lt;SubAccountKey&gt; ListSubAccountKeys (int userId)
+
+List all API key pairs of the sub-account
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListSubAccountKeysExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+            var userId = 56;  // int | Sub-account user ID
+
+            try
+            {
+                // List all API key pairs of the sub-account
+                List<SubAccountKey> result = apiInstance.ListSubAccountKeys(userId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.ListSubAccountKeys: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int**| Sub-account user ID | 
+
+### Return type
+
+[**List&lt;SubAccountKey&gt;**](SubAccountKey.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | List retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createsubaccountkeys"></a>
+# **CreateSubAccountKeys**
+> SubAccountKey CreateSubAccountKeys (long userId, SubAccountKey subAccountKey)
+
+Create new sub-account API key pair
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateSubAccountKeysExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+            var userId = 56;  // long | Sub-account user ID
+            var subAccountKey = new SubAccountKey(); // SubAccountKey | 
+
+            try
+            {
+                // Create new sub-account API key pair
+                SubAccountKey result = apiInstance.CreateSubAccountKeys(userId, subAccountKey);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.CreateSubAccountKeys: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **long**| Sub-account user ID | 
+ **subAccountKey** | [**SubAccountKey**](SubAccountKey.md)|  | 
+
+### Return type
+
+[**SubAccountKey**](SubAccountKey.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Created successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getsubaccountkey"></a>
+# **GetSubAccountKey**
+> SubAccountKey GetSubAccountKey (int userId, string key)
+
+Get specific API key pair of the sub-account
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetSubAccountKeyExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+            var userId = 56;  // int | Sub-account user ID
+            var key = "key_example";  // string | Sub-account API key
+
+            try
+            {
+                // Get specific API key pair of the sub-account
+                SubAccountKey result = apiInstance.GetSubAccountKey(userId, key);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.GetSubAccountKey: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int**| Sub-account user ID | 
+ **key** | **string**| Sub-account API key | 
+
+### Return type
+
+[**SubAccountKey**](SubAccountKey.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatesubaccountkeys"></a>
+# **UpdateSubAccountKeys**
+> void UpdateSubAccountKeys (int userId, string key, SubAccountKey subAccountKey)
+
+Update sub-account API key pair
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class UpdateSubAccountKeysExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+            var userId = 56;  // int | Sub-account user ID
+            var key = "key_example";  // string | Sub-account API key
+            var subAccountKey = new SubAccountKey(); // SubAccountKey | 
+
+            try
+            {
+                // Update sub-account API key pair
+                apiInstance.UpdateSubAccountKeys(userId, key, subAccountKey);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.UpdateSubAccountKeys: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int**| Sub-account user ID | 
+ **key** | **string**| Sub-account API key | 
+ **subAccountKey** | [**SubAccountKey**](SubAccountKey.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Updated successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletesubaccountkeys"></a>
+# **DeleteSubAccountKeys**
+> void DeleteSubAccountKeys (int userId, string key)
+
+Delete sub-account API key pair
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class DeleteSubAccountKeysExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+            var userId = 56;  // int | Sub-account user ID
+            var key = "key_example";  // string | Sub-account API key
+
+            try
+            {
+                // Delete sub-account API key pair
+                apiInstance.DeleteSubAccountKeys(userId, key);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.DeleteSubAccountKeys: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int**| Sub-account user ID | 
+ **key** | **string**| Sub-account API key | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Deleted successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="locksubaccount"></a>
+# **LockSubAccount**
+> void LockSubAccount (long userId)
+
+Lock sub-account
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class LockSubAccountExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+            var userId = 56;  // long | Sub-account user ID
+
+            try
+            {
+                // Lock sub-account
+                apiInstance.LockSubAccount(userId);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.LockSubAccount: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **long**| Sub-account user ID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Locked successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="unlocksubaccount"></a>
+# **UnlockSubAccount**
+> void UnlockSubAccount (long userId)
+
+Unlock sub-account
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class UnlockSubAccountExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+            var userId = 56;  // long | Sub-account user ID
+
+            try
+            {
+                // Unlock sub-account
+                apiInstance.UnlockSubAccount(userId);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.UnlockSubAccount: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **long**| Sub-account user ID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Unlocked successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listunifiedmode"></a>
+# **ListUnifiedMode**
+> List&lt;SubUserMode&gt; ListUnifiedMode ()
+
+Get sub-account mode
+
+Unified account mode: - `classic`: Classic account mode - `multi_currency`: Cross-currency margin mode - `portfolio`: Portfolio margin mode - `single_currency`: Single-currency margin mode
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListUnifiedModeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SubAccountApi(config);
+
+            try
+            {
+                // Get sub-account mode
+                List<SubUserMode> result = apiInstance.ListUnifiedMode();
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SubAccountApi.ListUnifiedMode: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;SubUserMode&gt;**](SubUserMode.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
