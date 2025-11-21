@@ -28,10 +28,10 @@ namespace Io.Gate.GateApi.Model
     /// Main Account API Key Information
     /// </summary>
     [DataContract]
-    public partial class AccountKeyInfo :  IEquatable<AccountKeyInfo>, IValidatableObject
+    public partial class Key :  IEquatable<Key>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountKeyInfo" /> class.
+        /// Initializes a new instance of the <see cref="Key" /> class.
         /// </summary>
         /// <param name="state">API Key Status: 1 - Normal, 2 - Locked, 3 - Frozen (can only be modified; default is 1 upon creation).</param>
         /// <param name="mode">User Mode: 1 - Classic, 2 - Legacy Unified (can only be specified during creation, non-modifiable afterwards).</param>
@@ -41,7 +41,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="ipWhitelist">IP Whitelist.</param>
         /// <param name="perms">perms.</param>
         /// <param name="key">key.</param>
-        public AccountKeyInfo(int state = default(int), int mode = default(int), List<string> name = default(List<string>), List<string> currencyPairs = default(List<string>), long userId = default(long), List<string> ipWhitelist = default(List<string>), List<AccountKeyInfoPerms> perms = default(List<AccountKeyInfoPerms>), AccountDetailKey key = default(AccountDetailKey))
+        public Key(int state = default(int), int mode = default(int), List<string> name = default(List<string>), List<string> currencyPairs = default(List<string>), long userId = default(long), List<string> ipWhitelist = default(List<string>), List<KeyPerms> perms = default(List<KeyPerms>), AccountDetailKey key = default(AccountDetailKey))
         {
             this.State = state;
             this.Mode = mode;
@@ -99,7 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Perms
         /// </summary>
         [DataMember(Name="perms")]
-        public List<AccountKeyInfoPerms> Perms { get; set; }
+        public List<KeyPerms> Perms { get; set; }
 
         /// <summary>
         /// Gets or Sets Key
@@ -135,7 +135,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AccountKeyInfo {\n");
+            sb.Append("class Key {\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Mode: ").Append(Mode).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -167,15 +167,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AccountKeyInfo);
+            return this.Equals(input as Key);
         }
 
         /// <summary>
-        /// Returns true if AccountKeyInfo instances are equal
+        /// Returns true if Key instances are equal
         /// </summary>
-        /// <param name="input">Instance of AccountKeyInfo to be compared</param>
+        /// <param name="input">Instance of Key to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AccountKeyInfo input)
+        public bool Equals(Key input)
         {
             if (input == null)
                 return false;

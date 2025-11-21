@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.AccountKeyInfoPerms
+# Io.Gate.GateApi.Model.KeyPerms
 
 ## Properties
 
