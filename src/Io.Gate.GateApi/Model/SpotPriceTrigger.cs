@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class SpotPriceTrigger :  IEquatable<SpotPriceTrigger>, IValidatableObject
     {
         /// <summary>
-        /// 价格条件类型 - 大于等于 (&gt;&#x3D;): 表示市场价格大于等于 price 时触发 - 小于等于 (&lt;&#x3D;): 表示市场价格小于等于 price 时触发
+        /// 价格条件类型 - 大于等于: 表示市场价格大于等于 price 时触发 - 小于等于: 表示市场价格小于等于 price 时触发
         /// </summary>
-        /// <value>价格条件类型 - 大于等于 (&gt;&#x3D;): 表示市场价格大于等于 price 时触发 - 小于等于 (&lt;&#x3D;): 表示市场价格小于等于 price 时触发</value>
+        /// <value>价格条件类型 - 大于等于: 表示市场价格大于等于 price 时触发 - 小于等于: 表示市场价格小于等于 price 时触发</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RuleEnum
         {
@@ -52,9 +52,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 价格条件类型 - 大于等于 (&gt;&#x3D;): 表示市场价格大于等于 price 时触发 - 小于等于 (&lt;&#x3D;): 表示市场价格小于等于 price 时触发
+        /// 价格条件类型 - 大于等于: 表示市场价格大于等于 price 时触发 - 小于等于: 表示市场价格小于等于 price 时触发
         /// </summary>
-        /// <value>价格条件类型 - 大于等于 (&gt;&#x3D;): 表示市场价格大于等于 price 时触发 - 小于等于 (&lt;&#x3D;): 表示市场价格小于等于 price 时触发</value>
+        /// <value>价格条件类型 - 大于等于: 表示市场价格大于等于 price 时触发 - 小于等于: 表示市场价格小于等于 price 时触发</value>
         [DataMember(Name="rule")]
         public RuleEnum Rule { get; set; }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="SpotPriceTrigger" /> class.
         /// </summary>
         /// <param name="price">Trigger price (required).</param>
-        /// <param name="rule">价格条件类型 - 大于等于 (&gt;&#x3D;): 表示市场价格大于等于 price 时触发 - 小于等于 (&lt;&#x3D;): 表示市场价格小于等于 price 时触发 (required).</param>
+        /// <param name="rule">价格条件类型 - 大于等于: 表示市场价格大于等于 price 时触发 - 小于等于: 表示市场价格小于等于 price 时触发 (required).</param>
         /// <param name="expiration">Maximum wait time for trigger condition (in seconds). Order will be cancelled if timeout (required).</param>
         public SpotPriceTrigger(string price = default(string), RuleEnum rule = default(RuleEnum), int expiration = default(int))
         {
