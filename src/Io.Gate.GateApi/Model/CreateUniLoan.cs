@@ -38,13 +38,13 @@ namespace Io.Gate.GateApi.Model
         public enum TypeEnum
         {
             /// <summary>
-            /// Enum Borrow for value: borrow
+            /// Enum value Borrow
             /// </summary>
             [EnumMember(Value = "borrow")]
             Borrow = 1,
 
             /// <summary>
-            /// Enum Repay for value: repay
+            /// Enum value Repay
             /// </summary>
             [EnumMember(Value = "repay")]
             Repay = 2

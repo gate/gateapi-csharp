@@ -38,19 +38,19 @@ namespace Io.Gate.GateApi.Model
         public enum ModeEnum
         {
             /// <summary>
-            /// Enum Single for value: single
+            /// Enum value Single
             /// </summary>
             [EnumMember(Value = "single")]
             Single = 1,
 
             /// <summary>
-            /// Enum Duallong for value: dual_long
+            /// Enum value Duallong
             /// </summary>
             [EnumMember(Value = "dual_long")]
             Duallong = 2,
 
             /// <summary>
-            /// Enum Dualshort for value: dual_short
+            /// Enum value Dualshort
             /// </summary>
             [EnumMember(Value = "dual_short")]
             Dualshort = 3

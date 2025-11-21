@@ -38,55 +38,55 @@ namespace Io.Gate.GateApi.Model
         public enum FinishAsEnum
         {
             /// <summary>
-            /// Enum Filled for value: filled
+            /// Enum value Filled
             /// </summary>
             [EnumMember(Value = "filled")]
             Filled = 1,
 
             /// <summary>
-            /// Enum Cancelled for value: cancelled
+            /// Enum value Cancelled
             /// </summary>
             [EnumMember(Value = "cancelled")]
             Cancelled = 2,
 
             /// <summary>
-            /// Enum Liquidated for value: liquidated
+            /// Enum value Liquidated
             /// </summary>
             [EnumMember(Value = "liquidated")]
             Liquidated = 3,
 
             /// <summary>
-            /// Enum Ioc for value: ioc
+            /// Enum value Ioc
             /// </summary>
             [EnumMember(Value = "ioc")]
             Ioc = 4,
 
             /// <summary>
-            /// Enum Autodeleveraged for value: auto_deleveraged
+            /// Enum value Autodeleveraged
             /// </summary>
             [EnumMember(Value = "auto_deleveraged")]
             Autodeleveraged = 5,
 
             /// <summary>
-            /// Enum Reduceonly for value: reduce_only
+            /// Enum value Reduceonly
             /// </summary>
             [EnumMember(Value = "reduce_only")]
             Reduceonly = 6,
 
             /// <summary>
-            /// Enum Positionclosed for value: position_closed
+            /// Enum value Positionclosed
             /// </summary>
             [EnumMember(Value = "position_closed")]
             Positionclosed = 7,
 
             /// <summary>
-            /// Enum Reduceout for value: reduce_out
+            /// Enum value Reduceout
             /// </summary>
             [EnumMember(Value = "reduce_out")]
             Reduceout = 8,
 
             /// <summary>
-            /// Enum Mmpcancelled for value: mmp_cancelled
+            /// Enum value Mmpcancelled
             /// </summary>
             [EnumMember(Value = "mmp_cancelled")]
             Mmpcancelled = 9
@@ -107,13 +107,13 @@ namespace Io.Gate.GateApi.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum Open for value: open
+            /// Enum value Open
             /// </summary>
             [EnumMember(Value = "open")]
             Open = 1,
 
             /// <summary>
-            /// Enum Finished for value: finished
+            /// Enum value Finished
             /// </summary>
             [EnumMember(Value = "finished")]
             Finished = 2
@@ -134,19 +134,19 @@ namespace Io.Gate.GateApi.Model
         public enum TifEnum
         {
             /// <summary>
-            /// Enum Gtc for value: gtc
+            /// Enum value Gtc
             /// </summary>
             [EnumMember(Value = "gtc")]
             Gtc = 1,
 
             /// <summary>
-            /// Enum Ioc for value: ioc
+            /// Enum value Ioc
             /// </summary>
             [EnumMember(Value = "ioc")]
             Ioc = 2,
 
             /// <summary>
-            /// Enum Poc for value: poc
+            /// Enum value Poc
             /// </summary>
             [EnumMember(Value = "poc")]
             Poc = 3

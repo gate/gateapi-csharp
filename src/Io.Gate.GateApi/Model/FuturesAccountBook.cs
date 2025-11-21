@@ -38,55 +38,55 @@ namespace Io.Gate.GateApi.Model
         public enum TypeEnum
         {
             /// <summary>
-            /// Enum Dnw for value: dnw
+            /// Enum value Dnw
             /// </summary>
             [EnumMember(Value = "dnw")]
             Dnw = 1,
 
             /// <summary>
-            /// Enum Pnl for value: pnl
+            /// Enum value Pnl
             /// </summary>
             [EnumMember(Value = "pnl")]
             Pnl = 2,
 
             /// <summary>
-            /// Enum Fee for value: fee
+            /// Enum value Fee
             /// </summary>
             [EnumMember(Value = "fee")]
             Fee = 3,
 
             /// <summary>
-            /// Enum Refr for value: refr
+            /// Enum value Refr
             /// </summary>
             [EnumMember(Value = "refr")]
             Refr = 4,
 
             /// <summary>
-            /// Enum Fund for value: fund
+            /// Enum value Fund
             /// </summary>
             [EnumMember(Value = "fund")]
             Fund = 5,
 
             /// <summary>
-            /// Enum Pointdnw for value: point_dnw
+            /// Enum value Pointdnw
             /// </summary>
             [EnumMember(Value = "point_dnw")]
             Pointdnw = 6,
 
             /// <summary>
-            /// Enum Pointfee for value: point_fee
+            /// Enum value Pointfee
             /// </summary>
             [EnumMember(Value = "point_fee")]
             Pointfee = 7,
 
             /// <summary>
-            /// Enum Pointrefr for value: point_refr
+            /// Enum value Pointrefr
             /// </summary>
             [EnumMember(Value = "point_refr")]
             Pointrefr = 8,
 
             /// <summary>
-            /// Enum Bonusoffset for value: bonus_offset
+            /// Enum value Bonusoffset
             /// </summary>
             [EnumMember(Value = "bonus_offset")]
             Bonusoffset = 9

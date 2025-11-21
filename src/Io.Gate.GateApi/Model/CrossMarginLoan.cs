@@ -37,17 +37,17 @@ namespace Io.Gate.GateApi.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum NUMBER_1 for value: 1
+            /// Enum value NUMBER_1
             /// </summary>
             NUMBER_1 = 1,
 
             /// <summary>
-            /// Enum NUMBER_2 for value: 2
+            /// Enum value NUMBER_2
             /// </summary>
             NUMBER_2 = 2,
 
             /// <summary>
-            /// Enum NUMBER_3 for value: 3
+            /// Enum value NUMBER_3
             /// </summary>
             NUMBER_3 = 3
 

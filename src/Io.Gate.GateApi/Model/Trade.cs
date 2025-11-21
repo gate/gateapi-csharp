@@ -38,13 +38,13 @@ namespace Io.Gate.GateApi.Model
         public enum SideEnum
         {
             /// <summary>
-            /// Enum Buy for value: buy
+            /// Enum value Buy
             /// </summary>
             [EnumMember(Value = "buy")]
             Buy = 1,
 
             /// <summary>
-            /// Enum Sell for value: sell
+            /// Enum value Sell
             /// </summary>
             [EnumMember(Value = "sell")]
             Sell = 2
@@ -65,13 +65,13 @@ namespace Io.Gate.GateApi.Model
         public enum RoleEnum
         {
             /// <summary>
-            /// Enum Taker for value: taker
+            /// Enum value Taker
             /// </summary>
             [EnumMember(Value = "taker")]
             Taker = 1,
 
             /// <summary>
-            /// Enum Maker for value: maker
+            /// Enum value Maker
             /// </summary>
             [EnumMember(Value = "maker")]
             Maker = 2

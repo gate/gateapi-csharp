@@ -38,25 +38,25 @@ namespace Io.Gate.GateApi.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum Open for value: open
+            /// Enum value Open
             /// </summary>
             [EnumMember(Value = "open")]
             Open = 1,
 
             /// <summary>
-            /// Enum Finished for value: finished
+            /// Enum value Finished
             /// </summary>
             [EnumMember(Value = "finished")]
             Finished = 2,
 
             /// <summary>
-            /// Enum Inactive for value: inactive
+            /// Enum value Inactive
             /// </summary>
             [EnumMember(Value = "inactive")]
             Inactive = 3,
 
             /// <summary>
-            /// Enum Invalid for value: invalid
+            /// Enum value Invalid
             /// </summary>
             [EnumMember(Value = "invalid")]
             Invalid = 4
@@ -77,25 +77,25 @@ namespace Io.Gate.GateApi.Model
         public enum FinishAsEnum
         {
             /// <summary>
-            /// Enum Cancelled for value: cancelled
+            /// Enum value Cancelled
             /// </summary>
             [EnumMember(Value = "cancelled")]
             Cancelled = 1,
 
             /// <summary>
-            /// Enum Succeeded for value: succeeded
+            /// Enum value Succeeded
             /// </summary>
             [EnumMember(Value = "succeeded")]
             Succeeded = 2,
 
             /// <summary>
-            /// Enum Failed for value: failed
+            /// Enum value Failed
             /// </summary>
             [EnumMember(Value = "failed")]
             Failed = 3,
 
             /// <summary>
-            /// Enum Expired for value: expired
+            /// Enum value Expired
             /// </summary>
             [EnumMember(Value = "expired")]
             Expired = 4

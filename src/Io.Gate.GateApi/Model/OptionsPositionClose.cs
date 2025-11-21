@@ -38,13 +38,13 @@ namespace Io.Gate.GateApi.Model
         public enum SideEnum
         {
             /// <summary>
-            /// Enum Long for value: long
+            /// Enum value Long
             /// </summary>
             [EnumMember(Value = "long")]
             Long = 1,
 
             /// <summary>
-            /// Enum Short for value: short
+            /// Enum value Short
             /// </summary>
             [EnumMember(Value = "short")]
             Short = 2

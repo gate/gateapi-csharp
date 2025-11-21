@@ -37,12 +37,12 @@ namespace Io.Gate.GateApi.Model
         public enum StrategyTypeEnum
         {
             /// <summary>
-            /// Enum NUMBER_0 for value: 0
+            /// Enum value NUMBER_0
             /// </summary>
             NUMBER_0 = 0,
 
             /// <summary>
-            /// Enum NUMBER_1 for value: 1
+            /// Enum value NUMBER_1
             /// </summary>
             NUMBER_1 = 1
 
@@ -61,17 +61,17 @@ namespace Io.Gate.GateApi.Model
         public enum PriceTypeEnum
         {
             /// <summary>
-            /// Enum NUMBER_0 for value: 0
+            /// Enum value NUMBER_0
             /// </summary>
             NUMBER_0 = 0,
 
             /// <summary>
-            /// Enum NUMBER_1 for value: 1
+            /// Enum value NUMBER_1
             /// </summary>
             NUMBER_1 = 1,
 
             /// <summary>
-            /// Enum NUMBER_2 for value: 2
+            /// Enum value NUMBER_2
             /// </summary>
             NUMBER_2 = 2
 
@@ -90,12 +90,12 @@ namespace Io.Gate.GateApi.Model
         public enum RuleEnum
         {
             /// <summary>
-            /// Enum NUMBER_1 for value: 1
+            /// Enum value NUMBER_1
             /// </summary>
             NUMBER_1 = 1,
 
             /// <summary>
-            /// Enum NUMBER_2 for value: 2
+            /// Enum value NUMBER_2
             /// </summary>
             NUMBER_2 = 2
 

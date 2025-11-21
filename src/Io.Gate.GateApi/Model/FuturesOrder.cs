@@ -38,55 +38,55 @@ namespace Io.Gate.GateApi.Model
         public enum FinishAsEnum
         {
             /// <summary>
-            /// Enum Filled for value: filled
+            /// Enum value Filled
             /// </summary>
             [EnumMember(Value = "filled")]
             Filled = 1,
 
             /// <summary>
-            /// Enum Cancelled for value: cancelled
+            /// Enum value Cancelled
             /// </summary>
             [EnumMember(Value = "cancelled")]
             Cancelled = 2,
 
             /// <summary>
-            /// Enum Liquidated for value: liquidated
+            /// Enum value Liquidated
             /// </summary>
             [EnumMember(Value = "liquidated")]
             Liquidated = 3,
 
             /// <summary>
-            /// Enum Ioc for value: ioc
+            /// Enum value Ioc
             /// </summary>
             [EnumMember(Value = "ioc")]
             Ioc = 4,
 
             /// <summary>
-            /// Enum Autodeleveraged for value: auto_deleveraged
+            /// Enum value Autodeleveraged
             /// </summary>
             [EnumMember(Value = "auto_deleveraged")]
             Autodeleveraged = 5,
 
             /// <summary>
-            /// Enum Reduceonly for value: reduce_only
+            /// Enum value Reduceonly
             /// </summary>
             [EnumMember(Value = "reduce_only")]
             Reduceonly = 6,
 
             /// <summary>
-            /// Enum Positionclosed for value: position_closed
+            /// Enum value Positionclosed
             /// </summary>
             [EnumMember(Value = "position_closed")]
             Positionclosed = 7,
 
             /// <summary>
-            /// Enum Reduceout for value: reduce_out
+            /// Enum value Reduceout
             /// </summary>
             [EnumMember(Value = "reduce_out")]
             Reduceout = 8,
 
             /// <summary>
-            /// Enum Stp for value: stp
+            /// Enum value Stp
             /// </summary>
             [EnumMember(Value = "stp")]
             Stp = 9
@@ -107,13 +107,13 @@ namespace Io.Gate.GateApi.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum Open for value: open
+            /// Enum value Open
             /// </summary>
             [EnumMember(Value = "open")]
             Open = 1,
 
             /// <summary>
-            /// Enum Finished for value: finished
+            /// Enum value Finished
             /// </summary>
             [EnumMember(Value = "finished")]
             Finished = 2
@@ -134,25 +134,25 @@ namespace Io.Gate.GateApi.Model
         public enum TifEnum
         {
             /// <summary>
-            /// Enum Gtc for value: gtc
+            /// Enum value Gtc
             /// </summary>
             [EnumMember(Value = "gtc")]
             Gtc = 1,
 
             /// <summary>
-            /// Enum Ioc for value: ioc
+            /// Enum value Ioc
             /// </summary>
             [EnumMember(Value = "ioc")]
             Ioc = 2,
 
             /// <summary>
-            /// Enum Poc for value: poc
+            /// Enum value Poc
             /// </summary>
             [EnumMember(Value = "poc")]
             Poc = 3,
 
             /// <summary>
-            /// Enum Fok for value: fok
+            /// Enum value Fok
             /// </summary>
             [EnumMember(Value = "fok")]
             Fok = 4
@@ -173,13 +173,13 @@ namespace Io.Gate.GateApi.Model
         public enum AutoSizeEnum
         {
             /// <summary>
-            /// Enum Long for value: close_long
+            /// Enum value Long
             /// </summary>
             [EnumMember(Value = "close_long")]
             Long = 1,
 
             /// <summary>
-            /// Enum Short for value: close_short
+            /// Enum value Short
             /// </summary>
             [EnumMember(Value = "close_short")]
             Short = 2
@@ -200,25 +200,25 @@ namespace Io.Gate.GateApi.Model
         public enum StpActEnum
         {
             /// <summary>
-            /// Enum Co for value: co
+            /// Enum value Co
             /// </summary>
             [EnumMember(Value = "co")]
             Co = 1,
 
             /// <summary>
-            /// Enum Cn for value: cn
+            /// Enum value Cn
             /// </summary>
             [EnumMember(Value = "cn")]
             Cn = 2,
 
             /// <summary>
-            /// Enum Cb for value: cb
+            /// Enum value Cb
             /// </summary>
             [EnumMember(Value = "cb")]
             Cb = 3,
 
             /// <summary>
-            /// Enum Minus for value: -
+            /// Enum value Minus
             /// </summary>
             [EnumMember(Value = "-")]
             Minus = 4

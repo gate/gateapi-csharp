@@ -38,13 +38,13 @@ namespace Io.Gate.GateApi.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum On for value: on
+            /// Enum value On
             /// </summary>
             [EnumMember(Value = "on")]
             On = 1,
 
             /// <summary>
-            /// Enum Off for value: off
+            /// Enum value Off
             /// </summary>
             [EnumMember(Value = "off")]
             Off = 2

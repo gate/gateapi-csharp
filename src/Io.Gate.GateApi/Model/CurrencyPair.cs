@@ -38,25 +38,25 @@ namespace Io.Gate.GateApi.Model
         public enum TradeStatusEnum
         {
             /// <summary>
-            /// Enum Untradable for value: untradable
+            /// Enum value Untradable
             /// </summary>
             [EnumMember(Value = "untradable")]
             Untradable = 1,
 
             /// <summary>
-            /// Enum Buyable for value: buyable
+            /// Enum value Buyable
             /// </summary>
             [EnumMember(Value = "buyable")]
             Buyable = 2,
 
             /// <summary>
-            /// Enum Sellable for value: sellable
+            /// Enum value Sellable
             /// </summary>
             [EnumMember(Value = "sellable")]
             Sellable = 3,
 
             /// <summary>
-            /// Enum Tradable for value: tradable
+            /// Enum value Tradable
             /// </summary>
             [EnumMember(Value = "tradable")]
             Tradable = 4

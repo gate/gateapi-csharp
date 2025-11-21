@@ -38,19 +38,19 @@ namespace Io.Gate.GateApi.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum Open for value: open
+            /// Enum value Open
             /// </summary>
             [EnumMember(Value = "open")]
             Open = 1,
 
             /// <summary>
-            /// Enum Closed for value: closed
+            /// Enum value Closed
             /// </summary>
             [EnumMember(Value = "closed")]
             Closed = 2,
 
             /// <summary>
-            /// Enum Cancelled for value: cancelled
+            /// Enum value Cancelled
             /// </summary>
             [EnumMember(Value = "cancelled")]
             Cancelled = 3
@@ -71,13 +71,13 @@ namespace Io.Gate.GateApi.Model
         public enum TypeEnum
         {
             /// <summary>
-            /// Enum Limit for value: limit
+            /// Enum value Limit
             /// </summary>
             [EnumMember(Value = "limit")]
             Limit = 1,
 
             /// <summary>
-            /// Enum Market for value: market
+            /// Enum value Market
             /// </summary>
             [EnumMember(Value = "market")]
             Market = 2
@@ -98,25 +98,25 @@ namespace Io.Gate.GateApi.Model
         public enum AccountEnum
         {
             /// <summary>
-            /// Enum Spot for value: spot
+            /// Enum value Spot
             /// </summary>
             [EnumMember(Value = "spot")]
             Spot = 1,
 
             /// <summary>
-            /// Enum Margin for value: margin
+            /// Enum value Margin
             /// </summary>
             [EnumMember(Value = "margin")]
             Margin = 2,
 
             /// <summary>
-            /// Enum Crossmargin for value: cross_margin
+            /// Enum value Crossmargin
             /// </summary>
             [EnumMember(Value = "cross_margin")]
             Crossmargin = 3,
 
             /// <summary>
-            /// Enum Unified for value: unified
+            /// Enum value Unified
             /// </summary>
             [EnumMember(Value = "unified")]
             Unified = 4
@@ -137,13 +137,13 @@ namespace Io.Gate.GateApi.Model
         public enum SideEnum
         {
             /// <summary>
-            /// Enum Buy for value: buy
+            /// Enum value Buy
             /// </summary>
             [EnumMember(Value = "buy")]
             Buy = 1,
 
             /// <summary>
-            /// Enum Sell for value: sell
+            /// Enum value Sell
             /// </summary>
             [EnumMember(Value = "sell")]
             Sell = 2
@@ -164,25 +164,25 @@ namespace Io.Gate.GateApi.Model
         public enum TimeInForceEnum
         {
             /// <summary>
-            /// Enum Gtc for value: gtc
+            /// Enum value Gtc
             /// </summary>
             [EnumMember(Value = "gtc")]
             Gtc = 1,
 
             /// <summary>
-            /// Enum Ioc for value: ioc
+            /// Enum value Ioc
             /// </summary>
             [EnumMember(Value = "ioc")]
             Ioc = 2,
 
             /// <summary>
-            /// Enum Poc for value: poc
+            /// Enum value Poc
             /// </summary>
             [EnumMember(Value = "poc")]
             Poc = 3,
 
             /// <summary>
-            /// Enum Fok for value: fok
+            /// Enum value Fok
             /// </summary>
             [EnumMember(Value = "fok")]
             Fok = 4
@@ -203,25 +203,25 @@ namespace Io.Gate.GateApi.Model
         public enum StpActEnum
         {
             /// <summary>
-            /// Enum Cn for value: cn
+            /// Enum value Cn
             /// </summary>
             [EnumMember(Value = "cn")]
             Cn = 1,
 
             /// <summary>
-            /// Enum Co for value: co
+            /// Enum value Co
             /// </summary>
             [EnumMember(Value = "co")]
             Co = 2,
 
             /// <summary>
-            /// Enum Cb for value: cb
+            /// Enum value Cb
             /// </summary>
             [EnumMember(Value = "cb")]
             Cb = 3,
 
             /// <summary>
-            /// Enum Minus for value: -
+            /// Enum value Minus
             /// </summary>
             [EnumMember(Value = "-")]
             Minus = 4
@@ -242,31 +242,31 @@ namespace Io.Gate.GateApi.Model
         public enum FinishAsEnum
         {
             /// <summary>
-            /// Enum Open for value: open
+            /// Enum value Open
             /// </summary>
             [EnumMember(Value = "open")]
             Open = 1,
 
             /// <summary>
-            /// Enum Filled for value: filled
+            /// Enum value Filled
             /// </summary>
             [EnumMember(Value = "filled")]
             Filled = 2,
 
             /// <summary>
-            /// Enum Cancelled for value: cancelled
+            /// Enum value Cancelled
             /// </summary>
             [EnumMember(Value = "cancelled")]
             Cancelled = 3,
 
             /// <summary>
-            /// Enum Ioc for value: ioc
+            /// Enum value Ioc
             /// </summary>
             [EnumMember(Value = "ioc")]
             Ioc = 4,
 
             /// <summary>
-            /// Enum Stp for value: stp
+            /// Enum value Stp
             /// </summary>
             [EnumMember(Value = "stp")]
             Stp = 5

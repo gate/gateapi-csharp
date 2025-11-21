@@ -38,13 +38,13 @@ namespace Io.Gate.GateApi.Model
         public enum RoleEnum
         {
             /// <summary>
-            /// Enum Taker for value: taker
+            /// Enum value Taker
             /// </summary>
             [EnumMember(Value = "taker")]
             Taker = 1,
 
             /// <summary>
-            /// Enum Maker for value: maker
+            /// Enum value Maker
             /// </summary>
             [EnumMember(Value = "maker")]
             Maker = 2

@@ -38,13 +38,13 @@ namespace Io.Gate.GateApi.Model
         public enum TypeEnum
         {
             /// <summary>
-            /// Enum Limit for value: limit
+            /// Enum value Limit
             /// </summary>
             [EnumMember(Value = "limit")]
             Limit = 1,
 
             /// <summary>
-            /// Enum Market for value: market
+            /// Enum value Market
             /// </summary>
             [EnumMember(Value = "market")]
             Market = 2
@@ -65,13 +65,13 @@ namespace Io.Gate.GateApi.Model
         public enum SideEnum
         {
             /// <summary>
-            /// Enum Buy for value: buy
+            /// Enum value Buy
             /// </summary>
             [EnumMember(Value = "buy")]
             Buy = 1,
 
             /// <summary>
-            /// Enum Sell for value: sell
+            /// Enum value Sell
             /// </summary>
             [EnumMember(Value = "sell")]
             Sell = 2
@@ -92,19 +92,19 @@ namespace Io.Gate.GateApi.Model
         public enum AccountEnum
         {
             /// <summary>
-            /// Enum Normal for value: normal
+            /// Enum value Normal
             /// </summary>
             [EnumMember(Value = "normal")]
             Normal = 1,
 
             /// <summary>
-            /// Enum Margin for value: margin
+            /// Enum value Margin
             /// </summary>
             [EnumMember(Value = "margin")]
             Margin = 2,
 
             /// <summary>
-            /// Enum Unified for value: unified
+            /// Enum value Unified
             /// </summary>
             [EnumMember(Value = "unified")]
             Unified = 3
@@ -125,13 +125,13 @@ namespace Io.Gate.GateApi.Model
         public enum TimeInForceEnum
         {
             /// <summary>
-            /// Enum Gtc for value: gtc
+            /// Enum value Gtc
             /// </summary>
             [EnumMember(Value = "gtc")]
             Gtc = 1,
 
             /// <summary>
-            /// Enum Ioc for value: ioc
+            /// Enum value Ioc
             /// </summary>
             [EnumMember(Value = "ioc")]
             Ioc = 2

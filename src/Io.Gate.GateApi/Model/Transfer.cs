@@ -38,31 +38,31 @@ namespace Io.Gate.GateApi.Model
         public enum FromEnum
         {
             /// <summary>
-            /// Enum Spot for value: spot
+            /// Enum value Spot
             /// </summary>
             [EnumMember(Value = "spot")]
             Spot = 1,
 
             /// <summary>
-            /// Enum Margin for value: margin
+            /// Enum value Margin
             /// </summary>
             [EnumMember(Value = "margin")]
             Margin = 2,
 
             /// <summary>
-            /// Enum Futures for value: futures
+            /// Enum value Futures
             /// </summary>
             [EnumMember(Value = "futures")]
             Futures = 3,
 
             /// <summary>
-            /// Enum Delivery for value: delivery
+            /// Enum value Delivery
             /// </summary>
             [EnumMember(Value = "delivery")]
             Delivery = 4,
 
             /// <summary>
-            /// Enum Options for value: options
+            /// Enum value Options
             /// </summary>
             [EnumMember(Value = "options")]
             Options = 5
@@ -83,31 +83,31 @@ namespace Io.Gate.GateApi.Model
         public enum ToEnum
         {
             /// <summary>
-            /// Enum Spot for value: spot
+            /// Enum value Spot
             /// </summary>
             [EnumMember(Value = "spot")]
             Spot = 1,
 
             /// <summary>
-            /// Enum Margin for value: margin
+            /// Enum value Margin
             /// </summary>
             [EnumMember(Value = "margin")]
             Margin = 2,
 
             /// <summary>
-            /// Enum Futures for value: futures
+            /// Enum value Futures
             /// </summary>
             [EnumMember(Value = "futures")]
             Futures = 3,
 
             /// <summary>
-            /// Enum Delivery for value: delivery
+            /// Enum value Delivery
             /// </summary>
             [EnumMember(Value = "delivery")]
             Delivery = 4,
 
             /// <summary>
-            /// Enum Options for value: options
+            /// Enum value Options
             /// </summary>
             [EnumMember(Value = "options")]
             Options = 5

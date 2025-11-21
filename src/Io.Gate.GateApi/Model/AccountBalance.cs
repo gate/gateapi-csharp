@@ -38,25 +38,25 @@ namespace Io.Gate.GateApi.Model
         public enum CurrencyEnum
         {
             /// <summary>
-            /// Enum BTC for value: BTC
+            /// Enum value BTC
             /// </summary>
             [EnumMember(Value = "BTC")]
             BTC = 1,
 
             /// <summary>
-            /// Enum CNY for value: CNY
+            /// Enum value CNY
             /// </summary>
             [EnumMember(Value = "CNY")]
             CNY = 2,
 
             /// <summary>
-            /// Enum USD for value: USD
+            /// Enum value USD
             /// </summary>
             [EnumMember(Value = "USD")]
             USD = 3,
 
             /// <summary>
-            /// Enum USDT for value: USDT
+            /// Enum value USDT
             /// </summary>
             [EnumMember(Value = "USDT")]
             USDT = 4

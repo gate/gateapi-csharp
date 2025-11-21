@@ -38,13 +38,13 @@ namespace Io.Gate.GateApi.Model
         public enum TifEnum
         {
             /// <summary>
-            /// Enum Gtc for value: gtc
+            /// Enum value Gtc
             /// </summary>
             [EnumMember(Value = "gtc")]
             Gtc = 1,
 
             /// <summary>
-            /// Enum Ioc for value: ioc
+            /// Enum value Ioc
             /// </summary>
             [EnumMember(Value = "ioc")]
             Ioc = 2

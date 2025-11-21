@@ -38,13 +38,13 @@ namespace Io.Gate.GateApi.Model
         public enum TypeEnum
         {
             /// <summary>
-            /// Enum Inverse for value: inverse
+            /// Enum value Inverse
             /// </summary>
             [EnumMember(Value = "inverse")]
             Inverse = 1,
 
             /// <summary>
-            /// Enum Direct for value: direct
+            /// Enum value Direct
             /// </summary>
             [EnumMember(Value = "direct")]
             Direct = 2
@@ -65,13 +65,13 @@ namespace Io.Gate.GateApi.Model
         public enum MarkTypeEnum
         {
             /// <summary>
-            /// Enum Internal for value: internal
+            /// Enum value Internal
             /// </summary>
             [EnumMember(Value = "internal")]
             Internal = 1,
 
             /// <summary>
-            /// Enum Index for value: index
+            /// Enum value Index
             /// </summary>
             [EnumMember(Value = "index")]
             Index = 2
