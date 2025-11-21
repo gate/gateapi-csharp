@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class SpotPriceTrigger :  IEquatable<SpotPriceTrigger>, IValidatableObject
     {
         /// <summary>
-        /// 价格条件类型 - 大于等于: 表示市场价格大于等于 price 时触发 - 小于等于: 表示市场价格小于等于 price 时触发
+        /// Price trigger condition  - &#x60;&gt;&#x3D;&#x60;: triggered when market price is greater than or equal to &#x60;price&#x60; - &#x60;&lt;&#x3D;&#x60;: triggered when market price is less than or equal to &#x60;price&#x60; 
         /// </summary>
-        /// <value>价格条件类型 - 大于等于: 表示市场价格大于等于 price 时触发 - 小于等于: 表示市场价格小于等于 price 时触发</value>
+        /// <value>Price trigger condition  - &#x60;&gt;&#x3D;&#x60;: triggered when market price is greater than or equal to &#x60;price&#x60; - &#x60;&lt;&#x3D;&#x60;: triggered when market price is less than or equal to &#x60;price&#x60; </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RuleEnum
         {
@@ -52,9 +52,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 价格条件类型 - 大于等于: 表示市场价格大于等于 price 时触发 - 小于等于: 表示市场价格小于等于 price 时触发
+        /// Price trigger condition  - &#x60;&gt;&#x3D;&#x60;: triggered when market price is greater than or equal to &#x60;price&#x60; - &#x60;&lt;&#x3D;&#x60;: triggered when market price is less than or equal to &#x60;price&#x60; 
         /// </summary>
-        /// <value>价格条件类型 - 大于等于: 表示市场价格大于等于 price 时触发 - 小于等于: 表示市场价格小于等于 price 时触发</value>
+        /// <value>Price trigger condition  - &#x60;&gt;&#x3D;&#x60;: triggered when market price is greater than or equal to &#x60;price&#x60; - &#x60;&lt;&#x3D;&#x60;: triggered when market price is less than or equal to &#x60;price&#x60; </value>
         [DataMember(Name="rule")]
         public RuleEnum Rule { get; set; }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="SpotPriceTrigger" /> class.
         /// </summary>
         /// <param name="price">Trigger price (required).</param>
-        /// <param name="rule">价格条件类型 - 大于等于: 表示市场价格大于等于 price 时触发 - 小于等于: 表示市场价格小于等于 price 时触发 (required).</param>
+        /// <param name="rule">Price trigger condition  - &#x60;&gt;&#x3D;&#x60;: triggered when market price is greater than or equal to &#x60;price&#x60; - &#x60;&lt;&#x3D;&#x60;: triggered when market price is less than or equal to &#x60;price&#x60;  (required).</param>
         /// <param name="expiration">Maximum wait time for trigger condition (in seconds). Order will be cancelled if timeout (required).</param>
         public SpotPriceTrigger(string price = default(string), RuleEnum rule = default(RuleEnum), int expiration = default(int))
         {
