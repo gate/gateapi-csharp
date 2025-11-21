@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.Key
+# Io.Gate.GateApi.Model.AccountKeyInfo
 
 Main Account API Key Information
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **CurrencyPairs** | **List&lt;string&gt;** | Trading Pair Whitelist, Maximum 30 Pairs | [optional] 
 **UserId** | **long** | User ID | [optional] 
 **IpWhitelist** | **List&lt;string&gt;** | IP Whitelist | [optional] 
-**Perms** | [**List&lt;KeyPerms&gt;**](KeyPerms.md) |  | [optional] 
+**Perms** | [**List&lt;AccountKeyInfoPerms&gt;**](AccountKeyInfoPerms.md) |  | [optional] 
 **Key** | [**AccountDetailKey**](AccountDetailKey.md) |  | [optional] 
 **CreatedAt** | **string** | Created time | [optional] [readonly] 
 **UpdatedAt** | **string** | Last Update Time | [optional] [readonly] 
