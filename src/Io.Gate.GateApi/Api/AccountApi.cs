@@ -53,8 +53,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Key</returns>
-        Key GetAccountMainKeys ();
+        /// <returns>AccountKeyInfo</returns>
+        AccountKeyInfo GetAccountMainKeys ();
 
         /// <summary>
         /// Query All Main Account Key Information
@@ -63,8 +63,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Key</returns>
-        ApiResponse<Key> GetAccountMainKeysWithHttpInfo ();
+        /// <returns>ApiResponse of AccountKeyInfo</returns>
+        ApiResponse<AccountKeyInfo> GetAccountMainKeysWithHttpInfo ();
         /// <summary>
         /// Get user transaction rate limit information
         /// </summary>
@@ -268,8 +268,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Key</returns>
-        Task<Key> GetAccountMainKeysAsync ();
+        /// <returns>Task of AccountKeyInfo</returns>
+        Task<AccountKeyInfo> GetAccountMainKeysAsync ();
 
         /// <summary>
         /// Query All Main Account Key Information
@@ -278,8 +278,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Key)</returns>
-        Task<ApiResponse<Key>> GetAccountMainKeysAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (AccountKeyInfo)</returns>
+        Task<ApiResponse<AccountKeyInfo>> GetAccountMainKeysAsyncWithHttpInfo ();
         /// <summary>
         /// Get user transaction rate limit information
         /// </summary>
@@ -675,10 +675,10 @@ namespace Io.Gate.GateApi.Api
         /// Query All Main Account Key Information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Key</returns>
-        public Key GetAccountMainKeys ()
+        /// <returns>AccountKeyInfo</returns>
+        public AccountKeyInfo GetAccountMainKeys ()
         {
-             ApiResponse<Key> localVarResponse = GetAccountMainKeysWithHttpInfo();
+             ApiResponse<AccountKeyInfo> localVarResponse = GetAccountMainKeysWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -686,8 +686,8 @@ namespace Io.Gate.GateApi.Api
         /// Query All Main Account Key Information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Key</returns>
-        public ApiResponse<Key> GetAccountMainKeysWithHttpInfo ()
+        /// <returns>ApiResponse of AccountKeyInfo</returns>
+        public ApiResponse<AccountKeyInfo> GetAccountMainKeysWithHttpInfo ()
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -710,7 +710,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Key>("/account/main_keys", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<AccountKeyInfo>("/account/main_keys", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -725,10 +725,10 @@ namespace Io.Gate.GateApi.Api
         /// Query All Main Account Key Information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Key</returns>
-        public async Task<Key> GetAccountMainKeysAsync ()
+        /// <returns>Task of AccountKeyInfo</returns>
+        public async Task<AccountKeyInfo> GetAccountMainKeysAsync ()
         {
-             Io.Gate.GateApi.Client.ApiResponse<Key> localVarResponse = await GetAccountMainKeysAsyncWithHttpInfo();
+             Io.Gate.GateApi.Client.ApiResponse<AccountKeyInfo> localVarResponse = await GetAccountMainKeysAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -737,8 +737,8 @@ namespace Io.Gate.GateApi.Api
         /// Query All Main Account Key Information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Key)</returns>
-        public async Task<ApiResponse<Key>> GetAccountMainKeysAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (AccountKeyInfo)</returns>
+        public async Task<ApiResponse<AccountKeyInfo>> GetAccountMainKeysAsyncWithHttpInfo ()
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -763,7 +763,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Key>("/account/main_keys", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AccountKeyInfo>("/account/main_keys", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

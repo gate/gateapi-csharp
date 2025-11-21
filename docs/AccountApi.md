@@ -85,7 +85,7 @@ This endpoint does not need any parameter.
 
 <a name="getaccountmainkeys"></a>
 # **GetAccountMainKeys**
-> Key GetAccountMainKeys ()
+> AccountKeyInfo GetAccountMainKeys ()
 
 Query All Main Account Key Information
 
@@ -112,7 +112,7 @@ namespace Example
             try
             {
                 // Query All Main Account Key Information
-                Key result = apiInstance.GetAccountMainKeys();
+                AccountKeyInfo result = apiInstance.GetAccountMainKeys();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -132,7 +132,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Key**](Key.md)
+[**AccountKeyInfo**](AccountKeyInfo.md)
 
 ### Authorization
 

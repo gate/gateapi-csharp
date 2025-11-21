@@ -25,17 +25,17 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// KeyPerms
+    /// AccountKeyInfoPerms
     /// </summary>
     [DataContract]
-    public partial class KeyPerms :  IEquatable<KeyPerms>, IValidatableObject
+    public partial class AccountKeyInfoPerms :  IEquatable<AccountKeyInfoPerms>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="KeyPerms" /> class.
+        /// Initializes a new instance of the <see cref="AccountKeyInfoPerms" /> class.
         /// </summary>
         /// <param name="name">Permission function name (no value will be cleared) - &#x60;wallet&#x60;: wallet - &#x60;spot&#x60;: spot/margin - &#x60;futures&#x60;: perpetual contract - &#x60;delivery&#x60;: delivery contract - &#x60;earn&#x60;: earn - &#x60;custody&#x60;: custody - &#x60;options&#x60;: options - &#x60;account&#x60;: account information - &#x60;loan&#x60;: lending - &#x60;margin&#x60;: margin - &#x60;unified&#x60;: unified account - &#x60;copy&#x60;: copy trading- &#x60;pilot&#x60;: pilot - &#x60;otc&#x60;: otc - &#x60;alpha&#x60;: alpha - &#x60;crossx&#x60;: cross-exchange.</param>
         /// <param name="readOnly">Read Only.</param>
-        public KeyPerms(string name = default(string), bool readOnly = default(bool))
+        public AccountKeyInfoPerms(string name = default(string), bool readOnly = default(bool))
         {
             this.Name = name;
             this.ReadOnly = readOnly;
@@ -62,7 +62,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class KeyPerms {\n");
+            sb.Append("class AccountKeyInfoPerms {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ReadOnly: ").Append(ReadOnly).Append("\n");
             sb.Append("}\n");
@@ -85,15 +85,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as KeyPerms);
+            return this.Equals(input as AccountKeyInfoPerms);
         }
 
         /// <summary>
-        /// Returns true if KeyPerms instances are equal
+        /// Returns true if AccountKeyInfoPerms instances are equal
         /// </summary>
-        /// <param name="input">Instance of KeyPerms to be compared</param>
+        /// <param name="input">Instance of AccountKeyInfoPerms to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(KeyPerms input)
+        public bool Equals(AccountKeyInfoPerms input)
         {
             if (input == null)
                 return false;
