@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="l">Lowest price (quote currency).</param>
         /// <param name="o">Open price (quote currency).</param>
         /// <param name="sum">Trading volume (unit: Quote currency).</param>
-        public FuturesCandlestick(double t = default(double), long v = default(long), string c = default(string), string h = default(string), string l = default(string), string o = default(string), string sum = default(string))
+        public FuturesCandlestick(double t = default(double), string v = default(string), string c = default(string), string h = default(string), string l = default(string), string o = default(string), string sum = default(string))
         {
             this.T = t;
             this.V = v;
@@ -63,7 +63,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>size volume (contract size). Only returned if &#x60;contract&#x60; is not prefixed</value>
         [DataMember(Name="v")]
-        public long V { get; set; }
+        public string V { get; set; }
 
         /// <summary>
         /// Close price (quote currency)
@@ -155,7 +155,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.V == input.V ||
-                    this.V.Equals(input.V)
+                    (this.V != null &&
+                    this.V.Equals(input.V))
                 ) && 
                 (
                     this.C == input.C ||
@@ -194,7 +195,8 @@ namespace Io.Gate.GateApi.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.T.GetHashCode();
-                hashCode = hashCode * 59 + this.V.GetHashCode();
+                if (this.V != null)
+                    hashCode = hashCode * 59 + this.V.GetHashCode();
                 if (this.C != null)
                     hashCode = hashCode * 59 + this.C.GetHashCode();
                 if (this.H != null)

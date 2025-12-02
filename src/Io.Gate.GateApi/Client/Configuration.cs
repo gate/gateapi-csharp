@@ -32,7 +32,7 @@ namespace Io.Gate.GateApi.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "7.105.30";
+        public const string Version = "7.106.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -103,9 +103,11 @@ namespace Io.Gate.GateApi.Client
         [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
-            UserAgent = "OpenAPI-Generator/7.105.30/csharp";
+            UserAgent = "OpenAPI-Generator/7.106.0/csharp";
             BasePath = "https://api.gateio.ws/api/v4";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
+            // Set default X-Gate-Size-Decimal header for futures API
+            DefaultHeaders.Add("X-Gate-Size-Decimal", "1");
 
             // Setting Timeout has side effects (forces ApiClient creation).
             Timeout = 100000;
@@ -133,6 +135,11 @@ namespace Io.Gate.GateApi.Client
                 {
                     DefaultHeaders.Add(keyValuePair);
                 }
+            }
+            // Ensure default X-Gate-Size-Decimal header is preserved when using this overload
+            if (!DefaultHeaders.ContainsKey("X-Gate-Size-Decimal"))
+            {
+                DefaultHeaders.Add("X-Gate-Size-Decimal", "1");
             }
 
             if (string.IsNullOrWhiteSpace(apiV4Key) && string.IsNullOrWhiteSpace(apiV4Secret))
@@ -287,8 +294,8 @@ namespace Io.Gate.GateApi.Client
         {
             string report = "C# SDK (Io.Gate.GateApi) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
-            report += "    Version of the API: v4.105.30\n";
-            report += "    SDK Package Version: 7.105.30\n";
+            report += "    Version of the API: v4.106.0\n";
+            report += "    SDK Package Version: 7.106.0\n";
 
             return report;
         }

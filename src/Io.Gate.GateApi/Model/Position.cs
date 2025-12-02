@@ -103,7 +103,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size</value>
         [DataMember(Name="size", EmitDefaultValue=false)]
-        public long Size { get; private set; }
+        public string Size { get; private set; }
 
         /// <summary>
         /// Position leverage. 0 means cross margin; positive number means isolated margin
@@ -401,7 +401,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 ) && 
                 (
                     this.Leverage == input.Leverage ||
@@ -565,7 +566,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.User.GetHashCode();
                 if (this.Contract != null)
                     hashCode = hashCode * 59 + this.Contract.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Leverage != null)
                     hashCode = hashCode * 59 + this.Leverage.GetHashCode();
                 if (this.RiskLimit != null)

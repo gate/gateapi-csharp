@@ -134,7 +134,7 @@ namespace Io.Gate.GateApi.Api
         /// Get market depth information
         /// </summary>
         /// <remarks>
-        /// Market depth buy orders are sorted by price from high to low, sell orders are sorted from low to high
+        /// Market depth buy orders are sorted by price from high to low, sell orders are reversed
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -148,7 +148,7 @@ namespace Io.Gate.GateApi.Api
         /// Get market depth information
         /// </summary>
         /// <remarks>
-        /// Market depth buy orders are sorted by price from high to low, sell orders are sorted from low to high
+        /// Market depth buy orders are sorted by price from high to low, sell orders are reversed
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -935,7 +935,7 @@ namespace Io.Gate.GateApi.Api
         /// Get market depth information
         /// </summary>
         /// <remarks>
-        /// Market depth buy orders are sorted by price from high to low, sell orders are sorted from low to high
+        /// Market depth buy orders are sorted by price from high to low, sell orders are reversed
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -949,7 +949,7 @@ namespace Io.Gate.GateApi.Api
         /// Get market depth information
         /// </summary>
         /// <remarks>
-        /// Market depth buy orders are sorted by price from high to low, sell orders are sorted from low to high
+        /// Market depth buy orders are sorted by price from high to low, sell orders are reversed
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -2288,7 +2288,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get market depth information Market depth buy orders are sorted by price from high to low, sell orders are sorted from low to high
+        /// Get market depth information Market depth buy orders are sorted by price from high to low, sell orders are reversed
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -2303,7 +2303,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get market depth information Market depth buy orders are sorted by price from high to low, sell orders are sorted from low to high
+        /// Get market depth information Market depth buy orders are sorted by price from high to low, sell orders are reversed
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -2361,7 +2361,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get market depth information Market depth buy orders are sorted by price from high to low, sell orders are sorted from low to high
+        /// Get market depth information Market depth buy orders are sorted by price from high to low, sell orders are reversed
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -2377,7 +2377,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get market depth information Market depth buy orders are sorted by price from high to low, sell orders are sorted from low to high
+        /// Get market depth information Market depth buy orders are sorted by price from high to low, sell orders are reversed
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>

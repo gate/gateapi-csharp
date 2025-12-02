@@ -37,7 +37,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="price">New order price.</param>
         /// <param name="amendText">Custom info during order amendment.</param>
         /// <param name="text">Internal users can modify information in the text field..</param>
-        public FuturesOrderAmendment(long size = default(long), string price = default(string), string amendText = default(string), string text = default(string))
+        public FuturesOrderAmendment(string size = default(string), string price = default(string), string amendText = default(string), string text = default(string))
         {
             this.Size = size;
             this.Price = price;
@@ -50,7 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>New order size, including filled part.  - If new size is less than or equal to filled size, the order will be cancelled. - Order side must be identical to the original one. - Close order size cannot be changed. - For reduce only orders, increasing size may leads to other reduce only orders being cancelled. - If price is not changed, decreasing size will not change its precedence in order book, while increasing will move it to the last at current price.</value>
         [DataMember(Name="size")]
-        public long Size { get; set; }
+        public string Size { get; set; }
 
         /// <summary>
         /// New order price
@@ -121,7 +121,8 @@ namespace Io.Gate.GateApi.Model
             return 
                 (
                     this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 ) && 
                 (
                     this.Price == input.Price ||
@@ -149,7 +150,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 if (this.AmendText != null)

@@ -34,8 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="TradeFee" /> class.
         /// </summary>
         /// <param name="userId">User ID.</param>
-        /// <param name="takerFee">taker fee rate.</param>
-        /// <param name="makerFee">maker fee rate.</param>
+        /// <param name="takerFee">spot taker fee rate.</param>
+        /// <param name="makerFee">spot maker fee rate.</param>
+        /// <param name="rpiMakerFee">spot RPI MM maker fee rate.</param>
         /// <param name="gtDiscount">Whether GT deduction discount is enabled.</param>
         /// <param name="gtTakerFee">Taker fee rate if using GT deduction. It will be 0 if GT deduction is disabled.</param>
         /// <param name="gtMakerFee">Maker fee rate with GT deduction. Returns 0 if GT deduction is disabled.</param>
@@ -43,14 +44,17 @@ namespace Io.Gate.GateApi.Model
         /// <param name="pointType">Point card type: 0 - Original version, 1 - New version since 202009.</param>
         /// <param name="futuresTakerFee">Perpetual contract taker fee rate.</param>
         /// <param name="futuresMakerFee">Perpetual contract maker fee rate.</param>
+        /// <param name="futuresRpiMakerFee">contract RPI MM maker fee rate.</param>
         /// <param name="deliveryTakerFee">Delivery contract taker fee rate.</param>
         /// <param name="deliveryMakerFee">Delivery contract maker fee rate.</param>
         /// <param name="debitFee">Deduction types for rates, 1 - GT deduction, 2 - Point card deduction, 3 - VIP rates.</param>
-        public TradeFee(long userId = default(long), string takerFee = default(string), string makerFee = default(string), bool gtDiscount = default(bool), string gtTakerFee = default(string), string gtMakerFee = default(string), string loanFee = default(string), string pointType = default(string), string futuresTakerFee = default(string), string futuresMakerFee = default(string), string deliveryTakerFee = default(string), string deliveryMakerFee = default(string), int debitFee = default(int))
+        /// <param name="rpiMm">RPI MM Level.</param>
+        public TradeFee(long userId = default(long), string takerFee = default(string), string makerFee = default(string), string rpiMakerFee = default(string), bool gtDiscount = default(bool), string gtTakerFee = default(string), string gtMakerFee = default(string), string loanFee = default(string), string pointType = default(string), string futuresTakerFee = default(string), string futuresMakerFee = default(string), string futuresRpiMakerFee = default(string), string deliveryTakerFee = default(string), string deliveryMakerFee = default(string), int debitFee = default(int), int rpiMm = default(int))
         {
             this.UserId = userId;
             this.TakerFee = takerFee;
             this.MakerFee = makerFee;
+            this.RpiMakerFee = rpiMakerFee;
             this.GtDiscount = gtDiscount;
             this.GtTakerFee = gtTakerFee;
             this.GtMakerFee = gtMakerFee;
@@ -58,9 +62,11 @@ namespace Io.Gate.GateApi.Model
             this.PointType = pointType;
             this.FuturesTakerFee = futuresTakerFee;
             this.FuturesMakerFee = futuresMakerFee;
+            this.FuturesRpiMakerFee = futuresRpiMakerFee;
             this.DeliveryTakerFee = deliveryTakerFee;
             this.DeliveryMakerFee = deliveryMakerFee;
             this.DebitFee = debitFee;
+            this.RpiMm = rpiMm;
         }
 
         /// <summary>
@@ -71,18 +77,25 @@ namespace Io.Gate.GateApi.Model
         public long UserId { get; set; }
 
         /// <summary>
-        /// taker fee rate
+        /// spot taker fee rate
         /// </summary>
-        /// <value>taker fee rate</value>
+        /// <value>spot taker fee rate</value>
         [DataMember(Name="taker_fee")]
         public string TakerFee { get; set; }
 
         /// <summary>
-        /// maker fee rate
+        /// spot maker fee rate
         /// </summary>
-        /// <value>maker fee rate</value>
+        /// <value>spot maker fee rate</value>
         [DataMember(Name="maker_fee")]
         public string MakerFee { get; set; }
+
+        /// <summary>
+        /// spot RPI MM maker fee rate
+        /// </summary>
+        /// <value>spot RPI MM maker fee rate</value>
+        [DataMember(Name="rpi_maker_fee")]
+        public string RpiMakerFee { get; set; }
 
         /// <summary>
         /// Whether GT deduction discount is enabled
@@ -134,6 +147,13 @@ namespace Io.Gate.GateApi.Model
         public string FuturesMakerFee { get; set; }
 
         /// <summary>
+        /// contract RPI MM maker fee rate
+        /// </summary>
+        /// <value>contract RPI MM maker fee rate</value>
+        [DataMember(Name="futures_rpi_maker_fee")]
+        public string FuturesRpiMakerFee { get; set; }
+
+        /// <summary>
         /// Delivery contract taker fee rate
         /// </summary>
         /// <value>Delivery contract taker fee rate</value>
@@ -155,6 +175,13 @@ namespace Io.Gate.GateApi.Model
         public int DebitFee { get; set; }
 
         /// <summary>
+        /// RPI MM Level
+        /// </summary>
+        /// <value>RPI MM Level</value>
+        [DataMember(Name="rpi_mm")]
+        public int RpiMm { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -165,6 +192,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("  TakerFee: ").Append(TakerFee).Append("\n");
             sb.Append("  MakerFee: ").Append(MakerFee).Append("\n");
+            sb.Append("  RpiMakerFee: ").Append(RpiMakerFee).Append("\n");
             sb.Append("  GtDiscount: ").Append(GtDiscount).Append("\n");
             sb.Append("  GtTakerFee: ").Append(GtTakerFee).Append("\n");
             sb.Append("  GtMakerFee: ").Append(GtMakerFee).Append("\n");
@@ -172,9 +200,11 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  PointType: ").Append(PointType).Append("\n");
             sb.Append("  FuturesTakerFee: ").Append(FuturesTakerFee).Append("\n");
             sb.Append("  FuturesMakerFee: ").Append(FuturesMakerFee).Append("\n");
+            sb.Append("  FuturesRpiMakerFee: ").Append(FuturesRpiMakerFee).Append("\n");
             sb.Append("  DeliveryTakerFee: ").Append(DeliveryTakerFee).Append("\n");
             sb.Append("  DeliveryMakerFee: ").Append(DeliveryMakerFee).Append("\n");
             sb.Append("  DebitFee: ").Append(DebitFee).Append("\n");
+            sb.Append("  RpiMm: ").Append(RpiMm).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -224,6 +254,11 @@ namespace Io.Gate.GateApi.Model
                     this.MakerFee.Equals(input.MakerFee))
                 ) && 
                 (
+                    this.RpiMakerFee == input.RpiMakerFee ||
+                    (this.RpiMakerFee != null &&
+                    this.RpiMakerFee.Equals(input.RpiMakerFee))
+                ) && 
+                (
                     this.GtDiscount == input.GtDiscount ||
                     this.GtDiscount.Equals(input.GtDiscount)
                 ) && 
@@ -258,6 +293,11 @@ namespace Io.Gate.GateApi.Model
                     this.FuturesMakerFee.Equals(input.FuturesMakerFee))
                 ) && 
                 (
+                    this.FuturesRpiMakerFee == input.FuturesRpiMakerFee ||
+                    (this.FuturesRpiMakerFee != null &&
+                    this.FuturesRpiMakerFee.Equals(input.FuturesRpiMakerFee))
+                ) && 
+                (
                     this.DeliveryTakerFee == input.DeliveryTakerFee ||
                     (this.DeliveryTakerFee != null &&
                     this.DeliveryTakerFee.Equals(input.DeliveryTakerFee))
@@ -270,6 +310,10 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.DebitFee == input.DebitFee ||
                     this.DebitFee.Equals(input.DebitFee)
+                ) && 
+                (
+                    this.RpiMm == input.RpiMm ||
+                    this.RpiMm.Equals(input.RpiMm)
                 );
         }
 
@@ -287,6 +331,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.TakerFee.GetHashCode();
                 if (this.MakerFee != null)
                     hashCode = hashCode * 59 + this.MakerFee.GetHashCode();
+                if (this.RpiMakerFee != null)
+                    hashCode = hashCode * 59 + this.RpiMakerFee.GetHashCode();
                 hashCode = hashCode * 59 + this.GtDiscount.GetHashCode();
                 if (this.GtTakerFee != null)
                     hashCode = hashCode * 59 + this.GtTakerFee.GetHashCode();
@@ -300,11 +346,14 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.FuturesTakerFee.GetHashCode();
                 if (this.FuturesMakerFee != null)
                     hashCode = hashCode * 59 + this.FuturesMakerFee.GetHashCode();
+                if (this.FuturesRpiMakerFee != null)
+                    hashCode = hashCode * 59 + this.FuturesRpiMakerFee.GetHashCode();
                 if (this.DeliveryTakerFee != null)
                     hashCode = hashCode * 59 + this.DeliveryTakerFee.GetHashCode();
                 if (this.DeliveryMakerFee != null)
                     hashCode = hashCode * 59 + this.DeliveryMakerFee.GetHashCode();
                 hashCode = hashCode * 59 + this.DebitFee.GetHashCode();
+                hashCode = hashCode * 59 + this.RpiMm.GetHashCode();
                 return hashCode;
             }
         }

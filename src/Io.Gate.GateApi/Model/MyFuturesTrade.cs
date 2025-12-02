@@ -71,7 +71,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="text">Order custom information.</param>
         /// <param name="fee">Trade fee.</param>
         /// <param name="pointFee">Points used to deduct trade fee.</param>
-        public MyFuturesTrade(long id = default(long), double createTime = default(double), string contract = default(string), string orderId = default(string), long size = default(long), long closeSize = default(long), string price = default(string), RoleEnum? role = default(RoleEnum?), string text = default(string), string fee = default(string), string pointFee = default(string))
+        /// <param name="tradeValue">trade value.</param>
+        public MyFuturesTrade(long id = default(long), double createTime = default(double), string contract = default(string), string orderId = default(string), string size = default(string), string closeSize = default(string), string price = default(string), RoleEnum? role = default(RoleEnum?), string text = default(string), string fee = default(string), string pointFee = default(string), string tradeValue = default(string))
         {
             this.Id = id;
             this.CreateTime = createTime;
@@ -84,6 +85,7 @@ namespace Io.Gate.GateApi.Model
             this.Text = text;
             this.Fee = fee;
             this.PointFee = pointFee;
+            this.TradeValue = tradeValue;
         }
 
         /// <summary>
@@ -119,14 +121,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading size</value>
         [DataMember(Name="size")]
-        public long Size { get; set; }
+        public string Size { get; set; }
 
         /// <summary>
         /// Number of closed positions:  close_size&#x3D;0 &amp;&amp; size＞0 Open long position close_size&#x3D;0 &amp;&amp; size＜0 Open short position close_size&gt;0 &amp;&amp; size&gt;0 &amp;&amp; size &lt;&#x3D; close_size Close short position close_size&gt;0 &amp;&amp; size&gt;0 &amp;&amp; size &gt; close_size Close short position and open long position close_size&lt;0 &amp;&amp; size&lt;0 &amp;&amp; size &gt;&#x3D; close_size Close long position close_size&lt;0 &amp;&amp; size&lt;0 &amp;&amp; size &lt; close_size Close long position and open short position
         /// </summary>
         /// <value>Number of closed positions:  close_size&#x3D;0 &amp;&amp; size＞0 Open long position close_size&#x3D;0 &amp;&amp; size＜0 Open short position close_size&gt;0 &amp;&amp; size&gt;0 &amp;&amp; size &lt;&#x3D; close_size Close short position close_size&gt;0 &amp;&amp; size&gt;0 &amp;&amp; size &gt; close_size Close short position and open long position close_size&lt;0 &amp;&amp; size&lt;0 &amp;&amp; size &gt;&#x3D; close_size Close long position close_size&lt;0 &amp;&amp; size&lt;0 &amp;&amp; size &lt; close_size Close long position and open short position</value>
         [DataMember(Name="close_size")]
-        public long CloseSize { get; set; }
+        public string CloseSize { get; set; }
 
         /// <summary>
         /// Fill Price
@@ -157,6 +159,13 @@ namespace Io.Gate.GateApi.Model
         public string PointFee { get; set; }
 
         /// <summary>
+        /// trade value
+        /// </summary>
+        /// <value>trade value</value>
+        [DataMember(Name="trade_value")]
+        public string TradeValue { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -175,6 +184,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Fee: ").Append(Fee).Append("\n");
             sb.Append("  PointFee: ").Append(PointFee).Append("\n");
+            sb.Append("  TradeValue: ").Append(TradeValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -229,11 +239,13 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 ) && 
                 (
                     this.CloseSize == input.CloseSize ||
-                    this.CloseSize.Equals(input.CloseSize)
+                    (this.CloseSize != null &&
+                    this.CloseSize.Equals(input.CloseSize))
                 ) && 
                 (
                     this.Price == input.Price ||
@@ -258,6 +270,11 @@ namespace Io.Gate.GateApi.Model
                     this.PointFee == input.PointFee ||
                     (this.PointFee != null &&
                     this.PointFee.Equals(input.PointFee))
+                ) && 
+                (
+                    this.TradeValue == input.TradeValue ||
+                    (this.TradeValue != null &&
+                    this.TradeValue.Equals(input.TradeValue))
                 );
         }
 
@@ -276,8 +293,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Contract.GetHashCode();
                 if (this.OrderId != null)
                     hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
-                hashCode = hashCode * 59 + this.CloseSize.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.CloseSize != null)
+                    hashCode = hashCode * 59 + this.CloseSize.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 hashCode = hashCode * 59 + this.Role.GetHashCode();
@@ -287,6 +306,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Fee.GetHashCode();
                 if (this.PointFee != null)
                     hashCode = hashCode * 59 + this.PointFee.GetHashCode();
+                if (this.TradeValue != null)
+                    hashCode = hashCode * 59 + this.TradeValue.GetHashCode();
                 return hashCode;
             }
         }

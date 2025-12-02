@@ -130,7 +130,7 @@ namespace Io.Gate.GateApi.Api
         /// Query users in the STP user group
         /// </summary>
         /// <remarks>
-        /// Only the main account that created this STP group can query the account ID list in the current STP group
+        /// Only the main account that created this STP group can query the account ID list of the current STP group
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stpId">STP Group ID</param>
@@ -141,7 +141,7 @@ namespace Io.Gate.GateApi.Api
         /// Query users in the STP user group
         /// </summary>
         /// <remarks>
-        /// Only the main account that created this STP group can query the account ID list in the current STP group
+        /// Only the main account that created this STP group can query the account ID list of the current STP group
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stpId">STP Group ID</param>
@@ -345,7 +345,7 @@ namespace Io.Gate.GateApi.Api
         /// Query users in the STP user group
         /// </summary>
         /// <remarks>
-        /// Only the main account that created this STP group can query the account ID list in the current STP group
+        /// Only the main account that created this STP group can query the account ID list of the current STP group
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stpId">STP Group ID</param>
@@ -356,7 +356,7 @@ namespace Io.Gate.GateApi.Api
         /// Query users in the STP user group
         /// </summary>
         /// <remarks>
-        /// Only the main account that created this STP group can query the account ID list in the current STP group
+        /// Only the main account that created this STP group can query the account ID list of the current STP group
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stpId">STP Group ID</param>
@@ -1112,7 +1112,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query users in the STP user group Only the main account that created this STP group can query the account ID list in the current STP group
+        /// Query users in the STP user group Only the main account that created this STP group can query the account ID list of the current STP group
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stpId">STP Group ID</param>
@@ -1124,7 +1124,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query users in the STP user group Only the main account that created this STP group can query the account ID list in the current STP group
+        /// Query users in the STP user group Only the main account that created this STP group can query the account ID list of the current STP group
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stpId">STP Group ID</param>
@@ -1165,7 +1165,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query users in the STP user group Only the main account that created this STP group can query the account ID list in the current STP group
+        /// Query users in the STP user group Only the main account that created this STP group can query the account ID list of the current STP group
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stpId">STP Group ID</param>
@@ -1178,7 +1178,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query users in the STP user group Only the main account that created this STP group can query the account ID list in the current STP group
+        /// Query users in the STP user group Only the main account that created this STP group can query the account ID list of the current STP group
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stpId">STP Group ID</param>

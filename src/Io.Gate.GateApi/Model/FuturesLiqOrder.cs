@@ -57,14 +57,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User position size</value>
         [DataMember(Name="size", EmitDefaultValue=false)]
-        public long Size { get; private set; }
+        public string Size { get; private set; }
 
         /// <summary>
         /// Number of forced liquidation orders
         /// </summary>
         /// <value>Number of forced liquidation orders</value>
         [DataMember(Name="order_size", EmitDefaultValue=false)]
-        public long OrderSize { get; private set; }
+        public string OrderSize { get; private set; }
 
         /// <summary>
         /// Liquidation order price
@@ -85,7 +85,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>System liquidation order maker size</value>
         [DataMember(Name="left", EmitDefaultValue=false)]
-        public long Left { get; private set; }
+        public string Left { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -147,11 +147,13 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 ) && 
                 (
                     this.OrderSize == input.OrderSize ||
-                    this.OrderSize.Equals(input.OrderSize)
+                    (this.OrderSize != null &&
+                    this.OrderSize.Equals(input.OrderSize))
                 ) && 
                 (
                     this.OrderPrice == input.OrderPrice ||
@@ -165,7 +167,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Left == input.Left ||
-                    this.Left.Equals(input.Left)
+                    (this.Left != null &&
+                    this.Left.Equals(input.Left))
                 );
         }
 
@@ -181,13 +184,16 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.Contract != null)
                     hashCode = hashCode * 59 + this.Contract.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
-                hashCode = hashCode * 59 + this.OrderSize.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.OrderSize != null)
+                    hashCode = hashCode * 59 + this.OrderSize.GetHashCode();
                 if (this.OrderPrice != null)
                     hashCode = hashCode * 59 + this.OrderPrice.GetHashCode();
                 if (this.FillPrice != null)
                     hashCode = hashCode * 59 + this.FillPrice.GetHashCode();
-                hashCode = hashCode * 59 + this.Left.GetHashCode();
+                if (this.Left != null)
+                    hashCode = hashCode * 59 + this.Left.GetHashCode();
                 return hashCode;
             }
         }

@@ -247,7 +247,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="text">User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.) Besides user defined information, reserved contents are listed below, denoting how the order is created:  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance .</param>
         /// <param name="autoSize">Set side to close dual-mode position. &#x60;close_long&#x60; closes the long side; while &#x60;close_short&#x60; the short one. Note &#x60;size&#x60; also needs to be set to 0.</param>
         /// <param name="stpAct">Self-Trading Prevention Action. Users can use this field to set self-trade prevention strategies  1. After users join the &#x60;STP Group&#x60;, they can pass &#x60;stp_act&#x60; to limit the user&#39;s self-trade prevention strategy. If &#x60;stp_act&#x60; is not passed, the default is &#x60;cn&#x60; strategy. 2. When the user does not join the &#x60;STP group&#x60;, an error will be returned when passing the &#x60;stp_act&#x60; parameter. 3. If the user did not use &#x60;stp_act&#x60; when placing the order, &#x60;stp_act&#x60; will return &#39;-&#39;  - cn: Cancel newest, cancel new orders and keep old ones - co: Cancel oldest, cancel old orders and keep new ones - cb: Cancel both, both old and new orders will be cancelled.</param>
-        public BatchFuturesOrder(bool succeeded = default(bool), string label = default(string), string detail = default(string), string contract = default(string), long size = default(long), long iceberg = default(long), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?))
+        public BatchFuturesOrder(bool succeeded = default(bool), string label = default(string), string detail = default(string), string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?))
         {
             this.Succeeded = succeeded;
             this.Label = label;
@@ -325,14 +325,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Required. Trading quantity. Positive for buy, negative for sell. Set to 0 for close position orders.</value>
         [DataMember(Name="size")]
-        public long Size { get; set; }
+        public string Size { get; set; }
 
         /// <summary>
         /// Display size for iceberg orders. 0 for non-iceberg orders. Note that hidden portions are charged taker fees.
         /// </summary>
         /// <value>Display size for iceberg orders. 0 for non-iceberg orders. Note that hidden portions are charged taker fees.</value>
         [DataMember(Name="iceberg")]
-        public long Iceberg { get; set; }
+        public string Iceberg { get; set; }
 
         /// <summary>
         /// Order price. Price of 0 with &#x60;tif&#x60; set to &#x60;ioc&#x60; represents a market order.
@@ -381,7 +381,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unfilled quantity</value>
         [DataMember(Name="left", EmitDefaultValue=false)]
-        public long Left { get; private set; }
+        public string Left { get; private set; }
 
         /// <summary>
         /// Fill price
@@ -540,11 +540,13 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 ) && 
                 (
                     this.Iceberg == input.Iceberg ||
-                    this.Iceberg.Equals(input.Iceberg)
+                    (this.Iceberg != null &&
+                    this.Iceberg.Equals(input.Iceberg))
                 ) && 
                 (
                     this.Price == input.Price ||
@@ -577,7 +579,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Left == input.Left ||
-                    this.Left.Equals(input.Left)
+                    (this.Left != null &&
+                    this.Left.Equals(input.Left))
                 ) && 
                 (
                     this.FillPrice == input.FillPrice ||
@@ -639,8 +642,10 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Contract != null)
                     hashCode = hashCode * 59 + this.Contract.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
-                hashCode = hashCode * 59 + this.Iceberg.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Iceberg != null)
+                    hashCode = hashCode * 59 + this.Iceberg.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 hashCode = hashCode * 59 + this.Close.GetHashCode();
@@ -649,7 +654,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.IsReduceOnly.GetHashCode();
                 hashCode = hashCode * 59 + this.IsLiq.GetHashCode();
                 hashCode = hashCode * 59 + this.Tif.GetHashCode();
-                hashCode = hashCode * 59 + this.Left.GetHashCode();
+                if (this.Left != null)
+                    hashCode = hashCode * 59 + this.Left.GetHashCode();
                 if (this.FillPrice != null)
                     hashCode = hashCode * 59 + this.FillPrice.GetHashCode();
                 if (this.Text != null)

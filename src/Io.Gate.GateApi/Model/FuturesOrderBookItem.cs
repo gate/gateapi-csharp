@@ -35,7 +35,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="p">Price (quote currency).</param>
         /// <param name="s">Size.</param>
-        public FuturesOrderBookItem(string p = default(string), long s = default(long))
+        public FuturesOrderBookItem(string p = default(string), string s = default(string))
         {
             this.P = p;
             this.S = s;
@@ -53,7 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Size</value>
         [DataMember(Name="s")]
-        public long S { get; set; }
+        public string S { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -106,7 +106,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.S == input.S ||
-                    this.S.Equals(input.S)
+                    (this.S != null &&
+                    this.S.Equals(input.S))
                 );
         }
 
@@ -121,7 +122,8 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.P != null)
                     hashCode = hashCode * 59 + this.P.GetHashCode();
-                hashCode = hashCode * 59 + this.S.GetHashCode();
+                if (this.S != null)
+                    hashCode = hashCode * 59 + this.S.GetHashCode();
                 return hashCode;
             }
         }

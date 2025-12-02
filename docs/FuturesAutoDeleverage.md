@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **CrossLeverageLimit** | **string** | Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) | [optional] [readonly] 
 **EntryPrice** | **string** | Average entry price | [optional] [readonly] 
 **FillPrice** | **string** | Average fill price | [optional] [readonly] 
-**TradeSize** | **long** | Trading size | [optional] [readonly] 
-**PositionSize** | **long** | Positions after auto-deleveraging | [optional] [readonly] 
+**TradeSize** | **string** | Trading size | [optional] [readonly] 
+**PositionSize** | **string** | Positions after auto-deleveraging | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

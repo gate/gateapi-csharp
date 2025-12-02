@@ -45,7 +45,7 @@ namespace Example
             var apiInstance = new MultiCollateralLoanApi(config);
             var page = 1;  // int? | Page number (optional)  (default to 1)
             var limit = 10;  // int? | Maximum number of records returned in a single list (optional)  (default to 10)
-            var sort = "ltv_asc";  // string | Sort type: `time_desc` - Created time descending (default), `ltv_asc` - Collateral ratio ascending, `ltv_desc` - Collateral ratio descending. (optional) 
+            var sort = "ltv_asc";  // string | Sort type: time_desc - Default descending by creation time, ltv_asc - Ascending by LTV ratio, ltv_desc - Descending by LTV ratio (optional) 
             var orderType = "current";  // string | Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified (optional) 
 
             try
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int?**| Page number | [optional] [default to 1]
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 10]
- **sort** | **string**| Sort type: &#x60;time_desc&#x60; - Created time descending (default), &#x60;ltv_asc&#x60; - Collateral ratio ascending, &#x60;ltv_desc&#x60; - Collateral ratio descending. | [optional] 
+ **sort** | **string**| Sort type: time_desc - Default descending by creation time, ltv_asc - Ascending by LTV ratio, ltv_desc - Descending by LTV ratio | [optional] 
  **orderType** | **string**| Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified | [optional] 
 
 ### Return type
@@ -565,7 +565,7 @@ namespace Example
 
             var apiInstance = new MultiCollateralLoanApi(config);
             var type = "collateral";  // string | Currency type: collateral - Collateral currency, borrow - Borrowing currency
-            var currency = "BTC";  // string | When it is a collateral currency, multiple currencies can be provided separated by commas; when it is a borrowing currency, only one currency can be provided.
+            var currency = "BTC";  // string | When it is a collateral currency, multiple currencies can be passed separated by commas; when it is a borrowing currency, only one currency can be passed
 
             try
             {
@@ -590,7 +590,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **string**| Currency type: collateral - Collateral currency, borrow - Borrowing currency | 
- **currency** | **string**| When it is a collateral currency, multiple currencies can be provided separated by commas; when it is a borrowing currency, only one currency can be provided. | 
+ **currency** | **string**| When it is a collateral currency, multiple currencies can be passed separated by commas; when it is a borrowing currency, only one currency can be passed | 
 
 ### Return type
 
@@ -815,7 +815,7 @@ No authorization required
 
 Query currency's current interest rate
 
-Query currency's current interest rate for the previous hour, current interest rate updates hourly
+Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
 
 ### Example
 ```csharp

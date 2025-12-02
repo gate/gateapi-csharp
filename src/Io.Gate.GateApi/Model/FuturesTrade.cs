@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="size">Trading size.</param>
         /// <param name="price">Trade price (quote currency).</param>
         /// <param name="isInternal">Whether it is an internal trade. Internal trade refers to the takeover of liquidation orders by the insurance fund and ADL users. Since it is not a normal matching on the market depth, the trade price may deviate from the market, and it will not be recorded in the K-line. If it is not an internal trade, this field will not be returned.</param>
-        public FuturesTrade(long id = default(long), double createTime = default(double), double createTimeMs = default(double), string contract = default(string), long size = default(long), string price = default(string), bool isInternal = default(bool))
+        public FuturesTrade(long id = default(long), double createTime = default(double), double createTimeMs = default(double), string contract = default(string), string size = default(string), string price = default(string), bool isInternal = default(bool))
         {
             this.Id = id;
             this.CreateTime = createTime;
@@ -84,7 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading size</value>
         [DataMember(Name="size")]
-        public long Size { get; set; }
+        public string Size { get; set; }
 
         /// <summary>
         /// Trade price (quote currency)
@@ -168,7 +168,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 ) && 
                 (
                     this.Price == input.Price ||
@@ -195,7 +196,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.CreateTimeMs.GetHashCode();
                 if (this.Contract != null)
                     hashCode = hashCode * 59 + this.Contract.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 hashCode = hashCode * 59 + this.IsInternal.GetHashCode();

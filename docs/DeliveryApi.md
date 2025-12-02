@@ -177,7 +177,7 @@ No authorization required
 
 <a name="listdeliveryorderbook"></a>
 # **ListDeliveryOrderBook**
-> FuturesOrderBook ListDeliveryOrderBook (string settle, string contract, string interval = null, int? limit = null, bool? withId = null)
+> DeliveryOrderBook ListDeliveryOrderBook (string settle, string contract, string interval = null, int? limit = null, bool? withId = null)
 
 Query futures market depth information
 
@@ -209,7 +209,7 @@ namespace Example
             try
             {
                 // Query futures market depth information
-                FuturesOrderBook result = apiInstance.ListDeliveryOrderBook(settle, contract, interval, limit, withId);
+                DeliveryOrderBook result = apiInstance.ListDeliveryOrderBook(settle, contract, interval, limit, withId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FuturesOrderBook**](FuturesOrderBook.md)
+[**DeliveryOrderBook**](DeliveryOrderBook.md)
 
 ### Authorization
 
@@ -256,7 +256,7 @@ No authorization required
 
 <a name="listdeliverytrades"></a>
 # **ListDeliveryTrades**
-> List&lt;FuturesTrade&gt; ListDeliveryTrades (string settle, string contract, int? limit = null, string lastId = null, long? from = null, long? to = null)
+> List&lt;DeliveryTrade&gt; ListDeliveryTrades (string settle, string contract, int? limit = null, string lastId = null, long? from = null, long? to = null)
 
 Futures market transaction records
 
@@ -287,7 +287,7 @@ namespace Example
             try
             {
                 // Futures market transaction records
-                List<FuturesTrade> result = apiInstance.ListDeliveryTrades(settle, contract, limit, lastId, from, to);
+                List<DeliveryTrade> result = apiInstance.ListDeliveryTrades(settle, contract, limit, lastId, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;FuturesTrade&gt;**](FuturesTrade.md)
+[**List&lt;DeliveryTrade&gt;**](DeliveryTrade.md)
 
 ### Authorization
 
@@ -558,7 +558,7 @@ No authorization required
 
 <a name="listdeliveryaccounts"></a>
 # **ListDeliveryAccounts**
-> FuturesAccount ListDeliveryAccounts (string settle)
+> DeliveryAccount ListDeliveryAccounts (string settle)
 
 Get futures account
 
@@ -586,7 +586,7 @@ namespace Example
             try
             {
                 // Get futures account
-                FuturesAccount result = apiInstance.ListDeliveryAccounts(settle);
+                DeliveryAccount result = apiInstance.ListDeliveryAccounts(settle);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FuturesAccount**](FuturesAccount.md)
+[**DeliveryAccount**](DeliveryAccount.md)
 
 ### Authorization
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 <a name="listdeliveryaccountbook"></a>
 # **ListDeliveryAccountBook**
-> List&lt;FuturesAccountBook&gt; ListDeliveryAccountBook (string settle, int? limit = null, long? from = null, long? to = null, string type = null)
+> List&lt;DeliveryAccountBook&gt; ListDeliveryAccountBook (string settle, int? limit = null, long? from = null, long? to = null, string type = null)
 
 Query futures account change history
 
@@ -661,7 +661,7 @@ namespace Example
             try
             {
                 // Query futures account change history
-                List<FuturesAccountBook> result = apiInstance.ListDeliveryAccountBook(settle, limit, from, to, type);
+                List<DeliveryAccountBook> result = apiInstance.ListDeliveryAccountBook(settle, limit, from, to, type);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -688,7 +688,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;FuturesAccountBook&gt;**](FuturesAccountBook.md)
+[**List&lt;DeliveryAccountBook&gt;**](DeliveryAccountBook.md)
 
 ### Authorization
 
@@ -708,7 +708,7 @@ Name | Type | Description  | Notes
 
 <a name="listdeliverypositions"></a>
 # **ListDeliveryPositions**
-> List&lt;Position&gt; ListDeliveryPositions (string settle)
+> List&lt;DeliveryPosition&gt; ListDeliveryPositions (string settle)
 
 Get user position list
 
@@ -736,7 +736,7 @@ namespace Example
             try
             {
                 // Get user position list
-                List<Position> result = apiInstance.ListDeliveryPositions(settle);
+                List<DeliveryPosition> result = apiInstance.ListDeliveryPositions(settle);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -759,7 +759,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Position&gt;**](Position.md)
+[**List&lt;DeliveryPosition&gt;**](DeliveryPosition.md)
 
 ### Authorization
 
@@ -779,7 +779,7 @@ Name | Type | Description  | Notes
 
 <a name="getdeliveryposition"></a>
 # **GetDeliveryPosition**
-> Position GetDeliveryPosition (string settle, string contract)
+> DeliveryPosition GetDeliveryPosition (string settle, string contract)
 
 Get single position information
 
@@ -808,7 +808,7 @@ namespace Example
             try
             {
                 // Get single position information
-                Position result = apiInstance.GetDeliveryPosition(settle, contract);
+                DeliveryPosition result = apiInstance.GetDeliveryPosition(settle, contract);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -832,7 +832,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Position**](Position.md)
+[**DeliveryPosition**](DeliveryPosition.md)
 
 ### Authorization
 
@@ -852,7 +852,7 @@ Name | Type | Description  | Notes
 
 <a name="updatedeliverypositionmargin"></a>
 # **UpdateDeliveryPositionMargin**
-> Position UpdateDeliveryPositionMargin (string settle, string contract, string change)
+> DeliveryPosition UpdateDeliveryPositionMargin (string settle, string contract, string change)
 
 Update position margin
 
@@ -882,7 +882,7 @@ namespace Example
             try
             {
                 // Update position margin
-                Position result = apiInstance.UpdateDeliveryPositionMargin(settle, contract, change);
+                DeliveryPosition result = apiInstance.UpdateDeliveryPositionMargin(settle, contract, change);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -907,7 +907,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Position**](Position.md)
+[**DeliveryPosition**](DeliveryPosition.md)
 
 ### Authorization
 
@@ -927,7 +927,7 @@ Name | Type | Description  | Notes
 
 <a name="updatedeliverypositionleverage"></a>
 # **UpdateDeliveryPositionLeverage**
-> Position UpdateDeliveryPositionLeverage (string settle, string contract, string leverage)
+> DeliveryPosition UpdateDeliveryPositionLeverage (string settle, string contract, string leverage)
 
 Update position leverage
 
@@ -957,7 +957,7 @@ namespace Example
             try
             {
                 // Update position leverage
-                Position result = apiInstance.UpdateDeliveryPositionLeverage(settle, contract, leverage);
+                DeliveryPosition result = apiInstance.UpdateDeliveryPositionLeverage(settle, contract, leverage);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -982,7 +982,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Position**](Position.md)
+[**DeliveryPosition**](DeliveryPosition.md)
 
 ### Authorization
 
@@ -1002,7 +1002,7 @@ Name | Type | Description  | Notes
 
 <a name="updatedeliverypositionrisklimit"></a>
 # **UpdateDeliveryPositionRiskLimit**
-> Position UpdateDeliveryPositionRiskLimit (string settle, string contract, string riskLimit)
+> DeliveryPosition UpdateDeliveryPositionRiskLimit (string settle, string contract, string riskLimit)
 
 Update position risk limit
 
@@ -1032,7 +1032,7 @@ namespace Example
             try
             {
                 // Update position risk limit
-                Position result = apiInstance.UpdateDeliveryPositionRiskLimit(settle, contract, riskLimit);
+                DeliveryPosition result = apiInstance.UpdateDeliveryPositionRiskLimit(settle, contract, riskLimit);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1057,7 +1057,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Position**](Position.md)
+[**DeliveryPosition**](DeliveryPosition.md)
 
 ### Authorization
 
@@ -1077,7 +1077,7 @@ Name | Type | Description  | Notes
 
 <a name="listdeliveryorders"></a>
 # **ListDeliveryOrders**
-> List&lt;FuturesOrder&gt; ListDeliveryOrders (string settle, string status, string contract = null, int? limit = null, int? offset = null, string lastId = null, int? countTotal = null)
+> List&lt;DeliveryOrder&gt; ListDeliveryOrders (string settle, string status, string contract = null, int? limit = null, int? offset = null, string lastId = null, int? countTotal = null)
 
 Query futures order list
 
@@ -1113,7 +1113,7 @@ namespace Example
             try
             {
                 // Query futures order list
-                List<FuturesOrder> result = apiInstance.ListDeliveryOrders(settle, status, contract, limit, offset, lastId, countTotal);
+                List<DeliveryOrder> result = apiInstance.ListDeliveryOrders(settle, status, contract, limit, offset, lastId, countTotal);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1142,7 +1142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;FuturesOrder&gt;**](FuturesOrder.md)
+[**List&lt;DeliveryOrder&gt;**](DeliveryOrder.md)
 
 ### Authorization
 
@@ -1162,7 +1162,7 @@ Name | Type | Description  | Notes
 
 <a name="createdeliveryorder"></a>
 # **CreateDeliveryOrder**
-> FuturesOrder CreateDeliveryOrder (string settle, FuturesOrder futuresOrder)
+> DeliveryOrder CreateDeliveryOrder (string settle, DeliveryOrder deliveryOrder)
 
 Place futures order
 
@@ -1188,12 +1188,12 @@ namespace Example
 
             var apiInstance = new DeliveryApi(config);
             var settle = "usdt";  // string | Settle currency
-            var futuresOrder = new FuturesOrder(); // FuturesOrder | 
+            var deliveryOrder = new DeliveryOrder(); // DeliveryOrder | 
 
             try
             {
                 // Place futures order
-                FuturesOrder result = apiInstance.CreateDeliveryOrder(settle, futuresOrder);
+                DeliveryOrder result = apiInstance.CreateDeliveryOrder(settle, deliveryOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1213,11 +1213,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
- **futuresOrder** | [**FuturesOrder**](FuturesOrder.md)|  | 
+ **deliveryOrder** | [**DeliveryOrder**](DeliveryOrder.md)|  | 
 
 ### Return type
 
-[**FuturesOrder**](FuturesOrder.md)
+[**DeliveryOrder**](DeliveryOrder.md)
 
 ### Authorization
 
@@ -1237,7 +1237,7 @@ Name | Type | Description  | Notes
 
 <a name="canceldeliveryorders"></a>
 # **CancelDeliveryOrders**
-> List&lt;FuturesOrder&gt; CancelDeliveryOrders (string settle, string contract, string side = null)
+> List&lt;DeliveryOrder&gt; CancelDeliveryOrders (string settle, string contract, string side = null)
 
 Cancel all orders with 'open' status
 
@@ -1269,7 +1269,7 @@ namespace Example
             try
             {
                 // Cancel all orders with 'open' status
-                List<FuturesOrder> result = apiInstance.CancelDeliveryOrders(settle, contract, side);
+                List<DeliveryOrder> result = apiInstance.CancelDeliveryOrders(settle, contract, side);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1294,7 +1294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;FuturesOrder&gt;**](FuturesOrder.md)
+[**List&lt;DeliveryOrder&gt;**](DeliveryOrder.md)
 
 ### Authorization
 
@@ -1314,7 +1314,7 @@ Name | Type | Description  | Notes
 
 <a name="getdeliveryorder"></a>
 # **GetDeliveryOrder**
-> FuturesOrder GetDeliveryOrder (string settle, string orderId)
+> DeliveryOrder GetDeliveryOrder (string settle, string orderId)
 
 Query single order details
 
@@ -1345,7 +1345,7 @@ namespace Example
             try
             {
                 // Query single order details
-                FuturesOrder result = apiInstance.GetDeliveryOrder(settle, orderId);
+                DeliveryOrder result = apiInstance.GetDeliveryOrder(settle, orderId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1369,7 +1369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FuturesOrder**](FuturesOrder.md)
+[**DeliveryOrder**](DeliveryOrder.md)
 
 ### Authorization
 
@@ -1389,7 +1389,7 @@ Name | Type | Description  | Notes
 
 <a name="canceldeliveryorder"></a>
 # **CancelDeliveryOrder**
-> FuturesOrder CancelDeliveryOrder (string settle, string orderId)
+> DeliveryOrder CancelDeliveryOrder (string settle, string orderId)
 
 Cancel single order
 
@@ -1418,7 +1418,7 @@ namespace Example
             try
             {
                 // Cancel single order
-                FuturesOrder result = apiInstance.CancelDeliveryOrder(settle, orderId);
+                DeliveryOrder result = apiInstance.CancelDeliveryOrder(settle, orderId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1442,7 +1442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FuturesOrder**](FuturesOrder.md)
+[**DeliveryOrder**](DeliveryOrder.md)
 
 ### Authorization
 
@@ -1462,7 +1462,7 @@ Name | Type | Description  | Notes
 
 <a name="getmydeliverytrades"></a>
 # **GetMyDeliveryTrades**
-> List&lt;MyFuturesTrade&gt; GetMyDeliveryTrades (string settle, string contract = null, long? order = null, int? limit = null, int? offset = null, string lastId = null, int? countTotal = null)
+> List&lt;DeliveryMyTrade&gt; GetMyDeliveryTrades (string settle, string contract = null, long? order = null, int? limit = null, int? offset = null, string lastId = null, int? countTotal = null)
 
 Query personal trading records
 
@@ -1496,7 +1496,7 @@ namespace Example
             try
             {
                 // Query personal trading records
-                List<MyFuturesTrade> result = apiInstance.GetMyDeliveryTrades(settle, contract, order, limit, offset, lastId, countTotal);
+                List<DeliveryMyTrade> result = apiInstance.GetMyDeliveryTrades(settle, contract, order, limit, offset, lastId, countTotal);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1525,7 +1525,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;MyFuturesTrade&gt;**](MyFuturesTrade.md)
+[**List&lt;DeliveryMyTrade&gt;**](DeliveryMyTrade.md)
 
 ### Authorization
 
@@ -1545,7 +1545,7 @@ Name | Type | Description  | Notes
 
 <a name="listdeliverypositionclose"></a>
 # **ListDeliveryPositionClose**
-> List&lt;PositionClose&gt; ListDeliveryPositionClose (string settle, string contract = null, int? limit = null)
+> List&lt;DeliveryPositionClose&gt; ListDeliveryPositionClose (string settle, string contract = null, int? limit = null)
 
 Query position close history
 
@@ -1575,7 +1575,7 @@ namespace Example
             try
             {
                 // Query position close history
-                List<PositionClose> result = apiInstance.ListDeliveryPositionClose(settle, contract, limit);
+                List<DeliveryPositionClose> result = apiInstance.ListDeliveryPositionClose(settle, contract, limit);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1600,7 +1600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;PositionClose&gt;**](PositionClose.md)
+[**List&lt;DeliveryPositionClose&gt;**](DeliveryPositionClose.md)
 
 ### Authorization
 
@@ -1620,7 +1620,7 @@ Name | Type | Description  | Notes
 
 <a name="listdeliveryliquidates"></a>
 # **ListDeliveryLiquidates**
-> List&lt;FuturesLiquidate&gt; ListDeliveryLiquidates (string settle, string contract = null, int? limit = null, int? at = null)
+> List&lt;DeliveryLiquidate&gt; ListDeliveryLiquidates (string settle, string contract = null, int? limit = null, int? at = null)
 
 Query liquidation history
 
@@ -1651,7 +1651,7 @@ namespace Example
             try
             {
                 // Query liquidation history
-                List<FuturesLiquidate> result = apiInstance.ListDeliveryLiquidates(settle, contract, limit, at);
+                List<DeliveryLiquidate> result = apiInstance.ListDeliveryLiquidates(settle, contract, limit, at);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1677,7 +1677,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;FuturesLiquidate&gt;**](FuturesLiquidate.md)
+[**List&lt;DeliveryLiquidate&gt;**](DeliveryLiquidate.md)
 
 ### Authorization
 
@@ -1774,7 +1774,7 @@ Name | Type | Description  | Notes
 
 <a name="listdeliveryrisklimittiers"></a>
 # **ListDeliveryRiskLimitTiers**
-> List&lt;FuturesLimitRiskTiers&gt; ListDeliveryRiskLimitTiers (string settle, string contract = null, int? limit = null, int? offset = null)
+> List&lt;DeliveryLimitRiskTiers&gt; ListDeliveryRiskLimitTiers (string settle, string contract = null, int? limit = null, int? offset = null)
 
 Query risk limit tiers
 
@@ -1805,7 +1805,7 @@ namespace Example
             try
             {
                 // Query risk limit tiers
-                List<FuturesLimitRiskTiers> result = apiInstance.ListDeliveryRiskLimitTiers(settle, contract, limit, offset);
+                List<DeliveryLimitRiskTiers> result = apiInstance.ListDeliveryRiskLimitTiers(settle, contract, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1831,7 +1831,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;FuturesLimitRiskTiers&gt;**](FuturesLimitRiskTiers.md)
+[**List&lt;DeliveryLimitRiskTiers&gt;**](DeliveryLimitRiskTiers.md)
 
 ### Authorization
 

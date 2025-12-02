@@ -64,7 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size</value>
         [DataMember(Name="size", EmitDefaultValue=false)]
-        public long Size { get; private set; }
+        public string Size { get; private set; }
 
         /// <summary>
         /// Position margin. Not returned in public endpoints
@@ -120,7 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation order maker size</value>
         [DataMember(Name="left", EmitDefaultValue=false)]
-        public long Left { get; private set; }
+        public string Left { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -192,7 +192,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 ) && 
                 (
                     this.Margin == input.Margin ||
@@ -230,7 +231,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Left == input.Left ||
-                    this.Left.Equals(input.Left)
+                    (this.Left != null &&
+                    this.Left.Equals(input.Left))
                 );
         }
 
@@ -248,7 +250,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Contract.GetHashCode();
                 if (this.Leverage != null)
                     hashCode = hashCode * 59 + this.Leverage.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Margin != null)
                     hashCode = hashCode * 59 + this.Margin.GetHashCode();
                 if (this.EntryPrice != null)
@@ -262,7 +265,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.OrderPrice.GetHashCode();
                 if (this.FillPrice != null)
                     hashCode = hashCode * 59 + this.FillPrice.GetHashCode();
-                hashCode = hashCode * 59 + this.Left.GetHashCode();
+                if (this.Left != null)
+                    hashCode = hashCode * 59 + this.Left.GetHashCode();
                 return hashCode;
             }
         }

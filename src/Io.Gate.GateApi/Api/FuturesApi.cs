@@ -409,7 +409,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures account change history
         /// </summary>
         /// <remarks>
-        /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered.
+        /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -426,7 +426,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures account change history
         /// </summary>
         /// <remarks>
-        /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered.
+        /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -517,7 +517,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage
         /// </summary>
         /// <remarks>
-        /// 
+        /// ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -532,7 +532,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage
         /// </summary>
         /// <remarks>
-        /// 
+        /// ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -617,7 +617,7 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode
         /// </summary>
         /// <remarks>
-        /// The prerequisite for changing mode is that there are no open positions and no open orders
+        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -629,7 +629,7 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode
         /// </summary>
         /// <remarks>
-        /// The prerequisite for changing mode is that there are no open positions and no open orders
+        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -802,13 +802,13 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="contract">Futures contract</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>List&lt;FuturesOrder&gt;</returns>
-        List<FuturesOrder> CancelFuturesOrders (string settle, string contract, string xGateExptime = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
+        List<FuturesOrder> CancelFuturesOrders (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
 
         /// <summary>
         /// Cancel all orders with &#39;open&#39; status
@@ -818,13 +818,13 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="contract">Futures contract</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>ApiResponse of List&lt;FuturesOrder&gt;</returns>
-        ApiResponse<List<FuturesOrder>> CancelFuturesOrdersWithHttpInfo (string settle, string contract, string xGateExptime = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
+        ApiResponse<List<FuturesOrder>> CancelFuturesOrdersWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
         /// <summary>
         /// Query futures order list by time range
         /// </summary>
@@ -1171,7 +1171,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel batch orders by specified ID list
         /// </summary>
         /// <remarks>
-        /// Multiple different order IDs can be specified, maximum 20 records per request
+        /// Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1184,7 +1184,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel batch orders by specified ID list
         /// </summary>
         /// <remarks>
-        /// Multiple different order IDs can be specified, maximum 20 records per request
+        /// Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1196,7 +1196,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch modify orders by specified IDs
         /// </summary>
         /// <remarks>
-        /// Multiple different order IDs can be specified, maximum 10 orders per request
+        /// Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1209,7 +1209,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch modify orders by specified IDs
         /// </summary>
         /// <remarks>
-        /// Multiple different order IDs can be specified, maximum 10 orders per request
+        /// Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1802,7 +1802,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures account change history
         /// </summary>
         /// <remarks>
-        /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered.
+        /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1819,7 +1819,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures account change history
         /// </summary>
         /// <remarks>
-        /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered.
+        /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1910,7 +1910,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage
         /// </summary>
         /// <remarks>
-        /// 
+        /// ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1925,7 +1925,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage
         /// </summary>
         /// <remarks>
-        /// 
+        /// ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -2010,7 +2010,7 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode
         /// </summary>
         /// <remarks>
-        /// The prerequisite for changing mode is that there are no open positions and no open orders
+        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -2022,7 +2022,7 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode
         /// </summary>
         /// <remarks>
-        /// The prerequisite for changing mode is that there are no open positions and no open orders
+        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -2195,13 +2195,13 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="contract">Futures contract</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>Task of List&lt;FuturesOrder&gt;</returns>
-        Task<List<FuturesOrder>> CancelFuturesOrdersAsync (string settle, string contract, string xGateExptime = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
+        Task<List<FuturesOrder>> CancelFuturesOrdersAsync (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
 
         /// <summary>
         /// Cancel all orders with &#39;open&#39; status
@@ -2211,13 +2211,13 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="contract">Futures contract</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesOrder&gt;)</returns>
-        Task<ApiResponse<List<FuturesOrder>>> CancelFuturesOrdersAsyncWithHttpInfo (string settle, string contract, string xGateExptime = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
+        Task<ApiResponse<List<FuturesOrder>>> CancelFuturesOrdersAsyncWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
         /// <summary>
         /// Query futures order list by time range
         /// </summary>
@@ -2564,7 +2564,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel batch orders by specified ID list
         /// </summary>
         /// <remarks>
-        /// Multiple different order IDs can be specified, maximum 20 records per request
+        /// Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -2577,7 +2577,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel batch orders by specified ID list
         /// </summary>
         /// <remarks>
-        /// Multiple different order IDs can be specified, maximum 20 records per request
+        /// Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -2589,7 +2589,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch modify orders by specified IDs
         /// </summary>
         /// <remarks>
-        /// Multiple different order IDs can be specified, maximum 10 orders per request
+        /// Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -2602,7 +2602,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch modify orders by specified IDs
         /// </summary>
         /// <remarks>
-        /// Multiple different order IDs can be specified, maximum 10 orders per request
+        /// Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5031,7 +5031,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered.
+        /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5049,7 +5049,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered.
+        /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5124,7 +5124,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered.
+        /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5143,7 +5143,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered.
+        /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5649,7 +5649,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position leverage 
+        /// Update position leverage ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5665,7 +5665,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position leverage 
+        /// Update position leverage ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5732,7 +5732,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position leverage 
+        /// Update position leverage ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5749,7 +5749,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position leverage 
+        /// Update position leverage ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6229,7 +6229,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Set position mode The prerequisite for changing mode is that there are no open positions and no open orders
+        /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6242,7 +6242,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Set position mode The prerequisite for changing mode is that there are no open positions and no open orders
+        /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6289,7 +6289,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Set position mode The prerequisite for changing mode is that there are no open positions and no open orders
+        /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6303,7 +6303,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Set position mode The prerequisite for changing mode is that there are no open positions and no open orders
+        /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -7272,15 +7272,15 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="contract">Futures contract</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>List&lt;FuturesOrder&gt;</returns>
-        public List<FuturesOrder> CancelFuturesOrders (string settle, string contract, string xGateExptime = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
+        public List<FuturesOrder> CancelFuturesOrders (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
         {
-             ApiResponse<List<FuturesOrder>> localVarResponse = CancelFuturesOrdersWithHttpInfo(settle, contract, xGateExptime, side, excludeReduceOnly, text);
+             ApiResponse<List<FuturesOrder>> localVarResponse = CancelFuturesOrdersWithHttpInfo(settle, xGateExptime, contract, side, excludeReduceOnly, text);
              return localVarResponse.Data;
         }
 
@@ -7289,21 +7289,17 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="contract">Futures contract</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>ApiResponse of List&lt;FuturesOrder&gt;</returns>
-        public ApiResponse<List<FuturesOrder>> CancelFuturesOrdersWithHttpInfo (string settle, string contract, string xGateExptime = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
+        public ApiResponse<List<FuturesOrder>> CancelFuturesOrdersWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
                 throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->CancelFuturesOrders");
-
-            // verify the required parameter 'contract' is set
-            if (contract == null)
-                throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->CancelFuturesOrders");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -7322,7 +7318,10 @@ namespace Io.Gate.GateApi.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
-            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            if (contract != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            }
             if (side != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "side", side));
@@ -7360,15 +7359,15 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="contract">Futures contract</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>Task of List&lt;FuturesOrder&gt;</returns>
-        public async Task<List<FuturesOrder>> CancelFuturesOrdersAsync (string settle, string contract, string xGateExptime = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
+        public async Task<List<FuturesOrder>> CancelFuturesOrdersAsync (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<FuturesOrder>> localVarResponse = await CancelFuturesOrdersAsyncWithHttpInfo(settle, contract, xGateExptime, side, excludeReduceOnly, text);
+             Io.Gate.GateApi.Client.ApiResponse<List<FuturesOrder>> localVarResponse = await CancelFuturesOrdersAsyncWithHttpInfo(settle, xGateExptime, contract, side, excludeReduceOnly, text);
              return localVarResponse.Data;
 
         }
@@ -7378,21 +7377,17 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="contract">Futures contract</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesOrder&gt;)</returns>
-        public async Task<ApiResponse<List<FuturesOrder>>> CancelFuturesOrdersAsyncWithHttpInfo (string settle, string contract, string xGateExptime = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
+        public async Task<ApiResponse<List<FuturesOrder>>> CancelFuturesOrdersAsyncWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
                 throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->CancelFuturesOrders");
-
-            // verify the required parameter 'contract' is set
-            if (contract == null)
-                throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->CancelFuturesOrders");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -7412,7 +7407,10 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
-            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            if (contract != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            }
             if (side != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "side", side));
@@ -9409,7 +9407,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Cancel batch orders by specified ID list Multiple different order IDs can be specified, maximum 20 records per request
+        /// Cancel batch orders by specified ID list Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9423,7 +9421,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Cancel batch orders by specified ID list Multiple different order IDs can be specified, maximum 20 records per request
+        /// Cancel batch orders by specified ID list Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9480,7 +9478,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Cancel batch orders by specified ID list Multiple different order IDs can be specified, maximum 20 records per request
+        /// Cancel batch orders by specified ID list Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9495,7 +9493,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Cancel batch orders by specified ID list Multiple different order IDs can be specified, maximum 20 records per request
+        /// Cancel batch orders by specified ID list Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9554,7 +9552,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Batch modify orders by specified IDs Multiple different order IDs can be specified, maximum 10 orders per request
+        /// Batch modify orders by specified IDs Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9568,7 +9566,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Batch modify orders by specified IDs Multiple different order IDs can be specified, maximum 10 orders per request
+        /// Batch modify orders by specified IDs Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9625,7 +9623,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Batch modify orders by specified IDs Multiple different order IDs can be specified, maximum 10 orders per request
+        /// Batch modify orders by specified IDs Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9640,7 +9638,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Batch modify orders by specified IDs Multiple different order IDs can be specified, maximum 10 orders per request
+        /// Batch modify orders by specified IDs Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>

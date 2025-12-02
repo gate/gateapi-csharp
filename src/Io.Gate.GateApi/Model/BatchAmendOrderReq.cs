@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="size">New order size, including filled size. - If less than or equal to the filled quantity, the order will be cancelled. - The new order side must be identical to the original one. - Close order size cannot be modified. - For reduce-only orders, increasing the size may cancel other reduce-only orders. - If the price is not modified, decreasing the size will not affect the depth queue, while increasing the size will place it at the end of the current price level..</param>
         /// <param name="price">New order price.</param>
         /// <param name="amendText">Custom info during order amendment.</param>
-        public BatchAmendOrderReq(long orderId = default(long), string text = default(string), long size = default(long), string price = default(string), string amendText = default(string))
+        public BatchAmendOrderReq(long orderId = default(long), string text = default(string), string size = default(string), string price = default(string), string amendText = default(string))
         {
             this.OrderId = orderId;
             this.Text = text;
@@ -66,7 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>New order size, including filled size. - If less than or equal to the filled quantity, the order will be cancelled. - The new order side must be identical to the original one. - Close order size cannot be modified. - For reduce-only orders, increasing the size may cancel other reduce-only orders. - If the price is not modified, decreasing the size will not affect the depth queue, while increasing the size will place it at the end of the current price level.</value>
         [DataMember(Name="size")]
-        public long Size { get; set; }
+        public string Size { get; set; }
 
         /// <summary>
         /// New order price
@@ -140,7 +140,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 ) && 
                 (
                     this.Price == input.Price ||
@@ -166,7 +167,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.Text != null)
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 if (this.AmendText != null)

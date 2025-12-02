@@ -127,7 +127,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="launchTime">Contract expiry timestamp.</param>
         /// <param name="delistingTime">Timestamp when contract enters reduce-only state.</param>
         /// <param name="delistedTime">Contract delisting time.</param>
-        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), long orderSizeMin = default(long), long orderSizeMax = default(long), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), long tradeSize = default(long), long positionSize = default(long), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long))
+        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long))
         {
             this.Name = name;
             this.Type = type;
@@ -302,14 +302,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum order size allowed by the contract</value>
         [DataMember(Name="order_size_min")]
-        public long OrderSizeMin { get; set; }
+        public string OrderSizeMin { get; set; }
 
         /// <summary>
         /// Maximum order size allowed by the contract
         /// </summary>
         /// <value>Maximum order size allowed by the contract</value>
         [DataMember(Name="order_size_max")]
-        public long OrderSizeMax { get; set; }
+        public string OrderSizeMax { get; set; }
 
         /// <summary>
         /// Maximum allowed deviation between order price and current mark price. The order price &#x60;order_price&#x60; must satisfy the following condition:      abs(order_price - mark_price) &lt;&#x3D; mark_price * order_price_deviate
@@ -351,14 +351,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Historical cumulative trading volume</value>
         [DataMember(Name="trade_size")]
-        public long TradeSize { get; set; }
+        public string TradeSize { get; set; }
 
         /// <summary>
         /// Current total long position size
         /// </summary>
         /// <value>Current total long position size</value>
         [DataMember(Name="position_size")]
-        public long PositionSize { get; set; }
+        public string PositionSize { get; set; }
 
         /// <summary>
         /// Last configuration update time
@@ -617,11 +617,13 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.OrderSizeMin == input.OrderSizeMin ||
-                    this.OrderSizeMin.Equals(input.OrderSizeMin)
+                    (this.OrderSizeMin != null &&
+                    this.OrderSizeMin.Equals(input.OrderSizeMin))
                 ) && 
                 (
                     this.OrderSizeMax == input.OrderSizeMax ||
-                    this.OrderSizeMax.Equals(input.OrderSizeMax)
+                    (this.OrderSizeMax != null &&
+                    this.OrderSizeMax.Equals(input.OrderSizeMax))
                 ) && 
                 (
                     this.OrderPriceDeviate == input.OrderPriceDeviate ||
@@ -648,11 +650,13 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.TradeSize == input.TradeSize ||
-                    this.TradeSize.Equals(input.TradeSize)
+                    (this.TradeSize != null &&
+                    this.TradeSize.Equals(input.TradeSize))
                 ) && 
                 (
                     this.PositionSize == input.PositionSize ||
-                    this.PositionSize.Equals(input.PositionSize)
+                    (this.PositionSize != null &&
+                    this.PositionSize.Equals(input.PositionSize))
                 ) && 
                 (
                     this.ConfigChangeTime == input.ConfigChangeTime ||
@@ -747,8 +751,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.RiskLimitStep.GetHashCode();
                 if (this.RiskLimitMax != null)
                     hashCode = hashCode * 59 + this.RiskLimitMax.GetHashCode();
-                hashCode = hashCode * 59 + this.OrderSizeMin.GetHashCode();
-                hashCode = hashCode * 59 + this.OrderSizeMax.GetHashCode();
+                if (this.OrderSizeMin != null)
+                    hashCode = hashCode * 59 + this.OrderSizeMin.GetHashCode();
+                if (this.OrderSizeMax != null)
+                    hashCode = hashCode * 59 + this.OrderSizeMax.GetHashCode();
                 if (this.OrderPriceDeviate != null)
                     hashCode = hashCode * 59 + this.OrderPriceDeviate.GetHashCode();
                 if (this.RefDiscountRate != null)
@@ -757,8 +763,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.RefRebateRate.GetHashCode();
                 hashCode = hashCode * 59 + this.OrderbookId.GetHashCode();
                 hashCode = hashCode * 59 + this.TradeId.GetHashCode();
-                hashCode = hashCode * 59 + this.TradeSize.GetHashCode();
-                hashCode = hashCode * 59 + this.PositionSize.GetHashCode();
+                if (this.TradeSize != null)
+                    hashCode = hashCode * 59 + this.TradeSize.GetHashCode();
+                if (this.PositionSize != null)
+                    hashCode = hashCode * 59 + this.PositionSize.GetHashCode();
                 hashCode = hashCode * 59 + this.ConfigChangeTime.GetHashCode();
                 hashCode = hashCode * 59 + this.InDelisting.GetHashCode();
                 hashCode = hashCode * 59 + this.OrdersLimit.GetHashCode();

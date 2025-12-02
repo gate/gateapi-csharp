@@ -47,7 +47,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="topLsrAccount">Top trader long/short account ratio.</param>
         /// <param name="topLsrSize">Top trader long/short position ratio.</param>
         /// <param name="markPrice">Mark price.</param>
-        public ContractStat(long time = default(long), decimal lsrTaker = default(decimal), decimal lsrAccount = default(decimal), long longLiqSize = default(long), double longLiqAmount = default(double), double longLiqUsd = default(double), long shortLiqSize = default(long), double shortLiqAmount = default(double), double shortLiqUsd = default(double), long openInterest = default(long), double openInterestUsd = default(double), double topLsrAccount = default(double), double topLsrSize = default(double), double markPrice = default(double))
+        public ContractStat(long time = default(long), double lsrTaker = default(double), double lsrAccount = default(double), string longLiqSize = default(string), double longLiqAmount = default(double), double longLiqUsd = default(double), string shortLiqSize = default(string), double shortLiqAmount = default(double), double shortLiqUsd = default(double), string openInterest = default(string), double openInterestUsd = default(double), double topLsrAccount = default(double), string topLsrSize = default(string), double markPrice = default(double))
         {
             this.Time = time;
             this.LsrTaker = lsrTaker;
@@ -77,21 +77,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Long/short taker ratio</value>
         [DataMember(Name="lsr_taker")]
-        public decimal LsrTaker { get; set; }
+        public double LsrTaker { get; set; }
 
         /// <summary>
         /// Long/short position user ratio
         /// </summary>
         /// <value>Long/short position user ratio</value>
         [DataMember(Name="lsr_account")]
-        public decimal LsrAccount { get; set; }
+        public double LsrAccount { get; set; }
 
         /// <summary>
         /// Long liquidation size (contracts)
         /// </summary>
         /// <value>Long liquidation size (contracts)</value>
         [DataMember(Name="long_liq_size")]
-        public long LongLiqSize { get; set; }
+        public string LongLiqSize { get; set; }
 
         /// <summary>
         /// Long liquidation amount (base currency)
@@ -112,7 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Short liquidation size (contracts)</value>
         [DataMember(Name="short_liq_size")]
-        public long ShortLiqSize { get; set; }
+        public string ShortLiqSize { get; set; }
 
         /// <summary>
         /// Short liquidation amount (base currency)
@@ -133,7 +133,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total open interest size (contracts)</value>
         [DataMember(Name="open_interest")]
-        public long OpenInterest { get; set; }
+        public string OpenInterest { get; set; }
 
         /// <summary>
         /// Total open interest volume (quote currency)
@@ -154,7 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Top trader long/short position ratio</value>
         [DataMember(Name="top_lsr_size")]
-        public double TopLsrSize { get; set; }
+        public string TopLsrSize { get; set; }
 
         /// <summary>
         /// Mark price
@@ -233,7 +233,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.LongLiqSize == input.LongLiqSize ||
-                    this.LongLiqSize.Equals(input.LongLiqSize)
+                    (this.LongLiqSize != null &&
+                    this.LongLiqSize.Equals(input.LongLiqSize))
                 ) && 
                 (
                     this.LongLiqAmount == input.LongLiqAmount ||
@@ -245,7 +246,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.ShortLiqSize == input.ShortLiqSize ||
-                    this.ShortLiqSize.Equals(input.ShortLiqSize)
+                    (this.ShortLiqSize != null &&
+                    this.ShortLiqSize.Equals(input.ShortLiqSize))
                 ) && 
                 (
                     this.ShortLiqAmount == input.ShortLiqAmount ||
@@ -257,7 +259,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.OpenInterest == input.OpenInterest ||
-                    this.OpenInterest.Equals(input.OpenInterest)
+                    (this.OpenInterest != null &&
+                    this.OpenInterest.Equals(input.OpenInterest))
                 ) && 
                 (
                     this.OpenInterestUsd == input.OpenInterestUsd ||
@@ -269,7 +272,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.TopLsrSize == input.TopLsrSize ||
-                    this.TopLsrSize.Equals(input.TopLsrSize)
+                    (this.TopLsrSize != null &&
+                    this.TopLsrSize.Equals(input.TopLsrSize))
                 ) && 
                 (
                     this.MarkPrice == input.MarkPrice ||
@@ -289,16 +293,20 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Time.GetHashCode();
                 hashCode = hashCode * 59 + this.LsrTaker.GetHashCode();
                 hashCode = hashCode * 59 + this.LsrAccount.GetHashCode();
-                hashCode = hashCode * 59 + this.LongLiqSize.GetHashCode();
+                if (this.LongLiqSize != null)
+                    hashCode = hashCode * 59 + this.LongLiqSize.GetHashCode();
                 hashCode = hashCode * 59 + this.LongLiqAmount.GetHashCode();
                 hashCode = hashCode * 59 + this.LongLiqUsd.GetHashCode();
-                hashCode = hashCode * 59 + this.ShortLiqSize.GetHashCode();
+                if (this.ShortLiqSize != null)
+                    hashCode = hashCode * 59 + this.ShortLiqSize.GetHashCode();
                 hashCode = hashCode * 59 + this.ShortLiqAmount.GetHashCode();
                 hashCode = hashCode * 59 + this.ShortLiqUsd.GetHashCode();
-                hashCode = hashCode * 59 + this.OpenInterest.GetHashCode();
+                if (this.OpenInterest != null)
+                    hashCode = hashCode * 59 + this.OpenInterest.GetHashCode();
                 hashCode = hashCode * 59 + this.OpenInterestUsd.GetHashCode();
                 hashCode = hashCode * 59 + this.TopLsrAccount.GetHashCode();
-                hashCode = hashCode * 59 + this.TopLsrSize.GetHashCode();
+                if (this.TopLsrSize != null)
+                    hashCode = hashCode * 59 + this.TopLsrSize.GetHashCode();
                 hashCode = hashCode * 59 + this.MarkPrice.GetHashCode();
                 return hashCode;
             }

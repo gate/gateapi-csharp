@@ -242,7 +242,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="contract">Futures contract (required).</param>
         /// <param name="size">Required. Trading quantity. Positive for buy, negative for sell. Set to 0 for close position orders. (required).</param>
         /// <param name="iceberg">Display size for iceberg orders. 0 for non-iceberg orders. Note that hidden portions are charged taker fees..</param>
-        /// <param name="price">Order price. Price of 0 with &#x60;tif&#x60; set to &#x60;ioc&#x60; represents a market order..</param>
+        /// <param name="price">Required. Order Price; a price of 0 with &#x60;tif&#x60; as &#x60;ioc&#x60; represents a market order. (required).</param>
         /// <param name="close">Set as &#x60;true&#x60; to close the position, with &#x60;size&#x60; set to 0 (default to false).</param>
         /// <param name="reduceOnly">Set as &#x60;true&#x60; to be reduce-only order (default to false).</param>
         /// <param name="tif">Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none (default to TifEnum.Gtc).</param>
@@ -251,13 +251,17 @@ namespace Io.Gate.GateApi.Model
         /// <param name="stpAct">Self-Trading Prevention Action. Users can use this field to set self-trade prevention strategies  1. After users join the &#x60;STP Group&#x60;, they can pass &#x60;stp_act&#x60; to limit the user&#39;s self-trade prevention strategy. If &#x60;stp_act&#x60; is not passed, the default is &#x60;cn&#x60; strategy. 2. When the user does not join the &#x60;STP group&#x60;, an error will be returned when passing the &#x60;stp_act&#x60; parameter. 3. If the user did not use &#x60;stp_act&#x60; when placing the order, &#x60;stp_act&#x60; will return &#39;-&#39;  - cn: Cancel newest, cancel new orders and keep old ones - co: Cancel oldest, cancel old orders and keep new ones - cb: Cancel both, both old and new orders will be cancelled.</param>
         /// <param name="limitVip">Counterparty user&#39;s VIP level for limit order fills. Current order will only match with orders whose VIP level is less than or equal to the specified level. Only 11~16 are supported; default is 0.</param>
         /// <param name="pid">Position ID.</param>
-        public FuturesOrder(string contract = default(string), long size = default(long), long iceberg = default(long), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long limitVip = default(long), long pid = default(long))
+        /// <param name="orderValue">order&#39;s value.</param>
+        /// <param name="tradeValue">trade value.</param>
+        public FuturesOrder(string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long limitVip = default(long), long pid = default(long), string orderValue = default(string), string tradeValue = default(string))
         {
             // to ensure "contract" is required (not null)
             this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for FuturesOrder and cannot be null");
-            this.Size = size;
+            // to ensure "size" is required (not null)
+            this.Size = size ?? throw new ArgumentNullException("size", "size is a required property for FuturesOrder and cannot be null");
+            // to ensure "price" is required (not null)
+            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for FuturesOrder and cannot be null");
             this.Iceberg = iceberg;
-            this.Price = price;
             this.Close = close;
             this.ReduceOnly = reduceOnly;
             this.Tif = tif;
@@ -266,6 +270,8 @@ namespace Io.Gate.GateApi.Model
             this.StpAct = stpAct;
             this.LimitVip = limitVip;
             this.Pid = pid;
+            this.OrderValue = orderValue;
+            this.TradeValue = tradeValue;
         }
 
         /// <summary>
@@ -315,19 +321,19 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Required. Trading quantity. Positive for buy, negative for sell. Set to 0 for close position orders.</value>
         [DataMember(Name="size")]
-        public long Size { get; set; }
+        public string Size { get; set; }
 
         /// <summary>
         /// Display size for iceberg orders. 0 for non-iceberg orders. Note that hidden portions are charged taker fees.
         /// </summary>
         /// <value>Display size for iceberg orders. 0 for non-iceberg orders. Note that hidden portions are charged taker fees.</value>
         [DataMember(Name="iceberg")]
-        public long Iceberg { get; set; }
+        public string Iceberg { get; set; }
 
         /// <summary>
-        /// Order price. Price of 0 with &#x60;tif&#x60; set to &#x60;ioc&#x60; represents a market order.
+        /// Required. Order Price; a price of 0 with &#x60;tif&#x60; as &#x60;ioc&#x60; represents a market order.
         /// </summary>
-        /// <value>Order price. Price of 0 with &#x60;tif&#x60; set to &#x60;ioc&#x60; represents a market order.</value>
+        /// <value>Required. Order Price; a price of 0 with &#x60;tif&#x60; as &#x60;ioc&#x60; represents a market order.</value>
         [DataMember(Name="price")]
         public string Price { get; set; }
 
@@ -371,7 +377,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unfilled quantity</value>
         [DataMember(Name="left", EmitDefaultValue=false)]
-        public long Left { get; private set; }
+        public string Left { get; private set; }
 
         /// <summary>
         /// Fill price
@@ -437,6 +443,20 @@ namespace Io.Gate.GateApi.Model
         public long Pid { get; set; }
 
         /// <summary>
+        /// order&#39;s value
+        /// </summary>
+        /// <value>order&#39;s value</value>
+        [DataMember(Name="order_value")]
+        public string OrderValue { get; set; }
+
+        /// <summary>
+        /// trade value
+        /// </summary>
+        /// <value>trade value</value>
+        [DataMember(Name="trade_value")]
+        public string TradeValue { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -473,6 +493,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  AmendText: ").Append(AmendText).Append("\n");
             sb.Append("  LimitVip: ").Append(LimitVip).Append("\n");
             sb.Append("  Pid: ").Append(Pid).Append("\n");
+            sb.Append("  OrderValue: ").Append(OrderValue).Append("\n");
+            sb.Append("  TradeValue: ").Append(TradeValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -542,11 +564,13 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 ) && 
                 (
                     this.Iceberg == input.Iceberg ||
-                    this.Iceberg.Equals(input.Iceberg)
+                    (this.Iceberg != null &&
+                    this.Iceberg.Equals(input.Iceberg))
                 ) && 
                 (
                     this.Price == input.Price ||
@@ -579,7 +603,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Left == input.Left ||
-                    this.Left.Equals(input.Left)
+                    (this.Left != null &&
+                    this.Left.Equals(input.Left))
                 ) && 
                 (
                     this.FillPrice == input.FillPrice ||
@@ -629,6 +654,16 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.Pid == input.Pid ||
                     this.Pid.Equals(input.Pid)
+                ) && 
+                (
+                    this.OrderValue == input.OrderValue ||
+                    (this.OrderValue != null &&
+                    this.OrderValue.Equals(input.OrderValue))
+                ) && 
+                (
+                    this.TradeValue == input.TradeValue ||
+                    (this.TradeValue != null &&
+                    this.TradeValue.Equals(input.TradeValue))
                 );
         }
 
@@ -650,8 +685,10 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Contract != null)
                     hashCode = hashCode * 59 + this.Contract.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
-                hashCode = hashCode * 59 + this.Iceberg.GetHashCode();
+                if (this.Size != null)
+                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Iceberg != null)
+                    hashCode = hashCode * 59 + this.Iceberg.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 hashCode = hashCode * 59 + this.Close.GetHashCode();
@@ -660,7 +697,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.IsReduceOnly.GetHashCode();
                 hashCode = hashCode * 59 + this.IsLiq.GetHashCode();
                 hashCode = hashCode * 59 + this.Tif.GetHashCode();
-                hashCode = hashCode * 59 + this.Left.GetHashCode();
+                if (this.Left != null)
+                    hashCode = hashCode * 59 + this.Left.GetHashCode();
                 if (this.FillPrice != null)
                     hashCode = hashCode * 59 + this.FillPrice.GetHashCode();
                 if (this.Text != null)
@@ -677,6 +715,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.AmendText.GetHashCode();
                 hashCode = hashCode * 59 + this.LimitVip.GetHashCode();
                 hashCode = hashCode * 59 + this.Pid.GetHashCode();
+                if (this.OrderValue != null)
+                    hashCode = hashCode * 59 + this.OrderValue.GetHashCode();
+                if (this.TradeValue != null)
+                    hashCode = hashCode * 59 + this.TradeValue.GetHashCode();
                 return hashCode;
             }
         }

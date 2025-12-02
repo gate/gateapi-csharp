@@ -1126,7 +1126,7 @@ Name | Type | Description  | Notes
 
 Query futures account change history
 
-If the contract field is passed, only records containing this field after 2023-10-30 can be filtered.
+If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
 
 ### Example
 ```csharp
@@ -1436,6 +1436,8 @@ Name | Type | Description  | Notes
 
 Update position leverage
 
+⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage = 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage=10 - Set cross margin with 10x leverage: leverage=0&cross_leverage_limit=10 - leverage=5&cross_leverage_limit=10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -1736,7 +1738,7 @@ Name | Type | Description  | Notes
 
 Set position mode
 
-The prerequisite for changing mode is that there are no open positions and no open orders
+The prerequisite for changing mode is that all positions have no holdings and no pending orders
 
 ### Example
 ```csharp
@@ -2269,7 +2271,7 @@ Name | Type | Description  | Notes
 
 <a name="cancelfuturesorders"></a>
 # **CancelFuturesOrders**
-> List&lt;FuturesOrder&gt; CancelFuturesOrders (string settle, string contract, string xGateExptime = null, string side = null, bool? excludeReduceOnly = null, string text = null)
+> List&lt;FuturesOrder&gt; CancelFuturesOrders (string settle, string xGateExptime = null, string contract = null, string side = null, bool? excludeReduceOnly = null, string text = null)
 
 Cancel all orders with 'open' status
 
@@ -2295,8 +2297,8 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
-            var contract = "BTC_USDT";  // string | Futures contract
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
+            var contract = "BTC_USDT";  // string | Contract Identifier; if specified, only cancel pending orders related to this contract (optional) 
             var side = "ask";  // string | Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional) 
             var excludeReduceOnly = false;  // bool? | Whether to exclude reduce-only orders (optional)  (default to false)
             var text = "cancel by user";  // string | Remark for order cancellation (optional) 
@@ -2304,7 +2306,7 @@ namespace Example
             try
             {
                 // Cancel all orders with 'open' status
-                List<FuturesOrder> result = apiInstance.CancelFuturesOrders(settle, contract, xGateExptime, side, excludeReduceOnly, text);
+                List<FuturesOrder> result = apiInstance.CancelFuturesOrders(settle, xGateExptime, contract, side, excludeReduceOnly, text);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -2324,8 +2326,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
- **contract** | **string**| Futures contract | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
+ **contract** | **string**| Contract Identifier; if specified, only cancel pending orders related to this contract | [optional] 
  **side** | **string**| Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders | [optional] 
  **excludeReduceOnly** | **bool?**| Whether to exclude reduce-only orders | [optional] [default to false]
  **text** | **string**| Remark for order cancellation | [optional] 
@@ -3306,7 +3308,7 @@ Name | Type | Description  | Notes
 
 Cancel batch orders by specified ID list
 
-Multiple different order IDs can be specified, maximum 20 records per request
+Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
 
 ### Example
 ```csharp
@@ -3383,7 +3385,7 @@ Name | Type | Description  | Notes
 
 Batch modify orders by specified IDs
 
-Multiple different order IDs can be specified, maximum 10 orders per request
+Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
 
 ### Example
 ```csharp

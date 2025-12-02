@@ -36,7 +36,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 10)</param>
-        /// <param name="sort">Sort type: &#x60;time_desc&#x60; - Created time descending (default), &#x60;ltv_asc&#x60; - Collateral ratio ascending, &#x60;ltv_desc&#x60; - Collateral ratio descending. (optional)</param>
+        /// <param name="sort">Sort type: time_desc - Default descending by creation time, ltv_asc - Ascending by LTV ratio, ltv_desc - Descending by LTV ratio (optional)</param>
         /// <param name="orderType">Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified (optional)</param>
         /// <returns>List&lt;MultiCollateralOrder&gt;</returns>
         List<MultiCollateralOrder> ListMultiCollateralOrders (int? page = default(int?), int? limit = default(int?), string sort = default(string), string orderType = default(string));
@@ -50,7 +50,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 10)</param>
-        /// <param name="sort">Sort type: &#x60;time_desc&#x60; - Created time descending (default), &#x60;ltv_asc&#x60; - Collateral ratio ascending, &#x60;ltv_desc&#x60; - Collateral ratio descending. (optional)</param>
+        /// <param name="sort">Sort type: time_desc - Default descending by creation time, ltv_asc - Ascending by LTV ratio, ltv_desc - Descending by LTV ratio (optional)</param>
         /// <param name="orderType">Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified (optional)</param>
         /// <returns>ApiResponse of List&lt;MultiCollateralOrder&gt;</returns>
         ApiResponse<List<MultiCollateralOrder>> ListMultiCollateralOrdersWithHttpInfo (int? page = default(int?), int? limit = default(int?), string sort = default(string), string orderType = default(string));
@@ -206,7 +206,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type">Currency type: collateral - Collateral currency, borrow - Borrowing currency</param>
-        /// <param name="currency">When it is a collateral currency, multiple currencies can be provided separated by commas; when it is a borrowing currency, only one currency can be provided.</param>
+        /// <param name="currency">When it is a collateral currency, multiple currencies can be passed separated by commas; when it is a borrowing currency, only one currency can be passed</param>
         /// <returns>List&lt;CurrencyQuota&gt;</returns>
         List<CurrencyQuota> ListUserCurrencyQuota (string type, string currency);
 
@@ -218,7 +218,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type">Currency type: collateral - Collateral currency, borrow - Borrowing currency</param>
-        /// <param name="currency">When it is a collateral currency, multiple currencies can be provided separated by commas; when it is a borrowing currency, only one currency can be provided.</param>
+        /// <param name="currency">When it is a collateral currency, multiple currencies can be passed separated by commas; when it is a borrowing currency, only one currency can be passed</param>
         /// <returns>ApiResponse of List&lt;CurrencyQuota&gt;</returns>
         ApiResponse<List<CurrencyQuota>> ListUserCurrencyQuotaWithHttpInfo (string type, string currency);
         /// <summary>
@@ -282,7 +282,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency&#39;s current interest rate
         /// </summary>
         /// <remarks>
-        /// Query currency&#39;s current interest rate for the previous hour, current interest rate updates hourly
+        /// Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
@@ -294,7 +294,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency&#39;s current interest rate
         /// </summary>
         /// <remarks>
-        /// Query currency&#39;s current interest rate for the previous hour, current interest rate updates hourly
+        /// Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
@@ -319,7 +319,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 10)</param>
-        /// <param name="sort">Sort type: &#x60;time_desc&#x60; - Created time descending (default), &#x60;ltv_asc&#x60; - Collateral ratio ascending, &#x60;ltv_desc&#x60; - Collateral ratio descending. (optional)</param>
+        /// <param name="sort">Sort type: time_desc - Default descending by creation time, ltv_asc - Ascending by LTV ratio, ltv_desc - Descending by LTV ratio (optional)</param>
         /// <param name="orderType">Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified (optional)</param>
         /// <returns>Task of List&lt;MultiCollateralOrder&gt;</returns>
         Task<List<MultiCollateralOrder>> ListMultiCollateralOrdersAsync (int? page = default(int?), int? limit = default(int?), string sort = default(string), string orderType = default(string));
@@ -333,7 +333,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 10)</param>
-        /// <param name="sort">Sort type: &#x60;time_desc&#x60; - Created time descending (default), &#x60;ltv_asc&#x60; - Collateral ratio ascending, &#x60;ltv_desc&#x60; - Collateral ratio descending. (optional)</param>
+        /// <param name="sort">Sort type: time_desc - Default descending by creation time, ltv_asc - Ascending by LTV ratio, ltv_desc - Descending by LTV ratio (optional)</param>
         /// <param name="orderType">Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;MultiCollateralOrder&gt;)</returns>
         Task<ApiResponse<List<MultiCollateralOrder>>> ListMultiCollateralOrdersAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string sort = default(string), string orderType = default(string));
@@ -489,7 +489,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type">Currency type: collateral - Collateral currency, borrow - Borrowing currency</param>
-        /// <param name="currency">When it is a collateral currency, multiple currencies can be provided separated by commas; when it is a borrowing currency, only one currency can be provided.</param>
+        /// <param name="currency">When it is a collateral currency, multiple currencies can be passed separated by commas; when it is a borrowing currency, only one currency can be passed</param>
         /// <returns>Task of List&lt;CurrencyQuota&gt;</returns>
         Task<List<CurrencyQuota>> ListUserCurrencyQuotaAsync (string type, string currency);
 
@@ -501,7 +501,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type">Currency type: collateral - Collateral currency, borrow - Borrowing currency</param>
-        /// <param name="currency">When it is a collateral currency, multiple currencies can be provided separated by commas; when it is a borrowing currency, only one currency can be provided.</param>
+        /// <param name="currency">When it is a collateral currency, multiple currencies can be passed separated by commas; when it is a borrowing currency, only one currency can be passed</param>
         /// <returns>Task of ApiResponse (List&lt;CurrencyQuota&gt;)</returns>
         Task<ApiResponse<List<CurrencyQuota>>> ListUserCurrencyQuotaAsyncWithHttpInfo (string type, string currency);
         /// <summary>
@@ -565,7 +565,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency&#39;s current interest rate
         /// </summary>
         /// <remarks>
-        /// Query currency&#39;s current interest rate for the previous hour, current interest rate updates hourly
+        /// Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
@@ -577,7 +577,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency&#39;s current interest rate
         /// </summary>
         /// <remarks>
-        /// Query currency&#39;s current interest rate for the previous hour, current interest rate updates hourly
+        /// Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
@@ -710,7 +710,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 10)</param>
-        /// <param name="sort">Sort type: &#x60;time_desc&#x60; - Created time descending (default), &#x60;ltv_asc&#x60; - Collateral ratio ascending, &#x60;ltv_desc&#x60; - Collateral ratio descending. (optional)</param>
+        /// <param name="sort">Sort type: time_desc - Default descending by creation time, ltv_asc - Ascending by LTV ratio, ltv_desc - Descending by LTV ratio (optional)</param>
         /// <param name="orderType">Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified (optional)</param>
         /// <returns>List&lt;MultiCollateralOrder&gt;</returns>
         public List<MultiCollateralOrder> ListMultiCollateralOrders (int? page = default(int?), int? limit = default(int?), string sort = default(string), string orderType = default(string))
@@ -725,7 +725,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 10)</param>
-        /// <param name="sort">Sort type: &#x60;time_desc&#x60; - Created time descending (default), &#x60;ltv_asc&#x60; - Collateral ratio ascending, &#x60;ltv_desc&#x60; - Collateral ratio descending. (optional)</param>
+        /// <param name="sort">Sort type: time_desc - Default descending by creation time, ltv_asc - Ascending by LTV ratio, ltv_desc - Descending by LTV ratio (optional)</param>
         /// <param name="orderType">Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified (optional)</param>
         /// <returns>ApiResponse of List&lt;MultiCollateralOrder&gt;</returns>
         public ApiResponse<List<MultiCollateralOrder>> ListMultiCollateralOrdersWithHttpInfo (int? page = default(int?), int? limit = default(int?), string sort = default(string), string orderType = default(string))
@@ -784,7 +784,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 10)</param>
-        /// <param name="sort">Sort type: &#x60;time_desc&#x60; - Created time descending (default), &#x60;ltv_asc&#x60; - Collateral ratio ascending, &#x60;ltv_desc&#x60; - Collateral ratio descending. (optional)</param>
+        /// <param name="sort">Sort type: time_desc - Default descending by creation time, ltv_asc - Ascending by LTV ratio, ltv_desc - Descending by LTV ratio (optional)</param>
         /// <param name="orderType">Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified (optional)</param>
         /// <returns>Task of List&lt;MultiCollateralOrder&gt;</returns>
         public async Task<List<MultiCollateralOrder>> ListMultiCollateralOrdersAsync (int? page = default(int?), int? limit = default(int?), string sort = default(string), string orderType = default(string))
@@ -800,7 +800,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 10)</param>
-        /// <param name="sort">Sort type: &#x60;time_desc&#x60; - Created time descending (default), &#x60;ltv_asc&#x60; - Collateral ratio ascending, &#x60;ltv_desc&#x60; - Collateral ratio descending. (optional)</param>
+        /// <param name="sort">Sort type: time_desc - Default descending by creation time, ltv_asc - Ascending by LTV ratio, ltv_desc - Descending by LTV ratio (optional)</param>
         /// <param name="orderType">Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;MultiCollateralOrder&gt;)</returns>
         public async Task<ApiResponse<List<MultiCollateralOrder>>> ListMultiCollateralOrdersAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string sort = default(string), string orderType = default(string))
@@ -1674,7 +1674,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type">Currency type: collateral - Collateral currency, borrow - Borrowing currency</param>
-        /// <param name="currency">When it is a collateral currency, multiple currencies can be provided separated by commas; when it is a borrowing currency, only one currency can be provided.</param>
+        /// <param name="currency">When it is a collateral currency, multiple currencies can be passed separated by commas; when it is a borrowing currency, only one currency can be passed</param>
         /// <returns>List&lt;CurrencyQuota&gt;</returns>
         public List<CurrencyQuota> ListUserCurrencyQuota (string type, string currency)
         {
@@ -1687,7 +1687,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type">Currency type: collateral - Collateral currency, borrow - Borrowing currency</param>
-        /// <param name="currency">When it is a collateral currency, multiple currencies can be provided separated by commas; when it is a borrowing currency, only one currency can be provided.</param>
+        /// <param name="currency">When it is a collateral currency, multiple currencies can be passed separated by commas; when it is a borrowing currency, only one currency can be passed</param>
         /// <returns>ApiResponse of List&lt;CurrencyQuota&gt;</returns>
         public ApiResponse<List<CurrencyQuota>> ListUserCurrencyQuotaWithHttpInfo (string type, string currency)
         {
@@ -1738,7 +1738,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type">Currency type: collateral - Collateral currency, borrow - Borrowing currency</param>
-        /// <param name="currency">When it is a collateral currency, multiple currencies can be provided separated by commas; when it is a borrowing currency, only one currency can be provided.</param>
+        /// <param name="currency">When it is a collateral currency, multiple currencies can be passed separated by commas; when it is a borrowing currency, only one currency can be passed</param>
         /// <returns>Task of List&lt;CurrencyQuota&gt;</returns>
         public async Task<List<CurrencyQuota>> ListUserCurrencyQuotaAsync (string type, string currency)
         {
@@ -1752,7 +1752,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="type">Currency type: collateral - Collateral currency, borrow - Borrowing currency</param>
-        /// <param name="currency">When it is a collateral currency, multiple currencies can be provided separated by commas; when it is a borrowing currency, only one currency can be provided.</param>
+        /// <param name="currency">When it is a collateral currency, multiple currencies can be passed separated by commas; when it is a borrowing currency, only one currency can be passed</param>
         /// <returns>Task of ApiResponse (List&lt;CurrencyQuota&gt;)</returns>
         public async Task<ApiResponse<List<CurrencyQuota>>> ListUserCurrencyQuotaAsyncWithHttpInfo (string type, string currency)
         {
@@ -2098,7 +2098,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query currency&#39;s current interest rate Query currency&#39;s current interest rate for the previous hour, current interest rate updates hourly
+        /// Query currency&#39;s current interest rate Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
@@ -2111,7 +2111,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query currency&#39;s current interest rate Query currency&#39;s current interest rate for the previous hour, current interest rate updates hourly
+        /// Query currency&#39;s current interest rate Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
@@ -2159,7 +2159,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query currency&#39;s current interest rate Query currency&#39;s current interest rate for the previous hour, current interest rate updates hourly
+        /// Query currency&#39;s current interest rate Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
@@ -2173,7 +2173,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query currency&#39;s current interest rate Query currency&#39;s current interest rate for the previous hour, current interest rate updates hourly
+        /// Query currency&#39;s current interest rate Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>

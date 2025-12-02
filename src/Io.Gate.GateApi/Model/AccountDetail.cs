@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="userId">User ID.</param>
         /// <param name="tier">User VIP level.</param>
         /// <param name="key">key.</param>
-        /// <param name="copyTradingRole">User role: 0 - Normal user, 1 - Copy trading leader, 2 - Follower, 3 - Both leader and follower.</param>
+        /// <param name="copyTradingRole">User role: 0 - Normal user 1 - Copy trading leader 2 - Copy trading follower 3 - Both leader and follower.</param>
         public AccountDetail(List<string> ipWhitelist = default(List<string>), List<string> currencyPairs = default(List<string>), long userId = default(long), long tier = default(long), AccountDetailKey key = default(AccountDetailKey), int copyTradingRole = default(int))
         {
             this.IpWhitelist = ipWhitelist;
@@ -84,9 +84,9 @@ namespace Io.Gate.GateApi.Model
         public AccountDetailKey Key { get; set; }
 
         /// <summary>
-        /// User role: 0 - Normal user, 1 - Copy trading leader, 2 - Follower, 3 - Both leader and follower
+        /// User role: 0 - Normal user 1 - Copy trading leader 2 - Copy trading follower 3 - Both leader and follower
         /// </summary>
-        /// <value>User role: 0 - Normal user, 1 - Copy trading leader, 2 - Follower, 3 - Both leader and follower</value>
+        /// <value>User role: 0 - Normal user 1 - Copy trading leader 2 - Copy trading follower 3 - Both leader and follower</value>
         [DataMember(Name="copy_trading_role")]
         public int CopyTradingRole { get; set; }
 

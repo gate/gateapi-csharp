@@ -99,14 +99,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading size</value>
         [DataMember(Name="trade_size", EmitDefaultValue=false)]
-        public long TradeSize { get; private set; }
+        public string TradeSize { get; private set; }
 
         /// <summary>
         /// Positions after auto-deleveraging
         /// </summary>
         /// <value>Positions after auto-deleveraging</value>
         [DataMember(Name="position_size", EmitDefaultValue=false)]
-        public long PositionSize { get; private set; }
+        public string PositionSize { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -199,11 +199,13 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.TradeSize == input.TradeSize ||
-                    this.TradeSize.Equals(input.TradeSize)
+                    (this.TradeSize != null &&
+                    this.TradeSize.Equals(input.TradeSize))
                 ) && 
                 (
                     this.PositionSize == input.PositionSize ||
-                    this.PositionSize.Equals(input.PositionSize)
+                    (this.PositionSize != null &&
+                    this.PositionSize.Equals(input.PositionSize))
                 );
         }
 
@@ -229,8 +231,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.EntryPrice.GetHashCode();
                 if (this.FillPrice != null)
                     hashCode = hashCode * 59 + this.FillPrice.GetHashCode();
-                hashCode = hashCode * 59 + this.TradeSize.GetHashCode();
-                hashCode = hashCode * 59 + this.PositionSize.GetHashCode();
+                if (this.TradeSize != null)
+                    hashCode = hashCode * 59 + this.TradeSize.GetHashCode();
+                if (this.PositionSize != null)
+                    hashCode = hashCode * 59 + this.PositionSize.GetHashCode();
                 return hashCode;
             }
         }
