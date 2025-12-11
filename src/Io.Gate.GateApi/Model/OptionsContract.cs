@@ -34,13 +34,13 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="OptionsContract" /> class.
         /// </summary>
         /// <param name="name">Options contract name.</param>
-        /// <param name="tag">Tag.</param>
+        /// <param name="tag">Expiry periods include day, week, and month..</param>
         /// <param name="createTime">Created time.</param>
         /// <param name="expirationTime">Expiration time.</param>
         /// <param name="isCall">&#x60;true&#x60; means call options, &#x60;false&#x60; means put options.</param>
-        /// <param name="multiplier">Multiplier used in converting from invoicing to settlement currency.</param>
+        /// <param name="multiplier">The option contract multiplier indicates how many units of the underlying asset the face value of one contract represents..</param>
         /// <param name="underlying">Underlying.</param>
-        /// <param name="underlyingPrice">Underlying price (quote currency).</param>
+        /// <param name="underlyingPrice">The forward futures price corresponding to the delivery date.</param>
         /// <param name="lastPrice">Last trading price.</param>
         /// <param name="markPrice">Current mark price (quote currency).</param>
         /// <param name="indexPrice">Current index price (quote currency).</param>
@@ -50,14 +50,14 @@ namespace Io.Gate.GateApi.Model
         /// <param name="markPriceRound">Minimum mark price increment.</param>
         /// <param name="orderSizeMin">Minimum order size allowed by the contract.</param>
         /// <param name="orderSizeMax">Maximum order size allowed by the contract.</param>
-        /// <param name="orderPriceDeviate">The positive and negative offset allowed between the order price and the current mark price, that &#x60;order_price&#x60; must meet the following conditions:  order_price is within the range of mark_price +/- order_price_deviate * underlying_price and does not distinguish between buy and sell orders.</param>
+        /// <param name="orderPriceDeviate">Deprecated.</param>
         /// <param name="refDiscountRate">Trading fee discount for referred users.</param>
         /// <param name="refRebateRate">Commission rate for referrers.</param>
         /// <param name="orderbookId">Orderbook update ID.</param>
-        /// <param name="tradeId">Current trade ID.</param>
+        /// <param name="tradeId">Deprecated.</param>
         /// <param name="tradeSize">Historical cumulative trading volume.</param>
         /// <param name="positionSize">Current total long position size.</param>
-        /// <param name="ordersLimit">Maximum number of pending orders.</param>
+        /// <param name="ordersLimit">The maximum number of open orders each user can place in this order book..</param>
         public OptionsContract(string name = default(string), string tag = default(string), double createTime = default(double), double expirationTime = default(double), bool isCall = default(bool), string multiplier = default(string), string underlying = default(string), string underlyingPrice = default(string), string lastPrice = default(string), string markPrice = default(string), string indexPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), long orderSizeMin = default(long), long orderSizeMax = default(long), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), long tradeSize = default(long), long positionSize = default(long), int ordersLimit = default(int))
         {
             this.Name = name;
@@ -95,9 +95,9 @@ namespace Io.Gate.GateApi.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Tag
+        /// Expiry periods include day, week, and month.
         /// </summary>
-        /// <value>Tag</value>
+        /// <value>Expiry periods include day, week, and month.</value>
         [DataMember(Name="tag")]
         public string Tag { get; set; }
 
@@ -123,9 +123,9 @@ namespace Io.Gate.GateApi.Model
         public bool IsCall { get; set; }
 
         /// <summary>
-        /// Multiplier used in converting from invoicing to settlement currency
+        /// The option contract multiplier indicates how many units of the underlying asset the face value of one contract represents.
         /// </summary>
-        /// <value>Multiplier used in converting from invoicing to settlement currency</value>
+        /// <value>The option contract multiplier indicates how many units of the underlying asset the face value of one contract represents.</value>
         [DataMember(Name="multiplier")]
         public string Multiplier { get; set; }
 
@@ -137,9 +137,9 @@ namespace Io.Gate.GateApi.Model
         public string Underlying { get; set; }
 
         /// <summary>
-        /// Underlying price (quote currency)
+        /// The forward futures price corresponding to the delivery date
         /// </summary>
-        /// <value>Underlying price (quote currency)</value>
+        /// <value>The forward futures price corresponding to the delivery date</value>
         [DataMember(Name="underlying_price")]
         public string UnderlyingPrice { get; set; }
 
@@ -207,9 +207,9 @@ namespace Io.Gate.GateApi.Model
         public long OrderSizeMax { get; set; }
 
         /// <summary>
-        /// The positive and negative offset allowed between the order price and the current mark price, that &#x60;order_price&#x60; must meet the following conditions:  order_price is within the range of mark_price +/- order_price_deviate * underlying_price and does not distinguish between buy and sell orders
+        /// Deprecated
         /// </summary>
-        /// <value>The positive and negative offset allowed between the order price and the current mark price, that &#x60;order_price&#x60; must meet the following conditions:  order_price is within the range of mark_price +/- order_price_deviate * underlying_price and does not distinguish between buy and sell orders</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="order_price_deviate")]
         public string OrderPriceDeviate { get; set; }
 
@@ -235,9 +235,9 @@ namespace Io.Gate.GateApi.Model
         public long OrderbookId { get; set; }
 
         /// <summary>
-        /// Current trade ID
+        /// Deprecated
         /// </summary>
-        /// <value>Current trade ID</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="trade_id")]
         public long TradeId { get; set; }
 
@@ -256,9 +256,9 @@ namespace Io.Gate.GateApi.Model
         public long PositionSize { get; set; }
 
         /// <summary>
-        /// Maximum number of pending orders
+        /// The maximum number of open orders each user can place in this order book.
         /// </summary>
-        /// <value>Maximum number of pending orders</value>
+        /// <value>The maximum number of open orders each user can place in this order book.</value>
         [DataMember(Name="orders_limit")]
         public int OrdersLimit { get; set; }
 

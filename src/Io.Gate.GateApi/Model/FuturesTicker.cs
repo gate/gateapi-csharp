@@ -49,7 +49,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="fundingRate">Funding rate.</param>
         /// <param name="fundingRateIndicative">Indicative Funding rate in next period. (deprecated. use &#x60;funding_rate&#x60;).</param>
         /// <param name="indexPrice">Index price.</param>
-        /// <param name="quantoBaseRate">Exchange rate of base currency and settlement currency in Quanto contract. Does not exists in contracts of other types.</param>
+        /// <param name="quantoBaseRate">Deprecated.</param>
         /// <param name="lowestAsk">Recent lowest ask.</param>
         /// <param name="lowestSize">The latest seller&#39;s lowest price order quantity.</param>
         /// <param name="highestBid">Recent highest bid.</param>
@@ -202,9 +202,9 @@ namespace Io.Gate.GateApi.Model
         public string IndexPrice { get; set; }
 
         /// <summary>
-        /// Exchange rate of base currency and settlement currency in Quanto contract. Does not exists in contracts of other types
+        /// Deprecated
         /// </summary>
-        /// <value>Exchange rate of base currency and settlement currency in Quanto contract. Does not exists in contracts of other types</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="quanto_base_rate")]
         public string QuantoBaseRate { get; set; }
 

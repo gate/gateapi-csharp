@@ -33,9 +33,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MarginLeverageTier" /> class.
         /// </summary>
-        /// <param name="upperLimit">Maximum loan limit.</param>
-        /// <param name="mmr">Maintenance margin rate.</param>
-        /// <param name="leverage">Maximum leverage multiple.</param>
+        /// <param name="upperLimit">Maximum borrowing limit. Determined by the leverage you set; the lower the leverage, the larger the borrowing limit..</param>
+        /// <param name="mmr">Maintenance margin rate.Under tiered margin requirements(https://www.gate.com/en/help/trade/margin-trading/42357), the maintenance margin rate is a composite value..</param>
+        /// <param name="leverage">the maximum permissible leverage given to the current debt level; the higher the debt level, the lower the maximum leverage..</param>
         public MarginLeverageTier(string upperLimit = default(string), string mmr = default(string), string leverage = default(string))
         {
             this.UpperLimit = upperLimit;
@@ -44,23 +44,23 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Maximum loan limit
+        /// Maximum borrowing limit. Determined by the leverage you set; the lower the leverage, the larger the borrowing limit.
         /// </summary>
-        /// <value>Maximum loan limit</value>
+        /// <value>Maximum borrowing limit. Determined by the leverage you set; the lower the leverage, the larger the borrowing limit.</value>
         [DataMember(Name="upper_limit")]
         public string UpperLimit { get; set; }
 
         /// <summary>
-        /// Maintenance margin rate
+        /// Maintenance margin rate.Under tiered margin requirements(https://www.gate.com/en/help/trade/margin-trading/42357), the maintenance margin rate is a composite value.
         /// </summary>
-        /// <value>Maintenance margin rate</value>
+        /// <value>Maintenance margin rate.Under tiered margin requirements(https://www.gate.com/en/help/trade/margin-trading/42357), the maintenance margin rate is a composite value.</value>
         [DataMember(Name="mmr")]
         public string Mmr { get; set; }
 
         /// <summary>
-        /// Maximum leverage multiple
+        /// the maximum permissible leverage given to the current debt level; the higher the debt level, the lower the maximum leverage.
         /// </summary>
-        /// <value>Maximum leverage multiple</value>
+        /// <value>the maximum permissible leverage given to the current debt level; the higher the debt level, the lower the maximum leverage.</value>
         [DataMember(Name="leverage")]
         public string Leverage { get; set; }
 

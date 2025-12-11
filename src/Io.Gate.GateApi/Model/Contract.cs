@@ -58,9 +58,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="type")]
         public TypeEnum? Type { get; set; }
         /// <summary>
-        /// Mark price type: internal - internal trading price, index - external index price
+        /// Deprecated
         /// </summary>
-        /// <value>Mark price type: internal - internal trading price, index - external index price</value>
+        /// <value>Deprecated</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MarkTypeEnum
         {
@@ -79,9 +79,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Mark price type: internal - internal trading price, index - external index price
+        /// Deprecated
         /// </summary>
-        /// <value>Mark price type: internal - internal trading price, index - external index price</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="mark_type")]
         public MarkTypeEnum? MarkType { get; set; }
         /// <summary>
@@ -89,11 +89,11 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="name">Futures contract.</param>
         /// <param name="type">Contract type: inverse - inverse contract, direct - direct contract.</param>
-        /// <param name="quantoMultiplier">Multiplier used in converting from invoicing to settlement currency.</param>
+        /// <param name="quantoMultiplier">The contract multiplier indicates how many units of the underlying asset the face value of one contract represents..</param>
         /// <param name="leverageMin">Minimum leverage.</param>
         /// <param name="leverageMax">Maximum leverage.</param>
-        /// <param name="maintenanceRate">Maintenance rate of margin.</param>
-        /// <param name="markType">Mark price type: internal - internal trading price, index - external index price.</param>
+        /// <param name="maintenanceRate">The maintenance margin rate of the first tier of risk limit sheet.</param>
+        /// <param name="markType">Deprecated.</param>
         /// <param name="markPrice">Current mark price.</param>
         /// <param name="indexPrice">Current index price.</param>
         /// <param name="lastPrice">Last trading price.</param>
@@ -122,12 +122,13 @@ namespace Io.Gate.GateApi.Model
         /// <param name="enableBonus">Whether bonus is enabled.</param>
         /// <param name="enableCredit">Whether portfolio margin account is enabled.</param>
         /// <param name="createTime">Created time of the contract.</param>
-        /// <param name="fundingCapRatio">The factor for the maximum of the funding rate. Maximum of funding rate &#x3D; (1/market maximum leverage - maintenance margin rate) * funding_cap_ratio.</param>
+        /// <param name="fundingCapRatio">Deprecated.</param>
         /// <param name="status">Contract status types include: prelaunch (pre-launch), trading (active), delisting (delisting), delisted (delisted), circuit_breaker (circuit breaker).</param>
         /// <param name="launchTime">Contract expiry timestamp.</param>
         /// <param name="delistingTime">Timestamp when contract enters reduce-only state.</param>
         /// <param name="delistedTime">Contract delisting time.</param>
-        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long))
+        /// <param name="fundingRateLimit">Upper and lower limits of funding rate.</param>
+        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string fundingRateLimit = default(string))
         {
             this.Name = name;
             this.Type = type;
@@ -169,6 +170,7 @@ namespace Io.Gate.GateApi.Model
             this.LaunchTime = launchTime;
             this.DelistingTime = delistingTime;
             this.DelistedTime = delistedTime;
+            this.FundingRateLimit = fundingRateLimit;
         }
 
         /// <summary>
@@ -179,9 +181,9 @@ namespace Io.Gate.GateApi.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Multiplier used in converting from invoicing to settlement currency
+        /// The contract multiplier indicates how many units of the underlying asset the face value of one contract represents.
         /// </summary>
-        /// <value>Multiplier used in converting from invoicing to settlement currency</value>
+        /// <value>The contract multiplier indicates how many units of the underlying asset the face value of one contract represents.</value>
         [DataMember(Name="quanto_multiplier")]
         public string QuantoMultiplier { get; set; }
 
@@ -200,9 +202,9 @@ namespace Io.Gate.GateApi.Model
         public string LeverageMax { get; set; }
 
         /// <summary>
-        /// Maintenance rate of margin
+        /// The maintenance margin rate of the first tier of risk limit sheet
         /// </summary>
-        /// <value>Maintenance rate of margin</value>
+        /// <value>The maintenance margin rate of the first tier of risk limit sheet</value>
         [DataMember(Name="maintenance_rate")]
         public string MaintenanceRate { get; set; }
 
@@ -403,9 +405,9 @@ namespace Io.Gate.GateApi.Model
         public double CreateTime { get; set; }
 
         /// <summary>
-        /// The factor for the maximum of the funding rate. Maximum of funding rate &#x3D; (1/market maximum leverage - maintenance margin rate) * funding_cap_ratio
+        /// Deprecated
         /// </summary>
-        /// <value>The factor for the maximum of the funding rate. Maximum of funding rate &#x3D; (1/market maximum leverage - maintenance margin rate) * funding_cap_ratio</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="funding_cap_ratio")]
         public string FundingCapRatio { get; set; }
 
@@ -436,6 +438,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Contract delisting time</value>
         [DataMember(Name="delisted_time")]
         public long DelistedTime { get; set; }
+
+        /// <summary>
+        /// Upper and lower limits of funding rate
+        /// </summary>
+        /// <value>Upper and lower limits of funding rate</value>
+        [DataMember(Name="funding_rate_limit")]
+        public string FundingRateLimit { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -485,6 +494,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  LaunchTime: ").Append(LaunchTime).Append("\n");
             sb.Append("  DelistingTime: ").Append(DelistingTime).Append("\n");
             sb.Append("  DelistedTime: ").Append(DelistedTime).Append("\n");
+            sb.Append("  FundingRateLimit: ").Append(FundingRateLimit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -703,6 +713,11 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.DelistedTime == input.DelistedTime ||
                     this.DelistedTime.Equals(input.DelistedTime)
+                ) && 
+                (
+                    this.FundingRateLimit == input.FundingRateLimit ||
+                    (this.FundingRateLimit != null &&
+                    this.FundingRateLimit.Equals(input.FundingRateLimit))
                 );
         }
 
@@ -780,6 +795,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.LaunchTime.GetHashCode();
                 hashCode = hashCode * 59 + this.DelistingTime.GetHashCode();
                 hashCode = hashCode * 59 + this.DelistedTime.GetHashCode();
+                if (this.FundingRateLimit != null)
+                    hashCode = hashCode * 59 + this.FundingRateLimit.GetHashCode();
                 return hashCode;
             }
         }

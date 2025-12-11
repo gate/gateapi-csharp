@@ -54,9 +54,9 @@ namespace Io.Gate.GateApi.Model
         public string Underlying { get; private set; }
 
         /// <summary>
-        /// Underlying price (quote currency)
+        /// The forward futures price corresponding to the delivery date
         /// </summary>
-        /// <value>Underlying price (quote currency)</value>
+        /// <value>The forward futures price corresponding to the delivery date</value>
         [DataMember(Name="underlying_price", EmitDefaultValue=false)]
         public string UnderlyingPrice { get; private set; }
 
@@ -103,9 +103,9 @@ namespace Io.Gate.GateApi.Model
         public string RealisedPnl { get; private set; }
 
         /// <summary>
-        /// Unrealized PNL
+        /// Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only.
         /// </summary>
-        /// <value>Unrealized PNL</value>
+        /// <value>Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only.</value>
         [DataMember(Name="unrealised_pnl", EmitDefaultValue=false)]
         public string UnrealisedPnl { get; private set; }
 

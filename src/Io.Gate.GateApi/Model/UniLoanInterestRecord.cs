@@ -74,9 +74,9 @@ namespace Io.Gate.GateApi.Model
         public int Status { get; private set; }
 
         /// <summary>
-        /// Type: platform - Platform borrowing, margin - Margin borrowing
+        /// Loan Type margin: margin borrowing
         /// </summary>
-        /// <value>Type: platform - Platform borrowing, margin - Margin borrowing</value>
+        /// <value>Loan Type margin: margin borrowing</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; private set; }
 

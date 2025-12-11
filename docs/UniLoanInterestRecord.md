@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ActualRate** | **string** | Actual Rate | [optional] [readonly] 
 **Interest** | **string** | Interest | [optional] [readonly] 
 **Status** | **int** | Status: 0 - fail, 1 - success | [optional] [readonly] 
-**Type** | **string** | Type: platform - Platform borrowing, margin - Margin borrowing | [optional] [readonly] 
+**Type** | **string** | Loan Type margin: margin borrowing | [optional] [readonly] 
 **CreateTime** | **long** | Created time | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

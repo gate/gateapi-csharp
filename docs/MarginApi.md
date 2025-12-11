@@ -462,6 +462,8 @@ Name | Type | Description  | Notes
 
 Query user's own leverage lending tiers in current market
 
+Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -532,6 +534,8 @@ Name | Type | Description  | Notes
 > List&lt;MarginLeverageTier&gt; GetMarketMarginTier (string currencyPair)
 
 Query current market leverage lending tiers
+
+Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
 
 ### Example
 ```csharp

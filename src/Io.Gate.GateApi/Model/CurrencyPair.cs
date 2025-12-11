@@ -91,7 +91,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="type">Trading pair type, normal: normal, premarket: pre-market.</param>
         /// <param name="tradeUrl">Transaction link.</param>
         /// <param name="stTag">Whether the trading pair is in ST risk assessment, false - No, true - Yes.</param>
-        public CurrencyPair(string id = default(string), string _base = default(string), string baseName = default(string), string quote = default(string), string quoteName = default(string), string fee = default(string), string minBaseAmount = default(string), string minQuoteAmount = default(string), string maxBaseAmount = default(string), string maxQuoteAmount = default(string), int amountPrecision = default(int), int precision = default(int), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), long sellStart = default(long), long buyStart = default(long), long delistingTime = default(long), string type = default(string), string tradeUrl = default(string), bool stTag = default(bool))
+        /// <param name="upRate">Maximum Quote Rise Percentage.</param>
+        /// <param name="downRate">Maximum Quote Decline Percentage.</param>
+        public CurrencyPair(string id = default(string), string _base = default(string), string baseName = default(string), string quote = default(string), string quoteName = default(string), string fee = default(string), string minBaseAmount = default(string), string minQuoteAmount = default(string), string maxBaseAmount = default(string), string maxQuoteAmount = default(string), int amountPrecision = default(int), int precision = default(int), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), long sellStart = default(long), long buyStart = default(long), long delistingTime = default(long), string type = default(string), string tradeUrl = default(string), bool stTag = default(bool), string upRate = default(string), string downRate = default(string))
         {
             this.Id = id;
             this.Base = _base;
@@ -112,6 +114,8 @@ namespace Io.Gate.GateApi.Model
             this.Type = type;
             this.TradeUrl = tradeUrl;
             this.StTag = stTag;
+            this.UpRate = upRate;
+            this.DownRate = downRate;
         }
 
         /// <summary>
@@ -241,6 +245,20 @@ namespace Io.Gate.GateApi.Model
         public bool StTag { get; set; }
 
         /// <summary>
+        /// Maximum Quote Rise Percentage
+        /// </summary>
+        /// <value>Maximum Quote Rise Percentage</value>
+        [DataMember(Name="up_rate")]
+        public string UpRate { get; set; }
+
+        /// <summary>
+        /// Maximum Quote Decline Percentage
+        /// </summary>
+        /// <value>Maximum Quote Decline Percentage</value>
+        [DataMember(Name="down_rate")]
+        public string DownRate { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -267,6 +285,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  TradeUrl: ").Append(TradeUrl).Append("\n");
             sb.Append("  StTag: ").Append(StTag).Append("\n");
+            sb.Append("  UpRate: ").Append(UpRate).Append("\n");
+            sb.Append("  DownRate: ").Append(DownRate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -388,6 +408,16 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.StTag == input.StTag ||
                     this.StTag.Equals(input.StTag)
+                ) && 
+                (
+                    this.UpRate == input.UpRate ||
+                    (this.UpRate != null &&
+                    this.UpRate.Equals(input.UpRate))
+                ) && 
+                (
+                    this.DownRate == input.DownRate ||
+                    (this.DownRate != null &&
+                    this.DownRate.Equals(input.DownRate))
                 );
         }
 
@@ -431,6 +461,10 @@ namespace Io.Gate.GateApi.Model
                 if (this.TradeUrl != null)
                     hashCode = hashCode * 59 + this.TradeUrl.GetHashCode();
                 hashCode = hashCode * 59 + this.StTag.GetHashCode();
+                if (this.UpRate != null)
+                    hashCode = hashCode * 59 + this.UpRate.GetHashCode();
+                if (this.DownRate != null)
+                    hashCode = hashCode * 59 + this.DownRate.GetHashCode();
                 return hashCode;
             }
         }

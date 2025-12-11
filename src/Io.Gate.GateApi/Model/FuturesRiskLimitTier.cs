@@ -36,7 +36,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="tier">Tier.</param>
         /// <param name="riskLimit">Position risk limit.</param>
         /// <param name="initialRate">Initial margin rate.</param>
-        /// <param name="maintenanceRate">Maintenance margin rate.</param>
+        /// <param name="maintenanceRate">The maintenance margin rate of the first tier of risk limit sheet.</param>
         /// <param name="leverageMax">Maximum leverage.</param>
         /// <param name="deduction">Maintenance margin quick calculation deduction amount.</param>
         public FuturesRiskLimitTier(int tier = default(int), string riskLimit = default(string), string initialRate = default(string), string maintenanceRate = default(string), string leverageMax = default(string), string deduction = default(string))
@@ -71,9 +71,9 @@ namespace Io.Gate.GateApi.Model
         public string InitialRate { get; set; }
 
         /// <summary>
-        /// Maintenance margin rate
+        /// The maintenance margin rate of the first tier of risk limit sheet
         /// </summary>
-        /// <value>Maintenance margin rate</value>
+        /// <value>The maintenance margin rate of the first tier of risk limit sheet</value>
         [DataMember(Name="maintenance_rate")]
         public string MaintenanceRate { get; set; }
 

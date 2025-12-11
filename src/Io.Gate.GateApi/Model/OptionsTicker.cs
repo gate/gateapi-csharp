@@ -45,7 +45,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="markIv">Implied volatility.</param>
         /// <param name="bidIv">Bid side implied volatility.</param>
         /// <param name="askIv">Ask side implied volatility.</param>
-        /// <param name="leverage">Current leverage. Formula: underlying_price / mark_price * delta.</param>
+        /// <param name="leverage">Leverage &#x3D; underlying_price / (mark_price * delta). This value is for reference only..</param>
         /// <param name="delta">Greek letter delta.</param>
         /// <param name="gamma">Greek letter gamma.</param>
         /// <param name="vega">Greek letter vega.</param>
@@ -158,9 +158,9 @@ namespace Io.Gate.GateApi.Model
         public string AskIv { get; set; }
 
         /// <summary>
-        /// Current leverage. Formula: underlying_price / mark_price * delta
+        /// Leverage &#x3D; underlying_price / (mark_price * delta). This value is for reference only.
         /// </summary>
-        /// <value>Current leverage. Formula: underlying_price / mark_price * delta</value>
+        /// <value>Leverage &#x3D; underlying_price / (mark_price * delta). This value is for reference only.</value>
         [DataMember(Name="leverage")]
         public string Leverage { get; set; }
 

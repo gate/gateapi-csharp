@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class OptionsAccount :  IEquatable<OptionsAccount>, IValidatableObject
     {
         /// <summary>
-        /// ｜ 保证金模式： - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式
+        /// 此字段表示统一账户所使用的保证金模式：  - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式 - 3: 表示为单币种保证金模式
         /// </summary>
-        /// <value>｜ 保证金模式： - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式</value>
+        /// <value>此字段表示统一账户所使用的保证金模式：  - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式 - 3: 表示为单币种保证金模式</value>
         public enum MarginModeEnum
         {
             /// <summary>
@@ -49,28 +49,33 @@ namespace Io.Gate.GateApi.Model
             /// <summary>
             /// Enum value NUMBER_2
             /// </summary>
-            NUMBER_2 = 2
+            NUMBER_2 = 2,
+
+            /// <summary>
+            /// Enum value NUMBER_3
+            /// </summary>
+            NUMBER_3 = 3
 
         }
 
         /// <summary>
-        /// ｜ 保证金模式： - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式
+        /// 此字段表示统一账户所使用的保证金模式：  - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式 - 3: 表示为单币种保证金模式
         /// </summary>
-        /// <value>｜ 保证金模式： - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式</value>
+        /// <value>此字段表示统一账户所使用的保证金模式：  - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式 - 3: 表示为单币种保证金模式</value>
         [DataMember(Name="margin_mode")]
         public MarginModeEnum? MarginMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionsAccount" /> class.
         /// </summary>
         /// <param name="user">User ID.</param>
-        /// <param name="total">Account Balance.</param>
+        /// <param name="total">Account balance, invalid for unified account.</param>
         /// <param name="positionValue">Position value, long position value is positive, short position value is negative.</param>
-        /// <param name="equity">Account equity, the sum of account balance and position value.</param>
+        /// <param name="equity">Account equity &#x3D; balance + option position value, invalid for unified account.</param>
         /// <param name="shortEnabled">If the account is allowed to short.</param>
         /// <param name="mmpEnabled">Whether to enable MMP.</param>
-        /// <param name="liqTriggered">Whether to trigger position liquidation.</param>
-        /// <param name="marginMode">｜ 保证金模式： - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式.</param>
-        /// <param name="unrealisedPnl">Unrealized PNL.</param>
+        /// <param name="liqTriggered">Whether the account is in a liquidation state.</param>
+        /// <param name="marginMode">此字段表示统一账户所使用的保证金模式：  - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式 - 3: 表示为单币种保证金模式.</param>
+        /// <param name="unrealisedPnl">Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only..</param>
         /// <param name="initMargin">Initial position margin.</param>
         /// <param name="maintMargin">Position maintenance margin.</param>
         /// <param name="orderMargin">Order margin of unfinished orders.</param>
@@ -112,9 +117,9 @@ namespace Io.Gate.GateApi.Model
         public long User { get; set; }
 
         /// <summary>
-        /// Account Balance
+        /// Account balance, invalid for unified account
         /// </summary>
-        /// <value>Account Balance</value>
+        /// <value>Account balance, invalid for unified account</value>
         [DataMember(Name="total")]
         public string Total { get; set; }
 
@@ -126,9 +131,9 @@ namespace Io.Gate.GateApi.Model
         public string PositionValue { get; set; }
 
         /// <summary>
-        /// Account equity, the sum of account balance and position value
+        /// Account equity &#x3D; balance + option position value, invalid for unified account
         /// </summary>
-        /// <value>Account equity, the sum of account balance and position value</value>
+        /// <value>Account equity &#x3D; balance + option position value, invalid for unified account</value>
         [DataMember(Name="equity")]
         public string Equity { get; set; }
 
@@ -147,16 +152,16 @@ namespace Io.Gate.GateApi.Model
         public bool MmpEnabled { get; set; }
 
         /// <summary>
-        /// Whether to trigger position liquidation
+        /// Whether the account is in a liquidation state
         /// </summary>
-        /// <value>Whether to trigger position liquidation</value>
+        /// <value>Whether the account is in a liquidation state</value>
         [DataMember(Name="liq_triggered")]
         public bool LiqTriggered { get; set; }
 
         /// <summary>
-        /// Unrealized PNL
+        /// Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only.
         /// </summary>
-        /// <value>Unrealized PNL</value>
+        /// <value>Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only.</value>
         [DataMember(Name="unrealised_pnl")]
         public string UnrealisedPnl { get; set; }
 

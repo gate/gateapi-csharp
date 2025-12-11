@@ -161,7 +161,7 @@ namespace Io.Gate.GateApi.Api
         /// Update sub-account API key pair
         /// </summary>
         /// <remarks>
-        /// 
+        /// Modify Sub-account API Key Pair (Note: This interface cannot modify the mode account type attribute)
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">Sub-account user ID</param>
@@ -174,7 +174,7 @@ namespace Io.Gate.GateApi.Api
         /// Update sub-account API key pair
         /// </summary>
         /// <remarks>
-        /// 
+        /// Modify Sub-account API Key Pair (Note: This interface cannot modify the mode account type attribute)
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">Sub-account user ID</param>
@@ -409,7 +409,7 @@ namespace Io.Gate.GateApi.Api
         /// Update sub-account API key pair
         /// </summary>
         /// <remarks>
-        /// 
+        /// Modify Sub-account API Key Pair (Note: This interface cannot modify the mode account type attribute)
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">Sub-account user ID</param>
@@ -422,7 +422,7 @@ namespace Io.Gate.GateApi.Api
         /// Update sub-account API key pair
         /// </summary>
         /// <remarks>
-        /// 
+        /// Modify Sub-account API Key Pair (Note: This interface cannot modify the mode account type attribute)
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">Sub-account user ID</param>
@@ -1335,7 +1335,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update sub-account API key pair 
+        /// Update sub-account API key pair Modify Sub-account API Key Pair (Note: This interface cannot modify the mode account type attribute)
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">Sub-account user ID</param>
@@ -1348,7 +1348,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update sub-account API key pair 
+        /// Update sub-account API key pair Modify Sub-account API Key Pair (Note: This interface cannot modify the mode account type attribute)
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">Sub-account user ID</param>
@@ -1401,7 +1401,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update sub-account API key pair 
+        /// Update sub-account API key pair Modify Sub-account API Key Pair (Note: This interface cannot modify the mode account type attribute)
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">Sub-account user ID</param>
@@ -1415,7 +1415,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update sub-account API key pair 
+        /// Update sub-account API key pair Modify Sub-account API Key Pair (Note: This interface cannot modify the mode account type attribute)
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">Sub-account user ID</param>

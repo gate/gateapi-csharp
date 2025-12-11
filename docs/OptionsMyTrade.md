@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **OrderId** | **int** | Related order ID | [optional] 
 **Size** | **long** | Trading size | [optional] 
 **Price** | **string** | Trade price (quote currency) | [optional] 
-**UnderlyingPrice** | **string** | Underlying price (quote currency) | [optional] 
+**UnderlyingPrice** | **string** | The forward futures price corresponding to the delivery date | [optional] 
 **Role** | **string** | Trade role. taker - taker, maker - maker | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

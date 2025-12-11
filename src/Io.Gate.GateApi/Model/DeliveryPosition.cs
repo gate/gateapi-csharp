@@ -127,9 +127,9 @@ namespace Io.Gate.GateApi.Model
         public string LeverageMax { get; private set; }
 
         /// <summary>
-        /// Maintenance rate under current risk limit
+        /// The maintenance margin rate of the first tier of risk limit sheet
         /// </summary>
-        /// <value>Maintenance rate under current risk limit</value>
+        /// <value>The maintenance margin rate of the first tier of risk limit sheet</value>
         [DataMember(Name="maintenance_rate", EmitDefaultValue=false)]
         public string MaintenanceRate { get; private set; }
 

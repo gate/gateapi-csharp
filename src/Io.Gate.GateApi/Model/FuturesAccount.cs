@@ -33,10 +33,10 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesAccount" /> class.
         /// </summary>
-        /// <param name="total">total is the balance after the user&#39;s accumulated deposit, withdraw, profit and loss (including realized profit and loss, fund, fee and referral rebate), excluding unrealized profit and loss.  total &#x3D; SUM(history_dnw, history_pnl, history_fee, history_refr, history_fund).</param>
+        /// <param name="total">Balance, only applicable to classic contract account.The balance is the sum of all historical fund flows, including historical transfers in and out, closing settlements, and transaction fee expenses, but does not include upl of positions.total &#x3D; SUM(history_dnw, history_pnl, history_fee, history_refr, history_fund).</param>
         /// <param name="unrealisedPnl">Unrealized PNL.</param>
-        /// <param name="positionMargin">Position margin.</param>
-        /// <param name="orderMargin">Order margin of unfinished orders.</param>
+        /// <param name="positionMargin">Deprecated.</param>
+        /// <param name="orderMargin">initial margin of all open orders.</param>
         /// <param name="available">Refers to the available withdrawal or trading amount in per-position, specifically the per-position available balance under the unified account that includes the credit line (which incorporates trial funds; since trial funds cannot be withdrawn, the actual withdrawal amount needs to deduct the trial fund portion when processing withdrawals).</param>
         /// <param name="point">Point card amount.</param>
         /// <param name="currency">Settlement currency.</param>
@@ -46,7 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="positionInitialMargin">Initial margin occupied by positions, applicable to unified account mode.</param>
         /// <param name="maintenanceMargin">Maintenance margin occupied by positions, applicable to new classic account margin mode and unified account mode.</param>
         /// <param name="bonus">Bonus.</param>
-        /// <param name="enableEvolvedClassic">Classic account margin mode, true-new mode, false-old mode.</param>
+        /// <param name="enableEvolvedClassic">Deprecated.</param>
         /// <param name="crossOrderMargin">Cross margin order margin, applicable to new classic account margin mode.</param>
         /// <param name="crossInitialMargin">Cross margin initial margin, applicable to new classic account margin mode.</param>
         /// <param name="crossMaintenanceMargin">Cross margin maintenance margin, applicable to new classic account margin mode.</param>
@@ -56,8 +56,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="crossMmr">Cross margin maintenance margin rate, applicable to new classic account margin mode.</param>
         /// <param name="crossImr">Cross margin initial margin rate, applicable to new classic account margin mode.</param>
         /// <param name="isolatedPositionMargin">Isolated position margin, applicable to new classic account margin mode.</param>
-        /// <param name="enableNewDualMode">Whether to open a new two-way position mode.</param>
-        /// <param name="marginMode">Margin mode, 0-classic margin mode, 1-cross-currency margin mode, 2-combined margin mode.</param>
+        /// <param name="enableNewDualMode">Deprecated.</param>
+        /// <param name="marginMode">Margin mode of the account 0: classic future account or Classic Spot Margin Mode of unified account; 1:  Multi-Currency Margin Mode; 2:  Portoforlio Margin Mode; 3:  Single-Currency Margin Mode.</param>
         /// <param name="enableTieredMm">Whether to enable tiered maintenance margin calculation.</param>
         /// <param name="history">history.</param>
         public FuturesAccount(string total = default(string), string unrealisedPnl = default(string), string positionMargin = default(string), string orderMargin = default(string), string available = default(string), string point = default(string), string currency = default(string), bool inDualMode = default(bool), string positionMode = default(string), bool enableCredit = default(bool), string positionInitialMargin = default(string), string maintenanceMargin = default(string), string bonus = default(string), bool enableEvolvedClassic = default(bool), string crossOrderMargin = default(string), string crossInitialMargin = default(string), string crossMaintenanceMargin = default(string), string crossUnrealisedPnl = default(string), string crossAvailable = default(string), string crossMarginBalance = default(string), string crossMmr = default(string), string crossImr = default(string), string isolatedPositionMargin = default(string), bool enableNewDualMode = default(bool), int marginMode = default(int), bool enableTieredMm = default(bool), FuturesAccountHistory history = default(FuturesAccountHistory))
@@ -92,9 +92,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// total is the balance after the user&#39;s accumulated deposit, withdraw, profit and loss (including realized profit and loss, fund, fee and referral rebate), excluding unrealized profit and loss.  total &#x3D; SUM(history_dnw, history_pnl, history_fee, history_refr, history_fund)
+        /// Balance, only applicable to classic contract account.The balance is the sum of all historical fund flows, including historical transfers in and out, closing settlements, and transaction fee expenses, but does not include upl of positions.total &#x3D; SUM(history_dnw, history_pnl, history_fee, history_refr, history_fund)
         /// </summary>
-        /// <value>total is the balance after the user&#39;s accumulated deposit, withdraw, profit and loss (including realized profit and loss, fund, fee and referral rebate), excluding unrealized profit and loss.  total &#x3D; SUM(history_dnw, history_pnl, history_fee, history_refr, history_fund)</value>
+        /// <value>Balance, only applicable to classic contract account.The balance is the sum of all historical fund flows, including historical transfers in and out, closing settlements, and transaction fee expenses, but does not include upl of positions.total &#x3D; SUM(history_dnw, history_pnl, history_fee, history_refr, history_fund)</value>
         [DataMember(Name="total")]
         public string Total { get; set; }
 
@@ -106,16 +106,16 @@ namespace Io.Gate.GateApi.Model
         public string UnrealisedPnl { get; set; }
 
         /// <summary>
-        /// Position margin
+        /// Deprecated
         /// </summary>
-        /// <value>Position margin</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="position_margin")]
         public string PositionMargin { get; set; }
 
         /// <summary>
-        /// Order margin of unfinished orders
+        /// initial margin of all open orders
         /// </summary>
-        /// <value>Order margin of unfinished orders</value>
+        /// <value>initial margin of all open orders</value>
         [DataMember(Name="order_margin")]
         public string OrderMargin { get; set; }
 
@@ -183,9 +183,9 @@ namespace Io.Gate.GateApi.Model
         public string Bonus { get; set; }
 
         /// <summary>
-        /// Classic account margin mode, true-new mode, false-old mode
+        /// Deprecated
         /// </summary>
-        /// <value>Classic account margin mode, true-new mode, false-old mode</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="enable_evolved_classic")]
         public bool EnableEvolvedClassic { get; set; }
 
@@ -253,16 +253,16 @@ namespace Io.Gate.GateApi.Model
         public string IsolatedPositionMargin { get; set; }
 
         /// <summary>
-        /// Whether to open a new two-way position mode
+        /// Deprecated
         /// </summary>
-        /// <value>Whether to open a new two-way position mode</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="enable_new_dual_mode")]
         public bool EnableNewDualMode { get; set; }
 
         /// <summary>
-        /// Margin mode, 0-classic margin mode, 1-cross-currency margin mode, 2-combined margin mode
+        /// Margin mode of the account 0: classic future account or Classic Spot Margin Mode of unified account; 1:  Multi-Currency Margin Mode; 2:  Portoforlio Margin Mode; 3:  Single-Currency Margin Mode
         /// </summary>
-        /// <value>Margin mode, 0-classic margin mode, 1-cross-currency margin mode, 2-combined margin mode</value>
+        /// <value>Margin mode of the account 0: classic future account or Classic Spot Margin Mode of unified account; 1:  Multi-Currency Margin Mode; 2:  Portoforlio Margin Mode; 3:  Single-Currency Margin Mode</value>
         [DataMember(Name="margin_mode")]
         public int MarginMode { get; set; }
 

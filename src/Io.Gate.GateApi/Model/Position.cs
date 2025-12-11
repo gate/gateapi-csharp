@@ -66,12 +66,12 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Position" /> class.
         /// </summary>
-        /// <param name="leverage">Position leverage. 0 means cross margin; positive number means isolated margin.</param>
+        /// <param name="leverage"> leverage for isolated margin. 0 means cross margin. For leverage of cross margin, please refer to &#x60;cross_leverage_limit&#x60;..</param>
         /// <param name="riskLimit">Position risk limit.</param>
         /// <param name="margin">Position margin.</param>
         /// <param name="closeOrder">closeOrder.</param>
         /// <param name="mode">Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode.</param>
-        /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0).</param>
+        /// <param name="crossLeverageLimit">leverage for cross margin.</param>
         /// <param name="openTime">First Open Time.</param>
         public Position(string leverage = default(string), string riskLimit = default(string), string margin = default(string), PositionCloseOrder closeOrder = default(PositionCloseOrder), ModeEnum? mode = default(ModeEnum?), string crossLeverageLimit = default(string), long openTime = default(long))
         {
@@ -106,9 +106,9 @@ namespace Io.Gate.GateApi.Model
         public string Size { get; private set; }
 
         /// <summary>
-        /// Position leverage. 0 means cross margin; positive number means isolated margin
+        ///  leverage for isolated margin. 0 means cross margin. For leverage of cross margin, please refer to &#x60;cross_leverage_limit&#x60;.
         /// </summary>
-        /// <value>Position leverage. 0 means cross margin; positive number means isolated margin</value>
+        /// <value> leverage for isolated margin. 0 means cross margin. For leverage of cross margin, please refer to &#x60;cross_leverage_limit&#x60;.</value>
         [DataMember(Name="leverage")]
         public string Leverage { get; set; }
 
@@ -120,16 +120,16 @@ namespace Io.Gate.GateApi.Model
         public string RiskLimit { get; set; }
 
         /// <summary>
-        /// Maximum leverage under current risk limit
+        /// the maximum permissible leverage given to the current positon value: the higher positon value, the lower maximum permissible leverage
         /// </summary>
-        /// <value>Maximum leverage under current risk limit</value>
+        /// <value>the maximum permissible leverage given to the current positon value: the higher positon value, the lower maximum permissible leverage</value>
         [DataMember(Name="leverage_max", EmitDefaultValue=false)]
         public string LeverageMax { get; private set; }
 
         /// <summary>
-        /// Maintenance rate under current risk limit
+        /// The maintenance margin requirement for the risk limit at which the current position size is located.Since the maintenance margin for the position has been calculated using a tiered system, the actual maintenance margin rate required for this position is based on &#x60;average_maintenance_rate&#x60;.
         /// </summary>
-        /// <value>Maintenance rate under current risk limit</value>
+        /// <value>The maintenance margin requirement for the risk limit at which the current position size is located.Since the maintenance margin for the position has been calculated using a tiered system, the actual maintenance margin rate required for this position is based on &#x60;average_maintenance_rate&#x60;.</value>
         [DataMember(Name="maintenance_rate", EmitDefaultValue=false)]
         public string MaintenanceRate { get; private set; }
 
@@ -155,9 +155,9 @@ namespace Io.Gate.GateApi.Model
         public string EntryPrice { get; private set; }
 
         /// <summary>
-        /// Liquidation price
+        /// Estimated liquidation price, for reference only. The actual liquidation trigger is based on the position mmr or the account maintenance margin level.
         /// </summary>
-        /// <value>Liquidation price</value>
+        /// <value>Estimated liquidation price, for reference only. The actual liquidation trigger is based on the position mmr or the account maintenance margin level.</value>
         [DataMember(Name="liq_price", EmitDefaultValue=false)]
         public string LiqPrice { get; private set; }
 
@@ -169,16 +169,16 @@ namespace Io.Gate.GateApi.Model
         public string MarkPrice { get; private set; }
 
         /// <summary>
-        /// The initial margin occupied by the position, applicable to the portfolio margin account
+        /// Initial margin of postions
         /// </summary>
-        /// <value>The initial margin occupied by the position, applicable to the portfolio margin account</value>
+        /// <value>Initial margin of postions</value>
         [DataMember(Name="initial_margin", EmitDefaultValue=false)]
         public string InitialMargin { get; private set; }
 
         /// <summary>
-        /// Maintenance margin required for the position, applicable to portfolio margin account
+        /// Maintencance margin of postions
         /// </summary>
-        /// <value>Maintenance margin required for the position, applicable to portfolio margin account</value>
+        /// <value>Maintencance margin of postions</value>
         [DataMember(Name="maintenance_margin", EmitDefaultValue=false)]
         public string MaintenanceMargin { get; private set; }
 
@@ -190,30 +190,30 @@ namespace Io.Gate.GateApi.Model
         public string UnrealisedPnl { get; private set; }
 
         /// <summary>
-        /// Realized PnL
+        /// Realised PnL, the sum of all cash flows generated by this position, including settlement of closing positions, settlement of funding fees, and transaction fee expenses.
         /// </summary>
-        /// <value>Realized PnL</value>
+        /// <value>Realised PnL, the sum of all cash flows generated by this position, including settlement of closing positions, settlement of funding fees, and transaction fee expenses.</value>
         [DataMember(Name="realised_pnl", EmitDefaultValue=false)]
         public string RealisedPnl { get; private set; }
 
         /// <summary>
-        /// Realized PNL - Position P/L
+        /// settled pnl when closing postion
         /// </summary>
-        /// <value>Realized PNL - Position P/L</value>
+        /// <value>settled pnl when closing postion</value>
         [DataMember(Name="pnl_pnl", EmitDefaultValue=false)]
         public string PnlPnl { get; private set; }
 
         /// <summary>
-        /// Realized PNL - Funding Fees
+        /// funding fees
         /// </summary>
-        /// <value>Realized PNL - Funding Fees</value>
+        /// <value>funding fees</value>
         [DataMember(Name="pnl_fund", EmitDefaultValue=false)]
         public string PnlFund { get; private set; }
 
         /// <summary>
-        /// Realized PNL - Transaction Fees
+        /// trading fees
         /// </summary>
-        /// <value>Realized PNL - Transaction Fees</value>
+        /// <value>trading fees</value>
         [DataMember(Name="pnl_fee", EmitDefaultValue=false)]
         public string PnlFee { get; private set; }
 
@@ -266,9 +266,9 @@ namespace Io.Gate.GateApi.Model
         public PositionCloseOrder CloseOrder { get; set; }
 
         /// <summary>
-        /// Cross margin leverage (valid only when &#x60;leverage&#x60; is 0)
+        /// leverage for cross margin
         /// </summary>
-        /// <value>Cross margin leverage (valid only when &#x60;leverage&#x60; is 0)</value>
+        /// <value>leverage for cross margin</value>
         [DataMember(Name="cross_leverage_limit")]
         public string CrossLeverageLimit { get; set; }
 

@@ -388,7 +388,7 @@ namespace Io.Gate.GateApi.Api
         /// Get futures account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query account information for classic future account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -399,7 +399,7 @@ namespace Io.Gate.GateApi.Api
         /// Get futures account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query account information for classic future account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -469,7 +469,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -481,7 +481,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -492,7 +492,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -505,7 +505,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -522,8 +522,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="leverage">New position leverage</param>
-        /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
+        /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
+        /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
         /// <param name="pid">Product ID (optional)</param>
         /// <returns>Position</returns>
         Position UpdatePositionLeverage (string settle, string contract, string leverage, string crossLeverageLimit = default(string), int? pid = default(int?));
@@ -537,8 +537,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="leverage">New position leverage</param>
-        /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
+        /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
+        /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
         /// <param name="pid">Product ID (optional)</param>
         /// <returns>ApiResponse of Position</returns>
         ApiResponse<Position> UpdatePositionLeverageWithHttpInfo (string settle, string contract, string leverage, string crossLeverageLimit = default(string), int? pid = default(int?));
@@ -592,7 +592,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -605,7 +605,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -717,7 +717,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit in Hedge Mode
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -730,7 +730,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit in Hedge Mode
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1781,7 +1781,7 @@ namespace Io.Gate.GateApi.Api
         /// Get futures account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query account information for classic future account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1792,7 +1792,7 @@ namespace Io.Gate.GateApi.Api
         /// Get futures account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query account information for classic future account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1862,7 +1862,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1874,7 +1874,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1885,7 +1885,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1898,7 +1898,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1915,8 +1915,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="leverage">New position leverage</param>
-        /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
+        /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
+        /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
         /// <param name="pid">Product ID (optional)</param>
         /// <returns>Task of Position</returns>
         Task<Position> UpdatePositionLeverageAsync (string settle, string contract, string leverage, string crossLeverageLimit = default(string), int? pid = default(int?));
@@ -1930,8 +1930,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="leverage">New position leverage</param>
-        /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
+        /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
+        /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
         /// <param name="pid">Product ID (optional)</param>
         /// <returns>Task of ApiResponse (Position)</returns>
         Task<ApiResponse<Position>> UpdatePositionLeverageAsyncWithHttpInfo (string settle, string contract, string leverage, string crossLeverageLimit = default(string), int? pid = default(int?));
@@ -1985,7 +1985,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1998,7 +1998,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -2110,7 +2110,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit in Hedge Mode
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -2123,7 +2123,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit in Hedge Mode
         /// </summary>
         /// <remarks>
-        /// 
+        /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -4914,7 +4914,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get futures account 
+        /// Get futures account Query account information for classic future account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -4926,7 +4926,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get futures account 
+        /// Get futures account Query account information for classic future account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -4971,7 +4971,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get futures account 
+        /// Get futures account Query account information for classic future account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -4984,7 +4984,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get futures account 
+        /// Get futures account Query account information for classic future account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5373,7 +5373,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get single position information 
+        /// Get single position information Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5386,7 +5386,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get single position information 
+        /// Get single position information Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5437,7 +5437,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get single position information 
+        /// Get single position information Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5451,7 +5451,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get single position information 
+        /// Get single position information Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5504,7 +5504,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position margin 
+        /// Update position margin Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5518,7 +5518,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position margin 
+        /// Update position margin Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5575,7 +5575,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position margin 
+        /// Update position margin Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5590,7 +5590,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position margin 
+        /// Update position margin Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -5654,8 +5654,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="leverage">New position leverage</param>
-        /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
+        /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
+        /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
         /// <param name="pid">Product ID (optional)</param>
         /// <returns>Position</returns>
         public Position UpdatePositionLeverage (string settle, string contract, string leverage, string crossLeverageLimit = default(string), int? pid = default(int?))
@@ -5670,8 +5670,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="leverage">New position leverage</param>
-        /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
+        /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
+        /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
         /// <param name="pid">Product ID (optional)</param>
         /// <returns>ApiResponse of Position</returns>
         public ApiResponse<Position> UpdatePositionLeverageWithHttpInfo (string settle, string contract, string leverage, string crossLeverageLimit = default(string), int? pid = default(int?))
@@ -5737,8 +5737,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="leverage">New position leverage</param>
-        /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
+        /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
+        /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
         /// <param name="pid">Product ID (optional)</param>
         /// <returns>Task of Position</returns>
         public async Task<Position> UpdatePositionLeverageAsync (string settle, string contract, string leverage, string crossLeverageLimit = default(string), int? pid = default(int?))
@@ -5754,8 +5754,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="leverage">New position leverage</param>
-        /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
+        /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
+        /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
         /// <param name="pid">Product ID (optional)</param>
         /// <returns>Task of ApiResponse (Position)</returns>
         public async Task<ApiResponse<Position>> UpdatePositionLeverageAsyncWithHttpInfo (string settle, string contract, string leverage, string crossLeverageLimit = default(string), int? pid = default(int?))
@@ -6084,7 +6084,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit 
+        /// Update position risk limit Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6098,7 +6098,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit 
+        /// Update position risk limit Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6155,7 +6155,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit 
+        /// Update position risk limit Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6170,7 +6170,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit 
+        /// Update position risk limit Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6799,7 +6799,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit in Hedge Mode 
+        /// Update position risk limit in Hedge Mode Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6813,7 +6813,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit in Hedge Mode 
+        /// Update position risk limit in Hedge Mode Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6870,7 +6870,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit in Hedge Mode 
+        /// Update position risk limit in Hedge Mode Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -6885,7 +6885,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Update position risk limit in Hedge Mode 
+        /// Update position risk limit in Hedge Mode Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>

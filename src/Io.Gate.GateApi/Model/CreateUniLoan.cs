@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class CreateUniLoan :  IEquatable<CreateUniLoan>, IValidatableObject
     {
         /// <summary>
-        /// Type: &#x60;borrow&#x60; - borrow, &#x60;repay&#x60; - repay
+        /// Loan Type margin: margin borrowing
         /// </summary>
-        /// <value>Type: &#x60;borrow&#x60; - borrow, &#x60;repay&#x60; - repay</value>
+        /// <value>Loan Type margin: margin borrowing</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -52,9 +52,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Type: &#x60;borrow&#x60; - borrow, &#x60;repay&#x60; - repay
+        /// Loan Type margin: margin borrowing
         /// </summary>
-        /// <value>Type: &#x60;borrow&#x60; - borrow, &#x60;repay&#x60; - repay</value>
+        /// <value>Loan Type margin: margin borrowing</value>
         [DataMember(Name="type")]
         public TypeEnum Type { get; set; }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="CreateUniLoan" /> class.
         /// </summary>
         /// <param name="currency">Currency (required).</param>
-        /// <param name="type">Type: &#x60;borrow&#x60; - borrow, &#x60;repay&#x60; - repay (required).</param>
+        /// <param name="type">Loan Type margin: margin borrowing (required).</param>
         /// <param name="amount">Borrow or repayment amount (required).</param>
         /// <param name="repaidAll">Full repayment. For repayment operations only. When &#x60;true&#x60;, overrides &#x60;amount&#x60; and repays the full amount.</param>
         /// <param name="currencyPair">Currency pair (required).</param>

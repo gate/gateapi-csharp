@@ -34,11 +34,11 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="MarginAccount" /> class.
         /// </summary>
         /// <param name="currencyPair">Currency pair.</param>
-        /// <param name="accountType">Account type: risk - risk rate account, mmr - maintenance margin rate account, inactive - market not activated.</param>
+        /// <param name="accountType">Account Type  mmr: maintenance margin rate account;inactive: market not activated.</param>
         /// <param name="leverage">User&#39;s current market leverage multiplier.</param>
         /// <param name="locked">Whether the account is locked.</param>
-        /// <param name="risk">Current risk rate of the margin account (returned when the account is a risk rate account).</param>
-        /// <param name="mmr">Leveraged Account Current Maintenance Margin Rate (returned when the Account is Account).</param>
+        /// <param name="risk">Deprecated.</param>
+        /// <param name="mmr">Current Maintenance Margin Rate of the account.</param>
         /// <param name="_base">_base.</param>
         /// <param name="quote">quote.</param>
         public MarginAccount(string currencyPair = default(string), string accountType = default(string), string leverage = default(string), bool locked = default(bool), string risk = default(string), string mmr = default(string), MarginAccountCurrency _base = default(MarginAccountCurrency), MarginAccountCurrency quote = default(MarginAccountCurrency))
@@ -61,9 +61,9 @@ namespace Io.Gate.GateApi.Model
         public string CurrencyPair { get; set; }
 
         /// <summary>
-        /// Account type: risk - risk rate account, mmr - maintenance margin rate account, inactive - market not activated
+        /// Account Type  mmr: maintenance margin rate account;inactive: market not activated
         /// </summary>
-        /// <value>Account type: risk - risk rate account, mmr - maintenance margin rate account, inactive - market not activated</value>
+        /// <value>Account Type  mmr: maintenance margin rate account;inactive: market not activated</value>
         [DataMember(Name="account_type")]
         public string AccountType { get; set; }
 
@@ -82,16 +82,16 @@ namespace Io.Gate.GateApi.Model
         public bool Locked { get; set; }
 
         /// <summary>
-        /// Current risk rate of the margin account (returned when the account is a risk rate account)
+        /// Deprecated
         /// </summary>
-        /// <value>Current risk rate of the margin account (returned when the account is a risk rate account)</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="risk")]
         public string Risk { get; set; }
 
         /// <summary>
-        /// Leveraged Account Current Maintenance Margin Rate (returned when the Account is Account)
+        /// Current Maintenance Margin Rate of the account
         /// </summary>
-        /// <value>Leveraged Account Current Maintenance Margin Rate (returned when the Account is Account)</value>
+        /// <value>Current Maintenance Margin Rate of the account</value>
         [DataMember(Name="mmr")]
         public string Mmr { get; set; }
 

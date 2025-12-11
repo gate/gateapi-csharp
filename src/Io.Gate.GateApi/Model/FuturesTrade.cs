@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="contract">Futures contract.</param>
         /// <param name="size">Trading size.</param>
         /// <param name="price">Trade price (quote currency).</param>
-        /// <param name="isInternal">Whether it is an internal trade. Internal trade refers to the takeover of liquidation orders by the insurance fund and ADL users. Since it is not a normal matching on the market depth, the trade price may deviate from the market, and it will not be recorded in the K-line. If it is not an internal trade, this field will not be returned.</param>
+        /// <param name="isInternal">Deprecated.</param>
         public FuturesTrade(long id = default(long), double createTime = default(double), double createTimeMs = default(double), string contract = default(string), string size = default(string), string price = default(string), bool isInternal = default(bool))
         {
             this.Id = id;
@@ -94,9 +94,9 @@ namespace Io.Gate.GateApi.Model
         public string Price { get; set; }
 
         /// <summary>
-        /// Whether it is an internal trade. Internal trade refers to the takeover of liquidation orders by the insurance fund and ADL users. Since it is not a normal matching on the market depth, the trade price may deviate from the market, and it will not be recorded in the K-line. If it is not an internal trade, this field will not be returned
+        /// Deprecated
         /// </summary>
-        /// <value>Whether it is an internal trade. Internal trade refers to the takeover of liquidation orders by the insurance fund and ADL users. Since it is not a normal matching on the market depth, the trade price may deviate from the market, and it will not be recorded in the K-line. If it is not an internal trade, this field will not be returned</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="is_internal")]
         public bool IsInternal { get; set; }
 

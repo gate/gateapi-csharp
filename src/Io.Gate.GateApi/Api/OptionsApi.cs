@@ -358,7 +358,7 @@ namespace Io.Gate.GateApi.Api
         /// Query account information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query account information for classic option account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>OptionsAccount</returns>
@@ -368,7 +368,7 @@ namespace Io.Gate.GateApi.Api
         /// Query account information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query account information for classic option account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of OptionsAccount</returns>
@@ -1043,7 +1043,7 @@ namespace Io.Gate.GateApi.Api
         /// Query account information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query account information for classic option account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of OptionsAccount</returns>
@@ -1053,7 +1053,7 @@ namespace Io.Gate.GateApi.Api
         /// Query account information
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query account information for classic option account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (OptionsAccount)</returns>
@@ -3298,7 +3298,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query account information 
+        /// Query account information Query account information for classic option account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>OptionsAccount</returns>
@@ -3309,7 +3309,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query account information 
+        /// Query account information Query account information for classic option account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of OptionsAccount</returns>
@@ -3348,7 +3348,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query account information 
+        /// Query account information Query account information for classic option account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of OptionsAccount</returns>
@@ -3360,7 +3360,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query account information 
+        /// Query account information Query account information for classic option account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (OptionsAccount)</returns>

@@ -522,6 +522,25 @@ namespace Io.Gate.GateApi.Api
         /// <param name="transactionType">Order type returned in the list: &#x60;withdraw&#x60;, &#x60;deposit&#x60;. Default is &#x60;withdraw&#x60;. (optional, default to &quot;withdraw&quot;)</param>
         /// <returns>ApiResponse of List&lt;UidPushOrder&gt;</returns>
         ApiResponse<List<UidPushOrder>> ListPushOrdersWithHttpInfo (int? id = default(int?), int? from = default(int?), int? to = default(int?), int? limit = default(int?), int? offset = default(int?), string transactionType = default(string));
+        /// <summary>
+        /// Retrieve the list of low-liquidity or low-cap tokens
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;string&gt;</returns>
+        List<string> GetLowCapExchangeList ();
+
+        /// <summary>
+        /// Retrieve the list of low-liquidity or low-cap tokens
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        ApiResponse<List<string>> GetLowCapExchangeListWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -1026,6 +1045,25 @@ namespace Io.Gate.GateApi.Api
         /// <param name="transactionType">Order type returned in the list: &#x60;withdraw&#x60;, &#x60;deposit&#x60;. Default is &#x60;withdraw&#x60;. (optional, default to &quot;withdraw&quot;)</param>
         /// <returns>Task of ApiResponse (List&lt;UidPushOrder&gt;)</returns>
         Task<ApiResponse<List<UidPushOrder>>> ListPushOrdersAsyncWithHttpInfo (int? id = default(int?), int? from = default(int?), int? to = default(int?), int? limit = default(int?), int? offset = default(int?), string transactionType = default(string));
+        /// <summary>
+        /// Retrieve the list of low-liquidity or low-cap tokens
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;string&gt;</returns>
+        Task<List<string>> GetLowCapExchangeListAsync ();
+
+        /// <summary>
+        /// Retrieve the list of low-liquidity or low-cap tokens
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        Task<ApiResponse<List<string>>> GetLowCapExchangeListAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -3893,6 +3931,109 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListPushOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieve the list of low-liquidity or low-cap tokens 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;string&gt;</returns>
+        public List<string> GetLowCapExchangeList ()
+        {
+             ApiResponse<List<string>> localVarResponse = GetLowCapExchangeListWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve the list of low-liquidity or low-cap tokens 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        public ApiResponse<List<string>> GetLowCapExchangeListWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<string>>("/wallet/getLowCapExchangeList", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLowCapExchangeList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieve the list of low-liquidity or low-cap tokens 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;string&gt;</returns>
+        public async Task<List<string>> GetLowCapExchangeListAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<string>> localVarResponse = await GetLowCapExchangeListAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Retrieve the list of low-liquidity or low-cap tokens 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        public async Task<ApiResponse<List<string>>> GetLowCapExchangeListAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/wallet/getLowCapExchangeList", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLowCapExchangeList", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

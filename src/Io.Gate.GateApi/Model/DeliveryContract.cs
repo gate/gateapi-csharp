@@ -97,9 +97,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="type")]
         public TypeEnum? Type { get; set; }
         /// <summary>
-        /// Mark price type: internal - internal trading price, index - external index price
+        /// Deprecated
         /// </summary>
-        /// <value>Mark price type: internal - internal trading price, index - external index price</value>
+        /// <value>Deprecated</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MarkTypeEnum
         {
@@ -118,9 +118,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Mark price type: internal - internal trading price, index - external index price
+        /// Deprecated
         /// </summary>
-        /// <value>Mark price type: internal - internal trading price, index - external index price</value>
+        /// <value>Deprecated</value>
         [DataMember(Name="mark_type")]
         public MarkTypeEnum? MarkType { get; set; }
         /// <summary>
@@ -130,11 +130,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="underlying">Underlying.</param>
         /// <param name="cycle">Cycle type, e.g. WEEKLY, QUARTERLY.</param>
         /// <param name="type">Contract type: inverse - inverse contract, direct - direct contract.</param>
-        /// <param name="quantoMultiplier">Multiplier used in converting from invoicing to settlement currency.</param>
+        /// <param name="quantoMultiplier">The contract multiplier indicates how many units of the underlying asset the face value of one contract represents..</param>
         /// <param name="leverageMin">Minimum leverage.</param>
         /// <param name="leverageMax">Maximum leverage.</param>
-        /// <param name="maintenanceRate">Maintenance rate of margin.</param>
-        /// <param name="markType">Mark price type: internal - internal trading price, index - external index price.</param>
+        /// <param name="maintenanceRate">The maintenance margin rate of the first tier of risk limit sheet.</param>
+        /// <param name="markType">Deprecated.</param>
         /// <param name="markPrice">Current mark price.</param>
         /// <param name="indexPrice">Current index price.</param>
         /// <param name="lastPrice">Last trading price.</param>
@@ -221,9 +221,9 @@ namespace Io.Gate.GateApi.Model
         public string Underlying { get; set; }
 
         /// <summary>
-        /// Multiplier used in converting from invoicing to settlement currency
+        /// The contract multiplier indicates how many units of the underlying asset the face value of one contract represents.
         /// </summary>
-        /// <value>Multiplier used in converting from invoicing to settlement currency</value>
+        /// <value>The contract multiplier indicates how many units of the underlying asset the face value of one contract represents.</value>
         [DataMember(Name="quanto_multiplier")]
         public string QuantoMultiplier { get; set; }
 
@@ -242,9 +242,9 @@ namespace Io.Gate.GateApi.Model
         public string LeverageMax { get; set; }
 
         /// <summary>
-        /// Maintenance rate of margin
+        /// The maintenance margin rate of the first tier of risk limit sheet
         /// </summary>
-        /// <value>Maintenance rate of margin</value>
+        /// <value>The maintenance margin rate of the first tier of risk limit sheet</value>
         [DataMember(Name="maintenance_rate")]
         public string MaintenanceRate { get; set; }
 

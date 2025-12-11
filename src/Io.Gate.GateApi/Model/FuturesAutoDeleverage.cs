@@ -67,16 +67,16 @@ namespace Io.Gate.GateApi.Model
         public string Contract { get; private set; }
 
         /// <summary>
-        /// Position leverage
+        ///  leverage for isolated margin. 0 means cross margin. For leverage of cross margin, please refer to &#x60;cross_leverage_limit&#x60;.
         /// </summary>
-        /// <value>Position leverage</value>
+        /// <value> leverage for isolated margin. 0 means cross margin. For leverage of cross margin, please refer to &#x60;cross_leverage_limit&#x60;.</value>
         [DataMember(Name="leverage", EmitDefaultValue=false)]
         public string Leverage { get; private set; }
 
         /// <summary>
-        /// Cross margin leverage (valid only when &#x60;leverage&#x60; is 0)
+        /// leverage for cross margin
         /// </summary>
-        /// <value>Cross margin leverage (valid only when &#x60;leverage&#x60; is 0)</value>
+        /// <value>leverage for cross margin</value>
         [DataMember(Name="cross_leverage_limit", EmitDefaultValue=false)]
         public string CrossLeverageLimit { get; private set; }
 

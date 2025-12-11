@@ -169,7 +169,7 @@ namespace Io.Gate.GateApi.Api
         /// Query user&#39;s own leverage lending tiers in current market
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -180,7 +180,7 @@ namespace Io.Gate.GateApi.Api
         /// Query user&#39;s own leverage lending tiers in current market
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -190,7 +190,7 @@ namespace Io.Gate.GateApi.Api
         /// Query current market leverage lending tiers
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -201,7 +201,7 @@ namespace Io.Gate.GateApi.Api
         /// Query current market leverage lending tiers
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -458,7 +458,7 @@ namespace Io.Gate.GateApi.Api
         /// Query user&#39;s own leverage lending tiers in current market
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -469,7 +469,7 @@ namespace Io.Gate.GateApi.Api
         /// Query user&#39;s own leverage lending tiers in current market
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -479,7 +479,7 @@ namespace Io.Gate.GateApi.Api
         /// Query current market leverage lending tiers
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -490,7 +490,7 @@ namespace Io.Gate.GateApi.Api
         /// Query current market leverage lending tiers
         /// </summary>
         /// <remarks>
-        /// 
+        /// Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -1483,7 +1483,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query user&#39;s own leverage lending tiers in current market 
+        /// Query user&#39;s own leverage lending tiers in current market Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -1495,7 +1495,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query user&#39;s own leverage lending tiers in current market 
+        /// Query user&#39;s own leverage lending tiers in current market Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -1540,7 +1540,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query user&#39;s own leverage lending tiers in current market 
+        /// Query user&#39;s own leverage lending tiers in current market Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -1553,7 +1553,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query user&#39;s own leverage lending tiers in current market 
+        /// Query user&#39;s own leverage lending tiers in current market Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -1600,7 +1600,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query current market leverage lending tiers 
+        /// Query current market leverage lending tiers Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -1612,7 +1612,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query current market leverage lending tiers 
+        /// Query current market leverage lending tiers Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -1655,7 +1655,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query current market leverage lending tiers 
+        /// Query current market leverage lending tiers Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -1668,7 +1668,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query current market leverage lending tiers 
+        /// Query current market leverage lending tiers Query the borrowing tier margin requirements of a specific spot market.For more details about borrowing tier margin requirements, please refer to Underlying Logic of the New Isolated Margin System（https://www.gate.com/en/help/trade/margin-trading/42357）
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
