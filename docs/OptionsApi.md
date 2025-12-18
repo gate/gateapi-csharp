@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 
 <a name="listoptionsorderbook"></a>
 # **ListOptionsOrderBook**
-> FuturesOrderBook ListOptionsOrderBook (string contract, string interval = null, int? limit = null, bool? withId = null)
+> OptionsOrderBook ListOptionsOrderBook (string contract, string interval = null, int? limit = null, bool? withId = null)
 
 Query options contract order book
 
@@ -572,7 +572,7 @@ namespace Example
             try
             {
                 // Query options contract order book
-                FuturesOrderBook result = apiInstance.ListOptionsOrderBook(contract, interval, limit, withId);
+                OptionsOrderBook result = apiInstance.ListOptionsOrderBook(contract, interval, limit, withId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FuturesOrderBook**](FuturesOrderBook.md)
+[**OptionsOrderBook**](OptionsOrderBook.md)
 
 ### Authorization
 
@@ -833,7 +833,7 @@ No authorization required
 
 <a name="listoptionsunderlyingcandlesticks"></a>
 # **ListOptionsUnderlyingCandlesticks**
-> List&lt;FuturesCandlestick&gt; ListOptionsUnderlyingCandlesticks (string underlying, int? limit = null, long? from = null, long? to = null, string interval = null)
+> List&lt;OptionsCandlestick&gt; ListOptionsUnderlyingCandlesticks (string underlying, int? limit = null, long? from = null, long? to = null, string interval = null)
 
 Underlying index price candlestick chart
 
@@ -863,7 +863,7 @@ namespace Example
             try
             {
                 // Underlying index price candlestick chart
-                List<FuturesCandlestick> result = apiInstance.ListOptionsUnderlyingCandlesticks(underlying, limit, from, to, interval);
+                List<OptionsCandlestick> result = apiInstance.ListOptionsUnderlyingCandlesticks(underlying, limit, from, to, interval);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -890,7 +890,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;FuturesCandlestick&gt;**](FuturesCandlestick.md)
+[**List&lt;OptionsCandlestick&gt;**](OptionsCandlestick.md)
 
 ### Authorization
 
@@ -910,7 +910,7 @@ No authorization required
 
 <a name="listoptionstrades"></a>
 # **ListOptionsTrades**
-> List&lt;FuturesTrade&gt; ListOptionsTrades (string contract = null, string type = null, int? limit = null, int? offset = null, long? from = null, long? to = null)
+> List&lt;OptionsTrade&gt; ListOptionsTrades (string contract = null, string type = null, int? limit = null, int? offset = null, long? from = null, long? to = null)
 
 Market trade records
 
@@ -941,7 +941,7 @@ namespace Example
             try
             {
                 // Market trade records
-                List<FuturesTrade> result = apiInstance.ListOptionsTrades(contract, type, limit, offset, from, to);
+                List<OptionsTrade> result = apiInstance.ListOptionsTrades(contract, type, limit, offset, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -969,7 +969,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;FuturesTrade&gt;**](FuturesTrade.md)
+[**List&lt;OptionsTrade&gt;**](OptionsTrade.md)
 
 ### Authorization
 

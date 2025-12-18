@@ -207,8 +207,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
-        /// <returns>FuturesOrderBook</returns>
-        FuturesOrderBook ListOptionsOrderBook (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+        /// <returns>OptionsOrderBook</returns>
+        OptionsOrderBook ListOptionsOrderBook (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
 
         /// <summary>
         /// Query options contract order book
@@ -221,8 +221,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
-        /// <returns>ApiResponse of FuturesOrderBook</returns>
-        ApiResponse<FuturesOrderBook> ListOptionsOrderBookWithHttpInfo (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+        /// <returns>ApiResponse of OptionsOrderBook</returns>
+        ApiResponse<OptionsOrderBook> ListOptionsOrderBookWithHttpInfo (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
         /// <summary>
         /// Query options market ticker information
         /// </summary>
@@ -306,8 +306,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
         /// <param name="interval">Time interval between data points (optional, default to 5m)</param>
-        /// <returns>List&lt;FuturesCandlestick&gt;</returns>
-        List<FuturesCandlestick> ListOptionsUnderlyingCandlesticks (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string));
+        /// <returns>List&lt;OptionsCandlestick&gt;</returns>
+        List<OptionsCandlestick> ListOptionsUnderlyingCandlesticks (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string));
 
         /// <summary>
         /// Underlying index price candlestick chart
@@ -321,8 +321,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
         /// <param name="interval">Time interval between data points (optional, default to 5m)</param>
-        /// <returns>ApiResponse of List&lt;FuturesCandlestick&gt;</returns>
-        ApiResponse<List<FuturesCandlestick>> ListOptionsUnderlyingCandlesticksWithHttpInfo (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string));
+        /// <returns>ApiResponse of List&lt;OptionsCandlestick&gt;</returns>
+        ApiResponse<List<OptionsCandlestick>> ListOptionsUnderlyingCandlesticksWithHttpInfo (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string));
         /// <summary>
         /// Market trade records
         /// </summary>
@@ -336,8 +336,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <returns>List&lt;FuturesTrade&gt;</returns>
-        List<FuturesTrade> ListOptionsTrades (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?));
+        /// <returns>List&lt;OptionsTrade&gt;</returns>
+        List<OptionsTrade> ListOptionsTrades (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?));
 
         /// <summary>
         /// Market trade records
@@ -352,8 +352,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;FuturesTrade&gt;</returns>
-        ApiResponse<List<FuturesTrade>> ListOptionsTradesWithHttpInfo (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?));
+        /// <returns>ApiResponse of List&lt;OptionsTrade&gt;</returns>
+        ApiResponse<List<OptionsTrade>> ListOptionsTradesWithHttpInfo (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?));
         /// <summary>
         /// Query account information
         /// </summary>
@@ -892,8 +892,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
-        /// <returns>Task of FuturesOrderBook</returns>
-        Task<FuturesOrderBook> ListOptionsOrderBookAsync (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+        /// <returns>Task of OptionsOrderBook</returns>
+        Task<OptionsOrderBook> ListOptionsOrderBookAsync (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
 
         /// <summary>
         /// Query options contract order book
@@ -906,8 +906,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (FuturesOrderBook)</returns>
-        Task<ApiResponse<FuturesOrderBook>> ListOptionsOrderBookAsyncWithHttpInfo (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+        /// <returns>Task of ApiResponse (OptionsOrderBook)</returns>
+        Task<ApiResponse<OptionsOrderBook>> ListOptionsOrderBookAsyncWithHttpInfo (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
         /// <summary>
         /// Query options market ticker information
         /// </summary>
@@ -991,8 +991,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
         /// <param name="interval">Time interval between data points (optional, default to 5m)</param>
-        /// <returns>Task of List&lt;FuturesCandlestick&gt;</returns>
-        Task<List<FuturesCandlestick>> ListOptionsUnderlyingCandlesticksAsync (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string));
+        /// <returns>Task of List&lt;OptionsCandlestick&gt;</returns>
+        Task<List<OptionsCandlestick>> ListOptionsUnderlyingCandlesticksAsync (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string));
 
         /// <summary>
         /// Underlying index price candlestick chart
@@ -1006,8 +1006,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
         /// <param name="interval">Time interval between data points (optional, default to 5m)</param>
-        /// <returns>Task of ApiResponse (List&lt;FuturesCandlestick&gt;)</returns>
-        Task<ApiResponse<List<FuturesCandlestick>>> ListOptionsUnderlyingCandlesticksAsyncWithHttpInfo (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string));
+        /// <returns>Task of ApiResponse (List&lt;OptionsCandlestick&gt;)</returns>
+        Task<ApiResponse<List<OptionsCandlestick>>> ListOptionsUnderlyingCandlesticksAsyncWithHttpInfo (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string));
         /// <summary>
         /// Market trade records
         /// </summary>
@@ -1021,8 +1021,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <returns>Task of List&lt;FuturesTrade&gt;</returns>
-        Task<List<FuturesTrade>> ListOptionsTradesAsync (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?));
+        /// <returns>Task of List&lt;OptionsTrade&gt;</returns>
+        Task<List<OptionsTrade>> ListOptionsTradesAsync (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?));
 
         /// <summary>
         /// Market trade records
@@ -1037,8 +1037,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;FuturesTrade&gt;)</returns>
-        Task<ApiResponse<List<FuturesTrade>>> ListOptionsTradesAsyncWithHttpInfo (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?));
+        /// <returns>Task of ApiResponse (List&lt;OptionsTrade&gt;)</returns>
+        Task<ApiResponse<List<OptionsTrade>>> ListOptionsTradesAsyncWithHttpInfo (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?));
         /// <summary>
         /// Query account information
         /// </summary>
@@ -2437,10 +2437,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
-        /// <returns>FuturesOrderBook</returns>
-        public FuturesOrderBook ListOptionsOrderBook (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        /// <returns>OptionsOrderBook</returns>
+        public OptionsOrderBook ListOptionsOrderBook (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
         {
-             ApiResponse<FuturesOrderBook> localVarResponse = ListOptionsOrderBookWithHttpInfo(contract, interval, limit, withId);
+             ApiResponse<OptionsOrderBook> localVarResponse = ListOptionsOrderBookWithHttpInfo(contract, interval, limit, withId);
              return localVarResponse.Data;
         }
 
@@ -2452,8 +2452,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
-        /// <returns>ApiResponse of FuturesOrderBook</returns>
-        public ApiResponse<FuturesOrderBook> ListOptionsOrderBookWithHttpInfo (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        /// <returns>ApiResponse of OptionsOrderBook</returns>
+        public ApiResponse<OptionsOrderBook> ListOptionsOrderBookWithHttpInfo (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
         {
             // verify the required parameter 'contract' is set
             if (contract == null)
@@ -2491,7 +2491,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<FuturesOrderBook>("/options/order_book", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OptionsOrderBook>("/options/order_book", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2510,10 +2510,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
-        /// <returns>Task of FuturesOrderBook</returns>
-        public async Task<FuturesOrderBook> ListOptionsOrderBookAsync (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        /// <returns>Task of OptionsOrderBook</returns>
+        public async Task<OptionsOrderBook> ListOptionsOrderBookAsync (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<FuturesOrderBook> localVarResponse = await ListOptionsOrderBookAsyncWithHttpInfo(contract, interval, limit, withId);
+             Io.Gate.GateApi.Client.ApiResponse<OptionsOrderBook> localVarResponse = await ListOptionsOrderBookAsyncWithHttpInfo(contract, interval, limit, withId);
              return localVarResponse.Data;
 
         }
@@ -2526,8 +2526,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (FuturesOrderBook)</returns>
-        public async Task<ApiResponse<FuturesOrderBook>> ListOptionsOrderBookAsyncWithHttpInfo (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        /// <returns>Task of ApiResponse (OptionsOrderBook)</returns>
+        public async Task<ApiResponse<OptionsOrderBook>> ListOptionsOrderBookAsyncWithHttpInfo (string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
         {
             // verify the required parameter 'contract' is set
             if (contract == null)
@@ -2567,7 +2567,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<FuturesOrderBook>("/options/order_book", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OptionsOrderBook>("/options/order_book", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2974,10 +2974,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
         /// <param name="interval">Time interval between data points (optional, default to 5m)</param>
-        /// <returns>List&lt;FuturesCandlestick&gt;</returns>
-        public List<FuturesCandlestick> ListOptionsUnderlyingCandlesticks (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string))
+        /// <returns>List&lt;OptionsCandlestick&gt;</returns>
+        public List<OptionsCandlestick> ListOptionsUnderlyingCandlesticks (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string))
         {
-             ApiResponse<List<FuturesCandlestick>> localVarResponse = ListOptionsUnderlyingCandlesticksWithHttpInfo(underlying, limit, from, to, interval);
+             ApiResponse<List<OptionsCandlestick>> localVarResponse = ListOptionsUnderlyingCandlesticksWithHttpInfo(underlying, limit, from, to, interval);
              return localVarResponse.Data;
         }
 
@@ -2990,8 +2990,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
         /// <param name="interval">Time interval between data points (optional, default to 5m)</param>
-        /// <returns>ApiResponse of List&lt;FuturesCandlestick&gt;</returns>
-        public ApiResponse<List<FuturesCandlestick>> ListOptionsUnderlyingCandlesticksWithHttpInfo (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string))
+        /// <returns>ApiResponse of List&lt;OptionsCandlestick&gt;</returns>
+        public ApiResponse<List<OptionsCandlestick>> ListOptionsUnderlyingCandlesticksWithHttpInfo (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string))
         {
             // verify the required parameter 'underlying' is set
             if (underlying == null)
@@ -3033,7 +3033,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<FuturesCandlestick>>("/options/underlying/candlesticks", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<OptionsCandlestick>>("/options/underlying/candlesticks", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3053,10 +3053,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
         /// <param name="interval">Time interval between data points (optional, default to 5m)</param>
-        /// <returns>Task of List&lt;FuturesCandlestick&gt;</returns>
-        public async Task<List<FuturesCandlestick>> ListOptionsUnderlyingCandlesticksAsync (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string))
+        /// <returns>Task of List&lt;OptionsCandlestick&gt;</returns>
+        public async Task<List<OptionsCandlestick>> ListOptionsUnderlyingCandlesticksAsync (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<FuturesCandlestick>> localVarResponse = await ListOptionsUnderlyingCandlesticksAsyncWithHttpInfo(underlying, limit, from, to, interval);
+             Io.Gate.GateApi.Client.ApiResponse<List<OptionsCandlestick>> localVarResponse = await ListOptionsUnderlyingCandlesticksAsyncWithHttpInfo(underlying, limit, from, to, interval);
              return localVarResponse.Data;
 
         }
@@ -3070,8 +3070,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
         /// <param name="interval">Time interval between data points (optional, default to 5m)</param>
-        /// <returns>Task of ApiResponse (List&lt;FuturesCandlestick&gt;)</returns>
-        public async Task<ApiResponse<List<FuturesCandlestick>>> ListOptionsUnderlyingCandlesticksAsyncWithHttpInfo (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string))
+        /// <returns>Task of ApiResponse (List&lt;OptionsCandlestick&gt;)</returns>
+        public async Task<ApiResponse<List<OptionsCandlestick>>> ListOptionsUnderlyingCandlesticksAsyncWithHttpInfo (string underlying, int? limit = default(int?), long? from = default(long?), long? to = default(long?), string interval = default(string))
         {
             // verify the required parameter 'underlying' is set
             if (underlying == null)
@@ -3115,7 +3115,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<FuturesCandlestick>>("/options/underlying/candlesticks", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<OptionsCandlestick>>("/options/underlying/candlesticks", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3136,10 +3136,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <returns>List&lt;FuturesTrade&gt;</returns>
-        public List<FuturesTrade> ListOptionsTrades (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?))
+        /// <returns>List&lt;OptionsTrade&gt;</returns>
+        public List<OptionsTrade> ListOptionsTrades (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?))
         {
-             ApiResponse<List<FuturesTrade>> localVarResponse = ListOptionsTradesWithHttpInfo(contract, type, limit, offset, from, to);
+             ApiResponse<List<OptionsTrade>> localVarResponse = ListOptionsTradesWithHttpInfo(contract, type, limit, offset, from, to);
              return localVarResponse.Data;
         }
 
@@ -3153,8 +3153,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;FuturesTrade&gt;</returns>
-        public ApiResponse<List<FuturesTrade>> ListOptionsTradesWithHttpInfo (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?))
+        /// <returns>ApiResponse of List&lt;OptionsTrade&gt;</returns>
+        public ApiResponse<List<OptionsTrade>> ListOptionsTradesWithHttpInfo (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3199,7 +3199,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<FuturesTrade>>("/options/trades", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<OptionsTrade>>("/options/trades", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3220,10 +3220,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <returns>Task of List&lt;FuturesTrade&gt;</returns>
-        public async Task<List<FuturesTrade>> ListOptionsTradesAsync (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?))
+        /// <returns>Task of List&lt;OptionsTrade&gt;</returns>
+        public async Task<List<OptionsTrade>> ListOptionsTradesAsync (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<FuturesTrade>> localVarResponse = await ListOptionsTradesAsyncWithHttpInfo(contract, type, limit, offset, from, to);
+             Io.Gate.GateApi.Client.ApiResponse<List<OptionsTrade>> localVarResponse = await ListOptionsTradesAsyncWithHttpInfo(contract, type, limit, offset, from, to);
              return localVarResponse.Data;
 
         }
@@ -3238,8 +3238,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;FuturesTrade&gt;)</returns>
-        public async Task<ApiResponse<List<FuturesTrade>>> ListOptionsTradesAsyncWithHttpInfo (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?))
+        /// <returns>Task of ApiResponse (List&lt;OptionsTrade&gt;)</returns>
+        public async Task<ApiResponse<List<OptionsTrade>>> ListOptionsTradesAsyncWithHttpInfo (string contract = default(string), string type = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3286,7 +3286,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<FuturesTrade>>("/options/trades", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<OptionsTrade>>("/options/trades", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
