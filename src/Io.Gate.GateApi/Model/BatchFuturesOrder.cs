@@ -247,7 +247,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="text">User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.) Besides user defined information, reserved contents are listed below, denoting how the order is created:  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance .</param>
         /// <param name="autoSize">Set side to close dual-mode position. &#x60;close_long&#x60; closes the long side; while &#x60;close_short&#x60; the short one. Note &#x60;size&#x60; also needs to be set to 0.</param>
         /// <param name="stpAct">Self-Trading Prevention Action. Users can use this field to set self-trade prevention strategies  1. After users join the &#x60;STP Group&#x60;, they can pass &#x60;stp_act&#x60; to limit the user&#39;s self-trade prevention strategy. If &#x60;stp_act&#x60; is not passed, the default is &#x60;cn&#x60; strategy. 2. When the user does not join the &#x60;STP group&#x60;, an error will be returned when passing the &#x60;stp_act&#x60; parameter. 3. If the user did not use &#x60;stp_act&#x60; when placing the order, &#x60;stp_act&#x60; will return &#39;-&#39;  - cn: Cancel newest, cancel new orders and keep old ones - co: Cancel oldest, cancel old orders and keep new ones - cb: Cancel both, both old and new orders will be cancelled.</param>
-        public BatchFuturesOrder(bool succeeded = default(bool), string label = default(string), string detail = default(string), string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?))
+        /// <param name="marketOrderSlipRatio">The maximum slippage ratio.</param>
+        public BatchFuturesOrder(bool succeeded = default(bool), string label = default(string), string detail = default(string), string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), string marketOrderSlipRatio = default(string))
         {
             this.Succeeded = succeeded;
             this.Label = label;
@@ -262,6 +263,7 @@ namespace Io.Gate.GateApi.Model
             this.Text = text;
             this.AutoSize = autoSize;
             this.StpAct = stpAct;
+            this.MarketOrderSlipRatio = marketOrderSlipRatio;
         }
 
         /// <summary>
@@ -426,6 +428,13 @@ namespace Io.Gate.GateApi.Model
         public int StpId { get; private set; }
 
         /// <summary>
+        /// The maximum slippage ratio
+        /// </summary>
+        /// <value>The maximum slippage ratio</value>
+        [DataMember(Name="market_order_slip_ratio")]
+        public string MarketOrderSlipRatio { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -461,6 +470,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  AutoSize: ").Append(AutoSize).Append("\n");
             sb.Append("  StpAct: ").Append(StpAct).Append("\n");
             sb.Append("  StpId: ").Append(StpId).Append("\n");
+            sb.Append("  MarketOrderSlipRatio: ").Append(MarketOrderSlipRatio).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -617,6 +627,11 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.StpId == input.StpId ||
                     this.StpId.Equals(input.StpId)
+                ) && 
+                (
+                    this.MarketOrderSlipRatio == input.MarketOrderSlipRatio ||
+                    (this.MarketOrderSlipRatio != null &&
+                    this.MarketOrderSlipRatio.Equals(input.MarketOrderSlipRatio))
                 );
         }
 
@@ -668,6 +683,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.AutoSize.GetHashCode();
                 hashCode = hashCode * 59 + this.StpAct.GetHashCode();
                 hashCode = hashCode * 59 + this.StpId.GetHashCode();
+                if (this.MarketOrderSlipRatio != null)
+                    hashCode = hashCode * 59 + this.MarketOrderSlipRatio.GetHashCode();
                 return hashCode;
             }
         }

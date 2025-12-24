@@ -37,7 +37,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="createTime">Fill Time.</param>
         /// <param name="contract">Options contract name.</param>
         /// <param name="size">Trading size.</param>
-        /// <param name="price">成交价格 (计价货币, 单位:标的对应的期权价格).</param>
+        /// <param name="price">Transaction Price (Quoted Currency, Unit: Underlying Option Price).</param>
         public OptionsTrade(long id = default(long), long createTime = default(long), string contract = default(string), long size = default(long), string price = default(string))
         {
             this.Id = id;
@@ -76,9 +76,9 @@ namespace Io.Gate.GateApi.Model
         public long Size { get; set; }
 
         /// <summary>
-        /// 成交价格 (计价货币, 单位:标的对应的期权价格)
+        /// Transaction Price (Quoted Currency, Unit: Underlying Option Price)
         /// </summary>
-        /// <value>成交价格 (计价货币, 单位:标的对应的期权价格)</value>
+        /// <value>Transaction Price (Quoted Currency, Unit: Underlying Option Price)</value>
         [DataMember(Name="price")]
         public string Price { get; set; }
 

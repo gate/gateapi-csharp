@@ -1642,7 +1642,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("multi", "currencies", currencies));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("csv", "currencies", currencies));
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -1701,7 +1701,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("multi", "currencies", currencies));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("csv", "currencies", currencies));
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2676,7 +2676,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("multi", "currencies", currencies));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("csv", "currencies", currencies));
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2735,7 +2735,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("multi", "currencies", currencies));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("csv", "currencies", currencies));
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;

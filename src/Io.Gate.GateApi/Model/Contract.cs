@@ -127,8 +127,10 @@ namespace Io.Gate.GateApi.Model
         /// <param name="launchTime">Contract expiry timestamp.</param>
         /// <param name="delistingTime">Timestamp when contract enters reduce-only state.</param>
         /// <param name="delistedTime">Contract delisting time.</param>
+        /// <param name="marketOrderSlipRatio">The maximum slippage allowed for market orders, with the slippage rate calculated based on the latest market price.</param>
+        /// <param name="marketOrderSizeMax">The maximum number of contracts supported for market orders, with a default value of 0. When the default value is used, the maximum number of contracts is limited by the &#x60;order_size_max&#x60; field.</param>
         /// <param name="fundingRateLimit">Upper and lower limits of funding rate.</param>
-        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string fundingRateLimit = default(string))
+        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string marketOrderSlipRatio = default(string), string marketOrderSizeMax = default(string), string fundingRateLimit = default(string))
         {
             this.Name = name;
             this.Type = type;
@@ -170,6 +172,8 @@ namespace Io.Gate.GateApi.Model
             this.LaunchTime = launchTime;
             this.DelistingTime = delistingTime;
             this.DelistedTime = delistedTime;
+            this.MarketOrderSlipRatio = marketOrderSlipRatio;
+            this.MarketOrderSizeMax = marketOrderSizeMax;
             this.FundingRateLimit = fundingRateLimit;
         }
 
@@ -440,6 +444,20 @@ namespace Io.Gate.GateApi.Model
         public long DelistedTime { get; set; }
 
         /// <summary>
+        /// The maximum slippage allowed for market orders, with the slippage rate calculated based on the latest market price
+        /// </summary>
+        /// <value>The maximum slippage allowed for market orders, with the slippage rate calculated based on the latest market price</value>
+        [DataMember(Name="market_order_slip_ratio")]
+        public string MarketOrderSlipRatio { get; set; }
+
+        /// <summary>
+        /// The maximum number of contracts supported for market orders, with a default value of 0. When the default value is used, the maximum number of contracts is limited by the &#x60;order_size_max&#x60; field
+        /// </summary>
+        /// <value>The maximum number of contracts supported for market orders, with a default value of 0. When the default value is used, the maximum number of contracts is limited by the &#x60;order_size_max&#x60; field</value>
+        [DataMember(Name="market_order_size_max")]
+        public string MarketOrderSizeMax { get; set; }
+
+        /// <summary>
         /// Upper and lower limits of funding rate
         /// </summary>
         /// <value>Upper and lower limits of funding rate</value>
@@ -494,6 +512,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  LaunchTime: ").Append(LaunchTime).Append("\n");
             sb.Append("  DelistingTime: ").Append(DelistingTime).Append("\n");
             sb.Append("  DelistedTime: ").Append(DelistedTime).Append("\n");
+            sb.Append("  MarketOrderSlipRatio: ").Append(MarketOrderSlipRatio).Append("\n");
+            sb.Append("  MarketOrderSizeMax: ").Append(MarketOrderSizeMax).Append("\n");
             sb.Append("  FundingRateLimit: ").Append(FundingRateLimit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -715,6 +735,16 @@ namespace Io.Gate.GateApi.Model
                     this.DelistedTime.Equals(input.DelistedTime)
                 ) && 
                 (
+                    this.MarketOrderSlipRatio == input.MarketOrderSlipRatio ||
+                    (this.MarketOrderSlipRatio != null &&
+                    this.MarketOrderSlipRatio.Equals(input.MarketOrderSlipRatio))
+                ) && 
+                (
+                    this.MarketOrderSizeMax == input.MarketOrderSizeMax ||
+                    (this.MarketOrderSizeMax != null &&
+                    this.MarketOrderSizeMax.Equals(input.MarketOrderSizeMax))
+                ) && 
+                (
                     this.FundingRateLimit == input.FundingRateLimit ||
                     (this.FundingRateLimit != null &&
                     this.FundingRateLimit.Equals(input.FundingRateLimit))
@@ -795,6 +825,10 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.LaunchTime.GetHashCode();
                 hashCode = hashCode * 59 + this.DelistingTime.GetHashCode();
                 hashCode = hashCode * 59 + this.DelistedTime.GetHashCode();
+                if (this.MarketOrderSlipRatio != null)
+                    hashCode = hashCode * 59 + this.MarketOrderSlipRatio.GetHashCode();
+                if (this.MarketOrderSizeMax != null)
+                    hashCode = hashCode * 59 + this.MarketOrderSizeMax.GetHashCode();
                 if (this.FundingRateLimit != null)
                     hashCode = hashCode * 59 + this.FundingRateLimit.GetHashCode();
                 return hashCode;
