@@ -93,7 +93,10 @@ namespace Io.Gate.GateApi.Model
         /// <param name="stTag">Whether the trading pair is in ST risk assessment, false - No, true - Yes.</param>
         /// <param name="upRate">Maximum Quote Rise Percentage.</param>
         /// <param name="downRate">Maximum Quote Decline Percentage.</param>
-        public CurrencyPair(string id = default(string), string _base = default(string), string baseName = default(string), string quote = default(string), string quoteName = default(string), string fee = default(string), string minBaseAmount = default(string), string minQuoteAmount = default(string), string maxBaseAmount = default(string), string maxQuoteAmount = default(string), int amountPrecision = default(int), int precision = default(int), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), long sellStart = default(long), long buyStart = default(long), long delistingTime = default(long), string type = default(string), string tradeUrl = default(string), bool stTag = default(bool), string upRate = default(string), string downRate = default(string))
+        /// <param name="slippage">Currency Slippage.</param>
+        /// <param name="marketOrderMaxStock">Maximum Market Order Quantity.</param>
+        /// <param name="marketOrderMaxMoney">Maximum Market Order Amount.</param>
+        public CurrencyPair(string id = default(string), string _base = default(string), string baseName = default(string), string quote = default(string), string quoteName = default(string), string fee = default(string), string minBaseAmount = default(string), string minQuoteAmount = default(string), string maxBaseAmount = default(string), string maxQuoteAmount = default(string), int amountPrecision = default(int), int precision = default(int), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), long sellStart = default(long), long buyStart = default(long), long delistingTime = default(long), string type = default(string), string tradeUrl = default(string), bool stTag = default(bool), string upRate = default(string), string downRate = default(string), string slippage = default(string), string marketOrderMaxStock = default(string), string marketOrderMaxMoney = default(string))
         {
             this.Id = id;
             this.Base = _base;
@@ -116,6 +119,9 @@ namespace Io.Gate.GateApi.Model
             this.StTag = stTag;
             this.UpRate = upRate;
             this.DownRate = downRate;
+            this.Slippage = slippage;
+            this.MarketOrderMaxStock = marketOrderMaxStock;
+            this.MarketOrderMaxMoney = marketOrderMaxMoney;
         }
 
         /// <summary>
@@ -259,6 +265,27 @@ namespace Io.Gate.GateApi.Model
         public string DownRate { get; set; }
 
         /// <summary>
+        /// Currency Slippage
+        /// </summary>
+        /// <value>Currency Slippage</value>
+        [DataMember(Name="slippage")]
+        public string Slippage { get; set; }
+
+        /// <summary>
+        /// Maximum Market Order Quantity
+        /// </summary>
+        /// <value>Maximum Market Order Quantity</value>
+        [DataMember(Name="market_order_max_stock")]
+        public string MarketOrderMaxStock { get; set; }
+
+        /// <summary>
+        /// Maximum Market Order Amount
+        /// </summary>
+        /// <value>Maximum Market Order Amount</value>
+        [DataMember(Name="market_order_max_money")]
+        public string MarketOrderMaxMoney { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -287,6 +314,9 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  StTag: ").Append(StTag).Append("\n");
             sb.Append("  UpRate: ").Append(UpRate).Append("\n");
             sb.Append("  DownRate: ").Append(DownRate).Append("\n");
+            sb.Append("  Slippage: ").Append(Slippage).Append("\n");
+            sb.Append("  MarketOrderMaxStock: ").Append(MarketOrderMaxStock).Append("\n");
+            sb.Append("  MarketOrderMaxMoney: ").Append(MarketOrderMaxMoney).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -418,6 +448,21 @@ namespace Io.Gate.GateApi.Model
                     this.DownRate == input.DownRate ||
                     (this.DownRate != null &&
                     this.DownRate.Equals(input.DownRate))
+                ) && 
+                (
+                    this.Slippage == input.Slippage ||
+                    (this.Slippage != null &&
+                    this.Slippage.Equals(input.Slippage))
+                ) && 
+                (
+                    this.MarketOrderMaxStock == input.MarketOrderMaxStock ||
+                    (this.MarketOrderMaxStock != null &&
+                    this.MarketOrderMaxStock.Equals(input.MarketOrderMaxStock))
+                ) && 
+                (
+                    this.MarketOrderMaxMoney == input.MarketOrderMaxMoney ||
+                    (this.MarketOrderMaxMoney != null &&
+                    this.MarketOrderMaxMoney.Equals(input.MarketOrderMaxMoney))
                 );
         }
 
@@ -465,6 +510,12 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.UpRate.GetHashCode();
                 if (this.DownRate != null)
                     hashCode = hashCode * 59 + this.DownRate.GetHashCode();
+                if (this.Slippage != null)
+                    hashCode = hashCode * 59 + this.Slippage.GetHashCode();
+                if (this.MarketOrderMaxStock != null)
+                    hashCode = hashCode * 59 + this.MarketOrderMaxStock.GetHashCode();
+                if (this.MarketOrderMaxMoney != null)
+                    hashCode = hashCode * 59 + this.MarketOrderMaxMoney.GetHashCode();
                 return hashCode;
             }
         }
