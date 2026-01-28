@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class OptionsAccount :  IEquatable<OptionsAccount>, IValidatableObject
     {
         /// <summary>
-        /// 此字段表示统一账户所使用的保证金模式：  - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式 - 3: 表示为单币种保证金模式
+        /// This field indicates the margin mode used by the unified account:  - 0: Classic Spot Margin Mode - 1: Cross-Currency Margin Mode - 2: Portfolio Margin Mode - 3: Single-Currency Margin Mode
         /// </summary>
-        /// <value>此字段表示统一账户所使用的保证金模式：  - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式 - 3: 表示为单币种保证金模式</value>
+        /// <value>This field indicates the margin mode used by the unified account:  - 0: Classic Spot Margin Mode - 1: Cross-Currency Margin Mode - 2: Portfolio Margin Mode - 3: Single-Currency Margin Mode</value>
         public enum MarginModeEnum
         {
             /// <summary>
@@ -59,9 +59,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 此字段表示统一账户所使用的保证金模式：  - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式 - 3: 表示为单币种保证金模式
+        /// This field indicates the margin mode used by the unified account:  - 0: Classic Spot Margin Mode - 1: Cross-Currency Margin Mode - 2: Portfolio Margin Mode - 3: Single-Currency Margin Mode
         /// </summary>
-        /// <value>此字段表示统一账户所使用的保证金模式：  - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式 - 3: 表示为单币种保证金模式</value>
+        /// <value>This field indicates the margin mode used by the unified account:  - 0: Classic Spot Margin Mode - 1: Cross-Currency Margin Mode - 2: Portfolio Margin Mode - 3: Single-Currency Margin Mode</value>
         [DataMember(Name="margin_mode")]
         public MarginModeEnum? MarginMode { get; set; }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="shortEnabled">If the account is allowed to short.</param>
         /// <param name="mmpEnabled">Whether to enable MMP.</param>
         /// <param name="liqTriggered">Whether the account is in a liquidation state.</param>
-        /// <param name="marginMode">此字段表示统一账户所使用的保证金模式：  - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式 - 3: 表示为单币种保证金模式.</param>
+        /// <param name="marginMode">This field indicates the margin mode used by the unified account:  - 0: Classic Spot Margin Mode - 1: Cross-Currency Margin Mode - 2: Portfolio Margin Mode - 3: Single-Currency Margin Mode.</param>
         /// <param name="unrealisedPnl">Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only..</param>
         /// <param name="initMargin">Initial position margin.</param>
         /// <param name="maintMargin">Position maintenance margin.</param>

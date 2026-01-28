@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**ListDualInvestmentPlans**](EarnApi.md#listdualinvestmentplans) | **GET** /earn/dual/investment_plan | Dual Investment product list
 [**ListDualOrders**](EarnApi.md#listdualorders) | **GET** /earn/dual/orders | Dual Investment order list
 [**PlaceDualOrder**](EarnApi.md#placedualorder) | **POST** /earn/dual/orders | Place Dual Investment order
+[**ListDualBalance**](EarnApi.md#listdualbalance) | **GET** /earn/dual/balance | Dual-Currency Earning Assets
 [**ListStructuredProducts**](EarnApi.md#liststructuredproducts) | **GET** /earn/structured/products | Structured Product List
 [**ListStructuredOrders**](EarnApi.md#liststructuredorders) | **GET** /earn/structured/orders | Structured Product Order List
 [**PlaceStructuredOrder**](EarnApi.md#placestructuredorder) | **POST** /earn/structured/orders | Place Structured Product Order
@@ -371,6 +372,73 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Order placed successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listdualbalance"></a>
+# **ListDualBalance**
+> DualGetBalance ListDualBalance ()
+
+Dual-Currency Earning Assets
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListDualBalanceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+
+            try
+            {
+                // Dual-Currency Earning Assets
+                DualGetBalance result = apiInstance.ListDualBalance();
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListDualBalance: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DualGetBalance**](DualGetBalance.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

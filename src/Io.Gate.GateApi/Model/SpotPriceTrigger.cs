@@ -67,7 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="price">Trigger price (required).</param>
         /// <param name="rule">Price trigger condition  - &#x60;&gt;&#x3D;&#x60;: triggered when market price is greater than or equal to &#x60;price&#x60; - &#x60;&lt;&#x3D;&#x60;: triggered when market price is less than or equal to &#x60;price&#x60;  (required).</param>
-        /// <param name="expiration">Maximum wait time for trigger condition (in seconds). Order will be cancelled if timeout (required).</param>
+        /// <param name="expiration">Maximum wait time for trigger condition (in seconds). Order will be cancelled if timeout.</param>
         public SpotPriceTrigger(string price = default(string), RuleEnum rule = default(RuleEnum), int expiration = default(int))
         {
             // to ensure "price" is required (not null)

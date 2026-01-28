@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class OrderCancel :  IEquatable<OrderCancel>, IValidatableObject
     {
         /// <summary>
-        /// Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: filled - &#x60;cancelled&#x60;: cancelled
+        /// Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: closed order - &#x60;cancelled&#x60;: cancelled
         /// </summary>
-        /// <value>Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: filled - &#x60;cancelled&#x60;: cancelled</value>
+        /// <value>Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: closed order - &#x60;cancelled&#x60;: cancelled</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -58,9 +58,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: filled - &#x60;cancelled&#x60;: cancelled
+        /// Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: closed order - &#x60;cancelled&#x60;: cancelled
         /// </summary>
-        /// <value>Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: filled - &#x60;cancelled&#x60;: cancelled</value>
+        /// <value>Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: closed order - &#x60;cancelled&#x60;: cancelled</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
@@ -248,7 +248,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderCancel" /> class.
         /// </summary>
-        /// <param name="text">User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  Besides user defined information, reserved contents are listed below, denoting how the order is created:  - 101: from android - 102: from IOS - 103: from IPAD - 104: from webapp - 3: from web - 2: from apiv2 - apiv4: from apiv4 .</param>
+        /// <param name="text">User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  Besides user defined information, reserved contents are listed below, denoting how the order is created:  - 101: from android - 102: from IOS - 103: from IPAD - 104: from webapp - 3: from web - 2: from apiv2 - apiv4: from apiv4.</param>
         /// <param name="succeeded">Request execution result.</param>
         /// <param name="label">Error label, if any, otherwise an empty string.</param>
         /// <param name="message">Detailed error message, if any, otherwise an empty string.</param>
@@ -295,9 +295,9 @@ namespace Io.Gate.GateApi.Model
         public string Id { get; private set; }
 
         /// <summary>
-        /// User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  Besides user defined information, reserved contents are listed below, denoting how the order is created:  - 101: from android - 102: from IOS - 103: from IPAD - 104: from webapp - 3: from web - 2: from apiv2 - apiv4: from apiv4 
+        /// User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  Besides user defined information, reserved contents are listed below, denoting how the order is created:  - 101: from android - 102: from IOS - 103: from IPAD - 104: from webapp - 3: from web - 2: from apiv2 - apiv4: from apiv4
         /// </summary>
-        /// <value>User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  Besides user defined information, reserved contents are listed below, denoting how the order is created:  - 101: from android - 102: from IOS - 103: from IPAD - 104: from webapp - 3: from web - 2: from apiv2 - apiv4: from apiv4 </value>
+        /// <value>User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  Besides user defined information, reserved contents are listed below, denoting how the order is created:  - 101: from android - 102: from IOS - 103: from IPAD - 104: from webapp - 3: from web - 2: from apiv2 - apiv4: from apiv4</value>
         [DataMember(Name="text")]
         public string Text { get; set; }
 

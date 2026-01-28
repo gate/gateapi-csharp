@@ -73,7 +73,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="mode">Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode.</param>
         /// <param name="crossLeverageLimit">leverage for cross margin.</param>
         /// <param name="openTime">First Open Time.</param>
-        public Position(string leverage = default(string), string riskLimit = default(string), string margin = default(string), PositionCloseOrder closeOrder = default(PositionCloseOrder), ModeEnum? mode = default(ModeEnum?), string crossLeverageLimit = default(string), long openTime = default(long))
+        /// <param name="posMarginMode">Position Margin Mode isolated - Isolated Margin, cross - Cross Margin.</param>
+        /// <param name="lever">Indicates the current leverage of the position, applicable to both isolated and cross margin, gradually replacing the current leverage and cross_leverage_limit.</param>
+        public Position(string leverage = default(string), string riskLimit = default(string), string margin = default(string), PositionCloseOrder closeOrder = default(PositionCloseOrder), ModeEnum? mode = default(ModeEnum?), string crossLeverageLimit = default(string), long openTime = default(long), string posMarginMode = default(string), string lever = default(string))
         {
             this.Leverage = leverage;
             this.RiskLimit = riskLimit;
@@ -82,6 +84,8 @@ namespace Io.Gate.GateApi.Model
             this.Mode = mode;
             this.CrossLeverageLimit = crossLeverageLimit;
             this.OpenTime = openTime;
+            this.PosMarginMode = posMarginMode;
+            this.Lever = lever;
         }
 
         /// <summary>
@@ -315,6 +319,20 @@ namespace Io.Gate.GateApi.Model
         public long Pid { get; private set; }
 
         /// <summary>
+        /// Position Margin Mode isolated - Isolated Margin, cross - Cross Margin
+        /// </summary>
+        /// <value>Position Margin Mode isolated - Isolated Margin, cross - Cross Margin</value>
+        [DataMember(Name="pos_margin_mode")]
+        public string PosMarginMode { get; set; }
+
+        /// <summary>
+        /// Indicates the current leverage of the position, applicable to both isolated and cross margin, gradually replacing the current leverage and cross_leverage_limit
+        /// </summary>
+        /// <value>Indicates the current leverage of the position, applicable to both isolated and cross margin, gradually replacing the current leverage and cross_leverage_limit</value>
+        [DataMember(Name="lever")]
+        public string Lever { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -356,6 +374,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  RiskLimitTable: ").Append(RiskLimitTable).Append("\n");
             sb.Append("  AverageMaintenanceRate: ").Append(AverageMaintenanceRate).Append("\n");
             sb.Append("  Pid: ").Append(Pid).Append("\n");
+            sb.Append("  PosMarginMode: ").Append(PosMarginMode).Append("\n");
+            sb.Append("  Lever: ").Append(Lever).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -551,6 +571,16 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.Pid == input.Pid ||
                     this.Pid.Equals(input.Pid)
+                ) && 
+                (
+                    this.PosMarginMode == input.PosMarginMode ||
+                    (this.PosMarginMode != null &&
+                    this.PosMarginMode.Equals(input.PosMarginMode))
+                ) && 
+                (
+                    this.Lever == input.Lever ||
+                    (this.Lever != null &&
+                    this.Lever.Equals(input.Lever))
                 );
         }
 
@@ -623,6 +653,10 @@ namespace Io.Gate.GateApi.Model
                 if (this.AverageMaintenanceRate != null)
                     hashCode = hashCode * 59 + this.AverageMaintenanceRate.GetHashCode();
                 hashCode = hashCode * 59 + this.Pid.GetHashCode();
+                if (this.PosMarginMode != null)
+                    hashCode = hashCode * 59 + this.PosMarginMode.GetHashCode();
+                if (this.Lever != null)
+                    hashCode = hashCode * 59 + this.Lever.GetHashCode();
                 return hashCode;
             }
         }

@@ -69,7 +69,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user transaction rate limit information
         /// </summary>
         /// <remarks>
-        /// 
+        /// This interface is not yet open for use
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;AccountRateLimit&gt;</returns>
@@ -79,7 +79,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user transaction rate limit information
         /// </summary>
         /// <remarks>
-        /// 
+        /// This interface is not yet open for use
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;AccountRateLimit&gt;</returns>
@@ -284,7 +284,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user transaction rate limit information
         /// </summary>
         /// <remarks>
-        /// 
+        /// This interface is not yet open for use
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;AccountRateLimit&gt;</returns>
@@ -294,7 +294,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user transaction rate limit information
         /// </summary>
         /// <remarks>
-        /// 
+        /// This interface is not yet open for use
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;AccountRateLimit&gt;)</returns>
@@ -775,7 +775,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get user transaction rate limit information 
+        /// Get user transaction rate limit information This interface is not yet open for use
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;AccountRateLimit&gt;</returns>
@@ -786,7 +786,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get user transaction rate limit information 
+        /// Get user transaction rate limit information This interface is not yet open for use
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;AccountRateLimit&gt;</returns>
@@ -825,7 +825,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get user transaction rate limit information 
+        /// Get user transaction rate limit information This interface is not yet open for use
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;AccountRateLimit&gt;</returns>
@@ -837,7 +837,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get user transaction rate limit information 
+        /// Get user transaction rate limit information This interface is not yet open for use
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;AccountRateLimit&gt;)</returns>

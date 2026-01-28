@@ -253,7 +253,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="orderValue">order&#39;s value.</param>
         /// <param name="tradeValue">trade value.</param>
         /// <param name="marketOrderSlipRatio">Custom maximum slippage rate for market orders. If not provided, the default contract settings will be used.</param>
-        public FuturesOrder(string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long pid = default(long), string orderValue = default(string), string tradeValue = default(string), string marketOrderSlipRatio = default(string))
+        /// <param name="posMarginMode">Position Margin Mode isolated - Isolated Margin, cross - Cross Margin, only passed in simple split position mode.</param>
+        public FuturesOrder(string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long pid = default(long), string orderValue = default(string), string tradeValue = default(string), string marketOrderSlipRatio = default(string), string posMarginMode = default(string))
         {
             // to ensure "contract" is required (not null)
             this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for FuturesOrder and cannot be null");
@@ -272,6 +273,7 @@ namespace Io.Gate.GateApi.Model
             this.OrderValue = orderValue;
             this.TradeValue = tradeValue;
             this.MarketOrderSlipRatio = marketOrderSlipRatio;
+            this.PosMarginMode = posMarginMode;
         }
 
         /// <summary>
@@ -457,6 +459,13 @@ namespace Io.Gate.GateApi.Model
         public string MarketOrderSlipRatio { get; set; }
 
         /// <summary>
+        /// Position Margin Mode isolated - Isolated Margin, cross - Cross Margin, only passed in simple split position mode
+        /// </summary>
+        /// <value>Position Margin Mode isolated - Isolated Margin, cross - Cross Margin, only passed in simple split position mode</value>
+        [DataMember(Name="pos_margin_mode")]
+        public string PosMarginMode { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -495,6 +504,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  OrderValue: ").Append(OrderValue).Append("\n");
             sb.Append("  TradeValue: ").Append(TradeValue).Append("\n");
             sb.Append("  MarketOrderSlipRatio: ").Append(MarketOrderSlipRatio).Append("\n");
+            sb.Append("  PosMarginMode: ").Append(PosMarginMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -665,6 +675,11 @@ namespace Io.Gate.GateApi.Model
                     this.MarketOrderSlipRatio == input.MarketOrderSlipRatio ||
                     (this.MarketOrderSlipRatio != null &&
                     this.MarketOrderSlipRatio.Equals(input.MarketOrderSlipRatio))
+                ) && 
+                (
+                    this.PosMarginMode == input.PosMarginMode ||
+                    (this.PosMarginMode != null &&
+                    this.PosMarginMode.Equals(input.PosMarginMode))
                 );
         }
 
@@ -721,6 +736,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.TradeValue.GetHashCode();
                 if (this.MarketOrderSlipRatio != null)
                     hashCode = hashCode * 59 + this.MarketOrderSlipRatio.GetHashCode();
+                if (this.PosMarginMode != null)
+                    hashCode = hashCode * 59 + this.PosMarginMode.GetHashCode();
                 return hashCode;
             }
         }

@@ -41,7 +41,6 @@ namespace Io.Gate.GateApi.Model
         /// <param name="point">Point card amount.</param>
         /// <param name="currency">Settlement currency.</param>
         /// <param name="inDualMode">Whether Hedge Mode is enabled.</param>
-        /// <param name="positionMode">Position mode: single - one-way, dual - dual-side, split - sub-positions (in_dual_mode is deprecated).</param>
         /// <param name="enableCredit">Whether portfolio margin account mode is enabled.</param>
         /// <param name="positionInitialMargin">Initial margin occupied by positions, applicable to unified account mode.</param>
         /// <param name="maintenanceMargin">Maintenance margin occupied by positions, applicable to new classic account margin mode and unified account mode.</param>
@@ -59,8 +58,10 @@ namespace Io.Gate.GateApi.Model
         /// <param name="enableNewDualMode">Deprecated.</param>
         /// <param name="marginMode">Margin mode of the account 0: classic future account or Classic Spot Margin Mode of unified account; 1:  Multi-Currency Margin Mode; 2:  Portoforlio Margin Mode; 3:  Single-Currency Margin Mode.</param>
         /// <param name="enableTieredMm">Whether to enable tiered maintenance margin calculation.</param>
+        /// <param name="enableDualPlus">Whether to Support Split Position Mode.</param>
+        /// <param name="positionMode">Position Holding Mode single - Single Direction Position, dual - Dual Direction Position, dual_plus - Split Position.</param>
         /// <param name="history">history.</param>
-        public FuturesAccount(string total = default(string), string unrealisedPnl = default(string), string positionMargin = default(string), string orderMargin = default(string), string available = default(string), string point = default(string), string currency = default(string), bool inDualMode = default(bool), string positionMode = default(string), bool enableCredit = default(bool), string positionInitialMargin = default(string), string maintenanceMargin = default(string), string bonus = default(string), bool enableEvolvedClassic = default(bool), string crossOrderMargin = default(string), string crossInitialMargin = default(string), string crossMaintenanceMargin = default(string), string crossUnrealisedPnl = default(string), string crossAvailable = default(string), string crossMarginBalance = default(string), string crossMmr = default(string), string crossImr = default(string), string isolatedPositionMargin = default(string), bool enableNewDualMode = default(bool), int marginMode = default(int), bool enableTieredMm = default(bool), FuturesAccountHistory history = default(FuturesAccountHistory))
+        public FuturesAccount(string total = default(string), string unrealisedPnl = default(string), string positionMargin = default(string), string orderMargin = default(string), string available = default(string), string point = default(string), string currency = default(string), bool inDualMode = default(bool), bool enableCredit = default(bool), string positionInitialMargin = default(string), string maintenanceMargin = default(string), string bonus = default(string), bool enableEvolvedClassic = default(bool), string crossOrderMargin = default(string), string crossInitialMargin = default(string), string crossMaintenanceMargin = default(string), string crossUnrealisedPnl = default(string), string crossAvailable = default(string), string crossMarginBalance = default(string), string crossMmr = default(string), string crossImr = default(string), string isolatedPositionMargin = default(string), bool enableNewDualMode = default(bool), int marginMode = default(int), bool enableTieredMm = default(bool), bool enableDualPlus = default(bool), string positionMode = default(string), FuturesAccountHistory history = default(FuturesAccountHistory))
         {
             this.Total = total;
             this.UnrealisedPnl = unrealisedPnl;
@@ -70,7 +71,6 @@ namespace Io.Gate.GateApi.Model
             this.Point = point;
             this.Currency = currency;
             this.InDualMode = inDualMode;
-            this.PositionMode = positionMode;
             this.EnableCredit = enableCredit;
             this.PositionInitialMargin = positionInitialMargin;
             this.MaintenanceMargin = maintenanceMargin;
@@ -88,6 +88,8 @@ namespace Io.Gate.GateApi.Model
             this.EnableNewDualMode = enableNewDualMode;
             this.MarginMode = marginMode;
             this.EnableTieredMm = enableTieredMm;
+            this.EnableDualPlus = enableDualPlus;
+            this.PositionMode = positionMode;
             this.History = history;
         }
 
@@ -146,13 +148,6 @@ namespace Io.Gate.GateApi.Model
         /// <value>Whether Hedge Mode is enabled</value>
         [DataMember(Name="in_dual_mode")]
         public bool InDualMode { get; set; }
-
-        /// <summary>
-        /// Position mode: single - one-way, dual - dual-side, split - sub-positions (in_dual_mode is deprecated)
-        /// </summary>
-        /// <value>Position mode: single - one-way, dual - dual-side, split - sub-positions (in_dual_mode is deprecated)</value>
-        [DataMember(Name="position_mode")]
-        public string PositionMode { get; set; }
 
         /// <summary>
         /// Whether portfolio margin account mode is enabled
@@ -274,6 +269,20 @@ namespace Io.Gate.GateApi.Model
         public bool EnableTieredMm { get; set; }
 
         /// <summary>
+        /// Whether to Support Split Position Mode
+        /// </summary>
+        /// <value>Whether to Support Split Position Mode</value>
+        [DataMember(Name="enable_dual_plus")]
+        public bool EnableDualPlus { get; set; }
+
+        /// <summary>
+        /// Position Holding Mode single - Single Direction Position, dual - Dual Direction Position, dual_plus - Split Position
+        /// </summary>
+        /// <value>Position Holding Mode single - Single Direction Position, dual - Dual Direction Position, dual_plus - Split Position</value>
+        [DataMember(Name="position_mode")]
+        public string PositionMode { get; set; }
+
+        /// <summary>
         /// Gets or Sets History
         /// </summary>
         [DataMember(Name="history")]
@@ -295,7 +304,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Point: ").Append(Point).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  InDualMode: ").Append(InDualMode).Append("\n");
-            sb.Append("  PositionMode: ").Append(PositionMode).Append("\n");
             sb.Append("  EnableCredit: ").Append(EnableCredit).Append("\n");
             sb.Append("  PositionInitialMargin: ").Append(PositionInitialMargin).Append("\n");
             sb.Append("  MaintenanceMargin: ").Append(MaintenanceMargin).Append("\n");
@@ -313,6 +321,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  EnableNewDualMode: ").Append(EnableNewDualMode).Append("\n");
             sb.Append("  MarginMode: ").Append(MarginMode).Append("\n");
             sb.Append("  EnableTieredMm: ").Append(EnableTieredMm).Append("\n");
+            sb.Append("  EnableDualPlus: ").Append(EnableDualPlus).Append("\n");
+            sb.Append("  PositionMode: ").Append(PositionMode).Append("\n");
             sb.Append("  History: ").Append(History).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -386,11 +396,6 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.InDualMode == input.InDualMode ||
                     this.InDualMode.Equals(input.InDualMode)
-                ) && 
-                (
-                    this.PositionMode == input.PositionMode ||
-                    (this.PositionMode != null &&
-                    this.PositionMode.Equals(input.PositionMode))
                 ) && 
                 (
                     this.EnableCredit == input.EnableCredit ||
@@ -473,6 +478,15 @@ namespace Io.Gate.GateApi.Model
                     this.EnableTieredMm.Equals(input.EnableTieredMm)
                 ) && 
                 (
+                    this.EnableDualPlus == input.EnableDualPlus ||
+                    this.EnableDualPlus.Equals(input.EnableDualPlus)
+                ) && 
+                (
+                    this.PositionMode == input.PositionMode ||
+                    (this.PositionMode != null &&
+                    this.PositionMode.Equals(input.PositionMode))
+                ) && 
+                (
                     this.History == input.History ||
                     (this.History != null &&
                     this.History.Equals(input.History))
@@ -503,8 +517,6 @@ namespace Io.Gate.GateApi.Model
                 if (this.Currency != null)
                     hashCode = hashCode * 59 + this.Currency.GetHashCode();
                 hashCode = hashCode * 59 + this.InDualMode.GetHashCode();
-                if (this.PositionMode != null)
-                    hashCode = hashCode * 59 + this.PositionMode.GetHashCode();
                 hashCode = hashCode * 59 + this.EnableCredit.GetHashCode();
                 if (this.PositionInitialMargin != null)
                     hashCode = hashCode * 59 + this.PositionInitialMargin.GetHashCode();
@@ -534,6 +546,9 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.EnableNewDualMode.GetHashCode();
                 hashCode = hashCode * 59 + this.MarginMode.GetHashCode();
                 hashCode = hashCode * 59 + this.EnableTieredMm.GetHashCode();
+                hashCode = hashCode * 59 + this.EnableDualPlus.GetHashCode();
+                if (this.PositionMode != null)
+                    hashCode = hashCode * 59 + this.PositionMode.GetHashCode();
                 if (this.History != null)
                     hashCode = hashCode * 59 + this.History.GetHashCode();
                 return hashCode;

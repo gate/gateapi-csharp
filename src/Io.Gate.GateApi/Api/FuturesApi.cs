@@ -489,6 +489,33 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of Position</returns>
         ApiResponse<Position> GetPositionWithHttpInfo (string settle, string contract);
         /// <summary>
+        /// Get Leverage Information for Specified Mode
+        /// </summary>
+        /// <remarks>
+        /// Get Leverage Information for Specified Mode
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>FuturesLeverage</returns>
+        FuturesLeverage GetLeverage (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string));
+
+        /// <summary>
+        /// Get Leverage Information for Specified Mode
+        /// </summary>
+        /// <remarks>
+        /// Get Leverage Information for Specified Mode
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>ApiResponse of FuturesLeverage</returns>
+        ApiResponse<FuturesLeverage> GetLeverageWithHttpInfo (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string));
+        /// <summary>
         /// Update position margin
         /// </summary>
         /// <remarks>
@@ -542,6 +569,35 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pid">Product ID (optional)</param>
         /// <returns>ApiResponse of Position</returns>
         ApiResponse<Position> UpdatePositionLeverageWithHttpInfo (string settle, string contract, string leverage, string crossLeverageLimit = default(string), int? pid = default(int?));
+        /// <summary>
+        /// Update Leverage for Specified Mode
+        /// </summary>
+        /// <remarks>
+        /// To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="leverage">Position Leverage Multiple</param>
+        /// <param name="marginMode">Margin Mode isolated/cross</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>Position</returns>
+        Position UpdateContractPositionLeverage (string settle, string contract, string leverage, string marginMode, string dualSide = default(string));
+
+        /// <summary>
+        /// Update Leverage for Specified Mode
+        /// </summary>
+        /// <remarks>
+        /// To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="leverage">Position Leverage Multiple</param>
+        /// <param name="marginMode">Margin Mode isolated/cross</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>ApiResponse of Position</returns>
+        ApiResponse<Position> UpdateContractPositionLeverageWithHttpInfo (string settle, string contract, string leverage, string marginMode, string dualSide = default(string));
         /// <summary>
         /// Switch Position Margin Mode
         /// </summary>
@@ -636,6 +692,29 @@ namespace Io.Gate.GateApi.Api
         /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>ApiResponse of FuturesAccount</returns>
         ApiResponse<FuturesAccount> SetDualModeWithHttpInfo (string settle, bool dualMode);
+        /// <summary>
+        /// Set Position Holding Mode, replacing the dual_mode interface
+        /// </summary>
+        /// <remarks>
+        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
+        /// <returns>FuturesAccount</returns>
+        FuturesAccount SetPositionMode (string settle, string positionMode);
+
+        /// <summary>
+        /// Set Position Holding Mode, replacing the dual_mode interface
+        /// </summary>
+        /// <remarks>
+        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
+        /// <returns>ApiResponse of FuturesAccount</returns>
+        ApiResponse<FuturesAccount> SetPositionModeWithHttpInfo (string settle, string positionMode);
         /// <summary>
         /// Get position information in Hedge Mode
         /// </summary>
@@ -1882,6 +1961,33 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (Position)</returns>
         Task<ApiResponse<Position>> GetPositionAsyncWithHttpInfo (string settle, string contract);
         /// <summary>
+        /// Get Leverage Information for Specified Mode
+        /// </summary>
+        /// <remarks>
+        /// Get Leverage Information for Specified Mode
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>Task of FuturesLeverage</returns>
+        Task<FuturesLeverage> GetLeverageAsync (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string));
+
+        /// <summary>
+        /// Get Leverage Information for Specified Mode
+        /// </summary>
+        /// <remarks>
+        /// Get Leverage Information for Specified Mode
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>Task of ApiResponse (FuturesLeverage)</returns>
+        Task<ApiResponse<FuturesLeverage>> GetLeverageAsyncWithHttpInfo (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string));
+        /// <summary>
         /// Update position margin
         /// </summary>
         /// <remarks>
@@ -1935,6 +2041,35 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pid">Product ID (optional)</param>
         /// <returns>Task of ApiResponse (Position)</returns>
         Task<ApiResponse<Position>> UpdatePositionLeverageAsyncWithHttpInfo (string settle, string contract, string leverage, string crossLeverageLimit = default(string), int? pid = default(int?));
+        /// <summary>
+        /// Update Leverage for Specified Mode
+        /// </summary>
+        /// <remarks>
+        /// To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="leverage">Position Leverage Multiple</param>
+        /// <param name="marginMode">Margin Mode isolated/cross</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>Task of Position</returns>
+        Task<Position> UpdateContractPositionLeverageAsync (string settle, string contract, string leverage, string marginMode, string dualSide = default(string));
+
+        /// <summary>
+        /// Update Leverage for Specified Mode
+        /// </summary>
+        /// <remarks>
+        /// To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="leverage">Position Leverage Multiple</param>
+        /// <param name="marginMode">Margin Mode isolated/cross</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>Task of ApiResponse (Position)</returns>
+        Task<ApiResponse<Position>> UpdateContractPositionLeverageAsyncWithHttpInfo (string settle, string contract, string leverage, string marginMode, string dualSide = default(string));
         /// <summary>
         /// Switch Position Margin Mode
         /// </summary>
@@ -2029,6 +2164,29 @@ namespace Io.Gate.GateApi.Api
         /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>Task of ApiResponse (FuturesAccount)</returns>
         Task<ApiResponse<FuturesAccount>> SetDualModeAsyncWithHttpInfo (string settle, bool dualMode);
+        /// <summary>
+        /// Set Position Holding Mode, replacing the dual_mode interface
+        /// </summary>
+        /// <remarks>
+        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
+        /// <returns>Task of FuturesAccount</returns>
+        Task<FuturesAccount> SetPositionModeAsync (string settle, string positionMode);
+
+        /// <summary>
+        /// Set Position Holding Mode, replacing the dual_mode interface
+        /// </summary>
+        /// <remarks>
+        /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
+        /// <returns>Task of ApiResponse (FuturesAccount)</returns>
+        Task<ApiResponse<FuturesAccount>> SetPositionModeAsyncWithHttpInfo (string settle, string positionMode);
         /// <summary>
         /// Get position information in Hedge Mode
         /// </summary>
@@ -5504,6 +5662,161 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
+        /// Get Leverage Information for Specified Mode Get Leverage Information for Specified Mode
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>FuturesLeverage</returns>
+        public FuturesLeverage GetLeverage (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string))
+        {
+             ApiResponse<FuturesLeverage> localVarResponse = GetLeverageWithHttpInfo(settle, contract, posMarginMode, dualSide);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Leverage Information for Specified Mode Get Leverage Information for Specified Mode
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>ApiResponse of FuturesLeverage</returns>
+        public ApiResponse<FuturesLeverage> GetLeverageWithHttpInfo (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetLeverage");
+
+            // verify the required parameter 'contract' is set
+            if (contract == null)
+                throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->GetLeverage");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.PathParameters.Add("contract", ClientUtils.ParameterToString(contract)); // path parameter
+            if (posMarginMode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pos_margin_mode", posMarginMode));
+            }
+            if (dualSide != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "dual_side", dualSide));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<FuturesLeverage>("/futures/{settle}/get_leverage/{contract}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLeverage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Leverage Information for Specified Mode Get Leverage Information for Specified Mode
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>Task of FuturesLeverage</returns>
+        public async Task<FuturesLeverage> GetLeverageAsync (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FuturesLeverage> localVarResponse = await GetLeverageAsyncWithHttpInfo(settle, contract, posMarginMode, dualSide);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get Leverage Information for Specified Mode Get Leverage Information for Specified Mode
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>Task of ApiResponse (FuturesLeverage)</returns>
+        public async Task<ApiResponse<FuturesLeverage>> GetLeverageAsyncWithHttpInfo (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetLeverage");
+
+            // verify the required parameter 'contract' is set
+            if (contract == null)
+                throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->GetLeverage");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.PathParameters.Add("contract", ClientUtils.ParameterToString(contract)); // path parameter
+            if (posMarginMode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pos_margin_mode", posMarginMode));
+            }
+            if (dualSide != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "dual_side", dualSide));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FuturesLeverage>("/futures/{settle}/get_leverage/{contract}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLeverage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Update position margin Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
@@ -5811,6 +6124,177 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdatePositionLeverage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Leverage for Specified Mode To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="leverage">Position Leverage Multiple</param>
+        /// <param name="marginMode">Margin Mode isolated/cross</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>Position</returns>
+        public Position UpdateContractPositionLeverage (string settle, string contract, string leverage, string marginMode, string dualSide = default(string))
+        {
+             ApiResponse<Position> localVarResponse = UpdateContractPositionLeverageWithHttpInfo(settle, contract, leverage, marginMode, dualSide);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Leverage for Specified Mode To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="leverage">Position Leverage Multiple</param>
+        /// <param name="marginMode">Margin Mode isolated/cross</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>ApiResponse of Position</returns>
+        public ApiResponse<Position> UpdateContractPositionLeverageWithHttpInfo (string settle, string contract, string leverage, string marginMode, string dualSide = default(string))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdateContractPositionLeverage");
+
+            // verify the required parameter 'contract' is set
+            if (contract == null)
+                throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->UpdateContractPositionLeverage");
+
+            // verify the required parameter 'leverage' is set
+            if (leverage == null)
+                throw new ApiException(400, "Missing required parameter 'leverage' when calling FuturesApi->UpdateContractPositionLeverage");
+
+            // verify the required parameter 'marginMode' is set
+            if (marginMode == null)
+                throw new ApiException(400, "Missing required parameter 'marginMode' when calling FuturesApi->UpdateContractPositionLeverage");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.PathParameters.Add("contract", ClientUtils.ParameterToString(contract)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "leverage", leverage));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "margin_mode", marginMode));
+            if (dualSide != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "dual_side", dualSide));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Position>("/futures/{settle}/positions/{contract}/set_leverage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateContractPositionLeverage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Leverage for Specified Mode To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="leverage">Position Leverage Multiple</param>
+        /// <param name="marginMode">Margin Mode isolated/cross</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>Task of Position</returns>
+        public async Task<Position> UpdateContractPositionLeverageAsync (string settle, string contract, string leverage, string marginMode, string dualSide = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<Position> localVarResponse = await UpdateContractPositionLeverageAsyncWithHttpInfo(settle, contract, leverage, marginMode, dualSide);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update Leverage for Specified Mode To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="leverage">Position Leverage Multiple</param>
+        /// <param name="marginMode">Margin Mode isolated/cross</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <returns>Task of ApiResponse (Position)</returns>
+        public async Task<ApiResponse<Position>> UpdateContractPositionLeverageAsyncWithHttpInfo (string settle, string contract, string leverage, string marginMode, string dualSide = default(string))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdateContractPositionLeverage");
+
+            // verify the required parameter 'contract' is set
+            if (contract == null)
+                throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->UpdateContractPositionLeverage");
+
+            // verify the required parameter 'leverage' is set
+            if (leverage == null)
+                throw new ApiException(400, "Missing required parameter 'leverage' when calling FuturesApi->UpdateContractPositionLeverage");
+
+            // verify the required parameter 'marginMode' is set
+            if (marginMode == null)
+                throw new ApiException(400, "Missing required parameter 'marginMode' when calling FuturesApi->UpdateContractPositionLeverage");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.PathParameters.Add("contract", ClientUtils.ParameterToString(contract)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "leverage", leverage));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "margin_mode", marginMode));
+            if (dualSide != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "dual_side", dualSide));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Position>("/futures/{settle}/positions/{contract}/set_leverage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateContractPositionLeverage", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -6345,6 +6829,137 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SetDualMode", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set Position Holding Mode, replacing the dual_mode interface The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
+        /// <returns>FuturesAccount</returns>
+        public FuturesAccount SetPositionMode (string settle, string positionMode)
+        {
+             ApiResponse<FuturesAccount> localVarResponse = SetPositionModeWithHttpInfo(settle, positionMode);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set Position Holding Mode, replacing the dual_mode interface The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
+        /// <returns>ApiResponse of FuturesAccount</returns>
+        public ApiResponse<FuturesAccount> SetPositionModeWithHttpInfo (string settle, string positionMode)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->SetPositionMode");
+
+            // verify the required parameter 'positionMode' is set
+            if (positionMode == null)
+                throw new ApiException(400, "Missing required parameter 'positionMode' when calling FuturesApi->SetPositionMode");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "position_mode", positionMode));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<FuturesAccount>("/futures/{settle}/set_position_mode", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetPositionMode", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set Position Holding Mode, replacing the dual_mode interface The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
+        /// <returns>Task of FuturesAccount</returns>
+        public async Task<FuturesAccount> SetPositionModeAsync (string settle, string positionMode)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FuturesAccount> localVarResponse = await SetPositionModeAsyncWithHttpInfo(settle, positionMode);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Set Position Holding Mode, replacing the dual_mode interface The prerequisite for changing mode is that all positions have no holdings and no pending orders
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
+        /// <returns>Task of ApiResponse (FuturesAccount)</returns>
+        public async Task<ApiResponse<FuturesAccount>> SetPositionModeAsyncWithHttpInfo (string settle, string positionMode)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->SetPositionMode");
+
+            // verify the required parameter 'positionMode' is set
+            if (positionMode == null)
+                throw new ApiException(400, "Missing required parameter 'positionMode' when calling FuturesApi->SetPositionMode");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "position_mode", positionMode));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FuturesAccount>("/futures/{settle}/set_position_mode", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetPositionMode", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

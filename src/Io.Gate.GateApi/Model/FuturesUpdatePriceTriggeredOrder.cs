@@ -62,20 +62,28 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesUpdatePriceTriggeredOrder" /> class.
         /// </summary>
-        /// <param name="contact">The order ID of the modified price-triggered order. This ID is returned upon successful creation of the price-triggered order. Note: This ID must be passed in both the request path and request body..</param>
+        [JsonConstructorAttribute]
+        protected FuturesUpdatePriceTriggeredOrder() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FuturesUpdatePriceTriggeredOrder" /> class.
+        /// </summary>
+        /// <param name="orderId">The order ID of the modified price-triggered order. This ID is returned upon successful creation of the price-triggered order. Note: This ID must be passed in both the request path and request body. (required).</param>
         /// <param name="size">Modified Contract Quantity. Full Close: 0; Partial Close: Positive/Negative values indicate direction (consistent with the creation interface logic)..</param>
         /// <param name="price">Represents the modified trading price. A value of 0 indicates a market order..</param>
         /// <param name="triggerPrice">Modified Trigger Price.</param>
         /// <param name="priceType">Reference price type. 0 - Latest trade price, 1 - Mark price, 2 - Index price.</param>
         /// <param name="autoSize">One-way Mode: auto_size is not required Hedge Mode partial closing (size≠0): auto_size is not required Hedge Mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions.</param>
-        public FuturesUpdatePriceTriggeredOrder(string contact = default(string), long size = default(long), string price = default(string), string triggerPrice = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), string autoSize = default(string))
+        /// <param name="close">In One-way Mode, when closing all positions, this must be set to true to perform the closing operation When partially closing positions in One-way Mode or Hedge Mode, you can omit close or set close&#x3D;false.</param>
+        public FuturesUpdatePriceTriggeredOrder(string orderId = default(string), long size = default(long), string price = default(string), string triggerPrice = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), string autoSize = default(string), bool close = default(bool))
         {
-            this.Contact = contact;
+            // to ensure "orderId" is required (not null)
+            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for FuturesUpdatePriceTriggeredOrder and cannot be null");
             this.Size = size;
             this.Price = price;
             this.TriggerPrice = triggerPrice;
             this.PriceType = priceType;
             this.AutoSize = autoSize;
+            this.Close = close;
         }
 
         /// <summary>
@@ -86,18 +94,11 @@ namespace Io.Gate.GateApi.Model
         public string Settle { get; private set; }
 
         /// <summary>
-        /// ID of the Pending Take-Profit/Stop-Loss Trigger Order
-        /// </summary>
-        /// <value>ID of the Pending Take-Profit/Stop-Loss Trigger Order</value>
-        [DataMember(Name="order_id", EmitDefaultValue=false)]
-        public int OrderId { get; private set; }
-
-        /// <summary>
         /// The order ID of the modified price-triggered order. This ID is returned upon successful creation of the price-triggered order. Note: This ID must be passed in both the request path and request body.
         /// </summary>
         /// <value>The order ID of the modified price-triggered order. This ID is returned upon successful creation of the price-triggered order. Note: This ID must be passed in both the request path and request body.</value>
-        [DataMember(Name="contact")]
-        public string Contact { get; set; }
+        [DataMember(Name="order_id")]
+        public string OrderId { get; set; }
 
         /// <summary>
         /// Modified Contract Quantity. Full Close: 0; Partial Close: Positive/Negative values indicate direction (consistent with the creation interface logic).
@@ -128,6 +129,13 @@ namespace Io.Gate.GateApi.Model
         public string AutoSize { get; set; }
 
         /// <summary>
+        /// In One-way Mode, when closing all positions, this must be set to true to perform the closing operation When partially closing positions in One-way Mode or Hedge Mode, you can omit close or set close&#x3D;false
+        /// </summary>
+        /// <value>In One-way Mode, when closing all positions, this must be set to true to perform the closing operation When partially closing positions in One-way Mode or Hedge Mode, you can omit close or set close&#x3D;false</value>
+        [DataMember(Name="close")]
+        public bool Close { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -137,12 +145,12 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class FuturesUpdatePriceTriggeredOrder {\n");
             sb.Append("  Settle: ").Append(Settle).Append("\n");
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
-            sb.Append("  Contact: ").Append(Contact).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("  TriggerPrice: ").Append(TriggerPrice).Append("\n");
             sb.Append("  PriceType: ").Append(PriceType).Append("\n");
             sb.Append("  AutoSize: ").Append(AutoSize).Append("\n");
+            sb.Append("  Close: ").Append(Close).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -184,12 +192,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.OrderId == input.OrderId ||
-                    this.OrderId.Equals(input.OrderId)
-                ) && 
-                (
-                    this.Contact == input.Contact ||
-                    (this.Contact != null &&
-                    this.Contact.Equals(input.Contact))
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 ) && 
                 (
                     this.Size == input.Size ||
@@ -213,6 +217,10 @@ namespace Io.Gate.GateApi.Model
                     this.AutoSize == input.AutoSize ||
                     (this.AutoSize != null &&
                     this.AutoSize.Equals(input.AutoSize))
+                ) && 
+                (
+                    this.Close == input.Close ||
+                    this.Close.Equals(input.Close)
                 );
         }
 
@@ -227,9 +235,8 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.Settle != null)
                     hashCode = hashCode * 59 + this.Settle.GetHashCode();
-                hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.Contact != null)
-                    hashCode = hashCode * 59 + this.Contact.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
@@ -238,6 +245,7 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.PriceType.GetHashCode();
                 if (this.AutoSize != null)
                     hashCode = hashCode * 59 + this.AutoSize.GetHashCode();
+                hashCode = hashCode * 59 + this.Close.GetHashCode();
                 return hashCode;
             }
         }

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**ListSubAccountTransfers**](WalletApi.md#listsubaccounttransfers) | **GET** /wallet/sub_account_transfers | Get transfer records between main and sub accounts
 [**TransferWithSubAccount**](WalletApi.md#transferwithsubaccount) | **POST** /wallet/sub_account_transfers | Transfer between main and sub accounts
 [**SubAccountToSubAccount**](WalletApi.md#subaccounttosubaccount) | **POST** /wallet/sub_account_to_sub_account | Transfer between sub-accounts
-[**GetTransferOrderStatus**](WalletApi.md#gettransferorderstatus) | **GET** /wallet/order_status | Transfer status query
+[**GetTransferOrderStatus**](WalletApi.md#gettransferorderstatus) | **GET** /wallet/order_status | Main-Sub Account Transfer Status Query
 [**ListWithdrawStatus**](WalletApi.md#listwithdrawstatus) | **GET** /wallet/withdraw_status | Query withdrawal status
 [**ListSubAccountBalances**](WalletApi.md#listsubaccountbalances) | **GET** /wallet/sub_account_balances | Query sub-account balance information
 [**ListSubAccountMarginBalances**](WalletApi.md#listsubaccountmarginbalances) | **GET** /wallet/sub_account_margin_balances | Query sub-account isolated margin account balance information
@@ -642,9 +642,9 @@ Name | Type | Description  | Notes
 # **GetTransferOrderStatus**
 > TransferOrderStatus GetTransferOrderStatus (string clientOrderId = null, string txId = null)
 
-Transfer status query
+Main-Sub Account Transfer Status Query
 
-Supports querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface
+Supports querying Main-Sub Account Transfer Status based on user-defined client_order_id or tx_id returned by the transfer interface
 
 ### Example
 ```csharp
@@ -670,7 +670,7 @@ namespace Example
 
             try
             {
-                // Transfer status query
+                // Main-Sub Account Transfer Status Query
                 TransferOrderStatus result = apiInstance.GetTransferOrderStatus(clientOrderId, txId);
                 Debug.WriteLine(result);
             }
@@ -709,7 +709,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Transfer status retrieved successfully |  -  |
+| **200** | Main-Sub Account Transfer Status Retrieval Successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

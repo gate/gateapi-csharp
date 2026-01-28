@@ -36,15 +36,19 @@ namespace Io.Gate.GateApi.Model
         /// <param name="currency">Currency.</param>
         /// <param name="indexPrice">Currency Index Price.</param>
         /// <param name="minQuota">Minimum borrowing/collateral limit for the currency.</param>
-        /// <param name="leftQuota">Remaining borrowing/collateral quota for the currency.</param>
-        /// <param name="leftQuoteUsdt">Remaining currency limit converted to USDT.</param>
-        public CurrencyQuota(string currency = default(string), string indexPrice = default(string), string minQuota = default(string), string leftQuota = default(string), string leftQuoteUsdt = default(string))
+        /// <param name="leftQuota">Remaining currency limit for &#x60;borrow/collateral&#x60; (when input parameter &#x60;type&#x60; is &#x60;borrow&#x60;, represents current currency).</param>
+        /// <param name="leftQuoteUsdt">Remaining currency limit converted to USDT (when input parameter &#x60;type&#x60; is &#x60;borrow&#x60;, represents current currency).</param>
+        /// <param name="leftQuotaFixed">Remaining &#x60;borrow/collateral&#x60; limit for fixed-term currency.</param>
+        /// <param name="leftQuoteUsdtFixed">Remaining currency limit for fixed-term currency converted to USDT.</param>
+        public CurrencyQuota(string currency = default(string), string indexPrice = default(string), string minQuota = default(string), string leftQuota = default(string), string leftQuoteUsdt = default(string), string leftQuotaFixed = default(string), string leftQuoteUsdtFixed = default(string))
         {
             this.Currency = currency;
             this.IndexPrice = indexPrice;
             this.MinQuota = minQuota;
             this.LeftQuota = leftQuota;
             this.LeftQuoteUsdt = leftQuoteUsdt;
+            this.LeftQuotaFixed = leftQuotaFixed;
+            this.LeftQuoteUsdtFixed = leftQuoteUsdtFixed;
         }
 
         /// <summary>
@@ -69,18 +73,32 @@ namespace Io.Gate.GateApi.Model
         public string MinQuota { get; set; }
 
         /// <summary>
-        /// Remaining borrowing/collateral quota for the currency
+        /// Remaining currency limit for &#x60;borrow/collateral&#x60; (when input parameter &#x60;type&#x60; is &#x60;borrow&#x60;, represents current currency)
         /// </summary>
-        /// <value>Remaining borrowing/collateral quota for the currency</value>
+        /// <value>Remaining currency limit for &#x60;borrow/collateral&#x60; (when input parameter &#x60;type&#x60; is &#x60;borrow&#x60;, represents current currency)</value>
         [DataMember(Name="left_quota")]
         public string LeftQuota { get; set; }
 
         /// <summary>
-        /// Remaining currency limit converted to USDT
+        /// Remaining currency limit converted to USDT (when input parameter &#x60;type&#x60; is &#x60;borrow&#x60;, represents current currency)
         /// </summary>
-        /// <value>Remaining currency limit converted to USDT</value>
+        /// <value>Remaining currency limit converted to USDT (when input parameter &#x60;type&#x60; is &#x60;borrow&#x60;, represents current currency)</value>
         [DataMember(Name="left_quote_usdt")]
         public string LeftQuoteUsdt { get; set; }
+
+        /// <summary>
+        /// Remaining &#x60;borrow/collateral&#x60; limit for fixed-term currency
+        /// </summary>
+        /// <value>Remaining &#x60;borrow/collateral&#x60; limit for fixed-term currency</value>
+        [DataMember(Name="left_quota_fixed")]
+        public string LeftQuotaFixed { get; set; }
+
+        /// <summary>
+        /// Remaining currency limit for fixed-term currency converted to USDT
+        /// </summary>
+        /// <value>Remaining currency limit for fixed-term currency converted to USDT</value>
+        [DataMember(Name="left_quote_usdt_fixed")]
+        public string LeftQuoteUsdtFixed { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -95,6 +113,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  MinQuota: ").Append(MinQuota).Append("\n");
             sb.Append("  LeftQuota: ").Append(LeftQuota).Append("\n");
             sb.Append("  LeftQuoteUsdt: ").Append(LeftQuoteUsdt).Append("\n");
+            sb.Append("  LeftQuotaFixed: ").Append(LeftQuotaFixed).Append("\n");
+            sb.Append("  LeftQuoteUsdtFixed: ").Append(LeftQuoteUsdtFixed).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,6 +173,16 @@ namespace Io.Gate.GateApi.Model
                     this.LeftQuoteUsdt == input.LeftQuoteUsdt ||
                     (this.LeftQuoteUsdt != null &&
                     this.LeftQuoteUsdt.Equals(input.LeftQuoteUsdt))
+                ) && 
+                (
+                    this.LeftQuotaFixed == input.LeftQuotaFixed ||
+                    (this.LeftQuotaFixed != null &&
+                    this.LeftQuotaFixed.Equals(input.LeftQuotaFixed))
+                ) && 
+                (
+                    this.LeftQuoteUsdtFixed == input.LeftQuoteUsdtFixed ||
+                    (this.LeftQuoteUsdtFixed != null &&
+                    this.LeftQuoteUsdtFixed.Equals(input.LeftQuoteUsdtFixed))
                 );
         }
 
@@ -175,6 +205,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.LeftQuota.GetHashCode();
                 if (this.LeftQuoteUsdt != null)
                     hashCode = hashCode * 59 + this.LeftQuoteUsdt.GetHashCode();
+                if (this.LeftQuotaFixed != null)
+                    hashCode = hashCode * 59 + this.LeftQuotaFixed.GetHashCode();
+                if (this.LeftQuoteUsdtFixed != null)
+                    hashCode = hashCode * 59 + this.LeftQuoteUsdtFixed.GetHashCode();
                 return hashCode;
             }
         }

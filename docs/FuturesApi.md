@@ -21,12 +21,15 @@ Method | HTTP request | Description
 [**ListFuturesAccountBook**](FuturesApi.md#listfuturesaccountbook) | **GET** /futures/{settle}/account_book | Query futures account change history
 [**ListPositions**](FuturesApi.md#listpositions) | **GET** /futures/{settle}/positions | Get user position list
 [**GetPosition**](FuturesApi.md#getposition) | **GET** /futures/{settle}/positions/{contract} | Get single position information
+[**GetLeverage**](FuturesApi.md#getleverage) | **GET** /futures/{settle}/get_leverage/{contract} | Get Leverage Information for Specified Mode
 [**UpdatePositionMargin**](FuturesApi.md#updatepositionmargin) | **POST** /futures/{settle}/positions/{contract}/margin | Update position margin
 [**UpdatePositionLeverage**](FuturesApi.md#updatepositionleverage) | **POST** /futures/{settle}/positions/{contract}/leverage | Update position leverage
+[**UpdateContractPositionLeverage**](FuturesApi.md#updatecontractpositionleverage) | **POST** /futures/{settle}/positions/{contract}/set_leverage | Update Leverage for Specified Mode
 [**UpdatePositionCrossMode**](FuturesApi.md#updatepositioncrossmode) | **POST** /futures/{settle}/positions/cross_mode | Switch Position Margin Mode
 [**UpdateDualCompPositionCrossMode**](FuturesApi.md#updatedualcomppositioncrossmode) | **POST** /futures/{settle}/dual_comp/positions/cross_mode | Switch Between Cross and Isolated Margin Modes Under Hedge Mode
 [**UpdatePositionRiskLimit**](FuturesApi.md#updatepositionrisklimit) | **POST** /futures/{settle}/positions/{contract}/risk_limit | Update position risk limit
 [**SetDualMode**](FuturesApi.md#setdualmode) | **POST** /futures/{settle}/dual_mode | Set position mode
+[**SetPositionMode**](FuturesApi.md#setpositionmode) | **POST** /futures/{settle}/set_position_mode | Set Position Holding Mode, replacing the dual_mode interface
 [**GetDualModePosition**](FuturesApi.md#getdualmodeposition) | **GET** /futures/{settle}/dual_comp/positions/{contract} | Get position information in Hedge Mode
 [**UpdateDualModePositionMargin**](FuturesApi.md#updatedualmodepositionmargin) | **POST** /futures/{settle}/dual_comp/positions/{contract}/margin | Update position margin in Hedge Mode
 [**UpdateDualModePositionLeverage**](FuturesApi.md#updatedualmodepositionleverage) | **POST** /futures/{settle}/dual_comp/positions/{contract}/leverage | Update position leverage in Hedge Mode
@@ -1359,6 +1362,85 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getleverage"></a>
+# **GetLeverage**
+> FuturesLeverage GetLeverage (string settle, string contract, string posMarginMode = null, string dualSide = null)
+
+Get Leverage Information for Specified Mode
+
+Get Leverage Information for Specified Mode
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetLeverageExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var contract = "BTC_USDT";  // string | Futures contract
+            var posMarginMode = "isolated";  // string | Position Margin Mode, required for split position mode, values: isolated/cross. (optional) 
+            var dualSide = "dual_long";  // string | dual_long - Long, dual_short - Short (optional) 
+
+            try
+            {
+                // Get Leverage Information for Specified Mode
+                FuturesLeverage result = apiInstance.GetLeverage(settle, contract, posMarginMode, dualSide);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.GetLeverage: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **contract** | **string**| Futures contract | 
+ **posMarginMode** | **string**| Position Margin Mode, required for split position mode, values: isolated/cross. | [optional] 
+ **dualSide** | **string**| dual_long - Long, dual_short - Short | [optional] 
+
+### Return type
+
+[**FuturesLeverage**](FuturesLeverage.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | query leverage success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updatepositionmargin"></a>
 # **UpdatePositionMargin**
 > Position UpdatePositionMargin (string settle, string contract, string change)
@@ -1496,6 +1578,87 @@ Name | Type | Description  | Notes
  **leverage** | **string**| Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty. | 
  **crossLeverageLimit** | **string**| Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. | [optional] 
  **pid** | **int?**| Product ID | [optional] 
+
+### Return type
+
+[**Position**](Position.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Position information |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatecontractpositionleverage"></a>
+# **UpdateContractPositionLeverage**
+> Position UpdateContractPositionLeverage (string settle, string contract, string leverage, string marginMode, string dualSide = null)
+
+Update Leverage for Specified Mode
+
+To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class UpdateContractPositionLeverageExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var contract = "BTC_USDT";  // string | Futures contract
+            var leverage = "10";  // string | Position Leverage Multiple
+            var marginMode = "cross";  // string | Margin Mode isolated/cross
+            var dualSide = "dual_long";  // string | dual_long - Long, dual_short - Short (optional) 
+
+            try
+            {
+                // Update Leverage for Specified Mode
+                Position result = apiInstance.UpdateContractPositionLeverage(settle, contract, leverage, marginMode, dualSide);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.UpdateContractPositionLeverage: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **contract** | **string**| Futures contract | 
+ **leverage** | **string**| Position Leverage Multiple | 
+ **marginMode** | **string**| Margin Mode isolated/cross | 
+ **dualSide** | **string**| dual_long - Long, dual_short - Short | [optional] 
 
 ### Return type
 
@@ -1794,6 +1957,81 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
  **dualMode** | **bool**| Whether to enable Hedge Mode | 
+
+### Return type
+
+[**FuturesAccount**](FuturesAccount.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Updated successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setpositionmode"></a>
+# **SetPositionMode**
+> FuturesAccount SetPositionMode (string settle, string positionMode)
+
+Set Position Holding Mode, replacing the dual_mode interface
+
+The prerequisite for changing mode is that all positions have no holdings and no pending orders
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class SetPositionModeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var positionMode = "dual_plus";  // string | Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively
+
+            try
+            {
+                // Set Position Holding Mode, replacing the dual_mode interface
+                FuturesAccount result = apiInstance.SetPositionMode(settle, positionMode);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.SetPositionMode: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **positionMode** | **string**| Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively | 
 
 ### Return type
 

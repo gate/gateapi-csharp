@@ -226,10 +226,10 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of TransactionID</returns>
         ApiResponse<TransactionID> SubAccountToSubAccountWithHttpInfo (SubAccountToSubAccount subAccountToSubAccount);
         /// <summary>
-        /// Transfer status query
+        /// Main-Sub Account Transfer Status Query
         /// </summary>
         /// <remarks>
-        /// Supports querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface
+        /// Supports querying Main-Sub Account Transfer Status based on user-defined client_order_id or tx_id returned by the transfer interface
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientOrderId">Customer-defined ID to prevent duplicate transfers. Can be a combination of letters (case-sensitive), numbers, hyphens &#39;-&#39;, and underscores &#39;_&#39;. Can be pure letters or pure numbers with length between 1-64 characters (optional)</param>
@@ -238,10 +238,10 @@ namespace Io.Gate.GateApi.Api
         TransferOrderStatus GetTransferOrderStatus (string clientOrderId = default(string), string txId = default(string));
 
         /// <summary>
-        /// Transfer status query
+        /// Main-Sub Account Transfer Status Query
         /// </summary>
         /// <remarks>
-        /// Supports querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface
+        /// Supports querying Main-Sub Account Transfer Status based on user-defined client_order_id or tx_id returned by the transfer interface
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientOrderId">Customer-defined ID to prevent duplicate transfers. Can be a combination of letters (case-sensitive), numbers, hyphens &#39;-&#39;, and underscores &#39;_&#39;. Can be pure letters or pure numbers with length between 1-64 characters (optional)</param>
@@ -749,10 +749,10 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (TransactionID)</returns>
         Task<ApiResponse<TransactionID>> SubAccountToSubAccountAsyncWithHttpInfo (SubAccountToSubAccount subAccountToSubAccount);
         /// <summary>
-        /// Transfer status query
+        /// Main-Sub Account Transfer Status Query
         /// </summary>
         /// <remarks>
-        /// Supports querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface
+        /// Supports querying Main-Sub Account Transfer Status based on user-defined client_order_id or tx_id returned by the transfer interface
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientOrderId">Customer-defined ID to prevent duplicate transfers. Can be a combination of letters (case-sensitive), numbers, hyphens &#39;-&#39;, and underscores &#39;_&#39;. Can be pure letters or pure numbers with length between 1-64 characters (optional)</param>
@@ -761,10 +761,10 @@ namespace Io.Gate.GateApi.Api
         Task<TransferOrderStatus> GetTransferOrderStatusAsync (string clientOrderId = default(string), string txId = default(string));
 
         /// <summary>
-        /// Transfer status query
+        /// Main-Sub Account Transfer Status Query
         /// </summary>
         /// <remarks>
-        /// Supports querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface
+        /// Supports querying Main-Sub Account Transfer Status based on user-defined client_order_id or tx_id returned by the transfer interface
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientOrderId">Customer-defined ID to prevent duplicate transfers. Can be a combination of letters (case-sensitive), numbers, hyphens &#39;-&#39;, and underscores &#39;_&#39;. Can be pure letters or pure numbers with length between 1-64 characters (optional)</param>
@@ -2297,7 +2297,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Transfer status query Supports querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface
+        /// Main-Sub Account Transfer Status Query Supports querying Main-Sub Account Transfer Status based on user-defined client_order_id or tx_id returned by the transfer interface
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientOrderId">Customer-defined ID to prevent duplicate transfers. Can be a combination of letters (case-sensitive), numbers, hyphens &#39;-&#39;, and underscores &#39;_&#39;. Can be pure letters or pure numbers with length between 1-64 characters (optional)</param>
@@ -2310,7 +2310,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Transfer status query Supports querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface
+        /// Main-Sub Account Transfer Status Query Supports querying Main-Sub Account Transfer Status based on user-defined client_order_id or tx_id returned by the transfer interface
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientOrderId">Customer-defined ID to prevent duplicate transfers. Can be a combination of letters (case-sensitive), numbers, hyphens &#39;-&#39;, and underscores &#39;_&#39;. Can be pure letters or pure numbers with length between 1-64 characters (optional)</param>
@@ -2359,7 +2359,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Transfer status query Supports querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface
+        /// Main-Sub Account Transfer Status Query Supports querying Main-Sub Account Transfer Status based on user-defined client_order_id or tx_id returned by the transfer interface
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientOrderId">Customer-defined ID to prevent duplicate transfers. Can be a combination of letters (case-sensitive), numbers, hyphens &#39;-&#39;, and underscores &#39;_&#39;. Can be pure letters or pure numbers with length between 1-64 characters (optional)</param>
@@ -2373,7 +2373,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Transfer status query Supports querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface
+        /// Main-Sub Account Transfer Status Query Supports querying Main-Sub Account Transfer Status based on user-defined client_order_id or tx_id returned by the transfer interface
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientOrderId">Customer-defined ID to prevent duplicate transfers. Can be a combination of letters (case-sensitive), numbers, hyphens &#39;-&#39;, and underscores &#39;_&#39;. Can be pure letters or pure numbers with length between 1-64 characters (optional)</param>

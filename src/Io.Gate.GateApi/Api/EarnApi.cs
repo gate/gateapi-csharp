@@ -137,6 +137,25 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> PlaceDualOrderWithHttpInfo (PlaceDualInvestmentOrder placeDualInvestmentOrder);
         /// <summary>
+        /// Dual-Currency Earning Assets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>DualGetBalance</returns>
+        DualGetBalance ListDualBalance ();
+
+        /// <summary>
+        /// Dual-Currency Earning Assets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of DualGetBalance</returns>
+        ApiResponse<DualGetBalance> ListDualBalanceWithHttpInfo ();
+        /// <summary>
         /// Structured Product List
         /// </summary>
         /// <remarks>
@@ -444,6 +463,25 @@ namespace Io.Gate.GateApi.Api
         /// <param name="placeDualInvestmentOrder"></param>
         /// <returns>Task of ApiResponse</returns>
         Task<ApiResponse<Object>> PlaceDualOrderAsyncWithHttpInfo (PlaceDualInvestmentOrder placeDualInvestmentOrder);
+        /// <summary>
+        /// Dual-Currency Earning Assets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of DualGetBalance</returns>
+        Task<DualGetBalance> ListDualBalanceAsync ();
+
+        /// <summary>
+        /// Dual-Currency Earning Assets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (DualGetBalance)</returns>
+        Task<ApiResponse<DualGetBalance>> ListDualBalanceAsyncWithHttpInfo ();
         /// <summary>
         /// Structured Product List
         /// </summary>
@@ -1343,6 +1381,109 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PlaceDualOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Dual-Currency Earning Assets 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>DualGetBalance</returns>
+        public DualGetBalance ListDualBalance ()
+        {
+             ApiResponse<DualGetBalance> localVarResponse = ListDualBalanceWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Dual-Currency Earning Assets 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of DualGetBalance</returns>
+        public ApiResponse<DualGetBalance> ListDualBalanceWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<DualGetBalance>("/earn/dual/balance", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListDualBalance", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Dual-Currency Earning Assets 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of DualGetBalance</returns>
+        public async Task<DualGetBalance> ListDualBalanceAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<DualGetBalance> localVarResponse = await ListDualBalanceAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Dual-Currency Earning Assets 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (DualGetBalance)</returns>
+        public async Task<ApiResponse<DualGetBalance>> ListDualBalanceAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DualGetBalance>("/earn/dual/balance", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListDualBalance", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

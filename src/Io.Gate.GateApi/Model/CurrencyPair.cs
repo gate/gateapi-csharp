@@ -93,7 +93,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="stTag">Whether the trading pair is in ST risk assessment, false - No, true - Yes.</param>
         /// <param name="upRate">Maximum Quote Rise Percentage.</param>
         /// <param name="downRate">Maximum Quote Decline Percentage.</param>
-        /// <param name="slippage">Currency Slippage.</param>
+        /// <param name="slippage">Maximum supported slippage ratio for Spot Market Order Placement, calculated based on the latest market price at the time of order placement as the benchmark (Example: 0.03 means 3%).</param>
         /// <param name="marketOrderMaxStock">Maximum Market Order Quantity.</param>
         /// <param name="marketOrderMaxMoney">Maximum Market Order Amount.</param>
         public CurrencyPair(string id = default(string), string _base = default(string), string baseName = default(string), string quote = default(string), string quoteName = default(string), string fee = default(string), string minBaseAmount = default(string), string minQuoteAmount = default(string), string maxBaseAmount = default(string), string maxQuoteAmount = default(string), int amountPrecision = default(int), int precision = default(int), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), long sellStart = default(long), long buyStart = default(long), long delistingTime = default(long), string type = default(string), string tradeUrl = default(string), bool stTag = default(bool), string upRate = default(string), string downRate = default(string), string slippage = default(string), string marketOrderMaxStock = default(string), string marketOrderMaxMoney = default(string))
@@ -265,9 +265,9 @@ namespace Io.Gate.GateApi.Model
         public string DownRate { get; set; }
 
         /// <summary>
-        /// Currency Slippage
+        /// Maximum supported slippage ratio for Spot Market Order Placement, calculated based on the latest market price at the time of order placement as the benchmark (Example: 0.03 means 3%)
         /// </summary>
-        /// <value>Currency Slippage</value>
+        /// <value>Maximum supported slippage ratio for Spot Market Order Placement, calculated based on the latest market price at the time of order placement as the benchmark (Example: 0.03 means 3%)</value>
         [DataMember(Name="slippage")]
         public string Slippage { get; set; }
 
