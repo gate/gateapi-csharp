@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Code** | **int** |  | 
 **Message** | **string** |  | 
-**Data** | [**InlineResponse2007Data**](InlineResponse2007Data.md) |  | 
+**Timestamp** | **int** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

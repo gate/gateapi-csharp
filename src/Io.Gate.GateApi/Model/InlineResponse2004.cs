@@ -33,31 +33,25 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2004" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse2004() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2004" /> class.
-        /// </summary>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        public InlineResponse2004(int code = default(int), string message = default(string))
+        /// <param name="time">time.</param>
+        /// <param name="value">value.</param>
+        public InlineResponse2004(long time = default(long), string value = default(string))
         {
-            this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2004 and cannot be null");
+            this.Time = time;
+            this.Value = value;
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Gets or Sets Time
         /// </summary>
-        [DataMember(Name="code")]
-        public int Code { get; set; }
+        [DataMember(Name="time")]
+        public long Time { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name="message")]
-        public string Message { get; set; }
+        [DataMember(Name="value")]
+        public string Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -67,8 +61,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2004 {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Time: ").Append(Time).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,13 +98,13 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Code == input.Code ||
-                    this.Code.Equals(input.Code)
+                    this.Time == input.Time ||
+                    this.Time.Equals(input.Time)
                 ) && 
                 (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
+                    this.Value == input.Value ||
+                    (this.Value != null &&
+                    this.Value.Equals(input.Value))
                 );
         }
 
@@ -123,9 +117,9 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Value != null)
+                    hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

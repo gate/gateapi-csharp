@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Time** | **long** |  | [optional] 
-**Value** | **string** |  | [optional] 
+**Order** | [**TrailOrder**](TrailOrder.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

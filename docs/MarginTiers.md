@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Tier** | **string** | Tier | [optional] 
 **MarginRate** | **string** | Discount | [optional] 
 **LowerLimit** | **string** | Lower limit | [optional] 
-**UpperLimit** | **string** | Upper limit, \&quot;\&quot; indicates greater than (the last tier) | [optional] 
+**UpperLimit** | **string** | Upper limit, &#x60;&#x60; indicates greater than (the last tier) | [optional] 
 **Leverage** | **string** | Position leverage | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

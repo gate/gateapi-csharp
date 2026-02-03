@@ -38,23 +38,14 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2008" /> class.
         /// </summary>
-        /// <param name="message">message (required).</param>
         /// <param name="code">code (required).</param>
-        /// <param name="data">data (required).</param>
-        public InlineResponse2008(string message = default(string), int code = default(int), InlineResponse2008Data data = default(InlineResponse2008Data))
+        /// <param name="message">message (required).</param>
+        public InlineResponse2008(int code = default(int), string message = default(string))
         {
+            this.Code = code;
             // to ensure "message" is required (not null)
             this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2008 and cannot be null");
-            this.Code = code;
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse2008 and cannot be null");
         }
-
-        /// <summary>
-        /// Gets or Sets Message
-        /// </summary>
-        [DataMember(Name="message")]
-        public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Code
@@ -63,10 +54,10 @@ namespace Io.Gate.GateApi.Model
         public int Code { get; set; }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets Message
         /// </summary>
-        [DataMember(Name="data")]
-        public InlineResponse2008Data Data { get; set; }
+        [DataMember(Name="message")]
+        public string Message { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -76,9 +67,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2008 {\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -114,18 +104,13 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
                     this.Code == input.Code ||
                     this.Code.Equals(input.Code)
                 ) && 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
                 );
         }
 
@@ -138,11 +123,9 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = hashCode * 59 + this.Code.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
-                hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }

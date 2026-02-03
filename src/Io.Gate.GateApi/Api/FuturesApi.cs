@@ -254,6 +254,29 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;FundingRateRecord&gt;</returns>
         ApiResponse<List<FundingRateRecord>> ListFuturesFundingRateHistoryWithHttpInfo (string settle, string contract, int? limit = default(int?), long? from = default(long?), long? to = default(long?));
         /// <summary>
+        /// Batch Query Historical Funding Rate Data for Perpetual Contracts
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="batchFundingRatesRequest"></param>
+        /// <returns>List&lt;BatchFundingRatesResponse&gt;</returns>
+        List<BatchFundingRatesResponse> ListBatchFuturesFundingRates (string settle, BatchFundingRatesRequest batchFundingRatesRequest);
+
+        /// <summary>
+        /// Batch Query Historical Funding Rate Data for Perpetual Contracts
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="batchFundingRatesRequest"></param>
+        /// <returns>ApiResponse of List&lt;BatchFundingRatesResponse&gt;</returns>
+        ApiResponse<List<BatchFundingRatesResponse>> ListBatchFuturesFundingRatesWithHttpInfo (string settle, BatchFundingRatesRequest batchFundingRatesRequest);
+        /// <summary>
         /// Futures market insurance fund history
         /// </summary>
         /// <remarks>
@@ -465,6 +488,37 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
         ApiResponse<List<Position>> ListPositionsWithHttpInfo (string settle, bool? holding = default(bool?), int? limit = default(int?), int? offset = default(int?));
+        /// <summary>
+        /// Get user&#39;s historical position information list by time
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
+        /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>List&lt;PositionTimerange&gt;</returns>
+        List<PositionTimerange> ListPositionsTimerange (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), int? offset = default(int?));
+
+        /// <summary>
+        /// Get user&#39;s historical position information list by time
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
+        /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>ApiResponse of List&lt;PositionTimerange&gt;</returns>
+        ApiResponse<List<PositionTimerange>> ListPositionsTimerangeWithHttpInfo (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), int? offset = default(int?));
         /// <summary>
         /// Get single position information
         /// </summary>
@@ -1345,6 +1399,193 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of FuturesOrder</returns>
         ApiResponse<FuturesOrder> CreateFuturesBBOOrderWithHttpInfo (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = default(string));
         /// <summary>
+        /// Create trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createTrailOrder"></param>
+        /// <returns>InlineResponse201</returns>
+        InlineResponse201 CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder);
+
+        /// <summary>
+        /// Create trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createTrailOrder"></param>
+        /// <returns>ApiResponse of InlineResponse201</returns>
+        ApiResponse<InlineResponse201> CreateTrailOrderWithHttpInfo (string settle, CreateTrailOrder createTrailOrder);
+        /// <summary>
+        /// Terminate trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopTrailOrder"></param>
+        /// <returns>InlineResponse200</returns>
+        InlineResponse200 StopTrailOrder (string settle, StopTrailOrder stopTrailOrder);
+
+        /// <summary>
+        /// Terminate trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopTrailOrder"></param>
+        /// <returns>ApiResponse of InlineResponse200</returns>
+        ApiResponse<InlineResponse200> StopTrailOrderWithHttpInfo (string settle, StopTrailOrder stopTrailOrder);
+        /// <summary>
+        /// Batch terminate trail orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllTrailOrders"></param>
+        /// <returns>InlineResponse2001</returns>
+        InlineResponse2001 StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders);
+
+        /// <summary>
+        /// Batch terminate trail orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllTrailOrders"></param>
+        /// <returns>ApiResponse of InlineResponse2001</returns>
+        ApiResponse<InlineResponse2001> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
+        /// <summary>
+        /// Get trail order list
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Contract name (optional)</param>
+        /// <param name="isFinished">Whether historical order (optional)</param>
+        /// <param name="startAt">Start time of time range (optional)</param>
+        /// <param name="endAt">End time of time range (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <param name="sortBy">Common sort field, 1-creation time, 2-end time (optional, default to 1)</param>
+        /// <param name="hideCancel">Hide cancelled orders (optional, default to false)</param>
+        /// <param name="relatedPosition">Associated position, if provided, only return orders associated with this position, 1-long, 2-short (optional)</param>
+        /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
+        /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
+        /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
+        /// <returns>InlineResponse2001</returns>
+        InlineResponse2001 GetTrailOrders (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+
+        /// <summary>
+        /// Get trail order list
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Contract name (optional)</param>
+        /// <param name="isFinished">Whether historical order (optional)</param>
+        /// <param name="startAt">Start time of time range (optional)</param>
+        /// <param name="endAt">End time of time range (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <param name="sortBy">Common sort field, 1-creation time, 2-end time (optional, default to 1)</param>
+        /// <param name="hideCancel">Hide cancelled orders (optional, default to false)</param>
+        /// <param name="relatedPosition">Associated position, if provided, only return orders associated with this position, 1-long, 2-short (optional)</param>
+        /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
+        /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
+        /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2001</returns>
+        ApiResponse<InlineResponse2001> GetTrailOrdersWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <summary>
+        /// Get trail order details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <returns>InlineResponse2002</returns>
+        InlineResponse2002 GetTrailOrderDetail (string settle, long id);
+
+        /// <summary>
+        /// Get trail order details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> GetTrailOrderDetailWithHttpInfo (string settle, long id);
+        /// <summary>
+        /// Update trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="updateTrailOrder"></param>
+        /// <returns>InlineResponse200</returns>
+        InlineResponse200 UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder);
+
+        /// <summary>
+        /// Update trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="updateTrailOrder"></param>
+        /// <returns>ApiResponse of InlineResponse200</returns>
+        ApiResponse<InlineResponse200> UpdateTrailOrderWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder);
+        /// <summary>
+        /// Get trail order user modification records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <returns>InlineResponse2003</returns>
+        InlineResponse2003 GetTrailOrderChangeLog (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
+
+        /// <summary>
+        /// Get trail order user modification records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <returns>ApiResponse of InlineResponse2003</returns>
+        ApiResponse<InlineResponse2003> GetTrailOrderChangeLogWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
+        /// <summary>
         /// Query auto order list
         /// </summary>
         /// <remarks>
@@ -1726,6 +1967,29 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;FundingRateRecord&gt;)</returns>
         Task<ApiResponse<List<FundingRateRecord>>> ListFuturesFundingRateHistoryAsyncWithHttpInfo (string settle, string contract, int? limit = default(int?), long? from = default(long?), long? to = default(long?));
         /// <summary>
+        /// Batch Query Historical Funding Rate Data for Perpetual Contracts
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="batchFundingRatesRequest"></param>
+        /// <returns>Task of List&lt;BatchFundingRatesResponse&gt;</returns>
+        Task<List<BatchFundingRatesResponse>> ListBatchFuturesFundingRatesAsync (string settle, BatchFundingRatesRequest batchFundingRatesRequest);
+
+        /// <summary>
+        /// Batch Query Historical Funding Rate Data for Perpetual Contracts
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="batchFundingRatesRequest"></param>
+        /// <returns>Task of ApiResponse (List&lt;BatchFundingRatesResponse&gt;)</returns>
+        Task<ApiResponse<List<BatchFundingRatesResponse>>> ListBatchFuturesFundingRatesAsyncWithHttpInfo (string settle, BatchFundingRatesRequest batchFundingRatesRequest);
+        /// <summary>
         /// Futures market insurance fund history
         /// </summary>
         /// <remarks>
@@ -1937,6 +2201,37 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
         Task<ApiResponse<List<Position>>> ListPositionsAsyncWithHttpInfo (string settle, bool? holding = default(bool?), int? limit = default(int?), int? offset = default(int?));
+        /// <summary>
+        /// Get user&#39;s historical position information list by time
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
+        /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>Task of List&lt;PositionTimerange&gt;</returns>
+        Task<List<PositionTimerange>> ListPositionsTimerangeAsync (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), int? offset = default(int?));
+
+        /// <summary>
+        /// Get user&#39;s historical position information list by time
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
+        /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>Task of ApiResponse (List&lt;PositionTimerange&gt;)</returns>
+        Task<ApiResponse<List<PositionTimerange>>> ListPositionsTimerangeAsyncWithHttpInfo (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), int? offset = default(int?));
         /// <summary>
         /// Get single position information
         /// </summary>
@@ -2816,6 +3111,193 @@ namespace Io.Gate.GateApi.Api
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (FuturesOrder)</returns>
         Task<ApiResponse<FuturesOrder>> CreateFuturesBBOOrderAsyncWithHttpInfo (string settle, FuturesBBOOrder futuresBBOOrder, string xGateExptime = default(string));
+        /// <summary>
+        /// Create trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createTrailOrder"></param>
+        /// <returns>Task of InlineResponse201</returns>
+        Task<InlineResponse201> CreateTrailOrderAsync (string settle, CreateTrailOrder createTrailOrder);
+
+        /// <summary>
+        /// Create trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createTrailOrder"></param>
+        /// <returns>Task of ApiResponse (InlineResponse201)</returns>
+        Task<ApiResponse<InlineResponse201>> CreateTrailOrderAsyncWithHttpInfo (string settle, CreateTrailOrder createTrailOrder);
+        /// <summary>
+        /// Terminate trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopTrailOrder"></param>
+        /// <returns>Task of InlineResponse200</returns>
+        Task<InlineResponse200> StopTrailOrderAsync (string settle, StopTrailOrder stopTrailOrder);
+
+        /// <summary>
+        /// Terminate trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopTrailOrder"></param>
+        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
+        Task<ApiResponse<InlineResponse200>> StopTrailOrderAsyncWithHttpInfo (string settle, StopTrailOrder stopTrailOrder);
+        /// <summary>
+        /// Batch terminate trail orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllTrailOrders"></param>
+        /// <returns>Task of InlineResponse2001</returns>
+        Task<InlineResponse2001> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders);
+
+        /// <summary>
+        /// Batch terminate trail orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllTrailOrders"></param>
+        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
+        Task<ApiResponse<InlineResponse2001>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
+        /// <summary>
+        /// Get trail order list
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Contract name (optional)</param>
+        /// <param name="isFinished">Whether historical order (optional)</param>
+        /// <param name="startAt">Start time of time range (optional)</param>
+        /// <param name="endAt">End time of time range (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <param name="sortBy">Common sort field, 1-creation time, 2-end time (optional, default to 1)</param>
+        /// <param name="hideCancel">Hide cancelled orders (optional, default to false)</param>
+        /// <param name="relatedPosition">Associated position, if provided, only return orders associated with this position, 1-long, 2-short (optional)</param>
+        /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
+        /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
+        /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
+        /// <returns>Task of InlineResponse2001</returns>
+        Task<InlineResponse2001> GetTrailOrdersAsync (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+
+        /// <summary>
+        /// Get trail order list
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Contract name (optional)</param>
+        /// <param name="isFinished">Whether historical order (optional)</param>
+        /// <param name="startAt">Start time of time range (optional)</param>
+        /// <param name="endAt">End time of time range (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <param name="sortBy">Common sort field, 1-creation time, 2-end time (optional, default to 1)</param>
+        /// <param name="hideCancel">Hide cancelled orders (optional, default to false)</param>
+        /// <param name="relatedPosition">Associated position, if provided, only return orders associated with this position, 1-long, 2-short (optional)</param>
+        /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
+        /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
+        /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
+        Task<ApiResponse<InlineResponse2001>> GetTrailOrdersAsyncWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <summary>
+        /// Get trail order details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        Task<InlineResponse2002> GetTrailOrderDetailAsync (string settle, long id);
+
+        /// <summary>
+        /// Get trail order details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        Task<ApiResponse<InlineResponse2002>> GetTrailOrderDetailAsyncWithHttpInfo (string settle, long id);
+        /// <summary>
+        /// Update trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="updateTrailOrder"></param>
+        /// <returns>Task of InlineResponse200</returns>
+        Task<InlineResponse200> UpdateTrailOrderAsync (string settle, UpdateTrailOrder updateTrailOrder);
+
+        /// <summary>
+        /// Update trail order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="updateTrailOrder"></param>
+        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
+        Task<ApiResponse<InlineResponse200>> UpdateTrailOrderAsyncWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder);
+        /// <summary>
+        /// Get trail order user modification records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <returns>Task of InlineResponse2003</returns>
+        Task<InlineResponse2003> GetTrailOrderChangeLogAsync (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
+
+        /// <summary>
+        /// Get trail order user modification records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+        Task<ApiResponse<InlineResponse2003>> GetTrailOrderChangeLogAsyncWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Query auto order list
         /// </summary>
@@ -4347,6 +4829,135 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
+        /// Batch Query Historical Funding Rate Data for Perpetual Contracts 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="batchFundingRatesRequest"></param>
+        /// <returns>List&lt;BatchFundingRatesResponse&gt;</returns>
+        public List<BatchFundingRatesResponse> ListBatchFuturesFundingRates (string settle, BatchFundingRatesRequest batchFundingRatesRequest)
+        {
+             ApiResponse<List<BatchFundingRatesResponse>> localVarResponse = ListBatchFuturesFundingRatesWithHttpInfo(settle, batchFundingRatesRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Batch Query Historical Funding Rate Data for Perpetual Contracts 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="batchFundingRatesRequest"></param>
+        /// <returns>ApiResponse of List&lt;BatchFundingRatesResponse&gt;</returns>
+        public ApiResponse<List<BatchFundingRatesResponse>> ListBatchFuturesFundingRatesWithHttpInfo (string settle, BatchFundingRatesRequest batchFundingRatesRequest)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->ListBatchFuturesFundingRates");
+
+            // verify the required parameter 'batchFundingRatesRequest' is set
+            if (batchFundingRatesRequest == null)
+                throw new ApiException(400, "Missing required parameter 'batchFundingRatesRequest' when calling FuturesApi->ListBatchFuturesFundingRates");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = batchFundingRatesRequest;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<BatchFundingRatesResponse>>("/futures/{settle}/funding_rates", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListBatchFuturesFundingRates", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Batch Query Historical Funding Rate Data for Perpetual Contracts 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="batchFundingRatesRequest"></param>
+        /// <returns>Task of List&lt;BatchFundingRatesResponse&gt;</returns>
+        public async Task<List<BatchFundingRatesResponse>> ListBatchFuturesFundingRatesAsync (string settle, BatchFundingRatesRequest batchFundingRatesRequest)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<BatchFundingRatesResponse>> localVarResponse = await ListBatchFuturesFundingRatesAsyncWithHttpInfo(settle, batchFundingRatesRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Batch Query Historical Funding Rate Data for Perpetual Contracts 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="batchFundingRatesRequest"></param>
+        /// <returns>Task of ApiResponse (List&lt;BatchFundingRatesResponse&gt;)</returns>
+        public async Task<ApiResponse<List<BatchFundingRatesResponse>>> ListBatchFuturesFundingRatesAsyncWithHttpInfo (string settle, BatchFundingRatesRequest batchFundingRatesRequest)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->ListBatchFuturesFundingRates");
+
+            // verify the required parameter 'batchFundingRatesRequest' is set
+            if (batchFundingRatesRequest == null)
+                throw new ApiException(400, "Missing required parameter 'batchFundingRatesRequest' when calling FuturesApi->ListBatchFuturesFundingRates");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = batchFundingRatesRequest;
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<BatchFundingRatesResponse>>("/futures/{settle}/funding_rates", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListBatchFuturesFundingRates", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Futures market insurance fund history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
@@ -5524,6 +6135,185 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get user&#39;s historical position information list by time 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
+        /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>List&lt;PositionTimerange&gt;</returns>
+        public List<PositionTimerange> ListPositionsTimerange (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), int? offset = default(int?))
+        {
+             ApiResponse<List<PositionTimerange>> localVarResponse = ListPositionsTimerangeWithHttpInfo(settle, contract, from, to, limit, offset);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get user&#39;s historical position information list by time 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
+        /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>ApiResponse of List&lt;PositionTimerange&gt;</returns>
+        public ApiResponse<List<PositionTimerange>> ListPositionsTimerangeWithHttpInfo (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), int? offset = default(int?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->ListPositionsTimerange");
+
+            // verify the required parameter 'contract' is set
+            if (contract == null)
+                throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->ListPositionsTimerange");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (offset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "offset", offset));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<PositionTimerange>>("/futures/{settle}/positions_timerange", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListPositionsTimerange", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get user&#39;s historical position information list by time 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
+        /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>Task of List&lt;PositionTimerange&gt;</returns>
+        public async Task<List<PositionTimerange>> ListPositionsTimerangeAsync (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), int? offset = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<PositionTimerange>> localVarResponse = await ListPositionsTimerangeAsyncWithHttpInfo(settle, contract, from, to, limit, offset);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get user&#39;s historical position information list by time 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
+        /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>Task of ApiResponse (List&lt;PositionTimerange&gt;)</returns>
+        public async Task<ApiResponse<List<PositionTimerange>>> ListPositionsTimerangeAsyncWithHttpInfo (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), int? offset = default(int?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->ListPositionsTimerange");
+
+            // verify the required parameter 'contract' is set
+            if (contract == null)
+                throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->ListPositionsTimerange");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (offset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "offset", offset));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<PositionTimerange>>("/futures/{settle}/positions_timerange", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListPositionsTimerange", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -10577,6 +11367,1069 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateFuturesBBOOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createTrailOrder"></param>
+        /// <returns>InlineResponse201</returns>
+        public InlineResponse201 CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder)
+        {
+             ApiResponse<InlineResponse201> localVarResponse = CreateTrailOrderWithHttpInfo(settle, createTrailOrder);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createTrailOrder"></param>
+        /// <returns>ApiResponse of InlineResponse201</returns>
+        public ApiResponse<InlineResponse201> CreateTrailOrderWithHttpInfo (string settle, CreateTrailOrder createTrailOrder)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->CreateTrailOrder");
+
+            // verify the required parameter 'createTrailOrder' is set
+            if (createTrailOrder == null)
+                throw new ApiException(400, "Missing required parameter 'createTrailOrder' when calling FuturesApi->CreateTrailOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = createTrailOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse201>("/futures/{settle}/autoorder/v1/trail/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateTrailOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createTrailOrder"></param>
+        /// <returns>Task of InlineResponse201</returns>
+        public async Task<InlineResponse201> CreateTrailOrderAsync (string settle, CreateTrailOrder createTrailOrder)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse201> localVarResponse = await CreateTrailOrderAsyncWithHttpInfo(settle, createTrailOrder);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createTrailOrder"></param>
+        /// <returns>Task of ApiResponse (InlineResponse201)</returns>
+        public async Task<ApiResponse<InlineResponse201>> CreateTrailOrderAsyncWithHttpInfo (string settle, CreateTrailOrder createTrailOrder)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->CreateTrailOrder");
+
+            // verify the required parameter 'createTrailOrder' is set
+            if (createTrailOrder == null)
+                throw new ApiException(400, "Missing required parameter 'createTrailOrder' when calling FuturesApi->CreateTrailOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = createTrailOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse201>("/futures/{settle}/autoorder/v1/trail/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateTrailOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Terminate trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopTrailOrder"></param>
+        /// <returns>InlineResponse200</returns>
+        public InlineResponse200 StopTrailOrder (string settle, StopTrailOrder stopTrailOrder)
+        {
+             ApiResponse<InlineResponse200> localVarResponse = StopTrailOrderWithHttpInfo(settle, stopTrailOrder);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Terminate trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopTrailOrder"></param>
+        /// <returns>ApiResponse of InlineResponse200</returns>
+        public ApiResponse<InlineResponse200> StopTrailOrderWithHttpInfo (string settle, StopTrailOrder stopTrailOrder)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->StopTrailOrder");
+
+            // verify the required parameter 'stopTrailOrder' is set
+            if (stopTrailOrder == null)
+                throw new ApiException(400, "Missing required parameter 'stopTrailOrder' when calling FuturesApi->StopTrailOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = stopTrailOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse200>("/futures/{settle}/autoorder/v1/trail/stop", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopTrailOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Terminate trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopTrailOrder"></param>
+        /// <returns>Task of InlineResponse200</returns>
+        public async Task<InlineResponse200> StopTrailOrderAsync (string settle, StopTrailOrder stopTrailOrder)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse200> localVarResponse = await StopTrailOrderAsyncWithHttpInfo(settle, stopTrailOrder);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Terminate trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopTrailOrder"></param>
+        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
+        public async Task<ApiResponse<InlineResponse200>> StopTrailOrderAsyncWithHttpInfo (string settle, StopTrailOrder stopTrailOrder)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->StopTrailOrder");
+
+            // verify the required parameter 'stopTrailOrder' is set
+            if (stopTrailOrder == null)
+                throw new ApiException(400, "Missing required parameter 'stopTrailOrder' when calling FuturesApi->StopTrailOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = stopTrailOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse200>("/futures/{settle}/autoorder/v1/trail/stop", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopTrailOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Batch terminate trail orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllTrailOrders"></param>
+        /// <returns>InlineResponse2001</returns>
+        public InlineResponse2001 StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
+        {
+             ApiResponse<InlineResponse2001> localVarResponse = StopAllTrailOrdersWithHttpInfo(settle, stopAllTrailOrders);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Batch terminate trail orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllTrailOrders"></param>
+        /// <returns>ApiResponse of InlineResponse2001</returns>
+        public ApiResponse<InlineResponse2001> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->StopAllTrailOrders");
+
+            // verify the required parameter 'stopAllTrailOrders' is set
+            if (stopAllTrailOrders == null)
+                throw new ApiException(400, "Missing required parameter 'stopAllTrailOrders' when calling FuturesApi->StopAllTrailOrders");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = stopAllTrailOrders;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse2001>("/futures/{settle}/autoorder/v1/trail/stop_all", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopAllTrailOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Batch terminate trail orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllTrailOrders"></param>
+        /// <returns>Task of InlineResponse2001</returns>
+        public async Task<InlineResponse2001> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2001> localVarResponse = await StopAllTrailOrdersAsyncWithHttpInfo(settle, stopAllTrailOrders);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Batch terminate trail orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllTrailOrders"></param>
+        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
+        public async Task<ApiResponse<InlineResponse2001>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->StopAllTrailOrders");
+
+            // verify the required parameter 'stopAllTrailOrders' is set
+            if (stopAllTrailOrders == null)
+                throw new ApiException(400, "Missing required parameter 'stopAllTrailOrders' when calling FuturesApi->StopAllTrailOrders");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = stopAllTrailOrders;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2001>("/futures/{settle}/autoorder/v1/trail/stop_all", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopAllTrailOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get trail order list 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Contract name (optional)</param>
+        /// <param name="isFinished">Whether historical order (optional)</param>
+        /// <param name="startAt">Start time of time range (optional)</param>
+        /// <param name="endAt">End time of time range (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <param name="sortBy">Common sort field, 1-creation time, 2-end time (optional, default to 1)</param>
+        /// <param name="hideCancel">Hide cancelled orders (optional, default to false)</param>
+        /// <param name="relatedPosition">Associated position, if provided, only return orders associated with this position, 1-long, 2-short (optional)</param>
+        /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
+        /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
+        /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
+        /// <returns>InlineResponse2001</returns>
+        public InlineResponse2001 GetTrailOrders (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        {
+             ApiResponse<InlineResponse2001> localVarResponse = GetTrailOrdersWithHttpInfo(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get trail order list 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Contract name (optional)</param>
+        /// <param name="isFinished">Whether historical order (optional)</param>
+        /// <param name="startAt">Start time of time range (optional)</param>
+        /// <param name="endAt">End time of time range (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <param name="sortBy">Common sort field, 1-creation time, 2-end time (optional, default to 1)</param>
+        /// <param name="hideCancel">Hide cancelled orders (optional, default to false)</param>
+        /// <param name="relatedPosition">Associated position, if provided, only return orders associated with this position, 1-long, 2-short (optional)</param>
+        /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
+        /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
+        /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2001</returns>
+        public ApiResponse<InlineResponse2001> GetTrailOrdersWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetTrailOrders");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            if (contract != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            }
+            if (isFinished != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "is_finished", isFinished));
+            }
+            if (startAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_at", startAt));
+            }
+            if (endAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_at", endAt));
+            }
+            if (pageNum != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_num", pageNum));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            if (sortBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sort_by", sortBy));
+            }
+            if (hideCancel != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "hide_cancel", hideCancel));
+            }
+            if (relatedPosition != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "related_position", relatedPosition));
+            }
+            if (sortByTrigger != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sort_by_trigger", sortByTrigger));
+            }
+            if (reduceOnly != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "reduce_only", reduceOnly));
+            }
+            if (side != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "side", side));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse2001>("/futures/{settle}/autoorder/v1/trail/list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTrailOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get trail order list 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Contract name (optional)</param>
+        /// <param name="isFinished">Whether historical order (optional)</param>
+        /// <param name="startAt">Start time of time range (optional)</param>
+        /// <param name="endAt">End time of time range (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <param name="sortBy">Common sort field, 1-creation time, 2-end time (optional, default to 1)</param>
+        /// <param name="hideCancel">Hide cancelled orders (optional, default to false)</param>
+        /// <param name="relatedPosition">Associated position, if provided, only return orders associated with this position, 1-long, 2-short (optional)</param>
+        /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
+        /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
+        /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
+        /// <returns>Task of InlineResponse2001</returns>
+        public async Task<InlineResponse2001> GetTrailOrdersAsync (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2001> localVarResponse = await GetTrailOrdersAsyncWithHttpInfo(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get trail order list 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="contract">Contract name (optional)</param>
+        /// <param name="isFinished">Whether historical order (optional)</param>
+        /// <param name="startAt">Start time of time range (optional)</param>
+        /// <param name="endAt">End time of time range (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <param name="sortBy">Common sort field, 1-creation time, 2-end time (optional, default to 1)</param>
+        /// <param name="hideCancel">Hide cancelled orders (optional, default to false)</param>
+        /// <param name="relatedPosition">Associated position, if provided, only return orders associated with this position, 1-long, 2-short (optional)</param>
+        /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
+        /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
+        /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
+        public async Task<ApiResponse<InlineResponse2001>> GetTrailOrdersAsyncWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetTrailOrders");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            if (contract != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            }
+            if (isFinished != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "is_finished", isFinished));
+            }
+            if (startAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_at", startAt));
+            }
+            if (endAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_at", endAt));
+            }
+            if (pageNum != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_num", pageNum));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            if (sortBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sort_by", sortBy));
+            }
+            if (hideCancel != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "hide_cancel", hideCancel));
+            }
+            if (relatedPosition != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "related_position", relatedPosition));
+            }
+            if (sortByTrigger != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sort_by_trigger", sortByTrigger));
+            }
+            if (reduceOnly != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "reduce_only", reduceOnly));
+            }
+            if (side != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "side", side));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2001>("/futures/{settle}/autoorder/v1/trail/list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTrailOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get trail order details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 GetTrailOrderDetail (string settle, long id)
+        {
+             ApiResponse<InlineResponse2002> localVarResponse = GetTrailOrderDetailWithHttpInfo(settle, id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get trail order details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse<InlineResponse2002> GetTrailOrderDetailWithHttpInfo (string settle, long id)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetTrailOrderDetail");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "id", id));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse2002>("/futures/{settle}/autoorder/v1/trail/detail", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTrailOrderDetail", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get trail order details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        public async Task<InlineResponse2002> GetTrailOrderDetailAsync (string settle, long id)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2002> localVarResponse = await GetTrailOrderDetailAsyncWithHttpInfo(settle, id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get trail order details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async Task<ApiResponse<InlineResponse2002>> GetTrailOrderDetailAsyncWithHttpInfo (string settle, long id)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetTrailOrderDetail");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "id", id));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2002>("/futures/{settle}/autoorder/v1/trail/detail", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTrailOrderDetail", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="updateTrailOrder"></param>
+        /// <returns>InlineResponse200</returns>
+        public InlineResponse200 UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder)
+        {
+             ApiResponse<InlineResponse200> localVarResponse = UpdateTrailOrderWithHttpInfo(settle, updateTrailOrder);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="updateTrailOrder"></param>
+        /// <returns>ApiResponse of InlineResponse200</returns>
+        public ApiResponse<InlineResponse200> UpdateTrailOrderWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdateTrailOrder");
+
+            // verify the required parameter 'updateTrailOrder' is set
+            if (updateTrailOrder == null)
+                throw new ApiException(400, "Missing required parameter 'updateTrailOrder' when calling FuturesApi->UpdateTrailOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = updateTrailOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse200>("/futures/{settle}/autoorder/v1/trail/update", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateTrailOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="updateTrailOrder"></param>
+        /// <returns>Task of InlineResponse200</returns>
+        public async Task<InlineResponse200> UpdateTrailOrderAsync (string settle, UpdateTrailOrder updateTrailOrder)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse200> localVarResponse = await UpdateTrailOrderAsyncWithHttpInfo(settle, updateTrailOrder);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update trail order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="updateTrailOrder"></param>
+        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
+        public async Task<ApiResponse<InlineResponse200>> UpdateTrailOrderAsyncWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdateTrailOrder");
+
+            // verify the required parameter 'updateTrailOrder' is set
+            if (updateTrailOrder == null)
+                throw new ApiException(400, "Missing required parameter 'updateTrailOrder' when calling FuturesApi->UpdateTrailOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = updateTrailOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse200>("/futures/{settle}/autoorder/v1/trail/update", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateTrailOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get trail order user modification records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <returns>InlineResponse2003</returns>
+        public InlineResponse2003 GetTrailOrderChangeLog (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
+        {
+             ApiResponse<InlineResponse2003> localVarResponse = GetTrailOrderChangeLogWithHttpInfo(settle, id, pageNum, pageSize);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get trail order user modification records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <returns>ApiResponse of InlineResponse2003</returns>
+        public ApiResponse<InlineResponse2003> GetTrailOrderChangeLogWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetTrailOrderChangeLog");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "id", id));
+            if (pageNum != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_num", pageNum));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse2003>("/futures/{settle}/autoorder/v1/trail/change_log", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTrailOrderChangeLog", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get trail order user modification records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <returns>Task of InlineResponse2003</returns>
+        public async Task<InlineResponse2003> GetTrailOrderChangeLogAsync (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2003> localVarResponse = await GetTrailOrderChangeLogAsyncWithHttpInfo(settle, id, pageNum, pageSize);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get trail order user modification records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+        public async Task<ApiResponse<InlineResponse2003>> GetTrailOrderChangeLogAsyncWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetTrailOrderChangeLog");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "id", id));
+            if (pageNum != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_num", pageNum));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2003>("/futures/{settle}/autoorder/v1/trail/change_log", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTrailOrderChangeLog", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

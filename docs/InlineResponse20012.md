@@ -5,12 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Timestamp** | **decimal** |  | 
-**Method** | **string** |  | 
-**Code** | **int** |  | 
 **Message** | **string** |  | 
+**Code** | **int** |  | 
 **Data** | [**InlineResponse20012Data**](InlineResponse20012Data.md) |  | 
-**Version** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OrderId** | **string** | Order ID | 
-**Text** | **string** | User-defined Order ID | 
+**Symbol** | **string** |  | [optional] 
+**Tiers** | [**List&lt;RuleRiskLimitsTiers&gt;**](RuleRiskLimitsTiers.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

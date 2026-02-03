@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="createotcquote"></a>
 # **CreateOtcQuote**
-> InlineResponse2002 CreateOtcQuote (InlineObject1 inlineObject1)
+> InlineResponse2006 CreateOtcQuote (InlineObject1 inlineObject1)
 
 Fiat and stablecoin quote
 
@@ -47,7 +47,7 @@ namespace Example
             try
             {
                 // Fiat and stablecoin quote
-                InlineResponse2002 result = apiInstance.CreateOtcQuote(inlineObject1);
+                InlineResponse2006 result = apiInstance.CreateOtcQuote(inlineObject1);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="createotcorder"></a>
 # **CreateOtcOrder**
-> InlineResponse2003 CreateOtcOrder (InlineObject2 inlineObject2)
+> InlineResponse2007 CreateOtcOrder (InlineObject2 inlineObject2)
 
 Create fiat order
 
@@ -120,7 +120,7 @@ namespace Example
             try
             {
                 // Create fiat order
-                InlineResponse2003 result = apiInstance.CreateOtcOrder(inlineObject2);
+                InlineResponse2007 result = apiInstance.CreateOtcOrder(inlineObject2);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 <a name="createstablecoinorder"></a>
 # **CreateStableCoinOrder**
-> InlineResponse2004 CreateStableCoinOrder (InlineObject3 inlineObject3)
+> InlineResponse2008 CreateStableCoinOrder (InlineObject3 inlineObject3)
 
 Create stablecoin order
 
@@ -193,7 +193,7 @@ namespace Example
             try
             {
                 // Create stablecoin order
-                InlineResponse2004 result = apiInstance.CreateStableCoinOrder(inlineObject3);
+                InlineResponse2008 result = apiInstance.CreateStableCoinOrder(inlineObject3);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserdefaultbank"></a>
 # **GetUserDefaultBank**
-> InlineResponse2005 GetUserDefaultBank ()
+> InlineResponse2009 GetUserDefaultBank ()
 
 Get user's default bank account information
 
@@ -265,7 +265,7 @@ namespace Example
             try
             {
                 // Get user's default bank account information
-                InlineResponse2005 result = apiInstance.GetUserDefaultBank();
+                InlineResponse2009 result = apiInstance.GetUserDefaultBank();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -285,7 +285,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -305,7 +305,7 @@ This endpoint does not need any parameter.
 
 <a name="markotcorderpaid"></a>
 # **MarkOtcOrderPaid**
-> InlineResponse2003 MarkOtcOrderPaid (InlineObject4 inlineObject4)
+> InlineResponse2007 MarkOtcOrderPaid (InlineObject4 inlineObject4)
 
 Mark fiat order as paid
 
@@ -335,7 +335,7 @@ namespace Example
             try
             {
                 // Mark fiat order as paid
-                InlineResponse2003 result = apiInstance.MarkOtcOrderPaid(inlineObject4);
+                InlineResponse2007 result = apiInstance.MarkOtcOrderPaid(inlineObject4);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 <a name="cancelotcorder"></a>
 # **CancelOtcOrder**
-> InlineResponse2003 CancelOtcOrder (string orderId)
+> InlineResponse2007 CancelOtcOrder (string orderId)
 
 Fiat order cancellation
 
@@ -408,7 +408,7 @@ namespace Example
             try
             {
                 // Fiat order cancellation
-                InlineResponse2003 result = apiInstance.CancelOtcOrder(orderId);
+                InlineResponse2007 result = apiInstance.CancelOtcOrder(orderId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 <a name="listotcorders"></a>
 # **ListOtcOrders**
-> InlineResponse2006 ListOtcOrders (string type = null, string fiatCurrency = null, string cryptoCurrency = null, string startTime = null, string endTime = null, string status = null, string pn = null, string ps = null)
+> InlineResponse20010 ListOtcOrders (string type = null, string fiatCurrency = null, string cryptoCurrency = null, string startTime = null, string endTime = null, string status = null, string pn = null, string ps = null)
 
 Fiat order list
 
@@ -488,7 +488,7 @@ namespace Example
             try
             {
                 // Fiat order list
-                InlineResponse2006 result = apiInstance.ListOtcOrders(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
+                InlineResponse20010 result = apiInstance.ListOtcOrders(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 
 <a name="liststablecoinorders"></a>
 # **ListStableCoinOrders**
-> InlineResponse2007 ListStableCoinOrders (string pageSize = null, string pageNumber = null, string coinName = null, string startTime = null, string endTime = null, string status = null)
+> InlineResponse20011 ListStableCoinOrders (string pageSize = null, string pageNumber = null, string coinName = null, string startTime = null, string endTime = null, string status = null)
 
 Stablecoin order list
 
@@ -573,7 +573,7 @@ namespace Example
             try
             {
                 // Stablecoin order list
-                InlineResponse2007 result = apiInstance.ListStableCoinOrders(pageSize, pageNumber, coinName, startTime, endTime, status);
+                InlineResponse20011 result = apiInstance.ListStableCoinOrders(pageSize, pageNumber, coinName, startTime, endTime, status);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -621,7 +621,7 @@ Name | Type | Description  | Notes
 
 <a name="getotcorderdetail"></a>
 # **GetOtcOrderDetail**
-> InlineResponse2008 GetOtcOrderDetail (string orderId)
+> InlineResponse20012 GetOtcOrderDetail (string orderId)
 
 Fiat order details
 
@@ -651,7 +651,7 @@ namespace Example
             try
             {
                 // Fiat order details
-                InlineResponse2008 result = apiInstance.GetOtcOrderDetail(orderId);
+                InlineResponse20012 result = apiInstance.GetOtcOrderDetail(orderId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -674,7 +674,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 

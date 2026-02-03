@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Code** | **int** |  | 
 **Message** | **string** |  | 
 **Data** | [**InlineResponse20016Data**](InlineResponse20016Data.md) |  | 
-**Version** | **string** | Version number | 
+**Version** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

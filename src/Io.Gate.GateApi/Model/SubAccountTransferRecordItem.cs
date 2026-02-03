@@ -41,7 +41,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="subAccount">Sub account user ID (required).</param>
         /// <param name="subAccountType">Target sub-account trading account: spot - spot account, futures - perpetual contract account, delivery - delivery contract account, options - options account (default to &quot;spot&quot;).</param>
         /// <param name="currency">Transfer currency name (required).</param>
-        /// <param name="amount">Transfer amount (required).</param>
+        /// <param name="amount">Transfer Amount (required).</param>
         /// <param name="direction">Transfer direction: to - transfer into sub-account, from - transfer out from sub-account (required).</param>
         /// <param name="clientOrderId">Customer-defined ID to prevent duplicate transfers. Can be a combination of letters (case-sensitive), numbers, hyphens &#39;-&#39;, and underscores &#39;_&#39;. Can be pure letters or pure numbers with length between 1-64 characters.</param>
         /// <param name="status">Sub-account transfer record status, currently only &#39;success&#39;.</param>
@@ -97,9 +97,9 @@ namespace Io.Gate.GateApi.Model
         public string Currency { get; set; }
 
         /// <summary>
-        /// Transfer amount
+        /// Transfer Amount
         /// </summary>
-        /// <value>Transfer amount</value>
+        /// <value>Transfer Amount</value>
         [DataMember(Name="amount")]
         public string Amount { get; set; }
 

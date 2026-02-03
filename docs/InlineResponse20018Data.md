@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SRVTM** | **int** | Timestamp when message was successfully sent (current timestamp) | 
+**Status** | **int** | Ad status after successful update | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

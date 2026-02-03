@@ -5,10 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Coin** | **string** | Currency | 
-**ExchangeType** | **string** | Exchange | 
-**HourInterestRate** | **string** | Hourly Interest Rate | 
-**Time** | **string** | Millisecond Timestamp | 
+**OrderId** | **decimal** |  | 
+**Text** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

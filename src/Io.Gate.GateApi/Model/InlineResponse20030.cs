@@ -38,49 +38,26 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20030" /> class.
         /// </summary>
-        /// <param name="coin">Currency (required).</param>
-        /// <param name="exchangeType">Exchange (required).</param>
-        /// <param name="hourInterestRate">Hourly Interest Rate (required).</param>
-        /// <param name="time">Millisecond Timestamp (required).</param>
-        public InlineResponse20030(string coin = default(string), string exchangeType = default(string), string hourInterestRate = default(string), string time = default(string))
+        /// <param name="orderId">orderId (required).</param>
+        /// <param name="text">text (required).</param>
+        public InlineResponse20030(decimal orderId = default(decimal), string text = default(string))
         {
-            // to ensure "coin" is required (not null)
-            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "exchangeType" is required (not null)
-            this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "hourInterestRate" is required (not null)
-            this.HourInterestRate = hourInterestRate ?? throw new ArgumentNullException("hourInterestRate", "hourInterestRate is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "time" is required (not null)
-            this.Time = time ?? throw new ArgumentNullException("time", "time is a required property for InlineResponse20030 and cannot be null");
+            this.OrderId = orderId;
+            // to ensure "text" is required (not null)
+            this.Text = text ?? throw new ArgumentNullException("text", "text is a required property for InlineResponse20030 and cannot be null");
         }
 
         /// <summary>
-        /// Currency
+        /// Gets or Sets OrderId
         /// </summary>
-        /// <value>Currency</value>
-        [DataMember(Name="coin")]
-        public string Coin { get; set; }
+        [DataMember(Name="order_id")]
+        public decimal OrderId { get; set; }
 
         /// <summary>
-        /// Exchange
+        /// Gets or Sets Text
         /// </summary>
-        /// <value>Exchange</value>
-        [DataMember(Name="exchange_type")]
-        public string ExchangeType { get; set; }
-
-        /// <summary>
-        /// Hourly Interest Rate
-        /// </summary>
-        /// <value>Hourly Interest Rate</value>
-        [DataMember(Name="hour_interest_rate")]
-        public string HourInterestRate { get; set; }
-
-        /// <summary>
-        /// Millisecond Timestamp
-        /// </summary>
-        /// <value>Millisecond Timestamp</value>
-        [DataMember(Name="time")]
-        public string Time { get; set; }
+        [DataMember(Name="text")]
+        public string Text { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -90,10 +67,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20030 {\n");
-            sb.Append("  Coin: ").Append(Coin).Append("\n");
-            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
-            sb.Append("  HourInterestRate: ").Append(HourInterestRate).Append("\n");
-            sb.Append("  Time: ").Append(Time).Append("\n");
+            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,24 +104,13 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Coin == input.Coin ||
-                    (this.Coin != null &&
-                    this.Coin.Equals(input.Coin))
+                    this.OrderId == input.OrderId ||
+                    this.OrderId.Equals(input.OrderId)
                 ) && 
                 (
-                    this.ExchangeType == input.ExchangeType ||
-                    (this.ExchangeType != null &&
-                    this.ExchangeType.Equals(input.ExchangeType))
-                ) && 
-                (
-                    this.HourInterestRate == input.HourInterestRate ||
-                    (this.HourInterestRate != null &&
-                    this.HourInterestRate.Equals(input.HourInterestRate))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
+                    this.Text == input.Text ||
+                    (this.Text != null &&
+                    this.Text.Equals(input.Text))
                 );
         }
 
@@ -159,14 +123,9 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Coin != null)
-                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
-                if (this.ExchangeType != null)
-                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
-                if (this.HourInterestRate != null)
-                    hashCode = hashCode * 59 + this.HourInterestRate.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.Text != null)
+                    hashCode = hashCode * 59 + this.Text.GetHashCode();
                 return hashCode;
             }
         }

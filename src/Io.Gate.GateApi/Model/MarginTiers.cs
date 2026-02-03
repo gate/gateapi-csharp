@@ -36,7 +36,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="tier">Tier.</param>
         /// <param name="marginRate">Discount.</param>
         /// <param name="lowerLimit">Lower limit.</param>
-        /// <param name="upperLimit">Upper limit, \&quot;\&quot; indicates greater than (the last tier).</param>
+        /// <param name="upperLimit">Upper limit, &#x60;&#x60; indicates greater than (the last tier).</param>
         /// <param name="leverage">Position leverage.</param>
         public MarginTiers(string tier = default(string), string marginRate = default(string), string lowerLimit = default(string), string upperLimit = default(string), string leverage = default(string))
         {
@@ -69,9 +69,9 @@ namespace Io.Gate.GateApi.Model
         public string LowerLimit { get; set; }
 
         /// <summary>
-        /// Upper limit, \&quot;\&quot; indicates greater than (the last tier)
+        /// Upper limit, &#x60;&#x60; indicates greater than (the last tier)
         /// </summary>
-        /// <value>Upper limit, \&quot;\&quot; indicates greater than (the last tier)</value>
+        /// <value>Upper limit, &#x60;&#x60; indicates greater than (the last tier)</value>
         [DataMember(Name="upper_limit")]
         public string UpperLimit { get; set; }
 

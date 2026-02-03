@@ -33,32 +33,29 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2002" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse2002() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2002" /> class.
-        /// </summary>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        /// <param name="data">data (required).</param>
-        public InlineResponse2002(int code = default(int), string message = default(string), InlineResponse2002Data data = default(InlineResponse2002Data))
+        /// <param name="code">Status code, 0 means success.</param>
+        /// <param name="message">Response message.</param>
+        /// <param name="data">data.</param>
+        /// <param name="timestamp">Response timestamp (milliseconds).</param>
+        public InlineResponse2002(int code = default(int), string message = default(string), InlineResponse200 data = default(InlineResponse200), long timestamp = default(long))
         {
             this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2002 and cannot be null");
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse2002 and cannot be null");
+            this.Message = message;
+            this.Data = data;
+            this.Timestamp = timestamp;
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Status code, 0 means success
         /// </summary>
+        /// <value>Status code, 0 means success</value>
         [DataMember(Name="code")]
         public int Code { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Response message
         /// </summary>
+        /// <value>Response message</value>
         [DataMember(Name="message")]
         public string Message { get; set; }
 
@@ -66,7 +63,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
-        public InlineResponse2002Data Data { get; set; }
+        public InlineResponse200 Data { get; set; }
+
+        /// <summary>
+        /// Response timestamp (milliseconds)
+        /// </summary>
+        /// <value>Response timestamp (milliseconds)</value>
+        [DataMember(Name="timestamp")]
+        public long Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,6 +83,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -126,6 +131,10 @@ namespace Io.Gate.GateApi.Model
                     this.Data == input.Data ||
                     (this.Data != null &&
                     this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
                 );
         }
 
@@ -143,6 +152,7 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.Data != null)
                     hashCode = hashCode * 59 + this.Data.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

@@ -33,25 +33,17 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse200" /> class.
         /// </summary>
-        /// <param name="time">time.</param>
-        /// <param name="value">value.</param>
-        public InlineResponse200(long time = default(long), string value = default(string))
+        /// <param name="order">order.</param>
+        public InlineResponse200(TrailOrder order = default(TrailOrder))
         {
-            this.Time = time;
-            this.Value = value;
+            this.Order = order;
         }
 
         /// <summary>
-        /// Gets or Sets Time
+        /// Gets or Sets Order
         /// </summary>
-        [DataMember(Name="time")]
-        public long Time { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Value
-        /// </summary>
-        [DataMember(Name="value")]
-        public string Value { get; set; }
+        [DataMember(Name="order")]
+        public TrailOrder Order { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -61,8 +53,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse200 {\n");
-            sb.Append("  Time: ").Append(Time).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,13 +89,9 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Time == input.Time ||
-                    this.Time.Equals(input.Time)
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
+                    this.Order == input.Order ||
+                    (this.Order != null &&
+                    this.Order.Equals(input.Order))
                 );
         }
 
@@ -117,9 +104,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.Order != null)
+                    hashCode = hashCode * 59 + this.Order.GetHashCode();
                 return hashCode;
             }
         }

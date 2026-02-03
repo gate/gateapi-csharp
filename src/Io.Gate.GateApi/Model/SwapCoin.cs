@@ -42,12 +42,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="side">0 - Stake 1 - Redeem (required).</param>
         /// <param name="amount">Size (required).</param>
         /// <param name="pid">DeFi-type Mining Protocol Identifier.</param>
-        public SwapCoin(string coin = default(string), string side = default(string), string amount = default(string), int pid = default(int))
+        public SwapCoin(string coin = default(string), int side = default(int), string amount = default(string), int pid = default(int))
         {
             // to ensure "coin" is required (not null)
             this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for SwapCoin and cannot be null");
-            // to ensure "side" is required (not null)
-            this.Side = side ?? throw new ArgumentNullException("side", "side is a required property for SwapCoin and cannot be null");
+            this.Side = side;
             // to ensure "amount" is required (not null)
             this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for SwapCoin and cannot be null");
             this.Pid = pid;
@@ -65,7 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>0 - Stake 1 - Redeem</value>
         [DataMember(Name="side")]
-        public string Side { get; set; }
+        public int Side { get; set; }
 
         /// <summary>
         /// Size
@@ -134,8 +133,7 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    this.Side.Equals(input.Side)
                 ) && 
                 (
                     this.Amount == input.Amount ||
@@ -159,8 +157,7 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.Coin != null)
                     hashCode = hashCode * 59 + this.Coin.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
+                hashCode = hashCode * 59 + this.Side.GetHashCode();
                 if (this.Amount != null)
                     hashCode = hashCode * 59 + this.Amount.GetHashCode();
                 hashCode = hashCode * 59 + this.Pid.GetHashCode();

@@ -38,69 +38,173 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20041" /> class.
         /// </summary>
-        /// <param name="coin">Currency (required).</param>
-        /// <param name="exchangeType">Exchange (required).</param>
-        /// <param name="tier">Tier (required).</param>
-        /// <param name="minValue">Minimum value (required).</param>
-        /// <param name="maxValue">Maximum value (required).</param>
-        /// <param name="discountRate">Discount rate (required).</param>
-        public InlineResponse20041(string coin = default(string), string exchangeType = default(string), string tier = default(string), string minValue = default(string), string maxValue = default(string), string discountRate = default(string))
+        /// <param name="positionId">Position ID.</param>
+        /// <param name="userId">User ID.</param>
+        /// <param name="symbol">Currency pair.</param>
+        /// <param name="closedType">Position close type (PARTIAL_CLOSED: partially closed; COMPLETE_CLOSED: fully closed).</param>
+        /// <param name="closedPnl">Close Position P&amp;L.</param>
+        /// <param name="closedPnlRate">Close Position P&amp;L Ratio.</param>
+        /// <param name="openAvgPrice">Average Opening Price.</param>
+        /// <param name="closedAvgPrice">Average Close Price.</param>
+        /// <param name="maxPositionQty">Max Trade Size.</param>
+        /// <param name="closedQty">Close Position Quantity.</param>
+        /// <param name="closedValue">Close Position Value.</param>
+        /// <param name="liqFee">Liquidation Fee.</param>
+        /// <param name="positionSide">Position Direction Before Close.</param>
+        /// <param name="leverage">Leverage at Close.</param>
+        /// <param name="interest">Total Deducted Interest (required).</param>
+        /// <param name="businessType">Position Business Type (required).</param>
+        /// <param name="createTime">Created time.</param>
+        /// <param name="updateTime">Update time.</param>
+        public InlineResponse20041(string positionId = default(string), string userId = default(string), string symbol = default(string), string closedType = default(string), string closedPnl = default(string), string closedPnlRate = default(string), string openAvgPrice = default(string), string closedAvgPrice = default(string), string maxPositionQty = default(string), string closedQty = default(string), string closedValue = default(string), string liqFee = default(string), string positionSide = default(string), string leverage = default(string), string interest = default(string), string businessType = default(string), string createTime = default(string), string updateTime = default(string))
         {
-            // to ensure "coin" is required (not null)
-            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20041 and cannot be null");
-            // to ensure "exchangeType" is required (not null)
-            this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for InlineResponse20041 and cannot be null");
-            // to ensure "tier" is required (not null)
-            this.Tier = tier ?? throw new ArgumentNullException("tier", "tier is a required property for InlineResponse20041 and cannot be null");
-            // to ensure "minValue" is required (not null)
-            this.MinValue = minValue ?? throw new ArgumentNullException("minValue", "minValue is a required property for InlineResponse20041 and cannot be null");
-            // to ensure "maxValue" is required (not null)
-            this.MaxValue = maxValue ?? throw new ArgumentNullException("maxValue", "maxValue is a required property for InlineResponse20041 and cannot be null");
-            // to ensure "discountRate" is required (not null)
-            this.DiscountRate = discountRate ?? throw new ArgumentNullException("discountRate", "discountRate is a required property for InlineResponse20041 and cannot be null");
+            // to ensure "interest" is required (not null)
+            this.Interest = interest ?? throw new ArgumentNullException("interest", "interest is a required property for InlineResponse20041 and cannot be null");
+            // to ensure "businessType" is required (not null)
+            this.BusinessType = businessType ?? throw new ArgumentNullException("businessType", "businessType is a required property for InlineResponse20041 and cannot be null");
+            this.PositionId = positionId;
+            this.UserId = userId;
+            this.Symbol = symbol;
+            this.ClosedType = closedType;
+            this.ClosedPnl = closedPnl;
+            this.ClosedPnlRate = closedPnlRate;
+            this.OpenAvgPrice = openAvgPrice;
+            this.ClosedAvgPrice = closedAvgPrice;
+            this.MaxPositionQty = maxPositionQty;
+            this.ClosedQty = closedQty;
+            this.ClosedValue = closedValue;
+            this.LiqFee = liqFee;
+            this.PositionSide = positionSide;
+            this.Leverage = leverage;
+            this.CreateTime = createTime;
+            this.UpdateTime = updateTime;
         }
 
         /// <summary>
-        /// Currency
+        /// Position ID
         /// </summary>
-        /// <value>Currency</value>
-        [DataMember(Name="coin")]
-        public string Coin { get; set; }
+        /// <value>Position ID</value>
+        [DataMember(Name="position_id")]
+        public string PositionId { get; set; }
 
         /// <summary>
-        /// Exchange
+        /// User ID
         /// </summary>
-        /// <value>Exchange</value>
-        [DataMember(Name="exchange_type")]
-        public string ExchangeType { get; set; }
+        /// <value>User ID</value>
+        [DataMember(Name="user_id")]
+        public string UserId { get; set; }
 
         /// <summary>
-        /// Tier
+        /// Currency pair
         /// </summary>
-        /// <value>Tier</value>
-        [DataMember(Name="tier")]
-        public string Tier { get; set; }
+        /// <value>Currency pair</value>
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
 
         /// <summary>
-        /// Minimum value
+        /// Position close type (PARTIAL_CLOSED: partially closed; COMPLETE_CLOSED: fully closed)
         /// </summary>
-        /// <value>Minimum value</value>
-        [DataMember(Name="min_value")]
-        public string MinValue { get; set; }
+        /// <value>Position close type (PARTIAL_CLOSED: partially closed; COMPLETE_CLOSED: fully closed)</value>
+        [DataMember(Name="closed_type")]
+        public string ClosedType { get; set; }
 
         /// <summary>
-        /// Maximum value
+        /// Close Position P&amp;L
         /// </summary>
-        /// <value>Maximum value</value>
-        [DataMember(Name="max_value")]
-        public string MaxValue { get; set; }
+        /// <value>Close Position P&amp;L</value>
+        [DataMember(Name="closed_pnl")]
+        public string ClosedPnl { get; set; }
 
         /// <summary>
-        /// Discount rate
+        /// Close Position P&amp;L Ratio
         /// </summary>
-        /// <value>Discount rate</value>
-        [DataMember(Name="discount_rate")]
-        public string DiscountRate { get; set; }
+        /// <value>Close Position P&amp;L Ratio</value>
+        [DataMember(Name="closed_pnl_rate")]
+        public string ClosedPnlRate { get; set; }
+
+        /// <summary>
+        /// Average Opening Price
+        /// </summary>
+        /// <value>Average Opening Price</value>
+        [DataMember(Name="open_avg_price")]
+        public string OpenAvgPrice { get; set; }
+
+        /// <summary>
+        /// Average Close Price
+        /// </summary>
+        /// <value>Average Close Price</value>
+        [DataMember(Name="closed_avg_price")]
+        public string ClosedAvgPrice { get; set; }
+
+        /// <summary>
+        /// Max Trade Size
+        /// </summary>
+        /// <value>Max Trade Size</value>
+        [DataMember(Name="max_position_qty")]
+        public string MaxPositionQty { get; set; }
+
+        /// <summary>
+        /// Close Position Quantity
+        /// </summary>
+        /// <value>Close Position Quantity</value>
+        [DataMember(Name="closed_qty")]
+        public string ClosedQty { get; set; }
+
+        /// <summary>
+        /// Close Position Value
+        /// </summary>
+        /// <value>Close Position Value</value>
+        [DataMember(Name="closed_value")]
+        public string ClosedValue { get; set; }
+
+        /// <summary>
+        /// Liquidation Fee
+        /// </summary>
+        /// <value>Liquidation Fee</value>
+        [DataMember(Name="liq_fee")]
+        public string LiqFee { get; set; }
+
+        /// <summary>
+        /// Position Direction Before Close
+        /// </summary>
+        /// <value>Position Direction Before Close</value>
+        [DataMember(Name="position_side")]
+        public string PositionSide { get; set; }
+
+        /// <summary>
+        /// Leverage at Close
+        /// </summary>
+        /// <value>Leverage at Close</value>
+        [DataMember(Name="leverage")]
+        public string Leverage { get; set; }
+
+        /// <summary>
+        /// Total Deducted Interest
+        /// </summary>
+        /// <value>Total Deducted Interest</value>
+        [DataMember(Name="interest")]
+        public string Interest { get; set; }
+
+        /// <summary>
+        /// Position Business Type
+        /// </summary>
+        /// <value>Position Business Type</value>
+        [DataMember(Name="business_type")]
+        public string BusinessType { get; set; }
+
+        /// <summary>
+        /// Created time
+        /// </summary>
+        /// <value>Created time</value>
+        [DataMember(Name="create_time")]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// Update time
+        /// </summary>
+        /// <value>Update time</value>
+        [DataMember(Name="update_time")]
+        public string UpdateTime { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -110,12 +214,24 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20041 {\n");
-            sb.Append("  Coin: ").Append(Coin).Append("\n");
-            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
-            sb.Append("  Tier: ").Append(Tier).Append("\n");
-            sb.Append("  MinValue: ").Append(MinValue).Append("\n");
-            sb.Append("  MaxValue: ").Append(MaxValue).Append("\n");
-            sb.Append("  DiscountRate: ").Append(DiscountRate).Append("\n");
+            sb.Append("  PositionId: ").Append(PositionId).Append("\n");
+            sb.Append("  UserId: ").Append(UserId).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
+            sb.Append("  ClosedType: ").Append(ClosedType).Append("\n");
+            sb.Append("  ClosedPnl: ").Append(ClosedPnl).Append("\n");
+            sb.Append("  ClosedPnlRate: ").Append(ClosedPnlRate).Append("\n");
+            sb.Append("  OpenAvgPrice: ").Append(OpenAvgPrice).Append("\n");
+            sb.Append("  ClosedAvgPrice: ").Append(ClosedAvgPrice).Append("\n");
+            sb.Append("  MaxPositionQty: ").Append(MaxPositionQty).Append("\n");
+            sb.Append("  ClosedQty: ").Append(ClosedQty).Append("\n");
+            sb.Append("  ClosedValue: ").Append(ClosedValue).Append("\n");
+            sb.Append("  LiqFee: ").Append(LiqFee).Append("\n");
+            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
+            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
+            sb.Append("  Interest: ").Append(Interest).Append("\n");
+            sb.Append("  BusinessType: ").Append(BusinessType).Append("\n");
+            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  UpdateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,34 +267,94 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Coin == input.Coin ||
-                    (this.Coin != null &&
-                    this.Coin.Equals(input.Coin))
+                    this.PositionId == input.PositionId ||
+                    (this.PositionId != null &&
+                    this.PositionId.Equals(input.PositionId))
                 ) && 
                 (
-                    this.ExchangeType == input.ExchangeType ||
-                    (this.ExchangeType != null &&
-                    this.ExchangeType.Equals(input.ExchangeType))
+                    this.UserId == input.UserId ||
+                    (this.UserId != null &&
+                    this.UserId.Equals(input.UserId))
                 ) && 
                 (
-                    this.Tier == input.Tier ||
-                    (this.Tier != null &&
-                    this.Tier.Equals(input.Tier))
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.MinValue == input.MinValue ||
-                    (this.MinValue != null &&
-                    this.MinValue.Equals(input.MinValue))
+                    this.ClosedType == input.ClosedType ||
+                    (this.ClosedType != null &&
+                    this.ClosedType.Equals(input.ClosedType))
                 ) && 
                 (
-                    this.MaxValue == input.MaxValue ||
-                    (this.MaxValue != null &&
-                    this.MaxValue.Equals(input.MaxValue))
+                    this.ClosedPnl == input.ClosedPnl ||
+                    (this.ClosedPnl != null &&
+                    this.ClosedPnl.Equals(input.ClosedPnl))
                 ) && 
                 (
-                    this.DiscountRate == input.DiscountRate ||
-                    (this.DiscountRate != null &&
-                    this.DiscountRate.Equals(input.DiscountRate))
+                    this.ClosedPnlRate == input.ClosedPnlRate ||
+                    (this.ClosedPnlRate != null &&
+                    this.ClosedPnlRate.Equals(input.ClosedPnlRate))
+                ) && 
+                (
+                    this.OpenAvgPrice == input.OpenAvgPrice ||
+                    (this.OpenAvgPrice != null &&
+                    this.OpenAvgPrice.Equals(input.OpenAvgPrice))
+                ) && 
+                (
+                    this.ClosedAvgPrice == input.ClosedAvgPrice ||
+                    (this.ClosedAvgPrice != null &&
+                    this.ClosedAvgPrice.Equals(input.ClosedAvgPrice))
+                ) && 
+                (
+                    this.MaxPositionQty == input.MaxPositionQty ||
+                    (this.MaxPositionQty != null &&
+                    this.MaxPositionQty.Equals(input.MaxPositionQty))
+                ) && 
+                (
+                    this.ClosedQty == input.ClosedQty ||
+                    (this.ClosedQty != null &&
+                    this.ClosedQty.Equals(input.ClosedQty))
+                ) && 
+                (
+                    this.ClosedValue == input.ClosedValue ||
+                    (this.ClosedValue != null &&
+                    this.ClosedValue.Equals(input.ClosedValue))
+                ) && 
+                (
+                    this.LiqFee == input.LiqFee ||
+                    (this.LiqFee != null &&
+                    this.LiqFee.Equals(input.LiqFee))
+                ) && 
+                (
+                    this.PositionSide == input.PositionSide ||
+                    (this.PositionSide != null &&
+                    this.PositionSide.Equals(input.PositionSide))
+                ) && 
+                (
+                    this.Leverage == input.Leverage ||
+                    (this.Leverage != null &&
+                    this.Leverage.Equals(input.Leverage))
+                ) && 
+                (
+                    this.Interest == input.Interest ||
+                    (this.Interest != null &&
+                    this.Interest.Equals(input.Interest))
+                ) && 
+                (
+                    this.BusinessType == input.BusinessType ||
+                    (this.BusinessType != null &&
+                    this.BusinessType.Equals(input.BusinessType))
+                ) && 
+                (
+                    this.CreateTime == input.CreateTime ||
+                    (this.CreateTime != null &&
+                    this.CreateTime.Equals(input.CreateTime))
+                ) && 
+                (
+                    this.UpdateTime == input.UpdateTime ||
+                    (this.UpdateTime != null &&
+                    this.UpdateTime.Equals(input.UpdateTime))
                 );
         }
 
@@ -191,18 +367,42 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Coin != null)
-                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
-                if (this.ExchangeType != null)
-                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
-                if (this.Tier != null)
-                    hashCode = hashCode * 59 + this.Tier.GetHashCode();
-                if (this.MinValue != null)
-                    hashCode = hashCode * 59 + this.MinValue.GetHashCode();
-                if (this.MaxValue != null)
-                    hashCode = hashCode * 59 + this.MaxValue.GetHashCode();
-                if (this.DiscountRate != null)
-                    hashCode = hashCode * 59 + this.DiscountRate.GetHashCode();
+                if (this.PositionId != null)
+                    hashCode = hashCode * 59 + this.PositionId.GetHashCode();
+                if (this.UserId != null)
+                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                if (this.ClosedType != null)
+                    hashCode = hashCode * 59 + this.ClosedType.GetHashCode();
+                if (this.ClosedPnl != null)
+                    hashCode = hashCode * 59 + this.ClosedPnl.GetHashCode();
+                if (this.ClosedPnlRate != null)
+                    hashCode = hashCode * 59 + this.ClosedPnlRate.GetHashCode();
+                if (this.OpenAvgPrice != null)
+                    hashCode = hashCode * 59 + this.OpenAvgPrice.GetHashCode();
+                if (this.ClosedAvgPrice != null)
+                    hashCode = hashCode * 59 + this.ClosedAvgPrice.GetHashCode();
+                if (this.MaxPositionQty != null)
+                    hashCode = hashCode * 59 + this.MaxPositionQty.GetHashCode();
+                if (this.ClosedQty != null)
+                    hashCode = hashCode * 59 + this.ClosedQty.GetHashCode();
+                if (this.ClosedValue != null)
+                    hashCode = hashCode * 59 + this.ClosedValue.GetHashCode();
+                if (this.LiqFee != null)
+                    hashCode = hashCode * 59 + this.LiqFee.GetHashCode();
+                if (this.PositionSide != null)
+                    hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
+                if (this.Leverage != null)
+                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
+                if (this.Interest != null)
+                    hashCode = hashCode * 59 + this.Interest.GetHashCode();
+                if (this.BusinessType != null)
+                    hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
+                if (this.CreateTime != null)
+                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null)
+                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -38,50 +38,119 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2006Data" /> class.
         /// </summary>
-        /// <param name="pn">pn (required).</param>
-        /// <param name="ps">ps (required).</param>
-        /// <param name="totalPn">totalPn (required).</param>
-        /// <param name="count">count (required).</param>
-        /// <param name="list">list (required).</param>
-        public InlineResponse2006Data(int pn = default(int), int ps = default(int), int totalPn = default(int), int count = default(int), List<InlineResponse2006DataList> list = default(List<InlineResponse2006DataList>))
+        /// <param name="type">BUY (on-ramp) or SELL (off-ramp) (required).</param>
+        /// <param name="payCoin">Payment currency (required).</param>
+        /// <param name="getCoin">Currency (required).</param>
+        /// <param name="payAmount">Payment amount (required).</param>
+        /// <param name="getAmount">Redemption Amount (required).</param>
+        /// <param name="rate">Exchange rate (required).</param>
+        /// <param name="rateReci">Reciprocal of the exchange rate (required).</param>
+        /// <param name="promotionCode">Promotion code (required).</param>
+        /// <param name="side">Quote method (required).</param>
+        /// <param name="orderType">Order type: FIAT (fiat) / STABLE (stablecoin) (required).</param>
+        /// <param name="quoteToken">Quote token required when placing an order (required).</param>
+        public InlineResponse2006Data(string type = default(string), string payCoin = default(string), string getCoin = default(string), string payAmount = default(string), string getAmount = default(string), string rate = default(string), string rateReci = default(string), string promotionCode = default(string), string side = default(string), string orderType = default(string), string quoteToken = default(string))
         {
-            this.Pn = pn;
-            this.Ps = ps;
-            this.TotalPn = totalPn;
-            this.Count = count;
-            // to ensure "list" is required (not null)
-            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "type" is required (not null)
+            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "payCoin" is required (not null)
+            this.PayCoin = payCoin ?? throw new ArgumentNullException("payCoin", "payCoin is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "getCoin" is required (not null)
+            this.GetCoin = getCoin ?? throw new ArgumentNullException("getCoin", "getCoin is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "payAmount" is required (not null)
+            this.PayAmount = payAmount ?? throw new ArgumentNullException("payAmount", "payAmount is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "getAmount" is required (not null)
+            this.GetAmount = getAmount ?? throw new ArgumentNullException("getAmount", "getAmount is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "rate" is required (not null)
+            this.Rate = rate ?? throw new ArgumentNullException("rate", "rate is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "rateReci" is required (not null)
+            this.RateReci = rateReci ?? throw new ArgumentNullException("rateReci", "rateReci is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "promotionCode" is required (not null)
+            this.PromotionCode = promotionCode ?? throw new ArgumentNullException("promotionCode", "promotionCode is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "side" is required (not null)
+            this.Side = side ?? throw new ArgumentNullException("side", "side is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "orderType" is required (not null)
+            this.OrderType = orderType ?? throw new ArgumentNullException("orderType", "orderType is a required property for InlineResponse2006Data and cannot be null");
+            // to ensure "quoteToken" is required (not null)
+            this.QuoteToken = quoteToken ?? throw new ArgumentNullException("quoteToken", "quoteToken is a required property for InlineResponse2006Data and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets Pn
+        /// BUY (on-ramp) or SELL (off-ramp)
         /// </summary>
-        [DataMember(Name="pn")]
-        public int Pn { get; set; }
+        /// <value>BUY (on-ramp) or SELL (off-ramp)</value>
+        [DataMember(Name="type")]
+        public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Ps
+        /// Payment currency
         /// </summary>
-        [DataMember(Name="ps")]
-        public int Ps { get; set; }
+        /// <value>Payment currency</value>
+        [DataMember(Name="pay_coin")]
+        public string PayCoin { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPn
+        /// Currency
         /// </summary>
-        [DataMember(Name="total_pn")]
-        public int TotalPn { get; set; }
+        /// <value>Currency</value>
+        [DataMember(Name="get_coin")]
+        public string GetCoin { get; set; }
 
         /// <summary>
-        /// Gets or Sets Count
+        /// Payment amount
         /// </summary>
-        [DataMember(Name="count")]
-        public int Count { get; set; }
+        /// <value>Payment amount</value>
+        [DataMember(Name="pay_amount")]
+        public string PayAmount { get; set; }
 
         /// <summary>
-        /// Gets or Sets List
+        /// Redemption Amount
         /// </summary>
-        [DataMember(Name="list")]
-        public List<InlineResponse2006DataList> List { get; set; }
+        /// <value>Redemption Amount</value>
+        [DataMember(Name="get_amount")]
+        public string GetAmount { get; set; }
+
+        /// <summary>
+        /// Exchange rate
+        /// </summary>
+        /// <value>Exchange rate</value>
+        [DataMember(Name="rate")]
+        public string Rate { get; set; }
+
+        /// <summary>
+        /// Reciprocal of the exchange rate
+        /// </summary>
+        /// <value>Reciprocal of the exchange rate</value>
+        [DataMember(Name="rate_reci")]
+        public string RateReci { get; set; }
+
+        /// <summary>
+        /// Promotion code
+        /// </summary>
+        /// <value>Promotion code</value>
+        [DataMember(Name="promotion_code")]
+        public string PromotionCode { get; set; }
+
+        /// <summary>
+        /// Quote method
+        /// </summary>
+        /// <value>Quote method</value>
+        [DataMember(Name="side")]
+        public string Side { get; set; }
+
+        /// <summary>
+        /// Order type: FIAT (fiat) / STABLE (stablecoin)
+        /// </summary>
+        /// <value>Order type: FIAT (fiat) / STABLE (stablecoin)</value>
+        [DataMember(Name="order_type")]
+        public string OrderType { get; set; }
+
+        /// <summary>
+        /// Quote token required when placing an order
+        /// </summary>
+        /// <value>Quote token required when placing an order</value>
+        [DataMember(Name="quote_token")]
+        public string QuoteToken { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -91,11 +160,17 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2006Data {\n");
-            sb.Append("  Pn: ").Append(Pn).Append("\n");
-            sb.Append("  Ps: ").Append(Ps).Append("\n");
-            sb.Append("  TotalPn: ").Append(TotalPn).Append("\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
-            sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  PayCoin: ").Append(PayCoin).Append("\n");
+            sb.Append("  GetCoin: ").Append(GetCoin).Append("\n");
+            sb.Append("  PayAmount: ").Append(PayAmount).Append("\n");
+            sb.Append("  GetAmount: ").Append(GetAmount).Append("\n");
+            sb.Append("  Rate: ").Append(Rate).Append("\n");
+            sb.Append("  RateReci: ").Append(RateReci).Append("\n");
+            sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
+            sb.Append("  Side: ").Append(Side).Append("\n");
+            sb.Append("  OrderType: ").Append(OrderType).Append("\n");
+            sb.Append("  QuoteToken: ").Append(QuoteToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,26 +206,59 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Pn == input.Pn ||
-                    this.Pn.Equals(input.Pn)
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Ps == input.Ps ||
-                    this.Ps.Equals(input.Ps)
+                    this.PayCoin == input.PayCoin ||
+                    (this.PayCoin != null &&
+                    this.PayCoin.Equals(input.PayCoin))
                 ) && 
                 (
-                    this.TotalPn == input.TotalPn ||
-                    this.TotalPn.Equals(input.TotalPn)
+                    this.GetCoin == input.GetCoin ||
+                    (this.GetCoin != null &&
+                    this.GetCoin.Equals(input.GetCoin))
                 ) && 
                 (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
+                    this.PayAmount == input.PayAmount ||
+                    (this.PayAmount != null &&
+                    this.PayAmount.Equals(input.PayAmount))
                 ) && 
                 (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
+                    this.GetAmount == input.GetAmount ||
+                    (this.GetAmount != null &&
+                    this.GetAmount.Equals(input.GetAmount))
+                ) && 
+                (
+                    this.Rate == input.Rate ||
+                    (this.Rate != null &&
+                    this.Rate.Equals(input.Rate))
+                ) && 
+                (
+                    this.RateReci == input.RateReci ||
+                    (this.RateReci != null &&
+                    this.RateReci.Equals(input.RateReci))
+                ) && 
+                (
+                    this.PromotionCode == input.PromotionCode ||
+                    (this.PromotionCode != null &&
+                    this.PromotionCode.Equals(input.PromotionCode))
+                ) && 
+                (
+                    this.Side == input.Side ||
+                    (this.Side != null &&
+                    this.Side.Equals(input.Side))
+                ) && 
+                (
+                    this.OrderType == input.OrderType ||
+                    (this.OrderType != null &&
+                    this.OrderType.Equals(input.OrderType))
+                ) && 
+                (
+                    this.QuoteToken == input.QuoteToken ||
+                    (this.QuoteToken != null &&
+                    this.QuoteToken.Equals(input.QuoteToken))
                 );
         }
 
@@ -163,12 +271,28 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Pn.GetHashCode();
-                hashCode = hashCode * 59 + this.Ps.GetHashCode();
-                hashCode = hashCode * 59 + this.TotalPn.GetHashCode();
-                hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.PayCoin != null)
+                    hashCode = hashCode * 59 + this.PayCoin.GetHashCode();
+                if (this.GetCoin != null)
+                    hashCode = hashCode * 59 + this.GetCoin.GetHashCode();
+                if (this.PayAmount != null)
+                    hashCode = hashCode * 59 + this.PayAmount.GetHashCode();
+                if (this.GetAmount != null)
+                    hashCode = hashCode * 59 + this.GetAmount.GetHashCode();
+                if (this.Rate != null)
+                    hashCode = hashCode * 59 + this.Rate.GetHashCode();
+                if (this.RateReci != null)
+                    hashCode = hashCode * 59 + this.RateReci.GetHashCode();
+                if (this.PromotionCode != null)
+                    hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
+                if (this.Side != null)
+                    hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.OrderType != null)
+                    hashCode = hashCode * 59 + this.OrderType.GetHashCode();
+                if (this.QuoteToken != null)
+                    hashCode = hashCode * 59 + this.QuoteToken.GetHashCode();
                 return hashCode;
             }
         }

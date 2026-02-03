@@ -5,78 +5,37 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsSell** | **int** | Whether sell order | 
-**Txid** | **int** | Order ID | 
-**Orderid** | **int** | Order ID | 
-**Timest** | **int** | Order creation timestamp | 
-**LastPayTime** | **int** | Payment deadline | 
-**RemainPayTime** | **int** | Remaining payment time | 
-**CurrencyType** | **string** | Cryptocurrency type | 
-**WantType** | **string** | Fiat currency type | 
-**Rate** | **string** | Price | 
-**Amount** | **string** | Size | 
-**Total** | **string** | Fiat amount | 
-**Status** | **string** | Order Status | 
-**ReasonId** | **string** | Cancellation reason ID | 
-**ReasonDesc** | **string** | Cancellation reason | 
-**ToastId** | **int** | Popup ID | 
-**CancelTime** | **string** | Cancellation time | 
-**SellerConfirm** | **int** | Whether seller confirmed the reason | 
-**InAppeal** | **int** | Whether in dispute | 
-**DisputeTime** | **int** | Appeal time limit | 
-**Cancelable** | **int** | Whether order cancellation is allowed | 
-**HidePayment** | **int** | Whether to hide payment method | 
-**TradeTips** | **string** | Trading terms | 
-**ShowBank** | **string** | Whether to display bank | 
-**Bankname** | **string** | Bank name | 
-**Bankbranch** | **string** | Bank branch name | 
-**Bankid** | **string** | Bank ID | 
-**BankHolderRealname** | **string** | Bank cardholder name | 
-**ShowAli** | **string** | Whether to display Alipay | 
-**Aliname** | **string** | Alipay account name | 
-**IsAlicode** | **int** | Whether Alipay QR code exists | 
-**ShowWechat** | **string** | Whether to display WeChat | 
-**Wename** | **string** | WeChat account name | 
-**ShowOthers** | **string** | Whether to display other payment methods | 
-**PayOthers** | **List&lt;string&gt;** | Other payment methods | 
-**SelPaytype** | **string** | Payment type | 
-**ItsUid** | **string** | Counterparty UID | 
-**ItsIsBlueVip** | **int** | Whether counterparty is Blue V | 
-**ItsTier** | **int** | Counterparty VIP tier | 
-**ItsAvatar** | **string** | Counterparty avatar | 
-**ItsNickname** | **string** | Counterparty nickname | 
-**ItsRealname** | **string** | Counterparty username | 
-**IsFollow** | **int** | Whether following | 
+**IsSelf** | **bool** | Whether self | 
+**UserTimest** | **string** | User registration time (formatted string) | 
+**CounterpartiesNum** | **int** | Number of counterparties | 
+**EmailVerified** | **string** | Whether email is verified | 
+**Verified** | **string** | Whether KYC verification is completed | 
+**HasPhone** | **string** | Whether phone is bound | 
+**UserName** | **string** | Username | 
+**UserNote** | **string** | User note information | 
+**CompleteTransactions** | **string** | Total completed orders | 
+**PaidTransactions** | **string** | Number of completed buy orders | 
+**AcceptedTransactions** | **string** | Number of completed sell orders | 
+**TransactionsUsedTime** | **string** | Average time to confirm receipt | 
+**CancelledUsedTimeMonth** | **string** | Cancellation time in last 30 days | 
+**CompleteTransactionsMonth** | **string** | Number of completed orders in last 30 days | 
+**CompleteRateMonth** | **int** | Completion rate in last 30 days | 
+**OrdersBuyRateMonth** | **int** | Buy order ratio in last 30 days | 
 **IsBlack** | **int** | Whether blocked | 
-**HaveTraded** | **int** | Whether traded before | 
-**AppealUnread** | **int** | Unread appeals | 
-**AppealAllowCancel** | **int** | Whether appeal cancellation is allowed | 
-**AppealVerdictHasOpen** | **string** | Appeal result (including pending appeals) | 
-**ImUnread** | **int** | IM unread | 
-**Message** | **string** | Review content | 
-**Score** | **string** | Rating | 
-**PaymentVoucherUrl** | **List&lt;string&gt;** | Payment voucher | 
-**CompleteNumber** | **int** | Counterparty transaction volume | 
-**CompleteRateMonth** | **string** | Counterparty completion rate | 
-**CheckJournalAccount** | **bool** | Whether transaction record is verified | 
-**ShowJournalAccount** | **bool** | Whether to display transaction records | 
-**IsFreezeGuarantee** | **int** | Whether margin is frozen | 
-**UsdtLeftGuarantee** | **string** | Remaining USDT margin | 
-**GuaranteeCurrType** | **string** | Margin currency type | 
-**TimestPaid** | **int** | Payment time | 
-**State** | **string** | Order Status | 
-**ReleaseCoinSwitch** | **int** | Coin release switch configuration | 
-**OwnRealname** | **string** | Username | 
-**ConfirmationUseTimeMonth** | **int** | Average confirmation time in last 30 days | 
-**IsRiskUser** | **int** | Whether risk user | 
-**IsXt** | **int** | Whether XT order | 
-**OrderType** | **int** | Order Type | 
-**Symbol** | **string** | Fiat currency symbol | 
-**IsShowReceive** | **int** | Whether to show confirm receipt during appeal | 
-**IsTaker** | **int** | Whether regular user | 
-**IsOnline** | **int** | Merchant online status | 
-**ShowSellerContactInfo** | **bool** | Whether to display seller contact information | 
-**SupportedPayTypes** | **List&lt;string&gt;** | Payment methods supported by current order | 
+**IsFollow** | **int** | Whether following | 
+**HaveTraded** | **int** | Whether traded with self | 
+**BizUid** | **string** | Encrypted UID | 
+**BlueVip** | **int** | Blue V Crown Shield | 
+**WorkStatus** | **int** | Merchant work status | 
+**RegistrationDays** | **int** | Registration days | 
+**FirstTradeDays** | **int** | Days since first trade | 
+**NeedReplenish** | **int** | Whether margin replenishment is needed | 
+**MerchantInfo** | [**InlineResponse20013DataMerchantInfo**](InlineResponse20013DataMerchantInfo.md) |  | 
+**OnlineStatus** | **int** | Merchant online status | 
+**WorkHours** | [**AnyType**](.md) | Merchant online status details | 
+**TransactionsMonth** | **int** | 30-day transaction volume | 
+**TransactionsAll** | **int** | Total transaction volume | 
+**TradeVersatile** | **bool** | Single user or composite user | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

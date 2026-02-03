@@ -56,8 +56,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
-        /// <returns>List&lt;InlineResponse20020&gt;</returns>
-        List<InlineResponse20020> ListCrossexRuleRiskLimits (string symbols);
+        /// <returns>List&lt;InlineResponse20024&gt;</returns>
+        List<InlineResponse20024> ListCrossexRuleRiskLimits (string symbols);
 
         /// <summary>
         /// [Public Interface] Query Risk Limit Information
@@ -67,8 +67,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20020&gt;</returns>
-        ApiResponse<List<InlineResponse20020>> ListCrossexRuleRiskLimitsWithHttpInfo (string symbols);
+        /// <returns>ApiResponse of List&lt;InlineResponse20024&gt;</returns>
+        ApiResponse<List<InlineResponse20024>> ListCrossexRuleRiskLimitsWithHttpInfo (string symbols);
         /// <summary>
         /// [Public Interface] Query Supported Transfer Currencies
         /// </summary>
@@ -77,8 +77,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
-        /// <returns>List&lt;InlineResponse20021&gt;</returns>
-        List<InlineResponse20021> ListCrossexTransferCoins (string coin = default(string));
+        /// <returns>List&lt;InlineResponse20025&gt;</returns>
+        List<InlineResponse20025> ListCrossexTransferCoins (string coin = default(string));
 
         /// <summary>
         /// [Public Interface] Query Supported Transfer Currencies
@@ -88,8 +88,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20021&gt;</returns>
-        ApiResponse<List<InlineResponse20021>> ListCrossexTransferCoinsWithHttpInfo (string coin = default(string));
+        /// <returns>ApiResponse of List&lt;InlineResponse20025&gt;</returns>
+        ApiResponse<List<InlineResponse20025>> ListCrossexTransferCoinsWithHttpInfo (string coin = default(string));
         /// <summary>
         /// Query Fund Transfer History
         /// </summary>
@@ -103,8 +103,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <returns>List&lt;InlineResponse20022&gt;</returns>
-        List<InlineResponse20022> ListCrossexTransfers (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?));
+        /// <returns>List&lt;InlineResponse20026&gt;</returns>
+        List<InlineResponse20026> ListCrossexTransfers (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// Query Fund Transfer History
@@ -119,8 +119,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20022&gt;</returns>
-        ApiResponse<List<InlineResponse20022>> ListCrossexTransfersWithHttpInfo (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?));
+        /// <returns>ApiResponse of List&lt;InlineResponse20026&gt;</returns>
+        ApiResponse<List<InlineResponse20026>> ListCrossexTransfersWithHttpInfo (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?));
         /// <summary>
         /// Fund Transfer
         /// </summary>
@@ -129,8 +129,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject20"> (optional)</param>
-        /// <returns>InlineResponse20023</returns>
-        InlineResponse20023 CreateCrossexTransfer (InlineObject20 inlineObject20 = default(InlineObject20));
+        /// <returns>InlineResponse20027</returns>
+        InlineResponse20027 CreateCrossexTransfer (InlineObject20 inlineObject20 = default(InlineObject20));
 
         /// <summary>
         /// Fund Transfer
@@ -140,8 +140,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject20"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20023</returns>
-        ApiResponse<InlineResponse20023> CreateCrossexTransferWithHttpInfo (InlineObject20 inlineObject20 = default(InlineObject20));
+        /// <returns>ApiResponse of InlineResponse20027</returns>
+        ApiResponse<InlineResponse20027> CreateCrossexTransferWithHttpInfo (InlineObject20 inlineObject20 = default(InlineObject20));
         /// <summary>
         /// Create an order
         /// </summary>
@@ -150,8 +150,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject21"> (optional)</param>
-        /// <returns>InlineResponse20024</returns>
-        InlineResponse20024 CreateCrossexOrder (InlineObject21 inlineObject21 = default(InlineObject21));
+        /// <returns>InlineResponse20028</returns>
+        InlineResponse20028 CreateCrossexOrder (InlineObject21 inlineObject21 = default(InlineObject21));
 
         /// <summary>
         /// Create an order
@@ -161,8 +161,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject21"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20024</returns>
-        ApiResponse<InlineResponse20024> CreateCrossexOrderWithHttpInfo (InlineObject21 inlineObject21 = default(InlineObject21));
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        ApiResponse<InlineResponse20028> CreateCrossexOrderWithHttpInfo (InlineObject21 inlineObject21 = default(InlineObject21));
         /// <summary>
         /// Query order details
         /// </summary>
@@ -171,8 +171,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">1. Supports querying order IDs returned when creating orders 2. Supports custom IDs specified by users when creating orders (i.e., the text field)</param>
-        /// <returns>InlineResponse20025</returns>
-        InlineResponse20025 GetCrossexOrder (string orderId);
+        /// <returns>InlineResponse20029</returns>
+        InlineResponse20029 GetCrossexOrder (string orderId);
 
         /// <summary>
         /// Query order details
@@ -182,8 +182,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">1. Supports querying order IDs returned when creating orders 2. Supports custom IDs specified by users when creating orders (i.e., the text field)</param>
-        /// <returns>ApiResponse of InlineResponse20025</returns>
-        ApiResponse<InlineResponse20025> GetCrossexOrderWithHttpInfo (string orderId);
+        /// <returns>ApiResponse of InlineResponse20029</returns>
+        ApiResponse<InlineResponse20029> GetCrossexOrderWithHttpInfo (string orderId);
         /// <summary>
         /// Modify Order
         /// </summary>
@@ -193,8 +193,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
         /// <param name="inlineObject22"> (optional)</param>
-        /// <returns>InlineResponse20026</returns>
-        InlineResponse20026 UpdateCrossexOrder (string orderId, InlineObject22 inlineObject22 = default(InlineObject22));
+        /// <returns>InlineResponse20030</returns>
+        InlineResponse20030 UpdateCrossexOrder (string orderId, InlineObject22 inlineObject22 = default(InlineObject22));
 
         /// <summary>
         /// Modify Order
@@ -205,8 +205,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
         /// <param name="inlineObject22"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20026</returns>
-        ApiResponse<InlineResponse20026> UpdateCrossexOrderWithHttpInfo (string orderId, InlineObject22 inlineObject22 = default(InlineObject22));
+        /// <returns>ApiResponse of InlineResponse20030</returns>
+        ApiResponse<InlineResponse20030> UpdateCrossexOrderWithHttpInfo (string orderId, InlineObject22 inlineObject22 = default(InlineObject22));
         /// <summary>
         /// Cancel Order
         /// </summary>
@@ -238,8 +238,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject23"> (optional)</param>
-        /// <returns>InlineResponse20027</returns>
-        InlineResponse20027 CreateCrossexConvertQuote (InlineObject23 inlineObject23 = default(InlineObject23));
+        /// <returns>InlineResponse20031</returns>
+        InlineResponse20031 CreateCrossexConvertQuote (InlineObject23 inlineObject23 = default(InlineObject23));
 
         /// <summary>
         /// Flash Swap Inquiry
@@ -249,8 +249,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject23"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20027</returns>
-        ApiResponse<InlineResponse20027> CreateCrossexConvertQuoteWithHttpInfo (InlineObject23 inlineObject23 = default(InlineObject23));
+        /// <returns>ApiResponse of InlineResponse20031</returns>
+        ApiResponse<InlineResponse20031> CreateCrossexConvertQuoteWithHttpInfo (InlineObject23 inlineObject23 = default(InlineObject23));
         /// <summary>
         /// Flash Swap Transaction
         /// </summary>
@@ -280,8 +280,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
-        /// <returns>InlineResponse20028</returns>
-        InlineResponse20028 GetCrossexAccount (string exchangeType = default(string));
+        /// <returns>InlineResponse20032</returns>
+        InlineResponse20032 GetCrossexAccount (string exchangeType = default(string));
 
         /// <summary>
         /// Query Account Assets
@@ -291,8 +291,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20028</returns>
-        ApiResponse<InlineResponse20028> GetCrossexAccountWithHttpInfo (string exchangeType = default(string));
+        /// <returns>ApiResponse of InlineResponse20032</returns>
+        ApiResponse<InlineResponse20032> GetCrossexAccountWithHttpInfo (string exchangeType = default(string));
         /// <summary>
         /// Modify Account Contract Position Mode and Account Mode
         /// </summary>
@@ -322,8 +322,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>List&lt;InlineResponse20029&gt;</returns>
-        List<InlineResponse20029> GetCrossexPositionsLeverage (string symbols = default(string));
+        /// <returns>List&lt;InlineResponse20033&gt;</returns>
+        List<InlineResponse20033> GetCrossexPositionsLeverage (string symbols = default(string));
 
         /// <summary>
         /// Query Contract Trading Pair Leverage Multiplier
@@ -333,8 +333,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20029&gt;</returns>
-        ApiResponse<List<InlineResponse20029>> GetCrossexPositionsLeverageWithHttpInfo (string symbols = default(string));
+        /// <returns>ApiResponse of List&lt;InlineResponse20033&gt;</returns>
+        ApiResponse<List<InlineResponse20033>> GetCrossexPositionsLeverageWithHttpInfo (string symbols = default(string));
         /// <summary>
         /// Modify Contract Trading Pair Leverage Multiplier
         /// </summary>
@@ -364,8 +364,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>List&lt;InlineResponse20029&gt;</returns>
-        List<InlineResponse20029> GetCrossexMarginPositionsLeverage (string symbols = default(string));
+        /// <returns>List&lt;InlineResponse20033&gt;</returns>
+        List<InlineResponse20033> GetCrossexMarginPositionsLeverage (string symbols = default(string));
 
         /// <summary>
         /// Query Leveraged Trading Pair Leverage Multiplier
@@ -375,8 +375,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20029&gt;</returns>
-        ApiResponse<List<InlineResponse20029>> GetCrossexMarginPositionsLeverageWithHttpInfo (string symbols = default(string));
+        /// <returns>ApiResponse of List&lt;InlineResponse20033&gt;</returns>
+        ApiResponse<List<InlineResponse20033>> GetCrossexMarginPositionsLeverageWithHttpInfo (string symbols = default(string));
         /// <summary>
         /// Modify Leveraged Trading Pair Leverage Multiplier
         /// </summary>
@@ -406,8 +406,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject28"> (optional)</param>
-        /// <returns>InlineResponse20024</returns>
-        InlineResponse20024 CloseCrossexPosition (InlineObject28 inlineObject28 = default(InlineObject28));
+        /// <returns>InlineResponse20028</returns>
+        InlineResponse20028 CloseCrossexPosition (InlineObject28 inlineObject28 = default(InlineObject28));
 
         /// <summary>
         /// Full Close Position
@@ -417,8 +417,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject28"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20024</returns>
-        ApiResponse<InlineResponse20024> CloseCrossexPositionWithHttpInfo (InlineObject28 inlineObject28 = default(InlineObject28));
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        ApiResponse<InlineResponse20028> CloseCrossexPositionWithHttpInfo (InlineObject28 inlineObject28 = default(InlineObject28));
         /// <summary>
         /// Query margin asset interest rates
         /// </summary>
@@ -428,95 +428,95 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
         /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>List&lt;InlineResponse20030&gt;</returns>
-        List<InlineResponse20030> GetCrossexInterestRate (string coin = default(string), string exchangeType = default(string));
-
-        /// <summary>
-        /// Query margin asset interest rates
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="coin">Currency (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20030&gt;</returns>
-        ApiResponse<List<InlineResponse20030>> GetCrossexInterestRateWithHttpInfo (string coin = default(string), string exchangeType = default(string));
-        /// <summary>
-        /// Query User Fee Rates
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20031</returns>
-        InlineResponse20031 GetCrossexFee ();
-
-        /// <summary>
-        /// Query User Fee Rates
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20031</returns>
-        ApiResponse<InlineResponse20031> GetCrossexFeeWithHttpInfo ();
-        /// <summary>
-        /// Query Contract Positions
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>List&lt;InlineResponse20032&gt;</returns>
-        List<InlineResponse20032> ListCrossexPositions (string symbol = default(string), string exchangeType = default(string));
-
-        /// <summary>
-        /// Query Contract Positions
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20032&gt;</returns>
-        ApiResponse<List<InlineResponse20032>> ListCrossexPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
-        /// <summary>
-        /// Query Leveraged Positions
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Currency pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>List&lt;InlineResponse20033&gt;</returns>
-        List<InlineResponse20033> ListCrossexMarginPositions (string symbol = default(string), string exchangeType = default(string));
-
-        /// <summary>
-        /// Query Leveraged Positions
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Currency pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20033&gt;</returns>
-        ApiResponse<List<InlineResponse20033>> ListCrossexMarginPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
-        /// <summary>
-        /// Query ADL Position Reduction Ranking
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair</param>
         /// <returns>List&lt;InlineResponse20034&gt;</returns>
-        List<InlineResponse20034> ListCrossexAdlRank (string symbol);
+        List<InlineResponse20034> GetCrossexInterestRate (string coin = default(string), string exchangeType = default(string));
+
+        /// <summary>
+        /// Query margin asset interest rates
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20034&gt;</returns>
+        ApiResponse<List<InlineResponse20034>> GetCrossexInterestRateWithHttpInfo (string coin = default(string), string exchangeType = default(string));
+        /// <summary>
+        /// Query User Fee Rates
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>InlineResponse20035</returns>
+        InlineResponse20035 GetCrossexFee ();
+
+        /// <summary>
+        /// Query User Fee Rates
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of InlineResponse20035</returns>
+        ApiResponse<InlineResponse20035> GetCrossexFeeWithHttpInfo ();
+        /// <summary>
+        /// Query Contract Positions
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>List&lt;InlineResponse20036&gt;</returns>
+        List<InlineResponse20036> ListCrossexPositions (string symbol = default(string), string exchangeType = default(string));
+
+        /// <summary>
+        /// Query Contract Positions
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20036&gt;</returns>
+        ApiResponse<List<InlineResponse20036>> ListCrossexPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
+        /// <summary>
+        /// Query Leveraged Positions
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Currency pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>List&lt;InlineResponse20037&gt;</returns>
+        List<InlineResponse20037> ListCrossexMarginPositions (string symbol = default(string), string exchangeType = default(string));
+
+        /// <summary>
+        /// Query Leveraged Positions
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Currency pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20037&gt;</returns>
+        ApiResponse<List<InlineResponse20037>> ListCrossexMarginPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
+        /// <summary>
+        /// Query ADL Position Reduction Ranking
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair</param>
+        /// <returns>List&lt;InlineResponse20038&gt;</returns>
+        List<InlineResponse20038> ListCrossexAdlRank (string symbol);
 
         /// <summary>
         /// Query ADL Position Reduction Ranking
@@ -526,165 +526,165 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20034&gt;</returns>
-        ApiResponse<List<InlineResponse20034>> ListCrossexAdlRankWithHttpInfo (string symbol);
-        /// <summary>
-        /// Query All Current Open Orders
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <param name="businessType">Business Type (optional)</param>
-        /// <returns>List&lt;InlineResponse20025&gt;</returns>
-        List<InlineResponse20025> ListCrossexOpenOrders (string symbol = default(string), string exchangeType = default(string), string businessType = default(string));
-
-        /// <summary>
-        /// Query All Current Open Orders
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <param name="businessType">Business Type (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20025&gt;</returns>
-        ApiResponse<List<InlineResponse20025>> ListCrossexOpenOrdersWithHttpInfo (string symbol = default(string), string exchangeType = default(string), string businessType = default(string));
-        /// <summary>
-        /// queryorderhistory
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>List&lt;InlineResponse20035&gt;</returns>
-        List<InlineResponse20035> ListCrossexHistoryOrders (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-
-        /// <summary>
-        /// queryorderhistory
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20035&gt;</returns>
-        ApiResponse<List<InlineResponse20035>> ListCrossexHistoryOrdersWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-        /// <summary>
-        /// Query Contract Position History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>List&lt;InlineResponse20036&gt;</returns>
-        List<InlineResponse20036> ListCrossexHistoryPositions (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-
-        /// <summary>
-        /// Query Contract Position History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20036&gt;</returns>
-        ApiResponse<List<InlineResponse20036>> ListCrossexHistoryPositionsWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-        /// <summary>
-        /// Query Leveraged Position History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>List&lt;InlineResponse20037&gt;</returns>
-        List<InlineResponse20037> ListCrossexHistoryMarginPositions (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-
-        /// <summary>
-        /// Query Leveraged Position History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20037&gt;</returns>
-        ApiResponse<List<InlineResponse20037>> ListCrossexHistoryMarginPositionsWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-        /// <summary>
-        /// Query Leveraged Interest Deduction History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>List&lt;InlineResponse20038&gt;</returns>
-        List<InlineResponse20038> ListCrossexHistoryMarginInterests (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string));
-
-        /// <summary>
-        /// Query Leveraged Interest Deduction History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>ApiResponse of List&lt;InlineResponse20038&gt;</returns>
-        ApiResponse<List<InlineResponse20038>> ListCrossexHistoryMarginInterestsWithHttpInfo (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string));
+        ApiResponse<List<InlineResponse20038>> ListCrossexAdlRankWithHttpInfo (string symbol);
         /// <summary>
-        /// queryfilledhistory
+        /// Query All Current Open Orders
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <param name="businessType">Business Type (optional)</param>
+        /// <returns>List&lt;InlineResponse20029&gt;</returns>
+        List<InlineResponse20029> ListCrossexOpenOrders (string symbol = default(string), string exchangeType = default(string), string businessType = default(string));
+
+        /// <summary>
+        /// Query All Current Open Orders
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <param name="businessType">Business Type (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20029&gt;</returns>
+        ApiResponse<List<InlineResponse20029>> ListCrossexOpenOrdersWithHttpInfo (string symbol = default(string), string exchangeType = default(string), string businessType = default(string));
+        /// <summary>
+        /// queryorderhistory
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
         /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>List&lt;InlineResponse20039&gt;</returns>
-        List<InlineResponse20039> ListCrossexHistoryTrades (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+        List<InlineResponse20039> ListCrossexHistoryOrders (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+
+        /// <summary>
+        /// queryorderhistory
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20039&gt;</returns>
+        ApiResponse<List<InlineResponse20039>> ListCrossexHistoryOrdersWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+        /// <summary>
+        /// Query Contract Position History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>List&lt;InlineResponse20040&gt;</returns>
+        List<InlineResponse20040> ListCrossexHistoryPositions (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+
+        /// <summary>
+        /// Query Contract Position History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20040&gt;</returns>
+        ApiResponse<List<InlineResponse20040>> ListCrossexHistoryPositionsWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+        /// <summary>
+        /// Query Leveraged Position History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>List&lt;InlineResponse20041&gt;</returns>
+        List<InlineResponse20041> ListCrossexHistoryMarginPositions (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+
+        /// <summary>
+        /// Query Leveraged Position History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20041&gt;</returns>
+        ApiResponse<List<InlineResponse20041>> ListCrossexHistoryMarginPositionsWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+        /// <summary>
+        /// Query Leveraged Interest Deduction History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <returns>List&lt;InlineResponse20042&gt;</returns>
+        List<InlineResponse20042> ListCrossexHistoryMarginInterests (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string));
+
+        /// <summary>
+        /// Query Leveraged Interest Deduction History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20042&gt;</returns>
+        ApiResponse<List<InlineResponse20042>> ListCrossexHistoryMarginInterestsWithHttpInfo (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string));
+        /// <summary>
+        /// queryfilledhistory
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>List&lt;InlineResponse20043&gt;</returns>
+        List<InlineResponse20043> ListCrossexHistoryTrades (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
 
         /// <summary>
         /// queryfilledhistory
@@ -698,8 +698,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20039&gt;</returns>
-        ApiResponse<List<InlineResponse20039>> ListCrossexHistoryTradesWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+        /// <returns>ApiResponse of List&lt;InlineResponse20043&gt;</returns>
+        ApiResponse<List<InlineResponse20043>> ListCrossexHistoryTradesWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
         /// <summary>
         /// Query Account Asset Change History
         /// </summary>
@@ -712,8 +712,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>List&lt;InlineResponse20040&gt;</returns>
-        List<InlineResponse20040> ListCrossexAccountBook (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
+        /// <returns>List&lt;InlineResponse20044&gt;</returns>
+        List<InlineResponse20044> ListCrossexAccountBook (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
 
         /// <summary>
         /// Query Account Asset Change History
@@ -727,8 +727,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20040&gt;</returns>
-        ApiResponse<List<InlineResponse20040>> ListCrossexAccountBookWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
+        /// <returns>ApiResponse of List&lt;InlineResponse20044&gt;</returns>
+        ApiResponse<List<InlineResponse20044>> ListCrossexAccountBookWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
         /// <summary>
         /// Query currency discount rate (discount rate of margin currency in isolated exchange mode)
         /// </summary>
@@ -738,8 +738,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
-        /// <returns>List&lt;InlineResponse20041&gt;</returns>
-        List<InlineResponse20041> ListCrossexCoinDiscountRate (string coin = default(string), string exchangeType = default(string));
+        /// <returns>List&lt;InlineResponse20045&gt;</returns>
+        List<InlineResponse20045> ListCrossexCoinDiscountRate (string coin = default(string), string exchangeType = default(string));
 
         /// <summary>
         /// Query currency discount rate (discount rate of margin currency in isolated exchange mode)
@@ -750,8 +750,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20041&gt;</returns>
-        ApiResponse<List<InlineResponse20041>> ListCrossexCoinDiscountRateWithHttpInfo (string coin = default(string), string exchangeType = default(string));
+        /// <returns>ApiResponse of List&lt;InlineResponse20045&gt;</returns>
+        ApiResponse<List<InlineResponse20045>> ListCrossexCoinDiscountRateWithHttpInfo (string coin = default(string), string exchangeType = default(string));
         #endregion Synchronous Operations
     }
 
@@ -790,8 +790,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
-        /// <returns>Task of List&lt;InlineResponse20020&gt;</returns>
-        Task<List<InlineResponse20020>> ListCrossexRuleRiskLimitsAsync (string symbols);
+        /// <returns>Task of List&lt;InlineResponse20024&gt;</returns>
+        Task<List<InlineResponse20024>> ListCrossexRuleRiskLimitsAsync (string symbols);
 
         /// <summary>
         /// [Public Interface] Query Risk Limit Information
@@ -801,8 +801,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20020&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20020>>> ListCrossexRuleRiskLimitsAsyncWithHttpInfo (string symbols);
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20024&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20024>>> ListCrossexRuleRiskLimitsAsyncWithHttpInfo (string symbols);
         /// <summary>
         /// [Public Interface] Query Supported Transfer Currencies
         /// </summary>
@@ -811,8 +811,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20021&gt;</returns>
-        Task<List<InlineResponse20021>> ListCrossexTransferCoinsAsync (string coin = default(string));
+        /// <returns>Task of List&lt;InlineResponse20025&gt;</returns>
+        Task<List<InlineResponse20025>> ListCrossexTransferCoinsAsync (string coin = default(string));
 
         /// <summary>
         /// [Public Interface] Query Supported Transfer Currencies
@@ -822,8 +822,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20021&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20021>>> ListCrossexTransferCoinsAsyncWithHttpInfo (string coin = default(string));
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20025&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20025>>> ListCrossexTransferCoinsAsyncWithHttpInfo (string coin = default(string));
         /// <summary>
         /// Query Fund Transfer History
         /// </summary>
@@ -837,8 +837,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20022&gt;</returns>
-        Task<List<InlineResponse20022>> ListCrossexTransfersAsync (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?));
+        /// <returns>Task of List&lt;InlineResponse20026&gt;</returns>
+        Task<List<InlineResponse20026>> ListCrossexTransfersAsync (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// Query Fund Transfer History
@@ -853,8 +853,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20022&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20022>>> ListCrossexTransfersAsyncWithHttpInfo (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?));
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20026&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20026>>> ListCrossexTransfersAsyncWithHttpInfo (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?));
         /// <summary>
         /// Fund Transfer
         /// </summary>
@@ -863,8 +863,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject20"> (optional)</param>
-        /// <returns>Task of InlineResponse20023</returns>
-        Task<InlineResponse20023> CreateCrossexTransferAsync (InlineObject20 inlineObject20 = default(InlineObject20));
+        /// <returns>Task of InlineResponse20027</returns>
+        Task<InlineResponse20027> CreateCrossexTransferAsync (InlineObject20 inlineObject20 = default(InlineObject20));
 
         /// <summary>
         /// Fund Transfer
@@ -874,8 +874,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject20"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
-        Task<ApiResponse<InlineResponse20023>> CreateCrossexTransferAsyncWithHttpInfo (InlineObject20 inlineObject20 = default(InlineObject20));
+        /// <returns>Task of ApiResponse (InlineResponse20027)</returns>
+        Task<ApiResponse<InlineResponse20027>> CreateCrossexTransferAsyncWithHttpInfo (InlineObject20 inlineObject20 = default(InlineObject20));
         /// <summary>
         /// Create an order
         /// </summary>
@@ -884,8 +884,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject21"> (optional)</param>
-        /// <returns>Task of InlineResponse20024</returns>
-        Task<InlineResponse20024> CreateCrossexOrderAsync (InlineObject21 inlineObject21 = default(InlineObject21));
+        /// <returns>Task of InlineResponse20028</returns>
+        Task<InlineResponse20028> CreateCrossexOrderAsync (InlineObject21 inlineObject21 = default(InlineObject21));
 
         /// <summary>
         /// Create an order
@@ -895,8 +895,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject21"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-        Task<ApiResponse<InlineResponse20024>> CreateCrossexOrderAsyncWithHttpInfo (InlineObject21 inlineObject21 = default(InlineObject21));
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        Task<ApiResponse<InlineResponse20028>> CreateCrossexOrderAsyncWithHttpInfo (InlineObject21 inlineObject21 = default(InlineObject21));
         /// <summary>
         /// Query order details
         /// </summary>
@@ -905,8 +905,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">1. Supports querying order IDs returned when creating orders 2. Supports custom IDs specified by users when creating orders (i.e., the text field)</param>
-        /// <returns>Task of InlineResponse20025</returns>
-        Task<InlineResponse20025> GetCrossexOrderAsync (string orderId);
+        /// <returns>Task of InlineResponse20029</returns>
+        Task<InlineResponse20029> GetCrossexOrderAsync (string orderId);
 
         /// <summary>
         /// Query order details
@@ -916,8 +916,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">1. Supports querying order IDs returned when creating orders 2. Supports custom IDs specified by users when creating orders (i.e., the text field)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-        Task<ApiResponse<InlineResponse20025>> GetCrossexOrderAsyncWithHttpInfo (string orderId);
+        /// <returns>Task of ApiResponse (InlineResponse20029)</returns>
+        Task<ApiResponse<InlineResponse20029>> GetCrossexOrderAsyncWithHttpInfo (string orderId);
         /// <summary>
         /// Modify Order
         /// </summary>
@@ -927,8 +927,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
         /// <param name="inlineObject22"> (optional)</param>
-        /// <returns>Task of InlineResponse20026</returns>
-        Task<InlineResponse20026> UpdateCrossexOrderAsync (string orderId, InlineObject22 inlineObject22 = default(InlineObject22));
+        /// <returns>Task of InlineResponse20030</returns>
+        Task<InlineResponse20030> UpdateCrossexOrderAsync (string orderId, InlineObject22 inlineObject22 = default(InlineObject22));
 
         /// <summary>
         /// Modify Order
@@ -939,8 +939,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
         /// <param name="inlineObject22"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20026)</returns>
-        Task<ApiResponse<InlineResponse20026>> UpdateCrossexOrderAsyncWithHttpInfo (string orderId, InlineObject22 inlineObject22 = default(InlineObject22));
+        /// <returns>Task of ApiResponse (InlineResponse20030)</returns>
+        Task<ApiResponse<InlineResponse20030>> UpdateCrossexOrderAsyncWithHttpInfo (string orderId, InlineObject22 inlineObject22 = default(InlineObject22));
         /// <summary>
         /// Cancel Order
         /// </summary>
@@ -972,8 +972,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject23"> (optional)</param>
-        /// <returns>Task of InlineResponse20027</returns>
-        Task<InlineResponse20027> CreateCrossexConvertQuoteAsync (InlineObject23 inlineObject23 = default(InlineObject23));
+        /// <returns>Task of InlineResponse20031</returns>
+        Task<InlineResponse20031> CreateCrossexConvertQuoteAsync (InlineObject23 inlineObject23 = default(InlineObject23));
 
         /// <summary>
         /// Flash Swap Inquiry
@@ -983,8 +983,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject23"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20027)</returns>
-        Task<ApiResponse<InlineResponse20027>> CreateCrossexConvertQuoteAsyncWithHttpInfo (InlineObject23 inlineObject23 = default(InlineObject23));
+        /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
+        Task<ApiResponse<InlineResponse20031>> CreateCrossexConvertQuoteAsyncWithHttpInfo (InlineObject23 inlineObject23 = default(InlineObject23));
         /// <summary>
         /// Flash Swap Transaction
         /// </summary>
@@ -1014,8 +1014,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
-        /// <returns>Task of InlineResponse20028</returns>
-        Task<InlineResponse20028> GetCrossexAccountAsync (string exchangeType = default(string));
+        /// <returns>Task of InlineResponse20032</returns>
+        Task<InlineResponse20032> GetCrossexAccountAsync (string exchangeType = default(string));
 
         /// <summary>
         /// Query Account Assets
@@ -1025,8 +1025,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
-        Task<ApiResponse<InlineResponse20028>> GetCrossexAccountAsyncWithHttpInfo (string exchangeType = default(string));
+        /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
+        Task<ApiResponse<InlineResponse20032>> GetCrossexAccountAsyncWithHttpInfo (string exchangeType = default(string));
         /// <summary>
         /// Modify Account Contract Position Mode and Account Mode
         /// </summary>
@@ -1056,8 +1056,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20029&gt;</returns>
-        Task<List<InlineResponse20029>> GetCrossexPositionsLeverageAsync (string symbols = default(string));
+        /// <returns>Task of List&lt;InlineResponse20033&gt;</returns>
+        Task<List<InlineResponse20033>> GetCrossexPositionsLeverageAsync (string symbols = default(string));
 
         /// <summary>
         /// Query Contract Trading Pair Leverage Multiplier
@@ -1067,8 +1067,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20029&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20029>>> GetCrossexPositionsLeverageAsyncWithHttpInfo (string symbols = default(string));
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20033&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20033>>> GetCrossexPositionsLeverageAsyncWithHttpInfo (string symbols = default(string));
         /// <summary>
         /// Modify Contract Trading Pair Leverage Multiplier
         /// </summary>
@@ -1098,8 +1098,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20029&gt;</returns>
-        Task<List<InlineResponse20029>> GetCrossexMarginPositionsLeverageAsync (string symbols = default(string));
+        /// <returns>Task of List&lt;InlineResponse20033&gt;</returns>
+        Task<List<InlineResponse20033>> GetCrossexMarginPositionsLeverageAsync (string symbols = default(string));
 
         /// <summary>
         /// Query Leveraged Trading Pair Leverage Multiplier
@@ -1109,8 +1109,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20029&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20029>>> GetCrossexMarginPositionsLeverageAsyncWithHttpInfo (string symbols = default(string));
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20033&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20033>>> GetCrossexMarginPositionsLeverageAsyncWithHttpInfo (string symbols = default(string));
         /// <summary>
         /// Modify Leveraged Trading Pair Leverage Multiplier
         /// </summary>
@@ -1140,8 +1140,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject28"> (optional)</param>
-        /// <returns>Task of InlineResponse20024</returns>
-        Task<InlineResponse20024> CloseCrossexPositionAsync (InlineObject28 inlineObject28 = default(InlineObject28));
+        /// <returns>Task of InlineResponse20028</returns>
+        Task<InlineResponse20028> CloseCrossexPositionAsync (InlineObject28 inlineObject28 = default(InlineObject28));
 
         /// <summary>
         /// Full Close Position
@@ -1151,8 +1151,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject28"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-        Task<ApiResponse<InlineResponse20024>> CloseCrossexPositionAsyncWithHttpInfo (InlineObject28 inlineObject28 = default(InlineObject28));
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        Task<ApiResponse<InlineResponse20028>> CloseCrossexPositionAsyncWithHttpInfo (InlineObject28 inlineObject28 = default(InlineObject28));
         /// <summary>
         /// Query margin asset interest rates
         /// </summary>
@@ -1162,95 +1162,95 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
         /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20030&gt;</returns>
-        Task<List<InlineResponse20030>> GetCrossexInterestRateAsync (string coin = default(string), string exchangeType = default(string));
-
-        /// <summary>
-        /// Query margin asset interest rates
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="coin">Currency (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20030&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20030>>> GetCrossexInterestRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string));
-        /// <summary>
-        /// Query User Fee Rates
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20031</returns>
-        Task<InlineResponse20031> GetCrossexFeeAsync ();
-
-        /// <summary>
-        /// Query User Fee Rates
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
-        Task<ApiResponse<InlineResponse20031>> GetCrossexFeeAsyncWithHttpInfo ();
-        /// <summary>
-        /// Query Contract Positions
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20032&gt;</returns>
-        Task<List<InlineResponse20032>> ListCrossexPositionsAsync (string symbol = default(string), string exchangeType = default(string));
-
-        /// <summary>
-        /// Query Contract Positions
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20032&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20032>>> ListCrossexPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
-        /// <summary>
-        /// Query Leveraged Positions
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Currency pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20033&gt;</returns>
-        Task<List<InlineResponse20033>> ListCrossexMarginPositionsAsync (string symbol = default(string), string exchangeType = default(string));
-
-        /// <summary>
-        /// Query Leveraged Positions
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Currency pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20033&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20033>>> ListCrossexMarginPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
-        /// <summary>
-        /// Query ADL Position Reduction Ranking
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair</param>
         /// <returns>Task of List&lt;InlineResponse20034&gt;</returns>
-        Task<List<InlineResponse20034>> ListCrossexAdlRankAsync (string symbol);
+        Task<List<InlineResponse20034>> GetCrossexInterestRateAsync (string coin = default(string), string exchangeType = default(string));
+
+        /// <summary>
+        /// Query margin asset interest rates
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20034&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20034>>> GetCrossexInterestRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string));
+        /// <summary>
+        /// Query User Fee Rates
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of InlineResponse20035</returns>
+        Task<InlineResponse20035> GetCrossexFeeAsync ();
+
+        /// <summary>
+        /// Query User Fee Rates
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (InlineResponse20035)</returns>
+        Task<ApiResponse<InlineResponse20035>> GetCrossexFeeAsyncWithHttpInfo ();
+        /// <summary>
+        /// Query Contract Positions
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20036&gt;</returns>
+        Task<List<InlineResponse20036>> ListCrossexPositionsAsync (string symbol = default(string), string exchangeType = default(string));
+
+        /// <summary>
+        /// Query Contract Positions
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20036&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20036>>> ListCrossexPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
+        /// <summary>
+        /// Query Leveraged Positions
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Currency pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20037&gt;</returns>
+        Task<List<InlineResponse20037>> ListCrossexMarginPositionsAsync (string symbol = default(string), string exchangeType = default(string));
+
+        /// <summary>
+        /// Query Leveraged Positions
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Currency pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20037&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20037>>> ListCrossexMarginPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
+        /// <summary>
+        /// Query ADL Position Reduction Ranking
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair</param>
+        /// <returns>Task of List&lt;InlineResponse20038&gt;</returns>
+        Task<List<InlineResponse20038>> ListCrossexAdlRankAsync (string symbol);
 
         /// <summary>
         /// Query ADL Position Reduction Ranking
@@ -1260,165 +1260,165 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20034&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20034>>> ListCrossexAdlRankAsyncWithHttpInfo (string symbol);
-        /// <summary>
-        /// Query All Current Open Orders
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <param name="businessType">Business Type (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20025&gt;</returns>
-        Task<List<InlineResponse20025>> ListCrossexOpenOrdersAsync (string symbol = default(string), string exchangeType = default(string), string businessType = default(string));
-
-        /// <summary>
-        /// Query All Current Open Orders
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <param name="businessType">Business Type (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20025&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20025>>> ListCrossexOpenOrdersAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string), string businessType = default(string));
-        /// <summary>
-        /// queryorderhistory
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20035&gt;</returns>
-        Task<List<InlineResponse20035>> ListCrossexHistoryOrdersAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-
-        /// <summary>
-        /// queryorderhistory
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20035&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20035>>> ListCrossexHistoryOrdersAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-        /// <summary>
-        /// Query Contract Position History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20036&gt;</returns>
-        Task<List<InlineResponse20036>> ListCrossexHistoryPositionsAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-
-        /// <summary>
-        /// Query Contract Position History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20036&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20036>>> ListCrossexHistoryPositionsAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-        /// <summary>
-        /// Query Leveraged Position History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20037&gt;</returns>
-        Task<List<InlineResponse20037>> ListCrossexHistoryMarginPositionsAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-
-        /// <summary>
-        /// Query Leveraged Position History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20037&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20037>>> ListCrossexHistoryMarginPositionsAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
-        /// <summary>
-        /// Query Leveraged Interest Deduction History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20038&gt;</returns>
-        Task<List<InlineResponse20038>> ListCrossexHistoryMarginInterestsAsync (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string));
-
-        /// <summary>
-        /// Query Leveraged Interest Deduction History
-        /// </summary>
-        /// <remarks>
-        /// Rate Limit: 200 requests per 10 seconds
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;InlineResponse20038&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20038>>> ListCrossexHistoryMarginInterestsAsyncWithHttpInfo (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string));
+        Task<ApiResponse<List<InlineResponse20038>>> ListCrossexAdlRankAsyncWithHttpInfo (string symbol);
         /// <summary>
-        /// queryfilledhistory
+        /// Query All Current Open Orders
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <param name="businessType">Business Type (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20029&gt;</returns>
+        Task<List<InlineResponse20029>> ListCrossexOpenOrdersAsync (string symbol = default(string), string exchangeType = default(string), string businessType = default(string));
+
+        /// <summary>
+        /// Query All Current Open Orders
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <param name="businessType">Business Type (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20029&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20029>>> ListCrossexOpenOrdersAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string), string businessType = default(string));
+        /// <summary>
+        /// queryorderhistory
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
         /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>Task of List&lt;InlineResponse20039&gt;</returns>
-        Task<List<InlineResponse20039>> ListCrossexHistoryTradesAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+        Task<List<InlineResponse20039>> ListCrossexHistoryOrdersAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+
+        /// <summary>
+        /// queryorderhistory
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20039&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20039>>> ListCrossexHistoryOrdersAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+        /// <summary>
+        /// Query Contract Position History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20040&gt;</returns>
+        Task<List<InlineResponse20040>> ListCrossexHistoryPositionsAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+
+        /// <summary>
+        /// Query Contract Position History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20040&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20040>>> ListCrossexHistoryPositionsAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+        /// <summary>
+        /// Query Leveraged Position History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20041&gt;</returns>
+        Task<List<InlineResponse20041>> ListCrossexHistoryMarginPositionsAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+
+        /// <summary>
+        /// Query Leveraged Position History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20041&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20041>>> ListCrossexHistoryMarginPositionsAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+        /// <summary>
+        /// Query Leveraged Interest Deduction History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20042&gt;</returns>
+        Task<List<InlineResponse20042>> ListCrossexHistoryMarginInterestsAsync (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string));
+
+        /// <summary>
+        /// Query Leveraged Interest Deduction History
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20042&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20042>>> ListCrossexHistoryMarginInterestsAsyncWithHttpInfo (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string));
+        /// <summary>
+        /// queryfilledhistory
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20043&gt;</returns>
+        Task<List<InlineResponse20043>> ListCrossexHistoryTradesAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
 
         /// <summary>
         /// queryfilledhistory
@@ -1432,8 +1432,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20039&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20039>>> ListCrossexHistoryTradesAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20043&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20043>>> ListCrossexHistoryTradesAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
         /// <summary>
         /// Query Account Asset Change History
         /// </summary>
@@ -1446,8 +1446,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20040&gt;</returns>
-        Task<List<InlineResponse20040>> ListCrossexAccountBookAsync (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
+        /// <returns>Task of List&lt;InlineResponse20044&gt;</returns>
+        Task<List<InlineResponse20044>> ListCrossexAccountBookAsync (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
 
         /// <summary>
         /// Query Account Asset Change History
@@ -1461,8 +1461,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20040&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20040>>> ListCrossexAccountBookAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20044&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20044>>> ListCrossexAccountBookAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
         /// <summary>
         /// Query currency discount rate (discount rate of margin currency in isolated exchange mode)
         /// </summary>
@@ -1472,8 +1472,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20041&gt;</returns>
-        Task<List<InlineResponse20041>> ListCrossexCoinDiscountRateAsync (string coin = default(string), string exchangeType = default(string));
+        /// <returns>Task of List&lt;InlineResponse20045&gt;</returns>
+        Task<List<InlineResponse20045>> ListCrossexCoinDiscountRateAsync (string coin = default(string), string exchangeType = default(string));
 
         /// <summary>
         /// Query currency discount rate (discount rate of margin currency in isolated exchange mode)
@@ -1484,8 +1484,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20041&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse20041>>> ListCrossexCoinDiscountRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string));
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20045&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse20045>>> ListCrossexCoinDiscountRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string));
         #endregion Asynchronous Operations
     }
 
@@ -1722,10 +1722,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
-        /// <returns>List&lt;InlineResponse20020&gt;</returns>
-        public List<InlineResponse20020> ListCrossexRuleRiskLimits (string symbols)
+        /// <returns>List&lt;InlineResponse20024&gt;</returns>
+        public List<InlineResponse20024> ListCrossexRuleRiskLimits (string symbols)
         {
-             ApiResponse<List<InlineResponse20020>> localVarResponse = ListCrossexRuleRiskLimitsWithHttpInfo(symbols);
+             ApiResponse<List<InlineResponse20024>> localVarResponse = ListCrossexRuleRiskLimitsWithHttpInfo(symbols);
              return localVarResponse.Data;
         }
 
@@ -1734,8 +1734,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20020&gt;</returns>
-        public ApiResponse<List<InlineResponse20020>> ListCrossexRuleRiskLimitsWithHttpInfo (string symbols)
+        /// <returns>ApiResponse of List&lt;InlineResponse20024&gt;</returns>
+        public ApiResponse<List<InlineResponse20024>> ListCrossexRuleRiskLimitsWithHttpInfo (string symbols)
         {
             // verify the required parameter 'symbols' is set
             if (symbols == null)
@@ -1761,7 +1761,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20020>>("/rule/risk_limits", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse20024>>("/rule/risk_limits", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1777,10 +1777,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
-        /// <returns>Task of List&lt;InlineResponse20020&gt;</returns>
-        public async Task<List<InlineResponse20020>> ListCrossexRuleRiskLimitsAsync (string symbols)
+        /// <returns>Task of List&lt;InlineResponse20024&gt;</returns>
+        public async Task<List<InlineResponse20024>> ListCrossexRuleRiskLimitsAsync (string symbols)
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20020>> localVarResponse = await ListCrossexRuleRiskLimitsAsyncWithHttpInfo(symbols);
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20024>> localVarResponse = await ListCrossexRuleRiskLimitsAsyncWithHttpInfo(symbols);
              return localVarResponse.Data;
 
         }
@@ -1790,8 +1790,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20020&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20020>>> ListCrossexRuleRiskLimitsAsyncWithHttpInfo (string symbols)
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20024&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20024>>> ListCrossexRuleRiskLimitsAsyncWithHttpInfo (string symbols)
         {
             // verify the required parameter 'symbols' is set
             if (symbols == null)
@@ -1819,7 +1819,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20020>>("/rule/risk_limits", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20024>>("/rule/risk_limits", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1835,10 +1835,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
-        /// <returns>List&lt;InlineResponse20021&gt;</returns>
-        public List<InlineResponse20021> ListCrossexTransferCoins (string coin = default(string))
+        /// <returns>List&lt;InlineResponse20025&gt;</returns>
+        public List<InlineResponse20025> ListCrossexTransferCoins (string coin = default(string))
         {
-             ApiResponse<List<InlineResponse20021>> localVarResponse = ListCrossexTransferCoinsWithHttpInfo(coin);
+             ApiResponse<List<InlineResponse20025>> localVarResponse = ListCrossexTransferCoinsWithHttpInfo(coin);
              return localVarResponse.Data;
         }
 
@@ -1847,8 +1847,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20021&gt;</returns>
-        public ApiResponse<List<InlineResponse20021>> ListCrossexTransferCoinsWithHttpInfo (string coin = default(string))
+        /// <returns>ApiResponse of List&lt;InlineResponse20025&gt;</returns>
+        public ApiResponse<List<InlineResponse20025>> ListCrossexTransferCoinsWithHttpInfo (string coin = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1873,7 +1873,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20021>>("/transfers/coin", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse20025>>("/transfers/coin", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1889,10 +1889,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20021&gt;</returns>
-        public async Task<List<InlineResponse20021>> ListCrossexTransferCoinsAsync (string coin = default(string))
+        /// <returns>Task of List&lt;InlineResponse20025&gt;</returns>
+        public async Task<List<InlineResponse20025>> ListCrossexTransferCoinsAsync (string coin = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20021>> localVarResponse = await ListCrossexTransferCoinsAsyncWithHttpInfo(coin);
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20025>> localVarResponse = await ListCrossexTransferCoinsAsyncWithHttpInfo(coin);
              return localVarResponse.Data;
 
         }
@@ -1902,8 +1902,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20021&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20021>>> ListCrossexTransferCoinsAsyncWithHttpInfo (string coin = default(string))
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20025&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20025>>> ListCrossexTransferCoinsAsyncWithHttpInfo (string coin = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1930,7 +1930,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20021>>("/transfers/coin", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20025>>("/transfers/coin", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1951,10 +1951,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <returns>List&lt;InlineResponse20022&gt;</returns>
-        public List<InlineResponse20022> ListCrossexTransfers (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?))
+        /// <returns>List&lt;InlineResponse20026&gt;</returns>
+        public List<InlineResponse20026> ListCrossexTransfers (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?))
         {
-             ApiResponse<List<InlineResponse20022>> localVarResponse = ListCrossexTransfersWithHttpInfo(coin, orderId, from, to, page, limit);
+             ApiResponse<List<InlineResponse20026>> localVarResponse = ListCrossexTransfersWithHttpInfo(coin, orderId, from, to, page, limit);
              return localVarResponse.Data;
         }
 
@@ -1968,8 +1968,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20022&gt;</returns>
-        public ApiResponse<List<InlineResponse20022>> ListCrossexTransfersWithHttpInfo (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?))
+        /// <returns>ApiResponse of List&lt;InlineResponse20026&gt;</returns>
+        public ApiResponse<List<InlineResponse20026>> ListCrossexTransfersWithHttpInfo (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2016,7 +2016,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20022>>("/transfers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse20026>>("/transfers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2037,10 +2037,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20022&gt;</returns>
-        public async Task<List<InlineResponse20022>> ListCrossexTransfersAsync (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?))
+        /// <returns>Task of List&lt;InlineResponse20026&gt;</returns>
+        public async Task<List<InlineResponse20026>> ListCrossexTransfersAsync (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20022>> localVarResponse = await ListCrossexTransfersAsyncWithHttpInfo(coin, orderId, from, to, page, limit);
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20026>> localVarResponse = await ListCrossexTransfersAsyncWithHttpInfo(coin, orderId, from, to, page, limit);
              return localVarResponse.Data;
 
         }
@@ -2055,8 +2055,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20022&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20022>>> ListCrossexTransfersAsyncWithHttpInfo (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?))
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20026&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20026>>> ListCrossexTransfersAsyncWithHttpInfo (string coin = default(string), string orderId = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2105,7 +2105,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20022>>("/transfers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20026>>("/transfers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2121,10 +2121,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject20"> (optional)</param>
-        /// <returns>InlineResponse20023</returns>
-        public InlineResponse20023 CreateCrossexTransfer (InlineObject20 inlineObject20 = default(InlineObject20))
+        /// <returns>InlineResponse20027</returns>
+        public InlineResponse20027 CreateCrossexTransfer (InlineObject20 inlineObject20 = default(InlineObject20))
         {
-             ApiResponse<InlineResponse20023> localVarResponse = CreateCrossexTransferWithHttpInfo(inlineObject20);
+             ApiResponse<InlineResponse20027> localVarResponse = CreateCrossexTransferWithHttpInfo(inlineObject20);
              return localVarResponse.Data;
         }
 
@@ -2133,8 +2133,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject20"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20023</returns>
-        public ApiResponse<InlineResponse20023> CreateCrossexTransferWithHttpInfo (InlineObject20 inlineObject20 = default(InlineObject20))
+        /// <returns>ApiResponse of InlineResponse20027</returns>
+        public ApiResponse<InlineResponse20027> CreateCrossexTransferWithHttpInfo (InlineObject20 inlineObject20 = default(InlineObject20))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2159,7 +2159,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20023>("/transfers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InlineResponse20027>("/transfers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2175,10 +2175,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject20"> (optional)</param>
-        /// <returns>Task of InlineResponse20023</returns>
-        public async Task<InlineResponse20023> CreateCrossexTransferAsync (InlineObject20 inlineObject20 = default(InlineObject20))
+        /// <returns>Task of InlineResponse20027</returns>
+        public async Task<InlineResponse20027> CreateCrossexTransferAsync (InlineObject20 inlineObject20 = default(InlineObject20))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20023> localVarResponse = await CreateCrossexTransferAsyncWithHttpInfo(inlineObject20);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20027> localVarResponse = await CreateCrossexTransferAsyncWithHttpInfo(inlineObject20);
              return localVarResponse.Data;
 
         }
@@ -2188,8 +2188,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject20"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
-        public async Task<ApiResponse<InlineResponse20023>> CreateCrossexTransferAsyncWithHttpInfo (InlineObject20 inlineObject20 = default(InlineObject20))
+        /// <returns>Task of ApiResponse (InlineResponse20027)</returns>
+        public async Task<ApiResponse<InlineResponse20027>> CreateCrossexTransferAsyncWithHttpInfo (InlineObject20 inlineObject20 = default(InlineObject20))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2216,7 +2216,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20023>("/transfers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20027>("/transfers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2232,10 +2232,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject21"> (optional)</param>
-        /// <returns>InlineResponse20024</returns>
-        public InlineResponse20024 CreateCrossexOrder (InlineObject21 inlineObject21 = default(InlineObject21))
+        /// <returns>InlineResponse20028</returns>
+        public InlineResponse20028 CreateCrossexOrder (InlineObject21 inlineObject21 = default(InlineObject21))
         {
-             ApiResponse<InlineResponse20024> localVarResponse = CreateCrossexOrderWithHttpInfo(inlineObject21);
+             ApiResponse<InlineResponse20028> localVarResponse = CreateCrossexOrderWithHttpInfo(inlineObject21);
              return localVarResponse.Data;
         }
 
@@ -2244,8 +2244,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject21"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20024</returns>
-        public ApiResponse<InlineResponse20024> CreateCrossexOrderWithHttpInfo (InlineObject21 inlineObject21 = default(InlineObject21))
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        public ApiResponse<InlineResponse20028> CreateCrossexOrderWithHttpInfo (InlineObject21 inlineObject21 = default(InlineObject21))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2270,7 +2270,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20024>("/orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InlineResponse20028>("/orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2286,10 +2286,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject21"> (optional)</param>
-        /// <returns>Task of InlineResponse20024</returns>
-        public async Task<InlineResponse20024> CreateCrossexOrderAsync (InlineObject21 inlineObject21 = default(InlineObject21))
+        /// <returns>Task of InlineResponse20028</returns>
+        public async Task<InlineResponse20028> CreateCrossexOrderAsync (InlineObject21 inlineObject21 = default(InlineObject21))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20024> localVarResponse = await CreateCrossexOrderAsyncWithHttpInfo(inlineObject21);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20028> localVarResponse = await CreateCrossexOrderAsyncWithHttpInfo(inlineObject21);
              return localVarResponse.Data;
 
         }
@@ -2299,8 +2299,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject21"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-        public async Task<ApiResponse<InlineResponse20024>> CreateCrossexOrderAsyncWithHttpInfo (InlineObject21 inlineObject21 = default(InlineObject21))
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        public async Task<ApiResponse<InlineResponse20028>> CreateCrossexOrderAsyncWithHttpInfo (InlineObject21 inlineObject21 = default(InlineObject21))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2327,7 +2327,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20024>("/orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20028>("/orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2343,10 +2343,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">1. Supports querying order IDs returned when creating orders 2. Supports custom IDs specified by users when creating orders (i.e., the text field)</param>
-        /// <returns>InlineResponse20025</returns>
-        public InlineResponse20025 GetCrossexOrder (string orderId)
+        /// <returns>InlineResponse20029</returns>
+        public InlineResponse20029 GetCrossexOrder (string orderId)
         {
-             ApiResponse<InlineResponse20025> localVarResponse = GetCrossexOrderWithHttpInfo(orderId);
+             ApiResponse<InlineResponse20029> localVarResponse = GetCrossexOrderWithHttpInfo(orderId);
              return localVarResponse.Data;
         }
 
@@ -2355,8 +2355,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">1. Supports querying order IDs returned when creating orders 2. Supports custom IDs specified by users when creating orders (i.e., the text field)</param>
-        /// <returns>ApiResponse of InlineResponse20025</returns>
-        public ApiResponse<InlineResponse20025> GetCrossexOrderWithHttpInfo (string orderId)
+        /// <returns>ApiResponse of InlineResponse20029</returns>
+        public ApiResponse<InlineResponse20029> GetCrossexOrderWithHttpInfo (string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -2384,7 +2384,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20025>("/orders/{order_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20029>("/orders/{order_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2400,10 +2400,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">1. Supports querying order IDs returned when creating orders 2. Supports custom IDs specified by users when creating orders (i.e., the text field)</param>
-        /// <returns>Task of InlineResponse20025</returns>
-        public async Task<InlineResponse20025> GetCrossexOrderAsync (string orderId)
+        /// <returns>Task of InlineResponse20029</returns>
+        public async Task<InlineResponse20029> GetCrossexOrderAsync (string orderId)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20025> localVarResponse = await GetCrossexOrderAsyncWithHttpInfo(orderId);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20029> localVarResponse = await GetCrossexOrderAsyncWithHttpInfo(orderId);
              return localVarResponse.Data;
 
         }
@@ -2413,8 +2413,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">1. Supports querying order IDs returned when creating orders 2. Supports custom IDs specified by users when creating orders (i.e., the text field)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-        public async Task<ApiResponse<InlineResponse20025>> GetCrossexOrderAsyncWithHttpInfo (string orderId)
+        /// <returns>Task of ApiResponse (InlineResponse20029)</returns>
+        public async Task<ApiResponse<InlineResponse20029>> GetCrossexOrderAsyncWithHttpInfo (string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -2444,7 +2444,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20025>("/orders/{order_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20029>("/orders/{order_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2461,10 +2461,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
         /// <param name="inlineObject22"> (optional)</param>
-        /// <returns>InlineResponse20026</returns>
-        public InlineResponse20026 UpdateCrossexOrder (string orderId, InlineObject22 inlineObject22 = default(InlineObject22))
+        /// <returns>InlineResponse20030</returns>
+        public InlineResponse20030 UpdateCrossexOrder (string orderId, InlineObject22 inlineObject22 = default(InlineObject22))
         {
-             ApiResponse<InlineResponse20026> localVarResponse = UpdateCrossexOrderWithHttpInfo(orderId, inlineObject22);
+             ApiResponse<InlineResponse20030> localVarResponse = UpdateCrossexOrderWithHttpInfo(orderId, inlineObject22);
              return localVarResponse.Data;
         }
 
@@ -2474,8 +2474,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
         /// <param name="inlineObject22"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20026</returns>
-        public ApiResponse<InlineResponse20026> UpdateCrossexOrderWithHttpInfo (string orderId, InlineObject22 inlineObject22 = default(InlineObject22))
+        /// <returns>ApiResponse of InlineResponse20030</returns>
+        public ApiResponse<InlineResponse20030> UpdateCrossexOrderWithHttpInfo (string orderId, InlineObject22 inlineObject22 = default(InlineObject22))
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -2505,7 +2505,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<InlineResponse20026>("/orders/{order_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<InlineResponse20030>("/orders/{order_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2522,10 +2522,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
         /// <param name="inlineObject22"> (optional)</param>
-        /// <returns>Task of InlineResponse20026</returns>
-        public async Task<InlineResponse20026> UpdateCrossexOrderAsync (string orderId, InlineObject22 inlineObject22 = default(InlineObject22))
+        /// <returns>Task of InlineResponse20030</returns>
+        public async Task<InlineResponse20030> UpdateCrossexOrderAsync (string orderId, InlineObject22 inlineObject22 = default(InlineObject22))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20026> localVarResponse = await UpdateCrossexOrderAsyncWithHttpInfo(orderId, inlineObject22);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20030> localVarResponse = await UpdateCrossexOrderAsyncWithHttpInfo(orderId, inlineObject22);
              return localVarResponse.Data;
 
         }
@@ -2536,8 +2536,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
         /// <param name="inlineObject22"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20026)</returns>
-        public async Task<ApiResponse<InlineResponse20026>> UpdateCrossexOrderAsyncWithHttpInfo (string orderId, InlineObject22 inlineObject22 = default(InlineObject22))
+        /// <returns>Task of ApiResponse (InlineResponse20030)</returns>
+        public async Task<ApiResponse<InlineResponse20030>> UpdateCrossexOrderAsyncWithHttpInfo (string orderId, InlineObject22 inlineObject22 = default(InlineObject22))
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -2569,7 +2569,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<InlineResponse20026>("/orders/{order_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<InlineResponse20030>("/orders/{order_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2710,10 +2710,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject23"> (optional)</param>
-        /// <returns>InlineResponse20027</returns>
-        public InlineResponse20027 CreateCrossexConvertQuote (InlineObject23 inlineObject23 = default(InlineObject23))
+        /// <returns>InlineResponse20031</returns>
+        public InlineResponse20031 CreateCrossexConvertQuote (InlineObject23 inlineObject23 = default(InlineObject23))
         {
-             ApiResponse<InlineResponse20027> localVarResponse = CreateCrossexConvertQuoteWithHttpInfo(inlineObject23);
+             ApiResponse<InlineResponse20031> localVarResponse = CreateCrossexConvertQuoteWithHttpInfo(inlineObject23);
              return localVarResponse.Data;
         }
 
@@ -2722,8 +2722,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject23"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20027</returns>
-        public ApiResponse<InlineResponse20027> CreateCrossexConvertQuoteWithHttpInfo (InlineObject23 inlineObject23 = default(InlineObject23))
+        /// <returns>ApiResponse of InlineResponse20031</returns>
+        public ApiResponse<InlineResponse20031> CreateCrossexConvertQuoteWithHttpInfo (InlineObject23 inlineObject23 = default(InlineObject23))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2748,7 +2748,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20027>("/convert/quote", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InlineResponse20031>("/convert/quote", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2764,10 +2764,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject23"> (optional)</param>
-        /// <returns>Task of InlineResponse20027</returns>
-        public async Task<InlineResponse20027> CreateCrossexConvertQuoteAsync (InlineObject23 inlineObject23 = default(InlineObject23))
+        /// <returns>Task of InlineResponse20031</returns>
+        public async Task<InlineResponse20031> CreateCrossexConvertQuoteAsync (InlineObject23 inlineObject23 = default(InlineObject23))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20027> localVarResponse = await CreateCrossexConvertQuoteAsyncWithHttpInfo(inlineObject23);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20031> localVarResponse = await CreateCrossexConvertQuoteAsyncWithHttpInfo(inlineObject23);
              return localVarResponse.Data;
 
         }
@@ -2777,8 +2777,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject23"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20027)</returns>
-        public async Task<ApiResponse<InlineResponse20027>> CreateCrossexConvertQuoteAsyncWithHttpInfo (InlineObject23 inlineObject23 = default(InlineObject23))
+        /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
+        public async Task<ApiResponse<InlineResponse20031>> CreateCrossexConvertQuoteAsyncWithHttpInfo (InlineObject23 inlineObject23 = default(InlineObject23))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2805,7 +2805,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20027>("/convert/quote", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20031>("/convert/quote", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2932,10 +2932,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
-        /// <returns>InlineResponse20028</returns>
-        public InlineResponse20028 GetCrossexAccount (string exchangeType = default(string))
+        /// <returns>InlineResponse20032</returns>
+        public InlineResponse20032 GetCrossexAccount (string exchangeType = default(string))
         {
-             ApiResponse<InlineResponse20028> localVarResponse = GetCrossexAccountWithHttpInfo(exchangeType);
+             ApiResponse<InlineResponse20032> localVarResponse = GetCrossexAccountWithHttpInfo(exchangeType);
              return localVarResponse.Data;
         }
 
@@ -2944,8 +2944,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20028</returns>
-        public ApiResponse<InlineResponse20028> GetCrossexAccountWithHttpInfo (string exchangeType = default(string))
+        /// <returns>ApiResponse of InlineResponse20032</returns>
+        public ApiResponse<InlineResponse20032> GetCrossexAccountWithHttpInfo (string exchangeType = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2972,7 +2972,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20028>("/accounts", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20032>("/accounts", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2988,10 +2988,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
-        /// <returns>Task of InlineResponse20028</returns>
-        public async Task<InlineResponse20028> GetCrossexAccountAsync (string exchangeType = default(string))
+        /// <returns>Task of InlineResponse20032</returns>
+        public async Task<InlineResponse20032> GetCrossexAccountAsync (string exchangeType = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20028> localVarResponse = await GetCrossexAccountAsyncWithHttpInfo(exchangeType);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20032> localVarResponse = await GetCrossexAccountAsyncWithHttpInfo(exchangeType);
              return localVarResponse.Data;
 
         }
@@ -3001,8 +3001,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
-        public async Task<ApiResponse<InlineResponse20028>> GetCrossexAccountAsyncWithHttpInfo (string exchangeType = default(string))
+        /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
+        public async Task<ApiResponse<InlineResponse20032>> GetCrossexAccountAsyncWithHttpInfo (string exchangeType = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3031,7 +3031,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20028>("/accounts", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20032>("/accounts", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3158,10 +3158,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>List&lt;InlineResponse20029&gt;</returns>
-        public List<InlineResponse20029> GetCrossexPositionsLeverage (string symbols = default(string))
+        /// <returns>List&lt;InlineResponse20033&gt;</returns>
+        public List<InlineResponse20033> GetCrossexPositionsLeverage (string symbols = default(string))
         {
-             ApiResponse<List<InlineResponse20029>> localVarResponse = GetCrossexPositionsLeverageWithHttpInfo(symbols);
+             ApiResponse<List<InlineResponse20033>> localVarResponse = GetCrossexPositionsLeverageWithHttpInfo(symbols);
              return localVarResponse.Data;
         }
 
@@ -3170,8 +3170,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20029&gt;</returns>
-        public ApiResponse<List<InlineResponse20029>> GetCrossexPositionsLeverageWithHttpInfo (string symbols = default(string))
+        /// <returns>ApiResponse of List&lt;InlineResponse20033&gt;</returns>
+        public ApiResponse<List<InlineResponse20033>> GetCrossexPositionsLeverageWithHttpInfo (string symbols = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3198,7 +3198,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20029>>("/positions/leverage", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse20033>>("/positions/leverage", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3214,10 +3214,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20029&gt;</returns>
-        public async Task<List<InlineResponse20029>> GetCrossexPositionsLeverageAsync (string symbols = default(string))
+        /// <returns>Task of List&lt;InlineResponse20033&gt;</returns>
+        public async Task<List<InlineResponse20033>> GetCrossexPositionsLeverageAsync (string symbols = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20029>> localVarResponse = await GetCrossexPositionsLeverageAsyncWithHttpInfo(symbols);
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20033>> localVarResponse = await GetCrossexPositionsLeverageAsyncWithHttpInfo(symbols);
              return localVarResponse.Data;
 
         }
@@ -3227,8 +3227,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20029&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20029>>> GetCrossexPositionsLeverageAsyncWithHttpInfo (string symbols = default(string))
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20033&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20033>>> GetCrossexPositionsLeverageAsyncWithHttpInfo (string symbols = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3257,7 +3257,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20029>>("/positions/leverage", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20033>>("/positions/leverage", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3384,10 +3384,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>List&lt;InlineResponse20029&gt;</returns>
-        public List<InlineResponse20029> GetCrossexMarginPositionsLeverage (string symbols = default(string))
+        /// <returns>List&lt;InlineResponse20033&gt;</returns>
+        public List<InlineResponse20033> GetCrossexMarginPositionsLeverage (string symbols = default(string))
         {
-             ApiResponse<List<InlineResponse20029>> localVarResponse = GetCrossexMarginPositionsLeverageWithHttpInfo(symbols);
+             ApiResponse<List<InlineResponse20033>> localVarResponse = GetCrossexMarginPositionsLeverageWithHttpInfo(symbols);
              return localVarResponse.Data;
         }
 
@@ -3396,8 +3396,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20029&gt;</returns>
-        public ApiResponse<List<InlineResponse20029>> GetCrossexMarginPositionsLeverageWithHttpInfo (string symbols = default(string))
+        /// <returns>ApiResponse of List&lt;InlineResponse20033&gt;</returns>
+        public ApiResponse<List<InlineResponse20033>> GetCrossexMarginPositionsLeverageWithHttpInfo (string symbols = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3424,7 +3424,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20029>>("/margin_positions/leverage", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse20033>>("/margin_positions/leverage", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3440,10 +3440,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20029&gt;</returns>
-        public async Task<List<InlineResponse20029>> GetCrossexMarginPositionsLeverageAsync (string symbols = default(string))
+        /// <returns>Task of List&lt;InlineResponse20033&gt;</returns>
+        public async Task<List<InlineResponse20033>> GetCrossexMarginPositionsLeverageAsync (string symbols = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20029>> localVarResponse = await GetCrossexMarginPositionsLeverageAsyncWithHttpInfo(symbols);
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20033>> localVarResponse = await GetCrossexMarginPositionsLeverageAsyncWithHttpInfo(symbols);
              return localVarResponse.Data;
 
         }
@@ -3453,8 +3453,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20029&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20029>>> GetCrossexMarginPositionsLeverageAsyncWithHttpInfo (string symbols = default(string))
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20033&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20033>>> GetCrossexMarginPositionsLeverageAsyncWithHttpInfo (string symbols = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3483,7 +3483,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20029>>("/margin_positions/leverage", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20033>>("/margin_positions/leverage", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3610,10 +3610,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject28"> (optional)</param>
-        /// <returns>InlineResponse20024</returns>
-        public InlineResponse20024 CloseCrossexPosition (InlineObject28 inlineObject28 = default(InlineObject28))
+        /// <returns>InlineResponse20028</returns>
+        public InlineResponse20028 CloseCrossexPosition (InlineObject28 inlineObject28 = default(InlineObject28))
         {
-             ApiResponse<InlineResponse20024> localVarResponse = CloseCrossexPositionWithHttpInfo(inlineObject28);
+             ApiResponse<InlineResponse20028> localVarResponse = CloseCrossexPositionWithHttpInfo(inlineObject28);
              return localVarResponse.Data;
         }
 
@@ -3622,8 +3622,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject28"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20024</returns>
-        public ApiResponse<InlineResponse20024> CloseCrossexPositionWithHttpInfo (InlineObject28 inlineObject28 = default(InlineObject28))
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        public ApiResponse<InlineResponse20028> CloseCrossexPositionWithHttpInfo (InlineObject28 inlineObject28 = default(InlineObject28))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3648,7 +3648,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<InlineResponse20024>("/position", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<InlineResponse20028>("/position", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3664,10 +3664,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject28"> (optional)</param>
-        /// <returns>Task of InlineResponse20024</returns>
-        public async Task<InlineResponse20024> CloseCrossexPositionAsync (InlineObject28 inlineObject28 = default(InlineObject28))
+        /// <returns>Task of InlineResponse20028</returns>
+        public async Task<InlineResponse20028> CloseCrossexPositionAsync (InlineObject28 inlineObject28 = default(InlineObject28))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20024> localVarResponse = await CloseCrossexPositionAsyncWithHttpInfo(inlineObject28);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20028> localVarResponse = await CloseCrossexPositionAsyncWithHttpInfo(inlineObject28);
              return localVarResponse.Data;
 
         }
@@ -3677,8 +3677,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="inlineObject28"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-        public async Task<ApiResponse<InlineResponse20024>> CloseCrossexPositionAsyncWithHttpInfo (InlineObject28 inlineObject28 = default(InlineObject28))
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        public async Task<ApiResponse<InlineResponse20028>> CloseCrossexPositionAsyncWithHttpInfo (InlineObject28 inlineObject28 = default(InlineObject28))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3705,7 +3705,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<InlineResponse20024>("/position", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<InlineResponse20028>("/position", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3722,508 +3722,22 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
         /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>List&lt;InlineResponse20030&gt;</returns>
-        public List<InlineResponse20030> GetCrossexInterestRate (string coin = default(string), string exchangeType = default(string))
-        {
-             ApiResponse<List<InlineResponse20030>> localVarResponse = GetCrossexInterestRateWithHttpInfo(coin, exchangeType);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Query margin asset interest rates Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="coin">Currency (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20030&gt;</returns>
-        public ApiResponse<List<InlineResponse20030>> GetCrossexInterestRateWithHttpInfo (string coin = default(string), string exchangeType = default(string))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (coin != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
-            }
-            if (exchangeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20030>>("/interest_rate", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetCrossexInterestRate", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query margin asset interest rates Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="coin">Currency (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20030&gt;</returns>
-        public async Task<List<InlineResponse20030>> GetCrossexInterestRateAsync (string coin = default(string), string exchangeType = default(string))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20030>> localVarResponse = await GetCrossexInterestRateAsyncWithHttpInfo(coin, exchangeType);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Query margin asset interest rates Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="coin">Currency (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20030&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20030>>> GetCrossexInterestRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (coin != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
-            }
-            if (exchangeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20030>>("/interest_rate", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetCrossexInterestRate", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20031</returns>
-        public InlineResponse20031 GetCrossexFee ()
-        {
-             ApiResponse<InlineResponse20031> localVarResponse = GetCrossexFeeWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20031</returns>
-        public ApiResponse<InlineResponse20031> GetCrossexFeeWithHttpInfo ()
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20031>("/fee", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetCrossexFee", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20031</returns>
-        public async Task<InlineResponse20031> GetCrossexFeeAsync ()
-        {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20031> localVarResponse = await GetCrossexFeeAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
-        public async Task<ApiResponse<InlineResponse20031>> GetCrossexFeeAsyncWithHttpInfo ()
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20031>("/fee", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetCrossexFee", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query Contract Positions Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>List&lt;InlineResponse20032&gt;</returns>
-        public List<InlineResponse20032> ListCrossexPositions (string symbol = default(string), string exchangeType = default(string))
-        {
-             ApiResponse<List<InlineResponse20032>> localVarResponse = ListCrossexPositionsWithHttpInfo(symbol, exchangeType);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Query Contract Positions Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20032&gt;</returns>
-        public ApiResponse<List<InlineResponse20032>> ListCrossexPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (exchangeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20032>>("/positions", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexPositions", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query Contract Positions Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20032&gt;</returns>
-        public async Task<List<InlineResponse20032>> ListCrossexPositionsAsync (string symbol = default(string), string exchangeType = default(string))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20032>> localVarResponse = await ListCrossexPositionsAsyncWithHttpInfo(symbol, exchangeType);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Query Contract Positions Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20032&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20032>>> ListCrossexPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (exchangeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20032>>("/positions", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexPositions", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query Leveraged Positions Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Currency pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>List&lt;InlineResponse20033&gt;</returns>
-        public List<InlineResponse20033> ListCrossexMarginPositions (string symbol = default(string), string exchangeType = default(string))
-        {
-             ApiResponse<List<InlineResponse20033>> localVarResponse = ListCrossexMarginPositionsWithHttpInfo(symbol, exchangeType);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Query Leveraged Positions Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Currency pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20033&gt;</returns>
-        public ApiResponse<List<InlineResponse20033>> ListCrossexMarginPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (exchangeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20033>>("/margin_positions", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexMarginPositions", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query Leveraged Positions Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Currency pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20033&gt;</returns>
-        public async Task<List<InlineResponse20033>> ListCrossexMarginPositionsAsync (string symbol = default(string), string exchangeType = default(string))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20033>> localVarResponse = await ListCrossexMarginPositionsAsyncWithHttpInfo(symbol, exchangeType);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Query Leveraged Positions Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Currency pair (optional)</param>
-        /// <param name="exchangeType">Exchange (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20033&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20033>>> ListCrossexMarginPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (exchangeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20033>>("/margin_positions", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexMarginPositions", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query ADL Position Reduction Ranking Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair</param>
         /// <returns>List&lt;InlineResponse20034&gt;</returns>
-        public List<InlineResponse20034> ListCrossexAdlRank (string symbol)
+        public List<InlineResponse20034> GetCrossexInterestRate (string coin = default(string), string exchangeType = default(string))
         {
-             ApiResponse<List<InlineResponse20034>> localVarResponse = ListCrossexAdlRankWithHttpInfo(symbol);
+             ApiResponse<List<InlineResponse20034>> localVarResponse = GetCrossexInterestRateWithHttpInfo(coin, exchangeType);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Query ADL Position Reduction Ranking Rate Limit: 200 requests per 10 seconds
+        /// Query margin asset interest rates Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair</param>
+        /// <param name="coin">Currency (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
         /// <returns>ApiResponse of List&lt;InlineResponse20034&gt;</returns>
-        public ApiResponse<List<InlineResponse20034>> ListCrossexAdlRankWithHttpInfo (string symbol)
+        public ApiResponse<List<InlineResponse20034>> GetCrossexInterestRateWithHttpInfo (string coin = default(string), string exchangeType = default(string))
         {
-            // verify the required parameter 'symbol' is set
-            if (symbol == null)
-                throw new ApiException(400, "Missing required parameter 'symbol' when calling CrossExApi->ListCrossexAdlRank");
-
             RequestOptions localVarRequestOptions = new RequestOptions();
 
             string[] _contentTypes = {
@@ -4240,17 +3754,24 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (exchangeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
+            }
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20034>>("/adl_rank", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse20034>>("/interest_rate", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ListCrossexAdlRank", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetCrossexInterestRate", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -4258,14 +3779,493 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query ADL Position Reduction Ranking Rate Limit: 200 requests per 10 seconds
+        /// Query margin asset interest rates Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Trading Pair</param>
+        /// <param name="coin">Currency (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
         /// <returns>Task of List&lt;InlineResponse20034&gt;</returns>
-        public async Task<List<InlineResponse20034>> ListCrossexAdlRankAsync (string symbol)
+        public async Task<List<InlineResponse20034>> GetCrossexInterestRateAsync (string coin = default(string), string exchangeType = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20034>> localVarResponse = await ListCrossexAdlRankAsyncWithHttpInfo(symbol);
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20034>> localVarResponse = await GetCrossexInterestRateAsyncWithHttpInfo(coin, exchangeType);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query margin asset interest rates Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Currency (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20034&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20034>>> GetCrossexInterestRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (exchangeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20034>>("/interest_rate", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCrossexInterestRate", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>InlineResponse20035</returns>
+        public InlineResponse20035 GetCrossexFee ()
+        {
+             ApiResponse<InlineResponse20035> localVarResponse = GetCrossexFeeWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of InlineResponse20035</returns>
+        public ApiResponse<InlineResponse20035> GetCrossexFeeWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse20035>("/fee", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCrossexFee", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of InlineResponse20035</returns>
+        public async Task<InlineResponse20035> GetCrossexFeeAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20035> localVarResponse = await GetCrossexFeeAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (InlineResponse20035)</returns>
+        public async Task<ApiResponse<InlineResponse20035>> GetCrossexFeeAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20035>("/fee", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCrossexFee", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Contract Positions Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>List&lt;InlineResponse20036&gt;</returns>
+        public List<InlineResponse20036> ListCrossexPositions (string symbol = default(string), string exchangeType = default(string))
+        {
+             ApiResponse<List<InlineResponse20036>> localVarResponse = ListCrossexPositionsWithHttpInfo(symbol, exchangeType);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query Contract Positions Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20036&gt;</returns>
+        public ApiResponse<List<InlineResponse20036>> ListCrossexPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (exchangeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<InlineResponse20036>>("/positions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Contract Positions Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20036&gt;</returns>
+        public async Task<List<InlineResponse20036>> ListCrossexPositionsAsync (string symbol = default(string), string exchangeType = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20036>> localVarResponse = await ListCrossexPositionsAsyncWithHttpInfo(symbol, exchangeType);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query Contract Positions Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20036&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20036>>> ListCrossexPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (exchangeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20036>>("/positions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Leveraged Positions Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Currency pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>List&lt;InlineResponse20037&gt;</returns>
+        public List<InlineResponse20037> ListCrossexMarginPositions (string symbol = default(string), string exchangeType = default(string))
+        {
+             ApiResponse<List<InlineResponse20037>> localVarResponse = ListCrossexMarginPositionsWithHttpInfo(symbol, exchangeType);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query Leveraged Positions Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Currency pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20037&gt;</returns>
+        public ApiResponse<List<InlineResponse20037>> ListCrossexMarginPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (exchangeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<InlineResponse20037>>("/margin_positions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexMarginPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Leveraged Positions Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Currency pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20037&gt;</returns>
+        public async Task<List<InlineResponse20037>> ListCrossexMarginPositionsAsync (string symbol = default(string), string exchangeType = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20037>> localVarResponse = await ListCrossexMarginPositionsAsyncWithHttpInfo(symbol, exchangeType);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query Leveraged Positions Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Currency pair (optional)</param>
+        /// <param name="exchangeType">Exchange (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20037&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20037>>> ListCrossexMarginPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (exchangeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20037>>("/margin_positions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexMarginPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query ADL Position Reduction Ranking Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair</param>
+        /// <returns>List&lt;InlineResponse20038&gt;</returns>
+        public List<InlineResponse20038> ListCrossexAdlRank (string symbol)
+        {
+             ApiResponse<List<InlineResponse20038>> localVarResponse = ListCrossexAdlRankWithHttpInfo(symbol);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query ADL Position Reduction Ranking Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20038&gt;</returns>
+        public ApiResponse<List<InlineResponse20038>> ListCrossexAdlRankWithHttpInfo (string symbol)
+        {
+            // verify the required parameter 'symbol' is set
+            if (symbol == null)
+                throw new ApiException(400, "Missing required parameter 'symbol' when calling CrossExApi->ListCrossexAdlRank");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<InlineResponse20038>>("/adl_rank", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexAdlRank", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query ADL Position Reduction Ranking Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Trading Pair</param>
+        /// <returns>Task of List&lt;InlineResponse20038&gt;</returns>
+        public async Task<List<InlineResponse20038>> ListCrossexAdlRankAsync (string symbol)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20038>> localVarResponse = await ListCrossexAdlRankAsyncWithHttpInfo(symbol);
              return localVarResponse.Data;
 
         }
@@ -4275,8 +4275,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20034&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20034>>> ListCrossexAdlRankAsyncWithHttpInfo (string symbol)
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20038&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20038>>> ListCrossexAdlRankAsyncWithHttpInfo (string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
@@ -4306,7 +4306,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20034>>("/adl_rank", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20038>>("/adl_rank", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -4324,10 +4324,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="symbol">Trading Pair (optional)</param>
         /// <param name="exchangeType">Exchange (optional)</param>
         /// <param name="businessType">Business Type (optional)</param>
-        /// <returns>List&lt;InlineResponse20025&gt;</returns>
-        public List<InlineResponse20025> ListCrossexOpenOrders (string symbol = default(string), string exchangeType = default(string), string businessType = default(string))
+        /// <returns>List&lt;InlineResponse20029&gt;</returns>
+        public List<InlineResponse20029> ListCrossexOpenOrders (string symbol = default(string), string exchangeType = default(string), string businessType = default(string))
         {
-             ApiResponse<List<InlineResponse20025>> localVarResponse = ListCrossexOpenOrdersWithHttpInfo(symbol, exchangeType, businessType);
+             ApiResponse<List<InlineResponse20029>> localVarResponse = ListCrossexOpenOrdersWithHttpInfo(symbol, exchangeType, businessType);
              return localVarResponse.Data;
         }
 
@@ -4338,8 +4338,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="symbol">Trading Pair (optional)</param>
         /// <param name="exchangeType">Exchange (optional)</param>
         /// <param name="businessType">Business Type (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20025&gt;</returns>
-        public ApiResponse<List<InlineResponse20025>> ListCrossexOpenOrdersWithHttpInfo (string symbol = default(string), string exchangeType = default(string), string businessType = default(string))
+        /// <returns>ApiResponse of List&lt;InlineResponse20029&gt;</returns>
+        public ApiResponse<List<InlineResponse20029>> ListCrossexOpenOrdersWithHttpInfo (string symbol = default(string), string exchangeType = default(string), string businessType = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -4374,7 +4374,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20025>>("/open_orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse20029>>("/open_orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -4392,10 +4392,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="symbol">Trading Pair (optional)</param>
         /// <param name="exchangeType">Exchange (optional)</param>
         /// <param name="businessType">Business Type (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20025&gt;</returns>
-        public async Task<List<InlineResponse20025>> ListCrossexOpenOrdersAsync (string symbol = default(string), string exchangeType = default(string), string businessType = default(string))
+        /// <returns>Task of List&lt;InlineResponse20029&gt;</returns>
+        public async Task<List<InlineResponse20029>> ListCrossexOpenOrdersAsync (string symbol = default(string), string exchangeType = default(string), string businessType = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20025>> localVarResponse = await ListCrossexOpenOrdersAsyncWithHttpInfo(symbol, exchangeType, businessType);
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20029>> localVarResponse = await ListCrossexOpenOrdersAsyncWithHttpInfo(symbol, exchangeType, businessType);
              return localVarResponse.Data;
 
         }
@@ -4407,8 +4407,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="symbol">Trading Pair (optional)</param>
         /// <param name="exchangeType">Exchange (optional)</param>
         /// <param name="businessType">Business Type (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20025&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20025>>> ListCrossexOpenOrdersAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string), string businessType = default(string))
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20029&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20029>>> ListCrossexOpenOrdersAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string), string businessType = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -4445,7 +4445,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20025>>("/open_orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20029>>("/open_orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -4462,691 +4462,27 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>List&lt;InlineResponse20035&gt;</returns>
-        public List<InlineResponse20035> ListCrossexHistoryOrders (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-             ApiResponse<List<InlineResponse20035>> localVarResponse = ListCrossexHistoryOrdersWithHttpInfo(page, limit, symbol, from, to);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// queryorderhistory Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20035&gt;</returns>
-        public ApiResponse<List<InlineResponse20035>> ListCrossexHistoryOrdersWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (page != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
-            }
-            if (limit != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
-            }
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (from != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
-            }
-            if (to != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20035>>("/history_orders", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexHistoryOrders", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// queryorderhistory Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20035&gt;</returns>
-        public async Task<List<InlineResponse20035>> ListCrossexHistoryOrdersAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20035>> localVarResponse = await ListCrossexHistoryOrdersAsyncWithHttpInfo(page, limit, symbol, from, to);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// queryorderhistory Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20035&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20035>>> ListCrossexHistoryOrdersAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (page != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
-            }
-            if (limit != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
-            }
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (from != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
-            }
-            if (to != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20035>>("/history_orders", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexHistoryOrders", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query Contract Position History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>List&lt;InlineResponse20036&gt;</returns>
-        public List<InlineResponse20036> ListCrossexHistoryPositions (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-             ApiResponse<List<InlineResponse20036>> localVarResponse = ListCrossexHistoryPositionsWithHttpInfo(page, limit, symbol, from, to);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Query Contract Position History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20036&gt;</returns>
-        public ApiResponse<List<InlineResponse20036>> ListCrossexHistoryPositionsWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (page != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
-            }
-            if (limit != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
-            }
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (from != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
-            }
-            if (to != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20036>>("/history_positions", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexHistoryPositions", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query Contract Position History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20036&gt;</returns>
-        public async Task<List<InlineResponse20036>> ListCrossexHistoryPositionsAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20036>> localVarResponse = await ListCrossexHistoryPositionsAsyncWithHttpInfo(page, limit, symbol, from, to);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Query Contract Position History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20036&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20036>>> ListCrossexHistoryPositionsAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (page != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
-            }
-            if (limit != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
-            }
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (from != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
-            }
-            if (to != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20036>>("/history_positions", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexHistoryPositions", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query Leveraged Position History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>List&lt;InlineResponse20037&gt;</returns>
-        public List<InlineResponse20037> ListCrossexHistoryMarginPositions (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-             ApiResponse<List<InlineResponse20037>> localVarResponse = ListCrossexHistoryMarginPositionsWithHttpInfo(page, limit, symbol, from, to);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Query Leveraged Position History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20037&gt;</returns>
-        public ApiResponse<List<InlineResponse20037>> ListCrossexHistoryMarginPositionsWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (page != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
-            }
-            if (limit != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
-            }
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (from != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
-            }
-            if (to != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20037>>("/history_margin_positions", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexHistoryMarginPositions", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query Leveraged Position History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20037&gt;</returns>
-        public async Task<List<InlineResponse20037>> ListCrossexHistoryMarginPositionsAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20037>> localVarResponse = await ListCrossexHistoryMarginPositionsAsyncWithHttpInfo(page, limit, symbol, from, to);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Query Leveraged Position History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Start Millisecond Timestamp (optional)</param>
-        /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20037&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20037>>> ListCrossexHistoryMarginPositionsAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (page != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
-            }
-            if (limit != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
-            }
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (from != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
-            }
-            if (to != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20037>>("/history_margin_positions", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexHistoryMarginPositions", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query Leveraged Interest Deduction History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>List&lt;InlineResponse20038&gt;</returns>
-        public List<InlineResponse20038> ListCrossexHistoryMarginInterests (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string))
-        {
-             ApiResponse<List<InlineResponse20038>> localVarResponse = ListCrossexHistoryMarginInterestsWithHttpInfo(symbol, from, to, page, limit, exchangeType);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Query Leveraged Interest Deduction History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20038&gt;</returns>
-        public ApiResponse<List<InlineResponse20038>> ListCrossexHistoryMarginInterestsWithHttpInfo (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (from != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
-            }
-            if (to != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
-            }
-            if (page != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
-            }
-            if (limit != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
-            }
-            if (exchangeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20038>>("/history_margin_interests", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexHistoryMarginInterests", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query Leveraged Interest Deduction History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20038&gt;</returns>
-        public async Task<List<InlineResponse20038>> ListCrossexHistoryMarginInterestsAsync (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20038>> localVarResponse = await ListCrossexHistoryMarginInterestsAsyncWithHttpInfo(symbol, from, to, page, limit, exchangeType);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Query Leveraged Interest Deduction History Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20038&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20038>>> ListCrossexHistoryMarginInterestsAsyncWithHttpInfo (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (symbol != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
-            }
-            if (from != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
-            }
-            if (to != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
-            }
-            if (page != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
-            }
-            if (limit != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
-            }
-            if (exchangeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20038>>("/history_margin_interests", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListCrossexHistoryMarginInterests", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
         /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>List&lt;InlineResponse20039&gt;</returns>
-        public List<InlineResponse20039> ListCrossexHistoryTrades (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        public List<InlineResponse20039> ListCrossexHistoryOrders (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
         {
-             ApiResponse<List<InlineResponse20039>> localVarResponse = ListCrossexHistoryTradesWithHttpInfo(page, limit, symbol, from, to);
+             ApiResponse<List<InlineResponse20039>> localVarResponse = ListCrossexHistoryOrdersWithHttpInfo(page, limit, symbol, from, to);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// queryorderhistory Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
         /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>ApiResponse of List&lt;InlineResponse20039&gt;</returns>
-        public ApiResponse<List<InlineResponse20039>> ListCrossexHistoryTradesWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        public ApiResponse<List<InlineResponse20039>> ListCrossexHistoryOrdersWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -5189,11 +4525,11 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20039>>("/history_trades", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse20039>>("/history_orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ListCrossexHistoryTrades", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ListCrossexHistoryOrders", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -5201,33 +4537,33 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// queryorderhistory Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
         /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>Task of List&lt;InlineResponse20039&gt;</returns>
-        public async Task<List<InlineResponse20039>> ListCrossexHistoryTradesAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        public async Task<List<InlineResponse20039>> ListCrossexHistoryOrdersAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20039>> localVarResponse = await ListCrossexHistoryTradesAsyncWithHttpInfo(page, limit, symbol, from, to);
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20039>> localVarResponse = await ListCrossexHistoryOrdersAsyncWithHttpInfo(page, limit, symbol, from, to);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// queryorderhistory Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
-        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional)</param>
         /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;InlineResponse20039&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20039>>> ListCrossexHistoryTradesAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        public async Task<ApiResponse<List<InlineResponse20039>>> ListCrossexHistoryOrdersAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -5272,7 +4608,671 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20039>>("/history_trades", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20039>>("/history_orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexHistoryOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Contract Position History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>List&lt;InlineResponse20040&gt;</returns>
+        public List<InlineResponse20040> ListCrossexHistoryPositions (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+             ApiResponse<List<InlineResponse20040>> localVarResponse = ListCrossexHistoryPositionsWithHttpInfo(page, limit, symbol, from, to);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query Contract Position History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20040&gt;</returns>
+        public ApiResponse<List<InlineResponse20040>> ListCrossexHistoryPositionsWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<InlineResponse20040>>("/history_positions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexHistoryPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Contract Position History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20040&gt;</returns>
+        public async Task<List<InlineResponse20040>> ListCrossexHistoryPositionsAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20040>> localVarResponse = await ListCrossexHistoryPositionsAsyncWithHttpInfo(page, limit, symbol, from, to);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query Contract Position History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20040&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20040>>> ListCrossexHistoryPositionsAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20040>>("/history_positions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexHistoryPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Leveraged Position History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>List&lt;InlineResponse20041&gt;</returns>
+        public List<InlineResponse20041> ListCrossexHistoryMarginPositions (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+             ApiResponse<List<InlineResponse20041>> localVarResponse = ListCrossexHistoryMarginPositionsWithHttpInfo(page, limit, symbol, from, to);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query Leveraged Position History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20041&gt;</returns>
+        public ApiResponse<List<InlineResponse20041>> ListCrossexHistoryMarginPositionsWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<InlineResponse20041>>("/history_margin_positions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexHistoryMarginPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Leveraged Position History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20041&gt;</returns>
+        public async Task<List<InlineResponse20041>> ListCrossexHistoryMarginPositionsAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20041>> localVarResponse = await ListCrossexHistoryMarginPositionsAsyncWithHttpInfo(page, limit, symbol, from, to);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query Leveraged Position History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20041&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20041>>> ListCrossexHistoryMarginPositionsAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20041>>("/history_margin_positions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexHistoryMarginPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Leveraged Interest Deduction History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <returns>List&lt;InlineResponse20042&gt;</returns>
+        public List<InlineResponse20042> ListCrossexHistoryMarginInterests (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string))
+        {
+             ApiResponse<List<InlineResponse20042>> localVarResponse = ListCrossexHistoryMarginInterestsWithHttpInfo(symbol, from, to, page, limit, exchangeType);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query Leveraged Interest Deduction History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20042&gt;</returns>
+        public ApiResponse<List<InlineResponse20042>> ListCrossexHistoryMarginInterestsWithHttpInfo (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (exchangeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<InlineResponse20042>>("/history_margin_interests", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexHistoryMarginInterests", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Leveraged Interest Deduction History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20042&gt;</returns>
+        public async Task<List<InlineResponse20042>> ListCrossexHistoryMarginInterestsAsync (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20042>> localVarResponse = await ListCrossexHistoryMarginInterestsAsyncWithHttpInfo(symbol, from, to, page, limit, exchangeType);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query Leveraged Interest Deduction History Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="to">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="page">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="limit">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="exchangeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20042&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20042>>> ListCrossexHistoryMarginInterestsAsyncWithHttpInfo (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (exchangeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20042>>("/history_margin_interests", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexHistoryMarginInterests", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>List&lt;InlineResponse20043&gt;</returns>
+        public List<InlineResponse20043> ListCrossexHistoryTrades (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+             ApiResponse<List<InlineResponse20043>> localVarResponse = ListCrossexHistoryTradesWithHttpInfo(page, limit, symbol, from, to);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse20043&gt;</returns>
+        public ApiResponse<List<InlineResponse20043>> ListCrossexHistoryTradesWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<InlineResponse20043>>("/history_trades", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexHistoryTrades", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse20043&gt;</returns>
+        public async Task<List<InlineResponse20043>> ListCrossexHistoryTradesAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20043>> localVarResponse = await ListCrossexHistoryTradesAsyncWithHttpInfo(page, limit, symbol, from, to);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (optional)</param>
+        /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
+        /// <param name="symbol">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="from">Start Millisecond Timestamp (optional)</param>
+        /// <param name="to">End Millisecond Timestamp (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20043&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20043>>> ListCrossexHistoryTradesAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20043>>("/history_trades", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -5292,10 +5292,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>List&lt;InlineResponse20040&gt;</returns>
-        public List<InlineResponse20040> ListCrossexAccountBook (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
+        /// <returns>List&lt;InlineResponse20044&gt;</returns>
+        public List<InlineResponse20044> ListCrossexAccountBook (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
         {
-             ApiResponse<List<InlineResponse20040>> localVarResponse = ListCrossexAccountBookWithHttpInfo(page, limit, coin, from, to);
+             ApiResponse<List<InlineResponse20044>> localVarResponse = ListCrossexAccountBookWithHttpInfo(page, limit, coin, from, to);
              return localVarResponse.Data;
         }
 
@@ -5308,8 +5308,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20040&gt;</returns>
-        public ApiResponse<List<InlineResponse20040>> ListCrossexAccountBookWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
+        /// <returns>ApiResponse of List&lt;InlineResponse20044&gt;</returns>
+        public ApiResponse<List<InlineResponse20044>> ListCrossexAccountBookWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -5352,7 +5352,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20040>>("/account_book", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse20044>>("/account_book", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -5372,10 +5372,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20040&gt;</returns>
-        public async Task<List<InlineResponse20040>> ListCrossexAccountBookAsync (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
+        /// <returns>Task of List&lt;InlineResponse20044&gt;</returns>
+        public async Task<List<InlineResponse20044>> ListCrossexAccountBookAsync (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20040>> localVarResponse = await ListCrossexAccountBookAsyncWithHttpInfo(page, limit, coin, from, to);
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20044>> localVarResponse = await ListCrossexAccountBookAsyncWithHttpInfo(page, limit, coin, from, to);
              return localVarResponse.Data;
 
         }
@@ -5389,8 +5389,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20040&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20040>>> ListCrossexAccountBookAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20044&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20044>>> ListCrossexAccountBookAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -5435,7 +5435,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20040>>("/account_book", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20044>>("/account_book", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -5452,10 +5452,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
-        /// <returns>List&lt;InlineResponse20041&gt;</returns>
-        public List<InlineResponse20041> ListCrossexCoinDiscountRate (string coin = default(string), string exchangeType = default(string))
+        /// <returns>List&lt;InlineResponse20045&gt;</returns>
+        public List<InlineResponse20045> ListCrossexCoinDiscountRate (string coin = default(string), string exchangeType = default(string))
         {
-             ApiResponse<List<InlineResponse20041>> localVarResponse = ListCrossexCoinDiscountRateWithHttpInfo(coin, exchangeType);
+             ApiResponse<List<InlineResponse20045>> localVarResponse = ListCrossexCoinDiscountRateWithHttpInfo(coin, exchangeType);
              return localVarResponse.Data;
         }
 
@@ -5465,8 +5465,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse20041&gt;</returns>
-        public ApiResponse<List<InlineResponse20041>> ListCrossexCoinDiscountRateWithHttpInfo (string coin = default(string), string exchangeType = default(string))
+        /// <returns>ApiResponse of List&lt;InlineResponse20045&gt;</returns>
+        public ApiResponse<List<InlineResponse20045>> ListCrossexCoinDiscountRateWithHttpInfo (string coin = default(string), string exchangeType = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -5497,7 +5497,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse20041>>("/coin_discount_rate", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse20045>>("/coin_discount_rate", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -5514,10 +5514,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
-        /// <returns>Task of List&lt;InlineResponse20041&gt;</returns>
-        public async Task<List<InlineResponse20041>> ListCrossexCoinDiscountRateAsync (string coin = default(string), string exchangeType = default(string))
+        /// <returns>Task of List&lt;InlineResponse20045&gt;</returns>
+        public async Task<List<InlineResponse20045>> ListCrossexCoinDiscountRateAsync (string coin = default(string), string exchangeType = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20041>> localVarResponse = await ListCrossexCoinDiscountRateAsyncWithHttpInfo(coin, exchangeType);
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse20045>> localVarResponse = await ListCrossexCoinDiscountRateAsyncWithHttpInfo(coin, exchangeType);
              return localVarResponse.Data;
 
         }
@@ -5528,8 +5528,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse20041&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse20041>>> ListCrossexCoinDiscountRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string))
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse20045&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse20045>>> ListCrossexCoinDiscountRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -5562,7 +5562,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20041>>("/coin_discount_rate", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse20045>>("/coin_discount_rate", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

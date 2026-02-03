@@ -5,25 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserTimest** | **string** | User registration time (formatted string) | 
-**EmailVerified** | **string** | Whether email is verified | 
-**Verified** | **string** | Whether KYC verification is completed | 
-**HasPhone** | **string** | Whether phone is bound | 
-**UserName** | **string** | Username | 
-**UserNote** | **string** | User note information | 
-**CompleteTransactions** | **string** | Total completed orders | 
-**PaidTransactions** | **string** | Number of completed buy orders | 
-**AcceptedTransactions** | **string** | Number of completed sell orders | 
-**TransactionsUsedTime** | **string** | Average time to confirm receipt | 
-**CancelledUsedTimeMonth** | **string** | Cancellation time in last 30 days | 
-**CompleteTransactionsMonth** | **string** | Number of completed orders in last 30 days | 
-**CompleteRateMonth** | **int** | Completion rate in last 30 days | 
-**IsFollow** | **int** | Whether following | 
-**HaveTraded** | **int** | Whether traded with self | 
-**BizUid** | **string** | Encrypted UID | 
-**RegistrationDays** | **int** | Registration days | 
-**FirstTradeDays** | **int** | Days since first trade | 
-**TradeVersatile** | **bool** | Single user or composite user | 
+**Pn** | **int** |  | 
+**Ps** | **int** |  | 
+**TotalPn** | **int** |  | 
+**Count** | **int** |  | 
+**List** | [**List&lt;InlineResponse20010DataList&gt;**](InlineResponse20010DataList.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

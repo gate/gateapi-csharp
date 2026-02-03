@@ -44,7 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="message">message (required).</param>
         /// <param name="data">data (required).</param>
         /// <param name="version">version (required).</param>
-        public InlineResponse20015(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), InlineResponse20015Data data = default(InlineResponse20015Data), string version = default(string))
+        public InlineResponse20015(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), List<InlineResponse20015Data> data = default(List<InlineResponse20015Data>), string version = default(string))
         {
             this.Timestamp = timestamp;
             // to ensure "method" is required (not null)
@@ -86,7 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
-        public InlineResponse20015Data Data { get; set; }
+        public List<InlineResponse20015Data> Data { get; set; }
 
         /// <summary>
         /// Gets or Sets Version
@@ -162,8 +162,9 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.Data != null &&
+                    input.Data != null &&
+                    this.Data.SequenceEqual(input.Data)
                 ) && 
                 (
                     this.Version == input.Version ||

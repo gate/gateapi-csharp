@@ -59,7 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="marginMode">Margin mode of the account 0: classic future account or Classic Spot Margin Mode of unified account; 1:  Multi-Currency Margin Mode; 2:  Portoforlio Margin Mode; 3:  Single-Currency Margin Mode.</param>
         /// <param name="enableTieredMm">Whether to enable tiered maintenance margin calculation.</param>
         /// <param name="history">history.</param>
-        public DeliveryAccount(string total = default(string), string unrealisedPnl = default(string), string positionMargin = default(string), string orderMargin = default(string), string available = default(string), string point = default(string), string currency = default(string), bool inDualMode = default(bool), bool enableCredit = default(bool), string positionInitialMargin = default(string), string maintenanceMargin = default(string), string bonus = default(string), bool enableEvolvedClassic = default(bool), string crossOrderMargin = default(string), string crossInitialMargin = default(string), string crossMaintenanceMargin = default(string), string crossUnrealisedPnl = default(string), string crossAvailable = default(string), string crossMarginBalance = default(string), string crossMmr = default(string), string crossImr = default(string), string isolatedPositionMargin = default(string), bool enableNewDualMode = default(bool), int marginMode = default(int), bool enableTieredMm = default(bool), FuturesAccountHistory history = default(FuturesAccountHistory))
+        public DeliveryAccount(string total = default(string), string unrealisedPnl = default(string), string positionMargin = default(string), string orderMargin = default(string), string available = default(string), string point = default(string), string currency = default(string), bool inDualMode = default(bool), bool enableCredit = default(bool), string positionInitialMargin = default(string), string maintenanceMargin = default(string), string bonus = default(string), bool enableEvolvedClassic = default(bool), string crossOrderMargin = default(string), string crossInitialMargin = default(string), string crossMaintenanceMargin = default(string), string crossUnrealisedPnl = default(string), string crossAvailable = default(string), string crossMarginBalance = default(string), string crossMmr = default(string), string crossImr = default(string), string isolatedPositionMargin = default(string), bool enableNewDualMode = default(bool), int marginMode = default(int), bool enableTieredMm = default(bool), DeliveryAccountHistory history = default(DeliveryAccountHistory))
         {
             this.Total = total;
             this.UnrealisedPnl = unrealisedPnl;
@@ -268,7 +268,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets History
         /// </summary>
         [DataMember(Name="history")]
-        public FuturesAccountHistory History { get; set; }
+        public DeliveryAccountHistory History { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

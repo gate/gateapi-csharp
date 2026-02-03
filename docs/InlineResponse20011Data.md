@@ -5,10 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PayType** | **string** | Payment method type | [optional] 
-**PayName** | **string** | Payment method name | [optional] 
-**Ids** | **List&lt;int&gt;** | User&#39;s currently bound payment method (primary key ID) | [optional] 
-**List** | [**List&lt;InlineResponse20011List&gt;**](InlineResponse20011List.md) |  | [optional] 
+**Total** | **int** |  | 
+**PageSize** | **int** |  | 
+**PageNumber** | **int** |  | 
+**TotalPage** | **int** |  | 
+**List** | [**List&lt;InlineResponse20011DataList&gt;**](InlineResponse20011DataList.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

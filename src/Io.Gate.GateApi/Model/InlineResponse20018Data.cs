@@ -38,18 +38,18 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20018Data" /> class.
         /// </summary>
-        /// <param name="sRVTM">Timestamp when message was successfully sent (current timestamp) (required).</param>
-        public InlineResponse20018Data(int sRVTM = default(int))
+        /// <param name="status">Ad status after successful update (required).</param>
+        public InlineResponse20018Data(int status = default(int))
         {
-            this.SRVTM = sRVTM;
+            this.Status = status;
         }
 
         /// <summary>
-        /// Timestamp when message was successfully sent (current timestamp)
+        /// Ad status after successful update
         /// </summary>
-        /// <value>Timestamp when message was successfully sent (current timestamp)</value>
-        [DataMember(Name="SRVTM")]
-        public int SRVTM { get; set; }
+        /// <value>Ad status after successful update</value>
+        [DataMember(Name="status")]
+        public int Status { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -59,7 +59,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20018Data {\n");
-            sb.Append("  SRVTM: ").Append(SRVTM).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,8 +95,8 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.SRVTM == input.SRVTM ||
-                    this.SRVTM.Equals(input.SRVTM)
+                    this.Status == input.Status ||
+                    this.Status.Equals(input.Status)
                 );
         }
 
@@ -109,7 +109,7 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.SRVTM.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

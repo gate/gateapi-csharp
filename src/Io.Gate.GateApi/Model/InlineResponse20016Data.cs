@@ -38,18 +38,46 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20016Data" /> class.
         /// </summary>
-        /// <param name="lists">lists (required).</param>
-        public InlineResponse20016Data(List<InlineResponse20016DataLists> lists = default(List<InlineResponse20016DataLists>))
+        /// <param name="list">list (required).</param>
+        /// <param name="transTime">Countdown time (required).</param>
+        /// <param name="count">Number of orders (required).</param>
+        /// <param name="exportedNum">Export count (required).</param>
+        public InlineResponse20016Data(List<InlineResponse20016DataList> list = default(List<InlineResponse20016DataList>), List<InlineResponse20016DataTransTime> transTime = default(List<InlineResponse20016DataTransTime>), int count = default(int), int exportedNum = default(int))
         {
-            // to ensure "lists" is required (not null)
-            this.Lists = lists ?? throw new ArgumentNullException("lists", "lists is a required property for InlineResponse20016Data and cannot be null");
+            // to ensure "list" is required (not null)
+            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20016Data and cannot be null");
+            // to ensure "transTime" is required (not null)
+            this.TransTime = transTime ?? throw new ArgumentNullException("transTime", "transTime is a required property for InlineResponse20016Data and cannot be null");
+            this.Count = count;
+            this.ExportedNum = exportedNum;
         }
 
         /// <summary>
-        /// Gets or Sets Lists
+        /// Gets or Sets List
         /// </summary>
-        [DataMember(Name="lists")]
-        public List<InlineResponse20016DataLists> Lists { get; set; }
+        [DataMember(Name="list")]
+        public List<InlineResponse20016DataList> List { get; set; }
+
+        /// <summary>
+        /// Countdown time
+        /// </summary>
+        /// <value>Countdown time</value>
+        [DataMember(Name="trans_time")]
+        public List<InlineResponse20016DataTransTime> TransTime { get; set; }
+
+        /// <summary>
+        /// Number of orders
+        /// </summary>
+        /// <value>Number of orders</value>
+        [DataMember(Name="count")]
+        public int Count { get; set; }
+
+        /// <summary>
+        /// Export count
+        /// </summary>
+        /// <value>Export count</value>
+        [DataMember(Name="exported_num")]
+        public int ExportedNum { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -59,7 +87,10 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20016Data {\n");
-            sb.Append("  Lists: ").Append(Lists).Append("\n");
+            sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("  TransTime: ").Append(TransTime).Append("\n");
+            sb.Append("  Count: ").Append(Count).Append("\n");
+            sb.Append("  ExportedNum: ").Append(ExportedNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,10 +126,24 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Lists == input.Lists ||
-                    this.Lists != null &&
-                    input.Lists != null &&
-                    this.Lists.SequenceEqual(input.Lists)
+                    this.List == input.List ||
+                    this.List != null &&
+                    input.List != null &&
+                    this.List.SequenceEqual(input.List)
+                ) && 
+                (
+                    this.TransTime == input.TransTime ||
+                    this.TransTime != null &&
+                    input.TransTime != null &&
+                    this.TransTime.SequenceEqual(input.TransTime)
+                ) && 
+                (
+                    this.Count == input.Count ||
+                    this.Count.Equals(input.Count)
+                ) && 
+                (
+                    this.ExportedNum == input.ExportedNum ||
+                    this.ExportedNum.Equals(input.ExportedNum)
                 );
         }
 
@@ -111,8 +156,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Lists != null)
-                    hashCode = hashCode * 59 + this.Lists.GetHashCode();
+                if (this.List != null)
+                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                if (this.TransTime != null)
+                    hashCode = hashCode * 59 + this.TransTime.GetHashCode();
+                hashCode = hashCode * 59 + this.Count.GetHashCode();
+                hashCode = hashCode * 59 + this.ExportedNum.GetHashCode();
                 return hashCode;
             }
         }

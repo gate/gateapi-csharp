@@ -38,193 +38,50 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20010Data" /> class.
         /// </summary>
-        /// <param name="userTimest">User registration time (formatted string) (required).</param>
-        /// <param name="emailVerified">Whether email is verified (required).</param>
-        /// <param name="verified">Whether KYC verification is completed (required).</param>
-        /// <param name="hasPhone">Whether phone is bound (required).</param>
-        /// <param name="userName">Username (required).</param>
-        /// <param name="userNote">User note information (required).</param>
-        /// <param name="completeTransactions">Total completed orders (required).</param>
-        /// <param name="paidTransactions">Number of completed buy orders (required).</param>
-        /// <param name="acceptedTransactions">Number of completed sell orders (required).</param>
-        /// <param name="transactionsUsedTime">Average time to confirm receipt (required).</param>
-        /// <param name="cancelledUsedTimeMonth">Cancellation time in last 30 days (required).</param>
-        /// <param name="completeTransactionsMonth">Number of completed orders in last 30 days (required).</param>
-        /// <param name="completeRateMonth">Completion rate in last 30 days (required).</param>
-        /// <param name="isFollow">Whether following (required).</param>
-        /// <param name="haveTraded">Whether traded with self (required).</param>
-        /// <param name="bizUid">Encrypted UID (required).</param>
-        /// <param name="registrationDays">Registration days (required).</param>
-        /// <param name="firstTradeDays">Days since first trade (required).</param>
-        /// <param name="tradeVersatile">Single user or composite user (required).</param>
-        public InlineResponse20010Data(string userTimest = default(string), string emailVerified = default(string), string verified = default(string), string hasPhone = default(string), string userName = default(string), string userNote = default(string), string completeTransactions = default(string), string paidTransactions = default(string), string acceptedTransactions = default(string), string transactionsUsedTime = default(string), string cancelledUsedTimeMonth = default(string), string completeTransactionsMonth = default(string), int completeRateMonth = default(int), int isFollow = default(int), int haveTraded = default(int), string bizUid = default(string), int registrationDays = default(int), int firstTradeDays = default(int), bool tradeVersatile = default(bool))
+        /// <param name="pn">pn (required).</param>
+        /// <param name="ps">ps (required).</param>
+        /// <param name="totalPn">totalPn (required).</param>
+        /// <param name="count">count (required).</param>
+        /// <param name="list">list (required).</param>
+        public InlineResponse20010Data(int pn = default(int), int ps = default(int), int totalPn = default(int), int count = default(int), List<InlineResponse20010DataList> list = default(List<InlineResponse20010DataList>))
         {
-            // to ensure "userTimest" is required (not null)
-            this.UserTimest = userTimest ?? throw new ArgumentNullException("userTimest", "userTimest is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "emailVerified" is required (not null)
-            this.EmailVerified = emailVerified ?? throw new ArgumentNullException("emailVerified", "emailVerified is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "verified" is required (not null)
-            this.Verified = verified ?? throw new ArgumentNullException("verified", "verified is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "hasPhone" is required (not null)
-            this.HasPhone = hasPhone ?? throw new ArgumentNullException("hasPhone", "hasPhone is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "userName" is required (not null)
-            this.UserName = userName ?? throw new ArgumentNullException("userName", "userName is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "userNote" is required (not null)
-            this.UserNote = userNote ?? throw new ArgumentNullException("userNote", "userNote is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "completeTransactions" is required (not null)
-            this.CompleteTransactions = completeTransactions ?? throw new ArgumentNullException("completeTransactions", "completeTransactions is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "paidTransactions" is required (not null)
-            this.PaidTransactions = paidTransactions ?? throw new ArgumentNullException("paidTransactions", "paidTransactions is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "acceptedTransactions" is required (not null)
-            this.AcceptedTransactions = acceptedTransactions ?? throw new ArgumentNullException("acceptedTransactions", "acceptedTransactions is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "transactionsUsedTime" is required (not null)
-            this.TransactionsUsedTime = transactionsUsedTime ?? throw new ArgumentNullException("transactionsUsedTime", "transactionsUsedTime is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "cancelledUsedTimeMonth" is required (not null)
-            this.CancelledUsedTimeMonth = cancelledUsedTimeMonth ?? throw new ArgumentNullException("cancelledUsedTimeMonth", "cancelledUsedTimeMonth is a required property for InlineResponse20010Data and cannot be null");
-            // to ensure "completeTransactionsMonth" is required (not null)
-            this.CompleteTransactionsMonth = completeTransactionsMonth ?? throw new ArgumentNullException("completeTransactionsMonth", "completeTransactionsMonth is a required property for InlineResponse20010Data and cannot be null");
-            this.CompleteRateMonth = completeRateMonth;
-            this.IsFollow = isFollow;
-            this.HaveTraded = haveTraded;
-            // to ensure "bizUid" is required (not null)
-            this.BizUid = bizUid ?? throw new ArgumentNullException("bizUid", "bizUid is a required property for InlineResponse20010Data and cannot be null");
-            this.RegistrationDays = registrationDays;
-            this.FirstTradeDays = firstTradeDays;
-            this.TradeVersatile = tradeVersatile;
+            this.Pn = pn;
+            this.Ps = ps;
+            this.TotalPn = totalPn;
+            this.Count = count;
+            // to ensure "list" is required (not null)
+            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20010Data and cannot be null");
         }
 
         /// <summary>
-        /// User registration time (formatted string)
+        /// Gets or Sets Pn
         /// </summary>
-        /// <value>User registration time (formatted string)</value>
-        [DataMember(Name="user_timest")]
-        public string UserTimest { get; set; }
+        [DataMember(Name="pn")]
+        public int Pn { get; set; }
 
         /// <summary>
-        /// Whether email is verified
+        /// Gets or Sets Ps
         /// </summary>
-        /// <value>Whether email is verified</value>
-        [DataMember(Name="email_verified")]
-        public string EmailVerified { get; set; }
+        [DataMember(Name="ps")]
+        public int Ps { get; set; }
 
         /// <summary>
-        /// Whether KYC verification is completed
+        /// Gets or Sets TotalPn
         /// </summary>
-        /// <value>Whether KYC verification is completed</value>
-        [DataMember(Name="verified")]
-        public string Verified { get; set; }
+        [DataMember(Name="total_pn")]
+        public int TotalPn { get; set; }
 
         /// <summary>
-        /// Whether phone is bound
+        /// Gets or Sets Count
         /// </summary>
-        /// <value>Whether phone is bound</value>
-        [DataMember(Name="has_phone")]
-        public string HasPhone { get; set; }
+        [DataMember(Name="count")]
+        public int Count { get; set; }
 
         /// <summary>
-        /// Username
+        /// Gets or Sets List
         /// </summary>
-        /// <value>Username</value>
-        [DataMember(Name="user_name")]
-        public string UserName { get; set; }
-
-        /// <summary>
-        /// User note information
-        /// </summary>
-        /// <value>User note information</value>
-        [DataMember(Name="user_note")]
-        public string UserNote { get; set; }
-
-        /// <summary>
-        /// Total completed orders
-        /// </summary>
-        /// <value>Total completed orders</value>
-        [DataMember(Name="complete_transactions")]
-        public string CompleteTransactions { get; set; }
-
-        /// <summary>
-        /// Number of completed buy orders
-        /// </summary>
-        /// <value>Number of completed buy orders</value>
-        [DataMember(Name="paid_transactions")]
-        public string PaidTransactions { get; set; }
-
-        /// <summary>
-        /// Number of completed sell orders
-        /// </summary>
-        /// <value>Number of completed sell orders</value>
-        [DataMember(Name="accepted_transactions")]
-        public string AcceptedTransactions { get; set; }
-
-        /// <summary>
-        /// Average time to confirm receipt
-        /// </summary>
-        /// <value>Average time to confirm receipt</value>
-        [DataMember(Name="transactions_used_time")]
-        public string TransactionsUsedTime { get; set; }
-
-        /// <summary>
-        /// Cancellation time in last 30 days
-        /// </summary>
-        /// <value>Cancellation time in last 30 days</value>
-        [DataMember(Name="cancelled_used_time_month")]
-        public string CancelledUsedTimeMonth { get; set; }
-
-        /// <summary>
-        /// Number of completed orders in last 30 days
-        /// </summary>
-        /// <value>Number of completed orders in last 30 days</value>
-        [DataMember(Name="complete_transactions_month")]
-        public string CompleteTransactionsMonth { get; set; }
-
-        /// <summary>
-        /// Completion rate in last 30 days
-        /// </summary>
-        /// <value>Completion rate in last 30 days</value>
-        [DataMember(Name="complete_rate_month")]
-        public int CompleteRateMonth { get; set; }
-
-        /// <summary>
-        /// Whether following
-        /// </summary>
-        /// <value>Whether following</value>
-        [DataMember(Name="is_follow")]
-        public int IsFollow { get; set; }
-
-        /// <summary>
-        /// Whether traded with self
-        /// </summary>
-        /// <value>Whether traded with self</value>
-        [DataMember(Name="have_traded")]
-        public int HaveTraded { get; set; }
-
-        /// <summary>
-        /// Encrypted UID
-        /// </summary>
-        /// <value>Encrypted UID</value>
-        [DataMember(Name="biz_uid")]
-        public string BizUid { get; set; }
-
-        /// <summary>
-        /// Registration days
-        /// </summary>
-        /// <value>Registration days</value>
-        [DataMember(Name="registration_days")]
-        public int RegistrationDays { get; set; }
-
-        /// <summary>
-        /// Days since first trade
-        /// </summary>
-        /// <value>Days since first trade</value>
-        [DataMember(Name="first_trade_days")]
-        public int FirstTradeDays { get; set; }
-
-        /// <summary>
-        /// Single user or composite user
-        /// </summary>
-        /// <value>Single user or composite user</value>
-        [DataMember(Name="trade_versatile")]
-        public bool TradeVersatile { get; set; }
+        [DataMember(Name="list")]
+        public List<InlineResponse20010DataList> List { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -234,25 +91,11 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20010Data {\n");
-            sb.Append("  UserTimest: ").Append(UserTimest).Append("\n");
-            sb.Append("  EmailVerified: ").Append(EmailVerified).Append("\n");
-            sb.Append("  Verified: ").Append(Verified).Append("\n");
-            sb.Append("  HasPhone: ").Append(HasPhone).Append("\n");
-            sb.Append("  UserName: ").Append(UserName).Append("\n");
-            sb.Append("  UserNote: ").Append(UserNote).Append("\n");
-            sb.Append("  CompleteTransactions: ").Append(CompleteTransactions).Append("\n");
-            sb.Append("  PaidTransactions: ").Append(PaidTransactions).Append("\n");
-            sb.Append("  AcceptedTransactions: ").Append(AcceptedTransactions).Append("\n");
-            sb.Append("  TransactionsUsedTime: ").Append(TransactionsUsedTime).Append("\n");
-            sb.Append("  CancelledUsedTimeMonth: ").Append(CancelledUsedTimeMonth).Append("\n");
-            sb.Append("  CompleteTransactionsMonth: ").Append(CompleteTransactionsMonth).Append("\n");
-            sb.Append("  CompleteRateMonth: ").Append(CompleteRateMonth).Append("\n");
-            sb.Append("  IsFollow: ").Append(IsFollow).Append("\n");
-            sb.Append("  HaveTraded: ").Append(HaveTraded).Append("\n");
-            sb.Append("  BizUid: ").Append(BizUid).Append("\n");
-            sb.Append("  RegistrationDays: ").Append(RegistrationDays).Append("\n");
-            sb.Append("  FirstTradeDays: ").Append(FirstTradeDays).Append("\n");
-            sb.Append("  TradeVersatile: ").Append(TradeVersatile).Append("\n");
+            sb.Append("  Pn: ").Append(Pn).Append("\n");
+            sb.Append("  Ps: ").Append(Ps).Append("\n");
+            sb.Append("  TotalPn: ").Append(TotalPn).Append("\n");
+            sb.Append("  Count: ").Append(Count).Append("\n");
+            sb.Append("  List: ").Append(List).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -288,93 +131,26 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.UserTimest == input.UserTimest ||
-                    (this.UserTimest != null &&
-                    this.UserTimest.Equals(input.UserTimest))
+                    this.Pn == input.Pn ||
+                    this.Pn.Equals(input.Pn)
                 ) && 
                 (
-                    this.EmailVerified == input.EmailVerified ||
-                    (this.EmailVerified != null &&
-                    this.EmailVerified.Equals(input.EmailVerified))
+                    this.Ps == input.Ps ||
+                    this.Ps.Equals(input.Ps)
                 ) && 
                 (
-                    this.Verified == input.Verified ||
-                    (this.Verified != null &&
-                    this.Verified.Equals(input.Verified))
+                    this.TotalPn == input.TotalPn ||
+                    this.TotalPn.Equals(input.TotalPn)
                 ) && 
                 (
-                    this.HasPhone == input.HasPhone ||
-                    (this.HasPhone != null &&
-                    this.HasPhone.Equals(input.HasPhone))
+                    this.Count == input.Count ||
+                    this.Count.Equals(input.Count)
                 ) && 
                 (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.UserNote == input.UserNote ||
-                    (this.UserNote != null &&
-                    this.UserNote.Equals(input.UserNote))
-                ) && 
-                (
-                    this.CompleteTransactions == input.CompleteTransactions ||
-                    (this.CompleteTransactions != null &&
-                    this.CompleteTransactions.Equals(input.CompleteTransactions))
-                ) && 
-                (
-                    this.PaidTransactions == input.PaidTransactions ||
-                    (this.PaidTransactions != null &&
-                    this.PaidTransactions.Equals(input.PaidTransactions))
-                ) && 
-                (
-                    this.AcceptedTransactions == input.AcceptedTransactions ||
-                    (this.AcceptedTransactions != null &&
-                    this.AcceptedTransactions.Equals(input.AcceptedTransactions))
-                ) && 
-                (
-                    this.TransactionsUsedTime == input.TransactionsUsedTime ||
-                    (this.TransactionsUsedTime != null &&
-                    this.TransactionsUsedTime.Equals(input.TransactionsUsedTime))
-                ) && 
-                (
-                    this.CancelledUsedTimeMonth == input.CancelledUsedTimeMonth ||
-                    (this.CancelledUsedTimeMonth != null &&
-                    this.CancelledUsedTimeMonth.Equals(input.CancelledUsedTimeMonth))
-                ) && 
-                (
-                    this.CompleteTransactionsMonth == input.CompleteTransactionsMonth ||
-                    (this.CompleteTransactionsMonth != null &&
-                    this.CompleteTransactionsMonth.Equals(input.CompleteTransactionsMonth))
-                ) && 
-                (
-                    this.CompleteRateMonth == input.CompleteRateMonth ||
-                    this.CompleteRateMonth.Equals(input.CompleteRateMonth)
-                ) && 
-                (
-                    this.IsFollow == input.IsFollow ||
-                    this.IsFollow.Equals(input.IsFollow)
-                ) && 
-                (
-                    this.HaveTraded == input.HaveTraded ||
-                    this.HaveTraded.Equals(input.HaveTraded)
-                ) && 
-                (
-                    this.BizUid == input.BizUid ||
-                    (this.BizUid != null &&
-                    this.BizUid.Equals(input.BizUid))
-                ) && 
-                (
-                    this.RegistrationDays == input.RegistrationDays ||
-                    this.RegistrationDays.Equals(input.RegistrationDays)
-                ) && 
-                (
-                    this.FirstTradeDays == input.FirstTradeDays ||
-                    this.FirstTradeDays.Equals(input.FirstTradeDays)
-                ) && 
-                (
-                    this.TradeVersatile == input.TradeVersatile ||
-                    this.TradeVersatile.Equals(input.TradeVersatile)
+                    this.List == input.List ||
+                    this.List != null &&
+                    input.List != null &&
+                    this.List.SequenceEqual(input.List)
                 );
         }
 
@@ -387,38 +163,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.UserTimest != null)
-                    hashCode = hashCode * 59 + this.UserTimest.GetHashCode();
-                if (this.EmailVerified != null)
-                    hashCode = hashCode * 59 + this.EmailVerified.GetHashCode();
-                if (this.Verified != null)
-                    hashCode = hashCode * 59 + this.Verified.GetHashCode();
-                if (this.HasPhone != null)
-                    hashCode = hashCode * 59 + this.HasPhone.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.UserNote != null)
-                    hashCode = hashCode * 59 + this.UserNote.GetHashCode();
-                if (this.CompleteTransactions != null)
-                    hashCode = hashCode * 59 + this.CompleteTransactions.GetHashCode();
-                if (this.PaidTransactions != null)
-                    hashCode = hashCode * 59 + this.PaidTransactions.GetHashCode();
-                if (this.AcceptedTransactions != null)
-                    hashCode = hashCode * 59 + this.AcceptedTransactions.GetHashCode();
-                if (this.TransactionsUsedTime != null)
-                    hashCode = hashCode * 59 + this.TransactionsUsedTime.GetHashCode();
-                if (this.CancelledUsedTimeMonth != null)
-                    hashCode = hashCode * 59 + this.CancelledUsedTimeMonth.GetHashCode();
-                if (this.CompleteTransactionsMonth != null)
-                    hashCode = hashCode * 59 + this.CompleteTransactionsMonth.GetHashCode();
-                hashCode = hashCode * 59 + this.CompleteRateMonth.GetHashCode();
-                hashCode = hashCode * 59 + this.IsFollow.GetHashCode();
-                hashCode = hashCode * 59 + this.HaveTraded.GetHashCode();
-                if (this.BizUid != null)
-                    hashCode = hashCode * 59 + this.BizUid.GetHashCode();
-                hashCode = hashCode * 59 + this.RegistrationDays.GetHashCode();
-                hashCode = hashCode * 59 + this.FirstTradeDays.GetHashCode();
-                hashCode = hashCode * 59 + this.TradeVersatile.GetHashCode();
+                hashCode = hashCode * 59 + this.Pn.GetHashCode();
+                hashCode = hashCode * 59 + this.Ps.GetHashCode();
+                hashCode = hashCode * 59 + this.TotalPn.GetHashCode();
+                hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.List != null)
+                    hashCode = hashCode * 59 + this.List.GetHashCode();
                 return hashCode;
             }
         }

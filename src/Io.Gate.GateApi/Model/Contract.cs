@@ -108,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="riskLimitStep">Risk limit adjustment step (deprecated).</param>
         /// <param name="riskLimitMax">Maximum risk limit allowed by the contract (deprecated). It is recommended to use /futures/{settle}/risk_limit_tiers to query risk limits.</param>
         /// <param name="orderSizeMin">Minimum order size allowed by the contract.</param>
+        /// <param name="enableDecimal">Whether decimal string type is supported for contract lot size. When this field is set to &#x60;true&#x60;, it indicates that the contract supports decimal lot sizes (i.e., the &#x60;size&#x60; field can use a decimal string type); when set to &#x60;false&#x60;, it indicates that the contract does not support decimal lot sizes (i.e., the &#x60;size&#x60; field can only use an integer type)..</param>
         /// <param name="orderSizeMax">Maximum order size allowed by the contract.</param>
         /// <param name="orderPriceDeviate">Maximum allowed deviation between order price and current mark price. The order price &#x60;order_price&#x60; must satisfy the following condition:      abs(order_price - mark_price) &lt;&#x3D; mark_price * order_price_deviate.</param>
         /// <param name="refDiscountRate">Trading fee discount for referred users.</param>
@@ -130,7 +131,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="marketOrderSlipRatio">The maximum slippage allowed for market orders, with the slippage rate calculated based on the latest market price.</param>
         /// <param name="marketOrderSizeMax">The maximum number of contracts supported for market orders, with a default value of 0. When the default value is used, the maximum number of contracts is limited by the &#x60;order_size_max&#x60; field.</param>
         /// <param name="fundingRateLimit">Upper and lower limits of funding rate.</param>
-        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string marketOrderSlipRatio = default(string), string marketOrderSizeMax = default(string), string fundingRateLimit = default(string))
+        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), bool enableDecimal = default(bool), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string marketOrderSlipRatio = default(string), string marketOrderSizeMax = default(string), string fundingRateLimit = default(string))
         {
             this.Name = name;
             this.Type = type;
@@ -153,6 +154,7 @@ namespace Io.Gate.GateApi.Model
             this.RiskLimitStep = riskLimitStep;
             this.RiskLimitMax = riskLimitMax;
             this.OrderSizeMin = orderSizeMin;
+            this.EnableDecimal = enableDecimal;
             this.OrderSizeMax = orderSizeMax;
             this.OrderPriceDeviate = orderPriceDeviate;
             this.RefDiscountRate = refDiscountRate;
@@ -309,6 +311,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Minimum order size allowed by the contract</value>
         [DataMember(Name="order_size_min")]
         public string OrderSizeMin { get; set; }
+
+        /// <summary>
+        /// Whether decimal string type is supported for contract lot size. When this field is set to &#x60;true&#x60;, it indicates that the contract supports decimal lot sizes (i.e., the &#x60;size&#x60; field can use a decimal string type); when set to &#x60;false&#x60;, it indicates that the contract does not support decimal lot sizes (i.e., the &#x60;size&#x60; field can only use an integer type).
+        /// </summary>
+        /// <value>Whether decimal string type is supported for contract lot size. When this field is set to &#x60;true&#x60;, it indicates that the contract supports decimal lot sizes (i.e., the &#x60;size&#x60; field can use a decimal string type); when set to &#x60;false&#x60;, it indicates that the contract does not support decimal lot sizes (i.e., the &#x60;size&#x60; field can only use an integer type).</value>
+        [DataMember(Name="enable_decimal")]
+        public bool EnableDecimal { get; set; }
 
         /// <summary>
         /// Maximum order size allowed by the contract
@@ -493,6 +502,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  RiskLimitStep: ").Append(RiskLimitStep).Append("\n");
             sb.Append("  RiskLimitMax: ").Append(RiskLimitMax).Append("\n");
             sb.Append("  OrderSizeMin: ").Append(OrderSizeMin).Append("\n");
+            sb.Append("  EnableDecimal: ").Append(EnableDecimal).Append("\n");
             sb.Append("  OrderSizeMax: ").Append(OrderSizeMax).Append("\n");
             sb.Append("  OrderPriceDeviate: ").Append(OrderPriceDeviate).Append("\n");
             sb.Append("  RefDiscountRate: ").Append(RefDiscountRate).Append("\n");
@@ -651,6 +661,10 @@ namespace Io.Gate.GateApi.Model
                     this.OrderSizeMin.Equals(input.OrderSizeMin))
                 ) && 
                 (
+                    this.EnableDecimal == input.EnableDecimal ||
+                    this.EnableDecimal.Equals(input.EnableDecimal)
+                ) && 
+                (
                     this.OrderSizeMax == input.OrderSizeMax ||
                     (this.OrderSizeMax != null &&
                     this.OrderSizeMax.Equals(input.OrderSizeMax))
@@ -798,6 +812,7 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.RiskLimitMax.GetHashCode();
                 if (this.OrderSizeMin != null)
                     hashCode = hashCode * 59 + this.OrderSizeMin.GetHashCode();
+                hashCode = hashCode * 59 + this.EnableDecimal.GetHashCode();
                 if (this.OrderSizeMax != null)
                     hashCode = hashCode * 59 + this.OrderSizeMax.GetHashCode();
                 if (this.OrderPriceDeviate != null)

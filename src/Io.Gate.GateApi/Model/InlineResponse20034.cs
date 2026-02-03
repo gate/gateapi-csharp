@@ -38,49 +38,49 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20034" /> class.
         /// </summary>
-        /// <param name="userId">User ID (required).</param>
-        /// <param name="symbol">Currency pair (required).</param>
-        /// <param name="crossexAdlRank">CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher) (required).</param>
-        /// <param name="exchangeAdlRank">Original exchange information (Binance: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; Gate: 1–5, lower value ranks higher) (required).</param>
-        public InlineResponse20034(string userId = default(string), string symbol = default(string), string crossexAdlRank = default(string), string exchangeAdlRank = default(string))
+        /// <param name="coin">Currency (required).</param>
+        /// <param name="exchangeType">Exchange (required).</param>
+        /// <param name="hourInterestRate">Hourly Interest Rate (required).</param>
+        /// <param name="time">Millisecond Timestamp (required).</param>
+        public InlineResponse20034(string coin = default(string), string exchangeType = default(string), string hourInterestRate = default(string), string time = default(string))
         {
-            // to ensure "userId" is required (not null)
-            this.UserId = userId ?? throw new ArgumentNullException("userId", "userId is a required property for InlineResponse20034 and cannot be null");
-            // to ensure "symbol" is required (not null)
-            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20034 and cannot be null");
-            // to ensure "crossexAdlRank" is required (not null)
-            this.CrossexAdlRank = crossexAdlRank ?? throw new ArgumentNullException("crossexAdlRank", "crossexAdlRank is a required property for InlineResponse20034 and cannot be null");
-            // to ensure "exchangeAdlRank" is required (not null)
-            this.ExchangeAdlRank = exchangeAdlRank ?? throw new ArgumentNullException("exchangeAdlRank", "exchangeAdlRank is a required property for InlineResponse20034 and cannot be null");
+            // to ensure "coin" is required (not null)
+            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20034 and cannot be null");
+            // to ensure "exchangeType" is required (not null)
+            this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for InlineResponse20034 and cannot be null");
+            // to ensure "hourInterestRate" is required (not null)
+            this.HourInterestRate = hourInterestRate ?? throw new ArgumentNullException("hourInterestRate", "hourInterestRate is a required property for InlineResponse20034 and cannot be null");
+            // to ensure "time" is required (not null)
+            this.Time = time ?? throw new ArgumentNullException("time", "time is a required property for InlineResponse20034 and cannot be null");
         }
 
         /// <summary>
-        /// User ID
+        /// Currency
         /// </summary>
-        /// <value>User ID</value>
-        [DataMember(Name="user_id")]
-        public string UserId { get; set; }
+        /// <value>Currency</value>
+        [DataMember(Name="coin")]
+        public string Coin { get; set; }
 
         /// <summary>
-        /// Currency pair
+        /// Exchange
         /// </summary>
-        /// <value>Currency pair</value>
-        [DataMember(Name="symbol")]
-        public string Symbol { get; set; }
+        /// <value>Exchange</value>
+        [DataMember(Name="exchange_type")]
+        public string ExchangeType { get; set; }
 
         /// <summary>
-        /// CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher)
+        /// Hourly Interest Rate
         /// </summary>
-        /// <value>CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher)</value>
-        [DataMember(Name="crossex_adl_rank")]
-        public string CrossexAdlRank { get; set; }
+        /// <value>Hourly Interest Rate</value>
+        [DataMember(Name="hour_interest_rate")]
+        public string HourInterestRate { get; set; }
 
         /// <summary>
-        /// Original exchange information (Binance: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; Gate: 1–5, lower value ranks higher)
+        /// Millisecond Timestamp
         /// </summary>
-        /// <value>Original exchange information (Binance: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; Gate: 1–5, lower value ranks higher)</value>
-        [DataMember(Name="exchange_adl_rank")]
-        public string ExchangeAdlRank { get; set; }
+        /// <value>Millisecond Timestamp</value>
+        [DataMember(Name="time")]
+        public string Time { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -90,10 +90,10 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20034 {\n");
-            sb.Append("  UserId: ").Append(UserId).Append("\n");
-            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  CrossexAdlRank: ").Append(CrossexAdlRank).Append("\n");
-            sb.Append("  ExchangeAdlRank: ").Append(ExchangeAdlRank).Append("\n");
+            sb.Append("  Coin: ").Append(Coin).Append("\n");
+            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
+            sb.Append("  HourInterestRate: ").Append(HourInterestRate).Append("\n");
+            sb.Append("  Time: ").Append(Time).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,24 +129,24 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    this.Coin == input.Coin ||
+                    (this.Coin != null &&
+                    this.Coin.Equals(input.Coin))
                 ) && 
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    this.ExchangeType == input.ExchangeType ||
+                    (this.ExchangeType != null &&
+                    this.ExchangeType.Equals(input.ExchangeType))
                 ) && 
                 (
-                    this.CrossexAdlRank == input.CrossexAdlRank ||
-                    (this.CrossexAdlRank != null &&
-                    this.CrossexAdlRank.Equals(input.CrossexAdlRank))
+                    this.HourInterestRate == input.HourInterestRate ||
+                    (this.HourInterestRate != null &&
+                    this.HourInterestRate.Equals(input.HourInterestRate))
                 ) && 
                 (
-                    this.ExchangeAdlRank == input.ExchangeAdlRank ||
-                    (this.ExchangeAdlRank != null &&
-                    this.ExchangeAdlRank.Equals(input.ExchangeAdlRank))
+                    this.Time == input.Time ||
+                    (this.Time != null &&
+                    this.Time.Equals(input.Time))
                 );
         }
 
@@ -159,14 +159,14 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.CrossexAdlRank != null)
-                    hashCode = hashCode * 59 + this.CrossexAdlRank.GetHashCode();
-                if (this.ExchangeAdlRank != null)
-                    hashCode = hashCode * 59 + this.ExchangeAdlRank.GetHashCode();
+                if (this.Coin != null)
+                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
+                if (this.ExchangeType != null)
+                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
+                if (this.HourInterestRate != null)
+                    hashCode = hashCode * 59 + this.HourInterestRate.GetHashCode();
+                if (this.Time != null)
+                    hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }
         }

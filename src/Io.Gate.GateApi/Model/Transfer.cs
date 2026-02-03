@@ -131,7 +131,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="currency">Transfer currency name. For contract accounts, &#x60;currency&#x60; can be set to &#x60;POINT&#x60; (points) or supported settlement currencies (e.g., &#x60;BTC&#x60;, &#x60;USDT&#x60;) (required).</param>
         /// <param name="from">Account to transfer from (required).</param>
         /// <param name="to">Account to transfer to (required).</param>
-        /// <param name="amount">Transfer amount (required).</param>
+        /// <param name="amount">Transfer Amount, supports up to 8 decimal places, must be greater than 0 (required).</param>
         /// <param name="currencyPair">Margin trading pair. Required when transferring to or from margin account.</param>
         /// <param name="settle">Contract settlement currency. Required when transferring to or from contract account.</param>
         public Transfer(string currency = default(string), FromEnum from = default(FromEnum), ToEnum to = default(ToEnum), string amount = default(string), string currencyPair = default(string), string settle = default(string))
@@ -154,9 +154,9 @@ namespace Io.Gate.GateApi.Model
         public string Currency { get; set; }
 
         /// <summary>
-        /// Transfer amount
+        /// Transfer Amount, supports up to 8 decimal places, must be greater than 0
         /// </summary>
-        /// <value>Transfer amount</value>
+        /// <value>Transfer Amount, supports up to 8 decimal places, must be greater than 0</value>
         [DataMember(Name="amount")]
         public string Amount { get; set; }
 

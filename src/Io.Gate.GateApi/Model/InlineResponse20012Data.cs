@@ -38,46 +38,168 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20012Data" /> class.
         /// </summary>
-        /// <param name="list">list (required).</param>
-        /// <param name="transTime">Countdown time (required).</param>
-        /// <param name="count">Number of orders (required).</param>
-        /// <param name="exportedNum">Export count (required).</param>
-        public InlineResponse20012Data(List<InlineResponse20012DataList> list = default(List<InlineResponse20012DataList>), List<InlineResponse20012DataTransTime> transTime = default(List<InlineResponse20012DataTransTime>), int count = default(int), int exportedNum = default(int))
+        /// <param name="orderId">Order ID (required).</param>
+        /// <param name="uid">User ID (required).</param>
+        /// <param name="type">Order Type (required).</param>
+        /// <param name="fiatCurrency">Fiat type (required).</param>
+        /// <param name="fiatAmount">Fiat amount (required).</param>
+        /// <param name="cryptoCurrency">Stablecoin (required).</param>
+        /// <param name="cryptoAmount">Stablecoin amount (required).</param>
+        /// <param name="rate">Exchange rate (required).</param>
+        /// <param name="transferRemark">Remark (required).</param>
+        /// <param name="status">Status (required).</param>
+        /// <param name="dbStatus">dbStatus (required).</param>
+        /// <param name="createTime">Created time (required).</param>
+        /// <param name="memo">Cancellation or rejection reason (required).</param>
+        /// <param name="side">Quote direction (required).</param>
+        /// <param name="promotionCode">Promotion code (required).</param>
+        /// <param name="tradeNo">Trade number (required).</param>
+        public InlineResponse20012Data(string orderId = default(string), string uid = default(string), string type = default(string), string fiatCurrency = default(string), string fiatAmount = default(string), string cryptoCurrency = default(string), string cryptoAmount = default(string), string rate = default(string), string transferRemark = default(string), string status = default(string), string dbStatus = default(string), string createTime = default(string), string memo = default(string), string side = default(string), string promotionCode = default(string), string tradeNo = default(string))
         {
-            // to ensure "list" is required (not null)
-            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20012Data and cannot be null");
-            // to ensure "transTime" is required (not null)
-            this.TransTime = transTime ?? throw new ArgumentNullException("transTime", "transTime is a required property for InlineResponse20012Data and cannot be null");
-            this.Count = count;
-            this.ExportedNum = exportedNum;
+            // to ensure "orderId" is required (not null)
+            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "uid" is required (not null)
+            this.Uid = uid ?? throw new ArgumentNullException("uid", "uid is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "type" is required (not null)
+            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "fiatCurrency" is required (not null)
+            this.FiatCurrency = fiatCurrency ?? throw new ArgumentNullException("fiatCurrency", "fiatCurrency is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "fiatAmount" is required (not null)
+            this.FiatAmount = fiatAmount ?? throw new ArgumentNullException("fiatAmount", "fiatAmount is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "cryptoCurrency" is required (not null)
+            this.CryptoCurrency = cryptoCurrency ?? throw new ArgumentNullException("cryptoCurrency", "cryptoCurrency is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "cryptoAmount" is required (not null)
+            this.CryptoAmount = cryptoAmount ?? throw new ArgumentNullException("cryptoAmount", "cryptoAmount is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "rate" is required (not null)
+            this.Rate = rate ?? throw new ArgumentNullException("rate", "rate is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "transferRemark" is required (not null)
+            this.TransferRemark = transferRemark ?? throw new ArgumentNullException("transferRemark", "transferRemark is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "status" is required (not null)
+            this.Status = status ?? throw new ArgumentNullException("status", "status is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "dbStatus" is required (not null)
+            this.DbStatus = dbStatus ?? throw new ArgumentNullException("dbStatus", "dbStatus is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "createTime" is required (not null)
+            this.CreateTime = createTime ?? throw new ArgumentNullException("createTime", "createTime is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "memo" is required (not null)
+            this.Memo = memo ?? throw new ArgumentNullException("memo", "memo is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "side" is required (not null)
+            this.Side = side ?? throw new ArgumentNullException("side", "side is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "promotionCode" is required (not null)
+            this.PromotionCode = promotionCode ?? throw new ArgumentNullException("promotionCode", "promotionCode is a required property for InlineResponse20012Data and cannot be null");
+            // to ensure "tradeNo" is required (not null)
+            this.TradeNo = tradeNo ?? throw new ArgumentNullException("tradeNo", "tradeNo is a required property for InlineResponse20012Data and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets List
+        /// Order ID
         /// </summary>
-        [DataMember(Name="list")]
-        public List<InlineResponse20012DataList> List { get; set; }
+        /// <value>Order ID</value>
+        [DataMember(Name="order_id")]
+        public string OrderId { get; set; }
 
         /// <summary>
-        /// Countdown time
+        /// User ID
         /// </summary>
-        /// <value>Countdown time</value>
-        [DataMember(Name="trans_time")]
-        public List<InlineResponse20012DataTransTime> TransTime { get; set; }
+        /// <value>User ID</value>
+        [DataMember(Name="uid")]
+        public string Uid { get; set; }
 
         /// <summary>
-        /// Number of orders
+        /// Order Type
         /// </summary>
-        /// <value>Number of orders</value>
-        [DataMember(Name="count")]
-        public int Count { get; set; }
+        /// <value>Order Type</value>
+        [DataMember(Name="type")]
+        public string Type { get; set; }
 
         /// <summary>
-        /// Export count
+        /// Fiat type
         /// </summary>
-        /// <value>Export count</value>
-        [DataMember(Name="exported_num")]
-        public int ExportedNum { get; set; }
+        /// <value>Fiat type</value>
+        [DataMember(Name="fiat_currency")]
+        public string FiatCurrency { get; set; }
+
+        /// <summary>
+        /// Fiat amount
+        /// </summary>
+        /// <value>Fiat amount</value>
+        [DataMember(Name="fiat_amount")]
+        public string FiatAmount { get; set; }
+
+        /// <summary>
+        /// Stablecoin
+        /// </summary>
+        /// <value>Stablecoin</value>
+        [DataMember(Name="crypto_currency")]
+        public string CryptoCurrency { get; set; }
+
+        /// <summary>
+        /// Stablecoin amount
+        /// </summary>
+        /// <value>Stablecoin amount</value>
+        [DataMember(Name="crypto_amount")]
+        public string CryptoAmount { get; set; }
+
+        /// <summary>
+        /// Exchange rate
+        /// </summary>
+        /// <value>Exchange rate</value>
+        [DataMember(Name="rate")]
+        public string Rate { get; set; }
+
+        /// <summary>
+        /// Remark
+        /// </summary>
+        /// <value>Remark</value>
+        [DataMember(Name="transfer_remark")]
+        public string TransferRemark { get; set; }
+
+        /// <summary>
+        /// Status
+        /// </summary>
+        /// <value>Status</value>
+        [DataMember(Name="status")]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DbStatus
+        /// </summary>
+        [DataMember(Name="db_status")]
+        public string DbStatus { get; set; }
+
+        /// <summary>
+        /// Created time
+        /// </summary>
+        /// <value>Created time</value>
+        [DataMember(Name="create_time")]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// Cancellation or rejection reason
+        /// </summary>
+        /// <value>Cancellation or rejection reason</value>
+        [DataMember(Name="memo")]
+        public string Memo { get; set; }
+
+        /// <summary>
+        /// Quote direction
+        /// </summary>
+        /// <value>Quote direction</value>
+        [DataMember(Name="side")]
+        public string Side { get; set; }
+
+        /// <summary>
+        /// Promotion code
+        /// </summary>
+        /// <value>Promotion code</value>
+        [DataMember(Name="promotion_code")]
+        public string PromotionCode { get; set; }
+
+        /// <summary>
+        /// Trade number
+        /// </summary>
+        /// <value>Trade number</value>
+        [DataMember(Name="trade_no")]
+        public string TradeNo { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -87,10 +209,22 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20012Data {\n");
-            sb.Append("  List: ").Append(List).Append("\n");
-            sb.Append("  TransTime: ").Append(TransTime).Append("\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
-            sb.Append("  ExportedNum: ").Append(ExportedNum).Append("\n");
+            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
+            sb.Append("  Uid: ").Append(Uid).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  FiatCurrency: ").Append(FiatCurrency).Append("\n");
+            sb.Append("  FiatAmount: ").Append(FiatAmount).Append("\n");
+            sb.Append("  CryptoCurrency: ").Append(CryptoCurrency).Append("\n");
+            sb.Append("  CryptoAmount: ").Append(CryptoAmount).Append("\n");
+            sb.Append("  Rate: ").Append(Rate).Append("\n");
+            sb.Append("  TransferRemark: ").Append(TransferRemark).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  DbStatus: ").Append(DbStatus).Append("\n");
+            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  Memo: ").Append(Memo).Append("\n");
+            sb.Append("  Side: ").Append(Side).Append("\n");
+            sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
+            sb.Append("  TradeNo: ").Append(TradeNo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -126,24 +260,84 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 ) && 
                 (
-                    this.TransTime == input.TransTime ||
-                    this.TransTime != null &&
-                    input.TransTime != null &&
-                    this.TransTime.SequenceEqual(input.TransTime)
+                    this.Uid == input.Uid ||
+                    (this.Uid != null &&
+                    this.Uid.Equals(input.Uid))
                 ) && 
                 (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.ExportedNum == input.ExportedNum ||
-                    this.ExportedNum.Equals(input.ExportedNum)
+                    this.FiatCurrency == input.FiatCurrency ||
+                    (this.FiatCurrency != null &&
+                    this.FiatCurrency.Equals(input.FiatCurrency))
+                ) && 
+                (
+                    this.FiatAmount == input.FiatAmount ||
+                    (this.FiatAmount != null &&
+                    this.FiatAmount.Equals(input.FiatAmount))
+                ) && 
+                (
+                    this.CryptoCurrency == input.CryptoCurrency ||
+                    (this.CryptoCurrency != null &&
+                    this.CryptoCurrency.Equals(input.CryptoCurrency))
+                ) && 
+                (
+                    this.CryptoAmount == input.CryptoAmount ||
+                    (this.CryptoAmount != null &&
+                    this.CryptoAmount.Equals(input.CryptoAmount))
+                ) && 
+                (
+                    this.Rate == input.Rate ||
+                    (this.Rate != null &&
+                    this.Rate.Equals(input.Rate))
+                ) && 
+                (
+                    this.TransferRemark == input.TransferRemark ||
+                    (this.TransferRemark != null &&
+                    this.TransferRemark.Equals(input.TransferRemark))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.DbStatus == input.DbStatus ||
+                    (this.DbStatus != null &&
+                    this.DbStatus.Equals(input.DbStatus))
+                ) && 
+                (
+                    this.CreateTime == input.CreateTime ||
+                    (this.CreateTime != null &&
+                    this.CreateTime.Equals(input.CreateTime))
+                ) && 
+                (
+                    this.Memo == input.Memo ||
+                    (this.Memo != null &&
+                    this.Memo.Equals(input.Memo))
+                ) && 
+                (
+                    this.Side == input.Side ||
+                    (this.Side != null &&
+                    this.Side.Equals(input.Side))
+                ) && 
+                (
+                    this.PromotionCode == input.PromotionCode ||
+                    (this.PromotionCode != null &&
+                    this.PromotionCode.Equals(input.PromotionCode))
+                ) && 
+                (
+                    this.TradeNo == input.TradeNo ||
+                    (this.TradeNo != null &&
+                    this.TradeNo.Equals(input.TradeNo))
                 );
         }
 
@@ -156,12 +350,38 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
-                if (this.TransTime != null)
-                    hashCode = hashCode * 59 + this.TransTime.GetHashCode();
-                hashCode = hashCode * 59 + this.Count.GetHashCode();
-                hashCode = hashCode * 59 + this.ExportedNum.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.Uid != null)
+                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.FiatCurrency != null)
+                    hashCode = hashCode * 59 + this.FiatCurrency.GetHashCode();
+                if (this.FiatAmount != null)
+                    hashCode = hashCode * 59 + this.FiatAmount.GetHashCode();
+                if (this.CryptoCurrency != null)
+                    hashCode = hashCode * 59 + this.CryptoCurrency.GetHashCode();
+                if (this.CryptoAmount != null)
+                    hashCode = hashCode * 59 + this.CryptoAmount.GetHashCode();
+                if (this.Rate != null)
+                    hashCode = hashCode * 59 + this.Rate.GetHashCode();
+                if (this.TransferRemark != null)
+                    hashCode = hashCode * 59 + this.TransferRemark.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.DbStatus != null)
+                    hashCode = hashCode * 59 + this.DbStatus.GetHashCode();
+                if (this.CreateTime != null)
+                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.Memo != null)
+                    hashCode = hashCode * 59 + this.Memo.GetHashCode();
+                if (this.Side != null)
+                    hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.PromotionCode != null)
+                    hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
+                if (this.TradeNo != null)
+                    hashCode = hashCode * 59 + this.TradeNo.GetHashCode();
                 return hashCode;
             }
         }

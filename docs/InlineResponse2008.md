@@ -5,9 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Message** | **string** |  | 
 **Code** | **int** |  | 
-**Data** | [**InlineResponse2008Data**](InlineResponse2008Data.md) |  | 
+**Message** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**ListFuturesPremiumIndex**](FuturesApi.md#listfuturespremiumindex) | **GET** /futures/{settle}/premium_index | Premium Index K-line chart
 [**ListFuturesTickers**](FuturesApi.md#listfuturestickers) | **GET** /futures/{settle}/tickers | Get all futures trading statistics
 [**ListFuturesFundingRateHistory**](FuturesApi.md#listfuturesfundingratehistory) | **GET** /futures/{settle}/funding_rate | Futures market historical funding rate
+[**ListBatchFuturesFundingRates**](FuturesApi.md#listbatchfuturesfundingrates) | **POST** /futures/{settle}/funding_rates | Batch Query Historical Funding Rate Data for Perpetual Contracts
 [**ListFuturesInsuranceLedger**](FuturesApi.md#listfuturesinsuranceledger) | **GET** /futures/{settle}/insurance | Futures market insurance fund history
 [**ListContractStats**](FuturesApi.md#listcontractstats) | **GET** /futures/{settle}/contract_stats | Futures statistics
 [**GetIndexConstituents**](FuturesApi.md#getindexconstituents) | **GET** /futures/{settle}/index_constituents/{index} | Query index constituents
@@ -20,6 +21,7 @@ Method | HTTP request | Description
 [**ListFuturesAccounts**](FuturesApi.md#listfuturesaccounts) | **GET** /futures/{settle}/accounts | Get futures account
 [**ListFuturesAccountBook**](FuturesApi.md#listfuturesaccountbook) | **GET** /futures/{settle}/account_book | Query futures account change history
 [**ListPositions**](FuturesApi.md#listpositions) | **GET** /futures/{settle}/positions | Get user position list
+[**ListPositionsTimerange**](FuturesApi.md#listpositionstimerange) | **GET** /futures/{settle}/positions_timerange | Get user&#39;s historical position information list by time
 [**GetPosition**](FuturesApi.md#getposition) | **GET** /futures/{settle}/positions/{contract} | Get single position information
 [**GetLeverage**](FuturesApi.md#getleverage) | **GET** /futures/{settle}/get_leverage/{contract} | Get Leverage Information for Specified Mode
 [**UpdatePositionMargin**](FuturesApi.md#updatepositionmargin) | **POST** /futures/{settle}/positions/{contract}/margin | Update position margin
@@ -53,6 +55,13 @@ Method | HTTP request | Description
 [**AmendBatchFutureOrders**](FuturesApi.md#amendbatchfutureorders) | **POST** /futures/{settle}/batch_amend_orders | Batch modify orders by specified IDs
 [**GetFuturesRiskLimitTable**](FuturesApi.md#getfuturesrisklimittable) | **GET** /futures/{settle}/risk_limit_table | Query risk limit table by table_id
 [**CreateFuturesBBOOrder**](FuturesApi.md#createfuturesbboorder) | **POST** /futures/{settle}/bbo_orders | Level-based BBO Contract Order Placement
+[**CreateTrailOrder**](FuturesApi.md#createtrailorder) | **POST** /futures/{settle}/autoorder/v1/trail/create | Create trail order
+[**StopTrailOrder**](FuturesApi.md#stoptrailorder) | **POST** /futures/{settle}/autoorder/v1/trail/stop | Terminate trail order
+[**StopAllTrailOrders**](FuturesApi.md#stopalltrailorders) | **POST** /futures/{settle}/autoorder/v1/trail/stop_all | Batch terminate trail orders
+[**GetTrailOrders**](FuturesApi.md#gettrailorders) | **GET** /futures/{settle}/autoorder/v1/trail/list | Get trail order list
+[**GetTrailOrderDetail**](FuturesApi.md#gettrailorderdetail) | **GET** /futures/{settle}/autoorder/v1/trail/detail | Get trail order details
+[**UpdateTrailOrder**](FuturesApi.md#updatetrailorder) | **POST** /futures/{settle}/autoorder/v1/trail/update | Update trail order
+[**GetTrailOrderChangeLog**](FuturesApi.md#gettrailorderchangelog) | **GET** /futures/{settle}/autoorder/v1/trail/change_log | Get trail order user modification records
 [**ListPriceTriggeredOrders**](FuturesApi.md#listpricetriggeredorders) | **GET** /futures/{settle}/price_orders | Query auto order list
 [**CreatePriceTriggeredOrder**](FuturesApi.md#createpricetriggeredorder) | **POST** /futures/{settle}/price_orders | Create price-triggered order
 [**CancelPriceTriggeredOrderList**](FuturesApi.md#cancelpricetriggeredorderlist) | **DELETE** /futures/{settle}/price_orders | Cancel all auto orders
@@ -677,6 +686,77 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="listbatchfuturesfundingrates"></a>
+# **ListBatchFuturesFundingRates**
+> List&lt;BatchFundingRatesResponse&gt; ListBatchFuturesFundingRates (string settle, BatchFundingRatesRequest batchFundingRatesRequest)
+
+Batch Query Historical Funding Rate Data for Perpetual Contracts
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListBatchFuturesFundingRatesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var batchFundingRatesRequest = new BatchFundingRatesRequest(); // BatchFundingRatesRequest | 
+
+            try
+            {
+                // Batch Query Historical Funding Rate Data for Perpetual Contracts
+                List<BatchFundingRatesResponse> result = apiInstance.ListBatchFuturesFundingRates(settle, batchFundingRatesRequest);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.ListBatchFuturesFundingRates: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **batchFundingRatesRequest** | [**BatchFundingRatesRequest**](BatchFundingRatesRequest.md)|  | 
+
+### Return type
+
+[**List&lt;BatchFundingRatesResponse&gt;**](BatchFundingRatesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Batch Query Successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="listfuturesinsuranceledger"></a>
 # **ListFuturesInsuranceLedger**
 > List&lt;InsuranceRecord&gt; ListFuturesInsuranceLedger (string settle, int? limit = null)
@@ -1270,6 +1350,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;Position&gt;**](Position.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | List retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listpositionstimerange"></a>
+# **ListPositionsTimerange**
+> List&lt;PositionTimerange&gt; ListPositionsTimerange (string settle, string contract, long? from = null, long? to = null, int? limit = null, int? offset = null)
+
+Get user's historical position information list by time
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListPositionsTimerangeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var contract = "BTC_USDT";  // string | Futures contract
+            var from = 1547706332;  // long? | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional) 
+            var to = 1547706332;  // long? | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional) 
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
+
+            try
+            {
+                // Get user's historical position information list by time
+                List<PositionTimerange> result = apiInstance.ListPositionsTimerange(settle, contract, from, to, limit, offset);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.ListPositionsTimerange: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **contract** | **string**| Futures contract | 
+ **from** | **long?**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **long?**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
+
+### Return type
+
+[**List&lt;PositionTimerange&gt;**](PositionTimerange.md)
 
 ### Authorization
 
@@ -3851,6 +4012,543 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Order details |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createtrailorder"></a>
+# **CreateTrailOrder**
+> InlineResponse201 CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder)
+
+Create trail order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateTrailOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var createTrailOrder = new CreateTrailOrder(); // CreateTrailOrder | 
+
+            try
+            {
+                // Create trail order
+                InlineResponse201 result = apiInstance.CreateTrailOrder(settle, createTrailOrder);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.CreateTrailOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **createTrailOrder** | [**CreateTrailOrder**](CreateTrailOrder.md)|  | 
+
+### Return type
+
+[**InlineResponse201**](InlineResponse201.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Created successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="stoptrailorder"></a>
+# **StopTrailOrder**
+> InlineResponse200 StopTrailOrder (string settle, StopTrailOrder stopTrailOrder)
+
+Terminate trail order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class StopTrailOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var stopTrailOrder = new StopTrailOrder(); // StopTrailOrder | 
+
+            try
+            {
+                // Terminate trail order
+                InlineResponse200 result = apiInstance.StopTrailOrder(settle, stopTrailOrder);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.StopTrailOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **stopTrailOrder** | [**StopTrailOrder**](StopTrailOrder.md)|  | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Termination successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="stopalltrailorders"></a>
+# **StopAllTrailOrders**
+> InlineResponse2001 StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
+
+Batch terminate trail orders
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class StopAllTrailOrdersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var stopAllTrailOrders = new StopAllTrailOrders(); // StopAllTrailOrders | 
+
+            try
+            {
+                // Batch terminate trail orders
+                InlineResponse2001 result = apiInstance.StopAllTrailOrders(settle, stopAllTrailOrders);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.StopAllTrailOrders: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **stopAllTrailOrders** | [**StopAllTrailOrders**](StopAllTrailOrders.md)|  | 
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Termination successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="gettrailorders"></a>
+# **GetTrailOrders**
+> InlineResponse2001 GetTrailOrders (string settle, string contract = null, bool? isFinished = null, long? startAt = null, long? endAt = null, int? pageNum = null, int? pageSize = null, int? sortBy = null, bool? hideCancel = null, int? relatedPosition = null, bool? sortByTrigger = null, int? reduceOnly = null, int? side = null)
+
+Get trail order list
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetTrailOrdersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var contract = "contract_example";  // string | Contract name (optional) 
+            var isFinished = true;  // bool? | Whether historical order (optional) 
+            var startAt = 56;  // long? | Start time of time range (optional) 
+            var endAt = 56;  // long? | End time of time range (optional) 
+            var pageNum = 1;  // int? | Page number, starting from 1 (optional)  (default to 1)
+            var pageSize = 20;  // int? | Number of items per page (optional)  (default to 20)
+            var sortBy = 1;  // int? | Common sort field, 1-creation time, 2-end time (optional)  (default to 1)
+            var hideCancel = false;  // bool? | Hide cancelled orders (optional)  (default to false)
+            var relatedPosition = 56;  // int? | Associated position, if provided, only return orders associated with this position, 1-long, 2-short (optional) 
+            var sortByTrigger = false;  // bool? | Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional)  (default to false)
+            var reduceOnly = 56;  // int? | Whether reduce only, 1-yes, 2-no (optional) 
+            var side = 56;  // int? | Direction, 1-long position, 2-short position (optional) 
+
+            try
+            {
+                // Get trail order list
+                InlineResponse2001 result = apiInstance.GetTrailOrders(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.GetTrailOrders: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **contract** | **string**| Contract name | [optional] 
+ **isFinished** | **bool?**| Whether historical order | [optional] 
+ **startAt** | **long?**| Start time of time range | [optional] 
+ **endAt** | **long?**| End time of time range | [optional] 
+ **pageNum** | **int?**| Page number, starting from 1 | [optional] [default to 1]
+ **pageSize** | **int?**| Number of items per page | [optional] [default to 20]
+ **sortBy** | **int?**| Common sort field, 1-creation time, 2-end time | [optional] [default to 1]
+ **hideCancel** | **bool?**| Hide cancelled orders | [optional] [default to false]
+ **relatedPosition** | **int?**| Associated position, if provided, only return orders associated with this position, 1-long, 2-short | [optional] 
+ **sortByTrigger** | **bool?**| Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions | [optional] [default to false]
+ **reduceOnly** | **int?**| Whether reduce only, 1-yes, 2-no | [optional] 
+ **side** | **int?**| Direction, 1-long position, 2-short position | [optional] 
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="gettrailorderdetail"></a>
+# **GetTrailOrderDetail**
+> InlineResponse2002 GetTrailOrderDetail (string settle, long id)
+
+Get trail order details
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetTrailOrderDetailExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var id = 56;  // long | Order ID
+
+            try
+            {
+                // Get trail order details
+                InlineResponse2002 result = apiInstance.GetTrailOrderDetail(settle, id);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.GetTrailOrderDetail: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **id** | **long**| Order ID | 
+
+### Return type
+
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatetrailorder"></a>
+# **UpdateTrailOrder**
+> InlineResponse200 UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder)
+
+Update trail order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class UpdateTrailOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var updateTrailOrder = new UpdateTrailOrder(); // UpdateTrailOrder | 
+
+            try
+            {
+                // Update trail order
+                InlineResponse200 result = apiInstance.UpdateTrailOrder(settle, updateTrailOrder);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.UpdateTrailOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **updateTrailOrder** | [**UpdateTrailOrder**](UpdateTrailOrder.md)|  | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Updated successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="gettrailorderchangelog"></a>
+# **GetTrailOrderChangeLog**
+> InlineResponse2003 GetTrailOrderChangeLog (string settle, long id, int? pageNum = null, int? pageSize = null)
+
+Get trail order user modification records
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetTrailOrderChangeLogExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var id = 56;  // long | Order ID
+            var pageNum = 1;  // int? | Page number, starting from 1 (optional)  (default to 1)
+            var pageSize = 20;  // int? | Number of items per page (optional)  (default to 20)
+
+            try
+            {
+                // Get trail order user modification records
+                InlineResponse2003 result = apiInstance.GetTrailOrderChangeLog(settle, id, pageNum, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.GetTrailOrderChangeLog: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **id** | **long**| Order ID | 
+ **pageNum** | **int?**| Page number, starting from 1 | [optional] [default to 1]
+ **pageSize** | **int?**| Number of items per page | [optional] [default to 20]
+
+### Return type
+
+[**InlineResponse2003**](InlineResponse2003.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

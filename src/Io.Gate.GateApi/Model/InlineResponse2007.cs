@@ -40,14 +40,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="code">code (required).</param>
         /// <param name="message">message (required).</param>
-        /// <param name="data">data (required).</param>
-        public InlineResponse2007(int code = default(int), string message = default(string), InlineResponse2007Data data = default(InlineResponse2007Data))
+        /// <param name="timestamp">timestamp (required).</param>
+        public InlineResponse2007(int code = default(int), string message = default(string), int timestamp = default(int))
         {
             this.Code = code;
             // to ensure "message" is required (not null)
             this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2007 and cannot be null");
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse2007 and cannot be null");
+            this.Timestamp = timestamp;
         }
 
         /// <summary>
@@ -63,10 +62,10 @@ namespace Io.Gate.GateApi.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets Timestamp
         /// </summary>
-        [DataMember(Name="data")]
-        public InlineResponse2007Data Data { get; set; }
+        [DataMember(Name="timestamp")]
+        public int Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,7 +77,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class InlineResponse2007 {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,9 +122,8 @@ namespace Io.Gate.GateApi.Model
                     this.Message.Equals(input.Message))
                 ) && 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
                 );
         }
 
@@ -141,8 +139,7 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Code.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

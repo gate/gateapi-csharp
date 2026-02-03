@@ -33,44 +33,55 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20011Data" /> class.
         /// </summary>
-        /// <param name="payType">Payment method type.</param>
-        /// <param name="payName">Payment method name.</param>
-        /// <param name="ids">User&#39;s currently bound payment method (primary key ID).</param>
-        /// <param name="list">list.</param>
-        public InlineResponse20011Data(string payType = default(string), string payName = default(string), List<int> ids = default(List<int>), List<InlineResponse20011List> list = default(List<InlineResponse20011List>))
+        [JsonConstructorAttribute]
+        protected InlineResponse20011Data() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20011Data" /> class.
+        /// </summary>
+        /// <param name="total">total (required).</param>
+        /// <param name="pageSize">pageSize (required).</param>
+        /// <param name="pageNumber">pageNumber (required).</param>
+        /// <param name="totalPage">totalPage (required).</param>
+        /// <param name="list">list (required).</param>
+        public InlineResponse20011Data(int total = default(int), int pageSize = default(int), int pageNumber = default(int), int totalPage = default(int), List<InlineResponse20011DataList> list = default(List<InlineResponse20011DataList>))
         {
-            this.PayType = payType;
-            this.PayName = payName;
-            this.Ids = ids;
-            this.List = list;
+            this.Total = total;
+            this.PageSize = pageSize;
+            this.PageNumber = pageNumber;
+            this.TotalPage = totalPage;
+            // to ensure "list" is required (not null)
+            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20011Data and cannot be null");
         }
 
         /// <summary>
-        /// Payment method type
+        /// Gets or Sets Total
         /// </summary>
-        /// <value>Payment method type</value>
-        [DataMember(Name="pay_type")]
-        public string PayType { get; set; }
+        [DataMember(Name="total")]
+        public int Total { get; set; }
 
         /// <summary>
-        /// Payment method name
+        /// Gets or Sets PageSize
         /// </summary>
-        /// <value>Payment method name</value>
-        [DataMember(Name="pay_name")]
-        public string PayName { get; set; }
+        [DataMember(Name="page_size")]
+        public int PageSize { get; set; }
 
         /// <summary>
-        /// User&#39;s currently bound payment method (primary key ID)
+        /// Gets or Sets PageNumber
         /// </summary>
-        /// <value>User&#39;s currently bound payment method (primary key ID)</value>
-        [DataMember(Name="ids")]
-        public List<int> Ids { get; set; }
+        [DataMember(Name="page_number")]
+        public int PageNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TotalPage
+        /// </summary>
+        [DataMember(Name="total_page")]
+        public int TotalPage { get; set; }
 
         /// <summary>
         /// Gets or Sets List
         /// </summary>
         [DataMember(Name="list")]
-        public List<InlineResponse20011List> List { get; set; }
+        public List<InlineResponse20011DataList> List { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -80,9 +91,10 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20011Data {\n");
-            sb.Append("  PayType: ").Append(PayType).Append("\n");
-            sb.Append("  PayName: ").Append(PayName).Append("\n");
-            sb.Append("  Ids: ").Append(Ids).Append("\n");
+            sb.Append("  Total: ").Append(Total).Append("\n");
+            sb.Append("  PageSize: ").Append(PageSize).Append("\n");
+            sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
+            sb.Append("  TotalPage: ").Append(TotalPage).Append("\n");
             sb.Append("  List: ").Append(List).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -119,20 +131,20 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.PayType == input.PayType ||
-                    (this.PayType != null &&
-                    this.PayType.Equals(input.PayType))
+                    this.Total == input.Total ||
+                    this.Total.Equals(input.Total)
                 ) && 
                 (
-                    this.PayName == input.PayName ||
-                    (this.PayName != null &&
-                    this.PayName.Equals(input.PayName))
+                    this.PageSize == input.PageSize ||
+                    this.PageSize.Equals(input.PageSize)
                 ) && 
                 (
-                    this.Ids == input.Ids ||
-                    this.Ids != null &&
-                    input.Ids != null &&
-                    this.Ids.SequenceEqual(input.Ids)
+                    this.PageNumber == input.PageNumber ||
+                    this.PageNumber.Equals(input.PageNumber)
+                ) && 
+                (
+                    this.TotalPage == input.TotalPage ||
+                    this.TotalPage.Equals(input.TotalPage)
                 ) && 
                 (
                     this.List == input.List ||
@@ -151,12 +163,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PayType != null)
-                    hashCode = hashCode * 59 + this.PayType.GetHashCode();
-                if (this.PayName != null)
-                    hashCode = hashCode * 59 + this.PayName.GetHashCode();
-                if (this.Ids != null)
-                    hashCode = hashCode * 59 + this.Ids.GetHashCode();
+                hashCode = hashCode * 59 + this.Total.GetHashCode();
+                hashCode = hashCode * 59 + this.PageSize.GetHashCode();
+                hashCode = hashCode * 59 + this.PageNumber.GetHashCode();
+                hashCode = hashCode * 59 + this.TotalPage.GetHashCode();
                 if (this.List != null)
                     hashCode = hashCode * 59 + this.List.GetHashCode();
                 return hashCode;

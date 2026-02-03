@@ -38,58 +38,79 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20031" /> class.
         /// </summary>
-        /// <param name="spotMakerFee">spotMakerfee rate (required).</param>
-        /// <param name="spotTakerFee">spotTakerfee rate (required).</param>
-        /// <param name="futureMakerFee">contractMakerfee rate (required).</param>
-        /// <param name="futureTakerFee">contractTakerfee rate (required).</param>
-        /// <param name="specialFeeList">specialFeeList (required).</param>
-        public InlineResponse20031(string spotMakerFee = default(string), string spotTakerFee = default(string), string futureMakerFee = default(string), string futureTakerFee = default(string), List<InlineResponse20031SpecialFeeList> specialFeeList = default(List<InlineResponse20031SpecialFeeList>))
+        /// <param name="quoteId">Quote ID (required).</param>
+        /// <param name="validMs">Valid time (milliseconds timestamp) (required).</param>
+        /// <param name="fromCoin">Asset Sold (required).</param>
+        /// <param name="toCoin">Asset Bought (required).</param>
+        /// <param name="fromAmount">Amount to sell (required).</param>
+        /// <param name="toAmount">Amount to buy (required).</param>
+        /// <param name="price">Price (required).</param>
+        public InlineResponse20031(string quoteId = default(string), string validMs = default(string), string fromCoin = default(string), string toCoin = default(string), string fromAmount = default(string), string toAmount = default(string), string price = default(string))
         {
-            // to ensure "spotMakerFee" is required (not null)
-            this.SpotMakerFee = spotMakerFee ?? throw new ArgumentNullException("spotMakerFee", "spotMakerFee is a required property for InlineResponse20031 and cannot be null");
-            // to ensure "spotTakerFee" is required (not null)
-            this.SpotTakerFee = spotTakerFee ?? throw new ArgumentNullException("spotTakerFee", "spotTakerFee is a required property for InlineResponse20031 and cannot be null");
-            // to ensure "futureMakerFee" is required (not null)
-            this.FutureMakerFee = futureMakerFee ?? throw new ArgumentNullException("futureMakerFee", "futureMakerFee is a required property for InlineResponse20031 and cannot be null");
-            // to ensure "futureTakerFee" is required (not null)
-            this.FutureTakerFee = futureTakerFee ?? throw new ArgumentNullException("futureTakerFee", "futureTakerFee is a required property for InlineResponse20031 and cannot be null");
-            // to ensure "specialFeeList" is required (not null)
-            this.SpecialFeeList = specialFeeList ?? throw new ArgumentNullException("specialFeeList", "specialFeeList is a required property for InlineResponse20031 and cannot be null");
+            // to ensure "quoteId" is required (not null)
+            this.QuoteId = quoteId ?? throw new ArgumentNullException("quoteId", "quoteId is a required property for InlineResponse20031 and cannot be null");
+            // to ensure "validMs" is required (not null)
+            this.ValidMs = validMs ?? throw new ArgumentNullException("validMs", "validMs is a required property for InlineResponse20031 and cannot be null");
+            // to ensure "fromCoin" is required (not null)
+            this.FromCoin = fromCoin ?? throw new ArgumentNullException("fromCoin", "fromCoin is a required property for InlineResponse20031 and cannot be null");
+            // to ensure "toCoin" is required (not null)
+            this.ToCoin = toCoin ?? throw new ArgumentNullException("toCoin", "toCoin is a required property for InlineResponse20031 and cannot be null");
+            // to ensure "fromAmount" is required (not null)
+            this.FromAmount = fromAmount ?? throw new ArgumentNullException("fromAmount", "fromAmount is a required property for InlineResponse20031 and cannot be null");
+            // to ensure "toAmount" is required (not null)
+            this.ToAmount = toAmount ?? throw new ArgumentNullException("toAmount", "toAmount is a required property for InlineResponse20031 and cannot be null");
+            // to ensure "price" is required (not null)
+            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineResponse20031 and cannot be null");
         }
 
         /// <summary>
-        /// spotMakerfee rate
+        /// Quote ID
         /// </summary>
-        /// <value>spotMakerfee rate</value>
-        [DataMember(Name="spot_maker_fee")]
-        public string SpotMakerFee { get; set; }
+        /// <value>Quote ID</value>
+        [DataMember(Name="quote_id")]
+        public string QuoteId { get; set; }
 
         /// <summary>
-        /// spotTakerfee rate
+        /// Valid time (milliseconds timestamp)
         /// </summary>
-        /// <value>spotTakerfee rate</value>
-        [DataMember(Name="spot_taker_fee")]
-        public string SpotTakerFee { get; set; }
+        /// <value>Valid time (milliseconds timestamp)</value>
+        [DataMember(Name="valid_ms")]
+        public string ValidMs { get; set; }
 
         /// <summary>
-        /// contractMakerfee rate
+        /// Asset Sold
         /// </summary>
-        /// <value>contractMakerfee rate</value>
-        [DataMember(Name="future_maker_fee")]
-        public string FutureMakerFee { get; set; }
+        /// <value>Asset Sold</value>
+        [DataMember(Name="from_coin")]
+        public string FromCoin { get; set; }
 
         /// <summary>
-        /// contractTakerfee rate
+        /// Asset Bought
         /// </summary>
-        /// <value>contractTakerfee rate</value>
-        [DataMember(Name="future_taker_fee")]
-        public string FutureTakerFee { get; set; }
+        /// <value>Asset Bought</value>
+        [DataMember(Name="to_coin")]
+        public string ToCoin { get; set; }
 
         /// <summary>
-        /// Gets or Sets SpecialFeeList
+        /// Amount to sell
         /// </summary>
-        [DataMember(Name="special_fee_list")]
-        public List<InlineResponse20031SpecialFeeList> SpecialFeeList { get; set; }
+        /// <value>Amount to sell</value>
+        [DataMember(Name="from_amount")]
+        public string FromAmount { get; set; }
+
+        /// <summary>
+        /// Amount to buy
+        /// </summary>
+        /// <value>Amount to buy</value>
+        [DataMember(Name="to_amount")]
+        public string ToAmount { get; set; }
+
+        /// <summary>
+        /// Price
+        /// </summary>
+        /// <value>Price</value>
+        [DataMember(Name="price")]
+        public string Price { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -99,11 +120,13 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20031 {\n");
-            sb.Append("  SpotMakerFee: ").Append(SpotMakerFee).Append("\n");
-            sb.Append("  SpotTakerFee: ").Append(SpotTakerFee).Append("\n");
-            sb.Append("  FutureMakerFee: ").Append(FutureMakerFee).Append("\n");
-            sb.Append("  FutureTakerFee: ").Append(FutureTakerFee).Append("\n");
-            sb.Append("  SpecialFeeList: ").Append(SpecialFeeList).Append("\n");
+            sb.Append("  QuoteId: ").Append(QuoteId).Append("\n");
+            sb.Append("  ValidMs: ").Append(ValidMs).Append("\n");
+            sb.Append("  FromCoin: ").Append(FromCoin).Append("\n");
+            sb.Append("  ToCoin: ").Append(ToCoin).Append("\n");
+            sb.Append("  FromAmount: ").Append(FromAmount).Append("\n");
+            sb.Append("  ToAmount: ").Append(ToAmount).Append("\n");
+            sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,30 +162,39 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.SpotMakerFee == input.SpotMakerFee ||
-                    (this.SpotMakerFee != null &&
-                    this.SpotMakerFee.Equals(input.SpotMakerFee))
+                    this.QuoteId == input.QuoteId ||
+                    (this.QuoteId != null &&
+                    this.QuoteId.Equals(input.QuoteId))
                 ) && 
                 (
-                    this.SpotTakerFee == input.SpotTakerFee ||
-                    (this.SpotTakerFee != null &&
-                    this.SpotTakerFee.Equals(input.SpotTakerFee))
+                    this.ValidMs == input.ValidMs ||
+                    (this.ValidMs != null &&
+                    this.ValidMs.Equals(input.ValidMs))
                 ) && 
                 (
-                    this.FutureMakerFee == input.FutureMakerFee ||
-                    (this.FutureMakerFee != null &&
-                    this.FutureMakerFee.Equals(input.FutureMakerFee))
+                    this.FromCoin == input.FromCoin ||
+                    (this.FromCoin != null &&
+                    this.FromCoin.Equals(input.FromCoin))
                 ) && 
                 (
-                    this.FutureTakerFee == input.FutureTakerFee ||
-                    (this.FutureTakerFee != null &&
-                    this.FutureTakerFee.Equals(input.FutureTakerFee))
+                    this.ToCoin == input.ToCoin ||
+                    (this.ToCoin != null &&
+                    this.ToCoin.Equals(input.ToCoin))
                 ) && 
                 (
-                    this.SpecialFeeList == input.SpecialFeeList ||
-                    this.SpecialFeeList != null &&
-                    input.SpecialFeeList != null &&
-                    this.SpecialFeeList.SequenceEqual(input.SpecialFeeList)
+                    this.FromAmount == input.FromAmount ||
+                    (this.FromAmount != null &&
+                    this.FromAmount.Equals(input.FromAmount))
+                ) && 
+                (
+                    this.ToAmount == input.ToAmount ||
+                    (this.ToAmount != null &&
+                    this.ToAmount.Equals(input.ToAmount))
+                ) && 
+                (
+                    this.Price == input.Price ||
+                    (this.Price != null &&
+                    this.Price.Equals(input.Price))
                 );
         }
 
@@ -175,16 +207,20 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SpotMakerFee != null)
-                    hashCode = hashCode * 59 + this.SpotMakerFee.GetHashCode();
-                if (this.SpotTakerFee != null)
-                    hashCode = hashCode * 59 + this.SpotTakerFee.GetHashCode();
-                if (this.FutureMakerFee != null)
-                    hashCode = hashCode * 59 + this.FutureMakerFee.GetHashCode();
-                if (this.FutureTakerFee != null)
-                    hashCode = hashCode * 59 + this.FutureTakerFee.GetHashCode();
-                if (this.SpecialFeeList != null)
-                    hashCode = hashCode * 59 + this.SpecialFeeList.GetHashCode();
+                if (this.QuoteId != null)
+                    hashCode = hashCode * 59 + this.QuoteId.GetHashCode();
+                if (this.ValidMs != null)
+                    hashCode = hashCode * 59 + this.ValidMs.GetHashCode();
+                if (this.FromCoin != null)
+                    hashCode = hashCode * 59 + this.FromCoin.GetHashCode();
+                if (this.ToCoin != null)
+                    hashCode = hashCode * 59 + this.ToCoin.GetHashCode();
+                if (this.FromAmount != null)
+                    hashCode = hashCode * 59 + this.FromAmount.GetHashCode();
+                if (this.ToAmount != null)
+                    hashCode = hashCode * 59 + this.ToAmount.GetHashCode();
+                if (this.Price != null)
+                    hashCode = hashCode * 59 + this.Price.GetHashCode();
                 return hashCode;
             }
         }

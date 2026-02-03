@@ -44,7 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="subAccountFromType">Source sub-account trading account: spot - spot account, futures - perpetual contract account, delivery - delivery contract account (required).</param>
         /// <param name="subAccountTo">Transfer to the user id of the sub-account (required).</param>
         /// <param name="subAccountToType">Target sub-account trading account: spot - spot account, futures - perpetual contract account, delivery - delivery contract account (required).</param>
-        /// <param name="amount">Transfer amount (required).</param>
+        /// <param name="amount">Transfer Amount, supports up to 8 decimal places, must be greater than 0 (required).</param>
         public SubAccountToSubAccount(string currency = default(string), string subAccountType = default(string), string subAccountFrom = default(string), string subAccountFromType = default(string), string subAccountTo = default(string), string subAccountToType = default(string), string amount = default(string))
         {
             // to ensure "currency" is required (not null)
@@ -105,9 +105,9 @@ namespace Io.Gate.GateApi.Model
         public string SubAccountToType { get; set; }
 
         /// <summary>
-        /// Transfer amount
+        /// Transfer Amount, supports up to 8 decimal places, must be greater than 0
         /// </summary>
-        /// <value>Transfer amount</value>
+        /// <value>Transfer Amount, supports up to 8 decimal places, must be greater than 0</value>
         [DataMember(Name="amount")]
         public string Amount { get; set; }
 

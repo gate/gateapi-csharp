@@ -33,39 +33,17 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2003" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse2003() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2003" /> class.
-        /// </summary>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        /// <param name="timestamp">timestamp (required).</param>
-        public InlineResponse2003(int code = default(int), string message = default(string), int timestamp = default(int))
+        /// <param name="changeLog">changeLog.</param>
+        public InlineResponse2003(List<TrailChangeLog> changeLog = default(List<TrailChangeLog>))
         {
-            this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2003 and cannot be null");
-            this.Timestamp = timestamp;
+            this.ChangeLog = changeLog;
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Gets or Sets ChangeLog
         /// </summary>
-        [DataMember(Name="code")]
-        public int Code { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Message
-        /// </summary>
-        [DataMember(Name="message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Timestamp
-        /// </summary>
-        [DataMember(Name="timestamp")]
-        public int Timestamp { get; set; }
+        [DataMember(Name="change_log")]
+        public List<TrailChangeLog> ChangeLog { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -75,9 +53,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2003 {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  ChangeLog: ").Append(ChangeLog).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,17 +89,10 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Code == input.Code ||
-                    this.Code.Equals(input.Code)
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Timestamp == input.Timestamp ||
-                    this.Timestamp.Equals(input.Timestamp)
+                    this.ChangeLog == input.ChangeLog ||
+                    this.ChangeLog != null &&
+                    input.ChangeLog != null &&
+                    this.ChangeLog.SequenceEqual(input.ChangeLog)
                 );
         }
 
@@ -136,10 +105,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.ChangeLog != null)
+                    hashCode = hashCode * 59 + this.ChangeLog.GetHashCode();
                 return hashCode;
             }
         }

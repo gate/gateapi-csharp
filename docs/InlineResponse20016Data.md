@@ -5,7 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Lists** | [**List&lt;InlineResponse20016DataLists&gt;**](InlineResponse20016DataLists.md) |  | 
+**List** | [**List&lt;InlineResponse20016DataList&gt;**](InlineResponse20016DataList.md) |  | 
+**TransTime** | [**List&lt;InlineResponse20016DataTransTime&gt;**](InlineResponse20016DataTransTime.md) | Countdown time | 
+**Count** | **int** | Number of orders | 
+**ExportedNum** | **int** | Export count | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

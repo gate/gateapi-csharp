@@ -43,7 +43,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="pointRefr">total amount of referrer rebates of point fee.</param>
         /// <param name="bonusDnw">total amount of perpetual contract bonus transfer.</param>
         /// <param name="bonusOffset">total amount of perpetual contract bonus deduction.</param>
-        public FuturesAccountHistory(string dnw = default(string), string pnl = default(string), string fee = default(string), string refr = default(string), string fund = default(string), string pointDnw = default(string), string pointFee = default(string), string pointRefr = default(string), string bonusDnw = default(string), string bonusOffset = default(string))
+        /// <param name="crossSettle">Represents the value of profit settlement from the futures account to the spot account under Unified Account Mode. Negative values indicate settlement from futures to spot, while positive values indicate settlement from spot to futures. This value is cumulative..</param>
+        public FuturesAccountHistory(string dnw = default(string), string pnl = default(string), string fee = default(string), string refr = default(string), string fund = default(string), string pointDnw = default(string), string pointFee = default(string), string pointRefr = default(string), string bonusDnw = default(string), string bonusOffset = default(string), string crossSettle = default(string))
         {
             this.Dnw = dnw;
             this.Pnl = pnl;
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
             this.PointRefr = pointRefr;
             this.BonusDnw = bonusDnw;
             this.BonusOffset = bonusOffset;
+            this.CrossSettle = crossSettle;
         }
 
         /// <summary>
@@ -128,6 +130,13 @@ namespace Io.Gate.GateApi.Model
         public string BonusOffset { get; set; }
 
         /// <summary>
+        /// Represents the value of profit settlement from the futures account to the spot account under Unified Account Mode. Negative values indicate settlement from futures to spot, while positive values indicate settlement from spot to futures. This value is cumulative.
+        /// </summary>
+        /// <value>Represents the value of profit settlement from the futures account to the spot account under Unified Account Mode. Negative values indicate settlement from futures to spot, while positive values indicate settlement from spot to futures. This value is cumulative.</value>
+        [DataMember(Name="cross_settle")]
+        public string CrossSettle { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -145,6 +154,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  PointRefr: ").Append(PointRefr).Append("\n");
             sb.Append("  BonusDnw: ").Append(BonusDnw).Append("\n");
             sb.Append("  BonusOffset: ").Append(BonusOffset).Append("\n");
+            sb.Append("  CrossSettle: ").Append(CrossSettle).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -228,6 +238,11 @@ namespace Io.Gate.GateApi.Model
                     this.BonusOffset == input.BonusOffset ||
                     (this.BonusOffset != null &&
                     this.BonusOffset.Equals(input.BonusOffset))
+                ) && 
+                (
+                    this.CrossSettle == input.CrossSettle ||
+                    (this.CrossSettle != null &&
+                    this.CrossSettle.Equals(input.CrossSettle))
                 );
         }
 
@@ -260,6 +275,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.BonusDnw.GetHashCode();
                 if (this.BonusOffset != null)
                     hashCode = hashCode * 59 + this.BonusOffset.GetHashCode();
+                if (this.CrossSettle != null)
+                    hashCode = hashCode * 59 + this.CrossSettle.GetHashCode();
                 return hashCode;
             }
         }

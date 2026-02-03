@@ -33,62 +33,51 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20036" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20036() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20036" /> class.
-        /// </summary>
-        /// <param name="positionId">Position ID.</param>
         /// <param name="userId">User ID.</param>
+        /// <param name="positionId">Position ID.</param>
         /// <param name="symbol">Currency pair.</param>
-        /// <param name="closedType">Position close type (PARTIAL_CLOSED: partially closed; COMPLETE_CLOSED: fully closed).</param>
-        /// <param name="closedPnl">Close Position P&amp;L.</param>
-        /// <param name="closedPnlRate">Close Position P&amp;L Ratio.</param>
-        /// <param name="openAvgPrice">Average Opening Price.</param>
-        /// <param name="closedAvgPrice">Average Close Price.</param>
-        /// <param name="maxPositionQty">Max Trade Size.</param>
-        /// <param name="closedQty">Close Position Quantity.</param>
-        /// <param name="closedValue">Close Position Value.</param>
-        /// <param name="fee">Position Accumulated Fees.</param>
-        /// <param name="liqFee">Liquidation Fee.</param>
-        /// <param name="fundingFee">Funding Fee.</param>
-        /// <param name="positionSide">Position Direction Before Close.</param>
-        /// <param name="positionMode">Position Mode at Close.</param>
-        /// <param name="leverage">Leverage at Close.</param>
-        /// <param name="businessType">Business Type (required).</param>
-        /// <param name="createTime">Created time.</param>
-        /// <param name="updateTime">Update time.</param>
-        public InlineResponse20036(string positionId = default(string), string userId = default(string), string symbol = default(string), string closedType = default(string), string closedPnl = default(string), string closedPnlRate = default(string), string openAvgPrice = default(string), string closedAvgPrice = default(string), string maxPositionQty = default(string), string closedQty = default(string), string closedValue = default(string), string fee = default(string), string liqFee = default(string), string fundingFee = default(string), string positionSide = default(string), string positionMode = default(string), string leverage = default(string), string businessType = default(string), string createTime = default(string), string updateTime = default(string))
+        /// <param name="positionSide">Position Direction.</param>
+        /// <param name="initialMargin">Initial Margin.</param>
+        /// <param name="maintenanceMargin">Maintenance margin.</param>
+        /// <param name="positionQty">Position Quantity.</param>
+        /// <param name="positionValue">Position Value.</param>
+        /// <param name="upnl">Unrealized P&amp;L.</param>
+        /// <param name="upnlRate">Unrealized P&amp;L Ratio.</param>
+        /// <param name="entryPrice">Position Average Entry Price.</param>
+        /// <param name="markPrice">Mark price.</param>
+        /// <param name="leverage">Position Leverage.</param>
+        /// <param name="maxLeverage">Maximum leverage.</param>
+        /// <param name="riskLimit">Position risk limit.</param>
+        /// <param name="fee">Position Fee.</param>
+        /// <param name="fundingFee">Position Funding Fee.</param>
+        /// <param name="fundingTime">Position funding fee collection time (0 indicates it has not been collected yet).</param>
+        /// <param name="createTime">Position Creation Time.</param>
+        /// <param name="updateTime">Position Update Time.</param>
+        /// <param name="closedPnl">Realized PnL.</param>
+        public InlineResponse20036(string userId = default(string), string positionId = default(string), string symbol = default(string), string positionSide = default(string), string initialMargin = default(string), string maintenanceMargin = default(string), string positionQty = default(string), string positionValue = default(string), string upnl = default(string), string upnlRate = default(string), string entryPrice = default(string), string markPrice = default(string), string leverage = default(string), string maxLeverage = default(string), string riskLimit = default(string), string fee = default(string), string fundingFee = default(string), string fundingTime = default(string), string createTime = default(string), string updateTime = default(string), string closedPnl = default(string))
         {
-            // to ensure "businessType" is required (not null)
-            this.BusinessType = businessType ?? throw new ArgumentNullException("businessType", "businessType is a required property for InlineResponse20036 and cannot be null");
-            this.PositionId = positionId;
             this.UserId = userId;
+            this.PositionId = positionId;
             this.Symbol = symbol;
-            this.ClosedType = closedType;
-            this.ClosedPnl = closedPnl;
-            this.ClosedPnlRate = closedPnlRate;
-            this.OpenAvgPrice = openAvgPrice;
-            this.ClosedAvgPrice = closedAvgPrice;
-            this.MaxPositionQty = maxPositionQty;
-            this.ClosedQty = closedQty;
-            this.ClosedValue = closedValue;
-            this.Fee = fee;
-            this.LiqFee = liqFee;
-            this.FundingFee = fundingFee;
             this.PositionSide = positionSide;
-            this.PositionMode = positionMode;
+            this.InitialMargin = initialMargin;
+            this.MaintenanceMargin = maintenanceMargin;
+            this.PositionQty = positionQty;
+            this.PositionValue = positionValue;
+            this.Upnl = upnl;
+            this.UpnlRate = upnlRate;
+            this.EntryPrice = entryPrice;
+            this.MarkPrice = markPrice;
             this.Leverage = leverage;
+            this.MaxLeverage = maxLeverage;
+            this.RiskLimit = riskLimit;
+            this.Fee = fee;
+            this.FundingFee = fundingFee;
+            this.FundingTime = fundingTime;
             this.CreateTime = createTime;
             this.UpdateTime = updateTime;
+            this.ClosedPnl = closedPnl;
         }
-
-        /// <summary>
-        /// Position ID
-        /// </summary>
-        /// <value>Position ID</value>
-        [DataMember(Name="position_id")]
-        public string PositionId { get; set; }
 
         /// <summary>
         /// User ID
@@ -98,6 +87,13 @@ namespace Io.Gate.GateApi.Model
         public string UserId { get; set; }
 
         /// <summary>
+        /// Position ID
+        /// </summary>
+        /// <value>Position ID</value>
+        [DataMember(Name="position_id")]
+        public string PositionId { get; set; }
+
+        /// <summary>
         /// Currency pair
         /// </summary>
         /// <value>Currency pair</value>
@@ -105,123 +101,130 @@ namespace Io.Gate.GateApi.Model
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Position close type (PARTIAL_CLOSED: partially closed; COMPLETE_CLOSED: fully closed)
+        /// Position Direction
         /// </summary>
-        /// <value>Position close type (PARTIAL_CLOSED: partially closed; COMPLETE_CLOSED: fully closed)</value>
-        [DataMember(Name="closed_type")]
-        public string ClosedType { get; set; }
-
-        /// <summary>
-        /// Close Position P&amp;L
-        /// </summary>
-        /// <value>Close Position P&amp;L</value>
-        [DataMember(Name="closed_pnl")]
-        public string ClosedPnl { get; set; }
-
-        /// <summary>
-        /// Close Position P&amp;L Ratio
-        /// </summary>
-        /// <value>Close Position P&amp;L Ratio</value>
-        [DataMember(Name="closed_pnl_rate")]
-        public string ClosedPnlRate { get; set; }
-
-        /// <summary>
-        /// Average Opening Price
-        /// </summary>
-        /// <value>Average Opening Price</value>
-        [DataMember(Name="open_avg_price")]
-        public string OpenAvgPrice { get; set; }
-
-        /// <summary>
-        /// Average Close Price
-        /// </summary>
-        /// <value>Average Close Price</value>
-        [DataMember(Name="closed_avg_price")]
-        public string ClosedAvgPrice { get; set; }
-
-        /// <summary>
-        /// Max Trade Size
-        /// </summary>
-        /// <value>Max Trade Size</value>
-        [DataMember(Name="max_position_qty")]
-        public string MaxPositionQty { get; set; }
-
-        /// <summary>
-        /// Close Position Quantity
-        /// </summary>
-        /// <value>Close Position Quantity</value>
-        [DataMember(Name="closed_qty")]
-        public string ClosedQty { get; set; }
-
-        /// <summary>
-        /// Close Position Value
-        /// </summary>
-        /// <value>Close Position Value</value>
-        [DataMember(Name="closed_value")]
-        public string ClosedValue { get; set; }
-
-        /// <summary>
-        /// Position Accumulated Fees
-        /// </summary>
-        /// <value>Position Accumulated Fees</value>
-        [DataMember(Name="fee")]
-        public string Fee { get; set; }
-
-        /// <summary>
-        /// Liquidation Fee
-        /// </summary>
-        /// <value>Liquidation Fee</value>
-        [DataMember(Name="liq_fee")]
-        public string LiqFee { get; set; }
-
-        /// <summary>
-        /// Funding Fee
-        /// </summary>
-        /// <value>Funding Fee</value>
-        [DataMember(Name="funding_fee")]
-        public string FundingFee { get; set; }
-
-        /// <summary>
-        /// Position Direction Before Close
-        /// </summary>
-        /// <value>Position Direction Before Close</value>
+        /// <value>Position Direction</value>
         [DataMember(Name="position_side")]
         public string PositionSide { get; set; }
 
         /// <summary>
-        /// Position Mode at Close
+        /// Initial Margin
         /// </summary>
-        /// <value>Position Mode at Close</value>
-        [DataMember(Name="position_mode")]
-        public string PositionMode { get; set; }
+        /// <value>Initial Margin</value>
+        [DataMember(Name="initial_margin")]
+        public string InitialMargin { get; set; }
 
         /// <summary>
-        /// Leverage at Close
+        /// Maintenance margin
         /// </summary>
-        /// <value>Leverage at Close</value>
+        /// <value>Maintenance margin</value>
+        [DataMember(Name="maintenance_margin")]
+        public string MaintenanceMargin { get; set; }
+
+        /// <summary>
+        /// Position Quantity
+        /// </summary>
+        /// <value>Position Quantity</value>
+        [DataMember(Name="position_qty")]
+        public string PositionQty { get; set; }
+
+        /// <summary>
+        /// Position Value
+        /// </summary>
+        /// <value>Position Value</value>
+        [DataMember(Name="position_value")]
+        public string PositionValue { get; set; }
+
+        /// <summary>
+        /// Unrealized P&amp;L
+        /// </summary>
+        /// <value>Unrealized P&amp;L</value>
+        [DataMember(Name="upnl")]
+        public string Upnl { get; set; }
+
+        /// <summary>
+        /// Unrealized P&amp;L Ratio
+        /// </summary>
+        /// <value>Unrealized P&amp;L Ratio</value>
+        [DataMember(Name="upnl_rate")]
+        public string UpnlRate { get; set; }
+
+        /// <summary>
+        /// Position Average Entry Price
+        /// </summary>
+        /// <value>Position Average Entry Price</value>
+        [DataMember(Name="entry_price")]
+        public string EntryPrice { get; set; }
+
+        /// <summary>
+        /// Mark price
+        /// </summary>
+        /// <value>Mark price</value>
+        [DataMember(Name="mark_price")]
+        public string MarkPrice { get; set; }
+
+        /// <summary>
+        /// Position Leverage
+        /// </summary>
+        /// <value>Position Leverage</value>
         [DataMember(Name="leverage")]
         public string Leverage { get; set; }
 
         /// <summary>
-        /// Business Type
+        /// Maximum leverage
         /// </summary>
-        /// <value>Business Type</value>
-        [DataMember(Name="business_type")]
-        public string BusinessType { get; set; }
+        /// <value>Maximum leverage</value>
+        [DataMember(Name="max_leverage")]
+        public string MaxLeverage { get; set; }
 
         /// <summary>
-        /// Created time
+        /// Position risk limit
         /// </summary>
-        /// <value>Created time</value>
+        /// <value>Position risk limit</value>
+        [DataMember(Name="risk_limit")]
+        public string RiskLimit { get; set; }
+
+        /// <summary>
+        /// Position Fee
+        /// </summary>
+        /// <value>Position Fee</value>
+        [DataMember(Name="fee")]
+        public string Fee { get; set; }
+
+        /// <summary>
+        /// Position Funding Fee
+        /// </summary>
+        /// <value>Position Funding Fee</value>
+        [DataMember(Name="funding_fee")]
+        public string FundingFee { get; set; }
+
+        /// <summary>
+        /// Position funding fee collection time (0 indicates it has not been collected yet)
+        /// </summary>
+        /// <value>Position funding fee collection time (0 indicates it has not been collected yet)</value>
+        [DataMember(Name="funding_time")]
+        public string FundingTime { get; set; }
+
+        /// <summary>
+        /// Position Creation Time
+        /// </summary>
+        /// <value>Position Creation Time</value>
         [DataMember(Name="create_time")]
         public string CreateTime { get; set; }
 
         /// <summary>
-        /// Update time
+        /// Position Update Time
         /// </summary>
-        /// <value>Update time</value>
+        /// <value>Position Update Time</value>
         [DataMember(Name="update_time")]
         public string UpdateTime { get; set; }
+
+        /// <summary>
+        /// Realized PnL
+        /// </summary>
+        /// <value>Realized PnL</value>
+        [DataMember(Name="closed_pnl")]
+        public string ClosedPnl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -231,26 +234,27 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20036 {\n");
-            sb.Append("  PositionId: ").Append(PositionId).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
+            sb.Append("  PositionId: ").Append(PositionId).Append("\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  ClosedType: ").Append(ClosedType).Append("\n");
-            sb.Append("  ClosedPnl: ").Append(ClosedPnl).Append("\n");
-            sb.Append("  ClosedPnlRate: ").Append(ClosedPnlRate).Append("\n");
-            sb.Append("  OpenAvgPrice: ").Append(OpenAvgPrice).Append("\n");
-            sb.Append("  ClosedAvgPrice: ").Append(ClosedAvgPrice).Append("\n");
-            sb.Append("  MaxPositionQty: ").Append(MaxPositionQty).Append("\n");
-            sb.Append("  ClosedQty: ").Append(ClosedQty).Append("\n");
-            sb.Append("  ClosedValue: ").Append(ClosedValue).Append("\n");
-            sb.Append("  Fee: ").Append(Fee).Append("\n");
-            sb.Append("  LiqFee: ").Append(LiqFee).Append("\n");
-            sb.Append("  FundingFee: ").Append(FundingFee).Append("\n");
             sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
-            sb.Append("  PositionMode: ").Append(PositionMode).Append("\n");
+            sb.Append("  InitialMargin: ").Append(InitialMargin).Append("\n");
+            sb.Append("  MaintenanceMargin: ").Append(MaintenanceMargin).Append("\n");
+            sb.Append("  PositionQty: ").Append(PositionQty).Append("\n");
+            sb.Append("  PositionValue: ").Append(PositionValue).Append("\n");
+            sb.Append("  Upnl: ").Append(Upnl).Append("\n");
+            sb.Append("  UpnlRate: ").Append(UpnlRate).Append("\n");
+            sb.Append("  EntryPrice: ").Append(EntryPrice).Append("\n");
+            sb.Append("  MarkPrice: ").Append(MarkPrice).Append("\n");
             sb.Append("  Leverage: ").Append(Leverage).Append("\n");
-            sb.Append("  BusinessType: ").Append(BusinessType).Append("\n");
+            sb.Append("  MaxLeverage: ").Append(MaxLeverage).Append("\n");
+            sb.Append("  RiskLimit: ").Append(RiskLimit).Append("\n");
+            sb.Append("  Fee: ").Append(Fee).Append("\n");
+            sb.Append("  FundingFee: ").Append(FundingFee).Append("\n");
+            sb.Append("  FundingTime: ").Append(FundingTime).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
             sb.Append("  UpdateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  ClosedPnl: ").Append(ClosedPnl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -286,14 +290,14 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.PositionId == input.PositionId ||
-                    (this.PositionId != null &&
-                    this.PositionId.Equals(input.PositionId))
-                ) && 
-                (
                     this.UserId == input.UserId ||
                     (this.UserId != null &&
                     this.UserId.Equals(input.UserId))
+                ) && 
+                (
+                    this.PositionId == input.PositionId ||
+                    (this.PositionId != null &&
+                    this.PositionId.Equals(input.PositionId))
                 ) && 
                 (
                     this.Symbol == input.Symbol ||
@@ -301,69 +305,49 @@ namespace Io.Gate.GateApi.Model
                     this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.ClosedType == input.ClosedType ||
-                    (this.ClosedType != null &&
-                    this.ClosedType.Equals(input.ClosedType))
-                ) && 
-                (
-                    this.ClosedPnl == input.ClosedPnl ||
-                    (this.ClosedPnl != null &&
-                    this.ClosedPnl.Equals(input.ClosedPnl))
-                ) && 
-                (
-                    this.ClosedPnlRate == input.ClosedPnlRate ||
-                    (this.ClosedPnlRate != null &&
-                    this.ClosedPnlRate.Equals(input.ClosedPnlRate))
-                ) && 
-                (
-                    this.OpenAvgPrice == input.OpenAvgPrice ||
-                    (this.OpenAvgPrice != null &&
-                    this.OpenAvgPrice.Equals(input.OpenAvgPrice))
-                ) && 
-                (
-                    this.ClosedAvgPrice == input.ClosedAvgPrice ||
-                    (this.ClosedAvgPrice != null &&
-                    this.ClosedAvgPrice.Equals(input.ClosedAvgPrice))
-                ) && 
-                (
-                    this.MaxPositionQty == input.MaxPositionQty ||
-                    (this.MaxPositionQty != null &&
-                    this.MaxPositionQty.Equals(input.MaxPositionQty))
-                ) && 
-                (
-                    this.ClosedQty == input.ClosedQty ||
-                    (this.ClosedQty != null &&
-                    this.ClosedQty.Equals(input.ClosedQty))
-                ) && 
-                (
-                    this.ClosedValue == input.ClosedValue ||
-                    (this.ClosedValue != null &&
-                    this.ClosedValue.Equals(input.ClosedValue))
-                ) && 
-                (
-                    this.Fee == input.Fee ||
-                    (this.Fee != null &&
-                    this.Fee.Equals(input.Fee))
-                ) && 
-                (
-                    this.LiqFee == input.LiqFee ||
-                    (this.LiqFee != null &&
-                    this.LiqFee.Equals(input.LiqFee))
-                ) && 
-                (
-                    this.FundingFee == input.FundingFee ||
-                    (this.FundingFee != null &&
-                    this.FundingFee.Equals(input.FundingFee))
-                ) && 
-                (
                     this.PositionSide == input.PositionSide ||
                     (this.PositionSide != null &&
                     this.PositionSide.Equals(input.PositionSide))
                 ) && 
                 (
-                    this.PositionMode == input.PositionMode ||
-                    (this.PositionMode != null &&
-                    this.PositionMode.Equals(input.PositionMode))
+                    this.InitialMargin == input.InitialMargin ||
+                    (this.InitialMargin != null &&
+                    this.InitialMargin.Equals(input.InitialMargin))
+                ) && 
+                (
+                    this.MaintenanceMargin == input.MaintenanceMargin ||
+                    (this.MaintenanceMargin != null &&
+                    this.MaintenanceMargin.Equals(input.MaintenanceMargin))
+                ) && 
+                (
+                    this.PositionQty == input.PositionQty ||
+                    (this.PositionQty != null &&
+                    this.PositionQty.Equals(input.PositionQty))
+                ) && 
+                (
+                    this.PositionValue == input.PositionValue ||
+                    (this.PositionValue != null &&
+                    this.PositionValue.Equals(input.PositionValue))
+                ) && 
+                (
+                    this.Upnl == input.Upnl ||
+                    (this.Upnl != null &&
+                    this.Upnl.Equals(input.Upnl))
+                ) && 
+                (
+                    this.UpnlRate == input.UpnlRate ||
+                    (this.UpnlRate != null &&
+                    this.UpnlRate.Equals(input.UpnlRate))
+                ) && 
+                (
+                    this.EntryPrice == input.EntryPrice ||
+                    (this.EntryPrice != null &&
+                    this.EntryPrice.Equals(input.EntryPrice))
+                ) && 
+                (
+                    this.MarkPrice == input.MarkPrice ||
+                    (this.MarkPrice != null &&
+                    this.MarkPrice.Equals(input.MarkPrice))
                 ) && 
                 (
                     this.Leverage == input.Leverage ||
@@ -371,9 +355,29 @@ namespace Io.Gate.GateApi.Model
                     this.Leverage.Equals(input.Leverage))
                 ) && 
                 (
-                    this.BusinessType == input.BusinessType ||
-                    (this.BusinessType != null &&
-                    this.BusinessType.Equals(input.BusinessType))
+                    this.MaxLeverage == input.MaxLeverage ||
+                    (this.MaxLeverage != null &&
+                    this.MaxLeverage.Equals(input.MaxLeverage))
+                ) && 
+                (
+                    this.RiskLimit == input.RiskLimit ||
+                    (this.RiskLimit != null &&
+                    this.RiskLimit.Equals(input.RiskLimit))
+                ) && 
+                (
+                    this.Fee == input.Fee ||
+                    (this.Fee != null &&
+                    this.Fee.Equals(input.Fee))
+                ) && 
+                (
+                    this.FundingFee == input.FundingFee ||
+                    (this.FundingFee != null &&
+                    this.FundingFee.Equals(input.FundingFee))
+                ) && 
+                (
+                    this.FundingTime == input.FundingTime ||
+                    (this.FundingTime != null &&
+                    this.FundingTime.Equals(input.FundingTime))
                 ) && 
                 (
                     this.CreateTime == input.CreateTime ||
@@ -384,6 +388,11 @@ namespace Io.Gate.GateApi.Model
                     this.UpdateTime == input.UpdateTime ||
                     (this.UpdateTime != null &&
                     this.UpdateTime.Equals(input.UpdateTime))
+                ) && 
+                (
+                    this.ClosedPnl == input.ClosedPnl ||
+                    (this.ClosedPnl != null &&
+                    this.ClosedPnl.Equals(input.ClosedPnl))
                 );
         }
 
@@ -396,46 +405,48 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PositionId != null)
-                    hashCode = hashCode * 59 + this.PositionId.GetHashCode();
                 if (this.UserId != null)
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.PositionId != null)
+                    hashCode = hashCode * 59 + this.PositionId.GetHashCode();
                 if (this.Symbol != null)
                     hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.ClosedType != null)
-                    hashCode = hashCode * 59 + this.ClosedType.GetHashCode();
-                if (this.ClosedPnl != null)
-                    hashCode = hashCode * 59 + this.ClosedPnl.GetHashCode();
-                if (this.ClosedPnlRate != null)
-                    hashCode = hashCode * 59 + this.ClosedPnlRate.GetHashCode();
-                if (this.OpenAvgPrice != null)
-                    hashCode = hashCode * 59 + this.OpenAvgPrice.GetHashCode();
-                if (this.ClosedAvgPrice != null)
-                    hashCode = hashCode * 59 + this.ClosedAvgPrice.GetHashCode();
-                if (this.MaxPositionQty != null)
-                    hashCode = hashCode * 59 + this.MaxPositionQty.GetHashCode();
-                if (this.ClosedQty != null)
-                    hashCode = hashCode * 59 + this.ClosedQty.GetHashCode();
-                if (this.ClosedValue != null)
-                    hashCode = hashCode * 59 + this.ClosedValue.GetHashCode();
-                if (this.Fee != null)
-                    hashCode = hashCode * 59 + this.Fee.GetHashCode();
-                if (this.LiqFee != null)
-                    hashCode = hashCode * 59 + this.LiqFee.GetHashCode();
-                if (this.FundingFee != null)
-                    hashCode = hashCode * 59 + this.FundingFee.GetHashCode();
                 if (this.PositionSide != null)
                     hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
-                if (this.PositionMode != null)
-                    hashCode = hashCode * 59 + this.PositionMode.GetHashCode();
+                if (this.InitialMargin != null)
+                    hashCode = hashCode * 59 + this.InitialMargin.GetHashCode();
+                if (this.MaintenanceMargin != null)
+                    hashCode = hashCode * 59 + this.MaintenanceMargin.GetHashCode();
+                if (this.PositionQty != null)
+                    hashCode = hashCode * 59 + this.PositionQty.GetHashCode();
+                if (this.PositionValue != null)
+                    hashCode = hashCode * 59 + this.PositionValue.GetHashCode();
+                if (this.Upnl != null)
+                    hashCode = hashCode * 59 + this.Upnl.GetHashCode();
+                if (this.UpnlRate != null)
+                    hashCode = hashCode * 59 + this.UpnlRate.GetHashCode();
+                if (this.EntryPrice != null)
+                    hashCode = hashCode * 59 + this.EntryPrice.GetHashCode();
+                if (this.MarkPrice != null)
+                    hashCode = hashCode * 59 + this.MarkPrice.GetHashCode();
                 if (this.Leverage != null)
                     hashCode = hashCode * 59 + this.Leverage.GetHashCode();
-                if (this.BusinessType != null)
-                    hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
+                if (this.MaxLeverage != null)
+                    hashCode = hashCode * 59 + this.MaxLeverage.GetHashCode();
+                if (this.RiskLimit != null)
+                    hashCode = hashCode * 59 + this.RiskLimit.GetHashCode();
+                if (this.Fee != null)
+                    hashCode = hashCode * 59 + this.Fee.GetHashCode();
+                if (this.FundingFee != null)
+                    hashCode = hashCode * 59 + this.FundingFee.GetHashCode();
+                if (this.FundingTime != null)
+                    hashCode = hashCode * 59 + this.FundingTime.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null)
                     hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.ClosedPnl != null)
+                    hashCode = hashCode * 59 + this.ClosedPnl.GetHashCode();
                 return hashCode;
             }
         }

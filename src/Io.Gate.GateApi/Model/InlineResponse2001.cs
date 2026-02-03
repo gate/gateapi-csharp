@@ -33,26 +33,17 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2001" /> class.
         /// </summary>
-        /// <param name="currency">currency.</param>
-        /// <param name="estRate">Estimated Annualized Rate, e.g., &#x60;est_rate&#x60;: &#x60;0.8014&#x60; represents an annualized rate of 80.14%.</param>
-        public InlineResponse2001(string currency = default(string), string estRate = default(string))
+        /// <param name="orders">orders.</param>
+        public InlineResponse2001(List<TrailOrder> orders = default(List<TrailOrder>))
         {
-            this.Currency = currency;
-            this.EstRate = estRate;
+            this.Orders = orders;
         }
 
         /// <summary>
-        /// Gets or Sets Currency
+        /// Gets or Sets Orders
         /// </summary>
-        [DataMember(Name="currency")]
-        public string Currency { get; set; }
-
-        /// <summary>
-        /// Estimated Annualized Rate, e.g., &#x60;est_rate&#x60;: &#x60;0.8014&#x60; represents an annualized rate of 80.14%
-        /// </summary>
-        /// <value>Estimated Annualized Rate, e.g., &#x60;est_rate&#x60;: &#x60;0.8014&#x60; represents an annualized rate of 80.14%</value>
-        [DataMember(Name="est_rate")]
-        public string EstRate { get; set; }
+        [DataMember(Name="orders")]
+        public List<TrailOrder> Orders { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,8 +53,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2001 {\n");
-            sb.Append("  Currency: ").Append(Currency).Append("\n");
-            sb.Append("  EstRate: ").Append(EstRate).Append("\n");
+            sb.Append("  Orders: ").Append(Orders).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,14 +89,10 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Currency == input.Currency ||
-                    (this.Currency != null &&
-                    this.Currency.Equals(input.Currency))
-                ) && 
-                (
-                    this.EstRate == input.EstRate ||
-                    (this.EstRate != null &&
-                    this.EstRate.Equals(input.EstRate))
+                    this.Orders == input.Orders ||
+                    this.Orders != null &&
+                    input.Orders != null &&
+                    this.Orders.SequenceEqual(input.Orders)
                 );
         }
 
@@ -119,10 +105,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Currency != null)
-                    hashCode = hashCode * 59 + this.Currency.GetHashCode();
-                if (this.EstRate != null)
-                    hashCode = hashCode * 59 + this.EstRate.GetHashCode();
+                if (this.Orders != null)
+                    hashCode = hashCode * 59 + this.Orders.GetHashCode();
                 return hashCode;
             }
         }

@@ -33,34 +33,25 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20024" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20024() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20024" /> class.
-        /// </summary>
-        /// <param name="orderId">Order ID (required).</param>
-        /// <param name="text">User-defined Order ID (required).</param>
-        public InlineResponse20024(string orderId = default(string), string text = default(string))
+        /// <param name="symbol">symbol.</param>
+        /// <param name="tiers">tiers.</param>
+        public InlineResponse20024(string symbol = default(string), List<RuleRiskLimitsTiers> tiers = default(List<RuleRiskLimitsTiers>))
         {
-            // to ensure "orderId" is required (not null)
-            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for InlineResponse20024 and cannot be null");
-            // to ensure "text" is required (not null)
-            this.Text = text ?? throw new ArgumentNullException("text", "text is a required property for InlineResponse20024 and cannot be null");
+            this.Symbol = symbol;
+            this.Tiers = tiers;
         }
 
         /// <summary>
-        /// Order ID
+        /// Gets or Sets Symbol
         /// </summary>
-        /// <value>Order ID</value>
-        [DataMember(Name="order_id")]
-        public string OrderId { get; set; }
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
 
         /// <summary>
-        /// User-defined Order ID
+        /// Gets or Sets Tiers
         /// </summary>
-        /// <value>User-defined Order ID</value>
-        [DataMember(Name="text")]
-        public string Text { get; set; }
+        [DataMember(Name="tiers")]
+        public List<RuleRiskLimitsTiers> Tiers { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,8 +61,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20024 {\n");
-            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
-            sb.Append("  Text: ").Append(Text).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
+            sb.Append("  Tiers: ").Append(Tiers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,14 +98,15 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
+                    this.Tiers == input.Tiers ||
+                    this.Tiers != null &&
+                    input.Tiers != null &&
+                    this.Tiers.SequenceEqual(input.Tiers)
                 );
         }
 
@@ -127,10 +119,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                if (this.Tiers != null)
+                    hashCode = hashCode * 59 + this.Tiers.GetHashCode();
                 return hashCode;
             }
         }

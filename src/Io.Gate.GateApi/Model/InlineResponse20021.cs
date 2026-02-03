@@ -38,55 +38,61 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20021" /> class.
         /// </summary>
-        /// <param name="coin">Currency (required).</param>
-        /// <param name="minTransAmount">Minimum Transfer Quantity (including estimated fees) (required).</param>
-        /// <param name="estFee">Estimated Fee (required).</param>
-        /// <param name="precision">Precision (required).</param>
-        /// <param name="isDisabled">If it is disabled. 0 means NOT being disabled (required).</param>
-        public InlineResponse20021(string coin = default(string), decimal minTransAmount = default(decimal), decimal estFee = default(decimal), int precision = default(int), int isDisabled = default(int))
+        /// <param name="timestamp">timestamp (required).</param>
+        /// <param name="method">method (required).</param>
+        /// <param name="code">code (required).</param>
+        /// <param name="message">message (required).</param>
+        /// <param name="data">data (required).</param>
+        /// <param name="version">version (required).</param>
+        public InlineResponse20021(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), InlineResponse20021Data data = default(InlineResponse20021Data), string version = default(string))
         {
-            // to ensure "coin" is required (not null)
-            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20021 and cannot be null");
-            this.MinTransAmount = minTransAmount;
-            this.EstFee = estFee;
-            this.Precision = precision;
-            this.IsDisabled = isDisabled;
+            this.Timestamp = timestamp;
+            // to ensure "method" is required (not null)
+            this.Method = method ?? throw new ArgumentNullException("method", "method is a required property for InlineResponse20021 and cannot be null");
+            this.Code = code;
+            // to ensure "message" is required (not null)
+            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse20021 and cannot be null");
+            // to ensure "data" is required (not null)
+            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse20021 and cannot be null");
+            // to ensure "version" is required (not null)
+            this.Version = version ?? throw new ArgumentNullException("version", "version is a required property for InlineResponse20021 and cannot be null");
         }
 
         /// <summary>
-        /// Currency
+        /// Gets or Sets Timestamp
         /// </summary>
-        /// <value>Currency</value>
-        [DataMember(Name="coin")]
-        public string Coin { get; set; }
+        [DataMember(Name="timestamp")]
+        public decimal Timestamp { get; set; }
 
         /// <summary>
-        /// Minimum Transfer Quantity (including estimated fees)
+        /// Gets or Sets Method
         /// </summary>
-        /// <value>Minimum Transfer Quantity (including estimated fees)</value>
-        [DataMember(Name="min_trans_amount")]
-        public decimal MinTransAmount { get; set; }
+        [DataMember(Name="method")]
+        public string Method { get; set; }
 
         /// <summary>
-        /// Estimated Fee
+        /// Gets or Sets Code
         /// </summary>
-        /// <value>Estimated Fee</value>
-        [DataMember(Name="est_fee")]
-        public decimal EstFee { get; set; }
+        [DataMember(Name="code")]
+        public int Code { get; set; }
 
         /// <summary>
-        /// Precision
+        /// Gets or Sets Message
         /// </summary>
-        /// <value>Precision</value>
-        [DataMember(Name="precision")]
-        public int Precision { get; set; }
+        [DataMember(Name="message")]
+        public string Message { get; set; }
 
         /// <summary>
-        /// If it is disabled. 0 means NOT being disabled
+        /// Gets or Sets Data
         /// </summary>
-        /// <value>If it is disabled. 0 means NOT being disabled</value>
-        [DataMember(Name="is_disabled")]
-        public int IsDisabled { get; set; }
+        [DataMember(Name="data")]
+        public InlineResponse20021Data Data { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Version
+        /// </summary>
+        [DataMember(Name="version")]
+        public string Version { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -96,11 +102,12 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20021 {\n");
-            sb.Append("  Coin: ").Append(Coin).Append("\n");
-            sb.Append("  MinTransAmount: ").Append(MinTransAmount).Append("\n");
-            sb.Append("  EstFee: ").Append(EstFee).Append("\n");
-            sb.Append("  Precision: ").Append(Precision).Append("\n");
-            sb.Append("  IsDisabled: ").Append(IsDisabled).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  Method: ").Append(Method).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -136,25 +143,32 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Coin == input.Coin ||
-                    (this.Coin != null &&
-                    this.Coin.Equals(input.Coin))
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
                 ) && 
                 (
-                    this.MinTransAmount == input.MinTransAmount ||
-                    this.MinTransAmount.Equals(input.MinTransAmount)
+                    this.Method == input.Method ||
+                    (this.Method != null &&
+                    this.Method.Equals(input.Method))
                 ) && 
                 (
-                    this.EstFee == input.EstFee ||
-                    this.EstFee.Equals(input.EstFee)
+                    this.Code == input.Code ||
+                    this.Code.Equals(input.Code)
                 ) && 
                 (
-                    this.Precision == input.Precision ||
-                    this.Precision.Equals(input.Precision)
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
                 ) && 
                 (
-                    this.IsDisabled == input.IsDisabled ||
-                    this.IsDisabled.Equals(input.IsDisabled)
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
                 );
         }
 
@@ -167,12 +181,16 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Coin != null)
-                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
-                hashCode = hashCode * 59 + this.MinTransAmount.GetHashCode();
-                hashCode = hashCode * 59 + this.EstFee.GetHashCode();
-                hashCode = hashCode * 59 + this.Precision.GetHashCode();
-                hashCode = hashCode * 59 + this.IsDisabled.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.Method != null)
+                    hashCode = hashCode * 59 + this.Method.GetHashCode();
+                hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

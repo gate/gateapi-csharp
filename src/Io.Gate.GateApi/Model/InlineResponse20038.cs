@@ -39,118 +39,48 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="InlineResponse20038" /> class.
         /// </summary>
         /// <param name="userId">User ID (required).</param>
-        /// <param name="symbol">Trading Pair (required).</param>
-        /// <param name="interestId">Interest Deduction ID (required).</param>
-        /// <param name="liabilityId">Debt Source ID, can be Order ID or Position ID (required).</param>
-        /// <param name="liability">Debt Quantity (required).</param>
-        /// <param name="liabilityCoin">Debt Currency (required).</param>
-        /// <param name="interest">Interest (required).</param>
-        /// <param name="interestRate">interest rate (required).</param>
-        /// <param name="interestType">Interest deduction type (&#x60;PERIODIC_POSITION&#x60;: periodic position interest; &#x60;PERIODIC_OPEN_ORDER&#x60;: periodic open-order interest; &#x60;IMMEDIATE_OPEN_ORDER&#x60;: interest charged on order opening) (required).</param>
-        /// <param name="createTime">Created time (required).</param>
-        /// <param name="exchangeType">Exchange (required).</param>
-        public InlineResponse20038(string userId = default(string), string symbol = default(string), string interestId = default(string), string liabilityId = default(string), string liability = default(string), string liabilityCoin = default(string), string interest = default(string), string interestRate = default(string), string interestType = default(string), string createTime = default(string), string exchangeType = default(string))
+        /// <param name="symbol">Currency pair (required).</param>
+        /// <param name="crossexAdlRank">CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher) (required).</param>
+        /// <param name="exchangeAdlRank">Original exchange information (Binance: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; Gate: 1–5, lower value ranks higher) (required).</param>
+        public InlineResponse20038(string userId = default(string), string symbol = default(string), string crossexAdlRank = default(string), string exchangeAdlRank = default(string))
         {
             // to ensure "userId" is required (not null)
             this.UserId = userId ?? throw new ArgumentNullException("userId", "userId is a required property for InlineResponse20038 and cannot be null");
             // to ensure "symbol" is required (not null)
             this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20038 and cannot be null");
-            // to ensure "interestId" is required (not null)
-            this.InterestId = interestId ?? throw new ArgumentNullException("interestId", "interestId is a required property for InlineResponse20038 and cannot be null");
-            // to ensure "liabilityId" is required (not null)
-            this.LiabilityId = liabilityId ?? throw new ArgumentNullException("liabilityId", "liabilityId is a required property for InlineResponse20038 and cannot be null");
-            // to ensure "liability" is required (not null)
-            this.Liability = liability ?? throw new ArgumentNullException("liability", "liability is a required property for InlineResponse20038 and cannot be null");
-            // to ensure "liabilityCoin" is required (not null)
-            this.LiabilityCoin = liabilityCoin ?? throw new ArgumentNullException("liabilityCoin", "liabilityCoin is a required property for InlineResponse20038 and cannot be null");
-            // to ensure "interest" is required (not null)
-            this.Interest = interest ?? throw new ArgumentNullException("interest", "interest is a required property for InlineResponse20038 and cannot be null");
-            // to ensure "interestRate" is required (not null)
-            this.InterestRate = interestRate ?? throw new ArgumentNullException("interestRate", "interestRate is a required property for InlineResponse20038 and cannot be null");
-            // to ensure "interestType" is required (not null)
-            this.InterestType = interestType ?? throw new ArgumentNullException("interestType", "interestType is a required property for InlineResponse20038 and cannot be null");
-            // to ensure "createTime" is required (not null)
-            this.CreateTime = createTime ?? throw new ArgumentNullException("createTime", "createTime is a required property for InlineResponse20038 and cannot be null");
-            // to ensure "exchangeType" is required (not null)
-            this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for InlineResponse20038 and cannot be null");
+            // to ensure "crossexAdlRank" is required (not null)
+            this.CrossexAdlRank = crossexAdlRank ?? throw new ArgumentNullException("crossexAdlRank", "crossexAdlRank is a required property for InlineResponse20038 and cannot be null");
+            // to ensure "exchangeAdlRank" is required (not null)
+            this.ExchangeAdlRank = exchangeAdlRank ?? throw new ArgumentNullException("exchangeAdlRank", "exchangeAdlRank is a required property for InlineResponse20038 and cannot be null");
         }
 
         /// <summary>
         /// User ID
         /// </summary>
         /// <value>User ID</value>
-        [DataMember(Name="userId")]
+        [DataMember(Name="user_id")]
         public string UserId { get; set; }
 
         /// <summary>
-        /// Trading Pair
+        /// Currency pair
         /// </summary>
-        /// <value>Trading Pair</value>
+        /// <value>Currency pair</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Interest Deduction ID
+        /// CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher)
         /// </summary>
-        /// <value>Interest Deduction ID</value>
-        [DataMember(Name="interest_id")]
-        public string InterestId { get; set; }
+        /// <value>CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher)</value>
+        [DataMember(Name="crossex_adl_rank")]
+        public string CrossexAdlRank { get; set; }
 
         /// <summary>
-        /// Debt Source ID, can be Order ID or Position ID
+        /// Original exchange information (Binance: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; Gate: 1–5, lower value ranks higher)
         /// </summary>
-        /// <value>Debt Source ID, can be Order ID or Position ID</value>
-        [DataMember(Name="liability_id")]
-        public string LiabilityId { get; set; }
-
-        /// <summary>
-        /// Debt Quantity
-        /// </summary>
-        /// <value>Debt Quantity</value>
-        [DataMember(Name="liability")]
-        public string Liability { get; set; }
-
-        /// <summary>
-        /// Debt Currency
-        /// </summary>
-        /// <value>Debt Currency</value>
-        [DataMember(Name="liability_coin")]
-        public string LiabilityCoin { get; set; }
-
-        /// <summary>
-        /// Interest
-        /// </summary>
-        /// <value>Interest</value>
-        [DataMember(Name="interest")]
-        public string Interest { get; set; }
-
-        /// <summary>
-        /// interest rate
-        /// </summary>
-        /// <value>interest rate</value>
-        [DataMember(Name="interest_rate")]
-        public string InterestRate { get; set; }
-
-        /// <summary>
-        /// Interest deduction type (&#x60;PERIODIC_POSITION&#x60;: periodic position interest; &#x60;PERIODIC_OPEN_ORDER&#x60;: periodic open-order interest; &#x60;IMMEDIATE_OPEN_ORDER&#x60;: interest charged on order opening)
-        /// </summary>
-        /// <value>Interest deduction type (&#x60;PERIODIC_POSITION&#x60;: periodic position interest; &#x60;PERIODIC_OPEN_ORDER&#x60;: periodic open-order interest; &#x60;IMMEDIATE_OPEN_ORDER&#x60;: interest charged on order opening)</value>
-        [DataMember(Name="interest_type")]
-        public string InterestType { get; set; }
-
-        /// <summary>
-        /// Created time
-        /// </summary>
-        /// <value>Created time</value>
-        [DataMember(Name="create_time")]
-        public string CreateTime { get; set; }
-
-        /// <summary>
-        /// Exchange
-        /// </summary>
-        /// <value>Exchange</value>
-        [DataMember(Name="exchange_type")]
-        public string ExchangeType { get; set; }
+        /// <value>Original exchange information (Binance: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; Gate: 1–5, lower value ranks higher)</value>
+        [DataMember(Name="exchange_adl_rank")]
+        public string ExchangeAdlRank { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -162,15 +92,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class InlineResponse20038 {\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  InterestId: ").Append(InterestId).Append("\n");
-            sb.Append("  LiabilityId: ").Append(LiabilityId).Append("\n");
-            sb.Append("  Liability: ").Append(Liability).Append("\n");
-            sb.Append("  LiabilityCoin: ").Append(LiabilityCoin).Append("\n");
-            sb.Append("  Interest: ").Append(Interest).Append("\n");
-            sb.Append("  InterestRate: ").Append(InterestRate).Append("\n");
-            sb.Append("  InterestType: ").Append(InterestType).Append("\n");
-            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
+            sb.Append("  CrossexAdlRank: ").Append(CrossexAdlRank).Append("\n");
+            sb.Append("  ExchangeAdlRank: ").Append(ExchangeAdlRank).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -216,49 +139,14 @@ namespace Io.Gate.GateApi.Model
                     this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.InterestId == input.InterestId ||
-                    (this.InterestId != null &&
-                    this.InterestId.Equals(input.InterestId))
+                    this.CrossexAdlRank == input.CrossexAdlRank ||
+                    (this.CrossexAdlRank != null &&
+                    this.CrossexAdlRank.Equals(input.CrossexAdlRank))
                 ) && 
                 (
-                    this.LiabilityId == input.LiabilityId ||
-                    (this.LiabilityId != null &&
-                    this.LiabilityId.Equals(input.LiabilityId))
-                ) && 
-                (
-                    this.Liability == input.Liability ||
-                    (this.Liability != null &&
-                    this.Liability.Equals(input.Liability))
-                ) && 
-                (
-                    this.LiabilityCoin == input.LiabilityCoin ||
-                    (this.LiabilityCoin != null &&
-                    this.LiabilityCoin.Equals(input.LiabilityCoin))
-                ) && 
-                (
-                    this.Interest == input.Interest ||
-                    (this.Interest != null &&
-                    this.Interest.Equals(input.Interest))
-                ) && 
-                (
-                    this.InterestRate == input.InterestRate ||
-                    (this.InterestRate != null &&
-                    this.InterestRate.Equals(input.InterestRate))
-                ) && 
-                (
-                    this.InterestType == input.InterestType ||
-                    (this.InterestType != null &&
-                    this.InterestType.Equals(input.InterestType))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.ExchangeType == input.ExchangeType ||
-                    (this.ExchangeType != null &&
-                    this.ExchangeType.Equals(input.ExchangeType))
+                    this.ExchangeAdlRank == input.ExchangeAdlRank ||
+                    (this.ExchangeAdlRank != null &&
+                    this.ExchangeAdlRank.Equals(input.ExchangeAdlRank))
                 );
         }
 
@@ -275,24 +163,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.Symbol != null)
                     hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.InterestId != null)
-                    hashCode = hashCode * 59 + this.InterestId.GetHashCode();
-                if (this.LiabilityId != null)
-                    hashCode = hashCode * 59 + this.LiabilityId.GetHashCode();
-                if (this.Liability != null)
-                    hashCode = hashCode * 59 + this.Liability.GetHashCode();
-                if (this.LiabilityCoin != null)
-                    hashCode = hashCode * 59 + this.LiabilityCoin.GetHashCode();
-                if (this.Interest != null)
-                    hashCode = hashCode * 59 + this.Interest.GetHashCode();
-                if (this.InterestRate != null)
-                    hashCode = hashCode * 59 + this.InterestRate.GetHashCode();
-                if (this.InterestType != null)
-                    hashCode = hashCode * 59 + this.InterestType.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.ExchangeType != null)
-                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
+                if (this.CrossexAdlRank != null)
+                    hashCode = hashCode * 59 + this.CrossexAdlRank.GetHashCode();
+                if (this.ExchangeAdlRank != null)
+                    hashCode = hashCode * 59 + this.ExchangeAdlRank.GetHashCode();
                 return hashCode;
             }
         }
