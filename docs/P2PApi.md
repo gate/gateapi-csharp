@@ -869,7 +869,7 @@ No authorization required
 
 <a name="p2pmerchantbooksadsdetail"></a>
 # **P2pMerchantBooksAdsDetail**
-> InlineResponse20019 P2pMerchantBooksAdsDetail (string advNo, int?  = null)
+> InlineResponse20019 P2pMerchantBooksAdsDetail (string advNo)
 
 Query ad details
 
@@ -891,12 +891,11 @@ namespace Example
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new P2PApi(config);
             var advNo = "advNo_example";  // string | 
-            var  = 56;  // int? | Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional) 
 
             try
             {
                 // Query ad details
-                InlineResponse20019 result = apiInstance.P2pMerchantBooksAdsDetail(advNo, );
+                InlineResponse20019 result = apiInstance.P2pMerchantBooksAdsDetail(advNo);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -916,7 +915,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advNo** | **string**|  | 
- **** | **int?**| Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  | [optional] 
 
 ### Return type
 

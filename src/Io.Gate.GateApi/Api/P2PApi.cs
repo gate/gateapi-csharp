@@ -354,9 +354,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="advNo"></param>
-        /// <param name="">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>InlineResponse20019</returns>
-        InlineResponse20019 P2pMerchantBooksAdsDetail (string advNo, int?  = default(int?));
+        InlineResponse20019 P2pMerchantBooksAdsDetail (string advNo);
 
         /// <summary>
         /// Query ad details
@@ -366,9 +365,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="advNo"></param>
-        /// <param name="">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20019</returns>
-        ApiResponse<InlineResponse20019> P2pMerchantBooksAdsDetailWithHttpInfo (string advNo, int?  = default(int?));
+        ApiResponse<InlineResponse20019> P2pMerchantBooksAdsDetailWithHttpInfo (string advNo);
         /// <summary>
         /// Get my ad list
         /// </summary>
@@ -803,9 +801,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="advNo"></param>
-        /// <param name="">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>Task of InlineResponse20019</returns>
-        Task<InlineResponse20019> P2pMerchantBooksAdsDetailAsync (string advNo, int?  = default(int?));
+        Task<InlineResponse20019> P2pMerchantBooksAdsDetailAsync (string advNo);
 
         /// <summary>
         /// Query ad details
@@ -815,9 +812,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="advNo"></param>
-        /// <param name="">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        Task<ApiResponse<InlineResponse20019>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (string advNo, int?  = default(int?));
+        Task<ApiResponse<InlineResponse20019>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (string advNo);
         /// <summary>
         /// Get my ad list
         /// </summary>
@@ -2798,11 +2794,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="advNo"></param>
-        /// <param name="">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>InlineResponse20019</returns>
-        public InlineResponse20019 P2pMerchantBooksAdsDetail (string advNo, int?  = default(int?))
+        public InlineResponse20019 P2pMerchantBooksAdsDetail (string advNo)
         {
-             ApiResponse<InlineResponse20019> localVarResponse = P2pMerchantBooksAdsDetailWithHttpInfo(advNo, );
+             ApiResponse<InlineResponse20019> localVarResponse = P2pMerchantBooksAdsDetailWithHttpInfo(advNo);
              return localVarResponse.Data;
         }
 
@@ -2811,9 +2806,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="advNo"></param>
-        /// <param name="">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20019</returns>
-        public ApiResponse<InlineResponse20019> P2pMerchantBooksAdsDetailWithHttpInfo (string advNo, int?  = default(int?))
+        public ApiResponse<InlineResponse20019> P2pMerchantBooksAdsDetailWithHttpInfo (string advNo)
         {
             // verify the required parameter 'advNo' is set
             if (advNo == null)
@@ -2836,10 +2830,6 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            if ( != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "&#x3D;", ));
-            }
             localVarRequestOptions.FormParameters.Add("adv_no", ClientUtils.ParameterToString(advNo)); // form parameter
 
 
@@ -2860,11 +2850,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="advNo"></param>
-        /// <param name="">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>Task of InlineResponse20019</returns>
-        public async Task<InlineResponse20019> P2pMerchantBooksAdsDetailAsync (string advNo, int?  = default(int?))
+        public async Task<InlineResponse20019> P2pMerchantBooksAdsDetailAsync (string advNo)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20019> localVarResponse = await P2pMerchantBooksAdsDetailAsyncWithHttpInfo(advNo, );
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20019> localVarResponse = await P2pMerchantBooksAdsDetailAsyncWithHttpInfo(advNo);
              return localVarResponse.Data;
 
         }
@@ -2874,9 +2863,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="advNo"></param>
-        /// <param name="">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        public async Task<ApiResponse<InlineResponse20019>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (string advNo, int?  = default(int?))
+        public async Task<ApiResponse<InlineResponse20019>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (string advNo)
         {
             // verify the required parameter 'advNo' is set
             if (advNo == null)
@@ -2900,10 +2888,6 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            if ( != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "&#x3D;", ));
-            }
             localVarRequestOptions.FormParameters.Add("adv_no", ClientUtils.ParameterToString(advNo)); // form parameter
 
 

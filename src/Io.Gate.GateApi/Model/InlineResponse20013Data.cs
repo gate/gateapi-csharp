@@ -69,7 +69,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="transactionsMonth">30-day transaction volume (required).</param>
         /// <param name="transactionsAll">Total transaction volume (required).</param>
         /// <param name="tradeVersatile">Single user or composite user (required).</param>
-        public InlineResponse20013Data(bool isSelf = default(bool), string userTimest = default(string), int counterpartiesNum = default(int), string emailVerified = default(string), string verified = default(string), string hasPhone = default(string), string userName = default(string), string userNote = default(string), string completeTransactions = default(string), string paidTransactions = default(string), string acceptedTransactions = default(string), string transactionsUsedTime = default(string), string cancelledUsedTimeMonth = default(string), string completeTransactionsMonth = default(string), int completeRateMonth = default(int), int ordersBuyRateMonth = default(int), int isBlack = default(int), int isFollow = default(int), int haveTraded = default(int), string bizUid = default(string), int blueVip = default(int), int workStatus = default(int), int registrationDays = default(int), int firstTradeDays = default(int), int needReplenish = default(int), InlineResponse20013DataMerchantInfo merchantInfo = default(InlineResponse20013DataMerchantInfo), int onlineStatus = default(int), AnyType workHours = default(AnyType), int transactionsMonth = default(int), int transactionsAll = default(int), bool tradeVersatile = default(bool))
+        public InlineResponse20013Data(bool isSelf = default(bool), string userTimest = default(string), int counterpartiesNum = default(int), string emailVerified = default(string), string verified = default(string), string hasPhone = default(string), string userName = default(string), string userNote = default(string), string completeTransactions = default(string), string paidTransactions = default(string), string acceptedTransactions = default(string), string transactionsUsedTime = default(string), string cancelledUsedTimeMonth = default(string), string completeTransactionsMonth = default(string), int completeRateMonth = default(int), int ordersBuyRateMonth = default(int), int isBlack = default(int), int isFollow = default(int), int haveTraded = default(int), string bizUid = default(string), int blueVip = default(int), int workStatus = default(int), int registrationDays = default(int), int firstTradeDays = default(int), int needReplenish = default(int), InlineResponse20013DataMerchantInfo merchantInfo = default(InlineResponse20013DataMerchantInfo), int onlineStatus = default(int), Object workHours = default(Object), int transactionsMonth = default(int), int transactionsAll = default(int), bool tradeVersatile = default(bool))
         {
             this.IsSelf = isSelf;
             // to ensure "userTimest" is required (not null)
@@ -312,7 +312,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Merchant online status details</value>
         [DataMember(Name="work_hours")]
-        public AnyType WorkHours { get; set; }
+        public Object WorkHours { get; set; }
 
         /// <summary>
         /// 30-day transaction volume
