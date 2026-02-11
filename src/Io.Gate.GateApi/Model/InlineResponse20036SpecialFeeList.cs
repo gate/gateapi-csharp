@@ -25,30 +25,30 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20035SpecialFeeList
+    /// InlineResponse20036SpecialFeeList
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20035SpecialFeeList :  IEquatable<InlineResponse20035SpecialFeeList>, IValidatableObject
+    public partial class InlineResponse20036SpecialFeeList :  IEquatable<InlineResponse20036SpecialFeeList>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20035SpecialFeeList" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20036SpecialFeeList" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineResponse20035SpecialFeeList() { }
+        protected InlineResponse20036SpecialFeeList() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20035SpecialFeeList" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20036SpecialFeeList" /> class.
         /// </summary>
         /// <param name="symbol">Currency pair (required).</param>
         /// <param name="takerFeeRate">Taker fee rate (required).</param>
         /// <param name="makerFeeRate">Maker fee rate (required).</param>
-        public InlineResponse20035SpecialFeeList(string symbol = default(string), string takerFeeRate = default(string), string makerFeeRate = default(string))
+        public InlineResponse20036SpecialFeeList(string symbol = default(string), string takerFeeRate = default(string), string makerFeeRate = default(string))
         {
             // to ensure "symbol" is required (not null)
-            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20035SpecialFeeList and cannot be null");
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20036SpecialFeeList and cannot be null");
             // to ensure "takerFeeRate" is required (not null)
-            this.TakerFeeRate = takerFeeRate ?? throw new ArgumentNullException("takerFeeRate", "takerFeeRate is a required property for InlineResponse20035SpecialFeeList and cannot be null");
+            this.TakerFeeRate = takerFeeRate ?? throw new ArgumentNullException("takerFeeRate", "takerFeeRate is a required property for InlineResponse20036SpecialFeeList and cannot be null");
             // to ensure "makerFeeRate" is required (not null)
-            this.MakerFeeRate = makerFeeRate ?? throw new ArgumentNullException("makerFeeRate", "makerFeeRate is a required property for InlineResponse20035SpecialFeeList and cannot be null");
+            this.MakerFeeRate = makerFeeRate ?? throw new ArgumentNullException("makerFeeRate", "makerFeeRate is a required property for InlineResponse20036SpecialFeeList and cannot be null");
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20035SpecialFeeList {\n");
+            sb.Append("class InlineResponse20036SpecialFeeList {\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  TakerFeeRate: ").Append(TakerFeeRate).Append("\n");
             sb.Append("  MakerFeeRate: ").Append(MakerFeeRate).Append("\n");
@@ -103,15 +103,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20035SpecialFeeList);
+            return this.Equals(input as InlineResponse20036SpecialFeeList);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20035SpecialFeeList instances are equal
+        /// Returns true if InlineResponse20036SpecialFeeList instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20035SpecialFeeList to be compared</param>
+        /// <param name="input">Instance of InlineResponse20036SpecialFeeList to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20035SpecialFeeList input)
+        public bool Equals(InlineResponse20036SpecialFeeList input)
         {
             if (input == null)
                 return false;

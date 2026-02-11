@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OrderId** | **string** | Order ID | 
+**TxId** | **string** | Order ID | 
 **Text** | **string** | User-defined Order ID | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

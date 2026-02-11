@@ -33,51 +33,44 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20016Data" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20016Data() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20016Data" /> class.
-        /// </summary>
-        /// <param name="list">list (required).</param>
-        /// <param name="transTime">Countdown time (required).</param>
-        /// <param name="count">Number of orders (required).</param>
-        /// <param name="exportedNum">Export count (required).</param>
-        public InlineResponse20016Data(List<InlineResponse20016DataList> list = default(List<InlineResponse20016DataList>), List<InlineResponse20016DataTransTime> transTime = default(List<InlineResponse20016DataTransTime>), int count = default(int), int exportedNum = default(int))
+        /// <param name="payType">Payment method type.</param>
+        /// <param name="payName">Payment method name.</param>
+        /// <param name="ids">User&#39;s currently bound payment method (primary key ID).</param>
+        /// <param name="list">list.</param>
+        public InlineResponse20016Data(string payType = default(string), string payName = default(string), List<int> ids = default(List<int>), List<InlineResponse20016List> list = default(List<InlineResponse20016List>))
         {
-            // to ensure "list" is required (not null)
-            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20016Data and cannot be null");
-            // to ensure "transTime" is required (not null)
-            this.TransTime = transTime ?? throw new ArgumentNullException("transTime", "transTime is a required property for InlineResponse20016Data and cannot be null");
-            this.Count = count;
-            this.ExportedNum = exportedNum;
+            this.PayType = payType;
+            this.PayName = payName;
+            this.Ids = ids;
+            this.List = list;
         }
+
+        /// <summary>
+        /// Payment method type
+        /// </summary>
+        /// <value>Payment method type</value>
+        [DataMember(Name="pay_type")]
+        public string PayType { get; set; }
+
+        /// <summary>
+        /// Payment method name
+        /// </summary>
+        /// <value>Payment method name</value>
+        [DataMember(Name="pay_name")]
+        public string PayName { get; set; }
+
+        /// <summary>
+        /// User&#39;s currently bound payment method (primary key ID)
+        /// </summary>
+        /// <value>User&#39;s currently bound payment method (primary key ID)</value>
+        [DataMember(Name="ids")]
+        public List<int> Ids { get; set; }
 
         /// <summary>
         /// Gets or Sets List
         /// </summary>
         [DataMember(Name="list")]
-        public List<InlineResponse20016DataList> List { get; set; }
-
-        /// <summary>
-        /// Countdown time
-        /// </summary>
-        /// <value>Countdown time</value>
-        [DataMember(Name="trans_time")]
-        public List<InlineResponse20016DataTransTime> TransTime { get; set; }
-
-        /// <summary>
-        /// Number of orders
-        /// </summary>
-        /// <value>Number of orders</value>
-        [DataMember(Name="count")]
-        public int Count { get; set; }
-
-        /// <summary>
-        /// Export count
-        /// </summary>
-        /// <value>Export count</value>
-        [DataMember(Name="exported_num")]
-        public int ExportedNum { get; set; }
+        public List<InlineResponse20016List> List { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -87,10 +80,10 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20016Data {\n");
+            sb.Append("  PayType: ").Append(PayType).Append("\n");
+            sb.Append("  PayName: ").Append(PayName).Append("\n");
+            sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("  List: ").Append(List).Append("\n");
-            sb.Append("  TransTime: ").Append(TransTime).Append("\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
-            sb.Append("  ExportedNum: ").Append(ExportedNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -126,24 +119,26 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
+                    this.PayType == input.PayType ||
+                    (this.PayType != null &&
+                    this.PayType.Equals(input.PayType))
+                ) && 
+                (
+                    this.PayName == input.PayName ||
+                    (this.PayName != null &&
+                    this.PayName.Equals(input.PayName))
+                ) && 
+                (
+                    this.Ids == input.Ids ||
+                    this.Ids != null &&
+                    input.Ids != null &&
+                    this.Ids.SequenceEqual(input.Ids)
+                ) && 
+                (
                     this.List == input.List ||
                     this.List != null &&
                     input.List != null &&
                     this.List.SequenceEqual(input.List)
-                ) && 
-                (
-                    this.TransTime == input.TransTime ||
-                    this.TransTime != null &&
-                    input.TransTime != null &&
-                    this.TransTime.SequenceEqual(input.TransTime)
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
-                ) && 
-                (
-                    this.ExportedNum == input.ExportedNum ||
-                    this.ExportedNum.Equals(input.ExportedNum)
                 );
         }
 
@@ -156,12 +151,14 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.PayType != null)
+                    hashCode = hashCode * 59 + this.PayType.GetHashCode();
+                if (this.PayName != null)
+                    hashCode = hashCode * 59 + this.PayName.GetHashCode();
+                if (this.Ids != null)
+                    hashCode = hashCode * 59 + this.Ids.GetHashCode();
                 if (this.List != null)
                     hashCode = hashCode * 59 + this.List.GetHashCode();
-                if (this.TransTime != null)
-                    hashCode = hashCode * 59 + this.TransTime.GetHashCode();
-                hashCode = hashCode * 59 + this.Count.GetHashCode();
-                hashCode = hashCode * 59 + this.ExportedNum.GetHashCode();
                 return hashCode;
             }
         }

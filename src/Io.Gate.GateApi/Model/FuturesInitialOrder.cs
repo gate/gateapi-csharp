@@ -68,7 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="contract">Futures contract (required).</param>
         /// <param name="size">Represents the number of contracts that need to be closed, full closing: size&#x3D;0 Partial closing: plan-close-short-position size&gt;0  Partial closing: plan-close-long-position size&lt;0.</param>
         /// <param name="price">Order price. Set to 0 to use market price (required).</param>
-        /// <param name="close">In One-way Mode, when closing all positions, this must be set to true to perform the closing operation When partially closing positions in One-way Mode or Hedge Mode, you can omit close or set close&#x3D;false (default to false).</param>
+        /// <param name="close">When fully closing a position in single-position mode, close must be set to true to execute the close operation. When partially closing a position in single-position mode or in dual-position mode, close can be left unset or set to false. (default to false).</param>
         /// <param name="tif">Time in force strategy, default is gtc, market orders currently only support ioc mode  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled (default to TifEnum.Gtc).</param>
         /// <param name="text">The source of the order, including: - web: Web - api: API call - app: Mobile app.</param>
         /// <param name="reduceOnly">When set to true, perform automatic position reduction operation. Set to true to ensure that the order will not open a new position, and is only used to close or reduce positions (default to false).</param>
@@ -109,9 +109,9 @@ namespace Io.Gate.GateApi.Model
         public string Price { get; set; }
 
         /// <summary>
-        /// In One-way Mode, when closing all positions, this must be set to true to perform the closing operation When partially closing positions in One-way Mode or Hedge Mode, you can omit close or set close&#x3D;false
+        /// When fully closing a position in single-position mode, close must be set to true to execute the close operation. When partially closing a position in single-position mode or in dual-position mode, close can be left unset or set to false.
         /// </summary>
-        /// <value>In One-way Mode, when closing all positions, this must be set to true to perform the closing operation When partially closing positions in One-way Mode or Hedge Mode, you can omit close or set close&#x3D;false</value>
+        /// <value>When fully closing a position in single-position mode, close must be set to true to execute the close operation. When partially closing a position in single-position mode or in dual-position mode, close can be left unset or set to false.</value>
         [DataMember(Name="close")]
         public bool Close { get; set; }
 

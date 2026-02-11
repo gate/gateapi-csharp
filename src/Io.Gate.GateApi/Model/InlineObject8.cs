@@ -41,7 +41,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="cryptoCurrency">Cryptocurrency (required).</param>
         /// <param name="fiatCurrency">Fiat currency (required).</param>
         /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All).</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED）.</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED).</param>
         /// <param name="txid">Order ID.</param>
         /// <param name="startTime">Start timestamp, default is 00:00 89 days ago.</param>
         /// <param name="endTime">End timestamp, default is 23:59:59 today.</param>
@@ -86,9 +86,9 @@ namespace Io.Gate.GateApi.Model
         public string SelectType { get; set; }
 
         /// <summary>
-        /// 订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED）
+        /// Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED)
         /// </summary>
-        /// <value>订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED）</value>
+        /// <value>Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED)</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 

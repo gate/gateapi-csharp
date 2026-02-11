@@ -110,6 +110,25 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of InlineResponse2009</returns>
         ApiResponse<InlineResponse2009> GetUserDefaultBankWithHttpInfo ();
         /// <summary>
+        /// Get user bank card list
+        /// </summary>
+        /// <remarks>
+        /// Get user bank card list for selecting bank card when placing orders
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>InlineResponse20010</returns>
+        InlineResponse20010 GetBankList ();
+
+        /// <summary>
+        /// Get user bank card list
+        /// </summary>
+        /// <remarks>
+        /// Get user bank card list for selecting bank card when placing orders
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of InlineResponse20010</returns>
+        ApiResponse<InlineResponse20010> GetBankListWithHttpInfo ();
+        /// <summary>
         /// Mark fiat order as paid
         /// </summary>
         /// <remarks>
@@ -163,11 +182,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE ：完成 CANCEL  ：取消 PROCESSING ：进行中 (optional)</param>
+        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>InlineResponse20010</returns>
-        InlineResponse20010 ListOtcOrders (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
+        /// <returns>InlineResponse20011</returns>
+        InlineResponse20011 ListOtcOrders (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
 
         /// <summary>
         /// Fiat order list
@@ -181,42 +200,42 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE ：完成 CANCEL  ：取消 PROCESSING ：进行中 (optional)</param>
+        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20010</returns>
-        ApiResponse<InlineResponse20010> ListOtcOrdersWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
-        /// <summary>
-        /// Stablecoin order list
-        /// </summary>
-        /// <remarks>
-        /// Query stablecoin order list with filtering by currency, time range, status, etc.
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Number of records per page (optional)</param>
-        /// <param name="pageNumber">Page number (optional)</param>
-        /// <param name="coinName">ordercurrency (optional)</param>
-        /// <param name="startTime">Start Time (optional)</param>
-        /// <param name="endTime">End time (optional)</param>
-        /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>InlineResponse20011</returns>
-        InlineResponse20011 ListStableCoinOrders (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
-
-        /// <summary>
-        /// Stablecoin order list
-        /// </summary>
-        /// <remarks>
-        /// Query stablecoin order list with filtering by currency, time range, status, etc.
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Number of records per page (optional)</param>
-        /// <param name="pageNumber">Page number (optional)</param>
-        /// <param name="coinName">ordercurrency (optional)</param>
-        /// <param name="startTime">Start Time (optional)</param>
-        /// <param name="endTime">End time (optional)</param>
-        /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
         /// <returns>ApiResponse of InlineResponse20011</returns>
-        ApiResponse<InlineResponse20011> ListStableCoinOrdersWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
+        ApiResponse<InlineResponse20011> ListOtcOrdersWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
+        /// <summary>
+        /// Stablecoin order list
+        /// </summary>
+        /// <remarks>
+        /// Query stablecoin order list with filtering by currency, time range, status, etc.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pageSize">Number of records per page (optional)</param>
+        /// <param name="pageNumber">Page number (optional)</param>
+        /// <param name="coinName">ordercurrency (optional)</param>
+        /// <param name="startTime">Start Time (optional)</param>
+        /// <param name="endTime">End time (optional)</param>
+        /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
+        /// <returns>InlineResponse20012</returns>
+        InlineResponse20012 ListStableCoinOrders (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
+
+        /// <summary>
+        /// Stablecoin order list
+        /// </summary>
+        /// <remarks>
+        /// Query stablecoin order list with filtering by currency, time range, status, etc.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pageSize">Number of records per page (optional)</param>
+        /// <param name="pageNumber">Page number (optional)</param>
+        /// <param name="coinName">ordercurrency (optional)</param>
+        /// <param name="startTime">Start Time (optional)</param>
+        /// <param name="endTime">End time (optional)</param>
+        /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20012</returns>
+        ApiResponse<InlineResponse20012> ListStableCoinOrdersWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
         /// <summary>
         /// Fiat order details
         /// </summary>
@@ -225,8 +244,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>InlineResponse20012</returns>
-        InlineResponse20012 GetOtcOrderDetail (string orderId);
+        /// <returns>InlineResponse20013</returns>
+        InlineResponse20013 GetOtcOrderDetail (string orderId);
 
         /// <summary>
         /// Fiat order details
@@ -236,8 +255,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        ApiResponse<InlineResponse20012> GetOtcOrderDetailWithHttpInfo (string orderId);
+        /// <returns>ApiResponse of InlineResponse20013</returns>
+        ApiResponse<InlineResponse20013> GetOtcOrderDetailWithHttpInfo (string orderId);
         #endregion Synchronous Operations
     }
 
@@ -330,6 +349,25 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
         Task<ApiResponse<InlineResponse2009>> GetUserDefaultBankAsyncWithHttpInfo ();
         /// <summary>
+        /// Get user bank card list
+        /// </summary>
+        /// <remarks>
+        /// Get user bank card list for selecting bank card when placing orders
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of InlineResponse20010</returns>
+        Task<InlineResponse20010> GetBankListAsync ();
+
+        /// <summary>
+        /// Get user bank card list
+        /// </summary>
+        /// <remarks>
+        /// Get user bank card list for selecting bank card when placing orders
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
+        Task<ApiResponse<InlineResponse20010>> GetBankListAsyncWithHttpInfo ();
+        /// <summary>
         /// Mark fiat order as paid
         /// </summary>
         /// <remarks>
@@ -383,11 +421,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE ：完成 CANCEL  ：取消 PROCESSING ：进行中 (optional)</param>
+        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>Task of InlineResponse20010</returns>
-        Task<InlineResponse20010> ListOtcOrdersAsync (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
+        /// <returns>Task of InlineResponse20011</returns>
+        Task<InlineResponse20011> ListOtcOrdersAsync (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
 
         /// <summary>
         /// Fiat order list
@@ -401,42 +439,42 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE ：完成 CANCEL  ：取消 PROCESSING ：进行中 (optional)</param>
+        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-        Task<ApiResponse<InlineResponse20010>> ListOtcOrdersAsyncWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
-        /// <summary>
-        /// Stablecoin order list
-        /// </summary>
-        /// <remarks>
-        /// Query stablecoin order list with filtering by currency, time range, status, etc.
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Number of records per page (optional)</param>
-        /// <param name="pageNumber">Page number (optional)</param>
-        /// <param name="coinName">ordercurrency (optional)</param>
-        /// <param name="startTime">Start Time (optional)</param>
-        /// <param name="endTime">End time (optional)</param>
-        /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>Task of InlineResponse20011</returns>
-        Task<InlineResponse20011> ListStableCoinOrdersAsync (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
-
-        /// <summary>
-        /// Stablecoin order list
-        /// </summary>
-        /// <remarks>
-        /// Query stablecoin order list with filtering by currency, time range, status, etc.
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Number of records per page (optional)</param>
-        /// <param name="pageNumber">Page number (optional)</param>
-        /// <param name="coinName">ordercurrency (optional)</param>
-        /// <param name="startTime">Start Time (optional)</param>
-        /// <param name="endTime">End time (optional)</param>
-        /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        Task<ApiResponse<InlineResponse20011>> ListStableCoinOrdersAsyncWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
+        Task<ApiResponse<InlineResponse20011>> ListOtcOrdersAsyncWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
+        /// <summary>
+        /// Stablecoin order list
+        /// </summary>
+        /// <remarks>
+        /// Query stablecoin order list with filtering by currency, time range, status, etc.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pageSize">Number of records per page (optional)</param>
+        /// <param name="pageNumber">Page number (optional)</param>
+        /// <param name="coinName">ordercurrency (optional)</param>
+        /// <param name="startTime">Start Time (optional)</param>
+        /// <param name="endTime">End time (optional)</param>
+        /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
+        /// <returns>Task of InlineResponse20012</returns>
+        Task<InlineResponse20012> ListStableCoinOrdersAsync (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
+
+        /// <summary>
+        /// Stablecoin order list
+        /// </summary>
+        /// <remarks>
+        /// Query stablecoin order list with filtering by currency, time range, status, etc.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pageSize">Number of records per page (optional)</param>
+        /// <param name="pageNumber">Page number (optional)</param>
+        /// <param name="coinName">ordercurrency (optional)</param>
+        /// <param name="startTime">Start Time (optional)</param>
+        /// <param name="endTime">End time (optional)</param>
+        /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
+        Task<ApiResponse<InlineResponse20012>> ListStableCoinOrdersAsyncWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
         /// <summary>
         /// Fiat order details
         /// </summary>
@@ -445,8 +483,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        Task<InlineResponse20012> GetOtcOrderDetailAsync (string orderId);
+        /// <returns>Task of InlineResponse20013</returns>
+        Task<InlineResponse20013> GetOtcOrderDetailAsync (string orderId);
 
         /// <summary>
         /// Fiat order details
@@ -456,8 +494,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        Task<ApiResponse<InlineResponse20012>> GetOtcOrderDetailAsyncWithHttpInfo (string orderId);
+        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
+        Task<ApiResponse<InlineResponse20013>> GetOtcOrderDetailAsyncWithHttpInfo (string orderId);
         #endregion Asynchronous Operations
     }
 
@@ -1039,6 +1077,109 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
+        /// Get user bank card list Get user bank card list for selecting bank card when placing orders
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>InlineResponse20010</returns>
+        public InlineResponse20010 GetBankList ()
+        {
+             ApiResponse<InlineResponse20010> localVarResponse = GetBankListWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get user bank card list Get user bank card list for selecting bank card when placing orders
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of InlineResponse20010</returns>
+        public ApiResponse<InlineResponse20010> GetBankListWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse20010>("/otc/bank_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetBankList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get user bank card list Get user bank card list for selecting bank card when placing orders
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of InlineResponse20010</returns>
+        public async Task<InlineResponse20010> GetBankListAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20010> localVarResponse = await GetBankListAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get user bank card list Get user bank card list for selecting bank card when placing orders
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
+        public async Task<ApiResponse<InlineResponse20010>> GetBankListAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20010>("/otc/bank_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetBankList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Mark fiat order as paid Mark fiat order as paid
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1283,210 +1424,210 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE ：完成 CANCEL  ：取消 PROCESSING ：进行中 (optional)</param>
+        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>InlineResponse20010</returns>
-        public InlineResponse20010 ListOtcOrders (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
-        {
-             ApiResponse<InlineResponse20010> localVarResponse = ListOtcOrdersWithHttpInfo(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Fiat order list Query the fiat order list with filters such as type, currency, time range, and status
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="type">BUY for on-ramp, SELL for off-ramp (optional)</param>
-        /// <param name="fiatCurrency">Fiat currency (optional)</param>
-        /// <param name="cryptoCurrency">Digital currency (optional)</param>
-        /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
-        /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE ：完成 CANCEL  ：取消 PROCESSING ：进行中 (optional)</param>
-        /// <param name="pn">Page number (optional)</param>
-        /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20010</returns>
-        public ApiResponse<InlineResponse20010> ListOtcOrdersWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (type != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
-            }
-            if (fiatCurrency != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "fiat_currency", fiatCurrency));
-            }
-            if (cryptoCurrency != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "crypto_currency", cryptoCurrency));
-            }
-            if (startTime != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_time", startTime));
-            }
-            if (endTime != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_time", endTime));
-            }
-            if (status != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
-            }
-            if (pn != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pn", pn));
-            }
-            if (ps != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "ps", ps));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20010>("/otc/order/list", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListOtcOrders", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Fiat order list Query the fiat order list with filters such as type, currency, time range, and status
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="type">BUY for on-ramp, SELL for off-ramp (optional)</param>
-        /// <param name="fiatCurrency">Fiat currency (optional)</param>
-        /// <param name="cryptoCurrency">Digital currency (optional)</param>
-        /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
-        /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE ：完成 CANCEL  ：取消 PROCESSING ：进行中 (optional)</param>
-        /// <param name="pn">Page number (optional)</param>
-        /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>Task of InlineResponse20010</returns>
-        public async Task<InlineResponse20010> ListOtcOrdersAsync (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20010> localVarResponse = await ListOtcOrdersAsyncWithHttpInfo(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Fiat order list Query the fiat order list with filters such as type, currency, time range, and status
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="type">BUY for on-ramp, SELL for off-ramp (optional)</param>
-        /// <param name="fiatCurrency">Fiat currency (optional)</param>
-        /// <param name="cryptoCurrency">Digital currency (optional)</param>
-        /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
-        /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE ：完成 CANCEL  ：取消 PROCESSING ：进行中 (optional)</param>
-        /// <param name="pn">Page number (optional)</param>
-        /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-        public async Task<ApiResponse<InlineResponse20010>> ListOtcOrdersAsyncWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (type != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
-            }
-            if (fiatCurrency != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "fiat_currency", fiatCurrency));
-            }
-            if (cryptoCurrency != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "crypto_currency", cryptoCurrency));
-            }
-            if (startTime != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_time", startTime));
-            }
-            if (endTime != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_time", endTime));
-            }
-            if (status != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
-            }
-            if (pn != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pn", pn));
-            }
-            if (ps != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "ps", ps));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20010>("/otc/order/list", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListOtcOrders", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Stablecoin order list Query stablecoin order list with filtering by currency, time range, status, etc.
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Number of records per page (optional)</param>
-        /// <param name="pageNumber">Page number (optional)</param>
-        /// <param name="coinName">ordercurrency (optional)</param>
-        /// <param name="startTime">Start Time (optional)</param>
-        /// <param name="endTime">End time (optional)</param>
-        /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
         /// <returns>InlineResponse20011</returns>
-        public InlineResponse20011 ListStableCoinOrders (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
+        public InlineResponse20011 ListOtcOrders (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
         {
-             ApiResponse<InlineResponse20011> localVarResponse = ListStableCoinOrdersWithHttpInfo(pageSize, pageNumber, coinName, startTime, endTime, status);
+             ApiResponse<InlineResponse20011> localVarResponse = ListOtcOrdersWithHttpInfo(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Fiat order list Query the fiat order list with filters such as type, currency, time range, and status
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">BUY for on-ramp, SELL for off-ramp (optional)</param>
+        /// <param name="fiatCurrency">Fiat currency (optional)</param>
+        /// <param name="cryptoCurrency">Digital currency (optional)</param>
+        /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
+        /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
+        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="pn">Page number (optional)</param>
+        /// <param name="ps">Number of items per page (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20011</returns>
+        public ApiResponse<InlineResponse20011> ListOtcOrdersWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (fiatCurrency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "fiat_currency", fiatCurrency));
+            }
+            if (cryptoCurrency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "crypto_currency", cryptoCurrency));
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_time", startTime));
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_time", endTime));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (pn != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pn", pn));
+            }
+            if (ps != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "ps", ps));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse20011>("/otc/order/list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListOtcOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Fiat order list Query the fiat order list with filters such as type, currency, time range, and status
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">BUY for on-ramp, SELL for off-ramp (optional)</param>
+        /// <param name="fiatCurrency">Fiat currency (optional)</param>
+        /// <param name="cryptoCurrency">Digital currency (optional)</param>
+        /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
+        /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
+        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="pn">Page number (optional)</param>
+        /// <param name="ps">Number of items per page (optional)</param>
+        /// <returns>Task of InlineResponse20011</returns>
+        public async Task<InlineResponse20011> ListOtcOrdersAsync (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20011> localVarResponse = await ListOtcOrdersAsyncWithHttpInfo(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Fiat order list Query the fiat order list with filters such as type, currency, time range, and status
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">BUY for on-ramp, SELL for off-ramp (optional)</param>
+        /// <param name="fiatCurrency">Fiat currency (optional)</param>
+        /// <param name="cryptoCurrency">Digital currency (optional)</param>
+        /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
+        /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
+        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="pn">Page number (optional)</param>
+        /// <param name="ps">Number of items per page (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
+        public async Task<ApiResponse<InlineResponse20011>> ListOtcOrdersAsyncWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (fiatCurrency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "fiat_currency", fiatCurrency));
+            }
+            if (cryptoCurrency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "crypto_currency", cryptoCurrency));
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_time", startTime));
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_time", endTime));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (pn != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pn", pn));
+            }
+            if (ps != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "ps", ps));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20011>("/otc/order/list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListOtcOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Stablecoin order list Query stablecoin order list with filtering by currency, time range, status, etc.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pageSize">Number of records per page (optional)</param>
+        /// <param name="pageNumber">Page number (optional)</param>
+        /// <param name="coinName">ordercurrency (optional)</param>
+        /// <param name="startTime">Start Time (optional)</param>
+        /// <param name="endTime">End time (optional)</param>
+        /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
+        /// <returns>InlineResponse20012</returns>
+        public InlineResponse20012 ListStableCoinOrders (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
+        {
+             ApiResponse<InlineResponse20012> localVarResponse = ListStableCoinOrdersWithHttpInfo(pageSize, pageNumber, coinName, startTime, endTime, status);
              return localVarResponse.Data;
         }
 
@@ -1500,8 +1641,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20011</returns>
-        public ApiResponse<InlineResponse20011> ListStableCoinOrdersWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
+        /// <returns>ApiResponse of InlineResponse20012</returns>
+        public ApiResponse<InlineResponse20012> ListStableCoinOrdersWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1548,7 +1689,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20011>("/otc/stable_coin/order/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20012>("/otc/stable_coin/order/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1569,10 +1710,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>Task of InlineResponse20011</returns>
-        public async Task<InlineResponse20011> ListStableCoinOrdersAsync (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
+        /// <returns>Task of InlineResponse20012</returns>
+        public async Task<InlineResponse20012> ListStableCoinOrdersAsync (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20011> localVarResponse = await ListStableCoinOrdersAsyncWithHttpInfo(pageSize, pageNumber, coinName, startTime, endTime, status);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20012> localVarResponse = await ListStableCoinOrdersAsyncWithHttpInfo(pageSize, pageNumber, coinName, startTime, endTime, status);
              return localVarResponse.Data;
 
         }
@@ -1587,8 +1728,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        public async Task<ApiResponse<InlineResponse20011>> ListStableCoinOrdersAsyncWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
+        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
+        public async Task<ApiResponse<InlineResponse20012>> ListStableCoinOrdersAsyncWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1637,7 +1778,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20011>("/otc/stable_coin/order/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20012>("/otc/stable_coin/order/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1653,10 +1794,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>InlineResponse20012</returns>
-        public InlineResponse20012 GetOtcOrderDetail (string orderId)
+        /// <returns>InlineResponse20013</returns>
+        public InlineResponse20013 GetOtcOrderDetail (string orderId)
         {
-             ApiResponse<InlineResponse20012> localVarResponse = GetOtcOrderDetailWithHttpInfo(orderId);
+             ApiResponse<InlineResponse20013> localVarResponse = GetOtcOrderDetailWithHttpInfo(orderId);
              return localVarResponse.Data;
         }
 
@@ -1665,8 +1806,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        public ApiResponse<InlineResponse20012> GetOtcOrderDetailWithHttpInfo (string orderId)
+        /// <returns>ApiResponse of InlineResponse20013</returns>
+        public ApiResponse<InlineResponse20013> GetOtcOrderDetailWithHttpInfo (string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1694,7 +1835,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20012>("/otc/order/detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20013>("/otc/order/detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1710,10 +1851,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        public async Task<InlineResponse20012> GetOtcOrderDetailAsync (string orderId)
+        /// <returns>Task of InlineResponse20013</returns>
+        public async Task<InlineResponse20013> GetOtcOrderDetailAsync (string orderId)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20012> localVarResponse = await GetOtcOrderDetailAsyncWithHttpInfo(orderId);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20013> localVarResponse = await GetOtcOrderDetailAsyncWithHttpInfo(orderId);
              return localVarResponse.Data;
 
         }
@@ -1723,8 +1864,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        public async Task<ApiResponse<InlineResponse20012>> GetOtcOrderDetailAsyncWithHttpInfo (string orderId)
+        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
+        public async Task<ApiResponse<InlineResponse20013>> GetOtcOrderDetailAsyncWithHttpInfo (string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1754,7 +1895,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20012>("/otc/order/detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20013>("/otc/order/detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20015List
+# Io.Gate.GateApi.Model.InlineResponse20016List
 
 ## Properties
 

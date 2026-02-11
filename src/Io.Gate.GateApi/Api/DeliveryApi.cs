@@ -80,7 +80,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>DeliveryOrderBook</returns>
@@ -95,7 +95,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>ApiResponse of DeliveryOrderBook</returns>
@@ -826,7 +826,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>Task of DeliveryOrderBook</returns>
@@ -841,7 +841,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>Task of ApiResponse (DeliveryOrderBook)</returns>
@@ -1876,7 +1876,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>DeliveryOrderBook</returns>
@@ -1892,7 +1892,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>ApiResponse of DeliveryOrderBook</returns>
@@ -1956,7 +1956,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>Task of DeliveryOrderBook</returns>
@@ -1973,7 +1973,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to 0)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to 0)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>Task of ApiResponse (DeliveryOrderBook)</returns>

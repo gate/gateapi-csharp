@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20035SpecialFeeList
+# Io.Gate.GateApi.Model.InlineResponse20036SpecialFeeList
 
 ## Properties
 

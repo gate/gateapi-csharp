@@ -38,29 +38,114 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20027" /> class.
         /// </summary>
-        /// <param name="txId">Order ID (required).</param>
-        /// <param name="text">User-defined Order ID (required).</param>
-        public InlineResponse20027(string txId = default(string), string text = default(string))
+        /// <param name="id">Order ID (required).</param>
+        /// <param name="text">Client Custom ID (required).</param>
+        /// <param name="fromAccountType">Source &#x60;from&#x60; account (CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT) (required).</param>
+        /// <param name="toAccountType">toAccountType (required).</param>
+        /// <param name="coin">Currency (required).</param>
+        /// <param name="amount">Transfer amount, the amount requested for the transfer (required).</param>
+        /// <param name="actualReceive">Actual credited amount (has a value when status &#x3D; SUCCESS; empty for other statuses).</param>
+        /// <param name="status">Transfer Status - &#x60;FAIL&#x60;: Failed - &#x60;SUCCESS&#x60;: Successful - &#x60;PENDING&#x60;: Transfer in Progress (required).</param>
+        /// <param name="failReason">Failure reason (has a value when status &#x3D; FAIL; empty for other statuses).</param>
+        /// <param name="createTime">Creation time of order (required).</param>
+        /// <param name="updateTime">OrderUpdateTime (required).</param>
+        public InlineResponse20027(string id = default(string), string text = default(string), string fromAccountType = default(string), string toAccountType = default(string), string coin = default(string), string amount = default(string), string actualReceive = default(string), string status = default(string), string failReason = default(string), int createTime = default(int), int updateTime = default(int))
         {
-            // to ensure "txId" is required (not null)
-            this.TxId = txId ?? throw new ArgumentNullException("txId", "txId is a required property for InlineResponse20027 and cannot be null");
+            // to ensure "id" is required (not null)
+            this.Id = id ?? throw new ArgumentNullException("id", "id is a required property for InlineResponse20027 and cannot be null");
             // to ensure "text" is required (not null)
             this.Text = text ?? throw new ArgumentNullException("text", "text is a required property for InlineResponse20027 and cannot be null");
+            // to ensure "fromAccountType" is required (not null)
+            this.FromAccountType = fromAccountType ?? throw new ArgumentNullException("fromAccountType", "fromAccountType is a required property for InlineResponse20027 and cannot be null");
+            // to ensure "toAccountType" is required (not null)
+            this.ToAccountType = toAccountType ?? throw new ArgumentNullException("toAccountType", "toAccountType is a required property for InlineResponse20027 and cannot be null");
+            // to ensure "coin" is required (not null)
+            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20027 and cannot be null");
+            // to ensure "amount" is required (not null)
+            this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for InlineResponse20027 and cannot be null");
+            // to ensure "status" is required (not null)
+            this.Status = status ?? throw new ArgumentNullException("status", "status is a required property for InlineResponse20027 and cannot be null");
+            this.CreateTime = createTime;
+            this.UpdateTime = updateTime;
+            this.ActualReceive = actualReceive;
+            this.FailReason = failReason;
         }
 
         /// <summary>
         /// Order ID
         /// </summary>
         /// <value>Order ID</value>
-        [DataMember(Name="tx_id")]
-        public string TxId { get; set; }
+        [DataMember(Name="id")]
+        public string Id { get; set; }
 
         /// <summary>
-        /// User-defined Order ID
+        /// Client Custom ID
         /// </summary>
-        /// <value>User-defined Order ID</value>
+        /// <value>Client Custom ID</value>
         [DataMember(Name="text")]
         public string Text { get; set; }
+
+        /// <summary>
+        /// Source &#x60;from&#x60; account (CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT)
+        /// </summary>
+        /// <value>Source &#x60;from&#x60; account (CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT)</value>
+        [DataMember(Name="from_account_type")]
+        public string FromAccountType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ToAccountType
+        /// </summary>
+        [DataMember(Name="to_account_type")]
+        public string ToAccountType { get; set; }
+
+        /// <summary>
+        /// Currency
+        /// </summary>
+        /// <value>Currency</value>
+        [DataMember(Name="coin")]
+        public string Coin { get; set; }
+
+        /// <summary>
+        /// Transfer amount, the amount requested for the transfer
+        /// </summary>
+        /// <value>Transfer amount, the amount requested for the transfer</value>
+        [DataMember(Name="amount")]
+        public string Amount { get; set; }
+
+        /// <summary>
+        /// Actual credited amount (has a value when status &#x3D; SUCCESS; empty for other statuses)
+        /// </summary>
+        /// <value>Actual credited amount (has a value when status &#x3D; SUCCESS; empty for other statuses)</value>
+        [DataMember(Name="actual_receive")]
+        public string ActualReceive { get; set; }
+
+        /// <summary>
+        /// Transfer Status - &#x60;FAIL&#x60;: Failed - &#x60;SUCCESS&#x60;: Successful - &#x60;PENDING&#x60;: Transfer in Progress
+        /// </summary>
+        /// <value>Transfer Status - &#x60;FAIL&#x60;: Failed - &#x60;SUCCESS&#x60;: Successful - &#x60;PENDING&#x60;: Transfer in Progress</value>
+        [DataMember(Name="status")]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Failure reason (has a value when status &#x3D; FAIL; empty for other statuses)
+        /// </summary>
+        /// <value>Failure reason (has a value when status &#x3D; FAIL; empty for other statuses)</value>
+        [DataMember(Name="fail_reason")]
+        public string FailReason { get; set; }
+
+        /// <summary>
+        /// Creation time of order
+        /// </summary>
+        /// <value>Creation time of order</value>
+        [DataMember(Name="create_time")]
+        public int CreateTime { get; set; }
+
+        /// <summary>
+        /// OrderUpdateTime
+        /// </summary>
+        /// <value>OrderUpdateTime</value>
+        [DataMember(Name="update_time")]
+        public int UpdateTime { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,8 +155,17 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20027 {\n");
-            sb.Append("  TxId: ").Append(TxId).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
+            sb.Append("  FromAccountType: ").Append(FromAccountType).Append("\n");
+            sb.Append("  ToAccountType: ").Append(ToAccountType).Append("\n");
+            sb.Append("  Coin: ").Append(Coin).Append("\n");
+            sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  ActualReceive: ").Append(ActualReceive).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  FailReason: ").Append(FailReason).Append("\n");
+            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  UpdateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,14 +201,57 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.TxId == input.TxId ||
-                    (this.TxId != null &&
-                    this.TxId.Equals(input.TxId))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
                     this.Text == input.Text ||
                     (this.Text != null &&
                     this.Text.Equals(input.Text))
+                ) && 
+                (
+                    this.FromAccountType == input.FromAccountType ||
+                    (this.FromAccountType != null &&
+                    this.FromAccountType.Equals(input.FromAccountType))
+                ) && 
+                (
+                    this.ToAccountType == input.ToAccountType ||
+                    (this.ToAccountType != null &&
+                    this.ToAccountType.Equals(input.ToAccountType))
+                ) && 
+                (
+                    this.Coin == input.Coin ||
+                    (this.Coin != null &&
+                    this.Coin.Equals(input.Coin))
+                ) && 
+                (
+                    this.Amount == input.Amount ||
+                    (this.Amount != null &&
+                    this.Amount.Equals(input.Amount))
+                ) && 
+                (
+                    this.ActualReceive == input.ActualReceive ||
+                    (this.ActualReceive != null &&
+                    this.ActualReceive.Equals(input.ActualReceive))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.FailReason == input.FailReason ||
+                    (this.FailReason != null &&
+                    this.FailReason.Equals(input.FailReason))
+                ) && 
+                (
+                    this.CreateTime == input.CreateTime ||
+                    this.CreateTime.Equals(input.CreateTime)
+                ) && 
+                (
+                    this.UpdateTime == input.UpdateTime ||
+                    this.UpdateTime.Equals(input.UpdateTime)
                 );
         }
 
@@ -127,10 +264,26 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TxId != null)
-                    hashCode = hashCode * 59 + this.TxId.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Text != null)
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.FromAccountType != null)
+                    hashCode = hashCode * 59 + this.FromAccountType.GetHashCode();
+                if (this.ToAccountType != null)
+                    hashCode = hashCode * 59 + this.ToAccountType.GetHashCode();
+                if (this.Coin != null)
+                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
+                if (this.Amount != null)
+                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
+                if (this.ActualReceive != null)
+                    hashCode = hashCode * 59 + this.ActualReceive.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.FailReason != null)
+                    hashCode = hashCode * 59 + this.FailReason.GetHashCode();
+                hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

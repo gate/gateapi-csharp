@@ -25,18 +25,18 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20021DataMessages
+    /// InlineResponse20022DataMessages
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20021DataMessages :  IEquatable<InlineResponse20021DataMessages>, IValidatableObject
+    public partial class InlineResponse20022DataMessages :  IEquatable<InlineResponse20022DataMessages>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20021DataMessages" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20022DataMessages" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineResponse20021DataMessages() { }
+        protected InlineResponse20022DataMessages() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20021DataMessages" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20022DataMessages" /> class.
         /// </summary>
         /// <param name="isSell">Whether seller (required).</param>
         /// <param name="msgType">Message type (required).</param>
@@ -51,30 +51,30 @@ namespace Io.Gate.GateApi.Model
         /// <param name="fileType">File type (required).</param>
         /// <param name="width">Image width (required).</param>
         /// <param name="height">Image height (required).</param>
-        public InlineResponse20021DataMessages(int isSell = default(int), int msgType = default(int), string msg = default(string), string username = default(string), int timest = default(int), InlineResponse20021DataMsgObj msgObj = default(InlineResponse20021DataMsgObj), string uid = default(string), int type = default(int), string pic = default(string), string fileKey = default(string), string fileType = default(string), string width = default(string), string height = default(string))
+        public InlineResponse20022DataMessages(int isSell = default(int), int msgType = default(int), string msg = default(string), string username = default(string), int timest = default(int), InlineResponse20022DataMsgObj msgObj = default(InlineResponse20022DataMsgObj), string uid = default(string), int type = default(int), string pic = default(string), string fileKey = default(string), string fileType = default(string), string width = default(string), string height = default(string))
         {
             this.IsSell = isSell;
             this.MsgType = msgType;
             // to ensure "msg" is required (not null)
-            this.Msg = msg ?? throw new ArgumentNullException("msg", "msg is a required property for InlineResponse20021DataMessages and cannot be null");
+            this.Msg = msg ?? throw new ArgumentNullException("msg", "msg is a required property for InlineResponse20022DataMessages and cannot be null");
             // to ensure "username" is required (not null)
-            this.Username = username ?? throw new ArgumentNullException("username", "username is a required property for InlineResponse20021DataMessages and cannot be null");
+            this.Username = username ?? throw new ArgumentNullException("username", "username is a required property for InlineResponse20022DataMessages and cannot be null");
             this.Timest = timest;
             // to ensure "msgObj" is required (not null)
-            this.MsgObj = msgObj ?? throw new ArgumentNullException("msgObj", "msgObj is a required property for InlineResponse20021DataMessages and cannot be null");
+            this.MsgObj = msgObj ?? throw new ArgumentNullException("msgObj", "msgObj is a required property for InlineResponse20022DataMessages and cannot be null");
             // to ensure "uid" is required (not null)
-            this.Uid = uid ?? throw new ArgumentNullException("uid", "uid is a required property for InlineResponse20021DataMessages and cannot be null");
+            this.Uid = uid ?? throw new ArgumentNullException("uid", "uid is a required property for InlineResponse20022DataMessages and cannot be null");
             this.Type = type;
             // to ensure "pic" is required (not null)
-            this.Pic = pic ?? throw new ArgumentNullException("pic", "pic is a required property for InlineResponse20021DataMessages and cannot be null");
+            this.Pic = pic ?? throw new ArgumentNullException("pic", "pic is a required property for InlineResponse20022DataMessages and cannot be null");
             // to ensure "fileKey" is required (not null)
-            this.FileKey = fileKey ?? throw new ArgumentNullException("fileKey", "fileKey is a required property for InlineResponse20021DataMessages and cannot be null");
+            this.FileKey = fileKey ?? throw new ArgumentNullException("fileKey", "fileKey is a required property for InlineResponse20022DataMessages and cannot be null");
             // to ensure "fileType" is required (not null)
-            this.FileType = fileType ?? throw new ArgumentNullException("fileType", "fileType is a required property for InlineResponse20021DataMessages and cannot be null");
+            this.FileType = fileType ?? throw new ArgumentNullException("fileType", "fileType is a required property for InlineResponse20022DataMessages and cannot be null");
             // to ensure "width" is required (not null)
-            this.Width = width ?? throw new ArgumentNullException("width", "width is a required property for InlineResponse20021DataMessages and cannot be null");
+            this.Width = width ?? throw new ArgumentNullException("width", "width is a required property for InlineResponse20022DataMessages and cannot be null");
             // to ensure "height" is required (not null)
-            this.Height = height ?? throw new ArgumentNullException("height", "height is a required property for InlineResponse20021DataMessages and cannot be null");
+            this.Height = height ?? throw new ArgumentNullException("height", "height is a required property for InlineResponse20022DataMessages and cannot be null");
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets MsgObj
         /// </summary>
         [DataMember(Name="msg_obj")]
-        public InlineResponse20021DataMsgObj MsgObj { get; set; }
+        public InlineResponse20022DataMsgObj MsgObj { get; set; }
 
         /// <summary>
         /// Message sender UID
@@ -174,7 +174,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20021DataMessages {\n");
+            sb.Append("class InlineResponse20022DataMessages {\n");
             sb.Append("  IsSell: ").Append(IsSell).Append("\n");
             sb.Append("  MsgType: ").Append(MsgType).Append("\n");
             sb.Append("  Msg: ").Append(Msg).Append("\n");
@@ -208,15 +208,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20021DataMessages);
+            return this.Equals(input as InlineResponse20022DataMessages);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20021DataMessages instances are equal
+        /// Returns true if InlineResponse20022DataMessages instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20021DataMessages to be compared</param>
+        /// <param name="input">Instance of InlineResponse20022DataMessages to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20021DataMessages input)
+        public bool Equals(InlineResponse20022DataMessages input)
         {
             if (input == null)
                 return false;

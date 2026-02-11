@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20016DataConvertInfo
+# Io.Gate.GateApi.Model.InlineResponse20017DataConvertInfo
 
 Flash swap order information
 

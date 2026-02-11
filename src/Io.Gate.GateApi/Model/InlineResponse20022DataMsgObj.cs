@@ -25,18 +25,18 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20021DataMsgObj
+    /// InlineResponse20022DataMsgObj
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20021DataMsgObj :  IEquatable<InlineResponse20021DataMsgObj>, IValidatableObject
+    public partial class InlineResponse20022DataMsgObj :  IEquatable<InlineResponse20022DataMsgObj>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20021DataMsgObj" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20022DataMsgObj" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineResponse20021DataMsgObj() { }
+        protected InlineResponse20022DataMsgObj() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20021DataMsgObj" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20022DataMsgObj" /> class.
         /// </summary>
         /// <param name="status">Order status when message was sent.</param>
         /// <param name="text">Message content.</param>
@@ -59,33 +59,33 @@ namespace Io.Gate.GateApi.Model
         /// <param name="realName">Payment method username (required).</param>
         /// <param name="isDelete">Whether deleted (required).</param>
         /// <param name="payName">Payment method full name (required).</param>
-        public InlineResponse20021DataMsgObj(string status = default(string), string text = default(string), List<string> paymentVoucher = default(List<string>), int reasonId = default(int), int toastId = default(int), string reasonMemo = default(string), int cancelTime = default(int), int sellerConfirm = default(int), string id = default(string), string accountDes = default(string), string payType = default(string), string file = default(string), string fileKey = default(string), string account = default(string), string memo = default(string), string code = default(string), string memoExt = default(string), string tradeTips = default(string), string realName = default(string), int isDelete = default(int), string payName = default(string))
+        public InlineResponse20022DataMsgObj(string status = default(string), string text = default(string), List<string> paymentVoucher = default(List<string>), int reasonId = default(int), int toastId = default(int), string reasonMemo = default(string), int cancelTime = default(int), int sellerConfirm = default(int), string id = default(string), string accountDes = default(string), string payType = default(string), string file = default(string), string fileKey = default(string), string account = default(string), string memo = default(string), string code = default(string), string memoExt = default(string), string tradeTips = default(string), string realName = default(string), int isDelete = default(int), string payName = default(string))
         {
             // to ensure "id" is required (not null)
-            this.Id = id ?? throw new ArgumentNullException("id", "id is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.Id = id ?? throw new ArgumentNullException("id", "id is a required property for InlineResponse20022DataMsgObj and cannot be null");
             // to ensure "accountDes" is required (not null)
-            this.AccountDes = accountDes ?? throw new ArgumentNullException("accountDes", "accountDes is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.AccountDes = accountDes ?? throw new ArgumentNullException("accountDes", "accountDes is a required property for InlineResponse20022DataMsgObj and cannot be null");
             // to ensure "payType" is required (not null)
-            this.PayType = payType ?? throw new ArgumentNullException("payType", "payType is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.PayType = payType ?? throw new ArgumentNullException("payType", "payType is a required property for InlineResponse20022DataMsgObj and cannot be null");
             // to ensure "file" is required (not null)
-            this.File = file ?? throw new ArgumentNullException("file", "file is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.File = file ?? throw new ArgumentNullException("file", "file is a required property for InlineResponse20022DataMsgObj and cannot be null");
             // to ensure "fileKey" is required (not null)
-            this.FileKey = fileKey ?? throw new ArgumentNullException("fileKey", "fileKey is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.FileKey = fileKey ?? throw new ArgumentNullException("fileKey", "fileKey is a required property for InlineResponse20022DataMsgObj and cannot be null");
             // to ensure "account" is required (not null)
-            this.Account = account ?? throw new ArgumentNullException("account", "account is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.Account = account ?? throw new ArgumentNullException("account", "account is a required property for InlineResponse20022DataMsgObj and cannot be null");
             // to ensure "memo" is required (not null)
-            this.Memo = memo ?? throw new ArgumentNullException("memo", "memo is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.Memo = memo ?? throw new ArgumentNullException("memo", "memo is a required property for InlineResponse20022DataMsgObj and cannot be null");
             // to ensure "code" is required (not null)
-            this.Code = code ?? throw new ArgumentNullException("code", "code is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.Code = code ?? throw new ArgumentNullException("code", "code is a required property for InlineResponse20022DataMsgObj and cannot be null");
             // to ensure "memoExt" is required (not null)
-            this.MemoExt = memoExt ?? throw new ArgumentNullException("memoExt", "memoExt is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.MemoExt = memoExt ?? throw new ArgumentNullException("memoExt", "memoExt is a required property for InlineResponse20022DataMsgObj and cannot be null");
             // to ensure "tradeTips" is required (not null)
-            this.TradeTips = tradeTips ?? throw new ArgumentNullException("tradeTips", "tradeTips is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.TradeTips = tradeTips ?? throw new ArgumentNullException("tradeTips", "tradeTips is a required property for InlineResponse20022DataMsgObj and cannot be null");
             // to ensure "realName" is required (not null)
-            this.RealName = realName ?? throw new ArgumentNullException("realName", "realName is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.RealName = realName ?? throw new ArgumentNullException("realName", "realName is a required property for InlineResponse20022DataMsgObj and cannot be null");
             this.IsDelete = isDelete;
             // to ensure "payName" is required (not null)
-            this.PayName = payName ?? throw new ArgumentNullException("payName", "payName is a required property for InlineResponse20021DataMsgObj and cannot be null");
+            this.PayName = payName ?? throw new ArgumentNullException("payName", "payName is a required property for InlineResponse20022DataMsgObj and cannot be null");
             this.Status = status;
             this.Text = text;
             this.PaymentVoucher = paymentVoucher;
@@ -250,7 +250,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20021DataMsgObj {\n");
+            sb.Append("class InlineResponse20022DataMsgObj {\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  PaymentVoucher: ").Append(PaymentVoucher).Append("\n");
@@ -292,15 +292,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20021DataMsgObj);
+            return this.Equals(input as InlineResponse20022DataMsgObj);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20021DataMsgObj instances are equal
+        /// Returns true if InlineResponse20022DataMsgObj instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20021DataMsgObj to be compared</param>
+        /// <param name="input">Instance of InlineResponse20022DataMsgObj to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20021DataMsgObj input)
+        public bool Equals(InlineResponse20022DataMsgObj input)
         {
             if (input == null)
                 return false;

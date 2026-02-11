@@ -84,7 +84,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>FuturesOrderBook</returns>
@@ -99,7 +99,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>ApiResponse of FuturesOrderBook</returns>
@@ -149,7 +149,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
         /// <param name="limit">Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. (optional, default to 100)</param>
-        /// <param name="interval">Interval time between data points. Note that &#x60;1w&#x60; means natural week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0. 30d represents a natural month, not 30 days (optional, default to 5m)</param>
+        /// <param name="interval">Time interval for data points. Note: 1w represents a natural week, 7d is aligned with Unix epoch time, 30d represents a natural month (optional, default to 5m)</param>
         /// <param name="timezone">Time zone: all/utc0/utc8, default utc0 (optional, default to &quot;utc0&quot;)</param>
         /// <returns>List&lt;FuturesCandlestick&gt;</returns>
         List<FuturesCandlestick> ListFuturesCandlesticks (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), string interval = default(string), string timezone = default(string));
@@ -166,7 +166,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
         /// <param name="limit">Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. (optional, default to 100)</param>
-        /// <param name="interval">Interval time between data points. Note that &#x60;1w&#x60; means natural week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0. 30d represents a natural month, not 30 days (optional, default to 5m)</param>
+        /// <param name="interval">Time interval for data points. Note: 1w represents a natural week, 7d is aligned with Unix epoch time, 30d represents a natural month (optional, default to 5m)</param>
         /// <param name="timezone">Time zone: all/utc0/utc8, default utc0 (optional, default to &quot;utc0&quot;)</param>
         /// <returns>ApiResponse of List&lt;FuturesCandlestick&gt;</returns>
         ApiResponse<List<FuturesCandlestick>> ListFuturesCandlesticksWithHttpInfo (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), string interval = default(string), string timezone = default(string));
@@ -174,7 +174,7 @@ namespace Io.Gate.GateApi.Api
         /// Premium Index K-line chart
         /// </summary>
         /// <remarks>
-        /// Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -190,7 +190,7 @@ namespace Io.Gate.GateApi.Api
         /// Premium Index K-line chart
         /// </summary>
         /// <remarks>
-        /// Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1093,7 +1093,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records
         /// </summary>
         /// <remarks>
-        /// By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;.
+        /// By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1109,7 +1109,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records
         /// </summary>
         /// <remarks>
-        /// By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;.
+        /// By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1797,7 +1797,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>Task of FuturesOrderBook</returns>
@@ -1812,7 +1812,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>Task of ApiResponse (FuturesOrderBook)</returns>
@@ -1862,7 +1862,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
         /// <param name="limit">Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. (optional, default to 100)</param>
-        /// <param name="interval">Interval time between data points. Note that &#x60;1w&#x60; means natural week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0. 30d represents a natural month, not 30 days (optional, default to 5m)</param>
+        /// <param name="interval">Time interval for data points. Note: 1w represents a natural week, 7d is aligned with Unix epoch time, 30d represents a natural month (optional, default to 5m)</param>
         /// <param name="timezone">Time zone: all/utc0/utc8, default utc0 (optional, default to &quot;utc0&quot;)</param>
         /// <returns>Task of List&lt;FuturesCandlestick&gt;</returns>
         Task<List<FuturesCandlestick>> ListFuturesCandlesticksAsync (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), string interval = default(string), string timezone = default(string));
@@ -1879,7 +1879,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
         /// <param name="limit">Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. (optional, default to 100)</param>
-        /// <param name="interval">Interval time between data points. Note that &#x60;1w&#x60; means natural week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0. 30d represents a natural month, not 30 days (optional, default to 5m)</param>
+        /// <param name="interval">Time interval for data points. Note: 1w represents a natural week, 7d is aligned with Unix epoch time, 30d represents a natural month (optional, default to 5m)</param>
         /// <param name="timezone">Time zone: all/utc0/utc8, default utc0 (optional, default to &quot;utc0&quot;)</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesCandlestick&gt;)</returns>
         Task<ApiResponse<List<FuturesCandlestick>>> ListFuturesCandlesticksAsyncWithHttpInfo (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), string interval = default(string), string timezone = default(string));
@@ -1887,7 +1887,7 @@ namespace Io.Gate.GateApi.Api
         /// Premium Index K-line chart
         /// </summary>
         /// <remarks>
-        /// Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -1903,7 +1903,7 @@ namespace Io.Gate.GateApi.Api
         /// Premium Index K-line chart
         /// </summary>
         /// <remarks>
-        /// Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -2806,7 +2806,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records
         /// </summary>
         /// <remarks>
-        /// By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;.
+        /// By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -2822,7 +2822,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records
         /// </summary>
         /// <remarks>
-        /// By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;.
+        /// By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -3834,7 +3834,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>FuturesOrderBook</returns>
@@ -3850,7 +3850,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>ApiResponse of FuturesOrderBook</returns>
@@ -3914,7 +3914,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>Task of FuturesOrderBook</returns>
@@ -3931,7 +3931,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>Task of ApiResponse (FuturesOrderBook)</returns>
@@ -4187,7 +4187,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
         /// <param name="limit">Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. (optional, default to 100)</param>
-        /// <param name="interval">Interval time between data points. Note that &#x60;1w&#x60; means natural week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0. 30d represents a natural month, not 30 days (optional, default to 5m)</param>
+        /// <param name="interval">Time interval for data points. Note: 1w represents a natural week, 7d is aligned with Unix epoch time, 30d represents a natural month (optional, default to 5m)</param>
         /// <param name="timezone">Time zone: all/utc0/utc8, default utc0 (optional, default to &quot;utc0&quot;)</param>
         /// <returns>List&lt;FuturesCandlestick&gt;</returns>
         public List<FuturesCandlestick> ListFuturesCandlesticks (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), string interval = default(string), string timezone = default(string))
@@ -4205,7 +4205,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
         /// <param name="limit">Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. (optional, default to 100)</param>
-        /// <param name="interval">Interval time between data points. Note that &#x60;1w&#x60; means natural week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0. 30d represents a natural month, not 30 days (optional, default to 5m)</param>
+        /// <param name="interval">Time interval for data points. Note: 1w represents a natural week, 7d is aligned with Unix epoch time, 30d represents a natural month (optional, default to 5m)</param>
         /// <param name="timezone">Time zone: all/utc0/utc8, default utc0 (optional, default to &quot;utc0&quot;)</param>
         /// <returns>ApiResponse of List&lt;FuturesCandlestick&gt;</returns>
         public ApiResponse<List<FuturesCandlestick>> ListFuturesCandlesticksWithHttpInfo (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), string interval = default(string), string timezone = default(string))
@@ -4279,7 +4279,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
         /// <param name="limit">Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. (optional, default to 100)</param>
-        /// <param name="interval">Interval time between data points. Note that &#x60;1w&#x60; means natural week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0. 30d represents a natural month, not 30 days (optional, default to 5m)</param>
+        /// <param name="interval">Time interval for data points. Note: 1w represents a natural week, 7d is aligned with Unix epoch time, 30d represents a natural month (optional, default to 5m)</param>
         /// <param name="timezone">Time zone: all/utc0/utc8, default utc0 (optional, default to &quot;utc0&quot;)</param>
         /// <returns>Task of List&lt;FuturesCandlestick&gt;</returns>
         public async Task<List<FuturesCandlestick>> ListFuturesCandlesticksAsync (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), string interval = default(string), string timezone = default(string))
@@ -4298,7 +4298,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
         /// <param name="limit">Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. (optional, default to 100)</param>
-        /// <param name="interval">Interval time between data points. Note that &#x60;1w&#x60; means natural week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0. 30d represents a natural month, not 30 days (optional, default to 5m)</param>
+        /// <param name="interval">Time interval for data points. Note: 1w represents a natural week, 7d is aligned with Unix epoch time, 30d represents a natural month (optional, default to 5m)</param>
         /// <param name="timezone">Time zone: all/utc0/utc8, default utc0 (optional, default to &quot;utc0&quot;)</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesCandlestick&gt;)</returns>
         public async Task<ApiResponse<List<FuturesCandlestick>>> ListFuturesCandlesticksAsyncWithHttpInfo (string settle, string contract, long? from = default(long?), long? to = default(long?), int? limit = default(int?), string interval = default(string), string timezone = default(string))
@@ -4366,7 +4366,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Premium Index K-line chart Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// Premium Index K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -4383,7 +4383,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Premium Index K-line chart Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// Premium Index K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -4452,7 +4452,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Premium Index K-line chart Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// Premium Index K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -4470,7 +4470,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Premium Index K-line chart Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// Premium Index K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9605,7 +9605,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query personal trading records By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;.
+        /// Query personal trading records By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9622,7 +9622,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query personal trading records By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;.
+        /// Query personal trading records By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9692,7 +9692,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query personal trading records By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;.
+        /// Query personal trading records By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
@@ -9710,7 +9710,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query personal trading records By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;.
+        /// Query personal trading records By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>

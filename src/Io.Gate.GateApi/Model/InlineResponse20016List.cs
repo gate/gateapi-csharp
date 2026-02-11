@@ -25,13 +25,13 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20015List
+    /// InlineResponse20016List
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20015List :  IEquatable<InlineResponse20015List>, IValidatableObject
+    public partial class InlineResponse20016List :  IEquatable<InlineResponse20016List>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20015List" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20016List" /> class.
         /// </summary>
         /// <param name="uid">useruID.</param>
         /// <param name="bankid">User&#39;s currently bound payment method (primary key ID).</param>
@@ -55,7 +55,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="code">Payment method code.</param>
         /// <param name="memoExt">Payment method additional note.</param>
         /// <param name="tradeTips">Payment method transaction information.</param>
-        public InlineResponse20015List(int uid = default(int), string bankid = default(string), int nickname = default(int), string bankname = default(string), string bankbranch = default(string), string bankcity = default(string), string bankprov = default(string), string bankaddr = default(string), string bankdesc = default(string), int holdUid = default(int), string holdUsername = default(string), string realName = default(string), string id = default(string), string accountDes = default(string), string payType = default(string), string file = default(string), string fileKey = default(string), string account = default(string), string memo = default(string), string code = default(string), string memoExt = default(string), string tradeTips = default(string))
+        public InlineResponse20016List(int uid = default(int), string bankid = default(string), int nickname = default(int), string bankname = default(string), string bankbranch = default(string), string bankcity = default(string), string bankprov = default(string), string bankaddr = default(string), string bankdesc = default(string), int holdUid = default(int), string holdUsername = default(string), string realName = default(string), string id = default(string), string accountDes = default(string), string payType = default(string), string file = default(string), string fileKey = default(string), string account = default(string), string memo = default(string), string code = default(string), string memoExt = default(string), string tradeTips = default(string))
         {
             this.Uid = uid;
             this.Bankid = bankid;
@@ -242,7 +242,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20015List {\n");
+            sb.Append("class InlineResponse20016List {\n");
             sb.Append("  Uid: ").Append(Uid).Append("\n");
             sb.Append("  Bankid: ").Append(Bankid).Append("\n");
             sb.Append("  Nickname: ").Append(Nickname).Append("\n");
@@ -285,15 +285,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20015List);
+            return this.Equals(input as InlineResponse20016List);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20015List instances are equal
+        /// Returns true if InlineResponse20016List instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20015List to be compared</param>
+        /// <param name="input">Instance of InlineResponse20016List to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20015List input)
+        public bool Equals(InlineResponse20016List input)
         {
             if (input == null)
                 return false;

@@ -407,7 +407,7 @@ namespace Example
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new SpotApi(config);
             var currencyPair = "BTC_USDT";  // string | Currency pair
-            var interval = "\"0\"";  // string | Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional)  (default to "0")
+            var interval = "\"0\"";  // string | Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional)  (default to "0")
             var limit = 10;  // int? | Number of depth levels (optional)  (default to 10)
             var withId = false;  // bool? | Return order book update ID (optional)  (default to false)
 
@@ -434,7 +434,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currencyPair** | **string**| Currency pair | 
- **interval** | **string**| Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified | [optional] [default to &quot;0&quot;]
+ **interval** | **string**| Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 | [optional] [default to &quot;0&quot;]
  **limit** | **int?**| Number of depth levels | [optional] [default to 10]
  **withId** | **bool?**| Return order book update ID | [optional] [default to false]
 
@@ -547,7 +547,7 @@ No authorization required
 
 Market K-line chart
 
-Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
 
 ### Example
 ```csharp
@@ -1384,7 +1384,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Batch cancellation request accepted and processed, success determined by order list |  -  |
+| **200** | Batch cancel request is received and processed. Success is determined based on the order list |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2298,7 +2298,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Batch cancellation request accepted and processed, success determined by order list |  -  |
+| **200** | Batch cancel request is received and processed. Success is determined based on the order list |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

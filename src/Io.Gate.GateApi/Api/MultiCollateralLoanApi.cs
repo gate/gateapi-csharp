@@ -222,7 +222,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;CurrencyQuota&gt;</returns>
         ApiResponse<List<CurrencyQuota>> ListUserCurrencyQuotaWithHttpInfo (string type, string currency);
         /// <summary>
-        /// Query supported borrowing and collateral currencies for multi-currency collateral
+        /// Query borrow currencies and collateral currencies supported by multi-currency collateral
         /// </summary>
         /// <remarks>
         /// 
@@ -232,7 +232,7 @@ namespace Io.Gate.GateApi.Api
         MultiCollateralCurrency ListMultiCollateralCurrencies ();
 
         /// <summary>
-        /// Query supported borrowing and collateral currencies for multi-currency collateral
+        /// Query borrow currencies and collateral currencies supported by multi-currency collateral
         /// </summary>
         /// <remarks>
         /// 
@@ -505,7 +505,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;CurrencyQuota&gt;)</returns>
         Task<ApiResponse<List<CurrencyQuota>>> ListUserCurrencyQuotaAsyncWithHttpInfo (string type, string currency);
         /// <summary>
-        /// Query supported borrowing and collateral currencies for multi-currency collateral
+        /// Query borrow currencies and collateral currencies supported by multi-currency collateral
         /// </summary>
         /// <remarks>
         /// 
@@ -515,7 +515,7 @@ namespace Io.Gate.GateApi.Api
         Task<MultiCollateralCurrency> ListMultiCollateralCurrenciesAsync ();
 
         /// <summary>
-        /// Query supported borrowing and collateral currencies for multi-currency collateral
+        /// Query borrow currencies and collateral currencies supported by multi-currency collateral
         /// </summary>
         /// <remarks>
         /// 
@@ -1801,7 +1801,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query supported borrowing and collateral currencies for multi-currency collateral 
+        /// Query borrow currencies and collateral currencies supported by multi-currency collateral 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>MultiCollateralCurrency</returns>
@@ -1812,7 +1812,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query supported borrowing and collateral currencies for multi-currency collateral 
+        /// Query borrow currencies and collateral currencies supported by multi-currency collateral 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of MultiCollateralCurrency</returns>
@@ -1849,7 +1849,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query supported borrowing and collateral currencies for multi-currency collateral 
+        /// Query borrow currencies and collateral currencies supported by multi-currency collateral 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of MultiCollateralCurrency</returns>
@@ -1861,7 +1861,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query supported borrowing and collateral currencies for multi-currency collateral 
+        /// Query borrow currencies and collateral currencies supported by multi-currency collateral 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (MultiCollateralCurrency)</returns>

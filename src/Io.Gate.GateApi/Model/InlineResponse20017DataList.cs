@@ -25,13 +25,13 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20016DataList
+    /// InlineResponse20017DataList
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20016DataList :  IEquatable<InlineResponse20016DataList>, IValidatableObject
+    public partial class InlineResponse20017DataList :  IEquatable<InlineResponse20017DataList>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20016DataList" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20017DataList" /> class.
         /// </summary>
         /// <param name="typeBuy">1&#x3D;Buy, 0&#x3D;Sell.</param>
         /// <param name="timest">Creation time of order.</param>
@@ -94,7 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="orderType">Order Type.</param>
         /// <param name="orderTag">Order tags.</param>
         /// <param name="convertInfo">convertInfo.</param>
-        public InlineResponse20016DataList(int typeBuy = default(int), string timest = default(string), string timestExpire = default(string), string type = default(string), string tradeType = default(string), int timestamp = default(int), string rate = default(string), string amount = default(string), string total = default(string), int txid = default(int), string status = default(string), string orderStatus = default(string), string itsRealname = default(string), string itsUid = default(string), string itsNick = default(string), string userNote = default(string), string showBank = default(string), string bankname = default(string), string bankbranch = default(string), string sellerRealname = default(string), string buyerRealname = default(string), string bankid = default(string), string bankHolderRealname = default(string), int showAli = default(int), string aliname = default(string), int showWechat = default(int), string wename = default(string), int isAlicode = default(int), int disputeTime = default(int), int cancelable = default(int), string blackUid = default(string), string blackName = default(string), string memo = default(string), int isFollow = default(int), bool isBlack = default(bool), string currencyType = default(string), string wantType = default(string), int isHedge = default(int), int hidePayment = default(int), string selPaytype = default(string), int showOthers = default(int), List<string> payOthers = default(List<string>), string tradeTips = default(string), int appealUnread = default(int), int imUnread = default(int), bool inDispute = default(bool), string reasonId = default(string), string reasonMemo = default(string), string cancelTime = default(string), int sellerConfirm = default(int), int toastId = default(int), int disputeReback = default(int), string score = default(string), string message = default(string), int releaseCoinSwitch = default(int), int tier = default(int), int blueVip = default(int), int odTime = default(int), int orderType = default(int), List<string> orderTag = default(List<string>), InlineResponse20016DataConvertInfo convertInfo = default(InlineResponse20016DataConvertInfo))
+        public InlineResponse20017DataList(int typeBuy = default(int), string timest = default(string), string timestExpire = default(string), string type = default(string), string tradeType = default(string), int timestamp = default(int), string rate = default(string), string amount = default(string), string total = default(string), int txid = default(int), string status = default(string), string orderStatus = default(string), string itsRealname = default(string), string itsUid = default(string), string itsNick = default(string), string userNote = default(string), string showBank = default(string), string bankname = default(string), string bankbranch = default(string), string sellerRealname = default(string), string buyerRealname = default(string), string bankid = default(string), string bankHolderRealname = default(string), int showAli = default(int), string aliname = default(string), int showWechat = default(int), string wename = default(string), int isAlicode = default(int), int disputeTime = default(int), int cancelable = default(int), string blackUid = default(string), string blackName = default(string), string memo = default(string), int isFollow = default(int), bool isBlack = default(bool), string currencyType = default(string), string wantType = default(string), int isHedge = default(int), int hidePayment = default(int), string selPaytype = default(string), int showOthers = default(int), List<string> payOthers = default(List<string>), string tradeTips = default(string), int appealUnread = default(int), int imUnread = default(int), bool inDispute = default(bool), string reasonId = default(string), string reasonMemo = default(string), string cancelTime = default(string), int sellerConfirm = default(int), int toastId = default(int), int disputeReback = default(int), string score = default(string), string message = default(string), int releaseCoinSwitch = default(int), int tier = default(int), int blueVip = default(int), int odTime = default(int), int orderType = default(int), List<string> orderTag = default(List<string>), InlineResponse20017DataConvertInfo convertInfo = default(InlineResponse20017DataConvertInfo))
         {
             this.TypeBuy = typeBuy;
             this.Timest = timest;
@@ -583,7 +583,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets ConvertInfo
         /// </summary>
         [DataMember(Name="convert_info")]
-        public InlineResponse20016DataConvertInfo ConvertInfo { get; set; }
+        public InlineResponse20017DataConvertInfo ConvertInfo { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -592,7 +592,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20016DataList {\n");
+            sb.Append("class InlineResponse20017DataList {\n");
             sb.Append("  TypeBuy: ").Append(TypeBuy).Append("\n");
             sb.Append("  Timest: ").Append(Timest).Append("\n");
             sb.Append("  TimestExpire: ").Append(TimestExpire).Append("\n");
@@ -674,15 +674,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20016DataList);
+            return this.Equals(input as InlineResponse20017DataList);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20016DataList instances are equal
+        /// Returns true if InlineResponse20017DataList instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20016DataList to be compared</param>
+        /// <param name="input">Instance of InlineResponse20017DataList to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20016DataList input)
+        public bool Equals(InlineResponse20017DataList input)
         {
             if (input == null)
                 return false;

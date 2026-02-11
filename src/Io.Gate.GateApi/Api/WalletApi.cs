@@ -80,7 +80,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="withdrawId">Withdrawal record ID starts with &#39;w&#39;, such as: w1879219868. When withdraw_id is not empty, only this specific withdrawal record will be queried, and time-based querying will be disabled (optional)</param>
         /// <param name="assetClass">Currency type of withdrawal record, empty by default. Supports querying withdrawal records in main zone and innovation zone on demand. Value range: SPOT, PILOT  SPOT: Main Zone PILOT: Innovation Zone (optional)</param>
         /// <param name="withdrawOrderId">User-defined order number for withdrawal. Default is empty. When not empty, the specified user-defined order number record will be queried (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -98,7 +98,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="withdrawId">Withdrawal record ID starts with &#39;w&#39;, such as: w1879219868. When withdraw_id is not empty, only this specific withdrawal record will be queried, and time-based querying will be disabled (optional)</param>
         /// <param name="assetClass">Currency type of withdrawal record, empty by default. Supports querying withdrawal records in main zone and innovation zone on demand. Value range: SPOT, PILOT  SPOT: Main Zone PILOT: Innovation Zone (optional)</param>
         /// <param name="withdrawOrderId">User-defined order number for withdrawal. Default is empty. When not empty, the specified user-defined order number record will be queried (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -112,7 +112,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of entries returned in the list, limited to 500 transactions (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -127,7 +127,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of entries returned in the list, limited to 500 transactions (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -162,7 +162,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -177,7 +177,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -603,7 +603,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="withdrawId">Withdrawal record ID starts with &#39;w&#39;, such as: w1879219868. When withdraw_id is not empty, only this specific withdrawal record will be queried, and time-based querying will be disabled (optional)</param>
         /// <param name="assetClass">Currency type of withdrawal record, empty by default. Supports querying withdrawal records in main zone and innovation zone on demand. Value range: SPOT, PILOT  SPOT: Main Zone PILOT: Innovation Zone (optional)</param>
         /// <param name="withdrawOrderId">User-defined order number for withdrawal. Default is empty. When not empty, the specified user-defined order number record will be queried (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -621,7 +621,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="withdrawId">Withdrawal record ID starts with &#39;w&#39;, such as: w1879219868. When withdraw_id is not empty, only this specific withdrawal record will be queried, and time-based querying will be disabled (optional)</param>
         /// <param name="assetClass">Currency type of withdrawal record, empty by default. Supports querying withdrawal records in main zone and innovation zone on demand. Value range: SPOT, PILOT  SPOT: Main Zone PILOT: Innovation Zone (optional)</param>
         /// <param name="withdrawOrderId">User-defined order number for withdrawal. Default is empty. When not empty, the specified user-defined order number record will be queried (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -635,7 +635,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of entries returned in the list, limited to 500 transactions (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -650,7 +650,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of entries returned in the list, limited to 500 transactions (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -685,7 +685,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -700,7 +700,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1422,7 +1422,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="withdrawId">Withdrawal record ID starts with &#39;w&#39;, such as: w1879219868. When withdraw_id is not empty, only this specific withdrawal record will be queried, and time-based querying will be disabled (optional)</param>
         /// <param name="assetClass">Currency type of withdrawal record, empty by default. Supports querying withdrawal records in main zone and innovation zone on demand. Value range: SPOT, PILOT  SPOT: Main Zone PILOT: Innovation Zone (optional)</param>
         /// <param name="withdrawOrderId">User-defined order number for withdrawal. Default is empty. When not empty, the specified user-defined order number record will be queried (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1441,7 +1441,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="withdrawId">Withdrawal record ID starts with &#39;w&#39;, such as: w1879219868. When withdraw_id is not empty, only this specific withdrawal record will be queried, and time-based querying will be disabled (optional)</param>
         /// <param name="assetClass">Currency type of withdrawal record, empty by default. Supports querying withdrawal records in main zone and innovation zone on demand. Value range: SPOT, PILOT  SPOT: Main Zone PILOT: Innovation Zone (optional)</param>
         /// <param name="withdrawOrderId">User-defined order number for withdrawal. Default is empty. When not empty, the specified user-defined order number record will be queried (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1520,7 +1520,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="withdrawId">Withdrawal record ID starts with &#39;w&#39;, such as: w1879219868. When withdraw_id is not empty, only this specific withdrawal record will be queried, and time-based querying will be disabled (optional)</param>
         /// <param name="assetClass">Currency type of withdrawal record, empty by default. Supports querying withdrawal records in main zone and innovation zone on demand. Value range: SPOT, PILOT  SPOT: Main Zone PILOT: Innovation Zone (optional)</param>
         /// <param name="withdrawOrderId">User-defined order number for withdrawal. Default is empty. When not empty, the specified user-defined order number record will be queried (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1540,7 +1540,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="withdrawId">Withdrawal record ID starts with &#39;w&#39;, such as: w1879219868. When withdraw_id is not empty, only this specific withdrawal record will be queried, and time-based querying will be disabled (optional)</param>
         /// <param name="assetClass">Currency type of withdrawal record, empty by default. Supports querying withdrawal records in main zone and innovation zone on demand. Value range: SPOT, PILOT  SPOT: Main Zone PILOT: Innovation Zone (optional)</param>
         /// <param name="withdrawOrderId">User-defined order number for withdrawal. Default is empty. When not empty, the specified user-defined order number record will be queried (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1618,7 +1618,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of entries returned in the list, limited to 500 transactions (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1634,7 +1634,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of entries returned in the list, limited to 500 transactions (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1698,7 +1698,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of entries returned in the list, limited to 500 transactions (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1715,7 +1715,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of entries returned in the list, limited to 500 transactions (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1900,7 +1900,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1916,7 +1916,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1980,7 +1980,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1997,7 +1997,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>

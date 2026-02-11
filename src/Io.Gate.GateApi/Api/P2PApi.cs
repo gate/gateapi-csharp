@@ -34,8 +34,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20013</returns>
-        InlineResponse20013 P2pMerchantAccountGetUserInfo ();
+        /// <returns>InlineResponse20014</returns>
+        InlineResponse20014 P2pMerchantAccountGetUserInfo ();
 
         /// <summary>
         /// Get account information
@@ -44,39 +44,39 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20013</returns>
-        ApiResponse<InlineResponse20013> P2pMerchantAccountGetUserInfoWithHttpInfo ();
-        /// <summary>
-        /// Get counterparty information
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bizUid">Counterparty UID (encrypted)</param>
-        /// <returns>InlineResponse20014</returns>
-        InlineResponse20014 P2pMerchantAccountGetCounterpartyUserInfo (string bizUid);
-
-        /// <summary>
-        /// Get counterparty information
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bizUid">Counterparty UID (encrypted)</param>
         /// <returns>ApiResponse of InlineResponse20014</returns>
-        ApiResponse<InlineResponse20014> P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo (string bizUid);
+        ApiResponse<InlineResponse20014> P2pMerchantAccountGetUserInfoWithHttpInfo ();
         /// <summary>
-        /// Get payment method list
+        /// Get counterparty information
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fiat">Fiat currency (optional)</param>
+        /// <param name="bizUid">Counterparty UID (encrypted)</param>
         /// <returns>InlineResponse20015</returns>
-        InlineResponse20015 P2pMerchantAccountGetMyselfPayment (string fiat = default(string));
+        InlineResponse20015 P2pMerchantAccountGetCounterpartyUserInfo (string bizUid);
+
+        /// <summary>
+        /// Get counterparty information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bizUid">Counterparty UID (encrypted)</param>
+        /// <returns>ApiResponse of InlineResponse20015</returns>
+        ApiResponse<InlineResponse20015> P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo (string bizUid);
+        /// <summary>
+        /// Get payment method list
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fiat">Fiat currency (optional)</param>
+        /// <returns>InlineResponse20016</returns>
+        InlineResponse20016 P2pMerchantAccountGetMyselfPayment (string fiat = default(string));
 
         /// <summary>
         /// Get payment method list
@@ -86,8 +86,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiat">Fiat currency (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20015</returns>
-        ApiResponse<InlineResponse20015> P2pMerchantAccountGetMyselfPaymentWithHttpInfo (string fiat = default(string));
+        /// <returns>ApiResponse of InlineResponse20016</returns>
+        ApiResponse<InlineResponse20016> P2pMerchantAccountGetMyselfPaymentWithHttpInfo (string fiat = default(string));
         /// <summary>
         /// Get pending orders
         /// </summary>
@@ -97,82 +97,82 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cryptoCurrency">Cryptocurrency</param>
         /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="orderTab">Order tab, default is pending (pending: Processing (pending: AND status in (&#39;OPEN&#39;,  &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In dispute (status in (&#39;ACCEPT&#39;,  &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
+        /// <param name="orderTab">订单标签页，默认pending（pending：处理中（pending:  AND status in (&#39;OPEN&#39;, &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)）；dispute：申诉中（status in (&#39;ACCEPT&#39;, &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
         /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
         /// <param name="txid">Order ID (optional)</param>
         /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
         /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <returns>InlineResponse20016</returns>
-        InlineResponse20016 P2pMerchantTransactionGetPendingTransactionList (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?));
-
-        /// <summary>
-        /// Get pending orders
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="orderTab">Order tab, default is pending (pending: Processing (pending: AND status in (&#39;OPEN&#39;,  &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In dispute (status in (&#39;ACCEPT&#39;,  &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20016</returns>
-        ApiResponse<InlineResponse20016> P2pMerchantTransactionGetPendingTransactionListWithHttpInfo (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?));
-        /// <summary>
-        /// Get all/historical orders
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
-        /// <param name="page">page number (optional)</param>
-        /// <param name="perPage">Number of orders per page (optional)</param>
-        /// <returns>InlineResponse20016</returns>
-        InlineResponse20016 P2pMerchantTransactionGetCompletedTransactionList (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?));
-
-        /// <summary>
-        /// Get all/historical orders
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
-        /// <param name="page">page number (optional)</param>
-        /// <param name="perPage">Number of orders per page (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20016</returns>
-        ApiResponse<InlineResponse20016> P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?));
-        /// <summary>
-        /// Query order details
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="txid">Order ID</param>
-        /// <param name="channel">Empty or web3 (optional)</param>
         /// <returns>InlineResponse20017</returns>
-        InlineResponse20017 P2pMerchantTransactionGetTransactionDetails (int txid, string channel = default(string));
+        InlineResponse20017 P2pMerchantTransactionGetPendingTransactionList (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?));
+
+        /// <summary>
+        /// Get pending orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="orderTab">订单标签页，默认pending（pending：处理中（pending:  AND status in (&#39;OPEN&#39;, &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)）；dispute：申诉中（status in (&#39;ACCEPT&#39;, &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20017</returns>
+        ApiResponse<InlineResponse20017> P2pMerchantTransactionGetPendingTransactionListWithHttpInfo (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?));
+        /// <summary>
+        /// Get all/historical orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="perPage">Number of orders per page (optional)</param>
+        /// <returns>InlineResponse20017</returns>
+        InlineResponse20017 P2pMerchantTransactionGetCompletedTransactionList (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?));
+
+        /// <summary>
+        /// Get all/historical orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="perPage">Number of orders per page (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20017</returns>
+        ApiResponse<InlineResponse20017> P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?));
+        /// <summary>
+        /// Query order details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txid">Order ID</param>
+        /// <param name="channel">Empty or web3 (optional)</param>
+        /// <returns>InlineResponse20018</returns>
+        InlineResponse20018 P2pMerchantTransactionGetTransactionDetails (int txid, string channel = default(string));
 
         /// <summary>
         /// Query order details
@@ -183,8 +183,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="txid">Order ID</param>
         /// <param name="channel">Empty or web3 (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20017</returns>
-        ApiResponse<InlineResponse20017> P2pMerchantTransactionGetTransactionDetailsWithHttpInfo (int txid, string channel = default(string));
+        /// <returns>ApiResponse of InlineResponse20018</returns>
+        ApiResponse<InlineResponse20018> P2pMerchantTransactionGetTransactionDetailsWithHttpInfo (int txid, string channel = default(string));
         /// <summary>
         /// Confirm payment
         /// </summary>
@@ -331,8 +331,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="advNo">Ad ID</param>
         /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>InlineResponse20018</returns>
-        InlineResponse20018 P2pMerchantBooksAdsUpdateStatus (int advNo, int advStatus, string tradeType = default(string));
+        /// <returns>InlineResponse20019</returns>
+        InlineResponse20019 P2pMerchantBooksAdsUpdateStatus (int advNo, int advStatus, string tradeType = default(string));
 
         /// <summary>
         /// Update ad status
@@ -344,41 +344,41 @@ namespace Io.Gate.GateApi.Api
         /// <param name="advNo">Ad ID</param>
         /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20018</returns>
-        ApiResponse<InlineResponse20018> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (int advNo, int advStatus, string tradeType = default(string));
-        /// <summary>
-        /// Query ad details
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="advNo"></param>
-        /// <returns>InlineResponse20019</returns>
-        InlineResponse20019 P2pMerchantBooksAdsDetail (string advNo);
-
-        /// <summary>
-        /// Query ad details
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="advNo"></param>
         /// <returns>ApiResponse of InlineResponse20019</returns>
-        ApiResponse<InlineResponse20019> P2pMerchantBooksAdsDetailWithHttpInfo (string advNo);
+        ApiResponse<InlineResponse20019> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (int advNo, int advStatus, string tradeType = default(string));
         /// <summary>
-        /// Get my ad list
+        /// Query ad details
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="asset">Cryptocurrency (optional)</param>
-        /// <param name="fiatUnit">Fiat currency (optional)</param>
-        /// <param name="tradeType">Buy/Sell (optional)</param>
+        /// <param name="advNo"></param>
         /// <returns>InlineResponse20020</returns>
-        InlineResponse20020 P2pMerchantBooksMyAdsList (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string));
+        InlineResponse20020 P2pMerchantBooksAdsDetail (string advNo);
+
+        /// <summary>
+        /// Query ad details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="advNo"></param>
+        /// <returns>ApiResponse of InlineResponse20020</returns>
+        ApiResponse<InlineResponse20020> P2pMerchantBooksAdsDetailWithHttpInfo (string advNo);
+        /// <summary>
+        /// Get my ad list
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Cryptocurrency (optional)</param>
+        /// <param name="fiatUnit">Fiat currency (optional)</param>
+        /// <param name="tradeType">Buy/Sell (optional)</param>
+        /// <returns>InlineResponse20021</returns>
+        InlineResponse20021 P2pMerchantBooksMyAdsList (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string));
 
         /// <summary>
         /// Get my ad list
@@ -390,45 +390,45 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Cryptocurrency (optional)</param>
         /// <param name="fiatUnit">Fiat currency (optional)</param>
         /// <param name="tradeType">Buy/Sell (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20020</returns>
-        ApiResponse<InlineResponse20020> P2pMerchantBooksMyAdsListWithHttpInfo (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string));
-        /// <summary>
-        /// Get chat history
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="txid">Order ID</param>
-        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
-        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
-        /// <returns>InlineResponse20021</returns>
-        InlineResponse20021 P2pMerchantChatGetChatsList (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?));
-
-        /// <summary>
-        /// Get chat history
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="txid">Order ID</param>
-        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
-        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
         /// <returns>ApiResponse of InlineResponse20021</returns>
-        ApiResponse<InlineResponse20021> P2pMerchantChatGetChatsListWithHttpInfo (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?));
+        ApiResponse<InlineResponse20021> P2pMerchantBooksMyAdsListWithHttpInfo (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string));
         /// <summary>
-        /// Send text message
+        /// Get chat history
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="txid">Order ID</param>
-        /// <param name="message">Message content</param>
-        /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided (optional)</param>
+        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
+        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
         /// <returns>InlineResponse20022</returns>
-        InlineResponse20022 P2pMerchantChatSendChatMessage (int txid, string message, int? type = default(int?));
+        InlineResponse20022 P2pMerchantChatGetChatsList (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?));
+
+        /// <summary>
+        /// Get chat history
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txid">Order ID</param>
+        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
+        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20022</returns>
+        ApiResponse<InlineResponse20022> P2pMerchantChatGetChatsListWithHttpInfo (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?));
+        /// <summary>
+        /// Send text message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txid">Order ID</param>
+        /// <param name="message">Message content</param>
+        /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided (optional)</param>
+        /// <returns>InlineResponse20023</returns>
+        InlineResponse20023 P2pMerchantChatSendChatMessage (int txid, string message, int? type = default(int?));
 
         /// <summary>
         /// Send text message
@@ -440,8 +440,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="txid">Order ID</param>
         /// <param name="message">Message content</param>
         /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20022</returns>
-        ApiResponse<InlineResponse20022> P2pMerchantChatSendChatMessageWithHttpInfo (int txid, string message, int? type = default(int?));
+        /// <returns>ApiResponse of InlineResponse20023</returns>
+        ApiResponse<InlineResponse20023> P2pMerchantChatSendChatMessageWithHttpInfo (int txid, string message, int? type = default(int?));
         /// <summary>
         /// Upload chat file
         /// </summary>
@@ -451,8 +451,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageContentType">File type, currently only images and videos are supported</param>
         /// <param name="base64Img">File content (base64 encoded)</param>
-        /// <returns>InlineResponse20023</returns>
-        InlineResponse20023 P2pMerchantChatUploadChatFile (string imageContentType, string base64Img);
+        /// <returns>InlineResponse20024</returns>
+        InlineResponse20024 P2pMerchantChatUploadChatFile (string imageContentType, string base64Img);
 
         /// <summary>
         /// Upload chat file
@@ -463,8 +463,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageContentType">File type, currently only images and videos are supported</param>
         /// <param name="base64Img">File content (base64 encoded)</param>
-        /// <returns>ApiResponse of InlineResponse20023</returns>
-        ApiResponse<InlineResponse20023> P2pMerchantChatUploadChatFileWithHttpInfo (string imageContentType, string base64Img);
+        /// <returns>ApiResponse of InlineResponse20024</returns>
+        ApiResponse<InlineResponse20024> P2pMerchantChatUploadChatFileWithHttpInfo (string imageContentType, string base64Img);
         #endregion Synchronous Operations
     }
 
@@ -481,8 +481,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20013</returns>
-        Task<InlineResponse20013> P2pMerchantAccountGetUserInfoAsync ();
+        /// <returns>Task of InlineResponse20014</returns>
+        Task<InlineResponse20014> P2pMerchantAccountGetUserInfoAsync ();
 
         /// <summary>
         /// Get account information
@@ -491,39 +491,39 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        Task<ApiResponse<InlineResponse20013>> P2pMerchantAccountGetUserInfoAsyncWithHttpInfo ();
-        /// <summary>
-        /// Get counterparty information
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bizUid">Counterparty UID (encrypted)</param>
-        /// <returns>Task of InlineResponse20014</returns>
-        Task<InlineResponse20014> P2pMerchantAccountGetCounterpartyUserInfoAsync (string bizUid);
-
-        /// <summary>
-        /// Get counterparty information
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bizUid">Counterparty UID (encrypted)</param>
         /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-        Task<ApiResponse<InlineResponse20014>> P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo (string bizUid);
+        Task<ApiResponse<InlineResponse20014>> P2pMerchantAccountGetUserInfoAsyncWithHttpInfo ();
         /// <summary>
-        /// Get payment method list
+        /// Get counterparty information
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="fiat">Fiat currency (optional)</param>
+        /// <param name="bizUid">Counterparty UID (encrypted)</param>
         /// <returns>Task of InlineResponse20015</returns>
-        Task<InlineResponse20015> P2pMerchantAccountGetMyselfPaymentAsync (string fiat = default(string));
+        Task<InlineResponse20015> P2pMerchantAccountGetCounterpartyUserInfoAsync (string bizUid);
+
+        /// <summary>
+        /// Get counterparty information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bizUid">Counterparty UID (encrypted)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
+        Task<ApiResponse<InlineResponse20015>> P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo (string bizUid);
+        /// <summary>
+        /// Get payment method list
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fiat">Fiat currency (optional)</param>
+        /// <returns>Task of InlineResponse20016</returns>
+        Task<InlineResponse20016> P2pMerchantAccountGetMyselfPaymentAsync (string fiat = default(string));
 
         /// <summary>
         /// Get payment method list
@@ -533,8 +533,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiat">Fiat currency (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
-        Task<ApiResponse<InlineResponse20015>> P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo (string fiat = default(string));
+        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
+        Task<ApiResponse<InlineResponse20016>> P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo (string fiat = default(string));
         /// <summary>
         /// Get pending orders
         /// </summary>
@@ -544,82 +544,82 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cryptoCurrency">Cryptocurrency</param>
         /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="orderTab">Order tab, default is pending (pending: Processing (pending: AND status in (&#39;OPEN&#39;,  &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In dispute (status in (&#39;ACCEPT&#39;,  &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
+        /// <param name="orderTab">订单标签页，默认pending（pending：处理中（pending:  AND status in (&#39;OPEN&#39;, &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)）；dispute：申诉中（status in (&#39;ACCEPT&#39;, &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
         /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
         /// <param name="txid">Order ID (optional)</param>
         /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
         /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <returns>Task of InlineResponse20016</returns>
-        Task<InlineResponse20016> P2pMerchantTransactionGetPendingTransactionListAsync (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?));
-
-        /// <summary>
-        /// Get pending orders
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="orderTab">Order tab, default is pending (pending: Processing (pending: AND status in (&#39;OPEN&#39;,  &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In dispute (status in (&#39;ACCEPT&#39;,  &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-        Task<ApiResponse<InlineResponse20016>> P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?));
-        /// <summary>
-        /// Get all/historical orders
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
-        /// <param name="page">page number (optional)</param>
-        /// <param name="perPage">Number of orders per page (optional)</param>
-        /// <returns>Task of InlineResponse20016</returns>
-        Task<InlineResponse20016> P2pMerchantTransactionGetCompletedTransactionListAsync (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?));
-
-        /// <summary>
-        /// Get all/historical orders
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
-        /// <param name="page">page number (optional)</param>
-        /// <param name="perPage">Number of orders per page (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-        Task<ApiResponse<InlineResponse20016>> P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?));
-        /// <summary>
-        /// Query order details
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="txid">Order ID</param>
-        /// <param name="channel">Empty or web3 (optional)</param>
         /// <returns>Task of InlineResponse20017</returns>
-        Task<InlineResponse20017> P2pMerchantTransactionGetTransactionDetailsAsync (int txid, string channel = default(string));
+        Task<InlineResponse20017> P2pMerchantTransactionGetPendingTransactionListAsync (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?));
+
+        /// <summary>
+        /// Get pending orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="orderTab">订单标签页，默认pending（pending：处理中（pending:  AND status in (&#39;OPEN&#39;, &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)）；dispute：申诉中（status in (&#39;ACCEPT&#39;, &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
+        Task<ApiResponse<InlineResponse20017>> P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?));
+        /// <summary>
+        /// Get all/historical orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="perPage">Number of orders per page (optional)</param>
+        /// <returns>Task of InlineResponse20017</returns>
+        Task<InlineResponse20017> P2pMerchantTransactionGetCompletedTransactionListAsync (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?));
+
+        /// <summary>
+        /// Get all/historical orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="perPage">Number of orders per page (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
+        Task<ApiResponse<InlineResponse20017>> P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?));
+        /// <summary>
+        /// Query order details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txid">Order ID</param>
+        /// <param name="channel">Empty or web3 (optional)</param>
+        /// <returns>Task of InlineResponse20018</returns>
+        Task<InlineResponse20018> P2pMerchantTransactionGetTransactionDetailsAsync (int txid, string channel = default(string));
 
         /// <summary>
         /// Query order details
@@ -630,8 +630,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="txid">Order ID</param>
         /// <param name="channel">Empty or web3 (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-        Task<ApiResponse<InlineResponse20017>> P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo (int txid, string channel = default(string));
+        /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
+        Task<ApiResponse<InlineResponse20018>> P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo (int txid, string channel = default(string));
         /// <summary>
         /// Confirm payment
         /// </summary>
@@ -778,8 +778,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="advNo">Ad ID</param>
         /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of InlineResponse20018</returns>
-        Task<InlineResponse20018> P2pMerchantBooksAdsUpdateStatusAsync (int advNo, int advStatus, string tradeType = default(string));
+        /// <returns>Task of InlineResponse20019</returns>
+        Task<InlineResponse20019> P2pMerchantBooksAdsUpdateStatusAsync (int advNo, int advStatus, string tradeType = default(string));
 
         /// <summary>
         /// Update ad status
@@ -791,41 +791,41 @@ namespace Io.Gate.GateApi.Api
         /// <param name="advNo">Ad ID</param>
         /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
-        Task<ApiResponse<InlineResponse20018>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (int advNo, int advStatus, string tradeType = default(string));
-        /// <summary>
-        /// Query ad details
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="advNo"></param>
-        /// <returns>Task of InlineResponse20019</returns>
-        Task<InlineResponse20019> P2pMerchantBooksAdsDetailAsync (string advNo);
-
-        /// <summary>
-        /// Query ad details
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="advNo"></param>
         /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        Task<ApiResponse<InlineResponse20019>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (string advNo);
+        Task<ApiResponse<InlineResponse20019>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (int advNo, int advStatus, string tradeType = default(string));
         /// <summary>
-        /// Get my ad list
+        /// Query ad details
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="asset">Cryptocurrency (optional)</param>
-        /// <param name="fiatUnit">Fiat currency (optional)</param>
-        /// <param name="tradeType">Buy/Sell (optional)</param>
+        /// <param name="advNo"></param>
         /// <returns>Task of InlineResponse20020</returns>
-        Task<InlineResponse20020> P2pMerchantBooksMyAdsListAsync (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string));
+        Task<InlineResponse20020> P2pMerchantBooksAdsDetailAsync (string advNo);
+
+        /// <summary>
+        /// Query ad details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="advNo"></param>
+        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
+        Task<ApiResponse<InlineResponse20020>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (string advNo);
+        /// <summary>
+        /// Get my ad list
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Cryptocurrency (optional)</param>
+        /// <param name="fiatUnit">Fiat currency (optional)</param>
+        /// <param name="tradeType">Buy/Sell (optional)</param>
+        /// <returns>Task of InlineResponse20021</returns>
+        Task<InlineResponse20021> P2pMerchantBooksMyAdsListAsync (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string));
 
         /// <summary>
         /// Get my ad list
@@ -837,45 +837,45 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Cryptocurrency (optional)</param>
         /// <param name="fiatUnit">Fiat currency (optional)</param>
         /// <param name="tradeType">Buy/Sell (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
-        Task<ApiResponse<InlineResponse20020>> P2pMerchantBooksMyAdsListAsyncWithHttpInfo (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string));
-        /// <summary>
-        /// Get chat history
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="txid">Order ID</param>
-        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
-        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
-        /// <returns>Task of InlineResponse20021</returns>
-        Task<InlineResponse20021> P2pMerchantChatGetChatsListAsync (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?));
-
-        /// <summary>
-        /// Get chat history
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="txid">Order ID</param>
-        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
-        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20021)</returns>
-        Task<ApiResponse<InlineResponse20021>> P2pMerchantChatGetChatsListAsyncWithHttpInfo (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?));
+        Task<ApiResponse<InlineResponse20021>> P2pMerchantBooksMyAdsListAsyncWithHttpInfo (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string));
         /// <summary>
-        /// Send text message
+        /// Get chat history
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="txid">Order ID</param>
-        /// <param name="message">Message content</param>
-        /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided (optional)</param>
+        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
+        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
         /// <returns>Task of InlineResponse20022</returns>
-        Task<InlineResponse20022> P2pMerchantChatSendChatMessageAsync (int txid, string message, int? type = default(int?));
+        Task<InlineResponse20022> P2pMerchantChatGetChatsListAsync (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?));
+
+        /// <summary>
+        /// Get chat history
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txid">Order ID</param>
+        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
+        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20022)</returns>
+        Task<ApiResponse<InlineResponse20022>> P2pMerchantChatGetChatsListAsyncWithHttpInfo (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?));
+        /// <summary>
+        /// Send text message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txid">Order ID</param>
+        /// <param name="message">Message content</param>
+        /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided (optional)</param>
+        /// <returns>Task of InlineResponse20023</returns>
+        Task<InlineResponse20023> P2pMerchantChatSendChatMessageAsync (int txid, string message, int? type = default(int?));
 
         /// <summary>
         /// Send text message
@@ -887,8 +887,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="txid">Order ID</param>
         /// <param name="message">Message content</param>
         /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20022)</returns>
-        Task<ApiResponse<InlineResponse20022>> P2pMerchantChatSendChatMessageAsyncWithHttpInfo (int txid, string message, int? type = default(int?));
+        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
+        Task<ApiResponse<InlineResponse20023>> P2pMerchantChatSendChatMessageAsyncWithHttpInfo (int txid, string message, int? type = default(int?));
         /// <summary>
         /// Upload chat file
         /// </summary>
@@ -898,8 +898,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageContentType">File type, currently only images and videos are supported</param>
         /// <param name="base64Img">File content (base64 encoded)</param>
-        /// <returns>Task of InlineResponse20023</returns>
-        Task<InlineResponse20023> P2pMerchantChatUploadChatFileAsync (string imageContentType, string base64Img);
+        /// <returns>Task of InlineResponse20024</returns>
+        Task<InlineResponse20024> P2pMerchantChatUploadChatFileAsync (string imageContentType, string base64Img);
 
         /// <summary>
         /// Upload chat file
@@ -910,8 +910,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageContentType">File type, currently only images and videos are supported</param>
         /// <param name="base64Img">File content (base64 encoded)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
-        Task<ApiResponse<InlineResponse20023>> P2pMerchantChatUploadChatFileAsyncWithHttpInfo (string imageContentType, string base64Img);
+        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
+        Task<ApiResponse<InlineResponse20024>> P2pMerchantChatUploadChatFileAsyncWithHttpInfo (string imageContentType, string base64Img);
         #endregion Asynchronous Operations
     }
 
@@ -1036,129 +1036,23 @@ namespace Io.Gate.GateApi.Api
         /// Get account information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20013</returns>
-        public InlineResponse20013 P2pMerchantAccountGetUserInfo ()
-        {
-             ApiResponse<InlineResponse20013> localVarResponse = P2pMerchantAccountGetUserInfoWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get account information 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20013</returns>
-        public ApiResponse<InlineResponse20013> P2pMerchantAccountGetUserInfoWithHttpInfo ()
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20013>("/p2p/merchant/account/get_user_info", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantAccountGetUserInfo", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get account information 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20013</returns>
-        public async Task<InlineResponse20013> P2pMerchantAccountGetUserInfoAsync ()
-        {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20013> localVarResponse = await P2pMerchantAccountGetUserInfoAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get account information 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        public async Task<ApiResponse<InlineResponse20013>> P2pMerchantAccountGetUserInfoAsyncWithHttpInfo ()
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20013>("/p2p/merchant/account/get_user_info", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantAccountGetUserInfo", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get counterparty information 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bizUid">Counterparty UID (encrypted)</param>
         /// <returns>InlineResponse20014</returns>
-        public InlineResponse20014 P2pMerchantAccountGetCounterpartyUserInfo (string bizUid)
+        public InlineResponse20014 P2pMerchantAccountGetUserInfo ()
         {
-             ApiResponse<InlineResponse20014> localVarResponse = P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo(bizUid);
+             ApiResponse<InlineResponse20014> localVarResponse = P2pMerchantAccountGetUserInfoWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get counterparty information 
+        /// Get account information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bizUid">Counterparty UID (encrypted)</param>
         /// <returns>ApiResponse of InlineResponse20014</returns>
-        public ApiResponse<InlineResponse20014> P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo (string bizUid)
+        public ApiResponse<InlineResponse20014> P2pMerchantAccountGetUserInfoWithHttpInfo ()
         {
-            // verify the required parameter 'bizUid' is set
-            if (bizUid == null)
-                throw new ApiException(400, "Missing required parameter 'bizUid' when calling P2PApi->P2pMerchantAccountGetCounterpartyUserInfo");
-
             RequestOptions localVarRequestOptions = new RequestOptions();
 
             string[] _contentTypes = {
-                "multipart/form-data"
             };
 
             // to determine the Accept header
@@ -1172,15 +1066,14 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.FormParameters.Add("biz_uid", ClientUtils.ParameterToString(bizUid)); // form parameter
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20014>("/p2p/merchant/account/get_counterparty_user_info", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InlineResponse20014>("/p2p/merchant/account/get_user_info", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("P2pMerchantAccountGetCounterpartyUserInfo", localVarResponse);
+                Exception _exception = this.ExceptionFactory("P2pMerchantAccountGetUserInfo", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1188,14 +1081,121 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get counterparty information 
+        /// Get account information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bizUid">Counterparty UID (encrypted)</param>
         /// <returns>Task of InlineResponse20014</returns>
-        public async Task<InlineResponse20014> P2pMerchantAccountGetCounterpartyUserInfoAsync (string bizUid)
+        public async Task<InlineResponse20014> P2pMerchantAccountGetUserInfoAsync ()
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20014> localVarResponse = await P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo(bizUid);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20014> localVarResponse = await P2pMerchantAccountGetUserInfoAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get account information 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
+        public async Task<ApiResponse<InlineResponse20014>> P2pMerchantAccountGetUserInfoAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20014>("/p2p/merchant/account/get_user_info", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantAccountGetUserInfo", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get counterparty information 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bizUid">Counterparty UID (encrypted)</param>
+        /// <returns>InlineResponse20015</returns>
+        public InlineResponse20015 P2pMerchantAccountGetCounterpartyUserInfo (string bizUid)
+        {
+             ApiResponse<InlineResponse20015> localVarResponse = P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo(bizUid);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get counterparty information 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bizUid">Counterparty UID (encrypted)</param>
+        /// <returns>ApiResponse of InlineResponse20015</returns>
+        public ApiResponse<InlineResponse20015> P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo (string bizUid)
+        {
+            // verify the required parameter 'bizUid' is set
+            if (bizUid == null)
+                throw new ApiException(400, "Missing required parameter 'bizUid' when calling P2PApi->P2pMerchantAccountGetCounterpartyUserInfo");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.FormParameters.Add("biz_uid", ClientUtils.ParameterToString(bizUid)); // form parameter
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse20015>("/p2p/merchant/account/get_counterparty_user_info", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantAccountGetCounterpartyUserInfo", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get counterparty information 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bizUid">Counterparty UID (encrypted)</param>
+        /// <returns>Task of InlineResponse20015</returns>
+        public async Task<InlineResponse20015> P2pMerchantAccountGetCounterpartyUserInfoAsync (string bizUid)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20015> localVarResponse = await P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo(bizUid);
              return localVarResponse.Data;
 
         }
@@ -1205,8 +1205,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bizUid">Counterparty UID (encrypted)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-        public async Task<ApiResponse<InlineResponse20014>> P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo (string bizUid)
+        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
+        public async Task<ApiResponse<InlineResponse20015>> P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo (string bizUid)
         {
             // verify the required parameter 'bizUid' is set
             if (bizUid == null)
@@ -1235,7 +1235,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20014>("/p2p/merchant/account/get_counterparty_user_info", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20015>("/p2p/merchant/account/get_counterparty_user_info", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1251,10 +1251,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiat">Fiat currency (optional)</param>
-        /// <returns>InlineResponse20015</returns>
-        public InlineResponse20015 P2pMerchantAccountGetMyselfPayment (string fiat = default(string))
+        /// <returns>InlineResponse20016</returns>
+        public InlineResponse20016 P2pMerchantAccountGetMyselfPayment (string fiat = default(string))
         {
-             ApiResponse<InlineResponse20015> localVarResponse = P2pMerchantAccountGetMyselfPaymentWithHttpInfo(fiat);
+             ApiResponse<InlineResponse20016> localVarResponse = P2pMerchantAccountGetMyselfPaymentWithHttpInfo(fiat);
              return localVarResponse.Data;
         }
 
@@ -1263,8 +1263,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiat">Fiat currency (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20015</returns>
-        public ApiResponse<InlineResponse20015> P2pMerchantAccountGetMyselfPaymentWithHttpInfo (string fiat = default(string))
+        /// <returns>ApiResponse of InlineResponse20016</returns>
+        public ApiResponse<InlineResponse20016> P2pMerchantAccountGetMyselfPaymentWithHttpInfo (string fiat = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1290,7 +1290,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20015>("/p2p/merchant/account/get_myself_payment", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InlineResponse20016>("/p2p/merchant/account/get_myself_payment", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1306,10 +1306,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiat">Fiat currency (optional)</param>
-        /// <returns>Task of InlineResponse20015</returns>
-        public async Task<InlineResponse20015> P2pMerchantAccountGetMyselfPaymentAsync (string fiat = default(string))
+        /// <returns>Task of InlineResponse20016</returns>
+        public async Task<InlineResponse20016> P2pMerchantAccountGetMyselfPaymentAsync (string fiat = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20015> localVarResponse = await P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo(fiat);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20016> localVarResponse = await P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo(fiat);
              return localVarResponse.Data;
 
         }
@@ -1319,8 +1319,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fiat">Fiat currency (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
-        public async Task<ApiResponse<InlineResponse20015>> P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo (string fiat = default(string))
+        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
+        public async Task<ApiResponse<InlineResponse20016>> P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo (string fiat = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1348,7 +1348,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20015>("/p2p/merchant/account/get_myself_payment", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20016>("/p2p/merchant/account/get_myself_payment", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1365,436 +1365,436 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cryptoCurrency">Cryptocurrency</param>
         /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="orderTab">Order tab, default is pending (pending: Processing (pending: AND status in (&#39;OPEN&#39;,  &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In dispute (status in (&#39;ACCEPT&#39;,  &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
+        /// <param name="orderTab">订单标签页，默认pending（pending：处理中（pending:  AND status in (&#39;OPEN&#39;, &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)）；dispute：申诉中（status in (&#39;ACCEPT&#39;, &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
         /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
         /// <param name="txid">Order ID (optional)</param>
         /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
         /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <returns>InlineResponse20016</returns>
-        public InlineResponse20016 P2pMerchantTransactionGetPendingTransactionList (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?))
-        {
-             ApiResponse<InlineResponse20016> localVarResponse = P2pMerchantTransactionGetPendingTransactionListWithHttpInfo(cryptoCurrency, fiatCurrency, orderTab, selectType, status, txid, startTime, endTime);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get pending orders 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="orderTab">Order tab, default is pending (pending: Processing (pending: AND status in (&#39;OPEN&#39;,  &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In dispute (status in (&#39;ACCEPT&#39;,  &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20016</returns>
-        public ApiResponse<InlineResponse20016> P2pMerchantTransactionGetPendingTransactionListWithHttpInfo (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?))
-        {
-            // verify the required parameter 'cryptoCurrency' is set
-            if (cryptoCurrency == null)
-                throw new ApiException(400, "Missing required parameter 'cryptoCurrency' when calling P2PApi->P2pMerchantTransactionGetPendingTransactionList");
-
-            // verify the required parameter 'fiatCurrency' is set
-            if (fiatCurrency == null)
-                throw new ApiException(400, "Missing required parameter 'fiatCurrency' when calling P2PApi->P2pMerchantTransactionGetPendingTransactionList");
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-                "multipart/form-data"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.FormParameters.Add("crypto_currency", ClientUtils.ParameterToString(cryptoCurrency)); // form parameter
-            localVarRequestOptions.FormParameters.Add("fiat_currency", ClientUtils.ParameterToString(fiatCurrency)); // form parameter
-            if (orderTab != null)
-            {
-                localVarRequestOptions.FormParameters.Add("order_tab", ClientUtils.ParameterToString(orderTab)); // form parameter
-            }
-            if (selectType != null)
-            {
-                localVarRequestOptions.FormParameters.Add("select_type", ClientUtils.ParameterToString(selectType)); // form parameter
-            }
-            if (status != null)
-            {
-                localVarRequestOptions.FormParameters.Add("status", ClientUtils.ParameterToString(status)); // form parameter
-            }
-            if (txid != null)
-            {
-                localVarRequestOptions.FormParameters.Add("txid", ClientUtils.ParameterToString(txid)); // form parameter
-            }
-            if (startTime != null)
-            {
-                localVarRequestOptions.FormParameters.Add("start_time", ClientUtils.ParameterToString(startTime)); // form parameter
-            }
-            if (endTime != null)
-            {
-                localVarRequestOptions.FormParameters.Add("end_time", ClientUtils.ParameterToString(endTime)); // form parameter
-            }
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20016>("/p2p/merchant/transaction/get_pending_transaction_list", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantTransactionGetPendingTransactionList", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get pending orders 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="orderTab">Order tab, default is pending (pending: Processing (pending: AND status in (&#39;OPEN&#39;,  &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In dispute (status in (&#39;ACCEPT&#39;,  &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <returns>Task of InlineResponse20016</returns>
-        public async Task<InlineResponse20016> P2pMerchantTransactionGetPendingTransactionListAsync (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20016> localVarResponse = await P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo(cryptoCurrency, fiatCurrency, orderTab, selectType, status, txid, startTime, endTime);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get pending orders 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="orderTab">Order tab, default is pending (pending: Processing (pending: AND status in (&#39;OPEN&#39;,  &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In dispute (status in (&#39;ACCEPT&#39;,  &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-        public async Task<ApiResponse<InlineResponse20016>> P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?))
-        {
-            // verify the required parameter 'cryptoCurrency' is set
-            if (cryptoCurrency == null)
-                throw new ApiException(400, "Missing required parameter 'cryptoCurrency' when calling P2PApi->P2pMerchantTransactionGetPendingTransactionList");
-
-            // verify the required parameter 'fiatCurrency' is set
-            if (fiatCurrency == null)
-                throw new ApiException(400, "Missing required parameter 'fiatCurrency' when calling P2PApi->P2pMerchantTransactionGetPendingTransactionList");
-
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "multipart/form-data"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            localVarRequestOptions.FormParameters.Add("crypto_currency", ClientUtils.ParameterToString(cryptoCurrency)); // form parameter
-            localVarRequestOptions.FormParameters.Add("fiat_currency", ClientUtils.ParameterToString(fiatCurrency)); // form parameter
-            if (orderTab != null)
-            {
-                localVarRequestOptions.FormParameters.Add("order_tab", ClientUtils.ParameterToString(orderTab)); // form parameter
-            }
-            if (selectType != null)
-            {
-                localVarRequestOptions.FormParameters.Add("select_type", ClientUtils.ParameterToString(selectType)); // form parameter
-            }
-            if (status != null)
-            {
-                localVarRequestOptions.FormParameters.Add("status", ClientUtils.ParameterToString(status)); // form parameter
-            }
-            if (txid != null)
-            {
-                localVarRequestOptions.FormParameters.Add("txid", ClientUtils.ParameterToString(txid)); // form parameter
-            }
-            if (startTime != null)
-            {
-                localVarRequestOptions.FormParameters.Add("start_time", ClientUtils.ParameterToString(startTime)); // form parameter
-            }
-            if (endTime != null)
-            {
-                localVarRequestOptions.FormParameters.Add("end_time", ClientUtils.ParameterToString(endTime)); // form parameter
-            }
-
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20016>("/p2p/merchant/transaction/get_pending_transaction_list", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantTransactionGetPendingTransactionList", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all/historical orders 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
-        /// <param name="page">page number (optional)</param>
-        /// <param name="perPage">Number of orders per page (optional)</param>
-        /// <returns>InlineResponse20016</returns>
-        public InlineResponse20016 P2pMerchantTransactionGetCompletedTransactionList (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?))
-        {
-             ApiResponse<InlineResponse20016> localVarResponse = P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo(cryptoCurrency, fiatCurrency, selectType, status, txid, startTime, endTime, queryDispute, page, perPage);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get all/historical orders 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
-        /// <param name="page">page number (optional)</param>
-        /// <param name="perPage">Number of orders per page (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20016</returns>
-        public ApiResponse<InlineResponse20016> P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?))
-        {
-            // verify the required parameter 'cryptoCurrency' is set
-            if (cryptoCurrency == null)
-                throw new ApiException(400, "Missing required parameter 'cryptoCurrency' when calling P2PApi->P2pMerchantTransactionGetCompletedTransactionList");
-
-            // verify the required parameter 'fiatCurrency' is set
-            if (fiatCurrency == null)
-                throw new ApiException(400, "Missing required parameter 'fiatCurrency' when calling P2PApi->P2pMerchantTransactionGetCompletedTransactionList");
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-                "multipart/form-data"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.FormParameters.Add("crypto_currency", ClientUtils.ParameterToString(cryptoCurrency)); // form parameter
-            localVarRequestOptions.FormParameters.Add("fiat_currency", ClientUtils.ParameterToString(fiatCurrency)); // form parameter
-            if (selectType != null)
-            {
-                localVarRequestOptions.FormParameters.Add("select_type", ClientUtils.ParameterToString(selectType)); // form parameter
-            }
-            if (status != null)
-            {
-                localVarRequestOptions.FormParameters.Add("status", ClientUtils.ParameterToString(status)); // form parameter
-            }
-            if (txid != null)
-            {
-                localVarRequestOptions.FormParameters.Add("txid", ClientUtils.ParameterToString(txid)); // form parameter
-            }
-            if (startTime != null)
-            {
-                localVarRequestOptions.FormParameters.Add("start_time", ClientUtils.ParameterToString(startTime)); // form parameter
-            }
-            if (endTime != null)
-            {
-                localVarRequestOptions.FormParameters.Add("end_time", ClientUtils.ParameterToString(endTime)); // form parameter
-            }
-            if (queryDispute != null)
-            {
-                localVarRequestOptions.FormParameters.Add("query_dispute", ClientUtils.ParameterToString(queryDispute)); // form parameter
-            }
-            if (page != null)
-            {
-                localVarRequestOptions.FormParameters.Add("page", ClientUtils.ParameterToString(page)); // form parameter
-            }
-            if (perPage != null)
-            {
-                localVarRequestOptions.FormParameters.Add("per_page", ClientUtils.ParameterToString(perPage)); // form parameter
-            }
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20016>("/p2p/merchant/transaction/get_completed_transaction_list", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantTransactionGetCompletedTransactionList", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all/historical orders 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
-        /// <param name="page">page number (optional)</param>
-        /// <param name="perPage">Number of orders per page (optional)</param>
-        /// <returns>Task of InlineResponse20016</returns>
-        public async Task<InlineResponse20016> P2pMerchantTransactionGetCompletedTransactionListAsync (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20016> localVarResponse = await P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo(cryptoCurrency, fiatCurrency, selectType, status, txid, startTime, endTime, queryDispute, page, perPage);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get all/historical orders 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cryptoCurrency">Cryptocurrency</param>
-        /// <param name="fiatCurrency">Fiat currency</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
-        /// <param name="status">订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional)</param>
-        /// <param name="txid">Order ID (optional)</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
-        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
-        /// <param name="page">page number (optional)</param>
-        /// <param name="perPage">Number of orders per page (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-        public async Task<ApiResponse<InlineResponse20016>> P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?))
-        {
-            // verify the required parameter 'cryptoCurrency' is set
-            if (cryptoCurrency == null)
-                throw new ApiException(400, "Missing required parameter 'cryptoCurrency' when calling P2PApi->P2pMerchantTransactionGetCompletedTransactionList");
-
-            // verify the required parameter 'fiatCurrency' is set
-            if (fiatCurrency == null)
-                throw new ApiException(400, "Missing required parameter 'fiatCurrency' when calling P2PApi->P2pMerchantTransactionGetCompletedTransactionList");
-
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "multipart/form-data"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            localVarRequestOptions.FormParameters.Add("crypto_currency", ClientUtils.ParameterToString(cryptoCurrency)); // form parameter
-            localVarRequestOptions.FormParameters.Add("fiat_currency", ClientUtils.ParameterToString(fiatCurrency)); // form parameter
-            if (selectType != null)
-            {
-                localVarRequestOptions.FormParameters.Add("select_type", ClientUtils.ParameterToString(selectType)); // form parameter
-            }
-            if (status != null)
-            {
-                localVarRequestOptions.FormParameters.Add("status", ClientUtils.ParameterToString(status)); // form parameter
-            }
-            if (txid != null)
-            {
-                localVarRequestOptions.FormParameters.Add("txid", ClientUtils.ParameterToString(txid)); // form parameter
-            }
-            if (startTime != null)
-            {
-                localVarRequestOptions.FormParameters.Add("start_time", ClientUtils.ParameterToString(startTime)); // form parameter
-            }
-            if (endTime != null)
-            {
-                localVarRequestOptions.FormParameters.Add("end_time", ClientUtils.ParameterToString(endTime)); // form parameter
-            }
-            if (queryDispute != null)
-            {
-                localVarRequestOptions.FormParameters.Add("query_dispute", ClientUtils.ParameterToString(queryDispute)); // form parameter
-            }
-            if (page != null)
-            {
-                localVarRequestOptions.FormParameters.Add("page", ClientUtils.ParameterToString(page)); // form parameter
-            }
-            if (perPage != null)
-            {
-                localVarRequestOptions.FormParameters.Add("per_page", ClientUtils.ParameterToString(perPage)); // form parameter
-            }
-
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20016>("/p2p/merchant/transaction/get_completed_transaction_list", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantTransactionGetCompletedTransactionList", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query order details 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="txid">Order ID</param>
-        /// <param name="channel">Empty or web3 (optional)</param>
         /// <returns>InlineResponse20017</returns>
-        public InlineResponse20017 P2pMerchantTransactionGetTransactionDetails (int txid, string channel = default(string))
+        public InlineResponse20017 P2pMerchantTransactionGetPendingTransactionList (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?))
         {
-             ApiResponse<InlineResponse20017> localVarResponse = P2pMerchantTransactionGetTransactionDetailsWithHttpInfo(txid, channel);
+             ApiResponse<InlineResponse20017> localVarResponse = P2pMerchantTransactionGetPendingTransactionListWithHttpInfo(cryptoCurrency, fiatCurrency, orderTab, selectType, status, txid, startTime, endTime);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get pending orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="orderTab">订单标签页，默认pending（pending：处理中（pending:  AND status in (&#39;OPEN&#39;, &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)）；dispute：申诉中（status in (&#39;ACCEPT&#39;, &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20017</returns>
+        public ApiResponse<InlineResponse20017> P2pMerchantTransactionGetPendingTransactionListWithHttpInfo (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?))
+        {
+            // verify the required parameter 'cryptoCurrency' is set
+            if (cryptoCurrency == null)
+                throw new ApiException(400, "Missing required parameter 'cryptoCurrency' when calling P2PApi->P2pMerchantTransactionGetPendingTransactionList");
+
+            // verify the required parameter 'fiatCurrency' is set
+            if (fiatCurrency == null)
+                throw new ApiException(400, "Missing required parameter 'fiatCurrency' when calling P2PApi->P2pMerchantTransactionGetPendingTransactionList");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.FormParameters.Add("crypto_currency", ClientUtils.ParameterToString(cryptoCurrency)); // form parameter
+            localVarRequestOptions.FormParameters.Add("fiat_currency", ClientUtils.ParameterToString(fiatCurrency)); // form parameter
+            if (orderTab != null)
+            {
+                localVarRequestOptions.FormParameters.Add("order_tab", ClientUtils.ParameterToString(orderTab)); // form parameter
+            }
+            if (selectType != null)
+            {
+                localVarRequestOptions.FormParameters.Add("select_type", ClientUtils.ParameterToString(selectType)); // form parameter
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.FormParameters.Add("status", ClientUtils.ParameterToString(status)); // form parameter
+            }
+            if (txid != null)
+            {
+                localVarRequestOptions.FormParameters.Add("txid", ClientUtils.ParameterToString(txid)); // form parameter
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.FormParameters.Add("start_time", ClientUtils.ParameterToString(startTime)); // form parameter
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.FormParameters.Add("end_time", ClientUtils.ParameterToString(endTime)); // form parameter
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse20017>("/p2p/merchant/transaction/get_pending_transaction_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantTransactionGetPendingTransactionList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get pending orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="orderTab">订单标签页，默认pending（pending：处理中（pending:  AND status in (&#39;OPEN&#39;, &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)）；dispute：申诉中（status in (&#39;ACCEPT&#39;, &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <returns>Task of InlineResponse20017</returns>
+        public async Task<InlineResponse20017> P2pMerchantTransactionGetPendingTransactionListAsync (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20017> localVarResponse = await P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo(cryptoCurrency, fiatCurrency, orderTab, selectType, status, txid, startTime, endTime);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get pending orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="orderTab">订单标签页，默认pending（pending：处理中（pending:  AND status in (&#39;OPEN&#39;, &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)）；dispute：申诉中（status in (&#39;ACCEPT&#39;, &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) (optional)</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
+        public async Task<ApiResponse<InlineResponse20017>> P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo (string cryptoCurrency, string fiatCurrency, string orderTab = default(string), string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?))
+        {
+            // verify the required parameter 'cryptoCurrency' is set
+            if (cryptoCurrency == null)
+                throw new ApiException(400, "Missing required parameter 'cryptoCurrency' when calling P2PApi->P2pMerchantTransactionGetPendingTransactionList");
+
+            // verify the required parameter 'fiatCurrency' is set
+            if (fiatCurrency == null)
+                throw new ApiException(400, "Missing required parameter 'fiatCurrency' when calling P2PApi->P2pMerchantTransactionGetPendingTransactionList");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.FormParameters.Add("crypto_currency", ClientUtils.ParameterToString(cryptoCurrency)); // form parameter
+            localVarRequestOptions.FormParameters.Add("fiat_currency", ClientUtils.ParameterToString(fiatCurrency)); // form parameter
+            if (orderTab != null)
+            {
+                localVarRequestOptions.FormParameters.Add("order_tab", ClientUtils.ParameterToString(orderTab)); // form parameter
+            }
+            if (selectType != null)
+            {
+                localVarRequestOptions.FormParameters.Add("select_type", ClientUtils.ParameterToString(selectType)); // form parameter
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.FormParameters.Add("status", ClientUtils.ParameterToString(status)); // form parameter
+            }
+            if (txid != null)
+            {
+                localVarRequestOptions.FormParameters.Add("txid", ClientUtils.ParameterToString(txid)); // form parameter
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.FormParameters.Add("start_time", ClientUtils.ParameterToString(startTime)); // form parameter
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.FormParameters.Add("end_time", ClientUtils.ParameterToString(endTime)); // form parameter
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20017>("/p2p/merchant/transaction/get_pending_transaction_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantTransactionGetPendingTransactionList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all/historical orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="perPage">Number of orders per page (optional)</param>
+        /// <returns>InlineResponse20017</returns>
+        public InlineResponse20017 P2pMerchantTransactionGetCompletedTransactionList (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?))
+        {
+             ApiResponse<InlineResponse20017> localVarResponse = P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo(cryptoCurrency, fiatCurrency, selectType, status, txid, startTime, endTime, queryDispute, page, perPage);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all/historical orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="perPage">Number of orders per page (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20017</returns>
+        public ApiResponse<InlineResponse20017> P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?))
+        {
+            // verify the required parameter 'cryptoCurrency' is set
+            if (cryptoCurrency == null)
+                throw new ApiException(400, "Missing required parameter 'cryptoCurrency' when calling P2PApi->P2pMerchantTransactionGetCompletedTransactionList");
+
+            // verify the required parameter 'fiatCurrency' is set
+            if (fiatCurrency == null)
+                throw new ApiException(400, "Missing required parameter 'fiatCurrency' when calling P2PApi->P2pMerchantTransactionGetCompletedTransactionList");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.FormParameters.Add("crypto_currency", ClientUtils.ParameterToString(cryptoCurrency)); // form parameter
+            localVarRequestOptions.FormParameters.Add("fiat_currency", ClientUtils.ParameterToString(fiatCurrency)); // form parameter
+            if (selectType != null)
+            {
+                localVarRequestOptions.FormParameters.Add("select_type", ClientUtils.ParameterToString(selectType)); // form parameter
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.FormParameters.Add("status", ClientUtils.ParameterToString(status)); // form parameter
+            }
+            if (txid != null)
+            {
+                localVarRequestOptions.FormParameters.Add("txid", ClientUtils.ParameterToString(txid)); // form parameter
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.FormParameters.Add("start_time", ClientUtils.ParameterToString(startTime)); // form parameter
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.FormParameters.Add("end_time", ClientUtils.ParameterToString(endTime)); // form parameter
+            }
+            if (queryDispute != null)
+            {
+                localVarRequestOptions.FormParameters.Add("query_dispute", ClientUtils.ParameterToString(queryDispute)); // form parameter
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.FormParameters.Add("page", ClientUtils.ParameterToString(page)); // form parameter
+            }
+            if (perPage != null)
+            {
+                localVarRequestOptions.FormParameters.Add("per_page", ClientUtils.ParameterToString(perPage)); // form parameter
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse20017>("/p2p/merchant/transaction/get_completed_transaction_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantTransactionGetCompletedTransactionList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all/historical orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="perPage">Number of orders per page (optional)</param>
+        /// <returns>Task of InlineResponse20017</returns>
+        public async Task<InlineResponse20017> P2pMerchantTransactionGetCompletedTransactionListAsync (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20017> localVarResponse = await P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo(cryptoCurrency, fiatCurrency, selectType, status, txid, startTime, endTime, queryDispute, page, perPage);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get all/historical orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cryptoCurrency">Cryptocurrency</param>
+        /// <param name="fiatCurrency">Fiat currency</param>
+        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) (optional)</param>
+        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional)</param>
+        /// <param name="txid">Order ID (optional)</param>
+        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago (optional)</param>
+        /// <param name="endTime">End timestamp, default is 23:59:59 today (optional)</param>
+        /// <param name="queryDispute">1: Include appeal status, 0: None (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="perPage">Number of orders per page (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
+        public async Task<ApiResponse<InlineResponse20017>> P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo (string cryptoCurrency, string fiatCurrency, string selectType = default(string), string status = default(string), int? txid = default(int?), int? startTime = default(int?), int? endTime = default(int?), int? queryDispute = default(int?), int? page = default(int?), int? perPage = default(int?))
+        {
+            // verify the required parameter 'cryptoCurrency' is set
+            if (cryptoCurrency == null)
+                throw new ApiException(400, "Missing required parameter 'cryptoCurrency' when calling P2PApi->P2pMerchantTransactionGetCompletedTransactionList");
+
+            // verify the required parameter 'fiatCurrency' is set
+            if (fiatCurrency == null)
+                throw new ApiException(400, "Missing required parameter 'fiatCurrency' when calling P2PApi->P2pMerchantTransactionGetCompletedTransactionList");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.FormParameters.Add("crypto_currency", ClientUtils.ParameterToString(cryptoCurrency)); // form parameter
+            localVarRequestOptions.FormParameters.Add("fiat_currency", ClientUtils.ParameterToString(fiatCurrency)); // form parameter
+            if (selectType != null)
+            {
+                localVarRequestOptions.FormParameters.Add("select_type", ClientUtils.ParameterToString(selectType)); // form parameter
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.FormParameters.Add("status", ClientUtils.ParameterToString(status)); // form parameter
+            }
+            if (txid != null)
+            {
+                localVarRequestOptions.FormParameters.Add("txid", ClientUtils.ParameterToString(txid)); // form parameter
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.FormParameters.Add("start_time", ClientUtils.ParameterToString(startTime)); // form parameter
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.FormParameters.Add("end_time", ClientUtils.ParameterToString(endTime)); // form parameter
+            }
+            if (queryDispute != null)
+            {
+                localVarRequestOptions.FormParameters.Add("query_dispute", ClientUtils.ParameterToString(queryDispute)); // form parameter
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.FormParameters.Add("page", ClientUtils.ParameterToString(page)); // form parameter
+            }
+            if (perPage != null)
+            {
+                localVarRequestOptions.FormParameters.Add("per_page", ClientUtils.ParameterToString(perPage)); // form parameter
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20017>("/p2p/merchant/transaction/get_completed_transaction_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantTransactionGetCompletedTransactionList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query order details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txid">Order ID</param>
+        /// <param name="channel">Empty or web3 (optional)</param>
+        /// <returns>InlineResponse20018</returns>
+        public InlineResponse20018 P2pMerchantTransactionGetTransactionDetails (int txid, string channel = default(string))
+        {
+             ApiResponse<InlineResponse20018> localVarResponse = P2pMerchantTransactionGetTransactionDetailsWithHttpInfo(txid, channel);
              return localVarResponse.Data;
         }
 
@@ -1804,8 +1804,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="txid">Order ID</param>
         /// <param name="channel">Empty or web3 (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20017</returns>
-        public ApiResponse<InlineResponse20017> P2pMerchantTransactionGetTransactionDetailsWithHttpInfo (int txid, string channel = default(string))
+        /// <returns>ApiResponse of InlineResponse20018</returns>
+        public ApiResponse<InlineResponse20018> P2pMerchantTransactionGetTransactionDetailsWithHttpInfo (int txid, string channel = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1832,7 +1832,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20017>("/p2p/merchant/transaction/get_transaction_details", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InlineResponse20018>("/p2p/merchant/transaction/get_transaction_details", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1849,10 +1849,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="txid">Order ID</param>
         /// <param name="channel">Empty or web3 (optional)</param>
-        /// <returns>Task of InlineResponse20017</returns>
-        public async Task<InlineResponse20017> P2pMerchantTransactionGetTransactionDetailsAsync (int txid, string channel = default(string))
+        /// <returns>Task of InlineResponse20018</returns>
+        public async Task<InlineResponse20018> P2pMerchantTransactionGetTransactionDetailsAsync (int txid, string channel = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20017> localVarResponse = await P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo(txid, channel);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20018> localVarResponse = await P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo(txid, channel);
              return localVarResponse.Data;
 
         }
@@ -1863,8 +1863,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="txid">Order ID</param>
         /// <param name="channel">Empty or web3 (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-        public async Task<ApiResponse<InlineResponse20017>> P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo (int txid, string channel = default(string))
+        /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
+        public async Task<ApiResponse<InlineResponse20018>> P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo (int txid, string channel = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1893,7 +1893,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20017>("/p2p/merchant/transaction/get_transaction_details", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20018>("/p2p/merchant/transaction/get_transaction_details", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2671,148 +2671,23 @@ namespace Io.Gate.GateApi.Api
         /// <param name="advNo">Ad ID</param>
         /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>InlineResponse20018</returns>
-        public InlineResponse20018 P2pMerchantBooksAdsUpdateStatus (int advNo, int advStatus, string tradeType = default(string))
-        {
-             ApiResponse<InlineResponse20018> localVarResponse = P2pMerchantBooksAdsUpdateStatusWithHttpInfo(advNo, advStatus, tradeType);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update ad status 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="advNo">Ad ID</param>
-        /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20018</returns>
-        public ApiResponse<InlineResponse20018> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (int advNo, int advStatus, string tradeType = default(string))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-                "multipart/form-data"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (tradeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "trade_type", tradeType));
-            }
-            localVarRequestOptions.FormParameters.Add("adv_no", ClientUtils.ParameterToString(advNo)); // form parameter
-            localVarRequestOptions.FormParameters.Add("adv_status", ClientUtils.ParameterToString(advStatus)); // form parameter
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20018>("/p2p/merchant/books/ads_update_status", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantBooksAdsUpdateStatus", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update ad status 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="advNo">Ad ID</param>
-        /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of InlineResponse20018</returns>
-        public async Task<InlineResponse20018> P2pMerchantBooksAdsUpdateStatusAsync (int advNo, int advStatus, string tradeType = default(string))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20018> localVarResponse = await P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo(advNo, advStatus, tradeType);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Update ad status 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="advNo">Ad ID</param>
-        /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
-        public async Task<ApiResponse<InlineResponse20018>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (int advNo, int advStatus, string tradeType = default(string))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "multipart/form-data"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (tradeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "trade_type", tradeType));
-            }
-            localVarRequestOptions.FormParameters.Add("adv_no", ClientUtils.ParameterToString(advNo)); // form parameter
-            localVarRequestOptions.FormParameters.Add("adv_status", ClientUtils.ParameterToString(advStatus)); // form parameter
-
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20018>("/p2p/merchant/books/ads_update_status", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantBooksAdsUpdateStatus", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query ad details 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="advNo"></param>
         /// <returns>InlineResponse20019</returns>
-        public InlineResponse20019 P2pMerchantBooksAdsDetail (string advNo)
+        public InlineResponse20019 P2pMerchantBooksAdsUpdateStatus (int advNo, int advStatus, string tradeType = default(string))
         {
-             ApiResponse<InlineResponse20019> localVarResponse = P2pMerchantBooksAdsDetailWithHttpInfo(advNo);
+             ApiResponse<InlineResponse20019> localVarResponse = P2pMerchantBooksAdsUpdateStatusWithHttpInfo(advNo, advStatus, tradeType);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Query ad details 
+        /// Update ad status 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="advNo"></param>
+        /// <param name="advNo">Ad ID</param>
+        /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
+        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20019</returns>
-        public ApiResponse<InlineResponse20019> P2pMerchantBooksAdsDetailWithHttpInfo (string advNo)
+        public ApiResponse<InlineResponse20019> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (int advNo, int advStatus, string tradeType = default(string))
         {
-            // verify the required parameter 'advNo' is set
-            if (advNo == null)
-                throw new ApiException(400, "Missing required parameter 'advNo' when calling P2PApi->P2pMerchantBooksAdsDetail");
-
             RequestOptions localVarRequestOptions = new RequestOptions();
 
             string[] _contentTypes = {
@@ -2830,15 +2705,20 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            if (tradeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "trade_type", tradeType));
+            }
             localVarRequestOptions.FormParameters.Add("adv_no", ClientUtils.ParameterToString(advNo)); // form parameter
+            localVarRequestOptions.FormParameters.Add("adv_status", ClientUtils.ParameterToString(advStatus)); // form parameter
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20019>("/p2p/merchant/books/ads_detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InlineResponse20019>("/p2p/merchant/books/ads_update_status", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("P2pMerchantBooksAdsDetail", localVarResponse);
+                Exception _exception = this.ExceptionFactory("P2pMerchantBooksAdsUpdateStatus", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -2846,14 +2726,134 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query ad details 
+        /// Update ad status 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="advNo"></param>
+        /// <param name="advNo">Ad ID</param>
+        /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
+        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>Task of InlineResponse20019</returns>
-        public async Task<InlineResponse20019> P2pMerchantBooksAdsDetailAsync (string advNo)
+        public async Task<InlineResponse20019> P2pMerchantBooksAdsUpdateStatusAsync (int advNo, int advStatus, string tradeType = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20019> localVarResponse = await P2pMerchantBooksAdsDetailAsyncWithHttpInfo(advNo);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20019> localVarResponse = await P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo(advNo, advStatus, tradeType);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update ad status 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="advNo">Ad ID</param>
+        /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</param>
+        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
+        public async Task<ApiResponse<InlineResponse20019>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (int advNo, int advStatus, string tradeType = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (tradeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "trade_type", tradeType));
+            }
+            localVarRequestOptions.FormParameters.Add("adv_no", ClientUtils.ParameterToString(advNo)); // form parameter
+            localVarRequestOptions.FormParameters.Add("adv_status", ClientUtils.ParameterToString(advStatus)); // form parameter
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20019>("/p2p/merchant/books/ads_update_status", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantBooksAdsUpdateStatus", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query ad details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="advNo"></param>
+        /// <returns>InlineResponse20020</returns>
+        public InlineResponse20020 P2pMerchantBooksAdsDetail (string advNo)
+        {
+             ApiResponse<InlineResponse20020> localVarResponse = P2pMerchantBooksAdsDetailWithHttpInfo(advNo);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query ad details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="advNo"></param>
+        /// <returns>ApiResponse of InlineResponse20020</returns>
+        public ApiResponse<InlineResponse20020> P2pMerchantBooksAdsDetailWithHttpInfo (string advNo)
+        {
+            // verify the required parameter 'advNo' is set
+            if (advNo == null)
+                throw new ApiException(400, "Missing required parameter 'advNo' when calling P2PApi->P2pMerchantBooksAdsDetail");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.FormParameters.Add("adv_no", ClientUtils.ParameterToString(advNo)); // form parameter
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse20020>("/p2p/merchant/books/ads_detail", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantBooksAdsDetail", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query ad details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="advNo"></param>
+        /// <returns>Task of InlineResponse20020</returns>
+        public async Task<InlineResponse20020> P2pMerchantBooksAdsDetailAsync (string advNo)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20020> localVarResponse = await P2pMerchantBooksAdsDetailAsyncWithHttpInfo(advNo);
              return localVarResponse.Data;
 
         }
@@ -2863,8 +2863,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="advNo"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        public async Task<ApiResponse<InlineResponse20019>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (string advNo)
+        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
+        public async Task<ApiResponse<InlineResponse20020>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (string advNo)
         {
             // verify the required parameter 'advNo' is set
             if (advNo == null)
@@ -2893,7 +2893,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20019>("/p2p/merchant/books/ads_detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20020>("/p2p/merchant/books/ads_detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2911,159 +2911,22 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Cryptocurrency (optional)</param>
         /// <param name="fiatUnit">Fiat currency (optional)</param>
         /// <param name="tradeType">Buy/Sell (optional)</param>
-        /// <returns>InlineResponse20020</returns>
-        public InlineResponse20020 P2pMerchantBooksMyAdsList (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
-        {
-             ApiResponse<InlineResponse20020> localVarResponse = P2pMerchantBooksMyAdsListWithHttpInfo(asset, fiatUnit, tradeType);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get my ad list 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="asset">Cryptocurrency (optional)</param>
-        /// <param name="fiatUnit">Fiat currency (optional)</param>
-        /// <param name="tradeType">Buy/Sell (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20020</returns>
-        public ApiResponse<InlineResponse20020> P2pMerchantBooksMyAdsListWithHttpInfo (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-                "multipart/form-data"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (asset != null)
-            {
-                localVarRequestOptions.FormParameters.Add("asset", ClientUtils.ParameterToString(asset)); // form parameter
-            }
-            if (fiatUnit != null)
-            {
-                localVarRequestOptions.FormParameters.Add("fiat_unit", ClientUtils.ParameterToString(fiatUnit)); // form parameter
-            }
-            if (tradeType != null)
-            {
-                localVarRequestOptions.FormParameters.Add("trade_type", ClientUtils.ParameterToString(tradeType)); // form parameter
-            }
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20020>("/p2p/merchant/books/my_ads_list", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantBooksMyAdsList", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get my ad list 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="asset">Cryptocurrency (optional)</param>
-        /// <param name="fiatUnit">Fiat currency (optional)</param>
-        /// <param name="tradeType">Buy/Sell (optional)</param>
-        /// <returns>Task of InlineResponse20020</returns>
-        public async Task<InlineResponse20020> P2pMerchantBooksMyAdsListAsync (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20020> localVarResponse = await P2pMerchantBooksMyAdsListAsyncWithHttpInfo(asset, fiatUnit, tradeType);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get my ad list 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="asset">Cryptocurrency (optional)</param>
-        /// <param name="fiatUnit">Fiat currency (optional)</param>
-        /// <param name="tradeType">Buy/Sell (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
-        public async Task<ApiResponse<InlineResponse20020>> P2pMerchantBooksMyAdsListAsyncWithHttpInfo (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "multipart/form-data"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (asset != null)
-            {
-                localVarRequestOptions.FormParameters.Add("asset", ClientUtils.ParameterToString(asset)); // form parameter
-            }
-            if (fiatUnit != null)
-            {
-                localVarRequestOptions.FormParameters.Add("fiat_unit", ClientUtils.ParameterToString(fiatUnit)); // form parameter
-            }
-            if (tradeType != null)
-            {
-                localVarRequestOptions.FormParameters.Add("trade_type", ClientUtils.ParameterToString(tradeType)); // form parameter
-            }
-
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20020>("/p2p/merchant/books/my_ads_list", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantBooksMyAdsList", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get chat history 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="txid">Order ID</param>
-        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
-        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
         /// <returns>InlineResponse20021</returns>
-        public InlineResponse20021 P2pMerchantChatGetChatsList (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?))
+        public InlineResponse20021 P2pMerchantBooksMyAdsList (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
         {
-             ApiResponse<InlineResponse20021> localVarResponse = P2pMerchantChatGetChatsListWithHttpInfo(txid, lastreceived, firstreceived);
+             ApiResponse<InlineResponse20021> localVarResponse = P2pMerchantBooksMyAdsListWithHttpInfo(asset, fiatUnit, tradeType);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get chat history 
+        /// Get my ad list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="txid">Order ID</param>
-        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
-        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
+        /// <param name="asset">Cryptocurrency (optional)</param>
+        /// <param name="fiatUnit">Fiat currency (optional)</param>
+        /// <param name="tradeType">Buy/Sell (optional)</param>
         /// <returns>ApiResponse of InlineResponse20021</returns>
-        public ApiResponse<InlineResponse20021> P2pMerchantChatGetChatsListWithHttpInfo (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?))
+        public ApiResponse<InlineResponse20021> P2pMerchantBooksMyAdsListWithHttpInfo (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3082,23 +2945,26 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.FormParameters.Add("txid", ClientUtils.ParameterToString(txid)); // form parameter
-            if (lastreceived != null)
+            if (asset != null)
             {
-                localVarRequestOptions.FormParameters.Add("lastreceived", ClientUtils.ParameterToString(lastreceived)); // form parameter
+                localVarRequestOptions.FormParameters.Add("asset", ClientUtils.ParameterToString(asset)); // form parameter
             }
-            if (firstreceived != null)
+            if (fiatUnit != null)
             {
-                localVarRequestOptions.FormParameters.Add("firstreceived", ClientUtils.ParameterToString(firstreceived)); // form parameter
+                localVarRequestOptions.FormParameters.Add("fiat_unit", ClientUtils.ParameterToString(fiatUnit)); // form parameter
+            }
+            if (tradeType != null)
+            {
+                localVarRequestOptions.FormParameters.Add("trade_type", ClientUtils.ParameterToString(tradeType)); // form parameter
             }
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20021>("/p2p/merchant/chat/get_chats_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InlineResponse20021>("/p2p/merchant/books/my_ads_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("P2pMerchantChatGetChatsList", localVarResponse);
+                Exception _exception = this.ExceptionFactory("P2pMerchantBooksMyAdsList", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -3106,16 +2972,150 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get chat history 
+        /// Get my ad list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="txid">Order ID</param>
-        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
-        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
+        /// <param name="asset">Cryptocurrency (optional)</param>
+        /// <param name="fiatUnit">Fiat currency (optional)</param>
+        /// <param name="tradeType">Buy/Sell (optional)</param>
         /// <returns>Task of InlineResponse20021</returns>
-        public async Task<InlineResponse20021> P2pMerchantChatGetChatsListAsync (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?))
+        public async Task<InlineResponse20021> P2pMerchantBooksMyAdsListAsync (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20021> localVarResponse = await P2pMerchantChatGetChatsListAsyncWithHttpInfo(txid, lastreceived, firstreceived);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20021> localVarResponse = await P2pMerchantBooksMyAdsListAsyncWithHttpInfo(asset, fiatUnit, tradeType);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get my ad list 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Cryptocurrency (optional)</param>
+        /// <param name="fiatUnit">Fiat currency (optional)</param>
+        /// <param name="tradeType">Buy/Sell (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20021)</returns>
+        public async Task<ApiResponse<InlineResponse20021>> P2pMerchantBooksMyAdsListAsyncWithHttpInfo (string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (asset != null)
+            {
+                localVarRequestOptions.FormParameters.Add("asset", ClientUtils.ParameterToString(asset)); // form parameter
+            }
+            if (fiatUnit != null)
+            {
+                localVarRequestOptions.FormParameters.Add("fiat_unit", ClientUtils.ParameterToString(fiatUnit)); // form parameter
+            }
+            if (tradeType != null)
+            {
+                localVarRequestOptions.FormParameters.Add("trade_type", ClientUtils.ParameterToString(tradeType)); // form parameter
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20021>("/p2p/merchant/books/my_ads_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantBooksMyAdsList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get chat history 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txid">Order ID</param>
+        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
+        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
+        /// <returns>InlineResponse20022</returns>
+        public InlineResponse20022 P2pMerchantChatGetChatsList (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?))
+        {
+             ApiResponse<InlineResponse20022> localVarResponse = P2pMerchantChatGetChatsListWithHttpInfo(txid, lastreceived, firstreceived);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get chat history 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txid">Order ID</param>
+        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
+        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20022</returns>
+        public ApiResponse<InlineResponse20022> P2pMerchantChatGetChatsListWithHttpInfo (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.FormParameters.Add("txid", ClientUtils.ParameterToString(txid)); // form parameter
+            if (lastreceived != null)
+            {
+                localVarRequestOptions.FormParameters.Add("lastreceived", ClientUtils.ParameterToString(lastreceived)); // form parameter
+            }
+            if (firstreceived != null)
+            {
+                localVarRequestOptions.FormParameters.Add("firstreceived", ClientUtils.ParameterToString(firstreceived)); // form parameter
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse20022>("/p2p/merchant/chat/get_chats_list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantChatGetChatsList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get chat history 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txid">Order ID</param>
+        /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
+        /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
+        /// <returns>Task of InlineResponse20022</returns>
+        public async Task<InlineResponse20022> P2pMerchantChatGetChatsListAsync (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20022> localVarResponse = await P2pMerchantChatGetChatsListAsyncWithHttpInfo(txid, lastreceived, firstreceived);
              return localVarResponse.Data;
 
         }
@@ -3127,8 +3127,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="txid">Order ID</param>
         /// <param name="lastreceived">Pagination timestamp (forward) (optional)</param>
         /// <param name="firstreceived">Pagination timestamp (backward) (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20021)</returns>
-        public async Task<ApiResponse<InlineResponse20021>> P2pMerchantChatGetChatsListAsyncWithHttpInfo (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?))
+        /// <returns>Task of ApiResponse (InlineResponse20022)</returns>
+        public async Task<ApiResponse<InlineResponse20022>> P2pMerchantChatGetChatsListAsyncWithHttpInfo (int txid, int? lastreceived = default(int?), int? firstreceived = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3161,7 +3161,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20021>("/p2p/merchant/chat/get_chats_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20022>("/p2p/merchant/chat/get_chats_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3179,10 +3179,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="txid">Order ID</param>
         /// <param name="message">Message content</param>
         /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided (optional)</param>
-        /// <returns>InlineResponse20022</returns>
-        public InlineResponse20022 P2pMerchantChatSendChatMessage (int txid, string message, int? type = default(int?))
+        /// <returns>InlineResponse20023</returns>
+        public InlineResponse20023 P2pMerchantChatSendChatMessage (int txid, string message, int? type = default(int?))
         {
-             ApiResponse<InlineResponse20022> localVarResponse = P2pMerchantChatSendChatMessageWithHttpInfo(txid, message, type);
+             ApiResponse<InlineResponse20023> localVarResponse = P2pMerchantChatSendChatMessageWithHttpInfo(txid, message, type);
              return localVarResponse.Data;
         }
 
@@ -3193,8 +3193,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="txid">Order ID</param>
         /// <param name="message">Message content</param>
         /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20022</returns>
-        public ApiResponse<InlineResponse20022> P2pMerchantChatSendChatMessageWithHttpInfo (int txid, string message, int? type = default(int?))
+        /// <returns>ApiResponse of InlineResponse20023</returns>
+        public ApiResponse<InlineResponse20023> P2pMerchantChatSendChatMessageWithHttpInfo (int txid, string message, int? type = default(int?))
         {
             // verify the required parameter 'message' is set
             if (message == null)
@@ -3226,7 +3226,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20022>("/p2p/merchant/chat/send_chat_message", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InlineResponse20023>("/p2p/merchant/chat/send_chat_message", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3244,10 +3244,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="txid">Order ID</param>
         /// <param name="message">Message content</param>
         /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided (optional)</param>
-        /// <returns>Task of InlineResponse20022</returns>
-        public async Task<InlineResponse20022> P2pMerchantChatSendChatMessageAsync (int txid, string message, int? type = default(int?))
+        /// <returns>Task of InlineResponse20023</returns>
+        public async Task<InlineResponse20023> P2pMerchantChatSendChatMessageAsync (int txid, string message, int? type = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20022> localVarResponse = await P2pMerchantChatSendChatMessageAsyncWithHttpInfo(txid, message, type);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20023> localVarResponse = await P2pMerchantChatSendChatMessageAsyncWithHttpInfo(txid, message, type);
              return localVarResponse.Data;
 
         }
@@ -3259,8 +3259,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="txid">Order ID</param>
         /// <param name="message">Message content</param>
         /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20022)</returns>
-        public async Task<ApiResponse<InlineResponse20022>> P2pMerchantChatSendChatMessageAsyncWithHttpInfo (int txid, string message, int? type = default(int?))
+        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
+        public async Task<ApiResponse<InlineResponse20023>> P2pMerchantChatSendChatMessageAsyncWithHttpInfo (int txid, string message, int? type = default(int?))
         {
             // verify the required parameter 'message' is set
             if (message == null)
@@ -3294,7 +3294,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20022>("/p2p/merchant/chat/send_chat_message", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20023>("/p2p/merchant/chat/send_chat_message", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3311,10 +3311,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageContentType">File type, currently only images and videos are supported</param>
         /// <param name="base64Img">File content (base64 encoded)</param>
-        /// <returns>InlineResponse20023</returns>
-        public InlineResponse20023 P2pMerchantChatUploadChatFile (string imageContentType, string base64Img)
+        /// <returns>InlineResponse20024</returns>
+        public InlineResponse20024 P2pMerchantChatUploadChatFile (string imageContentType, string base64Img)
         {
-             ApiResponse<InlineResponse20023> localVarResponse = P2pMerchantChatUploadChatFileWithHttpInfo(imageContentType, base64Img);
+             ApiResponse<InlineResponse20024> localVarResponse = P2pMerchantChatUploadChatFileWithHttpInfo(imageContentType, base64Img);
              return localVarResponse.Data;
         }
 
@@ -3324,8 +3324,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageContentType">File type, currently only images and videos are supported</param>
         /// <param name="base64Img">File content (base64 encoded)</param>
-        /// <returns>ApiResponse of InlineResponse20023</returns>
-        public ApiResponse<InlineResponse20023> P2pMerchantChatUploadChatFileWithHttpInfo (string imageContentType, string base64Img)
+        /// <returns>ApiResponse of InlineResponse20024</returns>
+        public ApiResponse<InlineResponse20024> P2pMerchantChatUploadChatFileWithHttpInfo (string imageContentType, string base64Img)
         {
             // verify the required parameter 'imageContentType' is set
             if (imageContentType == null)
@@ -3357,7 +3357,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20023>("/p2p/merchant/chat/upload_chat_file", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InlineResponse20024>("/p2p/merchant/chat/upload_chat_file", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3374,10 +3374,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageContentType">File type, currently only images and videos are supported</param>
         /// <param name="base64Img">File content (base64 encoded)</param>
-        /// <returns>Task of InlineResponse20023</returns>
-        public async Task<InlineResponse20023> P2pMerchantChatUploadChatFileAsync (string imageContentType, string base64Img)
+        /// <returns>Task of InlineResponse20024</returns>
+        public async Task<InlineResponse20024> P2pMerchantChatUploadChatFileAsync (string imageContentType, string base64Img)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20023> localVarResponse = await P2pMerchantChatUploadChatFileAsyncWithHttpInfo(imageContentType, base64Img);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20024> localVarResponse = await P2pMerchantChatUploadChatFileAsyncWithHttpInfo(imageContentType, base64Img);
              return localVarResponse.Data;
 
         }
@@ -3388,8 +3388,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageContentType">File type, currently only images and videos are supported</param>
         /// <param name="base64Img">File content (base64 encoded)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
-        public async Task<ApiResponse<InlineResponse20023>> P2pMerchantChatUploadChatFileAsyncWithHttpInfo (string imageContentType, string base64Img)
+        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
+        public async Task<ApiResponse<InlineResponse20024>> P2pMerchantChatUploadChatFileAsyncWithHttpInfo (string imageContentType, string base64Img)
         {
             // verify the required parameter 'imageContentType' is set
             if (imageContentType == null)
@@ -3423,7 +3423,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20023>("/p2p/merchant/chat/upload_chat_file", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20024>("/p2p/merchant/chat/upload_chat_file", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

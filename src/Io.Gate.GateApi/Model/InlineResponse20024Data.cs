@@ -25,25 +25,32 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20016DataTransTime
+    /// InlineResponse20024Data
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20016DataTransTime :  IEquatable<InlineResponse20016DataTransTime>, IValidatableObject
+    public partial class InlineResponse20024Data :  IEquatable<InlineResponse20024Data>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20016DataTransTime" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20024Data" /> class.
         /// </summary>
-        /// <param name="odTime">odTime.</param>
-        public InlineResponse20016DataTransTime(int odTime = default(int))
+        [JsonConstructorAttribute]
+        protected InlineResponse20024Data() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20024Data" /> class.
+        /// </summary>
+        /// <param name="fileKey">File key (required).</param>
+        public InlineResponse20024Data(string fileKey = default(string))
         {
-            this.OdTime = odTime;
+            // to ensure "fileKey" is required (not null)
+            this.FileKey = fileKey ?? throw new ArgumentNullException("fileKey", "fileKey is a required property for InlineResponse20024Data and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets OdTime
+        /// File key
         /// </summary>
-        [DataMember(Name="od_time")]
-        public int OdTime { get; set; }
+        /// <value>File key</value>
+        [DataMember(Name="file_key")]
+        public string FileKey { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -52,8 +59,8 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20016DataTransTime {\n");
-            sb.Append("  OdTime: ").Append(OdTime).Append("\n");
+            sb.Append("class InlineResponse20024Data {\n");
+            sb.Append("  FileKey: ").Append(FileKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,23 +81,24 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20016DataTransTime);
+            return this.Equals(input as InlineResponse20024Data);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20016DataTransTime instances are equal
+        /// Returns true if InlineResponse20024Data instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20016DataTransTime to be compared</param>
+        /// <param name="input">Instance of InlineResponse20024Data to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20016DataTransTime input)
+        public bool Equals(InlineResponse20024Data input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.OdTime == input.OdTime ||
-                    this.OdTime.Equals(input.OdTime)
+                    this.FileKey == input.FileKey ||
+                    (this.FileKey != null &&
+                    this.FileKey.Equals(input.FileKey))
                 );
         }
 
@@ -103,7 +111,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.OdTime.GetHashCode();
+                if (this.FileKey != null)
+                    hashCode = hashCode * 59 + this.FileKey.GetHashCode();
                 return hashCode;
             }
         }

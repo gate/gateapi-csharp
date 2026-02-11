@@ -102,7 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="gtFee">GT used to deduct fee, not returned in public endpoints.</param>
         /// <param name="amendText">The custom data that the user remarked when amending the order.</param>
         /// <param name="sequenceId">Consecutive trade ID within a single market. Used to track and identify trades in the specific market.</param>
-        /// <param name="text">订单的自定义信息，公共接口无此字段返回 pm_liquidate、comb_margin_liquidate、scm_liquidate 这三种场景代表全仓强平订单 liquidate 代表逐仓强平订单.</param>
+        /// <param name="text">Order&#39;s Custom Information. This field is not returned by public interfaces. The scenarios pm_liquidate, comb_margin_liquidate, and scm_liquidate represent full-account forced liquidation orders. liquidate represents isolated-account forced liquidation orders..</param>
         /// <param name="deal">Total Executed Value.</param>
         public Trade(string id = default(string), string createTime = default(string), string createTimeMs = default(string), string currencyPair = default(string), SideEnum? side = default(SideEnum?), RoleEnum? role = default(RoleEnum?), string amount = default(string), string price = default(string), string orderId = default(string), string fee = default(string), string feeCurrency = default(string), string pointFee = default(string), string gtFee = default(string), string amendText = default(string), string sequenceId = default(string), string text = default(string), string deal = default(string))
         {
@@ -217,9 +217,9 @@ namespace Io.Gate.GateApi.Model
         public string SequenceId { get; set; }
 
         /// <summary>
-        /// 订单的自定义信息，公共接口无此字段返回 pm_liquidate、comb_margin_liquidate、scm_liquidate 这三种场景代表全仓强平订单 liquidate 代表逐仓强平订单
+        /// Order&#39;s Custom Information. This field is not returned by public interfaces. The scenarios pm_liquidate, comb_margin_liquidate, and scm_liquidate represent full-account forced liquidation orders. liquidate represents isolated-account forced liquidation orders.
         /// </summary>
-        /// <value>订单的自定义信息，公共接口无此字段返回 pm_liquidate、comb_margin_liquidate、scm_liquidate 这三种场景代表全仓强平订单 liquidate 代表逐仓强平订单</value>
+        /// <value>Order&#39;s Custom Information. This field is not returned by public interfaces. The scenarios pm_liquidate, comb_margin_liquidate, and scm_liquidate represent full-account forced liquidation orders. liquidate represents isolated-account forced liquidation orders.</value>
         [DataMember(Name="text")]
         public string Text { get; set; }
 

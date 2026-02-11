@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 <a name="placedualorder"></a>
 # **PlaceDualOrder**
-> void PlaceDualOrder (PlaceDualInvestmentOrder placeDualInvestmentOrder)
+> PlaceDualInvestmentOrder PlaceDualOrder (PlaceDualInvestmentOrderParams placeDualInvestmentOrderParams)
 
 Place Dual Investment order
 
@@ -330,12 +330,13 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new EarnApi(config);
-            var placeDualInvestmentOrder = new PlaceDualInvestmentOrder(); // PlaceDualInvestmentOrder | 
+            var placeDualInvestmentOrderParams = new PlaceDualInvestmentOrderParams(); // PlaceDualInvestmentOrderParams | 
 
             try
             {
                 // Place Dual Investment order
-                apiInstance.PlaceDualOrder(placeDualInvestmentOrder);
+                PlaceDualInvestmentOrder result = apiInstance.PlaceDualOrder(placeDualInvestmentOrderParams);
+                Debug.WriteLine(result);
             }
             catch (GateApiException e)
             {
@@ -353,11 +354,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **placeDualInvestmentOrder** | [**PlaceDualInvestmentOrder**](PlaceDualInvestmentOrder.md)|  | 
+ **placeDualInvestmentOrderParams** | [**PlaceDualInvestmentOrderParams**](PlaceDualInvestmentOrderParams.md)|  | 
 
 ### Return type
 
-void (empty response body)
+[**PlaceDualInvestmentOrder**](PlaceDualInvestmentOrder.md)
 
 ### Authorization
 
@@ -366,7 +367,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

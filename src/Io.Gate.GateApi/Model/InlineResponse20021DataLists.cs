@@ -25,13 +25,13 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20020DataLists
+    /// InlineResponse20021DataLists
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20020DataLists :  IEquatable<InlineResponse20020DataLists>, IValidatableObject
+    public partial class InlineResponse20021DataLists :  IEquatable<InlineResponse20021DataLists>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20020DataLists" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20021DataLists" /> class.
         /// </summary>
         /// <param name="type">Ad buy/sell direction.</param>
         /// <param name="rate">Price.</param>
@@ -72,7 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="autoReply">Auto reply data.</param>
         /// <param name="timestamp">Ad creation time.</param>
         /// <param name="isHedge">Auto delegation.</param>
-        public InlineResponse20020DataLists(string type = default(string), string rate = default(string), string originalRate = default(string), string amount = default(string), string total = default(string), string limitTotal = default(string), string limitFiat = default(string), string minAmount = default(string), string maxAmount = default(string), string payTypeNum = default(string), string payTypeJson = default(string), string expireMin = default(string), string tierLimit = default(string), int advertisersLimit = default(int), int regTimeLimit = default(int), int verifiedLimit = default(int), int minCompletedLimit = default(int), int maxCompletedLimit = default(int), int userCountryLimit = default(int), int completedRateLimit = default(int), int userOrdersLimit = default(int), string hidePayment = default(string), string currencyType = default(string), string wantType = default(string), string tradeTips = default(string), int newHand = default(int), string id = default(string), string status = default(string), string lockedAmount = default(string), string hideRate = default(string), int isOutTime = default(int), int rateRefId = default(int), string rateOffset = default(string), int rateFixed = default(int), int floatTrend = default(int), int inDispute = default(int), string autoReply = default(string), int timestamp = default(int), int isHedge = default(int))
+        public InlineResponse20021DataLists(string type = default(string), string rate = default(string), string originalRate = default(string), string amount = default(string), string total = default(string), string limitTotal = default(string), string limitFiat = default(string), string minAmount = default(string), string maxAmount = default(string), string payTypeNum = default(string), string payTypeJson = default(string), string expireMin = default(string), string tierLimit = default(string), int advertisersLimit = default(int), int regTimeLimit = default(int), int verifiedLimit = default(int), int minCompletedLimit = default(int), int maxCompletedLimit = default(int), int userCountryLimit = default(int), int completedRateLimit = default(int), int userOrdersLimit = default(int), string hidePayment = default(string), string currencyType = default(string), string wantType = default(string), string tradeTips = default(string), int newHand = default(int), string id = default(string), string status = default(string), string lockedAmount = default(string), string hideRate = default(string), int isOutTime = default(int), int rateRefId = default(int), string rateOffset = default(string), int rateFixed = default(int), int floatTrend = default(int), int inDispute = default(int), string autoReply = default(string), int timestamp = default(int), int isHedge = default(int))
         {
             this.Type = type;
             this.Rate = rate;
@@ -395,7 +395,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20020DataLists {\n");
+            sb.Append("class InlineResponse20021DataLists {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Rate: ").Append(Rate).Append("\n");
             sb.Append("  OriginalRate: ").Append(OriginalRate).Append("\n");
@@ -455,15 +455,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20020DataLists);
+            return this.Equals(input as InlineResponse20021DataLists);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20020DataLists instances are equal
+        /// Returns true if InlineResponse20021DataLists instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20020DataLists to be compared</param>
+        /// <param name="input">Instance of InlineResponse20021DataLists to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20020DataLists input)
+        public bool Equals(InlineResponse20021DataLists input)
         {
             if (input == null)
                 return false;

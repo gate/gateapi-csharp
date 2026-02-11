@@ -38,7 +38,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20014Data" /> class.
         /// </summary>
+        /// <param name="isSelf">Whether self (required).</param>
         /// <param name="userTimest">User registration time (formatted string) (required).</param>
+        /// <param name="counterpartiesNum">Number of counterparties (required).</param>
         /// <param name="emailVerified">Whether email is verified (required).</param>
         /// <param name="verified">Whether KYC verification is completed (required).</param>
         /// <param name="hasPhone">Whether phone is bound (required).</param>
@@ -51,16 +53,28 @@ namespace Io.Gate.GateApi.Model
         /// <param name="cancelledUsedTimeMonth">Cancellation time in last 30 days (required).</param>
         /// <param name="completeTransactionsMonth">Number of completed orders in last 30 days (required).</param>
         /// <param name="completeRateMonth">Completion rate in last 30 days (required).</param>
+        /// <param name="ordersBuyRateMonth">Buy order ratio in last 30 days (required).</param>
+        /// <param name="isBlack">Whether blocked (required).</param>
         /// <param name="isFollow">Whether following (required).</param>
         /// <param name="haveTraded">Whether traded with self (required).</param>
         /// <param name="bizUid">Encrypted UID (required).</param>
+        /// <param name="blueVip">Blue V Crown Shield (required).</param>
+        /// <param name="workStatus">Merchant work status (required).</param>
         /// <param name="registrationDays">Registration days (required).</param>
         /// <param name="firstTradeDays">Days since first trade (required).</param>
+        /// <param name="needReplenish">Whether margin replenishment is needed (required).</param>
+        /// <param name="merchantInfo">merchantInfo (required).</param>
+        /// <param name="onlineStatus">Merchant online status (required).</param>
+        /// <param name="workHours">Merchant online status details (required).</param>
+        /// <param name="transactionsMonth">30-day transaction volume (required).</param>
+        /// <param name="transactionsAll">Total transaction volume (required).</param>
         /// <param name="tradeVersatile">Single user or composite user (required).</param>
-        public InlineResponse20014Data(string userTimest = default(string), string emailVerified = default(string), string verified = default(string), string hasPhone = default(string), string userName = default(string), string userNote = default(string), string completeTransactions = default(string), string paidTransactions = default(string), string acceptedTransactions = default(string), string transactionsUsedTime = default(string), string cancelledUsedTimeMonth = default(string), string completeTransactionsMonth = default(string), int completeRateMonth = default(int), int isFollow = default(int), int haveTraded = default(int), string bizUid = default(string), int registrationDays = default(int), int firstTradeDays = default(int), bool tradeVersatile = default(bool))
+        public InlineResponse20014Data(bool isSelf = default(bool), string userTimest = default(string), int counterpartiesNum = default(int), string emailVerified = default(string), string verified = default(string), string hasPhone = default(string), string userName = default(string), string userNote = default(string), string completeTransactions = default(string), string paidTransactions = default(string), string acceptedTransactions = default(string), string transactionsUsedTime = default(string), string cancelledUsedTimeMonth = default(string), string completeTransactionsMonth = default(string), int completeRateMonth = default(int), int ordersBuyRateMonth = default(int), int isBlack = default(int), int isFollow = default(int), int haveTraded = default(int), string bizUid = default(string), int blueVip = default(int), int workStatus = default(int), int registrationDays = default(int), int firstTradeDays = default(int), int needReplenish = default(int), InlineResponse20014DataMerchantInfo merchantInfo = default(InlineResponse20014DataMerchantInfo), int onlineStatus = default(int), Object workHours = default(Object), int transactionsMonth = default(int), int transactionsAll = default(int), bool tradeVersatile = default(bool))
         {
+            this.IsSelf = isSelf;
             // to ensure "userTimest" is required (not null)
             this.UserTimest = userTimest ?? throw new ArgumentNullException("userTimest", "userTimest is a required property for InlineResponse20014Data and cannot be null");
+            this.CounterpartiesNum = counterpartiesNum;
             // to ensure "emailVerified" is required (not null)
             this.EmailVerified = emailVerified ?? throw new ArgumentNullException("emailVerified", "emailVerified is a required property for InlineResponse20014Data and cannot be null");
             // to ensure "verified" is required (not null)
@@ -84,14 +98,33 @@ namespace Io.Gate.GateApi.Model
             // to ensure "completeTransactionsMonth" is required (not null)
             this.CompleteTransactionsMonth = completeTransactionsMonth ?? throw new ArgumentNullException("completeTransactionsMonth", "completeTransactionsMonth is a required property for InlineResponse20014Data and cannot be null");
             this.CompleteRateMonth = completeRateMonth;
+            this.OrdersBuyRateMonth = ordersBuyRateMonth;
+            this.IsBlack = isBlack;
             this.IsFollow = isFollow;
             this.HaveTraded = haveTraded;
             // to ensure "bizUid" is required (not null)
             this.BizUid = bizUid ?? throw new ArgumentNullException("bizUid", "bizUid is a required property for InlineResponse20014Data and cannot be null");
+            this.BlueVip = blueVip;
+            this.WorkStatus = workStatus;
             this.RegistrationDays = registrationDays;
             this.FirstTradeDays = firstTradeDays;
+            this.NeedReplenish = needReplenish;
+            // to ensure "merchantInfo" is required (not null)
+            this.MerchantInfo = merchantInfo ?? throw new ArgumentNullException("merchantInfo", "merchantInfo is a required property for InlineResponse20014Data and cannot be null");
+            this.OnlineStatus = onlineStatus;
+            // to ensure "workHours" is required (not null)
+            this.WorkHours = workHours ?? throw new ArgumentNullException("workHours", "workHours is a required property for InlineResponse20014Data and cannot be null");
+            this.TransactionsMonth = transactionsMonth;
+            this.TransactionsAll = transactionsAll;
             this.TradeVersatile = tradeVersatile;
         }
+
+        /// <summary>
+        /// Whether self
+        /// </summary>
+        /// <value>Whether self</value>
+        [DataMember(Name="is_self")]
+        public bool IsSelf { get; set; }
 
         /// <summary>
         /// User registration time (formatted string)
@@ -99,6 +132,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>User registration time (formatted string)</value>
         [DataMember(Name="user_timest")]
         public string UserTimest { get; set; }
+
+        /// <summary>
+        /// Number of counterparties
+        /// </summary>
+        /// <value>Number of counterparties</value>
+        [DataMember(Name="counterparties_num")]
+        public int CounterpartiesNum { get; set; }
 
         /// <summary>
         /// Whether email is verified
@@ -185,6 +225,20 @@ namespace Io.Gate.GateApi.Model
         public int CompleteRateMonth { get; set; }
 
         /// <summary>
+        /// Buy order ratio in last 30 days
+        /// </summary>
+        /// <value>Buy order ratio in last 30 days</value>
+        [DataMember(Name="orders_buy_rate_month")]
+        public int OrdersBuyRateMonth { get; set; }
+
+        /// <summary>
+        /// Whether blocked
+        /// </summary>
+        /// <value>Whether blocked</value>
+        [DataMember(Name="is_black")]
+        public int IsBlack { get; set; }
+
+        /// <summary>
         /// Whether following
         /// </summary>
         /// <value>Whether following</value>
@@ -206,6 +260,20 @@ namespace Io.Gate.GateApi.Model
         public string BizUid { get; set; }
 
         /// <summary>
+        /// Blue V Crown Shield
+        /// </summary>
+        /// <value>Blue V Crown Shield</value>
+        [DataMember(Name="blue_vip")]
+        public int BlueVip { get; set; }
+
+        /// <summary>
+        /// Merchant work status
+        /// </summary>
+        /// <value>Merchant work status</value>
+        [DataMember(Name="work_status")]
+        public int WorkStatus { get; set; }
+
+        /// <summary>
         /// Registration days
         /// </summary>
         /// <value>Registration days</value>
@@ -218,6 +286,47 @@ namespace Io.Gate.GateApi.Model
         /// <value>Days since first trade</value>
         [DataMember(Name="first_trade_days")]
         public int FirstTradeDays { get; set; }
+
+        /// <summary>
+        /// Whether margin replenishment is needed
+        /// </summary>
+        /// <value>Whether margin replenishment is needed</value>
+        [DataMember(Name="need_replenish")]
+        public int NeedReplenish { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MerchantInfo
+        /// </summary>
+        [DataMember(Name="merchant_info")]
+        public InlineResponse20014DataMerchantInfo MerchantInfo { get; set; }
+
+        /// <summary>
+        /// Merchant online status
+        /// </summary>
+        /// <value>Merchant online status</value>
+        [DataMember(Name="online_status")]
+        public int OnlineStatus { get; set; }
+
+        /// <summary>
+        /// Merchant online status details
+        /// </summary>
+        /// <value>Merchant online status details</value>
+        [DataMember(Name="work_hours")]
+        public Object WorkHours { get; set; }
+
+        /// <summary>
+        /// 30-day transaction volume
+        /// </summary>
+        /// <value>30-day transaction volume</value>
+        [DataMember(Name="transactions_month")]
+        public int TransactionsMonth { get; set; }
+
+        /// <summary>
+        /// Total transaction volume
+        /// </summary>
+        /// <value>Total transaction volume</value>
+        [DataMember(Name="transactions_all")]
+        public int TransactionsAll { get; set; }
 
         /// <summary>
         /// Single user or composite user
@@ -234,7 +343,9 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20014Data {\n");
+            sb.Append("  IsSelf: ").Append(IsSelf).Append("\n");
             sb.Append("  UserTimest: ").Append(UserTimest).Append("\n");
+            sb.Append("  CounterpartiesNum: ").Append(CounterpartiesNum).Append("\n");
             sb.Append("  EmailVerified: ").Append(EmailVerified).Append("\n");
             sb.Append("  Verified: ").Append(Verified).Append("\n");
             sb.Append("  HasPhone: ").Append(HasPhone).Append("\n");
@@ -247,11 +358,21 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  CancelledUsedTimeMonth: ").Append(CancelledUsedTimeMonth).Append("\n");
             sb.Append("  CompleteTransactionsMonth: ").Append(CompleteTransactionsMonth).Append("\n");
             sb.Append("  CompleteRateMonth: ").Append(CompleteRateMonth).Append("\n");
+            sb.Append("  OrdersBuyRateMonth: ").Append(OrdersBuyRateMonth).Append("\n");
+            sb.Append("  IsBlack: ").Append(IsBlack).Append("\n");
             sb.Append("  IsFollow: ").Append(IsFollow).Append("\n");
             sb.Append("  HaveTraded: ").Append(HaveTraded).Append("\n");
             sb.Append("  BizUid: ").Append(BizUid).Append("\n");
+            sb.Append("  BlueVip: ").Append(BlueVip).Append("\n");
+            sb.Append("  WorkStatus: ").Append(WorkStatus).Append("\n");
             sb.Append("  RegistrationDays: ").Append(RegistrationDays).Append("\n");
             sb.Append("  FirstTradeDays: ").Append(FirstTradeDays).Append("\n");
+            sb.Append("  NeedReplenish: ").Append(NeedReplenish).Append("\n");
+            sb.Append("  MerchantInfo: ").Append(MerchantInfo).Append("\n");
+            sb.Append("  OnlineStatus: ").Append(OnlineStatus).Append("\n");
+            sb.Append("  WorkHours: ").Append(WorkHours).Append("\n");
+            sb.Append("  TransactionsMonth: ").Append(TransactionsMonth).Append("\n");
+            sb.Append("  TransactionsAll: ").Append(TransactionsAll).Append("\n");
             sb.Append("  TradeVersatile: ").Append(TradeVersatile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -288,9 +409,17 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
+                    this.IsSelf == input.IsSelf ||
+                    this.IsSelf.Equals(input.IsSelf)
+                ) && 
+                (
                     this.UserTimest == input.UserTimest ||
                     (this.UserTimest != null &&
                     this.UserTimest.Equals(input.UserTimest))
+                ) && 
+                (
+                    this.CounterpartiesNum == input.CounterpartiesNum ||
+                    this.CounterpartiesNum.Equals(input.CounterpartiesNum)
                 ) && 
                 (
                     this.EmailVerified == input.EmailVerified ||
@@ -352,6 +481,14 @@ namespace Io.Gate.GateApi.Model
                     this.CompleteRateMonth.Equals(input.CompleteRateMonth)
                 ) && 
                 (
+                    this.OrdersBuyRateMonth == input.OrdersBuyRateMonth ||
+                    this.OrdersBuyRateMonth.Equals(input.OrdersBuyRateMonth)
+                ) && 
+                (
+                    this.IsBlack == input.IsBlack ||
+                    this.IsBlack.Equals(input.IsBlack)
+                ) && 
+                (
                     this.IsFollow == input.IsFollow ||
                     this.IsFollow.Equals(input.IsFollow)
                 ) && 
@@ -365,12 +502,46 @@ namespace Io.Gate.GateApi.Model
                     this.BizUid.Equals(input.BizUid))
                 ) && 
                 (
+                    this.BlueVip == input.BlueVip ||
+                    this.BlueVip.Equals(input.BlueVip)
+                ) && 
+                (
+                    this.WorkStatus == input.WorkStatus ||
+                    this.WorkStatus.Equals(input.WorkStatus)
+                ) && 
+                (
                     this.RegistrationDays == input.RegistrationDays ||
                     this.RegistrationDays.Equals(input.RegistrationDays)
                 ) && 
                 (
                     this.FirstTradeDays == input.FirstTradeDays ||
                     this.FirstTradeDays.Equals(input.FirstTradeDays)
+                ) && 
+                (
+                    this.NeedReplenish == input.NeedReplenish ||
+                    this.NeedReplenish.Equals(input.NeedReplenish)
+                ) && 
+                (
+                    this.MerchantInfo == input.MerchantInfo ||
+                    (this.MerchantInfo != null &&
+                    this.MerchantInfo.Equals(input.MerchantInfo))
+                ) && 
+                (
+                    this.OnlineStatus == input.OnlineStatus ||
+                    this.OnlineStatus.Equals(input.OnlineStatus)
+                ) && 
+                (
+                    this.WorkHours == input.WorkHours ||
+                    (this.WorkHours != null &&
+                    this.WorkHours.Equals(input.WorkHours))
+                ) && 
+                (
+                    this.TransactionsMonth == input.TransactionsMonth ||
+                    this.TransactionsMonth.Equals(input.TransactionsMonth)
+                ) && 
+                (
+                    this.TransactionsAll == input.TransactionsAll ||
+                    this.TransactionsAll.Equals(input.TransactionsAll)
                 ) && 
                 (
                     this.TradeVersatile == input.TradeVersatile ||
@@ -387,8 +558,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = hashCode * 59 + this.IsSelf.GetHashCode();
                 if (this.UserTimest != null)
                     hashCode = hashCode * 59 + this.UserTimest.GetHashCode();
+                hashCode = hashCode * 59 + this.CounterpartiesNum.GetHashCode();
                 if (this.EmailVerified != null)
                     hashCode = hashCode * 59 + this.EmailVerified.GetHashCode();
                 if (this.Verified != null)
@@ -412,12 +585,24 @@ namespace Io.Gate.GateApi.Model
                 if (this.CompleteTransactionsMonth != null)
                     hashCode = hashCode * 59 + this.CompleteTransactionsMonth.GetHashCode();
                 hashCode = hashCode * 59 + this.CompleteRateMonth.GetHashCode();
+                hashCode = hashCode * 59 + this.OrdersBuyRateMonth.GetHashCode();
+                hashCode = hashCode * 59 + this.IsBlack.GetHashCode();
                 hashCode = hashCode * 59 + this.IsFollow.GetHashCode();
                 hashCode = hashCode * 59 + this.HaveTraded.GetHashCode();
                 if (this.BizUid != null)
                     hashCode = hashCode * 59 + this.BizUid.GetHashCode();
+                hashCode = hashCode * 59 + this.BlueVip.GetHashCode();
+                hashCode = hashCode * 59 + this.WorkStatus.GetHashCode();
                 hashCode = hashCode * 59 + this.RegistrationDays.GetHashCode();
                 hashCode = hashCode * 59 + this.FirstTradeDays.GetHashCode();
+                hashCode = hashCode * 59 + this.NeedReplenish.GetHashCode();
+                if (this.MerchantInfo != null)
+                    hashCode = hashCode * 59 + this.MerchantInfo.GetHashCode();
+                hashCode = hashCode * 59 + this.OnlineStatus.GetHashCode();
+                if (this.WorkHours != null)
+                    hashCode = hashCode * 59 + this.WorkHours.GetHashCode();
+                hashCode = hashCode * 59 + this.TransactionsMonth.GetHashCode();
+                hashCode = hashCode * 59 + this.TransactionsAll.GetHashCode();
                 hashCode = hashCode * 59 + this.TradeVersatile.GetHashCode();
                 return hashCode;
             }

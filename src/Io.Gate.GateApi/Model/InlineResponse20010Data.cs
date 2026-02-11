@@ -38,50 +38,19 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20010Data" /> class.
         /// </summary>
-        /// <param name="pn">pn (required).</param>
-        /// <param name="ps">ps (required).</param>
-        /// <param name="totalPn">totalPn (required).</param>
-        /// <param name="count">count (required).</param>
-        /// <param name="list">list (required).</param>
-        public InlineResponse20010Data(int pn = default(int), int ps = default(int), int totalPn = default(int), int count = default(int), List<InlineResponse20010DataList> list = default(List<InlineResponse20010DataList>))
+        /// <param name="lists">Bank card list (required).</param>
+        public InlineResponse20010Data(List<InlineResponse20010DataLists> lists = default(List<InlineResponse20010DataLists>))
         {
-            this.Pn = pn;
-            this.Ps = ps;
-            this.TotalPn = totalPn;
-            this.Count = count;
-            // to ensure "list" is required (not null)
-            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20010Data and cannot be null");
+            // to ensure "lists" is required (not null)
+            this.Lists = lists ?? throw new ArgumentNullException("lists", "lists is a required property for InlineResponse20010Data and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets Pn
+        /// Bank card list
         /// </summary>
-        [DataMember(Name="pn")]
-        public int Pn { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Ps
-        /// </summary>
-        [DataMember(Name="ps")]
-        public int Ps { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TotalPn
-        /// </summary>
-        [DataMember(Name="total_pn")]
-        public int TotalPn { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Count
-        /// </summary>
-        [DataMember(Name="count")]
-        public int Count { get; set; }
-
-        /// <summary>
-        /// Gets or Sets List
-        /// </summary>
-        [DataMember(Name="list")]
-        public List<InlineResponse20010DataList> List { get; set; }
+        /// <value>Bank card list</value>
+        [DataMember(Name="lists")]
+        public List<InlineResponse20010DataLists> Lists { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -91,11 +60,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20010Data {\n");
-            sb.Append("  Pn: ").Append(Pn).Append("\n");
-            sb.Append("  Ps: ").Append(Ps).Append("\n");
-            sb.Append("  TotalPn: ").Append(TotalPn).Append("\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
-            sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("  Lists: ").Append(Lists).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,26 +96,10 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Pn == input.Pn ||
-                    this.Pn.Equals(input.Pn)
-                ) && 
-                (
-                    this.Ps == input.Ps ||
-                    this.Ps.Equals(input.Ps)
-                ) && 
-                (
-                    this.TotalPn == input.TotalPn ||
-                    this.TotalPn.Equals(input.TotalPn)
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
-                ) && 
-                (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
+                    this.Lists == input.Lists ||
+                    this.Lists != null &&
+                    input.Lists != null &&
+                    this.Lists.SequenceEqual(input.Lists)
                 );
         }
 
@@ -163,12 +112,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Pn.GetHashCode();
-                hashCode = hashCode * 59 + this.Ps.GetHashCode();
-                hashCode = hashCode * 59 + this.TotalPn.GetHashCode();
-                hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                if (this.Lists != null)
+                    hashCode = hashCode * 59 + this.Lists.GetHashCode();
                 return hashCode;
             }
         }

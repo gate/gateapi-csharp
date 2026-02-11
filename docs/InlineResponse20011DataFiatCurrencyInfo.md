@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20010DataFiatCurrencyInfo
+# Io.Gate.GateApi.Model.InlineResponse20011DataFiatCurrencyInfo
 
 ## Properties
 

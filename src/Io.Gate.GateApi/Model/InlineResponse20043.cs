@@ -33,164 +33,110 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20043" /> class.
         /// </summary>
-        /// <param name="userId">User ID.</param>
-        /// <param name="transactionId">filledrecordsID.</param>
-        /// <param name="orderId">Order ID.</param>
-        /// <param name="text">User Order ID.</param>
-        /// <param name="symbol">Currency pair.</param>
-        /// <param name="exchangeType">Exchange.</param>
-        /// <param name="businessType">Business Type.</param>
-        /// <param name="side">Buy/Sell Direction.</param>
-        /// <param name="qty">Trading size.</param>
-        /// <param name="price">Fill Price.</param>
-        /// <param name="fee">fee.</param>
-        /// <param name="feeCoin">Fee currency.</param>
-        /// <param name="feeRate">Fee Rate.</param>
-        /// <param name="matchRole">Filled Role.</param>
-        /// <param name="rpnl">Realized P&amp;L.</param>
-        /// <param name="positionMode">Position Mode.</param>
-        /// <param name="positionSide">Position Direction.</param>
-        /// <param name="createTime">Created time.</param>
-        public InlineResponse20043(string userId = default(string), string transactionId = default(string), string orderId = default(string), string text = default(string), string symbol = default(string), string exchangeType = default(string), string businessType = default(string), string side = default(string), string qty = default(string), string price = default(string), string fee = default(string), string feeCoin = default(string), string feeRate = default(string), string matchRole = default(string), string rpnl = default(string), string positionMode = default(string), string positionSide = default(string), string createTime = default(string))
+        [JsonConstructorAttribute]
+        protected InlineResponse20043() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20043" /> class.
+        /// </summary>
+        /// <param name="userId">User ID (required).</param>
+        /// <param name="symbol">Trading Pair (required).</param>
+        /// <param name="interestId">Interest Deduction ID (required).</param>
+        /// <param name="liabilityId">Debt Source ID, can be Order ID or Position ID (required).</param>
+        /// <param name="liability">Debt Quantity (required).</param>
+        /// <param name="liabilityCoin">Debt Currency (required).</param>
+        /// <param name="interest">Interest (required).</param>
+        /// <param name="interestRate">interest rate (required).</param>
+        /// <param name="interestType">Interest deduction type (&#x60;PERIODIC_POSITION&#x60;: periodic position interest; &#x60;PERIODIC_OPEN_ORDER&#x60;: periodic open-order interest; &#x60;IMMEDIATE_OPEN_ORDER&#x60;: interest charged on order opening) (required).</param>
+        /// <param name="createTime">Created time (required).</param>
+        /// <param name="exchangeType">Exchange (required).</param>
+        public InlineResponse20043(string userId = default(string), string symbol = default(string), string interestId = default(string), string liabilityId = default(string), string liability = default(string), string liabilityCoin = default(string), string interest = default(string), string interestRate = default(string), string interestType = default(string), string createTime = default(string), string exchangeType = default(string))
         {
-            this.UserId = userId;
-            this.TransactionId = transactionId;
-            this.OrderId = orderId;
-            this.Text = text;
-            this.Symbol = symbol;
-            this.ExchangeType = exchangeType;
-            this.BusinessType = businessType;
-            this.Side = side;
-            this.Qty = qty;
-            this.Price = price;
-            this.Fee = fee;
-            this.FeeCoin = feeCoin;
-            this.FeeRate = feeRate;
-            this.MatchRole = matchRole;
-            this.Rpnl = rpnl;
-            this.PositionMode = positionMode;
-            this.PositionSide = positionSide;
-            this.CreateTime = createTime;
+            // to ensure "userId" is required (not null)
+            this.UserId = userId ?? throw new ArgumentNullException("userId", "userId is a required property for InlineResponse20043 and cannot be null");
+            // to ensure "symbol" is required (not null)
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20043 and cannot be null");
+            // to ensure "interestId" is required (not null)
+            this.InterestId = interestId ?? throw new ArgumentNullException("interestId", "interestId is a required property for InlineResponse20043 and cannot be null");
+            // to ensure "liabilityId" is required (not null)
+            this.LiabilityId = liabilityId ?? throw new ArgumentNullException("liabilityId", "liabilityId is a required property for InlineResponse20043 and cannot be null");
+            // to ensure "liability" is required (not null)
+            this.Liability = liability ?? throw new ArgumentNullException("liability", "liability is a required property for InlineResponse20043 and cannot be null");
+            // to ensure "liabilityCoin" is required (not null)
+            this.LiabilityCoin = liabilityCoin ?? throw new ArgumentNullException("liabilityCoin", "liabilityCoin is a required property for InlineResponse20043 and cannot be null");
+            // to ensure "interest" is required (not null)
+            this.Interest = interest ?? throw new ArgumentNullException("interest", "interest is a required property for InlineResponse20043 and cannot be null");
+            // to ensure "interestRate" is required (not null)
+            this.InterestRate = interestRate ?? throw new ArgumentNullException("interestRate", "interestRate is a required property for InlineResponse20043 and cannot be null");
+            // to ensure "interestType" is required (not null)
+            this.InterestType = interestType ?? throw new ArgumentNullException("interestType", "interestType is a required property for InlineResponse20043 and cannot be null");
+            // to ensure "createTime" is required (not null)
+            this.CreateTime = createTime ?? throw new ArgumentNullException("createTime", "createTime is a required property for InlineResponse20043 and cannot be null");
+            // to ensure "exchangeType" is required (not null)
+            this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for InlineResponse20043 and cannot be null");
         }
 
         /// <summary>
         /// User ID
         /// </summary>
         /// <value>User ID</value>
-        [DataMember(Name="user_id")]
+        [DataMember(Name="userId")]
         public string UserId { get; set; }
 
         /// <summary>
-        /// filledrecordsID
+        /// Trading Pair
         /// </summary>
-        /// <value>filledrecordsID</value>
-        [DataMember(Name="transaction_id")]
-        public string TransactionId { get; set; }
-
-        /// <summary>
-        /// Order ID
-        /// </summary>
-        /// <value>Order ID</value>
-        [DataMember(Name="order_id")]
-        public string OrderId { get; set; }
-
-        /// <summary>
-        /// User Order ID
-        /// </summary>
-        /// <value>User Order ID</value>
-        [DataMember(Name="text")]
-        public string Text { get; set; }
-
-        /// <summary>
-        /// Currency pair
-        /// </summary>
-        /// <value>Currency pair</value>
+        /// <value>Trading Pair</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Exchange
+        /// Interest Deduction ID
         /// </summary>
-        /// <value>Exchange</value>
-        [DataMember(Name="exchange_type")]
-        public string ExchangeType { get; set; }
+        /// <value>Interest Deduction ID</value>
+        [DataMember(Name="interest_id")]
+        public string InterestId { get; set; }
 
         /// <summary>
-        /// Business Type
+        /// Debt Source ID, can be Order ID or Position ID
         /// </summary>
-        /// <value>Business Type</value>
-        [DataMember(Name="business_type")]
-        public string BusinessType { get; set; }
+        /// <value>Debt Source ID, can be Order ID or Position ID</value>
+        [DataMember(Name="liability_id")]
+        public string LiabilityId { get; set; }
 
         /// <summary>
-        /// Buy/Sell Direction
+        /// Debt Quantity
         /// </summary>
-        /// <value>Buy/Sell Direction</value>
-        [DataMember(Name="side")]
-        public string Side { get; set; }
+        /// <value>Debt Quantity</value>
+        [DataMember(Name="liability")]
+        public string Liability { get; set; }
 
         /// <summary>
-        /// Trading size
+        /// Debt Currency
         /// </summary>
-        /// <value>Trading size</value>
-        [DataMember(Name="qty")]
-        public string Qty { get; set; }
+        /// <value>Debt Currency</value>
+        [DataMember(Name="liability_coin")]
+        public string LiabilityCoin { get; set; }
 
         /// <summary>
-        /// Fill Price
+        /// Interest
         /// </summary>
-        /// <value>Fill Price</value>
-        [DataMember(Name="price")]
-        public string Price { get; set; }
+        /// <value>Interest</value>
+        [DataMember(Name="interest")]
+        public string Interest { get; set; }
 
         /// <summary>
-        /// fee
+        /// interest rate
         /// </summary>
-        /// <value>fee</value>
-        [DataMember(Name="fee")]
-        public string Fee { get; set; }
+        /// <value>interest rate</value>
+        [DataMember(Name="interest_rate")]
+        public string InterestRate { get; set; }
 
         /// <summary>
-        /// Fee currency
+        /// Interest deduction type (&#x60;PERIODIC_POSITION&#x60;: periodic position interest; &#x60;PERIODIC_OPEN_ORDER&#x60;: periodic open-order interest; &#x60;IMMEDIATE_OPEN_ORDER&#x60;: interest charged on order opening)
         /// </summary>
-        /// <value>Fee currency</value>
-        [DataMember(Name="fee_coin")]
-        public string FeeCoin { get; set; }
-
-        /// <summary>
-        /// Fee Rate
-        /// </summary>
-        /// <value>Fee Rate</value>
-        [DataMember(Name="fee_rate")]
-        public string FeeRate { get; set; }
-
-        /// <summary>
-        /// Filled Role
-        /// </summary>
-        /// <value>Filled Role</value>
-        [DataMember(Name="match_role")]
-        public string MatchRole { get; set; }
-
-        /// <summary>
-        /// Realized P&amp;L
-        /// </summary>
-        /// <value>Realized P&amp;L</value>
-        [DataMember(Name="rpnl")]
-        public string Rpnl { get; set; }
-
-        /// <summary>
-        /// Position Mode
-        /// </summary>
-        /// <value>Position Mode</value>
-        [DataMember(Name="position_mode")]
-        public string PositionMode { get; set; }
-
-        /// <summary>
-        /// Position Direction
-        /// </summary>
-        /// <value>Position Direction</value>
-        [DataMember(Name="position_side")]
-        public string PositionSide { get; set; }
+        /// <value>Interest deduction type (&#x60;PERIODIC_POSITION&#x60;: periodic position interest; &#x60;PERIODIC_OPEN_ORDER&#x60;: periodic open-order interest; &#x60;IMMEDIATE_OPEN_ORDER&#x60;: interest charged on order opening)</value>
+        [DataMember(Name="interest_type")]
+        public string InterestType { get; set; }
 
         /// <summary>
         /// Created time
@@ -198,6 +144,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
         public string CreateTime { get; set; }
+
+        /// <summary>
+        /// Exchange
+        /// </summary>
+        /// <value>Exchange</value>
+        [DataMember(Name="exchange_type")]
+        public string ExchangeType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -208,23 +161,16 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20043 {\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
-            sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
-            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
-            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
-            sb.Append("  BusinessType: ").Append(BusinessType).Append("\n");
-            sb.Append("  Side: ").Append(Side).Append("\n");
-            sb.Append("  Qty: ").Append(Qty).Append("\n");
-            sb.Append("  Price: ").Append(Price).Append("\n");
-            sb.Append("  Fee: ").Append(Fee).Append("\n");
-            sb.Append("  FeeCoin: ").Append(FeeCoin).Append("\n");
-            sb.Append("  FeeRate: ").Append(FeeRate).Append("\n");
-            sb.Append("  MatchRole: ").Append(MatchRole).Append("\n");
-            sb.Append("  Rpnl: ").Append(Rpnl).Append("\n");
-            sb.Append("  PositionMode: ").Append(PositionMode).Append("\n");
-            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
+            sb.Append("  InterestId: ").Append(InterestId).Append("\n");
+            sb.Append("  LiabilityId: ").Append(LiabilityId).Append("\n");
+            sb.Append("  Liability: ").Append(Liability).Append("\n");
+            sb.Append("  LiabilityCoin: ").Append(LiabilityCoin).Append("\n");
+            sb.Append("  Interest: ").Append(Interest).Append("\n");
+            sb.Append("  InterestRate: ").Append(InterestRate).Append("\n");
+            sb.Append("  InterestType: ").Append(InterestType).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -265,89 +211,54 @@ namespace Io.Gate.GateApi.Model
                     this.UserId.Equals(input.UserId))
                 ) && 
                 (
-                    this.TransactionId == input.TransactionId ||
-                    (this.TransactionId != null &&
-                    this.TransactionId.Equals(input.TransactionId))
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
                     this.Symbol == input.Symbol ||
                     (this.Symbol != null &&
                     this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.ExchangeType == input.ExchangeType ||
-                    (this.ExchangeType != null &&
-                    this.ExchangeType.Equals(input.ExchangeType))
+                    this.InterestId == input.InterestId ||
+                    (this.InterestId != null &&
+                    this.InterestId.Equals(input.InterestId))
                 ) && 
                 (
-                    this.BusinessType == input.BusinessType ||
-                    (this.BusinessType != null &&
-                    this.BusinessType.Equals(input.BusinessType))
+                    this.LiabilityId == input.LiabilityId ||
+                    (this.LiabilityId != null &&
+                    this.LiabilityId.Equals(input.LiabilityId))
                 ) && 
                 (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    this.Liability == input.Liability ||
+                    (this.Liability != null &&
+                    this.Liability.Equals(input.Liability))
                 ) && 
                 (
-                    this.Qty == input.Qty ||
-                    (this.Qty != null &&
-                    this.Qty.Equals(input.Qty))
+                    this.LiabilityCoin == input.LiabilityCoin ||
+                    (this.LiabilityCoin != null &&
+                    this.LiabilityCoin.Equals(input.LiabilityCoin))
                 ) && 
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
+                    this.Interest == input.Interest ||
+                    (this.Interest != null &&
+                    this.Interest.Equals(input.Interest))
                 ) && 
                 (
-                    this.Fee == input.Fee ||
-                    (this.Fee != null &&
-                    this.Fee.Equals(input.Fee))
+                    this.InterestRate == input.InterestRate ||
+                    (this.InterestRate != null &&
+                    this.InterestRate.Equals(input.InterestRate))
                 ) && 
                 (
-                    this.FeeCoin == input.FeeCoin ||
-                    (this.FeeCoin != null &&
-                    this.FeeCoin.Equals(input.FeeCoin))
-                ) && 
-                (
-                    this.FeeRate == input.FeeRate ||
-                    (this.FeeRate != null &&
-                    this.FeeRate.Equals(input.FeeRate))
-                ) && 
-                (
-                    this.MatchRole == input.MatchRole ||
-                    (this.MatchRole != null &&
-                    this.MatchRole.Equals(input.MatchRole))
-                ) && 
-                (
-                    this.Rpnl == input.Rpnl ||
-                    (this.Rpnl != null &&
-                    this.Rpnl.Equals(input.Rpnl))
-                ) && 
-                (
-                    this.PositionMode == input.PositionMode ||
-                    (this.PositionMode != null &&
-                    this.PositionMode.Equals(input.PositionMode))
-                ) && 
-                (
-                    this.PositionSide == input.PositionSide ||
-                    (this.PositionSide != null &&
-                    this.PositionSide.Equals(input.PositionSide))
+                    this.InterestType == input.InterestType ||
+                    (this.InterestType != null &&
+                    this.InterestType.Equals(input.InterestType))
                 ) && 
                 (
                     this.CreateTime == input.CreateTime ||
                     (this.CreateTime != null &&
                     this.CreateTime.Equals(input.CreateTime))
+                ) && 
+                (
+                    this.ExchangeType == input.ExchangeType ||
+                    (this.ExchangeType != null &&
+                    this.ExchangeType.Equals(input.ExchangeType))
                 );
         }
 
@@ -362,40 +273,26 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.UserId != null)
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.TransactionId != null)
-                    hashCode = hashCode * 59 + this.TransactionId.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
                 if (this.Symbol != null)
                     hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.ExchangeType != null)
-                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
-                if (this.BusinessType != null)
-                    hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.Qty != null)
-                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.Fee != null)
-                    hashCode = hashCode * 59 + this.Fee.GetHashCode();
-                if (this.FeeCoin != null)
-                    hashCode = hashCode * 59 + this.FeeCoin.GetHashCode();
-                if (this.FeeRate != null)
-                    hashCode = hashCode * 59 + this.FeeRate.GetHashCode();
-                if (this.MatchRole != null)
-                    hashCode = hashCode * 59 + this.MatchRole.GetHashCode();
-                if (this.Rpnl != null)
-                    hashCode = hashCode * 59 + this.Rpnl.GetHashCode();
-                if (this.PositionMode != null)
-                    hashCode = hashCode * 59 + this.PositionMode.GetHashCode();
-                if (this.PositionSide != null)
-                    hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
+                if (this.InterestId != null)
+                    hashCode = hashCode * 59 + this.InterestId.GetHashCode();
+                if (this.LiabilityId != null)
+                    hashCode = hashCode * 59 + this.LiabilityId.GetHashCode();
+                if (this.Liability != null)
+                    hashCode = hashCode * 59 + this.Liability.GetHashCode();
+                if (this.LiabilityCoin != null)
+                    hashCode = hashCode * 59 + this.LiabilityCoin.GetHashCode();
+                if (this.Interest != null)
+                    hashCode = hashCode * 59 + this.Interest.GetHashCode();
+                if (this.InterestRate != null)
+                    hashCode = hashCode * 59 + this.InterestRate.GetHashCode();
+                if (this.InterestType != null)
+                    hashCode = hashCode * 59 + this.InterestType.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.ExchangeType != null)
+                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
                 return hashCode;
             }
         }

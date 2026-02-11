@@ -28,15 +28,15 @@ namespace Io.Gate.GateApi.Model
     /// Flash swap order information
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20016DataConvertInfo :  IEquatable<InlineResponse20016DataConvertInfo>, IValidatableObject
+    public partial class InlineResponse20017DataConvertInfo :  IEquatable<InlineResponse20017DataConvertInfo>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20016DataConvertInfo" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20017DataConvertInfo" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineResponse20016DataConvertInfo() { }
+        protected InlineResponse20017DataConvertInfo() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20016DataConvertInfo" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20017DataConvertInfo" /> class.
         /// </summary>
         /// <param name="convertType">Flash swap target currency (required).</param>
         /// <param name="convertStatus">Flash swap order status (required).</param>
@@ -48,28 +48,28 @@ namespace Io.Gate.GateApi.Model
         /// <param name="convertAmount">Swap Amount (required).</param>
         /// <param name="slippage">Slippage calculation: slippage &#x3D; (expected price when placing order - real-time price during auto swap) / expected price when placing order (required).</param>
         /// <param name="status">Flash swap order display status (required).</param>
-        public InlineResponse20016DataConvertInfo(string convertType = default(string), string convertStatus = default(string), string preRate = default(string), string rate = default(string), string preFiatRate = default(string), string fiatRate = default(string), string amount = default(string), string convertAmount = default(string), string slippage = default(string), string status = default(string))
+        public InlineResponse20017DataConvertInfo(string convertType = default(string), string convertStatus = default(string), string preRate = default(string), string rate = default(string), string preFiatRate = default(string), string fiatRate = default(string), string amount = default(string), string convertAmount = default(string), string slippage = default(string), string status = default(string))
         {
             // to ensure "convertType" is required (not null)
-            this.ConvertType = convertType ?? throw new ArgumentNullException("convertType", "convertType is a required property for InlineResponse20016DataConvertInfo and cannot be null");
+            this.ConvertType = convertType ?? throw new ArgumentNullException("convertType", "convertType is a required property for InlineResponse20017DataConvertInfo and cannot be null");
             // to ensure "convertStatus" is required (not null)
-            this.ConvertStatus = convertStatus ?? throw new ArgumentNullException("convertStatus", "convertStatus is a required property for InlineResponse20016DataConvertInfo and cannot be null");
+            this.ConvertStatus = convertStatus ?? throw new ArgumentNullException("convertStatus", "convertStatus is a required property for InlineResponse20017DataConvertInfo and cannot be null");
             // to ensure "preRate" is required (not null)
-            this.PreRate = preRate ?? throw new ArgumentNullException("preRate", "preRate is a required property for InlineResponse20016DataConvertInfo and cannot be null");
+            this.PreRate = preRate ?? throw new ArgumentNullException("preRate", "preRate is a required property for InlineResponse20017DataConvertInfo and cannot be null");
             // to ensure "rate" is required (not null)
-            this.Rate = rate ?? throw new ArgumentNullException("rate", "rate is a required property for InlineResponse20016DataConvertInfo and cannot be null");
+            this.Rate = rate ?? throw new ArgumentNullException("rate", "rate is a required property for InlineResponse20017DataConvertInfo and cannot be null");
             // to ensure "preFiatRate" is required (not null)
-            this.PreFiatRate = preFiatRate ?? throw new ArgumentNullException("preFiatRate", "preFiatRate is a required property for InlineResponse20016DataConvertInfo and cannot be null");
+            this.PreFiatRate = preFiatRate ?? throw new ArgumentNullException("preFiatRate", "preFiatRate is a required property for InlineResponse20017DataConvertInfo and cannot be null");
             // to ensure "fiatRate" is required (not null)
-            this.FiatRate = fiatRate ?? throw new ArgumentNullException("fiatRate", "fiatRate is a required property for InlineResponse20016DataConvertInfo and cannot be null");
+            this.FiatRate = fiatRate ?? throw new ArgumentNullException("fiatRate", "fiatRate is a required property for InlineResponse20017DataConvertInfo and cannot be null");
             // to ensure "amount" is required (not null)
-            this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for InlineResponse20016DataConvertInfo and cannot be null");
+            this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for InlineResponse20017DataConvertInfo and cannot be null");
             // to ensure "convertAmount" is required (not null)
-            this.ConvertAmount = convertAmount ?? throw new ArgumentNullException("convertAmount", "convertAmount is a required property for InlineResponse20016DataConvertInfo and cannot be null");
+            this.ConvertAmount = convertAmount ?? throw new ArgumentNullException("convertAmount", "convertAmount is a required property for InlineResponse20017DataConvertInfo and cannot be null");
             // to ensure "slippage" is required (not null)
-            this.Slippage = slippage ?? throw new ArgumentNullException("slippage", "slippage is a required property for InlineResponse20016DataConvertInfo and cannot be null");
+            this.Slippage = slippage ?? throw new ArgumentNullException("slippage", "slippage is a required property for InlineResponse20017DataConvertInfo and cannot be null");
             // to ensure "status" is required (not null)
-            this.Status = status ?? throw new ArgumentNullException("status", "status is a required property for InlineResponse20016DataConvertInfo and cannot be null");
+            this.Status = status ?? throw new ArgumentNullException("status", "status is a required property for InlineResponse20017DataConvertInfo and cannot be null");
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20016DataConvertInfo {\n");
+            sb.Append("class InlineResponse20017DataConvertInfo {\n");
             sb.Append("  ConvertType: ").Append(ConvertType).Append("\n");
             sb.Append("  ConvertStatus: ").Append(ConvertStatus).Append("\n");
             sb.Append("  PreRate: ").Append(PreRate).Append("\n");
@@ -180,15 +180,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20016DataConvertInfo);
+            return this.Equals(input as InlineResponse20017DataConvertInfo);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20016DataConvertInfo instances are equal
+        /// Returns true if InlineResponse20017DataConvertInfo instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20016DataConvertInfo to be compared</param>
+        /// <param name="input">Instance of InlineResponse20017DataConvertInfo to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20016DataConvertInfo input)
+        public bool Equals(InlineResponse20017DataConvertInfo input)
         {
             if (input == null)
                 return false;

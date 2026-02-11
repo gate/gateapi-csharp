@@ -202,7 +202,7 @@ namespace Example
             var apiInstance = new DeliveryApi(config);
             var settle = "usdt";  // string | Settle currency
             var contract = "BTC_USDT_20200814";  // string | Futures contract
-            var interval = "0";  // string | Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional)  (default to 0)
+            var interval = "0";  // string | Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional)  (default to 0)
             var limit = 10;  // int? | Number of depth levels (optional)  (default to 10)
             var withId = false;  // bool? | Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional)  (default to false)
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
  **contract** | **string**| Futures contract | 
- **interval** | **string**| Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified | [optional] [default to 0]
+ **interval** | **string**| Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 | [optional] [default to 0]
  **limit** | **int?**| Number of depth levels | [optional] [default to 10]
  **withId** | **bool?**| Whether to return depth update ID. This ID increments by 1 each time the depth changes | [optional] [default to false]
 
@@ -2070,7 +2070,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Batch cancellation request accepted and processed, success determined by order list |  -  |
+| **200** | Batch cancel request is received and processed. Success is determined based on the order list |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**CreateOtcOrder**](OTCApi.md#createotcorder) | **POST** /otc/order/create | Create fiat order
 [**CreateStableCoinOrder**](OTCApi.md#createstablecoinorder) | **POST** /otc/stable_coin/order/create | Create stablecoin order
 [**GetUserDefaultBank**](OTCApi.md#getuserdefaultbank) | **GET** /otc/get_user_def_bank | Get user&#39;s default bank account information
+[**GetBankList**](OTCApi.md#getbanklist) | **GET** /otc/bank_list | Get user bank card list
 [**MarkOtcOrderPaid**](OTCApi.md#markotcorderpaid) | **POST** /otc/order/paid | Mark fiat order as paid
 [**CancelOtcOrder**](OTCApi.md#cancelotcorder) | **POST** /otc/order/cancel | Fiat order cancellation
 [**ListOtcOrders**](OTCApi.md#listotcorders) | **GET** /otc/order/list | Fiat order list
@@ -303,6 +304,75 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getbanklist"></a>
+# **GetBankList**
+> InlineResponse20010 GetBankList ()
+
+Get user bank card list
+
+Get user bank card list for selecting bank card when placing orders
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetBankListExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new OTCApi(config);
+
+            try
+            {
+                // Get user bank card list
+                InlineResponse20010 result = apiInstance.GetBankList();
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling OTCApi.GetBankList: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InlineResponse20010**](InlineResponse20010.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="markotcorderpaid"></a>
 # **MarkOtcOrderPaid**
 > InlineResponse2007 MarkOtcOrderPaid (InlineObject4 inlineObject4)
@@ -451,7 +521,7 @@ Name | Type | Description  | Notes
 
 <a name="listotcorders"></a>
 # **ListOtcOrders**
-> InlineResponse20010 ListOtcOrders (string type = null, string fiatCurrency = null, string cryptoCurrency = null, string startTime = null, string endTime = null, string status = null, string pn = null, string ps = null)
+> InlineResponse20011 ListOtcOrders (string type = null, string fiatCurrency = null, string cryptoCurrency = null, string startTime = null, string endTime = null, string status = null, string pn = null, string ps = null)
 
 Fiat order list
 
@@ -481,14 +551,14 @@ namespace Example
             var cryptoCurrency = "cryptoCurrency_example";  // string | Digital currency (optional) 
             var startTime = "startTime_example";  // string | starttime   for example : 2025-09-09 (optional) 
             var endTime = "endTime_example";  // string | endtime  for example :2025-09-09 (optional) 
-            var status = "status_example";  // string | DONE ：完成 CANCEL  ：取消 PROCESSING ：进行中 (optional) 
+            var status = "status_example";  // string | DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional) 
             var pn = "pn_example";  // string | Page number (optional) 
             var ps = "ps_example";  // string | Number of items per page (optional) 
 
             try
             {
                 // Fiat order list
-                InlineResponse20010 result = apiInstance.ListOtcOrders(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
+                InlineResponse20011 result = apiInstance.ListOtcOrders(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -512,13 +582,13 @@ Name | Type | Description  | Notes
  **cryptoCurrency** | **string**| Digital currency | [optional] 
  **startTime** | **string**| starttime   for example : 2025-09-09 | [optional] 
  **endTime** | **string**| endtime  for example :2025-09-09 | [optional] 
- **status** | **string**| DONE ：完成 CANCEL  ：取消 PROCESSING ：进行中 | [optional] 
+ **status** | **string**| DONE: Completed CANCEL: Canceled PROCESSING: In Progress | [optional] 
  **pn** | **string**| Page number | [optional] 
  **ps** | **string**| Number of items per page | [optional] 
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -538,7 +608,7 @@ Name | Type | Description  | Notes
 
 <a name="liststablecoinorders"></a>
 # **ListStableCoinOrders**
-> InlineResponse20011 ListStableCoinOrders (string pageSize = null, string pageNumber = null, string coinName = null, string startTime = null, string endTime = null, string status = null)
+> InlineResponse20012 ListStableCoinOrders (string pageSize = null, string pageNumber = null, string coinName = null, string startTime = null, string endTime = null, string status = null)
 
 Stablecoin order list
 
@@ -573,7 +643,7 @@ namespace Example
             try
             {
                 // Stablecoin order list
-                InlineResponse20011 result = apiInstance.ListStableCoinOrders(pageSize, pageNumber, coinName, startTime, endTime, status);
+                InlineResponse20012 result = apiInstance.ListStableCoinOrders(pageSize, pageNumber, coinName, startTime, endTime, status);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -601,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -621,7 +691,7 @@ Name | Type | Description  | Notes
 
 <a name="getotcorderdetail"></a>
 # **GetOtcOrderDetail**
-> InlineResponse20012 GetOtcOrderDetail (string orderId)
+> InlineResponse20013 GetOtcOrderDetail (string orderId)
 
 Fiat order details
 
@@ -651,7 +721,7 @@ namespace Example
             try
             {
                 // Fiat order details
-                InlineResponse20012 result = apiInstance.GetOtcOrderDetail(orderId);
+                InlineResponse20013 result = apiInstance.GetOtcOrderDetail(orderId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -674,7 +744,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 

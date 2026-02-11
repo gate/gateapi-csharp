@@ -25,42 +25,40 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20010DataFiatCurrencyInfo
+    /// Markets where user can place orders
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20010DataFiatCurrencyInfo :  IEquatable<InlineResponse20010DataFiatCurrencyInfo>, IValidatableObject
+    public partial class InlineResponse20014DataMerchantInfo :  IEquatable<InlineResponse20014DataMerchantInfo>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20010DataFiatCurrencyInfo" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20014DataMerchantInfo" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineResponse20010DataFiatCurrencyInfo() { }
+        protected InlineResponse20014DataMerchantInfo() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20010DataFiatCurrencyInfo" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20014DataMerchantInfo" /> class.
         /// </summary>
-        /// <param name="name">Name (required).</param>
-        /// <param name="icon">Image (required).</param>
-        public InlineResponse20010DataFiatCurrencyInfo(string name = default(string), string icon = default(string))
+        /// <param name="type">type (required).</param>
+        /// <param name="market">market (required).</param>
+        public InlineResponse20014DataMerchantInfo(string type = default(string), string market = default(string))
         {
-            // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name", "name is a required property for InlineResponse20010DataFiatCurrencyInfo and cannot be null");
-            // to ensure "icon" is required (not null)
-            this.Icon = icon ?? throw new ArgumentNullException("icon", "icon is a required property for InlineResponse20010DataFiatCurrencyInfo and cannot be null");
+            // to ensure "type" is required (not null)
+            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for InlineResponse20014DataMerchantInfo and cannot be null");
+            // to ensure "market" is required (not null)
+            this.Market = market ?? throw new ArgumentNullException("market", "market is a required property for InlineResponse20014DataMerchantInfo and cannot be null");
         }
 
         /// <summary>
-        /// Name
+        /// Gets or Sets Type
         /// </summary>
-        /// <value>Name</value>
-        [DataMember(Name="name")]
-        public string Name { get; set; }
+        [DataMember(Name="type")]
+        public string Type { get; set; }
 
         /// <summary>
-        /// Image
+        /// Gets or Sets Market
         /// </summary>
-        /// <value>Image</value>
-        [DataMember(Name="icon")]
-        public string Icon { get; set; }
+        [DataMember(Name="market")]
+        public string Market { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,9 +67,9 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20010DataFiatCurrencyInfo {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Icon: ").Append(Icon).Append("\n");
+            sb.Append("class InlineResponse20014DataMerchantInfo {\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Market: ").Append(Market).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,29 +90,29 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20010DataFiatCurrencyInfo);
+            return this.Equals(input as InlineResponse20014DataMerchantInfo);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20010DataFiatCurrencyInfo instances are equal
+        /// Returns true if InlineResponse20014DataMerchantInfo instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20010DataFiatCurrencyInfo to be compared</param>
+        /// <param name="input">Instance of InlineResponse20014DataMerchantInfo to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20010DataFiatCurrencyInfo input)
+        public bool Equals(InlineResponse20014DataMerchantInfo input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Icon == input.Icon ||
-                    (this.Icon != null &&
-                    this.Icon.Equals(input.Icon))
+                    this.Market == input.Market ||
+                    (this.Market != null &&
+                    this.Market.Equals(input.Market))
                 );
         }
 
@@ -127,10 +125,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Icon != null)
-                    hashCode = hashCode * 59 + this.Icon.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Market != null)
+                    hashCode = hashCode * 59 + this.Market.GetHashCode();
                 return hashCode;
             }
         }

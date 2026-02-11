@@ -122,9 +122,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="placeDualInvestmentOrder"></param>
-        /// <returns></returns>
-        void PlaceDualOrder (PlaceDualInvestmentOrder placeDualInvestmentOrder);
+        /// <param name="placeDualInvestmentOrderParams"></param>
+        /// <returns>PlaceDualInvestmentOrder</returns>
+        PlaceDualInvestmentOrder PlaceDualOrder (PlaceDualInvestmentOrderParams placeDualInvestmentOrderParams);
 
         /// <summary>
         /// Place Dual Investment order
@@ -133,9 +133,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="placeDualInvestmentOrder"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PlaceDualOrderWithHttpInfo (PlaceDualInvestmentOrder placeDualInvestmentOrder);
+        /// <param name="placeDualInvestmentOrderParams"></param>
+        /// <returns>ApiResponse of PlaceDualInvestmentOrder</returns>
+        ApiResponse<PlaceDualInvestmentOrder> PlaceDualOrderWithHttpInfo (PlaceDualInvestmentOrderParams placeDualInvestmentOrderParams);
         /// <summary>
         /// Dual-Currency Earning Assets
         /// </summary>
@@ -449,9 +449,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="placeDualInvestmentOrder"></param>
-        /// <returns>Task of void</returns>
-        Task PlaceDualOrderAsync (PlaceDualInvestmentOrder placeDualInvestmentOrder);
+        /// <param name="placeDualInvestmentOrderParams"></param>
+        /// <returns>Task of PlaceDualInvestmentOrder</returns>
+        Task<PlaceDualInvestmentOrder> PlaceDualOrderAsync (PlaceDualInvestmentOrderParams placeDualInvestmentOrderParams);
 
         /// <summary>
         /// Place Dual Investment order
@@ -460,9 +460,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="placeDualInvestmentOrder"></param>
-        /// <returns>Task of ApiResponse</returns>
-        Task<ApiResponse<Object>> PlaceDualOrderAsyncWithHttpInfo (PlaceDualInvestmentOrder placeDualInvestmentOrder);
+        /// <param name="placeDualInvestmentOrderParams"></param>
+        /// <returns>Task of ApiResponse (PlaceDualInvestmentOrder)</returns>
+        Task<ApiResponse<PlaceDualInvestmentOrder>> PlaceDualOrderAsyncWithHttpInfo (PlaceDualInvestmentOrderParams placeDualInvestmentOrderParams);
         /// <summary>
         /// Dual-Currency Earning Assets
         /// </summary>
@@ -1276,24 +1276,25 @@ namespace Io.Gate.GateApi.Api
         /// Place Dual Investment order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="placeDualInvestmentOrder"></param>
-        /// <returns></returns>
-        public void PlaceDualOrder (PlaceDualInvestmentOrder placeDualInvestmentOrder)
+        /// <param name="placeDualInvestmentOrderParams"></param>
+        /// <returns>PlaceDualInvestmentOrder</returns>
+        public PlaceDualInvestmentOrder PlaceDualOrder (PlaceDualInvestmentOrderParams placeDualInvestmentOrderParams)
         {
-             PlaceDualOrderWithHttpInfo(placeDualInvestmentOrder);
+             ApiResponse<PlaceDualInvestmentOrder> localVarResponse = PlaceDualOrderWithHttpInfo(placeDualInvestmentOrderParams);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Place Dual Investment order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="placeDualInvestmentOrder"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> PlaceDualOrderWithHttpInfo (PlaceDualInvestmentOrder placeDualInvestmentOrder)
+        /// <param name="placeDualInvestmentOrderParams"></param>
+        /// <returns>ApiResponse of PlaceDualInvestmentOrder</returns>
+        public ApiResponse<PlaceDualInvestmentOrder> PlaceDualOrderWithHttpInfo (PlaceDualInvestmentOrderParams placeDualInvestmentOrderParams)
         {
-            // verify the required parameter 'placeDualInvestmentOrder' is set
-            if (placeDualInvestmentOrder == null)
-                throw new ApiException(400, "Missing required parameter 'placeDualInvestmentOrder' when calling EarnApi->PlaceDualOrder");
+            // verify the required parameter 'placeDualInvestmentOrderParams' is set
+            if (placeDualInvestmentOrderParams == null)
+                throw new ApiException(400, "Missing required parameter 'placeDualInvestmentOrderParams' when calling EarnApi->PlaceDualOrder");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1303,6 +1304,7 @@ namespace Io.Gate.GateApi.Api
 
             // to determine the Accept header
             string[] _accepts = {
+                "application/json"
             };
 
             var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1311,13 +1313,13 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = placeDualInvestmentOrder;
+            localVarRequestOptions.Data = placeDualInvestmentOrderParams;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/earn/dual/orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<PlaceDualInvestmentOrder>("/earn/dual/orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1332,11 +1334,12 @@ namespace Io.Gate.GateApi.Api
         /// Place Dual Investment order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="placeDualInvestmentOrder"></param>
-        /// <returns>Task of void</returns>
-        public async Task PlaceDualOrderAsync (PlaceDualInvestmentOrder placeDualInvestmentOrder)
+        /// <param name="placeDualInvestmentOrderParams"></param>
+        /// <returns>Task of PlaceDualInvestmentOrder</returns>
+        public async Task<PlaceDualInvestmentOrder> PlaceDualOrderAsync (PlaceDualInvestmentOrderParams placeDualInvestmentOrderParams)
         {
-             await PlaceDualOrderAsyncWithHttpInfo(placeDualInvestmentOrder);
+             Io.Gate.GateApi.Client.ApiResponse<PlaceDualInvestmentOrder> localVarResponse = await PlaceDualOrderAsyncWithHttpInfo(placeDualInvestmentOrderParams);
+             return localVarResponse.Data;
 
         }
 
@@ -1344,13 +1347,13 @@ namespace Io.Gate.GateApi.Api
         /// Place Dual Investment order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="placeDualInvestmentOrder"></param>
-        /// <returns>Task of ApiResponse</returns>
-        public async Task<ApiResponse<Object>> PlaceDualOrderAsyncWithHttpInfo (PlaceDualInvestmentOrder placeDualInvestmentOrder)
+        /// <param name="placeDualInvestmentOrderParams"></param>
+        /// <returns>Task of ApiResponse (PlaceDualInvestmentOrder)</returns>
+        public async Task<ApiResponse<PlaceDualInvestmentOrder>> PlaceDualOrderAsyncWithHttpInfo (PlaceDualInvestmentOrderParams placeDualInvestmentOrderParams)
         {
-            // verify the required parameter 'placeDualInvestmentOrder' is set
-            if (placeDualInvestmentOrder == null)
-                throw new ApiException(400, "Missing required parameter 'placeDualInvestmentOrder' when calling EarnApi->PlaceDualOrder");
+            // verify the required parameter 'placeDualInvestmentOrderParams' is set
+            if (placeDualInvestmentOrderParams == null)
+                throw new ApiException(400, "Missing required parameter 'placeDualInvestmentOrderParams' when calling EarnApi->PlaceDualOrder");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1361,6 +1364,7 @@ namespace Io.Gate.GateApi.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
+                "application/json"
             };
 
             foreach (var _contentType in _contentTypes)
@@ -1369,14 +1373,14 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = placeDualInvestmentOrder;
+            localVarRequestOptions.Data = placeDualInvestmentOrderParams;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/earn/dual/orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<PlaceDualInvestmentOrder>("/earn/dual/orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

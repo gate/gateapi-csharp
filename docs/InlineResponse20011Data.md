@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Total** | **int** |  | 
-**PageSize** | **int** |  | 
-**PageNumber** | **int** |  | 
-**TotalPage** | **int** |  | 
+**Pn** | **int** |  | 
+**Ps** | **int** |  | 
+**TotalPn** | **int** |  | 
+**Count** | **int** |  | 
 **List** | [**List&lt;InlineResponse20011DataList&gt;**](InlineResponse20011DataList.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

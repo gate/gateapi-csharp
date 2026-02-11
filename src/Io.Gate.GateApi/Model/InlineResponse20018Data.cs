@@ -38,18 +38,694 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20018Data" /> class.
         /// </summary>
-        /// <param name="status">Ad status after successful update (required).</param>
-        public InlineResponse20018Data(int status = default(int))
+        /// <param name="isSell">Whether sell order (required).</param>
+        /// <param name="txid">Order ID (required).</param>
+        /// <param name="orderid">Order ID (required).</param>
+        /// <param name="timest">Order creation timestamp (required).</param>
+        /// <param name="lastPayTime">Payment deadline (required).</param>
+        /// <param name="remainPayTime">Remaining payment time (required).</param>
+        /// <param name="currencyType">Cryptocurrency type (required).</param>
+        /// <param name="wantType">Fiat currency type (required).</param>
+        /// <param name="rate">Price (required).</param>
+        /// <param name="amount">Size (required).</param>
+        /// <param name="total">Fiat amount (required).</param>
+        /// <param name="status">Order Status (required).</param>
+        /// <param name="reasonId">Cancellation reason ID (required).</param>
+        /// <param name="reasonDesc">Cancellation reason (required).</param>
+        /// <param name="toastId">Popup ID (required).</param>
+        /// <param name="cancelTime">Cancellation time (required).</param>
+        /// <param name="sellerConfirm">Whether seller confirmed the reason (required).</param>
+        /// <param name="inAppeal">Whether in dispute (required).</param>
+        /// <param name="disputeTime">Appeal time limit (required).</param>
+        /// <param name="cancelable">Whether order cancellation is allowed (required).</param>
+        /// <param name="hidePayment">Whether to hide payment method (required).</param>
+        /// <param name="tradeTips">Trading terms (required).</param>
+        /// <param name="showBank">Whether to display bank (required).</param>
+        /// <param name="bankname">Bank name (required).</param>
+        /// <param name="bankbranch">Bank branch name (required).</param>
+        /// <param name="bankid">Bank ID (required).</param>
+        /// <param name="bankHolderRealname">Bank cardholder name (required).</param>
+        /// <param name="showAli">Whether to display Alipay (required).</param>
+        /// <param name="aliname">Alipay account name (required).</param>
+        /// <param name="isAlicode">Whether Alipay QR code exists (required).</param>
+        /// <param name="showWechat">Whether to display WeChat (required).</param>
+        /// <param name="wename">WeChat account name (required).</param>
+        /// <param name="showOthers">Whether to display other payment methods (required).</param>
+        /// <param name="payOthers">Other payment methods (required).</param>
+        /// <param name="selPaytype">Payment type (required).</param>
+        /// <param name="itsUid">Counterparty UID (required).</param>
+        /// <param name="itsIsBlueVip">Whether counterparty is Blue V (required).</param>
+        /// <param name="itsTier">Counterparty VIP tier (required).</param>
+        /// <param name="itsAvatar">Counterparty avatar (required).</param>
+        /// <param name="itsNickname">Counterparty nickname (required).</param>
+        /// <param name="itsRealname">Counterparty username (required).</param>
+        /// <param name="isFollow">Whether following (required).</param>
+        /// <param name="isBlack">Whether blocked (required).</param>
+        /// <param name="haveTraded">Whether traded before (required).</param>
+        /// <param name="appealUnread">Unread appeals (required).</param>
+        /// <param name="appealAllowCancel">Whether appeal cancellation is allowed (required).</param>
+        /// <param name="appealVerdictHasOpen">Appeal result (including pending appeals) (required).</param>
+        /// <param name="imUnread">IM unread (required).</param>
+        /// <param name="message">Review content (required).</param>
+        /// <param name="score">Rating (required).</param>
+        /// <param name="paymentVoucherUrl">Payment voucher (required).</param>
+        /// <param name="completeNumber">Counterparty transaction volume (required).</param>
+        /// <param name="completeRateMonth">Counterparty completion rate (required).</param>
+        /// <param name="checkJournalAccount">Whether transaction record is verified (required).</param>
+        /// <param name="showJournalAccount">Whether to display transaction records (required).</param>
+        /// <param name="isFreezeGuarantee">Whether margin is frozen (required).</param>
+        /// <param name="usdtLeftGuarantee">Remaining USDT margin (required).</param>
+        /// <param name="guaranteeCurrType">Margin currency type (required).</param>
+        /// <param name="timestPaid">Payment time (required).</param>
+        /// <param name="state">Order Status (required).</param>
+        /// <param name="releaseCoinSwitch">Coin release switch configuration (required).</param>
+        /// <param name="ownRealname">Username (required).</param>
+        /// <param name="confirmationUseTimeMonth">Average confirmation time in last 30 days (required).</param>
+        /// <param name="isRiskUser">Whether risk user (required).</param>
+        /// <param name="isXt">Whether XT order (required).</param>
+        /// <param name="orderType">Order Type (required).</param>
+        /// <param name="symbol">Fiat currency symbol (required).</param>
+        /// <param name="isShowReceive">Whether to show confirm receipt during appeal (required).</param>
+        /// <param name="isTaker">Whether regular user (required).</param>
+        /// <param name="isOnline">Merchant online status (required).</param>
+        /// <param name="showSellerContactInfo">Whether to display seller contact information (required).</param>
+        /// <param name="supportedPayTypes">Payment methods supported by current order (required).</param>
+        public InlineResponse20018Data(int isSell = default(int), int txid = default(int), int orderid = default(int), int timest = default(int), int lastPayTime = default(int), int remainPayTime = default(int), string currencyType = default(string), string wantType = default(string), string rate = default(string), string amount = default(string), string total = default(string), string status = default(string), string reasonId = default(string), string reasonDesc = default(string), int toastId = default(int), string cancelTime = default(string), int sellerConfirm = default(int), int inAppeal = default(int), int disputeTime = default(int), int cancelable = default(int), int hidePayment = default(int), string tradeTips = default(string), string showBank = default(string), string bankname = default(string), string bankbranch = default(string), string bankid = default(string), string bankHolderRealname = default(string), string showAli = default(string), string aliname = default(string), int isAlicode = default(int), string showWechat = default(string), string wename = default(string), string showOthers = default(string), List<string> payOthers = default(List<string>), string selPaytype = default(string), string itsUid = default(string), int itsIsBlueVip = default(int), int itsTier = default(int), string itsAvatar = default(string), string itsNickname = default(string), string itsRealname = default(string), int isFollow = default(int), int isBlack = default(int), int haveTraded = default(int), int appealUnread = default(int), int appealAllowCancel = default(int), string appealVerdictHasOpen = default(string), int imUnread = default(int), string message = default(string), string score = default(string), List<string> paymentVoucherUrl = default(List<string>), int completeNumber = default(int), string completeRateMonth = default(string), bool checkJournalAccount = default(bool), bool showJournalAccount = default(bool), int isFreezeGuarantee = default(int), string usdtLeftGuarantee = default(string), string guaranteeCurrType = default(string), int timestPaid = default(int), string state = default(string), int releaseCoinSwitch = default(int), string ownRealname = default(string), int confirmationUseTimeMonth = default(int), int isRiskUser = default(int), int isXt = default(int), int orderType = default(int), string symbol = default(string), int isShowReceive = default(int), int isTaker = default(int), int isOnline = default(int), bool showSellerContactInfo = default(bool), List<string> supportedPayTypes = default(List<string>))
         {
-            this.Status = status;
+            this.IsSell = isSell;
+            this.Txid = txid;
+            this.Orderid = orderid;
+            this.Timest = timest;
+            this.LastPayTime = lastPayTime;
+            this.RemainPayTime = remainPayTime;
+            // to ensure "currencyType" is required (not null)
+            this.CurrencyType = currencyType ?? throw new ArgumentNullException("currencyType", "currencyType is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "wantType" is required (not null)
+            this.WantType = wantType ?? throw new ArgumentNullException("wantType", "wantType is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "rate" is required (not null)
+            this.Rate = rate ?? throw new ArgumentNullException("rate", "rate is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "amount" is required (not null)
+            this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "total" is required (not null)
+            this.Total = total ?? throw new ArgumentNullException("total", "total is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "status" is required (not null)
+            this.Status = status ?? throw new ArgumentNullException("status", "status is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "reasonId" is required (not null)
+            this.ReasonId = reasonId ?? throw new ArgumentNullException("reasonId", "reasonId is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "reasonDesc" is required (not null)
+            this.ReasonDesc = reasonDesc ?? throw new ArgumentNullException("reasonDesc", "reasonDesc is a required property for InlineResponse20018Data and cannot be null");
+            this.ToastId = toastId;
+            // to ensure "cancelTime" is required (not null)
+            this.CancelTime = cancelTime ?? throw new ArgumentNullException("cancelTime", "cancelTime is a required property for InlineResponse20018Data and cannot be null");
+            this.SellerConfirm = sellerConfirm;
+            this.InAppeal = inAppeal;
+            this.DisputeTime = disputeTime;
+            this.Cancelable = cancelable;
+            this.HidePayment = hidePayment;
+            // to ensure "tradeTips" is required (not null)
+            this.TradeTips = tradeTips ?? throw new ArgumentNullException("tradeTips", "tradeTips is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "showBank" is required (not null)
+            this.ShowBank = showBank ?? throw new ArgumentNullException("showBank", "showBank is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "bankname" is required (not null)
+            this.Bankname = bankname ?? throw new ArgumentNullException("bankname", "bankname is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "bankbranch" is required (not null)
+            this.Bankbranch = bankbranch ?? throw new ArgumentNullException("bankbranch", "bankbranch is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "bankid" is required (not null)
+            this.Bankid = bankid ?? throw new ArgumentNullException("bankid", "bankid is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "bankHolderRealname" is required (not null)
+            this.BankHolderRealname = bankHolderRealname ?? throw new ArgumentNullException("bankHolderRealname", "bankHolderRealname is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "showAli" is required (not null)
+            this.ShowAli = showAli ?? throw new ArgumentNullException("showAli", "showAli is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "aliname" is required (not null)
+            this.Aliname = aliname ?? throw new ArgumentNullException("aliname", "aliname is a required property for InlineResponse20018Data and cannot be null");
+            this.IsAlicode = isAlicode;
+            // to ensure "showWechat" is required (not null)
+            this.ShowWechat = showWechat ?? throw new ArgumentNullException("showWechat", "showWechat is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "wename" is required (not null)
+            this.Wename = wename ?? throw new ArgumentNullException("wename", "wename is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "showOthers" is required (not null)
+            this.ShowOthers = showOthers ?? throw new ArgumentNullException("showOthers", "showOthers is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "payOthers" is required (not null)
+            this.PayOthers = payOthers ?? throw new ArgumentNullException("payOthers", "payOthers is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "selPaytype" is required (not null)
+            this.SelPaytype = selPaytype ?? throw new ArgumentNullException("selPaytype", "selPaytype is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "itsUid" is required (not null)
+            this.ItsUid = itsUid ?? throw new ArgumentNullException("itsUid", "itsUid is a required property for InlineResponse20018Data and cannot be null");
+            this.ItsIsBlueVip = itsIsBlueVip;
+            this.ItsTier = itsTier;
+            // to ensure "itsAvatar" is required (not null)
+            this.ItsAvatar = itsAvatar ?? throw new ArgumentNullException("itsAvatar", "itsAvatar is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "itsNickname" is required (not null)
+            this.ItsNickname = itsNickname ?? throw new ArgumentNullException("itsNickname", "itsNickname is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "itsRealname" is required (not null)
+            this.ItsRealname = itsRealname ?? throw new ArgumentNullException("itsRealname", "itsRealname is a required property for InlineResponse20018Data and cannot be null");
+            this.IsFollow = isFollow;
+            this.IsBlack = isBlack;
+            this.HaveTraded = haveTraded;
+            this.AppealUnread = appealUnread;
+            this.AppealAllowCancel = appealAllowCancel;
+            // to ensure "appealVerdictHasOpen" is required (not null)
+            this.AppealVerdictHasOpen = appealVerdictHasOpen ?? throw new ArgumentNullException("appealVerdictHasOpen", "appealVerdictHasOpen is a required property for InlineResponse20018Data and cannot be null");
+            this.ImUnread = imUnread;
+            // to ensure "message" is required (not null)
+            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "score" is required (not null)
+            this.Score = score ?? throw new ArgumentNullException("score", "score is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "paymentVoucherUrl" is required (not null)
+            this.PaymentVoucherUrl = paymentVoucherUrl ?? throw new ArgumentNullException("paymentVoucherUrl", "paymentVoucherUrl is a required property for InlineResponse20018Data and cannot be null");
+            this.CompleteNumber = completeNumber;
+            // to ensure "completeRateMonth" is required (not null)
+            this.CompleteRateMonth = completeRateMonth ?? throw new ArgumentNullException("completeRateMonth", "completeRateMonth is a required property for InlineResponse20018Data and cannot be null");
+            this.CheckJournalAccount = checkJournalAccount;
+            this.ShowJournalAccount = showJournalAccount;
+            this.IsFreezeGuarantee = isFreezeGuarantee;
+            // to ensure "usdtLeftGuarantee" is required (not null)
+            this.UsdtLeftGuarantee = usdtLeftGuarantee ?? throw new ArgumentNullException("usdtLeftGuarantee", "usdtLeftGuarantee is a required property for InlineResponse20018Data and cannot be null");
+            // to ensure "guaranteeCurrType" is required (not null)
+            this.GuaranteeCurrType = guaranteeCurrType ?? throw new ArgumentNullException("guaranteeCurrType", "guaranteeCurrType is a required property for InlineResponse20018Data and cannot be null");
+            this.TimestPaid = timestPaid;
+            // to ensure "state" is required (not null)
+            this.State = state ?? throw new ArgumentNullException("state", "state is a required property for InlineResponse20018Data and cannot be null");
+            this.ReleaseCoinSwitch = releaseCoinSwitch;
+            // to ensure "ownRealname" is required (not null)
+            this.OwnRealname = ownRealname ?? throw new ArgumentNullException("ownRealname", "ownRealname is a required property for InlineResponse20018Data and cannot be null");
+            this.ConfirmationUseTimeMonth = confirmationUseTimeMonth;
+            this.IsRiskUser = isRiskUser;
+            this.IsXt = isXt;
+            this.OrderType = orderType;
+            // to ensure "symbol" is required (not null)
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20018Data and cannot be null");
+            this.IsShowReceive = isShowReceive;
+            this.IsTaker = isTaker;
+            this.IsOnline = isOnline;
+            this.ShowSellerContactInfo = showSellerContactInfo;
+            // to ensure "supportedPayTypes" is required (not null)
+            this.SupportedPayTypes = supportedPayTypes ?? throw new ArgumentNullException("supportedPayTypes", "supportedPayTypes is a required property for InlineResponse20018Data and cannot be null");
         }
 
         /// <summary>
-        /// Ad status after successful update
+        /// Whether sell order
         /// </summary>
-        /// <value>Ad status after successful update</value>
+        /// <value>Whether sell order</value>
+        [DataMember(Name="is_sell")]
+        public int IsSell { get; set; }
+
+        /// <summary>
+        /// Order ID
+        /// </summary>
+        /// <value>Order ID</value>
+        [DataMember(Name="txid")]
+        public int Txid { get; set; }
+
+        /// <summary>
+        /// Order ID
+        /// </summary>
+        /// <value>Order ID</value>
+        [DataMember(Name="orderid")]
+        public int Orderid { get; set; }
+
+        /// <summary>
+        /// Order creation timestamp
+        /// </summary>
+        /// <value>Order creation timestamp</value>
+        [DataMember(Name="timest")]
+        public int Timest { get; set; }
+
+        /// <summary>
+        /// Payment deadline
+        /// </summary>
+        /// <value>Payment deadline</value>
+        [DataMember(Name="last_pay_time")]
+        public int LastPayTime { get; set; }
+
+        /// <summary>
+        /// Remaining payment time
+        /// </summary>
+        /// <value>Remaining payment time</value>
+        [DataMember(Name="remain_pay_time")]
+        public int RemainPayTime { get; set; }
+
+        /// <summary>
+        /// Cryptocurrency type
+        /// </summary>
+        /// <value>Cryptocurrency type</value>
+        [DataMember(Name="currencyType")]
+        public string CurrencyType { get; set; }
+
+        /// <summary>
+        /// Fiat currency type
+        /// </summary>
+        /// <value>Fiat currency type</value>
+        [DataMember(Name="want_type")]
+        public string WantType { get; set; }
+
+        /// <summary>
+        /// Price
+        /// </summary>
+        /// <value>Price</value>
+        [DataMember(Name="rate")]
+        public string Rate { get; set; }
+
+        /// <summary>
+        /// Size
+        /// </summary>
+        /// <value>Size</value>
+        [DataMember(Name="amount")]
+        public string Amount { get; set; }
+
+        /// <summary>
+        /// Fiat amount
+        /// </summary>
+        /// <value>Fiat amount</value>
+        [DataMember(Name="total")]
+        public string Total { get; set; }
+
+        /// <summary>
+        /// Order Status
+        /// </summary>
+        /// <value>Order Status</value>
         [DataMember(Name="status")]
-        public int Status { get; set; }
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Cancellation reason ID
+        /// </summary>
+        /// <value>Cancellation reason ID</value>
+        [DataMember(Name="reason_id")]
+        public string ReasonId { get; set; }
+
+        /// <summary>
+        /// Cancellation reason
+        /// </summary>
+        /// <value>Cancellation reason</value>
+        [DataMember(Name="reason_desc")]
+        public string ReasonDesc { get; set; }
+
+        /// <summary>
+        /// Popup ID
+        /// </summary>
+        /// <value>Popup ID</value>
+        [DataMember(Name="toast_id")]
+        public int ToastId { get; set; }
+
+        /// <summary>
+        /// Cancellation time
+        /// </summary>
+        /// <value>Cancellation time</value>
+        [DataMember(Name="cancel_time")]
+        public string CancelTime { get; set; }
+
+        /// <summary>
+        /// Whether seller confirmed the reason
+        /// </summary>
+        /// <value>Whether seller confirmed the reason</value>
+        [DataMember(Name="seller_confirm")]
+        public int SellerConfirm { get; set; }
+
+        /// <summary>
+        /// Whether in dispute
+        /// </summary>
+        /// <value>Whether in dispute</value>
+        [DataMember(Name="in_appeal")]
+        public int InAppeal { get; set; }
+
+        /// <summary>
+        /// Appeal time limit
+        /// </summary>
+        /// <value>Appeal time limit</value>
+        [DataMember(Name="dispute_time")]
+        public int DisputeTime { get; set; }
+
+        /// <summary>
+        /// Whether order cancellation is allowed
+        /// </summary>
+        /// <value>Whether order cancellation is allowed</value>
+        [DataMember(Name="cancelable")]
+        public int Cancelable { get; set; }
+
+        /// <summary>
+        /// Whether to hide payment method
+        /// </summary>
+        /// <value>Whether to hide payment method</value>
+        [DataMember(Name="hide_payment")]
+        public int HidePayment { get; set; }
+
+        /// <summary>
+        /// Trading terms
+        /// </summary>
+        /// <value>Trading terms</value>
+        [DataMember(Name="trade_tips")]
+        public string TradeTips { get; set; }
+
+        /// <summary>
+        /// Whether to display bank
+        /// </summary>
+        /// <value>Whether to display bank</value>
+        [DataMember(Name="show_bank")]
+        public string ShowBank { get; set; }
+
+        /// <summary>
+        /// Bank name
+        /// </summary>
+        /// <value>Bank name</value>
+        [DataMember(Name="bankname")]
+        public string Bankname { get; set; }
+
+        /// <summary>
+        /// Bank branch name
+        /// </summary>
+        /// <value>Bank branch name</value>
+        [DataMember(Name="bankbranch")]
+        public string Bankbranch { get; set; }
+
+        /// <summary>
+        /// Bank ID
+        /// </summary>
+        /// <value>Bank ID</value>
+        [DataMember(Name="bankid")]
+        public string Bankid { get; set; }
+
+        /// <summary>
+        /// Bank cardholder name
+        /// </summary>
+        /// <value>Bank cardholder name</value>
+        [DataMember(Name="bank_holder_realname")]
+        public string BankHolderRealname { get; set; }
+
+        /// <summary>
+        /// Whether to display Alipay
+        /// </summary>
+        /// <value>Whether to display Alipay</value>
+        [DataMember(Name="show_ali")]
+        public string ShowAli { get; set; }
+
+        /// <summary>
+        /// Alipay account name
+        /// </summary>
+        /// <value>Alipay account name</value>
+        [DataMember(Name="aliname")]
+        public string Aliname { get; set; }
+
+        /// <summary>
+        /// Whether Alipay QR code exists
+        /// </summary>
+        /// <value>Whether Alipay QR code exists</value>
+        [DataMember(Name="is_alicode")]
+        public int IsAlicode { get; set; }
+
+        /// <summary>
+        /// Whether to display WeChat
+        /// </summary>
+        /// <value>Whether to display WeChat</value>
+        [DataMember(Name="show_wechat")]
+        public string ShowWechat { get; set; }
+
+        /// <summary>
+        /// WeChat account name
+        /// </summary>
+        /// <value>WeChat account name</value>
+        [DataMember(Name="wename")]
+        public string Wename { get; set; }
+
+        /// <summary>
+        /// Whether to display other payment methods
+        /// </summary>
+        /// <value>Whether to display other payment methods</value>
+        [DataMember(Name="show_others")]
+        public string ShowOthers { get; set; }
+
+        /// <summary>
+        /// Other payment methods
+        /// </summary>
+        /// <value>Other payment methods</value>
+        [DataMember(Name="pay_others")]
+        public List<string> PayOthers { get; set; }
+
+        /// <summary>
+        /// Payment type
+        /// </summary>
+        /// <value>Payment type</value>
+        [DataMember(Name="sel_paytype")]
+        public string SelPaytype { get; set; }
+
+        /// <summary>
+        /// Counterparty UID
+        /// </summary>
+        /// <value>Counterparty UID</value>
+        [DataMember(Name="its_uid")]
+        public string ItsUid { get; set; }
+
+        /// <summary>
+        /// Whether counterparty is Blue V
+        /// </summary>
+        /// <value>Whether counterparty is Blue V</value>
+        [DataMember(Name="its_is_blue_vip")]
+        public int ItsIsBlueVip { get; set; }
+
+        /// <summary>
+        /// Counterparty VIP tier
+        /// </summary>
+        /// <value>Counterparty VIP tier</value>
+        [DataMember(Name="its_tier")]
+        public int ItsTier { get; set; }
+
+        /// <summary>
+        /// Counterparty avatar
+        /// </summary>
+        /// <value>Counterparty avatar</value>
+        [DataMember(Name="its_avatar")]
+        public string ItsAvatar { get; set; }
+
+        /// <summary>
+        /// Counterparty nickname
+        /// </summary>
+        /// <value>Counterparty nickname</value>
+        [DataMember(Name="its_nickname")]
+        public string ItsNickname { get; set; }
+
+        /// <summary>
+        /// Counterparty username
+        /// </summary>
+        /// <value>Counterparty username</value>
+        [DataMember(Name="its_realname")]
+        public string ItsRealname { get; set; }
+
+        /// <summary>
+        /// Whether following
+        /// </summary>
+        /// <value>Whether following</value>
+        [DataMember(Name="is_follow")]
+        public int IsFollow { get; set; }
+
+        /// <summary>
+        /// Whether blocked
+        /// </summary>
+        /// <value>Whether blocked</value>
+        [DataMember(Name="is_black")]
+        public int IsBlack { get; set; }
+
+        /// <summary>
+        /// Whether traded before
+        /// </summary>
+        /// <value>Whether traded before</value>
+        [DataMember(Name="have_traded")]
+        public int HaveTraded { get; set; }
+
+        /// <summary>
+        /// Unread appeals
+        /// </summary>
+        /// <value>Unread appeals</value>
+        [DataMember(Name="appeal_unread")]
+        public int AppealUnread { get; set; }
+
+        /// <summary>
+        /// Whether appeal cancellation is allowed
+        /// </summary>
+        /// <value>Whether appeal cancellation is allowed</value>
+        [DataMember(Name="appeal_allow_cancel")]
+        public int AppealAllowCancel { get; set; }
+
+        /// <summary>
+        /// Appeal result (including pending appeals)
+        /// </summary>
+        /// <value>Appeal result (including pending appeals)</value>
+        [DataMember(Name="appeal_verdict_has_open")]
+        public string AppealVerdictHasOpen { get; set; }
+
+        /// <summary>
+        /// IM unread
+        /// </summary>
+        /// <value>IM unread</value>
+        [DataMember(Name="im_unread")]
+        public int ImUnread { get; set; }
+
+        /// <summary>
+        /// Review content
+        /// </summary>
+        /// <value>Review content</value>
+        [DataMember(Name="message")]
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Rating
+        /// </summary>
+        /// <value>Rating</value>
+        [DataMember(Name="score")]
+        public string Score { get; set; }
+
+        /// <summary>
+        /// Payment voucher
+        /// </summary>
+        /// <value>Payment voucher</value>
+        [DataMember(Name="payment_voucher_url")]
+        public List<string> PaymentVoucherUrl { get; set; }
+
+        /// <summary>
+        /// Counterparty transaction volume
+        /// </summary>
+        /// <value>Counterparty transaction volume</value>
+        [DataMember(Name="complete_number")]
+        public int CompleteNumber { get; set; }
+
+        /// <summary>
+        /// Counterparty completion rate
+        /// </summary>
+        /// <value>Counterparty completion rate</value>
+        [DataMember(Name="complete_rate_month")]
+        public string CompleteRateMonth { get; set; }
+
+        /// <summary>
+        /// Whether transaction record is verified
+        /// </summary>
+        /// <value>Whether transaction record is verified</value>
+        [DataMember(Name="check_journal_account")]
+        public bool CheckJournalAccount { get; set; }
+
+        /// <summary>
+        /// Whether to display transaction records
+        /// </summary>
+        /// <value>Whether to display transaction records</value>
+        [DataMember(Name="show_journal_account")]
+        public bool ShowJournalAccount { get; set; }
+
+        /// <summary>
+        /// Whether margin is frozen
+        /// </summary>
+        /// <value>Whether margin is frozen</value>
+        [DataMember(Name="is_freeze_guarantee")]
+        public int IsFreezeGuarantee { get; set; }
+
+        /// <summary>
+        /// Remaining USDT margin
+        /// </summary>
+        /// <value>Remaining USDT margin</value>
+        [DataMember(Name="usdt_left_guarantee")]
+        public string UsdtLeftGuarantee { get; set; }
+
+        /// <summary>
+        /// Margin currency type
+        /// </summary>
+        /// <value>Margin currency type</value>
+        [DataMember(Name="guarantee_curr_type")]
+        public string GuaranteeCurrType { get; set; }
+
+        /// <summary>
+        /// Payment time
+        /// </summary>
+        /// <value>Payment time</value>
+        [DataMember(Name="timest_paid")]
+        public int TimestPaid { get; set; }
+
+        /// <summary>
+        /// Order Status
+        /// </summary>
+        /// <value>Order Status</value>
+        [DataMember(Name="state")]
+        public string State { get; set; }
+
+        /// <summary>
+        /// Coin release switch configuration
+        /// </summary>
+        /// <value>Coin release switch configuration</value>
+        [DataMember(Name="release_coin_switch")]
+        public int ReleaseCoinSwitch { get; set; }
+
+        /// <summary>
+        /// Username
+        /// </summary>
+        /// <value>Username</value>
+        [DataMember(Name="own_realname")]
+        public string OwnRealname { get; set; }
+
+        /// <summary>
+        /// Average confirmation time in last 30 days
+        /// </summary>
+        /// <value>Average confirmation time in last 30 days</value>
+        [DataMember(Name="confirmation_use_time_month")]
+        public int ConfirmationUseTimeMonth { get; set; }
+
+        /// <summary>
+        /// Whether risk user
+        /// </summary>
+        /// <value>Whether risk user</value>
+        [DataMember(Name="is_risk_user")]
+        public int IsRiskUser { get; set; }
+
+        /// <summary>
+        /// Whether XT order
+        /// </summary>
+        /// <value>Whether XT order</value>
+        [DataMember(Name="is_xt")]
+        public int IsXt { get; set; }
+
+        /// <summary>
+        /// Order Type
+        /// </summary>
+        /// <value>Order Type</value>
+        [DataMember(Name="order_type")]
+        public int OrderType { get; set; }
+
+        /// <summary>
+        /// Fiat currency symbol
+        /// </summary>
+        /// <value>Fiat currency symbol</value>
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
+
+        /// <summary>
+        /// Whether to show confirm receipt during appeal
+        /// </summary>
+        /// <value>Whether to show confirm receipt during appeal</value>
+        [DataMember(Name="is_show_receive")]
+        public int IsShowReceive { get; set; }
+
+        /// <summary>
+        /// Whether regular user
+        /// </summary>
+        /// <value>Whether regular user</value>
+        [DataMember(Name="is_taker")]
+        public int IsTaker { get; set; }
+
+        /// <summary>
+        /// Merchant online status
+        /// </summary>
+        /// <value>Merchant online status</value>
+        [DataMember(Name="is_online")]
+        public int IsOnline { get; set; }
+
+        /// <summary>
+        /// Whether to display seller contact information
+        /// </summary>
+        /// <value>Whether to display seller contact information</value>
+        [DataMember(Name="show_seller_contact_info")]
+        public bool ShowSellerContactInfo { get; set; }
+
+        /// <summary>
+        /// Payment methods supported by current order
+        /// </summary>
+        /// <value>Payment methods supported by current order</value>
+        [DataMember(Name="supported_pay_types")]
+        public List<string> SupportedPayTypes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -59,7 +735,78 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20018Data {\n");
+            sb.Append("  IsSell: ").Append(IsSell).Append("\n");
+            sb.Append("  Txid: ").Append(Txid).Append("\n");
+            sb.Append("  Orderid: ").Append(Orderid).Append("\n");
+            sb.Append("  Timest: ").Append(Timest).Append("\n");
+            sb.Append("  LastPayTime: ").Append(LastPayTime).Append("\n");
+            sb.Append("  RemainPayTime: ").Append(RemainPayTime).Append("\n");
+            sb.Append("  CurrencyType: ").Append(CurrencyType).Append("\n");
+            sb.Append("  WantType: ").Append(WantType).Append("\n");
+            sb.Append("  Rate: ").Append(Rate).Append("\n");
+            sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  Total: ").Append(Total).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  ReasonId: ").Append(ReasonId).Append("\n");
+            sb.Append("  ReasonDesc: ").Append(ReasonDesc).Append("\n");
+            sb.Append("  ToastId: ").Append(ToastId).Append("\n");
+            sb.Append("  CancelTime: ").Append(CancelTime).Append("\n");
+            sb.Append("  SellerConfirm: ").Append(SellerConfirm).Append("\n");
+            sb.Append("  InAppeal: ").Append(InAppeal).Append("\n");
+            sb.Append("  DisputeTime: ").Append(DisputeTime).Append("\n");
+            sb.Append("  Cancelable: ").Append(Cancelable).Append("\n");
+            sb.Append("  HidePayment: ").Append(HidePayment).Append("\n");
+            sb.Append("  TradeTips: ").Append(TradeTips).Append("\n");
+            sb.Append("  ShowBank: ").Append(ShowBank).Append("\n");
+            sb.Append("  Bankname: ").Append(Bankname).Append("\n");
+            sb.Append("  Bankbranch: ").Append(Bankbranch).Append("\n");
+            sb.Append("  Bankid: ").Append(Bankid).Append("\n");
+            sb.Append("  BankHolderRealname: ").Append(BankHolderRealname).Append("\n");
+            sb.Append("  ShowAli: ").Append(ShowAli).Append("\n");
+            sb.Append("  Aliname: ").Append(Aliname).Append("\n");
+            sb.Append("  IsAlicode: ").Append(IsAlicode).Append("\n");
+            sb.Append("  ShowWechat: ").Append(ShowWechat).Append("\n");
+            sb.Append("  Wename: ").Append(Wename).Append("\n");
+            sb.Append("  ShowOthers: ").Append(ShowOthers).Append("\n");
+            sb.Append("  PayOthers: ").Append(PayOthers).Append("\n");
+            sb.Append("  SelPaytype: ").Append(SelPaytype).Append("\n");
+            sb.Append("  ItsUid: ").Append(ItsUid).Append("\n");
+            sb.Append("  ItsIsBlueVip: ").Append(ItsIsBlueVip).Append("\n");
+            sb.Append("  ItsTier: ").Append(ItsTier).Append("\n");
+            sb.Append("  ItsAvatar: ").Append(ItsAvatar).Append("\n");
+            sb.Append("  ItsNickname: ").Append(ItsNickname).Append("\n");
+            sb.Append("  ItsRealname: ").Append(ItsRealname).Append("\n");
+            sb.Append("  IsFollow: ").Append(IsFollow).Append("\n");
+            sb.Append("  IsBlack: ").Append(IsBlack).Append("\n");
+            sb.Append("  HaveTraded: ").Append(HaveTraded).Append("\n");
+            sb.Append("  AppealUnread: ").Append(AppealUnread).Append("\n");
+            sb.Append("  AppealAllowCancel: ").Append(AppealAllowCancel).Append("\n");
+            sb.Append("  AppealVerdictHasOpen: ").Append(AppealVerdictHasOpen).Append("\n");
+            sb.Append("  ImUnread: ").Append(ImUnread).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Score: ").Append(Score).Append("\n");
+            sb.Append("  PaymentVoucherUrl: ").Append(PaymentVoucherUrl).Append("\n");
+            sb.Append("  CompleteNumber: ").Append(CompleteNumber).Append("\n");
+            sb.Append("  CompleteRateMonth: ").Append(CompleteRateMonth).Append("\n");
+            sb.Append("  CheckJournalAccount: ").Append(CheckJournalAccount).Append("\n");
+            sb.Append("  ShowJournalAccount: ").Append(ShowJournalAccount).Append("\n");
+            sb.Append("  IsFreezeGuarantee: ").Append(IsFreezeGuarantee).Append("\n");
+            sb.Append("  UsdtLeftGuarantee: ").Append(UsdtLeftGuarantee).Append("\n");
+            sb.Append("  GuaranteeCurrType: ").Append(GuaranteeCurrType).Append("\n");
+            sb.Append("  TimestPaid: ").Append(TimestPaid).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  ReleaseCoinSwitch: ").Append(ReleaseCoinSwitch).Append("\n");
+            sb.Append("  OwnRealname: ").Append(OwnRealname).Append("\n");
+            sb.Append("  ConfirmationUseTimeMonth: ").Append(ConfirmationUseTimeMonth).Append("\n");
+            sb.Append("  IsRiskUser: ").Append(IsRiskUser).Append("\n");
+            sb.Append("  IsXt: ").Append(IsXt).Append("\n");
+            sb.Append("  OrderType: ").Append(OrderType).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
+            sb.Append("  IsShowReceive: ").Append(IsShowReceive).Append("\n");
+            sb.Append("  IsTaker: ").Append(IsTaker).Append("\n");
+            sb.Append("  IsOnline: ").Append(IsOnline).Append("\n");
+            sb.Append("  ShowSellerContactInfo: ").Append(ShowSellerContactInfo).Append("\n");
+            sb.Append("  SupportedPayTypes: ").Append(SupportedPayTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,8 +842,332 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
+                    this.IsSell == input.IsSell ||
+                    this.IsSell.Equals(input.IsSell)
+                ) && 
+                (
+                    this.Txid == input.Txid ||
+                    this.Txid.Equals(input.Txid)
+                ) && 
+                (
+                    this.Orderid == input.Orderid ||
+                    this.Orderid.Equals(input.Orderid)
+                ) && 
+                (
+                    this.Timest == input.Timest ||
+                    this.Timest.Equals(input.Timest)
+                ) && 
+                (
+                    this.LastPayTime == input.LastPayTime ||
+                    this.LastPayTime.Equals(input.LastPayTime)
+                ) && 
+                (
+                    this.RemainPayTime == input.RemainPayTime ||
+                    this.RemainPayTime.Equals(input.RemainPayTime)
+                ) && 
+                (
+                    this.CurrencyType == input.CurrencyType ||
+                    (this.CurrencyType != null &&
+                    this.CurrencyType.Equals(input.CurrencyType))
+                ) && 
+                (
+                    this.WantType == input.WantType ||
+                    (this.WantType != null &&
+                    this.WantType.Equals(input.WantType))
+                ) && 
+                (
+                    this.Rate == input.Rate ||
+                    (this.Rate != null &&
+                    this.Rate.Equals(input.Rate))
+                ) && 
+                (
+                    this.Amount == input.Amount ||
+                    (this.Amount != null &&
+                    this.Amount.Equals(input.Amount))
+                ) && 
+                (
+                    this.Total == input.Total ||
+                    (this.Total != null &&
+                    this.Total.Equals(input.Total))
+                ) && 
+                (
                     this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.ReasonId == input.ReasonId ||
+                    (this.ReasonId != null &&
+                    this.ReasonId.Equals(input.ReasonId))
+                ) && 
+                (
+                    this.ReasonDesc == input.ReasonDesc ||
+                    (this.ReasonDesc != null &&
+                    this.ReasonDesc.Equals(input.ReasonDesc))
+                ) && 
+                (
+                    this.ToastId == input.ToastId ||
+                    this.ToastId.Equals(input.ToastId)
+                ) && 
+                (
+                    this.CancelTime == input.CancelTime ||
+                    (this.CancelTime != null &&
+                    this.CancelTime.Equals(input.CancelTime))
+                ) && 
+                (
+                    this.SellerConfirm == input.SellerConfirm ||
+                    this.SellerConfirm.Equals(input.SellerConfirm)
+                ) && 
+                (
+                    this.InAppeal == input.InAppeal ||
+                    this.InAppeal.Equals(input.InAppeal)
+                ) && 
+                (
+                    this.DisputeTime == input.DisputeTime ||
+                    this.DisputeTime.Equals(input.DisputeTime)
+                ) && 
+                (
+                    this.Cancelable == input.Cancelable ||
+                    this.Cancelable.Equals(input.Cancelable)
+                ) && 
+                (
+                    this.HidePayment == input.HidePayment ||
+                    this.HidePayment.Equals(input.HidePayment)
+                ) && 
+                (
+                    this.TradeTips == input.TradeTips ||
+                    (this.TradeTips != null &&
+                    this.TradeTips.Equals(input.TradeTips))
+                ) && 
+                (
+                    this.ShowBank == input.ShowBank ||
+                    (this.ShowBank != null &&
+                    this.ShowBank.Equals(input.ShowBank))
+                ) && 
+                (
+                    this.Bankname == input.Bankname ||
+                    (this.Bankname != null &&
+                    this.Bankname.Equals(input.Bankname))
+                ) && 
+                (
+                    this.Bankbranch == input.Bankbranch ||
+                    (this.Bankbranch != null &&
+                    this.Bankbranch.Equals(input.Bankbranch))
+                ) && 
+                (
+                    this.Bankid == input.Bankid ||
+                    (this.Bankid != null &&
+                    this.Bankid.Equals(input.Bankid))
+                ) && 
+                (
+                    this.BankHolderRealname == input.BankHolderRealname ||
+                    (this.BankHolderRealname != null &&
+                    this.BankHolderRealname.Equals(input.BankHolderRealname))
+                ) && 
+                (
+                    this.ShowAli == input.ShowAli ||
+                    (this.ShowAli != null &&
+                    this.ShowAli.Equals(input.ShowAli))
+                ) && 
+                (
+                    this.Aliname == input.Aliname ||
+                    (this.Aliname != null &&
+                    this.Aliname.Equals(input.Aliname))
+                ) && 
+                (
+                    this.IsAlicode == input.IsAlicode ||
+                    this.IsAlicode.Equals(input.IsAlicode)
+                ) && 
+                (
+                    this.ShowWechat == input.ShowWechat ||
+                    (this.ShowWechat != null &&
+                    this.ShowWechat.Equals(input.ShowWechat))
+                ) && 
+                (
+                    this.Wename == input.Wename ||
+                    (this.Wename != null &&
+                    this.Wename.Equals(input.Wename))
+                ) && 
+                (
+                    this.ShowOthers == input.ShowOthers ||
+                    (this.ShowOthers != null &&
+                    this.ShowOthers.Equals(input.ShowOthers))
+                ) && 
+                (
+                    this.PayOthers == input.PayOthers ||
+                    this.PayOthers != null &&
+                    input.PayOthers != null &&
+                    this.PayOthers.SequenceEqual(input.PayOthers)
+                ) && 
+                (
+                    this.SelPaytype == input.SelPaytype ||
+                    (this.SelPaytype != null &&
+                    this.SelPaytype.Equals(input.SelPaytype))
+                ) && 
+                (
+                    this.ItsUid == input.ItsUid ||
+                    (this.ItsUid != null &&
+                    this.ItsUid.Equals(input.ItsUid))
+                ) && 
+                (
+                    this.ItsIsBlueVip == input.ItsIsBlueVip ||
+                    this.ItsIsBlueVip.Equals(input.ItsIsBlueVip)
+                ) && 
+                (
+                    this.ItsTier == input.ItsTier ||
+                    this.ItsTier.Equals(input.ItsTier)
+                ) && 
+                (
+                    this.ItsAvatar == input.ItsAvatar ||
+                    (this.ItsAvatar != null &&
+                    this.ItsAvatar.Equals(input.ItsAvatar))
+                ) && 
+                (
+                    this.ItsNickname == input.ItsNickname ||
+                    (this.ItsNickname != null &&
+                    this.ItsNickname.Equals(input.ItsNickname))
+                ) && 
+                (
+                    this.ItsRealname == input.ItsRealname ||
+                    (this.ItsRealname != null &&
+                    this.ItsRealname.Equals(input.ItsRealname))
+                ) && 
+                (
+                    this.IsFollow == input.IsFollow ||
+                    this.IsFollow.Equals(input.IsFollow)
+                ) && 
+                (
+                    this.IsBlack == input.IsBlack ||
+                    this.IsBlack.Equals(input.IsBlack)
+                ) && 
+                (
+                    this.HaveTraded == input.HaveTraded ||
+                    this.HaveTraded.Equals(input.HaveTraded)
+                ) && 
+                (
+                    this.AppealUnread == input.AppealUnread ||
+                    this.AppealUnread.Equals(input.AppealUnread)
+                ) && 
+                (
+                    this.AppealAllowCancel == input.AppealAllowCancel ||
+                    this.AppealAllowCancel.Equals(input.AppealAllowCancel)
+                ) && 
+                (
+                    this.AppealVerdictHasOpen == input.AppealVerdictHasOpen ||
+                    (this.AppealVerdictHasOpen != null &&
+                    this.AppealVerdictHasOpen.Equals(input.AppealVerdictHasOpen))
+                ) && 
+                (
+                    this.ImUnread == input.ImUnread ||
+                    this.ImUnread.Equals(input.ImUnread)
+                ) && 
+                (
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Score == input.Score ||
+                    (this.Score != null &&
+                    this.Score.Equals(input.Score))
+                ) && 
+                (
+                    this.PaymentVoucherUrl == input.PaymentVoucherUrl ||
+                    this.PaymentVoucherUrl != null &&
+                    input.PaymentVoucherUrl != null &&
+                    this.PaymentVoucherUrl.SequenceEqual(input.PaymentVoucherUrl)
+                ) && 
+                (
+                    this.CompleteNumber == input.CompleteNumber ||
+                    this.CompleteNumber.Equals(input.CompleteNumber)
+                ) && 
+                (
+                    this.CompleteRateMonth == input.CompleteRateMonth ||
+                    (this.CompleteRateMonth != null &&
+                    this.CompleteRateMonth.Equals(input.CompleteRateMonth))
+                ) && 
+                (
+                    this.CheckJournalAccount == input.CheckJournalAccount ||
+                    this.CheckJournalAccount.Equals(input.CheckJournalAccount)
+                ) && 
+                (
+                    this.ShowJournalAccount == input.ShowJournalAccount ||
+                    this.ShowJournalAccount.Equals(input.ShowJournalAccount)
+                ) && 
+                (
+                    this.IsFreezeGuarantee == input.IsFreezeGuarantee ||
+                    this.IsFreezeGuarantee.Equals(input.IsFreezeGuarantee)
+                ) && 
+                (
+                    this.UsdtLeftGuarantee == input.UsdtLeftGuarantee ||
+                    (this.UsdtLeftGuarantee != null &&
+                    this.UsdtLeftGuarantee.Equals(input.UsdtLeftGuarantee))
+                ) && 
+                (
+                    this.GuaranteeCurrType == input.GuaranteeCurrType ||
+                    (this.GuaranteeCurrType != null &&
+                    this.GuaranteeCurrType.Equals(input.GuaranteeCurrType))
+                ) && 
+                (
+                    this.TimestPaid == input.TimestPaid ||
+                    this.TimestPaid.Equals(input.TimestPaid)
+                ) && 
+                (
+                    this.State == input.State ||
+                    (this.State != null &&
+                    this.State.Equals(input.State))
+                ) && 
+                (
+                    this.ReleaseCoinSwitch == input.ReleaseCoinSwitch ||
+                    this.ReleaseCoinSwitch.Equals(input.ReleaseCoinSwitch)
+                ) && 
+                (
+                    this.OwnRealname == input.OwnRealname ||
+                    (this.OwnRealname != null &&
+                    this.OwnRealname.Equals(input.OwnRealname))
+                ) && 
+                (
+                    this.ConfirmationUseTimeMonth == input.ConfirmationUseTimeMonth ||
+                    this.ConfirmationUseTimeMonth.Equals(input.ConfirmationUseTimeMonth)
+                ) && 
+                (
+                    this.IsRiskUser == input.IsRiskUser ||
+                    this.IsRiskUser.Equals(input.IsRiskUser)
+                ) && 
+                (
+                    this.IsXt == input.IsXt ||
+                    this.IsXt.Equals(input.IsXt)
+                ) && 
+                (
+                    this.OrderType == input.OrderType ||
+                    this.OrderType.Equals(input.OrderType)
+                ) && 
+                (
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
+                ) && 
+                (
+                    this.IsShowReceive == input.IsShowReceive ||
+                    this.IsShowReceive.Equals(input.IsShowReceive)
+                ) && 
+                (
+                    this.IsTaker == input.IsTaker ||
+                    this.IsTaker.Equals(input.IsTaker)
+                ) && 
+                (
+                    this.IsOnline == input.IsOnline ||
+                    this.IsOnline.Equals(input.IsOnline)
+                ) && 
+                (
+                    this.ShowSellerContactInfo == input.ShowSellerContactInfo ||
+                    this.ShowSellerContactInfo.Equals(input.ShowSellerContactInfo)
+                ) && 
+                (
+                    this.SupportedPayTypes == input.SupportedPayTypes ||
+                    this.SupportedPayTypes != null &&
+                    input.SupportedPayTypes != null &&
+                    this.SupportedPayTypes.SequenceEqual(input.SupportedPayTypes)
                 );
         }
 
@@ -109,7 +1180,115 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.IsSell.GetHashCode();
+                hashCode = hashCode * 59 + this.Txid.GetHashCode();
+                hashCode = hashCode * 59 + this.Orderid.GetHashCode();
+                hashCode = hashCode * 59 + this.Timest.GetHashCode();
+                hashCode = hashCode * 59 + this.LastPayTime.GetHashCode();
+                hashCode = hashCode * 59 + this.RemainPayTime.GetHashCode();
+                if (this.CurrencyType != null)
+                    hashCode = hashCode * 59 + this.CurrencyType.GetHashCode();
+                if (this.WantType != null)
+                    hashCode = hashCode * 59 + this.WantType.GetHashCode();
+                if (this.Rate != null)
+                    hashCode = hashCode * 59 + this.Rate.GetHashCode();
+                if (this.Amount != null)
+                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
+                if (this.Total != null)
+                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ReasonId != null)
+                    hashCode = hashCode * 59 + this.ReasonId.GetHashCode();
+                if (this.ReasonDesc != null)
+                    hashCode = hashCode * 59 + this.ReasonDesc.GetHashCode();
+                hashCode = hashCode * 59 + this.ToastId.GetHashCode();
+                if (this.CancelTime != null)
+                    hashCode = hashCode * 59 + this.CancelTime.GetHashCode();
+                hashCode = hashCode * 59 + this.SellerConfirm.GetHashCode();
+                hashCode = hashCode * 59 + this.InAppeal.GetHashCode();
+                hashCode = hashCode * 59 + this.DisputeTime.GetHashCode();
+                hashCode = hashCode * 59 + this.Cancelable.GetHashCode();
+                hashCode = hashCode * 59 + this.HidePayment.GetHashCode();
+                if (this.TradeTips != null)
+                    hashCode = hashCode * 59 + this.TradeTips.GetHashCode();
+                if (this.ShowBank != null)
+                    hashCode = hashCode * 59 + this.ShowBank.GetHashCode();
+                if (this.Bankname != null)
+                    hashCode = hashCode * 59 + this.Bankname.GetHashCode();
+                if (this.Bankbranch != null)
+                    hashCode = hashCode * 59 + this.Bankbranch.GetHashCode();
+                if (this.Bankid != null)
+                    hashCode = hashCode * 59 + this.Bankid.GetHashCode();
+                if (this.BankHolderRealname != null)
+                    hashCode = hashCode * 59 + this.BankHolderRealname.GetHashCode();
+                if (this.ShowAli != null)
+                    hashCode = hashCode * 59 + this.ShowAli.GetHashCode();
+                if (this.Aliname != null)
+                    hashCode = hashCode * 59 + this.Aliname.GetHashCode();
+                hashCode = hashCode * 59 + this.IsAlicode.GetHashCode();
+                if (this.ShowWechat != null)
+                    hashCode = hashCode * 59 + this.ShowWechat.GetHashCode();
+                if (this.Wename != null)
+                    hashCode = hashCode * 59 + this.Wename.GetHashCode();
+                if (this.ShowOthers != null)
+                    hashCode = hashCode * 59 + this.ShowOthers.GetHashCode();
+                if (this.PayOthers != null)
+                    hashCode = hashCode * 59 + this.PayOthers.GetHashCode();
+                if (this.SelPaytype != null)
+                    hashCode = hashCode * 59 + this.SelPaytype.GetHashCode();
+                if (this.ItsUid != null)
+                    hashCode = hashCode * 59 + this.ItsUid.GetHashCode();
+                hashCode = hashCode * 59 + this.ItsIsBlueVip.GetHashCode();
+                hashCode = hashCode * 59 + this.ItsTier.GetHashCode();
+                if (this.ItsAvatar != null)
+                    hashCode = hashCode * 59 + this.ItsAvatar.GetHashCode();
+                if (this.ItsNickname != null)
+                    hashCode = hashCode * 59 + this.ItsNickname.GetHashCode();
+                if (this.ItsRealname != null)
+                    hashCode = hashCode * 59 + this.ItsRealname.GetHashCode();
+                hashCode = hashCode * 59 + this.IsFollow.GetHashCode();
+                hashCode = hashCode * 59 + this.IsBlack.GetHashCode();
+                hashCode = hashCode * 59 + this.HaveTraded.GetHashCode();
+                hashCode = hashCode * 59 + this.AppealUnread.GetHashCode();
+                hashCode = hashCode * 59 + this.AppealAllowCancel.GetHashCode();
+                if (this.AppealVerdictHasOpen != null)
+                    hashCode = hashCode * 59 + this.AppealVerdictHasOpen.GetHashCode();
+                hashCode = hashCode * 59 + this.ImUnread.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Score != null)
+                    hashCode = hashCode * 59 + this.Score.GetHashCode();
+                if (this.PaymentVoucherUrl != null)
+                    hashCode = hashCode * 59 + this.PaymentVoucherUrl.GetHashCode();
+                hashCode = hashCode * 59 + this.CompleteNumber.GetHashCode();
+                if (this.CompleteRateMonth != null)
+                    hashCode = hashCode * 59 + this.CompleteRateMonth.GetHashCode();
+                hashCode = hashCode * 59 + this.CheckJournalAccount.GetHashCode();
+                hashCode = hashCode * 59 + this.ShowJournalAccount.GetHashCode();
+                hashCode = hashCode * 59 + this.IsFreezeGuarantee.GetHashCode();
+                if (this.UsdtLeftGuarantee != null)
+                    hashCode = hashCode * 59 + this.UsdtLeftGuarantee.GetHashCode();
+                if (this.GuaranteeCurrType != null)
+                    hashCode = hashCode * 59 + this.GuaranteeCurrType.GetHashCode();
+                hashCode = hashCode * 59 + this.TimestPaid.GetHashCode();
+                if (this.State != null)
+                    hashCode = hashCode * 59 + this.State.GetHashCode();
+                hashCode = hashCode * 59 + this.ReleaseCoinSwitch.GetHashCode();
+                if (this.OwnRealname != null)
+                    hashCode = hashCode * 59 + this.OwnRealname.GetHashCode();
+                hashCode = hashCode * 59 + this.ConfirmationUseTimeMonth.GetHashCode();
+                hashCode = hashCode * 59 + this.IsRiskUser.GetHashCode();
+                hashCode = hashCode * 59 + this.IsXt.GetHashCode();
+                hashCode = hashCode * 59 + this.OrderType.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                hashCode = hashCode * 59 + this.IsShowReceive.GetHashCode();
+                hashCode = hashCode * 59 + this.IsTaker.GetHashCode();
+                hashCode = hashCode * 59 + this.IsOnline.GetHashCode();
+                hashCode = hashCode * 59 + this.ShowSellerContactInfo.GetHashCode();
+                if (this.SupportedPayTypes != null)
+                    hashCode = hashCode * 59 + this.SupportedPayTypes.GetHashCode();
                 return hashCode;
             }
         }

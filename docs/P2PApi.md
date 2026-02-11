@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 <a name="p2pmerchantaccountgetuserinfo"></a>
 # **P2pMerchantAccountGetUserInfo**
-> InlineResponse20013 P2pMerchantAccountGetUserInfo ()
+> InlineResponse20014 P2pMerchantAccountGetUserInfo ()
 
 Get account information
 
@@ -49,7 +49,7 @@ namespace Example
             try
             {
                 // Get account information
-                InlineResponse20013 result = apiInstance.P2pMerchantAccountGetUserInfo();
+                InlineResponse20014 result = apiInstance.P2pMerchantAccountGetUserInfo();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -69,7 +69,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ No authorization required
 
 <a name="p2pmerchantaccountgetcounterpartyuserinfo"></a>
 # **P2pMerchantAccountGetCounterpartyUserInfo**
-> InlineResponse20014 P2pMerchantAccountGetCounterpartyUserInfo (string bizUid)
+> InlineResponse20015 P2pMerchantAccountGetCounterpartyUserInfo (string bizUid)
 
 Get counterparty information
 
@@ -115,7 +115,7 @@ namespace Example
             try
             {
                 // Get counterparty information
-                InlineResponse20014 result = apiInstance.P2pMerchantAccountGetCounterpartyUserInfo(bizUid);
+                InlineResponse20015 result = apiInstance.P2pMerchantAccountGetCounterpartyUserInfo(bizUid);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ No authorization required
 
 <a name="p2pmerchantaccountgetmyselfpayment"></a>
 # **P2pMerchantAccountGetMyselfPayment**
-> InlineResponse20015 P2pMerchantAccountGetMyselfPayment (string fiat = null)
+> InlineResponse20016 P2pMerchantAccountGetMyselfPayment (string fiat = null)
 
 Get payment method list
 
@@ -184,7 +184,7 @@ namespace Example
             try
             {
                 // Get payment method list
-                InlineResponse20015 result = apiInstance.P2pMerchantAccountGetMyselfPayment(fiat);
+                InlineResponse20016 result = apiInstance.P2pMerchantAccountGetMyselfPayment(fiat);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ No authorization required
 
 <a name="p2pmerchanttransactiongetpendingtransactionlist"></a>
 # **P2pMerchantTransactionGetPendingTransactionList**
-> InlineResponse20016 P2pMerchantTransactionGetPendingTransactionList (string cryptoCurrency, string fiatCurrency, string orderTab = null, string selectType = null, string status = null, int? txid = null, int? startTime = null, int? endTime = null)
+> InlineResponse20017 P2pMerchantTransactionGetPendingTransactionList (string cryptoCurrency, string fiatCurrency, string orderTab = null, string selectType = null, string status = null, int? txid = null, int? startTime = null, int? endTime = null)
 
 Get pending orders
 
@@ -250,9 +250,9 @@ namespace Example
             var apiInstance = new P2PApi(config);
             var cryptoCurrency = "cryptoCurrency_example";  // string | Cryptocurrency
             var fiatCurrency = "fiatCurrency_example";  // string | Fiat currency
-            var orderTab = "orderTab_example";  // string | Order tab, default is pending (pending: Processing (pending: AND status in ('OPEN',  'PAID', 'LOCKED', 'TEMP')); dispute: In dispute (status in ('ACCEPT',  'BCLOSED', 'CANCEL', 'BECANCEL', 'SCLOSED', 'SCANCEL'))) (optional) 
+            var orderTab = "orderTab_example";  // string | 订单标签页，默认pending（pending：处理中（pending:  AND status in ('OPEN', 'PAID', 'LOCKED', 'TEMP')）；dispute：申诉中（status in ('ACCEPT', 'BCLOSED', 'CANCEL', 'BECANCEL', 'SCLOSED', 'SCANCEL'))) (optional) 
             var selectType = "selectType_example";  // string | Buy/Sell (sell=Sell, buy=Buy, others=All) (optional) 
-            var status = "status_example";  // string | 订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional) 
+            var status = "status_example";  // string | Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional) 
             var txid = 56;  // int? | Order ID (optional) 
             var startTime = 56;  // int? | Start timestamp, default is 00:00 89 days ago (optional) 
             var endTime = 56;  // int? | End timestamp, default is 23:59:59 today (optional) 
@@ -260,7 +260,7 @@ namespace Example
             try
             {
                 // Get pending orders
-                InlineResponse20016 result = apiInstance.P2pMerchantTransactionGetPendingTransactionList(cryptoCurrency, fiatCurrency, orderTab, selectType, status, txid, startTime, endTime);
+                InlineResponse20017 result = apiInstance.P2pMerchantTransactionGetPendingTransactionList(cryptoCurrency, fiatCurrency, orderTab, selectType, status, txid, startTime, endTime);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -281,16 +281,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cryptoCurrency** | **string**| Cryptocurrency | 
  **fiatCurrency** | **string**| Fiat currency | 
- **orderTab** | **string**| Order tab, default is pending (pending: Processing (pending: AND status in (&#39;OPEN&#39;,  &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In dispute (status in (&#39;ACCEPT&#39;,  &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) | [optional] 
+ **orderTab** | **string**| 订单标签页，默认pending（pending：处理中（pending:  AND status in (&#39;OPEN&#39;, &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)）；dispute：申诉中（status in (&#39;ACCEPT&#39;, &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) | [optional] 
  **selectType** | **string**| Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) | [optional] 
- **status** | **string**| 订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） | [optional] 
+ **status** | **string**| Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) | [optional] 
  **txid** | **int?**| Order ID | [optional] 
  **startTime** | **int?**| Start timestamp, default is 00:00 89 days ago | [optional] 
  **endTime** | **int?**| End timestamp, default is 23:59:59 today | [optional] 
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -310,7 +310,7 @@ No authorization required
 
 <a name="p2pmerchanttransactiongetcompletedtransactionlist"></a>
 # **P2pMerchantTransactionGetCompletedTransactionList**
-> InlineResponse20016 P2pMerchantTransactionGetCompletedTransactionList (string cryptoCurrency, string fiatCurrency, string selectType = null, string status = null, int? txid = null, int? startTime = null, int? endTime = null, int? queryDispute = null, int? page = null, int? perPage = null)
+> InlineResponse20017 P2pMerchantTransactionGetCompletedTransactionList (string cryptoCurrency, string fiatCurrency, string selectType = null, string status = null, int? txid = null, int? startTime = null, int? endTime = null, int? queryDispute = null, int? page = null, int? perPage = null)
 
 Get all/historical orders
 
@@ -334,7 +334,7 @@ namespace Example
             var cryptoCurrency = "cryptoCurrency_example";  // string | Cryptocurrency
             var fiatCurrency = "fiatCurrency_example";  // string | Fiat currency
             var selectType = "selectType_example";  // string | Buy/Sell (sell=Sell, buy=Buy, others=All) (optional) 
-            var status = "status_example";  // string | 订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） (optional) 
+            var status = "status_example";  // string | Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional) 
             var txid = 56;  // int? | Order ID (optional) 
             var startTime = 56;  // int? | Start timestamp, default is 00:00 89 days ago (optional) 
             var endTime = 56;  // int? | End timestamp, default is 23:59:59 today (optional) 
@@ -345,7 +345,7 @@ namespace Example
             try
             {
                 // Get all/historical orders
-                InlineResponse20016 result = apiInstance.P2pMerchantTransactionGetCompletedTransactionList(cryptoCurrency, fiatCurrency, selectType, status, txid, startTime, endTime, queryDispute, page, perPage);
+                InlineResponse20017 result = apiInstance.P2pMerchantTransactionGetCompletedTransactionList(cryptoCurrency, fiatCurrency, selectType, status, txid, startTime, endTime, queryDispute, page, perPage);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
  **cryptoCurrency** | **string**| Cryptocurrency | 
  **fiatCurrency** | **string**| Fiat currency | 
  **selectType** | **string**| Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) | [optional] 
- **status** | **string**| 订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） | [optional] 
+ **status** | **string**| Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) | [optional] 
  **txid** | **int?**| Order ID | [optional] 
  **startTime** | **int?**| Start timestamp, default is 00:00 89 days ago | [optional] 
  **endTime** | **int?**| End timestamp, default is 23:59:59 today | [optional] 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ No authorization required
 
 <a name="p2pmerchanttransactiongettransactiondetails"></a>
 # **P2pMerchantTransactionGetTransactionDetails**
-> InlineResponse20017 P2pMerchantTransactionGetTransactionDetails (int txid, string channel = null)
+> InlineResponse20018 P2pMerchantTransactionGetTransactionDetails (int txid, string channel = null)
 
 Query order details
 
@@ -424,7 +424,7 @@ namespace Example
             try
             {
                 // Query order details
-                InlineResponse20017 result = apiInstance.P2pMerchantTransactionGetTransactionDetails(txid, channel);
+                InlineResponse20018 result = apiInstance.P2pMerchantTransactionGetTransactionDetails(txid, channel);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -796,7 +796,7 @@ No authorization required
 
 <a name="p2pmerchantbooksadsupdatestatus"></a>
 # **P2pMerchantBooksAdsUpdateStatus**
-> InlineResponse20018 P2pMerchantBooksAdsUpdateStatus (int advNo, int advStatus, string tradeType = null)
+> InlineResponse20019 P2pMerchantBooksAdsUpdateStatus (int advNo, int advStatus, string tradeType = null)
 
 Update ad status
 
@@ -824,7 +824,7 @@ namespace Example
             try
             {
                 // Update ad status
-                InlineResponse20018 result = apiInstance.P2pMerchantBooksAdsUpdateStatus(advNo, advStatus, tradeType);
+                InlineResponse20019 result = apiInstance.P2pMerchantBooksAdsUpdateStatus(advNo, advStatus, tradeType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -849,7 +849,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -869,7 +869,7 @@ No authorization required
 
 <a name="p2pmerchantbooksadsdetail"></a>
 # **P2pMerchantBooksAdsDetail**
-> InlineResponse20019 P2pMerchantBooksAdsDetail (string advNo)
+> InlineResponse20020 P2pMerchantBooksAdsDetail (string advNo)
 
 Query ad details
 
@@ -895,7 +895,7 @@ namespace Example
             try
             {
                 // Query ad details
-                InlineResponse20019 result = apiInstance.P2pMerchantBooksAdsDetail(advNo);
+                InlineResponse20020 result = apiInstance.P2pMerchantBooksAdsDetail(advNo);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -918,7 +918,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**InlineResponse20020**](InlineResponse20020.md)
 
 ### Authorization
 
@@ -938,7 +938,7 @@ No authorization required
 
 <a name="p2pmerchantbooksmyadslist"></a>
 # **P2pMerchantBooksMyAdsList**
-> InlineResponse20020 P2pMerchantBooksMyAdsList (string asset = null, string fiatUnit = null, string tradeType = null)
+> InlineResponse20021 P2pMerchantBooksMyAdsList (string asset = null, string fiatUnit = null, string tradeType = null)
 
 Get my ad list
 
@@ -966,7 +966,7 @@ namespace Example
             try
             {
                 // Get my ad list
-                InlineResponse20020 result = apiInstance.P2pMerchantBooksMyAdsList(asset, fiatUnit, tradeType);
+                InlineResponse20021 result = apiInstance.P2pMerchantBooksMyAdsList(asset, fiatUnit, tradeType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -991,7 +991,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -1011,7 +1011,7 @@ No authorization required
 
 <a name="p2pmerchantchatgetchatslist"></a>
 # **P2pMerchantChatGetChatsList**
-> InlineResponse20021 P2pMerchantChatGetChatsList (int txid, int? lastreceived = null, int? firstreceived = null)
+> InlineResponse20022 P2pMerchantChatGetChatsList (int txid, int? lastreceived = null, int? firstreceived = null)
 
 Get chat history
 
@@ -1039,7 +1039,7 @@ namespace Example
             try
             {
                 // Get chat history
-                InlineResponse20021 result = apiInstance.P2pMerchantChatGetChatsList(txid, lastreceived, firstreceived);
+                InlineResponse20022 result = apiInstance.P2pMerchantChatGetChatsList(txid, lastreceived, firstreceived);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1064,7 +1064,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -1084,7 +1084,7 @@ No authorization required
 
 <a name="p2pmerchantchatsendchatmessage"></a>
 # **P2pMerchantChatSendChatMessage**
-> InlineResponse20022 P2pMerchantChatSendChatMessage (int txid, string message, int? type = null)
+> InlineResponse20023 P2pMerchantChatSendChatMessage (int txid, string message, int? type = null)
 
 Send text message
 
@@ -1112,7 +1112,7 @@ namespace Example
             try
             {
                 // Send text message
-                InlineResponse20022 result = apiInstance.P2pMerchantChatSendChatMessage(txid, message, type);
+                InlineResponse20023 result = apiInstance.P2pMerchantChatSendChatMessage(txid, message, type);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1137,7 +1137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -1157,7 +1157,7 @@ No authorization required
 
 <a name="p2pmerchantchatuploadchatfile"></a>
 # **P2pMerchantChatUploadChatFile**
-> InlineResponse20023 P2pMerchantChatUploadChatFile (string imageContentType, string base64Img)
+> InlineResponse20024 P2pMerchantChatUploadChatFile (string imageContentType, string base64Img)
 
 Upload chat file
 
@@ -1184,7 +1184,7 @@ namespace Example
             try
             {
                 // Upload chat file
-                InlineResponse20023 result = apiInstance.P2pMerchantChatUploadChatFile(imageContentType, base64Img);
+                InlineResponse20024 result = apiInstance.P2pMerchantChatUploadChatFile(imageContentType, base64Img);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1208,7 +1208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 

@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20016DataList
+# Io.Gate.GateApi.Model.InlineResponse20017DataList
 
 ## Properties
 
@@ -65,7 +65,7 @@ Name | Type | Description | Notes
 **OdTime** | **int** | Countdown time | [optional] 
 **OrderType** | **int** | Order Type | [optional] 
 **OrderTag** | **List&lt;string&gt;** | Order tags | [optional] 
-**ConvertInfo** | [**InlineResponse20016DataConvertInfo**](InlineResponse20016DataConvertInfo.md) |  | [optional] 
+**ConvertInfo** | [**InlineResponse20017DataConvertInfo**](InlineResponse20017DataConvertInfo.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

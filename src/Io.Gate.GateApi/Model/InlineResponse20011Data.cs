@@ -38,44 +38,44 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20011Data" /> class.
         /// </summary>
-        /// <param name="total">total (required).</param>
-        /// <param name="pageSize">pageSize (required).</param>
-        /// <param name="pageNumber">pageNumber (required).</param>
-        /// <param name="totalPage">totalPage (required).</param>
+        /// <param name="pn">pn (required).</param>
+        /// <param name="ps">ps (required).</param>
+        /// <param name="totalPn">totalPn (required).</param>
+        /// <param name="count">count (required).</param>
         /// <param name="list">list (required).</param>
-        public InlineResponse20011Data(int total = default(int), int pageSize = default(int), int pageNumber = default(int), int totalPage = default(int), List<InlineResponse20011DataList> list = default(List<InlineResponse20011DataList>))
+        public InlineResponse20011Data(int pn = default(int), int ps = default(int), int totalPn = default(int), int count = default(int), List<InlineResponse20011DataList> list = default(List<InlineResponse20011DataList>))
         {
-            this.Total = total;
-            this.PageSize = pageSize;
-            this.PageNumber = pageNumber;
-            this.TotalPage = totalPage;
+            this.Pn = pn;
+            this.Ps = ps;
+            this.TotalPn = totalPn;
+            this.Count = count;
             // to ensure "list" is required (not null)
             this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20011Data and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets Total
+        /// Gets or Sets Pn
         /// </summary>
-        [DataMember(Name="total")]
-        public int Total { get; set; }
+        [DataMember(Name="pn")]
+        public int Pn { get; set; }
 
         /// <summary>
-        /// Gets or Sets PageSize
+        /// Gets or Sets Ps
         /// </summary>
-        [DataMember(Name="page_size")]
-        public int PageSize { get; set; }
+        [DataMember(Name="ps")]
+        public int Ps { get; set; }
 
         /// <summary>
-        /// Gets or Sets PageNumber
+        /// Gets or Sets TotalPn
         /// </summary>
-        [DataMember(Name="page_number")]
-        public int PageNumber { get; set; }
+        [DataMember(Name="total_pn")]
+        public int TotalPn { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPage
+        /// Gets or Sets Count
         /// </summary>
-        [DataMember(Name="total_page")]
-        public int TotalPage { get; set; }
+        [DataMember(Name="count")]
+        public int Count { get; set; }
 
         /// <summary>
         /// Gets or Sets List
@@ -91,10 +91,10 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20011Data {\n");
-            sb.Append("  Total: ").Append(Total).Append("\n");
-            sb.Append("  PageSize: ").Append(PageSize).Append("\n");
-            sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
-            sb.Append("  TotalPage: ").Append(TotalPage).Append("\n");
+            sb.Append("  Pn: ").Append(Pn).Append("\n");
+            sb.Append("  Ps: ").Append(Ps).Append("\n");
+            sb.Append("  TotalPn: ").Append(TotalPn).Append("\n");
+            sb.Append("  Count: ").Append(Count).Append("\n");
             sb.Append("  List: ").Append(List).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -131,20 +131,20 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Total == input.Total ||
-                    this.Total.Equals(input.Total)
+                    this.Pn == input.Pn ||
+                    this.Pn.Equals(input.Pn)
                 ) && 
                 (
-                    this.PageSize == input.PageSize ||
-                    this.PageSize.Equals(input.PageSize)
+                    this.Ps == input.Ps ||
+                    this.Ps.Equals(input.Ps)
                 ) && 
                 (
-                    this.PageNumber == input.PageNumber ||
-                    this.PageNumber.Equals(input.PageNumber)
+                    this.TotalPn == input.TotalPn ||
+                    this.TotalPn.Equals(input.TotalPn)
                 ) && 
                 (
-                    this.TotalPage == input.TotalPage ||
-                    this.TotalPage.Equals(input.TotalPage)
+                    this.Count == input.Count ||
+                    this.Count.Equals(input.Count)
                 ) && 
                 (
                     this.List == input.List ||
@@ -163,10 +163,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Total.GetHashCode();
-                hashCode = hashCode * 59 + this.PageSize.GetHashCode();
-                hashCode = hashCode * 59 + this.PageNumber.GetHashCode();
-                hashCode = hashCode * 59 + this.TotalPage.GetHashCode();
+                hashCode = hashCode * 59 + this.Pn.GetHashCode();
+                hashCode = hashCode * 59 + this.Ps.GetHashCode();
+                hashCode = hashCode * 59 + this.TotalPn.GetHashCode();
+                hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.List != null)
                     hashCode = hashCode * 59 + this.List.GetHashCode();
                 return hashCode;

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Method** | **string** |  | 
 **Code** | **int** |  | 
 **Message** | **string** |  | 
-**Data** | [**List&lt;InlineResponse20015Data&gt;**](InlineResponse20015Data.md) |  | 
+**Data** | [**InlineResponse20015Data**](InlineResponse20015Data.md) |  | 
 **Version** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

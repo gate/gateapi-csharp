@@ -1,12 +1,11 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20010DataCryptoCurrencyInfo
+# Io.Gate.GateApi.Model.InlineResponse20017DataTransTime
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Icon** | **string** |  | 
+**OdTime** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

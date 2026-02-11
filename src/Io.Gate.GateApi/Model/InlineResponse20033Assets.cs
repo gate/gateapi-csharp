@@ -25,18 +25,18 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20032Assets
+    /// InlineResponse20033Assets
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20032Assets :  IEquatable<InlineResponse20032Assets>, IValidatableObject
+    public partial class InlineResponse20033Assets :  IEquatable<InlineResponse20033Assets>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20032Assets" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20033Assets" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineResponse20032Assets() { }
+        protected InlineResponse20033Assets() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20032Assets" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20033Assets" /> class.
         /// </summary>
         /// <param name="userId">User ID.</param>
         /// <param name="coin">Currency.</param>
@@ -50,12 +50,12 @@ namespace Io.Gate.GateApi.Model
         /// <param name="borrowingMaintenanceMargin">Margin trading maintenance margin (only USDT has a value; other assets are 0) (required).</param>
         /// <param name="availableBalance">Available Balance.</param>
         /// <param name="liability">Liabilities (only meaningful in isolated exchange mode; always 0 in cross-exchange mode).</param>
-        public InlineResponse20032Assets(string userId = default(string), string coin = default(string), string exchangeType = default(string), string balance = default(string), string upnl = default(string), string equity = default(string), string futuresInitialMargin = default(string), string futuresMaintenanceMargin = default(string), string borrowingInitialMargin = default(string), string borrowingMaintenanceMargin = default(string), string availableBalance = default(string), string liability = default(string))
+        public InlineResponse20033Assets(string userId = default(string), string coin = default(string), string exchangeType = default(string), string balance = default(string), string upnl = default(string), string equity = default(string), string futuresInitialMargin = default(string), string futuresMaintenanceMargin = default(string), string borrowingInitialMargin = default(string), string borrowingMaintenanceMargin = default(string), string availableBalance = default(string), string liability = default(string))
         {
             // to ensure "borrowingInitialMargin" is required (not null)
-            this.BorrowingInitialMargin = borrowingInitialMargin ?? throw new ArgumentNullException("borrowingInitialMargin", "borrowingInitialMargin is a required property for InlineResponse20032Assets and cannot be null");
+            this.BorrowingInitialMargin = borrowingInitialMargin ?? throw new ArgumentNullException("borrowingInitialMargin", "borrowingInitialMargin is a required property for InlineResponse20033Assets and cannot be null");
             // to ensure "borrowingMaintenanceMargin" is required (not null)
-            this.BorrowingMaintenanceMargin = borrowingMaintenanceMargin ?? throw new ArgumentNullException("borrowingMaintenanceMargin", "borrowingMaintenanceMargin is a required property for InlineResponse20032Assets and cannot be null");
+            this.BorrowingMaintenanceMargin = borrowingMaintenanceMargin ?? throw new ArgumentNullException("borrowingMaintenanceMargin", "borrowingMaintenanceMargin is a required property for InlineResponse20033Assets and cannot be null");
             this.UserId = userId;
             this.Coin = coin;
             this.ExchangeType = exchangeType;
@@ -159,7 +159,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20032Assets {\n");
+            sb.Append("class InlineResponse20033Assets {\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("  Coin: ").Append(Coin).Append("\n");
             sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
@@ -192,15 +192,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20032Assets);
+            return this.Equals(input as InlineResponse20033Assets);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20032Assets instances are equal
+        /// Returns true if InlineResponse20033Assets instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20032Assets to be compared</param>
+        /// <param name="input">Instance of InlineResponse20033Assets to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20032Assets input)
+        public bool Equals(InlineResponse20033Assets input)
         {
             if (input == null)
                 return false;

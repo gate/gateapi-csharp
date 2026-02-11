@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Message** | **string** |  | 
 **Code** | **int** |  | 
+**Message** | **string** |  | 
 **Data** | [**InlineResponse20012Data**](InlineResponse20012Data.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

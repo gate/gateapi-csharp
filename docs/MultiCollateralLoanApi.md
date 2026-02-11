@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**ListMultiCollateralRecords**](MultiCollateralLoanApi.md#listmulticollateralrecords) | **GET** /loan/multi_collateral/mortgage | Query collateral adjustment records
 [**OperateMultiCollateral**](MultiCollateralLoanApi.md#operatemulticollateral) | **POST** /loan/multi_collateral/mortgage | Add or withdraw collateral
 [**ListUserCurrencyQuota**](MultiCollateralLoanApi.md#listusercurrencyquota) | **GET** /loan/multi_collateral/currency_quota | Query user&#39;s collateral and borrowing currency quota information
-[**ListMultiCollateralCurrencies**](MultiCollateralLoanApi.md#listmulticollateralcurrencies) | **GET** /loan/multi_collateral/currencies | Query supported borrowing and collateral currencies for multi-currency collateral
+[**ListMultiCollateralCurrencies**](MultiCollateralLoanApi.md#listmulticollateralcurrencies) | **GET** /loan/multi_collateral/currencies | Query borrow currencies and collateral currencies supported by multi-currency collateral
 [**GetMultiCollateralLtv**](MultiCollateralLoanApi.md#getmulticollateralltv) | **GET** /loan/multi_collateral/ltv | Query collateralization ratio information
 [**GetMultiCollateralFixRate**](MultiCollateralLoanApi.md#getmulticollateralfixrate) | **GET** /loan/multi_collateral/fixed_rate | Query currency&#39;s 7-day and 30-day fixed interest rates
 [**GetMultiCollateralCurrentRate**](MultiCollateralLoanApi.md#getmulticollateralcurrentrate) | **GET** /loan/multi_collateral/current_rate | Query currency&#39;s current interest rate
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 # **ListMultiCollateralCurrencies**
 > MultiCollateralCurrency ListMultiCollateralCurrencies ()
 
-Query supported borrowing and collateral currencies for multi-currency collateral
+Query borrow currencies and collateral currencies supported by multi-currency collateral
 
 ### Example
 ```csharp
@@ -638,7 +638,7 @@ namespace Example
 
             try
             {
-                // Query supported borrowing and collateral currencies for multi-currency collateral
+                // Query borrow currencies and collateral currencies supported by multi-currency collateral
                 MultiCollateralCurrency result = apiInstance.ListMultiCollateralCurrencies();
                 Debug.WriteLine(result);
             }

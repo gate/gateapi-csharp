@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject" /> class.
         /// </summary>
-        /// <param name="mode">Cross margin or isolated margin mode. ISOLATED - isolated margin mode, CROSS - cross margin mode (required).</param>
+        /// <param name="mode">Cross/isolated margin mode. ISOLATED - isolated margin, CROSS - cross margin (required).</param>
         /// <param name="contract">Futures market (required).</param>
         public InlineObject(string mode = default(string), string contract = default(string))
         {
@@ -49,9 +49,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Cross margin or isolated margin mode. ISOLATED - isolated margin mode, CROSS - cross margin mode
+        /// Cross/isolated margin mode. ISOLATED - isolated margin, CROSS - cross margin
         /// </summary>
-        /// <value>Cross margin or isolated margin mode. ISOLATED - isolated margin mode, CROSS - cross margin mode</value>
+        /// <value>Cross/isolated margin mode. ISOLATED - isolated margin, CROSS - cross margin</value>
         [DataMember(Name="mode")]
         public string Mode { get; set; }
 

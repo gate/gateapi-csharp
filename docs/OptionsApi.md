@@ -565,7 +565,7 @@ namespace Example
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new OptionsApi(config);
             var contract = "BTC_USDT-20210916-5000-C";  // string | Options contract name
-            var interval = "0";  // string | Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional)  (default to 0)
+            var interval = "0";  // string | Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional)  (default to 0)
             var limit = 10;  // int? | Number of depth levels (optional)  (default to 10)
             var withId = false;  // bool? | Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional)  (default to false)
 
@@ -592,7 +592,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contract** | **string**| Options contract name | 
- **interval** | **string**| Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified | [optional] [default to 0]
+ **interval** | **string**| Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 | [optional] [default to 0]
  **limit** | **int?**| Number of depth levels | [optional] [default to 10]
  **withId** | **bool?**| Whether to return depth update ID. This ID increments by 1 each time the depth changes | [optional] [default to false]
 

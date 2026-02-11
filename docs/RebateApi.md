@@ -44,7 +44,7 @@ namespace Example
             var apiInstance = new RebateApi(config);
             var currencyPair = "BTC_USDT";  // string | Specify the trading pair. If not specified, returns all trading pairs (optional) 
             var userId = 10003;  // long? | User ID. If not specified, all user records will be returned (optional) 
-            var from = 1602120000;  // long? | Start time for querying records, defaults to 7 days before current time if not specified (optional) 
+            var from = 1602120000;  // long? | Start time for querying records. If not specified, defaults to 7 days before current time (optional) 
             var to = 1602123600;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currencyPair** | **string**| Specify the trading pair. If not specified, returns all trading pairs | [optional] 
  **userId** | **long?**| User ID. If not specified, all user records will be returned | [optional] 
- **from** | **long?**| Start time for querying records, defaults to 7 days before current time if not specified | [optional] 
+ **from** | **long?**| Start time for querying records. If not specified, defaults to 7 days before current time | [optional] 
  **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
@@ -128,7 +128,7 @@ namespace Example
             var currency = "BTC";  // string | Specify the currency. If not specified, returns all currencies (optional) 
             var commissionType = 1;  // int? | Rebate type: 1 - Direct rebate, 2 - Indirect rebate, 3 - Self rebate (optional) 
             var userId = 10003;  // long? | User ID. If not specified, all user records will be returned (optional) 
-            var from = 1602120000;  // long? | Start time for querying records, defaults to 7 days before current time if not specified (optional) 
+            var from = 1602120000;  // long? | Start time for querying records. If not specified, defaults to 7 days before current time (optional) 
             var to = 1602123600;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
  **currency** | **string**| Specify the currency. If not specified, returns all currencies | [optional] 
  **commissionType** | **int?**| Rebate type: 1 - Direct rebate, 2 - Indirect rebate, 3 - Self rebate | [optional] 
  **userId** | **long?**| User ID. If not specified, all user records will be returned | [optional] 
- **from** | **long?**| Start time for querying records, defaults to 7 days before current time if not specified | [optional] 
+ **from** | **long?**| Start time for querying records. If not specified, defaults to 7 days before current time | [optional] 
  **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
@@ -212,7 +212,7 @@ namespace Example
             var apiInstance = new RebateApi(config);
             var currencyPair = "BTC_USDT";  // string | Specify the trading pair. If not specified, returns all trading pairs (optional) 
             var userId = 10003;  // long? | User ID. If not specified, all user records will be returned (optional) 
-            var from = 1602120000;  // long? | Start time for querying records, defaults to 7 days before current time if not specified (optional) 
+            var from = 1602120000;  // long? | Start time for querying records. If not specified, defaults to 7 days before current time (optional) 
             var to = 1602123600;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currencyPair** | **string**| Specify the trading pair. If not specified, returns all trading pairs | [optional] 
  **userId** | **long?**| User ID. If not specified, all user records will be returned | [optional] 
- **from** | **long?**| Start time for querying records, defaults to 7 days before current time if not specified | [optional] 
+ **from** | **long?**| Start time for querying records. If not specified, defaults to 7 days before current time | [optional] 
  **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
@@ -295,7 +295,7 @@ namespace Example
             var apiInstance = new RebateApi(config);
             var currency = "BTC";  // string | Specify the currency. If not specified, returns all currencies (optional) 
             var userId = 10003;  // long? | User ID. If not specified, all user records will be returned (optional) 
-            var from = 1602120000;  // long? | Start time for querying records, defaults to 7 days before current time if not specified (optional) 
+            var from = 1602120000;  // long? | Start time for querying records. If not specified, defaults to 7 days before current time (optional) 
             var to = 1602123600;  // long? | End timestamp for the query, defaults to current time if not specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency** | **string**| Specify the currency. If not specified, returns all currencies | [optional] 
  **userId** | **long?**| User ID. If not specified, all user records will be returned | [optional] 
- **from** | **long?**| Start time for querying records, defaults to 7 days before current time if not specified | [optional] 
+ **from** | **long?**| Start time for querying records. If not specified, defaults to 7 days before current time | [optional] 
  **to** | **long?**| End timestamp for the query, defaults to current time if not specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]

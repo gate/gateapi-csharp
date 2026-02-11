@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Mode** | **string** | Cross margin or isolated margin mode. ISOLATED - isolated margin mode, CROSS - cross margin mode | 
+**Mode** | **string** | Cross/isolated margin mode. ISOLATED - isolated margin, CROSS - cross margin | 
 **Contract** | **string** | Futures market | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -5,11 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Pn** | **int** |  | 
-**Ps** | **int** |  | 
-**TotalPn** | **int** |  | 
-**Count** | **int** |  | 
-**List** | [**List&lt;InlineResponse20010DataList&gt;**](InlineResponse20010DataList.md) |  | 
+**Lists** | [**List&lt;InlineResponse20010DataLists&gt;**](InlineResponse20010DataLists.md) | Bank card list | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

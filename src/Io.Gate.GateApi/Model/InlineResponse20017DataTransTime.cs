@@ -25,40 +25,25 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Markets where user can place orders
+    /// InlineResponse20017DataTransTime
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20013DataMerchantInfo :  IEquatable<InlineResponse20013DataMerchantInfo>, IValidatableObject
+    public partial class InlineResponse20017DataTransTime :  IEquatable<InlineResponse20017DataTransTime>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20013DataMerchantInfo" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20017DataTransTime" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20013DataMerchantInfo() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20013DataMerchantInfo" /> class.
-        /// </summary>
-        /// <param name="type">type (required).</param>
-        /// <param name="market">market (required).</param>
-        public InlineResponse20013DataMerchantInfo(string type = default(string), string market = default(string))
+        /// <param name="odTime">odTime.</param>
+        public InlineResponse20017DataTransTime(int odTime = default(int))
         {
-            // to ensure "type" is required (not null)
-            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for InlineResponse20013DataMerchantInfo and cannot be null");
-            // to ensure "market" is required (not null)
-            this.Market = market ?? throw new ArgumentNullException("market", "market is a required property for InlineResponse20013DataMerchantInfo and cannot be null");
+            this.OdTime = odTime;
         }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or Sets OdTime
         /// </summary>
-        [DataMember(Name="type")]
-        public string Type { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Market
-        /// </summary>
-        [DataMember(Name="market")]
-        public string Market { get; set; }
+        [DataMember(Name="od_time")]
+        public int OdTime { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -67,9 +52,8 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20013DataMerchantInfo {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Market: ").Append(Market).Append("\n");
+            sb.Append("class InlineResponse20017DataTransTime {\n");
+            sb.Append("  OdTime: ").Append(OdTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,29 +74,23 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20013DataMerchantInfo);
+            return this.Equals(input as InlineResponse20017DataTransTime);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20013DataMerchantInfo instances are equal
+        /// Returns true if InlineResponse20017DataTransTime instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20013DataMerchantInfo to be compared</param>
+        /// <param name="input">Instance of InlineResponse20017DataTransTime to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20013DataMerchantInfo input)
+        public bool Equals(InlineResponse20017DataTransTime input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Market == input.Market ||
-                    (this.Market != null &&
-                    this.Market.Equals(input.Market))
+                    this.OdTime == input.OdTime ||
+                    this.OdTime.Equals(input.OdTime)
                 );
         }
 
@@ -125,10 +103,7 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Market != null)
-                    hashCode = hashCode * 59 + this.Market.GetHashCode();
+                hashCode = hashCode * 59 + this.OdTime.GetHashCode();
                 return hashCode;
             }
         }

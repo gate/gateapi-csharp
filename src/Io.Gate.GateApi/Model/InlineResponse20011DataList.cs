@@ -33,73 +33,131 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20011DataList" /> class.
         /// </summary>
-        /// <param name="id">Order ID.</param>
-        /// <param name="tradeNo">Transaction reference number.</param>
-        /// <param name="payCoin">Payment currency.</param>
-        /// <param name="payAmount">Payment amount.</param>
-        /// <param name="getCoin">Received currency.</param>
-        /// <param name="getAmount">Received amount.</param>
+        /// <param name="time">Current time.</param>
+        /// <param name="timestamp">Current timestamp.</param>
+        /// <param name="orderId">orderId.</param>
+        /// <param name="tradeNo">Trade number.</param>
+        /// <param name="type">Quote direction buy/sell/all.</param>
+        /// <param name="status">Order Status.</param>
+        /// <param name="dbStatus">dbStatus.</param>
+        /// <param name="fiatCurrency">Fiat type.</param>
+        /// <param name="fiatCurrencyInfo">fiatCurrencyInfo.</param>
+        /// <param name="fiatAmount">Fiat amount.</param>
+        /// <param name="cryptoCurrency">Stablecoin.</param>
+        /// <param name="cryptoCurrencyInfo">cryptoCurrencyInfo.</param>
+        /// <param name="cryptoAmount">Stablecoin amount.</param>
         /// <param name="rate">Exchange rate.</param>
-        /// <param name="rateReci">Reciprocal of the exchange rate.</param>
-        /// <param name="status">PROCESSING: in progress / DONE: completed / FAILED: failed.</param>
-        /// <param name="createTimest">timetimestamp.</param>
-        /// <param name="createTime">Created time.</param>
-        public InlineResponse20011DataList(int id = default(int), string tradeNo = default(string), string payCoin = default(string), string payAmount = default(string), string getCoin = default(string), string getAmount = default(string), string rate = default(string), string rateReci = default(string), string status = default(string), int createTimest = default(int), string createTime = default(string))
+        /// <param name="transferRemark">Remark.</param>
+        /// <param name="gateBankAccountIban">Bank account.</param>
+        /// <param name="promotionCode">Promotion code.</param>
+        public InlineResponse20011DataList(string time = default(string), int timestamp = default(int), string orderId = default(string), string tradeNo = default(string), string type = default(string), string status = default(string), string dbStatus = default(string), string fiatCurrency = default(string), InlineResponse20011DataFiatCurrencyInfo fiatCurrencyInfo = default(InlineResponse20011DataFiatCurrencyInfo), string fiatAmount = default(string), string cryptoCurrency = default(string), InlineResponse20011DataCryptoCurrencyInfo cryptoCurrencyInfo = default(InlineResponse20011DataCryptoCurrencyInfo), string cryptoAmount = default(string), string rate = default(string), string transferRemark = default(string), string gateBankAccountIban = default(string), string promotionCode = default(string))
         {
-            this.Id = id;
+            this.Time = time;
+            this.Timestamp = timestamp;
+            this.OrderId = orderId;
             this.TradeNo = tradeNo;
-            this.PayCoin = payCoin;
-            this.PayAmount = payAmount;
-            this.GetCoin = getCoin;
-            this.GetAmount = getAmount;
-            this.Rate = rate;
-            this.RateReci = rateReci;
+            this.Type = type;
             this.Status = status;
-            this.CreateTimest = createTimest;
-            this.CreateTime = createTime;
+            this.DbStatus = dbStatus;
+            this.FiatCurrency = fiatCurrency;
+            this.FiatCurrencyInfo = fiatCurrencyInfo;
+            this.FiatAmount = fiatAmount;
+            this.CryptoCurrency = cryptoCurrency;
+            this.CryptoCurrencyInfo = cryptoCurrencyInfo;
+            this.CryptoAmount = cryptoAmount;
+            this.Rate = rate;
+            this.TransferRemark = transferRemark;
+            this.GateBankAccountIban = gateBankAccountIban;
+            this.PromotionCode = promotionCode;
         }
 
         /// <summary>
-        /// Order ID
+        /// Current time
         /// </summary>
-        /// <value>Order ID</value>
-        [DataMember(Name="id")]
-        public int Id { get; set; }
+        /// <value>Current time</value>
+        [DataMember(Name="time")]
+        public string Time { get; set; }
 
         /// <summary>
-        /// Transaction reference number
+        /// Current timestamp
         /// </summary>
-        /// <value>Transaction reference number</value>
+        /// <value>Current timestamp</value>
+        [DataMember(Name="timestamp")]
+        public int Timestamp { get; set; }
+
+        /// <summary>
+        /// orderId
+        /// </summary>
+        /// <value>orderId</value>
+        [DataMember(Name="order_id")]
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// Trade number
+        /// </summary>
+        /// <value>Trade number</value>
         [DataMember(Name="trade_no")]
         public string TradeNo { get; set; }
 
         /// <summary>
-        /// Payment currency
+        /// Quote direction buy/sell/all
         /// </summary>
-        /// <value>Payment currency</value>
-        [DataMember(Name="pay_coin")]
-        public string PayCoin { get; set; }
+        /// <value>Quote direction buy/sell/all</value>
+        [DataMember(Name="type")]
+        public string Type { get; set; }
 
         /// <summary>
-        /// Payment amount
+        /// Order Status
         /// </summary>
-        /// <value>Payment amount</value>
-        [DataMember(Name="pay_amount")]
-        public string PayAmount { get; set; }
+        /// <value>Order Status</value>
+        [DataMember(Name="status")]
+        public string Status { get; set; }
 
         /// <summary>
-        /// Received currency
+        /// Gets or Sets DbStatus
         /// </summary>
-        /// <value>Received currency</value>
-        [DataMember(Name="get_coin")]
-        public string GetCoin { get; set; }
+        [DataMember(Name="db_status")]
+        public string DbStatus { get; set; }
 
         /// <summary>
-        /// Received amount
+        /// Fiat type
         /// </summary>
-        /// <value>Received amount</value>
-        [DataMember(Name="get_amount")]
-        public string GetAmount { get; set; }
+        /// <value>Fiat type</value>
+        [DataMember(Name="fiat_currency")]
+        public string FiatCurrency { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FiatCurrencyInfo
+        /// </summary>
+        [DataMember(Name="fiat_currency_info")]
+        public InlineResponse20011DataFiatCurrencyInfo FiatCurrencyInfo { get; set; }
+
+        /// <summary>
+        /// Fiat amount
+        /// </summary>
+        /// <value>Fiat amount</value>
+        [DataMember(Name="fiat_amount")]
+        public string FiatAmount { get; set; }
+
+        /// <summary>
+        /// Stablecoin
+        /// </summary>
+        /// <value>Stablecoin</value>
+        [DataMember(Name="crypto_currency")]
+        public string CryptoCurrency { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CryptoCurrencyInfo
+        /// </summary>
+        [DataMember(Name="crypto_currency_info")]
+        public InlineResponse20011DataCryptoCurrencyInfo CryptoCurrencyInfo { get; set; }
+
+        /// <summary>
+        /// Stablecoin amount
+        /// </summary>
+        /// <value>Stablecoin amount</value>
+        [DataMember(Name="crypto_amount")]
+        public string CryptoAmount { get; set; }
 
         /// <summary>
         /// Exchange rate
@@ -109,32 +167,25 @@ namespace Io.Gate.GateApi.Model
         public string Rate { get; set; }
 
         /// <summary>
-        /// Reciprocal of the exchange rate
+        /// Remark
         /// </summary>
-        /// <value>Reciprocal of the exchange rate</value>
-        [DataMember(Name="rate_reci")]
-        public string RateReci { get; set; }
+        /// <value>Remark</value>
+        [DataMember(Name="transfer_remark")]
+        public string TransferRemark { get; set; }
 
         /// <summary>
-        /// PROCESSING: in progress / DONE: completed / FAILED: failed
+        /// Bank account
         /// </summary>
-        /// <value>PROCESSING: in progress / DONE: completed / FAILED: failed</value>
-        [DataMember(Name="status")]
-        public string Status { get; set; }
+        /// <value>Bank account</value>
+        [DataMember(Name="gate_bank_account_iban")]
+        public string GateBankAccountIban { get; set; }
 
         /// <summary>
-        /// timetimestamp
+        /// Promotion code
         /// </summary>
-        /// <value>timetimestamp</value>
-        [DataMember(Name="create_timest")]
-        public int CreateTimest { get; set; }
-
-        /// <summary>
-        /// Created time
-        /// </summary>
-        /// <value>Created time</value>
-        [DataMember(Name="create_time")]
-        public string CreateTime { get; set; }
+        /// <value>Promotion code</value>
+        [DataMember(Name="promotion_code")]
+        public string PromotionCode { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -144,17 +195,23 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20011DataList {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Time: ").Append(Time).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("  TradeNo: ").Append(TradeNo).Append("\n");
-            sb.Append("  PayCoin: ").Append(PayCoin).Append("\n");
-            sb.Append("  PayAmount: ").Append(PayAmount).Append("\n");
-            sb.Append("  GetCoin: ").Append(GetCoin).Append("\n");
-            sb.Append("  GetAmount: ").Append(GetAmount).Append("\n");
-            sb.Append("  Rate: ").Append(Rate).Append("\n");
-            sb.Append("  RateReci: ").Append(RateReci).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  CreateTimest: ").Append(CreateTimest).Append("\n");
-            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  DbStatus: ").Append(DbStatus).Append("\n");
+            sb.Append("  FiatCurrency: ").Append(FiatCurrency).Append("\n");
+            sb.Append("  FiatCurrencyInfo: ").Append(FiatCurrencyInfo).Append("\n");
+            sb.Append("  FiatAmount: ").Append(FiatAmount).Append("\n");
+            sb.Append("  CryptoCurrency: ").Append(CryptoCurrency).Append("\n");
+            sb.Append("  CryptoCurrencyInfo: ").Append(CryptoCurrencyInfo).Append("\n");
+            sb.Append("  CryptoAmount: ").Append(CryptoAmount).Append("\n");
+            sb.Append("  Rate: ").Append(Rate).Append("\n");
+            sb.Append("  TransferRemark: ").Append(TransferRemark).Append("\n");
+            sb.Append("  GateBankAccountIban: ").Append(GateBankAccountIban).Append("\n");
+            sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -190,8 +247,18 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
+                    this.Time == input.Time ||
+                    (this.Time != null &&
+                    this.Time.Equals(input.Time))
+                ) && 
+                (
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
+                ) && 
+                (
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 ) && 
                 (
                     this.TradeNo == input.TradeNo ||
@@ -199,34 +266,9 @@ namespace Io.Gate.GateApi.Model
                     this.TradeNo.Equals(input.TradeNo))
                 ) && 
                 (
-                    this.PayCoin == input.PayCoin ||
-                    (this.PayCoin != null &&
-                    this.PayCoin.Equals(input.PayCoin))
-                ) && 
-                (
-                    this.PayAmount == input.PayAmount ||
-                    (this.PayAmount != null &&
-                    this.PayAmount.Equals(input.PayAmount))
-                ) && 
-                (
-                    this.GetCoin == input.GetCoin ||
-                    (this.GetCoin != null &&
-                    this.GetCoin.Equals(input.GetCoin))
-                ) && 
-                (
-                    this.GetAmount == input.GetAmount ||
-                    (this.GetAmount != null &&
-                    this.GetAmount.Equals(input.GetAmount))
-                ) && 
-                (
-                    this.Rate == input.Rate ||
-                    (this.Rate != null &&
-                    this.Rate.Equals(input.Rate))
-                ) && 
-                (
-                    this.RateReci == input.RateReci ||
-                    (this.RateReci != null &&
-                    this.RateReci.Equals(input.RateReci))
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -234,13 +276,59 @@ namespace Io.Gate.GateApi.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
-                    this.CreateTimest == input.CreateTimest ||
-                    this.CreateTimest.Equals(input.CreateTimest)
+                    this.DbStatus == input.DbStatus ||
+                    (this.DbStatus != null &&
+                    this.DbStatus.Equals(input.DbStatus))
                 ) && 
                 (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
+                    this.FiatCurrency == input.FiatCurrency ||
+                    (this.FiatCurrency != null &&
+                    this.FiatCurrency.Equals(input.FiatCurrency))
+                ) && 
+                (
+                    this.FiatCurrencyInfo == input.FiatCurrencyInfo ||
+                    (this.FiatCurrencyInfo != null &&
+                    this.FiatCurrencyInfo.Equals(input.FiatCurrencyInfo))
+                ) && 
+                (
+                    this.FiatAmount == input.FiatAmount ||
+                    (this.FiatAmount != null &&
+                    this.FiatAmount.Equals(input.FiatAmount))
+                ) && 
+                (
+                    this.CryptoCurrency == input.CryptoCurrency ||
+                    (this.CryptoCurrency != null &&
+                    this.CryptoCurrency.Equals(input.CryptoCurrency))
+                ) && 
+                (
+                    this.CryptoCurrencyInfo == input.CryptoCurrencyInfo ||
+                    (this.CryptoCurrencyInfo != null &&
+                    this.CryptoCurrencyInfo.Equals(input.CryptoCurrencyInfo))
+                ) && 
+                (
+                    this.CryptoAmount == input.CryptoAmount ||
+                    (this.CryptoAmount != null &&
+                    this.CryptoAmount.Equals(input.CryptoAmount))
+                ) && 
+                (
+                    this.Rate == input.Rate ||
+                    (this.Rate != null &&
+                    this.Rate.Equals(input.Rate))
+                ) && 
+                (
+                    this.TransferRemark == input.TransferRemark ||
+                    (this.TransferRemark != null &&
+                    this.TransferRemark.Equals(input.TransferRemark))
+                ) && 
+                (
+                    this.GateBankAccountIban == input.GateBankAccountIban ||
+                    (this.GateBankAccountIban != null &&
+                    this.GateBankAccountIban.Equals(input.GateBankAccountIban))
+                ) && 
+                (
+                    this.PromotionCode == input.PromotionCode ||
+                    (this.PromotionCode != null &&
+                    this.PromotionCode.Equals(input.PromotionCode))
                 );
         }
 
@@ -253,26 +341,39 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Time != null)
+                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.TradeNo != null)
                     hashCode = hashCode * 59 + this.TradeNo.GetHashCode();
-                if (this.PayCoin != null)
-                    hashCode = hashCode * 59 + this.PayCoin.GetHashCode();
-                if (this.PayAmount != null)
-                    hashCode = hashCode * 59 + this.PayAmount.GetHashCode();
-                if (this.GetCoin != null)
-                    hashCode = hashCode * 59 + this.GetCoin.GetHashCode();
-                if (this.GetAmount != null)
-                    hashCode = hashCode * 59 + this.GetAmount.GetHashCode();
-                if (this.Rate != null)
-                    hashCode = hashCode * 59 + this.Rate.GetHashCode();
-                if (this.RateReci != null)
-                    hashCode = hashCode * 59 + this.RateReci.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
-                hashCode = hashCode * 59 + this.CreateTimest.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.DbStatus != null)
+                    hashCode = hashCode * 59 + this.DbStatus.GetHashCode();
+                if (this.FiatCurrency != null)
+                    hashCode = hashCode * 59 + this.FiatCurrency.GetHashCode();
+                if (this.FiatCurrencyInfo != null)
+                    hashCode = hashCode * 59 + this.FiatCurrencyInfo.GetHashCode();
+                if (this.FiatAmount != null)
+                    hashCode = hashCode * 59 + this.FiatAmount.GetHashCode();
+                if (this.CryptoCurrency != null)
+                    hashCode = hashCode * 59 + this.CryptoCurrency.GetHashCode();
+                if (this.CryptoCurrencyInfo != null)
+                    hashCode = hashCode * 59 + this.CryptoCurrencyInfo.GetHashCode();
+                if (this.CryptoAmount != null)
+                    hashCode = hashCode * 59 + this.CryptoAmount.GetHashCode();
+                if (this.Rate != null)
+                    hashCode = hashCode * 59 + this.Rate.GetHashCode();
+                if (this.TransferRemark != null)
+                    hashCode = hashCode * 59 + this.TransferRemark.GetHashCode();
+                if (this.GateBankAccountIban != null)
+                    hashCode = hashCode * 59 + this.GateBankAccountIban.GetHashCode();
+                if (this.PromotionCode != null)
+                    hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
                 return hashCode;
             }
         }

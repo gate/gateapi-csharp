@@ -33,60 +33,25 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20025" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20025() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20025" /> class.
-        /// </summary>
-        /// <param name="coin">Currency (required).</param>
-        /// <param name="minTransAmount">Minimum Transfer Quantity (including estimated fees) (required).</param>
-        /// <param name="estFee">Estimated Fee (required).</param>
-        /// <param name="precision">Precision (required).</param>
-        /// <param name="isDisabled">If it is disabled. 0 means NOT being disabled (required).</param>
-        public InlineResponse20025(string coin = default(string), decimal minTransAmount = default(decimal), decimal estFee = default(decimal), int precision = default(int), int isDisabled = default(int))
+        /// <param name="symbol">symbol.</param>
+        /// <param name="tiers">tiers.</param>
+        public InlineResponse20025(string symbol = default(string), List<RuleRiskLimitsTiers> tiers = default(List<RuleRiskLimitsTiers>))
         {
-            // to ensure "coin" is required (not null)
-            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20025 and cannot be null");
-            this.MinTransAmount = minTransAmount;
-            this.EstFee = estFee;
-            this.Precision = precision;
-            this.IsDisabled = isDisabled;
+            this.Symbol = symbol;
+            this.Tiers = tiers;
         }
 
         /// <summary>
-        /// Currency
+        /// Gets or Sets Symbol
         /// </summary>
-        /// <value>Currency</value>
-        [DataMember(Name="coin")]
-        public string Coin { get; set; }
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
 
         /// <summary>
-        /// Minimum Transfer Quantity (including estimated fees)
+        /// Gets or Sets Tiers
         /// </summary>
-        /// <value>Minimum Transfer Quantity (including estimated fees)</value>
-        [DataMember(Name="min_trans_amount")]
-        public decimal MinTransAmount { get; set; }
-
-        /// <summary>
-        /// Estimated Fee
-        /// </summary>
-        /// <value>Estimated Fee</value>
-        [DataMember(Name="est_fee")]
-        public decimal EstFee { get; set; }
-
-        /// <summary>
-        /// Precision
-        /// </summary>
-        /// <value>Precision</value>
-        [DataMember(Name="precision")]
-        public int Precision { get; set; }
-
-        /// <summary>
-        /// If it is disabled. 0 means NOT being disabled
-        /// </summary>
-        /// <value>If it is disabled. 0 means NOT being disabled</value>
-        [DataMember(Name="is_disabled")]
-        public int IsDisabled { get; set; }
+        [DataMember(Name="tiers")]
+        public List<RuleRiskLimitsTiers> Tiers { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -96,11 +61,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20025 {\n");
-            sb.Append("  Coin: ").Append(Coin).Append("\n");
-            sb.Append("  MinTransAmount: ").Append(MinTransAmount).Append("\n");
-            sb.Append("  EstFee: ").Append(EstFee).Append("\n");
-            sb.Append("  Precision: ").Append(Precision).Append("\n");
-            sb.Append("  IsDisabled: ").Append(IsDisabled).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
+            sb.Append("  Tiers: ").Append(Tiers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -136,25 +98,15 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Coin == input.Coin ||
-                    (this.Coin != null &&
-                    this.Coin.Equals(input.Coin))
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.MinTransAmount == input.MinTransAmount ||
-                    this.MinTransAmount.Equals(input.MinTransAmount)
-                ) && 
-                (
-                    this.EstFee == input.EstFee ||
-                    this.EstFee.Equals(input.EstFee)
-                ) && 
-                (
-                    this.Precision == input.Precision ||
-                    this.Precision.Equals(input.Precision)
-                ) && 
-                (
-                    this.IsDisabled == input.IsDisabled ||
-                    this.IsDisabled.Equals(input.IsDisabled)
+                    this.Tiers == input.Tiers ||
+                    this.Tiers != null &&
+                    input.Tiers != null &&
+                    this.Tiers.SequenceEqual(input.Tiers)
                 );
         }
 
@@ -167,12 +119,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Coin != null)
-                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
-                hashCode = hashCode * 59 + this.MinTransAmount.GetHashCode();
-                hashCode = hashCode * 59 + this.EstFee.GetHashCode();
-                hashCode = hashCode * 59 + this.Precision.GetHashCode();
-                hashCode = hashCode * 59 + this.IsDisabled.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                if (this.Tiers != null)
+                    hashCode = hashCode * 59 + this.Tiers.GetHashCode();
                 return hashCode;
             }
         }

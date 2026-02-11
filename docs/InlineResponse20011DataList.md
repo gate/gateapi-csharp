@@ -5,17 +5,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int** | Order ID | [optional] 
-**TradeNo** | **string** | Transaction reference number | [optional] 
-**PayCoin** | **string** | Payment currency | [optional] 
-**PayAmount** | **string** | Payment amount | [optional] 
-**GetCoin** | **string** | Received currency | [optional] 
-**GetAmount** | **string** | Received amount | [optional] 
+**Time** | **string** | Current time | [optional] 
+**Timestamp** | **int** | Current timestamp | [optional] 
+**OrderId** | **string** | orderId | [optional] 
+**TradeNo** | **string** | Trade number | [optional] 
+**Type** | **string** | Quote direction buy/sell/all | [optional] 
+**Status** | **string** | Order Status | [optional] 
+**DbStatus** | **string** |  | [optional] 
+**FiatCurrency** | **string** | Fiat type | [optional] 
+**FiatCurrencyInfo** | [**InlineResponse20011DataFiatCurrencyInfo**](InlineResponse20011DataFiatCurrencyInfo.md) |  | [optional] 
+**FiatAmount** | **string** | Fiat amount | [optional] 
+**CryptoCurrency** | **string** | Stablecoin | [optional] 
+**CryptoCurrencyInfo** | [**InlineResponse20011DataCryptoCurrencyInfo**](InlineResponse20011DataCryptoCurrencyInfo.md) |  | [optional] 
+**CryptoAmount** | **string** | Stablecoin amount | [optional] 
 **Rate** | **string** | Exchange rate | [optional] 
-**RateReci** | **string** | Reciprocal of the exchange rate | [optional] 
-**Status** | **string** | PROCESSING: in progress / DONE: completed / FAILED: failed | [optional] 
-**CreateTimest** | **int** | timetimestamp | [optional] 
-**CreateTime** | **string** | Created time | [optional] 
+**TransferRemark** | **string** | Remark | [optional] 
+**GateBankAccountIban** | **string** | Bank account | [optional] 
+**PromotionCode** | **string** | Promotion code | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

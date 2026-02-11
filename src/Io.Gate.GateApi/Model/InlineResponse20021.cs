@@ -43,7 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="code">code (required).</param>
         /// <param name="message">message (required).</param>
         /// <param name="data">data (required).</param>
-        /// <param name="version">version (required).</param>
+        /// <param name="version">Version number (required).</param>
         public InlineResponse20021(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), InlineResponse20021Data data = default(InlineResponse20021Data), string version = default(string))
         {
             this.Timestamp = timestamp;
@@ -89,8 +89,9 @@ namespace Io.Gate.GateApi.Model
         public InlineResponse20021Data Data { get; set; }
 
         /// <summary>
-        /// Gets or Sets Version
+        /// Version number
         /// </summary>
+        /// <value>Version number</value>
         [DataMember(Name="version")]
         public string Version { get; set; }
 

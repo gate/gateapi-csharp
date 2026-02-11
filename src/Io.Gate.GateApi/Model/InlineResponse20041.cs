@@ -49,17 +49,17 @@ namespace Io.Gate.GateApi.Model
         /// <param name="maxPositionQty">Max Trade Size.</param>
         /// <param name="closedQty">Close Position Quantity.</param>
         /// <param name="closedValue">Close Position Value.</param>
+        /// <param name="fee">Position Accumulated Fees.</param>
         /// <param name="liqFee">Liquidation Fee.</param>
+        /// <param name="fundingFee">Funding Fee.</param>
         /// <param name="positionSide">Position Direction Before Close.</param>
+        /// <param name="positionMode">Position Mode at Close.</param>
         /// <param name="leverage">Leverage at Close.</param>
-        /// <param name="interest">Total Deducted Interest (required).</param>
-        /// <param name="businessType">Position Business Type (required).</param>
+        /// <param name="businessType">Business Type (required).</param>
         /// <param name="createTime">Created time.</param>
         /// <param name="updateTime">Update time.</param>
-        public InlineResponse20041(string positionId = default(string), string userId = default(string), string symbol = default(string), string closedType = default(string), string closedPnl = default(string), string closedPnlRate = default(string), string openAvgPrice = default(string), string closedAvgPrice = default(string), string maxPositionQty = default(string), string closedQty = default(string), string closedValue = default(string), string liqFee = default(string), string positionSide = default(string), string leverage = default(string), string interest = default(string), string businessType = default(string), string createTime = default(string), string updateTime = default(string))
+        public InlineResponse20041(string positionId = default(string), string userId = default(string), string symbol = default(string), string closedType = default(string), string closedPnl = default(string), string closedPnlRate = default(string), string openAvgPrice = default(string), string closedAvgPrice = default(string), string maxPositionQty = default(string), string closedQty = default(string), string closedValue = default(string), string fee = default(string), string liqFee = default(string), string fundingFee = default(string), string positionSide = default(string), string positionMode = default(string), string leverage = default(string), string businessType = default(string), string createTime = default(string), string updateTime = default(string))
         {
-            // to ensure "interest" is required (not null)
-            this.Interest = interest ?? throw new ArgumentNullException("interest", "interest is a required property for InlineResponse20041 and cannot be null");
             // to ensure "businessType" is required (not null)
             this.BusinessType = businessType ?? throw new ArgumentNullException("businessType", "businessType is a required property for InlineResponse20041 and cannot be null");
             this.PositionId = positionId;
@@ -73,8 +73,11 @@ namespace Io.Gate.GateApi.Model
             this.MaxPositionQty = maxPositionQty;
             this.ClosedQty = closedQty;
             this.ClosedValue = closedValue;
+            this.Fee = fee;
             this.LiqFee = liqFee;
+            this.FundingFee = fundingFee;
             this.PositionSide = positionSide;
+            this.PositionMode = positionMode;
             this.Leverage = leverage;
             this.CreateTime = createTime;
             this.UpdateTime = updateTime;
@@ -158,11 +161,25 @@ namespace Io.Gate.GateApi.Model
         public string ClosedValue { get; set; }
 
         /// <summary>
+        /// Position Accumulated Fees
+        /// </summary>
+        /// <value>Position Accumulated Fees</value>
+        [DataMember(Name="fee")]
+        public string Fee { get; set; }
+
+        /// <summary>
         /// Liquidation Fee
         /// </summary>
         /// <value>Liquidation Fee</value>
         [DataMember(Name="liq_fee")]
         public string LiqFee { get; set; }
+
+        /// <summary>
+        /// Funding Fee
+        /// </summary>
+        /// <value>Funding Fee</value>
+        [DataMember(Name="funding_fee")]
+        public string FundingFee { get; set; }
 
         /// <summary>
         /// Position Direction Before Close
@@ -172,6 +189,13 @@ namespace Io.Gate.GateApi.Model
         public string PositionSide { get; set; }
 
         /// <summary>
+        /// Position Mode at Close
+        /// </summary>
+        /// <value>Position Mode at Close</value>
+        [DataMember(Name="position_mode")]
+        public string PositionMode { get; set; }
+
+        /// <summary>
         /// Leverage at Close
         /// </summary>
         /// <value>Leverage at Close</value>
@@ -179,16 +203,9 @@ namespace Io.Gate.GateApi.Model
         public string Leverage { get; set; }
 
         /// <summary>
-        /// Total Deducted Interest
+        /// Business Type
         /// </summary>
-        /// <value>Total Deducted Interest</value>
-        [DataMember(Name="interest")]
-        public string Interest { get; set; }
-
-        /// <summary>
-        /// Position Business Type
-        /// </summary>
-        /// <value>Position Business Type</value>
+        /// <value>Business Type</value>
         [DataMember(Name="business_type")]
         public string BusinessType { get; set; }
 
@@ -225,10 +242,12 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  MaxPositionQty: ").Append(MaxPositionQty).Append("\n");
             sb.Append("  ClosedQty: ").Append(ClosedQty).Append("\n");
             sb.Append("  ClosedValue: ").Append(ClosedValue).Append("\n");
+            sb.Append("  Fee: ").Append(Fee).Append("\n");
             sb.Append("  LiqFee: ").Append(LiqFee).Append("\n");
+            sb.Append("  FundingFee: ").Append(FundingFee).Append("\n");
             sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
+            sb.Append("  PositionMode: ").Append(PositionMode).Append("\n");
             sb.Append("  Leverage: ").Append(Leverage).Append("\n");
-            sb.Append("  Interest: ").Append(Interest).Append("\n");
             sb.Append("  BusinessType: ").Append(BusinessType).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
             sb.Append("  UpdateTime: ").Append(UpdateTime).Append("\n");
@@ -322,9 +341,19 @@ namespace Io.Gate.GateApi.Model
                     this.ClosedValue.Equals(input.ClosedValue))
                 ) && 
                 (
+                    this.Fee == input.Fee ||
+                    (this.Fee != null &&
+                    this.Fee.Equals(input.Fee))
+                ) && 
+                (
                     this.LiqFee == input.LiqFee ||
                     (this.LiqFee != null &&
                     this.LiqFee.Equals(input.LiqFee))
+                ) && 
+                (
+                    this.FundingFee == input.FundingFee ||
+                    (this.FundingFee != null &&
+                    this.FundingFee.Equals(input.FundingFee))
                 ) && 
                 (
                     this.PositionSide == input.PositionSide ||
@@ -332,14 +361,14 @@ namespace Io.Gate.GateApi.Model
                     this.PositionSide.Equals(input.PositionSide))
                 ) && 
                 (
+                    this.PositionMode == input.PositionMode ||
+                    (this.PositionMode != null &&
+                    this.PositionMode.Equals(input.PositionMode))
+                ) && 
+                (
                     this.Leverage == input.Leverage ||
                     (this.Leverage != null &&
                     this.Leverage.Equals(input.Leverage))
-                ) && 
-                (
-                    this.Interest == input.Interest ||
-                    (this.Interest != null &&
-                    this.Interest.Equals(input.Interest))
                 ) && 
                 (
                     this.BusinessType == input.BusinessType ||
@@ -389,14 +418,18 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.ClosedQty.GetHashCode();
                 if (this.ClosedValue != null)
                     hashCode = hashCode * 59 + this.ClosedValue.GetHashCode();
+                if (this.Fee != null)
+                    hashCode = hashCode * 59 + this.Fee.GetHashCode();
                 if (this.LiqFee != null)
                     hashCode = hashCode * 59 + this.LiqFee.GetHashCode();
+                if (this.FundingFee != null)
+                    hashCode = hashCode * 59 + this.FundingFee.GetHashCode();
                 if (this.PositionSide != null)
                     hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
+                if (this.PositionMode != null)
+                    hashCode = hashCode * 59 + this.PositionMode.GetHashCode();
                 if (this.Leverage != null)
                     hashCode = hashCode * 59 + this.Leverage.GetHashCode();
-                if (this.Interest != null)
-                    hashCode = hashCode * 59 + this.Interest.GetHashCode();
                 if (this.BusinessType != null)
                     hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
                 if (this.CreateTime != null)

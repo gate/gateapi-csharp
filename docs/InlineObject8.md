@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CryptoCurrency** | **string** | Cryptocurrency | 
 **FiatCurrency** | **string** | Fiat currency | 
 **SelectType** | **string** | Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) | [optional] 
-**Status** | **string** | 订单状态（dispute: 申诉订单； closed: ACCEPT、BCLOSED； cancel： CANCEL、BECANCEL、SCLOSED、SCANCEL； locked: LOCKED； open: OPEN； paid： PAID； completed： CANCEL、BECANCEL、SCLOSED、SCANCEL、ACCEPT、BCLOSED） | [optional] 
+**Status** | **string** | Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) | [optional] 
 **Txid** | **int** | Order ID | [optional] 
 **StartTime** | **int** | Start timestamp, default is 00:00 89 days ago | [optional] 
 **EndTime** | **int** | End timestamp, default is 23:59:59 today | [optional] 

@@ -138,7 +138,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Return order book update ID (optional, default to false)</param>
         /// <returns>OrderBook</returns>
@@ -152,7 +152,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Return order book update ID (optional, default to false)</param>
         /// <returns>ApiResponse of OrderBook</returns>
@@ -194,7 +194,7 @@ namespace Io.Gate.GateApi.Api
         /// Market K-line chart
         /// </summary>
         /// <remarks>
-        /// Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -209,7 +209,7 @@ namespace Io.Gate.GateApi.Api
         /// Market K-line chart
         /// </summary>
         /// <remarks>
-        /// Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -939,7 +939,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Return order book update ID (optional, default to false)</param>
         /// <returns>Task of OrderBook</returns>
@@ -953,7 +953,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Return order book update ID (optional, default to false)</param>
         /// <returns>Task of ApiResponse (OrderBook)</returns>
@@ -995,7 +995,7 @@ namespace Io.Gate.GateApi.Api
         /// Market K-line chart
         /// </summary>
         /// <remarks>
-        /// Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -1010,7 +1010,7 @@ namespace Io.Gate.GateApi.Api
         /// Market K-line chart
         /// </summary>
         /// <remarks>
-        /// Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -2292,7 +2292,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Return order book update ID (optional, default to false)</param>
         /// <returns>OrderBook</returns>
@@ -2307,7 +2307,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Return order book update ID (optional, default to false)</param>
         /// <returns>ApiResponse of OrderBook</returns>
@@ -2365,7 +2365,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Return order book update ID (optional, default to false)</param>
         /// <returns>Task of OrderBook</returns>
@@ -2381,7 +2381,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
-        /// <param name="interval">Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
         /// <param name="withId">Return order book update ID (optional, default to false)</param>
         /// <returns>Task of ApiResponse (OrderBook)</returns>
@@ -2622,7 +2622,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Market K-line chart Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// Market K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -2638,7 +2638,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Market K-line chart Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// Market K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -2701,7 +2701,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Market K-line chart Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// Market K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>
@@ -2718,7 +2718,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Market K-line chart Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
+        /// Market K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Currency pair</param>

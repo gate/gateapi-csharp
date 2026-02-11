@@ -33,48 +33,45 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20044" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20044() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20044" /> class.
-        /// </summary>
-        /// <param name="id">Account Change Record ID (required).</param>
-        /// <param name="userId">User ID (required).</param>
-        /// <param name="businessId">Business ID (required).</param>
-        /// <param name="type">变更类型| &#x60;TRANSACTION&#x60; 成交 &#x60;TRADING_FEE&#x60; 手续费 &#x60;FUNDING_FEE&#x60; 合约资金费 &#x60;LIQUIDATION_FEE&#x60; 强平费 &#x60;TRANSFER_IN&#x60; 资金转入 &#x60;TRANSFER_OUT&#x60; 资金转出 &#x60;BANKRUPT_COMPENSATION&#x60; 穿仓补贴 &#x60;AUTO_REPAY&#x60; 杠杆仓位自动还负债 (required).</param>
-        /// <param name="exchangeType">Exchange (required).</param>
-        /// <param name="coin">Currency (required).</param>
-        /// <param name="change">Change amount (positive indicates transfer in; negative indicates transfer out) (required).</param>
-        /// <param name="balance">Balance after change (required).</param>
-        /// <param name="createTime">Created time (required).</param>
-        public InlineResponse20044(string id = default(string), string userId = default(string), string businessId = default(string), string type = default(string), string exchangeType = default(string), string coin = default(string), string change = default(string), string balance = default(string), string createTime = default(string))
+        /// <param name="userId">User ID.</param>
+        /// <param name="transactionId">filledrecordsID.</param>
+        /// <param name="orderId">Order ID.</param>
+        /// <param name="text">User Order ID.</param>
+        /// <param name="symbol">Currency pair.</param>
+        /// <param name="exchangeType">Exchange.</param>
+        /// <param name="businessType">Business Type.</param>
+        /// <param name="side">Buy/Sell Direction.</param>
+        /// <param name="qty">Trading size.</param>
+        /// <param name="price">Fill Price.</param>
+        /// <param name="fee">fee.</param>
+        /// <param name="feeCoin">Fee currency.</param>
+        /// <param name="feeRate">Fee Rate.</param>
+        /// <param name="matchRole">Filled Role.</param>
+        /// <param name="rpnl">Realized P&amp;L.</param>
+        /// <param name="positionMode">Position Mode.</param>
+        /// <param name="positionSide">Position Direction.</param>
+        /// <param name="createTime">Created time.</param>
+        public InlineResponse20044(string userId = default(string), string transactionId = default(string), string orderId = default(string), string text = default(string), string symbol = default(string), string exchangeType = default(string), string businessType = default(string), string side = default(string), string qty = default(string), string price = default(string), string fee = default(string), string feeCoin = default(string), string feeRate = default(string), string matchRole = default(string), string rpnl = default(string), string positionMode = default(string), string positionSide = default(string), string createTime = default(string))
         {
-            // to ensure "id" is required (not null)
-            this.Id = id ?? throw new ArgumentNullException("id", "id is a required property for InlineResponse20044 and cannot be null");
-            // to ensure "userId" is required (not null)
-            this.UserId = userId ?? throw new ArgumentNullException("userId", "userId is a required property for InlineResponse20044 and cannot be null");
-            // to ensure "businessId" is required (not null)
-            this.BusinessId = businessId ?? throw new ArgumentNullException("businessId", "businessId is a required property for InlineResponse20044 and cannot be null");
-            // to ensure "type" is required (not null)
-            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for InlineResponse20044 and cannot be null");
-            // to ensure "exchangeType" is required (not null)
-            this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for InlineResponse20044 and cannot be null");
-            // to ensure "coin" is required (not null)
-            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20044 and cannot be null");
-            // to ensure "change" is required (not null)
-            this.Change = change ?? throw new ArgumentNullException("change", "change is a required property for InlineResponse20044 and cannot be null");
-            // to ensure "balance" is required (not null)
-            this.Balance = balance ?? throw new ArgumentNullException("balance", "balance is a required property for InlineResponse20044 and cannot be null");
-            // to ensure "createTime" is required (not null)
-            this.CreateTime = createTime ?? throw new ArgumentNullException("createTime", "createTime is a required property for InlineResponse20044 and cannot be null");
+            this.UserId = userId;
+            this.TransactionId = transactionId;
+            this.OrderId = orderId;
+            this.Text = text;
+            this.Symbol = symbol;
+            this.ExchangeType = exchangeType;
+            this.BusinessType = businessType;
+            this.Side = side;
+            this.Qty = qty;
+            this.Price = price;
+            this.Fee = fee;
+            this.FeeCoin = feeCoin;
+            this.FeeRate = feeRate;
+            this.MatchRole = matchRole;
+            this.Rpnl = rpnl;
+            this.PositionMode = positionMode;
+            this.PositionSide = positionSide;
+            this.CreateTime = createTime;
         }
-
-        /// <summary>
-        /// Account Change Record ID
-        /// </summary>
-        /// <value>Account Change Record ID</value>
-        [DataMember(Name="id")]
-        public string Id { get; set; }
 
         /// <summary>
         /// User ID
@@ -84,18 +81,32 @@ namespace Io.Gate.GateApi.Model
         public string UserId { get; set; }
 
         /// <summary>
-        /// Business ID
+        /// filledrecordsID
         /// </summary>
-        /// <value>Business ID</value>
-        [DataMember(Name="business_id")]
-        public string BusinessId { get; set; }
+        /// <value>filledrecordsID</value>
+        [DataMember(Name="transaction_id")]
+        public string TransactionId { get; set; }
 
         /// <summary>
-        /// 变更类型| &#x60;TRANSACTION&#x60; 成交 &#x60;TRADING_FEE&#x60; 手续费 &#x60;FUNDING_FEE&#x60; 合约资金费 &#x60;LIQUIDATION_FEE&#x60; 强平费 &#x60;TRANSFER_IN&#x60; 资金转入 &#x60;TRANSFER_OUT&#x60; 资金转出 &#x60;BANKRUPT_COMPENSATION&#x60; 穿仓补贴 &#x60;AUTO_REPAY&#x60; 杠杆仓位自动还负债
+        /// Order ID
         /// </summary>
-        /// <value>变更类型| &#x60;TRANSACTION&#x60; 成交 &#x60;TRADING_FEE&#x60; 手续费 &#x60;FUNDING_FEE&#x60; 合约资金费 &#x60;LIQUIDATION_FEE&#x60; 强平费 &#x60;TRANSFER_IN&#x60; 资金转入 &#x60;TRANSFER_OUT&#x60; 资金转出 &#x60;BANKRUPT_COMPENSATION&#x60; 穿仓补贴 &#x60;AUTO_REPAY&#x60; 杠杆仓位自动还负债</value>
-        [DataMember(Name="type")]
-        public string Type { get; set; }
+        /// <value>Order ID</value>
+        [DataMember(Name="order_id")]
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// User Order ID
+        /// </summary>
+        /// <value>User Order ID</value>
+        [DataMember(Name="text")]
+        public string Text { get; set; }
+
+        /// <summary>
+        /// Currency pair
+        /// </summary>
+        /// <value>Currency pair</value>
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
 
         /// <summary>
         /// Exchange
@@ -105,25 +116,81 @@ namespace Io.Gate.GateApi.Model
         public string ExchangeType { get; set; }
 
         /// <summary>
-        /// Currency
+        /// Business Type
         /// </summary>
-        /// <value>Currency</value>
-        [DataMember(Name="coin")]
-        public string Coin { get; set; }
+        /// <value>Business Type</value>
+        [DataMember(Name="business_type")]
+        public string BusinessType { get; set; }
 
         /// <summary>
-        /// Change amount (positive indicates transfer in; negative indicates transfer out)
+        /// Buy/Sell Direction
         /// </summary>
-        /// <value>Change amount (positive indicates transfer in; negative indicates transfer out)</value>
-        [DataMember(Name="change")]
-        public string Change { get; set; }
+        /// <value>Buy/Sell Direction</value>
+        [DataMember(Name="side")]
+        public string Side { get; set; }
 
         /// <summary>
-        /// Balance after change
+        /// Trading size
         /// </summary>
-        /// <value>Balance after change</value>
-        [DataMember(Name="balance")]
-        public string Balance { get; set; }
+        /// <value>Trading size</value>
+        [DataMember(Name="qty")]
+        public string Qty { get; set; }
+
+        /// <summary>
+        /// Fill Price
+        /// </summary>
+        /// <value>Fill Price</value>
+        [DataMember(Name="price")]
+        public string Price { get; set; }
+
+        /// <summary>
+        /// fee
+        /// </summary>
+        /// <value>fee</value>
+        [DataMember(Name="fee")]
+        public string Fee { get; set; }
+
+        /// <summary>
+        /// Fee currency
+        /// </summary>
+        /// <value>Fee currency</value>
+        [DataMember(Name="fee_coin")]
+        public string FeeCoin { get; set; }
+
+        /// <summary>
+        /// Fee Rate
+        /// </summary>
+        /// <value>Fee Rate</value>
+        [DataMember(Name="fee_rate")]
+        public string FeeRate { get; set; }
+
+        /// <summary>
+        /// Filled Role
+        /// </summary>
+        /// <value>Filled Role</value>
+        [DataMember(Name="match_role")]
+        public string MatchRole { get; set; }
+
+        /// <summary>
+        /// Realized P&amp;L
+        /// </summary>
+        /// <value>Realized P&amp;L</value>
+        [DataMember(Name="rpnl")]
+        public string Rpnl { get; set; }
+
+        /// <summary>
+        /// Position Mode
+        /// </summary>
+        /// <value>Position Mode</value>
+        [DataMember(Name="position_mode")]
+        public string PositionMode { get; set; }
+
+        /// <summary>
+        /// Position Direction
+        /// </summary>
+        /// <value>Position Direction</value>
+        [DataMember(Name="position_side")]
+        public string PositionSide { get; set; }
 
         /// <summary>
         /// Created time
@@ -140,14 +207,23 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20044 {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
-            sb.Append("  BusinessId: ").Append(BusinessId).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
+            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
-            sb.Append("  Coin: ").Append(Coin).Append("\n");
-            sb.Append("  Change: ").Append(Change).Append("\n");
-            sb.Append("  Balance: ").Append(Balance).Append("\n");
+            sb.Append("  BusinessType: ").Append(BusinessType).Append("\n");
+            sb.Append("  Side: ").Append(Side).Append("\n");
+            sb.Append("  Qty: ").Append(Qty).Append("\n");
+            sb.Append("  Price: ").Append(Price).Append("\n");
+            sb.Append("  Fee: ").Append(Fee).Append("\n");
+            sb.Append("  FeeCoin: ").Append(FeeCoin).Append("\n");
+            sb.Append("  FeeRate: ").Append(FeeRate).Append("\n");
+            sb.Append("  MatchRole: ").Append(MatchRole).Append("\n");
+            sb.Append("  Rpnl: ").Append(Rpnl).Append("\n");
+            sb.Append("  PositionMode: ").Append(PositionMode).Append("\n");
+            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -184,24 +260,29 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
                     this.UserId == input.UserId ||
                     (this.UserId != null &&
                     this.UserId.Equals(input.UserId))
                 ) && 
                 (
-                    this.BusinessId == input.BusinessId ||
-                    (this.BusinessId != null &&
-                    this.BusinessId.Equals(input.BusinessId))
+                    this.TransactionId == input.TransactionId ||
+                    (this.TransactionId != null &&
+                    this.TransactionId.Equals(input.TransactionId))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
+                ) && 
+                (
+                    this.Text == input.Text ||
+                    (this.Text != null &&
+                    this.Text.Equals(input.Text))
+                ) && 
+                (
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
                     this.ExchangeType == input.ExchangeType ||
@@ -209,19 +290,59 @@ namespace Io.Gate.GateApi.Model
                     this.ExchangeType.Equals(input.ExchangeType))
                 ) && 
                 (
-                    this.Coin == input.Coin ||
-                    (this.Coin != null &&
-                    this.Coin.Equals(input.Coin))
+                    this.BusinessType == input.BusinessType ||
+                    (this.BusinessType != null &&
+                    this.BusinessType.Equals(input.BusinessType))
                 ) && 
                 (
-                    this.Change == input.Change ||
-                    (this.Change != null &&
-                    this.Change.Equals(input.Change))
+                    this.Side == input.Side ||
+                    (this.Side != null &&
+                    this.Side.Equals(input.Side))
                 ) && 
                 (
-                    this.Balance == input.Balance ||
-                    (this.Balance != null &&
-                    this.Balance.Equals(input.Balance))
+                    this.Qty == input.Qty ||
+                    (this.Qty != null &&
+                    this.Qty.Equals(input.Qty))
+                ) && 
+                (
+                    this.Price == input.Price ||
+                    (this.Price != null &&
+                    this.Price.Equals(input.Price))
+                ) && 
+                (
+                    this.Fee == input.Fee ||
+                    (this.Fee != null &&
+                    this.Fee.Equals(input.Fee))
+                ) && 
+                (
+                    this.FeeCoin == input.FeeCoin ||
+                    (this.FeeCoin != null &&
+                    this.FeeCoin.Equals(input.FeeCoin))
+                ) && 
+                (
+                    this.FeeRate == input.FeeRate ||
+                    (this.FeeRate != null &&
+                    this.FeeRate.Equals(input.FeeRate))
+                ) && 
+                (
+                    this.MatchRole == input.MatchRole ||
+                    (this.MatchRole != null &&
+                    this.MatchRole.Equals(input.MatchRole))
+                ) && 
+                (
+                    this.Rpnl == input.Rpnl ||
+                    (this.Rpnl != null &&
+                    this.Rpnl.Equals(input.Rpnl))
+                ) && 
+                (
+                    this.PositionMode == input.PositionMode ||
+                    (this.PositionMode != null &&
+                    this.PositionMode.Equals(input.PositionMode))
+                ) && 
+                (
+                    this.PositionSide == input.PositionSide ||
+                    (this.PositionSide != null &&
+                    this.PositionSide.Equals(input.PositionSide))
                 ) && 
                 (
                     this.CreateTime == input.CreateTime ||
@@ -239,22 +360,40 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.UserId != null)
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.BusinessId != null)
-                    hashCode = hashCode * 59 + this.BusinessId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.TransactionId != null)
+                    hashCode = hashCode * 59 + this.TransactionId.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.Text != null)
+                    hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
                 if (this.ExchangeType != null)
                     hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
-                if (this.Coin != null)
-                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
-                if (this.Change != null)
-                    hashCode = hashCode * 59 + this.Change.GetHashCode();
-                if (this.Balance != null)
-                    hashCode = hashCode * 59 + this.Balance.GetHashCode();
+                if (this.BusinessType != null)
+                    hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
+                if (this.Side != null)
+                    hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.Qty != null)
+                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
+                if (this.Price != null)
+                    hashCode = hashCode * 59 + this.Price.GetHashCode();
+                if (this.Fee != null)
+                    hashCode = hashCode * 59 + this.Fee.GetHashCode();
+                if (this.FeeCoin != null)
+                    hashCode = hashCode * 59 + this.FeeCoin.GetHashCode();
+                if (this.FeeRate != null)
+                    hashCode = hashCode * 59 + this.FeeRate.GetHashCode();
+                if (this.MatchRole != null)
+                    hashCode = hashCode * 59 + this.MatchRole.GetHashCode();
+                if (this.Rpnl != null)
+                    hashCode = hashCode * 59 + this.Rpnl.GetHashCode();
+                if (this.PositionMode != null)
+                    hashCode = hashCode * 59 + this.PositionMode.GetHashCode();
+                if (this.PositionSide != null)
+                    hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;

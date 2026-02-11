@@ -36,7 +36,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -52,7 +52,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -68,7 +68,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="commissionType">Rebate type: 1 - Direct rebate, 2 - Indirect rebate, 3 - Self rebate (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -85,7 +85,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="commissionType">Rebate type: 1 - Direct rebate, 2 - Indirect rebate, 3 - Self rebate (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -100,7 +100,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -116,7 +116,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -131,7 +131,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -147,7 +147,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -294,7 +294,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -310,7 +310,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -326,7 +326,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="commissionType">Rebate type: 1 - Direct rebate, 2 - Indirect rebate, 3 - Self rebate (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -343,7 +343,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="commissionType">Rebate type: 1 - Direct rebate, 2 - Indirect rebate, 3 - Self rebate (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -358,7 +358,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -374,7 +374,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -389,7 +389,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -405,7 +405,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -660,7 +660,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -677,7 +677,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -746,7 +746,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -764,7 +764,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -836,7 +836,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="commissionType">Rebate type: 1 - Direct rebate, 2 - Indirect rebate, 3 - Self rebate (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -854,7 +854,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="commissionType">Rebate type: 1 - Direct rebate, 2 - Indirect rebate, 3 - Self rebate (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -928,7 +928,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="commissionType">Rebate type: 1 - Direct rebate, 2 - Indirect rebate, 3 - Self rebate (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -947,7 +947,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="commissionType">Rebate type: 1 - Direct rebate, 2 - Indirect rebate, 3 - Self rebate (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1022,7 +1022,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1039,7 +1039,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1108,7 +1108,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1126,7 +1126,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencyPair">Specify the trading pair. If not specified, returns all trading pairs (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1197,7 +1197,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1214,7 +1214,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1283,7 +1283,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1301,7 +1301,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Specify the currency. If not specified, returns all currencies (optional)</param>
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
-        /// <param name="from">Start time for querying records, defaults to 7 days before current time if not specified (optional)</param>
+        /// <param name="from">Start time for querying records. If not specified, defaults to 7 days before current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>

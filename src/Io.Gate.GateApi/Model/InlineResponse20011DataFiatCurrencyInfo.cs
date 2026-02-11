@@ -25,38 +25,40 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20010DataCryptoCurrencyInfo
+    /// InlineResponse20011DataFiatCurrencyInfo
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20010DataCryptoCurrencyInfo :  IEquatable<InlineResponse20010DataCryptoCurrencyInfo>, IValidatableObject
+    public partial class InlineResponse20011DataFiatCurrencyInfo :  IEquatable<InlineResponse20011DataFiatCurrencyInfo>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20010DataCryptoCurrencyInfo" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20011DataFiatCurrencyInfo" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineResponse20010DataCryptoCurrencyInfo() { }
+        protected InlineResponse20011DataFiatCurrencyInfo() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20010DataCryptoCurrencyInfo" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20011DataFiatCurrencyInfo" /> class.
         /// </summary>
-        /// <param name="name">name (required).</param>
-        /// <param name="icon">icon (required).</param>
-        public InlineResponse20010DataCryptoCurrencyInfo(string name = default(string), string icon = default(string))
+        /// <param name="name">Name (required).</param>
+        /// <param name="icon">Image (required).</param>
+        public InlineResponse20011DataFiatCurrencyInfo(string name = default(string), string icon = default(string))
         {
             // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name", "name is a required property for InlineResponse20010DataCryptoCurrencyInfo and cannot be null");
+            this.Name = name ?? throw new ArgumentNullException("name", "name is a required property for InlineResponse20011DataFiatCurrencyInfo and cannot be null");
             // to ensure "icon" is required (not null)
-            this.Icon = icon ?? throw new ArgumentNullException("icon", "icon is a required property for InlineResponse20010DataCryptoCurrencyInfo and cannot be null");
+            this.Icon = icon ?? throw new ArgumentNullException("icon", "icon is a required property for InlineResponse20011DataFiatCurrencyInfo and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name
         /// </summary>
+        /// <value>Name</value>
         [DataMember(Name="name")]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Icon
+        /// Image
         /// </summary>
+        /// <value>Image</value>
         [DataMember(Name="icon")]
         public string Icon { get; set; }
 
@@ -67,7 +69,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20010DataCryptoCurrencyInfo {\n");
+            sb.Append("class InlineResponse20011DataFiatCurrencyInfo {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Icon: ").Append(Icon).Append("\n");
             sb.Append("}\n");
@@ -90,15 +92,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20010DataCryptoCurrencyInfo);
+            return this.Equals(input as InlineResponse20011DataFiatCurrencyInfo);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20010DataCryptoCurrencyInfo instances are equal
+        /// Returns true if InlineResponse20011DataFiatCurrencyInfo instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20010DataCryptoCurrencyInfo to be compared</param>
+        /// <param name="input">Instance of InlineResponse20011DataFiatCurrencyInfo to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20010DataCryptoCurrencyInfo input)
+        public bool Equals(InlineResponse20011DataFiatCurrencyInfo input)
         {
             if (input == null)
                 return false;

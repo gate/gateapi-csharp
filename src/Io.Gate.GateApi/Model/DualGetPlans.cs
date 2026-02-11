@@ -41,11 +41,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="deliveryTime">Settlement time.</param>
         /// <param name="minCopies">Minimum Units.</param>
         /// <param name="maxCopies">Maximum Units.</param>
-        /// <param name="perValue">Value Per Unit.</param>
+        /// <param name="perValue">Value Per Unit (deprecated).</param>
         /// <param name="apyDisplay">Annual Yield.</param>
         /// <param name="startTime">Start Time.</param>
         /// <param name="endTime">End time.</param>
-        /// <param name="status">Status:   &#x60;NOTSTARTED&#x60;-Not Started  &#x60;ONGOING&#x60;-In Progress  &#x60;ENDED&#x60;-Ended.</param>
+        /// <param name="status">状态:  &#x60;NOTSTARTED&#x60;-未开始 &#x60;ONGOING&#x60;-进行中 &#x60;ENDED&#x60;-已结束.</param>
         public DualGetPlans(int id = default(int), string instrumentName = default(string), string investCurrency = default(string), string exerciseCurrency = default(string), double exercisePrice = default(double), int deliveryTime = default(int), int minCopies = default(int), int maxCopies = default(int), string perValue = default(string), string apyDisplay = default(string), int startTime = default(int), int endTime = default(int), string status = default(string))
         {
             this.Id = id;
@@ -120,9 +120,9 @@ namespace Io.Gate.GateApi.Model
         public int MaxCopies { get; set; }
 
         /// <summary>
-        /// Value Per Unit
+        /// Value Per Unit (deprecated)
         /// </summary>
-        /// <value>Value Per Unit</value>
+        /// <value>Value Per Unit (deprecated)</value>
         [DataMember(Name="per_value")]
         public string PerValue { get; set; }
 
@@ -148,9 +148,9 @@ namespace Io.Gate.GateApi.Model
         public int EndTime { get; set; }
 
         /// <summary>
-        /// Status:   &#x60;NOTSTARTED&#x60;-Not Started  &#x60;ONGOING&#x60;-In Progress  &#x60;ENDED&#x60;-Ended
+        /// 状态:  &#x60;NOTSTARTED&#x60;-未开始 &#x60;ONGOING&#x60;-进行中 &#x60;ENDED&#x60;-已结束
         /// </summary>
-        /// <value>Status:   &#x60;NOTSTARTED&#x60;-Not Started  &#x60;ONGOING&#x60;-In Progress  &#x60;ENDED&#x60;-Ended</value>
+        /// <value>状态:  &#x60;NOTSTARTED&#x60;-未开始 &#x60;ONGOING&#x60;-进行中 &#x60;ENDED&#x60;-已结束</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 

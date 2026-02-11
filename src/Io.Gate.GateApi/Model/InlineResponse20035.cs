@@ -38,58 +38,49 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20035" /> class.
         /// </summary>
-        /// <param name="spotMakerFee">spotMakerfee rate (required).</param>
-        /// <param name="spotTakerFee">spotTakerfee rate (required).</param>
-        /// <param name="futureMakerFee">contractMakerfee rate (required).</param>
-        /// <param name="futureTakerFee">contractTakerfee rate (required).</param>
-        /// <param name="specialFeeList">specialFeeList (required).</param>
-        public InlineResponse20035(string spotMakerFee = default(string), string spotTakerFee = default(string), string futureMakerFee = default(string), string futureTakerFee = default(string), List<InlineResponse20035SpecialFeeList> specialFeeList = default(List<InlineResponse20035SpecialFeeList>))
+        /// <param name="coin">Currency (required).</param>
+        /// <param name="exchangeType">Exchange (required).</param>
+        /// <param name="hourInterestRate">Hourly Interest Rate (required).</param>
+        /// <param name="time">Millisecond Timestamp (required).</param>
+        public InlineResponse20035(string coin = default(string), string exchangeType = default(string), string hourInterestRate = default(string), string time = default(string))
         {
-            // to ensure "spotMakerFee" is required (not null)
-            this.SpotMakerFee = spotMakerFee ?? throw new ArgumentNullException("spotMakerFee", "spotMakerFee is a required property for InlineResponse20035 and cannot be null");
-            // to ensure "spotTakerFee" is required (not null)
-            this.SpotTakerFee = spotTakerFee ?? throw new ArgumentNullException("spotTakerFee", "spotTakerFee is a required property for InlineResponse20035 and cannot be null");
-            // to ensure "futureMakerFee" is required (not null)
-            this.FutureMakerFee = futureMakerFee ?? throw new ArgumentNullException("futureMakerFee", "futureMakerFee is a required property for InlineResponse20035 and cannot be null");
-            // to ensure "futureTakerFee" is required (not null)
-            this.FutureTakerFee = futureTakerFee ?? throw new ArgumentNullException("futureTakerFee", "futureTakerFee is a required property for InlineResponse20035 and cannot be null");
-            // to ensure "specialFeeList" is required (not null)
-            this.SpecialFeeList = specialFeeList ?? throw new ArgumentNullException("specialFeeList", "specialFeeList is a required property for InlineResponse20035 and cannot be null");
+            // to ensure "coin" is required (not null)
+            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20035 and cannot be null");
+            // to ensure "exchangeType" is required (not null)
+            this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for InlineResponse20035 and cannot be null");
+            // to ensure "hourInterestRate" is required (not null)
+            this.HourInterestRate = hourInterestRate ?? throw new ArgumentNullException("hourInterestRate", "hourInterestRate is a required property for InlineResponse20035 and cannot be null");
+            // to ensure "time" is required (not null)
+            this.Time = time ?? throw new ArgumentNullException("time", "time is a required property for InlineResponse20035 and cannot be null");
         }
 
         /// <summary>
-        /// spotMakerfee rate
+        /// Currency
         /// </summary>
-        /// <value>spotMakerfee rate</value>
-        [DataMember(Name="spot_maker_fee")]
-        public string SpotMakerFee { get; set; }
+        /// <value>Currency</value>
+        [DataMember(Name="coin")]
+        public string Coin { get; set; }
 
         /// <summary>
-        /// spotTakerfee rate
+        /// Exchange
         /// </summary>
-        /// <value>spotTakerfee rate</value>
-        [DataMember(Name="spot_taker_fee")]
-        public string SpotTakerFee { get; set; }
+        /// <value>Exchange</value>
+        [DataMember(Name="exchange_type")]
+        public string ExchangeType { get; set; }
 
         /// <summary>
-        /// contractMakerfee rate
+        /// Hourly Interest Rate
         /// </summary>
-        /// <value>contractMakerfee rate</value>
-        [DataMember(Name="future_maker_fee")]
-        public string FutureMakerFee { get; set; }
+        /// <value>Hourly Interest Rate</value>
+        [DataMember(Name="hour_interest_rate")]
+        public string HourInterestRate { get; set; }
 
         /// <summary>
-        /// contractTakerfee rate
+        /// Millisecond Timestamp
         /// </summary>
-        /// <value>contractTakerfee rate</value>
-        [DataMember(Name="future_taker_fee")]
-        public string FutureTakerFee { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SpecialFeeList
-        /// </summary>
-        [DataMember(Name="special_fee_list")]
-        public List<InlineResponse20035SpecialFeeList> SpecialFeeList { get; set; }
+        /// <value>Millisecond Timestamp</value>
+        [DataMember(Name="time")]
+        public string Time { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -99,11 +90,10 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20035 {\n");
-            sb.Append("  SpotMakerFee: ").Append(SpotMakerFee).Append("\n");
-            sb.Append("  SpotTakerFee: ").Append(SpotTakerFee).Append("\n");
-            sb.Append("  FutureMakerFee: ").Append(FutureMakerFee).Append("\n");
-            sb.Append("  FutureTakerFee: ").Append(FutureTakerFee).Append("\n");
-            sb.Append("  SpecialFeeList: ").Append(SpecialFeeList).Append("\n");
+            sb.Append("  Coin: ").Append(Coin).Append("\n");
+            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
+            sb.Append("  HourInterestRate: ").Append(HourInterestRate).Append("\n");
+            sb.Append("  Time: ").Append(Time).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,30 +129,24 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.SpotMakerFee == input.SpotMakerFee ||
-                    (this.SpotMakerFee != null &&
-                    this.SpotMakerFee.Equals(input.SpotMakerFee))
+                    this.Coin == input.Coin ||
+                    (this.Coin != null &&
+                    this.Coin.Equals(input.Coin))
                 ) && 
                 (
-                    this.SpotTakerFee == input.SpotTakerFee ||
-                    (this.SpotTakerFee != null &&
-                    this.SpotTakerFee.Equals(input.SpotTakerFee))
+                    this.ExchangeType == input.ExchangeType ||
+                    (this.ExchangeType != null &&
+                    this.ExchangeType.Equals(input.ExchangeType))
                 ) && 
                 (
-                    this.FutureMakerFee == input.FutureMakerFee ||
-                    (this.FutureMakerFee != null &&
-                    this.FutureMakerFee.Equals(input.FutureMakerFee))
+                    this.HourInterestRate == input.HourInterestRate ||
+                    (this.HourInterestRate != null &&
+                    this.HourInterestRate.Equals(input.HourInterestRate))
                 ) && 
                 (
-                    this.FutureTakerFee == input.FutureTakerFee ||
-                    (this.FutureTakerFee != null &&
-                    this.FutureTakerFee.Equals(input.FutureTakerFee))
-                ) && 
-                (
-                    this.SpecialFeeList == input.SpecialFeeList ||
-                    this.SpecialFeeList != null &&
-                    input.SpecialFeeList != null &&
-                    this.SpecialFeeList.SequenceEqual(input.SpecialFeeList)
+                    this.Time == input.Time ||
+                    (this.Time != null &&
+                    this.Time.Equals(input.Time))
                 );
         }
 
@@ -175,16 +159,14 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SpotMakerFee != null)
-                    hashCode = hashCode * 59 + this.SpotMakerFee.GetHashCode();
-                if (this.SpotTakerFee != null)
-                    hashCode = hashCode * 59 + this.SpotTakerFee.GetHashCode();
-                if (this.FutureMakerFee != null)
-                    hashCode = hashCode * 59 + this.FutureMakerFee.GetHashCode();
-                if (this.FutureTakerFee != null)
-                    hashCode = hashCode * 59 + this.FutureTakerFee.GetHashCode();
-                if (this.SpecialFeeList != null)
-                    hashCode = hashCode * 59 + this.SpecialFeeList.GetHashCode();
+                if (this.Coin != null)
+                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
+                if (this.ExchangeType != null)
+                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
+                if (this.HourInterestRate != null)
+                    hashCode = hashCode * 59 + this.HourInterestRate.GetHashCode();
+                if (this.Time != null)
+                    hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }
         }
