@@ -33,34 +33,36 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject26" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineObject26() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject26" /> class.
-        /// </summary>
-        /// <param name="symbol">Currency pair (required).</param>
-        /// <param name="leverage">leverage (required).</param>
-        public InlineObject26(string symbol = default(string), string leverage = default(string))
+        /// <param name="positionMode">Futures position mode (SINGLE/DUAL).</param>
+        /// <param name="accountMode">Account mode (CROSS_EXCHANGE/ISOLATED_EXCHANGE, default: CROSS_EXCHANGE).</param>
+        /// <param name="exchangeType">Exchange (BINANCE/OKX/GATE/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode).</param>
+        public InlineObject26(string positionMode = default(string), string accountMode = default(string), string exchangeType = default(string))
         {
-            // to ensure "symbol" is required (not null)
-            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineObject26 and cannot be null");
-            // to ensure "leverage" is required (not null)
-            this.Leverage = leverage ?? throw new ArgumentNullException("leverage", "leverage is a required property for InlineObject26 and cannot be null");
+            this.PositionMode = positionMode;
+            this.AccountMode = accountMode;
+            this.ExchangeType = exchangeType;
         }
 
         /// <summary>
-        /// Currency pair
+        /// Futures position mode (SINGLE/DUAL)
         /// </summary>
-        /// <value>Currency pair</value>
-        [DataMember(Name="symbol")]
-        public string Symbol { get; set; }
+        /// <value>Futures position mode (SINGLE/DUAL)</value>
+        [DataMember(Name="position_mode")]
+        public string PositionMode { get; set; }
 
         /// <summary>
-        /// leverage
+        /// Account mode (CROSS_EXCHANGE/ISOLATED_EXCHANGE, default: CROSS_EXCHANGE)
         /// </summary>
-        /// <value>leverage</value>
-        [DataMember(Name="leverage")]
-        public string Leverage { get; set; }
+        /// <value>Account mode (CROSS_EXCHANGE/ISOLATED_EXCHANGE, default: CROSS_EXCHANGE)</value>
+        [DataMember(Name="account_mode")]
+        public string AccountMode { get; set; }
+
+        /// <summary>
+        /// Exchange (BINANCE/OKX/GATE/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode)
+        /// </summary>
+        /// <value>Exchange (BINANCE/OKX/GATE/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode)</value>
+        [DataMember(Name="exchange_type")]
+        public string ExchangeType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,8 +72,9 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject26 {\n");
-            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
+            sb.Append("  PositionMode: ").Append(PositionMode).Append("\n");
+            sb.Append("  AccountMode: ").Append(AccountMode).Append("\n");
+            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,14 +110,19 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    this.PositionMode == input.PositionMode ||
+                    (this.PositionMode != null &&
+                    this.PositionMode.Equals(input.PositionMode))
                 ) && 
                 (
-                    this.Leverage == input.Leverage ||
-                    (this.Leverage != null &&
-                    this.Leverage.Equals(input.Leverage))
+                    this.AccountMode == input.AccountMode ||
+                    (this.AccountMode != null &&
+                    this.AccountMode.Equals(input.AccountMode))
+                ) && 
+                (
+                    this.ExchangeType == input.ExchangeType ||
+                    (this.ExchangeType != null &&
+                    this.ExchangeType.Equals(input.ExchangeType))
                 );
         }
 
@@ -127,10 +135,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Leverage != null)
-                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
+                if (this.PositionMode != null)
+                    hashCode = hashCode * 59 + this.PositionMode.GetHashCode();
+                if (this.AccountMode != null)
+                    hashCode = hashCode * 59 + this.AccountMode.GetHashCode();
+                if (this.ExchangeType != null)
+                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
                 return hashCode;
             }
         }

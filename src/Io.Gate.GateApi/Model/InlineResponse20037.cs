@@ -33,198 +33,63 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20037" /> class.
         /// </summary>
-        /// <param name="userId">User ID.</param>
-        /// <param name="positionId">Position ID.</param>
-        /// <param name="symbol">Currency pair.</param>
-        /// <param name="positionSide">Position Direction.</param>
-        /// <param name="initialMargin">Initial Margin.</param>
-        /// <param name="maintenanceMargin">Maintenance margin.</param>
-        /// <param name="positionQty">Position Quantity.</param>
-        /// <param name="positionValue">Position Value.</param>
-        /// <param name="upnl">Unrealized P&amp;L.</param>
-        /// <param name="upnlRate">Unrealized P&amp;L Ratio.</param>
-        /// <param name="entryPrice">Position Average Entry Price.</param>
-        /// <param name="markPrice">Mark price.</param>
-        /// <param name="leverage">Position Leverage.</param>
-        /// <param name="maxLeverage">Maximum leverage.</param>
-        /// <param name="riskLimit">Position risk limit.</param>
-        /// <param name="fee">Position Fee.</param>
-        /// <param name="fundingFee">Position Funding Fee.</param>
-        /// <param name="fundingTime">Position funding fee collection time (0 indicates it has not been collected yet).</param>
-        /// <param name="createTime">Position Creation Time.</param>
-        /// <param name="updateTime">Position Update Time.</param>
-        /// <param name="closedPnl">Realized PnL.</param>
-        public InlineResponse20037(string userId = default(string), string positionId = default(string), string symbol = default(string), string positionSide = default(string), string initialMargin = default(string), string maintenanceMargin = default(string), string positionQty = default(string), string positionValue = default(string), string upnl = default(string), string upnlRate = default(string), string entryPrice = default(string), string markPrice = default(string), string leverage = default(string), string maxLeverage = default(string), string riskLimit = default(string), string fee = default(string), string fundingFee = default(string), string fundingTime = default(string), string createTime = default(string), string updateTime = default(string), string closedPnl = default(string))
+        [JsonConstructorAttribute]
+        protected InlineResponse20037() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20037" /> class.
+        /// </summary>
+        /// <param name="spotMakerFee">spotMakerfee rate (required).</param>
+        /// <param name="spotTakerFee">spotTakerfee rate (required).</param>
+        /// <param name="futureMakerFee">contractMakerfee rate (required).</param>
+        /// <param name="futureTakerFee">contractTakerfee rate (required).</param>
+        /// <param name="specialFeeList">specialFeeList (required).</param>
+        public InlineResponse20037(string spotMakerFee = default(string), string spotTakerFee = default(string), string futureMakerFee = default(string), string futureTakerFee = default(string), List<InlineResponse20037SpecialFeeList> specialFeeList = default(List<InlineResponse20037SpecialFeeList>))
         {
-            this.UserId = userId;
-            this.PositionId = positionId;
-            this.Symbol = symbol;
-            this.PositionSide = positionSide;
-            this.InitialMargin = initialMargin;
-            this.MaintenanceMargin = maintenanceMargin;
-            this.PositionQty = positionQty;
-            this.PositionValue = positionValue;
-            this.Upnl = upnl;
-            this.UpnlRate = upnlRate;
-            this.EntryPrice = entryPrice;
-            this.MarkPrice = markPrice;
-            this.Leverage = leverage;
-            this.MaxLeverage = maxLeverage;
-            this.RiskLimit = riskLimit;
-            this.Fee = fee;
-            this.FundingFee = fundingFee;
-            this.FundingTime = fundingTime;
-            this.CreateTime = createTime;
-            this.UpdateTime = updateTime;
-            this.ClosedPnl = closedPnl;
+            // to ensure "spotMakerFee" is required (not null)
+            this.SpotMakerFee = spotMakerFee ?? throw new ArgumentNullException("spotMakerFee", "spotMakerFee is a required property for InlineResponse20037 and cannot be null");
+            // to ensure "spotTakerFee" is required (not null)
+            this.SpotTakerFee = spotTakerFee ?? throw new ArgumentNullException("spotTakerFee", "spotTakerFee is a required property for InlineResponse20037 and cannot be null");
+            // to ensure "futureMakerFee" is required (not null)
+            this.FutureMakerFee = futureMakerFee ?? throw new ArgumentNullException("futureMakerFee", "futureMakerFee is a required property for InlineResponse20037 and cannot be null");
+            // to ensure "futureTakerFee" is required (not null)
+            this.FutureTakerFee = futureTakerFee ?? throw new ArgumentNullException("futureTakerFee", "futureTakerFee is a required property for InlineResponse20037 and cannot be null");
+            // to ensure "specialFeeList" is required (not null)
+            this.SpecialFeeList = specialFeeList ?? throw new ArgumentNullException("specialFeeList", "specialFeeList is a required property for InlineResponse20037 and cannot be null");
         }
 
         /// <summary>
-        /// User ID
+        /// spotMakerfee rate
         /// </summary>
-        /// <value>User ID</value>
-        [DataMember(Name="user_id")]
-        public string UserId { get; set; }
+        /// <value>spotMakerfee rate</value>
+        [DataMember(Name="spot_maker_fee")]
+        public string SpotMakerFee { get; set; }
 
         /// <summary>
-        /// Position ID
+        /// spotTakerfee rate
         /// </summary>
-        /// <value>Position ID</value>
-        [DataMember(Name="position_id")]
-        public string PositionId { get; set; }
+        /// <value>spotTakerfee rate</value>
+        [DataMember(Name="spot_taker_fee")]
+        public string SpotTakerFee { get; set; }
 
         /// <summary>
-        /// Currency pair
+        /// contractMakerfee rate
         /// </summary>
-        /// <value>Currency pair</value>
-        [DataMember(Name="symbol")]
-        public string Symbol { get; set; }
+        /// <value>contractMakerfee rate</value>
+        [DataMember(Name="future_maker_fee")]
+        public string FutureMakerFee { get; set; }
 
         /// <summary>
-        /// Position Direction
+        /// contractTakerfee rate
         /// </summary>
-        /// <value>Position Direction</value>
-        [DataMember(Name="position_side")]
-        public string PositionSide { get; set; }
+        /// <value>contractTakerfee rate</value>
+        [DataMember(Name="future_taker_fee")]
+        public string FutureTakerFee { get; set; }
 
         /// <summary>
-        /// Initial Margin
+        /// Gets or Sets SpecialFeeList
         /// </summary>
-        /// <value>Initial Margin</value>
-        [DataMember(Name="initial_margin")]
-        public string InitialMargin { get; set; }
-
-        /// <summary>
-        /// Maintenance margin
-        /// </summary>
-        /// <value>Maintenance margin</value>
-        [DataMember(Name="maintenance_margin")]
-        public string MaintenanceMargin { get; set; }
-
-        /// <summary>
-        /// Position Quantity
-        /// </summary>
-        /// <value>Position Quantity</value>
-        [DataMember(Name="position_qty")]
-        public string PositionQty { get; set; }
-
-        /// <summary>
-        /// Position Value
-        /// </summary>
-        /// <value>Position Value</value>
-        [DataMember(Name="position_value")]
-        public string PositionValue { get; set; }
-
-        /// <summary>
-        /// Unrealized P&amp;L
-        /// </summary>
-        /// <value>Unrealized P&amp;L</value>
-        [DataMember(Name="upnl")]
-        public string Upnl { get; set; }
-
-        /// <summary>
-        /// Unrealized P&amp;L Ratio
-        /// </summary>
-        /// <value>Unrealized P&amp;L Ratio</value>
-        [DataMember(Name="upnl_rate")]
-        public string UpnlRate { get; set; }
-
-        /// <summary>
-        /// Position Average Entry Price
-        /// </summary>
-        /// <value>Position Average Entry Price</value>
-        [DataMember(Name="entry_price")]
-        public string EntryPrice { get; set; }
-
-        /// <summary>
-        /// Mark price
-        /// </summary>
-        /// <value>Mark price</value>
-        [DataMember(Name="mark_price")]
-        public string MarkPrice { get; set; }
-
-        /// <summary>
-        /// Position Leverage
-        /// </summary>
-        /// <value>Position Leverage</value>
-        [DataMember(Name="leverage")]
-        public string Leverage { get; set; }
-
-        /// <summary>
-        /// Maximum leverage
-        /// </summary>
-        /// <value>Maximum leverage</value>
-        [DataMember(Name="max_leverage")]
-        public string MaxLeverage { get; set; }
-
-        /// <summary>
-        /// Position risk limit
-        /// </summary>
-        /// <value>Position risk limit</value>
-        [DataMember(Name="risk_limit")]
-        public string RiskLimit { get; set; }
-
-        /// <summary>
-        /// Position Fee
-        /// </summary>
-        /// <value>Position Fee</value>
-        [DataMember(Name="fee")]
-        public string Fee { get; set; }
-
-        /// <summary>
-        /// Position Funding Fee
-        /// </summary>
-        /// <value>Position Funding Fee</value>
-        [DataMember(Name="funding_fee")]
-        public string FundingFee { get; set; }
-
-        /// <summary>
-        /// Position funding fee collection time (0 indicates it has not been collected yet)
-        /// </summary>
-        /// <value>Position funding fee collection time (0 indicates it has not been collected yet)</value>
-        [DataMember(Name="funding_time")]
-        public string FundingTime { get; set; }
-
-        /// <summary>
-        /// Position Creation Time
-        /// </summary>
-        /// <value>Position Creation Time</value>
-        [DataMember(Name="create_time")]
-        public string CreateTime { get; set; }
-
-        /// <summary>
-        /// Position Update Time
-        /// </summary>
-        /// <value>Position Update Time</value>
-        [DataMember(Name="update_time")]
-        public string UpdateTime { get; set; }
-
-        /// <summary>
-        /// Realized PnL
-        /// </summary>
-        /// <value>Realized PnL</value>
-        [DataMember(Name="closed_pnl")]
-        public string ClosedPnl { get; set; }
+        [DataMember(Name="special_fee_list")]
+        public List<InlineResponse20037SpecialFeeList> SpecialFeeList { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -234,27 +99,11 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20037 {\n");
-            sb.Append("  UserId: ").Append(UserId).Append("\n");
-            sb.Append("  PositionId: ").Append(PositionId).Append("\n");
-            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
-            sb.Append("  InitialMargin: ").Append(InitialMargin).Append("\n");
-            sb.Append("  MaintenanceMargin: ").Append(MaintenanceMargin).Append("\n");
-            sb.Append("  PositionQty: ").Append(PositionQty).Append("\n");
-            sb.Append("  PositionValue: ").Append(PositionValue).Append("\n");
-            sb.Append("  Upnl: ").Append(Upnl).Append("\n");
-            sb.Append("  UpnlRate: ").Append(UpnlRate).Append("\n");
-            sb.Append("  EntryPrice: ").Append(EntryPrice).Append("\n");
-            sb.Append("  MarkPrice: ").Append(MarkPrice).Append("\n");
-            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
-            sb.Append("  MaxLeverage: ").Append(MaxLeverage).Append("\n");
-            sb.Append("  RiskLimit: ").Append(RiskLimit).Append("\n");
-            sb.Append("  Fee: ").Append(Fee).Append("\n");
-            sb.Append("  FundingFee: ").Append(FundingFee).Append("\n");
-            sb.Append("  FundingTime: ").Append(FundingTime).Append("\n");
-            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  UpdateTime: ").Append(UpdateTime).Append("\n");
-            sb.Append("  ClosedPnl: ").Append(ClosedPnl).Append("\n");
+            sb.Append("  SpotMakerFee: ").Append(SpotMakerFee).Append("\n");
+            sb.Append("  SpotTakerFee: ").Append(SpotTakerFee).Append("\n");
+            sb.Append("  FutureMakerFee: ").Append(FutureMakerFee).Append("\n");
+            sb.Append("  FutureTakerFee: ").Append(FutureTakerFee).Append("\n");
+            sb.Append("  SpecialFeeList: ").Append(SpecialFeeList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -290,109 +139,30 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    this.SpotMakerFee == input.SpotMakerFee ||
+                    (this.SpotMakerFee != null &&
+                    this.SpotMakerFee.Equals(input.SpotMakerFee))
                 ) && 
                 (
-                    this.PositionId == input.PositionId ||
-                    (this.PositionId != null &&
-                    this.PositionId.Equals(input.PositionId))
+                    this.SpotTakerFee == input.SpotTakerFee ||
+                    (this.SpotTakerFee != null &&
+                    this.SpotTakerFee.Equals(input.SpotTakerFee))
                 ) && 
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    this.FutureMakerFee == input.FutureMakerFee ||
+                    (this.FutureMakerFee != null &&
+                    this.FutureMakerFee.Equals(input.FutureMakerFee))
                 ) && 
                 (
-                    this.PositionSide == input.PositionSide ||
-                    (this.PositionSide != null &&
-                    this.PositionSide.Equals(input.PositionSide))
+                    this.FutureTakerFee == input.FutureTakerFee ||
+                    (this.FutureTakerFee != null &&
+                    this.FutureTakerFee.Equals(input.FutureTakerFee))
                 ) && 
                 (
-                    this.InitialMargin == input.InitialMargin ||
-                    (this.InitialMargin != null &&
-                    this.InitialMargin.Equals(input.InitialMargin))
-                ) && 
-                (
-                    this.MaintenanceMargin == input.MaintenanceMargin ||
-                    (this.MaintenanceMargin != null &&
-                    this.MaintenanceMargin.Equals(input.MaintenanceMargin))
-                ) && 
-                (
-                    this.PositionQty == input.PositionQty ||
-                    (this.PositionQty != null &&
-                    this.PositionQty.Equals(input.PositionQty))
-                ) && 
-                (
-                    this.PositionValue == input.PositionValue ||
-                    (this.PositionValue != null &&
-                    this.PositionValue.Equals(input.PositionValue))
-                ) && 
-                (
-                    this.Upnl == input.Upnl ||
-                    (this.Upnl != null &&
-                    this.Upnl.Equals(input.Upnl))
-                ) && 
-                (
-                    this.UpnlRate == input.UpnlRate ||
-                    (this.UpnlRate != null &&
-                    this.UpnlRate.Equals(input.UpnlRate))
-                ) && 
-                (
-                    this.EntryPrice == input.EntryPrice ||
-                    (this.EntryPrice != null &&
-                    this.EntryPrice.Equals(input.EntryPrice))
-                ) && 
-                (
-                    this.MarkPrice == input.MarkPrice ||
-                    (this.MarkPrice != null &&
-                    this.MarkPrice.Equals(input.MarkPrice))
-                ) && 
-                (
-                    this.Leverage == input.Leverage ||
-                    (this.Leverage != null &&
-                    this.Leverage.Equals(input.Leverage))
-                ) && 
-                (
-                    this.MaxLeverage == input.MaxLeverage ||
-                    (this.MaxLeverage != null &&
-                    this.MaxLeverage.Equals(input.MaxLeverage))
-                ) && 
-                (
-                    this.RiskLimit == input.RiskLimit ||
-                    (this.RiskLimit != null &&
-                    this.RiskLimit.Equals(input.RiskLimit))
-                ) && 
-                (
-                    this.Fee == input.Fee ||
-                    (this.Fee != null &&
-                    this.Fee.Equals(input.Fee))
-                ) && 
-                (
-                    this.FundingFee == input.FundingFee ||
-                    (this.FundingFee != null &&
-                    this.FundingFee.Equals(input.FundingFee))
-                ) && 
-                (
-                    this.FundingTime == input.FundingTime ||
-                    (this.FundingTime != null &&
-                    this.FundingTime.Equals(input.FundingTime))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.ClosedPnl == input.ClosedPnl ||
-                    (this.ClosedPnl != null &&
-                    this.ClosedPnl.Equals(input.ClosedPnl))
+                    this.SpecialFeeList == input.SpecialFeeList ||
+                    this.SpecialFeeList != null &&
+                    input.SpecialFeeList != null &&
+                    this.SpecialFeeList.SequenceEqual(input.SpecialFeeList)
                 );
         }
 
@@ -405,48 +175,16 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.PositionId != null)
-                    hashCode = hashCode * 59 + this.PositionId.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.PositionSide != null)
-                    hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
-                if (this.InitialMargin != null)
-                    hashCode = hashCode * 59 + this.InitialMargin.GetHashCode();
-                if (this.MaintenanceMargin != null)
-                    hashCode = hashCode * 59 + this.MaintenanceMargin.GetHashCode();
-                if (this.PositionQty != null)
-                    hashCode = hashCode * 59 + this.PositionQty.GetHashCode();
-                if (this.PositionValue != null)
-                    hashCode = hashCode * 59 + this.PositionValue.GetHashCode();
-                if (this.Upnl != null)
-                    hashCode = hashCode * 59 + this.Upnl.GetHashCode();
-                if (this.UpnlRate != null)
-                    hashCode = hashCode * 59 + this.UpnlRate.GetHashCode();
-                if (this.EntryPrice != null)
-                    hashCode = hashCode * 59 + this.EntryPrice.GetHashCode();
-                if (this.MarkPrice != null)
-                    hashCode = hashCode * 59 + this.MarkPrice.GetHashCode();
-                if (this.Leverage != null)
-                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
-                if (this.MaxLeverage != null)
-                    hashCode = hashCode * 59 + this.MaxLeverage.GetHashCode();
-                if (this.RiskLimit != null)
-                    hashCode = hashCode * 59 + this.RiskLimit.GetHashCode();
-                if (this.Fee != null)
-                    hashCode = hashCode * 59 + this.Fee.GetHashCode();
-                if (this.FundingFee != null)
-                    hashCode = hashCode * 59 + this.FundingFee.GetHashCode();
-                if (this.FundingTime != null)
-                    hashCode = hashCode * 59 + this.FundingTime.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.ClosedPnl != null)
-                    hashCode = hashCode * 59 + this.ClosedPnl.GetHashCode();
+                if (this.SpotMakerFee != null)
+                    hashCode = hashCode * 59 + this.SpotMakerFee.GetHashCode();
+                if (this.SpotTakerFee != null)
+                    hashCode = hashCode * 59 + this.SpotTakerFee.GetHashCode();
+                if (this.FutureMakerFee != null)
+                    hashCode = hashCode * 59 + this.FutureMakerFee.GetHashCode();
+                if (this.FutureTakerFee != null)
+                    hashCode = hashCode * 59 + this.FutureTakerFee.GetHashCode();
+                if (this.SpecialFeeList != null)
+                    hashCode = hashCode * 59 + this.SpecialFeeList.GetHashCode();
                 return hashCode;
             }
         }

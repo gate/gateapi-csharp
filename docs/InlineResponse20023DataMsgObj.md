@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20022DataMsgObj
+# Io.Gate.GateApi.Model.InlineResponse20023DataMsgObj
 
 ## Properties
 

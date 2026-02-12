@@ -38,28 +38,29 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject28" /> class.
         /// </summary>
-        /// <param name="symbol">Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT (required).</param>
-        /// <param name="positionSide">Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method.</param>
-        public InlineObject28(string symbol = default(string), string positionSide = default(string))
+        /// <param name="symbol">Currency pair (required).</param>
+        /// <param name="leverage">leverage (required).</param>
+        public InlineObject28(string symbol = default(string), string leverage = default(string))
         {
             // to ensure "symbol" is required (not null)
             this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineObject28 and cannot be null");
-            this.PositionSide = positionSide;
+            // to ensure "leverage" is required (not null)
+            this.Leverage = leverage ?? throw new ArgumentNullException("leverage", "leverage is a required property for InlineObject28 and cannot be null");
         }
 
         /// <summary>
-        /// Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT
+        /// Currency pair
         /// </summary>
-        /// <value>Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT</value>
+        /// <value>Currency pair</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method
+        /// leverage
         /// </summary>
-        /// <value>Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method</value>
-        [DataMember(Name="position_side")]
-        public string PositionSide { get; set; }
+        /// <value>leverage</value>
+        [DataMember(Name="leverage")]
+        public string Leverage { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,7 +71,7 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class InlineObject28 {\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
+            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -111,9 +112,9 @@ namespace Io.Gate.GateApi.Model
                     this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.PositionSide == input.PositionSide ||
-                    (this.PositionSide != null &&
-                    this.PositionSide.Equals(input.PositionSide))
+                    this.Leverage == input.Leverage ||
+                    (this.Leverage != null &&
+                    this.Leverage.Equals(input.Leverage))
                 );
         }
 
@@ -128,8 +129,8 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.Symbol != null)
                     hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.PositionSide != null)
-                    hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
+                if (this.Leverage != null)
+                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
                 return hashCode;
             }
         }

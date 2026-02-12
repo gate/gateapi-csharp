@@ -1,16 +1,11 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20025
+# Io.Gate.GateApi.Model.InlineResponse20025Data
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Timestamp** | **decimal** |  | 
-**Method** | **string** |  | 
-**Code** | **int** |  | 
-**Message** | **string** |  | 
-**Data** | [**InlineResponse20025Data**](InlineResponse20025Data.md) |  | 
-**Version** | **string** |  | 
+**FileKey** | **string** | File key | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

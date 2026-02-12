@@ -33,25 +33,66 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20025" /> class.
         /// </summary>
-        /// <param name="symbol">symbol.</param>
-        /// <param name="tiers">tiers.</param>
-        public InlineResponse20025(string symbol = default(string), List<RuleRiskLimitsTiers> tiers = default(List<RuleRiskLimitsTiers>))
+        [JsonConstructorAttribute]
+        protected InlineResponse20025() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20025" /> class.
+        /// </summary>
+        /// <param name="timestamp">timestamp (required).</param>
+        /// <param name="method">method (required).</param>
+        /// <param name="code">code (required).</param>
+        /// <param name="message">message (required).</param>
+        /// <param name="data">data (required).</param>
+        /// <param name="version">version (required).</param>
+        public InlineResponse20025(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), InlineResponse20025Data data = default(InlineResponse20025Data), string version = default(string))
         {
-            this.Symbol = symbol;
-            this.Tiers = tiers;
+            this.Timestamp = timestamp;
+            // to ensure "method" is required (not null)
+            this.Method = method ?? throw new ArgumentNullException("method", "method is a required property for InlineResponse20025 and cannot be null");
+            this.Code = code;
+            // to ensure "message" is required (not null)
+            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse20025 and cannot be null");
+            // to ensure "data" is required (not null)
+            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse20025 and cannot be null");
+            // to ensure "version" is required (not null)
+            this.Version = version ?? throw new ArgumentNullException("version", "version is a required property for InlineResponse20025 and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets Symbol
+        /// Gets or Sets Timestamp
         /// </summary>
-        [DataMember(Name="symbol")]
-        public string Symbol { get; set; }
+        [DataMember(Name="timestamp")]
+        public decimal Timestamp { get; set; }
 
         /// <summary>
-        /// Gets or Sets Tiers
+        /// Gets or Sets Method
         /// </summary>
-        [DataMember(Name="tiers")]
-        public List<RuleRiskLimitsTiers> Tiers { get; set; }
+        [DataMember(Name="method")]
+        public string Method { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Code
+        /// </summary>
+        [DataMember(Name="code")]
+        public int Code { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Message
+        /// </summary>
+        [DataMember(Name="message")]
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Data
+        /// </summary>
+        [DataMember(Name="data")]
+        public InlineResponse20025Data Data { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Version
+        /// </summary>
+        [DataMember(Name="version")]
+        public string Version { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -61,8 +102,12 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20025 {\n");
-            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  Tiers: ").Append(Tiers).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  Method: ").Append(Method).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,15 +143,32 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
                 ) && 
                 (
-                    this.Tiers == input.Tiers ||
-                    this.Tiers != null &&
-                    input.Tiers != null &&
-                    this.Tiers.SequenceEqual(input.Tiers)
+                    this.Method == input.Method ||
+                    (this.Method != null &&
+                    this.Method.Equals(input.Method))
+                ) && 
+                (
+                    this.Code == input.Code ||
+                    this.Code.Equals(input.Code)
+                ) && 
+                (
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
                 );
         }
 
@@ -119,10 +181,16 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Tiers != null)
-                    hashCode = hashCode * 59 + this.Tiers.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.Method != null)
+                    hashCode = hashCode * 59 + this.Method.GetHashCode();
+                hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

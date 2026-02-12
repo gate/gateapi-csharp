@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20022DataMessages
+# Io.Gate.GateApi.Model.InlineResponse20023DataMessages
 
 ## Properties
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Msg** | **string** | Message content | 
 **Username** | **string** | Message sender username | 
 **Timest** | **int** | Message timestamp | 
-**MsgObj** | [**InlineResponse20022DataMsgObj**](InlineResponse20022DataMsgObj.md) |  | 
+**MsgObj** | [**InlineResponse20023DataMsgObj**](InlineResponse20023DataMsgObj.md) |  | 
 **Uid** | **string** | Message sender UID | 
 **Type** | **int** | Message type | 
 **Pic** | **string** | File link | 

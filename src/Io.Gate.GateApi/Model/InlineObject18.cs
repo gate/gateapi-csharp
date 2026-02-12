@@ -39,14 +39,13 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="InlineObject18" /> class.
         /// </summary>
         /// <param name="txid">Order ID (required).</param>
-        /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided.</param>
-        /// <param name="message">Message content (required).</param>
-        public InlineObject18(int txid = default(int), int type = default(int), string message = default(string))
+        /// <param name="lastreceived">Pagination timestamp (forward).</param>
+        /// <param name="firstreceived">Pagination timestamp (backward).</param>
+        public InlineObject18(int txid = default(int), int lastreceived = default(int), int firstreceived = default(int))
         {
             this.Txid = txid;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineObject18 and cannot be null");
-            this.Type = type;
+            this.Lastreceived = lastreceived;
+            this.Firstreceived = firstreceived;
         }
 
         /// <summary>
@@ -57,18 +56,18 @@ namespace Io.Gate.GateApi.Model
         public int Txid { get; set; }
 
         /// <summary>
-        /// 0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided
+        /// Pagination timestamp (forward)
         /// </summary>
-        /// <value>0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided</value>
-        [DataMember(Name="type")]
-        public int Type { get; set; }
+        /// <value>Pagination timestamp (forward)</value>
+        [DataMember(Name="lastreceived")]
+        public int Lastreceived { get; set; }
 
         /// <summary>
-        /// Message content
+        /// Pagination timestamp (backward)
         /// </summary>
-        /// <value>Message content</value>
-        [DataMember(Name="message")]
-        public string Message { get; set; }
+        /// <value>Pagination timestamp (backward)</value>
+        [DataMember(Name="firstreceived")]
+        public int Firstreceived { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,8 +78,8 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class InlineObject18 {\n");
             sb.Append("  Txid: ").Append(Txid).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Lastreceived: ").Append(Lastreceived).Append("\n");
+            sb.Append("  Firstreceived: ").Append(Firstreceived).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -120,13 +119,12 @@ namespace Io.Gate.GateApi.Model
                     this.Txid.Equals(input.Txid)
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
+                    this.Lastreceived == input.Lastreceived ||
+                    this.Lastreceived.Equals(input.Lastreceived)
                 ) && 
                 (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
+                    this.Firstreceived == input.Firstreceived ||
+                    this.Firstreceived.Equals(input.Firstreceived)
                 );
         }
 
@@ -140,9 +138,8 @@ namespace Io.Gate.GateApi.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Txid.GetHashCode();
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                hashCode = hashCode * 59 + this.Lastreceived.GetHashCode();
+                hashCode = hashCode * 59 + this.Firstreceived.GetHashCode();
                 return hashCode;
             }
         }

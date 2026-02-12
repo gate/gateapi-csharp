@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**P2pMerchantBooksAdsUpdateStatus**](P2PApi.md#p2pmerchantbooksadsupdatestatus) | **POST** /p2p/merchant/books/ads_update_status | Update ad status
 [**P2pMerchantBooksAdsDetail**](P2PApi.md#p2pmerchantbooksadsdetail) | **POST** /p2p/merchant/books/ads_detail | Query ad details
 [**P2pMerchantBooksMyAdsList**](P2PApi.md#p2pmerchantbooksmyadslist) | **POST** /p2p/merchant/books/my_ads_list | Get my ad list
+[**P2pMerchantBooksAdsList**](P2PApi.md#p2pmerchantbooksadslist) | **POST** /p2p/merchant/books/ads_list | Get Advertisement List
 [**P2pMerchantChatGetChatsList**](P2PApi.md#p2pmerchantchatgetchatslist) | **POST** /p2p/merchant/chat/get_chats_list | Get chat history
 [**P2pMerchantChatSendChatMessage**](P2PApi.md#p2pmerchantchatsendchatmessage) | **POST** /p2p/merchant/chat/send_chat_message | Send text message
 [**P2pMerchantChatUploadChatFile**](P2PApi.md#p2pmerchantchatuploadchatfile) | **POST** /p2p/merchant/chat/upload_chat_file | Upload chat file
@@ -250,7 +251,7 @@ namespace Example
             var apiInstance = new P2PApi(config);
             var cryptoCurrency = "cryptoCurrency_example";  // string | Cryptocurrency
             var fiatCurrency = "fiatCurrency_example";  // string | Fiat currency
-            var orderTab = "orderTab_example";  // string | 订单标签页，默认pending（pending：处理中（pending:  AND status in ('OPEN', 'PAID', 'LOCKED', 'TEMP')）；dispute：申诉中（status in ('ACCEPT', 'BCLOSED', 'CANCEL', 'BECANCEL', 'SCLOSED', 'SCANCEL'))) (optional) 
+            var orderTab = "orderTab_example";  // string | Order tab, default: pending (pending: In Progress (pending: AND status in ('OPEN','PAID', 'LOCKED', 'TEMP')); dispute: In Dispute (status in ('ACCEPT','BCLOSED', 'CANCEL', 'BECANCEL', 'SCLOSED', 'SCANCEL'))) (optional) 
             var selectType = "selectType_example";  // string | Buy/Sell (sell=Sell, buy=Buy, others=All) (optional) 
             var status = "status_example";  // string | Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) (optional) 
             var txid = 56;  // int? | Order ID (optional) 
@@ -281,7 +282,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cryptoCurrency** | **string**| Cryptocurrency | 
  **fiatCurrency** | **string**| Fiat currency | 
- **orderTab** | **string**| 订单标签页，默认pending（pending：处理中（pending:  AND status in (&#39;OPEN&#39;, &#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)）；dispute：申诉中（status in (&#39;ACCEPT&#39;, &#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) | [optional] 
+ **orderTab** | **string**| Order tab, default: pending (pending: In Progress (pending: AND status in (&#39;OPEN&#39;,&#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In Dispute (status in (&#39;ACCEPT&#39;,&#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))) | [optional] 
  **selectType** | **string**| Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All) | [optional] 
  **status** | **string**| Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED) | [optional] 
  **txid** | **int?**| Order ID | [optional] 
@@ -1009,9 +1010,84 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="p2pmerchantbooksadslist"></a>
+# **P2pMerchantBooksAdsList**
+> InlineResponse20022 P2pMerchantBooksAdsList (string asset, string fiatUnit, string tradeType)
+
+Get Advertisement List
+
+Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class P2pMerchantBooksAdsListExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            var apiInstance = new P2PApi(config);
+            var asset = "asset_example";  // string | Cryptocurrency
+            var fiatUnit = "fiatUnit_example";  // string | Fiat currency
+            var tradeType = "tradeType_example";  // string | Buy/Sell, sell/buy
+
+            try
+            {
+                // Get Advertisement List
+                InlineResponse20022 result = apiInstance.P2pMerchantBooksAdsList(asset, fiatUnit, tradeType);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling P2PApi.P2pMerchantBooksAdsList: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset** | **string**| Cryptocurrency | 
+ **fiatUnit** | **string**| Fiat currency | 
+ **tradeType** | **string**| Buy/Sell, sell/buy | 
+
+### Return type
+
+[**InlineResponse20022**](InlineResponse20022.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="p2pmerchantchatgetchatslist"></a>
 # **P2pMerchantChatGetChatsList**
-> InlineResponse20022 P2pMerchantChatGetChatsList (int txid, int? lastreceived = null, int? firstreceived = null)
+> InlineResponse20023 P2pMerchantChatGetChatsList (int txid, int? lastreceived = null, int? firstreceived = null)
 
 Get chat history
 
@@ -1039,7 +1115,7 @@ namespace Example
             try
             {
                 // Get chat history
-                InlineResponse20022 result = apiInstance.P2pMerchantChatGetChatsList(txid, lastreceived, firstreceived);
+                InlineResponse20023 result = apiInstance.P2pMerchantChatGetChatsList(txid, lastreceived, firstreceived);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1064,7 +1140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -1084,7 +1160,7 @@ No authorization required
 
 <a name="p2pmerchantchatsendchatmessage"></a>
 # **P2pMerchantChatSendChatMessage**
-> InlineResponse20023 P2pMerchantChatSendChatMessage (int txid, string message, int? type = null)
+> InlineResponse20024 P2pMerchantChatSendChatMessage (int txid, string message, int? type = null)
 
 Send text message
 
@@ -1112,7 +1188,7 @@ namespace Example
             try
             {
                 // Send text message
-                InlineResponse20023 result = apiInstance.P2pMerchantChatSendChatMessage(txid, message, type);
+                InlineResponse20024 result = apiInstance.P2pMerchantChatSendChatMessage(txid, message, type);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1137,7 +1213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 
@@ -1157,7 +1233,7 @@ No authorization required
 
 <a name="p2pmerchantchatuploadchatfile"></a>
 # **P2pMerchantChatUploadChatFile**
-> InlineResponse20024 P2pMerchantChatUploadChatFile (string imageContentType, string base64Img)
+> InlineResponse20025 P2pMerchantChatUploadChatFile (string imageContentType, string base64Img)
 
 Upload chat file
 
@@ -1184,7 +1260,7 @@ namespace Example
             try
             {
                 // Upload chat file
-                InlineResponse20024 result = apiInstance.P2pMerchantChatUploadChatFile(imageContentType, base64Img);
+                InlineResponse20025 result = apiInstance.P2pMerchantChatUploadChatFile(imageContentType, base64Img);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1208,7 +1284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**InlineResponse20025**](InlineResponse20025.md)
 
 ### Authorization
 

@@ -38,100 +38,15 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20030" /> class.
         /// </summary>
-        /// <param name="userId">User ID (required).</param>
         /// <param name="orderId">Order ID (required).</param>
-        /// <param name="text">Client Order ID (required).</param>
-        /// <param name="state">Order Status (required).</param>
-        /// <param name="symbol">Currency pair (required).</param>
-        /// <param name="side">direction (required).</param>
-        /// <param name="type">type (required).</param>
-        /// <param name="attribute">Attribute COMMON: Normal Order, LIQ: Liquidation Takeover Order, REDUCE: Liquidation Reduce Order, ADL: Auto-Reduce (required).</param>
-        /// <param name="exchangeType">Exchange (required).</param>
-        /// <param name="businessType">Business Type (required).</param>
-        /// <param name="qty">Base Currency Quantity (required).</param>
-        /// <param name="quoteQty">Quote Currency Quantity (required).</param>
-        /// <param name="price">Price (required).</param>
-        /// <param name="timeInForce">Time in Force Strategy (required).</param>
-        /// <param name="executedQty">Filled Quantity (required).</param>
-        /// <param name="executedAmount">Filled Amount (required).</param>
-        /// <param name="executedAvgPrice">Average Filled Price (required).</param>
-        /// <param name="feeCoin">Fee currency (required).</param>
-        /// <param name="fee">fee (required).</param>
-        /// <param name="reduceOnly">Reduce Position Only (required).</param>
-        /// <param name="leverage">leverage (required).</param>
-        /// <param name="reason">Reason (required).</param>
-        /// <param name="lastExecutedQty">Latest Filled Quantity (required).</param>
-        /// <param name="lastExecutedPrice">Latest Filled Price (required).</param>
-        /// <param name="lastExecutedAmount">Latest Filled Amount (required).</param>
-        /// <param name="positionSide">Position Direction (required).</param>
-        /// <param name="createTime">Created time (required).</param>
-        /// <param name="updateTime">Update time (required).</param>
-        public InlineResponse20030(string userId = default(string), string orderId = default(string), string text = default(string), string state = default(string), string symbol = default(string), string side = default(string), string type = default(string), string attribute = default(string), string exchangeType = default(string), string businessType = default(string), string qty = default(string), string quoteQty = default(string), string price = default(string), string timeInForce = default(string), string executedQty = default(string), string executedAmount = default(string), string executedAvgPrice = default(string), string feeCoin = default(string), string fee = default(string), string reduceOnly = default(string), string leverage = default(string), string reason = default(string), string lastExecutedQty = default(string), string lastExecutedPrice = default(string), string lastExecutedAmount = default(string), string positionSide = default(string), string createTime = default(string), string updateTime = default(string))
+        /// <param name="text">User-defined Order ID (required).</param>
+        public InlineResponse20030(string orderId = default(string), string text = default(string))
         {
-            // to ensure "userId" is required (not null)
-            this.UserId = userId ?? throw new ArgumentNullException("userId", "userId is a required property for InlineResponse20030 and cannot be null");
             // to ensure "orderId" is required (not null)
             this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for InlineResponse20030 and cannot be null");
             // to ensure "text" is required (not null)
             this.Text = text ?? throw new ArgumentNullException("text", "text is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "state" is required (not null)
-            this.State = state ?? throw new ArgumentNullException("state", "state is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "symbol" is required (not null)
-            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "side" is required (not null)
-            this.Side = side ?? throw new ArgumentNullException("side", "side is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "type" is required (not null)
-            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "attribute" is required (not null)
-            this.Attribute = attribute ?? throw new ArgumentNullException("attribute", "attribute is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "exchangeType" is required (not null)
-            this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "businessType" is required (not null)
-            this.BusinessType = businessType ?? throw new ArgumentNullException("businessType", "businessType is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "qty" is required (not null)
-            this.Qty = qty ?? throw new ArgumentNullException("qty", "qty is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "quoteQty" is required (not null)
-            this.QuoteQty = quoteQty ?? throw new ArgumentNullException("quoteQty", "quoteQty is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "price" is required (not null)
-            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "timeInForce" is required (not null)
-            this.TimeInForce = timeInForce ?? throw new ArgumentNullException("timeInForce", "timeInForce is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "executedQty" is required (not null)
-            this.ExecutedQty = executedQty ?? throw new ArgumentNullException("executedQty", "executedQty is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "executedAmount" is required (not null)
-            this.ExecutedAmount = executedAmount ?? throw new ArgumentNullException("executedAmount", "executedAmount is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "executedAvgPrice" is required (not null)
-            this.ExecutedAvgPrice = executedAvgPrice ?? throw new ArgumentNullException("executedAvgPrice", "executedAvgPrice is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "feeCoin" is required (not null)
-            this.FeeCoin = feeCoin ?? throw new ArgumentNullException("feeCoin", "feeCoin is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "fee" is required (not null)
-            this.Fee = fee ?? throw new ArgumentNullException("fee", "fee is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "reduceOnly" is required (not null)
-            this.ReduceOnly = reduceOnly ?? throw new ArgumentNullException("reduceOnly", "reduceOnly is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "leverage" is required (not null)
-            this.Leverage = leverage ?? throw new ArgumentNullException("leverage", "leverage is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "reason" is required (not null)
-            this.Reason = reason ?? throw new ArgumentNullException("reason", "reason is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "lastExecutedQty" is required (not null)
-            this.LastExecutedQty = lastExecutedQty ?? throw new ArgumentNullException("lastExecutedQty", "lastExecutedQty is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "lastExecutedPrice" is required (not null)
-            this.LastExecutedPrice = lastExecutedPrice ?? throw new ArgumentNullException("lastExecutedPrice", "lastExecutedPrice is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "lastExecutedAmount" is required (not null)
-            this.LastExecutedAmount = lastExecutedAmount ?? throw new ArgumentNullException("lastExecutedAmount", "lastExecutedAmount is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "positionSide" is required (not null)
-            this.PositionSide = positionSide ?? throw new ArgumentNullException("positionSide", "positionSide is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "createTime" is required (not null)
-            this.CreateTime = createTime ?? throw new ArgumentNullException("createTime", "createTime is a required property for InlineResponse20030 and cannot be null");
-            // to ensure "updateTime" is required (not null)
-            this.UpdateTime = updateTime ?? throw new ArgumentNullException("updateTime", "updateTime is a required property for InlineResponse20030 and cannot be null");
         }
-
-        /// <summary>
-        /// User ID
-        /// </summary>
-        /// <value>User ID</value>
-        [DataMember(Name="user_id")]
-        public string UserId { get; set; }
 
         /// <summary>
         /// Order ID
@@ -141,186 +56,11 @@ namespace Io.Gate.GateApi.Model
         public string OrderId { get; set; }
 
         /// <summary>
-        /// Client Order ID
+        /// User-defined Order ID
         /// </summary>
-        /// <value>Client Order ID</value>
+        /// <value>User-defined Order ID</value>
         [DataMember(Name="text")]
         public string Text { get; set; }
-
-        /// <summary>
-        /// Order Status
-        /// </summary>
-        /// <value>Order Status</value>
-        [DataMember(Name="state")]
-        public string State { get; set; }
-
-        /// <summary>
-        /// Currency pair
-        /// </summary>
-        /// <value>Currency pair</value>
-        [DataMember(Name="symbol")]
-        public string Symbol { get; set; }
-
-        /// <summary>
-        /// direction
-        /// </summary>
-        /// <value>direction</value>
-        [DataMember(Name="side")]
-        public string Side { get; set; }
-
-        /// <summary>
-        /// type
-        /// </summary>
-        /// <value>type</value>
-        [DataMember(Name="type")]
-        public string Type { get; set; }
-
-        /// <summary>
-        /// Attribute COMMON: Normal Order, LIQ: Liquidation Takeover Order, REDUCE: Liquidation Reduce Order, ADL: Auto-Reduce
-        /// </summary>
-        /// <value>Attribute COMMON: Normal Order, LIQ: Liquidation Takeover Order, REDUCE: Liquidation Reduce Order, ADL: Auto-Reduce</value>
-        [DataMember(Name="attribute")]
-        public string Attribute { get; set; }
-
-        /// <summary>
-        /// Exchange
-        /// </summary>
-        /// <value>Exchange</value>
-        [DataMember(Name="exchange_type")]
-        public string ExchangeType { get; set; }
-
-        /// <summary>
-        /// Business Type
-        /// </summary>
-        /// <value>Business Type</value>
-        [DataMember(Name="business_type")]
-        public string BusinessType { get; set; }
-
-        /// <summary>
-        /// Base Currency Quantity
-        /// </summary>
-        /// <value>Base Currency Quantity</value>
-        [DataMember(Name="qty")]
-        public string Qty { get; set; }
-
-        /// <summary>
-        /// Quote Currency Quantity
-        /// </summary>
-        /// <value>Quote Currency Quantity</value>
-        [DataMember(Name="quote_qty")]
-        public string QuoteQty { get; set; }
-
-        /// <summary>
-        /// Price
-        /// </summary>
-        /// <value>Price</value>
-        [DataMember(Name="price")]
-        public string Price { get; set; }
-
-        /// <summary>
-        /// Time in Force Strategy
-        /// </summary>
-        /// <value>Time in Force Strategy</value>
-        [DataMember(Name="time_in_force")]
-        public string TimeInForce { get; set; }
-
-        /// <summary>
-        /// Filled Quantity
-        /// </summary>
-        /// <value>Filled Quantity</value>
-        [DataMember(Name="executed_qty")]
-        public string ExecutedQty { get; set; }
-
-        /// <summary>
-        /// Filled Amount
-        /// </summary>
-        /// <value>Filled Amount</value>
-        [DataMember(Name="executed_amount")]
-        public string ExecutedAmount { get; set; }
-
-        /// <summary>
-        /// Average Filled Price
-        /// </summary>
-        /// <value>Average Filled Price</value>
-        [DataMember(Name="executed_avg_price")]
-        public string ExecutedAvgPrice { get; set; }
-
-        /// <summary>
-        /// Fee currency
-        /// </summary>
-        /// <value>Fee currency</value>
-        [DataMember(Name="fee_coin")]
-        public string FeeCoin { get; set; }
-
-        /// <summary>
-        /// fee
-        /// </summary>
-        /// <value>fee</value>
-        [DataMember(Name="fee")]
-        public string Fee { get; set; }
-
-        /// <summary>
-        /// Reduce Position Only
-        /// </summary>
-        /// <value>Reduce Position Only</value>
-        [DataMember(Name="reduce_only")]
-        public string ReduceOnly { get; set; }
-
-        /// <summary>
-        /// leverage
-        /// </summary>
-        /// <value>leverage</value>
-        [DataMember(Name="leverage")]
-        public string Leverage { get; set; }
-
-        /// <summary>
-        /// Reason
-        /// </summary>
-        /// <value>Reason</value>
-        [DataMember(Name="reason")]
-        public string Reason { get; set; }
-
-        /// <summary>
-        /// Latest Filled Quantity
-        /// </summary>
-        /// <value>Latest Filled Quantity</value>
-        [DataMember(Name="last_executed_qty")]
-        public string LastExecutedQty { get; set; }
-
-        /// <summary>
-        /// Latest Filled Price
-        /// </summary>
-        /// <value>Latest Filled Price</value>
-        [DataMember(Name="last_executed_price")]
-        public string LastExecutedPrice { get; set; }
-
-        /// <summary>
-        /// Latest Filled Amount
-        /// </summary>
-        /// <value>Latest Filled Amount</value>
-        [DataMember(Name="last_executed_amount")]
-        public string LastExecutedAmount { get; set; }
-
-        /// <summary>
-        /// Position Direction
-        /// </summary>
-        /// <value>Position Direction</value>
-        [DataMember(Name="position_side")]
-        public string PositionSide { get; set; }
-
-        /// <summary>
-        /// Created time
-        /// </summary>
-        /// <value>Created time</value>
-        [DataMember(Name="create_time")]
-        public string CreateTime { get; set; }
-
-        /// <summary>
-        /// Update time
-        /// </summary>
-        /// <value>Update time</value>
-        [DataMember(Name="update_time")]
-        public string UpdateTime { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -330,34 +70,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20030 {\n");
-            sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  Side: ").Append(Side).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Attribute: ").Append(Attribute).Append("\n");
-            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
-            sb.Append("  BusinessType: ").Append(BusinessType).Append("\n");
-            sb.Append("  Qty: ").Append(Qty).Append("\n");
-            sb.Append("  QuoteQty: ").Append(QuoteQty).Append("\n");
-            sb.Append("  Price: ").Append(Price).Append("\n");
-            sb.Append("  TimeInForce: ").Append(TimeInForce).Append("\n");
-            sb.Append("  ExecutedQty: ").Append(ExecutedQty).Append("\n");
-            sb.Append("  ExecutedAmount: ").Append(ExecutedAmount).Append("\n");
-            sb.Append("  ExecutedAvgPrice: ").Append(ExecutedAvgPrice).Append("\n");
-            sb.Append("  FeeCoin: ").Append(FeeCoin).Append("\n");
-            sb.Append("  Fee: ").Append(Fee).Append("\n");
-            sb.Append("  ReduceOnly: ").Append(ReduceOnly).Append("\n");
-            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
-            sb.Append("  Reason: ").Append(Reason).Append("\n");
-            sb.Append("  LastExecutedQty: ").Append(LastExecutedQty).Append("\n");
-            sb.Append("  LastExecutedPrice: ").Append(LastExecutedPrice).Append("\n");
-            sb.Append("  LastExecutedAmount: ").Append(LastExecutedAmount).Append("\n");
-            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
-            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  UpdateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -393,11 +107,6 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
                     this.OrderId == input.OrderId ||
                     (this.OrderId != null &&
                     this.OrderId.Equals(input.OrderId))
@@ -406,131 +115,6 @@ namespace Io.Gate.GateApi.Model
                     this.Text == input.Text ||
                     (this.Text != null &&
                     this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
-                ) && 
-                (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Attribute == input.Attribute ||
-                    (this.Attribute != null &&
-                    this.Attribute.Equals(input.Attribute))
-                ) && 
-                (
-                    this.ExchangeType == input.ExchangeType ||
-                    (this.ExchangeType != null &&
-                    this.ExchangeType.Equals(input.ExchangeType))
-                ) && 
-                (
-                    this.BusinessType == input.BusinessType ||
-                    (this.BusinessType != null &&
-                    this.BusinessType.Equals(input.BusinessType))
-                ) && 
-                (
-                    this.Qty == input.Qty ||
-                    (this.Qty != null &&
-                    this.Qty.Equals(input.Qty))
-                ) && 
-                (
-                    this.QuoteQty == input.QuoteQty ||
-                    (this.QuoteQty != null &&
-                    this.QuoteQty.Equals(input.QuoteQty))
-                ) && 
-                (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
-                ) && 
-                (
-                    this.TimeInForce == input.TimeInForce ||
-                    (this.TimeInForce != null &&
-                    this.TimeInForce.Equals(input.TimeInForce))
-                ) && 
-                (
-                    this.ExecutedQty == input.ExecutedQty ||
-                    (this.ExecutedQty != null &&
-                    this.ExecutedQty.Equals(input.ExecutedQty))
-                ) && 
-                (
-                    this.ExecutedAmount == input.ExecutedAmount ||
-                    (this.ExecutedAmount != null &&
-                    this.ExecutedAmount.Equals(input.ExecutedAmount))
-                ) && 
-                (
-                    this.ExecutedAvgPrice == input.ExecutedAvgPrice ||
-                    (this.ExecutedAvgPrice != null &&
-                    this.ExecutedAvgPrice.Equals(input.ExecutedAvgPrice))
-                ) && 
-                (
-                    this.FeeCoin == input.FeeCoin ||
-                    (this.FeeCoin != null &&
-                    this.FeeCoin.Equals(input.FeeCoin))
-                ) && 
-                (
-                    this.Fee == input.Fee ||
-                    (this.Fee != null &&
-                    this.Fee.Equals(input.Fee))
-                ) && 
-                (
-                    this.ReduceOnly == input.ReduceOnly ||
-                    (this.ReduceOnly != null &&
-                    this.ReduceOnly.Equals(input.ReduceOnly))
-                ) && 
-                (
-                    this.Leverage == input.Leverage ||
-                    (this.Leverage != null &&
-                    this.Leverage.Equals(input.Leverage))
-                ) && 
-                (
-                    this.Reason == input.Reason ||
-                    (this.Reason != null &&
-                    this.Reason.Equals(input.Reason))
-                ) && 
-                (
-                    this.LastExecutedQty == input.LastExecutedQty ||
-                    (this.LastExecutedQty != null &&
-                    this.LastExecutedQty.Equals(input.LastExecutedQty))
-                ) && 
-                (
-                    this.LastExecutedPrice == input.LastExecutedPrice ||
-                    (this.LastExecutedPrice != null &&
-                    this.LastExecutedPrice.Equals(input.LastExecutedPrice))
-                ) && 
-                (
-                    this.LastExecutedAmount == input.LastExecutedAmount ||
-                    (this.LastExecutedAmount != null &&
-                    this.LastExecutedAmount.Equals(input.LastExecutedAmount))
-                ) && 
-                (
-                    this.PositionSide == input.PositionSide ||
-                    (this.PositionSide != null &&
-                    this.PositionSide.Equals(input.PositionSide))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
                 );
         }
 
@@ -543,62 +127,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.OrderId != null)
                     hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.Text != null)
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Attribute != null)
-                    hashCode = hashCode * 59 + this.Attribute.GetHashCode();
-                if (this.ExchangeType != null)
-                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
-                if (this.BusinessType != null)
-                    hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
-                if (this.Qty != null)
-                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
-                if (this.QuoteQty != null)
-                    hashCode = hashCode * 59 + this.QuoteQty.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.TimeInForce != null)
-                    hashCode = hashCode * 59 + this.TimeInForce.GetHashCode();
-                if (this.ExecutedQty != null)
-                    hashCode = hashCode * 59 + this.ExecutedQty.GetHashCode();
-                if (this.ExecutedAmount != null)
-                    hashCode = hashCode * 59 + this.ExecutedAmount.GetHashCode();
-                if (this.ExecutedAvgPrice != null)
-                    hashCode = hashCode * 59 + this.ExecutedAvgPrice.GetHashCode();
-                if (this.FeeCoin != null)
-                    hashCode = hashCode * 59 + this.FeeCoin.GetHashCode();
-                if (this.Fee != null)
-                    hashCode = hashCode * 59 + this.Fee.GetHashCode();
-                if (this.ReduceOnly != null)
-                    hashCode = hashCode * 59 + this.ReduceOnly.GetHashCode();
-                if (this.Leverage != null)
-                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
-                if (this.Reason != null)
-                    hashCode = hashCode * 59 + this.Reason.GetHashCode();
-                if (this.LastExecutedQty != null)
-                    hashCode = hashCode * 59 + this.LastExecutedQty.GetHashCode();
-                if (this.LastExecutedPrice != null)
-                    hashCode = hashCode * 59 + this.LastExecutedPrice.GetHashCode();
-                if (this.LastExecutedAmount != null)
-                    hashCode = hashCode * 59 + this.LastExecutedAmount.GetHashCode();
-                if (this.PositionSide != null)
-                    hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

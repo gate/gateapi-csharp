@@ -31,159 +31,6 @@ namespace Io.Gate.GateApi.Model
     public partial class InlineObject21 :  IEquatable<InlineObject21>, IValidatableObject
     {
         /// <summary>
-        /// BUY, SELL
-        /// </summary>
-        /// <value>BUY, SELL</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SideEnum
-        {
-            /// <summary>
-            /// Enum value BUY
-            /// </summary>
-            [EnumMember(Value = "BUY")]
-            BUY = 1,
-
-            /// <summary>
-            /// Enum value SELL
-            /// </summary>
-            [EnumMember(Value = "SELL")]
-            SELL = 2
-
-        }
-
-        /// <summary>
-        /// BUY, SELL
-        /// </summary>
-        /// <value>BUY, SELL</value>
-        [DataMember(Name="side")]
-        public SideEnum Side { get; set; }
-        /// <summary>
-        /// Order type (default: &#x60;LIMIT&#x60;; supported types: &#x60;LIMIT&#x60;, &#x60;MARKET&#x60;)
-        /// </summary>
-        /// <value>Order type (default: &#x60;LIMIT&#x60;; supported types: &#x60;LIMIT&#x60;, &#x60;MARKET&#x60;)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            /// <summary>
-            /// Enum value LIMIT
-            /// </summary>
-            [EnumMember(Value = "LIMIT")]
-            LIMIT = 1,
-
-            /// <summary>
-            /// Enum value MARKET
-            /// </summary>
-            [EnumMember(Value = "MARKET")]
-            MARKET = 2
-
-        }
-
-        /// <summary>
-        /// Order type (default: &#x60;LIMIT&#x60;; supported types: &#x60;LIMIT&#x60;, &#x60;MARKET&#x60;)
-        /// </summary>
-        /// <value>Order type (default: &#x60;LIMIT&#x60;; supported types: &#x60;LIMIT&#x60;, &#x60;MARKET&#x60;)</value>
-        [DataMember(Name="type")]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
-        /// Default GTC, supports enumerated types: GTC, IOC, FOK, POC GTC: GoodTillCancelled IOC: ImmediateOrCancelled FOK: FillOrKill POC: PendingOrCancelled or PostOnly
-        /// </summary>
-        /// <value>Default GTC, supports enumerated types: GTC, IOC, FOK, POC GTC: GoodTillCancelled IOC: ImmediateOrCancelled FOK: FillOrKill POC: PendingOrCancelled or PostOnly</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TimeInForceEnum
-        {
-            /// <summary>
-            /// Enum value GTC
-            /// </summary>
-            [EnumMember(Value = "GTC")]
-            GTC = 1,
-
-            /// <summary>
-            /// Enum value IOC
-            /// </summary>
-            [EnumMember(Value = "IOC")]
-            IOC = 2,
-
-            /// <summary>
-            /// Enum value FOK
-            /// </summary>
-            [EnumMember(Value = "FOK")]
-            FOK = 3,
-
-            /// <summary>
-            /// Enum value POC
-            /// </summary>
-            [EnumMember(Value = "POC")]
-            POC = 4
-
-        }
-
-        /// <summary>
-        /// Default GTC, supports enumerated types: GTC, IOC, FOK, POC GTC: GoodTillCancelled IOC: ImmediateOrCancelled FOK: FillOrKill POC: PendingOrCancelled or PostOnly
-        /// </summary>
-        /// <value>Default GTC, supports enumerated types: GTC, IOC, FOK, POC GTC: GoodTillCancelled IOC: ImmediateOrCancelled FOK: FillOrKill POC: PendingOrCancelled or PostOnly</value>
-        [DataMember(Name="time_in_force")]
-        public TimeInForceEnum? TimeInForce { get; set; }
-        /// <summary>
-        /// Reduce-only: &#x60;true&#x60; or &#x60;false&#x60;
-        /// </summary>
-        /// <value>Reduce-only: &#x60;true&#x60; or &#x60;false&#x60;</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ReduceOnlyEnum
-        {
-            /// <summary>
-            /// Enum value True
-            /// </summary>
-            [EnumMember(Value = "true")]
-            True = 1,
-
-            /// <summary>
-            /// Enum value False
-            /// </summary>
-            [EnumMember(Value = "false")]
-            False = 2
-
-        }
-
-        /// <summary>
-        /// Reduce-only: &#x60;true&#x60; or &#x60;false&#x60;
-        /// </summary>
-        /// <value>Reduce-only: &#x60;true&#x60; or &#x60;false&#x60;</value>
-        [DataMember(Name="reduce_only")]
-        public ReduceOnlyEnum? ReduceOnly { get; set; }
-        /// <summary>
-        /// Position side: &#x60;NONE&#x60;, &#x60;LONG&#x60;, &#x60;SHORT&#x60; Defaults to &#x60;NONE&#x60; (single position mode) if not specified
-        /// </summary>
-        /// <value>Position side: &#x60;NONE&#x60;, &#x60;LONG&#x60;, &#x60;SHORT&#x60; Defaults to &#x60;NONE&#x60; (single position mode) if not specified</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum PositionSideEnum
-        {
-            /// <summary>
-            /// Enum value LONG
-            /// </summary>
-            [EnumMember(Value = "LONG")]
-            LONG = 1,
-
-            /// <summary>
-            /// Enum value SHORT
-            /// </summary>
-            [EnumMember(Value = "SHORT")]
-            SHORT = 2,
-
-            /// <summary>
-            /// Enum value NONE
-            /// </summary>
-            [EnumMember(Value = "NONE")]
-            NONE = 3
-
-        }
-
-        /// <summary>
-        /// Position side: &#x60;NONE&#x60;, &#x60;LONG&#x60;, &#x60;SHORT&#x60; Defaults to &#x60;NONE&#x60; (single position mode) if not specified
-        /// </summary>
-        /// <value>Position side: &#x60;NONE&#x60;, &#x60;LONG&#x60;, &#x60;SHORT&#x60; Defaults to &#x60;NONE&#x60; (single position mode) if not specified</value>
-        [DataMember(Name="position_side")]
-        public PositionSideEnum? PositionSide { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject21" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -191,65 +38,58 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject21" /> class.
         /// </summary>
-        /// <param name="text">Client-defined Order ID, supports letters (a-z), numbers (0-9), symbols (-, _) only.</param>
-        /// <param name="symbol">Unique Identifier for Exchange_Business_Base_Counter Examples: - To place a spot order for ADA/USDT on Binance: Use unique identifier &#x60;BINANCE_SPOT_ADA_USDT&#x60;; - To place a USDT-margin perpetual contract order for ADA/USDT on OKX: Use unique identifier &#x60;OKX_FUTURE_ADA_USDT&#x60;; - To place a spot margin order for ADA/USDT on Gate.io: Use unique identifier &#x60;GATE_MARGIN_ADA_USDT&#x60;; Currently supports three order types: Spot Orders, USDT-margin Perpetual Contract Orders, and Spot Margin Orders (required).</param>
-        /// <param name="side">BUY, SELL (required).</param>
-        /// <param name="type">Order type (default: &#x60;LIMIT&#x60;; supported types: &#x60;LIMIT&#x60;, &#x60;MARKET&#x60;) (default to TypeEnum.LIMIT).</param>
-        /// <param name="timeInForce">Default GTC, supports enumerated types: GTC, IOC, FOK, POC GTC: GoodTillCancelled IOC: ImmediateOrCancelled FOK: FillOrKill POC: PendingOrCancelled or PostOnly (default to TimeInForceEnum.GTC).</param>
-        /// <param name="qty">Order quantity (required unless spot market buy).</param>
-        /// <param name="price">Limit Order Price (Required for Limit Orders).</param>
-        /// <param name="quoteQty">Order quote quantity; required for spot and margin market buy orders.</param>
-        /// <param name="reduceOnly">Reduce-only: &#x60;true&#x60; or &#x60;false&#x60;.</param>
-        /// <param name="positionSide">Position side: &#x60;NONE&#x60;, &#x60;LONG&#x60;, &#x60;SHORT&#x60; Defaults to &#x60;NONE&#x60; (single position mode) if not specified.</param>
-        public InlineObject21(string text = default(string), string symbol = default(string), SideEnum side = default(SideEnum), TypeEnum? type = TypeEnum.LIMIT, TimeInForceEnum? timeInForce = TimeInForceEnum.GTC, string qty = default(string), string price = default(string), string quoteQty = default(string), ReduceOnlyEnum? reduceOnly = default(ReduceOnlyEnum?), PositionSideEnum? positionSide = default(PositionSideEnum?))
+        /// <param name="coin">Currency (required).</param>
+        /// <param name="amount">Transfer amount (required).</param>
+        /// <param name="from">Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT (required).</param>
+        /// <param name="to">Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT (required).</param>
+        /// <param name="text">User-defined ID.</param>
+        public InlineObject21(string coin = default(string), string amount = default(string), string from = default(string), string to = default(string), string text = default(string))
         {
-            // to ensure "symbol" is required (not null)
-            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineObject21 and cannot be null");
-            this.Side = side;
+            // to ensure "coin" is required (not null)
+            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineObject21 and cannot be null");
+            // to ensure "amount" is required (not null)
+            this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for InlineObject21 and cannot be null");
+            // to ensure "from" is required (not null)
+            this.From = from ?? throw new ArgumentNullException("from", "from is a required property for InlineObject21 and cannot be null");
+            // to ensure "to" is required (not null)
+            this.To = to ?? throw new ArgumentNullException("to", "to is a required property for InlineObject21 and cannot be null");
             this.Text = text;
-            this.Type = type;
-            this.TimeInForce = timeInForce;
-            this.Qty = qty;
-            this.Price = price;
-            this.QuoteQty = quoteQty;
-            this.ReduceOnly = reduceOnly;
-            this.PositionSide = positionSide;
         }
 
         /// <summary>
-        /// Client-defined Order ID, supports letters (a-z), numbers (0-9), symbols (-, _) only
+        /// Currency
         /// </summary>
-        /// <value>Client-defined Order ID, supports letters (a-z), numbers (0-9), symbols (-, _) only</value>
+        /// <value>Currency</value>
+        [DataMember(Name="coin")]
+        public string Coin { get; set; }
+
+        /// <summary>
+        /// Transfer amount
+        /// </summary>
+        /// <value>Transfer amount</value>
+        [DataMember(Name="amount")]
+        public string Amount { get; set; }
+
+        /// <summary>
+        /// Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT
+        /// </summary>
+        /// <value>Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT</value>
+        [DataMember(Name="from")]
+        public string From { get; set; }
+
+        /// <summary>
+        /// Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT
+        /// </summary>
+        /// <value>Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT</value>
+        [DataMember(Name="to")]
+        public string To { get; set; }
+
+        /// <summary>
+        /// User-defined ID
+        /// </summary>
+        /// <value>User-defined ID</value>
         [DataMember(Name="text")]
         public string Text { get; set; }
-
-        /// <summary>
-        /// Unique Identifier for Exchange_Business_Base_Counter Examples: - To place a spot order for ADA/USDT on Binance: Use unique identifier &#x60;BINANCE_SPOT_ADA_USDT&#x60;; - To place a USDT-margin perpetual contract order for ADA/USDT on OKX: Use unique identifier &#x60;OKX_FUTURE_ADA_USDT&#x60;; - To place a spot margin order for ADA/USDT on Gate.io: Use unique identifier &#x60;GATE_MARGIN_ADA_USDT&#x60;; Currently supports three order types: Spot Orders, USDT-margin Perpetual Contract Orders, and Spot Margin Orders
-        /// </summary>
-        /// <value>Unique Identifier for Exchange_Business_Base_Counter Examples: - To place a spot order for ADA/USDT on Binance: Use unique identifier &#x60;BINANCE_SPOT_ADA_USDT&#x60;; - To place a USDT-margin perpetual contract order for ADA/USDT on OKX: Use unique identifier &#x60;OKX_FUTURE_ADA_USDT&#x60;; - To place a spot margin order for ADA/USDT on Gate.io: Use unique identifier &#x60;GATE_MARGIN_ADA_USDT&#x60;; Currently supports three order types: Spot Orders, USDT-margin Perpetual Contract Orders, and Spot Margin Orders</value>
-        [DataMember(Name="symbol")]
-        public string Symbol { get; set; }
-
-        /// <summary>
-        /// Order quantity (required unless spot market buy)
-        /// </summary>
-        /// <value>Order quantity (required unless spot market buy)</value>
-        [DataMember(Name="qty")]
-        public string Qty { get; set; }
-
-        /// <summary>
-        /// Limit Order Price (Required for Limit Orders)
-        /// </summary>
-        /// <value>Limit Order Price (Required for Limit Orders)</value>
-        [DataMember(Name="price")]
-        public string Price { get; set; }
-
-        /// <summary>
-        /// Order quote quantity; required for spot and margin market buy orders
-        /// </summary>
-        /// <value>Order quote quantity; required for spot and margin market buy orders</value>
-        [DataMember(Name="quote_qty")]
-        public string QuoteQty { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -259,16 +99,11 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject21 {\n");
+            sb.Append("  Coin: ").Append(Coin).Append("\n");
+            sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  From: ").Append(From).Append("\n");
+            sb.Append("  To: ").Append(To).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
-            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  Side: ").Append(Side).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  TimeInForce: ").Append(TimeInForce).Append("\n");
-            sb.Append("  Qty: ").Append(Qty).Append("\n");
-            sb.Append("  Price: ").Append(Price).Append("\n");
-            sb.Append("  QuoteQty: ").Append(QuoteQty).Append("\n");
-            sb.Append("  ReduceOnly: ").Append(ReduceOnly).Append("\n");
-            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -304,49 +139,29 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
+                    this.Coin == input.Coin ||
+                    (this.Coin != null &&
+                    this.Coin.Equals(input.Coin))
+                ) && 
+                (
+                    this.Amount == input.Amount ||
+                    (this.Amount != null &&
+                    this.Amount.Equals(input.Amount))
+                ) && 
+                (
+                    this.From == input.From ||
+                    (this.From != null &&
+                    this.From.Equals(input.From))
+                ) && 
+                (
+                    this.To == input.To ||
+                    (this.To != null &&
+                    this.To.Equals(input.To))
+                ) && 
+                (
                     this.Text == input.Text ||
                     (this.Text != null &&
                     this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
-                ) && 
-                (
-                    this.Side == input.Side ||
-                    this.Side.Equals(input.Side)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.TimeInForce == input.TimeInForce ||
-                    this.TimeInForce.Equals(input.TimeInForce)
-                ) && 
-                (
-                    this.Qty == input.Qty ||
-                    (this.Qty != null &&
-                    this.Qty.Equals(input.Qty))
-                ) && 
-                (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
-                ) && 
-                (
-                    this.QuoteQty == input.QuoteQty ||
-                    (this.QuoteQty != null &&
-                    this.QuoteQty.Equals(input.QuoteQty))
-                ) && 
-                (
-                    this.ReduceOnly == input.ReduceOnly ||
-                    this.ReduceOnly.Equals(input.ReduceOnly)
-                ) && 
-                (
-                    this.PositionSide == input.PositionSide ||
-                    this.PositionSide.Equals(input.PositionSide)
                 );
         }
 
@@ -359,21 +174,16 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Coin != null)
+                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
+                if (this.Amount != null)
+                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
+                if (this.From != null)
+                    hashCode = hashCode * 59 + this.From.GetHashCode();
+                if (this.To != null)
+                    hashCode = hashCode * 59 + this.To.GetHashCode();
                 if (this.Text != null)
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                hashCode = hashCode * 59 + this.Side.GetHashCode();
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
-                hashCode = hashCode * 59 + this.TimeInForce.GetHashCode();
-                if (this.Qty != null)
-                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.QuoteQty != null)
-                    hashCode = hashCode * 59 + this.QuoteQty.GetHashCode();
-                hashCode = hashCode * 59 + this.ReduceOnly.GetHashCode();
-                hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
                 return hashCode;
             }
         }

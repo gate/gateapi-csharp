@@ -38,18 +38,66 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20023Data" /> class.
         /// </summary>
-        /// <param name="sRVTM">Timestamp when message was successfully sent (current timestamp) (required).</param>
-        public InlineResponse20023Data(int sRVTM = default(int))
+        /// <param name="messages">Message List (required).</param>
+        /// <param name="memo">Payment tip (displayed on homepage only) (required).</param>
+        /// <param name="hasHistory">Whether historical records exist (required).</param>
+        /// <param name="txid">Order ID (required).</param>
+        /// <param name="sRVTM">Timestamp of the latest message (required).</param>
+        /// <param name="orderStatus">Order Status (required).</param>
+        public InlineResponse20023Data(List<InlineResponse20023DataMessages> messages = default(List<InlineResponse20023DataMessages>), string memo = default(string), bool hasHistory = default(bool), int txid = default(int), int sRVTM = default(int), string orderStatus = default(string))
         {
+            // to ensure "messages" is required (not null)
+            this.Messages = messages ?? throw new ArgumentNullException("messages", "messages is a required property for InlineResponse20023Data and cannot be null");
+            // to ensure "memo" is required (not null)
+            this.Memo = memo ?? throw new ArgumentNullException("memo", "memo is a required property for InlineResponse20023Data and cannot be null");
+            this.HasHistory = hasHistory;
+            this.Txid = txid;
             this.SRVTM = sRVTM;
+            // to ensure "orderStatus" is required (not null)
+            this.OrderStatus = orderStatus ?? throw new ArgumentNullException("orderStatus", "orderStatus is a required property for InlineResponse20023Data and cannot be null");
         }
 
         /// <summary>
-        /// Timestamp when message was successfully sent (current timestamp)
+        /// Message List
         /// </summary>
-        /// <value>Timestamp when message was successfully sent (current timestamp)</value>
+        /// <value>Message List</value>
+        [DataMember(Name="messages")]
+        public List<InlineResponse20023DataMessages> Messages { get; set; }
+
+        /// <summary>
+        /// Payment tip (displayed on homepage only)
+        /// </summary>
+        /// <value>Payment tip (displayed on homepage only)</value>
+        [DataMember(Name="memo")]
+        public string Memo { get; set; }
+
+        /// <summary>
+        /// Whether historical records exist
+        /// </summary>
+        /// <value>Whether historical records exist</value>
+        [DataMember(Name="has_history")]
+        public bool HasHistory { get; set; }
+
+        /// <summary>
+        /// Order ID
+        /// </summary>
+        /// <value>Order ID</value>
+        [DataMember(Name="txid")]
+        public int Txid { get; set; }
+
+        /// <summary>
+        /// Timestamp of the latest message
+        /// </summary>
+        /// <value>Timestamp of the latest message</value>
         [DataMember(Name="SRVTM")]
         public int SRVTM { get; set; }
+
+        /// <summary>
+        /// Order Status
+        /// </summary>
+        /// <value>Order Status</value>
+        [DataMember(Name="order_status")]
+        public string OrderStatus { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -59,7 +107,12 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20023Data {\n");
+            sb.Append("  Messages: ").Append(Messages).Append("\n");
+            sb.Append("  Memo: ").Append(Memo).Append("\n");
+            sb.Append("  HasHistory: ").Append(HasHistory).Append("\n");
+            sb.Append("  Txid: ").Append(Txid).Append("\n");
             sb.Append("  SRVTM: ").Append(SRVTM).Append("\n");
+            sb.Append("  OrderStatus: ").Append(OrderStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,8 +148,32 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
+                    this.Messages == input.Messages ||
+                    this.Messages != null &&
+                    input.Messages != null &&
+                    this.Messages.SequenceEqual(input.Messages)
+                ) && 
+                (
+                    this.Memo == input.Memo ||
+                    (this.Memo != null &&
+                    this.Memo.Equals(input.Memo))
+                ) && 
+                (
+                    this.HasHistory == input.HasHistory ||
+                    this.HasHistory.Equals(input.HasHistory)
+                ) && 
+                (
+                    this.Txid == input.Txid ||
+                    this.Txid.Equals(input.Txid)
+                ) && 
+                (
                     this.SRVTM == input.SRVTM ||
                     this.SRVTM.Equals(input.SRVTM)
+                ) && 
+                (
+                    this.OrderStatus == input.OrderStatus ||
+                    (this.OrderStatus != null &&
+                    this.OrderStatus.Equals(input.OrderStatus))
                 );
         }
 
@@ -109,7 +186,15 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Messages != null)
+                    hashCode = hashCode * 59 + this.Messages.GetHashCode();
+                if (this.Memo != null)
+                    hashCode = hashCode * 59 + this.Memo.GetHashCode();
+                hashCode = hashCode * 59 + this.HasHistory.GetHashCode();
+                hashCode = hashCode * 59 + this.Txid.GetHashCode();
                 hashCode = hashCode * 59 + this.SRVTM.GetHashCode();
+                if (this.OrderStatus != null)
+                    hashCode = hashCode * 59 + this.OrderStatus.GetHashCode();
                 return hashCode;
             }
         }

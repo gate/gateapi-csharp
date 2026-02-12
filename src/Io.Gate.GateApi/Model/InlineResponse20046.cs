@@ -38,34 +38,64 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20046" /> class.
         /// </summary>
-        /// <param name="coin">Currency (required).</param>
+        /// <param name="id">Account Change Record ID (required).</param>
+        /// <param name="userId">User ID (required).</param>
+        /// <param name="businessId">Business ID (required).</param>
+        /// <param name="type">变更类型| &#x60;TRANSACTION&#x60; 成交 &#x60;TRADING_FEE&#x60; 手续费 &#x60;FUNDING_FEE&#x60; 合约资金费 &#x60;LIQUIDATION_FEE&#x60; 强平费 &#x60;TRANSFER_IN&#x60; 资金转入 &#x60;TRANSFER_OUT&#x60; 资金转出 &#x60;BANKRUPT_COMPENSATION&#x60; 穿仓补贴 &#x60;AUTO_REPAY&#x60; 杠杆仓位自动还负债 (required).</param>
         /// <param name="exchangeType">Exchange (required).</param>
-        /// <param name="tier">Tier (required).</param>
-        /// <param name="minValue">Minimum value (required).</param>
-        /// <param name="maxValue">Maximum value (required).</param>
-        /// <param name="discountRate">Discount rate (required).</param>
-        public InlineResponse20046(string coin = default(string), string exchangeType = default(string), string tier = default(string), string minValue = default(string), string maxValue = default(string), string discountRate = default(string))
+        /// <param name="coin">Currency (required).</param>
+        /// <param name="change">Change amount (positive indicates transfer in; negative indicates transfer out) (required).</param>
+        /// <param name="balance">Balance after change (required).</param>
+        /// <param name="createTime">Created time (required).</param>
+        public InlineResponse20046(string id = default(string), string userId = default(string), string businessId = default(string), string type = default(string), string exchangeType = default(string), string coin = default(string), string change = default(string), string balance = default(string), string createTime = default(string))
         {
-            // to ensure "coin" is required (not null)
-            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20046 and cannot be null");
+            // to ensure "id" is required (not null)
+            this.Id = id ?? throw new ArgumentNullException("id", "id is a required property for InlineResponse20046 and cannot be null");
+            // to ensure "userId" is required (not null)
+            this.UserId = userId ?? throw new ArgumentNullException("userId", "userId is a required property for InlineResponse20046 and cannot be null");
+            // to ensure "businessId" is required (not null)
+            this.BusinessId = businessId ?? throw new ArgumentNullException("businessId", "businessId is a required property for InlineResponse20046 and cannot be null");
+            // to ensure "type" is required (not null)
+            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for InlineResponse20046 and cannot be null");
             // to ensure "exchangeType" is required (not null)
             this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for InlineResponse20046 and cannot be null");
-            // to ensure "tier" is required (not null)
-            this.Tier = tier ?? throw new ArgumentNullException("tier", "tier is a required property for InlineResponse20046 and cannot be null");
-            // to ensure "minValue" is required (not null)
-            this.MinValue = minValue ?? throw new ArgumentNullException("minValue", "minValue is a required property for InlineResponse20046 and cannot be null");
-            // to ensure "maxValue" is required (not null)
-            this.MaxValue = maxValue ?? throw new ArgumentNullException("maxValue", "maxValue is a required property for InlineResponse20046 and cannot be null");
-            // to ensure "discountRate" is required (not null)
-            this.DiscountRate = discountRate ?? throw new ArgumentNullException("discountRate", "discountRate is a required property for InlineResponse20046 and cannot be null");
+            // to ensure "coin" is required (not null)
+            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20046 and cannot be null");
+            // to ensure "change" is required (not null)
+            this.Change = change ?? throw new ArgumentNullException("change", "change is a required property for InlineResponse20046 and cannot be null");
+            // to ensure "balance" is required (not null)
+            this.Balance = balance ?? throw new ArgumentNullException("balance", "balance is a required property for InlineResponse20046 and cannot be null");
+            // to ensure "createTime" is required (not null)
+            this.CreateTime = createTime ?? throw new ArgumentNullException("createTime", "createTime is a required property for InlineResponse20046 and cannot be null");
         }
 
         /// <summary>
-        /// Currency
+        /// Account Change Record ID
         /// </summary>
-        /// <value>Currency</value>
-        [DataMember(Name="coin")]
-        public string Coin { get; set; }
+        /// <value>Account Change Record ID</value>
+        [DataMember(Name="id")]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// User ID
+        /// </summary>
+        /// <value>User ID</value>
+        [DataMember(Name="user_id")]
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// Business ID
+        /// </summary>
+        /// <value>Business ID</value>
+        [DataMember(Name="business_id")]
+        public string BusinessId { get; set; }
+
+        /// <summary>
+        /// 变更类型| &#x60;TRANSACTION&#x60; 成交 &#x60;TRADING_FEE&#x60; 手续费 &#x60;FUNDING_FEE&#x60; 合约资金费 &#x60;LIQUIDATION_FEE&#x60; 强平费 &#x60;TRANSFER_IN&#x60; 资金转入 &#x60;TRANSFER_OUT&#x60; 资金转出 &#x60;BANKRUPT_COMPENSATION&#x60; 穿仓补贴 &#x60;AUTO_REPAY&#x60; 杠杆仓位自动还负债
+        /// </summary>
+        /// <value>变更类型| &#x60;TRANSACTION&#x60; 成交 &#x60;TRADING_FEE&#x60; 手续费 &#x60;FUNDING_FEE&#x60; 合约资金费 &#x60;LIQUIDATION_FEE&#x60; 强平费 &#x60;TRANSFER_IN&#x60; 资金转入 &#x60;TRANSFER_OUT&#x60; 资金转出 &#x60;BANKRUPT_COMPENSATION&#x60; 穿仓补贴 &#x60;AUTO_REPAY&#x60; 杠杆仓位自动还负债</value>
+        [DataMember(Name="type")]
+        public string Type { get; set; }
 
         /// <summary>
         /// Exchange
@@ -75,32 +105,32 @@ namespace Io.Gate.GateApi.Model
         public string ExchangeType { get; set; }
 
         /// <summary>
-        /// Tier
+        /// Currency
         /// </summary>
-        /// <value>Tier</value>
-        [DataMember(Name="tier")]
-        public string Tier { get; set; }
+        /// <value>Currency</value>
+        [DataMember(Name="coin")]
+        public string Coin { get; set; }
 
         /// <summary>
-        /// Minimum value
+        /// Change amount (positive indicates transfer in; negative indicates transfer out)
         /// </summary>
-        /// <value>Minimum value</value>
-        [DataMember(Name="min_value")]
-        public string MinValue { get; set; }
+        /// <value>Change amount (positive indicates transfer in; negative indicates transfer out)</value>
+        [DataMember(Name="change")]
+        public string Change { get; set; }
 
         /// <summary>
-        /// Maximum value
+        /// Balance after change
         /// </summary>
-        /// <value>Maximum value</value>
-        [DataMember(Name="max_value")]
-        public string MaxValue { get; set; }
+        /// <value>Balance after change</value>
+        [DataMember(Name="balance")]
+        public string Balance { get; set; }
 
         /// <summary>
-        /// Discount rate
+        /// Created time
         /// </summary>
-        /// <value>Discount rate</value>
-        [DataMember(Name="discount_rate")]
-        public string DiscountRate { get; set; }
+        /// <value>Created time</value>
+        [DataMember(Name="create_time")]
+        public string CreateTime { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -110,12 +140,15 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20046 {\n");
-            sb.Append("  Coin: ").Append(Coin).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  UserId: ").Append(UserId).Append("\n");
+            sb.Append("  BusinessId: ").Append(BusinessId).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
-            sb.Append("  Tier: ").Append(Tier).Append("\n");
-            sb.Append("  MinValue: ").Append(MinValue).Append("\n");
-            sb.Append("  MaxValue: ").Append(MaxValue).Append("\n");
-            sb.Append("  DiscountRate: ").Append(DiscountRate).Append("\n");
+            sb.Append("  Coin: ").Append(Coin).Append("\n");
+            sb.Append("  Change: ").Append(Change).Append("\n");
+            sb.Append("  Balance: ").Append(Balance).Append("\n");
+            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,9 +184,24 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Coin == input.Coin ||
-                    (this.Coin != null &&
-                    this.Coin.Equals(input.Coin))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.UserId == input.UserId ||
+                    (this.UserId != null &&
+                    this.UserId.Equals(input.UserId))
+                ) && 
+                (
+                    this.BusinessId == input.BusinessId ||
+                    (this.BusinessId != null &&
+                    this.BusinessId.Equals(input.BusinessId))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
                     this.ExchangeType == input.ExchangeType ||
@@ -161,24 +209,24 @@ namespace Io.Gate.GateApi.Model
                     this.ExchangeType.Equals(input.ExchangeType))
                 ) && 
                 (
-                    this.Tier == input.Tier ||
-                    (this.Tier != null &&
-                    this.Tier.Equals(input.Tier))
+                    this.Coin == input.Coin ||
+                    (this.Coin != null &&
+                    this.Coin.Equals(input.Coin))
                 ) && 
                 (
-                    this.MinValue == input.MinValue ||
-                    (this.MinValue != null &&
-                    this.MinValue.Equals(input.MinValue))
+                    this.Change == input.Change ||
+                    (this.Change != null &&
+                    this.Change.Equals(input.Change))
                 ) && 
                 (
-                    this.MaxValue == input.MaxValue ||
-                    (this.MaxValue != null &&
-                    this.MaxValue.Equals(input.MaxValue))
+                    this.Balance == input.Balance ||
+                    (this.Balance != null &&
+                    this.Balance.Equals(input.Balance))
                 ) && 
                 (
-                    this.DiscountRate == input.DiscountRate ||
-                    (this.DiscountRate != null &&
-                    this.DiscountRate.Equals(input.DiscountRate))
+                    this.CreateTime == input.CreateTime ||
+                    (this.CreateTime != null &&
+                    this.CreateTime.Equals(input.CreateTime))
                 );
         }
 
@@ -191,18 +239,24 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Coin != null)
-                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.UserId != null)
+                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.BusinessId != null)
+                    hashCode = hashCode * 59 + this.BusinessId.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.ExchangeType != null)
                     hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
-                if (this.Tier != null)
-                    hashCode = hashCode * 59 + this.Tier.GetHashCode();
-                if (this.MinValue != null)
-                    hashCode = hashCode * 59 + this.MinValue.GetHashCode();
-                if (this.MaxValue != null)
-                    hashCode = hashCode * 59 + this.MaxValue.GetHashCode();
-                if (this.DiscountRate != null)
-                    hashCode = hashCode * 59 + this.DiscountRate.GetHashCode();
+                if (this.Coin != null)
+                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
+                if (this.Change != null)
+                    hashCode = hashCode * 59 + this.Change.GetHashCode();
+                if (this.Balance != null)
+                    hashCode = hashCode * 59 + this.Balance.GetHashCode();
+                if (this.CreateTime != null)
+                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

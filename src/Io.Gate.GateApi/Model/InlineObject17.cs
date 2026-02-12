@@ -38,36 +38,39 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject17" /> class.
         /// </summary>
-        /// <param name="txid">Order ID (required).</param>
-        /// <param name="lastreceived">Pagination timestamp (forward).</param>
-        /// <param name="firstreceived">Pagination timestamp (backward).</param>
-        public InlineObject17(int txid = default(int), int lastreceived = default(int), int firstreceived = default(int))
+        /// <param name="asset">Cryptocurrency (required).</param>
+        /// <param name="fiatUnit">Fiat currency (required).</param>
+        /// <param name="tradeType">Buy/Sell, sell/buy (required).</param>
+        public InlineObject17(string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
         {
-            this.Txid = txid;
-            this.Lastreceived = lastreceived;
-            this.Firstreceived = firstreceived;
+            // to ensure "asset" is required (not null)
+            this.Asset = asset ?? throw new ArgumentNullException("asset", "asset is a required property for InlineObject17 and cannot be null");
+            // to ensure "fiatUnit" is required (not null)
+            this.FiatUnit = fiatUnit ?? throw new ArgumentNullException("fiatUnit", "fiatUnit is a required property for InlineObject17 and cannot be null");
+            // to ensure "tradeType" is required (not null)
+            this.TradeType = tradeType ?? throw new ArgumentNullException("tradeType", "tradeType is a required property for InlineObject17 and cannot be null");
         }
 
         /// <summary>
-        /// Order ID
+        /// Cryptocurrency
         /// </summary>
-        /// <value>Order ID</value>
-        [DataMember(Name="txid")]
-        public int Txid { get; set; }
+        /// <value>Cryptocurrency</value>
+        [DataMember(Name="asset")]
+        public string Asset { get; set; }
 
         /// <summary>
-        /// Pagination timestamp (forward)
+        /// Fiat currency
         /// </summary>
-        /// <value>Pagination timestamp (forward)</value>
-        [DataMember(Name="lastreceived")]
-        public int Lastreceived { get; set; }
+        /// <value>Fiat currency</value>
+        [DataMember(Name="fiat_unit")]
+        public string FiatUnit { get; set; }
 
         /// <summary>
-        /// Pagination timestamp (backward)
+        /// Buy/Sell, sell/buy
         /// </summary>
-        /// <value>Pagination timestamp (backward)</value>
-        [DataMember(Name="firstreceived")]
-        public int Firstreceived { get; set; }
+        /// <value>Buy/Sell, sell/buy</value>
+        [DataMember(Name="trade_type")]
+        public string TradeType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -77,9 +80,9 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject17 {\n");
-            sb.Append("  Txid: ").Append(Txid).Append("\n");
-            sb.Append("  Lastreceived: ").Append(Lastreceived).Append("\n");
-            sb.Append("  Firstreceived: ").Append(Firstreceived).Append("\n");
+            sb.Append("  Asset: ").Append(Asset).Append("\n");
+            sb.Append("  FiatUnit: ").Append(FiatUnit).Append("\n");
+            sb.Append("  TradeType: ").Append(TradeType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,16 +118,19 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Txid == input.Txid ||
-                    this.Txid.Equals(input.Txid)
+                    this.Asset == input.Asset ||
+                    (this.Asset != null &&
+                    this.Asset.Equals(input.Asset))
                 ) && 
                 (
-                    this.Lastreceived == input.Lastreceived ||
-                    this.Lastreceived.Equals(input.Lastreceived)
+                    this.FiatUnit == input.FiatUnit ||
+                    (this.FiatUnit != null &&
+                    this.FiatUnit.Equals(input.FiatUnit))
                 ) && 
                 (
-                    this.Firstreceived == input.Firstreceived ||
-                    this.Firstreceived.Equals(input.Firstreceived)
+                    this.TradeType == input.TradeType ||
+                    (this.TradeType != null &&
+                    this.TradeType.Equals(input.TradeType))
                 );
         }
 
@@ -137,9 +143,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Txid.GetHashCode();
-                hashCode = hashCode * 59 + this.Lastreceived.GetHashCode();
-                hashCode = hashCode * 59 + this.Firstreceived.GetHashCode();
+                if (this.Asset != null)
+                    hashCode = hashCode * 59 + this.Asset.GetHashCode();
+                if (this.FiatUnit != null)
+                    hashCode = hashCode * 59 + this.FiatUnit.GetHashCode();
+                if (this.TradeType != null)
+                    hashCode = hashCode * 59 + this.TradeType.GetHashCode();
                 return hashCode;
             }
         }

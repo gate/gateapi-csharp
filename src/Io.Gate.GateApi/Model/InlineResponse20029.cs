@@ -38,12 +38,12 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20029" /> class.
         /// </summary>
-        /// <param name="orderId">Order ID (required).</param>
+        /// <param name="txId">Order ID (required).</param>
         /// <param name="text">User-defined Order ID (required).</param>
-        public InlineResponse20029(string orderId = default(string), string text = default(string))
+        public InlineResponse20029(string txId = default(string), string text = default(string))
         {
-            // to ensure "orderId" is required (not null)
-            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for InlineResponse20029 and cannot be null");
+            // to ensure "txId" is required (not null)
+            this.TxId = txId ?? throw new ArgumentNullException("txId", "txId is a required property for InlineResponse20029 and cannot be null");
             // to ensure "text" is required (not null)
             this.Text = text ?? throw new ArgumentNullException("text", "text is a required property for InlineResponse20029 and cannot be null");
         }
@@ -52,8 +52,8 @@ namespace Io.Gate.GateApi.Model
         /// Order ID
         /// </summary>
         /// <value>Order ID</value>
-        [DataMember(Name="order_id")]
-        public string OrderId { get; set; }
+        [DataMember(Name="tx_id")]
+        public string TxId { get; set; }
 
         /// <summary>
         /// User-defined Order ID
@@ -70,7 +70,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20029 {\n");
-            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
+            sb.Append("  TxId: ").Append(TxId).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -107,9 +107,9 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
+                    this.TxId == input.TxId ||
+                    (this.TxId != null &&
+                    this.TxId.Equals(input.TxId))
                 ) && 
                 (
                     this.Text == input.Text ||
@@ -127,8 +127,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.TxId != null)
+                    hashCode = hashCode * 59 + this.TxId.GetHashCode();
                 if (this.Text != null)
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
                 return hashCode;

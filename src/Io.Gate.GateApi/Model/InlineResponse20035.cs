@@ -38,49 +38,29 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20035" /> class.
         /// </summary>
-        /// <param name="coin">Currency (required).</param>
-        /// <param name="exchangeType">Exchange (required).</param>
-        /// <param name="hourInterestRate">Hourly Interest Rate (required).</param>
-        /// <param name="time">Millisecond Timestamp (required).</param>
-        public InlineResponse20035(string coin = default(string), string exchangeType = default(string), string hourInterestRate = default(string), string time = default(string))
+        /// <param name="symbol">Currency pair (required).</param>
+        /// <param name="leverage">leverage (required).</param>
+        public InlineResponse20035(string symbol = default(string), string leverage = default(string))
         {
-            // to ensure "coin" is required (not null)
-            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineResponse20035 and cannot be null");
-            // to ensure "exchangeType" is required (not null)
-            this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for InlineResponse20035 and cannot be null");
-            // to ensure "hourInterestRate" is required (not null)
-            this.HourInterestRate = hourInterestRate ?? throw new ArgumentNullException("hourInterestRate", "hourInterestRate is a required property for InlineResponse20035 and cannot be null");
-            // to ensure "time" is required (not null)
-            this.Time = time ?? throw new ArgumentNullException("time", "time is a required property for InlineResponse20035 and cannot be null");
+            // to ensure "symbol" is required (not null)
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20035 and cannot be null");
+            // to ensure "leverage" is required (not null)
+            this.Leverage = leverage ?? throw new ArgumentNullException("leverage", "leverage is a required property for InlineResponse20035 and cannot be null");
         }
 
         /// <summary>
-        /// Currency
+        /// Currency pair
         /// </summary>
-        /// <value>Currency</value>
-        [DataMember(Name="coin")]
-        public string Coin { get; set; }
+        /// <value>Currency pair</value>
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
 
         /// <summary>
-        /// Exchange
+        /// leverage
         /// </summary>
-        /// <value>Exchange</value>
-        [DataMember(Name="exchange_type")]
-        public string ExchangeType { get; set; }
-
-        /// <summary>
-        /// Hourly Interest Rate
-        /// </summary>
-        /// <value>Hourly Interest Rate</value>
-        [DataMember(Name="hour_interest_rate")]
-        public string HourInterestRate { get; set; }
-
-        /// <summary>
-        /// Millisecond Timestamp
-        /// </summary>
-        /// <value>Millisecond Timestamp</value>
-        [DataMember(Name="time")]
-        public string Time { get; set; }
+        /// <value>leverage</value>
+        [DataMember(Name="leverage")]
+        public string Leverage { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -90,10 +70,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20035 {\n");
-            sb.Append("  Coin: ").Append(Coin).Append("\n");
-            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
-            sb.Append("  HourInterestRate: ").Append(HourInterestRate).Append("\n");
-            sb.Append("  Time: ").Append(Time).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
+            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,24 +107,14 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Coin == input.Coin ||
-                    (this.Coin != null &&
-                    this.Coin.Equals(input.Coin))
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.ExchangeType == input.ExchangeType ||
-                    (this.ExchangeType != null &&
-                    this.ExchangeType.Equals(input.ExchangeType))
-                ) && 
-                (
-                    this.HourInterestRate == input.HourInterestRate ||
-                    (this.HourInterestRate != null &&
-                    this.HourInterestRate.Equals(input.HourInterestRate))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
+                    this.Leverage == input.Leverage ||
+                    (this.Leverage != null &&
+                    this.Leverage.Equals(input.Leverage))
                 );
         }
 
@@ -159,14 +127,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Coin != null)
-                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
-                if (this.ExchangeType != null)
-                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
-                if (this.HourInterestRate != null)
-                    hashCode = hashCode * 59 + this.HourInterestRate.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                if (this.Leverage != null)
+                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
                 return hashCode;
             }
         }

@@ -38,29 +38,37 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject19" /> class.
         /// </summary>
-        /// <param name="imageContentType">File type, currently only images and videos are supported (required).</param>
-        /// <param name="base64Img">File content (base64 encoded) (required).</param>
-        public InlineObject19(string imageContentType = default(string), string base64Img = default(string))
+        /// <param name="txid">Order ID (required).</param>
+        /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided.</param>
+        /// <param name="message">Message content (required).</param>
+        public InlineObject19(int txid = default(int), int type = default(int), string message = default(string))
         {
-            // to ensure "imageContentType" is required (not null)
-            this.ImageContentType = imageContentType ?? throw new ArgumentNullException("imageContentType", "imageContentType is a required property for InlineObject19 and cannot be null");
-            // to ensure "base64Img" is required (not null)
-            this.Base64Img = base64Img ?? throw new ArgumentNullException("base64Img", "base64Img is a required property for InlineObject19 and cannot be null");
+            this.Txid = txid;
+            // to ensure "message" is required (not null)
+            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineObject19 and cannot be null");
+            this.Type = type;
         }
 
         /// <summary>
-        /// File type, currently only images and videos are supported
+        /// Order ID
         /// </summary>
-        /// <value>File type, currently only images and videos are supported</value>
-        [DataMember(Name="image_content_type")]
-        public string ImageContentType { get; set; }
+        /// <value>Order ID</value>
+        [DataMember(Name="txid")]
+        public int Txid { get; set; }
 
         /// <summary>
-        /// File content (base64 encoded)
+        /// 0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided
         /// </summary>
-        /// <value>File content (base64 encoded)</value>
-        [DataMember(Name="base64_img")]
-        public string Base64Img { get; set; }
+        /// <value>0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided</value>
+        [DataMember(Name="type")]
+        public int Type { get; set; }
+
+        /// <summary>
+        /// Message content
+        /// </summary>
+        /// <value>Message content</value>
+        [DataMember(Name="message")]
+        public string Message { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,8 +78,9 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject19 {\n");
-            sb.Append("  ImageContentType: ").Append(ImageContentType).Append("\n");
-            sb.Append("  Base64Img: ").Append(Base64Img).Append("\n");
+            sb.Append("  Txid: ").Append(Txid).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,14 +116,17 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.ImageContentType == input.ImageContentType ||
-                    (this.ImageContentType != null &&
-                    this.ImageContentType.Equals(input.ImageContentType))
+                    this.Txid == input.Txid ||
+                    this.Txid.Equals(input.Txid)
                 ) && 
                 (
-                    this.Base64Img == input.Base64Img ||
-                    (this.Base64Img != null &&
-                    this.Base64Img.Equals(input.Base64Img))
+                    this.Type == input.Type ||
+                    this.Type.Equals(input.Type)
+                ) && 
+                (
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
                 );
         }
 
@@ -127,10 +139,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ImageContentType != null)
-                    hashCode = hashCode * 59 + this.ImageContentType.GetHashCode();
-                if (this.Base64Img != null)
-                    hashCode = hashCode * 59 + this.Base64Img.GetHashCode();
+                hashCode = hashCode * 59 + this.Txid.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
                 return hashCode;
             }
         }

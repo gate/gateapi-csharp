@@ -38,145 +38,79 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20033" /> class.
         /// </summary>
-        /// <param name="userId">User ID (required).</param>
-        /// <param name="availableMargin">Available Margin (required).</param>
-        /// <param name="marginBalance">marginbalance (required).</param>
-        /// <param name="initialMargin">Initial Margin (required).</param>
-        /// <param name="maintenanceMargin">Maintenance margin (required).</param>
-        /// <param name="initialMarginRate">Initial margin rate (required).</param>
-        /// <param name="maintenanceMarginRate">Maintenance margin rate (required).</param>
-        /// <param name="positionMode">Contract Position Mode (required).</param>
-        /// <param name="accountLimit">Account limit.</param>
-        /// <param name="createTime">Created time (required).</param>
-        /// <param name="updateTime">Update time (required).</param>
-        /// <param name="accountMode">Account Mode. CROSS_EXCHANGE: Cross-Exchange Mode; ISOLATED_EXCHANGE: Split-Exchange Mode.</param>
-        /// <param name="exchangeType">Exchange Type. When account_mode is CROSS_EXCHANGE, it must be CROSSEX; otherwise, it is another exchange..</param>
-        /// <param name="assets">assets (required).</param>
-        public InlineResponse20033(string userId = default(string), string availableMargin = default(string), string marginBalance = default(string), string initialMargin = default(string), string maintenanceMargin = default(string), string initialMarginRate = default(string), string maintenanceMarginRate = default(string), string positionMode = default(string), string accountLimit = default(string), string createTime = default(string), string updateTime = default(string), string accountMode = default(string), string exchangeType = default(string), List<InlineResponse20033Assets> assets = default(List<InlineResponse20033Assets>))
+        /// <param name="quoteId">Quote ID (required).</param>
+        /// <param name="validMs">Valid time (milliseconds timestamp) (required).</param>
+        /// <param name="fromCoin">Asset Sold (required).</param>
+        /// <param name="toCoin">Asset Bought (required).</param>
+        /// <param name="fromAmount">Amount to sell (required).</param>
+        /// <param name="toAmount">Amount to buy (required).</param>
+        /// <param name="price">Price (required).</param>
+        public InlineResponse20033(string quoteId = default(string), string validMs = default(string), string fromCoin = default(string), string toCoin = default(string), string fromAmount = default(string), string toAmount = default(string), string price = default(string))
         {
-            // to ensure "userId" is required (not null)
-            this.UserId = userId ?? throw new ArgumentNullException("userId", "userId is a required property for InlineResponse20033 and cannot be null");
-            // to ensure "availableMargin" is required (not null)
-            this.AvailableMargin = availableMargin ?? throw new ArgumentNullException("availableMargin", "availableMargin is a required property for InlineResponse20033 and cannot be null");
-            // to ensure "marginBalance" is required (not null)
-            this.MarginBalance = marginBalance ?? throw new ArgumentNullException("marginBalance", "marginBalance is a required property for InlineResponse20033 and cannot be null");
-            // to ensure "initialMargin" is required (not null)
-            this.InitialMargin = initialMargin ?? throw new ArgumentNullException("initialMargin", "initialMargin is a required property for InlineResponse20033 and cannot be null");
-            // to ensure "maintenanceMargin" is required (not null)
-            this.MaintenanceMargin = maintenanceMargin ?? throw new ArgumentNullException("maintenanceMargin", "maintenanceMargin is a required property for InlineResponse20033 and cannot be null");
-            // to ensure "initialMarginRate" is required (not null)
-            this.InitialMarginRate = initialMarginRate ?? throw new ArgumentNullException("initialMarginRate", "initialMarginRate is a required property for InlineResponse20033 and cannot be null");
-            // to ensure "maintenanceMarginRate" is required (not null)
-            this.MaintenanceMarginRate = maintenanceMarginRate ?? throw new ArgumentNullException("maintenanceMarginRate", "maintenanceMarginRate is a required property for InlineResponse20033 and cannot be null");
-            // to ensure "positionMode" is required (not null)
-            this.PositionMode = positionMode ?? throw new ArgumentNullException("positionMode", "positionMode is a required property for InlineResponse20033 and cannot be null");
-            // to ensure "createTime" is required (not null)
-            this.CreateTime = createTime ?? throw new ArgumentNullException("createTime", "createTime is a required property for InlineResponse20033 and cannot be null");
-            // to ensure "updateTime" is required (not null)
-            this.UpdateTime = updateTime ?? throw new ArgumentNullException("updateTime", "updateTime is a required property for InlineResponse20033 and cannot be null");
-            // to ensure "assets" is required (not null)
-            this.Assets = assets ?? throw new ArgumentNullException("assets", "assets is a required property for InlineResponse20033 and cannot be null");
-            this.AccountLimit = accountLimit;
-            this.AccountMode = accountMode;
-            this.ExchangeType = exchangeType;
+            // to ensure "quoteId" is required (not null)
+            this.QuoteId = quoteId ?? throw new ArgumentNullException("quoteId", "quoteId is a required property for InlineResponse20033 and cannot be null");
+            // to ensure "validMs" is required (not null)
+            this.ValidMs = validMs ?? throw new ArgumentNullException("validMs", "validMs is a required property for InlineResponse20033 and cannot be null");
+            // to ensure "fromCoin" is required (not null)
+            this.FromCoin = fromCoin ?? throw new ArgumentNullException("fromCoin", "fromCoin is a required property for InlineResponse20033 and cannot be null");
+            // to ensure "toCoin" is required (not null)
+            this.ToCoin = toCoin ?? throw new ArgumentNullException("toCoin", "toCoin is a required property for InlineResponse20033 and cannot be null");
+            // to ensure "fromAmount" is required (not null)
+            this.FromAmount = fromAmount ?? throw new ArgumentNullException("fromAmount", "fromAmount is a required property for InlineResponse20033 and cannot be null");
+            // to ensure "toAmount" is required (not null)
+            this.ToAmount = toAmount ?? throw new ArgumentNullException("toAmount", "toAmount is a required property for InlineResponse20033 and cannot be null");
+            // to ensure "price" is required (not null)
+            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineResponse20033 and cannot be null");
         }
 
         /// <summary>
-        /// User ID
+        /// Quote ID
         /// </summary>
-        /// <value>User ID</value>
-        [DataMember(Name="user_id")]
-        public string UserId { get; set; }
+        /// <value>Quote ID</value>
+        [DataMember(Name="quote_id")]
+        public string QuoteId { get; set; }
 
         /// <summary>
-        /// Available Margin
+        /// Valid time (milliseconds timestamp)
         /// </summary>
-        /// <value>Available Margin</value>
-        [DataMember(Name="available_margin")]
-        public string AvailableMargin { get; set; }
+        /// <value>Valid time (milliseconds timestamp)</value>
+        [DataMember(Name="valid_ms")]
+        public string ValidMs { get; set; }
 
         /// <summary>
-        /// marginbalance
+        /// Asset Sold
         /// </summary>
-        /// <value>marginbalance</value>
-        [DataMember(Name="margin_balance")]
-        public string MarginBalance { get; set; }
+        /// <value>Asset Sold</value>
+        [DataMember(Name="from_coin")]
+        public string FromCoin { get; set; }
 
         /// <summary>
-        /// Initial Margin
+        /// Asset Bought
         /// </summary>
-        /// <value>Initial Margin</value>
-        [DataMember(Name="initial_margin")]
-        public string InitialMargin { get; set; }
+        /// <value>Asset Bought</value>
+        [DataMember(Name="to_coin")]
+        public string ToCoin { get; set; }
 
         /// <summary>
-        /// Maintenance margin
+        /// Amount to sell
         /// </summary>
-        /// <value>Maintenance margin</value>
-        [DataMember(Name="maintenance_margin")]
-        public string MaintenanceMargin { get; set; }
+        /// <value>Amount to sell</value>
+        [DataMember(Name="from_amount")]
+        public string FromAmount { get; set; }
 
         /// <summary>
-        /// Initial margin rate
+        /// Amount to buy
         /// </summary>
-        /// <value>Initial margin rate</value>
-        [DataMember(Name="initial_margin_rate")]
-        public string InitialMarginRate { get; set; }
+        /// <value>Amount to buy</value>
+        [DataMember(Name="to_amount")]
+        public string ToAmount { get; set; }
 
         /// <summary>
-        /// Maintenance margin rate
+        /// Price
         /// </summary>
-        /// <value>Maintenance margin rate</value>
-        [DataMember(Name="maintenance_margin_rate")]
-        public string MaintenanceMarginRate { get; set; }
-
-        /// <summary>
-        /// Contract Position Mode
-        /// </summary>
-        /// <value>Contract Position Mode</value>
-        [DataMember(Name="position_mode")]
-        public string PositionMode { get; set; }
-
-        /// <summary>
-        /// Account limit
-        /// </summary>
-        /// <value>Account limit</value>
-        [DataMember(Name="account_limit")]
-        public string AccountLimit { get; set; }
-
-        /// <summary>
-        /// Created time
-        /// </summary>
-        /// <value>Created time</value>
-        [DataMember(Name="create_time")]
-        public string CreateTime { get; set; }
-
-        /// <summary>
-        /// Update time
-        /// </summary>
-        /// <value>Update time</value>
-        [DataMember(Name="update_time")]
-        public string UpdateTime { get; set; }
-
-        /// <summary>
-        /// Account Mode. CROSS_EXCHANGE: Cross-Exchange Mode; ISOLATED_EXCHANGE: Split-Exchange Mode
-        /// </summary>
-        /// <value>Account Mode. CROSS_EXCHANGE: Cross-Exchange Mode; ISOLATED_EXCHANGE: Split-Exchange Mode</value>
-        [DataMember(Name="account_mode")]
-        public string AccountMode { get; set; }
-
-        /// <summary>
-        /// Exchange Type. When account_mode is CROSS_EXCHANGE, it must be CROSSEX; otherwise, it is another exchange.
-        /// </summary>
-        /// <value>Exchange Type. When account_mode is CROSS_EXCHANGE, it must be CROSSEX; otherwise, it is another exchange.</value>
-        [DataMember(Name="exchange_type")]
-        public string ExchangeType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Assets
-        /// </summary>
-        [DataMember(Name="assets")]
-        public List<InlineResponse20033Assets> Assets { get; set; }
+        /// <value>Price</value>
+        [DataMember(Name="price")]
+        public string Price { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -186,20 +120,13 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20033 {\n");
-            sb.Append("  UserId: ").Append(UserId).Append("\n");
-            sb.Append("  AvailableMargin: ").Append(AvailableMargin).Append("\n");
-            sb.Append("  MarginBalance: ").Append(MarginBalance).Append("\n");
-            sb.Append("  InitialMargin: ").Append(InitialMargin).Append("\n");
-            sb.Append("  MaintenanceMargin: ").Append(MaintenanceMargin).Append("\n");
-            sb.Append("  InitialMarginRate: ").Append(InitialMarginRate).Append("\n");
-            sb.Append("  MaintenanceMarginRate: ").Append(MaintenanceMarginRate).Append("\n");
-            sb.Append("  PositionMode: ").Append(PositionMode).Append("\n");
-            sb.Append("  AccountLimit: ").Append(AccountLimit).Append("\n");
-            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  UpdateTime: ").Append(UpdateTime).Append("\n");
-            sb.Append("  AccountMode: ").Append(AccountMode).Append("\n");
-            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
-            sb.Append("  Assets: ").Append(Assets).Append("\n");
+            sb.Append("  QuoteId: ").Append(QuoteId).Append("\n");
+            sb.Append("  ValidMs: ").Append(ValidMs).Append("\n");
+            sb.Append("  FromCoin: ").Append(FromCoin).Append("\n");
+            sb.Append("  ToCoin: ").Append(ToCoin).Append("\n");
+            sb.Append("  FromAmount: ").Append(FromAmount).Append("\n");
+            sb.Append("  ToAmount: ").Append(ToAmount).Append("\n");
+            sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,75 +162,39 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
+                    this.QuoteId == input.QuoteId ||
+                    (this.QuoteId != null &&
+                    this.QuoteId.Equals(input.QuoteId))
                 ) && 
                 (
-                    this.AvailableMargin == input.AvailableMargin ||
-                    (this.AvailableMargin != null &&
-                    this.AvailableMargin.Equals(input.AvailableMargin))
+                    this.ValidMs == input.ValidMs ||
+                    (this.ValidMs != null &&
+                    this.ValidMs.Equals(input.ValidMs))
                 ) && 
                 (
-                    this.MarginBalance == input.MarginBalance ||
-                    (this.MarginBalance != null &&
-                    this.MarginBalance.Equals(input.MarginBalance))
+                    this.FromCoin == input.FromCoin ||
+                    (this.FromCoin != null &&
+                    this.FromCoin.Equals(input.FromCoin))
                 ) && 
                 (
-                    this.InitialMargin == input.InitialMargin ||
-                    (this.InitialMargin != null &&
-                    this.InitialMargin.Equals(input.InitialMargin))
+                    this.ToCoin == input.ToCoin ||
+                    (this.ToCoin != null &&
+                    this.ToCoin.Equals(input.ToCoin))
                 ) && 
                 (
-                    this.MaintenanceMargin == input.MaintenanceMargin ||
-                    (this.MaintenanceMargin != null &&
-                    this.MaintenanceMargin.Equals(input.MaintenanceMargin))
+                    this.FromAmount == input.FromAmount ||
+                    (this.FromAmount != null &&
+                    this.FromAmount.Equals(input.FromAmount))
                 ) && 
                 (
-                    this.InitialMarginRate == input.InitialMarginRate ||
-                    (this.InitialMarginRate != null &&
-                    this.InitialMarginRate.Equals(input.InitialMarginRate))
+                    this.ToAmount == input.ToAmount ||
+                    (this.ToAmount != null &&
+                    this.ToAmount.Equals(input.ToAmount))
                 ) && 
                 (
-                    this.MaintenanceMarginRate == input.MaintenanceMarginRate ||
-                    (this.MaintenanceMarginRate != null &&
-                    this.MaintenanceMarginRate.Equals(input.MaintenanceMarginRate))
-                ) && 
-                (
-                    this.PositionMode == input.PositionMode ||
-                    (this.PositionMode != null &&
-                    this.PositionMode.Equals(input.PositionMode))
-                ) && 
-                (
-                    this.AccountLimit == input.AccountLimit ||
-                    (this.AccountLimit != null &&
-                    this.AccountLimit.Equals(input.AccountLimit))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.AccountMode == input.AccountMode ||
-                    (this.AccountMode != null &&
-                    this.AccountMode.Equals(input.AccountMode))
-                ) && 
-                (
-                    this.ExchangeType == input.ExchangeType ||
-                    (this.ExchangeType != null &&
-                    this.ExchangeType.Equals(input.ExchangeType))
-                ) && 
-                (
-                    this.Assets == input.Assets ||
-                    this.Assets != null &&
-                    input.Assets != null &&
-                    this.Assets.SequenceEqual(input.Assets)
+                    this.Price == input.Price ||
+                    (this.Price != null &&
+                    this.Price.Equals(input.Price))
                 );
         }
 
@@ -316,34 +207,20 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.AvailableMargin != null)
-                    hashCode = hashCode * 59 + this.AvailableMargin.GetHashCode();
-                if (this.MarginBalance != null)
-                    hashCode = hashCode * 59 + this.MarginBalance.GetHashCode();
-                if (this.InitialMargin != null)
-                    hashCode = hashCode * 59 + this.InitialMargin.GetHashCode();
-                if (this.MaintenanceMargin != null)
-                    hashCode = hashCode * 59 + this.MaintenanceMargin.GetHashCode();
-                if (this.InitialMarginRate != null)
-                    hashCode = hashCode * 59 + this.InitialMarginRate.GetHashCode();
-                if (this.MaintenanceMarginRate != null)
-                    hashCode = hashCode * 59 + this.MaintenanceMarginRate.GetHashCode();
-                if (this.PositionMode != null)
-                    hashCode = hashCode * 59 + this.PositionMode.GetHashCode();
-                if (this.AccountLimit != null)
-                    hashCode = hashCode * 59 + this.AccountLimit.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.AccountMode != null)
-                    hashCode = hashCode * 59 + this.AccountMode.GetHashCode();
-                if (this.ExchangeType != null)
-                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
-                if (this.Assets != null)
-                    hashCode = hashCode * 59 + this.Assets.GetHashCode();
+                if (this.QuoteId != null)
+                    hashCode = hashCode * 59 + this.QuoteId.GetHashCode();
+                if (this.ValidMs != null)
+                    hashCode = hashCode * 59 + this.ValidMs.GetHashCode();
+                if (this.FromCoin != null)
+                    hashCode = hashCode * 59 + this.FromCoin.GetHashCode();
+                if (this.ToCoin != null)
+                    hashCode = hashCode * 59 + this.ToCoin.GetHashCode();
+                if (this.FromAmount != null)
+                    hashCode = hashCode * 59 + this.FromAmount.GetHashCode();
+                if (this.ToAmount != null)
+                    hashCode = hashCode * 59 + this.ToAmount.GetHashCode();
+                if (this.Price != null)
+                    hashCode = hashCode * 59 + this.Price.GetHashCode();
                 return hashCode;
             }
         }

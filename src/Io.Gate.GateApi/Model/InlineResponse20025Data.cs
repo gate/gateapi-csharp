@@ -25,39 +25,32 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20032
+    /// InlineResponse20025Data
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20032 :  IEquatable<InlineResponse20032>, IValidatableObject
+    public partial class InlineResponse20025Data :  IEquatable<InlineResponse20025Data>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20032" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20025Data" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineResponse20032() { }
+        protected InlineResponse20025Data() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20032" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20025Data" /> class.
         /// </summary>
-        /// <param name="orderId">orderId (required).</param>
-        /// <param name="text">text (required).</param>
-        public InlineResponse20032(decimal orderId = default(decimal), string text = default(string))
+        /// <param name="fileKey">File key (required).</param>
+        public InlineResponse20025Data(string fileKey = default(string))
         {
-            this.OrderId = orderId;
-            // to ensure "text" is required (not null)
-            this.Text = text ?? throw new ArgumentNullException("text", "text is a required property for InlineResponse20032 and cannot be null");
+            // to ensure "fileKey" is required (not null)
+            this.FileKey = fileKey ?? throw new ArgumentNullException("fileKey", "fileKey is a required property for InlineResponse20025Data and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets OrderId
+        /// File key
         /// </summary>
-        [DataMember(Name="order_id")]
-        public decimal OrderId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Text
-        /// </summary>
-        [DataMember(Name="text")]
-        public string Text { get; set; }
+        /// <value>File key</value>
+        [DataMember(Name="file_key")]
+        public string FileKey { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,9 +59,8 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20032 {\n");
-            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
-            sb.Append("  Text: ").Append(Text).Append("\n");
+            sb.Append("class InlineResponse20025Data {\n");
+            sb.Append("  FileKey: ").Append(FileKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -89,28 +81,24 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20032);
+            return this.Equals(input as InlineResponse20025Data);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20032 instances are equal
+        /// Returns true if InlineResponse20025Data instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20032 to be compared</param>
+        /// <param name="input">Instance of InlineResponse20025Data to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20032 input)
+        public bool Equals(InlineResponse20025Data input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.OrderId == input.OrderId ||
-                    this.OrderId.Equals(input.OrderId)
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
+                    this.FileKey == input.FileKey ||
+                    (this.FileKey != null &&
+                    this.FileKey.Equals(input.FileKey))
                 );
         }
 
@@ -123,9 +111,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.FileKey != null)
+                    hashCode = hashCode * 59 + this.FileKey.GetHashCode();
                 return hashCode;
             }
         }

@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Txid** | **int** | Order ID | 
-**Lastreceived** | **int** | Pagination timestamp (forward) | [optional] 
-**Firstreceived** | **int** | Pagination timestamp (backward) | [optional] 
+**Asset** | **string** | Cryptocurrency | 
+**FiatUnit** | **string** | Fiat currency | 
+**TradeType** | **string** | Buy/Sell, sell/buy | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

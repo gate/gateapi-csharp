@@ -33,36 +33,24 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject25" /> class.
         /// </summary>
-        /// <param name="positionMode">Futures position mode (SINGLE/DUAL).</param>
-        /// <param name="accountMode">Account mode (CROSS_EXCHANGE/ISOLATED_EXCHANGE, default: CROSS_EXCHANGE).</param>
-        /// <param name="exchangeType">Exchange (BINANCE/OKX/GATE/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode).</param>
-        public InlineObject25(string positionMode = default(string), string accountMode = default(string), string exchangeType = default(string))
+        [JsonConstructorAttribute]
+        protected InlineObject25() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineObject25" /> class.
+        /// </summary>
+        /// <param name="quoteId">Inquiry ID (required).</param>
+        public InlineObject25(string quoteId = default(string))
         {
-            this.PositionMode = positionMode;
-            this.AccountMode = accountMode;
-            this.ExchangeType = exchangeType;
+            // to ensure "quoteId" is required (not null)
+            this.QuoteId = quoteId ?? throw new ArgumentNullException("quoteId", "quoteId is a required property for InlineObject25 and cannot be null");
         }
 
         /// <summary>
-        /// Futures position mode (SINGLE/DUAL)
+        /// Inquiry ID
         /// </summary>
-        /// <value>Futures position mode (SINGLE/DUAL)</value>
-        [DataMember(Name="position_mode")]
-        public string PositionMode { get; set; }
-
-        /// <summary>
-        /// Account mode (CROSS_EXCHANGE/ISOLATED_EXCHANGE, default: CROSS_EXCHANGE)
-        /// </summary>
-        /// <value>Account mode (CROSS_EXCHANGE/ISOLATED_EXCHANGE, default: CROSS_EXCHANGE)</value>
-        [DataMember(Name="account_mode")]
-        public string AccountMode { get; set; }
-
-        /// <summary>
-        /// Exchange (BINANCE/OKX/GATE/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode)
-        /// </summary>
-        /// <value>Exchange (BINANCE/OKX/GATE/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode)</value>
-        [DataMember(Name="exchange_type")]
-        public string ExchangeType { get; set; }
+        /// <value>Inquiry ID</value>
+        [DataMember(Name="quote_id")]
+        public string QuoteId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -72,9 +60,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject25 {\n");
-            sb.Append("  PositionMode: ").Append(PositionMode).Append("\n");
-            sb.Append("  AccountMode: ").Append(AccountMode).Append("\n");
-            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
+            sb.Append("  QuoteId: ").Append(QuoteId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,19 +96,9 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.PositionMode == input.PositionMode ||
-                    (this.PositionMode != null &&
-                    this.PositionMode.Equals(input.PositionMode))
-                ) && 
-                (
-                    this.AccountMode == input.AccountMode ||
-                    (this.AccountMode != null &&
-                    this.AccountMode.Equals(input.AccountMode))
-                ) && 
-                (
-                    this.ExchangeType == input.ExchangeType ||
-                    (this.ExchangeType != null &&
-                    this.ExchangeType.Equals(input.ExchangeType))
+                    this.QuoteId == input.QuoteId ||
+                    (this.QuoteId != null &&
+                    this.QuoteId.Equals(input.QuoteId))
                 );
         }
 
@@ -135,12 +111,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PositionMode != null)
-                    hashCode = hashCode * 59 + this.PositionMode.GetHashCode();
-                if (this.AccountMode != null)
-                    hashCode = hashCode * 59 + this.AccountMode.GetHashCode();
-                if (this.ExchangeType != null)
-                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
+                if (this.QuoteId != null)
+                    hashCode = hashCode * 59 + this.QuoteId.GetHashCode();
                 return hashCode;
             }
         }

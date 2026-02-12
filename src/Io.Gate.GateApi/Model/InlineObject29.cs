@@ -25,52 +25,41 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20036SpecialFeeList
+    /// InlineObject29
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20036SpecialFeeList :  IEquatable<InlineResponse20036SpecialFeeList>, IValidatableObject
+    public partial class InlineObject29 :  IEquatable<InlineObject29>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20036SpecialFeeList" /> class.
+        /// Initializes a new instance of the <see cref="InlineObject29" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineResponse20036SpecialFeeList() { }
+        protected InlineObject29() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20036SpecialFeeList" /> class.
+        /// Initializes a new instance of the <see cref="InlineObject29" /> class.
         /// </summary>
-        /// <param name="symbol">Currency pair (required).</param>
-        /// <param name="takerFeeRate">Taker fee rate (required).</param>
-        /// <param name="makerFeeRate">Maker fee rate (required).</param>
-        public InlineResponse20036SpecialFeeList(string symbol = default(string), string takerFeeRate = default(string), string makerFeeRate = default(string))
+        /// <param name="symbol">Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT (required).</param>
+        /// <param name="positionSide">Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method.</param>
+        public InlineObject29(string symbol = default(string), string positionSide = default(string))
         {
             // to ensure "symbol" is required (not null)
-            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20036SpecialFeeList and cannot be null");
-            // to ensure "takerFeeRate" is required (not null)
-            this.TakerFeeRate = takerFeeRate ?? throw new ArgumentNullException("takerFeeRate", "takerFeeRate is a required property for InlineResponse20036SpecialFeeList and cannot be null");
-            // to ensure "makerFeeRate" is required (not null)
-            this.MakerFeeRate = makerFeeRate ?? throw new ArgumentNullException("makerFeeRate", "makerFeeRate is a required property for InlineResponse20036SpecialFeeList and cannot be null");
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineObject29 and cannot be null");
+            this.PositionSide = positionSide;
         }
 
         /// <summary>
-        /// Currency pair
+        /// Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT
         /// </summary>
-        /// <value>Currency pair</value>
+        /// <value>Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Taker fee rate
+        /// Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method
         /// </summary>
-        /// <value>Taker fee rate</value>
-        [DataMember(Name="taker_fee_rate")]
-        public string TakerFeeRate { get; set; }
-
-        /// <summary>
-        /// Maker fee rate
-        /// </summary>
-        /// <value>Maker fee rate</value>
-        [DataMember(Name="maker_fee_rate")]
-        public string MakerFeeRate { get; set; }
+        /// <value>Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method</value>
+        [DataMember(Name="position_side")]
+        public string PositionSide { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,10 +68,9 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20036SpecialFeeList {\n");
+            sb.Append("class InlineObject29 {\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  TakerFeeRate: ").Append(TakerFeeRate).Append("\n");
-            sb.Append("  MakerFeeRate: ").Append(MakerFeeRate).Append("\n");
+            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,15 +91,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20036SpecialFeeList);
+            return this.Equals(input as InlineObject29);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20036SpecialFeeList instances are equal
+        /// Returns true if InlineObject29 instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20036SpecialFeeList to be compared</param>
+        /// <param name="input">Instance of InlineObject29 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20036SpecialFeeList input)
+        public bool Equals(InlineObject29 input)
         {
             if (input == null)
                 return false;
@@ -123,14 +111,9 @@ namespace Io.Gate.GateApi.Model
                     this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.TakerFeeRate == input.TakerFeeRate ||
-                    (this.TakerFeeRate != null &&
-                    this.TakerFeeRate.Equals(input.TakerFeeRate))
-                ) && 
-                (
-                    this.MakerFeeRate == input.MakerFeeRate ||
-                    (this.MakerFeeRate != null &&
-                    this.MakerFeeRate.Equals(input.MakerFeeRate))
+                    this.PositionSide == input.PositionSide ||
+                    (this.PositionSide != null &&
+                    this.PositionSide.Equals(input.PositionSide))
                 );
         }
 
@@ -145,10 +128,8 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.Symbol != null)
                     hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.TakerFeeRate != null)
-                    hashCode = hashCode * 59 + this.TakerFeeRate.GetHashCode();
-                if (this.MakerFeeRate != null)
-                    hashCode = hashCode * 59 + this.MakerFeeRate.GetHashCode();
+                if (this.PositionSide != null)
+                    hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
                 return hashCode;
             }
         }

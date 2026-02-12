@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20036
+# Io.Gate.GateApi.Model.InlineResponse20047
 
 ## Properties
 
@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Coin** | **string** | Currency | 
 **ExchangeType** | **string** | Exchange | 
-**HourInterestRate** | **string** | Hourly Interest Rate | 
-**Time** | **string** | Millisecond Timestamp | 
+**Tier** | **string** | Tier | 
+**MinValue** | **string** | Minimum value | 
+**MaxValue** | **string** | Maximum value | 
+**DiscountRate** | **string** | Discount rate | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

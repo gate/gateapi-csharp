@@ -25,33 +25,52 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20026
+    /// InlineResponse20037SpecialFeeList
     /// </summary>
     [DataContract]
-    public partial class InlineResponse20026 :  IEquatable<InlineResponse20026>, IValidatableObject
+    public partial class InlineResponse20037SpecialFeeList :  IEquatable<InlineResponse20037SpecialFeeList>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20026" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20037SpecialFeeList" /> class.
         /// </summary>
-        /// <param name="symbol">symbol.</param>
-        /// <param name="tiers">tiers.</param>
-        public InlineResponse20026(string symbol = default(string), List<RuleRiskLimitsTiers> tiers = default(List<RuleRiskLimitsTiers>))
+        [JsonConstructorAttribute]
+        protected InlineResponse20037SpecialFeeList() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20037SpecialFeeList" /> class.
+        /// </summary>
+        /// <param name="symbol">Currency pair (required).</param>
+        /// <param name="takerFeeRate">Taker fee rate (required).</param>
+        /// <param name="makerFeeRate">Maker fee rate (required).</param>
+        public InlineResponse20037SpecialFeeList(string symbol = default(string), string takerFeeRate = default(string), string makerFeeRate = default(string))
         {
-            this.Symbol = symbol;
-            this.Tiers = tiers;
+            // to ensure "symbol" is required (not null)
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20037SpecialFeeList and cannot be null");
+            // to ensure "takerFeeRate" is required (not null)
+            this.TakerFeeRate = takerFeeRate ?? throw new ArgumentNullException("takerFeeRate", "takerFeeRate is a required property for InlineResponse20037SpecialFeeList and cannot be null");
+            // to ensure "makerFeeRate" is required (not null)
+            this.MakerFeeRate = makerFeeRate ?? throw new ArgumentNullException("makerFeeRate", "makerFeeRate is a required property for InlineResponse20037SpecialFeeList and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets Symbol
+        /// Currency pair
         /// </summary>
+        /// <value>Currency pair</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Gets or Sets Tiers
+        /// Taker fee rate
         /// </summary>
-        [DataMember(Name="tiers")]
-        public List<RuleRiskLimitsTiers> Tiers { get; set; }
+        /// <value>Taker fee rate</value>
+        [DataMember(Name="taker_fee_rate")]
+        public string TakerFeeRate { get; set; }
+
+        /// <summary>
+        /// Maker fee rate
+        /// </summary>
+        /// <value>Maker fee rate</value>
+        [DataMember(Name="maker_fee_rate")]
+        public string MakerFeeRate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,9 +79,10 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20026 {\n");
+            sb.Append("class InlineResponse20037SpecialFeeList {\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  Tiers: ").Append(Tiers).Append("\n");
+            sb.Append("  TakerFeeRate: ").Append(TakerFeeRate).Append("\n");
+            sb.Append("  MakerFeeRate: ").Append(MakerFeeRate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,15 +103,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse20026);
+            return this.Equals(input as InlineResponse20037SpecialFeeList);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20026 instances are equal
+        /// Returns true if InlineResponse20037SpecialFeeList instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse20026 to be compared</param>
+        /// <param name="input">Instance of InlineResponse20037SpecialFeeList to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20026 input)
+        public bool Equals(InlineResponse20037SpecialFeeList input)
         {
             if (input == null)
                 return false;
@@ -103,10 +123,14 @@ namespace Io.Gate.GateApi.Model
                     this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.Tiers == input.Tiers ||
-                    this.Tiers != null &&
-                    input.Tiers != null &&
-                    this.Tiers.SequenceEqual(input.Tiers)
+                    this.TakerFeeRate == input.TakerFeeRate ||
+                    (this.TakerFeeRate != null &&
+                    this.TakerFeeRate.Equals(input.TakerFeeRate))
+                ) && 
+                (
+                    this.MakerFeeRate == input.MakerFeeRate ||
+                    (this.MakerFeeRate != null &&
+                    this.MakerFeeRate.Equals(input.MakerFeeRate))
                 );
         }
 
@@ -121,8 +145,10 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.Symbol != null)
                     hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Tiers != null)
-                    hashCode = hashCode * 59 + this.Tiers.GetHashCode();
+                if (this.TakerFeeRate != null)
+                    hashCode = hashCode * 59 + this.TakerFeeRate.GetHashCode();
+                if (this.MakerFeeRate != null)
+                    hashCode = hashCode * 59 + this.MakerFeeRate.GetHashCode();
                 return hashCode;
             }
         }

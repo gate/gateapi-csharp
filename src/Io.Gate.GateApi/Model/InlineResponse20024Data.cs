@@ -38,19 +38,18 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20024Data" /> class.
         /// </summary>
-        /// <param name="fileKey">File key (required).</param>
-        public InlineResponse20024Data(string fileKey = default(string))
+        /// <param name="sRVTM">Timestamp when message was successfully sent (current timestamp) (required).</param>
+        public InlineResponse20024Data(int sRVTM = default(int))
         {
-            // to ensure "fileKey" is required (not null)
-            this.FileKey = fileKey ?? throw new ArgumentNullException("fileKey", "fileKey is a required property for InlineResponse20024Data and cannot be null");
+            this.SRVTM = sRVTM;
         }
 
         /// <summary>
-        /// File key
+        /// Timestamp when message was successfully sent (current timestamp)
         /// </summary>
-        /// <value>File key</value>
-        [DataMember(Name="file_key")]
-        public string FileKey { get; set; }
+        /// <value>Timestamp when message was successfully sent (current timestamp)</value>
+        [DataMember(Name="SRVTM")]
+        public int SRVTM { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,7 +59,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20024Data {\n");
-            sb.Append("  FileKey: ").Append(FileKey).Append("\n");
+            sb.Append("  SRVTM: ").Append(SRVTM).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,9 +95,8 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.FileKey == input.FileKey ||
-                    (this.FileKey != null &&
-                    this.FileKey.Equals(input.FileKey))
+                    this.SRVTM == input.SRVTM ||
+                    this.SRVTM.Equals(input.SRVTM)
                 );
         }
 
@@ -111,8 +109,7 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.FileKey != null)
-                    hashCode = hashCode * 59 + this.FileKey.GetHashCode();
+                hashCode = hashCode * 59 + this.SRVTM.GetHashCode();
                 return hashCode;
             }
         }
