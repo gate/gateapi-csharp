@@ -7,7 +7,7 @@ Option orders
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OptionsName** | **string** | Option name, currently only supports USDT options for BTC and ETH | 
+**OptionsName** | **string** | Options contract name. Currently supports all options contract markets. | 
 **Size** | **string** | Initial order quantity, not involved in actual calculation | 
 **Left** | **string** | Unfilled contract quantity, involved in actual calculation | 
 

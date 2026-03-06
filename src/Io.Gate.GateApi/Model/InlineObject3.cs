@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineObject3
+    /// Modify order price and take profit/stop loss parameters
     /// </summary>
     [DataContract]
     public partial class InlineObject3 :  IEquatable<InlineObject3>, IValidatableObject
@@ -33,72 +33,42 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject3" /> class.
         /// </summary>
-        /// <param name="payCoin">Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page..</param>
-        /// <param name="getCoin">Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page..</param>
-        /// <param name="payAmount">User payment currency amount.</param>
-        /// <param name="getAmount">Amount of currency received by the user.</param>
-        /// <param name="side">Quote direction returned by the quote API (used for order validation).</param>
-        /// <param name="promotionCode">promotion code .</param>
-        /// <param name="quoteToken">Parameter returned by the quote API.</param>
-        public InlineObject3(string payCoin = default(string), string getCoin = default(string), string payAmount = default(string), string getAmount = default(string), string side = default(string), string promotionCode = default(string), string quoteToken = default(string))
+        [JsonConstructorAttribute]
+        protected InlineObject3() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineObject3" /> class.
+        /// </summary>
+        /// <param name="price">Price Description: - Required (required).</param>
+        /// <param name="priceTp">Take Profit Price Description: - If not provided or set to \&quot;0\&quot;: The original take profit price will be cleared - If you do not want to clear it, pass the original take profit price returned by the interface.</param>
+        /// <param name="priceSl">Stop Loss Price Description: - If not provided or set to \&quot;0\&quot;: The original stop loss price will be cleared - If you do not want to clear it, pass the original stop loss price returned by the interface.</param>
+        public InlineObject3(string price = default(string), string priceTp = default(string), string priceSl = default(string))
         {
-            this.PayCoin = payCoin;
-            this.GetCoin = getCoin;
-            this.PayAmount = payAmount;
-            this.GetAmount = getAmount;
-            this.Side = side;
-            this.PromotionCode = promotionCode;
-            this.QuoteToken = quoteToken;
+            // to ensure "price" is required (not null)
+            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineObject3 and cannot be null");
+            this.PriceTp = priceTp;
+            this.PriceSl = priceSl;
         }
 
         /// <summary>
-        /// Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page.
+        /// Price Description: - Required
         /// </summary>
-        /// <value>Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page.</value>
-        [DataMember(Name="pay_coin")]
-        public string PayCoin { get; set; }
+        /// <value>Price Description: - Required</value>
+        [DataMember(Name="price")]
+        public string Price { get; set; }
 
         /// <summary>
-        /// Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page.
+        /// Take Profit Price Description: - If not provided or set to \&quot;0\&quot;: The original take profit price will be cleared - If you do not want to clear it, pass the original take profit price returned by the interface
         /// </summary>
-        /// <value>Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page.</value>
-        [DataMember(Name="get_coin")]
-        public string GetCoin { get; set; }
+        /// <value>Take Profit Price Description: - If not provided or set to \&quot;0\&quot;: The original take profit price will be cleared - If you do not want to clear it, pass the original take profit price returned by the interface</value>
+        [DataMember(Name="price_tp")]
+        public string PriceTp { get; set; }
 
         /// <summary>
-        /// User payment currency amount
+        /// Stop Loss Price Description: - If not provided or set to \&quot;0\&quot;: The original stop loss price will be cleared - If you do not want to clear it, pass the original stop loss price returned by the interface
         /// </summary>
-        /// <value>User payment currency amount</value>
-        [DataMember(Name="pay_amount")]
-        public string PayAmount { get; set; }
-
-        /// <summary>
-        /// Amount of currency received by the user
-        /// </summary>
-        /// <value>Amount of currency received by the user</value>
-        [DataMember(Name="get_amount")]
-        public string GetAmount { get; set; }
-
-        /// <summary>
-        /// Quote direction returned by the quote API (used for order validation)
-        /// </summary>
-        /// <value>Quote direction returned by the quote API (used for order validation)</value>
-        [DataMember(Name="side")]
-        public string Side { get; set; }
-
-        /// <summary>
-        /// promotion code 
-        /// </summary>
-        /// <value>promotion code </value>
-        [DataMember(Name="promotion_code")]
-        public string PromotionCode { get; set; }
-
-        /// <summary>
-        /// Parameter returned by the quote API
-        /// </summary>
-        /// <value>Parameter returned by the quote API</value>
-        [DataMember(Name="quote_token")]
-        public string QuoteToken { get; set; }
+        /// <value>Stop Loss Price Description: - If not provided or set to \&quot;0\&quot;: The original stop loss price will be cleared - If you do not want to clear it, pass the original stop loss price returned by the interface</value>
+        [DataMember(Name="price_sl")]
+        public string PriceSl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -108,13 +78,9 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject3 {\n");
-            sb.Append("  PayCoin: ").Append(PayCoin).Append("\n");
-            sb.Append("  GetCoin: ").Append(GetCoin).Append("\n");
-            sb.Append("  PayAmount: ").Append(PayAmount).Append("\n");
-            sb.Append("  GetAmount: ").Append(GetAmount).Append("\n");
-            sb.Append("  Side: ").Append(Side).Append("\n");
-            sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
-            sb.Append("  QuoteToken: ").Append(QuoteToken).Append("\n");
+            sb.Append("  Price: ").Append(Price).Append("\n");
+            sb.Append("  PriceTp: ").Append(PriceTp).Append("\n");
+            sb.Append("  PriceSl: ").Append(PriceSl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -150,39 +116,19 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.PayCoin == input.PayCoin ||
-                    (this.PayCoin != null &&
-                    this.PayCoin.Equals(input.PayCoin))
+                    this.Price == input.Price ||
+                    (this.Price != null &&
+                    this.Price.Equals(input.Price))
                 ) && 
                 (
-                    this.GetCoin == input.GetCoin ||
-                    (this.GetCoin != null &&
-                    this.GetCoin.Equals(input.GetCoin))
+                    this.PriceTp == input.PriceTp ||
+                    (this.PriceTp != null &&
+                    this.PriceTp.Equals(input.PriceTp))
                 ) && 
                 (
-                    this.PayAmount == input.PayAmount ||
-                    (this.PayAmount != null &&
-                    this.PayAmount.Equals(input.PayAmount))
-                ) && 
-                (
-                    this.GetAmount == input.GetAmount ||
-                    (this.GetAmount != null &&
-                    this.GetAmount.Equals(input.GetAmount))
-                ) && 
-                (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
-                ) && 
-                (
-                    this.PromotionCode == input.PromotionCode ||
-                    (this.PromotionCode != null &&
-                    this.PromotionCode.Equals(input.PromotionCode))
-                ) && 
-                (
-                    this.QuoteToken == input.QuoteToken ||
-                    (this.QuoteToken != null &&
-                    this.QuoteToken.Equals(input.QuoteToken))
+                    this.PriceSl == input.PriceSl ||
+                    (this.PriceSl != null &&
+                    this.PriceSl.Equals(input.PriceSl))
                 );
         }
 
@@ -195,20 +141,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PayCoin != null)
-                    hashCode = hashCode * 59 + this.PayCoin.GetHashCode();
-                if (this.GetCoin != null)
-                    hashCode = hashCode * 59 + this.GetCoin.GetHashCode();
-                if (this.PayAmount != null)
-                    hashCode = hashCode * 59 + this.PayAmount.GetHashCode();
-                if (this.GetAmount != null)
-                    hashCode = hashCode * 59 + this.GetAmount.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.PromotionCode != null)
-                    hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
-                if (this.QuoteToken != null)
-                    hashCode = hashCode * 59 + this.QuoteToken.GetHashCode();
+                if (this.Price != null)
+                    hashCode = hashCode * 59 + this.Price.GetHashCode();
+                if (this.PriceTp != null)
+                    hashCode = hashCode * 59 + this.PriceTp.GetHashCode();
+                if (this.PriceSl != null)
+                    hashCode = hashCode * 59 + this.PriceSl.GetHashCode();
                 return hashCode;
             }
         }

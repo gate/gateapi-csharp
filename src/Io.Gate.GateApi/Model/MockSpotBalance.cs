@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="MockSpotBalance" /> class.
         /// </summary>
         /// <param name="currency">Currency name (required).</param>
-        /// <param name="equity">Currency equity, where equity &#x3D; balance - borrowed, represents the net delta exposure of your spot positions, which can be negative. Currently only supports BTC and ETH (required).</param>
+        /// <param name="equity">Currency equity, where equity &#x3D; balance - borrowed, represents the net delta exposure of your spot positions (required).</param>
         public MockSpotBalance(string currency = default(string), string equity = default(string))
         {
             // to ensure "currency" is required (not null)
@@ -56,9 +56,9 @@ namespace Io.Gate.GateApi.Model
         public string Currency { get; set; }
 
         /// <summary>
-        /// Currency equity, where equity &#x3D; balance - borrowed, represents the net delta exposure of your spot positions, which can be negative. Currently only supports BTC and ETH
+        /// Currency equity, where equity &#x3D; balance - borrowed, represents the net delta exposure of your spot positions
         /// </summary>
-        /// <value>Currency equity, where equity &#x3D; balance - borrowed, represents the net delta exposure of your spot positions, which can be negative. Currently only supports BTC and ETH</value>
+        /// <value>Currency equity, where equity &#x3D; balance - borrowed, represents the net delta exposure of your spot positions</value>
         [DataMember(Name="equity")]
         public string Equity { get; set; }
 

@@ -38,27 +38,58 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject10" /> class.
         /// </summary>
-        /// <param name="tradeId">tradeId (required).</param>
-        /// <param name="paymentMethod">paymentMethod (required).</param>
-        public InlineObject10(string tradeId = default(string), string paymentMethod = default(string))
+        /// <param name="coin">Currency (required).</param>
+        /// <param name="amount">Transfer amount (required).</param>
+        /// <param name="from">Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT (required).</param>
+        /// <param name="to">Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT (required).</param>
+        /// <param name="text">User-defined ID.</param>
+        public InlineObject10(string coin = default(string), string amount = default(string), string from = default(string), string to = default(string), string text = default(string))
         {
-            // to ensure "tradeId" is required (not null)
-            this.TradeId = tradeId ?? throw new ArgumentNullException("tradeId", "tradeId is a required property for InlineObject10 and cannot be null");
-            // to ensure "paymentMethod" is required (not null)
-            this.PaymentMethod = paymentMethod ?? throw new ArgumentNullException("paymentMethod", "paymentMethod is a required property for InlineObject10 and cannot be null");
+            // to ensure "coin" is required (not null)
+            this.Coin = coin ?? throw new ArgumentNullException("coin", "coin is a required property for InlineObject10 and cannot be null");
+            // to ensure "amount" is required (not null)
+            this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for InlineObject10 and cannot be null");
+            // to ensure "from" is required (not null)
+            this.From = from ?? throw new ArgumentNullException("from", "from is a required property for InlineObject10 and cannot be null");
+            // to ensure "to" is required (not null)
+            this.To = to ?? throw new ArgumentNullException("to", "to is a required property for InlineObject10 and cannot be null");
+            this.Text = text;
         }
 
         /// <summary>
-        /// Gets or Sets TradeId
+        /// Currency
         /// </summary>
-        [DataMember(Name="trade_id")]
-        public string TradeId { get; set; }
+        /// <value>Currency</value>
+        [DataMember(Name="coin")]
+        public string Coin { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentMethod
+        /// Transfer amount
         /// </summary>
-        [DataMember(Name="payment_method")]
-        public string PaymentMethod { get; set; }
+        /// <value>Transfer amount</value>
+        [DataMember(Name="amount")]
+        public string Amount { get; set; }
+
+        /// <summary>
+        /// Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT
+        /// </summary>
+        /// <value>Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT</value>
+        [DataMember(Name="from")]
+        public string From { get; set; }
+
+        /// <summary>
+        /// Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT
+        /// </summary>
+        /// <value>Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT</value>
+        [DataMember(Name="to")]
+        public string To { get; set; }
+
+        /// <summary>
+        /// User-defined ID
+        /// </summary>
+        /// <value>User-defined ID</value>
+        [DataMember(Name="text")]
+        public string Text { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,8 +99,11 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject10 {\n");
-            sb.Append("  TradeId: ").Append(TradeId).Append("\n");
-            sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  Coin: ").Append(Coin).Append("\n");
+            sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  From: ").Append(From).Append("\n");
+            sb.Append("  To: ").Append(To).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,14 +139,29 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.TradeId == input.TradeId ||
-                    (this.TradeId != null &&
-                    this.TradeId.Equals(input.TradeId))
+                    this.Coin == input.Coin ||
+                    (this.Coin != null &&
+                    this.Coin.Equals(input.Coin))
                 ) && 
                 (
-                    this.PaymentMethod == input.PaymentMethod ||
-                    (this.PaymentMethod != null &&
-                    this.PaymentMethod.Equals(input.PaymentMethod))
+                    this.Amount == input.Amount ||
+                    (this.Amount != null &&
+                    this.Amount.Equals(input.Amount))
+                ) && 
+                (
+                    this.From == input.From ||
+                    (this.From != null &&
+                    this.From.Equals(input.From))
+                ) && 
+                (
+                    this.To == input.To ||
+                    (this.To != null &&
+                    this.To.Equals(input.To))
+                ) && 
+                (
+                    this.Text == input.Text ||
+                    (this.Text != null &&
+                    this.Text.Equals(input.Text))
                 );
         }
 
@@ -125,10 +174,16 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TradeId != null)
-                    hashCode = hashCode * 59 + this.TradeId.GetHashCode();
-                if (this.PaymentMethod != null)
-                    hashCode = hashCode * 59 + this.PaymentMethod.GetHashCode();
+                if (this.Coin != null)
+                    hashCode = hashCode * 59 + this.Coin.GetHashCode();
+                if (this.Amount != null)
+                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
+                if (this.From != null)
+                    hashCode = hashCode * 59 + this.From.GetHashCode();
+                if (this.To != null)
+                    hashCode = hashCode * 59 + this.To.GetHashCode();
+                if (this.Text != null)
+                    hashCode = hashCode * 59 + this.Text.GetHashCode();
                 return hashCode;
             }
         }

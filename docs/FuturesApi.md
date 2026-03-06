@@ -66,8 +66,8 @@ Method | HTTP request | Description
 [**CreatePriceTriggeredOrder**](FuturesApi.md#createpricetriggeredorder) | **POST** /futures/{settle}/price_orders | Create price-triggered order
 [**CancelPriceTriggeredOrderList**](FuturesApi.md#cancelpricetriggeredorderlist) | **DELETE** /futures/{settle}/price_orders | Cancel all auto orders
 [**GetPriceTriggeredOrder**](FuturesApi.md#getpricetriggeredorder) | **GET** /futures/{settle}/price_orders/{order_id} | Query single auto order details
-[**UpdatePriceTriggeredOrder**](FuturesApi.md#updatepricetriggeredorder) | **PUT** /futures/{settle}/price_orders/{order_id} | Modify a Single Auto Order
 [**CancelPriceTriggeredOrder**](FuturesApi.md#cancelpricetriggeredorder) | **DELETE** /futures/{settle}/price_orders/{order_id} | Cancel single auto order
+[**UpdatePriceTriggeredOrder**](FuturesApi.md#updatepricetriggeredorder) | **PUT** /futures/{settle}/price_orders/amend/{order_id} | Modify a Single Auto Order
 
 
 <a name="listfuturescontracts"></a>
@@ -4779,7 +4779,7 @@ Name | Type | Description  | Notes
 
 <a name="getpricetriggeredorder"></a>
 # **GetPriceTriggeredOrder**
-> FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, string orderId)
+> FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, int orderId)
 
 Query single auto order details
 
@@ -4803,7 +4803,7 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
-            var orderId = "orderId_example";  // string | ID returned when order is successfully created
+            var orderId = 56;  // int | ID returned when order is successfully created
 
             try
             {
@@ -4828,7 +4828,80 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
- **orderId** | **string**| ID returned when order is successfully created | 
+ **orderId** | **int**| ID returned when order is successfully created | 
+
+### Return type
+
+[**FuturesPriceTriggeredOrder**](FuturesPriceTriggeredOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Auto order details |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="cancelpricetriggeredorder"></a>
+# **CancelPriceTriggeredOrder**
+> FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, int orderId)
+
+Cancel single auto order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CancelPriceTriggeredOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var orderId = 56;  // int | ID returned when order is successfully created
+
+            try
+            {
+                // Cancel single auto order
+                FuturesPriceTriggeredOrder result = apiInstance.CancelPriceTriggeredOrder(settle, orderId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.CancelPriceTriggeredOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **orderId** | **int**| ID returned when order is successfully created | 
 
 ### Return type
 
@@ -4852,7 +4925,7 @@ Name | Type | Description  | Notes
 
 <a name="updatepricetriggeredorder"></a>
 # **UpdatePriceTriggeredOrder**
-> TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+> TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
 
 Modify a Single Auto Order
 
@@ -4876,7 +4949,7 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
-            var orderId = "orderId_example";  // string | ID returned when order is successfully created
+            var orderId = 56;  // int | ID returned when order is successfully created
             var futuresUpdatePriceTriggeredOrder = new FuturesUpdatePriceTriggeredOrder(); // FuturesUpdatePriceTriggeredOrder | 
 
             try
@@ -4902,7 +4975,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
- **orderId** | **string**| ID returned when order is successfully created | 
+ **orderId** | **int**| ID returned when order is successfully created | 
  **futuresUpdatePriceTriggeredOrder** | [**FuturesUpdatePriceTriggeredOrder**](FuturesUpdatePriceTriggeredOrder.md)|  | 
 
 ### Return type
@@ -4922,79 +4995,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Order created successfully |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="cancelpricetriggeredorder"></a>
-# **CancelPriceTriggeredOrder**
-> FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, string orderId)
-
-Cancel single auto order
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Io.Gate.GateApi.Api;
-using Io.Gate.GateApi.Client;
-using Io.Gate.GateApi.Model;
-
-namespace Example
-{
-    public class CancelPriceTriggeredOrderExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.gateio.ws/api/v4";
-            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
-
-            var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
-            var orderId = "orderId_example";  // string | ID returned when order is successfully created
-
-            try
-            {
-                // Cancel single auto order
-                FuturesPriceTriggeredOrder result = apiInstance.CancelPriceTriggeredOrder(settle, orderId);
-                Debug.WriteLine(result);
-            }
-            catch (GateApiException e)
-            {
-                Debug.Print("Exception when calling FuturesApi.CancelPriceTriggeredOrder: " + e.Message);
-                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
- **orderId** | **string**| ID returned when order is successfully created | 
-
-### Return type
-
-[**FuturesPriceTriggeredOrder**](FuturesPriceTriggeredOrder.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Auto order details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

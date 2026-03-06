@@ -7,7 +7,7 @@ Options positions
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OptionsName** | **string** | Option name, currently only supports USDT options for BTC and ETH | 
+**OptionsName** | **string** | Options contract name. Currently supports all options contract markets. | 
 **Size** | **string** | Position size, measured in contract quantity | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

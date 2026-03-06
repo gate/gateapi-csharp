@@ -25,11 +25,36 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineObject5
+    /// Close position request parameters
     /// </summary>
     [DataContract]
     public partial class InlineObject5 :  IEquatable<InlineObject5>, IValidatableObject
     {
+        /// <summary>
+        /// 平仓类型  说明： - 1：部分平仓（必须传 close_volume） - 2：全平（无需传 close_volume）
+        /// </summary>
+        /// <value>平仓类型  说明： - 1：部分平仓（必须传 close_volume） - 2：全平（无需传 close_volume）</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CloseTypeEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1,
+
+            /// <summary>
+            /// Enum value NUMBER_2
+            /// </summary>
+            NUMBER_2 = 2
+
+        }
+
+        /// <summary>
+        /// 平仓类型  说明： - 1：部分平仓（必须传 close_volume） - 2：全平（无需传 close_volume）
+        /// </summary>
+        /// <value>平仓类型  说明： - 1：部分平仓（必须传 close_volume） - 2：全平（无需传 close_volume）</value>
+        [DataMember(Name="close_type")]
+        public CloseTypeEnum CloseType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject5" /> class.
         /// </summary>
@@ -38,19 +63,20 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject5" /> class.
         /// </summary>
-        /// <param name="bizUid">Counterparty UID (encrypted) (required).</param>
-        public InlineObject5(string bizUid = default(string))
+        /// <param name="closeType">平仓类型  说明： - 1：部分平仓（必须传 close_volume） - 2：全平（无需传 close_volume） (required).</param>
+        /// <param name="closeVolume">平仓数量  说明： - 当 close_type &#x3D; 1 时必传 - 当 close_type &#x3D; 2 时忽略该字段.</param>
+        public InlineObject5(CloseTypeEnum closeType = default(CloseTypeEnum), string closeVolume = default(string))
         {
-            // to ensure "bizUid" is required (not null)
-            this.BizUid = bizUid ?? throw new ArgumentNullException("bizUid", "bizUid is a required property for InlineObject5 and cannot be null");
+            this.CloseType = closeType;
+            this.CloseVolume = closeVolume;
         }
 
         /// <summary>
-        /// Counterparty UID (encrypted)
+        /// 平仓数量  说明： - 当 close_type &#x3D; 1 时必传 - 当 close_type &#x3D; 2 时忽略该字段
         /// </summary>
-        /// <value>Counterparty UID (encrypted)</value>
-        [DataMember(Name="biz_uid")]
-        public string BizUid { get; set; }
+        /// <value>平仓数量  说明： - 当 close_type &#x3D; 1 时必传 - 当 close_type &#x3D; 2 时忽略该字段</value>
+        [DataMember(Name="close_volume")]
+        public string CloseVolume { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,7 +86,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject5 {\n");
-            sb.Append("  BizUid: ").Append(BizUid).Append("\n");
+            sb.Append("  CloseType: ").Append(CloseType).Append("\n");
+            sb.Append("  CloseVolume: ").Append(CloseVolume).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,9 +123,13 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.BizUid == input.BizUid ||
-                    (this.BizUid != null &&
-                    this.BizUid.Equals(input.BizUid))
+                    this.CloseType == input.CloseType ||
+                    this.CloseType.Equals(input.CloseType)
+                ) && 
+                (
+                    this.CloseVolume == input.CloseVolume ||
+                    (this.CloseVolume != null &&
+                    this.CloseVolume.Equals(input.CloseVolume))
                 );
         }
 
@@ -111,8 +142,9 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.BizUid != null)
-                    hashCode = hashCode * 59 + this.BizUid.GetHashCode();
+                hashCode = hashCode * 59 + this.CloseType.GetHashCode();
+                if (this.CloseVolume != null)
+                    hashCode = hashCode * 59 + this.CloseVolume.GetHashCode();
                 return hashCode;
             }
         }

@@ -67,17 +67,18 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesUpdatePriceTriggeredOrder" /> class.
         /// </summary>
-        /// <param name="orderId">The order ID of the modified price-triggered order. This ID is returned upon successful creation of the price-triggered order. Note: This ID must be passed in both the request path and request body. (required).</param>
+        /// <param name="settle">Settlement Currency (e.g., USDT, BTC).</param>
+        /// <param name="orderId">ID of the Pending Take-Profit/Stop-Loss Trigger Order (required).</param>
         /// <param name="size">Modified Contract Quantity. Full Close: 0; Partial Close: Positive/Negative values indicate direction (consistent with the creation interface logic)..</param>
         /// <param name="price">Represents the modified trading price. A value of 0 indicates a market order..</param>
         /// <param name="triggerPrice">Modified Trigger Price.</param>
         /// <param name="priceType">Reference price type. 0 - Latest trade price, 1 - Mark price, 2 - Index price.</param>
         /// <param name="autoSize">One-way Mode: auto_size is not required Hedge Mode partial closing (size≠0): auto_size is not required Hedge Mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions.</param>
         /// <param name="close">When fully closing a position in single-position mode, close must be set to true to execute the close operation. When partially closing a position in single-position mode or in dual-position mode, close can be left unset or set to false..</param>
-        public FuturesUpdatePriceTriggeredOrder(string orderId = default(string), long size = default(long), string price = default(string), string triggerPrice = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), string autoSize = default(string), bool close = default(bool))
+        public FuturesUpdatePriceTriggeredOrder(string settle = default(string), int orderId = default(int), long size = default(long), string price = default(string), string triggerPrice = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), string autoSize = default(string), bool close = default(bool))
         {
-            // to ensure "orderId" is required (not null)
-            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for FuturesUpdatePriceTriggeredOrder and cannot be null");
+            this.OrderId = orderId;
+            this.Settle = settle;
             this.Size = size;
             this.Price = price;
             this.TriggerPrice = triggerPrice;
@@ -90,15 +91,15 @@ namespace Io.Gate.GateApi.Model
         /// Settlement Currency (e.g., USDT, BTC)
         /// </summary>
         /// <value>Settlement Currency (e.g., USDT, BTC)</value>
-        [DataMember(Name="settle", EmitDefaultValue=false)]
-        public string Settle { get; private set; }
+        [DataMember(Name="settle")]
+        public string Settle { get; set; }
 
         /// <summary>
-        /// The order ID of the modified price-triggered order. This ID is returned upon successful creation of the price-triggered order. Note: This ID must be passed in both the request path and request body.
+        /// ID of the Pending Take-Profit/Stop-Loss Trigger Order
         /// </summary>
-        /// <value>The order ID of the modified price-triggered order. This ID is returned upon successful creation of the price-triggered order. Note: This ID must be passed in both the request path and request body.</value>
+        /// <value>ID of the Pending Take-Profit/Stop-Loss Trigger Order</value>
         [DataMember(Name="order_id")]
-        public string OrderId { get; set; }
+        public int OrderId { get; set; }
 
         /// <summary>
         /// Modified Contract Quantity. Full Close: 0; Partial Close: Positive/Negative values indicate direction (consistent with the creation interface logic).
@@ -192,8 +193,7 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
+                    this.OrderId.Equals(input.OrderId)
                 ) && 
                 (
                     this.Size == input.Size ||
@@ -235,8 +235,7 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.Settle != null)
                     hashCode = hashCode * 59 + this.Settle.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();

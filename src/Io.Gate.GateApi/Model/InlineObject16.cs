@@ -33,36 +33,34 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject16" /> class.
         /// </summary>
-        /// <param name="asset">Cryptocurrency.</param>
-        /// <param name="fiatUnit">Fiat currency.</param>
-        /// <param name="tradeType">Buy/Sell.</param>
-        public InlineObject16(string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
+        [JsonConstructorAttribute]
+        protected InlineObject16() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineObject16" /> class.
+        /// </summary>
+        /// <param name="symbol">Currency pair (required).</param>
+        /// <param name="leverage">leverage (required).</param>
+        public InlineObject16(string symbol = default(string), string leverage = default(string))
         {
-            this.Asset = asset;
-            this.FiatUnit = fiatUnit;
-            this.TradeType = tradeType;
+            // to ensure "symbol" is required (not null)
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineObject16 and cannot be null");
+            // to ensure "leverage" is required (not null)
+            this.Leverage = leverage ?? throw new ArgumentNullException("leverage", "leverage is a required property for InlineObject16 and cannot be null");
         }
 
         /// <summary>
-        /// Cryptocurrency
+        /// Currency pair
         /// </summary>
-        /// <value>Cryptocurrency</value>
-        [DataMember(Name="asset")]
-        public string Asset { get; set; }
+        /// <value>Currency pair</value>
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
 
         /// <summary>
-        /// Fiat currency
+        /// leverage
         /// </summary>
-        /// <value>Fiat currency</value>
-        [DataMember(Name="fiat_unit")]
-        public string FiatUnit { get; set; }
-
-        /// <summary>
-        /// Buy/Sell
-        /// </summary>
-        /// <value>Buy/Sell</value>
-        [DataMember(Name="trade_type")]
-        public string TradeType { get; set; }
+        /// <value>leverage</value>
+        [DataMember(Name="leverage")]
+        public string Leverage { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -72,9 +70,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject16 {\n");
-            sb.Append("  Asset: ").Append(Asset).Append("\n");
-            sb.Append("  FiatUnit: ").Append(FiatUnit).Append("\n");
-            sb.Append("  TradeType: ").Append(TradeType).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
+            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,19 +107,14 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Asset == input.Asset ||
-                    (this.Asset != null &&
-                    this.Asset.Equals(input.Asset))
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.FiatUnit == input.FiatUnit ||
-                    (this.FiatUnit != null &&
-                    this.FiatUnit.Equals(input.FiatUnit))
-                ) && 
-                (
-                    this.TradeType == input.TradeType ||
-                    (this.TradeType != null &&
-                    this.TradeType.Equals(input.TradeType))
+                    this.Leverage == input.Leverage ||
+                    (this.Leverage != null &&
+                    this.Leverage.Equals(input.Leverage))
                 );
         }
 
@@ -135,12 +127,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Asset != null)
-                    hashCode = hashCode * 59 + this.Asset.GetHashCode();
-                if (this.FiatUnit != null)
-                    hashCode = hashCode * 59 + this.FiatUnit.GetHashCode();
-                if (this.TradeType != null)
-                    hashCode = hashCode * 59 + this.TradeType.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                if (this.Leverage != null)
+                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
                 return hashCode;
             }
         }

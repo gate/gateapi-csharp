@@ -33,87 +33,67 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20014Data" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20014Data() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20014Data" /> class.
-        /// </summary>
-        /// <param name="isSelf">Whether self (required).</param>
-        /// <param name="userTimest">User registration time (formatted string) (required).</param>
-        /// <param name="counterpartiesNum">Number of counterparties (required).</param>
-        /// <param name="emailVerified">Whether email is verified (required).</param>
-        /// <param name="verified">Whether KYC verification is completed (required).</param>
-        /// <param name="hasPhone">Whether phone is bound (required).</param>
-        /// <param name="userName">Username (required).</param>
-        /// <param name="userNote">User note information (required).</param>
-        /// <param name="completeTransactions">Total completed orders (required).</param>
-        /// <param name="paidTransactions">Number of completed buy orders (required).</param>
-        /// <param name="acceptedTransactions">Number of completed sell orders (required).</param>
-        /// <param name="transactionsUsedTime">Average time to confirm receipt (required).</param>
-        /// <param name="cancelledUsedTimeMonth">Cancellation time in last 30 days (required).</param>
-        /// <param name="completeTransactionsMonth">Number of completed orders in last 30 days (required).</param>
-        /// <param name="completeRateMonth">Completion rate in last 30 days (required).</param>
-        /// <param name="ordersBuyRateMonth">Buy order ratio in last 30 days (required).</param>
-        /// <param name="isBlack">Whether blocked (required).</param>
-        /// <param name="isFollow">Whether following (required).</param>
-        /// <param name="haveTraded">Whether traded with self (required).</param>
-        /// <param name="bizUid">Encrypted UID (required).</param>
-        /// <param name="blueVip">Blue V Crown Shield (required).</param>
-        /// <param name="workStatus">Merchant work status (required).</param>
-        /// <param name="registrationDays">Registration days (required).</param>
-        /// <param name="firstTradeDays">Days since first trade (required).</param>
-        /// <param name="needReplenish">Whether margin replenishment is needed (required).</param>
-        /// <param name="merchantInfo">merchantInfo (required).</param>
-        /// <param name="onlineStatus">Merchant online status (required).</param>
-        /// <param name="workHours">Merchant online status details (required).</param>
-        /// <param name="transactionsMonth">30-day transaction volume (required).</param>
-        /// <param name="transactionsAll">Total transaction volume (required).</param>
-        /// <param name="tradeVersatile">Single user or composite user (required).</param>
-        public InlineResponse20014Data(bool isSelf = default(bool), string userTimest = default(string), int counterpartiesNum = default(int), string emailVerified = default(string), string verified = default(string), string hasPhone = default(string), string userName = default(string), string userNote = default(string), string completeTransactions = default(string), string paidTransactions = default(string), string acceptedTransactions = default(string), string transactionsUsedTime = default(string), string cancelledUsedTimeMonth = default(string), string completeTransactionsMonth = default(string), int completeRateMonth = default(int), int ordersBuyRateMonth = default(int), int isBlack = default(int), int isFollow = default(int), int haveTraded = default(int), string bizUid = default(string), int blueVip = default(int), int workStatus = default(int), int registrationDays = default(int), int firstTradeDays = default(int), int needReplenish = default(int), InlineResponse20014DataMerchantInfo merchantInfo = default(InlineResponse20014DataMerchantInfo), int onlineStatus = default(int), Object workHours = default(Object), int transactionsMonth = default(int), int transactionsAll = default(int), bool tradeVersatile = default(bool))
+        /// <param name="isSelf">Whether self.</param>
+        /// <param name="userTimest">User registration time (formatted string).</param>
+        /// <param name="counterpartiesNum">Number of counterparties.</param>
+        /// <param name="emailVerified">Whether email is verified.</param>
+        /// <param name="verified">Whether KYC verification is completed.</param>
+        /// <param name="hasPhone">Whether phone is bound.</param>
+        /// <param name="userName">Username.</param>
+        /// <param name="userNote">User note information.</param>
+        /// <param name="completeTransactions">Total completed orders.</param>
+        /// <param name="paidTransactions">Number of completed buy orders.</param>
+        /// <param name="acceptedTransactions">Number of completed sell orders.</param>
+        /// <param name="transactionsUsedTime">Average time to confirm receipt.</param>
+        /// <param name="cancelledUsedTimeMonth">Cancellation time in last 30 days.</param>
+        /// <param name="completeTransactionsMonth">Number of completed orders in last 30 days.</param>
+        /// <param name="completeRateMonth">Completion rate in last 30 days.</param>
+        /// <param name="ordersBuyRateMonth">Buy order ratio in last 30 days.</param>
+        /// <param name="isBlack">Whether blocked.</param>
+        /// <param name="isFollow">Whether following.</param>
+        /// <param name="haveTraded">Whether traded with self.</param>
+        /// <param name="bizUid">Encrypted UID.</param>
+        /// <param name="blueVip">Blue V Crown Shield.</param>
+        /// <param name="workStatus">Merchant work status.</param>
+        /// <param name="registrationDays">Registration days.</param>
+        /// <param name="firstTradeDays">Days since first trade.</param>
+        /// <param name="needReplenish">Whether margin replenishment is needed.</param>
+        /// <param name="merchantInfo">merchantInfo.</param>
+        /// <param name="onlineStatus">Merchant online status.</param>
+        /// <param name="workHours">Merchant online status details.</param>
+        /// <param name="transactionsMonth">30-day transaction volume.</param>
+        /// <param name="transactionsAll">Total transaction volume.</param>
+        /// <param name="tradeVersatile">Single user or composite user.</param>
+        public InlineResponse20014Data(bool isSelf = default(bool), string userTimest = default(string), int counterpartiesNum = default(int), string emailVerified = default(string), string verified = default(string), string hasPhone = default(string), string userName = default(string), string userNote = default(string), string completeTransactions = default(string), string paidTransactions = default(string), string acceptedTransactions = default(string), string transactionsUsedTime = default(string), string cancelledUsedTimeMonth = default(string), string completeTransactionsMonth = default(string), decimal completeRateMonth = default(decimal), decimal ordersBuyRateMonth = default(decimal), int isBlack = default(int), int isFollow = default(int), int haveTraded = default(int), string bizUid = default(string), int blueVip = default(int), int workStatus = default(int), int registrationDays = default(int), int firstTradeDays = default(int), int needReplenish = default(int), InlineResponse20014DataMerchantInfo merchantInfo = default(InlineResponse20014DataMerchantInfo), int onlineStatus = default(int), Object workHours = default(Object), decimal transactionsMonth = default(decimal), decimal transactionsAll = default(decimal), bool tradeVersatile = default(bool))
         {
             this.IsSelf = isSelf;
-            // to ensure "userTimest" is required (not null)
-            this.UserTimest = userTimest ?? throw new ArgumentNullException("userTimest", "userTimest is a required property for InlineResponse20014Data and cannot be null");
+            this.UserTimest = userTimest;
             this.CounterpartiesNum = counterpartiesNum;
-            // to ensure "emailVerified" is required (not null)
-            this.EmailVerified = emailVerified ?? throw new ArgumentNullException("emailVerified", "emailVerified is a required property for InlineResponse20014Data and cannot be null");
-            // to ensure "verified" is required (not null)
-            this.Verified = verified ?? throw new ArgumentNullException("verified", "verified is a required property for InlineResponse20014Data and cannot be null");
-            // to ensure "hasPhone" is required (not null)
-            this.HasPhone = hasPhone ?? throw new ArgumentNullException("hasPhone", "hasPhone is a required property for InlineResponse20014Data and cannot be null");
-            // to ensure "userName" is required (not null)
-            this.UserName = userName ?? throw new ArgumentNullException("userName", "userName is a required property for InlineResponse20014Data and cannot be null");
-            // to ensure "userNote" is required (not null)
-            this.UserNote = userNote ?? throw new ArgumentNullException("userNote", "userNote is a required property for InlineResponse20014Data and cannot be null");
-            // to ensure "completeTransactions" is required (not null)
-            this.CompleteTransactions = completeTransactions ?? throw new ArgumentNullException("completeTransactions", "completeTransactions is a required property for InlineResponse20014Data and cannot be null");
-            // to ensure "paidTransactions" is required (not null)
-            this.PaidTransactions = paidTransactions ?? throw new ArgumentNullException("paidTransactions", "paidTransactions is a required property for InlineResponse20014Data and cannot be null");
-            // to ensure "acceptedTransactions" is required (not null)
-            this.AcceptedTransactions = acceptedTransactions ?? throw new ArgumentNullException("acceptedTransactions", "acceptedTransactions is a required property for InlineResponse20014Data and cannot be null");
-            // to ensure "transactionsUsedTime" is required (not null)
-            this.TransactionsUsedTime = transactionsUsedTime ?? throw new ArgumentNullException("transactionsUsedTime", "transactionsUsedTime is a required property for InlineResponse20014Data and cannot be null");
-            // to ensure "cancelledUsedTimeMonth" is required (not null)
-            this.CancelledUsedTimeMonth = cancelledUsedTimeMonth ?? throw new ArgumentNullException("cancelledUsedTimeMonth", "cancelledUsedTimeMonth is a required property for InlineResponse20014Data and cannot be null");
-            // to ensure "completeTransactionsMonth" is required (not null)
-            this.CompleteTransactionsMonth = completeTransactionsMonth ?? throw new ArgumentNullException("completeTransactionsMonth", "completeTransactionsMonth is a required property for InlineResponse20014Data and cannot be null");
+            this.EmailVerified = emailVerified;
+            this.Verified = verified;
+            this.HasPhone = hasPhone;
+            this.UserName = userName;
+            this.UserNote = userNote;
+            this.CompleteTransactions = completeTransactions;
+            this.PaidTransactions = paidTransactions;
+            this.AcceptedTransactions = acceptedTransactions;
+            this.TransactionsUsedTime = transactionsUsedTime;
+            this.CancelledUsedTimeMonth = cancelledUsedTimeMonth;
+            this.CompleteTransactionsMonth = completeTransactionsMonth;
             this.CompleteRateMonth = completeRateMonth;
             this.OrdersBuyRateMonth = ordersBuyRateMonth;
             this.IsBlack = isBlack;
             this.IsFollow = isFollow;
             this.HaveTraded = haveTraded;
-            // to ensure "bizUid" is required (not null)
-            this.BizUid = bizUid ?? throw new ArgumentNullException("bizUid", "bizUid is a required property for InlineResponse20014Data and cannot be null");
+            this.BizUid = bizUid;
             this.BlueVip = blueVip;
             this.WorkStatus = workStatus;
             this.RegistrationDays = registrationDays;
             this.FirstTradeDays = firstTradeDays;
             this.NeedReplenish = needReplenish;
-            // to ensure "merchantInfo" is required (not null)
-            this.MerchantInfo = merchantInfo ?? throw new ArgumentNullException("merchantInfo", "merchantInfo is a required property for InlineResponse20014Data and cannot be null");
+            this.MerchantInfo = merchantInfo;
             this.OnlineStatus = onlineStatus;
-            // to ensure "workHours" is required (not null)
-            this.WorkHours = workHours ?? throw new ArgumentNullException("workHours", "workHours is a required property for InlineResponse20014Data and cannot be null");
+            this.WorkHours = workHours;
             this.TransactionsMonth = transactionsMonth;
             this.TransactionsAll = transactionsAll;
             this.TradeVersatile = tradeVersatile;
@@ -222,14 +202,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Completion rate in last 30 days</value>
         [DataMember(Name="complete_rate_month")]
-        public int CompleteRateMonth { get; set; }
+        public decimal CompleteRateMonth { get; set; }
 
         /// <summary>
         /// Buy order ratio in last 30 days
         /// </summary>
         /// <value>Buy order ratio in last 30 days</value>
         [DataMember(Name="orders_buy_rate_month")]
-        public int OrdersBuyRateMonth { get; set; }
+        public decimal OrdersBuyRateMonth { get; set; }
 
         /// <summary>
         /// Whether blocked
@@ -319,14 +299,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>30-day transaction volume</value>
         [DataMember(Name="transactions_month")]
-        public int TransactionsMonth { get; set; }
+        public decimal TransactionsMonth { get; set; }
 
         /// <summary>
         /// Total transaction volume
         /// </summary>
         /// <value>Total transaction volume</value>
         [DataMember(Name="transactions_all")]
-        public int TransactionsAll { get; set; }
+        public decimal TransactionsAll { get; set; }
 
         /// <summary>
         /// Single user or composite user

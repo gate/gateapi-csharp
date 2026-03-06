@@ -33,18 +33,80 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject6" /> class.
         /// </summary>
-        /// <param name="fiat">Fiat currency.</param>
-        public InlineObject6(string fiat = default(string))
+        [JsonConstructorAttribute]
+        protected InlineObject6() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineObject6" /> class.
+        /// </summary>
+        /// <param name="side">PAY/GET quote direction. PAY means user inputs pay amount, GET means user inputs get amount. If PAY, pay_amount is required. If GET, get_amount is required (required).</param>
+        /// <param name="payCoin">Currency the user pays. Supported currencies can be found on the OTC web quote page. (required).</param>
+        /// <param name="getCoin">Currency the user receives. Supported currencies can be found on the OTC web quote page. (required).</param>
+        /// <param name="payAmount">User payment currency amount.</param>
+        /// <param name="getAmount">Amount of currency received by the user.</param>
+        /// <param name="createQuoteToken">Create quote token: 0: quote preview only; 1: generate quote token for order placement..</param>
+        /// <param name="promotionCode">Promotion code (optional).</param>
+        public InlineObject6(string side = default(string), string payCoin = default(string), string getCoin = default(string), string payAmount = default(string), string getAmount = default(string), string createQuoteToken = default(string), string promotionCode = default(string))
         {
-            this.Fiat = fiat;
+            // to ensure "side" is required (not null)
+            this.Side = side ?? throw new ArgumentNullException("side", "side is a required property for InlineObject6 and cannot be null");
+            // to ensure "payCoin" is required (not null)
+            this.PayCoin = payCoin ?? throw new ArgumentNullException("payCoin", "payCoin is a required property for InlineObject6 and cannot be null");
+            // to ensure "getCoin" is required (not null)
+            this.GetCoin = getCoin ?? throw new ArgumentNullException("getCoin", "getCoin is a required property for InlineObject6 and cannot be null");
+            this.PayAmount = payAmount;
+            this.GetAmount = getAmount;
+            this.CreateQuoteToken = createQuoteToken;
+            this.PromotionCode = promotionCode;
         }
 
         /// <summary>
-        /// Fiat currency
+        /// PAY/GET quote direction. PAY means user inputs pay amount, GET means user inputs get amount. If PAY, pay_amount is required. If GET, get_amount is required
         /// </summary>
-        /// <value>Fiat currency</value>
-        [DataMember(Name="fiat")]
-        public string Fiat { get; set; }
+        /// <value>PAY/GET quote direction. PAY means user inputs pay amount, GET means user inputs get amount. If PAY, pay_amount is required. If GET, get_amount is required</value>
+        [DataMember(Name="side")]
+        public string Side { get; set; }
+
+        /// <summary>
+        /// Currency the user pays. Supported currencies can be found on the OTC web quote page.
+        /// </summary>
+        /// <value>Currency the user pays. Supported currencies can be found on the OTC web quote page.</value>
+        [DataMember(Name="pay_coin")]
+        public string PayCoin { get; set; }
+
+        /// <summary>
+        /// Currency the user receives. Supported currencies can be found on the OTC web quote page.
+        /// </summary>
+        /// <value>Currency the user receives. Supported currencies can be found on the OTC web quote page.</value>
+        [DataMember(Name="get_coin")]
+        public string GetCoin { get; set; }
+
+        /// <summary>
+        /// User payment currency amount
+        /// </summary>
+        /// <value>User payment currency amount</value>
+        [DataMember(Name="pay_amount")]
+        public string PayAmount { get; set; }
+
+        /// <summary>
+        /// Amount of currency received by the user
+        /// </summary>
+        /// <value>Amount of currency received by the user</value>
+        [DataMember(Name="get_amount")]
+        public string GetAmount { get; set; }
+
+        /// <summary>
+        /// Create quote token: 0: quote preview only; 1: generate quote token for order placement.
+        /// </summary>
+        /// <value>Create quote token: 0: quote preview only; 1: generate quote token for order placement.</value>
+        [DataMember(Name="create_quote_token")]
+        public string CreateQuoteToken { get; set; }
+
+        /// <summary>
+        /// Promotion code (optional)
+        /// </summary>
+        /// <value>Promotion code (optional)</value>
+        [DataMember(Name="promotion_code")]
+        public string PromotionCode { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +116,13 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject6 {\n");
-            sb.Append("  Fiat: ").Append(Fiat).Append("\n");
+            sb.Append("  Side: ").Append(Side).Append("\n");
+            sb.Append("  PayCoin: ").Append(PayCoin).Append("\n");
+            sb.Append("  GetCoin: ").Append(GetCoin).Append("\n");
+            sb.Append("  PayAmount: ").Append(PayAmount).Append("\n");
+            sb.Append("  GetAmount: ").Append(GetAmount).Append("\n");
+            sb.Append("  CreateQuoteToken: ").Append(CreateQuoteToken).Append("\n");
+            sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,9 +158,39 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Fiat == input.Fiat ||
-                    (this.Fiat != null &&
-                    this.Fiat.Equals(input.Fiat))
+                    this.Side == input.Side ||
+                    (this.Side != null &&
+                    this.Side.Equals(input.Side))
+                ) && 
+                (
+                    this.PayCoin == input.PayCoin ||
+                    (this.PayCoin != null &&
+                    this.PayCoin.Equals(input.PayCoin))
+                ) && 
+                (
+                    this.GetCoin == input.GetCoin ||
+                    (this.GetCoin != null &&
+                    this.GetCoin.Equals(input.GetCoin))
+                ) && 
+                (
+                    this.PayAmount == input.PayAmount ||
+                    (this.PayAmount != null &&
+                    this.PayAmount.Equals(input.PayAmount))
+                ) && 
+                (
+                    this.GetAmount == input.GetAmount ||
+                    (this.GetAmount != null &&
+                    this.GetAmount.Equals(input.GetAmount))
+                ) && 
+                (
+                    this.CreateQuoteToken == input.CreateQuoteToken ||
+                    (this.CreateQuoteToken != null &&
+                    this.CreateQuoteToken.Equals(input.CreateQuoteToken))
+                ) && 
+                (
+                    this.PromotionCode == input.PromotionCode ||
+                    (this.PromotionCode != null &&
+                    this.PromotionCode.Equals(input.PromotionCode))
                 );
         }
 
@@ -105,8 +203,20 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Fiat != null)
-                    hashCode = hashCode * 59 + this.Fiat.GetHashCode();
+                if (this.Side != null)
+                    hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.PayCoin != null)
+                    hashCode = hashCode * 59 + this.PayCoin.GetHashCode();
+                if (this.GetCoin != null)
+                    hashCode = hashCode * 59 + this.GetCoin.GetHashCode();
+                if (this.PayAmount != null)
+                    hashCode = hashCode * 59 + this.PayAmount.GetHashCode();
+                if (this.GetAmount != null)
+                    hashCode = hashCode * 59 + this.GetAmount.GetHashCode();
+                if (this.CreateQuoteToken != null)
+                    hashCode = hashCode * 59 + this.CreateQuoteToken.GetHashCode();
+                if (this.PromotionCode != null)
+                    hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
                 return hashCode;
             }
         }

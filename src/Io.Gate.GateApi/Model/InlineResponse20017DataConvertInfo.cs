@@ -33,43 +33,28 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20017DataConvertInfo" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20017DataConvertInfo() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20017DataConvertInfo" /> class.
-        /// </summary>
-        /// <param name="convertType">Flash swap target currency (required).</param>
-        /// <param name="convertStatus">Flash swap order status (required).</param>
-        /// <param name="preRate">Expected price when placing order (required).</param>
-        /// <param name="rate">Execution price (required).</param>
-        /// <param name="preFiatRate">Expected fiat price when placing order (required).</param>
-        /// <param name="fiatRate">Fiat price at execution (required).</param>
-        /// <param name="amount">Size (required).</param>
-        /// <param name="convertAmount">Swap Amount (required).</param>
-        /// <param name="slippage">Slippage calculation: slippage &#x3D; (expected price when placing order - real-time price during auto swap) / expected price when placing order (required).</param>
-        /// <param name="status">Flash swap order display status (required).</param>
+        /// <param name="convertType">Flash swap target currency.</param>
+        /// <param name="convertStatus">Flash swap order status.</param>
+        /// <param name="preRate">Expected price when placing order.</param>
+        /// <param name="rate">Execution price.</param>
+        /// <param name="preFiatRate">Expected fiat price when placing order.</param>
+        /// <param name="fiatRate">Fiat price at execution.</param>
+        /// <param name="amount">Size.</param>
+        /// <param name="convertAmount">Swap Amount.</param>
+        /// <param name="slippage">Slippage calculation: slippage &#x3D; (expected price when placing order - real-time price during auto swap) / expected price when placing order.</param>
+        /// <param name="status">Flash swap order display status.</param>
         public InlineResponse20017DataConvertInfo(string convertType = default(string), string convertStatus = default(string), string preRate = default(string), string rate = default(string), string preFiatRate = default(string), string fiatRate = default(string), string amount = default(string), string convertAmount = default(string), string slippage = default(string), string status = default(string))
         {
-            // to ensure "convertType" is required (not null)
-            this.ConvertType = convertType ?? throw new ArgumentNullException("convertType", "convertType is a required property for InlineResponse20017DataConvertInfo and cannot be null");
-            // to ensure "convertStatus" is required (not null)
-            this.ConvertStatus = convertStatus ?? throw new ArgumentNullException("convertStatus", "convertStatus is a required property for InlineResponse20017DataConvertInfo and cannot be null");
-            // to ensure "preRate" is required (not null)
-            this.PreRate = preRate ?? throw new ArgumentNullException("preRate", "preRate is a required property for InlineResponse20017DataConvertInfo and cannot be null");
-            // to ensure "rate" is required (not null)
-            this.Rate = rate ?? throw new ArgumentNullException("rate", "rate is a required property for InlineResponse20017DataConvertInfo and cannot be null");
-            // to ensure "preFiatRate" is required (not null)
-            this.PreFiatRate = preFiatRate ?? throw new ArgumentNullException("preFiatRate", "preFiatRate is a required property for InlineResponse20017DataConvertInfo and cannot be null");
-            // to ensure "fiatRate" is required (not null)
-            this.FiatRate = fiatRate ?? throw new ArgumentNullException("fiatRate", "fiatRate is a required property for InlineResponse20017DataConvertInfo and cannot be null");
-            // to ensure "amount" is required (not null)
-            this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for InlineResponse20017DataConvertInfo and cannot be null");
-            // to ensure "convertAmount" is required (not null)
-            this.ConvertAmount = convertAmount ?? throw new ArgumentNullException("convertAmount", "convertAmount is a required property for InlineResponse20017DataConvertInfo and cannot be null");
-            // to ensure "slippage" is required (not null)
-            this.Slippage = slippage ?? throw new ArgumentNullException("slippage", "slippage is a required property for InlineResponse20017DataConvertInfo and cannot be null");
-            // to ensure "status" is required (not null)
-            this.Status = status ?? throw new ArgumentNullException("status", "status is a required property for InlineResponse20017DataConvertInfo and cannot be null");
+            this.ConvertType = convertType;
+            this.ConvertStatus = convertStatus;
+            this.PreRate = preRate;
+            this.Rate = rate;
+            this.PreFiatRate = preFiatRate;
+            this.FiatRate = fiatRate;
+            this.Amount = amount;
+            this.ConvertAmount = convertAmount;
+            this.Slippage = slippage;
+            this.Status = status;
         }
 
         /// <summary>

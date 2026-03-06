@@ -33,21 +33,14 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20017Data" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20017Data() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20017Data" /> class.
-        /// </summary>
-        /// <param name="list">list (required).</param>
-        /// <param name="transTime">Countdown time (required).</param>
-        /// <param name="count">Number of orders (required).</param>
-        /// <param name="exportedNum">Export count (required).</param>
+        /// <param name="list">list.</param>
+        /// <param name="transTime">Countdown time.</param>
+        /// <param name="count">Number of orders.</param>
+        /// <param name="exportedNum">Export count.</param>
         public InlineResponse20017Data(List<InlineResponse20017DataList> list = default(List<InlineResponse20017DataList>), List<InlineResponse20017DataTransTime> transTime = default(List<InlineResponse20017DataTransTime>), int count = default(int), int exportedNum = default(int))
         {
-            // to ensure "list" is required (not null)
-            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20017Data and cannot be null");
-            // to ensure "transTime" is required (not null)
-            this.TransTime = transTime ?? throw new ArgumentNullException("transTime", "transTime is a required property for InlineResponse20017Data and cannot be null");
+            this.List = list;
+            this.TransTime = transTime;
             this.Count = count;
             this.ExportedNum = exportedNum;
         }

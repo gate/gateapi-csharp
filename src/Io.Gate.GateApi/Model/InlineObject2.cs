@@ -25,11 +25,63 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineObject2
+    /// Place order request parameters
     /// </summary>
     [DataContract]
     public partial class InlineObject2 :  IEquatable<InlineObject2>, IValidatableObject
     {
+        /// <summary>
+        /// Price type (trigger&#x3D;trigger price, market&#x3D;market price)
+        /// </summary>
+        /// <value>Price type (trigger&#x3D;trigger price, market&#x3D;market price)</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PriceTypeEnum
+        {
+            /// <summary>
+            /// Enum value Trigger
+            /// </summary>
+            [EnumMember(Value = "trigger")]
+            Trigger = 1,
+
+            /// <summary>
+            /// Enum value Market
+            /// </summary>
+            [EnumMember(Value = "market")]
+            Market = 2
+
+        }
+
+        /// <summary>
+        /// Price type (trigger&#x3D;trigger price, market&#x3D;market price)
+        /// </summary>
+        /// <value>Price type (trigger&#x3D;trigger price, market&#x3D;market price)</value>
+        [DataMember(Name="price_type")]
+        public PriceTypeEnum PriceType { get; set; }
+        /// <summary>
+        /// Order side (1&#x3D;sell, 2&#x3D;buy)
+        /// </summary>
+        /// <value>Order side (1&#x3D;sell, 2&#x3D;buy)</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SideEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1,
+
+            /// <summary>
+            /// Enum value NUMBER_2
+            /// </summary>
+            NUMBER_2 = 2
+
+        }
+
+        /// <summary>
+        /// Order side (1&#x3D;sell, 2&#x3D;buy)
+        /// </summary>
+        /// <value>Order side (1&#x3D;sell, 2&#x3D;buy)</value>
+        [DataMember(Name="side")]
+        public SideEnum Side { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject2" /> class.
         /// </summary>
@@ -38,98 +90,61 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject2" /> class.
         /// </summary>
-        /// <param name="type">BUY for on-ramp, SELL for off-ramp (required).</param>
-        /// <param name="side">Quote direction returned by the quote API (used for order validation) (required).</param>
-        /// <param name="cryptoCurrency">Cryptocurrency (supported currencies can be queried from the OTC web fiat quote page) (required).</param>
-        /// <param name="fiatCurrency">Fiat currency (supported currencies can be queried from the OTC web fiat quote page) (required).</param>
-        /// <param name="cryptoAmount">Amount of cryptocurrency (required).</param>
-        /// <param name="fiatAmount">Fiat amount (required).</param>
-        /// <param name="promotionCode">Promotion code.</param>
-        /// <param name="quoteToken">Parameter returned by the quote API (required).</param>
-        /// <param name="bankId">Bank card ID used for the order (retrieved via the default bank card API) (required).</param>
-        public InlineObject2(string type = default(string), string side = default(string), string cryptoCurrency = default(string), string fiatCurrency = default(string), string cryptoAmount = default(string), string fiatAmount = default(string), string promotionCode = default(string), string quoteToken = default(string), string bankId = default(string))
+        /// <param name="price">Order price (required).</param>
+        /// <param name="priceType">Price type (trigger&#x3D;trigger price, market&#x3D;market price) (required).</param>
+        /// <param name="side">Order side (1&#x3D;sell, 2&#x3D;buy) (required).</param>
+        /// <param name="symbol">Trading symbol code (required).</param>
+        /// <param name="volume">Order volume (required).</param>
+        /// <param name="priceTp">Take profit price (optional).</param>
+        /// <param name="priceSl">Stop loss price (optional).</param>
+        public InlineObject2(string price = default(string), PriceTypeEnum priceType = default(PriceTypeEnum), SideEnum side = default(SideEnum), string symbol = default(string), string volume = default(string), string priceTp = default(string), string priceSl = default(string))
         {
-            // to ensure "type" is required (not null)
-            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for InlineObject2 and cannot be null");
-            // to ensure "side" is required (not null)
-            this.Side = side ?? throw new ArgumentNullException("side", "side is a required property for InlineObject2 and cannot be null");
-            // to ensure "cryptoCurrency" is required (not null)
-            this.CryptoCurrency = cryptoCurrency ?? throw new ArgumentNullException("cryptoCurrency", "cryptoCurrency is a required property for InlineObject2 and cannot be null");
-            // to ensure "fiatCurrency" is required (not null)
-            this.FiatCurrency = fiatCurrency ?? throw new ArgumentNullException("fiatCurrency", "fiatCurrency is a required property for InlineObject2 and cannot be null");
-            // to ensure "cryptoAmount" is required (not null)
-            this.CryptoAmount = cryptoAmount ?? throw new ArgumentNullException("cryptoAmount", "cryptoAmount is a required property for InlineObject2 and cannot be null");
-            // to ensure "fiatAmount" is required (not null)
-            this.FiatAmount = fiatAmount ?? throw new ArgumentNullException("fiatAmount", "fiatAmount is a required property for InlineObject2 and cannot be null");
-            // to ensure "quoteToken" is required (not null)
-            this.QuoteToken = quoteToken ?? throw new ArgumentNullException("quoteToken", "quoteToken is a required property for InlineObject2 and cannot be null");
-            // to ensure "bankId" is required (not null)
-            this.BankId = bankId ?? throw new ArgumentNullException("bankId", "bankId is a required property for InlineObject2 and cannot be null");
-            this.PromotionCode = promotionCode;
+            // to ensure "price" is required (not null)
+            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineObject2 and cannot be null");
+            this.PriceType = priceType;
+            this.Side = side;
+            // to ensure "symbol" is required (not null)
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineObject2 and cannot be null");
+            // to ensure "volume" is required (not null)
+            this.Volume = volume ?? throw new ArgumentNullException("volume", "volume is a required property for InlineObject2 and cannot be null");
+            this.PriceTp = priceTp;
+            this.PriceSl = priceSl;
         }
 
         /// <summary>
-        /// BUY for on-ramp, SELL for off-ramp
+        /// Order price
         /// </summary>
-        /// <value>BUY for on-ramp, SELL for off-ramp</value>
-        [DataMember(Name="type")]
-        public string Type { get; set; }
+        /// <value>Order price</value>
+        [DataMember(Name="price")]
+        public string Price { get; set; }
 
         /// <summary>
-        /// Quote direction returned by the quote API (used for order validation)
+        /// Trading symbol code
         /// </summary>
-        /// <value>Quote direction returned by the quote API (used for order validation)</value>
-        [DataMember(Name="side")]
-        public string Side { get; set; }
+        /// <value>Trading symbol code</value>
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
 
         /// <summary>
-        /// Cryptocurrency (supported currencies can be queried from the OTC web fiat quote page)
+        /// Order volume
         /// </summary>
-        /// <value>Cryptocurrency (supported currencies can be queried from the OTC web fiat quote page)</value>
-        [DataMember(Name="crypto_currency")]
-        public string CryptoCurrency { get; set; }
+        /// <value>Order volume</value>
+        [DataMember(Name="volume")]
+        public string Volume { get; set; }
 
         /// <summary>
-        /// Fiat currency (supported currencies can be queried from the OTC web fiat quote page)
+        /// Take profit price (optional)
         /// </summary>
-        /// <value>Fiat currency (supported currencies can be queried from the OTC web fiat quote page)</value>
-        [DataMember(Name="fiat_currency")]
-        public string FiatCurrency { get; set; }
+        /// <value>Take profit price (optional)</value>
+        [DataMember(Name="price_tp")]
+        public string PriceTp { get; set; }
 
         /// <summary>
-        /// Amount of cryptocurrency
+        /// Stop loss price (optional)
         /// </summary>
-        /// <value>Amount of cryptocurrency</value>
-        [DataMember(Name="crypto_amount")]
-        public string CryptoAmount { get; set; }
-
-        /// <summary>
-        /// Fiat amount
-        /// </summary>
-        /// <value>Fiat amount</value>
-        [DataMember(Name="fiat_amount")]
-        public string FiatAmount { get; set; }
-
-        /// <summary>
-        /// Promotion code
-        /// </summary>
-        /// <value>Promotion code</value>
-        [DataMember(Name="promotion_code")]
-        public string PromotionCode { get; set; }
-
-        /// <summary>
-        /// Parameter returned by the quote API
-        /// </summary>
-        /// <value>Parameter returned by the quote API</value>
-        [DataMember(Name="quote_token")]
-        public string QuoteToken { get; set; }
-
-        /// <summary>
-        /// Bank card ID used for the order (retrieved via the default bank card API)
-        /// </summary>
-        /// <value>Bank card ID used for the order (retrieved via the default bank card API)</value>
-        [DataMember(Name="bank_id")]
-        public string BankId { get; set; }
+        /// <value>Stop loss price (optional)</value>
+        [DataMember(Name="price_sl")]
+        public string PriceSl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -139,15 +154,13 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject2 {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Price: ").Append(Price).Append("\n");
+            sb.Append("  PriceType: ").Append(PriceType).Append("\n");
             sb.Append("  Side: ").Append(Side).Append("\n");
-            sb.Append("  CryptoCurrency: ").Append(CryptoCurrency).Append("\n");
-            sb.Append("  FiatCurrency: ").Append(FiatCurrency).Append("\n");
-            sb.Append("  CryptoAmount: ").Append(CryptoAmount).Append("\n");
-            sb.Append("  FiatAmount: ").Append(FiatAmount).Append("\n");
-            sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
-            sb.Append("  QuoteToken: ").Append(QuoteToken).Append("\n");
-            sb.Append("  BankId: ").Append(BankId).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
+            sb.Append("  Volume: ").Append(Volume).Append("\n");
+            sb.Append("  PriceTp: ").Append(PriceTp).Append("\n");
+            sb.Append("  PriceSl: ").Append(PriceSl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,49 +196,37 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.Price == input.Price ||
+                    (this.Price != null &&
+                    this.Price.Equals(input.Price))
+                ) && 
+                (
+                    this.PriceType == input.PriceType ||
+                    this.PriceType.Equals(input.PriceType)
                 ) && 
                 (
                     this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
+                    this.Side.Equals(input.Side)
                 ) && 
                 (
-                    this.CryptoCurrency == input.CryptoCurrency ||
-                    (this.CryptoCurrency != null &&
-                    this.CryptoCurrency.Equals(input.CryptoCurrency))
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.FiatCurrency == input.FiatCurrency ||
-                    (this.FiatCurrency != null &&
-                    this.FiatCurrency.Equals(input.FiatCurrency))
+                    this.Volume == input.Volume ||
+                    (this.Volume != null &&
+                    this.Volume.Equals(input.Volume))
                 ) && 
                 (
-                    this.CryptoAmount == input.CryptoAmount ||
-                    (this.CryptoAmount != null &&
-                    this.CryptoAmount.Equals(input.CryptoAmount))
+                    this.PriceTp == input.PriceTp ||
+                    (this.PriceTp != null &&
+                    this.PriceTp.Equals(input.PriceTp))
                 ) && 
                 (
-                    this.FiatAmount == input.FiatAmount ||
-                    (this.FiatAmount != null &&
-                    this.FiatAmount.Equals(input.FiatAmount))
-                ) && 
-                (
-                    this.PromotionCode == input.PromotionCode ||
-                    (this.PromotionCode != null &&
-                    this.PromotionCode.Equals(input.PromotionCode))
-                ) && 
-                (
-                    this.QuoteToken == input.QuoteToken ||
-                    (this.QuoteToken != null &&
-                    this.QuoteToken.Equals(input.QuoteToken))
-                ) && 
-                (
-                    this.BankId == input.BankId ||
-                    (this.BankId != null &&
-                    this.BankId.Equals(input.BankId))
+                    this.PriceSl == input.PriceSl ||
+                    (this.PriceSl != null &&
+                    this.PriceSl.Equals(input.PriceSl))
                 );
         }
 
@@ -238,24 +239,18 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.CryptoCurrency != null)
-                    hashCode = hashCode * 59 + this.CryptoCurrency.GetHashCode();
-                if (this.FiatCurrency != null)
-                    hashCode = hashCode * 59 + this.FiatCurrency.GetHashCode();
-                if (this.CryptoAmount != null)
-                    hashCode = hashCode * 59 + this.CryptoAmount.GetHashCode();
-                if (this.FiatAmount != null)
-                    hashCode = hashCode * 59 + this.FiatAmount.GetHashCode();
-                if (this.PromotionCode != null)
-                    hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
-                if (this.QuoteToken != null)
-                    hashCode = hashCode * 59 + this.QuoteToken.GetHashCode();
-                if (this.BankId != null)
-                    hashCode = hashCode * 59 + this.BankId.GetHashCode();
+                if (this.Price != null)
+                    hashCode = hashCode * 59 + this.Price.GetHashCode();
+                hashCode = hashCode * 59 + this.PriceType.GetHashCode();
+                hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                if (this.Volume != null)
+                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                if (this.PriceTp != null)
+                    hashCode = hashCode * 59 + this.PriceTp.GetHashCode();
+                if (this.PriceSl != null)
+                    hashCode = hashCode * 59 + this.PriceSl.GetHashCode();
                 return hashCode;
             }
         }

@@ -5,25 +5,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserTimest** | **string** | User registration time (formatted string) | 
-**EmailVerified** | **string** | Whether email is verified | 
-**Verified** | **string** | Whether KYC verification is completed | 
-**HasPhone** | **string** | Whether phone is bound | 
-**UserName** | **string** | Username | 
-**UserNote** | **string** | User note information | 
-**CompleteTransactions** | **string** | Total completed orders | 
-**PaidTransactions** | **string** | Number of completed buy orders | 
-**AcceptedTransactions** | **string** | Number of completed sell orders | 
-**TransactionsUsedTime** | **string** | Average time to confirm receipt | 
-**CancelledUsedTimeMonth** | **string** | Cancellation time in last 30 days | 
-**CompleteTransactionsMonth** | **string** | Number of completed orders in last 30 days | 
-**CompleteRateMonth** | **int** | Completion rate in last 30 days | 
-**IsFollow** | **int** | Whether following | 
-**HaveTraded** | **int** | Whether traded with self | 
-**BizUid** | **string** | Encrypted UID | 
-**RegistrationDays** | **int** | Registration days | 
-**FirstTradeDays** | **int** | Days since first trade | 
-**TradeVersatile** | **bool** | Single user or composite user | 
+**UserTimest** | **string** | User registration time (formatted string) | [optional] 
+**EmailVerified** | **string** | Whether email is verified | [optional] 
+**Verified** | **string** | Whether KYC verification is completed | [optional] 
+**HasPhone** | **string** | Whether phone is bound | [optional] 
+**UserName** | **string** | Username | [optional] 
+**UserNote** | **string** | User note information | [optional] 
+**CompleteTransactions** | **string** | Total completed orders | [optional] 
+**PaidTransactions** | **string** | Number of completed buy orders | [optional] 
+**AcceptedTransactions** | **string** | Number of completed sell orders | [optional] 
+**TransactionsUsedTime** | **string** | Average time to confirm receipt | [optional] 
+**CancelledUsedTimeMonth** | **string** | Cancellation time in last 30 days | [optional] 
+**CompleteTransactionsMonth** | **string** | Number of completed orders in last 30 days | [optional] 
+**CompleteRateMonth** | **decimal** | Completion rate in last 30 days | [optional] 
+**IsFollow** | **int** | Whether following | [optional] 
+**HaveTraded** | **int** | Whether traded with self | [optional] 
+**BizUid** | **string** | Encrypted UID | [optional] 
+**RegistrationDays** | **int** | Registration days | [optional] 
+**FirstTradeDays** | **int** | Days since first trade | [optional] 
+**TradeVersatile** | **bool** | Single user or composite user | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineObject4
+    /// Modify position take profit/stop loss parameters
     /// </summary>
     [DataContract]
     public partial class InlineObject4 :  IEquatable<InlineObject4>, IValidatableObject
@@ -33,24 +33,27 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject4" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineObject4() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject4" /> class.
-        /// </summary>
-        /// <param name="orderId">Order ID (required).</param>
-        public InlineObject4(string orderId = default(string))
+        /// <param name="priceTp">止盈价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止盈价 - 如不希望清空，请传接口返回的原止盈价.</param>
+        /// <param name="priceSl">止损价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止损价 - 如不希望清空，请传接口返回的原止损价.</param>
+        public InlineObject4(string priceTp = default(string), string priceSl = default(string))
         {
-            // to ensure "orderId" is required (not null)
-            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for InlineObject4 and cannot be null");
+            this.PriceTp = priceTp;
+            this.PriceSl = priceSl;
         }
 
         /// <summary>
-        /// Order ID
+        /// 止盈价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止盈价 - 如不希望清空，请传接口返回的原止盈价
         /// </summary>
-        /// <value>Order ID</value>
-        [DataMember(Name="order_id")]
-        public string OrderId { get; set; }
+        /// <value>止盈价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止盈价 - 如不希望清空，请传接口返回的原止盈价</value>
+        [DataMember(Name="price_tp")]
+        public string PriceTp { get; set; }
+
+        /// <summary>
+        /// 止损价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止损价 - 如不希望清空，请传接口返回的原止损价
+        /// </summary>
+        /// <value>止损价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止损价 - 如不希望清空，请传接口返回的原止损价</value>
+        [DataMember(Name="price_sl")]
+        public string PriceSl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,7 +63,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject4 {\n");
-            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
+            sb.Append("  PriceTp: ").Append(PriceTp).Append("\n");
+            sb.Append("  PriceSl: ").Append(PriceSl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,9 +100,14 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
+                    this.PriceTp == input.PriceTp ||
+                    (this.PriceTp != null &&
+                    this.PriceTp.Equals(input.PriceTp))
+                ) && 
+                (
+                    this.PriceSl == input.PriceSl ||
+                    (this.PriceSl != null &&
+                    this.PriceSl.Equals(input.PriceSl))
                 );
         }
 
@@ -111,8 +120,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.PriceTp != null)
+                    hashCode = hashCode * 59 + this.PriceTp.GetHashCode();
+                if (this.PriceSl != null)
+                    hashCode = hashCode * 59 + this.PriceSl.GetHashCode();
                 return hashCode;
             }
         }

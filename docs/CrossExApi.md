@@ -4,37 +4,37 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListCrossexRuleSymbols**](CrossExApi.md#listcrossexrulesymbols) | **GET** /rule/symbols | [Public Interface] Query Trading Pair Information
-[**ListCrossexRuleRiskLimits**](CrossExApi.md#listcrossexrulerisklimits) | **GET** /rule/risk_limits | [Public Interface] Query Risk Limit Information
-[**ListCrossexTransferCoins**](CrossExApi.md#listcrossextransfercoins) | **GET** /transfers/coin | [Public Interface] Query Supported Transfer Currencies
-[**ListCrossexTransfers**](CrossExApi.md#listcrossextransfers) | **GET** /transfers | Query Fund Transfer History
-[**CreateCrossexTransfer**](CrossExApi.md#createcrossextransfer) | **POST** /transfers | Fund Transfer
-[**CreateCrossexOrder**](CrossExApi.md#createcrossexorder) | **POST** /orders | Create an order
-[**GetCrossexOrder**](CrossExApi.md#getcrossexorder) | **GET** /orders/{order_id} | Query order details
-[**UpdateCrossexOrder**](CrossExApi.md#updatecrossexorder) | **PUT** /orders/{order_id} | Modify Order
-[**CancelCrossexOrder**](CrossExApi.md#cancelcrossexorder) | **DELETE** /orders/{order_id} | Cancel Order
-[**CreateCrossexConvertQuote**](CrossExApi.md#createcrossexconvertquote) | **POST** /convert/quote | Flash Swap Inquiry
-[**CreateCrossexConvertOrder**](CrossExApi.md#createcrossexconvertorder) | **POST** /convert/orders | Flash Swap Transaction
-[**GetCrossexAccount**](CrossExApi.md#getcrossexaccount) | **GET** /accounts | Query Account Assets
-[**UpdateCrossexAccount**](CrossExApi.md#updatecrossexaccount) | **PUT** /accounts | Modify Account Contract Position Mode and Account Mode
-[**GetCrossexPositionsLeverage**](CrossExApi.md#getcrossexpositionsleverage) | **GET** /positions/leverage | Query Contract Trading Pair Leverage Multiplier
-[**UpdateCrossexPositionsLeverage**](CrossExApi.md#updatecrossexpositionsleverage) | **POST** /positions/leverage | Modify Contract Trading Pair Leverage Multiplier
-[**GetCrossexMarginPositionsLeverage**](CrossExApi.md#getcrossexmarginpositionsleverage) | **GET** /margin_positions/leverage | Query Leveraged Trading Pair Leverage Multiplier
-[**UpdateCrossexMarginPositionsLeverage**](CrossExApi.md#updatecrossexmarginpositionsleverage) | **POST** /margin_positions/leverage | Modify Leveraged Trading Pair Leverage Multiplier
-[**CloseCrossexPosition**](CrossExApi.md#closecrossexposition) | **DELETE** /position | Full Close Position
-[**GetCrossexInterestRate**](CrossExApi.md#getcrossexinterestrate) | **GET** /interest_rate | Query margin asset interest rates
-[**GetCrossexFee**](CrossExApi.md#getcrossexfee) | **GET** /fee | Query User Fee Rates
-[**ListCrossexPositions**](CrossExApi.md#listcrossexpositions) | **GET** /positions | Query Contract Positions
-[**ListCrossexMarginPositions**](CrossExApi.md#listcrossexmarginpositions) | **GET** /margin_positions | Query Leveraged Positions
-[**ListCrossexAdlRank**](CrossExApi.md#listcrossexadlrank) | **GET** /adl_rank | Query ADL Position Reduction Ranking
-[**ListCrossexOpenOrders**](CrossExApi.md#listcrossexopenorders) | **GET** /open_orders | Query All Current Open Orders
-[**ListCrossexHistoryOrders**](CrossExApi.md#listcrossexhistoryorders) | **GET** /history_orders | queryorderhistory
-[**ListCrossexHistoryPositions**](CrossExApi.md#listcrossexhistorypositions) | **GET** /history_positions | Query Contract Position History
-[**ListCrossexHistoryMarginPositions**](CrossExApi.md#listcrossexhistorymarginpositions) | **GET** /history_margin_positions | Query Leveraged Position History
-[**ListCrossexHistoryMarginInterests**](CrossExApi.md#listcrossexhistorymargininterests) | **GET** /history_margin_interests | Query Leveraged Interest Deduction History
-[**ListCrossexHistoryTrades**](CrossExApi.md#listcrossexhistorytrades) | **GET** /history_trades | queryfilledhistory
-[**ListCrossexAccountBook**](CrossExApi.md#listcrossexaccountbook) | **GET** /account_book | Query Account Asset Change History
-[**ListCrossexCoinDiscountRate**](CrossExApi.md#listcrossexcoindiscountrate) | **GET** /coin_discount_rate | Query currency discount rate (discount rate of margin currency in isolated exchange mode)
+[**ListCrossexRuleSymbols**](CrossExApi.md#listcrossexrulesymbols) | **GET** /crossex/rule/symbols | [Public Interface] Query Trading Pair Information
+[**ListCrossexRuleRiskLimits**](CrossExApi.md#listcrossexrulerisklimits) | **GET** /crossex/rule/risk_limits | [Public Interface] Query Risk Limit Information
+[**ListCrossexTransferCoins**](CrossExApi.md#listcrossextransfercoins) | **GET** /crossex/transfers/coin | [Public Interface] Query Supported Transfer Currencies
+[**ListCrossexTransfers**](CrossExApi.md#listcrossextransfers) | **GET** /crossex/transfers | Query Fund Transfer History
+[**CreateCrossexTransfer**](CrossExApi.md#createcrossextransfer) | **POST** /crossex/transfers | Fund Transfer
+[**CreateCrossexOrder**](CrossExApi.md#createcrossexorder) | **POST** /crossex/orders | Create an order
+[**GetCrossexOrder**](CrossExApi.md#getcrossexorder) | **GET** /crossex/orders/{order_id} | Query order details
+[**UpdateCrossexOrder**](CrossExApi.md#updatecrossexorder) | **PUT** /crossex/orders/{order_id} | Modify Order
+[**CancelCrossexOrder**](CrossExApi.md#cancelcrossexorder) | **DELETE** /crossex/orders/{order_id} | Cancel Order
+[**CreateCrossexConvertQuote**](CrossExApi.md#createcrossexconvertquote) | **POST** /crossex/convert/quote | Flash Swap Inquiry
+[**CreateCrossexConvertOrder**](CrossExApi.md#createcrossexconvertorder) | **POST** /crossex/convert/orders | Flash Swap Transaction
+[**GetCrossexAccount**](CrossExApi.md#getcrossexaccount) | **GET** /crossex/accounts | Query Account Assets
+[**UpdateCrossexAccount**](CrossExApi.md#updatecrossexaccount) | **PUT** /crossex/accounts | Modify Account Contract Position Mode and Account Mode
+[**GetCrossexPositionsLeverage**](CrossExApi.md#getcrossexpositionsleverage) | **GET** /crossex/positions/leverage | Query Contract Trading Pair Leverage Multiplier
+[**UpdateCrossexPositionsLeverage**](CrossExApi.md#updatecrossexpositionsleverage) | **POST** /crossex/positions/leverage | Modify Contract Trading Pair Leverage Multiplier
+[**GetCrossexMarginPositionsLeverage**](CrossExApi.md#getcrossexmarginpositionsleverage) | **GET** /crossex/margin_positions/leverage | Query Leveraged Trading Pair Leverage Multiplier
+[**UpdateCrossexMarginPositionsLeverage**](CrossExApi.md#updatecrossexmarginpositionsleverage) | **POST** /crossex/margin_positions/leverage | Modify Leveraged Trading Pair Leverage Multiplier
+[**CloseCrossexPosition**](CrossExApi.md#closecrossexposition) | **POST** /crossex/position | Full Close Position
+[**GetCrossexInterestRate**](CrossExApi.md#getcrossexinterestrate) | **GET** /crossex/interest_rate | Query margin asset interest rates
+[**GetCrossexFee**](CrossExApi.md#getcrossexfee) | **GET** /crossex/fee | Query User Fee Rates
+[**ListCrossexPositions**](CrossExApi.md#listcrossexpositions) | **GET** /crossex/positions | Query Contract Positions
+[**ListCrossexMarginPositions**](CrossExApi.md#listcrossexmarginpositions) | **GET** /crossex/margin_positions | Query Leveraged Positions
+[**ListCrossexAdlRank**](CrossExApi.md#listcrossexadlrank) | **GET** /crossex/adl_rank | Query ADL Position Reduction Ranking
+[**ListCrossexOpenOrders**](CrossExApi.md#listcrossexopenorders) | **GET** /crossex/open_orders | Query All Current Open Orders
+[**ListCrossexHistoryOrders**](CrossExApi.md#listcrossexhistoryorders) | **GET** /crossex/history_orders | queryorderhistory
+[**ListCrossexHistoryPositions**](CrossExApi.md#listcrossexhistorypositions) | **GET** /crossex/history_positions | Query Contract Position History
+[**ListCrossexHistoryMarginPositions**](CrossExApi.md#listcrossexhistorymarginpositions) | **GET** /crossex/history_margin_positions | Query Leveraged Position History
+[**ListCrossexHistoryMarginInterests**](CrossExApi.md#listcrossexhistorymargininterests) | **GET** /crossex/history_margin_interests | Query Leveraged Interest Deduction History
+[**ListCrossexHistoryTrades**](CrossExApi.md#listcrossexhistorytrades) | **GET** /crossex/history_trades | queryfilledhistory
+[**ListCrossexAccountBook**](CrossExApi.md#listcrossexaccountbook) | **GET** /crossex/account_book | Query Account Asset Change History
+[**ListCrossexCoinDiscountRate**](CrossExApi.md#listcrossexcoindiscountrate) | **GET** /crossex/coin_discount_rate | Query currency discount rate (discount rate of margin currency in isolated exchange mode)
 
 
 <a name="listcrossexrulesymbols"></a>
@@ -110,7 +110,7 @@ No authorization required
 
 <a name="listcrossexrulerisklimits"></a>
 # **ListCrossexRuleRiskLimits**
-> List&lt;InlineResponse20026&gt; ListCrossexRuleRiskLimits (string symbols)
+> List&lt;InlineResponse20027&gt; ListCrossexRuleRiskLimits (string symbols)
 
 [Public Interface] Query Risk Limit Information
 
@@ -138,7 +138,7 @@ namespace Example
             try
             {
                 // [Public Interface] Query Risk Limit Information
-                List<InlineResponse20026> result = apiInstance.ListCrossexRuleRiskLimits(symbols);
+                List<InlineResponse20027> result = apiInstance.ListCrossexRuleRiskLimits(symbols);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20026&gt;**](InlineResponse20026.md)
+[**List&lt;InlineResponse20027&gt;**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ No authorization required
 
 <a name="listcrossextransfercoins"></a>
 # **ListCrossexTransferCoins**
-> List&lt;InlineResponse20027&gt; ListCrossexTransferCoins (string coin = null)
+> List&lt;InlineResponse20028&gt; ListCrossexTransferCoins (string coin = null)
 
 [Public Interface] Query Supported Transfer Currencies
 
@@ -209,7 +209,7 @@ namespace Example
             try
             {
                 // [Public Interface] Query Supported Transfer Currencies
-                List<InlineResponse20027> result = apiInstance.ListCrossexTransferCoins(coin);
+                List<InlineResponse20028> result = apiInstance.ListCrossexTransferCoins(coin);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20027&gt;**](InlineResponse20027.md)
+[**List&lt;InlineResponse20028&gt;**](InlineResponse20028.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ No authorization required
 
 <a name="listcrossextransfers"></a>
 # **ListCrossexTransfers**
-> List&lt;InlineResponse20028&gt; ListCrossexTransfers (string coin = null, string orderId = null, int? from = null, int? to = null, int? page = null, int? limit = null)
+> List&lt;InlineResponse20029&gt; ListCrossexTransfers (string coin = null, string orderId = null, int? from = null, int? to = null, int? page = null, int? limit = null)
 
 Query Fund Transfer History
 
@@ -287,7 +287,7 @@ namespace Example
             try
             {
                 // Query Fund Transfer History
-                List<InlineResponse20028> result = apiInstance.ListCrossexTransfers(coin, orderId, from, to, page, limit);
+                List<InlineResponse20029> result = apiInstance.ListCrossexTransfers(coin, orderId, from, to, page, limit);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20028&gt;**](InlineResponse20028.md)
+[**List&lt;InlineResponse20029&gt;**](InlineResponse20029.md)
 
 ### Authorization
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossextransfer"></a>
 # **CreateCrossexTransfer**
-> InlineResponse20029 CreateCrossexTransfer (InlineObject21 inlineObject21 = null)
+> InlineResponse20030 CreateCrossexTransfer (InlineObject10 inlineObject10 = null)
 
 Fund Transfer
 
@@ -360,12 +360,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject21 = new InlineObject21(); // InlineObject21 |  (optional) 
+            var inlineObject10 = new InlineObject10(); // InlineObject10 |  (optional) 
 
             try
             {
                 // Fund Transfer
-                InlineResponse20029 result = apiInstance.CreateCrossexTransfer(inlineObject21);
+                InlineResponse20030 result = apiInstance.CreateCrossexTransfer(inlineObject10);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -384,80 +384,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject21** | [**InlineObject21**](InlineObject21.md)|  | [optional] 
-
-### Return type
-
-[**InlineResponse20029**](InlineResponse20029.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="createcrossexorder"></a>
-# **CreateCrossexOrder**
-> InlineResponse20030 CreateCrossexOrder (InlineObject22 inlineObject22 = null)
-
-Create an order
-
-Rate Limit: 100 requests per 10 seconds
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Io.Gate.GateApi.Api;
-using Io.Gate.GateApi.Client;
-using Io.Gate.GateApi.Model;
-
-namespace Example
-{
-    public class CreateCrossexOrderExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.gateio.ws/api/v4";
-            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
-
-            var apiInstance = new CrossExApi(config);
-            var inlineObject22 = new InlineObject22(); // InlineObject22 |  (optional) 
-
-            try
-            {
-                // Create an order
-                InlineResponse20030 result = apiInstance.CreateCrossexOrder(inlineObject22);
-                Debug.WriteLine(result);
-            }
-            catch (GateApiException e)
-            {
-                Debug.Print("Exception when calling CrossExApi.CreateCrossexOrder: " + e.Message);
-                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject22** | [**InlineObject22**](InlineObject22.md)|  | [optional] 
+ **inlineObject10** | [**InlineObject10**](InlineObject10.md)|  | [optional] 
 
 ### Return type
 
@@ -479,9 +406,82 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="createcrossexorder"></a>
+# **CreateCrossexOrder**
+> InlineResponse20031 CreateCrossexOrder (InlineObject11 inlineObject11 = null)
+
+Create an order
+
+Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateCrossexOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new CrossExApi(config);
+            var inlineObject11 = new InlineObject11(); // InlineObject11 |  (optional) 
+
+            try
+            {
+                // Create an order
+                InlineResponse20031 result = apiInstance.CreateCrossexOrder(inlineObject11);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling CrossExApi.CreateCrossexOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inlineObject11** | [**InlineObject11**](InlineObject11.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse20031**](InlineResponse20031.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getcrossexorder"></a>
 # **GetCrossexOrder**
-> InlineResponse20031 GetCrossexOrder (string orderId)
+> InlineResponse20032 GetCrossexOrder (string orderId)
 
 Query order details
 
@@ -511,7 +511,7 @@ namespace Example
             try
             {
                 // Query order details
-                InlineResponse20031 result = apiInstance.GetCrossexOrder(orderId);
+                InlineResponse20032 result = apiInstance.GetCrossexOrder(orderId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**InlineResponse20032**](InlineResponse20032.md)
 
 ### Authorization
 
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexorder"></a>
 # **UpdateCrossexOrder**
-> InlineResponse20032 UpdateCrossexOrder (string orderId, InlineObject23 inlineObject23 = null)
+> InlineResponse20033 UpdateCrossexOrder (string orderId, InlineObject12 inlineObject12 = null)
 
 Modify Order
 
@@ -580,12 +580,12 @@ namespace Example
 
             var apiInstance = new CrossExApi(config);
             var orderId = "orderId_example";  // string | Support Order ID or Text for Modify Order
-            var inlineObject23 = new InlineObject23(); // InlineObject23 |  (optional) 
+            var inlineObject12 = new InlineObject12(); // InlineObject12 |  (optional) 
 
             try
             {
                 // Modify Order
-                InlineResponse20032 result = apiInstance.UpdateCrossexOrder(orderId, inlineObject23);
+                InlineResponse20033 result = apiInstance.UpdateCrossexOrder(orderId, inlineObject12);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -605,11 +605,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **string**| Support Order ID or Text for Modify Order | 
- **inlineObject23** | [**InlineObject23**](InlineObject23.md)|  | [optional] 
+ **inlineObject12** | [**InlineObject12**](InlineObject12.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**InlineResponse20033**](InlineResponse20033.md)
 
 ### Authorization
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 <a name="cancelcrossexorder"></a>
 # **CancelCrossexOrder**
-> Object CancelCrossexOrder (string orderId, Object body = null)
+> Object CancelCrossexOrder (string orderId)
 
 Cancel Order
 
@@ -655,12 +655,11 @@ namespace Example
 
             var apiInstance = new CrossExApi(config);
             var orderId = "orderId_example";  // string | Support Order ID or Text for Cancel Order
-            var body = null;  // Object |  (optional) 
 
             try
             {
                 // Cancel Order
-                Object result = apiInstance.CancelCrossexOrder(orderId, body);
+                Object result = apiInstance.CancelCrossexOrder(orderId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -680,7 +679,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **string**| Support Order ID or Text for Cancel Order | 
- **body** | **Object**|  | [optional] 
 
 ### Return type
 
@@ -692,7 +690,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -704,7 +702,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossexconvertquote"></a>
 # **CreateCrossexConvertQuote**
-> InlineResponse20033 CreateCrossexConvertQuote (InlineObject24 inlineObject24 = null)
+> InlineResponse20034 CreateCrossexConvertQuote (InlineObject13 inlineObject13 = null)
 
 Flash Swap Inquiry
 
@@ -729,12 +727,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject24 = new InlineObject24(); // InlineObject24 |  (optional) 
+            var inlineObject13 = new InlineObject13(); // InlineObject13 |  (optional) 
 
             try
             {
                 // Flash Swap Inquiry
-                InlineResponse20033 result = apiInstance.CreateCrossexConvertQuote(inlineObject24);
+                InlineResponse20034 result = apiInstance.CreateCrossexConvertQuote(inlineObject13);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -753,11 +751,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject24** | [**InlineObject24**](InlineObject24.md)|  | [optional] 
+ **inlineObject13** | [**InlineObject13**](InlineObject13.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**InlineResponse20034**](InlineResponse20034.md)
 
 ### Authorization
 
@@ -777,7 +775,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossexconvertorder"></a>
 # **CreateCrossexConvertOrder**
-> Object CreateCrossexConvertOrder (InlineObject25 inlineObject25 = null)
+> Object CreateCrossexConvertOrder (InlineObject14 inlineObject14 = null)
 
 Flash Swap Transaction
 
@@ -802,12 +800,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject25 = new InlineObject25(); // InlineObject25 |  (optional) 
+            var inlineObject14 = new InlineObject14(); // InlineObject14 |  (optional) 
 
             try
             {
                 // Flash Swap Transaction
-                Object result = apiInstance.CreateCrossexConvertOrder(inlineObject25);
+                Object result = apiInstance.CreateCrossexConvertOrder(inlineObject14);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -826,7 +824,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject25** | [**InlineObject25**](InlineObject25.md)|  | [optional] 
+ **inlineObject14** | [**InlineObject14**](InlineObject14.md)|  | [optional] 
 
 ### Return type
 
@@ -850,7 +848,7 @@ Name | Type | Description  | Notes
 
 <a name="getcrossexaccount"></a>
 # **GetCrossexAccount**
-> InlineResponse20034 GetCrossexAccount (string exchangeType = null)
+> InlineResponse20035 GetCrossexAccount (string exchangeType = null)
 
 Query Account Assets
 
@@ -880,7 +878,7 @@ namespace Example
             try
             {
                 // Query Account Assets
-                InlineResponse20034 result = apiInstance.GetCrossexAccount(exchangeType);
+                InlineResponse20035 result = apiInstance.GetCrossexAccount(exchangeType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -903,7 +901,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20034**](InlineResponse20034.md)
+[**InlineResponse20035**](InlineResponse20035.md)
 
 ### Authorization
 
@@ -923,7 +921,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexaccount"></a>
 # **UpdateCrossexAccount**
-> InlineResponse202 UpdateCrossexAccount (InlineObject26 inlineObject26 = null)
+> InlineResponse202 UpdateCrossexAccount (InlineObject15 inlineObject15 = null)
 
 Modify Account Contract Position Mode and Account Mode
 
@@ -948,12 +946,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject26 = new InlineObject26(); // InlineObject26 |  (optional) 
+            var inlineObject15 = new InlineObject15(); // InlineObject15 |  (optional) 
 
             try
             {
                 // Modify Account Contract Position Mode and Account Mode
-                InlineResponse202 result = apiInstance.UpdateCrossexAccount(inlineObject26);
+                InlineResponse202 result = apiInstance.UpdateCrossexAccount(inlineObject15);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -972,7 +970,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject26** | [**InlineObject26**](InlineObject26.md)|  | [optional] 
+ **inlineObject15** | [**InlineObject15**](InlineObject15.md)|  | [optional] 
 
 ### Return type
 
@@ -996,7 +994,7 @@ Name | Type | Description  | Notes
 
 <a name="getcrossexpositionsleverage"></a>
 # **GetCrossexPositionsLeverage**
-> List&lt;InlineResponse20035&gt; GetCrossexPositionsLeverage (string symbols = null)
+> Dictionary&lt;string, string&gt; GetCrossexPositionsLeverage (string symbols = null)
 
 Query Contract Trading Pair Leverage Multiplier
 
@@ -1021,12 +1019,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var symbols = "BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT";  // string | Trading Pair List, multiple separated by commas (optional) 
+            var symbols = "BINANCE_FUTURE_BTC_USDT,OKX_FUTURE_BTC_USDT,GATE_FUTURE_BTC_USDT";  // string | Trading Pair List, multiple separated by commas (optional) 
 
             try
             {
                 // Query Contract Trading Pair Leverage Multiplier
-                List<InlineResponse20035> result = apiInstance.GetCrossexPositionsLeverage(symbols);
+                Dictionary<string, string> result = apiInstance.GetCrossexPositionsLeverage(symbols);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1049,7 +1047,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20035&gt;**](InlineResponse20035.md)
+**Dictionary<string, string>**
 
 ### Authorization
 
@@ -1069,7 +1067,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexpositionsleverage"></a>
 # **UpdateCrossexPositionsLeverage**
-> InlineResponse2021 UpdateCrossexPositionsLeverage (InlineObject27 inlineObject27 = null)
+> InlineResponse2021 UpdateCrossexPositionsLeverage (InlineObject16 inlineObject16 = null)
 
 Modify Contract Trading Pair Leverage Multiplier
 
@@ -1094,12 +1092,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject27 = new InlineObject27(); // InlineObject27 |  (optional) 
+            var inlineObject16 = new InlineObject16(); // InlineObject16 |  (optional) 
 
             try
             {
                 // Modify Contract Trading Pair Leverage Multiplier
-                InlineResponse2021 result = apiInstance.UpdateCrossexPositionsLeverage(inlineObject27);
+                InlineResponse2021 result = apiInstance.UpdateCrossexPositionsLeverage(inlineObject16);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1118,7 +1116,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject27** | [**InlineObject27**](InlineObject27.md)|  | [optional] 
+ **inlineObject16** | [**InlineObject16**](InlineObject16.md)|  | [optional] 
 
 ### Return type
 
@@ -1142,7 +1140,7 @@ Name | Type | Description  | Notes
 
 <a name="getcrossexmarginpositionsleverage"></a>
 # **GetCrossexMarginPositionsLeverage**
-> List&lt;InlineResponse20035&gt; GetCrossexMarginPositionsLeverage (string symbols = null)
+> Dictionary&lt;string, string&gt; GetCrossexMarginPositionsLeverage (string symbols = null)
 
 Query Leveraged Trading Pair Leverage Multiplier
 
@@ -1167,12 +1165,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var symbols = "BINANCE_MARGIN_ADA_USDT,OKX_FUTURE_ADA_USDT";  // string | Trading Pair List, multiple separated by commas (optional) 
+            var symbols = "BINANCE_MARGIN_BTC_USDT,OKX_MARGIN_BTC_USDT,GATE_MARGIN_BTC_USDT";  // string | Trading Pair List, multiple separated by commas (optional) 
 
             try
             {
                 // Query Leveraged Trading Pair Leverage Multiplier
-                List<InlineResponse20035> result = apiInstance.GetCrossexMarginPositionsLeverage(symbols);
+                Dictionary<string, string> result = apiInstance.GetCrossexMarginPositionsLeverage(symbols);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1195,7 +1193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20035&gt;**](InlineResponse20035.md)
+**Dictionary<string, string>**
 
 ### Authorization
 
@@ -1215,7 +1213,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexmarginpositionsleverage"></a>
 # **UpdateCrossexMarginPositionsLeverage**
-> InlineResponse2021 UpdateCrossexMarginPositionsLeverage (InlineObject28 inlineObject28 = null)
+> InlineResponse2021 UpdateCrossexMarginPositionsLeverage (InlineObject17 inlineObject17 = null)
 
 Modify Leveraged Trading Pair Leverage Multiplier
 
@@ -1240,12 +1238,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject28 = new InlineObject28(); // InlineObject28 |  (optional) 
+            var inlineObject17 = new InlineObject17(); // InlineObject17 |  (optional) 
 
             try
             {
                 // Modify Leveraged Trading Pair Leverage Multiplier
-                InlineResponse2021 result = apiInstance.UpdateCrossexMarginPositionsLeverage(inlineObject28);
+                InlineResponse2021 result = apiInstance.UpdateCrossexMarginPositionsLeverage(inlineObject17);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1264,7 +1262,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject28** | [**InlineObject28**](InlineObject28.md)|  | [optional] 
+ **inlineObject17** | [**InlineObject17**](InlineObject17.md)|  | [optional] 
 
 ### Return type
 
@@ -1288,7 +1286,7 @@ Name | Type | Description  | Notes
 
 <a name="closecrossexposition"></a>
 # **CloseCrossexPosition**
-> InlineResponse20030 CloseCrossexPosition (InlineObject29 inlineObject29 = null)
+> InlineResponse20031 CloseCrossexPosition (InlineObject18 inlineObject18 = null)
 
 Full Close Position
 
@@ -1313,12 +1311,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject29 = new InlineObject29(); // InlineObject29 |  (optional) 
+            var inlineObject18 = new InlineObject18(); // InlineObject18 |  (optional) 
 
             try
             {
                 // Full Close Position
-                InlineResponse20030 result = apiInstance.CloseCrossexPosition(inlineObject29);
+                InlineResponse20031 result = apiInstance.CloseCrossexPosition(inlineObject18);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1337,11 +1335,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject29** | [**InlineObject29**](InlineObject29.md)|  | [optional] 
+ **inlineObject18** | [**InlineObject18**](InlineObject18.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**InlineResponse20031**](InlineResponse20031.md)
 
 ### Authorization
 
@@ -1728,7 +1726,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexopenorders"></a>
 # **ListCrossexOpenOrders**
-> List&lt;InlineResponse20031&gt; ListCrossexOpenOrders (string symbol = null, string exchangeType = null, string businessType = null)
+> List&lt;InlineResponse20032&gt; ListCrossexOpenOrders (string symbol = null, string exchangeType = null, string businessType = null)
 
 Query All Current Open Orders
 
@@ -1760,7 +1758,7 @@ namespace Example
             try
             {
                 // Query All Current Open Orders
-                List<InlineResponse20031> result = apiInstance.ListCrossexOpenOrders(symbol, exchangeType, businessType);
+                List<InlineResponse20032> result = apiInstance.ListCrossexOpenOrders(symbol, exchangeType, businessType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1785,7 +1783,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20031&gt;**](InlineResponse20031.md)
+[**List&lt;InlineResponse20032&gt;**](InlineResponse20032.md)
 
 ### Authorization
 

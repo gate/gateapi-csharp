@@ -38,27 +38,19 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject9" /> class.
         /// </summary>
-        /// <param name="txid">Order ID (required).</param>
-        /// <param name="channel">Empty or web3.</param>
-        public InlineObject9(int txid = default(int), string channel = default(string))
+        /// <param name="orderId">Order ID (required).</param>
+        public InlineObject9(string orderId = default(string))
         {
-            this.Txid = txid;
-            this.Channel = channel;
+            // to ensure "orderId" is required (not null)
+            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for InlineObject9 and cannot be null");
         }
 
         /// <summary>
         /// Order ID
         /// </summary>
         /// <value>Order ID</value>
-        [DataMember(Name="txid")]
-        public int Txid { get; set; }
-
-        /// <summary>
-        /// Empty or web3
-        /// </summary>
-        /// <value>Empty or web3</value>
-        [DataMember(Name="channel")]
-        public string Channel { get; set; }
+        [DataMember(Name="order_id")]
+        public string OrderId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,8 +60,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject9 {\n");
-            sb.Append("  Txid: ").Append(Txid).Append("\n");
-            sb.Append("  Channel: ").Append(Channel).Append("\n");
+            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,13 +96,9 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Txid == input.Txid ||
-                    this.Txid.Equals(input.Txid)
-                ) && 
-                (
-                    this.Channel == input.Channel ||
-                    (this.Channel != null &&
-                    this.Channel.Equals(input.Channel))
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 );
         }
 
@@ -124,9 +111,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Txid.GetHashCode();
-                if (this.Channel != null)
-                    hashCode = hashCode * 59 + this.Channel.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 return hashCode;
             }
         }

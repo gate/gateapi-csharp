@@ -33,41 +33,27 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject12" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineObject12() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject12" /> class.
-        /// </summary>
-        /// <param name="tradeId">tradeId (required).</param>
-        /// <param name="reasonId">reasonId (required).</param>
-        /// <param name="reasonMemo">reasonMemo (required).</param>
-        public InlineObject12(string tradeId = default(string), string reasonId = default(string), string reasonMemo = default(string))
+        /// <param name="qty">modify amount.</param>
+        /// <param name="price">modify price.</param>
+        public InlineObject12(string qty = default(string), string price = default(string))
         {
-            // to ensure "tradeId" is required (not null)
-            this.TradeId = tradeId ?? throw new ArgumentNullException("tradeId", "tradeId is a required property for InlineObject12 and cannot be null");
-            // to ensure "reasonId" is required (not null)
-            this.ReasonId = reasonId ?? throw new ArgumentNullException("reasonId", "reasonId is a required property for InlineObject12 and cannot be null");
-            // to ensure "reasonMemo" is required (not null)
-            this.ReasonMemo = reasonMemo ?? throw new ArgumentNullException("reasonMemo", "reasonMemo is a required property for InlineObject12 and cannot be null");
+            this.Qty = qty;
+            this.Price = price;
         }
 
         /// <summary>
-        /// Gets or Sets TradeId
+        /// modify amount
         /// </summary>
-        [DataMember(Name="trade_id")]
-        public string TradeId { get; set; }
+        /// <value>modify amount</value>
+        [DataMember(Name="qty")]
+        public string Qty { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReasonId
+        /// modify price
         /// </summary>
-        [DataMember(Name="reason_id")]
-        public string ReasonId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ReasonMemo
-        /// </summary>
-        [DataMember(Name="reason_memo")]
-        public string ReasonMemo { get; set; }
+        /// <value>modify price</value>
+        [DataMember(Name="price")]
+        public string Price { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -77,9 +63,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject12 {\n");
-            sb.Append("  TradeId: ").Append(TradeId).Append("\n");
-            sb.Append("  ReasonId: ").Append(ReasonId).Append("\n");
-            sb.Append("  ReasonMemo: ").Append(ReasonMemo).Append("\n");
+            sb.Append("  Qty: ").Append(Qty).Append("\n");
+            sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,19 +100,14 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.TradeId == input.TradeId ||
-                    (this.TradeId != null &&
-                    this.TradeId.Equals(input.TradeId))
+                    this.Qty == input.Qty ||
+                    (this.Qty != null &&
+                    this.Qty.Equals(input.Qty))
                 ) && 
                 (
-                    this.ReasonId == input.ReasonId ||
-                    (this.ReasonId != null &&
-                    this.ReasonId.Equals(input.ReasonId))
-                ) && 
-                (
-                    this.ReasonMemo == input.ReasonMemo ||
-                    (this.ReasonMemo != null &&
-                    this.ReasonMemo.Equals(input.ReasonMemo))
+                    this.Price == input.Price ||
+                    (this.Price != null &&
+                    this.Price.Equals(input.Price))
                 );
         }
 
@@ -140,12 +120,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TradeId != null)
-                    hashCode = hashCode * 59 + this.TradeId.GetHashCode();
-                if (this.ReasonId != null)
-                    hashCode = hashCode * 59 + this.ReasonId.GetHashCode();
-                if (this.ReasonMemo != null)
-                    hashCode = hashCode * 59 + this.ReasonMemo.GetHashCode();
+                if (this.Qty != null)
+                    hashCode = hashCode * 59 + this.Qty.GetHashCode();
+                if (this.Price != null)
+                    hashCode = hashCode * 59 + this.Price.GetHashCode();
                 return hashCode;
             }
         }

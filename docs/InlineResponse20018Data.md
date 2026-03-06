@@ -5,78 +5,78 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsSell** | **int** | Whether sell order | 
-**Txid** | **int** | Order ID | 
-**Orderid** | **int** | Order ID | 
-**Timest** | **int** | Order creation timestamp | 
-**LastPayTime** | **int** | Payment deadline | 
-**RemainPayTime** | **int** | Remaining payment time | 
-**CurrencyType** | **string** | Cryptocurrency type | 
-**WantType** | **string** | Fiat currency type | 
-**Rate** | **string** | Price | 
-**Amount** | **string** | Size | 
-**Total** | **string** | Fiat amount | 
-**Status** | **string** | Order Status | 
-**ReasonId** | **string** | Cancellation reason ID | 
-**ReasonDesc** | **string** | Cancellation reason | 
-**ToastId** | **int** | Popup ID | 
-**CancelTime** | **string** | Cancellation time | 
-**SellerConfirm** | **int** | Whether seller confirmed the reason | 
-**InAppeal** | **int** | Whether in dispute | 
-**DisputeTime** | **int** | Appeal time limit | 
-**Cancelable** | **int** | Whether order cancellation is allowed | 
-**HidePayment** | **int** | Whether to hide payment method | 
-**TradeTips** | **string** | Trading terms | 
-**ShowBank** | **string** | Whether to display bank | 
-**Bankname** | **string** | Bank name | 
-**Bankbranch** | **string** | Bank branch name | 
-**Bankid** | **string** | Bank ID | 
-**BankHolderRealname** | **string** | Bank cardholder name | 
-**ShowAli** | **string** | Whether to display Alipay | 
-**Aliname** | **string** | Alipay account name | 
-**IsAlicode** | **int** | Whether Alipay QR code exists | 
-**ShowWechat** | **string** | Whether to display WeChat | 
-**Wename** | **string** | WeChat account name | 
-**ShowOthers** | **string** | Whether to display other payment methods | 
-**PayOthers** | **List&lt;string&gt;** | Other payment methods | 
-**SelPaytype** | **string** | Payment type | 
-**ItsUid** | **string** | Counterparty UID | 
-**ItsIsBlueVip** | **int** | Whether counterparty is Blue V | 
-**ItsTier** | **int** | Counterparty VIP tier | 
-**ItsAvatar** | **string** | Counterparty avatar | 
-**ItsNickname** | **string** | Counterparty nickname | 
-**ItsRealname** | **string** | Counterparty username | 
-**IsFollow** | **int** | Whether following | 
-**IsBlack** | **int** | Whether blocked | 
-**HaveTraded** | **int** | Whether traded before | 
-**AppealUnread** | **int** | Unread appeals | 
-**AppealAllowCancel** | **int** | Whether appeal cancellation is allowed | 
-**AppealVerdictHasOpen** | **string** | Appeal result (including pending appeals) | 
-**ImUnread** | **int** | IM unread | 
-**Message** | **string** | Review content | 
-**Score** | **string** | Rating | 
-**PaymentVoucherUrl** | **List&lt;string&gt;** | Payment voucher | 
-**CompleteNumber** | **int** | Counterparty transaction volume | 
-**CompleteRateMonth** | **string** | Counterparty completion rate | 
-**CheckJournalAccount** | **bool** | Whether transaction record is verified | 
-**ShowJournalAccount** | **bool** | Whether to display transaction records | 
-**IsFreezeGuarantee** | **int** | Whether margin is frozen | 
-**UsdtLeftGuarantee** | **string** | Remaining USDT margin | 
-**GuaranteeCurrType** | **string** | Margin currency type | 
-**TimestPaid** | **int** | Payment time | 
-**State** | **string** | Order Status | 
-**ReleaseCoinSwitch** | **int** | Coin release switch configuration | 
-**OwnRealname** | **string** | Username | 
-**ConfirmationUseTimeMonth** | **int** | Average confirmation time in last 30 days | 
-**IsRiskUser** | **int** | Whether risk user | 
-**IsXt** | **int** | Whether XT order | 
-**OrderType** | **int** | Order Type | 
-**Symbol** | **string** | Fiat currency symbol | 
-**IsShowReceive** | **int** | Whether to show confirm receipt during appeal | 
-**IsTaker** | **int** | Whether regular user | 
-**IsOnline** | **int** | Merchant online status | 
-**ShowSellerContactInfo** | **bool** | Whether to display seller contact information | 
-**SupportedPayTypes** | **List&lt;string&gt;** | Payment methods supported by current order | 
+**IsSell** | **int** | Whether sell order | [optional] 
+**Txid** | **int** | Order ID | [optional] 
+**Orderid** | **int** | Order ID | [optional] 
+**Timest** | **int** | Order creation timestamp | [optional] 
+**LastPayTime** | **int** | Payment deadline | [optional] 
+**RemainPayTime** | **int** | Remaining payment time | [optional] 
+**CurrencyType** | **string** | Cryptocurrency type | [optional] 
+**WantType** | **string** | Fiat currency type | [optional] 
+**Rate** | **string** | Price | [optional] 
+**Amount** | **string** | Size | [optional] 
+**Total** | **string** | Fiat amount | [optional] 
+**Status** | **string** | Order Status | [optional] 
+**ReasonId** | **string** | Cancellation reason ID | [optional] 
+**ReasonDesc** | **string** | Cancellation reason | [optional] 
+**ToastId** | **int** | Popup ID | [optional] 
+**CancelTime** | **string** | Cancellation time | [optional] 
+**SellerConfirm** | **int** | Whether seller confirmed the reason | [optional] 
+**InAppeal** | **int** | Whether in dispute | [optional] 
+**DisputeTime** | **int** | Appeal time limit | [optional] 
+**Cancelable** | **int** | Whether order cancellation is allowed | [optional] 
+**HidePayment** | **int** | Whether to hide payment method | [optional] 
+**TradeTips** | **string** | Trading terms | [optional] 
+**ShowBank** | **string** | Whether to display bank | [optional] 
+**Bankname** | **string** | Bank name | [optional] 
+**Bankbranch** | **string** | Bank branch name | [optional] 
+**Bankid** | **string** | Bank ID | [optional] 
+**BankHolderRealname** | **string** | Bank cardholder name | [optional] 
+**ShowAli** | **string** | Whether to display Alipay | [optional] 
+**Aliname** | **string** | Alipay account name | [optional] 
+**IsAlicode** | **int** | Whether Alipay QR code exists | [optional] 
+**ShowWechat** | **string** | Whether to display WeChat | [optional] 
+**Wename** | **string** | WeChat account name | [optional] 
+**ShowOthers** | **string** | Whether to display other payment methods | [optional] 
+**PayOthers** | **List&lt;string&gt;** | Other payment methods | [optional] 
+**SelPaytype** | **string** | Payment type | [optional] 
+**ItsUid** | **string** | Counterparty UID | [optional] 
+**ItsIsBlueVip** | **int** | Whether counterparty is Blue V | [optional] 
+**ItsTier** | **int** | Counterparty VIP tier | [optional] 
+**ItsAvatar** | **string** | Counterparty avatar | [optional] 
+**ItsNickname** | **string** | Counterparty nickname | [optional] 
+**ItsRealname** | **string** | Counterparty username | [optional] 
+**IsFollow** | **int** | Whether following | [optional] 
+**IsBlack** | **int** | Whether blocked | [optional] 
+**HaveTraded** | **int** | Whether traded before | [optional] 
+**AppealUnread** | **int** | Unread appeals | [optional] 
+**AppealAllowCancel** | **int** | Whether appeal cancellation is allowed | [optional] 
+**AppealVerdictHasOpen** | **string** | Appeal result (including pending appeals) | [optional] 
+**ImUnread** | **int** | IM unread | [optional] 
+**Message** | **string** | Review content | [optional] 
+**Score** | **string** | Rating | [optional] 
+**PaymentVoucherUrl** | **List&lt;string&gt;** | Payment voucher | [optional] 
+**CompleteNumber** | **int** | Counterparty transaction volume | [optional] 
+**CompleteRateMonth** | **string** | Counterparty completion rate | [optional] 
+**CheckJournalAccount** | **bool** | Whether transaction record is verified | [optional] 
+**ShowJournalAccount** | **bool** | Whether to display transaction records | [optional] 
+**IsFreezeGuarantee** | **int** | Whether margin is frozen | [optional] 
+**UsdtLeftGuarantee** | **string** | Remaining USDT margin | [optional] 
+**GuaranteeCurrType** | **string** | Margin currency type | [optional] 
+**TimestPaid** | **int** | Payment time | [optional] 
+**State** | **string** | Order Status | [optional] 
+**ReleaseCoinSwitch** | **int** | Coin release switch configuration | [optional] 
+**OwnRealname** | **string** | Username | [optional] 
+**ConfirmationUseTimeMonth** | **int** | Average confirmation time in last 30 days | [optional] 
+**IsRiskUser** | **int** | Whether risk user | [optional] 
+**IsXt** | **int** | Whether XT order | [optional] 
+**OrderType** | **int** | Order Type | [optional] 
+**Symbol** | **string** | Fiat currency symbol | [optional] 
+**IsShowReceive** | **int** | Whether to show confirm receipt during appeal | [optional] 
+**IsTaker** | **int** | Whether regular user | [optional] 
+**IsOnline** | **int** | Merchant online status | [optional] 
+**ShowSellerContactInfo** | **bool** | Whether to display seller contact information | [optional] 
+**SupportedPayTypes** | **List&lt;string&gt;** | Payment methods supported by current order | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

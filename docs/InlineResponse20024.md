@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Timestamp** | **decimal** |  | 
-**Method** | **string** |  | 
-**Code** | **int** |  | 
-**Message** | **string** |  | 
-**Data** | [**InlineResponse20024Data**](InlineResponse20024Data.md) |  | 
-**Version** | **string** |  | 
+**Timestamp** | **decimal** |  | [optional] 
+**Method** | **string** |  | [optional] 
+**Code** | **int** |  | [optional] 
+**Message** | **string** |  | [optional] 
+**Data** | [**InlineResponse20024Data**](InlineResponse20024Data.md) |  | [optional] 
+**Version** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

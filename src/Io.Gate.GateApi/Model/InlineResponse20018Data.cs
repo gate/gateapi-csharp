@@ -33,83 +33,78 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20018Data" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20018Data() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20018Data" /> class.
-        /// </summary>
-        /// <param name="isSell">Whether sell order (required).</param>
-        /// <param name="txid">Order ID (required).</param>
-        /// <param name="orderid">Order ID (required).</param>
-        /// <param name="timest">Order creation timestamp (required).</param>
-        /// <param name="lastPayTime">Payment deadline (required).</param>
-        /// <param name="remainPayTime">Remaining payment time (required).</param>
-        /// <param name="currencyType">Cryptocurrency type (required).</param>
-        /// <param name="wantType">Fiat currency type (required).</param>
-        /// <param name="rate">Price (required).</param>
-        /// <param name="amount">Size (required).</param>
-        /// <param name="total">Fiat amount (required).</param>
-        /// <param name="status">Order Status (required).</param>
-        /// <param name="reasonId">Cancellation reason ID (required).</param>
-        /// <param name="reasonDesc">Cancellation reason (required).</param>
-        /// <param name="toastId">Popup ID (required).</param>
-        /// <param name="cancelTime">Cancellation time (required).</param>
-        /// <param name="sellerConfirm">Whether seller confirmed the reason (required).</param>
-        /// <param name="inAppeal">Whether in dispute (required).</param>
-        /// <param name="disputeTime">Appeal time limit (required).</param>
-        /// <param name="cancelable">Whether order cancellation is allowed (required).</param>
-        /// <param name="hidePayment">Whether to hide payment method (required).</param>
-        /// <param name="tradeTips">Trading terms (required).</param>
-        /// <param name="showBank">Whether to display bank (required).</param>
-        /// <param name="bankname">Bank name (required).</param>
-        /// <param name="bankbranch">Bank branch name (required).</param>
-        /// <param name="bankid">Bank ID (required).</param>
-        /// <param name="bankHolderRealname">Bank cardholder name (required).</param>
-        /// <param name="showAli">Whether to display Alipay (required).</param>
-        /// <param name="aliname">Alipay account name (required).</param>
-        /// <param name="isAlicode">Whether Alipay QR code exists (required).</param>
-        /// <param name="showWechat">Whether to display WeChat (required).</param>
-        /// <param name="wename">WeChat account name (required).</param>
-        /// <param name="showOthers">Whether to display other payment methods (required).</param>
-        /// <param name="payOthers">Other payment methods (required).</param>
-        /// <param name="selPaytype">Payment type (required).</param>
-        /// <param name="itsUid">Counterparty UID (required).</param>
-        /// <param name="itsIsBlueVip">Whether counterparty is Blue V (required).</param>
-        /// <param name="itsTier">Counterparty VIP tier (required).</param>
-        /// <param name="itsAvatar">Counterparty avatar (required).</param>
-        /// <param name="itsNickname">Counterparty nickname (required).</param>
-        /// <param name="itsRealname">Counterparty username (required).</param>
-        /// <param name="isFollow">Whether following (required).</param>
-        /// <param name="isBlack">Whether blocked (required).</param>
-        /// <param name="haveTraded">Whether traded before (required).</param>
-        /// <param name="appealUnread">Unread appeals (required).</param>
-        /// <param name="appealAllowCancel">Whether appeal cancellation is allowed (required).</param>
-        /// <param name="appealVerdictHasOpen">Appeal result (including pending appeals) (required).</param>
-        /// <param name="imUnread">IM unread (required).</param>
-        /// <param name="message">Review content (required).</param>
-        /// <param name="score">Rating (required).</param>
-        /// <param name="paymentVoucherUrl">Payment voucher (required).</param>
-        /// <param name="completeNumber">Counterparty transaction volume (required).</param>
-        /// <param name="completeRateMonth">Counterparty completion rate (required).</param>
-        /// <param name="checkJournalAccount">Whether transaction record is verified (required).</param>
-        /// <param name="showJournalAccount">Whether to display transaction records (required).</param>
-        /// <param name="isFreezeGuarantee">Whether margin is frozen (required).</param>
-        /// <param name="usdtLeftGuarantee">Remaining USDT margin (required).</param>
-        /// <param name="guaranteeCurrType">Margin currency type (required).</param>
-        /// <param name="timestPaid">Payment time (required).</param>
-        /// <param name="state">Order Status (required).</param>
-        /// <param name="releaseCoinSwitch">Coin release switch configuration (required).</param>
-        /// <param name="ownRealname">Username (required).</param>
-        /// <param name="confirmationUseTimeMonth">Average confirmation time in last 30 days (required).</param>
-        /// <param name="isRiskUser">Whether risk user (required).</param>
-        /// <param name="isXt">Whether XT order (required).</param>
-        /// <param name="orderType">Order Type (required).</param>
-        /// <param name="symbol">Fiat currency symbol (required).</param>
-        /// <param name="isShowReceive">Whether to show confirm receipt during appeal (required).</param>
-        /// <param name="isTaker">Whether regular user (required).</param>
-        /// <param name="isOnline">Merchant online status (required).</param>
-        /// <param name="showSellerContactInfo">Whether to display seller contact information (required).</param>
-        /// <param name="supportedPayTypes">Payment methods supported by current order (required).</param>
+        /// <param name="isSell">Whether sell order.</param>
+        /// <param name="txid">Order ID.</param>
+        /// <param name="orderid">Order ID.</param>
+        /// <param name="timest">Order creation timestamp.</param>
+        /// <param name="lastPayTime">Payment deadline.</param>
+        /// <param name="remainPayTime">Remaining payment time.</param>
+        /// <param name="currencyType">Cryptocurrency type.</param>
+        /// <param name="wantType">Fiat currency type.</param>
+        /// <param name="rate">Price.</param>
+        /// <param name="amount">Size.</param>
+        /// <param name="total">Fiat amount.</param>
+        /// <param name="status">Order Status.</param>
+        /// <param name="reasonId">Cancellation reason ID.</param>
+        /// <param name="reasonDesc">Cancellation reason.</param>
+        /// <param name="toastId">Popup ID.</param>
+        /// <param name="cancelTime">Cancellation time.</param>
+        /// <param name="sellerConfirm">Whether seller confirmed the reason.</param>
+        /// <param name="inAppeal">Whether in dispute.</param>
+        /// <param name="disputeTime">Appeal time limit.</param>
+        /// <param name="cancelable">Whether order cancellation is allowed.</param>
+        /// <param name="hidePayment">Whether to hide payment method.</param>
+        /// <param name="tradeTips">Trading terms.</param>
+        /// <param name="showBank">Whether to display bank.</param>
+        /// <param name="bankname">Bank name.</param>
+        /// <param name="bankbranch">Bank branch name.</param>
+        /// <param name="bankid">Bank ID.</param>
+        /// <param name="bankHolderRealname">Bank cardholder name.</param>
+        /// <param name="showAli">Whether to display Alipay.</param>
+        /// <param name="aliname">Alipay account name.</param>
+        /// <param name="isAlicode">Whether Alipay QR code exists.</param>
+        /// <param name="showWechat">Whether to display WeChat.</param>
+        /// <param name="wename">WeChat account name.</param>
+        /// <param name="showOthers">Whether to display other payment methods.</param>
+        /// <param name="payOthers">Other payment methods.</param>
+        /// <param name="selPaytype">Payment type.</param>
+        /// <param name="itsUid">Counterparty UID.</param>
+        /// <param name="itsIsBlueVip">Whether counterparty is Blue V.</param>
+        /// <param name="itsTier">Counterparty VIP tier.</param>
+        /// <param name="itsAvatar">Counterparty avatar.</param>
+        /// <param name="itsNickname">Counterparty nickname.</param>
+        /// <param name="itsRealname">Counterparty username.</param>
+        /// <param name="isFollow">Whether following.</param>
+        /// <param name="isBlack">Whether blocked.</param>
+        /// <param name="haveTraded">Whether traded before.</param>
+        /// <param name="appealUnread">Unread appeals.</param>
+        /// <param name="appealAllowCancel">Whether appeal cancellation is allowed.</param>
+        /// <param name="appealVerdictHasOpen">Appeal result (including pending appeals).</param>
+        /// <param name="imUnread">IM unread.</param>
+        /// <param name="message">Review content.</param>
+        /// <param name="score">Rating.</param>
+        /// <param name="paymentVoucherUrl">Payment voucher.</param>
+        /// <param name="completeNumber">Counterparty transaction volume.</param>
+        /// <param name="completeRateMonth">Counterparty completion rate.</param>
+        /// <param name="checkJournalAccount">Whether transaction record is verified.</param>
+        /// <param name="showJournalAccount">Whether to display transaction records.</param>
+        /// <param name="isFreezeGuarantee">Whether margin is frozen.</param>
+        /// <param name="usdtLeftGuarantee">Remaining USDT margin.</param>
+        /// <param name="guaranteeCurrType">Margin currency type.</param>
+        /// <param name="timestPaid">Payment time.</param>
+        /// <param name="state">Order Status.</param>
+        /// <param name="releaseCoinSwitch">Coin release switch configuration.</param>
+        /// <param name="ownRealname">Username.</param>
+        /// <param name="confirmationUseTimeMonth">Average confirmation time in last 30 days.</param>
+        /// <param name="isRiskUser">Whether risk user.</param>
+        /// <param name="isXt">Whether XT order.</param>
+        /// <param name="orderType">Order Type.</param>
+        /// <param name="symbol">Fiat currency symbol.</param>
+        /// <param name="isShowReceive">Whether to show confirm receipt during appeal.</param>
+        /// <param name="isTaker">Whether regular user.</param>
+        /// <param name="isOnline">Merchant online status.</param>
+        /// <param name="showSellerContactInfo">Whether to display seller contact information.</param>
+        /// <param name="supportedPayTypes">Payment methods supported by current order.</param>
         public InlineResponse20018Data(int isSell = default(int), int txid = default(int), int orderid = default(int), int timest = default(int), int lastPayTime = default(int), int remainPayTime = default(int), string currencyType = default(string), string wantType = default(string), string rate = default(string), string amount = default(string), string total = default(string), string status = default(string), string reasonId = default(string), string reasonDesc = default(string), int toastId = default(int), string cancelTime = default(string), int sellerConfirm = default(int), int inAppeal = default(int), int disputeTime = default(int), int cancelable = default(int), int hidePayment = default(int), string tradeTips = default(string), string showBank = default(string), string bankname = default(string), string bankbranch = default(string), string bankid = default(string), string bankHolderRealname = default(string), string showAli = default(string), string aliname = default(string), int isAlicode = default(int), string showWechat = default(string), string wename = default(string), string showOthers = default(string), List<string> payOthers = default(List<string>), string selPaytype = default(string), string itsUid = default(string), int itsIsBlueVip = default(int), int itsTier = default(int), string itsAvatar = default(string), string itsNickname = default(string), string itsRealname = default(string), int isFollow = default(int), int isBlack = default(int), int haveTraded = default(int), int appealUnread = default(int), int appealAllowCancel = default(int), string appealVerdictHasOpen = default(string), int imUnread = default(int), string message = default(string), string score = default(string), List<string> paymentVoucherUrl = default(List<string>), int completeNumber = default(int), string completeRateMonth = default(string), bool checkJournalAccount = default(bool), bool showJournalAccount = default(bool), int isFreezeGuarantee = default(int), string usdtLeftGuarantee = default(string), string guaranteeCurrType = default(string), int timestPaid = default(int), string state = default(string), int releaseCoinSwitch = default(int), string ownRealname = default(string), int confirmationUseTimeMonth = default(int), int isRiskUser = default(int), int isXt = default(int), int orderType = default(int), string symbol = default(string), int isShowReceive = default(int), int isTaker = default(int), int isOnline = default(int), bool showSellerContactInfo = default(bool), List<string> supportedPayTypes = default(List<string>))
         {
             this.IsSell = isSell;
@@ -118,109 +113,72 @@ namespace Io.Gate.GateApi.Model
             this.Timest = timest;
             this.LastPayTime = lastPayTime;
             this.RemainPayTime = remainPayTime;
-            // to ensure "currencyType" is required (not null)
-            this.CurrencyType = currencyType ?? throw new ArgumentNullException("currencyType", "currencyType is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "wantType" is required (not null)
-            this.WantType = wantType ?? throw new ArgumentNullException("wantType", "wantType is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "rate" is required (not null)
-            this.Rate = rate ?? throw new ArgumentNullException("rate", "rate is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "amount" is required (not null)
-            this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "total" is required (not null)
-            this.Total = total ?? throw new ArgumentNullException("total", "total is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "status" is required (not null)
-            this.Status = status ?? throw new ArgumentNullException("status", "status is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "reasonId" is required (not null)
-            this.ReasonId = reasonId ?? throw new ArgumentNullException("reasonId", "reasonId is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "reasonDesc" is required (not null)
-            this.ReasonDesc = reasonDesc ?? throw new ArgumentNullException("reasonDesc", "reasonDesc is a required property for InlineResponse20018Data and cannot be null");
+            this.CurrencyType = currencyType;
+            this.WantType = wantType;
+            this.Rate = rate;
+            this.Amount = amount;
+            this.Total = total;
+            this.Status = status;
+            this.ReasonId = reasonId;
+            this.ReasonDesc = reasonDesc;
             this.ToastId = toastId;
-            // to ensure "cancelTime" is required (not null)
-            this.CancelTime = cancelTime ?? throw new ArgumentNullException("cancelTime", "cancelTime is a required property for InlineResponse20018Data and cannot be null");
+            this.CancelTime = cancelTime;
             this.SellerConfirm = sellerConfirm;
             this.InAppeal = inAppeal;
             this.DisputeTime = disputeTime;
             this.Cancelable = cancelable;
             this.HidePayment = hidePayment;
-            // to ensure "tradeTips" is required (not null)
-            this.TradeTips = tradeTips ?? throw new ArgumentNullException("tradeTips", "tradeTips is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "showBank" is required (not null)
-            this.ShowBank = showBank ?? throw new ArgumentNullException("showBank", "showBank is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "bankname" is required (not null)
-            this.Bankname = bankname ?? throw new ArgumentNullException("bankname", "bankname is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "bankbranch" is required (not null)
-            this.Bankbranch = bankbranch ?? throw new ArgumentNullException("bankbranch", "bankbranch is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "bankid" is required (not null)
-            this.Bankid = bankid ?? throw new ArgumentNullException("bankid", "bankid is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "bankHolderRealname" is required (not null)
-            this.BankHolderRealname = bankHolderRealname ?? throw new ArgumentNullException("bankHolderRealname", "bankHolderRealname is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "showAli" is required (not null)
-            this.ShowAli = showAli ?? throw new ArgumentNullException("showAli", "showAli is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "aliname" is required (not null)
-            this.Aliname = aliname ?? throw new ArgumentNullException("aliname", "aliname is a required property for InlineResponse20018Data and cannot be null");
+            this.TradeTips = tradeTips;
+            this.ShowBank = showBank;
+            this.Bankname = bankname;
+            this.Bankbranch = bankbranch;
+            this.Bankid = bankid;
+            this.BankHolderRealname = bankHolderRealname;
+            this.ShowAli = showAli;
+            this.Aliname = aliname;
             this.IsAlicode = isAlicode;
-            // to ensure "showWechat" is required (not null)
-            this.ShowWechat = showWechat ?? throw new ArgumentNullException("showWechat", "showWechat is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "wename" is required (not null)
-            this.Wename = wename ?? throw new ArgumentNullException("wename", "wename is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "showOthers" is required (not null)
-            this.ShowOthers = showOthers ?? throw new ArgumentNullException("showOthers", "showOthers is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "payOthers" is required (not null)
-            this.PayOthers = payOthers ?? throw new ArgumentNullException("payOthers", "payOthers is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "selPaytype" is required (not null)
-            this.SelPaytype = selPaytype ?? throw new ArgumentNullException("selPaytype", "selPaytype is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "itsUid" is required (not null)
-            this.ItsUid = itsUid ?? throw new ArgumentNullException("itsUid", "itsUid is a required property for InlineResponse20018Data and cannot be null");
+            this.ShowWechat = showWechat;
+            this.Wename = wename;
+            this.ShowOthers = showOthers;
+            this.PayOthers = payOthers;
+            this.SelPaytype = selPaytype;
+            this.ItsUid = itsUid;
             this.ItsIsBlueVip = itsIsBlueVip;
             this.ItsTier = itsTier;
-            // to ensure "itsAvatar" is required (not null)
-            this.ItsAvatar = itsAvatar ?? throw new ArgumentNullException("itsAvatar", "itsAvatar is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "itsNickname" is required (not null)
-            this.ItsNickname = itsNickname ?? throw new ArgumentNullException("itsNickname", "itsNickname is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "itsRealname" is required (not null)
-            this.ItsRealname = itsRealname ?? throw new ArgumentNullException("itsRealname", "itsRealname is a required property for InlineResponse20018Data and cannot be null");
+            this.ItsAvatar = itsAvatar;
+            this.ItsNickname = itsNickname;
+            this.ItsRealname = itsRealname;
             this.IsFollow = isFollow;
             this.IsBlack = isBlack;
             this.HaveTraded = haveTraded;
             this.AppealUnread = appealUnread;
             this.AppealAllowCancel = appealAllowCancel;
-            // to ensure "appealVerdictHasOpen" is required (not null)
-            this.AppealVerdictHasOpen = appealVerdictHasOpen ?? throw new ArgumentNullException("appealVerdictHasOpen", "appealVerdictHasOpen is a required property for InlineResponse20018Data and cannot be null");
+            this.AppealVerdictHasOpen = appealVerdictHasOpen;
             this.ImUnread = imUnread;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "score" is required (not null)
-            this.Score = score ?? throw new ArgumentNullException("score", "score is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "paymentVoucherUrl" is required (not null)
-            this.PaymentVoucherUrl = paymentVoucherUrl ?? throw new ArgumentNullException("paymentVoucherUrl", "paymentVoucherUrl is a required property for InlineResponse20018Data and cannot be null");
+            this.Message = message;
+            this.Score = score;
+            this.PaymentVoucherUrl = paymentVoucherUrl;
             this.CompleteNumber = completeNumber;
-            // to ensure "completeRateMonth" is required (not null)
-            this.CompleteRateMonth = completeRateMonth ?? throw new ArgumentNullException("completeRateMonth", "completeRateMonth is a required property for InlineResponse20018Data and cannot be null");
+            this.CompleteRateMonth = completeRateMonth;
             this.CheckJournalAccount = checkJournalAccount;
             this.ShowJournalAccount = showJournalAccount;
             this.IsFreezeGuarantee = isFreezeGuarantee;
-            // to ensure "usdtLeftGuarantee" is required (not null)
-            this.UsdtLeftGuarantee = usdtLeftGuarantee ?? throw new ArgumentNullException("usdtLeftGuarantee", "usdtLeftGuarantee is a required property for InlineResponse20018Data and cannot be null");
-            // to ensure "guaranteeCurrType" is required (not null)
-            this.GuaranteeCurrType = guaranteeCurrType ?? throw new ArgumentNullException("guaranteeCurrType", "guaranteeCurrType is a required property for InlineResponse20018Data and cannot be null");
+            this.UsdtLeftGuarantee = usdtLeftGuarantee;
+            this.GuaranteeCurrType = guaranteeCurrType;
             this.TimestPaid = timestPaid;
-            // to ensure "state" is required (not null)
-            this.State = state ?? throw new ArgumentNullException("state", "state is a required property for InlineResponse20018Data and cannot be null");
+            this.State = state;
             this.ReleaseCoinSwitch = releaseCoinSwitch;
-            // to ensure "ownRealname" is required (not null)
-            this.OwnRealname = ownRealname ?? throw new ArgumentNullException("ownRealname", "ownRealname is a required property for InlineResponse20018Data and cannot be null");
+            this.OwnRealname = ownRealname;
             this.ConfirmationUseTimeMonth = confirmationUseTimeMonth;
             this.IsRiskUser = isRiskUser;
             this.IsXt = isXt;
             this.OrderType = orderType;
-            // to ensure "symbol" is required (not null)
-            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineResponse20018Data and cannot be null");
+            this.Symbol = symbol;
             this.IsShowReceive = isShowReceive;
             this.IsTaker = isTaker;
             this.IsOnline = isOnline;
             this.ShowSellerContactInfo = showSellerContactInfo;
-            // to ensure "supportedPayTypes" is required (not null)
-            this.SupportedPayTypes = supportedPayTypes ?? throw new ArgumentNullException("supportedPayTypes", "supportedPayTypes is a required property for InlineResponse20018Data and cannot be null");
+            this.SupportedPayTypes = supportedPayTypes;
         }
 
         /// <summary>

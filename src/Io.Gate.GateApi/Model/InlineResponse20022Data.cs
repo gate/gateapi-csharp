@@ -33,92 +33,17 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20022Data" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20022Data() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20022Data" /> class.
-        /// </summary>
-        /// <param name="index">Serial number (required).</param>
-        /// <param name="asset">Cryptocurrency (required).</param>
-        /// <param name="fiatUnit">Fiat currency (required).</param>
-        /// <param name="advNo">广告id (required).</param>
-        /// <param name="price">Price (required).</param>
-        /// <param name="maxSingleTransAmount">Maximum Cryptocurrency Amount (required).</param>
-        /// <param name="minSingleTransAmount">Minimum Cryptocurrency Amount (required).</param>
-        /// <param name="nickName">Advertiser Nickname (required).</param>
-        public InlineResponse20022Data(int index = default(int), string asset = default(string), string fiatUnit = default(string), int advNo = default(int), string price = default(string), string maxSingleTransAmount = default(string), string minSingleTransAmount = default(string), string nickName = default(string))
+        /// <param name="lists">lists.</param>
+        public InlineResponse20022Data(List<InlineResponse20022DataLists> lists = default(List<InlineResponse20022DataLists>))
         {
-            this.Index = index;
-            // to ensure "asset" is required (not null)
-            this.Asset = asset ?? throw new ArgumentNullException("asset", "asset is a required property for InlineResponse20022Data and cannot be null");
-            // to ensure "fiatUnit" is required (not null)
-            this.FiatUnit = fiatUnit ?? throw new ArgumentNullException("fiatUnit", "fiatUnit is a required property for InlineResponse20022Data and cannot be null");
-            this.AdvNo = advNo;
-            // to ensure "price" is required (not null)
-            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineResponse20022Data and cannot be null");
-            // to ensure "maxSingleTransAmount" is required (not null)
-            this.MaxSingleTransAmount = maxSingleTransAmount ?? throw new ArgumentNullException("maxSingleTransAmount", "maxSingleTransAmount is a required property for InlineResponse20022Data and cannot be null");
-            // to ensure "minSingleTransAmount" is required (not null)
-            this.MinSingleTransAmount = minSingleTransAmount ?? throw new ArgumentNullException("minSingleTransAmount", "minSingleTransAmount is a required property for InlineResponse20022Data and cannot be null");
-            // to ensure "nickName" is required (not null)
-            this.NickName = nickName ?? throw new ArgumentNullException("nickName", "nickName is a required property for InlineResponse20022Data and cannot be null");
+            this.Lists = lists;
         }
 
         /// <summary>
-        /// Serial number
+        /// Gets or Sets Lists
         /// </summary>
-        /// <value>Serial number</value>
-        [DataMember(Name="index")]
-        public int Index { get; set; }
-
-        /// <summary>
-        /// Cryptocurrency
-        /// </summary>
-        /// <value>Cryptocurrency</value>
-        [DataMember(Name="asset")]
-        public string Asset { get; set; }
-
-        /// <summary>
-        /// Fiat currency
-        /// </summary>
-        /// <value>Fiat currency</value>
-        [DataMember(Name="fiat_unit")]
-        public string FiatUnit { get; set; }
-
-        /// <summary>
-        /// 广告id
-        /// </summary>
-        /// <value>广告id</value>
-        [DataMember(Name="adv_no")]
-        public int AdvNo { get; set; }
-
-        /// <summary>
-        /// Price
-        /// </summary>
-        /// <value>Price</value>
-        [DataMember(Name="price")]
-        public string Price { get; set; }
-
-        /// <summary>
-        /// Maximum Cryptocurrency Amount
-        /// </summary>
-        /// <value>Maximum Cryptocurrency Amount</value>
-        [DataMember(Name="max_single_trans_amount")]
-        public string MaxSingleTransAmount { get; set; }
-
-        /// <summary>
-        /// Minimum Cryptocurrency Amount
-        /// </summary>
-        /// <value>Minimum Cryptocurrency Amount</value>
-        [DataMember(Name="min_single_trans_amount")]
-        public string MinSingleTransAmount { get; set; }
-
-        /// <summary>
-        /// Advertiser Nickname
-        /// </summary>
-        /// <value>Advertiser Nickname</value>
-        [DataMember(Name="nick_name")]
-        public string NickName { get; set; }
+        [DataMember(Name="lists")]
+        public List<InlineResponse20022DataLists> Lists { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -128,14 +53,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20022Data {\n");
-            sb.Append("  Index: ").Append(Index).Append("\n");
-            sb.Append("  Asset: ").Append(Asset).Append("\n");
-            sb.Append("  FiatUnit: ").Append(FiatUnit).Append("\n");
-            sb.Append("  AdvNo: ").Append(AdvNo).Append("\n");
-            sb.Append("  Price: ").Append(Price).Append("\n");
-            sb.Append("  MaxSingleTransAmount: ").Append(MaxSingleTransAmount).Append("\n");
-            sb.Append("  MinSingleTransAmount: ").Append(MinSingleTransAmount).Append("\n");
-            sb.Append("  NickName: ").Append(NickName).Append("\n");
+            sb.Append("  Lists: ").Append(Lists).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,42 +89,10 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Index == input.Index ||
-                    this.Index.Equals(input.Index)
-                ) && 
-                (
-                    this.Asset == input.Asset ||
-                    (this.Asset != null &&
-                    this.Asset.Equals(input.Asset))
-                ) && 
-                (
-                    this.FiatUnit == input.FiatUnit ||
-                    (this.FiatUnit != null &&
-                    this.FiatUnit.Equals(input.FiatUnit))
-                ) && 
-                (
-                    this.AdvNo == input.AdvNo ||
-                    this.AdvNo.Equals(input.AdvNo)
-                ) && 
-                (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
-                ) && 
-                (
-                    this.MaxSingleTransAmount == input.MaxSingleTransAmount ||
-                    (this.MaxSingleTransAmount != null &&
-                    this.MaxSingleTransAmount.Equals(input.MaxSingleTransAmount))
-                ) && 
-                (
-                    this.MinSingleTransAmount == input.MinSingleTransAmount ||
-                    (this.MinSingleTransAmount != null &&
-                    this.MinSingleTransAmount.Equals(input.MinSingleTransAmount))
-                ) && 
-                (
-                    this.NickName == input.NickName ||
-                    (this.NickName != null &&
-                    this.NickName.Equals(input.NickName))
+                    this.Lists == input.Lists ||
+                    this.Lists != null &&
+                    input.Lists != null &&
+                    this.Lists.SequenceEqual(input.Lists)
                 );
         }
 
@@ -219,20 +105,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Index.GetHashCode();
-                if (this.Asset != null)
-                    hashCode = hashCode * 59 + this.Asset.GetHashCode();
-                if (this.FiatUnit != null)
-                    hashCode = hashCode * 59 + this.FiatUnit.GetHashCode();
-                hashCode = hashCode * 59 + this.AdvNo.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.MaxSingleTransAmount != null)
-                    hashCode = hashCode * 59 + this.MaxSingleTransAmount.GetHashCode();
-                if (this.MinSingleTransAmount != null)
-                    hashCode = hashCode * 59 + this.MinSingleTransAmount.GetHashCode();
-                if (this.NickName != null)
-                    hashCode = hashCode * 59 + this.NickName.GetHashCode();
+                if (this.Lists != null)
+                    hashCode = hashCode * 59 + this.Lists.GetHashCode();
                 return hashCode;
             }
         }

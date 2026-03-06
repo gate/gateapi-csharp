@@ -33,61 +33,43 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20015Data" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20015Data() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20015Data" /> class.
-        /// </summary>
-        /// <param name="userTimest">User registration time (formatted string) (required).</param>
-        /// <param name="emailVerified">Whether email is verified (required).</param>
-        /// <param name="verified">Whether KYC verification is completed (required).</param>
-        /// <param name="hasPhone">Whether phone is bound (required).</param>
-        /// <param name="userName">Username (required).</param>
-        /// <param name="userNote">User note information (required).</param>
-        /// <param name="completeTransactions">Total completed orders (required).</param>
-        /// <param name="paidTransactions">Number of completed buy orders (required).</param>
-        /// <param name="acceptedTransactions">Number of completed sell orders (required).</param>
-        /// <param name="transactionsUsedTime">Average time to confirm receipt (required).</param>
-        /// <param name="cancelledUsedTimeMonth">Cancellation time in last 30 days (required).</param>
-        /// <param name="completeTransactionsMonth">Number of completed orders in last 30 days (required).</param>
-        /// <param name="completeRateMonth">Completion rate in last 30 days (required).</param>
-        /// <param name="isFollow">Whether following (required).</param>
-        /// <param name="haveTraded">Whether traded with self (required).</param>
-        /// <param name="bizUid">Encrypted UID (required).</param>
-        /// <param name="registrationDays">Registration days (required).</param>
-        /// <param name="firstTradeDays">Days since first trade (required).</param>
-        /// <param name="tradeVersatile">Single user or composite user (required).</param>
-        public InlineResponse20015Data(string userTimest = default(string), string emailVerified = default(string), string verified = default(string), string hasPhone = default(string), string userName = default(string), string userNote = default(string), string completeTransactions = default(string), string paidTransactions = default(string), string acceptedTransactions = default(string), string transactionsUsedTime = default(string), string cancelledUsedTimeMonth = default(string), string completeTransactionsMonth = default(string), int completeRateMonth = default(int), int isFollow = default(int), int haveTraded = default(int), string bizUid = default(string), int registrationDays = default(int), int firstTradeDays = default(int), bool tradeVersatile = default(bool))
+        /// <param name="userTimest">User registration time (formatted string).</param>
+        /// <param name="emailVerified">Whether email is verified.</param>
+        /// <param name="verified">Whether KYC verification is completed.</param>
+        /// <param name="hasPhone">Whether phone is bound.</param>
+        /// <param name="userName">Username.</param>
+        /// <param name="userNote">User note information.</param>
+        /// <param name="completeTransactions">Total completed orders.</param>
+        /// <param name="paidTransactions">Number of completed buy orders.</param>
+        /// <param name="acceptedTransactions">Number of completed sell orders.</param>
+        /// <param name="transactionsUsedTime">Average time to confirm receipt.</param>
+        /// <param name="cancelledUsedTimeMonth">Cancellation time in last 30 days.</param>
+        /// <param name="completeTransactionsMonth">Number of completed orders in last 30 days.</param>
+        /// <param name="completeRateMonth">Completion rate in last 30 days.</param>
+        /// <param name="isFollow">Whether following.</param>
+        /// <param name="haveTraded">Whether traded with self.</param>
+        /// <param name="bizUid">Encrypted UID.</param>
+        /// <param name="registrationDays">Registration days.</param>
+        /// <param name="firstTradeDays">Days since first trade.</param>
+        /// <param name="tradeVersatile">Single user or composite user.</param>
+        public InlineResponse20015Data(string userTimest = default(string), string emailVerified = default(string), string verified = default(string), string hasPhone = default(string), string userName = default(string), string userNote = default(string), string completeTransactions = default(string), string paidTransactions = default(string), string acceptedTransactions = default(string), string transactionsUsedTime = default(string), string cancelledUsedTimeMonth = default(string), string completeTransactionsMonth = default(string), decimal completeRateMonth = default(decimal), int isFollow = default(int), int haveTraded = default(int), string bizUid = default(string), int registrationDays = default(int), int firstTradeDays = default(int), bool tradeVersatile = default(bool))
         {
-            // to ensure "userTimest" is required (not null)
-            this.UserTimest = userTimest ?? throw new ArgumentNullException("userTimest", "userTimest is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "emailVerified" is required (not null)
-            this.EmailVerified = emailVerified ?? throw new ArgumentNullException("emailVerified", "emailVerified is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "verified" is required (not null)
-            this.Verified = verified ?? throw new ArgumentNullException("verified", "verified is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "hasPhone" is required (not null)
-            this.HasPhone = hasPhone ?? throw new ArgumentNullException("hasPhone", "hasPhone is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "userName" is required (not null)
-            this.UserName = userName ?? throw new ArgumentNullException("userName", "userName is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "userNote" is required (not null)
-            this.UserNote = userNote ?? throw new ArgumentNullException("userNote", "userNote is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "completeTransactions" is required (not null)
-            this.CompleteTransactions = completeTransactions ?? throw new ArgumentNullException("completeTransactions", "completeTransactions is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "paidTransactions" is required (not null)
-            this.PaidTransactions = paidTransactions ?? throw new ArgumentNullException("paidTransactions", "paidTransactions is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "acceptedTransactions" is required (not null)
-            this.AcceptedTransactions = acceptedTransactions ?? throw new ArgumentNullException("acceptedTransactions", "acceptedTransactions is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "transactionsUsedTime" is required (not null)
-            this.TransactionsUsedTime = transactionsUsedTime ?? throw new ArgumentNullException("transactionsUsedTime", "transactionsUsedTime is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "cancelledUsedTimeMonth" is required (not null)
-            this.CancelledUsedTimeMonth = cancelledUsedTimeMonth ?? throw new ArgumentNullException("cancelledUsedTimeMonth", "cancelledUsedTimeMonth is a required property for InlineResponse20015Data and cannot be null");
-            // to ensure "completeTransactionsMonth" is required (not null)
-            this.CompleteTransactionsMonth = completeTransactionsMonth ?? throw new ArgumentNullException("completeTransactionsMonth", "completeTransactionsMonth is a required property for InlineResponse20015Data and cannot be null");
+            this.UserTimest = userTimest;
+            this.EmailVerified = emailVerified;
+            this.Verified = verified;
+            this.HasPhone = hasPhone;
+            this.UserName = userName;
+            this.UserNote = userNote;
+            this.CompleteTransactions = completeTransactions;
+            this.PaidTransactions = paidTransactions;
+            this.AcceptedTransactions = acceptedTransactions;
+            this.TransactionsUsedTime = transactionsUsedTime;
+            this.CancelledUsedTimeMonth = cancelledUsedTimeMonth;
+            this.CompleteTransactionsMonth = completeTransactionsMonth;
             this.CompleteRateMonth = completeRateMonth;
             this.IsFollow = isFollow;
             this.HaveTraded = haveTraded;
-            // to ensure "bizUid" is required (not null)
-            this.BizUid = bizUid ?? throw new ArgumentNullException("bizUid", "bizUid is a required property for InlineResponse20015Data and cannot be null");
+            this.BizUid = bizUid;
             this.RegistrationDays = registrationDays;
             this.FirstTradeDays = firstTradeDays;
             this.TradeVersatile = tradeVersatile;
@@ -182,7 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Completion rate in last 30 days</value>
         [DataMember(Name="complete_rate_month")]
-        public int CompleteRateMonth { get; set; }
+        public decimal CompleteRateMonth { get; set; }
 
         /// <summary>
         /// Whether following

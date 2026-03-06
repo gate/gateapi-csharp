@@ -43,7 +43,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="fixedRate">Fixed fee rate. Only for fixed rate currencies, not valid for normal currencies.</param>
         /// <param name="chain">The main chain corresponding to the coin.</param>
         /// <param name="chains">All links corresponding to coins.</param>
-        public Currency(string currency = default(string), string name = default(string), bool delisted = default(bool), bool withdrawDisabled = default(bool), bool withdrawDelayed = default(bool), bool depositDisabled = default(bool), bool tradeDisabled = default(bool), string fixedRate = default(string), string chain = default(string), List<SpotCurrencyChain> chains = default(List<SpotCurrencyChain>))
+        /// <param name="totalSupply">Total supply.</param>
+        /// <param name="marketCap">Market cap.</param>
+        public Currency(string currency = default(string), string name = default(string), bool delisted = default(bool), bool withdrawDisabled = default(bool), bool withdrawDelayed = default(bool), bool depositDisabled = default(bool), bool tradeDisabled = default(bool), string fixedRate = default(string), string chain = default(string), List<SpotCurrencyChain> chains = default(List<SpotCurrencyChain>), string totalSupply = default(string), string marketCap = default(string))
         {
             this._Currency = currency;
             this.Name = name;
@@ -55,6 +57,8 @@ namespace Io.Gate.GateApi.Model
             this.FixedRate = fixedRate;
             this.Chain = chain;
             this.Chains = chains;
+            this.TotalSupply = totalSupply;
+            this.MarketCap = marketCap;
         }
 
         /// <summary>
@@ -128,6 +132,20 @@ namespace Io.Gate.GateApi.Model
         public List<SpotCurrencyChain> Chains { get; set; }
 
         /// <summary>
+        /// Total supply
+        /// </summary>
+        /// <value>Total supply</value>
+        [DataMember(Name="total_supply")]
+        public string TotalSupply { get; set; }
+
+        /// <summary>
+        /// Market cap
+        /// </summary>
+        /// <value>Market cap</value>
+        [DataMember(Name="market_cap")]
+        public string MarketCap { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -145,6 +163,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  FixedRate: ").Append(FixedRate).Append("\n");
             sb.Append("  Chain: ").Append(Chain).Append("\n");
             sb.Append("  Chains: ").Append(Chains).Append("\n");
+            sb.Append("  TotalSupply: ").Append(TotalSupply).Append("\n");
+            sb.Append("  MarketCap: ").Append(MarketCap).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -224,6 +244,16 @@ namespace Io.Gate.GateApi.Model
                     this.Chains != null &&
                     input.Chains != null &&
                     this.Chains.SequenceEqual(input.Chains)
+                ) && 
+                (
+                    this.TotalSupply == input.TotalSupply ||
+                    (this.TotalSupply != null &&
+                    this.TotalSupply.Equals(input.TotalSupply))
+                ) && 
+                (
+                    this.MarketCap == input.MarketCap ||
+                    (this.MarketCap != null &&
+                    this.MarketCap.Equals(input.MarketCap))
                 );
         }
 
@@ -251,6 +281,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Chain.GetHashCode();
                 if (this.Chains != null)
                     hashCode = hashCode * 59 + this.Chains.GetHashCode();
+                if (this.TotalSupply != null)
+                    hashCode = hashCode * 59 + this.TotalSupply.GetHashCode();
+                if (this.MarketCap != null)
+                    hashCode = hashCode * 59 + this.MarketCap.GetHashCode();
                 return hashCode;
             }
         }

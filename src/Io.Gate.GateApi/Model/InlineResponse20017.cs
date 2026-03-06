@@ -33,29 +33,20 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20017" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20017() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20017" /> class.
-        /// </summary>
-        /// <param name="timestamp">timestamp (required).</param>
-        /// <param name="method">method (required).</param>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        /// <param name="data">data (required).</param>
-        /// <param name="version">version (required).</param>
+        /// <param name="timestamp">timestamp.</param>
+        /// <param name="method">method.</param>
+        /// <param name="code">code.</param>
+        /// <param name="message">message.</param>
+        /// <param name="data">data.</param>
+        /// <param name="version">version.</param>
         public InlineResponse20017(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), InlineResponse20017Data data = default(InlineResponse20017Data), string version = default(string))
         {
             this.Timestamp = timestamp;
-            // to ensure "method" is required (not null)
-            this.Method = method ?? throw new ArgumentNullException("method", "method is a required property for InlineResponse20017 and cannot be null");
+            this.Method = method;
             this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse20017 and cannot be null");
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse20017 and cannot be null");
-            // to ensure "version" is required (not null)
-            this.Version = version ?? throw new ArgumentNullException("version", "version is a required property for InlineResponse20017 and cannot be null");
+            this.Message = message;
+            this.Data = data;
+            this.Version = version;
         }
 
         /// <summary>

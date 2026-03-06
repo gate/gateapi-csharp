@@ -1670,7 +1670,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
-        FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, string orderId);
+        FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, int orderId);
 
         /// <summary>
         /// Query single auto order details
@@ -1682,7 +1682,30 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
-        ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, string orderId);
+        ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, int orderId);
+        /// <summary>
+        /// Cancel single auto order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <returns>FuturesPriceTriggeredOrder</returns>
+        FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, int orderId);
+
+        /// <summary>
+        /// Cancel single auto order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
+        ApiResponse<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderWithHttpInfo (string settle, int orderId);
         /// <summary>
         /// Modify a Single Auto Order
         /// </summary>
@@ -1694,7 +1717,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
-        TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
 
         /// <summary>
         /// Modify a Single Auto Order
@@ -1707,30 +1730,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
-        ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
-        /// <summary>
-        /// Cancel single auto order
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
-        /// <returns>FuturesPriceTriggeredOrder</returns>
-        FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, string orderId);
-
-        /// <summary>
-        /// Cancel single auto order
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
-        /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
-        ApiResponse<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderWithHttpInfo (string settle, string orderId);
+        ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
         #endregion Synchronous Operations
     }
 
@@ -3383,7 +3383,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
-        Task<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderAsync (string settle, string orderId);
+        Task<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderAsync (string settle, int orderId);
 
         /// <summary>
         /// Query single auto order details
@@ -3395,7 +3395,30 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
-        Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId);
+        Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId);
+        /// <summary>
+        /// Cancel single auto order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <returns>Task of FuturesPriceTriggeredOrder</returns>
+        Task<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderAsync (string settle, int orderId);
+
+        /// <summary>
+        /// Cancel single auto order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
+        Task<ApiResponse<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId);
         /// <summary>
         /// Modify a Single Auto Order
         /// </summary>
@@ -3407,7 +3430,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
-        Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
 
         /// <summary>
         /// Modify a Single Auto Order
@@ -3420,30 +3443,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
-        Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
-        /// <summary>
-        /// Cancel single auto order
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
-        /// <returns>Task of FuturesPriceTriggeredOrder</returns>
-        Task<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderAsync (string settle, string orderId);
-
-        /// <summary>
-        /// Cancel single auto order
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
-        /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
-        Task<ApiResponse<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId);
+        Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
         #endregion Asynchronous Operations
     }
 
@@ -12872,7 +12872,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
-        public FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, string orderId)
+        public FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, int orderId)
         {
              ApiResponse<FuturesPriceTriggeredOrder> localVarResponse = GetPriceTriggeredOrderWithHttpInfo(settle, orderId);
              return localVarResponse.Data;
@@ -12885,15 +12885,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
-        public ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, string orderId)
+        public ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, int orderId)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
                 throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetPriceTriggeredOrder");
-
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling FuturesApi->GetPriceTriggeredOrder");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -12936,7 +12932,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
-        public async Task<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderAsync (string settle, string orderId)
+        public async Task<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderAsync (string settle, int orderId)
         {
              Io.Gate.GateApi.Client.ApiResponse<FuturesPriceTriggeredOrder> localVarResponse = await GetPriceTriggeredOrderAsyncWithHttpInfo(settle, orderId);
              return localVarResponse.Data;
@@ -12950,15 +12946,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
-        public async Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId)
+        public async Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
                 throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetPriceTriggeredOrder");
-
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling FuturesApi->GetPriceTriggeredOrder");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -12997,160 +12989,13 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Modify a Single Auto Order 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
-        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
-        /// <returns>TriggerOrderResponse</returns>
-        public TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
-        {
-             ApiResponse<TriggerOrderResponse> localVarResponse = UpdatePriceTriggeredOrderWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Modify a Single Auto Order 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
-        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
-        /// <returns>ApiResponse of TriggerOrderResponse</returns>
-        public ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
-        {
-            // verify the required parameter 'settle' is set
-            if (settle == null)
-                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdatePriceTriggeredOrder");
-
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling FuturesApi->UpdatePriceTriggeredOrder");
-
-            // verify the required parameter 'futuresUpdatePriceTriggeredOrder' is set
-            if (futuresUpdatePriceTriggeredOrder == null)
-                throw new ApiException(400, "Missing required parameter 'futuresUpdatePriceTriggeredOrder' when calling FuturesApi->UpdatePriceTriggeredOrder");
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
-            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
-            localVarRequestOptions.Data = futuresUpdatePriceTriggeredOrder;
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Put<TriggerOrderResponse>("/futures/{settle}/price_orders/{order_id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdatePriceTriggeredOrder", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Modify a Single Auto Order 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
-        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
-        /// <returns>Task of TriggerOrderResponse</returns>
-        public async Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
-        {
-             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse> localVarResponse = await UpdatePriceTriggeredOrderAsyncWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Modify a Single Auto Order 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
-        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
-        /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
-        public async Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
-        {
-            // verify the required parameter 'settle' is set
-            if (settle == null)
-                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdatePriceTriggeredOrder");
-
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling FuturesApi->UpdatePriceTriggeredOrder");
-
-            // verify the required parameter 'futuresUpdatePriceTriggeredOrder' is set
-            if (futuresUpdatePriceTriggeredOrder == null)
-                throw new ApiException(400, "Missing required parameter 'futuresUpdatePriceTriggeredOrder' when calling FuturesApi->UpdatePriceTriggeredOrder");
-
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
-            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
-            localVarRequestOptions.Data = futuresUpdatePriceTriggeredOrder;
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TriggerOrderResponse>("/futures/{settle}/price_orders/{order_id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdatePriceTriggeredOrder", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
         /// Cancel single auto order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
-        public FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, string orderId)
+        public FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, int orderId)
         {
              ApiResponse<FuturesPriceTriggeredOrder> localVarResponse = CancelPriceTriggeredOrderWithHttpInfo(settle, orderId);
              return localVarResponse.Data;
@@ -13163,15 +13008,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
-        public ApiResponse<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderWithHttpInfo (string settle, string orderId)
+        public ApiResponse<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderWithHttpInfo (string settle, int orderId)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
                 throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->CancelPriceTriggeredOrder");
-
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling FuturesApi->CancelPriceTriggeredOrder");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -13214,7 +13055,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
-        public async Task<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderAsync (string settle, string orderId)
+        public async Task<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderAsync (string settle, int orderId)
         {
              Io.Gate.GateApi.Client.ApiResponse<FuturesPriceTriggeredOrder> localVarResponse = await CancelPriceTriggeredOrderAsyncWithHttpInfo(settle, orderId);
              return localVarResponse.Data;
@@ -13228,15 +13069,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
-        public async Task<ApiResponse<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId)
+        public async Task<ApiResponse<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
                 throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->CancelPriceTriggeredOrder");
-
-            // verify the required parameter 'orderId' is set
-            if (orderId == null)
-                throw new ApiException(400, "Missing required parameter 'orderId' when calling FuturesApi->CancelPriceTriggeredOrder");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -13268,6 +13105,145 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CancelPriceTriggeredOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Modify a Single Auto Order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>TriggerOrderResponse</returns>
+        public TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        {
+             ApiResponse<TriggerOrderResponse> localVarResponse = UpdatePriceTriggeredOrderWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Modify a Single Auto Order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>ApiResponse of TriggerOrderResponse</returns>
+        public ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+            // verify the required parameter 'futuresUpdatePriceTriggeredOrder' is set
+            if (futuresUpdatePriceTriggeredOrder == null)
+                throw new ApiException(400, "Missing required parameter 'futuresUpdatePriceTriggeredOrder' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+            localVarRequestOptions.Data = futuresUpdatePriceTriggeredOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<TriggerOrderResponse>("/futures/{settle}/price_orders/amend/{order_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdatePriceTriggeredOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Modify a Single Auto Order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>Task of TriggerOrderResponse</returns>
+        public async Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse> localVarResponse = await UpdatePriceTriggeredOrderAsyncWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Modify a Single Auto Order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
+        /// <param name="futuresUpdatePriceTriggeredOrder"></param>
+        /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
+        public async Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+            // verify the required parameter 'futuresUpdatePriceTriggeredOrder' is set
+            if (futuresUpdatePriceTriggeredOrder == null)
+                throw new ApiException(400, "Missing required parameter 'futuresUpdatePriceTriggeredOrder' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+            localVarRequestOptions.Data = futuresUpdatePriceTriggeredOrder;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TriggerOrderResponse>("/futures/{settle}/price_orders/amend/{order_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdatePriceTriggeredOrder", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

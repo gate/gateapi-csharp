@@ -38,36 +38,28 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject18" /> class.
         /// </summary>
-        /// <param name="txid">Order ID (required).</param>
-        /// <param name="lastreceived">Pagination timestamp (forward).</param>
-        /// <param name="firstreceived">Pagination timestamp (backward).</param>
-        public InlineObject18(int txid = default(int), int lastreceived = default(int), int firstreceived = default(int))
+        /// <param name="symbol">Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT (required).</param>
+        /// <param name="positionSide">Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method.</param>
+        public InlineObject18(string symbol = default(string), string positionSide = default(string))
         {
-            this.Txid = txid;
-            this.Lastreceived = lastreceived;
-            this.Firstreceived = firstreceived;
+            // to ensure "symbol" is required (not null)
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineObject18 and cannot be null");
+            this.PositionSide = positionSide;
         }
 
         /// <summary>
-        /// Order ID
+        /// Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT
         /// </summary>
-        /// <value>Order ID</value>
-        [DataMember(Name="txid")]
-        public int Txid { get; set; }
+        /// <value>Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT</value>
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
 
         /// <summary>
-        /// Pagination timestamp (forward)
+        /// Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method
         /// </summary>
-        /// <value>Pagination timestamp (forward)</value>
-        [DataMember(Name="lastreceived")]
-        public int Lastreceived { get; set; }
-
-        /// <summary>
-        /// Pagination timestamp (backward)
-        /// </summary>
-        /// <value>Pagination timestamp (backward)</value>
-        [DataMember(Name="firstreceived")]
-        public int Firstreceived { get; set; }
+        /// <value>Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method</value>
+        [DataMember(Name="position_side")]
+        public string PositionSide { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -77,9 +69,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject18 {\n");
-            sb.Append("  Txid: ").Append(Txid).Append("\n");
-            sb.Append("  Lastreceived: ").Append(Lastreceived).Append("\n");
-            sb.Append("  Firstreceived: ").Append(Firstreceived).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
+            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,16 +106,14 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Txid == input.Txid ||
-                    this.Txid.Equals(input.Txid)
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.Lastreceived == input.Lastreceived ||
-                    this.Lastreceived.Equals(input.Lastreceived)
-                ) && 
-                (
-                    this.Firstreceived == input.Firstreceived ||
-                    this.Firstreceived.Equals(input.Firstreceived)
+                    this.PositionSide == input.PositionSide ||
+                    (this.PositionSide != null &&
+                    this.PositionSide.Equals(input.PositionSide))
                 );
         }
 
@@ -137,9 +126,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Txid.GetHashCode();
-                hashCode = hashCode * 59 + this.Lastreceived.GetHashCode();
-                hashCode = hashCode * 59 + this.Firstreceived.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                if (this.PositionSide != null)
+                    hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
                 return hashCode;
             }
         }

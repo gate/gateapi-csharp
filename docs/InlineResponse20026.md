@@ -5,8 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Symbol** | **string** |  | [optional] 
-**Tiers** | [**List&lt;RuleRiskLimitsTiers&gt;**](RuleRiskLimitsTiers.md) |  | [optional] 
+**Timestamp** | **decimal** |  | [optional] 
+**Method** | **string** |  | [optional] 
+**Code** | **int** |  | [optional] 
+**Message** | **string** |  | [optional] 
+**Data** | [**InlineResponse20026Data**](InlineResponse20026Data.md) |  | [optional] 
+**Version** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

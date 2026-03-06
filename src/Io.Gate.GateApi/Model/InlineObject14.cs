@@ -38,27 +38,19 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject14" /> class.
         /// </summary>
-        /// <param name="advNo">Ad ID (required).</param>
-        /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed (required).</param>
-        public InlineObject14(int advNo = default(int), int advStatus = default(int))
+        /// <param name="quoteId">Inquiry ID (required).</param>
+        public InlineObject14(string quoteId = default(string))
         {
-            this.AdvNo = advNo;
-            this.AdvStatus = advStatus;
+            // to ensure "quoteId" is required (not null)
+            this.QuoteId = quoteId ?? throw new ArgumentNullException("quoteId", "quoteId is a required property for InlineObject14 and cannot be null");
         }
 
         /// <summary>
-        /// Ad ID
+        /// Inquiry ID
         /// </summary>
-        /// <value>Ad ID</value>
-        [DataMember(Name="adv_no")]
-        public int AdvNo { get; set; }
-
-        /// <summary>
-        /// Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed
-        /// </summary>
-        /// <value>Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</value>
-        [DataMember(Name="adv_status")]
-        public int AdvStatus { get; set; }
+        /// <value>Inquiry ID</value>
+        [DataMember(Name="quote_id")]
+        public string QuoteId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,8 +60,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject14 {\n");
-            sb.Append("  AdvNo: ").Append(AdvNo).Append("\n");
-            sb.Append("  AdvStatus: ").Append(AdvStatus).Append("\n");
+            sb.Append("  QuoteId: ").Append(QuoteId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,12 +96,9 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.AdvNo == input.AdvNo ||
-                    this.AdvNo.Equals(input.AdvNo)
-                ) && 
-                (
-                    this.AdvStatus == input.AdvStatus ||
-                    this.AdvStatus.Equals(input.AdvStatus)
+                    this.QuoteId == input.QuoteId ||
+                    (this.QuoteId != null &&
+                    this.QuoteId.Equals(input.QuoteId))
                 );
         }
 
@@ -123,8 +111,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.AdvNo.GetHashCode();
-                hashCode = hashCode * 59 + this.AdvStatus.GetHashCode();
+                if (this.QuoteId != null)
+                    hashCode = hashCode * 59 + this.QuoteId.GetHashCode();
                 return hashCode;
             }
         }

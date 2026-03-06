@@ -33,106 +33,72 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject8" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineObject8() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject8" /> class.
-        /// </summary>
-        /// <param name="cryptoCurrency">Cryptocurrency (required).</param>
-        /// <param name="fiatCurrency">Fiat currency (required).</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All).</param>
-        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED).</param>
-        /// <param name="txid">Order ID.</param>
-        /// <param name="startTime">Start timestamp, default is 00:00 89 days ago.</param>
-        /// <param name="endTime">End timestamp, default is 23:59:59 today.</param>
-        /// <param name="queryDispute">1: Include appeal status, 0: None.</param>
-        /// <param name="page">page number.</param>
-        /// <param name="perPage">Number of orders per page.</param>
-        public InlineObject8(string cryptoCurrency = default(string), string fiatCurrency = default(string), string selectType = default(string), string status = default(string), int txid = default(int), int startTime = default(int), int endTime = default(int), int queryDispute = default(int), int page = default(int), int perPage = default(int))
+        /// <param name="payCoin">Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page..</param>
+        /// <param name="getCoin">Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page..</param>
+        /// <param name="payAmount">User payment currency amount.</param>
+        /// <param name="getAmount">Amount of currency received by the user.</param>
+        /// <param name="side">Quote direction returned by the quote API (used for order validation).</param>
+        /// <param name="promotionCode">promotion code .</param>
+        /// <param name="quoteToken">Parameter returned by the quote API.</param>
+        public InlineObject8(string payCoin = default(string), string getCoin = default(string), string payAmount = default(string), string getAmount = default(string), string side = default(string), string promotionCode = default(string), string quoteToken = default(string))
         {
-            // to ensure "cryptoCurrency" is required (not null)
-            this.CryptoCurrency = cryptoCurrency ?? throw new ArgumentNullException("cryptoCurrency", "cryptoCurrency is a required property for InlineObject8 and cannot be null");
-            // to ensure "fiatCurrency" is required (not null)
-            this.FiatCurrency = fiatCurrency ?? throw new ArgumentNullException("fiatCurrency", "fiatCurrency is a required property for InlineObject8 and cannot be null");
-            this.SelectType = selectType;
-            this.Status = status;
-            this.Txid = txid;
-            this.StartTime = startTime;
-            this.EndTime = endTime;
-            this.QueryDispute = queryDispute;
-            this.Page = page;
-            this.PerPage = perPage;
+            this.PayCoin = payCoin;
+            this.GetCoin = getCoin;
+            this.PayAmount = payAmount;
+            this.GetAmount = getAmount;
+            this.Side = side;
+            this.PromotionCode = promotionCode;
+            this.QuoteToken = quoteToken;
         }
 
         /// <summary>
-        /// Cryptocurrency
+        /// Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page.
         /// </summary>
-        /// <value>Cryptocurrency</value>
-        [DataMember(Name="crypto_currency")]
-        public string CryptoCurrency { get; set; }
+        /// <value>Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page.</value>
+        [DataMember(Name="pay_coin")]
+        public string PayCoin { get; set; }
 
         /// <summary>
-        /// Fiat currency
+        /// Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page.
         /// </summary>
-        /// <value>Fiat currency</value>
-        [DataMember(Name="fiat_currency")]
-        public string FiatCurrency { get; set; }
+        /// <value>Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page.</value>
+        [DataMember(Name="get_coin")]
+        public string GetCoin { get; set; }
 
         /// <summary>
-        /// Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All)
+        /// User payment currency amount
         /// </summary>
-        /// <value>Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All)</value>
-        [DataMember(Name="select_type")]
-        public string SelectType { get; set; }
+        /// <value>User payment currency amount</value>
+        [DataMember(Name="pay_amount")]
+        public string PayAmount { get; set; }
 
         /// <summary>
-        /// Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED)
+        /// Amount of currency received by the user
         /// </summary>
-        /// <value>Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED)</value>
-        [DataMember(Name="status")]
-        public string Status { get; set; }
+        /// <value>Amount of currency received by the user</value>
+        [DataMember(Name="get_amount")]
+        public string GetAmount { get; set; }
 
         /// <summary>
-        /// Order ID
+        /// Quote direction returned by the quote API (used for order validation)
         /// </summary>
-        /// <value>Order ID</value>
-        [DataMember(Name="txid")]
-        public int Txid { get; set; }
+        /// <value>Quote direction returned by the quote API (used for order validation)</value>
+        [DataMember(Name="side")]
+        public string Side { get; set; }
 
         /// <summary>
-        /// Start timestamp, default is 00:00 89 days ago
+        /// promotion code 
         /// </summary>
-        /// <value>Start timestamp, default is 00:00 89 days ago</value>
-        [DataMember(Name="start_time")]
-        public int StartTime { get; set; }
+        /// <value>promotion code </value>
+        [DataMember(Name="promotion_code")]
+        public string PromotionCode { get; set; }
 
         /// <summary>
-        /// End timestamp, default is 23:59:59 today
+        /// Parameter returned by the quote API
         /// </summary>
-        /// <value>End timestamp, default is 23:59:59 today</value>
-        [DataMember(Name="end_time")]
-        public int EndTime { get; set; }
-
-        /// <summary>
-        /// 1: Include appeal status, 0: None
-        /// </summary>
-        /// <value>1: Include appeal status, 0: None</value>
-        [DataMember(Name="query_dispute")]
-        public int QueryDispute { get; set; }
-
-        /// <summary>
-        /// page number
-        /// </summary>
-        /// <value>page number</value>
-        [DataMember(Name="page")]
-        public int Page { get; set; }
-
-        /// <summary>
-        /// Number of orders per page
-        /// </summary>
-        /// <value>Number of orders per page</value>
-        [DataMember(Name="per_page")]
-        public int PerPage { get; set; }
+        /// <value>Parameter returned by the quote API</value>
+        [DataMember(Name="quote_token")]
+        public string QuoteToken { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -142,16 +108,13 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject8 {\n");
-            sb.Append("  CryptoCurrency: ").Append(CryptoCurrency).Append("\n");
-            sb.Append("  FiatCurrency: ").Append(FiatCurrency).Append("\n");
-            sb.Append("  SelectType: ").Append(SelectType).Append("\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  Txid: ").Append(Txid).Append("\n");
-            sb.Append("  StartTime: ").Append(StartTime).Append("\n");
-            sb.Append("  EndTime: ").Append(EndTime).Append("\n");
-            sb.Append("  QueryDispute: ").Append(QueryDispute).Append("\n");
-            sb.Append("  Page: ").Append(Page).Append("\n");
-            sb.Append("  PerPage: ").Append(PerPage).Append("\n");
+            sb.Append("  PayCoin: ").Append(PayCoin).Append("\n");
+            sb.Append("  GetCoin: ").Append(GetCoin).Append("\n");
+            sb.Append("  PayAmount: ").Append(PayAmount).Append("\n");
+            sb.Append("  GetAmount: ").Append(GetAmount).Append("\n");
+            sb.Append("  Side: ").Append(Side).Append("\n");
+            sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
+            sb.Append("  QuoteToken: ").Append(QuoteToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,48 +150,39 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.CryptoCurrency == input.CryptoCurrency ||
-                    (this.CryptoCurrency != null &&
-                    this.CryptoCurrency.Equals(input.CryptoCurrency))
+                    this.PayCoin == input.PayCoin ||
+                    (this.PayCoin != null &&
+                    this.PayCoin.Equals(input.PayCoin))
                 ) && 
                 (
-                    this.FiatCurrency == input.FiatCurrency ||
-                    (this.FiatCurrency != null &&
-                    this.FiatCurrency.Equals(input.FiatCurrency))
+                    this.GetCoin == input.GetCoin ||
+                    (this.GetCoin != null &&
+                    this.GetCoin.Equals(input.GetCoin))
                 ) && 
                 (
-                    this.SelectType == input.SelectType ||
-                    (this.SelectType != null &&
-                    this.SelectType.Equals(input.SelectType))
+                    this.PayAmount == input.PayAmount ||
+                    (this.PayAmount != null &&
+                    this.PayAmount.Equals(input.PayAmount))
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    this.GetAmount == input.GetAmount ||
+                    (this.GetAmount != null &&
+                    this.GetAmount.Equals(input.GetAmount))
                 ) && 
                 (
-                    this.Txid == input.Txid ||
-                    this.Txid.Equals(input.Txid)
+                    this.Side == input.Side ||
+                    (this.Side != null &&
+                    this.Side.Equals(input.Side))
                 ) && 
                 (
-                    this.StartTime == input.StartTime ||
-                    this.StartTime.Equals(input.StartTime)
+                    this.PromotionCode == input.PromotionCode ||
+                    (this.PromotionCode != null &&
+                    this.PromotionCode.Equals(input.PromotionCode))
                 ) && 
                 (
-                    this.EndTime == input.EndTime ||
-                    this.EndTime.Equals(input.EndTime)
-                ) && 
-                (
-                    this.QueryDispute == input.QueryDispute ||
-                    this.QueryDispute.Equals(input.QueryDispute)
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    this.Page.Equals(input.Page)
-                ) && 
-                (
-                    this.PerPage == input.PerPage ||
-                    this.PerPage.Equals(input.PerPage)
+                    this.QuoteToken == input.QuoteToken ||
+                    (this.QuoteToken != null &&
+                    this.QuoteToken.Equals(input.QuoteToken))
                 );
         }
 
@@ -241,20 +195,20 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CryptoCurrency != null)
-                    hashCode = hashCode * 59 + this.CryptoCurrency.GetHashCode();
-                if (this.FiatCurrency != null)
-                    hashCode = hashCode * 59 + this.FiatCurrency.GetHashCode();
-                if (this.SelectType != null)
-                    hashCode = hashCode * 59 + this.SelectType.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                hashCode = hashCode * 59 + this.Txid.GetHashCode();
-                hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                hashCode = hashCode * 59 + this.QueryDispute.GetHashCode();
-                hashCode = hashCode * 59 + this.Page.GetHashCode();
-                hashCode = hashCode * 59 + this.PerPage.GetHashCode();
+                if (this.PayCoin != null)
+                    hashCode = hashCode * 59 + this.PayCoin.GetHashCode();
+                if (this.GetCoin != null)
+                    hashCode = hashCode * 59 + this.GetCoin.GetHashCode();
+                if (this.PayAmount != null)
+                    hashCode = hashCode * 59 + this.PayAmount.GetHashCode();
+                if (this.GetAmount != null)
+                    hashCode = hashCode * 59 + this.GetAmount.GetHashCode();
+                if (this.Side != null)
+                    hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.PromotionCode != null)
+                    hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
+                if (this.QuoteToken != null)
+                    hashCode = hashCode * 59 + this.QuoteToken.GetHashCode();
                 return hashCode;
             }
         }

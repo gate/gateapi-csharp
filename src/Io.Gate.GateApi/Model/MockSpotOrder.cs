@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="currencyPairs">Market (required).</param>
         /// <param name="orderPrice">Price (required).</param>
-        /// <param name="count">Initial order quantity for spot trading pairs, not involved in actual calculation. Currently only supports BTC and ETH Currently only supports three currencies: BTC, ETH.</param>
+        /// <param name="count">Initial order quantity for spot trading pairs, not involved in actual calculation..</param>
         /// <param name="left">Unfilled quantity, involved in actual calculation (required).</param>
         /// <param name="type">Order type, sell - sell order, buy - buy order (required).</param>
         public MockSpotOrder(string currencyPairs = default(string), string orderPrice = default(string), string count = default(string), string left = default(string), string type = default(string))
@@ -71,9 +71,9 @@ namespace Io.Gate.GateApi.Model
         public string OrderPrice { get; set; }
 
         /// <summary>
-        /// Initial order quantity for spot trading pairs, not involved in actual calculation. Currently only supports BTC and ETH Currently only supports three currencies: BTC, ETH
+        /// Initial order quantity for spot trading pairs, not involved in actual calculation.
         /// </summary>
-        /// <value>Initial order quantity for spot trading pairs, not involved in actual calculation. Currently only supports BTC and ETH Currently only supports three currencies: BTC, ETH</value>
+        /// <value>Initial order quantity for spot trading pairs, not involved in actual calculation.</value>
         [DataMember(Name="count")]
         public string Count { get; set; }
 

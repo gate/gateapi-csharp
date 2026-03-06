@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MockOptionsPosition" /> class.
         /// </summary>
-        /// <param name="optionsName">Option name, currently only supports USDT options for BTC and ETH (required).</param>
+        /// <param name="optionsName">Options contract name. Currently supports all options contract markets. (required).</param>
         /// <param name="size">Position size, measured in contract quantity (required).</param>
         public MockOptionsPosition(string optionsName = default(string), string size = default(string))
         {
@@ -49,9 +49,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Option name, currently only supports USDT options for BTC and ETH
+        /// Options contract name. Currently supports all options contract markets.
         /// </summary>
-        /// <value>Option name, currently only supports USDT options for BTC and ETH</value>
+        /// <value>Options contract name. Currently supports all options contract markets.</value>
         [DataMember(Name="options_name")]
         public string OptionsName { get; set; }
 

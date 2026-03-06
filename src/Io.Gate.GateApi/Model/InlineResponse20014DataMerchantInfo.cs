@@ -33,19 +33,12 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20014DataMerchantInfo" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20014DataMerchantInfo() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20014DataMerchantInfo" /> class.
-        /// </summary>
-        /// <param name="type">type (required).</param>
-        /// <param name="market">market (required).</param>
+        /// <param name="type">type.</param>
+        /// <param name="market">market.</param>
         public InlineResponse20014DataMerchantInfo(string type = default(string), string market = default(string))
         {
-            // to ensure "type" is required (not null)
-            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for InlineResponse20014DataMerchantInfo and cannot be null");
-            // to ensure "market" is required (not null)
-            this.Market = market ?? throw new ArgumentNullException("market", "market is a required property for InlineResponse20014DataMerchantInfo and cannot be null");
+            this.Type = type;
+            this.Market = market;
         }
 
         /// <summary>

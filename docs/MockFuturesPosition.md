@@ -7,7 +7,7 @@ Futures positions
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Contract** | **string** | Futures name, currently only supports USDT perpetual contracts for BTC and ETH | 
+**Contract** | **string** | Perpetual contract name. Only USDT perpetual contracts for underlying currencies with active options trading are supported. | 
 **Size** | **string** | Position size, measured in contract quantity | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

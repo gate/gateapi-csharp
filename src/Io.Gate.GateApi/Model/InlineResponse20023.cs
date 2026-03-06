@@ -33,29 +33,20 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20023" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20023() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20023" /> class.
-        /// </summary>
-        /// <param name="timestamp">timestamp (required).</param>
-        /// <param name="method">method (required).</param>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        /// <param name="data">data (required).</param>
-        /// <param name="version">version (required).</param>
-        public InlineResponse20023(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), InlineResponse20023Data data = default(InlineResponse20023Data), string version = default(string))
+        /// <param name="timestamp">timestamp.</param>
+        /// <param name="method">method.</param>
+        /// <param name="code">code.</param>
+        /// <param name="message">message.</param>
+        /// <param name="data">data.</param>
+        /// <param name="version">version.</param>
+        public InlineResponse20023(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), List<InlineResponse20023Data> data = default(List<InlineResponse20023Data>), string version = default(string))
         {
             this.Timestamp = timestamp;
-            // to ensure "method" is required (not null)
-            this.Method = method ?? throw new ArgumentNullException("method", "method is a required property for InlineResponse20023 and cannot be null");
+            this.Method = method;
             this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse20023 and cannot be null");
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse20023 and cannot be null");
-            // to ensure "version" is required (not null)
-            this.Version = version ?? throw new ArgumentNullException("version", "version is a required property for InlineResponse20023 and cannot be null");
+            this.Message = message;
+            this.Data = data;
+            this.Version = version;
         }
 
         /// <summary>
@@ -86,7 +77,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
-        public InlineResponse20023Data Data { get; set; }
+        public List<InlineResponse20023Data> Data { get; set; }
 
         /// <summary>
         /// Gets or Sets Version
@@ -162,8 +153,9 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.Data != null &&
+                    input.Data != null &&
+                    this.Data.SequenceEqual(input.Data)
                 ) && 
                 (
                     this.Version == input.Version ||

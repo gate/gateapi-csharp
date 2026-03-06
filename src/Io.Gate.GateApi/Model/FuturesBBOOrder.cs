@@ -154,9 +154,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="text">Order Custom Information: Users can set custom IDs via this field. Custom fields must meet the following conditions:  1. Must start with &#x60;t-&#x60; 2. Excluding &#x60;t-&#x60;, length cannot exceed 28 bytes 3. Content can only contain numbers, letters, underscores (_), hyphens (-), or dots (.)  In addition to user custom information, the following are internal reserved fields identifying order sources:  - web: Web - api: API Call - app: Mobile App - auto_deleveraging: Auto-Deleveraging - liquidation: Forced Liquidation of Legacy Classic Mode Positions - liq-xxx: a. Forced liquidation of New Classic Mode positions, including isolated margin, single-direction cross margin, and non-hedged dual-direction cross margin positions. b. Forced liquidation of isolated margin positions in Unified Account Single-Currency Margin Mode - hedge-liq-xxx: Forced liquidation of hedged portions in New Classic Mode dual-direction cross margin (simultaneous closing of long and short positions) - pm_liquidate: Forced liquidation in Unified Account Cross-Currency Margin Mode - comb_margin_liquidate: Forced liquidation in Unified Account Portfolio Margin Mode - scm_liquidate: Forced liquidation of positions in Unified Account Single-Currency Margin Mode - insurance: Insurance.</param>
         /// <param name="autoSize">Set side to close dual-mode position. &#x60;close_long&#x60; closes the long side; while &#x60;close_short&#x60; the short one. Note &#x60;size&#x60; also needs to be set to 0.</param>
         /// <param name="stpAct">Self-Trading Prevention Action. Users can use this field to set self-trade prevention strategies  1. After users join the &#x60;STP Group&#x60;, they can pass &#x60;stp_act&#x60; to limit the user&#39;s self-trade prevention strategy. If &#x60;stp_act&#x60; is not passed, the default is &#x60;cn&#x60; strategy. 2. When the user does not join the &#x60;STP group&#x60;, an error will be returned when passing the &#x60;stp_act&#x60; parameter. 3. If the user did not use &#x60;stp_act&#x60; when placing the order, &#x60;stp_act&#x60; will return &#39;-&#39;  - cn: Cancel newest, cancel new orders and keep old ones - co: Cancel oldest, cancel old orders and keep new ones - cb: Cancel both, both old and new orders will be cancelled.</param>
-        /// <param name="limitVip">Counterparty user&#39;s VIP level for limit order fills. Current order will only match with orders whose VIP level is less than or equal to the specified level. Only 11~16 are supported; default is 0.</param>
         /// <param name="pid">Position ID.</param>
-        public FuturesBBOOrder(string contract = default(string), long size = default(long), string direction = default(string), long iceberg = default(long), long level = default(long), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long limitVip = default(long), long pid = default(long))
+        public FuturesBBOOrder(string contract = default(string), long size = default(long), string direction = default(string), long iceberg = default(long), long level = default(long), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long pid = default(long))
         {
             // to ensure "contract" is required (not null)
             this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for FuturesBBOOrder and cannot be null");
@@ -171,7 +170,6 @@ namespace Io.Gate.GateApi.Model
             this.Text = text;
             this.AutoSize = autoSize;
             this.StpAct = stpAct;
-            this.LimitVip = limitVip;
             this.Pid = pid;
         }
 
@@ -302,13 +300,6 @@ namespace Io.Gate.GateApi.Model
         public string AmendText { get; private set; }
 
         /// <summary>
-        /// Counterparty user&#39;s VIP level for limit order fills. Current order will only match with orders whose VIP level is less than or equal to the specified level. Only 11~16 are supported; default is 0
-        /// </summary>
-        /// <value>Counterparty user&#39;s VIP level for limit order fills. Current order will only match with orders whose VIP level is less than or equal to the specified level. Only 11~16 are supported; default is 0</value>
-        [DataMember(Name="limit_vip")]
-        public long LimitVip { get; set; }
-
-        /// <summary>
         /// Position ID
         /// </summary>
         /// <value>Position ID</value>
@@ -344,7 +335,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  StpId: ").Append(StpId).Append("\n");
             sb.Append("  StpAct: ").Append(StpAct).Append("\n");
             sb.Append("  AmendText: ").Append(AmendText).Append("\n");
-            sb.Append("  LimitVip: ").Append(LimitVip).Append("\n");
             sb.Append("  Pid: ").Append(Pid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -472,10 +462,6 @@ namespace Io.Gate.GateApi.Model
                     this.AmendText.Equals(input.AmendText))
                 ) && 
                 (
-                    this.LimitVip == input.LimitVip ||
-                    this.LimitVip.Equals(input.LimitVip)
-                ) && 
-                (
                     this.Pid == input.Pid ||
                     this.Pid.Equals(input.Pid)
                 );
@@ -518,7 +504,6 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.StpAct.GetHashCode();
                 if (this.AmendText != null)
                     hashCode = hashCode * 59 + this.AmendText.GetHashCode();
-                hashCode = hashCode * 59 + this.LimitVip.GetHashCode();
                 hashCode = hashCode * 59 + this.Pid.GetHashCode();
                 return hashCode;
             }

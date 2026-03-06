@@ -131,7 +131,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="marketOrderSlipRatio">The maximum slippage allowed for market orders, with the slippage rate calculated based on the latest market price.</param>
         /// <param name="marketOrderSizeMax">The maximum number of contracts supported for market orders, with a default value of 0. When the default value is used, the maximum number of contracts is limited by the &#x60;order_size_max&#x60; field.</param>
         /// <param name="fundingRateLimit">Upper and lower limits of funding rate.</param>
-        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), bool enableDecimal = default(bool), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string marketOrderSlipRatio = default(string), string marketOrderSizeMax = default(string), string fundingRateLimit = default(string))
+        /// <param name="fundingImpactValue">Funding rate depth impact value.</param>
+        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), bool enableDecimal = default(bool), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string marketOrderSlipRatio = default(string), string marketOrderSizeMax = default(string), string fundingRateLimit = default(string), string fundingImpactValue = default(string))
         {
             this.Name = name;
             this.Type = type;
@@ -177,6 +178,7 @@ namespace Io.Gate.GateApi.Model
             this.MarketOrderSlipRatio = marketOrderSlipRatio;
             this.MarketOrderSizeMax = marketOrderSizeMax;
             this.FundingRateLimit = fundingRateLimit;
+            this.FundingImpactValue = fundingImpactValue;
         }
 
         /// <summary>
@@ -474,6 +476,13 @@ namespace Io.Gate.GateApi.Model
         public string FundingRateLimit { get; set; }
 
         /// <summary>
+        /// Funding rate depth impact value
+        /// </summary>
+        /// <value>Funding rate depth impact value</value>
+        [DataMember(Name="funding_impact_value")]
+        public string FundingImpactValue { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -525,6 +534,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  MarketOrderSlipRatio: ").Append(MarketOrderSlipRatio).Append("\n");
             sb.Append("  MarketOrderSizeMax: ").Append(MarketOrderSizeMax).Append("\n");
             sb.Append("  FundingRateLimit: ").Append(FundingRateLimit).Append("\n");
+            sb.Append("  FundingImpactValue: ").Append(FundingImpactValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -762,6 +772,11 @@ namespace Io.Gate.GateApi.Model
                     this.FundingRateLimit == input.FundingRateLimit ||
                     (this.FundingRateLimit != null &&
                     this.FundingRateLimit.Equals(input.FundingRateLimit))
+                ) && 
+                (
+                    this.FundingImpactValue == input.FundingImpactValue ||
+                    (this.FundingImpactValue != null &&
+                    this.FundingImpactValue.Equals(input.FundingImpactValue))
                 );
         }
 
@@ -846,6 +861,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.MarketOrderSizeMax.GetHashCode();
                 if (this.FundingRateLimit != null)
                     hashCode = hashCode * 59 + this.FundingRateLimit.GetHashCode();
+                if (this.FundingImpactValue != null)
+                    hashCode = hashCode * 59 + this.FundingImpactValue.GetHashCode();
                 return hashCode;
             }
         }

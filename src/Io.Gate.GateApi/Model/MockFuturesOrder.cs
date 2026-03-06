@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MockFuturesOrder" /> class.
         /// </summary>
-        /// <param name="contract">Futures name, currently only supports USDT perpetual contracts for BTC and ETH (required).</param>
+        /// <param name="contract">Perpetual contract name. Only USDT perpetual contracts for underlying currencies with active options trading are supported. (required).</param>
         /// <param name="size">Contract quantity, representing the initial order quantity, not involved in actual settlement (required).</param>
         /// <param name="left">Unfilled contract quantity, involved in actual calculation (required).</param>
         public MockFuturesOrder(string contract = default(string), string size = default(string), string left = default(string))
@@ -52,9 +52,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Futures name, currently only supports USDT perpetual contracts for BTC and ETH
+        /// Perpetual contract name. Only USDT perpetual contracts for underlying currencies with active options trading are supported.
         /// </summary>
-        /// <value>Futures name, currently only supports USDT perpetual contracts for BTC and ETH</value>
+        /// <value>Perpetual contract name. Only USDT perpetual contracts for underlying currencies with active options trading are supported.</value>
         [DataMember(Name="contract")]
         public string Contract { get; set; }
 

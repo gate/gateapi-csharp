@@ -235,9 +235,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="stp_act")]
         public StpActEnum? StpAct { get; set; }
         /// <summary>
-        /// How the order was finished.  - open: processing - filled: filled totally - cancelled: manually cancelled - ioc: time in force is &#x60;IOC&#x60;, finish immediately - stp: cancelled because self trade prevention 
+        /// 订单结束方式，包括：  - open: 等待处理 - filled: 完全成交 - cancelled: 用户撤销 - liquidate_cancelled: 爆仓撤销 - small: 订单数量太小 - depth_not_enough: 深度不足导致撤单 - trader_not_enough: 对手方不足导致撤单 - ioc: 未立即成交，因为 tif 设置为 poc/rvt/rat/rpi表示只想成为maker, 经检查会成为taker被拒绝 - poc: 未满足挂单策略，因为 tif 设置为 poc - fok: 未立即完全成交，因为 tif 设置为 fok - stp: 订单发生自成交限制而被撤销 - price_protect_cancelled: 价格保护导致撤单 - unknown: 未知
         /// </summary>
-        /// <value>How the order was finished.  - open: processing - filled: filled totally - cancelled: manually cancelled - ioc: time in force is &#x60;IOC&#x60;, finish immediately - stp: cancelled because self trade prevention </value>
+        /// <value>订单结束方式，包括：  - open: 等待处理 - filled: 完全成交 - cancelled: 用户撤销 - liquidate_cancelled: 爆仓撤销 - small: 订单数量太小 - depth_not_enough: 深度不足导致撤单 - trader_not_enough: 对手方不足导致撤单 - ioc: 未立即成交，因为 tif 设置为 poc/rvt/rat/rpi表示只想成为maker, 经检查会成为taker被拒绝 - poc: 未满足挂单策略，因为 tif 设置为 poc - fok: 未立即完全成交，因为 tif 设置为 fok - stp: 订单发生自成交限制而被撤销 - price_protect_cancelled: 价格保护导致撤单 - unknown: 未知</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FinishAsEnum
         {
@@ -260,23 +260,71 @@ namespace Io.Gate.GateApi.Model
             Cancelled = 3,
 
             /// <summary>
+            /// Enum value Liquidatecancelled
+            /// </summary>
+            [EnumMember(Value = "liquidate_cancelled")]
+            Liquidatecancelled = 4,
+
+            /// <summary>
+            /// Enum value Depthnotenough
+            /// </summary>
+            [EnumMember(Value = "depth_not_enough")]
+            Depthnotenough = 5,
+
+            /// <summary>
+            /// Enum value Tradernotenough
+            /// </summary>
+            [EnumMember(Value = "trader_not_enough")]
+            Tradernotenough = 6,
+
+            /// <summary>
+            /// Enum value Small
+            /// </summary>
+            [EnumMember(Value = "small")]
+            Small = 7,
+
+            /// <summary>
             /// Enum value Ioc
             /// </summary>
             [EnumMember(Value = "ioc")]
-            Ioc = 4,
+            Ioc = 8,
+
+            /// <summary>
+            /// Enum value Poc
+            /// </summary>
+            [EnumMember(Value = "poc")]
+            Poc = 9,
+
+            /// <summary>
+            /// Enum value Fok
+            /// </summary>
+            [EnumMember(Value = "fok")]
+            Fok = 10,
 
             /// <summary>
             /// Enum value Stp
             /// </summary>
             [EnumMember(Value = "stp")]
-            Stp = 5
+            Stp = 11,
+
+            /// <summary>
+            /// Enum value Priceprotectcancelled
+            /// </summary>
+            [EnumMember(Value = "price_protect_cancelled")]
+            Priceprotectcancelled = 12,
+
+            /// <summary>
+            /// Enum value Unknown
+            /// </summary>
+            [EnumMember(Value = "unknown")]
+            Unknown = 13
 
         }
 
         /// <summary>
-        /// How the order was finished.  - open: processing - filled: filled totally - cancelled: manually cancelled - ioc: time in force is &#x60;IOC&#x60;, finish immediately - stp: cancelled because self trade prevention 
+        /// 订单结束方式，包括：  - open: 等待处理 - filled: 完全成交 - cancelled: 用户撤销 - liquidate_cancelled: 爆仓撤销 - small: 订单数量太小 - depth_not_enough: 深度不足导致撤单 - trader_not_enough: 对手方不足导致撤单 - ioc: 未立即成交，因为 tif 设置为 poc/rvt/rat/rpi表示只想成为maker, 经检查会成为taker被拒绝 - poc: 未满足挂单策略，因为 tif 设置为 poc - fok: 未立即完全成交，因为 tif 设置为 fok - stp: 订单发生自成交限制而被撤销 - price_protect_cancelled: 价格保护导致撤单 - unknown: 未知
         /// </summary>
-        /// <value>How the order was finished.  - open: processing - filled: filled totally - cancelled: manually cancelled - ioc: time in force is &#x60;IOC&#x60;, finish immediately - stp: cancelled because self trade prevention </value>
+        /// <value>订单结束方式，包括：  - open: 等待处理 - filled: 完全成交 - cancelled: 用户撤销 - liquidate_cancelled: 爆仓撤销 - small: 订单数量太小 - depth_not_enough: 深度不足导致撤单 - trader_not_enough: 对手方不足导致撤单 - ioc: 未立即成交，因为 tif 设置为 poc/rvt/rat/rpi表示只想成为maker, 经检查会成为taker被拒绝 - poc: 未满足挂单策略，因为 tif 设置为 poc - fok: 未立即完全成交，因为 tif 设置为 fok - stp: 订单发生自成交限制而被撤销 - price_protect_cancelled: 价格保护导致撤单 - unknown: 未知</value>
         [DataMember(Name="finish_as", EmitDefaultValue=false)]
         public FinishAsEnum? FinishAs { get; set; }
         /// <summary>
