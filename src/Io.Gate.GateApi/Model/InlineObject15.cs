@@ -35,7 +35,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="positionMode">Futures position mode (SINGLE/DUAL).</param>
         /// <param name="accountMode">Account mode (CROSS_EXCHANGE/ISOLATED_EXCHANGE, default: CROSS_EXCHANGE).</param>
-        /// <param name="exchangeType">Exchange (BINANCE/OKX/GATE/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode).</param>
+        /// <param name="exchangeType">Exchange (BINANCE/OKX/GATE/BYBIT/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode).</param>
         public InlineObject15(string positionMode = default(string), string accountMode = default(string), string exchangeType = default(string))
         {
             this.PositionMode = positionMode;
@@ -58,9 +58,9 @@ namespace Io.Gate.GateApi.Model
         public string AccountMode { get; set; }
 
         /// <summary>
-        /// Exchange (BINANCE/OKX/GATE/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode)
+        /// Exchange (BINANCE/OKX/GATE/BYBIT/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode)
         /// </summary>
-        /// <value>Exchange (BINANCE/OKX/GATE/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode)</value>
+        /// <value>Exchange (BINANCE/OKX/GATE/BYBIT/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode)</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 

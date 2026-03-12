@@ -41,7 +41,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="userId">User ID (required).</param>
         /// <param name="symbol">Currency pair (required).</param>
         /// <param name="crossexAdlRank">CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher) (required).</param>
-        /// <param name="exchangeAdlRank">Original exchange information (Binance: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; Gate: 1–5, lower value ranks higher) (required).</param>
+        /// <param name="exchangeAdlRank">Original exchange information (BINANCE: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; GATE: 1–5, lower value ranks higher; BYBIT: 0–5, higher value ranks higher) (required).</param>
         public InlineResponse20040(string userId = default(string), string symbol = default(string), string crossexAdlRank = default(string), string exchangeAdlRank = default(string))
         {
             // to ensure "userId" is required (not null)
@@ -76,9 +76,9 @@ namespace Io.Gate.GateApi.Model
         public string CrossexAdlRank { get; set; }
 
         /// <summary>
-        /// Original exchange information (Binance: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; Gate: 1–5, lower value ranks higher)
+        /// Original exchange information (BINANCE: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; GATE: 1–5, lower value ranks higher; BYBIT: 0–5, higher value ranks higher)
         /// </summary>
-        /// <value>Original exchange information (Binance: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; Gate: 1–5, lower value ranks higher)</value>
+        /// <value>Original exchange information (BINANCE: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; GATE: 1–5, lower value ranks higher; BYBIT: 0–5, higher value ranks higher)</value>
         [DataMember(Name="exchange_adl_rank")]
         public string ExchangeAdlRank { get; set; }
 

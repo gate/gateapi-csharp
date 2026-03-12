@@ -40,8 +40,8 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="coin">Currency (required).</param>
         /// <param name="amount">Transfer amount (required).</param>
-        /// <param name="from">Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT (required).</param>
-        /// <param name="to">Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT (required).</param>
+        /// <param name="from">Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX_BYBIT, CROSSEX, SPOT (required).</param>
+        /// <param name="to">Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX_BYBIT, CROSSEX, SPOT (required).</param>
         /// <param name="text">User-defined ID.</param>
         public InlineObject10(string coin = default(string), string amount = default(string), string from = default(string), string to = default(string), string text = default(string))
         {
@@ -71,16 +71,16 @@ namespace Io.Gate.GateApi.Model
         public string Amount { get; set; }
 
         /// <summary>
-        /// Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT
+        /// Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX_BYBIT, CROSSEX, SPOT
         /// </summary>
-        /// <value>Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT</value>
+        /// <value>Transfer-in account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX_BYBIT, CROSSEX, SPOT</value>
         [DataMember(Name="from")]
         public string From { get; set; }
 
         /// <summary>
-        /// Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT
+        /// Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX_BYBIT, CROSSEX, SPOT
         /// </summary>
-        /// <value>Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT</value>
+        /// <value>Transfer-out account: CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX_BYBIT, CROSSEX, SPOT</value>
         [DataMember(Name="to")]
         public string To { get; set; }
 

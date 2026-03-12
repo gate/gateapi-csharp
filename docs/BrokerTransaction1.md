@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **CurrencyPair** | **string** | Currency pair | [optional] 
 **Amount** | **string** | Transaction amount | [optional] 
 **FeeAsset** | **string** | Fee currency | [optional] 
-**Source** | **string** | Commission transaction type: Spot, Futures, Options, Alpha | [optional] 
+**Source** | **string** | Commission transaction type: Spot, Futures, Options, Alpha、TradFi | [optional] 
 **SubBrokerInfo** | [**BrokerCommissionSubBrokerInfo**](BrokerCommissionSubBrokerInfo.md) |  | [optional] 
 **AlphaContractAddr** | **string** | Alpha contract address | [optional] 
 

@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="fee">Fee.</param>
         /// <param name="feeAsset">Fee currency.</param>
         /// <param name="rebateFee">The income from rebates, converted to USDT.</param>
-        /// <param name="source">Commission transaction type: Spot, Futures, Options, Alpha.</param>
+        /// <param name="source">Commission transaction type: Spot, Futures, Options, Alpha、TradFi.</param>
         /// <param name="currencyPair">Currency pair.</param>
         /// <param name="subBrokerInfo">subBrokerInfo.</param>
         /// <param name="alphaContractAddr">Alpha contract address.</param>
@@ -109,9 +109,9 @@ namespace Io.Gate.GateApi.Model
         public string RebateFee { get; set; }
 
         /// <summary>
-        /// Commission transaction type: Spot, Futures, Options, Alpha
+        /// Commission transaction type: Spot, Futures, Options, Alpha、TradFi
         /// </summary>
-        /// <value>Commission transaction type: Spot, Futures, Options, Alpha</value>
+        /// <value>Commission transaction type: Spot, Futures, Options, Alpha、TradFi</value>
         [DataMember(Name="source")]
         public string Source { get; set; }
 

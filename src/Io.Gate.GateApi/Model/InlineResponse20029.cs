@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="id">Order ID (required).</param>
         /// <param name="text">Client Custom ID (required).</param>
-        /// <param name="fromAccountType">Source &#x60;from&#x60; account (CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT) (required).</param>
+        /// <param name="fromAccountType">Source &#x60;from&#x60; account (CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX_BYBIT, CROSSEX, SPOT) (required).</param>
         /// <param name="toAccountType">toAccountType (required).</param>
         /// <param name="coin">Currency (required).</param>
         /// <param name="amount">Transfer amount, the amount requested for the transfer (required).</param>
@@ -86,9 +86,9 @@ namespace Io.Gate.GateApi.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// Source &#x60;from&#x60; account (CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT)
+        /// Source &#x60;from&#x60; account (CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX_BYBIT, CROSSEX, SPOT)
         /// </summary>
-        /// <value>Source &#x60;from&#x60; account (CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX, SPOT)</value>
+        /// <value>Source &#x60;from&#x60; account (CROSSEX_BINANCE, CROSSEX_OKX, CROSSEX_GATE, CROSSEX_BYBIT, CROSSEX, SPOT)</value>
         [DataMember(Name="from_account_type")]
         public string FromAccountType { get; set; }
 

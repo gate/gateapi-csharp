@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Trading Pair Information
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">Trading Pair List, multiple separated by commas  Example values: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
         /// <returns>List&lt;Symbol&gt;</returns>
         List<Symbol> ListCrossexRuleSymbols (string symbols = default(string));
 
@@ -45,7 +45,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Trading Pair Information
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">Trading Pair List, multiple separated by commas  Example values: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
         /// <returns>ApiResponse of List&lt;Symbol&gt;</returns>
         ApiResponse<List<Symbol>> ListCrossexRuleSymbolsWithHttpInfo (string symbols = default(string));
         /// <summary>
@@ -277,7 +277,7 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
+        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE/BYBIT) (optional)</param>
         /// <returns>InlineResponse20035</returns>
         InlineResponse20035 GetCrossexAccount (string exchangeType = default(string));
 
@@ -288,7 +288,7 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
+        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE/BYBIT) (optional)</param>
         /// <returns>ApiResponse of InlineResponse20035</returns>
         ApiResponse<InlineResponse20035> GetCrossexAccountWithHttpInfo (string exchangeType = default(string));
         /// <summary>
@@ -735,7 +735,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT (optional)</param>
         /// <returns>List&lt;InlineResponse20047&gt;</returns>
         List<InlineResponse20047> ListCrossexCoinDiscountRate (string coin = default(string), string exchangeType = default(string));
 
@@ -747,7 +747,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT (optional)</param>
         /// <returns>ApiResponse of List&lt;InlineResponse20047&gt;</returns>
         ApiResponse<List<InlineResponse20047>> ListCrossexCoinDiscountRateWithHttpInfo (string coin = default(string), string exchangeType = default(string));
         #endregion Synchronous Operations
@@ -766,7 +766,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Trading Pair Information
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">Trading Pair List, multiple separated by commas  Example values: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
         /// <returns>Task of List&lt;Symbol&gt;</returns>
         Task<List<Symbol>> ListCrossexRuleSymbolsAsync (string symbols = default(string));
 
@@ -777,7 +777,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Trading Pair Information
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">Trading Pair List, multiple separated by commas  Example values: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Symbol&gt;)</returns>
         Task<ApiResponse<List<Symbol>>> ListCrossexRuleSymbolsAsyncWithHttpInfo (string symbols = default(string));
         /// <summary>
@@ -1009,7 +1009,7 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
+        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE/BYBIT) (optional)</param>
         /// <returns>Task of InlineResponse20035</returns>
         Task<InlineResponse20035> GetCrossexAccountAsync (string exchangeType = default(string));
 
@@ -1020,7 +1020,7 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
+        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE/BYBIT) (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20035)</returns>
         Task<ApiResponse<InlineResponse20035>> GetCrossexAccountAsyncWithHttpInfo (string exchangeType = default(string));
         /// <summary>
@@ -1467,7 +1467,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT (optional)</param>
         /// <returns>Task of List&lt;InlineResponse20047&gt;</returns>
         Task<List<InlineResponse20047>> ListCrossexCoinDiscountRateAsync (string coin = default(string), string exchangeType = default(string));
 
@@ -1479,7 +1479,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;InlineResponse20047&gt;)</returns>
         Task<ApiResponse<List<InlineResponse20047>>> ListCrossexCoinDiscountRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string));
         #endregion Asynchronous Operations
@@ -1606,7 +1606,7 @@ namespace Io.Gate.GateApi.Api
         /// [Public Interface] Query Trading Pair Information Query Trading Pair Information
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">Trading Pair List, multiple separated by commas  Example values: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
         /// <returns>List&lt;Symbol&gt;</returns>
         public List<Symbol> ListCrossexRuleSymbols (string symbols = default(string))
         {
@@ -1618,7 +1618,7 @@ namespace Io.Gate.GateApi.Api
         /// [Public Interface] Query Trading Pair Information Query Trading Pair Information
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">Trading Pair List, multiple separated by commas  Example values: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
         /// <returns>ApiResponse of List&lt;Symbol&gt;</returns>
         public ApiResponse<List<Symbol>> ListCrossexRuleSymbolsWithHttpInfo (string symbols = default(string))
         {
@@ -1660,7 +1660,7 @@ namespace Io.Gate.GateApi.Api
         /// [Public Interface] Query Trading Pair Information Query Trading Pair Information
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">Trading Pair List, multiple separated by commas  Example values: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
         /// <returns>Task of List&lt;Symbol&gt;</returns>
         public async Task<List<Symbol>> ListCrossexRuleSymbolsAsync (string symbols = default(string))
         {
@@ -1673,7 +1673,7 @@ namespace Io.Gate.GateApi.Api
         /// [Public Interface] Query Trading Pair Information Query Trading Pair Information
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">Trading Pair List, multiple separated by commas  Example values: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Symbol&gt;)</returns>
         public async Task<ApiResponse<List<Symbol>>> ListCrossexRuleSymbolsAsyncWithHttpInfo (string symbols = default(string))
         {
@@ -2919,7 +2919,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Account Assets Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
+        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE/BYBIT) (optional)</param>
         /// <returns>InlineResponse20035</returns>
         public InlineResponse20035 GetCrossexAccount (string exchangeType = default(string))
         {
@@ -2931,7 +2931,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Account Assets Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
+        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE/BYBIT) (optional)</param>
         /// <returns>ApiResponse of InlineResponse20035</returns>
         public ApiResponse<InlineResponse20035> GetCrossexAccountWithHttpInfo (string exchangeType = default(string))
         {
@@ -2975,7 +2975,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Account Assets Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
+        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE/BYBIT) (optional)</param>
         /// <returns>Task of InlineResponse20035</returns>
         public async Task<InlineResponse20035> GetCrossexAccountAsync (string exchangeType = default(string))
         {
@@ -2988,7 +2988,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Account Assets Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE) (optional)</param>
+        /// <param name="exchangeType">Exchange. Not required in cross-exchange mode; required in single-exchange mode (BINANCE/OKX/GATE/BYBIT) (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20035)</returns>
         public async Task<ApiResponse<InlineResponse20035>> GetCrossexAccountAsyncWithHttpInfo (string exchangeType = default(string))
         {
@@ -5439,7 +5439,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT (optional)</param>
         /// <returns>List&lt;InlineResponse20047&gt;</returns>
         public List<InlineResponse20047> ListCrossexCoinDiscountRate (string coin = default(string), string exchangeType = default(string))
         {
@@ -5452,7 +5452,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT (optional)</param>
         /// <returns>ApiResponse of List&lt;InlineResponse20047&gt;</returns>
         public ApiResponse<List<InlineResponse20047>> ListCrossexCoinDiscountRateWithHttpInfo (string coin = default(string), string exchangeType = default(string))
         {
@@ -5501,7 +5501,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT (optional)</param>
         /// <returns>Task of List&lt;InlineResponse20047&gt;</returns>
         public async Task<List<InlineResponse20047>> ListCrossexCoinDiscountRateAsync (string coin = default(string), string exchangeType = default(string))
         {
@@ -5515,7 +5515,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;InlineResponse20047&gt;)</returns>
         public async Task<ApiResponse<List<InlineResponse20047>>> ListCrossexCoinDiscountRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string))
         {

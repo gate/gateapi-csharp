@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="Symbol" /> class.
         /// </summary>
         /// <param name="symbol">ExchangeType_BusinessType_Base_Counter (required).</param>
-        /// <param name="exchangeType">BINANCE,OKX,GATE,CROSSEX (required).</param>
+        /// <param name="exchangeType">BINANCE,OKX,GATE,BYBIT,CROSSEX (required).</param>
         /// <param name="businessType">SPOT, FUTURE, MARGIN (required).</param>
         /// <param name="state">live/suspend (required).</param>
         /// <param name="minSize">Minimum order quantity (required).</param>
@@ -92,9 +92,9 @@ namespace Io.Gate.GateApi.Model
         public string _Symbol { get; set; }
 
         /// <summary>
-        /// BINANCE,OKX,GATE,CROSSEX
+        /// BINANCE,OKX,GATE,BYBIT,CROSSEX
         /// </summary>
-        /// <value>BINANCE,OKX,GATE,CROSSEX</value>
+        /// <value>BINANCE,OKX,GATE,BYBIT,CROSSEX</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 
