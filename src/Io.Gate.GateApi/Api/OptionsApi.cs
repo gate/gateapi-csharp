@@ -568,6 +568,29 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of OptionsOrder</returns>
         ApiResponse<OptionsOrder> GetOptionsOrderWithHttpInfo (long orderId);
         /// <summary>
+        /// Option Order Modification
+        /// </summary>
+        /// <remarks>
+        /// Modify the order price and/or quantity of a specified order; only orders with status &#39;open&#39; are supported
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID returned when order is successfully created</param>
+        /// <param name="inlineObject6"></param>
+        /// <returns>OptionsOrder</returns>
+        OptionsOrder AmendOptionsOrder (long orderId, InlineObject6 inlineObject6);
+
+        /// <summary>
+        /// Option Order Modification
+        /// </summary>
+        /// <remarks>
+        /// Modify the order price and/or quantity of a specified order; only orders with status &#39;open&#39; are supported
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID returned when order is successfully created</param>
+        /// <param name="inlineObject6"></param>
+        /// <returns>ApiResponse of OptionsOrder</returns>
+        ApiResponse<OptionsOrder> AmendOptionsOrderWithHttpInfo (long orderId, InlineObject6 inlineObject6);
+        /// <summary>
         /// Cancel single order
         /// </summary>
         /// <remarks>
@@ -1252,6 +1275,29 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">Order ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (OptionsOrder)</returns>
         Task<ApiResponse<OptionsOrder>> GetOptionsOrderAsyncWithHttpInfo (long orderId);
+        /// <summary>
+        /// Option Order Modification
+        /// </summary>
+        /// <remarks>
+        /// Modify the order price and/or quantity of a specified order; only orders with status &#39;open&#39; are supported
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID returned when order is successfully created</param>
+        /// <param name="inlineObject6"></param>
+        /// <returns>Task of OptionsOrder</returns>
+        Task<OptionsOrder> AmendOptionsOrderAsync (long orderId, InlineObject6 inlineObject6);
+
+        /// <summary>
+        /// Option Order Modification
+        /// </summary>
+        /// <remarks>
+        /// Modify the order price and/or quantity of a specified order; only orders with status &#39;open&#39; are supported
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID returned when order is successfully created</param>
+        /// <param name="inlineObject6"></param>
+        /// <returns>Task of ApiResponse (OptionsOrder)</returns>
+        Task<ApiResponse<OptionsOrder>> AmendOptionsOrderAsyncWithHttpInfo (long orderId, InlineObject6 inlineObject6);
         /// <summary>
         /// Cancel single order
         /// </summary>
@@ -4474,6 +4520,131 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetOptionsOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Option Order Modification Modify the order price and/or quantity of a specified order; only orders with status &#39;open&#39; are supported
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID returned when order is successfully created</param>
+        /// <param name="inlineObject6"></param>
+        /// <returns>OptionsOrder</returns>
+        public OptionsOrder AmendOptionsOrder (long orderId, InlineObject6 inlineObject6)
+        {
+             ApiResponse<OptionsOrder> localVarResponse = AmendOptionsOrderWithHttpInfo(orderId, inlineObject6);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Option Order Modification Modify the order price and/or quantity of a specified order; only orders with status &#39;open&#39; are supported
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID returned when order is successfully created</param>
+        /// <param name="inlineObject6"></param>
+        /// <returns>ApiResponse of OptionsOrder</returns>
+        public ApiResponse<OptionsOrder> AmendOptionsOrderWithHttpInfo (long orderId, InlineObject6 inlineObject6)
+        {
+            // verify the required parameter 'inlineObject6' is set
+            if (inlineObject6 == null)
+                throw new ApiException(400, "Missing required parameter 'inlineObject6' when calling OptionsApi->AmendOptionsOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+            localVarRequestOptions.Data = inlineObject6;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<OptionsOrder>("/options/orders/{order_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AmendOptionsOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Option Order Modification Modify the order price and/or quantity of a specified order; only orders with status &#39;open&#39; are supported
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID returned when order is successfully created</param>
+        /// <param name="inlineObject6"></param>
+        /// <returns>Task of OptionsOrder</returns>
+        public async Task<OptionsOrder> AmendOptionsOrderAsync (long orderId, InlineObject6 inlineObject6)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OptionsOrder> localVarResponse = await AmendOptionsOrderAsyncWithHttpInfo(orderId, inlineObject6);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Option Order Modification Modify the order price and/or quantity of a specified order; only orders with status &#39;open&#39; are supported
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID returned when order is successfully created</param>
+        /// <param name="inlineObject6"></param>
+        /// <returns>Task of ApiResponse (OptionsOrder)</returns>
+        public async Task<ApiResponse<OptionsOrder>> AmendOptionsOrderAsyncWithHttpInfo (long orderId, InlineObject6 inlineObject6)
+        {
+            // verify the required parameter 'inlineObject6' is set
+            if (inlineObject6 == null)
+                throw new ApiException(400, "Missing required parameter 'inlineObject6' when calling OptionsApi->AmendOptionsOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+            localVarRequestOptions.Data = inlineObject6;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<OptionsOrder>("/options/orders/{order_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AmendOptionsOrder", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

@@ -33,24 +33,72 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject9" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineObject9() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject9" /> class.
-        /// </summary>
-        /// <param name="orderId">Order ID (required).</param>
-        public InlineObject9(string orderId = default(string))
+        /// <param name="payCoin">Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page..</param>
+        /// <param name="getCoin">Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page..</param>
+        /// <param name="payAmount">User payment currency amount.</param>
+        /// <param name="getAmount">Amount of currency received by the user.</param>
+        /// <param name="side">Quote direction returned by the quote API (used for order validation).</param>
+        /// <param name="promotionCode">promotion code .</param>
+        /// <param name="quoteToken">Parameter returned by the quote API.</param>
+        public InlineObject9(string payCoin = default(string), string getCoin = default(string), string payAmount = default(string), string getAmount = default(string), string side = default(string), string promotionCode = default(string), string quoteToken = default(string))
         {
-            // to ensure "orderId" is required (not null)
-            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for InlineObject9 and cannot be null");
+            this.PayCoin = payCoin;
+            this.GetCoin = getCoin;
+            this.PayAmount = payAmount;
+            this.GetAmount = getAmount;
+            this.Side = side;
+            this.PromotionCode = promotionCode;
+            this.QuoteToken = quoteToken;
         }
 
         /// <summary>
-        /// Order ID
+        /// Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page.
         /// </summary>
-        /// <value>Order ID</value>
-        [DataMember(Name="order_id")]
-        public string OrderId { get; set; }
+        /// <value>Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page.</value>
+        [DataMember(Name="pay_coin")]
+        public string PayCoin { get; set; }
+
+        /// <summary>
+        /// Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page.
+        /// </summary>
+        /// <value>Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page.</value>
+        [DataMember(Name="get_coin")]
+        public string GetCoin { get; set; }
+
+        /// <summary>
+        /// User payment currency amount
+        /// </summary>
+        /// <value>User payment currency amount</value>
+        [DataMember(Name="pay_amount")]
+        public string PayAmount { get; set; }
+
+        /// <summary>
+        /// Amount of currency received by the user
+        /// </summary>
+        /// <value>Amount of currency received by the user</value>
+        [DataMember(Name="get_amount")]
+        public string GetAmount { get; set; }
+
+        /// <summary>
+        /// Quote direction returned by the quote API (used for order validation)
+        /// </summary>
+        /// <value>Quote direction returned by the quote API (used for order validation)</value>
+        [DataMember(Name="side")]
+        public string Side { get; set; }
+
+        /// <summary>
+        /// promotion code 
+        /// </summary>
+        /// <value>promotion code </value>
+        [DataMember(Name="promotion_code")]
+        public string PromotionCode { get; set; }
+
+        /// <summary>
+        /// Parameter returned by the quote API
+        /// </summary>
+        /// <value>Parameter returned by the quote API</value>
+        [DataMember(Name="quote_token")]
+        public string QuoteToken { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,7 +108,13 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject9 {\n");
-            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
+            sb.Append("  PayCoin: ").Append(PayCoin).Append("\n");
+            sb.Append("  GetCoin: ").Append(GetCoin).Append("\n");
+            sb.Append("  PayAmount: ").Append(PayAmount).Append("\n");
+            sb.Append("  GetAmount: ").Append(GetAmount).Append("\n");
+            sb.Append("  Side: ").Append(Side).Append("\n");
+            sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
+            sb.Append("  QuoteToken: ").Append(QuoteToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,9 +150,39 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
+                    this.PayCoin == input.PayCoin ||
+                    (this.PayCoin != null &&
+                    this.PayCoin.Equals(input.PayCoin))
+                ) && 
+                (
+                    this.GetCoin == input.GetCoin ||
+                    (this.GetCoin != null &&
+                    this.GetCoin.Equals(input.GetCoin))
+                ) && 
+                (
+                    this.PayAmount == input.PayAmount ||
+                    (this.PayAmount != null &&
+                    this.PayAmount.Equals(input.PayAmount))
+                ) && 
+                (
+                    this.GetAmount == input.GetAmount ||
+                    (this.GetAmount != null &&
+                    this.GetAmount.Equals(input.GetAmount))
+                ) && 
+                (
+                    this.Side == input.Side ||
+                    (this.Side != null &&
+                    this.Side.Equals(input.Side))
+                ) && 
+                (
+                    this.PromotionCode == input.PromotionCode ||
+                    (this.PromotionCode != null &&
+                    this.PromotionCode.Equals(input.PromotionCode))
+                ) && 
+                (
+                    this.QuoteToken == input.QuoteToken ||
+                    (this.QuoteToken != null &&
+                    this.QuoteToken.Equals(input.QuoteToken))
                 );
         }
 
@@ -111,8 +195,20 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.PayCoin != null)
+                    hashCode = hashCode * 59 + this.PayCoin.GetHashCode();
+                if (this.GetCoin != null)
+                    hashCode = hashCode * 59 + this.GetCoin.GetHashCode();
+                if (this.PayAmount != null)
+                    hashCode = hashCode * 59 + this.PayAmount.GetHashCode();
+                if (this.GetAmount != null)
+                    hashCode = hashCode * 59 + this.GetAmount.GetHashCode();
+                if (this.Side != null)
+                    hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.PromotionCode != null)
+                    hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
+                if (this.QuoteToken != null)
+                    hashCode = hashCode * 59 + this.QuoteToken.GetHashCode();
                 return hashCode;
             }
         }

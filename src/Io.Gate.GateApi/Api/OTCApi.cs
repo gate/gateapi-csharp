@@ -34,9 +34,9 @@ namespace Io.Gate.GateApi.Api
         /// Create fiat and stablecoin quotes, supporting both PAY and GET directions
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject6"></param>
+        /// <param name="inlineObject7"></param>
         /// <returns>InlineResponse2006</returns>
-        InlineResponse2006 CreateOtcQuote (InlineObject6 inlineObject6);
+        InlineResponse2006 CreateOtcQuote (InlineObject7 inlineObject7);
 
         /// <summary>
         /// Fiat and stablecoin quote
@@ -45,9 +45,9 @@ namespace Io.Gate.GateApi.Api
         /// Create fiat and stablecoin quotes, supporting both PAY and GET directions
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject6"></param>
+        /// <param name="inlineObject7"></param>
         /// <returns>ApiResponse of InlineResponse2006</returns>
-        ApiResponse<InlineResponse2006> CreateOtcQuoteWithHttpInfo (InlineObject6 inlineObject6);
+        ApiResponse<InlineResponse2006> CreateOtcQuoteWithHttpInfo (InlineObject7 inlineObject7);
         /// <summary>
         /// Create fiat order
         /// </summary>
@@ -55,9 +55,9 @@ namespace Io.Gate.GateApi.Api
         /// Create a fiat order, supporting BUY for on-ramp and SELL for off-ramp
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject7"></param>
+        /// <param name="inlineObject8"></param>
         /// <returns>InlineResponse2007</returns>
-        InlineResponse2007 CreateOtcOrder (InlineObject7 inlineObject7);
+        InlineResponse2007 CreateOtcOrder (InlineObject8 inlineObject8);
 
         /// <summary>
         /// Create fiat order
@@ -66,9 +66,9 @@ namespace Io.Gate.GateApi.Api
         /// Create a fiat order, supporting BUY for on-ramp and SELL for off-ramp
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject7"></param>
+        /// <param name="inlineObject8"></param>
         /// <returns>ApiResponse of InlineResponse2007</returns>
-        ApiResponse<InlineResponse2007> CreateOtcOrderWithHttpInfo (InlineObject7 inlineObject7);
+        ApiResponse<InlineResponse2007> CreateOtcOrderWithHttpInfo (InlineObject8 inlineObject8);
         /// <summary>
         /// Create stablecoin order
         /// </summary>
@@ -76,9 +76,9 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject8"></param>
+        /// <param name="inlineObject9"></param>
         /// <returns>InlineResponse2008</returns>
-        InlineResponse2008 CreateStableCoinOrder (InlineObject8 inlineObject8);
+        InlineResponse2008 CreateStableCoinOrder (InlineObject9 inlineObject9);
 
         /// <summary>
         /// Create stablecoin order
@@ -87,9 +87,9 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject8"></param>
+        /// <param name="inlineObject9"></param>
         /// <returns>ApiResponse of InlineResponse2008</returns>
-        ApiResponse<InlineResponse2008> CreateStableCoinOrderWithHttpInfo (InlineObject8 inlineObject8);
+        ApiResponse<InlineResponse2008> CreateStableCoinOrderWithHttpInfo (InlineObject9 inlineObject9);
         /// <summary>
         /// Get user&#39;s default bank account information
         /// </summary>
@@ -135,9 +135,9 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject9"></param>
+        /// <param name="inlineObject10"></param>
         /// <returns>InlineResponse2007</returns>
-        InlineResponse2007 MarkOtcOrderPaid (InlineObject9 inlineObject9);
+        InlineResponse2007 MarkOtcOrderPaid (InlineObject10 inlineObject10);
 
         /// <summary>
         /// Mark fiat order as paid
@@ -146,9 +146,9 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject9"></param>
+        /// <param name="inlineObject10"></param>
         /// <returns>ApiResponse of InlineResponse2007</returns>
-        ApiResponse<InlineResponse2007> MarkOtcOrderPaidWithHttpInfo (InlineObject9 inlineObject9);
+        ApiResponse<InlineResponse2007> MarkOtcOrderPaidWithHttpInfo (InlineObject10 inlineObject10);
         /// <summary>
         /// Fiat order cancellation
         /// </summary>
@@ -273,9 +273,9 @@ namespace Io.Gate.GateApi.Api
         /// Create fiat and stablecoin quotes, supporting both PAY and GET directions
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject6"></param>
+        /// <param name="inlineObject7"></param>
         /// <returns>Task of InlineResponse2006</returns>
-        Task<InlineResponse2006> CreateOtcQuoteAsync (InlineObject6 inlineObject6);
+        Task<InlineResponse2006> CreateOtcQuoteAsync (InlineObject7 inlineObject7);
 
         /// <summary>
         /// Fiat and stablecoin quote
@@ -284,9 +284,9 @@ namespace Io.Gate.GateApi.Api
         /// Create fiat and stablecoin quotes, supporting both PAY and GET directions
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject6"></param>
+        /// <param name="inlineObject7"></param>
         /// <returns>Task of ApiResponse (InlineResponse2006)</returns>
-        Task<ApiResponse<InlineResponse2006>> CreateOtcQuoteAsyncWithHttpInfo (InlineObject6 inlineObject6);
+        Task<ApiResponse<InlineResponse2006>> CreateOtcQuoteAsyncWithHttpInfo (InlineObject7 inlineObject7);
         /// <summary>
         /// Create fiat order
         /// </summary>
@@ -294,9 +294,9 @@ namespace Io.Gate.GateApi.Api
         /// Create a fiat order, supporting BUY for on-ramp and SELL for off-ramp
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject7"></param>
+        /// <param name="inlineObject8"></param>
         /// <returns>Task of InlineResponse2007</returns>
-        Task<InlineResponse2007> CreateOtcOrderAsync (InlineObject7 inlineObject7);
+        Task<InlineResponse2007> CreateOtcOrderAsync (InlineObject8 inlineObject8);
 
         /// <summary>
         /// Create fiat order
@@ -305,9 +305,9 @@ namespace Io.Gate.GateApi.Api
         /// Create a fiat order, supporting BUY for on-ramp and SELL for off-ramp
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject7"></param>
+        /// <param name="inlineObject8"></param>
         /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        Task<ApiResponse<InlineResponse2007>> CreateOtcOrderAsyncWithHttpInfo (InlineObject7 inlineObject7);
+        Task<ApiResponse<InlineResponse2007>> CreateOtcOrderAsyncWithHttpInfo (InlineObject8 inlineObject8);
         /// <summary>
         /// Create stablecoin order
         /// </summary>
@@ -315,9 +315,9 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject8"></param>
+        /// <param name="inlineObject9"></param>
         /// <returns>Task of InlineResponse2008</returns>
-        Task<InlineResponse2008> CreateStableCoinOrderAsync (InlineObject8 inlineObject8);
+        Task<InlineResponse2008> CreateStableCoinOrderAsync (InlineObject9 inlineObject9);
 
         /// <summary>
         /// Create stablecoin order
@@ -326,9 +326,9 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject8"></param>
+        /// <param name="inlineObject9"></param>
         /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        Task<ApiResponse<InlineResponse2008>> CreateStableCoinOrderAsyncWithHttpInfo (InlineObject8 inlineObject8);
+        Task<ApiResponse<InlineResponse2008>> CreateStableCoinOrderAsyncWithHttpInfo (InlineObject9 inlineObject9);
         /// <summary>
         /// Get user&#39;s default bank account information
         /// </summary>
@@ -374,9 +374,9 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject9"></param>
+        /// <param name="inlineObject10"></param>
         /// <returns>Task of InlineResponse2007</returns>
-        Task<InlineResponse2007> MarkOtcOrderPaidAsync (InlineObject9 inlineObject9);
+        Task<InlineResponse2007> MarkOtcOrderPaidAsync (InlineObject10 inlineObject10);
 
         /// <summary>
         /// Mark fiat order as paid
@@ -385,9 +385,9 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject9"></param>
+        /// <param name="inlineObject10"></param>
         /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        Task<ApiResponse<InlineResponse2007>> MarkOtcOrderPaidAsyncWithHttpInfo (InlineObject9 inlineObject9);
+        Task<ApiResponse<InlineResponse2007>> MarkOtcOrderPaidAsyncWithHttpInfo (InlineObject10 inlineObject10);
         /// <summary>
         /// Fiat order cancellation
         /// </summary>
@@ -620,11 +620,11 @@ namespace Io.Gate.GateApi.Api
         /// Fiat and stablecoin quote Create fiat and stablecoin quotes, supporting both PAY and GET directions
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject6"></param>
+        /// <param name="inlineObject7"></param>
         /// <returns>InlineResponse2006</returns>
-        public InlineResponse2006 CreateOtcQuote (InlineObject6 inlineObject6)
+        public InlineResponse2006 CreateOtcQuote (InlineObject7 inlineObject7)
         {
-             ApiResponse<InlineResponse2006> localVarResponse = CreateOtcQuoteWithHttpInfo(inlineObject6);
+             ApiResponse<InlineResponse2006> localVarResponse = CreateOtcQuoteWithHttpInfo(inlineObject7);
              return localVarResponse.Data;
         }
 
@@ -632,13 +632,13 @@ namespace Io.Gate.GateApi.Api
         /// Fiat and stablecoin quote Create fiat and stablecoin quotes, supporting both PAY and GET directions
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject6"></param>
+        /// <param name="inlineObject7"></param>
         /// <returns>ApiResponse of InlineResponse2006</returns>
-        public ApiResponse<InlineResponse2006> CreateOtcQuoteWithHttpInfo (InlineObject6 inlineObject6)
+        public ApiResponse<InlineResponse2006> CreateOtcQuoteWithHttpInfo (InlineObject7 inlineObject7)
         {
-            // verify the required parameter 'inlineObject6' is set
-            if (inlineObject6 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject6' when calling OTCApi->CreateOtcQuote");
+            // verify the required parameter 'inlineObject7' is set
+            if (inlineObject7 == null)
+                throw new ApiException(400, "Missing required parameter 'inlineObject7' when calling OTCApi->CreateOtcQuote");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -657,7 +657,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject6;
+            localVarRequestOptions.Data = inlineObject7;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -678,11 +678,11 @@ namespace Io.Gate.GateApi.Api
         /// Fiat and stablecoin quote Create fiat and stablecoin quotes, supporting both PAY and GET directions
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject6"></param>
+        /// <param name="inlineObject7"></param>
         /// <returns>Task of InlineResponse2006</returns>
-        public async Task<InlineResponse2006> CreateOtcQuoteAsync (InlineObject6 inlineObject6)
+        public async Task<InlineResponse2006> CreateOtcQuoteAsync (InlineObject7 inlineObject7)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2006> localVarResponse = await CreateOtcQuoteAsyncWithHttpInfo(inlineObject6);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2006> localVarResponse = await CreateOtcQuoteAsyncWithHttpInfo(inlineObject7);
              return localVarResponse.Data;
 
         }
@@ -691,13 +691,13 @@ namespace Io.Gate.GateApi.Api
         /// Fiat and stablecoin quote Create fiat and stablecoin quotes, supporting both PAY and GET directions
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject6"></param>
+        /// <param name="inlineObject7"></param>
         /// <returns>Task of ApiResponse (InlineResponse2006)</returns>
-        public async Task<ApiResponse<InlineResponse2006>> CreateOtcQuoteAsyncWithHttpInfo (InlineObject6 inlineObject6)
+        public async Task<ApiResponse<InlineResponse2006>> CreateOtcQuoteAsyncWithHttpInfo (InlineObject7 inlineObject7)
         {
-            // verify the required parameter 'inlineObject6' is set
-            if (inlineObject6 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject6' when calling OTCApi->CreateOtcQuote");
+            // verify the required parameter 'inlineObject7' is set
+            if (inlineObject7 == null)
+                throw new ApiException(400, "Missing required parameter 'inlineObject7' when calling OTCApi->CreateOtcQuote");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -717,7 +717,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject6;
+            localVarRequestOptions.Data = inlineObject7;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -739,11 +739,11 @@ namespace Io.Gate.GateApi.Api
         /// Create fiat order Create a fiat order, supporting BUY for on-ramp and SELL for off-ramp
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject7"></param>
+        /// <param name="inlineObject8"></param>
         /// <returns>InlineResponse2007</returns>
-        public InlineResponse2007 CreateOtcOrder (InlineObject7 inlineObject7)
+        public InlineResponse2007 CreateOtcOrder (InlineObject8 inlineObject8)
         {
-             ApiResponse<InlineResponse2007> localVarResponse = CreateOtcOrderWithHttpInfo(inlineObject7);
+             ApiResponse<InlineResponse2007> localVarResponse = CreateOtcOrderWithHttpInfo(inlineObject8);
              return localVarResponse.Data;
         }
 
@@ -751,13 +751,13 @@ namespace Io.Gate.GateApi.Api
         /// Create fiat order Create a fiat order, supporting BUY for on-ramp and SELL for off-ramp
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject7"></param>
+        /// <param name="inlineObject8"></param>
         /// <returns>ApiResponse of InlineResponse2007</returns>
-        public ApiResponse<InlineResponse2007> CreateOtcOrderWithHttpInfo (InlineObject7 inlineObject7)
+        public ApiResponse<InlineResponse2007> CreateOtcOrderWithHttpInfo (InlineObject8 inlineObject8)
         {
-            // verify the required parameter 'inlineObject7' is set
-            if (inlineObject7 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject7' when calling OTCApi->CreateOtcOrder");
+            // verify the required parameter 'inlineObject8' is set
+            if (inlineObject8 == null)
+                throw new ApiException(400, "Missing required parameter 'inlineObject8' when calling OTCApi->CreateOtcOrder");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -776,7 +776,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject7;
+            localVarRequestOptions.Data = inlineObject8;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -797,11 +797,11 @@ namespace Io.Gate.GateApi.Api
         /// Create fiat order Create a fiat order, supporting BUY for on-ramp and SELL for off-ramp
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject7"></param>
+        /// <param name="inlineObject8"></param>
         /// <returns>Task of InlineResponse2007</returns>
-        public async Task<InlineResponse2007> CreateOtcOrderAsync (InlineObject7 inlineObject7)
+        public async Task<InlineResponse2007> CreateOtcOrderAsync (InlineObject8 inlineObject8)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2007> localVarResponse = await CreateOtcOrderAsyncWithHttpInfo(inlineObject7);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2007> localVarResponse = await CreateOtcOrderAsyncWithHttpInfo(inlineObject8);
              return localVarResponse.Data;
 
         }
@@ -810,13 +810,13 @@ namespace Io.Gate.GateApi.Api
         /// Create fiat order Create a fiat order, supporting BUY for on-ramp and SELL for off-ramp
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject7"></param>
+        /// <param name="inlineObject8"></param>
         /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        public async Task<ApiResponse<InlineResponse2007>> CreateOtcOrderAsyncWithHttpInfo (InlineObject7 inlineObject7)
+        public async Task<ApiResponse<InlineResponse2007>> CreateOtcOrderAsyncWithHttpInfo (InlineObject8 inlineObject8)
         {
-            // verify the required parameter 'inlineObject7' is set
-            if (inlineObject7 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject7' when calling OTCApi->CreateOtcOrder");
+            // verify the required parameter 'inlineObject8' is set
+            if (inlineObject8 == null)
+                throw new ApiException(400, "Missing required parameter 'inlineObject8' when calling OTCApi->CreateOtcOrder");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -836,7 +836,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject7;
+            localVarRequestOptions.Data = inlineObject8;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -858,11 +858,11 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order Create stablecoin order
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject8"></param>
+        /// <param name="inlineObject9"></param>
         /// <returns>InlineResponse2008</returns>
-        public InlineResponse2008 CreateStableCoinOrder (InlineObject8 inlineObject8)
+        public InlineResponse2008 CreateStableCoinOrder (InlineObject9 inlineObject9)
         {
-             ApiResponse<InlineResponse2008> localVarResponse = CreateStableCoinOrderWithHttpInfo(inlineObject8);
+             ApiResponse<InlineResponse2008> localVarResponse = CreateStableCoinOrderWithHttpInfo(inlineObject9);
              return localVarResponse.Data;
         }
 
@@ -870,13 +870,13 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order Create stablecoin order
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject8"></param>
+        /// <param name="inlineObject9"></param>
         /// <returns>ApiResponse of InlineResponse2008</returns>
-        public ApiResponse<InlineResponse2008> CreateStableCoinOrderWithHttpInfo (InlineObject8 inlineObject8)
+        public ApiResponse<InlineResponse2008> CreateStableCoinOrderWithHttpInfo (InlineObject9 inlineObject9)
         {
-            // verify the required parameter 'inlineObject8' is set
-            if (inlineObject8 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject8' when calling OTCApi->CreateStableCoinOrder");
+            // verify the required parameter 'inlineObject9' is set
+            if (inlineObject9 == null)
+                throw new ApiException(400, "Missing required parameter 'inlineObject9' when calling OTCApi->CreateStableCoinOrder");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -895,7 +895,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject8;
+            localVarRequestOptions.Data = inlineObject9;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -916,11 +916,11 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order Create stablecoin order
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject8"></param>
+        /// <param name="inlineObject9"></param>
         /// <returns>Task of InlineResponse2008</returns>
-        public async Task<InlineResponse2008> CreateStableCoinOrderAsync (InlineObject8 inlineObject8)
+        public async Task<InlineResponse2008> CreateStableCoinOrderAsync (InlineObject9 inlineObject9)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2008> localVarResponse = await CreateStableCoinOrderAsyncWithHttpInfo(inlineObject8);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2008> localVarResponse = await CreateStableCoinOrderAsyncWithHttpInfo(inlineObject9);
              return localVarResponse.Data;
 
         }
@@ -929,13 +929,13 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order Create stablecoin order
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject8"></param>
+        /// <param name="inlineObject9"></param>
         /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        public async Task<ApiResponse<InlineResponse2008>> CreateStableCoinOrderAsyncWithHttpInfo (InlineObject8 inlineObject8)
+        public async Task<ApiResponse<InlineResponse2008>> CreateStableCoinOrderAsyncWithHttpInfo (InlineObject9 inlineObject9)
         {
-            // verify the required parameter 'inlineObject8' is set
-            if (inlineObject8 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject8' when calling OTCApi->CreateStableCoinOrder");
+            // verify the required parameter 'inlineObject9' is set
+            if (inlineObject9 == null)
+                throw new ApiException(400, "Missing required parameter 'inlineObject9' when calling OTCApi->CreateStableCoinOrder");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -955,7 +955,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject8;
+            localVarRequestOptions.Data = inlineObject9;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -1183,11 +1183,11 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid Mark fiat order as paid
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject9"></param>
+        /// <param name="inlineObject10"></param>
         /// <returns>InlineResponse2007</returns>
-        public InlineResponse2007 MarkOtcOrderPaid (InlineObject9 inlineObject9)
+        public InlineResponse2007 MarkOtcOrderPaid (InlineObject10 inlineObject10)
         {
-             ApiResponse<InlineResponse2007> localVarResponse = MarkOtcOrderPaidWithHttpInfo(inlineObject9);
+             ApiResponse<InlineResponse2007> localVarResponse = MarkOtcOrderPaidWithHttpInfo(inlineObject10);
              return localVarResponse.Data;
         }
 
@@ -1195,13 +1195,13 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid Mark fiat order as paid
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject9"></param>
+        /// <param name="inlineObject10"></param>
         /// <returns>ApiResponse of InlineResponse2007</returns>
-        public ApiResponse<InlineResponse2007> MarkOtcOrderPaidWithHttpInfo (InlineObject9 inlineObject9)
+        public ApiResponse<InlineResponse2007> MarkOtcOrderPaidWithHttpInfo (InlineObject10 inlineObject10)
         {
-            // verify the required parameter 'inlineObject9' is set
-            if (inlineObject9 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject9' when calling OTCApi->MarkOtcOrderPaid");
+            // verify the required parameter 'inlineObject10' is set
+            if (inlineObject10 == null)
+                throw new ApiException(400, "Missing required parameter 'inlineObject10' when calling OTCApi->MarkOtcOrderPaid");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1220,7 +1220,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject9;
+            localVarRequestOptions.Data = inlineObject10;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -1241,11 +1241,11 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid Mark fiat order as paid
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject9"></param>
+        /// <param name="inlineObject10"></param>
         /// <returns>Task of InlineResponse2007</returns>
-        public async Task<InlineResponse2007> MarkOtcOrderPaidAsync (InlineObject9 inlineObject9)
+        public async Task<InlineResponse2007> MarkOtcOrderPaidAsync (InlineObject10 inlineObject10)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2007> localVarResponse = await MarkOtcOrderPaidAsyncWithHttpInfo(inlineObject9);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2007> localVarResponse = await MarkOtcOrderPaidAsyncWithHttpInfo(inlineObject10);
              return localVarResponse.Data;
 
         }
@@ -1254,13 +1254,13 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid Mark fiat order as paid
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject9"></param>
+        /// <param name="inlineObject10"></param>
         /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        public async Task<ApiResponse<InlineResponse2007>> MarkOtcOrderPaidAsyncWithHttpInfo (InlineObject9 inlineObject9)
+        public async Task<ApiResponse<InlineResponse2007>> MarkOtcOrderPaidAsyncWithHttpInfo (InlineObject10 inlineObject10)
         {
-            // verify the required parameter 'inlineObject9' is set
-            if (inlineObject9 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject9' when calling OTCApi->MarkOtcOrderPaid");
+            // verify the required parameter 'inlineObject10' is set
+            if (inlineObject10 == null)
+                throw new ApiException(400, "Missing required parameter 'inlineObject10' when calling OTCApi->MarkOtcOrderPaid");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1280,7 +1280,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject9;
+            localVarRequestOptions.Data = inlineObject10;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;

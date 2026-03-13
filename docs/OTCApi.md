@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="createotcquote"></a>
 # **CreateOtcQuote**
-> InlineResponse2006 CreateOtcQuote (InlineObject6 inlineObject6)
+> InlineResponse2006 CreateOtcQuote (InlineObject7 inlineObject7)
 
 Fiat and stablecoin quote
 
@@ -43,12 +43,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new OTCApi(config);
-            var inlineObject6 = new InlineObject6(); // InlineObject6 | 
+            var inlineObject7 = new InlineObject7(); // InlineObject7 | 
 
             try
             {
                 // Fiat and stablecoin quote
-                InlineResponse2006 result = apiInstance.CreateOtcQuote(inlineObject6);
+                InlineResponse2006 result = apiInstance.CreateOtcQuote(inlineObject7);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -67,7 +67,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject6** | [**InlineObject6**](InlineObject6.md)|  | 
+ **inlineObject7** | [**InlineObject7**](InlineObject7.md)|  | 
 
 ### Return type
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 <a name="createotcorder"></a>
 # **CreateOtcOrder**
-> InlineResponse2007 CreateOtcOrder (InlineObject7 inlineObject7)
+> InlineResponse2007 CreateOtcOrder (InlineObject8 inlineObject8)
 
 Create fiat order
 
@@ -116,12 +116,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new OTCApi(config);
-            var inlineObject7 = new InlineObject7(); // InlineObject7 | 
+            var inlineObject8 = new InlineObject8(); // InlineObject8 | 
 
             try
             {
                 // Create fiat order
-                InlineResponse2007 result = apiInstance.CreateOtcOrder(inlineObject7);
+                InlineResponse2007 result = apiInstance.CreateOtcOrder(inlineObject8);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -140,7 +140,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject7** | [**InlineObject7**](InlineObject7.md)|  | 
+ **inlineObject8** | [**InlineObject8**](InlineObject8.md)|  | 
 
 ### Return type
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 <a name="createstablecoinorder"></a>
 # **CreateStableCoinOrder**
-> InlineResponse2008 CreateStableCoinOrder (InlineObject8 inlineObject8)
+> InlineResponse2008 CreateStableCoinOrder (InlineObject9 inlineObject9)
 
 Create stablecoin order
 
@@ -189,12 +189,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new OTCApi(config);
-            var inlineObject8 = new InlineObject8(); // InlineObject8 | 
+            var inlineObject9 = new InlineObject9(); // InlineObject9 | 
 
             try
             {
                 // Create stablecoin order
-                InlineResponse2008 result = apiInstance.CreateStableCoinOrder(inlineObject8);
+                InlineResponse2008 result = apiInstance.CreateStableCoinOrder(inlineObject9);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -213,7 +213,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject8** | [**InlineObject8**](InlineObject8.md)|  | 
+ **inlineObject9** | [**InlineObject9**](InlineObject9.md)|  | 
 
 ### Return type
 
@@ -375,7 +375,7 @@ This endpoint does not need any parameter.
 
 <a name="markotcorderpaid"></a>
 # **MarkOtcOrderPaid**
-> InlineResponse2007 MarkOtcOrderPaid (InlineObject9 inlineObject9)
+> InlineResponse2007 MarkOtcOrderPaid (InlineObject10 inlineObject10)
 
 Mark fiat order as paid
 
@@ -400,12 +400,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new OTCApi(config);
-            var inlineObject9 = new InlineObject9(); // InlineObject9 | 
+            var inlineObject10 = new InlineObject10(); // InlineObject10 | 
 
             try
             {
                 // Mark fiat order as paid
-                InlineResponse2007 result = apiInstance.MarkOtcOrderPaid(inlineObject9);
+                InlineResponse2007 result = apiInstance.MarkOtcOrderPaid(inlineObject10);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -424,7 +424,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject9** | [**InlineObject9**](InlineObject9.md)|  | 
+ **inlineObject10** | [**InlineObject10**](InlineObject10.md)|  | 
 
 ### Return type
 

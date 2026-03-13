@@ -1029,6 +1029,8 @@ namespace Io.Gate.GateApi.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Mt5Account>("/tradfi/users/mt5-account", localVarRequestOptions, this.Configuration);
@@ -1079,6 +1081,8 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
 
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
 

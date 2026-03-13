@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**CreateOptionsOrder**](OptionsApi.md#createoptionsorder) | **POST** /options/orders | Create an options order
 [**CancelOptionsOrders**](OptionsApi.md#canceloptionsorders) | **DELETE** /options/orders | Cancel all orders with &#39;open&#39; status
 [**GetOptionsOrder**](OptionsApi.md#getoptionsorder) | **GET** /options/orders/{order_id} | Query single order details
+[**AmendOptionsOrder**](OptionsApi.md#amendoptionsorder) | **PUT** /options/orders/{order_id} | Option Order Modification
 [**CancelOptionsOrder**](OptionsApi.md#canceloptionsorder) | **DELETE** /options/orders/{order_id} | Cancel single order
 [**CountdownCancelAllOptions**](OptionsApi.md#countdowncancelalloptions) | **POST** /options/countdown_cancel_all | Countdown cancel orders
 [**ListMyOptionsTrades**](OptionsApi.md#listmyoptionstrades) | **GET** /options/my_trades | Query personal trading records
@@ -1641,6 +1642,81 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Order detail |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="amendoptionsorder"></a>
+# **AmendOptionsOrder**
+> OptionsOrder AmendOptionsOrder (long orderId, InlineObject6 inlineObject6)
+
+Option Order Modification
+
+Modify the order price and/or quantity of a specified order; only orders with status 'open' are supported
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class AmendOptionsOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new OptionsApi(config);
+            var orderId = 12345;  // long | Order ID returned when order is successfully created
+            var inlineObject6 = new InlineObject6(); // InlineObject6 | 
+
+            try
+            {
+                // Option Order Modification
+                OptionsOrder result = apiInstance.AmendOptionsOrder(orderId, inlineObject6);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling OptionsApi.AmendOptionsOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | **long**| Order ID returned when order is successfully created | 
+ **inlineObject6** | [**InlineObject6**](InlineObject6.md)|  | 
+
+### Return type
+
+[**OptionsOrder**](OptionsOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

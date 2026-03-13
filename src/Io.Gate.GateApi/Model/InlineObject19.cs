@@ -25,42 +25,41 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineObject18
+    /// InlineObject19
     /// </summary>
     [DataContract]
-    public partial class InlineObject18 :  IEquatable<InlineObject18>, IValidatableObject
+    public partial class InlineObject19 :  IEquatable<InlineObject19>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject18" /> class.
+        /// Initializes a new instance of the <see cref="InlineObject19" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineObject18() { }
+        protected InlineObject19() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject18" /> class.
+        /// Initializes a new instance of the <see cref="InlineObject19" /> class.
         /// </summary>
-        /// <param name="symbol">Currency pair (required).</param>
-        /// <param name="leverage">leverage (required).</param>
-        public InlineObject18(string symbol = default(string), string leverage = default(string))
+        /// <param name="symbol">Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT (required).</param>
+        /// <param name="positionSide">Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method.</param>
+        public InlineObject19(string symbol = default(string), string positionSide = default(string))
         {
             // to ensure "symbol" is required (not null)
-            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineObject18 and cannot be null");
-            // to ensure "leverage" is required (not null)
-            this.Leverage = leverage ?? throw new ArgumentNullException("leverage", "leverage is a required property for InlineObject18 and cannot be null");
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for InlineObject19 and cannot be null");
+            this.PositionSide = positionSide;
         }
 
         /// <summary>
-        /// Currency pair
+        /// Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT
         /// </summary>
-        /// <value>Currency pair</value>
+        /// <value>Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 
         /// <summary>
-        /// leverage
+        /// Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method
         /// </summary>
-        /// <value>leverage</value>
-        [DataMember(Name="leverage")]
-        public string Leverage { get; set; }
+        /// <value>Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method</value>
+        [DataMember(Name="position_side")]
+        public string PositionSide { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,9 +68,9 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineObject18 {\n");
+            sb.Append("class InlineObject19 {\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
+            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,15 +91,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineObject18);
+            return this.Equals(input as InlineObject19);
         }
 
         /// <summary>
-        /// Returns true if InlineObject18 instances are equal
+        /// Returns true if InlineObject19 instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineObject18 to be compared</param>
+        /// <param name="input">Instance of InlineObject19 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineObject18 input)
+        public bool Equals(InlineObject19 input)
         {
             if (input == null)
                 return false;
@@ -112,9 +111,9 @@ namespace Io.Gate.GateApi.Model
                     this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.Leverage == input.Leverage ||
-                    (this.Leverage != null &&
-                    this.Leverage.Equals(input.Leverage))
+                    this.PositionSide == input.PositionSide ||
+                    (this.PositionSide != null &&
+                    this.PositionSide.Equals(input.PositionSide))
                 );
         }
 
@@ -129,8 +128,8 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.Symbol != null)
                     hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Leverage != null)
-                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
+                if (this.PositionSide != null)
+                    hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
                 return hashCode;
             }
         }

@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossextransfer"></a>
 # **CreateCrossexTransfer**
-> InlineResponse20030 CreateCrossexTransfer (InlineObject10 inlineObject10 = null)
+> InlineResponse20030 CreateCrossexTransfer (InlineObject11 inlineObject11 = null)
 
 Fund Transfer
 
@@ -360,12 +360,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject10 = new InlineObject10(); // InlineObject10 |  (optional) 
+            var inlineObject11 = new InlineObject11(); // InlineObject11 |  (optional) 
 
             try
             {
                 // Fund Transfer
-                InlineResponse20030 result = apiInstance.CreateCrossexTransfer(inlineObject10);
+                InlineResponse20030 result = apiInstance.CreateCrossexTransfer(inlineObject11);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -384,7 +384,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject10** | [**InlineObject10**](InlineObject10.md)|  | [optional] 
+ **inlineObject11** | [**InlineObject11**](InlineObject11.md)|  | [optional] 
 
 ### Return type
 
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossexorder"></a>
 # **CreateCrossexOrder**
-> InlineResponse20031 CreateCrossexOrder (InlineObject11 inlineObject11 = null)
+> InlineResponse20031 CreateCrossexOrder (InlineObject12 inlineObject12 = null)
 
 Create an order
 
@@ -433,12 +433,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject11 = new InlineObject11(); // InlineObject11 |  (optional) 
+            var inlineObject12 = new InlineObject12(); // InlineObject12 |  (optional) 
 
             try
             {
                 // Create an order
-                InlineResponse20031 result = apiInstance.CreateCrossexOrder(inlineObject11);
+                InlineResponse20031 result = apiInstance.CreateCrossexOrder(inlineObject12);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -457,7 +457,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject11** | [**InlineObject11**](InlineObject11.md)|  | [optional] 
+ **inlineObject12** | [**InlineObject12**](InlineObject12.md)|  | [optional] 
 
 ### Return type
 
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexorder"></a>
 # **UpdateCrossexOrder**
-> InlineResponse20033 UpdateCrossexOrder (string orderId, InlineObject12 inlineObject12 = null)
+> InlineResponse20033 UpdateCrossexOrder (string orderId, InlineObject13 inlineObject13 = null)
 
 Modify Order
 
@@ -580,12 +580,12 @@ namespace Example
 
             var apiInstance = new CrossExApi(config);
             var orderId = "orderId_example";  // string | Support Order ID or Text for Modify Order
-            var inlineObject12 = new InlineObject12(); // InlineObject12 |  (optional) 
+            var inlineObject13 = new InlineObject13(); // InlineObject13 |  (optional) 
 
             try
             {
                 // Modify Order
-                InlineResponse20033 result = apiInstance.UpdateCrossexOrder(orderId, inlineObject12);
+                InlineResponse20033 result = apiInstance.UpdateCrossexOrder(orderId, inlineObject13);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -605,7 +605,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **string**| Support Order ID or Text for Modify Order | 
- **inlineObject12** | [**InlineObject12**](InlineObject12.md)|  | [optional] 
+ **inlineObject13** | [**InlineObject13**](InlineObject13.md)|  | [optional] 
 
 ### Return type
 
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossexconvertquote"></a>
 # **CreateCrossexConvertQuote**
-> InlineResponse20034 CreateCrossexConvertQuote (InlineObject13 inlineObject13 = null)
+> InlineResponse20034 CreateCrossexConvertQuote (InlineObject14 inlineObject14 = null)
 
 Flash Swap Inquiry
 
@@ -727,12 +727,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject13 = new InlineObject13(); // InlineObject13 |  (optional) 
+            var inlineObject14 = new InlineObject14(); // InlineObject14 |  (optional) 
 
             try
             {
                 // Flash Swap Inquiry
-                InlineResponse20034 result = apiInstance.CreateCrossexConvertQuote(inlineObject13);
+                InlineResponse20034 result = apiInstance.CreateCrossexConvertQuote(inlineObject14);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -751,7 +751,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject13** | [**InlineObject13**](InlineObject13.md)|  | [optional] 
+ **inlineObject14** | [**InlineObject14**](InlineObject14.md)|  | [optional] 
 
 ### Return type
 
@@ -775,7 +775,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossexconvertorder"></a>
 # **CreateCrossexConvertOrder**
-> Object CreateCrossexConvertOrder (InlineObject14 inlineObject14 = null)
+> Object CreateCrossexConvertOrder (InlineObject15 inlineObject15 = null)
 
 Flash Swap Transaction
 
@@ -800,12 +800,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject14 = new InlineObject14(); // InlineObject14 |  (optional) 
+            var inlineObject15 = new InlineObject15(); // InlineObject15 |  (optional) 
 
             try
             {
                 // Flash Swap Transaction
-                Object result = apiInstance.CreateCrossexConvertOrder(inlineObject14);
+                Object result = apiInstance.CreateCrossexConvertOrder(inlineObject15);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -824,7 +824,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject14** | [**InlineObject14**](InlineObject14.md)|  | [optional] 
+ **inlineObject15** | [**InlineObject15**](InlineObject15.md)|  | [optional] 
 
 ### Return type
 
@@ -921,7 +921,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexaccount"></a>
 # **UpdateCrossexAccount**
-> InlineResponse202 UpdateCrossexAccount (InlineObject15 inlineObject15 = null)
+> InlineResponse202 UpdateCrossexAccount (InlineObject16 inlineObject16 = null)
 
 Modify Account Contract Position Mode and Account Mode
 
@@ -946,12 +946,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject15 = new InlineObject15(); // InlineObject15 |  (optional) 
+            var inlineObject16 = new InlineObject16(); // InlineObject16 |  (optional) 
 
             try
             {
                 // Modify Account Contract Position Mode and Account Mode
-                InlineResponse202 result = apiInstance.UpdateCrossexAccount(inlineObject15);
+                InlineResponse202 result = apiInstance.UpdateCrossexAccount(inlineObject16);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -970,7 +970,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject15** | [**InlineObject15**](InlineObject15.md)|  | [optional] 
+ **inlineObject16** | [**InlineObject16**](InlineObject16.md)|  | [optional] 
 
 ### Return type
 
@@ -1067,7 +1067,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexpositionsleverage"></a>
 # **UpdateCrossexPositionsLeverage**
-> InlineResponse2021 UpdateCrossexPositionsLeverage (InlineObject16 inlineObject16 = null)
+> InlineResponse2021 UpdateCrossexPositionsLeverage (InlineObject17 inlineObject17 = null)
 
 Modify Contract Trading Pair Leverage Multiplier
 
@@ -1092,12 +1092,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject16 = new InlineObject16(); // InlineObject16 |  (optional) 
+            var inlineObject17 = new InlineObject17(); // InlineObject17 |  (optional) 
 
             try
             {
                 // Modify Contract Trading Pair Leverage Multiplier
-                InlineResponse2021 result = apiInstance.UpdateCrossexPositionsLeverage(inlineObject16);
+                InlineResponse2021 result = apiInstance.UpdateCrossexPositionsLeverage(inlineObject17);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1116,7 +1116,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject16** | [**InlineObject16**](InlineObject16.md)|  | [optional] 
+ **inlineObject17** | [**InlineObject17**](InlineObject17.md)|  | [optional] 
 
 ### Return type
 
@@ -1213,7 +1213,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexmarginpositionsleverage"></a>
 # **UpdateCrossexMarginPositionsLeverage**
-> InlineResponse2021 UpdateCrossexMarginPositionsLeverage (InlineObject17 inlineObject17 = null)
+> InlineResponse2021 UpdateCrossexMarginPositionsLeverage (InlineObject18 inlineObject18 = null)
 
 Modify Leveraged Trading Pair Leverage Multiplier
 
@@ -1238,12 +1238,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject17 = new InlineObject17(); // InlineObject17 |  (optional) 
+            var inlineObject18 = new InlineObject18(); // InlineObject18 |  (optional) 
 
             try
             {
                 // Modify Leveraged Trading Pair Leverage Multiplier
-                InlineResponse2021 result = apiInstance.UpdateCrossexMarginPositionsLeverage(inlineObject17);
+                InlineResponse2021 result = apiInstance.UpdateCrossexMarginPositionsLeverage(inlineObject18);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1262,7 +1262,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject17** | [**InlineObject17**](InlineObject17.md)|  | [optional] 
+ **inlineObject18** | [**InlineObject18**](InlineObject18.md)|  | [optional] 
 
 ### Return type
 
@@ -1286,7 +1286,7 @@ Name | Type | Description  | Notes
 
 <a name="closecrossexposition"></a>
 # **CloseCrossexPosition**
-> InlineResponse20031 CloseCrossexPosition (InlineObject18 inlineObject18 = null)
+> InlineResponse20031 CloseCrossexPosition (InlineObject19 inlineObject19 = null)
 
 Full Close Position
 
@@ -1311,12 +1311,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CrossExApi(config);
-            var inlineObject18 = new InlineObject18(); // InlineObject18 |  (optional) 
+            var inlineObject19 = new InlineObject19(); // InlineObject19 |  (optional) 
 
             try
             {
                 // Full Close Position
-                InlineResponse20031 result = apiInstance.CloseCrossexPosition(inlineObject18);
+                InlineResponse20031 result = apiInstance.CloseCrossexPosition(inlineObject19);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1335,7 +1335,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject18** | [**InlineObject18**](InlineObject18.md)|  | [optional] 
+ **inlineObject19** | [**InlineObject19**](InlineObject19.md)|  | [optional] 
 
 ### Return type
 

@@ -38,98 +38,75 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject7" /> class.
         /// </summary>
-        /// <param name="type">BUY for on-ramp, SELL for off-ramp (required).</param>
-        /// <param name="side">Quote direction returned by the quote API (used for order validation) (required).</param>
-        /// <param name="cryptoCurrency">Cryptocurrency (supported currencies can be queried from the OTC web fiat quote page) (required).</param>
-        /// <param name="fiatCurrency">Fiat currency (supported currencies can be queried from the OTC web fiat quote page) (required).</param>
-        /// <param name="cryptoAmount">Amount of cryptocurrency (required).</param>
-        /// <param name="fiatAmount">Fiat amount (required).</param>
-        /// <param name="promotionCode">Promotion code.</param>
-        /// <param name="quoteToken">Parameter returned by the quote API (required).</param>
-        /// <param name="bankId">Bank card ID used for the order (retrieved via the default bank card API) (required).</param>
-        public InlineObject7(string type = default(string), string side = default(string), string cryptoCurrency = default(string), string fiatCurrency = default(string), string cryptoAmount = default(string), string fiatAmount = default(string), string promotionCode = default(string), string quoteToken = default(string), string bankId = default(string))
+        /// <param name="side">PAY/GET quote direction. PAY means user inputs pay amount, GET means user inputs get amount. If PAY, pay_amount is required. If GET, get_amount is required (required).</param>
+        /// <param name="payCoin">Currency the user pays. Supported currencies can be found on the OTC web quote page. (required).</param>
+        /// <param name="getCoin">Currency the user receives. Supported currencies can be found on the OTC web quote page. (required).</param>
+        /// <param name="payAmount">User payment currency amount.</param>
+        /// <param name="getAmount">Amount of currency received by the user.</param>
+        /// <param name="createQuoteToken">Create quote token: 0: quote preview only; 1: generate quote token for order placement..</param>
+        /// <param name="promotionCode">Promotion code (optional).</param>
+        public InlineObject7(string side = default(string), string payCoin = default(string), string getCoin = default(string), string payAmount = default(string), string getAmount = default(string), string createQuoteToken = default(string), string promotionCode = default(string))
         {
-            // to ensure "type" is required (not null)
-            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for InlineObject7 and cannot be null");
             // to ensure "side" is required (not null)
             this.Side = side ?? throw new ArgumentNullException("side", "side is a required property for InlineObject7 and cannot be null");
-            // to ensure "cryptoCurrency" is required (not null)
-            this.CryptoCurrency = cryptoCurrency ?? throw new ArgumentNullException("cryptoCurrency", "cryptoCurrency is a required property for InlineObject7 and cannot be null");
-            // to ensure "fiatCurrency" is required (not null)
-            this.FiatCurrency = fiatCurrency ?? throw new ArgumentNullException("fiatCurrency", "fiatCurrency is a required property for InlineObject7 and cannot be null");
-            // to ensure "cryptoAmount" is required (not null)
-            this.CryptoAmount = cryptoAmount ?? throw new ArgumentNullException("cryptoAmount", "cryptoAmount is a required property for InlineObject7 and cannot be null");
-            // to ensure "fiatAmount" is required (not null)
-            this.FiatAmount = fiatAmount ?? throw new ArgumentNullException("fiatAmount", "fiatAmount is a required property for InlineObject7 and cannot be null");
-            // to ensure "quoteToken" is required (not null)
-            this.QuoteToken = quoteToken ?? throw new ArgumentNullException("quoteToken", "quoteToken is a required property for InlineObject7 and cannot be null");
-            // to ensure "bankId" is required (not null)
-            this.BankId = bankId ?? throw new ArgumentNullException("bankId", "bankId is a required property for InlineObject7 and cannot be null");
+            // to ensure "payCoin" is required (not null)
+            this.PayCoin = payCoin ?? throw new ArgumentNullException("payCoin", "payCoin is a required property for InlineObject7 and cannot be null");
+            // to ensure "getCoin" is required (not null)
+            this.GetCoin = getCoin ?? throw new ArgumentNullException("getCoin", "getCoin is a required property for InlineObject7 and cannot be null");
+            this.PayAmount = payAmount;
+            this.GetAmount = getAmount;
+            this.CreateQuoteToken = createQuoteToken;
             this.PromotionCode = promotionCode;
         }
 
         /// <summary>
-        /// BUY for on-ramp, SELL for off-ramp
+        /// PAY/GET quote direction. PAY means user inputs pay amount, GET means user inputs get amount. If PAY, pay_amount is required. If GET, get_amount is required
         /// </summary>
-        /// <value>BUY for on-ramp, SELL for off-ramp</value>
-        [DataMember(Name="type")]
-        public string Type { get; set; }
-
-        /// <summary>
-        /// Quote direction returned by the quote API (used for order validation)
-        /// </summary>
-        /// <value>Quote direction returned by the quote API (used for order validation)</value>
+        /// <value>PAY/GET quote direction. PAY means user inputs pay amount, GET means user inputs get amount. If PAY, pay_amount is required. If GET, get_amount is required</value>
         [DataMember(Name="side")]
         public string Side { get; set; }
 
         /// <summary>
-        /// Cryptocurrency (supported currencies can be queried from the OTC web fiat quote page)
+        /// Currency the user pays. Supported currencies can be found on the OTC web quote page.
         /// </summary>
-        /// <value>Cryptocurrency (supported currencies can be queried from the OTC web fiat quote page)</value>
-        [DataMember(Name="crypto_currency")]
-        public string CryptoCurrency { get; set; }
+        /// <value>Currency the user pays. Supported currencies can be found on the OTC web quote page.</value>
+        [DataMember(Name="pay_coin")]
+        public string PayCoin { get; set; }
 
         /// <summary>
-        /// Fiat currency (supported currencies can be queried from the OTC web fiat quote page)
+        /// Currency the user receives. Supported currencies can be found on the OTC web quote page.
         /// </summary>
-        /// <value>Fiat currency (supported currencies can be queried from the OTC web fiat quote page)</value>
-        [DataMember(Name="fiat_currency")]
-        public string FiatCurrency { get; set; }
+        /// <value>Currency the user receives. Supported currencies can be found on the OTC web quote page.</value>
+        [DataMember(Name="get_coin")]
+        public string GetCoin { get; set; }
 
         /// <summary>
-        /// Amount of cryptocurrency
+        /// User payment currency amount
         /// </summary>
-        /// <value>Amount of cryptocurrency</value>
-        [DataMember(Name="crypto_amount")]
-        public string CryptoAmount { get; set; }
+        /// <value>User payment currency amount</value>
+        [DataMember(Name="pay_amount")]
+        public string PayAmount { get; set; }
 
         /// <summary>
-        /// Fiat amount
+        /// Amount of currency received by the user
         /// </summary>
-        /// <value>Fiat amount</value>
-        [DataMember(Name="fiat_amount")]
-        public string FiatAmount { get; set; }
+        /// <value>Amount of currency received by the user</value>
+        [DataMember(Name="get_amount")]
+        public string GetAmount { get; set; }
 
         /// <summary>
-        /// Promotion code
+        /// Create quote token: 0: quote preview only; 1: generate quote token for order placement.
         /// </summary>
-        /// <value>Promotion code</value>
+        /// <value>Create quote token: 0: quote preview only; 1: generate quote token for order placement.</value>
+        [DataMember(Name="create_quote_token")]
+        public string CreateQuoteToken { get; set; }
+
+        /// <summary>
+        /// Promotion code (optional)
+        /// </summary>
+        /// <value>Promotion code (optional)</value>
         [DataMember(Name="promotion_code")]
         public string PromotionCode { get; set; }
-
-        /// <summary>
-        /// Parameter returned by the quote API
-        /// </summary>
-        /// <value>Parameter returned by the quote API</value>
-        [DataMember(Name="quote_token")]
-        public string QuoteToken { get; set; }
-
-        /// <summary>
-        /// Bank card ID used for the order (retrieved via the default bank card API)
-        /// </summary>
-        /// <value>Bank card ID used for the order (retrieved via the default bank card API)</value>
-        [DataMember(Name="bank_id")]
-        public string BankId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -139,15 +116,13 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject7 {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Side: ").Append(Side).Append("\n");
-            sb.Append("  CryptoCurrency: ").Append(CryptoCurrency).Append("\n");
-            sb.Append("  FiatCurrency: ").Append(FiatCurrency).Append("\n");
-            sb.Append("  CryptoAmount: ").Append(CryptoAmount).Append("\n");
-            sb.Append("  FiatAmount: ").Append(FiatAmount).Append("\n");
+            sb.Append("  PayCoin: ").Append(PayCoin).Append("\n");
+            sb.Append("  GetCoin: ").Append(GetCoin).Append("\n");
+            sb.Append("  PayAmount: ").Append(PayAmount).Append("\n");
+            sb.Append("  GetAmount: ").Append(GetAmount).Append("\n");
+            sb.Append("  CreateQuoteToken: ").Append(CreateQuoteToken).Append("\n");
             sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
-            sb.Append("  QuoteToken: ").Append(QuoteToken).Append("\n");
-            sb.Append("  BankId: ").Append(BankId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,49 +158,39 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
                     this.Side == input.Side ||
                     (this.Side != null &&
                     this.Side.Equals(input.Side))
                 ) && 
                 (
-                    this.CryptoCurrency == input.CryptoCurrency ||
-                    (this.CryptoCurrency != null &&
-                    this.CryptoCurrency.Equals(input.CryptoCurrency))
+                    this.PayCoin == input.PayCoin ||
+                    (this.PayCoin != null &&
+                    this.PayCoin.Equals(input.PayCoin))
                 ) && 
                 (
-                    this.FiatCurrency == input.FiatCurrency ||
-                    (this.FiatCurrency != null &&
-                    this.FiatCurrency.Equals(input.FiatCurrency))
+                    this.GetCoin == input.GetCoin ||
+                    (this.GetCoin != null &&
+                    this.GetCoin.Equals(input.GetCoin))
                 ) && 
                 (
-                    this.CryptoAmount == input.CryptoAmount ||
-                    (this.CryptoAmount != null &&
-                    this.CryptoAmount.Equals(input.CryptoAmount))
+                    this.PayAmount == input.PayAmount ||
+                    (this.PayAmount != null &&
+                    this.PayAmount.Equals(input.PayAmount))
                 ) && 
                 (
-                    this.FiatAmount == input.FiatAmount ||
-                    (this.FiatAmount != null &&
-                    this.FiatAmount.Equals(input.FiatAmount))
+                    this.GetAmount == input.GetAmount ||
+                    (this.GetAmount != null &&
+                    this.GetAmount.Equals(input.GetAmount))
+                ) && 
+                (
+                    this.CreateQuoteToken == input.CreateQuoteToken ||
+                    (this.CreateQuoteToken != null &&
+                    this.CreateQuoteToken.Equals(input.CreateQuoteToken))
                 ) && 
                 (
                     this.PromotionCode == input.PromotionCode ||
                     (this.PromotionCode != null &&
                     this.PromotionCode.Equals(input.PromotionCode))
-                ) && 
-                (
-                    this.QuoteToken == input.QuoteToken ||
-                    (this.QuoteToken != null &&
-                    this.QuoteToken.Equals(input.QuoteToken))
-                ) && 
-                (
-                    this.BankId == input.BankId ||
-                    (this.BankId != null &&
-                    this.BankId.Equals(input.BankId))
                 );
         }
 
@@ -238,24 +203,20 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Side != null)
                     hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.CryptoCurrency != null)
-                    hashCode = hashCode * 59 + this.CryptoCurrency.GetHashCode();
-                if (this.FiatCurrency != null)
-                    hashCode = hashCode * 59 + this.FiatCurrency.GetHashCode();
-                if (this.CryptoAmount != null)
-                    hashCode = hashCode * 59 + this.CryptoAmount.GetHashCode();
-                if (this.FiatAmount != null)
-                    hashCode = hashCode * 59 + this.FiatAmount.GetHashCode();
+                if (this.PayCoin != null)
+                    hashCode = hashCode * 59 + this.PayCoin.GetHashCode();
+                if (this.GetCoin != null)
+                    hashCode = hashCode * 59 + this.GetCoin.GetHashCode();
+                if (this.PayAmount != null)
+                    hashCode = hashCode * 59 + this.PayAmount.GetHashCode();
+                if (this.GetAmount != null)
+                    hashCode = hashCode * 59 + this.GetAmount.GetHashCode();
+                if (this.CreateQuoteToken != null)
+                    hashCode = hashCode * 59 + this.CreateQuoteToken.GetHashCode();
                 if (this.PromotionCode != null)
                     hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
-                if (this.QuoteToken != null)
-                    hashCode = hashCode * 59 + this.QuoteToken.GetHashCode();
-                if (this.BankId != null)
-                    hashCode = hashCode * 59 + this.BankId.GetHashCode();
                 return hashCode;
             }
         }
