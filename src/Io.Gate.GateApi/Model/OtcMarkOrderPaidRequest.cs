@@ -25,41 +25,32 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Order Modification Request Body
+    /// 法币订单设置已付款请求体
     /// </summary>
     [DataContract]
-    public partial class InlineObject1 :  IEquatable<InlineObject1>, IValidatableObject
+    public partial class OtcMarkOrderPaidRequest :  IEquatable<OtcMarkOrderPaidRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject1" /> class.
+        /// Initializes a new instance of the <see cref="OtcMarkOrderPaidRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineObject1() { }
+        protected OtcMarkOrderPaidRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject1" /> class.
+        /// Initializes a new instance of the <see cref="OtcMarkOrderPaidRequest" /> class.
         /// </summary>
-        /// <param name="price">Order Price (required).</param>
-        /// <param name="size">Trade amount (required).</param>
-        public InlineObject1(string price = default(string), long size = default(long))
+        /// <param name="orderId">Order ID (required).</param>
+        public OtcMarkOrderPaidRequest(string orderId = default(string))
         {
-            // to ensure "price" is required (not null)
-            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineObject1 and cannot be null");
-            this.Size = size;
+            // to ensure "orderId" is required (not null)
+            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for OtcMarkOrderPaidRequest and cannot be null");
         }
 
         /// <summary>
-        /// Order Price
+        /// Order ID
         /// </summary>
-        /// <value>Order Price</value>
-        [DataMember(Name="price")]
-        public string Price { get; set; }
-
-        /// <summary>
-        /// Trade amount
-        /// </summary>
-        /// <value>Trade amount</value>
-        [DataMember(Name="size")]
-        public long Size { get; set; }
+        /// <value>Order ID</value>
+        [DataMember(Name="order_id")]
+        public string OrderId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,9 +59,8 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineObject1 {\n");
-            sb.Append("  Price: ").Append(Price).Append("\n");
-            sb.Append("  Size: ").Append(Size).Append("\n");
+            sb.Append("class OtcMarkOrderPaidRequest {\n");
+            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,28 +81,24 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineObject1);
+            return this.Equals(input as OtcMarkOrderPaidRequest);
         }
 
         /// <summary>
-        /// Returns true if InlineObject1 instances are equal
+        /// Returns true if OtcMarkOrderPaidRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineObject1 to be compared</param>
+        /// <param name="input">Instance of OtcMarkOrderPaidRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineObject1 input)
+        public bool Equals(OtcMarkOrderPaidRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 );
         }
 
@@ -125,9 +111,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 return hashCode;
             }
         }

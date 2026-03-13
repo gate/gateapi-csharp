@@ -25,41 +25,32 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Order Modification Request Body
+    /// 闪兑交易请求体
     /// </summary>
     [DataContract]
-    public partial class InlineObject1 :  IEquatable<InlineObject1>, IValidatableObject
+    public partial class CrossexConvertOrderRequest :  IEquatable<CrossexConvertOrderRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject1" /> class.
+        /// Initializes a new instance of the <see cref="CrossexConvertOrderRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineObject1() { }
+        protected CrossexConvertOrderRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject1" /> class.
+        /// Initializes a new instance of the <see cref="CrossexConvertOrderRequest" /> class.
         /// </summary>
-        /// <param name="price">Order Price (required).</param>
-        /// <param name="size">Trade amount (required).</param>
-        public InlineObject1(string price = default(string), long size = default(long))
+        /// <param name="quoteId">Inquiry ID (required).</param>
+        public CrossexConvertOrderRequest(string quoteId = default(string))
         {
-            // to ensure "price" is required (not null)
-            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineObject1 and cannot be null");
-            this.Size = size;
+            // to ensure "quoteId" is required (not null)
+            this.QuoteId = quoteId ?? throw new ArgumentNullException("quoteId", "quoteId is a required property for CrossexConvertOrderRequest and cannot be null");
         }
 
         /// <summary>
-        /// Order Price
+        /// Inquiry ID
         /// </summary>
-        /// <value>Order Price</value>
-        [DataMember(Name="price")]
-        public string Price { get; set; }
-
-        /// <summary>
-        /// Trade amount
-        /// </summary>
-        /// <value>Trade amount</value>
-        [DataMember(Name="size")]
-        public long Size { get; set; }
+        /// <value>Inquiry ID</value>
+        [DataMember(Name="quote_id")]
+        public string QuoteId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,9 +59,8 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineObject1 {\n");
-            sb.Append("  Price: ").Append(Price).Append("\n");
-            sb.Append("  Size: ").Append(Size).Append("\n");
+            sb.Append("class CrossexConvertOrderRequest {\n");
+            sb.Append("  QuoteId: ").Append(QuoteId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,28 +81,24 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineObject1);
+            return this.Equals(input as CrossexConvertOrderRequest);
         }
 
         /// <summary>
-        /// Returns true if InlineObject1 instances are equal
+        /// Returns true if CrossexConvertOrderRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineObject1 to be compared</param>
+        /// <param name="input">Instance of CrossexConvertOrderRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineObject1 input)
+        public bool Equals(CrossexConvertOrderRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    this.QuoteId == input.QuoteId ||
+                    (this.QuoteId != null &&
+                    this.QuoteId.Equals(input.QuoteId))
                 );
         }
 
@@ -125,9 +111,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.QuoteId != null)
+                    hashCode = hashCode * 59 + this.QuoteId.GetHashCode();
                 return hashCode;
             }
         }

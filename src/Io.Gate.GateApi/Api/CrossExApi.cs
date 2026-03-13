@@ -128,9 +128,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate limit: 10 requests per 10 seconds - In cross-exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;SPOT&#x60;, and the other side must be &#x60;CROSSEX&#x60;.   If &#x60;CROSSEX_${exchange_type}&#x60; (e.g. &#x60;CROSSEX_GATE&#x60;) is provided, it will be automatically treated as &#x60;CROSSEX&#x60;. - In isolated exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;CROSSEX_${exchange_type}&#x60;, and the other side must be &#x60;SPOT&#x60; or &#x60;CROSSEX_${exchange_type}&#x60;.   If &#x60;CROSSEX&#x60; is provided, it will be automatically treated as &#x60;CROSSEX_GATE&#x60;. - When transferring non-USDT assets to or from CrossEx, neither &#x60;from&#x60; nor &#x60;to&#x60; can be &#x60;CROSSEX&#x60;; &#x60;CROSSEX_${exchange_type}&#x60; must be explicitly specified. - When transferring non-USDT assets, transfers between &#x60;CROSSEX_{exchange_type}&#x60; accounts are supported, for example: from &#x3D; &#x60;CROSSEX_BINANCE&#x60;, to &#x3D; &#x60;CROSSEX_GATE&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject11"> (optional)</param>
+        /// <param name="crossexTransferRequest"> (optional)</param>
         /// <returns>InlineResponse20030</returns>
-        InlineResponse20030 CreateCrossexTransfer (InlineObject11 inlineObject11 = default(InlineObject11));
+        InlineResponse20030 CreateCrossexTransfer (CrossexTransferRequest crossexTransferRequest = default(CrossexTransferRequest));
 
         /// <summary>
         /// Fund Transfer
@@ -139,9 +139,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate limit: 10 requests per 10 seconds - In cross-exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;SPOT&#x60;, and the other side must be &#x60;CROSSEX&#x60;.   If &#x60;CROSSEX_${exchange_type}&#x60; (e.g. &#x60;CROSSEX_GATE&#x60;) is provided, it will be automatically treated as &#x60;CROSSEX&#x60;. - In isolated exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;CROSSEX_${exchange_type}&#x60;, and the other side must be &#x60;SPOT&#x60; or &#x60;CROSSEX_${exchange_type}&#x60;.   If &#x60;CROSSEX&#x60; is provided, it will be automatically treated as &#x60;CROSSEX_GATE&#x60;. - When transferring non-USDT assets to or from CrossEx, neither &#x60;from&#x60; nor &#x60;to&#x60; can be &#x60;CROSSEX&#x60;; &#x60;CROSSEX_${exchange_type}&#x60; must be explicitly specified. - When transferring non-USDT assets, transfers between &#x60;CROSSEX_{exchange_type}&#x60; accounts are supported, for example: from &#x3D; &#x60;CROSSEX_BINANCE&#x60;, to &#x3D; &#x60;CROSSEX_GATE&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject11"> (optional)</param>
+        /// <param name="crossexTransferRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse20030</returns>
-        ApiResponse<InlineResponse20030> CreateCrossexTransferWithHttpInfo (InlineObject11 inlineObject11 = default(InlineObject11));
+        ApiResponse<InlineResponse20030> CreateCrossexTransferWithHttpInfo (CrossexTransferRequest crossexTransferRequest = default(CrossexTransferRequest));
         /// <summary>
         /// Create an order
         /// </summary>
@@ -149,9 +149,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject12"> (optional)</param>
+        /// <param name="crossexOrderRequest"> (optional)</param>
         /// <returns>InlineResponse20031</returns>
-        InlineResponse20031 CreateCrossexOrder (InlineObject12 inlineObject12 = default(InlineObject12));
+        InlineResponse20031 CreateCrossexOrder (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest));
 
         /// <summary>
         /// Create an order
@@ -160,9 +160,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject12"> (optional)</param>
+        /// <param name="crossexOrderRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse20031</returns>
-        ApiResponse<InlineResponse20031> CreateCrossexOrderWithHttpInfo (InlineObject12 inlineObject12 = default(InlineObject12));
+        ApiResponse<InlineResponse20031> CreateCrossexOrderWithHttpInfo (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest));
         /// <summary>
         /// Query order details
         /// </summary>
@@ -192,9 +192,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
-        /// <param name="inlineObject13"> (optional)</param>
+        /// <param name="crossexOrderUpdateRequest"> (optional)</param>
         /// <returns>InlineResponse20033</returns>
-        InlineResponse20033 UpdateCrossexOrder (string orderId, InlineObject13 inlineObject13 = default(InlineObject13));
+        InlineResponse20033 UpdateCrossexOrder (string orderId, CrossexOrderUpdateRequest crossexOrderUpdateRequest = default(CrossexOrderUpdateRequest));
 
         /// <summary>
         /// Modify Order
@@ -204,9 +204,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
-        /// <param name="inlineObject13"> (optional)</param>
+        /// <param name="crossexOrderUpdateRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse20033</returns>
-        ApiResponse<InlineResponse20033> UpdateCrossexOrderWithHttpInfo (string orderId, InlineObject13 inlineObject13 = default(InlineObject13));
+        ApiResponse<InlineResponse20033> UpdateCrossexOrderWithHttpInfo (string orderId, CrossexOrderUpdateRequest crossexOrderUpdateRequest = default(CrossexOrderUpdateRequest));
         /// <summary>
         /// Cancel Order
         /// </summary>
@@ -235,9 +235,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per day
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject14"> (optional)</param>
+        /// <param name="crossexConvertQuoteRequest"> (optional)</param>
         /// <returns>InlineResponse20034</returns>
-        InlineResponse20034 CreateCrossexConvertQuote (InlineObject14 inlineObject14 = default(InlineObject14));
+        InlineResponse20034 CreateCrossexConvertQuote (CrossexConvertQuoteRequest crossexConvertQuoteRequest = default(CrossexConvertQuoteRequest));
 
         /// <summary>
         /// Flash Swap Inquiry
@@ -246,9 +246,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per day
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject14"> (optional)</param>
+        /// <param name="crossexConvertQuoteRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse20034</returns>
-        ApiResponse<InlineResponse20034> CreateCrossexConvertQuoteWithHttpInfo (InlineObject14 inlineObject14 = default(InlineObject14));
+        ApiResponse<InlineResponse20034> CreateCrossexConvertQuoteWithHttpInfo (CrossexConvertQuoteRequest crossexConvertQuoteRequest = default(CrossexConvertQuoteRequest));
         /// <summary>
         /// Flash Swap Transaction
         /// </summary>
@@ -256,9 +256,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate limit: 10 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject15"> (optional)</param>
+        /// <param name="crossexConvertOrderRequest"> (optional)</param>
         /// <returns>Object</returns>
-        Object CreateCrossexConvertOrder (InlineObject15 inlineObject15 = default(InlineObject15));
+        Object CreateCrossexConvertOrder (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
 
         /// <summary>
         /// Flash Swap Transaction
@@ -267,9 +267,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate limit: 10 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject15"> (optional)</param>
+        /// <param name="crossexConvertOrderRequest"> (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> CreateCrossexConvertOrderWithHttpInfo (InlineObject15 inlineObject15 = default(InlineObject15));
+        ApiResponse<Object> CreateCrossexConvertOrderWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
         /// <summary>
         /// Query Account Assets
         /// </summary>
@@ -298,9 +298,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 60 seconds. position_mode+exchange_type modifies contract position mode (exchange_type is required when the user&#39;s account mode is split exchange); account_mode modifies the user&#39;s account mode.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject16"> (optional)</param>
+        /// <param name="crossexAccountUpdateRequest"> (optional)</param>
         /// <returns>InlineResponse202</returns>
-        InlineResponse202 UpdateCrossexAccount (InlineObject16 inlineObject16 = default(InlineObject16));
+        InlineResponse202 UpdateCrossexAccount (CrossexAccountUpdateRequest crossexAccountUpdateRequest = default(CrossexAccountUpdateRequest));
 
         /// <summary>
         /// Modify Account Contract Position Mode and Account Mode
@@ -309,9 +309,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 60 seconds. position_mode+exchange_type modifies contract position mode (exchange_type is required when the user&#39;s account mode is split exchange); account_mode modifies the user&#39;s account mode.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject16"> (optional)</param>
+        /// <param name="crossexAccountUpdateRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse202</returns>
-        ApiResponse<InlineResponse202> UpdateCrossexAccountWithHttpInfo (InlineObject16 inlineObject16 = default(InlineObject16));
+        ApiResponse<InlineResponse202> UpdateCrossexAccountWithHttpInfo (CrossexAccountUpdateRequest crossexAccountUpdateRequest = default(CrossexAccountUpdateRequest));
         /// <summary>
         /// Query Contract Trading Pair Leverage Multiplier
         /// </summary>
@@ -340,9 +340,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject17"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>InlineResponse2021</returns>
-        InlineResponse2021 UpdateCrossexPositionsLeverage (InlineObject17 inlineObject17 = default(InlineObject17));
+        InlineResponse2021 UpdateCrossexPositionsLeverage (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest));
 
         /// <summary>
         /// Modify Contract Trading Pair Leverage Multiplier
@@ -351,9 +351,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject17"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse2021</returns>
-        ApiResponse<InlineResponse2021> UpdateCrossexPositionsLeverageWithHttpInfo (InlineObject17 inlineObject17 = default(InlineObject17));
+        ApiResponse<InlineResponse2021> UpdateCrossexPositionsLeverageWithHttpInfo (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest));
         /// <summary>
         /// Query Leveraged Trading Pair Leverage Multiplier
         /// </summary>
@@ -382,9 +382,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject18"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>InlineResponse2021</returns>
-        InlineResponse2021 UpdateCrossexMarginPositionsLeverage (InlineObject18 inlineObject18 = default(InlineObject18));
+        InlineResponse2021 UpdateCrossexMarginPositionsLeverage (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest));
 
         /// <summary>
         /// Modify Leveraged Trading Pair Leverage Multiplier
@@ -393,9 +393,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject18"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse2021</returns>
-        ApiResponse<InlineResponse2021> UpdateCrossexMarginPositionsLeverageWithHttpInfo (InlineObject18 inlineObject18 = default(InlineObject18));
+        ApiResponse<InlineResponse2021> UpdateCrossexMarginPositionsLeverageWithHttpInfo (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest));
         /// <summary>
         /// Full Close Position
         /// </summary>
@@ -403,9 +403,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject19"> (optional)</param>
+        /// <param name="crossexClosePositionRequest"> (optional)</param>
         /// <returns>InlineResponse20031</returns>
-        InlineResponse20031 CloseCrossexPosition (InlineObject19 inlineObject19 = default(InlineObject19));
+        InlineResponse20031 CloseCrossexPosition (CrossexClosePositionRequest crossexClosePositionRequest = default(CrossexClosePositionRequest));
 
         /// <summary>
         /// Full Close Position
@@ -414,9 +414,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject19"> (optional)</param>
+        /// <param name="crossexClosePositionRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse20031</returns>
-        ApiResponse<InlineResponse20031> CloseCrossexPositionWithHttpInfo (InlineObject19 inlineObject19 = default(InlineObject19));
+        ApiResponse<InlineResponse20031> CloseCrossexPositionWithHttpInfo (CrossexClosePositionRequest crossexClosePositionRequest = default(CrossexClosePositionRequest));
         /// <summary>
         /// Query margin asset interest rates
         /// </summary>
@@ -860,9 +860,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate limit: 10 requests per 10 seconds - In cross-exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;SPOT&#x60;, and the other side must be &#x60;CROSSEX&#x60;.   If &#x60;CROSSEX_${exchange_type}&#x60; (e.g. &#x60;CROSSEX_GATE&#x60;) is provided, it will be automatically treated as &#x60;CROSSEX&#x60;. - In isolated exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;CROSSEX_${exchange_type}&#x60;, and the other side must be &#x60;SPOT&#x60; or &#x60;CROSSEX_${exchange_type}&#x60;.   If &#x60;CROSSEX&#x60; is provided, it will be automatically treated as &#x60;CROSSEX_GATE&#x60;. - When transferring non-USDT assets to or from CrossEx, neither &#x60;from&#x60; nor &#x60;to&#x60; can be &#x60;CROSSEX&#x60;; &#x60;CROSSEX_${exchange_type}&#x60; must be explicitly specified. - When transferring non-USDT assets, transfers between &#x60;CROSSEX_{exchange_type}&#x60; accounts are supported, for example: from &#x3D; &#x60;CROSSEX_BINANCE&#x60;, to &#x3D; &#x60;CROSSEX_GATE&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject11"> (optional)</param>
+        /// <param name="crossexTransferRequest"> (optional)</param>
         /// <returns>Task of InlineResponse20030</returns>
-        Task<InlineResponse20030> CreateCrossexTransferAsync (InlineObject11 inlineObject11 = default(InlineObject11));
+        Task<InlineResponse20030> CreateCrossexTransferAsync (CrossexTransferRequest crossexTransferRequest = default(CrossexTransferRequest));
 
         /// <summary>
         /// Fund Transfer
@@ -871,9 +871,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate limit: 10 requests per 10 seconds - In cross-exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;SPOT&#x60;, and the other side must be &#x60;CROSSEX&#x60;.   If &#x60;CROSSEX_${exchange_type}&#x60; (e.g. &#x60;CROSSEX_GATE&#x60;) is provided, it will be automatically treated as &#x60;CROSSEX&#x60;. - In isolated exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;CROSSEX_${exchange_type}&#x60;, and the other side must be &#x60;SPOT&#x60; or &#x60;CROSSEX_${exchange_type}&#x60;.   If &#x60;CROSSEX&#x60; is provided, it will be automatically treated as &#x60;CROSSEX_GATE&#x60;. - When transferring non-USDT assets to or from CrossEx, neither &#x60;from&#x60; nor &#x60;to&#x60; can be &#x60;CROSSEX&#x60;; &#x60;CROSSEX_${exchange_type}&#x60; must be explicitly specified. - When transferring non-USDT assets, transfers between &#x60;CROSSEX_{exchange_type}&#x60; accounts are supported, for example: from &#x3D; &#x60;CROSSEX_BINANCE&#x60;, to &#x3D; &#x60;CROSSEX_GATE&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject11"> (optional)</param>
+        /// <param name="crossexTransferRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20030)</returns>
-        Task<ApiResponse<InlineResponse20030>> CreateCrossexTransferAsyncWithHttpInfo (InlineObject11 inlineObject11 = default(InlineObject11));
+        Task<ApiResponse<InlineResponse20030>> CreateCrossexTransferAsyncWithHttpInfo (CrossexTransferRequest crossexTransferRequest = default(CrossexTransferRequest));
         /// <summary>
         /// Create an order
         /// </summary>
@@ -881,9 +881,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject12"> (optional)</param>
+        /// <param name="crossexOrderRequest"> (optional)</param>
         /// <returns>Task of InlineResponse20031</returns>
-        Task<InlineResponse20031> CreateCrossexOrderAsync (InlineObject12 inlineObject12 = default(InlineObject12));
+        Task<InlineResponse20031> CreateCrossexOrderAsync (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest));
 
         /// <summary>
         /// Create an order
@@ -892,9 +892,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject12"> (optional)</param>
+        /// <param name="crossexOrderRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
-        Task<ApiResponse<InlineResponse20031>> CreateCrossexOrderAsyncWithHttpInfo (InlineObject12 inlineObject12 = default(InlineObject12));
+        Task<ApiResponse<InlineResponse20031>> CreateCrossexOrderAsyncWithHttpInfo (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest));
         /// <summary>
         /// Query order details
         /// </summary>
@@ -924,9 +924,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
-        /// <param name="inlineObject13"> (optional)</param>
+        /// <param name="crossexOrderUpdateRequest"> (optional)</param>
         /// <returns>Task of InlineResponse20033</returns>
-        Task<InlineResponse20033> UpdateCrossexOrderAsync (string orderId, InlineObject13 inlineObject13 = default(InlineObject13));
+        Task<InlineResponse20033> UpdateCrossexOrderAsync (string orderId, CrossexOrderUpdateRequest crossexOrderUpdateRequest = default(CrossexOrderUpdateRequest));
 
         /// <summary>
         /// Modify Order
@@ -936,9 +936,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
-        /// <param name="inlineObject13"> (optional)</param>
+        /// <param name="crossexOrderUpdateRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20033)</returns>
-        Task<ApiResponse<InlineResponse20033>> UpdateCrossexOrderAsyncWithHttpInfo (string orderId, InlineObject13 inlineObject13 = default(InlineObject13));
+        Task<ApiResponse<InlineResponse20033>> UpdateCrossexOrderAsyncWithHttpInfo (string orderId, CrossexOrderUpdateRequest crossexOrderUpdateRequest = default(CrossexOrderUpdateRequest));
         /// <summary>
         /// Cancel Order
         /// </summary>
@@ -967,9 +967,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per day
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject14"> (optional)</param>
+        /// <param name="crossexConvertQuoteRequest"> (optional)</param>
         /// <returns>Task of InlineResponse20034</returns>
-        Task<InlineResponse20034> CreateCrossexConvertQuoteAsync (InlineObject14 inlineObject14 = default(InlineObject14));
+        Task<InlineResponse20034> CreateCrossexConvertQuoteAsync (CrossexConvertQuoteRequest crossexConvertQuoteRequest = default(CrossexConvertQuoteRequest));
 
         /// <summary>
         /// Flash Swap Inquiry
@@ -978,9 +978,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per day
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject14"> (optional)</param>
+        /// <param name="crossexConvertQuoteRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20034)</returns>
-        Task<ApiResponse<InlineResponse20034>> CreateCrossexConvertQuoteAsyncWithHttpInfo (InlineObject14 inlineObject14 = default(InlineObject14));
+        Task<ApiResponse<InlineResponse20034>> CreateCrossexConvertQuoteAsyncWithHttpInfo (CrossexConvertQuoteRequest crossexConvertQuoteRequest = default(CrossexConvertQuoteRequest));
         /// <summary>
         /// Flash Swap Transaction
         /// </summary>
@@ -988,9 +988,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate limit: 10 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject15"> (optional)</param>
+        /// <param name="crossexConvertOrderRequest"> (optional)</param>
         /// <returns>Task of Object</returns>
-        Task<Object> CreateCrossexConvertOrderAsync (InlineObject15 inlineObject15 = default(InlineObject15));
+        Task<Object> CreateCrossexConvertOrderAsync (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
 
         /// <summary>
         /// Flash Swap Transaction
@@ -999,9 +999,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate limit: 10 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject15"> (optional)</param>
+        /// <param name="crossexConvertOrderRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<Object>> CreateCrossexConvertOrderAsyncWithHttpInfo (InlineObject15 inlineObject15 = default(InlineObject15));
+        Task<ApiResponse<Object>> CreateCrossexConvertOrderAsyncWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
         /// <summary>
         /// Query Account Assets
         /// </summary>
@@ -1030,9 +1030,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 60 seconds. position_mode+exchange_type modifies contract position mode (exchange_type is required when the user&#39;s account mode is split exchange); account_mode modifies the user&#39;s account mode.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject16"> (optional)</param>
+        /// <param name="crossexAccountUpdateRequest"> (optional)</param>
         /// <returns>Task of InlineResponse202</returns>
-        Task<InlineResponse202> UpdateCrossexAccountAsync (InlineObject16 inlineObject16 = default(InlineObject16));
+        Task<InlineResponse202> UpdateCrossexAccountAsync (CrossexAccountUpdateRequest crossexAccountUpdateRequest = default(CrossexAccountUpdateRequest));
 
         /// <summary>
         /// Modify Account Contract Position Mode and Account Mode
@@ -1041,9 +1041,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 60 seconds. position_mode+exchange_type modifies contract position mode (exchange_type is required when the user&#39;s account mode is split exchange); account_mode modifies the user&#39;s account mode.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject16"> (optional)</param>
+        /// <param name="crossexAccountUpdateRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse202)</returns>
-        Task<ApiResponse<InlineResponse202>> UpdateCrossexAccountAsyncWithHttpInfo (InlineObject16 inlineObject16 = default(InlineObject16));
+        Task<ApiResponse<InlineResponse202>> UpdateCrossexAccountAsyncWithHttpInfo (CrossexAccountUpdateRequest crossexAccountUpdateRequest = default(CrossexAccountUpdateRequest));
         /// <summary>
         /// Query Contract Trading Pair Leverage Multiplier
         /// </summary>
@@ -1072,9 +1072,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject17"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>Task of InlineResponse2021</returns>
-        Task<InlineResponse2021> UpdateCrossexPositionsLeverageAsync (InlineObject17 inlineObject17 = default(InlineObject17));
+        Task<InlineResponse2021> UpdateCrossexPositionsLeverageAsync (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest));
 
         /// <summary>
         /// Modify Contract Trading Pair Leverage Multiplier
@@ -1083,9 +1083,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject17"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse2021)</returns>
-        Task<ApiResponse<InlineResponse2021>> UpdateCrossexPositionsLeverageAsyncWithHttpInfo (InlineObject17 inlineObject17 = default(InlineObject17));
+        Task<ApiResponse<InlineResponse2021>> UpdateCrossexPositionsLeverageAsyncWithHttpInfo (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest));
         /// <summary>
         /// Query Leveraged Trading Pair Leverage Multiplier
         /// </summary>
@@ -1114,9 +1114,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject18"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>Task of InlineResponse2021</returns>
-        Task<InlineResponse2021> UpdateCrossexMarginPositionsLeverageAsync (InlineObject18 inlineObject18 = default(InlineObject18));
+        Task<InlineResponse2021> UpdateCrossexMarginPositionsLeverageAsync (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest));
 
         /// <summary>
         /// Modify Leveraged Trading Pair Leverage Multiplier
@@ -1125,9 +1125,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject18"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse2021)</returns>
-        Task<ApiResponse<InlineResponse2021>> UpdateCrossexMarginPositionsLeverageAsyncWithHttpInfo (InlineObject18 inlineObject18 = default(InlineObject18));
+        Task<ApiResponse<InlineResponse2021>> UpdateCrossexMarginPositionsLeverageAsyncWithHttpInfo (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest));
         /// <summary>
         /// Full Close Position
         /// </summary>
@@ -1135,9 +1135,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject19"> (optional)</param>
+        /// <param name="crossexClosePositionRequest"> (optional)</param>
         /// <returns>Task of InlineResponse20031</returns>
-        Task<InlineResponse20031> CloseCrossexPositionAsync (InlineObject19 inlineObject19 = default(InlineObject19));
+        Task<InlineResponse20031> CloseCrossexPositionAsync (CrossexClosePositionRequest crossexClosePositionRequest = default(CrossexClosePositionRequest));
 
         /// <summary>
         /// Full Close Position
@@ -1146,9 +1146,9 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject19"> (optional)</param>
+        /// <param name="crossexClosePositionRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
-        Task<ApiResponse<InlineResponse20031>> CloseCrossexPositionAsyncWithHttpInfo (InlineObject19 inlineObject19 = default(InlineObject19));
+        Task<ApiResponse<InlineResponse20031>> CloseCrossexPositionAsyncWithHttpInfo (CrossexClosePositionRequest crossexClosePositionRequest = default(CrossexClosePositionRequest));
         /// <summary>
         /// Query margin asset interest rates
         /// </summary>
@@ -2116,11 +2116,11 @@ namespace Io.Gate.GateApi.Api
         /// Fund Transfer Rate limit: 10 requests per 10 seconds - In cross-exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;SPOT&#x60;, and the other side must be &#x60;CROSSEX&#x60;.   If &#x60;CROSSEX_${exchange_type}&#x60; (e.g. &#x60;CROSSEX_GATE&#x60;) is provided, it will be automatically treated as &#x60;CROSSEX&#x60;. - In isolated exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;CROSSEX_${exchange_type}&#x60;, and the other side must be &#x60;SPOT&#x60; or &#x60;CROSSEX_${exchange_type}&#x60;.   If &#x60;CROSSEX&#x60; is provided, it will be automatically treated as &#x60;CROSSEX_GATE&#x60;. - When transferring non-USDT assets to or from CrossEx, neither &#x60;from&#x60; nor &#x60;to&#x60; can be &#x60;CROSSEX&#x60;; &#x60;CROSSEX_${exchange_type}&#x60; must be explicitly specified. - When transferring non-USDT assets, transfers between &#x60;CROSSEX_{exchange_type}&#x60; accounts are supported, for example: from &#x3D; &#x60;CROSSEX_BINANCE&#x60;, to &#x3D; &#x60;CROSSEX_GATE&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject11"> (optional)</param>
+        /// <param name="crossexTransferRequest"> (optional)</param>
         /// <returns>InlineResponse20030</returns>
-        public InlineResponse20030 CreateCrossexTransfer (InlineObject11 inlineObject11 = default(InlineObject11))
+        public InlineResponse20030 CreateCrossexTransfer (CrossexTransferRequest crossexTransferRequest = default(CrossexTransferRequest))
         {
-             ApiResponse<InlineResponse20030> localVarResponse = CreateCrossexTransferWithHttpInfo(inlineObject11);
+             ApiResponse<InlineResponse20030> localVarResponse = CreateCrossexTransferWithHttpInfo(crossexTransferRequest);
              return localVarResponse.Data;
         }
 
@@ -2128,9 +2128,9 @@ namespace Io.Gate.GateApi.Api
         /// Fund Transfer Rate limit: 10 requests per 10 seconds - In cross-exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;SPOT&#x60;, and the other side must be &#x60;CROSSEX&#x60;.   If &#x60;CROSSEX_${exchange_type}&#x60; (e.g. &#x60;CROSSEX_GATE&#x60;) is provided, it will be automatically treated as &#x60;CROSSEX&#x60;. - In isolated exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;CROSSEX_${exchange_type}&#x60;, and the other side must be &#x60;SPOT&#x60; or &#x60;CROSSEX_${exchange_type}&#x60;.   If &#x60;CROSSEX&#x60; is provided, it will be automatically treated as &#x60;CROSSEX_GATE&#x60;. - When transferring non-USDT assets to or from CrossEx, neither &#x60;from&#x60; nor &#x60;to&#x60; can be &#x60;CROSSEX&#x60;; &#x60;CROSSEX_${exchange_type}&#x60; must be explicitly specified. - When transferring non-USDT assets, transfers between &#x60;CROSSEX_{exchange_type}&#x60; accounts are supported, for example: from &#x3D; &#x60;CROSSEX_BINANCE&#x60;, to &#x3D; &#x60;CROSSEX_GATE&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject11"> (optional)</param>
+        /// <param name="crossexTransferRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse20030</returns>
-        public ApiResponse<InlineResponse20030> CreateCrossexTransferWithHttpInfo (InlineObject11 inlineObject11 = default(InlineObject11))
+        public ApiResponse<InlineResponse20030> CreateCrossexTransferWithHttpInfo (CrossexTransferRequest crossexTransferRequest = default(CrossexTransferRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2149,7 +2149,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject11;
+            localVarRequestOptions.Data = crossexTransferRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2170,11 +2170,11 @@ namespace Io.Gate.GateApi.Api
         /// Fund Transfer Rate limit: 10 requests per 10 seconds - In cross-exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;SPOT&#x60;, and the other side must be &#x60;CROSSEX&#x60;.   If &#x60;CROSSEX_${exchange_type}&#x60; (e.g. &#x60;CROSSEX_GATE&#x60;) is provided, it will be automatically treated as &#x60;CROSSEX&#x60;. - In isolated exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;CROSSEX_${exchange_type}&#x60;, and the other side must be &#x60;SPOT&#x60; or &#x60;CROSSEX_${exchange_type}&#x60;.   If &#x60;CROSSEX&#x60; is provided, it will be automatically treated as &#x60;CROSSEX_GATE&#x60;. - When transferring non-USDT assets to or from CrossEx, neither &#x60;from&#x60; nor &#x60;to&#x60; can be &#x60;CROSSEX&#x60;; &#x60;CROSSEX_${exchange_type}&#x60; must be explicitly specified. - When transferring non-USDT assets, transfers between &#x60;CROSSEX_{exchange_type}&#x60; accounts are supported, for example: from &#x3D; &#x60;CROSSEX_BINANCE&#x60;, to &#x3D; &#x60;CROSSEX_GATE&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject11"> (optional)</param>
+        /// <param name="crossexTransferRequest"> (optional)</param>
         /// <returns>Task of InlineResponse20030</returns>
-        public async Task<InlineResponse20030> CreateCrossexTransferAsync (InlineObject11 inlineObject11 = default(InlineObject11))
+        public async Task<InlineResponse20030> CreateCrossexTransferAsync (CrossexTransferRequest crossexTransferRequest = default(CrossexTransferRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20030> localVarResponse = await CreateCrossexTransferAsyncWithHttpInfo(inlineObject11);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20030> localVarResponse = await CreateCrossexTransferAsyncWithHttpInfo(crossexTransferRequest);
              return localVarResponse.Data;
 
         }
@@ -2183,9 +2183,9 @@ namespace Io.Gate.GateApi.Api
         /// Fund Transfer Rate limit: 10 requests per 10 seconds - In cross-exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;SPOT&#x60;, and the other side must be &#x60;CROSSEX&#x60;.   If &#x60;CROSSEX_${exchange_type}&#x60; (e.g. &#x60;CROSSEX_GATE&#x60;) is provided, it will be automatically treated as &#x60;CROSSEX&#x60;. - In isolated exchange mode, when transferring USDT, either &#x60;from&#x60; or &#x60;to&#x60; must be &#x60;CROSSEX_${exchange_type}&#x60;, and the other side must be &#x60;SPOT&#x60; or &#x60;CROSSEX_${exchange_type}&#x60;.   If &#x60;CROSSEX&#x60; is provided, it will be automatically treated as &#x60;CROSSEX_GATE&#x60;. - When transferring non-USDT assets to or from CrossEx, neither &#x60;from&#x60; nor &#x60;to&#x60; can be &#x60;CROSSEX&#x60;; &#x60;CROSSEX_${exchange_type}&#x60; must be explicitly specified. - When transferring non-USDT assets, transfers between &#x60;CROSSEX_{exchange_type}&#x60; accounts are supported, for example: from &#x3D; &#x60;CROSSEX_BINANCE&#x60;, to &#x3D; &#x60;CROSSEX_GATE&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject11"> (optional)</param>
+        /// <param name="crossexTransferRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20030)</returns>
-        public async Task<ApiResponse<InlineResponse20030>> CreateCrossexTransferAsyncWithHttpInfo (InlineObject11 inlineObject11 = default(InlineObject11))
+        public async Task<ApiResponse<InlineResponse20030>> CreateCrossexTransferAsyncWithHttpInfo (CrossexTransferRequest crossexTransferRequest = default(CrossexTransferRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2205,7 +2205,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject11;
+            localVarRequestOptions.Data = crossexTransferRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2227,11 +2227,11 @@ namespace Io.Gate.GateApi.Api
         /// Create an order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject12"> (optional)</param>
+        /// <param name="crossexOrderRequest"> (optional)</param>
         /// <returns>InlineResponse20031</returns>
-        public InlineResponse20031 CreateCrossexOrder (InlineObject12 inlineObject12 = default(InlineObject12))
+        public InlineResponse20031 CreateCrossexOrder (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest))
         {
-             ApiResponse<InlineResponse20031> localVarResponse = CreateCrossexOrderWithHttpInfo(inlineObject12);
+             ApiResponse<InlineResponse20031> localVarResponse = CreateCrossexOrderWithHttpInfo(crossexOrderRequest);
              return localVarResponse.Data;
         }
 
@@ -2239,9 +2239,9 @@ namespace Io.Gate.GateApi.Api
         /// Create an order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject12"> (optional)</param>
+        /// <param name="crossexOrderRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse20031</returns>
-        public ApiResponse<InlineResponse20031> CreateCrossexOrderWithHttpInfo (InlineObject12 inlineObject12 = default(InlineObject12))
+        public ApiResponse<InlineResponse20031> CreateCrossexOrderWithHttpInfo (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2260,7 +2260,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject12;
+            localVarRequestOptions.Data = crossexOrderRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2281,11 +2281,11 @@ namespace Io.Gate.GateApi.Api
         /// Create an order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject12"> (optional)</param>
+        /// <param name="crossexOrderRequest"> (optional)</param>
         /// <returns>Task of InlineResponse20031</returns>
-        public async Task<InlineResponse20031> CreateCrossexOrderAsync (InlineObject12 inlineObject12 = default(InlineObject12))
+        public async Task<InlineResponse20031> CreateCrossexOrderAsync (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20031> localVarResponse = await CreateCrossexOrderAsyncWithHttpInfo(inlineObject12);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20031> localVarResponse = await CreateCrossexOrderAsyncWithHttpInfo(crossexOrderRequest);
              return localVarResponse.Data;
 
         }
@@ -2294,9 +2294,9 @@ namespace Io.Gate.GateApi.Api
         /// Create an order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject12"> (optional)</param>
+        /// <param name="crossexOrderRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
-        public async Task<ApiResponse<InlineResponse20031>> CreateCrossexOrderAsyncWithHttpInfo (InlineObject12 inlineObject12 = default(InlineObject12))
+        public async Task<ApiResponse<InlineResponse20031>> CreateCrossexOrderAsyncWithHttpInfo (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2316,7 +2316,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject12;
+            localVarRequestOptions.Data = crossexOrderRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2456,11 +2456,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
-        /// <param name="inlineObject13"> (optional)</param>
+        /// <param name="crossexOrderUpdateRequest"> (optional)</param>
         /// <returns>InlineResponse20033</returns>
-        public InlineResponse20033 UpdateCrossexOrder (string orderId, InlineObject13 inlineObject13 = default(InlineObject13))
+        public InlineResponse20033 UpdateCrossexOrder (string orderId, CrossexOrderUpdateRequest crossexOrderUpdateRequest = default(CrossexOrderUpdateRequest))
         {
-             ApiResponse<InlineResponse20033> localVarResponse = UpdateCrossexOrderWithHttpInfo(orderId, inlineObject13);
+             ApiResponse<InlineResponse20033> localVarResponse = UpdateCrossexOrderWithHttpInfo(orderId, crossexOrderUpdateRequest);
              return localVarResponse.Data;
         }
 
@@ -2469,9 +2469,9 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
-        /// <param name="inlineObject13"> (optional)</param>
+        /// <param name="crossexOrderUpdateRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse20033</returns>
-        public ApiResponse<InlineResponse20033> UpdateCrossexOrderWithHttpInfo (string orderId, InlineObject13 inlineObject13 = default(InlineObject13))
+        public ApiResponse<InlineResponse20033> UpdateCrossexOrderWithHttpInfo (string orderId, CrossexOrderUpdateRequest crossexOrderUpdateRequest = default(CrossexOrderUpdateRequest))
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -2495,7 +2495,7 @@ namespace Io.Gate.GateApi.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
-            localVarRequestOptions.Data = inlineObject13;
+            localVarRequestOptions.Data = crossexOrderUpdateRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2517,11 +2517,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
-        /// <param name="inlineObject13"> (optional)</param>
+        /// <param name="crossexOrderUpdateRequest"> (optional)</param>
         /// <returns>Task of InlineResponse20033</returns>
-        public async Task<InlineResponse20033> UpdateCrossexOrderAsync (string orderId, InlineObject13 inlineObject13 = default(InlineObject13))
+        public async Task<InlineResponse20033> UpdateCrossexOrderAsync (string orderId, CrossexOrderUpdateRequest crossexOrderUpdateRequest = default(CrossexOrderUpdateRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20033> localVarResponse = await UpdateCrossexOrderAsyncWithHttpInfo(orderId, inlineObject13);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20033> localVarResponse = await UpdateCrossexOrderAsyncWithHttpInfo(orderId, crossexOrderUpdateRequest);
              return localVarResponse.Data;
 
         }
@@ -2531,9 +2531,9 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Support Order ID or Text for Modify Order</param>
-        /// <param name="inlineObject13"> (optional)</param>
+        /// <param name="crossexOrderUpdateRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20033)</returns>
-        public async Task<ApiResponse<InlineResponse20033>> UpdateCrossexOrderAsyncWithHttpInfo (string orderId, InlineObject13 inlineObject13 = default(InlineObject13))
+        public async Task<ApiResponse<InlineResponse20033>> UpdateCrossexOrderAsyncWithHttpInfo (string orderId, CrossexOrderUpdateRequest crossexOrderUpdateRequest = default(CrossexOrderUpdateRequest))
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -2558,7 +2558,7 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
             localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
-            localVarRequestOptions.Data = inlineObject13;
+            localVarRequestOptions.Data = crossexOrderUpdateRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2697,11 +2697,11 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Inquiry Rate Limit: 100 requests per day
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject14"> (optional)</param>
+        /// <param name="crossexConvertQuoteRequest"> (optional)</param>
         /// <returns>InlineResponse20034</returns>
-        public InlineResponse20034 CreateCrossexConvertQuote (InlineObject14 inlineObject14 = default(InlineObject14))
+        public InlineResponse20034 CreateCrossexConvertQuote (CrossexConvertQuoteRequest crossexConvertQuoteRequest = default(CrossexConvertQuoteRequest))
         {
-             ApiResponse<InlineResponse20034> localVarResponse = CreateCrossexConvertQuoteWithHttpInfo(inlineObject14);
+             ApiResponse<InlineResponse20034> localVarResponse = CreateCrossexConvertQuoteWithHttpInfo(crossexConvertQuoteRequest);
              return localVarResponse.Data;
         }
 
@@ -2709,9 +2709,9 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Inquiry Rate Limit: 100 requests per day
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject14"> (optional)</param>
+        /// <param name="crossexConvertQuoteRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse20034</returns>
-        public ApiResponse<InlineResponse20034> CreateCrossexConvertQuoteWithHttpInfo (InlineObject14 inlineObject14 = default(InlineObject14))
+        public ApiResponse<InlineResponse20034> CreateCrossexConvertQuoteWithHttpInfo (CrossexConvertQuoteRequest crossexConvertQuoteRequest = default(CrossexConvertQuoteRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2730,7 +2730,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject14;
+            localVarRequestOptions.Data = crossexConvertQuoteRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2751,11 +2751,11 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Inquiry Rate Limit: 100 requests per day
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject14"> (optional)</param>
+        /// <param name="crossexConvertQuoteRequest"> (optional)</param>
         /// <returns>Task of InlineResponse20034</returns>
-        public async Task<InlineResponse20034> CreateCrossexConvertQuoteAsync (InlineObject14 inlineObject14 = default(InlineObject14))
+        public async Task<InlineResponse20034> CreateCrossexConvertQuoteAsync (CrossexConvertQuoteRequest crossexConvertQuoteRequest = default(CrossexConvertQuoteRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20034> localVarResponse = await CreateCrossexConvertQuoteAsyncWithHttpInfo(inlineObject14);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20034> localVarResponse = await CreateCrossexConvertQuoteAsyncWithHttpInfo(crossexConvertQuoteRequest);
              return localVarResponse.Data;
 
         }
@@ -2764,9 +2764,9 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Inquiry Rate Limit: 100 requests per day
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject14"> (optional)</param>
+        /// <param name="crossexConvertQuoteRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20034)</returns>
-        public async Task<ApiResponse<InlineResponse20034>> CreateCrossexConvertQuoteAsyncWithHttpInfo (InlineObject14 inlineObject14 = default(InlineObject14))
+        public async Task<ApiResponse<InlineResponse20034>> CreateCrossexConvertQuoteAsyncWithHttpInfo (CrossexConvertQuoteRequest crossexConvertQuoteRequest = default(CrossexConvertQuoteRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2786,7 +2786,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject14;
+            localVarRequestOptions.Data = crossexConvertQuoteRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2808,11 +2808,11 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Transaction Rate limit: 10 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject15"> (optional)</param>
+        /// <param name="crossexConvertOrderRequest"> (optional)</param>
         /// <returns>Object</returns>
-        public Object CreateCrossexConvertOrder (InlineObject15 inlineObject15 = default(InlineObject15))
+        public Object CreateCrossexConvertOrder (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
         {
-             ApiResponse<Object> localVarResponse = CreateCrossexConvertOrderWithHttpInfo(inlineObject15);
+             ApiResponse<Object> localVarResponse = CreateCrossexConvertOrderWithHttpInfo(crossexConvertOrderRequest);
              return localVarResponse.Data;
         }
 
@@ -2820,9 +2820,9 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Transaction Rate limit: 10 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject15"> (optional)</param>
+        /// <param name="crossexConvertOrderRequest"> (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> CreateCrossexConvertOrderWithHttpInfo (InlineObject15 inlineObject15 = default(InlineObject15))
+        public ApiResponse<Object> CreateCrossexConvertOrderWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2841,7 +2841,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject15;
+            localVarRequestOptions.Data = crossexConvertOrderRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2862,11 +2862,11 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Transaction Rate limit: 10 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject15"> (optional)</param>
+        /// <param name="crossexConvertOrderRequest"> (optional)</param>
         /// <returns>Task of Object</returns>
-        public async Task<Object> CreateCrossexConvertOrderAsync (InlineObject15 inlineObject15 = default(InlineObject15))
+        public async Task<Object> CreateCrossexConvertOrderAsync (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<Object> localVarResponse = await CreateCrossexConvertOrderAsyncWithHttpInfo(inlineObject15);
+             Io.Gate.GateApi.Client.ApiResponse<Object> localVarResponse = await CreateCrossexConvertOrderAsyncWithHttpInfo(crossexConvertOrderRequest);
              return localVarResponse.Data;
 
         }
@@ -2875,9 +2875,9 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Transaction Rate limit: 10 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject15"> (optional)</param>
+        /// <param name="crossexConvertOrderRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<Object>> CreateCrossexConvertOrderAsyncWithHttpInfo (InlineObject15 inlineObject15 = default(InlineObject15))
+        public async Task<ApiResponse<Object>> CreateCrossexConvertOrderAsyncWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2897,7 +2897,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject15;
+            localVarRequestOptions.Data = crossexConvertOrderRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -3034,11 +3034,11 @@ namespace Io.Gate.GateApi.Api
         /// Modify Account Contract Position Mode and Account Mode Rate Limit: 100 requests per 60 seconds. position_mode+exchange_type modifies contract position mode (exchange_type is required when the user&#39;s account mode is split exchange); account_mode modifies the user&#39;s account mode.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject16"> (optional)</param>
+        /// <param name="crossexAccountUpdateRequest"> (optional)</param>
         /// <returns>InlineResponse202</returns>
-        public InlineResponse202 UpdateCrossexAccount (InlineObject16 inlineObject16 = default(InlineObject16))
+        public InlineResponse202 UpdateCrossexAccount (CrossexAccountUpdateRequest crossexAccountUpdateRequest = default(CrossexAccountUpdateRequest))
         {
-             ApiResponse<InlineResponse202> localVarResponse = UpdateCrossexAccountWithHttpInfo(inlineObject16);
+             ApiResponse<InlineResponse202> localVarResponse = UpdateCrossexAccountWithHttpInfo(crossexAccountUpdateRequest);
              return localVarResponse.Data;
         }
 
@@ -3046,9 +3046,9 @@ namespace Io.Gate.GateApi.Api
         /// Modify Account Contract Position Mode and Account Mode Rate Limit: 100 requests per 60 seconds. position_mode+exchange_type modifies contract position mode (exchange_type is required when the user&#39;s account mode is split exchange); account_mode modifies the user&#39;s account mode.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject16"> (optional)</param>
+        /// <param name="crossexAccountUpdateRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse202</returns>
-        public ApiResponse<InlineResponse202> UpdateCrossexAccountWithHttpInfo (InlineObject16 inlineObject16 = default(InlineObject16))
+        public ApiResponse<InlineResponse202> UpdateCrossexAccountWithHttpInfo (CrossexAccountUpdateRequest crossexAccountUpdateRequest = default(CrossexAccountUpdateRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3067,7 +3067,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject16;
+            localVarRequestOptions.Data = crossexAccountUpdateRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -3088,11 +3088,11 @@ namespace Io.Gate.GateApi.Api
         /// Modify Account Contract Position Mode and Account Mode Rate Limit: 100 requests per 60 seconds. position_mode+exchange_type modifies contract position mode (exchange_type is required when the user&#39;s account mode is split exchange); account_mode modifies the user&#39;s account mode.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject16"> (optional)</param>
+        /// <param name="crossexAccountUpdateRequest"> (optional)</param>
         /// <returns>Task of InlineResponse202</returns>
-        public async Task<InlineResponse202> UpdateCrossexAccountAsync (InlineObject16 inlineObject16 = default(InlineObject16))
+        public async Task<InlineResponse202> UpdateCrossexAccountAsync (CrossexAccountUpdateRequest crossexAccountUpdateRequest = default(CrossexAccountUpdateRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse202> localVarResponse = await UpdateCrossexAccountAsyncWithHttpInfo(inlineObject16);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse202> localVarResponse = await UpdateCrossexAccountAsyncWithHttpInfo(crossexAccountUpdateRequest);
              return localVarResponse.Data;
 
         }
@@ -3101,9 +3101,9 @@ namespace Io.Gate.GateApi.Api
         /// Modify Account Contract Position Mode and Account Mode Rate Limit: 100 requests per 60 seconds. position_mode+exchange_type modifies contract position mode (exchange_type is required when the user&#39;s account mode is split exchange); account_mode modifies the user&#39;s account mode.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject16"> (optional)</param>
+        /// <param name="crossexAccountUpdateRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse202)</returns>
-        public async Task<ApiResponse<InlineResponse202>> UpdateCrossexAccountAsyncWithHttpInfo (InlineObject16 inlineObject16 = default(InlineObject16))
+        public async Task<ApiResponse<InlineResponse202>> UpdateCrossexAccountAsyncWithHttpInfo (CrossexAccountUpdateRequest crossexAccountUpdateRequest = default(CrossexAccountUpdateRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3123,7 +3123,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject16;
+            localVarRequestOptions.Data = crossexAccountUpdateRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -3260,11 +3260,11 @@ namespace Io.Gate.GateApi.Api
         /// Modify Contract Trading Pair Leverage Multiplier Rate Limit: 100 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject17"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>InlineResponse2021</returns>
-        public InlineResponse2021 UpdateCrossexPositionsLeverage (InlineObject17 inlineObject17 = default(InlineObject17))
+        public InlineResponse2021 UpdateCrossexPositionsLeverage (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest))
         {
-             ApiResponse<InlineResponse2021> localVarResponse = UpdateCrossexPositionsLeverageWithHttpInfo(inlineObject17);
+             ApiResponse<InlineResponse2021> localVarResponse = UpdateCrossexPositionsLeverageWithHttpInfo(crossexLeverageRequest);
              return localVarResponse.Data;
         }
 
@@ -3272,9 +3272,9 @@ namespace Io.Gate.GateApi.Api
         /// Modify Contract Trading Pair Leverage Multiplier Rate Limit: 100 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject17"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse2021</returns>
-        public ApiResponse<InlineResponse2021> UpdateCrossexPositionsLeverageWithHttpInfo (InlineObject17 inlineObject17 = default(InlineObject17))
+        public ApiResponse<InlineResponse2021> UpdateCrossexPositionsLeverageWithHttpInfo (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3293,7 +3293,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject17;
+            localVarRequestOptions.Data = crossexLeverageRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -3314,11 +3314,11 @@ namespace Io.Gate.GateApi.Api
         /// Modify Contract Trading Pair Leverage Multiplier Rate Limit: 100 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject17"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>Task of InlineResponse2021</returns>
-        public async Task<InlineResponse2021> UpdateCrossexPositionsLeverageAsync (InlineObject17 inlineObject17 = default(InlineObject17))
+        public async Task<InlineResponse2021> UpdateCrossexPositionsLeverageAsync (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2021> localVarResponse = await UpdateCrossexPositionsLeverageAsyncWithHttpInfo(inlineObject17);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2021> localVarResponse = await UpdateCrossexPositionsLeverageAsyncWithHttpInfo(crossexLeverageRequest);
              return localVarResponse.Data;
 
         }
@@ -3327,9 +3327,9 @@ namespace Io.Gate.GateApi.Api
         /// Modify Contract Trading Pair Leverage Multiplier Rate Limit: 100 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject17"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse2021)</returns>
-        public async Task<ApiResponse<InlineResponse2021>> UpdateCrossexPositionsLeverageAsyncWithHttpInfo (InlineObject17 inlineObject17 = default(InlineObject17))
+        public async Task<ApiResponse<InlineResponse2021>> UpdateCrossexPositionsLeverageAsyncWithHttpInfo (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3349,7 +3349,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject17;
+            localVarRequestOptions.Data = crossexLeverageRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -3486,11 +3486,11 @@ namespace Io.Gate.GateApi.Api
         /// Modify Leveraged Trading Pair Leverage Multiplier Rate Limit: 100 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject18"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>InlineResponse2021</returns>
-        public InlineResponse2021 UpdateCrossexMarginPositionsLeverage (InlineObject18 inlineObject18 = default(InlineObject18))
+        public InlineResponse2021 UpdateCrossexMarginPositionsLeverage (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest))
         {
-             ApiResponse<InlineResponse2021> localVarResponse = UpdateCrossexMarginPositionsLeverageWithHttpInfo(inlineObject18);
+             ApiResponse<InlineResponse2021> localVarResponse = UpdateCrossexMarginPositionsLeverageWithHttpInfo(crossexLeverageRequest);
              return localVarResponse.Data;
         }
 
@@ -3498,9 +3498,9 @@ namespace Io.Gate.GateApi.Api
         /// Modify Leveraged Trading Pair Leverage Multiplier Rate Limit: 100 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject18"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse2021</returns>
-        public ApiResponse<InlineResponse2021> UpdateCrossexMarginPositionsLeverageWithHttpInfo (InlineObject18 inlineObject18 = default(InlineObject18))
+        public ApiResponse<InlineResponse2021> UpdateCrossexMarginPositionsLeverageWithHttpInfo (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3519,7 +3519,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject18;
+            localVarRequestOptions.Data = crossexLeverageRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -3540,11 +3540,11 @@ namespace Io.Gate.GateApi.Api
         /// Modify Leveraged Trading Pair Leverage Multiplier Rate Limit: 100 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject18"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>Task of InlineResponse2021</returns>
-        public async Task<InlineResponse2021> UpdateCrossexMarginPositionsLeverageAsync (InlineObject18 inlineObject18 = default(InlineObject18))
+        public async Task<InlineResponse2021> UpdateCrossexMarginPositionsLeverageAsync (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2021> localVarResponse = await UpdateCrossexMarginPositionsLeverageAsyncWithHttpInfo(inlineObject18);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2021> localVarResponse = await UpdateCrossexMarginPositionsLeverageAsyncWithHttpInfo(crossexLeverageRequest);
              return localVarResponse.Data;
 
         }
@@ -3553,9 +3553,9 @@ namespace Io.Gate.GateApi.Api
         /// Modify Leveraged Trading Pair Leverage Multiplier Rate Limit: 100 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject18"> (optional)</param>
+        /// <param name="crossexLeverageRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse2021)</returns>
-        public async Task<ApiResponse<InlineResponse2021>> UpdateCrossexMarginPositionsLeverageAsyncWithHttpInfo (InlineObject18 inlineObject18 = default(InlineObject18))
+        public async Task<ApiResponse<InlineResponse2021>> UpdateCrossexMarginPositionsLeverageAsyncWithHttpInfo (CrossexLeverageRequest crossexLeverageRequest = default(CrossexLeverageRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3575,7 +3575,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject18;
+            localVarRequestOptions.Data = crossexLeverageRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -3597,11 +3597,11 @@ namespace Io.Gate.GateApi.Api
         /// Full Close Position Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject19"> (optional)</param>
+        /// <param name="crossexClosePositionRequest"> (optional)</param>
         /// <returns>InlineResponse20031</returns>
-        public InlineResponse20031 CloseCrossexPosition (InlineObject19 inlineObject19 = default(InlineObject19))
+        public InlineResponse20031 CloseCrossexPosition (CrossexClosePositionRequest crossexClosePositionRequest = default(CrossexClosePositionRequest))
         {
-             ApiResponse<InlineResponse20031> localVarResponse = CloseCrossexPositionWithHttpInfo(inlineObject19);
+             ApiResponse<InlineResponse20031> localVarResponse = CloseCrossexPositionWithHttpInfo(crossexClosePositionRequest);
              return localVarResponse.Data;
         }
 
@@ -3609,9 +3609,9 @@ namespace Io.Gate.GateApi.Api
         /// Full Close Position Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject19"> (optional)</param>
+        /// <param name="crossexClosePositionRequest"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse20031</returns>
-        public ApiResponse<InlineResponse20031> CloseCrossexPositionWithHttpInfo (InlineObject19 inlineObject19 = default(InlineObject19))
+        public ApiResponse<InlineResponse20031> CloseCrossexPositionWithHttpInfo (CrossexClosePositionRequest crossexClosePositionRequest = default(CrossexClosePositionRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3630,7 +3630,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject19;
+            localVarRequestOptions.Data = crossexClosePositionRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -3651,11 +3651,11 @@ namespace Io.Gate.GateApi.Api
         /// Full Close Position Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject19"> (optional)</param>
+        /// <param name="crossexClosePositionRequest"> (optional)</param>
         /// <returns>Task of InlineResponse20031</returns>
-        public async Task<InlineResponse20031> CloseCrossexPositionAsync (InlineObject19 inlineObject19 = default(InlineObject19))
+        public async Task<InlineResponse20031> CloseCrossexPositionAsync (CrossexClosePositionRequest crossexClosePositionRequest = default(CrossexClosePositionRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20031> localVarResponse = await CloseCrossexPositionAsyncWithHttpInfo(inlineObject19);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20031> localVarResponse = await CloseCrossexPositionAsyncWithHttpInfo(crossexClosePositionRequest);
              return localVarResponse.Data;
 
         }
@@ -3664,9 +3664,9 @@ namespace Io.Gate.GateApi.Api
         /// Full Close Position Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject19"> (optional)</param>
+        /// <param name="crossexClosePositionRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
-        public async Task<ApiResponse<InlineResponse20031>> CloseCrossexPositionAsyncWithHttpInfo (InlineObject19 inlineObject19 = default(InlineObject19))
+        public async Task<ApiResponse<InlineResponse20031>> CloseCrossexPositionAsyncWithHttpInfo (CrossexClosePositionRequest crossexClosePositionRequest = default(CrossexClosePositionRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3686,7 +3686,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject19;
+            localVarRequestOptions.Data = crossexClosePositionRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;

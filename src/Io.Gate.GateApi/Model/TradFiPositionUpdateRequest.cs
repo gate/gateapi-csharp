@@ -25,41 +25,35 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Order Modification Request Body
+    /// Modify position take profit/stop loss parameters
     /// </summary>
     [DataContract]
-    public partial class InlineObject1 :  IEquatable<InlineObject1>, IValidatableObject
+    public partial class TradFiPositionUpdateRequest :  IEquatable<TradFiPositionUpdateRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject1" /> class.
+        /// Initializes a new instance of the <see cref="TradFiPositionUpdateRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineObject1() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject1" /> class.
-        /// </summary>
-        /// <param name="price">Order Price (required).</param>
-        /// <param name="size">Trade amount (required).</param>
-        public InlineObject1(string price = default(string), long size = default(long))
+        /// <param name="priceTp">止盈价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止盈价 - 如不希望清空，请传接口返回的原止盈价.</param>
+        /// <param name="priceSl">止损价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止损价 - 如不希望清空，请传接口返回的原止损价.</param>
+        public TradFiPositionUpdateRequest(string priceTp = default(string), string priceSl = default(string))
         {
-            // to ensure "price" is required (not null)
-            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineObject1 and cannot be null");
-            this.Size = size;
+            this.PriceTp = priceTp;
+            this.PriceSl = priceSl;
         }
 
         /// <summary>
-        /// Order Price
+        /// 止盈价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止盈价 - 如不希望清空，请传接口返回的原止盈价
         /// </summary>
-        /// <value>Order Price</value>
-        [DataMember(Name="price")]
-        public string Price { get; set; }
+        /// <value>止盈价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止盈价 - 如不希望清空，请传接口返回的原止盈价</value>
+        [DataMember(Name="price_tp")]
+        public string PriceTp { get; set; }
 
         /// <summary>
-        /// Trade amount
+        /// 止损价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止损价 - 如不希望清空，请传接口返回的原止损价
         /// </summary>
-        /// <value>Trade amount</value>
-        [DataMember(Name="size")]
-        public long Size { get; set; }
+        /// <value>止损价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止损价 - 如不希望清空，请传接口返回的原止损价</value>
+        [DataMember(Name="price_sl")]
+        public string PriceSl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,9 +62,9 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineObject1 {\n");
-            sb.Append("  Price: ").Append(Price).Append("\n");
-            sb.Append("  Size: ").Append(Size).Append("\n");
+            sb.Append("class TradFiPositionUpdateRequest {\n");
+            sb.Append("  PriceTp: ").Append(PriceTp).Append("\n");
+            sb.Append("  PriceSl: ").Append(PriceSl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,28 +85,29 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineObject1);
+            return this.Equals(input as TradFiPositionUpdateRequest);
         }
 
         /// <summary>
-        /// Returns true if InlineObject1 instances are equal
+        /// Returns true if TradFiPositionUpdateRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineObject1 to be compared</param>
+        /// <param name="input">Instance of TradFiPositionUpdateRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineObject1 input)
+        public bool Equals(TradFiPositionUpdateRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
+                    this.PriceTp == input.PriceTp ||
+                    (this.PriceTp != null &&
+                    this.PriceTp.Equals(input.PriceTp))
                 ) && 
                 (
-                    this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    this.PriceSl == input.PriceSl ||
+                    (this.PriceSl != null &&
+                    this.PriceSl.Equals(input.PriceSl))
                 );
         }
 
@@ -125,9 +120,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.PriceTp != null)
+                    hashCode = hashCode * 59 + this.PriceTp.GetHashCode();
+                if (this.PriceSl != null)
+                    hashCode = hashCode * 59 + this.PriceSl.GetHashCode();
                 return hashCode;
             }
         }

@@ -25,41 +25,42 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Order Modification Request Body
+    /// 更改杠杆请求体（合约/杠杆通用）
     /// </summary>
     [DataContract]
-    public partial class InlineObject1 :  IEquatable<InlineObject1>, IValidatableObject
+    public partial class CrossexLeverageRequest :  IEquatable<CrossexLeverageRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject1" /> class.
+        /// Initializes a new instance of the <see cref="CrossexLeverageRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InlineObject1() { }
+        protected CrossexLeverageRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineObject1" /> class.
+        /// Initializes a new instance of the <see cref="CrossexLeverageRequest" /> class.
         /// </summary>
-        /// <param name="price">Order Price (required).</param>
-        /// <param name="size">Trade amount (required).</param>
-        public InlineObject1(string price = default(string), long size = default(long))
+        /// <param name="symbol">Currency pair (required).</param>
+        /// <param name="leverage">leverage (required).</param>
+        public CrossexLeverageRequest(string symbol = default(string), string leverage = default(string))
         {
-            // to ensure "price" is required (not null)
-            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineObject1 and cannot be null");
-            this.Size = size;
+            // to ensure "symbol" is required (not null)
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for CrossexLeverageRequest and cannot be null");
+            // to ensure "leverage" is required (not null)
+            this.Leverage = leverage ?? throw new ArgumentNullException("leverage", "leverage is a required property for CrossexLeverageRequest and cannot be null");
         }
 
         /// <summary>
-        /// Order Price
+        /// Currency pair
         /// </summary>
-        /// <value>Order Price</value>
-        [DataMember(Name="price")]
-        public string Price { get; set; }
+        /// <value>Currency pair</value>
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
 
         /// <summary>
-        /// Trade amount
+        /// leverage
         /// </summary>
-        /// <value>Trade amount</value>
-        [DataMember(Name="size")]
-        public long Size { get; set; }
+        /// <value>leverage</value>
+        [DataMember(Name="leverage")]
+        public string Leverage { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,9 +69,9 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineObject1 {\n");
-            sb.Append("  Price: ").Append(Price).Append("\n");
-            sb.Append("  Size: ").Append(Size).Append("\n");
+            sb.Append("class CrossexLeverageRequest {\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
+            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,28 +92,29 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineObject1);
+            return this.Equals(input as CrossexLeverageRequest);
         }
 
         /// <summary>
-        /// Returns true if InlineObject1 instances are equal
+        /// Returns true if CrossexLeverageRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineObject1 to be compared</param>
+        /// <param name="input">Instance of CrossexLeverageRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineObject1 input)
+        public bool Equals(CrossexLeverageRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    this.Leverage == input.Leverage ||
+                    (this.Leverage != null &&
+                    this.Leverage.Equals(input.Leverage))
                 );
         }
 
@@ -125,9 +127,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
+                if (this.Leverage != null)
+                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
                 return hashCode;
             }
         }

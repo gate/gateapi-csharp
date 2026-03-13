@@ -1653,7 +1653,7 @@ Name | Type | Description  | Notes
 
 <a name="amendoptionsorder"></a>
 # **AmendOptionsOrder**
-> OptionsOrder AmendOptionsOrder (long orderId, InlineObject6 inlineObject6)
+> OptionsOrder AmendOptionsOrder (long orderId, InlineObject1 inlineObject1)
 
 Option Order Modification
 
@@ -1679,12 +1679,12 @@ namespace Example
 
             var apiInstance = new OptionsApi(config);
             var orderId = 12345;  // long | Order ID returned when order is successfully created
-            var inlineObject6 = new InlineObject6(); // InlineObject6 | 
+            var inlineObject1 = new InlineObject1(); // InlineObject1 | 
 
             try
             {
                 // Option Order Modification
-                OptionsOrder result = apiInstance.AmendOptionsOrder(orderId, inlineObject6);
+                OptionsOrder result = apiInstance.AmendOptionsOrder(orderId, inlineObject1);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1704,7 +1704,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **long**| Order ID returned when order is successfully created | 
- **inlineObject6** | [**InlineObject6**](InlineObject6.md)|  | 
+ **inlineObject1** | [**InlineObject1**](InlineObject1.md)|  | 
 
 ### Return type
 

@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineObject1
+# Io.Gate.GateApi.Model.CrossexOrderUpdateRequest
 
 Order Modification Request Body
 
@@ -7,8 +7,8 @@ Order Modification Request Body
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Price** | **string** | Order Price | 
-**Size** | **long** | Trade amount | 
+**Qty** | **string** | modify amount | [optional] 
+**Price** | **string** | modify price | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

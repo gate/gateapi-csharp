@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 <a name="createtransaction"></a>
 # **CreateTransaction**
-> CreateTransaction CreateTransaction (InlineObject1 inlineObject1)
+> CreateTransaction CreateTransaction (TradFiTransactionRequest tradFiTransactionRequest)
 
 Fund Deposit and Withdrawal
 
@@ -686,12 +686,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new TradFiApi(config);
-            var inlineObject1 = new InlineObject1(); // InlineObject1 | 
+            var tradFiTransactionRequest = new TradFiTransactionRequest(); // TradFiTransactionRequest | 
 
             try
             {
                 // Fund Deposit and Withdrawal
-                CreateTransaction result = apiInstance.CreateTransaction(inlineObject1);
+                CreateTransaction result = apiInstance.CreateTransaction(tradFiTransactionRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -710,7 +710,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject1** | [**InlineObject1**](InlineObject1.md)|  | 
+ **tradFiTransactionRequest** | [**TradFiTransactionRequest**](TradFiTransactionRequest.md)|  | 
 
 ### Return type
 
@@ -803,7 +803,7 @@ This endpoint does not need any parameter.
 
 <a name="createtradfiorder"></a>
 # **CreateTradFiOrder**
-> CreateOrder CreateTradFiOrder (InlineObject2 inlineObject2)
+> CreateOrder CreateTradFiOrder (TradFiOrderRequest tradFiOrderRequest)
 
 Create an order
 
@@ -826,12 +826,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new TradFiApi(config);
-            var inlineObject2 = new InlineObject2(); // InlineObject2 | 
+            var tradFiOrderRequest = new TradFiOrderRequest(); // TradFiOrderRequest | 
 
             try
             {
                 // Create an order
-                CreateOrder result = apiInstance.CreateTradFiOrder(inlineObject2);
+                CreateOrder result = apiInstance.CreateTradFiOrder(tradFiOrderRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -850,7 +850,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject2** | [**InlineObject2**](InlineObject2.md)|  | 
+ **tradFiOrderRequest** | [**TradFiOrderRequest**](TradFiOrderRequest.md)|  | 
 
 ### Return type
 
@@ -875,7 +875,7 @@ Name | Type | Description  | Notes
 
 <a name="updateorder"></a>
 # **UpdateOrder**
-> UpdateOrder UpdateOrder (int orderId, InlineObject3 inlineObject3)
+> UpdateOrder UpdateOrder (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
 
 Modify order
 
@@ -899,12 +899,12 @@ namespace Example
 
             var apiInstance = new TradFiApi(config);
             var orderId = 1223;  // int | Order ID
-            var inlineObject3 = new InlineObject3(); // InlineObject3 | 
+            var tradFiOrderUpdateRequest = new TradFiOrderUpdateRequest(); // TradFiOrderUpdateRequest | 
 
             try
             {
                 // Modify order
-                UpdateOrder result = apiInstance.UpdateOrder(orderId, inlineObject3);
+                UpdateOrder result = apiInstance.UpdateOrder(orderId, tradFiOrderUpdateRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -924,7 +924,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **int**| Order ID | 
- **inlineObject3** | [**InlineObject3**](InlineObject3.md)|  | 
+ **tradFiOrderUpdateRequest** | [**TradFiOrderUpdateRequest**](TradFiOrderUpdateRequest.md)|  | 
 
 ### Return type
 
@@ -1167,7 +1167,7 @@ This endpoint does not need any parameter.
 
 <a name="updateposition"></a>
 # **UpdatePosition**
-> UpdatePosition UpdatePosition (int positionId, InlineObject4 inlineObject4)
+> UpdatePosition UpdatePosition (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
 
 Modify position
 
@@ -1191,12 +1191,12 @@ namespace Example
 
             var apiInstance = new TradFiApi(config);
             var positionId = 1223;  // int | Position ID
-            var inlineObject4 = new InlineObject4(); // InlineObject4 | 
+            var tradFiPositionUpdateRequest = new TradFiPositionUpdateRequest(); // TradFiPositionUpdateRequest | 
 
             try
             {
                 // Modify position
-                UpdatePosition result = apiInstance.UpdatePosition(positionId, inlineObject4);
+                UpdatePosition result = apiInstance.UpdatePosition(positionId, tradFiPositionUpdateRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1216,7 +1216,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **positionId** | **int**| Position ID | 
- **inlineObject4** | [**InlineObject4**](InlineObject4.md)|  | 
+ **tradFiPositionUpdateRequest** | [**TradFiPositionUpdateRequest**](TradFiPositionUpdateRequest.md)|  | 
 
 ### Return type
 
@@ -1241,7 +1241,7 @@ Name | Type | Description  | Notes
 
 <a name="closeposition"></a>
 # **ClosePosition**
-> DeletePosition ClosePosition (int positionId, InlineObject5 inlineObject5)
+> DeletePosition ClosePosition (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
 
 Close position
 
@@ -1265,12 +1265,12 @@ namespace Example
 
             var apiInstance = new TradFiApi(config);
             var positionId = 1223;  // int | Position ID
-            var inlineObject5 = new InlineObject5(); // InlineObject5 | 
+            var tradFiClosePositionRequest = new TradFiClosePositionRequest(); // TradFiClosePositionRequest | 
 
             try
             {
                 // Close position
-                DeletePosition result = apiInstance.ClosePosition(positionId, inlineObject5);
+                DeletePosition result = apiInstance.ClosePosition(positionId, tradFiClosePositionRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1290,7 +1290,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **positionId** | **int**| Position ID | 
- **inlineObject5** | [**InlineObject5**](InlineObject5.md)|  | 
+ **tradFiClosePositionRequest** | [**TradFiClosePositionRequest**](TradFiClosePositionRequest.md)|  | 
 
 ### Return type
 

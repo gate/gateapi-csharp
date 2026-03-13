@@ -229,9 +229,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject1"></param>
+        /// <param name="tradFiTransactionRequest"></param>
         /// <returns>CreateTransaction</returns>
-        CreateTransaction CreateTransaction (InlineObject1 inlineObject1);
+        CreateTransaction CreateTransaction (TradFiTransactionRequest tradFiTransactionRequest);
 
         /// <summary>
         /// Fund Deposit and Withdrawal
@@ -240,9 +240,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject1"></param>
+        /// <param name="tradFiTransactionRequest"></param>
         /// <returns>ApiResponse of CreateTransaction</returns>
-        ApiResponse<CreateTransaction> CreateTransactionWithHttpInfo (InlineObject1 inlineObject1);
+        ApiResponse<CreateTransaction> CreateTransactionWithHttpInfo (TradFiTransactionRequest tradFiTransactionRequest);
         /// <summary>
         /// Query active order list
         /// </summary>
@@ -269,9 +269,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject2"></param>
+        /// <param name="tradFiOrderRequest"></param>
         /// <returns>CreateOrder</returns>
-        CreateOrder CreateTradFiOrder (InlineObject2 inlineObject2);
+        CreateOrder CreateTradFiOrder (TradFiOrderRequest tradFiOrderRequest);
 
         /// <summary>
         /// Create an order
@@ -280,9 +280,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject2"></param>
+        /// <param name="tradFiOrderRequest"></param>
         /// <returns>ApiResponse of CreateOrder</returns>
-        ApiResponse<CreateOrder> CreateTradFiOrderWithHttpInfo (InlineObject2 inlineObject2);
+        ApiResponse<CreateOrder> CreateTradFiOrderWithHttpInfo (TradFiOrderRequest tradFiOrderRequest);
         /// <summary>
         /// Modify order
         /// </summary>
@@ -291,9 +291,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <param name="inlineObject3"></param>
+        /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>UpdateOrder</returns>
-        UpdateOrder UpdateOrder (int orderId, InlineObject3 inlineObject3);
+        UpdateOrder UpdateOrder (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
 
         /// <summary>
         /// Modify order
@@ -303,9 +303,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <param name="inlineObject3"></param>
+        /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>ApiResponse of UpdateOrder</returns>
-        ApiResponse<UpdateOrder> UpdateOrderWithHttpInfo (int orderId, InlineObject3 inlineObject3);
+        ApiResponse<UpdateOrder> UpdateOrderWithHttpInfo (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
         /// <summary>
         /// Cancel order
         /// </summary>
@@ -381,9 +381,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject4"></param>
+        /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>UpdatePosition</returns>
-        UpdatePosition UpdatePosition (int positionId, InlineObject4 inlineObject4);
+        UpdatePosition UpdatePosition (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
 
         /// <summary>
         /// Modify position
@@ -393,9 +393,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject4"></param>
+        /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>ApiResponse of UpdatePosition</returns>
-        ApiResponse<UpdatePosition> UpdatePositionWithHttpInfo (int positionId, InlineObject4 inlineObject4);
+        ApiResponse<UpdatePosition> UpdatePositionWithHttpInfo (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
         /// <summary>
         /// Close position
         /// </summary>
@@ -404,9 +404,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject5"></param>
+        /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>DeletePosition</returns>
-        DeletePosition ClosePosition (int positionId, InlineObject5 inlineObject5);
+        DeletePosition ClosePosition (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
 
         /// <summary>
         /// Close position
@@ -416,9 +416,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject5"></param>
+        /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>ApiResponse of DeletePosition</returns>
-        ApiResponse<DeletePosition> ClosePositionWithHttpInfo (int positionId, InlineObject5 inlineObject5);
+        ApiResponse<DeletePosition> ClosePositionWithHttpInfo (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
         /// <summary>
         /// Query historical position list
         /// </summary>
@@ -657,9 +657,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject1"></param>
+        /// <param name="tradFiTransactionRequest"></param>
         /// <returns>Task of CreateTransaction</returns>
-        Task<CreateTransaction> CreateTransactionAsync (InlineObject1 inlineObject1);
+        Task<CreateTransaction> CreateTransactionAsync (TradFiTransactionRequest tradFiTransactionRequest);
 
         /// <summary>
         /// Fund Deposit and Withdrawal
@@ -668,9 +668,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject1"></param>
+        /// <param name="tradFiTransactionRequest"></param>
         /// <returns>Task of ApiResponse (CreateTransaction)</returns>
-        Task<ApiResponse<CreateTransaction>> CreateTransactionAsyncWithHttpInfo (InlineObject1 inlineObject1);
+        Task<ApiResponse<CreateTransaction>> CreateTransactionAsyncWithHttpInfo (TradFiTransactionRequest tradFiTransactionRequest);
         /// <summary>
         /// Query active order list
         /// </summary>
@@ -697,9 +697,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject2"></param>
+        /// <param name="tradFiOrderRequest"></param>
         /// <returns>Task of CreateOrder</returns>
-        Task<CreateOrder> CreateTradFiOrderAsync (InlineObject2 inlineObject2);
+        Task<CreateOrder> CreateTradFiOrderAsync (TradFiOrderRequest tradFiOrderRequest);
 
         /// <summary>
         /// Create an order
@@ -708,9 +708,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject2"></param>
+        /// <param name="tradFiOrderRequest"></param>
         /// <returns>Task of ApiResponse (CreateOrder)</returns>
-        Task<ApiResponse<CreateOrder>> CreateTradFiOrderAsyncWithHttpInfo (InlineObject2 inlineObject2);
+        Task<ApiResponse<CreateOrder>> CreateTradFiOrderAsyncWithHttpInfo (TradFiOrderRequest tradFiOrderRequest);
         /// <summary>
         /// Modify order
         /// </summary>
@@ -719,9 +719,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <param name="inlineObject3"></param>
+        /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>Task of UpdateOrder</returns>
-        Task<UpdateOrder> UpdateOrderAsync (int orderId, InlineObject3 inlineObject3);
+        Task<UpdateOrder> UpdateOrderAsync (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
 
         /// <summary>
         /// Modify order
@@ -731,9 +731,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <param name="inlineObject3"></param>
+        /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>Task of ApiResponse (UpdateOrder)</returns>
-        Task<ApiResponse<UpdateOrder>> UpdateOrderAsyncWithHttpInfo (int orderId, InlineObject3 inlineObject3);
+        Task<ApiResponse<UpdateOrder>> UpdateOrderAsyncWithHttpInfo (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
         /// <summary>
         /// Cancel order
         /// </summary>
@@ -809,9 +809,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject4"></param>
+        /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>Task of UpdatePosition</returns>
-        Task<UpdatePosition> UpdatePositionAsync (int positionId, InlineObject4 inlineObject4);
+        Task<UpdatePosition> UpdatePositionAsync (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
 
         /// <summary>
         /// Modify position
@@ -821,9 +821,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject4"></param>
+        /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>Task of ApiResponse (UpdatePosition)</returns>
-        Task<ApiResponse<UpdatePosition>> UpdatePositionAsyncWithHttpInfo (int positionId, InlineObject4 inlineObject4);
+        Task<ApiResponse<UpdatePosition>> UpdatePositionAsyncWithHttpInfo (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
         /// <summary>
         /// Close position
         /// </summary>
@@ -832,9 +832,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject5"></param>
+        /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>Task of DeletePosition</returns>
-        Task<DeletePosition> ClosePositionAsync (int positionId, InlineObject5 inlineObject5);
+        Task<DeletePosition> ClosePositionAsync (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
 
         /// <summary>
         /// Close position
@@ -844,9 +844,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject5"></param>
+        /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>Task of ApiResponse (DeletePosition)</returns>
-        Task<ApiResponse<DeletePosition>> ClosePositionAsyncWithHttpInfo (int positionId, InlineObject5 inlineObject5);
+        Task<ApiResponse<DeletePosition>> ClosePositionAsyncWithHttpInfo (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
         /// <summary>
         /// Query historical position list
         /// </summary>
@@ -2057,11 +2057,11 @@ namespace Io.Gate.GateApi.Api
         /// Fund Deposit and Withdrawal 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject1"></param>
+        /// <param name="tradFiTransactionRequest"></param>
         /// <returns>CreateTransaction</returns>
-        public CreateTransaction CreateTransaction (InlineObject1 inlineObject1)
+        public CreateTransaction CreateTransaction (TradFiTransactionRequest tradFiTransactionRequest)
         {
-             ApiResponse<CreateTransaction> localVarResponse = CreateTransactionWithHttpInfo(inlineObject1);
+             ApiResponse<CreateTransaction> localVarResponse = CreateTransactionWithHttpInfo(tradFiTransactionRequest);
              return localVarResponse.Data;
         }
 
@@ -2069,13 +2069,13 @@ namespace Io.Gate.GateApi.Api
         /// Fund Deposit and Withdrawal 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject1"></param>
+        /// <param name="tradFiTransactionRequest"></param>
         /// <returns>ApiResponse of CreateTransaction</returns>
-        public ApiResponse<CreateTransaction> CreateTransactionWithHttpInfo (InlineObject1 inlineObject1)
+        public ApiResponse<CreateTransaction> CreateTransactionWithHttpInfo (TradFiTransactionRequest tradFiTransactionRequest)
         {
-            // verify the required parameter 'inlineObject1' is set
-            if (inlineObject1 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject1' when calling TradFiApi->CreateTransaction");
+            // verify the required parameter 'tradFiTransactionRequest' is set
+            if (tradFiTransactionRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiTransactionRequest' when calling TradFiApi->CreateTransaction");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2094,7 +2094,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject1;
+            localVarRequestOptions.Data = tradFiTransactionRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2115,11 +2115,11 @@ namespace Io.Gate.GateApi.Api
         /// Fund Deposit and Withdrawal 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject1"></param>
+        /// <param name="tradFiTransactionRequest"></param>
         /// <returns>Task of CreateTransaction</returns>
-        public async Task<CreateTransaction> CreateTransactionAsync (InlineObject1 inlineObject1)
+        public async Task<CreateTransaction> CreateTransactionAsync (TradFiTransactionRequest tradFiTransactionRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<CreateTransaction> localVarResponse = await CreateTransactionAsyncWithHttpInfo(inlineObject1);
+             Io.Gate.GateApi.Client.ApiResponse<CreateTransaction> localVarResponse = await CreateTransactionAsyncWithHttpInfo(tradFiTransactionRequest);
              return localVarResponse.Data;
 
         }
@@ -2128,13 +2128,13 @@ namespace Io.Gate.GateApi.Api
         /// Fund Deposit and Withdrawal 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject1"></param>
+        /// <param name="tradFiTransactionRequest"></param>
         /// <returns>Task of ApiResponse (CreateTransaction)</returns>
-        public async Task<ApiResponse<CreateTransaction>> CreateTransactionAsyncWithHttpInfo (InlineObject1 inlineObject1)
+        public async Task<ApiResponse<CreateTransaction>> CreateTransactionAsyncWithHttpInfo (TradFiTransactionRequest tradFiTransactionRequest)
         {
-            // verify the required parameter 'inlineObject1' is set
-            if (inlineObject1 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject1' when calling TradFiApi->CreateTransaction");
+            // verify the required parameter 'tradFiTransactionRequest' is set
+            if (tradFiTransactionRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiTransactionRequest' when calling TradFiApi->CreateTransaction");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2154,7 +2154,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject1;
+            localVarRequestOptions.Data = tradFiTransactionRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2279,11 +2279,11 @@ namespace Io.Gate.GateApi.Api
         /// Create an order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject2"></param>
+        /// <param name="tradFiOrderRequest"></param>
         /// <returns>CreateOrder</returns>
-        public CreateOrder CreateTradFiOrder (InlineObject2 inlineObject2)
+        public CreateOrder CreateTradFiOrder (TradFiOrderRequest tradFiOrderRequest)
         {
-             ApiResponse<CreateOrder> localVarResponse = CreateTradFiOrderWithHttpInfo(inlineObject2);
+             ApiResponse<CreateOrder> localVarResponse = CreateTradFiOrderWithHttpInfo(tradFiOrderRequest);
              return localVarResponse.Data;
         }
 
@@ -2291,13 +2291,13 @@ namespace Io.Gate.GateApi.Api
         /// Create an order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject2"></param>
+        /// <param name="tradFiOrderRequest"></param>
         /// <returns>ApiResponse of CreateOrder</returns>
-        public ApiResponse<CreateOrder> CreateTradFiOrderWithHttpInfo (InlineObject2 inlineObject2)
+        public ApiResponse<CreateOrder> CreateTradFiOrderWithHttpInfo (TradFiOrderRequest tradFiOrderRequest)
         {
-            // verify the required parameter 'inlineObject2' is set
-            if (inlineObject2 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject2' when calling TradFiApi->CreateTradFiOrder");
+            // verify the required parameter 'tradFiOrderRequest' is set
+            if (tradFiOrderRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiOrderRequest' when calling TradFiApi->CreateTradFiOrder");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2316,7 +2316,7 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject2;
+            localVarRequestOptions.Data = tradFiOrderRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2337,11 +2337,11 @@ namespace Io.Gate.GateApi.Api
         /// Create an order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject2"></param>
+        /// <param name="tradFiOrderRequest"></param>
         /// <returns>Task of CreateOrder</returns>
-        public async Task<CreateOrder> CreateTradFiOrderAsync (InlineObject2 inlineObject2)
+        public async Task<CreateOrder> CreateTradFiOrderAsync (TradFiOrderRequest tradFiOrderRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<CreateOrder> localVarResponse = await CreateTradFiOrderAsyncWithHttpInfo(inlineObject2);
+             Io.Gate.GateApi.Client.ApiResponse<CreateOrder> localVarResponse = await CreateTradFiOrderAsyncWithHttpInfo(tradFiOrderRequest);
              return localVarResponse.Data;
 
         }
@@ -2350,13 +2350,13 @@ namespace Io.Gate.GateApi.Api
         /// Create an order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject2"></param>
+        /// <param name="tradFiOrderRequest"></param>
         /// <returns>Task of ApiResponse (CreateOrder)</returns>
-        public async Task<ApiResponse<CreateOrder>> CreateTradFiOrderAsyncWithHttpInfo (InlineObject2 inlineObject2)
+        public async Task<ApiResponse<CreateOrder>> CreateTradFiOrderAsyncWithHttpInfo (TradFiOrderRequest tradFiOrderRequest)
         {
-            // verify the required parameter 'inlineObject2' is set
-            if (inlineObject2 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject2' when calling TradFiApi->CreateTradFiOrder");
+            // verify the required parameter 'tradFiOrderRequest' is set
+            if (tradFiOrderRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiOrderRequest' when calling TradFiApi->CreateTradFiOrder");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2376,7 +2376,7 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject2;
+            localVarRequestOptions.Data = tradFiOrderRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2399,11 +2399,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <param name="inlineObject3"></param>
+        /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>UpdateOrder</returns>
-        public UpdateOrder UpdateOrder (int orderId, InlineObject3 inlineObject3)
+        public UpdateOrder UpdateOrder (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
         {
-             ApiResponse<UpdateOrder> localVarResponse = UpdateOrderWithHttpInfo(orderId, inlineObject3);
+             ApiResponse<UpdateOrder> localVarResponse = UpdateOrderWithHttpInfo(orderId, tradFiOrderUpdateRequest);
              return localVarResponse.Data;
         }
 
@@ -2412,13 +2412,13 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <param name="inlineObject3"></param>
+        /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>ApiResponse of UpdateOrder</returns>
-        public ApiResponse<UpdateOrder> UpdateOrderWithHttpInfo (int orderId, InlineObject3 inlineObject3)
+        public ApiResponse<UpdateOrder> UpdateOrderWithHttpInfo (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
         {
-            // verify the required parameter 'inlineObject3' is set
-            if (inlineObject3 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject3' when calling TradFiApi->UpdateOrder");
+            // verify the required parameter 'tradFiOrderUpdateRequest' is set
+            if (tradFiOrderUpdateRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiOrderUpdateRequest' when calling TradFiApi->UpdateOrder");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2438,7 +2438,7 @@ namespace Io.Gate.GateApi.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
-            localVarRequestOptions.Data = inlineObject3;
+            localVarRequestOptions.Data = tradFiOrderUpdateRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2460,11 +2460,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <param name="inlineObject3"></param>
+        /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>Task of UpdateOrder</returns>
-        public async Task<UpdateOrder> UpdateOrderAsync (int orderId, InlineObject3 inlineObject3)
+        public async Task<UpdateOrder> UpdateOrderAsync (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<UpdateOrder> localVarResponse = await UpdateOrderAsyncWithHttpInfo(orderId, inlineObject3);
+             Io.Gate.GateApi.Client.ApiResponse<UpdateOrder> localVarResponse = await UpdateOrderAsyncWithHttpInfo(orderId, tradFiOrderUpdateRequest);
              return localVarResponse.Data;
 
         }
@@ -2474,13 +2474,13 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <param name="inlineObject3"></param>
+        /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>Task of ApiResponse (UpdateOrder)</returns>
-        public async Task<ApiResponse<UpdateOrder>> UpdateOrderAsyncWithHttpInfo (int orderId, InlineObject3 inlineObject3)
+        public async Task<ApiResponse<UpdateOrder>> UpdateOrderAsyncWithHttpInfo (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
         {
-            // verify the required parameter 'inlineObject3' is set
-            if (inlineObject3 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject3' when calling TradFiApi->UpdateOrder");
+            // verify the required parameter 'tradFiOrderUpdateRequest' is set
+            if (tradFiOrderUpdateRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiOrderUpdateRequest' when calling TradFiApi->UpdateOrder");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2501,7 +2501,7 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
             localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
-            localVarRequestOptions.Data = inlineObject3;
+            localVarRequestOptions.Data = tradFiOrderUpdateRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2887,11 +2887,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject4"></param>
+        /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>UpdatePosition</returns>
-        public UpdatePosition UpdatePosition (int positionId, InlineObject4 inlineObject4)
+        public UpdatePosition UpdatePosition (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
         {
-             ApiResponse<UpdatePosition> localVarResponse = UpdatePositionWithHttpInfo(positionId, inlineObject4);
+             ApiResponse<UpdatePosition> localVarResponse = UpdatePositionWithHttpInfo(positionId, tradFiPositionUpdateRequest);
              return localVarResponse.Data;
         }
 
@@ -2900,13 +2900,13 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject4"></param>
+        /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>ApiResponse of UpdatePosition</returns>
-        public ApiResponse<UpdatePosition> UpdatePositionWithHttpInfo (int positionId, InlineObject4 inlineObject4)
+        public ApiResponse<UpdatePosition> UpdatePositionWithHttpInfo (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
         {
-            // verify the required parameter 'inlineObject4' is set
-            if (inlineObject4 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject4' when calling TradFiApi->UpdatePosition");
+            // verify the required parameter 'tradFiPositionUpdateRequest' is set
+            if (tradFiPositionUpdateRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiPositionUpdateRequest' when calling TradFiApi->UpdatePosition");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2926,7 +2926,7 @@ namespace Io.Gate.GateApi.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("position_id", ClientUtils.ParameterToString(positionId)); // path parameter
-            localVarRequestOptions.Data = inlineObject4;
+            localVarRequestOptions.Data = tradFiPositionUpdateRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2948,11 +2948,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject4"></param>
+        /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>Task of UpdatePosition</returns>
-        public async Task<UpdatePosition> UpdatePositionAsync (int positionId, InlineObject4 inlineObject4)
+        public async Task<UpdatePosition> UpdatePositionAsync (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<UpdatePosition> localVarResponse = await UpdatePositionAsyncWithHttpInfo(positionId, inlineObject4);
+             Io.Gate.GateApi.Client.ApiResponse<UpdatePosition> localVarResponse = await UpdatePositionAsyncWithHttpInfo(positionId, tradFiPositionUpdateRequest);
              return localVarResponse.Data;
 
         }
@@ -2962,13 +2962,13 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject4"></param>
+        /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>Task of ApiResponse (UpdatePosition)</returns>
-        public async Task<ApiResponse<UpdatePosition>> UpdatePositionAsyncWithHttpInfo (int positionId, InlineObject4 inlineObject4)
+        public async Task<ApiResponse<UpdatePosition>> UpdatePositionAsyncWithHttpInfo (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
         {
-            // verify the required parameter 'inlineObject4' is set
-            if (inlineObject4 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject4' when calling TradFiApi->UpdatePosition");
+            // verify the required parameter 'tradFiPositionUpdateRequest' is set
+            if (tradFiPositionUpdateRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiPositionUpdateRequest' when calling TradFiApi->UpdatePosition");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2989,7 +2989,7 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
             localVarRequestOptions.PathParameters.Add("position_id", ClientUtils.ParameterToString(positionId)); // path parameter
-            localVarRequestOptions.Data = inlineObject4;
+            localVarRequestOptions.Data = tradFiPositionUpdateRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -3012,11 +3012,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject5"></param>
+        /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>DeletePosition</returns>
-        public DeletePosition ClosePosition (int positionId, InlineObject5 inlineObject5)
+        public DeletePosition ClosePosition (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
         {
-             ApiResponse<DeletePosition> localVarResponse = ClosePositionWithHttpInfo(positionId, inlineObject5);
+             ApiResponse<DeletePosition> localVarResponse = ClosePositionWithHttpInfo(positionId, tradFiClosePositionRequest);
              return localVarResponse.Data;
         }
 
@@ -3025,13 +3025,13 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject5"></param>
+        /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>ApiResponse of DeletePosition</returns>
-        public ApiResponse<DeletePosition> ClosePositionWithHttpInfo (int positionId, InlineObject5 inlineObject5)
+        public ApiResponse<DeletePosition> ClosePositionWithHttpInfo (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
         {
-            // verify the required parameter 'inlineObject5' is set
-            if (inlineObject5 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject5' when calling TradFiApi->ClosePosition");
+            // verify the required parameter 'tradFiClosePositionRequest' is set
+            if (tradFiClosePositionRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiClosePositionRequest' when calling TradFiApi->ClosePosition");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3051,7 +3051,7 @@ namespace Io.Gate.GateApi.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("position_id", ClientUtils.ParameterToString(positionId)); // path parameter
-            localVarRequestOptions.Data = inlineObject5;
+            localVarRequestOptions.Data = tradFiClosePositionRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -3073,11 +3073,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject5"></param>
+        /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>Task of DeletePosition</returns>
-        public async Task<DeletePosition> ClosePositionAsync (int positionId, InlineObject5 inlineObject5)
+        public async Task<DeletePosition> ClosePositionAsync (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<DeletePosition> localVarResponse = await ClosePositionAsyncWithHttpInfo(positionId, inlineObject5);
+             Io.Gate.GateApi.Client.ApiResponse<DeletePosition> localVarResponse = await ClosePositionAsyncWithHttpInfo(positionId, tradFiClosePositionRequest);
              return localVarResponse.Data;
 
         }
@@ -3087,13 +3087,13 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="positionId">Position ID</param>
-        /// <param name="inlineObject5"></param>
+        /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>Task of ApiResponse (DeletePosition)</returns>
-        public async Task<ApiResponse<DeletePosition>> ClosePositionAsyncWithHttpInfo (int positionId, InlineObject5 inlineObject5)
+        public async Task<ApiResponse<DeletePosition>> ClosePositionAsyncWithHttpInfo (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
         {
-            // verify the required parameter 'inlineObject5' is set
-            if (inlineObject5 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject5' when calling TradFiApi->ClosePosition");
+            // verify the required parameter 'tradFiClosePositionRequest' is set
+            if (tradFiClosePositionRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiClosePositionRequest' when calling TradFiApi->ClosePosition");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3114,7 +3114,7 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
             localVarRequestOptions.PathParameters.Add("position_id", ClientUtils.ParameterToString(positionId)); // path parameter
-            localVarRequestOptions.Data = inlineObject5;
+            localVarRequestOptions.Data = tradFiClosePositionRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;

@@ -1,14 +1,13 @@
 
-# Io.Gate.GateApi.Model.InlineObject1
+# Io.Gate.GateApi.Model.OtcMarkOrderPaidRequest
 
-Order Modification Request Body
+法币订单设置已付款请求体
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Price** | **string** | Order Price | 
-**Size** | **long** | Trade amount | 
+**OrderId** | **string** | Order ID | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
