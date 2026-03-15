@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 更改杠杆请求体（合约/杠杆通用）
+    /// Change Leverage Request Body (for futures/margin)
     /// </summary>
     [DataContract]
     public partial class CrossexLeverageRequest :  IEquatable<CrossexLeverageRequest>, IValidatableObject

@@ -1,7 +1,7 @@
 
 # Io.Gate.GateApi.Model.TradFiTransactionRequest
 
-资金转入转出请求体
+Fund Transfer Request Body
 
 ## Properties
 

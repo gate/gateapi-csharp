@@ -1,7 +1,7 @@
 
 # Io.Gate.GateApi.Model.CrossexClosePositionRequest
 
-完全平仓请求体
+Full Close Position Request Body
 
 ## Properties
 

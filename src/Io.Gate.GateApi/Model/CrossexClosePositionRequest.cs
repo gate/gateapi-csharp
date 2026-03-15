@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 完全平仓请求体
+    /// Full Close Position Request Body
     /// </summary>
     [DataContract]
     public partial class CrossexClosePositionRequest :  IEquatable<CrossexClosePositionRequest>, IValidatableObject

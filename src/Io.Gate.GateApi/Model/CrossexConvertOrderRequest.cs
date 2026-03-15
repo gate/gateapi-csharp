@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 闪兑交易请求体
+    /// Flash Swap Transaction Request Body
     /// </summary>
     [DataContract]
     public partial class CrossexConvertOrderRequest :  IEquatable<CrossexConvertOrderRequest>, IValidatableObject

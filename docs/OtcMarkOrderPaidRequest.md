@@ -1,7 +1,7 @@
 
 # Io.Gate.GateApi.Model.OtcMarkOrderPaidRequest
 
-法币订单设置已付款请求体
+Fiat Order Set Paid Request Body
 
 ## Properties
 

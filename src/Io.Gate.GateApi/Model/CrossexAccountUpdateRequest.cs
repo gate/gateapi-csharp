@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 更改账户请求体
+    /// Change Account Request Body
     /// </summary>
     [DataContract]
     public partial class CrossexAccountUpdateRequest :  IEquatable<CrossexAccountUpdateRequest>, IValidatableObject

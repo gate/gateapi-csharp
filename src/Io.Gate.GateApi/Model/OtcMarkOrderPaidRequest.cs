@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 法币订单设置已付款请求体
+    /// Fiat Order Set Paid Request Body
     /// </summary>
     [DataContract]
     public partial class OtcMarkOrderPaidRequest :  IEquatable<OtcMarkOrderPaidRequest>, IValidatableObject

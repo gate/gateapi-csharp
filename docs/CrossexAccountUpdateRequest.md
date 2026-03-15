@@ -1,7 +1,7 @@
 
 # Io.Gate.GateApi.Model.CrossexAccountUpdateRequest
 
-更改账户请求体
+Change Account Request Body
 
 ## Properties
 

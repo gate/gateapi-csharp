@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 下单请求体
+    /// Place Order Request Body
     /// </summary>
     [DataContract]
     public partial class CrossexOrderRequest :  IEquatable<CrossexOrderRequest>, IValidatableObject
@@ -192,7 +192,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="CrossexOrderRequest" /> class.
         /// </summary>
         /// <param name="text">Client-defined Order ID, supports letters (a-z), numbers (0-9), symbols (-, _) only.</param>
-        /// <param name="symbol">唯一标识 Exchange_Business_Base_Counter 示例： 如果您想在BINANCE交易所上为ADA/USDT交易对下现货订单，您可以使用这样的唯一标识符：&#x60;BINANCE_SPOT_ADA_USDT&#x60;; 如果您想在OKX交易所上为ADA/USDT交易对下U本位永续合约订单，您可以使用这样的唯一标识符：&#x60;OKX_FUTURE_ADA_USDT&#x60;; 如果您想在GATE交易所上为ADA/USDT交易对下现货杠杆订单，您可以使用这样的唯一标识符：&#x60;GATE_MARGIN_ADA_USDT&#x60;; 如果您想在BYBIT交易所上为ADA/USDT交易对下现货订单，您可以使用这样的唯一标识符：&#x60;BYBIT_SPOT_ADA_USDT&#x60;; 目前支持三种订单：现货订单、U本位永续合约订单和现货杠杆订单, BYBIT暂不支持现货杠杆订单 (required).</param>
+        /// <param name="symbol">Unique Identifier for Exchange_Business_Base_Counter Examples: If you want to place a spot order for ADA/USDT on BINANCE, use: &#x60;BINANCE_SPOT_ADA_USDT&#x60;; If you want to place a USDT-M perpetual futures order for ADA/USDT on OKX, use: &#x60;OKX_FUTURE_ADA_USDT&#x60;; If you want to place a spot margin order for ADA/USDT on GATE, use: &#x60;GATE_MARGIN_ADA_USDT&#x60;; If you want to place a spot order for ADA/USDT on BYBIT, use: &#x60;BYBIT_SPOT_ADA_USDT&#x60;; Currently supports three order types: Spot Orders, USDT-M Perpetual Futures Orders, and Spot Margin Orders. BYBIT does not currently support spot margin orders (required).</param>
         /// <param name="side">BUY, SELL (required).</param>
         /// <param name="type">Order type (default: &#x60;LIMIT&#x60;; supported types: &#x60;LIMIT&#x60;, &#x60;MARKET&#x60;) (default to TypeEnum.LIMIT).</param>
         /// <param name="timeInForce">Default GTC, supports enumerated types: GTC, IOC, FOK, POC GTC: GoodTillCancelled IOC: ImmediateOrCancelled FOK: FillOrKill POC: PendingOrCancelled or PostOnly (default to TimeInForceEnum.GTC).</param>
@@ -224,9 +224,9 @@ namespace Io.Gate.GateApi.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// 唯一标识 Exchange_Business_Base_Counter 示例： 如果您想在BINANCE交易所上为ADA/USDT交易对下现货订单，您可以使用这样的唯一标识符：&#x60;BINANCE_SPOT_ADA_USDT&#x60;; 如果您想在OKX交易所上为ADA/USDT交易对下U本位永续合约订单，您可以使用这样的唯一标识符：&#x60;OKX_FUTURE_ADA_USDT&#x60;; 如果您想在GATE交易所上为ADA/USDT交易对下现货杠杆订单，您可以使用这样的唯一标识符：&#x60;GATE_MARGIN_ADA_USDT&#x60;; 如果您想在BYBIT交易所上为ADA/USDT交易对下现货订单，您可以使用这样的唯一标识符：&#x60;BYBIT_SPOT_ADA_USDT&#x60;; 目前支持三种订单：现货订单、U本位永续合约订单和现货杠杆订单, BYBIT暂不支持现货杠杆订单
+        /// Unique Identifier for Exchange_Business_Base_Counter Examples: If you want to place a spot order for ADA/USDT on BINANCE, use: &#x60;BINANCE_SPOT_ADA_USDT&#x60;; If you want to place a USDT-M perpetual futures order for ADA/USDT on OKX, use: &#x60;OKX_FUTURE_ADA_USDT&#x60;; If you want to place a spot margin order for ADA/USDT on GATE, use: &#x60;GATE_MARGIN_ADA_USDT&#x60;; If you want to place a spot order for ADA/USDT on BYBIT, use: &#x60;BYBIT_SPOT_ADA_USDT&#x60;; Currently supports three order types: Spot Orders, USDT-M Perpetual Futures Orders, and Spot Margin Orders. BYBIT does not currently support spot margin orders
         /// </summary>
-        /// <value>唯一标识 Exchange_Business_Base_Counter 示例： 如果您想在BINANCE交易所上为ADA/USDT交易对下现货订单，您可以使用这样的唯一标识符：&#x60;BINANCE_SPOT_ADA_USDT&#x60;; 如果您想在OKX交易所上为ADA/USDT交易对下U本位永续合约订单，您可以使用这样的唯一标识符：&#x60;OKX_FUTURE_ADA_USDT&#x60;; 如果您想在GATE交易所上为ADA/USDT交易对下现货杠杆订单，您可以使用这样的唯一标识符：&#x60;GATE_MARGIN_ADA_USDT&#x60;; 如果您想在BYBIT交易所上为ADA/USDT交易对下现货订单，您可以使用这样的唯一标识符：&#x60;BYBIT_SPOT_ADA_USDT&#x60;; 目前支持三种订单：现货订单、U本位永续合约订单和现货杠杆订单, BYBIT暂不支持现货杠杆订单</value>
+        /// <value>Unique Identifier for Exchange_Business_Base_Counter Examples: If you want to place a spot order for ADA/USDT on BINANCE, use: &#x60;BINANCE_SPOT_ADA_USDT&#x60;; If you want to place a USDT-M perpetual futures order for ADA/USDT on OKX, use: &#x60;OKX_FUTURE_ADA_USDT&#x60;; If you want to place a spot margin order for ADA/USDT on GATE, use: &#x60;GATE_MARGIN_ADA_USDT&#x60;; If you want to place a spot order for ADA/USDT on BYBIT, use: &#x60;BYBIT_SPOT_ADA_USDT&#x60;; Currently supports three order types: Spot Orders, USDT-M Perpetual Futures Orders, and Spot Margin Orders. BYBIT does not currently support spot margin orders</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 

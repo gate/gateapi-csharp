@@ -204,8 +204,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query by specified currency name (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>List&lt;Ticker2&gt;</returns>
-        List<Ticker2> ListAlphaTickers (string currency = default(string), int? limit = default(int?), int? page = default(int?));
+        /// <returns>List&lt;AlphaTicker&gt;</returns>
+        List<AlphaTicker> ListAlphaTickers (string currency = default(string), int? limit = default(int?), int? page = default(int?));
 
         /// <summary>
         /// Query currency ticker
@@ -217,8 +217,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query by specified currency name (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>ApiResponse of List&lt;Ticker2&gt;</returns>
-        ApiResponse<List<Ticker2>> ListAlphaTickersWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?));
+        /// <returns>ApiResponse of List&lt;AlphaTicker&gt;</returns>
+        ApiResponse<List<AlphaTicker>> ListAlphaTickersWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?));
         /// <summary>
         /// Query Token Information
         /// </summary>
@@ -432,8 +432,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query by specified currency name (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of List&lt;Ticker2&gt;</returns>
-        Task<List<Ticker2>> ListAlphaTickersAsync (string currency = default(string), int? limit = default(int?), int? page = default(int?));
+        /// <returns>Task of List&lt;AlphaTicker&gt;</returns>
+        Task<List<AlphaTicker>> ListAlphaTickersAsync (string currency = default(string), int? limit = default(int?), int? page = default(int?));
 
         /// <summary>
         /// Query currency ticker
@@ -445,8 +445,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query by specified currency name (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of ApiResponse (List&lt;Ticker2&gt;)</returns>
-        Task<ApiResponse<List<Ticker2>>> ListAlphaTickersAsyncWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?));
+        /// <returns>Task of ApiResponse (List&lt;AlphaTicker&gt;)</returns>
+        Task<ApiResponse<List<AlphaTicker>>> ListAlphaTickersAsyncWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?));
         /// <summary>
         /// Query Token Information
         /// </summary>
@@ -1526,10 +1526,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query by specified currency name (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>List&lt;Ticker2&gt;</returns>
-        public List<Ticker2> ListAlphaTickers (string currency = default(string), int? limit = default(int?), int? page = default(int?))
+        /// <returns>List&lt;AlphaTicker&gt;</returns>
+        public List<AlphaTicker> ListAlphaTickers (string currency = default(string), int? limit = default(int?), int? page = default(int?))
         {
-             ApiResponse<List<Ticker2>> localVarResponse = ListAlphaTickersWithHttpInfo(currency, limit, page);
+             ApiResponse<List<AlphaTicker>> localVarResponse = ListAlphaTickersWithHttpInfo(currency, limit, page);
              return localVarResponse.Data;
         }
 
@@ -1540,8 +1540,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query by specified currency name (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>ApiResponse of List&lt;Ticker2&gt;</returns>
-        public ApiResponse<List<Ticker2>> ListAlphaTickersWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?))
+        /// <returns>ApiResponse of List&lt;AlphaTicker&gt;</returns>
+        public ApiResponse<List<AlphaTicker>> ListAlphaTickersWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1574,7 +1574,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<Ticker2>>("/alpha/tickers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<AlphaTicker>>("/alpha/tickers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1592,10 +1592,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query by specified currency name (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of List&lt;Ticker2&gt;</returns>
-        public async Task<List<Ticker2>> ListAlphaTickersAsync (string currency = default(string), int? limit = default(int?), int? page = default(int?))
+        /// <returns>Task of List&lt;AlphaTicker&gt;</returns>
+        public async Task<List<AlphaTicker>> ListAlphaTickersAsync (string currency = default(string), int? limit = default(int?), int? page = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<Ticker2>> localVarResponse = await ListAlphaTickersAsyncWithHttpInfo(currency, limit, page);
+             Io.Gate.GateApi.Client.ApiResponse<List<AlphaTicker>> localVarResponse = await ListAlphaTickersAsyncWithHttpInfo(currency, limit, page);
              return localVarResponse.Data;
 
         }
@@ -1607,8 +1607,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query by specified currency name (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of ApiResponse (List&lt;Ticker2&gt;)</returns>
-        public async Task<ApiResponse<List<Ticker2>>> ListAlphaTickersAsyncWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?))
+        /// <returns>Task of ApiResponse (List&lt;AlphaTicker&gt;)</returns>
+        public async Task<ApiResponse<List<AlphaTicker>>> ListAlphaTickersAsyncWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1643,7 +1643,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Ticker2>>("/alpha/tickers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<AlphaTicker>>("/alpha/tickers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

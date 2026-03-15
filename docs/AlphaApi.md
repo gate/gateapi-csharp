@@ -540,7 +540,7 @@ No authorization required
 
 <a name="listalphatickers"></a>
 # **ListAlphaTickers**
-> List&lt;Ticker2&gt; ListAlphaTickers (string currency = null, int? limit = null, int? page = null)
+> List&lt;AlphaTicker&gt; ListAlphaTickers (string currency = null, int? limit = null, int? page = null)
 
 Query currency ticker
 
@@ -570,7 +570,7 @@ namespace Example
             try
             {
                 // Query currency ticker
-                List<Ticker2> result = apiInstance.ListAlphaTickers(currency, limit, page);
+                List<AlphaTicker> result = apiInstance.ListAlphaTickers(currency, limit, page);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -595,7 +595,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Ticker2&gt;**](Ticker2.md)
+[**List&lt;AlphaTicker&gt;**](AlphaTicker.md)
 
 ### Authorization
 

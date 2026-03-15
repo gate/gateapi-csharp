@@ -38,14 +38,24 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject1" /> class.
         /// </summary>
+        /// <param name="contract">Options contract name (required).</param>
         /// <param name="price">Order Price (required).</param>
         /// <param name="size">Trade amount (required).</param>
-        public InlineObject1(string price = default(string), long size = default(long))
+        public InlineObject1(string contract = default(string), string price = default(string), long size = default(long))
         {
+            // to ensure "contract" is required (not null)
+            this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for InlineObject1 and cannot be null");
             // to ensure "price" is required (not null)
             this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for InlineObject1 and cannot be null");
             this.Size = size;
         }
+
+        /// <summary>
+        /// Options contract name
+        /// </summary>
+        /// <value>Options contract name</value>
+        [DataMember(Name="contract")]
+        public string Contract { get; set; }
 
         /// <summary>
         /// Order Price
@@ -69,6 +79,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject1 {\n");
+            sb.Append("  Contract: ").Append(Contract).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
             sb.Append("}\n");
@@ -106,6 +117,11 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
+                    this.Contract == input.Contract ||
+                    (this.Contract != null &&
+                    this.Contract.Equals(input.Contract))
+                ) && 
+                (
                     this.Price == input.Price ||
                     (this.Price != null &&
                     this.Price.Equals(input.Price))
@@ -125,6 +141,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Contract != null)
+                    hashCode = hashCode * 59 + this.Contract.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 hashCode = hashCode * 59 + this.Size.GetHashCode();

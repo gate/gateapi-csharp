@@ -7,6 +7,7 @@ Order Modification Request Body
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Contract** | **string** | Options contract name | 
 **Price** | **string** | Order Price | 
 **Size** | **long** | Trade amount | 
 

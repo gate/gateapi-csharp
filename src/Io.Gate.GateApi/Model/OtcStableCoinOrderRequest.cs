@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 稳定币下单请求体
+    /// Stablecoin Order Request Body
     /// </summary>
     [DataContract]
     public partial class OtcStableCoinOrderRequest :  IEquatable<OtcStableCoinOrderRequest>, IValidatableObject

@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="price">Token Price (USDT-based).</param>
         /// <param name="slippage">Slippage.</param>
         /// <param name="estimateGasFeeAmountUsdt">Estimated Gas Fee (USDT-based).</param>
-        /// <param name="orderFee">Slippage tolerance (10 means 10% tolerance).</param>
+        /// <param name="orderFee">Trading fee.</param>
         /// <param name="targetTokenMinAmount">Minimum received amount.</param>
         /// <param name="targetTokenMaxAmount">Maximum received amount.</param>
         /// <param name="errorType">Failure Type - &#x60;0&#x60; : Success - &#x60;1&#x60; : Exceeds maximum value - &#x60;2&#x60; : Below minimum value.</param>
@@ -100,9 +100,9 @@ namespace Io.Gate.GateApi.Model
         public string EstimateGasFeeAmountUsdt { get; set; }
 
         /// <summary>
-        /// Slippage tolerance (10 means 10% tolerance)
+        /// Trading fee
         /// </summary>
-        /// <value>Slippage tolerance (10 means 10% tolerance)</value>
+        /// <value>Trading fee</value>
         [DataMember(Name="order_fee")]
         public string OrderFee { get; set; }
 

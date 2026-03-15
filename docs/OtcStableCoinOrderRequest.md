@@ -1,7 +1,7 @@
 
 # Io.Gate.GateApi.Model.OtcStableCoinOrderRequest
 
-稳定币下单请求体
+Stablecoin Order Request Body
 
 ## Properties
 

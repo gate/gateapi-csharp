@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 资金划转请求体
+    /// Fund Transfer Request Body
     /// </summary>
     [DataContract]
     public partial class CrossexTransferRequest :  IEquatable<CrossexTransferRequest>, IValidatableObject
