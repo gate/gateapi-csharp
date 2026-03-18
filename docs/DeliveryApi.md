@@ -1930,7 +1930,7 @@ Name | Type | Description  | Notes
 
 <a name="createpricetriggereddeliveryorder"></a>
 # **CreatePriceTriggeredDeliveryOrder**
-> TriggerOrderResponse CreatePriceTriggeredDeliveryOrder (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
+> TriggerOrderResponse1 CreatePriceTriggeredDeliveryOrder (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
 
 Create price-triggered order
 
@@ -1959,7 +1959,7 @@ namespace Example
             try
             {
                 // Create price-triggered order
-                TriggerOrderResponse result = apiInstance.CreatePriceTriggeredDeliveryOrder(settle, futuresPriceTriggeredOrder);
+                TriggerOrderResponse1 result = apiInstance.CreatePriceTriggeredDeliveryOrder(settle, futuresPriceTriggeredOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1983,7 +1983,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TriggerOrderResponse**](TriggerOrderResponse.md)
+[**TriggerOrderResponse1**](TriggerOrderResponse1.md)
 
 ### Authorization
 

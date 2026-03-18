@@ -681,8 +681,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
-        /// <returns>TriggerOrderResponse</returns>
-        TriggerOrderResponse CreatePriceTriggeredDeliveryOrder (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
+        /// <returns>TriggerOrderResponse1</returns>
+        TriggerOrderResponse1 CreatePriceTriggeredDeliveryOrder (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
 
         /// <summary>
         /// Create price-triggered order
@@ -693,8 +693,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
-        /// <returns>ApiResponse of TriggerOrderResponse</returns>
-        ApiResponse<TriggerOrderResponse> CreatePriceTriggeredDeliveryOrderWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
+        /// <returns>ApiResponse of TriggerOrderResponse1</returns>
+        ApiResponse<TriggerOrderResponse1> CreatePriceTriggeredDeliveryOrderWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
         /// <summary>
         /// Cancel all auto orders
         /// </summary>
@@ -1427,8 +1427,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
-        /// <returns>Task of TriggerOrderResponse</returns>
-        Task<TriggerOrderResponse> CreatePriceTriggeredDeliveryOrderAsync (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
+        /// <returns>Task of TriggerOrderResponse1</returns>
+        Task<TriggerOrderResponse1> CreatePriceTriggeredDeliveryOrderAsync (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
 
         /// <summary>
         /// Create price-triggered order
@@ -1439,8 +1439,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
-        /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
-        Task<ApiResponse<TriggerOrderResponse>> CreatePriceTriggeredDeliveryOrderAsyncWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
+        /// <returns>Task of ApiResponse (TriggerOrderResponse1)</returns>
+        Task<ApiResponse<TriggerOrderResponse1>> CreatePriceTriggeredDeliveryOrderAsyncWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
         /// <summary>
         /// Cancel all auto orders
         /// </summary>
@@ -5285,10 +5285,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
-        /// <returns>TriggerOrderResponse</returns>
-        public TriggerOrderResponse CreatePriceTriggeredDeliveryOrder (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
+        /// <returns>TriggerOrderResponse1</returns>
+        public TriggerOrderResponse1 CreatePriceTriggeredDeliveryOrder (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
         {
-             ApiResponse<TriggerOrderResponse> localVarResponse = CreatePriceTriggeredDeliveryOrderWithHttpInfo(settle, futuresPriceTriggeredOrder);
+             ApiResponse<TriggerOrderResponse1> localVarResponse = CreatePriceTriggeredDeliveryOrderWithHttpInfo(settle, futuresPriceTriggeredOrder);
              return localVarResponse.Data;
         }
 
@@ -5298,8 +5298,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
-        /// <returns>ApiResponse of TriggerOrderResponse</returns>
-        public ApiResponse<TriggerOrderResponse> CreatePriceTriggeredDeliveryOrderWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
+        /// <returns>ApiResponse of TriggerOrderResponse1</returns>
+        public ApiResponse<TriggerOrderResponse1> CreatePriceTriggeredDeliveryOrderWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -5333,7 +5333,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TriggerOrderResponse>("/delivery/{settle}/price_orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TriggerOrderResponse1>("/delivery/{settle}/price_orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -5350,10 +5350,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
-        /// <returns>Task of TriggerOrderResponse</returns>
-        public async Task<TriggerOrderResponse> CreatePriceTriggeredDeliveryOrderAsync (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
+        /// <returns>Task of TriggerOrderResponse1</returns>
+        public async Task<TriggerOrderResponse1> CreatePriceTriggeredDeliveryOrderAsync (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
         {
-             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse> localVarResponse = await CreatePriceTriggeredDeliveryOrderAsyncWithHttpInfo(settle, futuresPriceTriggeredOrder);
+             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse1> localVarResponse = await CreatePriceTriggeredDeliveryOrderAsyncWithHttpInfo(settle, futuresPriceTriggeredOrder);
              return localVarResponse.Data;
 
         }
@@ -5364,8 +5364,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
-        /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
-        public async Task<ApiResponse<TriggerOrderResponse>> CreatePriceTriggeredDeliveryOrderAsyncWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
+        /// <returns>Task of ApiResponse (TriggerOrderResponse1)</returns>
+        public async Task<ApiResponse<TriggerOrderResponse1>> CreatePriceTriggeredDeliveryOrderAsyncWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -5401,7 +5401,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TriggerOrderResponse>("/delivery/{settle}/price_orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TriggerOrderResponse1>("/delivery/{settle}/price_orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

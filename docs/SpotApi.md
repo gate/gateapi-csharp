@@ -2160,7 +2160,7 @@ Name | Type | Description  | Notes
 
 <a name="createspotpricetriggeredorder"></a>
 # **CreateSpotPriceTriggeredOrder**
-> TriggerOrderResponse CreateSpotPriceTriggeredOrder (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
+> TriggerOrderResponse1 CreateSpotPriceTriggeredOrder (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
 
 Create price-triggered order
 
@@ -2188,7 +2188,7 @@ namespace Example
             try
             {
                 // Create price-triggered order
-                TriggerOrderResponse result = apiInstance.CreateSpotPriceTriggeredOrder(spotPriceTriggeredOrder);
+                TriggerOrderResponse1 result = apiInstance.CreateSpotPriceTriggeredOrder(spotPriceTriggeredOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -2211,7 +2211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TriggerOrderResponse**](TriggerOrderResponse.md)
+[**TriggerOrderResponse1**](TriggerOrderResponse1.md)
 
 ### Authorization
 
