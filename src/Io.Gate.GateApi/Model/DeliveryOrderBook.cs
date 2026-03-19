@@ -43,7 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="update">Order book changed timestamp.</param>
         /// <param name="asks">Ask Depth (required).</param>
         /// <param name="bids">Bid Depth (required).</param>
-        public DeliveryOrderBook(long id = default(long), double current = default(double), double update = default(double), List<FuturesOrderBookItem1> asks = default(List<FuturesOrderBookItem1>), List<FuturesOrderBookItem1> bids = default(List<FuturesOrderBookItem1>))
+        public DeliveryOrderBook(long id = default(long), double current = default(double), double update = default(double), List<DeliveryOrderBookItem> asks = default(List<DeliveryOrderBookItem>), List<DeliveryOrderBookItem> bids = default(List<DeliveryOrderBookItem>))
         {
             // to ensure "asks" is required (not null)
             this.Asks = asks ?? throw new ArgumentNullException("asks", "asks is a required property for DeliveryOrderBook and cannot be null");
@@ -80,14 +80,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ask Depth</value>
         [DataMember(Name="asks")]
-        public List<FuturesOrderBookItem1> Asks { get; set; }
+        public List<DeliveryOrderBookItem> Asks { get; set; }
 
         /// <summary>
         /// Bid Depth
         /// </summary>
         /// <value>Bid Depth</value>
         [DataMember(Name="bids")]
-        public List<FuturesOrderBookItem1> Bids { get; set; }
+        public List<DeliveryOrderBookItem> Bids { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

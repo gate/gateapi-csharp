@@ -575,9 +575,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID returned when order is successfully created</param>
-        /// <param name="inlineObject1"></param>
+        /// <param name="amendOptionsOrderRequest"></param>
         /// <returns>OptionsOrder</returns>
-        OptionsOrder AmendOptionsOrder (long orderId, InlineObject1 inlineObject1);
+        OptionsOrder AmendOptionsOrder (long orderId, AmendOptionsOrderRequest amendOptionsOrderRequest);
 
         /// <summary>
         /// Option Order Modification
@@ -587,9 +587,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID returned when order is successfully created</param>
-        /// <param name="inlineObject1"></param>
+        /// <param name="amendOptionsOrderRequest"></param>
         /// <returns>ApiResponse of OptionsOrder</returns>
-        ApiResponse<OptionsOrder> AmendOptionsOrderWithHttpInfo (long orderId, InlineObject1 inlineObject1);
+        ApiResponse<OptionsOrder> AmendOptionsOrderWithHttpInfo (long orderId, AmendOptionsOrderRequest amendOptionsOrderRequest);
         /// <summary>
         /// Cancel single order
         /// </summary>
@@ -1283,9 +1283,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID returned when order is successfully created</param>
-        /// <param name="inlineObject1"></param>
+        /// <param name="amendOptionsOrderRequest"></param>
         /// <returns>Task of OptionsOrder</returns>
-        Task<OptionsOrder> AmendOptionsOrderAsync (long orderId, InlineObject1 inlineObject1);
+        Task<OptionsOrder> AmendOptionsOrderAsync (long orderId, AmendOptionsOrderRequest amendOptionsOrderRequest);
 
         /// <summary>
         /// Option Order Modification
@@ -1295,9 +1295,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID returned when order is successfully created</param>
-        /// <param name="inlineObject1"></param>
+        /// <param name="amendOptionsOrderRequest"></param>
         /// <returns>Task of ApiResponse (OptionsOrder)</returns>
-        Task<ApiResponse<OptionsOrder>> AmendOptionsOrderAsyncWithHttpInfo (long orderId, InlineObject1 inlineObject1);
+        Task<ApiResponse<OptionsOrder>> AmendOptionsOrderAsyncWithHttpInfo (long orderId, AmendOptionsOrderRequest amendOptionsOrderRequest);
         /// <summary>
         /// Cancel single order
         /// </summary>
@@ -4531,11 +4531,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID returned when order is successfully created</param>
-        /// <param name="inlineObject1"></param>
+        /// <param name="amendOptionsOrderRequest"></param>
         /// <returns>OptionsOrder</returns>
-        public OptionsOrder AmendOptionsOrder (long orderId, InlineObject1 inlineObject1)
+        public OptionsOrder AmendOptionsOrder (long orderId, AmendOptionsOrderRequest amendOptionsOrderRequest)
         {
-             ApiResponse<OptionsOrder> localVarResponse = AmendOptionsOrderWithHttpInfo(orderId, inlineObject1);
+             ApiResponse<OptionsOrder> localVarResponse = AmendOptionsOrderWithHttpInfo(orderId, amendOptionsOrderRequest);
              return localVarResponse.Data;
         }
 
@@ -4544,13 +4544,13 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID returned when order is successfully created</param>
-        /// <param name="inlineObject1"></param>
+        /// <param name="amendOptionsOrderRequest"></param>
         /// <returns>ApiResponse of OptionsOrder</returns>
-        public ApiResponse<OptionsOrder> AmendOptionsOrderWithHttpInfo (long orderId, InlineObject1 inlineObject1)
+        public ApiResponse<OptionsOrder> AmendOptionsOrderWithHttpInfo (long orderId, AmendOptionsOrderRequest amendOptionsOrderRequest)
         {
-            // verify the required parameter 'inlineObject1' is set
-            if (inlineObject1 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject1' when calling OptionsApi->AmendOptionsOrder");
+            // verify the required parameter 'amendOptionsOrderRequest' is set
+            if (amendOptionsOrderRequest == null)
+                throw new ApiException(400, "Missing required parameter 'amendOptionsOrderRequest' when calling OptionsApi->AmendOptionsOrder");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -4570,7 +4570,7 @@ namespace Io.Gate.GateApi.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
-            localVarRequestOptions.Data = inlineObject1;
+            localVarRequestOptions.Data = amendOptionsOrderRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -4592,11 +4592,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID returned when order is successfully created</param>
-        /// <param name="inlineObject1"></param>
+        /// <param name="amendOptionsOrderRequest"></param>
         /// <returns>Task of OptionsOrder</returns>
-        public async Task<OptionsOrder> AmendOptionsOrderAsync (long orderId, InlineObject1 inlineObject1)
+        public async Task<OptionsOrder> AmendOptionsOrderAsync (long orderId, AmendOptionsOrderRequest amendOptionsOrderRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<OptionsOrder> localVarResponse = await AmendOptionsOrderAsyncWithHttpInfo(orderId, inlineObject1);
+             Io.Gate.GateApi.Client.ApiResponse<OptionsOrder> localVarResponse = await AmendOptionsOrderAsyncWithHttpInfo(orderId, amendOptionsOrderRequest);
              return localVarResponse.Data;
 
         }
@@ -4606,13 +4606,13 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID returned when order is successfully created</param>
-        /// <param name="inlineObject1"></param>
+        /// <param name="amendOptionsOrderRequest"></param>
         /// <returns>Task of ApiResponse (OptionsOrder)</returns>
-        public async Task<ApiResponse<OptionsOrder>> AmendOptionsOrderAsyncWithHttpInfo (long orderId, InlineObject1 inlineObject1)
+        public async Task<ApiResponse<OptionsOrder>> AmendOptionsOrderAsyncWithHttpInfo (long orderId, AmendOptionsOrderRequest amendOptionsOrderRequest)
         {
-            // verify the required parameter 'inlineObject1' is set
-            if (inlineObject1 == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject1' when calling OptionsApi->AmendOptionsOrder");
+            // verify the required parameter 'amendOptionsOrderRequest' is set
+            if (amendOptionsOrderRequest == null)
+                throw new ApiException(400, "Missing required parameter 'amendOptionsOrderRequest' when calling OptionsApi->AmendOptionsOrder");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -4633,7 +4633,7 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
             localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
-            localVarRequestOptions.Data = inlineObject1;
+            localVarRequestOptions.Data = amendOptionsOrderRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;

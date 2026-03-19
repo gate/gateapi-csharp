@@ -31,30 +31,56 @@ namespace Io.Gate.GateApi.Model
     public partial class InlineResponse2006 :  IEquatable<InlineResponse2006>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2006" /> class.
+        /// Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse2006() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2006" /> class.
-        /// </summary>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        /// <param name="data">data (required).</param>
-        public InlineResponse2006(int code = default(int), string message = default(string), InlineResponse2006Data data = default(InlineResponse2006Data))
+        /// <value>Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CodeEnum
         {
-            this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2006 and cannot be null");
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse2006 and cannot be null");
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_2002
+            /// </summary>
+            NUMBER_2002 = 2002,
+
+            /// <summary>
+            /// Enum value NUMBER_50105
+            /// </summary>
+            NUMBER_50105 = 50105
+
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed
         /// </summary>
+        /// <value>Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed</value>
         [DataMember(Name="code")]
-        public int Code { get; set; }
+        public CodeEnum? Code { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse2006" /> class.
+        /// </summary>
+        /// <param name="code">Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed.</param>
+        /// <param name="label">Error identifier code. Empty string on success, machine-readable error label on error.</param>
+        /// <param name="message">message.</param>
+        /// <param name="data">data.</param>
+        public InlineResponse2006(CodeEnum? code = default(CodeEnum?), string label = default(string), string message = default(string), InlineResponse2006Data data = default(InlineResponse2006Data))
+        {
+            this.Code = code;
+            this.Label = label;
+            this.Message = message;
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Error identifier code. Empty string on success, machine-readable error label on error
+        /// </summary>
+        /// <value>Error identifier code. Empty string on success, machine-readable error label on error</value>
+        [DataMember(Name="label")]
+        public string Label { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
@@ -77,6 +103,7 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2006 {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
@@ -118,6 +145,11 @@ namespace Io.Gate.GateApi.Model
                     this.Code.Equals(input.Code)
                 ) && 
                 (
+                    this.Label == input.Label ||
+                    (this.Label != null &&
+                    this.Label.Equals(input.Label))
+                ) && 
+                (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
@@ -139,6 +171,8 @@ namespace Io.Gate.GateApi.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Label != null)
+                    hashCode = hashCode * 59 + this.Label.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.Data != null)

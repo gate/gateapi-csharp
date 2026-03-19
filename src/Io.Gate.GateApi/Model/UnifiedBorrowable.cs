@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// UnifiedBorrowable
+    /// 统一账户最多可借入额度
     /// </summary>
     [DataContract]
     public partial class UnifiedBorrowable :  IEquatable<UnifiedBorrowable>, IValidatableObject

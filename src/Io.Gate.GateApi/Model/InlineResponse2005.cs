@@ -33,26 +33,44 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2005" /> class.
         /// </summary>
-        /// <param name="currency">currency.</param>
-        /// <param name="estRate">Estimated Annualized Rate, e.g., &#x60;est_rate&#x60;: &#x60;0.8014&#x60; represents an annualized rate of 80.14%.</param>
-        public InlineResponse2005(string currency = default(string), string estRate = default(string))
+        /// <param name="code">Return code, 0 means success.</param>
+        /// <param name="message">Response message.</param>
+        /// <param name="data">data.</param>
+        /// <param name="timestamp">Response timestamp (in seconds).</param>
+        public InlineResponse2005(int code = default(int), string message = default(string), InlineResponse2005Data data = default(InlineResponse2005Data), int timestamp = default(int))
         {
-            this.Currency = currency;
-            this.EstRate = estRate;
+            this.Code = code;
+            this.Message = message;
+            this.Data = data;
+            this.Timestamp = timestamp;
         }
 
         /// <summary>
-        /// Gets or Sets Currency
+        /// Return code, 0 means success
         /// </summary>
-        [DataMember(Name="currency")]
-        public string Currency { get; set; }
+        /// <value>Return code, 0 means success</value>
+        [DataMember(Name="code")]
+        public int Code { get; set; }
 
         /// <summary>
-        /// Estimated Annualized Rate, e.g., &#x60;est_rate&#x60;: &#x60;0.8014&#x60; represents an annualized rate of 80.14%
+        /// Response message
         /// </summary>
-        /// <value>Estimated Annualized Rate, e.g., &#x60;est_rate&#x60;: &#x60;0.8014&#x60; represents an annualized rate of 80.14%</value>
-        [DataMember(Name="est_rate")]
-        public string EstRate { get; set; }
+        /// <value>Response message</value>
+        [DataMember(Name="message")]
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Data
+        /// </summary>
+        [DataMember(Name="data")]
+        public InlineResponse2005Data Data { get; set; }
+
+        /// <summary>
+        /// Response timestamp (in seconds)
+        /// </summary>
+        /// <value>Response timestamp (in seconds)</value>
+        [DataMember(Name="timestamp")]
+        public int Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,8 +80,10 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2005 {\n");
-            sb.Append("  Currency: ").Append(Currency).Append("\n");
-            sb.Append("  EstRate: ").Append(EstRate).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,14 +119,22 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Currency == input.Currency ||
-                    (this.Currency != null &&
-                    this.Currency.Equals(input.Currency))
+                    this.Code == input.Code ||
+                    this.Code.Equals(input.Code)
                 ) && 
                 (
-                    this.EstRate == input.EstRate ||
-                    (this.EstRate != null &&
-                    this.EstRate.Equals(input.EstRate))
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
                 );
         }
 
@@ -119,10 +147,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Currency != null)
-                    hashCode = hashCode * 59 + this.Currency.GetHashCode();
-                if (this.EstRate != null)
-                    hashCode = hashCode * 59 + this.EstRate.GetHashCode();
+                hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

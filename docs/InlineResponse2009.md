@@ -5,10 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | **int** |  | 
-**Message** | **string** |  | 
-**Data** | [**InlineResponse2009Data**](InlineResponse2009Data.md) |  | 
-**Timestamp** | **int** |  | 
+**Code** | **int** | Status code, 200 &#x3D; success | [optional] 
+**Label** | **string** | Status label | [optional] 
+**Message** | **string** | Status message | [optional] 
+**RequestId** | **string** | Request ID | [optional] 
+**Data** | [**InlineResponse2009Data**](InlineResponse2009Data.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

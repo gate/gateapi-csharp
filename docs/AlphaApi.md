@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 <a name="listalphacurrencies"></a>
 # **ListAlphaCurrencies**
-> List&lt;Currency2&gt; ListAlphaCurrencies (string currency = null, int? limit = null, int? page = null)
+> List&lt;AlphaCurrency&gt; ListAlphaCurrencies (string currency = null, int? limit = null, int? page = null)
 
 Query currency information
 
@@ -495,7 +495,7 @@ namespace Example
             try
             {
                 // Query currency information
-                List<Currency2> result = apiInstance.ListAlphaCurrencies(currency, limit, page);
+                List<AlphaCurrency> result = apiInstance.ListAlphaCurrencies(currency, limit, page);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Currency2&gt;**](Currency2.md)
+[**List&lt;AlphaCurrency&gt;**](AlphaCurrency.md)
 
 ### Authorization
 

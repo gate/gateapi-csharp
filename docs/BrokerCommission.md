@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Total** | **long** | Total | [optional] 
-**List** | [**List&lt;BrokerCommission1&gt;**](BrokerCommission1.md) | List of commission history | [optional] 
+**List** | [**List&lt;BrokerCommissionItem&gt;**](BrokerCommissionItem.md) | List of commission history | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

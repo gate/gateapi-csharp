@@ -75,7 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="priceType">Reference price type. 0 - Latest trade price, 1 - Mark price, 2 - Index price.</param>
         /// <param name="autoSize">One-way Mode: auto_size is not required Hedge Mode partial closing (size≠0): auto_size is not required Hedge Mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions.</param>
         /// <param name="close">When fully closing a position in single-position mode, close must be set to true to execute the close operation. When partially closing a position in single-position mode or in dual-position mode, close can be left unset or set to false..</param>
-        public FuturesUpdatePriceTriggeredOrder(string settle = default(string), int orderId = default(int), long size = default(long), string price = default(string), string triggerPrice = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), string autoSize = default(string), bool close = default(bool))
+        public FuturesUpdatePriceTriggeredOrder(string settle = default(string), long orderId = default(long), long size = default(long), string price = default(string), string triggerPrice = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), string autoSize = default(string), bool close = default(bool))
         {
             this.OrderId = orderId;
             this.Settle = settle;
@@ -99,7 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ID of the Pending Take-Profit/Stop-Loss Trigger Order</value>
         [DataMember(Name="order_id")]
-        public int OrderId { get; set; }
+        public long OrderId { get; set; }
 
         /// <summary>
         /// Modified Contract Quantity. Full Close: 0; Partial Close: Positive/Negative values indicate direction (consistent with the creation interface logic).

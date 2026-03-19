@@ -33,22 +33,29 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2002" /> class.
         /// </summary>
-        /// <param name="code">Status code, 0 means success.</param>
-        /// <param name="message">Response message.</param>
-        /// <param name="data">data.</param>
-        /// <param name="timestamp">Response timestamp (milliseconds).</param>
-        public InlineResponse2002(int code = default(int), string message = default(string), InlineResponse200 data = default(InlineResponse200), long timestamp = default(long))
+        [JsonConstructorAttribute]
+        protected InlineResponse2002() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse2002" /> class.
+        /// </summary>
+        /// <param name="code">Return code, 0 means success (required).</param>
+        /// <param name="message">Response message (required).</param>
+        /// <param name="data">data (required).</param>
+        /// <param name="timestamp">Response timestamp (in seconds) (required).</param>
+        public InlineResponse2002(int code = default(int), string message = default(string), InlineResponse2002Data data = default(InlineResponse2002Data), int timestamp = default(int))
         {
             this.Code = code;
-            this.Message = message;
-            this.Data = data;
+            // to ensure "message" is required (not null)
+            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2002 and cannot be null");
+            // to ensure "data" is required (not null)
+            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse2002 and cannot be null");
             this.Timestamp = timestamp;
         }
 
         /// <summary>
-        /// Status code, 0 means success
+        /// Return code, 0 means success
         /// </summary>
-        /// <value>Status code, 0 means success</value>
+        /// <value>Return code, 0 means success</value>
         [DataMember(Name="code")]
         public int Code { get; set; }
 
@@ -63,14 +70,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
-        public InlineResponse200 Data { get; set; }
+        public InlineResponse2002Data Data { get; set; }
 
         /// <summary>
-        /// Response timestamp (milliseconds)
+        /// Response timestamp (in seconds)
         /// </summary>
-        /// <value>Response timestamp (milliseconds)</value>
+        /// <value>Response timestamp (in seconds)</value>
         [DataMember(Name="timestamp")]
-        public long Timestamp { get; set; }
+        public int Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

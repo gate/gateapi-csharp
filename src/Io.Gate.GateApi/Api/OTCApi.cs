@@ -35,8 +35,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcQuoteRequest"></param>
-        /// <returns>InlineResponse2006</returns>
-        InlineResponse2006 CreateOtcQuote (OtcQuoteRequest otcQuoteRequest);
+        /// <returns>OtcQuoteResponse</returns>
+        OtcQuoteResponse CreateOtcQuote (OtcQuoteRequest otcQuoteRequest);
 
         /// <summary>
         /// Fiat and stablecoin quote
@@ -46,8 +46,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcQuoteRequest"></param>
-        /// <returns>ApiResponse of InlineResponse2006</returns>
-        ApiResponse<InlineResponse2006> CreateOtcQuoteWithHttpInfo (OtcQuoteRequest otcQuoteRequest);
+        /// <returns>ApiResponse of OtcQuoteResponse</returns>
+        ApiResponse<OtcQuoteResponse> CreateOtcQuoteWithHttpInfo (OtcQuoteRequest otcQuoteRequest);
         /// <summary>
         /// Create fiat order
         /// </summary>
@@ -56,8 +56,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcOrderRequest"></param>
-        /// <returns>InlineResponse2007</returns>
-        InlineResponse2007 CreateOtcOrder (OtcOrderRequest otcOrderRequest);
+        /// <returns>OtcActionResponse</returns>
+        OtcActionResponse CreateOtcOrder (OtcOrderRequest otcOrderRequest);
 
         /// <summary>
         /// Create fiat order
@@ -67,8 +67,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcOrderRequest"></param>
-        /// <returns>ApiResponse of InlineResponse2007</returns>
-        ApiResponse<InlineResponse2007> CreateOtcOrderWithHttpInfo (OtcOrderRequest otcOrderRequest);
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        ApiResponse<OtcActionResponse> CreateOtcOrderWithHttpInfo (OtcOrderRequest otcOrderRequest);
         /// <summary>
         /// Create stablecoin order
         /// </summary>
@@ -77,8 +77,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
-        /// <returns>InlineResponse2008</returns>
-        InlineResponse2008 CreateStableCoinOrder (OtcStableCoinOrderRequest otcStableCoinOrderRequest);
+        /// <returns>OtcStableCoinOrderCreateResponse</returns>
+        OtcStableCoinOrderCreateResponse CreateStableCoinOrder (OtcStableCoinOrderRequest otcStableCoinOrderRequest);
 
         /// <summary>
         /// Create stablecoin order
@@ -88,8 +88,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
-        /// <returns>ApiResponse of InlineResponse2008</returns>
-        ApiResponse<InlineResponse2008> CreateStableCoinOrderWithHttpInfo (OtcStableCoinOrderRequest otcStableCoinOrderRequest);
+        /// <returns>ApiResponse of OtcStableCoinOrderCreateResponse</returns>
+        ApiResponse<OtcStableCoinOrderCreateResponse> CreateStableCoinOrderWithHttpInfo (OtcStableCoinOrderRequest otcStableCoinOrderRequest);
         /// <summary>
         /// Get user&#39;s default bank account information
         /// </summary>
@@ -97,8 +97,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s default bank account information for order placement
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse2009</returns>
-        InlineResponse2009 GetUserDefaultBank ();
+        /// <returns>OtcUserDefaultBankResponse</returns>
+        OtcUserDefaultBankResponse GetUserDefaultBank ();
 
         /// <summary>
         /// Get user&#39;s default bank account information
@@ -107,8 +107,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s default bank account information for order placement
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse2009</returns>
-        ApiResponse<InlineResponse2009> GetUserDefaultBankWithHttpInfo ();
+        /// <returns>ApiResponse of OtcUserDefaultBankResponse</returns>
+        ApiResponse<OtcUserDefaultBankResponse> GetUserDefaultBankWithHttpInfo ();
         /// <summary>
         /// Get user bank card list
         /// </summary>
@@ -116,8 +116,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list for selecting bank card when placing orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20010</returns>
-        InlineResponse20010 GetBankList ();
+        /// <returns>OtcBankListResponse</returns>
+        OtcBankListResponse GetBankList ();
 
         /// <summary>
         /// Get user bank card list
@@ -126,8 +126,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list for selecting bank card when placing orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20010</returns>
-        ApiResponse<InlineResponse20010> GetBankListWithHttpInfo ();
+        /// <returns>ApiResponse of OtcBankListResponse</returns>
+        ApiResponse<OtcBankListResponse> GetBankListWithHttpInfo ();
         /// <summary>
         /// Mark fiat order as paid
         /// </summary>
@@ -136,8 +136,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
-        /// <returns>InlineResponse2007</returns>
-        InlineResponse2007 MarkOtcOrderPaid (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest);
+        /// <returns>OtcActionResponse</returns>
+        OtcActionResponse MarkOtcOrderPaid (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest);
 
         /// <summary>
         /// Mark fiat order as paid
@@ -147,8 +147,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
-        /// <returns>ApiResponse of InlineResponse2007</returns>
-        ApiResponse<InlineResponse2007> MarkOtcOrderPaidWithHttpInfo (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest);
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        ApiResponse<OtcActionResponse> MarkOtcOrderPaidWithHttpInfo (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest);
         /// <summary>
         /// Fiat order cancellation
         /// </summary>
@@ -157,8 +157,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>InlineResponse2007</returns>
-        InlineResponse2007 CancelOtcOrder (string orderId);
+        /// <returns>OtcActionResponse</returns>
+        OtcActionResponse CancelOtcOrder (string orderId);
 
         /// <summary>
         /// Fiat order cancellation
@@ -168,8 +168,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>ApiResponse of InlineResponse2007</returns>
-        ApiResponse<InlineResponse2007> CancelOtcOrderWithHttpInfo (string orderId);
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        ApiResponse<OtcActionResponse> CancelOtcOrderWithHttpInfo (string orderId);
         /// <summary>
         /// Fiat order list
         /// </summary>
@@ -185,8 +185,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>InlineResponse20011</returns>
-        InlineResponse20011 ListOtcOrders (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
+        /// <returns>OtcOrderListResponse</returns>
+        OtcOrderListResponse ListOtcOrders (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
 
         /// <summary>
         /// Fiat order list
@@ -203,8 +203,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20011</returns>
-        ApiResponse<InlineResponse20011> ListOtcOrdersWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
+        /// <returns>ApiResponse of OtcOrderListResponse</returns>
+        ApiResponse<OtcOrderListResponse> ListOtcOrdersWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
         /// <summary>
         /// Stablecoin order list
         /// </summary>
@@ -218,8 +218,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>InlineResponse20012</returns>
-        InlineResponse20012 ListStableCoinOrders (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
+        /// <returns>OtcStableCoinOrderListResponse</returns>
+        OtcStableCoinOrderListResponse ListStableCoinOrders (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
 
         /// <summary>
         /// Stablecoin order list
@@ -234,8 +234,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        ApiResponse<InlineResponse20012> ListStableCoinOrdersWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
+        /// <returns>ApiResponse of OtcStableCoinOrderListResponse</returns>
+        ApiResponse<OtcStableCoinOrderListResponse> ListStableCoinOrdersWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
         /// <summary>
         /// Fiat order details
         /// </summary>
@@ -244,8 +244,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>InlineResponse20013</returns>
-        InlineResponse20013 GetOtcOrderDetail (string orderId);
+        /// <returns>OtcOrderDetailResponse</returns>
+        OtcOrderDetailResponse GetOtcOrderDetail (string orderId);
 
         /// <summary>
         /// Fiat order details
@@ -255,8 +255,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>ApiResponse of InlineResponse20013</returns>
-        ApiResponse<InlineResponse20013> GetOtcOrderDetailWithHttpInfo (string orderId);
+        /// <returns>ApiResponse of OtcOrderDetailResponse</returns>
+        ApiResponse<OtcOrderDetailResponse> GetOtcOrderDetailWithHttpInfo (string orderId);
         #endregion Synchronous Operations
     }
 
@@ -274,8 +274,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcQuoteRequest"></param>
-        /// <returns>Task of InlineResponse2006</returns>
-        Task<InlineResponse2006> CreateOtcQuoteAsync (OtcQuoteRequest otcQuoteRequest);
+        /// <returns>Task of OtcQuoteResponse</returns>
+        Task<OtcQuoteResponse> CreateOtcQuoteAsync (OtcQuoteRequest otcQuoteRequest);
 
         /// <summary>
         /// Fiat and stablecoin quote
@@ -285,8 +285,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcQuoteRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse2006)</returns>
-        Task<ApiResponse<InlineResponse2006>> CreateOtcQuoteAsyncWithHttpInfo (OtcQuoteRequest otcQuoteRequest);
+        /// <returns>Task of ApiResponse (OtcQuoteResponse)</returns>
+        Task<ApiResponse<OtcQuoteResponse>> CreateOtcQuoteAsyncWithHttpInfo (OtcQuoteRequest otcQuoteRequest);
         /// <summary>
         /// Create fiat order
         /// </summary>
@@ -295,8 +295,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcOrderRequest"></param>
-        /// <returns>Task of InlineResponse2007</returns>
-        Task<InlineResponse2007> CreateOtcOrderAsync (OtcOrderRequest otcOrderRequest);
+        /// <returns>Task of OtcActionResponse</returns>
+        Task<OtcActionResponse> CreateOtcOrderAsync (OtcOrderRequest otcOrderRequest);
 
         /// <summary>
         /// Create fiat order
@@ -306,8 +306,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcOrderRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        Task<ApiResponse<InlineResponse2007>> CreateOtcOrderAsyncWithHttpInfo (OtcOrderRequest otcOrderRequest);
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        Task<ApiResponse<OtcActionResponse>> CreateOtcOrderAsyncWithHttpInfo (OtcOrderRequest otcOrderRequest);
         /// <summary>
         /// Create stablecoin order
         /// </summary>
@@ -316,8 +316,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
-        /// <returns>Task of InlineResponse2008</returns>
-        Task<InlineResponse2008> CreateStableCoinOrderAsync (OtcStableCoinOrderRequest otcStableCoinOrderRequest);
+        /// <returns>Task of OtcStableCoinOrderCreateResponse</returns>
+        Task<OtcStableCoinOrderCreateResponse> CreateStableCoinOrderAsync (OtcStableCoinOrderRequest otcStableCoinOrderRequest);
 
         /// <summary>
         /// Create stablecoin order
@@ -327,8 +327,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        Task<ApiResponse<InlineResponse2008>> CreateStableCoinOrderAsyncWithHttpInfo (OtcStableCoinOrderRequest otcStableCoinOrderRequest);
+        /// <returns>Task of ApiResponse (OtcStableCoinOrderCreateResponse)</returns>
+        Task<ApiResponse<OtcStableCoinOrderCreateResponse>> CreateStableCoinOrderAsyncWithHttpInfo (OtcStableCoinOrderRequest otcStableCoinOrderRequest);
         /// <summary>
         /// Get user&#39;s default bank account information
         /// </summary>
@@ -336,8 +336,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s default bank account information for order placement
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse2009</returns>
-        Task<InlineResponse2009> GetUserDefaultBankAsync ();
+        /// <returns>Task of OtcUserDefaultBankResponse</returns>
+        Task<OtcUserDefaultBankResponse> GetUserDefaultBankAsync ();
 
         /// <summary>
         /// Get user&#39;s default bank account information
@@ -346,8 +346,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s default bank account information for order placement
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
-        Task<ApiResponse<InlineResponse2009>> GetUserDefaultBankAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (OtcUserDefaultBankResponse)</returns>
+        Task<ApiResponse<OtcUserDefaultBankResponse>> GetUserDefaultBankAsyncWithHttpInfo ();
         /// <summary>
         /// Get user bank card list
         /// </summary>
@@ -355,8 +355,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list for selecting bank card when placing orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20010</returns>
-        Task<InlineResponse20010> GetBankListAsync ();
+        /// <returns>Task of OtcBankListResponse</returns>
+        Task<OtcBankListResponse> GetBankListAsync ();
 
         /// <summary>
         /// Get user bank card list
@@ -365,8 +365,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list for selecting bank card when placing orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-        Task<ApiResponse<InlineResponse20010>> GetBankListAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (OtcBankListResponse)</returns>
+        Task<ApiResponse<OtcBankListResponse>> GetBankListAsyncWithHttpInfo ();
         /// <summary>
         /// Mark fiat order as paid
         /// </summary>
@@ -375,8 +375,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
-        /// <returns>Task of InlineResponse2007</returns>
-        Task<InlineResponse2007> MarkOtcOrderPaidAsync (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest);
+        /// <returns>Task of OtcActionResponse</returns>
+        Task<OtcActionResponse> MarkOtcOrderPaidAsync (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest);
 
         /// <summary>
         /// Mark fiat order as paid
@@ -386,8 +386,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        Task<ApiResponse<InlineResponse2007>> MarkOtcOrderPaidAsyncWithHttpInfo (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest);
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        Task<ApiResponse<OtcActionResponse>> MarkOtcOrderPaidAsyncWithHttpInfo (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest);
         /// <summary>
         /// Fiat order cancellation
         /// </summary>
@@ -396,8 +396,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of InlineResponse2007</returns>
-        Task<InlineResponse2007> CancelOtcOrderAsync (string orderId);
+        /// <returns>Task of OtcActionResponse</returns>
+        Task<OtcActionResponse> CancelOtcOrderAsync (string orderId);
 
         /// <summary>
         /// Fiat order cancellation
@@ -407,8 +407,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        Task<ApiResponse<InlineResponse2007>> CancelOtcOrderAsyncWithHttpInfo (string orderId);
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        Task<ApiResponse<OtcActionResponse>> CancelOtcOrderAsyncWithHttpInfo (string orderId);
         /// <summary>
         /// Fiat order list
         /// </summary>
@@ -424,8 +424,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>Task of InlineResponse20011</returns>
-        Task<InlineResponse20011> ListOtcOrdersAsync (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
+        /// <returns>Task of OtcOrderListResponse</returns>
+        Task<OtcOrderListResponse> ListOtcOrdersAsync (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
 
         /// <summary>
         /// Fiat order list
@@ -442,8 +442,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        Task<ApiResponse<InlineResponse20011>> ListOtcOrdersAsyncWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
+        /// <returns>Task of ApiResponse (OtcOrderListResponse)</returns>
+        Task<ApiResponse<OtcOrderListResponse>> ListOtcOrdersAsyncWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string));
         /// <summary>
         /// Stablecoin order list
         /// </summary>
@@ -457,8 +457,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        Task<InlineResponse20012> ListStableCoinOrdersAsync (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
+        /// <returns>Task of OtcStableCoinOrderListResponse</returns>
+        Task<OtcStableCoinOrderListResponse> ListStableCoinOrdersAsync (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
 
         /// <summary>
         /// Stablecoin order list
@@ -473,8 +473,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        Task<ApiResponse<InlineResponse20012>> ListStableCoinOrdersAsyncWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
+        /// <returns>Task of ApiResponse (OtcStableCoinOrderListResponse)</returns>
+        Task<ApiResponse<OtcStableCoinOrderListResponse>> ListStableCoinOrdersAsyncWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string));
         /// <summary>
         /// Fiat order details
         /// </summary>
@@ -483,8 +483,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of InlineResponse20013</returns>
-        Task<InlineResponse20013> GetOtcOrderDetailAsync (string orderId);
+        /// <returns>Task of OtcOrderDetailResponse</returns>
+        Task<OtcOrderDetailResponse> GetOtcOrderDetailAsync (string orderId);
 
         /// <summary>
         /// Fiat order details
@@ -494,8 +494,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        Task<ApiResponse<InlineResponse20013>> GetOtcOrderDetailAsyncWithHttpInfo (string orderId);
+        /// <returns>Task of ApiResponse (OtcOrderDetailResponse)</returns>
+        Task<ApiResponse<OtcOrderDetailResponse>> GetOtcOrderDetailAsyncWithHttpInfo (string orderId);
         #endregion Asynchronous Operations
     }
 
@@ -621,10 +621,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcQuoteRequest"></param>
-        /// <returns>InlineResponse2006</returns>
-        public InlineResponse2006 CreateOtcQuote (OtcQuoteRequest otcQuoteRequest)
+        /// <returns>OtcQuoteResponse</returns>
+        public OtcQuoteResponse CreateOtcQuote (OtcQuoteRequest otcQuoteRequest)
         {
-             ApiResponse<InlineResponse2006> localVarResponse = CreateOtcQuoteWithHttpInfo(otcQuoteRequest);
+             ApiResponse<OtcQuoteResponse> localVarResponse = CreateOtcQuoteWithHttpInfo(otcQuoteRequest);
              return localVarResponse.Data;
         }
 
@@ -633,8 +633,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcQuoteRequest"></param>
-        /// <returns>ApiResponse of InlineResponse2006</returns>
-        public ApiResponse<InlineResponse2006> CreateOtcQuoteWithHttpInfo (OtcQuoteRequest otcQuoteRequest)
+        /// <returns>ApiResponse of OtcQuoteResponse</returns>
+        public ApiResponse<OtcQuoteResponse> CreateOtcQuoteWithHttpInfo (OtcQuoteRequest otcQuoteRequest)
         {
             // verify the required parameter 'otcQuoteRequest' is set
             if (otcQuoteRequest == null)
@@ -663,7 +663,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse2006>("/otc/quote", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<OtcQuoteResponse>("/otc/quote", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -679,10 +679,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcQuoteRequest"></param>
-        /// <returns>Task of InlineResponse2006</returns>
-        public async Task<InlineResponse2006> CreateOtcQuoteAsync (OtcQuoteRequest otcQuoteRequest)
+        /// <returns>Task of OtcQuoteResponse</returns>
+        public async Task<OtcQuoteResponse> CreateOtcQuoteAsync (OtcQuoteRequest otcQuoteRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2006> localVarResponse = await CreateOtcQuoteAsyncWithHttpInfo(otcQuoteRequest);
+             Io.Gate.GateApi.Client.ApiResponse<OtcQuoteResponse> localVarResponse = await CreateOtcQuoteAsyncWithHttpInfo(otcQuoteRequest);
              return localVarResponse.Data;
 
         }
@@ -692,8 +692,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcQuoteRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse2006)</returns>
-        public async Task<ApiResponse<InlineResponse2006>> CreateOtcQuoteAsyncWithHttpInfo (OtcQuoteRequest otcQuoteRequest)
+        /// <returns>Task of ApiResponse (OtcQuoteResponse)</returns>
+        public async Task<ApiResponse<OtcQuoteResponse>> CreateOtcQuoteAsyncWithHttpInfo (OtcQuoteRequest otcQuoteRequest)
         {
             // verify the required parameter 'otcQuoteRequest' is set
             if (otcQuoteRequest == null)
@@ -724,7 +724,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2006>("/otc/quote", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OtcQuoteResponse>("/otc/quote", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -740,10 +740,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcOrderRequest"></param>
-        /// <returns>InlineResponse2007</returns>
-        public InlineResponse2007 CreateOtcOrder (OtcOrderRequest otcOrderRequest)
+        /// <returns>OtcActionResponse</returns>
+        public OtcActionResponse CreateOtcOrder (OtcOrderRequest otcOrderRequest)
         {
-             ApiResponse<InlineResponse2007> localVarResponse = CreateOtcOrderWithHttpInfo(otcOrderRequest);
+             ApiResponse<OtcActionResponse> localVarResponse = CreateOtcOrderWithHttpInfo(otcOrderRequest);
              return localVarResponse.Data;
         }
 
@@ -752,8 +752,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcOrderRequest"></param>
-        /// <returns>ApiResponse of InlineResponse2007</returns>
-        public ApiResponse<InlineResponse2007> CreateOtcOrderWithHttpInfo (OtcOrderRequest otcOrderRequest)
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        public ApiResponse<OtcActionResponse> CreateOtcOrderWithHttpInfo (OtcOrderRequest otcOrderRequest)
         {
             // verify the required parameter 'otcOrderRequest' is set
             if (otcOrderRequest == null)
@@ -782,7 +782,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse2007>("/otc/order/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<OtcActionResponse>("/otc/order/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -798,10 +798,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcOrderRequest"></param>
-        /// <returns>Task of InlineResponse2007</returns>
-        public async Task<InlineResponse2007> CreateOtcOrderAsync (OtcOrderRequest otcOrderRequest)
+        /// <returns>Task of OtcActionResponse</returns>
+        public async Task<OtcActionResponse> CreateOtcOrderAsync (OtcOrderRequest otcOrderRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2007> localVarResponse = await CreateOtcOrderAsyncWithHttpInfo(otcOrderRequest);
+             Io.Gate.GateApi.Client.ApiResponse<OtcActionResponse> localVarResponse = await CreateOtcOrderAsyncWithHttpInfo(otcOrderRequest);
              return localVarResponse.Data;
 
         }
@@ -811,8 +811,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcOrderRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        public async Task<ApiResponse<InlineResponse2007>> CreateOtcOrderAsyncWithHttpInfo (OtcOrderRequest otcOrderRequest)
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        public async Task<ApiResponse<OtcActionResponse>> CreateOtcOrderAsyncWithHttpInfo (OtcOrderRequest otcOrderRequest)
         {
             // verify the required parameter 'otcOrderRequest' is set
             if (otcOrderRequest == null)
@@ -843,7 +843,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2007>("/otc/order/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OtcActionResponse>("/otc/order/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -859,10 +859,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
-        /// <returns>InlineResponse2008</returns>
-        public InlineResponse2008 CreateStableCoinOrder (OtcStableCoinOrderRequest otcStableCoinOrderRequest)
+        /// <returns>OtcStableCoinOrderCreateResponse</returns>
+        public OtcStableCoinOrderCreateResponse CreateStableCoinOrder (OtcStableCoinOrderRequest otcStableCoinOrderRequest)
         {
-             ApiResponse<InlineResponse2008> localVarResponse = CreateStableCoinOrderWithHttpInfo(otcStableCoinOrderRequest);
+             ApiResponse<OtcStableCoinOrderCreateResponse> localVarResponse = CreateStableCoinOrderWithHttpInfo(otcStableCoinOrderRequest);
              return localVarResponse.Data;
         }
 
@@ -871,8 +871,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
-        /// <returns>ApiResponse of InlineResponse2008</returns>
-        public ApiResponse<InlineResponse2008> CreateStableCoinOrderWithHttpInfo (OtcStableCoinOrderRequest otcStableCoinOrderRequest)
+        /// <returns>ApiResponse of OtcStableCoinOrderCreateResponse</returns>
+        public ApiResponse<OtcStableCoinOrderCreateResponse> CreateStableCoinOrderWithHttpInfo (OtcStableCoinOrderRequest otcStableCoinOrderRequest)
         {
             // verify the required parameter 'otcStableCoinOrderRequest' is set
             if (otcStableCoinOrderRequest == null)
@@ -901,7 +901,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse2008>("/otc/stable_coin/order/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<OtcStableCoinOrderCreateResponse>("/otc/stable_coin/order/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -917,10 +917,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
-        /// <returns>Task of InlineResponse2008</returns>
-        public async Task<InlineResponse2008> CreateStableCoinOrderAsync (OtcStableCoinOrderRequest otcStableCoinOrderRequest)
+        /// <returns>Task of OtcStableCoinOrderCreateResponse</returns>
+        public async Task<OtcStableCoinOrderCreateResponse> CreateStableCoinOrderAsync (OtcStableCoinOrderRequest otcStableCoinOrderRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2008> localVarResponse = await CreateStableCoinOrderAsyncWithHttpInfo(otcStableCoinOrderRequest);
+             Io.Gate.GateApi.Client.ApiResponse<OtcStableCoinOrderCreateResponse> localVarResponse = await CreateStableCoinOrderAsyncWithHttpInfo(otcStableCoinOrderRequest);
              return localVarResponse.Data;
 
         }
@@ -930,8 +930,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        public async Task<ApiResponse<InlineResponse2008>> CreateStableCoinOrderAsyncWithHttpInfo (OtcStableCoinOrderRequest otcStableCoinOrderRequest)
+        /// <returns>Task of ApiResponse (OtcStableCoinOrderCreateResponse)</returns>
+        public async Task<ApiResponse<OtcStableCoinOrderCreateResponse>> CreateStableCoinOrderAsyncWithHttpInfo (OtcStableCoinOrderRequest otcStableCoinOrderRequest)
         {
             // verify the required parameter 'otcStableCoinOrderRequest' is set
             if (otcStableCoinOrderRequest == null)
@@ -962,7 +962,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2008>("/otc/stable_coin/order/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OtcStableCoinOrderCreateResponse>("/otc/stable_coin/order/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -977,10 +977,10 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s default bank account information Get user&#39;s default bank account information for order placement
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse2009</returns>
-        public InlineResponse2009 GetUserDefaultBank ()
+        /// <returns>OtcUserDefaultBankResponse</returns>
+        public OtcUserDefaultBankResponse GetUserDefaultBank ()
         {
-             ApiResponse<InlineResponse2009> localVarResponse = GetUserDefaultBankWithHttpInfo();
+             ApiResponse<OtcUserDefaultBankResponse> localVarResponse = GetUserDefaultBankWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -988,8 +988,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s default bank account information Get user&#39;s default bank account information for order placement
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse2009</returns>
-        public ApiResponse<InlineResponse2009> GetUserDefaultBankWithHttpInfo ()
+        /// <returns>ApiResponse of OtcUserDefaultBankResponse</returns>
+        public ApiResponse<OtcUserDefaultBankResponse> GetUserDefaultBankWithHttpInfo ()
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1012,7 +1012,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse2009>("/otc/get_user_def_bank", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OtcUserDefaultBankResponse>("/otc/get_user_def_bank", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1027,10 +1027,10 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s default bank account information Get user&#39;s default bank account information for order placement
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse2009</returns>
-        public async Task<InlineResponse2009> GetUserDefaultBankAsync ()
+        /// <returns>Task of OtcUserDefaultBankResponse</returns>
+        public async Task<OtcUserDefaultBankResponse> GetUserDefaultBankAsync ()
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2009> localVarResponse = await GetUserDefaultBankAsyncWithHttpInfo();
+             Io.Gate.GateApi.Client.ApiResponse<OtcUserDefaultBankResponse> localVarResponse = await GetUserDefaultBankAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -1039,8 +1039,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s default bank account information Get user&#39;s default bank account information for order placement
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
-        public async Task<ApiResponse<InlineResponse2009>> GetUserDefaultBankAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (OtcUserDefaultBankResponse)</returns>
+        public async Task<ApiResponse<OtcUserDefaultBankResponse>> GetUserDefaultBankAsyncWithHttpInfo ()
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1065,7 +1065,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2009>("/otc/get_user_def_bank", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OtcUserDefaultBankResponse>("/otc/get_user_def_bank", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1080,10 +1080,10 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list Get user bank card list for selecting bank card when placing orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20010</returns>
-        public InlineResponse20010 GetBankList ()
+        /// <returns>OtcBankListResponse</returns>
+        public OtcBankListResponse GetBankList ()
         {
-             ApiResponse<InlineResponse20010> localVarResponse = GetBankListWithHttpInfo();
+             ApiResponse<OtcBankListResponse> localVarResponse = GetBankListWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -1091,8 +1091,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list Get user bank card list for selecting bank card when placing orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20010</returns>
-        public ApiResponse<InlineResponse20010> GetBankListWithHttpInfo ()
+        /// <returns>ApiResponse of OtcBankListResponse</returns>
+        public ApiResponse<OtcBankListResponse> GetBankListWithHttpInfo ()
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1115,7 +1115,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20010>("/otc/bank_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OtcBankListResponse>("/otc/bank_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1130,10 +1130,10 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list Get user bank card list for selecting bank card when placing orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20010</returns>
-        public async Task<InlineResponse20010> GetBankListAsync ()
+        /// <returns>Task of OtcBankListResponse</returns>
+        public async Task<OtcBankListResponse> GetBankListAsync ()
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20010> localVarResponse = await GetBankListAsyncWithHttpInfo();
+             Io.Gate.GateApi.Client.ApiResponse<OtcBankListResponse> localVarResponse = await GetBankListAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -1142,8 +1142,8 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list Get user bank card list for selecting bank card when placing orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-        public async Task<ApiResponse<InlineResponse20010>> GetBankListAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (OtcBankListResponse)</returns>
+        public async Task<ApiResponse<OtcBankListResponse>> GetBankListAsyncWithHttpInfo ()
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1168,7 +1168,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20010>("/otc/bank_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OtcBankListResponse>("/otc/bank_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1184,10 +1184,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
-        /// <returns>InlineResponse2007</returns>
-        public InlineResponse2007 MarkOtcOrderPaid (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest)
+        /// <returns>OtcActionResponse</returns>
+        public OtcActionResponse MarkOtcOrderPaid (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest)
         {
-             ApiResponse<InlineResponse2007> localVarResponse = MarkOtcOrderPaidWithHttpInfo(otcMarkOrderPaidRequest);
+             ApiResponse<OtcActionResponse> localVarResponse = MarkOtcOrderPaidWithHttpInfo(otcMarkOrderPaidRequest);
              return localVarResponse.Data;
         }
 
@@ -1196,8 +1196,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
-        /// <returns>ApiResponse of InlineResponse2007</returns>
-        public ApiResponse<InlineResponse2007> MarkOtcOrderPaidWithHttpInfo (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest)
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        public ApiResponse<OtcActionResponse> MarkOtcOrderPaidWithHttpInfo (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest)
         {
             // verify the required parameter 'otcMarkOrderPaidRequest' is set
             if (otcMarkOrderPaidRequest == null)
@@ -1226,7 +1226,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse2007>("/otc/order/paid", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<OtcActionResponse>("/otc/order/paid", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1242,10 +1242,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
-        /// <returns>Task of InlineResponse2007</returns>
-        public async Task<InlineResponse2007> MarkOtcOrderPaidAsync (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest)
+        /// <returns>Task of OtcActionResponse</returns>
+        public async Task<OtcActionResponse> MarkOtcOrderPaidAsync (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2007> localVarResponse = await MarkOtcOrderPaidAsyncWithHttpInfo(otcMarkOrderPaidRequest);
+             Io.Gate.GateApi.Client.ApiResponse<OtcActionResponse> localVarResponse = await MarkOtcOrderPaidAsyncWithHttpInfo(otcMarkOrderPaidRequest);
              return localVarResponse.Data;
 
         }
@@ -1255,8 +1255,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        public async Task<ApiResponse<InlineResponse2007>> MarkOtcOrderPaidAsyncWithHttpInfo (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest)
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        public async Task<ApiResponse<OtcActionResponse>> MarkOtcOrderPaidAsyncWithHttpInfo (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest)
         {
             // verify the required parameter 'otcMarkOrderPaidRequest' is set
             if (otcMarkOrderPaidRequest == null)
@@ -1287,7 +1287,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2007>("/otc/order/paid", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OtcActionResponse>("/otc/order/paid", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1303,10 +1303,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>InlineResponse2007</returns>
-        public InlineResponse2007 CancelOtcOrder (string orderId)
+        /// <returns>OtcActionResponse</returns>
+        public OtcActionResponse CancelOtcOrder (string orderId)
         {
-             ApiResponse<InlineResponse2007> localVarResponse = CancelOtcOrderWithHttpInfo(orderId);
+             ApiResponse<OtcActionResponse> localVarResponse = CancelOtcOrderWithHttpInfo(orderId);
              return localVarResponse.Data;
         }
 
@@ -1315,8 +1315,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>ApiResponse of InlineResponse2007</returns>
-        public ApiResponse<InlineResponse2007> CancelOtcOrderWithHttpInfo (string orderId)
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        public ApiResponse<OtcActionResponse> CancelOtcOrderWithHttpInfo (string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1344,7 +1344,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse2007>("/otc/order/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<OtcActionResponse>("/otc/order/cancel", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1360,10 +1360,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of InlineResponse2007</returns>
-        public async Task<InlineResponse2007> CancelOtcOrderAsync (string orderId)
+        /// <returns>Task of OtcActionResponse</returns>
+        public async Task<OtcActionResponse> CancelOtcOrderAsync (string orderId)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2007> localVarResponse = await CancelOtcOrderAsyncWithHttpInfo(orderId);
+             Io.Gate.GateApi.Client.ApiResponse<OtcActionResponse> localVarResponse = await CancelOtcOrderAsyncWithHttpInfo(orderId);
              return localVarResponse.Data;
 
         }
@@ -1373,8 +1373,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        public async Task<ApiResponse<InlineResponse2007>> CancelOtcOrderAsyncWithHttpInfo (string orderId)
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        public async Task<ApiResponse<OtcActionResponse>> CancelOtcOrderAsyncWithHttpInfo (string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1404,7 +1404,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2007>("/otc/order/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OtcActionResponse>("/otc/order/cancel", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1427,10 +1427,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>InlineResponse20011</returns>
-        public InlineResponse20011 ListOtcOrders (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
+        /// <returns>OtcOrderListResponse</returns>
+        public OtcOrderListResponse ListOtcOrders (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
         {
-             ApiResponse<InlineResponse20011> localVarResponse = ListOtcOrdersWithHttpInfo(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
+             ApiResponse<OtcOrderListResponse> localVarResponse = ListOtcOrdersWithHttpInfo(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
              return localVarResponse.Data;
         }
 
@@ -1446,8 +1446,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20011</returns>
-        public ApiResponse<InlineResponse20011> ListOtcOrdersWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
+        /// <returns>ApiResponse of OtcOrderListResponse</returns>
+        public ApiResponse<OtcOrderListResponse> ListOtcOrdersWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1502,7 +1502,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20011>("/otc/order/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OtcOrderListResponse>("/otc/order/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1525,10 +1525,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>Task of InlineResponse20011</returns>
-        public async Task<InlineResponse20011> ListOtcOrdersAsync (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
+        /// <returns>Task of OtcOrderListResponse</returns>
+        public async Task<OtcOrderListResponse> ListOtcOrdersAsync (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20011> localVarResponse = await ListOtcOrdersAsyncWithHttpInfo(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
+             Io.Gate.GateApi.Client.ApiResponse<OtcOrderListResponse> localVarResponse = await ListOtcOrdersAsyncWithHttpInfo(type, fiatCurrency, cryptoCurrency, startTime, endTime, status, pn, ps);
              return localVarResponse.Data;
 
         }
@@ -1545,8 +1545,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        public async Task<ApiResponse<InlineResponse20011>> ListOtcOrdersAsyncWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
+        /// <returns>Task of ApiResponse (OtcOrderListResponse)</returns>
+        public async Task<ApiResponse<OtcOrderListResponse>> ListOtcOrdersAsyncWithHttpInfo (string type = default(string), string fiatCurrency = default(string), string cryptoCurrency = default(string), string startTime = default(string), string endTime = default(string), string status = default(string), string pn = default(string), string ps = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1603,7 +1603,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20011>("/otc/order/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OtcOrderListResponse>("/otc/order/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1624,10 +1624,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>InlineResponse20012</returns>
-        public InlineResponse20012 ListStableCoinOrders (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
+        /// <returns>OtcStableCoinOrderListResponse</returns>
+        public OtcStableCoinOrderListResponse ListStableCoinOrders (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
         {
-             ApiResponse<InlineResponse20012> localVarResponse = ListStableCoinOrdersWithHttpInfo(pageSize, pageNumber, coinName, startTime, endTime, status);
+             ApiResponse<OtcStableCoinOrderListResponse> localVarResponse = ListStableCoinOrdersWithHttpInfo(pageSize, pageNumber, coinName, startTime, endTime, status);
              return localVarResponse.Data;
         }
 
@@ -1641,8 +1641,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        public ApiResponse<InlineResponse20012> ListStableCoinOrdersWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
+        /// <returns>ApiResponse of OtcStableCoinOrderListResponse</returns>
+        public ApiResponse<OtcStableCoinOrderListResponse> ListStableCoinOrdersWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1689,7 +1689,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20012>("/otc/stable_coin/order/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OtcStableCoinOrderListResponse>("/otc/stable_coin/order/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1710,10 +1710,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        public async Task<InlineResponse20012> ListStableCoinOrdersAsync (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
+        /// <returns>Task of OtcStableCoinOrderListResponse</returns>
+        public async Task<OtcStableCoinOrderListResponse> ListStableCoinOrdersAsync (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20012> localVarResponse = await ListStableCoinOrdersAsyncWithHttpInfo(pageSize, pageNumber, coinName, startTime, endTime, status);
+             Io.Gate.GateApi.Client.ApiResponse<OtcStableCoinOrderListResponse> localVarResponse = await ListStableCoinOrdersAsyncWithHttpInfo(pageSize, pageNumber, coinName, startTime, endTime, status);
              return localVarResponse.Data;
 
         }
@@ -1728,8 +1728,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="startTime">Start Time (optional)</param>
         /// <param name="endTime">End time (optional)</param>
         /// <param name="status">Status: PROCESSING: in progress / DONE：completed / FAILED: failed (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        public async Task<ApiResponse<InlineResponse20012>> ListStableCoinOrdersAsyncWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
+        /// <returns>Task of ApiResponse (OtcStableCoinOrderListResponse)</returns>
+        public async Task<ApiResponse<OtcStableCoinOrderListResponse>> ListStableCoinOrdersAsyncWithHttpInfo (string pageSize = default(string), string pageNumber = default(string), string coinName = default(string), string startTime = default(string), string endTime = default(string), string status = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1778,7 +1778,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20012>("/otc/stable_coin/order/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OtcStableCoinOrderListResponse>("/otc/stable_coin/order/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1794,10 +1794,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>InlineResponse20013</returns>
-        public InlineResponse20013 GetOtcOrderDetail (string orderId)
+        /// <returns>OtcOrderDetailResponse</returns>
+        public OtcOrderDetailResponse GetOtcOrderDetail (string orderId)
         {
-             ApiResponse<InlineResponse20013> localVarResponse = GetOtcOrderDetailWithHttpInfo(orderId);
+             ApiResponse<OtcOrderDetailResponse> localVarResponse = GetOtcOrderDetailWithHttpInfo(orderId);
              return localVarResponse.Data;
         }
 
@@ -1806,8 +1806,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>ApiResponse of InlineResponse20013</returns>
-        public ApiResponse<InlineResponse20013> GetOtcOrderDetailWithHttpInfo (string orderId)
+        /// <returns>ApiResponse of OtcOrderDetailResponse</returns>
+        public ApiResponse<OtcOrderDetailResponse> GetOtcOrderDetailWithHttpInfo (string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1835,7 +1835,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20013>("/otc/order/detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OtcOrderDetailResponse>("/otc/order/detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1851,10 +1851,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of InlineResponse20013</returns>
-        public async Task<InlineResponse20013> GetOtcOrderDetailAsync (string orderId)
+        /// <returns>Task of OtcOrderDetailResponse</returns>
+        public async Task<OtcOrderDetailResponse> GetOtcOrderDetailAsync (string orderId)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20013> localVarResponse = await GetOtcOrderDetailAsyncWithHttpInfo(orderId);
+             Io.Gate.GateApi.Client.ApiResponse<OtcOrderDetailResponse> localVarResponse = await GetOtcOrderDetailAsyncWithHttpInfo(orderId);
              return localVarResponse.Data;
 
         }
@@ -1864,8 +1864,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
-        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        public async Task<ApiResponse<InlineResponse20013>> GetOtcOrderDetailAsyncWithHttpInfo (string orderId)
+        /// <returns>Task of ApiResponse (OtcOrderDetailResponse)</returns>
+        public async Task<ApiResponse<OtcOrderDetailResponse>> GetOtcOrderDetailAsyncWithHttpInfo (string orderId)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -1895,7 +1895,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20013>("/otc/order/detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OtcOrderDetailResponse>("/otc/order/detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

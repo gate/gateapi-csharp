@@ -33,78 +33,18 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2009Data" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse2009Data() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2009Data" /> class.
-        /// </summary>
-        /// <param name="id">Bank ID (required for order placement) (required).</param>
-        /// <param name="bankAccountName">bankAccountName (required).</param>
-        /// <param name="bankName">bankName (required).</param>
-        /// <param name="bankCountry">bankCountry (required).</param>
-        /// <param name="bankAddress">bankAddress (required).</param>
-        /// <param name="bankCode">bankCode (required).</param>
-        /// <param name="branchCode">branchCode (required).</param>
-        public InlineResponse2009Data(string id = default(string), string bankAccountName = default(string), string bankName = default(string), string bankCountry = default(string), string bankAddress = default(string), string bankCode = default(string), string branchCode = default(string))
+        /// <param name="list">Live stream/replay list.</param>
+        public InlineResponse2009Data(List<InlineResponse2009DataList> list = default(List<InlineResponse2009DataList>))
         {
-            // to ensure "id" is required (not null)
-            this.Id = id ?? throw new ArgumentNullException("id", "id is a required property for InlineResponse2009Data and cannot be null");
-            // to ensure "bankAccountName" is required (not null)
-            this.BankAccountName = bankAccountName ?? throw new ArgumentNullException("bankAccountName", "bankAccountName is a required property for InlineResponse2009Data and cannot be null");
-            // to ensure "bankName" is required (not null)
-            this.BankName = bankName ?? throw new ArgumentNullException("bankName", "bankName is a required property for InlineResponse2009Data and cannot be null");
-            // to ensure "bankCountry" is required (not null)
-            this.BankCountry = bankCountry ?? throw new ArgumentNullException("bankCountry", "bankCountry is a required property for InlineResponse2009Data and cannot be null");
-            // to ensure "bankAddress" is required (not null)
-            this.BankAddress = bankAddress ?? throw new ArgumentNullException("bankAddress", "bankAddress is a required property for InlineResponse2009Data and cannot be null");
-            // to ensure "bankCode" is required (not null)
-            this.BankCode = bankCode ?? throw new ArgumentNullException("bankCode", "bankCode is a required property for InlineResponse2009Data and cannot be null");
-            // to ensure "branchCode" is required (not null)
-            this.BranchCode = branchCode ?? throw new ArgumentNullException("branchCode", "branchCode is a required property for InlineResponse2009Data and cannot be null");
+            this.List = list;
         }
 
         /// <summary>
-        /// Bank ID (required for order placement)
+        /// Live stream/replay list
         /// </summary>
-        /// <value>Bank ID (required for order placement)</value>
-        [DataMember(Name="id")]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BankAccountName
-        /// </summary>
-        [DataMember(Name="bank_account_name")]
-        public string BankAccountName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BankName
-        /// </summary>
-        [DataMember(Name="bank_name")]
-        public string BankName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BankCountry
-        /// </summary>
-        [DataMember(Name="bank_country")]
-        public string BankCountry { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BankAddress
-        /// </summary>
-        [DataMember(Name="bank_address")]
-        public string BankAddress { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BankCode
-        /// </summary>
-        [DataMember(Name="bank_code")]
-        public string BankCode { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BranchCode
-        /// </summary>
-        [DataMember(Name="branch_code")]
-        public string BranchCode { get; set; }
+        /// <value>Live stream/replay list</value>
+        [DataMember(Name="list")]
+        public List<InlineResponse2009DataList> List { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -114,13 +54,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2009Data {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  BankAccountName: ").Append(BankAccountName).Append("\n");
-            sb.Append("  BankName: ").Append(BankName).Append("\n");
-            sb.Append("  BankCountry: ").Append(BankCountry).Append("\n");
-            sb.Append("  BankAddress: ").Append(BankAddress).Append("\n");
-            sb.Append("  BankCode: ").Append(BankCode).Append("\n");
-            sb.Append("  BranchCode: ").Append(BranchCode).Append("\n");
+            sb.Append("  List: ").Append(List).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -156,39 +90,10 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.BankAccountName == input.BankAccountName ||
-                    (this.BankAccountName != null &&
-                    this.BankAccountName.Equals(input.BankAccountName))
-                ) && 
-                (
-                    this.BankName == input.BankName ||
-                    (this.BankName != null &&
-                    this.BankName.Equals(input.BankName))
-                ) && 
-                (
-                    this.BankCountry == input.BankCountry ||
-                    (this.BankCountry != null &&
-                    this.BankCountry.Equals(input.BankCountry))
-                ) && 
-                (
-                    this.BankAddress == input.BankAddress ||
-                    (this.BankAddress != null &&
-                    this.BankAddress.Equals(input.BankAddress))
-                ) && 
-                (
-                    this.BankCode == input.BankCode ||
-                    (this.BankCode != null &&
-                    this.BankCode.Equals(input.BankCode))
-                ) && 
-                (
-                    this.BranchCode == input.BranchCode ||
-                    (this.BranchCode != null &&
-                    this.BranchCode.Equals(input.BranchCode))
+                    this.List == input.List ||
+                    this.List != null &&
+                    input.List != null &&
+                    this.List.SequenceEqual(input.List)
                 );
         }
 
@@ -201,20 +106,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.BankAccountName != null)
-                    hashCode = hashCode * 59 + this.BankAccountName.GetHashCode();
-                if (this.BankName != null)
-                    hashCode = hashCode * 59 + this.BankName.GetHashCode();
-                if (this.BankCountry != null)
-                    hashCode = hashCode * 59 + this.BankCountry.GetHashCode();
-                if (this.BankAddress != null)
-                    hashCode = hashCode * 59 + this.BankAddress.GetHashCode();
-                if (this.BankCode != null)
-                    hashCode = hashCode * 59 + this.BankCode.GetHashCode();
-                if (this.BranchCode != null)
-                    hashCode = hashCode * 59 + this.BranchCode.GetHashCode();
+                if (this.List != null)
+                    hashCode = hashCode * 59 + this.List.GetHashCode();
                 return hashCode;
             }
         }

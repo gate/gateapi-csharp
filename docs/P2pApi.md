@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 <a name="p2pmerchantaccountgetuserinfo"></a>
 # **P2pMerchantAccountGetUserInfo**
-> InlineResponse20014 P2pMerchantAccountGetUserInfo ()
+> P2pMerchantUserInfoResponse P2pMerchantAccountGetUserInfo ()
 
 Get account information
 
@@ -52,7 +52,7 @@ namespace Example
             try
             {
                 // Get account information
-                InlineResponse20014 result = apiInstance.P2pMerchantAccountGetUserInfo();
+                P2pMerchantUserInfoResponse result = apiInstance.P2pMerchantAccountGetUserInfo();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -72,7 +72,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**P2pMerchantUserInfoResponse**](P2pMerchantUserInfoResponse.md)
 
 ### Authorization
 
@@ -92,7 +92,7 @@ This endpoint does not need any parameter.
 
 <a name="p2pmerchantaccountgetcounterpartyuserinfo"></a>
 # **P2pMerchantAccountGetCounterpartyUserInfo**
-> InlineResponse20015 P2pMerchantAccountGetCounterpartyUserInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest)
+> P2pCounterpartyUserInfoResponse P2pMerchantAccountGetCounterpartyUserInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest)
 
 Get counterparty information
 
@@ -120,7 +120,7 @@ namespace Example
             try
             {
                 // Get counterparty information
-                InlineResponse20015 result = apiInstance.P2pMerchantAccountGetCounterpartyUserInfo(getCounterpartyUserInfoRequest);
+                P2pCounterpartyUserInfoResponse result = apiInstance.P2pMerchantAccountGetCounterpartyUserInfo(getCounterpartyUserInfoRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**P2pCounterpartyUserInfoResponse**](P2pCounterpartyUserInfoResponse.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchantaccountgetmyselfpayment"></a>
 # **P2pMerchantAccountGetMyselfPayment**
-> InlineResponse20016 P2pMerchantAccountGetMyselfPayment (GetMyselfPaymentRequest getMyselfPaymentRequest = null)
+> P2pPaymentMethodsResponse P2pMerchantAccountGetMyselfPayment (GetMyselfPaymentRequest getMyselfPaymentRequest = null)
 
 Get payment method list
 
@@ -191,7 +191,7 @@ namespace Example
             try
             {
                 // Get payment method list
-                InlineResponse20016 result = apiInstance.P2pMerchantAccountGetMyselfPayment(getMyselfPaymentRequest);
+                P2pPaymentMethodsResponse result = apiInstance.P2pMerchantAccountGetMyselfPayment(getMyselfPaymentRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**P2pPaymentMethodsResponse**](P2pPaymentMethodsResponse.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchanttransactiongetpendingtransactionlist"></a>
 # **P2pMerchantTransactionGetPendingTransactionList**
-> InlineResponse20017 P2pMerchantTransactionGetPendingTransactionList (GetPendingTransactionListRequest getPendingTransactionListRequest)
+> P2pTransactionListResponse P2pMerchantTransactionGetPendingTransactionList (GetPendingTransactionListRequest getPendingTransactionListRequest)
 
 Get pending orders
 
@@ -262,7 +262,7 @@ namespace Example
             try
             {
                 // Get pending orders
-                InlineResponse20017 result = apiInstance.P2pMerchantTransactionGetPendingTransactionList(getPendingTransactionListRequest);
+                P2pTransactionListResponse result = apiInstance.P2pMerchantTransactionGetPendingTransactionList(getPendingTransactionListRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**P2pTransactionListResponse**](P2pTransactionListResponse.md)
 
 ### Authorization
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchanttransactiongetcompletedtransactionlist"></a>
 # **P2pMerchantTransactionGetCompletedTransactionList**
-> InlineResponse20017 P2pMerchantTransactionGetCompletedTransactionList (GetCompletedTransactionListRequest getCompletedTransactionListRequest)
+> P2pTransactionListResponse P2pMerchantTransactionGetCompletedTransactionList (GetCompletedTransactionListRequest getCompletedTransactionListRequest)
 
 Get all/historical orders
 
@@ -333,7 +333,7 @@ namespace Example
             try
             {
                 // Get all/historical orders
-                InlineResponse20017 result = apiInstance.P2pMerchantTransactionGetCompletedTransactionList(getCompletedTransactionListRequest);
+                P2pTransactionListResponse result = apiInstance.P2pMerchantTransactionGetCompletedTransactionList(getCompletedTransactionListRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**P2pTransactionListResponse**](P2pTransactionListResponse.md)
 
 ### Authorization
 
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchanttransactiongettransactiondetails"></a>
 # **P2pMerchantTransactionGetTransactionDetails**
-> InlineResponse20018 P2pMerchantTransactionGetTransactionDetails (GetTransactionDetailsRequest getTransactionDetailsRequest)
+> P2pTransactionDetailResponse P2pMerchantTransactionGetTransactionDetails (GetTransactionDetailsRequest getTransactionDetailsRequest)
 
 Query order details
 
@@ -404,7 +404,7 @@ namespace Example
             try
             {
                 // Query order details
-                InlineResponse20018 result = apiInstance.P2pMerchantTransactionGetTransactionDetails(getTransactionDetailsRequest);
+                P2pTransactionDetailResponse result = apiInstance.P2pMerchantTransactionGetTransactionDetails(getTransactionDetailsRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**P2pTransactionDetailResponse**](P2pTransactionDetailResponse.md)
 
 ### Authorization
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchanttransactionconfirmpayment"></a>
 # **P2pMerchantTransactionConfirmPayment**
-> InlineResponse20019 P2pMerchantTransactionConfirmPayment (ConfirmPayment confirmPayment)
+> P2pTransactionActionResponse P2pMerchantTransactionConfirmPayment (ConfirmPayment confirmPayment)
 
 Confirm payment
 
@@ -475,7 +475,7 @@ namespace Example
             try
             {
                 // Confirm payment
-                InlineResponse20019 result = apiInstance.P2pMerchantTransactionConfirmPayment(confirmPayment);
+                P2pTransactionActionResponse result = apiInstance.P2pMerchantTransactionConfirmPayment(confirmPayment);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**P2pTransactionActionResponse**](P2pTransactionActionResponse.md)
 
 ### Authorization
 
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchanttransactionconfirmreceipt"></a>
 # **P2pMerchantTransactionConfirmReceipt**
-> InlineResponse20019 P2pMerchantTransactionConfirmReceipt (ConfirmReceipt confirmReceipt)
+> P2pTransactionActionResponse P2pMerchantTransactionConfirmReceipt (ConfirmReceipt confirmReceipt)
 
 Confirm receipt
 
@@ -546,7 +546,7 @@ namespace Example
             try
             {
                 // Confirm receipt
-                InlineResponse20019 result = apiInstance.P2pMerchantTransactionConfirmReceipt(confirmReceipt);
+                P2pTransactionActionResponse result = apiInstance.P2pMerchantTransactionConfirmReceipt(confirmReceipt);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -569,7 +569,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**P2pTransactionActionResponse**](P2pTransactionActionResponse.md)
 
 ### Authorization
 
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchanttransactioncancel"></a>
 # **P2pMerchantTransactionCancel**
-> InlineResponse20019 P2pMerchantTransactionCancel (CancelOrder cancelOrder)
+> P2pTransactionActionResponse P2pMerchantTransactionCancel (CancelOrder cancelOrder)
 
 Cancel order
 
@@ -617,7 +617,7 @@ namespace Example
             try
             {
                 // Cancel order
-                InlineResponse20019 result = apiInstance.P2pMerchantTransactionCancel(cancelOrder);
+                P2pTransactionActionResponse result = apiInstance.P2pMerchantTransactionCancel(cancelOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**P2pTransactionActionResponse**](P2pTransactionActionResponse.md)
 
 ### Authorization
 
@@ -731,7 +731,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchantbooksadsupdatestatus"></a>
 # **P2pMerchantBooksAdsUpdateStatus**
-> InlineResponse20020 P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus, string tradeType = null)
+> P2pAdsUpdateStatusResponse P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus, string tradeType = null)
 
 Update ad status
 
@@ -760,7 +760,7 @@ namespace Example
             try
             {
                 // Update ad status
-                InlineResponse20020 result = apiInstance.P2pMerchantBooksAdsUpdateStatus(adsUpdateStatus, tradeType);
+                P2pAdsUpdateStatusResponse result = apiInstance.P2pMerchantBooksAdsUpdateStatus(adsUpdateStatus, tradeType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -784,7 +784,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**P2pAdsUpdateStatusResponse**](P2pAdsUpdateStatusResponse.md)
 
 ### Authorization
 
@@ -804,7 +804,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchantbooksadsdetail"></a>
 # **P2pMerchantBooksAdsDetail**
-> InlineResponse20021 P2pMerchantBooksAdsDetail (AdsDetailRequest adsDetailRequest)
+> P2pAdDetailResponse P2pMerchantBooksAdsDetail (AdsDetailRequest adsDetailRequest)
 
 Query ad details
 
@@ -832,7 +832,7 @@ namespace Example
             try
             {
                 // Query ad details
-                InlineResponse20021 result = apiInstance.P2pMerchantBooksAdsDetail(adsDetailRequest);
+                P2pAdDetailResponse result = apiInstance.P2pMerchantBooksAdsDetail(adsDetailRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**P2pAdDetailResponse**](P2pAdDetailResponse.md)
 
 ### Authorization
 
@@ -875,7 +875,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchantbooksmyadslist"></a>
 # **P2pMerchantBooksMyAdsList**
-> InlineResponse20022 P2pMerchantBooksMyAdsList (MyAdsListRequest myAdsListRequest = null)
+> P2pMyAdsListResponse P2pMerchantBooksMyAdsList (MyAdsListRequest myAdsListRequest = null)
 
 Get my ad list
 
@@ -903,7 +903,7 @@ namespace Example
             try
             {
                 // Get my ad list
-                InlineResponse20022 result = apiInstance.P2pMerchantBooksMyAdsList(myAdsListRequest);
+                P2pMyAdsListResponse result = apiInstance.P2pMerchantBooksMyAdsList(myAdsListRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -926,7 +926,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**P2pMyAdsListResponse**](P2pMyAdsListResponse.md)
 
 ### Authorization
 
@@ -946,7 +946,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchantbooksadslist"></a>
 # **P2pMerchantBooksAdsList**
-> InlineResponse20023 P2pMerchantBooksAdsList (AdsListRequest adsListRequest)
+> P2pAdsListResponse P2pMerchantBooksAdsList (AdsListRequest adsListRequest)
 
 Get Advertisement List
 
@@ -976,7 +976,7 @@ namespace Example
             try
             {
                 // Get Advertisement List
-                InlineResponse20023 result = apiInstance.P2pMerchantBooksAdsList(adsListRequest);
+                P2pAdsListResponse result = apiInstance.P2pMerchantBooksAdsList(adsListRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -999,7 +999,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**P2pAdsListResponse**](P2pAdsListResponse.md)
 
 ### Authorization
 
@@ -1019,7 +1019,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchantchatgetchatslist"></a>
 # **P2pMerchantChatGetChatsList**
-> InlineResponse20024 P2pMerchantChatGetChatsList (GetChatsListRequest getChatsListRequest)
+> P2pChatListResponse P2pMerchantChatGetChatsList (GetChatsListRequest getChatsListRequest)
 
 Get chat history
 
@@ -1047,7 +1047,7 @@ namespace Example
             try
             {
                 // Get chat history
-                InlineResponse20024 result = apiInstance.P2pMerchantChatGetChatsList(getChatsListRequest);
+                P2pChatListResponse result = apiInstance.P2pMerchantChatGetChatsList(getChatsListRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1070,7 +1070,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**P2pChatListResponse**](P2pChatListResponse.md)
 
 ### Authorization
 
@@ -1090,7 +1090,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchantchatsendchatmessage"></a>
 # **P2pMerchantChatSendChatMessage**
-> InlineResponse20025 P2pMerchantChatSendChatMessage (SendChatMessageRequest sendChatMessageRequest)
+> P2pSendChatMessageResponse P2pMerchantChatSendChatMessage (SendChatMessageRequest sendChatMessageRequest)
 
 Send text message
 
@@ -1118,7 +1118,7 @@ namespace Example
             try
             {
                 // Send text message
-                InlineResponse20025 result = apiInstance.P2pMerchantChatSendChatMessage(sendChatMessageRequest);
+                P2pSendChatMessageResponse result = apiInstance.P2pMerchantChatSendChatMessage(sendChatMessageRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1141,7 +1141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**P2pSendChatMessageResponse**](P2pSendChatMessageResponse.md)
 
 ### Authorization
 
@@ -1161,7 +1161,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchantchatuploadchatfile"></a>
 # **P2pMerchantChatUploadChatFile**
-> InlineResponse20026 P2pMerchantChatUploadChatFile (UploadChatFile uploadChatFile)
+> P2pUploadChatFileResponse P2pMerchantChatUploadChatFile (UploadChatFile uploadChatFile)
 
 Upload chat file
 
@@ -1189,7 +1189,7 @@ namespace Example
             try
             {
                 // Upload chat file
-                InlineResponse20026 result = apiInstance.P2pMerchantChatUploadChatFile(uploadChatFile);
+                P2pUploadChatFileResponse result = apiInstance.P2pMerchantChatUploadChatFile(uploadChatFile);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1212,7 +1212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**P2pUploadChatFileResponse**](P2pUploadChatFileResponse.md)
 
 ### Authorization
 

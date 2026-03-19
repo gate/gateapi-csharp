@@ -674,7 +674,7 @@ Name | Type | Description  | Notes
 
 <a name="listunichart"></a>
 # **ListUniChart**
-> List&lt;InlineResponse2004&gt; ListUniChart (long from, long to, string asset)
+> List&lt;UniChartPoint&gt; ListUniChart (long from, long to, string asset)
 
 UniLoan currency annualized trend chart
 
@@ -704,7 +704,7 @@ namespace Example
             try
             {
                 // UniLoan currency annualized trend chart
-                List<InlineResponse2004> result = apiInstance.ListUniChart(from, to, asset);
+                List<UniChartPoint> result = apiInstance.ListUniChart(from, to, asset);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -729,7 +729,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+[**List&lt;UniChartPoint&gt;**](UniChartPoint.md)
 
 ### Authorization
 
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 
 <a name="listunirate"></a>
 # **ListUniRate**
-> List&lt;InlineResponse2005&gt; ListUniRate ()
+> List&lt;UniEstimatedRate&gt; ListUniRate ()
 
 Currency estimated annualized interest rate
 
@@ -776,7 +776,7 @@ namespace Example
             try
             {
                 // Currency estimated annualized interest rate
-                List<InlineResponse2005> result = apiInstance.ListUniRate();
+                List<UniEstimatedRate> result = apiInstance.ListUniRate();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -796,7 +796,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;InlineResponse2005&gt;**](InlineResponse2005.md)
+[**List&lt;UniEstimatedRate&gt;**](UniEstimatedRate.md)
 
 ### Authorization
 

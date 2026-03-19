@@ -345,6 +345,172 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Currency name (optional)</param>
         /// <returns>ApiResponse of List&lt;Object&gt;</returns>
         ApiResponse<List<Object>> AssetListWithHttpInfo (string coin = default(string));
+        /// <summary>
+        /// Get product list
+        /// </summary>
+        /// <remarks>
+        /// Query fixed-term earn product list. Supports filtering by currency, product type, status, etc. Returns product interest rate, lock-up period, quota, and reward campaign information
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>InlineResponse200</returns>
+        InlineResponse200 ListEarnFixedTermProducts (int page, int limit, string asset = default(string), int? type = default(int?));
+
+        /// <summary>
+        /// Get product list
+        /// </summary>
+        /// <remarks>
+        /// Query fixed-term earn product list. Supports filtering by currency, product type, status, etc. Returns product interest rate, lock-up period, quota, and reward campaign information
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>ApiResponse of InlineResponse200</returns>
+        ApiResponse<InlineResponse200> ListEarnFixedTermProductsWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?));
+        /// <summary>
+        /// Get product list by single currency
+        /// </summary>
+        /// <remarks>
+        /// Sort by product term in ascending order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Currency name, e.g., USDT, BTC</param>
+        /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
+        /// <returns>InlineResponse2001</returns>
+        InlineResponse2001 ListEarnFixedTermProductsByAsset (string asset, string type = default(string));
+
+        /// <summary>
+        /// Get product list by single currency
+        /// </summary>
+        /// <remarks>
+        /// Sort by product term in ascending order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Currency name, e.g., USDT, BTC</param>
+        /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2001</returns>
+        ApiResponse<InlineResponse2001> ListEarnFixedTermProductsByAssetWithHttpInfo (string asset, string type = default(string));
+        /// <summary>
+        /// Subscription list
+        /// </summary>
+        /// <remarks>
+        /// Query the user&#39;s fixed-term earn subscription order list. Supports filtering by product, currency, order type, etc. Returns order details, earnings, rewards, and interest rate boost coupon information
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderType">Order type: 1 for current orders, 2 for historical orders</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>InlineResponse2002</returns>
+        InlineResponse2002 ListEarnFixedTermLends (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
+
+        /// <summary>
+        /// Subscription list
+        /// </summary>
+        /// <remarks>
+        /// Query the user&#39;s fixed-term earn subscription order list. Supports filtering by product, currency, order type, etc. Returns order details, earnings, rewards, and interest rate boost coupon information
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderType">Order type: 1 for current orders, 2 for historical orders</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> ListEarnFixedTermLendsWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
+        /// <summary>
+        /// Subscription
+        /// </summary>
+        /// <remarks>
+        /// Subscribe to a fixed-term earn product by specifying the product ID and subscription amount. Optionally enable auto-renewal and apply an interest rate boost coupon
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fixedTermLendRequest"> (optional)</param>
+        /// <returns>InlineResponse2003</returns>
+        InlineResponse2003 CreateEarnFixedTermLend (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
+
+        /// <summary>
+        /// Subscription
+        /// </summary>
+        /// <remarks>
+        /// Subscribe to a fixed-term earn product by specifying the product ID and subscription amount. Optionally enable auto-renewal and apply an interest rate boost coupon
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fixedTermLendRequest"> (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2003</returns>
+        ApiResponse<InlineResponse2003> CreateEarnFixedTermLendWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
+        /// <summary>
+        /// Redeem
+        /// </summary>
+        /// <remarks>
+        /// Early redemption of a fixed-term earn order, order ID is required
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>InlineResponse2004</returns>
+        InlineResponse2004 CreateEarnFixedTermPreRedeem (InlineObject inlineObject = default(InlineObject));
+
+        /// <summary>
+        /// Redeem
+        /// </summary>
+        /// <remarks>
+        /// Early redemption of a fixed-term earn order, order ID is required
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2004</returns>
+        ApiResponse<InlineResponse2004> CreateEarnFixedTermPreRedeemWithHttpInfo (InlineObject inlineObject = default(InlineObject));
+        /// <summary>
+        /// Subscription history
+        /// </summary>
+        /// <remarks>
+        /// Query the user&#39;s fixed-term earn history records. Supports filtering by type (subscription, redemption, interest, bonus rewards) and time range
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">1 for subscription, 2 for redemption, 3 for interest, 4 for bonus reward</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="startAt">Start timestamp (optional)</param>
+        /// <param name="endAt">End Timestamp (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>InlineResponse2005</returns>
+        InlineResponse2005 ListEarnFixedTermHistory (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
+
+        /// <summary>
+        /// Subscription history
+        /// </summary>
+        /// <remarks>
+        /// Query the user&#39;s fixed-term earn history records. Supports filtering by type (subscription, redemption, interest, bonus rewards) and time range
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">1 for subscription, 2 for redemption, 3 for interest, 4 for bonus reward</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="startAt">Start timestamp (optional)</param>
+        /// <param name="endAt">End Timestamp (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2005</returns>
+        ApiResponse<InlineResponse2005> ListEarnFixedTermHistoryWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
         #endregion Synchronous Operations
     }
 
@@ -672,6 +838,172 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Currency name (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
         Task<ApiResponse<List<Object>>> AssetListAsyncWithHttpInfo (string coin = default(string));
+        /// <summary>
+        /// Get product list
+        /// </summary>
+        /// <remarks>
+        /// Query fixed-term earn product list. Supports filtering by currency, product type, status, etc. Returns product interest rate, lock-up period, quota, and reward campaign information
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of InlineResponse200</returns>
+        Task<InlineResponse200> ListEarnFixedTermProductsAsync (int page, int limit, string asset = default(string), int? type = default(int?));
+
+        /// <summary>
+        /// Get product list
+        /// </summary>
+        /// <remarks>
+        /// Query fixed-term earn product list. Supports filtering by currency, product type, status, etc. Returns product interest rate, lock-up period, quota, and reward campaign information
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
+        Task<ApiResponse<InlineResponse200>> ListEarnFixedTermProductsAsyncWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?));
+        /// <summary>
+        /// Get product list by single currency
+        /// </summary>
+        /// <remarks>
+        /// Sort by product term in ascending order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Currency name, e.g., USDT, BTC</param>
+        /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
+        /// <returns>Task of InlineResponse2001</returns>
+        Task<InlineResponse2001> ListEarnFixedTermProductsByAssetAsync (string asset, string type = default(string));
+
+        /// <summary>
+        /// Get product list by single currency
+        /// </summary>
+        /// <remarks>
+        /// Sort by product term in ascending order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Currency name, e.g., USDT, BTC</param>
+        /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
+        Task<ApiResponse<InlineResponse2001>> ListEarnFixedTermProductsByAssetAsyncWithHttpInfo (string asset, string type = default(string));
+        /// <summary>
+        /// Subscription list
+        /// </summary>
+        /// <remarks>
+        /// Query the user&#39;s fixed-term earn subscription order list. Supports filtering by product, currency, order type, etc. Returns order details, earnings, rewards, and interest rate boost coupon information
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderType">Order type: 1 for current orders, 2 for historical orders</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        Task<InlineResponse2002> ListEarnFixedTermLendsAsync (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
+
+        /// <summary>
+        /// Subscription list
+        /// </summary>
+        /// <remarks>
+        /// Query the user&#39;s fixed-term earn subscription order list. Supports filtering by product, currency, order type, etc. Returns order details, earnings, rewards, and interest rate boost coupon information
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderType">Order type: 1 for current orders, 2 for historical orders</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        Task<ApiResponse<InlineResponse2002>> ListEarnFixedTermLendsAsyncWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
+        /// <summary>
+        /// Subscription
+        /// </summary>
+        /// <remarks>
+        /// Subscribe to a fixed-term earn product by specifying the product ID and subscription amount. Optionally enable auto-renewal and apply an interest rate boost coupon
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fixedTermLendRequest"> (optional)</param>
+        /// <returns>Task of InlineResponse2003</returns>
+        Task<InlineResponse2003> CreateEarnFixedTermLendAsync (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
+
+        /// <summary>
+        /// Subscription
+        /// </summary>
+        /// <remarks>
+        /// Subscribe to a fixed-term earn product by specifying the product ID and subscription amount. Optionally enable auto-renewal and apply an interest rate boost coupon
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fixedTermLendRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+        Task<ApiResponse<InlineResponse2003>> CreateEarnFixedTermLendAsyncWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
+        /// <summary>
+        /// Redeem
+        /// </summary>
+        /// <remarks>
+        /// Early redemption of a fixed-term earn order, order ID is required
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>Task of InlineResponse2004</returns>
+        Task<InlineResponse2004> CreateEarnFixedTermPreRedeemAsync (InlineObject inlineObject = default(InlineObject));
+
+        /// <summary>
+        /// Redeem
+        /// </summary>
+        /// <remarks>
+        /// Early redemption of a fixed-term earn order, order ID is required
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2004)</returns>
+        Task<ApiResponse<InlineResponse2004>> CreateEarnFixedTermPreRedeemAsyncWithHttpInfo (InlineObject inlineObject = default(InlineObject));
+        /// <summary>
+        /// Subscription history
+        /// </summary>
+        /// <remarks>
+        /// Query the user&#39;s fixed-term earn history records. Supports filtering by type (subscription, redemption, interest, bonus rewards) and time range
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">1 for subscription, 2 for redemption, 3 for interest, 4 for bonus reward</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="startAt">Start timestamp (optional)</param>
+        /// <param name="endAt">End Timestamp (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of InlineResponse2005</returns>
+        Task<InlineResponse2005> ListEarnFixedTermHistoryAsync (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
+
+        /// <summary>
+        /// Subscription history
+        /// </summary>
+        /// <remarks>
+        /// Query the user&#39;s fixed-term earn history records. Supports filtering by type (subscription, redemption, interest, bonus rewards) and time range
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">1 for subscription, 2 for redemption, 3 for interest, 4 for bonus reward</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="startAt">Start timestamp (optional)</param>
+        /// <param name="endAt">End Timestamp (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+        Task<ApiResponse<InlineResponse2005>> ListEarnFixedTermHistoryAsyncWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
         #endregion Asynchronous Operations
     }
 
@@ -2546,6 +2878,890 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AssetList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get product list Query fixed-term earn product list. Supports filtering by currency, product type, status, etc. Returns product interest rate, lock-up period, quota, and reward campaign information
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>InlineResponse200</returns>
+        public InlineResponse200 ListEarnFixedTermProducts (int page, int limit, string asset = default(string), int? type = default(int?))
+        {
+             ApiResponse<InlineResponse200> localVarResponse = ListEarnFixedTermProductsWithHttpInfo(page, limit, asset, type);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get product list Query fixed-term earn product list. Supports filtering by currency, product type, status, etc. Returns product interest rate, lock-up period, quota, and reward campaign information
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>ApiResponse of InlineResponse200</returns>
+        public ApiResponse<InlineResponse200> ListEarnFixedTermProductsWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (asset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "asset", asset));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse200>("/earn/fixed-term/product", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListEarnFixedTermProducts", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get product list Query fixed-term earn product list. Supports filtering by currency, product type, status, etc. Returns product interest rate, lock-up period, quota, and reward campaign information
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of InlineResponse200</returns>
+        public async Task<InlineResponse200> ListEarnFixedTermProductsAsync (int page, int limit, string asset = default(string), int? type = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse200> localVarResponse = await ListEarnFixedTermProductsAsyncWithHttpInfo(page, limit, asset, type);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get product list Query fixed-term earn product list. Supports filtering by currency, product type, status, etc. Returns product interest rate, lock-up period, quota, and reward campaign information
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
+        public async Task<ApiResponse<InlineResponse200>> ListEarnFixedTermProductsAsyncWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (asset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "asset", asset));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse200>("/earn/fixed-term/product", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListEarnFixedTermProducts", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get product list by single currency Sort by product term in ascending order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Currency name, e.g., USDT, BTC</param>
+        /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
+        /// <returns>InlineResponse2001</returns>
+        public InlineResponse2001 ListEarnFixedTermProductsByAsset (string asset, string type = default(string))
+        {
+             ApiResponse<InlineResponse2001> localVarResponse = ListEarnFixedTermProductsByAssetWithHttpInfo(asset, type);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get product list by single currency Sort by product term in ascending order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Currency name, e.g., USDT, BTC</param>
+        /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2001</returns>
+        public ApiResponse<InlineResponse2001> ListEarnFixedTermProductsByAssetWithHttpInfo (string asset, string type = default(string))
+        {
+            // verify the required parameter 'asset' is set
+            if (asset == null)
+                throw new ApiException(400, "Missing required parameter 'asset' when calling EarnApi->ListEarnFixedTermProductsByAsset");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("asset", ClientUtils.ParameterToString(asset)); // path parameter
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse2001>("/earn/fixed-term/product/{asset}/list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListEarnFixedTermProductsByAsset", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get product list by single currency Sort by product term in ascending order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Currency name, e.g., USDT, BTC</param>
+        /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
+        /// <returns>Task of InlineResponse2001</returns>
+        public async Task<InlineResponse2001> ListEarnFixedTermProductsByAssetAsync (string asset, string type = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2001> localVarResponse = await ListEarnFixedTermProductsByAssetAsyncWithHttpInfo(asset, type);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get product list by single currency Sort by product term in ascending order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asset">Currency name, e.g., USDT, BTC</param>
+        /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
+        public async Task<ApiResponse<InlineResponse2001>> ListEarnFixedTermProductsByAssetAsyncWithHttpInfo (string asset, string type = default(string))
+        {
+            // verify the required parameter 'asset' is set
+            if (asset == null)
+                throw new ApiException(400, "Missing required parameter 'asset' when calling EarnApi->ListEarnFixedTermProductsByAsset");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("asset", ClientUtils.ParameterToString(asset)); // path parameter
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2001>("/earn/fixed-term/product/{asset}/list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListEarnFixedTermProductsByAsset", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Subscription list Query the user&#39;s fixed-term earn subscription order list. Supports filtering by product, currency, order type, etc. Returns order details, earnings, rewards, and interest rate boost coupon information
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderType">Order type: 1 for current orders, 2 for historical orders</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 ListEarnFixedTermLends (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
+        {
+             ApiResponse<InlineResponse2002> localVarResponse = ListEarnFixedTermLendsWithHttpInfo(orderType, page, limit, productId, orderId, asset, subBusiness, businessFilter);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Subscription list Query the user&#39;s fixed-term earn subscription order list. Supports filtering by product, currency, order type, etc. Returns order details, earnings, rewards, and interest rate boost coupon information
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderType">Order type: 1 for current orders, 2 for historical orders</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse<InlineResponse2002> ListEarnFixedTermLendsWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
+        {
+            // verify the required parameter 'orderType' is set
+            if (orderType == null)
+                throw new ApiException(400, "Missing required parameter 'orderType' when calling EarnApi->ListEarnFixedTermLends");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (productId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "product_id", productId));
+            }
+            if (orderId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "order_id", orderId));
+            }
+            if (asset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "asset", asset));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "order_type", orderType));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            if (subBusiness != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sub_business", subBusiness));
+            }
+            if (businessFilter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "business_filter", businessFilter));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse2002>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListEarnFixedTermLends", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Subscription list Query the user&#39;s fixed-term earn subscription order list. Supports filtering by product, currency, order type, etc. Returns order details, earnings, rewards, and interest rate boost coupon information
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderType">Order type: 1 for current orders, 2 for historical orders</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        public async Task<InlineResponse2002> ListEarnFixedTermLendsAsync (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2002> localVarResponse = await ListEarnFixedTermLendsAsyncWithHttpInfo(orderType, page, limit, productId, orderId, asset, subBusiness, businessFilter);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Subscription list Query the user&#39;s fixed-term earn subscription order list. Supports filtering by product, currency, order type, etc. Returns order details, earnings, rewards, and interest rate boost coupon information
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderType">Order type: 1 for current orders, 2 for historical orders</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async Task<ApiResponse<InlineResponse2002>> ListEarnFixedTermLendsAsyncWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
+        {
+            // verify the required parameter 'orderType' is set
+            if (orderType == null)
+                throw new ApiException(400, "Missing required parameter 'orderType' when calling EarnApi->ListEarnFixedTermLends");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (productId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "product_id", productId));
+            }
+            if (orderId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "order_id", orderId));
+            }
+            if (asset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "asset", asset));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "order_type", orderType));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            if (subBusiness != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sub_business", subBusiness));
+            }
+            if (businessFilter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "business_filter", businessFilter));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2002>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListEarnFixedTermLends", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Subscription Subscribe to a fixed-term earn product by specifying the product ID and subscription amount. Optionally enable auto-renewal and apply an interest rate boost coupon
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fixedTermLendRequest"> (optional)</param>
+        /// <returns>InlineResponse2003</returns>
+        public InlineResponse2003 CreateEarnFixedTermLend (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
+        {
+             ApiResponse<InlineResponse2003> localVarResponse = CreateEarnFixedTermLendWithHttpInfo(fixedTermLendRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Subscription Subscribe to a fixed-term earn product by specifying the product ID and subscription amount. Optionally enable auto-renewal and apply an interest rate boost coupon
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fixedTermLendRequest"> (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2003</returns>
+        public ApiResponse<InlineResponse2003> CreateEarnFixedTermLendWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = fixedTermLendRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse2003>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateEarnFixedTermLend", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Subscription Subscribe to a fixed-term earn product by specifying the product ID and subscription amount. Optionally enable auto-renewal and apply an interest rate boost coupon
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fixedTermLendRequest"> (optional)</param>
+        /// <returns>Task of InlineResponse2003</returns>
+        public async Task<InlineResponse2003> CreateEarnFixedTermLendAsync (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2003> localVarResponse = await CreateEarnFixedTermLendAsyncWithHttpInfo(fixedTermLendRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Subscription Subscribe to a fixed-term earn product by specifying the product ID and subscription amount. Optionally enable auto-renewal and apply an interest rate boost coupon
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fixedTermLendRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+        public async Task<ApiResponse<InlineResponse2003>> CreateEarnFixedTermLendAsyncWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = fixedTermLendRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2003>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateEarnFixedTermLend", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Redeem Early redemption of a fixed-term earn order, order ID is required
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>InlineResponse2004</returns>
+        public InlineResponse2004 CreateEarnFixedTermPreRedeem (InlineObject inlineObject = default(InlineObject))
+        {
+             ApiResponse<InlineResponse2004> localVarResponse = CreateEarnFixedTermPreRedeemWithHttpInfo(inlineObject);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Redeem Early redemption of a fixed-term earn order, order ID is required
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2004</returns>
+        public ApiResponse<InlineResponse2004> CreateEarnFixedTermPreRedeemWithHttpInfo (InlineObject inlineObject = default(InlineObject))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = inlineObject;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<InlineResponse2004>("/earn/fixed-term/user/pre-redeem", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateEarnFixedTermPreRedeem", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Redeem Early redemption of a fixed-term earn order, order ID is required
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>Task of InlineResponse2004</returns>
+        public async Task<InlineResponse2004> CreateEarnFixedTermPreRedeemAsync (InlineObject inlineObject = default(InlineObject))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2004> localVarResponse = await CreateEarnFixedTermPreRedeemAsyncWithHttpInfo(inlineObject);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Redeem Early redemption of a fixed-term earn order, order ID is required
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2004)</returns>
+        public async Task<ApiResponse<InlineResponse2004>> CreateEarnFixedTermPreRedeemAsyncWithHttpInfo (InlineObject inlineObject = default(InlineObject))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = inlineObject;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2004>("/earn/fixed-term/user/pre-redeem", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateEarnFixedTermPreRedeem", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Subscription history Query the user&#39;s fixed-term earn history records. Supports filtering by type (subscription, redemption, interest, bonus rewards) and time range
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">1 for subscription, 2 for redemption, 3 for interest, 4 for bonus reward</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="startAt">Start timestamp (optional)</param>
+        /// <param name="endAt">End Timestamp (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>InlineResponse2005</returns>
+        public InlineResponse2005 ListEarnFixedTermHistory (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
+        {
+             ApiResponse<InlineResponse2005> localVarResponse = ListEarnFixedTermHistoryWithHttpInfo(type, page, limit, productId, orderId, asset, startAt, endAt, subBusiness, businessFilter);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Subscription history Query the user&#39;s fixed-term earn history records. Supports filtering by type (subscription, redemption, interest, bonus rewards) and time range
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">1 for subscription, 2 for redemption, 3 for interest, 4 for bonus reward</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="startAt">Start timestamp (optional)</param>
+        /// <param name="endAt">End Timestamp (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2005</returns>
+        public ApiResponse<InlineResponse2005> ListEarnFixedTermHistoryWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
+        {
+            // verify the required parameter 'type' is set
+            if (type == null)
+                throw new ApiException(400, "Missing required parameter 'type' when calling EarnApi->ListEarnFixedTermHistory");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (productId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "product_id", productId));
+            }
+            if (orderId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "order_id", orderId));
+            }
+            if (asset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "asset", asset));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            if (startAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_at", startAt));
+            }
+            if (endAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_at", endAt));
+            }
+            if (subBusiness != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sub_business", subBusiness));
+            }
+            if (businessFilter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "business_filter", businessFilter));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse2005>("/earn/fixed-term/user/history", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListEarnFixedTermHistory", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Subscription history Query the user&#39;s fixed-term earn history records. Supports filtering by type (subscription, redemption, interest, bonus rewards) and time range
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">1 for subscription, 2 for redemption, 3 for interest, 4 for bonus reward</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="startAt">Start timestamp (optional)</param>
+        /// <param name="endAt">End Timestamp (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of InlineResponse2005</returns>
+        public async Task<InlineResponse2005> ListEarnFixedTermHistoryAsync (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2005> localVarResponse = await ListEarnFixedTermHistoryAsyncWithHttpInfo(type, page, limit, productId, orderId, asset, startAt, endAt, subBusiness, businessFilter);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Subscription history Query the user&#39;s fixed-term earn history records. Supports filtering by type (subscription, redemption, interest, bonus rewards) and time range
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">1 for subscription, 2 for redemption, 3 for interest, 4 for bonus reward</param>
+        /// <param name="page">Page number</param>
+        /// <param name="limit">Page size</param>
+        /// <param name="productId">Product ID (optional)</param>
+        /// <param name="orderId">Order ID (optional)</param>
+        /// <param name="asset">Currency (optional)</param>
+        /// <param name="startAt">Start timestamp (optional)</param>
+        /// <param name="endAt">End Timestamp (optional)</param>
+        /// <param name="subBusiness">Sub-business (optional)</param>
+        /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+        public async Task<ApiResponse<InlineResponse2005>> ListEarnFixedTermHistoryAsyncWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
+        {
+            // verify the required parameter 'type' is set
+            if (type == null)
+                throw new ApiException(400, "Missing required parameter 'type' when calling EarnApi->ListEarnFixedTermHistory");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (productId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "product_id", productId));
+            }
+            if (orderId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "order_id", orderId));
+            }
+            if (asset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "asset", asset));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            if (startAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_at", startAt));
+            }
+            if (endAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_at", endAt));
+            }
+            if (subBusiness != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sub_business", subBusiness));
+            }
+            if (businessFilter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "business_filter", businessFilter));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2005>("/earn/fixed-term/user/history", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListEarnFixedTermHistory", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

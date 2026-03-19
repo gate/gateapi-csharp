@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**RebateBrokerTransactionHistory**](RebateApi.md#rebatebrokertransactionhistory) | **GET** /rebate/broker/transaction_history | Broker obtains user&#39;s trading history
 [**RebateUserInfo**](RebateApi.md#rebateuserinfo) | **GET** /rebate/user/info | User obtains rebate information
 [**UserSubRelation**](RebateApi.md#usersubrelation) | **GET** /rebate/user/sub_relation | User subordinate relationship
+[**GetPartnerApplicationRecent**](RebateApi.md#getpartnerapplicationrecent) | **GET** /rebate/partner/applications/recent | Get recent partner application records
+[**GetPartnerEligibility**](RebateApi.md#getpartnereligibility) | **GET** /rebate/partner/eligibility | Check partner application eligibility
 
 
 <a name="agencytransactionhistory"></a>
@@ -509,7 +511,7 @@ Name | Type | Description  | Notes
 
 <a name="rebatebrokertransactionhistory"></a>
 # **RebateBrokerTransactionHistory**
-> List&lt;BrokerTransaction&gt; RebateBrokerTransactionHistory (int? limit = null, int? offset = null, long? userId = null, long? from = null, long? to = null)
+> List&lt;BrokerTransactionHistory&gt; RebateBrokerTransactionHistory (int? limit = null, int? offset = null, long? userId = null, long? from = null, long? to = null)
 
 Broker obtains user's trading history
 
@@ -543,7 +545,7 @@ namespace Example
             try
             {
                 // Broker obtains user's trading history
-                List<BrokerTransaction> result = apiInstance.RebateBrokerTransactionHistory(limit, offset, userId, from, to);
+                List<BrokerTransactionHistory> result = apiInstance.RebateBrokerTransactionHistory(limit, offset, userId, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -570,7 +572,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;BrokerTransaction&gt;**](BrokerTransaction.md)
+[**List&lt;BrokerTransactionHistory&gt;**](BrokerTransactionHistory.md)
 
 ### Authorization
 
@@ -725,6 +727,144 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | List retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getpartnerapplicationrecent"></a>
+# **GetPartnerApplicationRecent**
+> PartnerApplicationResponse GetPartnerApplicationRecent ()
+
+Get recent partner application records
+
+获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetPartnerApplicationRecentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new RebateApi(config);
+
+            try
+            {
+                // Get recent partner application records
+                PartnerApplicationResponse result = apiInstance.GetPartnerApplicationRecent();
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling RebateApi.GetPartnerApplicationRecent: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PartnerApplicationResponse**](PartnerApplicationResponse.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getpartnereligibility"></a>
+# **GetPartnerEligibility**
+> EligibilityResponse GetPartnerEligibility ()
+
+Check partner application eligibility
+
+检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetPartnerEligibilityExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new RebateApi(config);
+
+            try
+            {
+                // Check partner application eligibility
+                EligibilityResponse result = apiInstance.GetPartnerEligibility();
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling RebateApi.GetPartnerEligibility: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**EligibilityResponse**](EligibilityResponse.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

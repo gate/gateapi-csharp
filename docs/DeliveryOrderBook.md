@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Id** | **long** | Order Book ID. Increases by 1 on every order book change. Set &#x60;with_id&#x3D;true&#x60; to include this field in response | [optional] 
 **Current** | **double** | Response data generation timestamp | [optional] 
 **Update** | **double** | Order book changed timestamp | [optional] 
-**Asks** | [**List&lt;FuturesOrderBookItem1&gt;**](FuturesOrderBookItem1.md) | Ask Depth | 
-**Bids** | [**List&lt;FuturesOrderBookItem1&gt;**](FuturesOrderBookItem1.md) | Bid Depth | 
+**Asks** | [**List&lt;DeliveryOrderBookItem&gt;**](DeliveryOrderBookItem.md) | Ask Depth | 
+**Bids** | [**List&lt;DeliveryOrderBookItem&gt;**](DeliveryOrderBookItem.md) | Bid Depth | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

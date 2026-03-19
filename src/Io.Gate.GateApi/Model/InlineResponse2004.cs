@@ -33,25 +33,45 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2004" /> class.
         /// </summary>
-        /// <param name="time">time.</param>
-        /// <param name="value">value.</param>
-        public InlineResponse2004(long time = default(long), string value = default(string))
+        /// <param name="code">Return code, 0 means success.</param>
+        /// <param name="message">Response message.</param>
+        /// <param name="data">Redemption result (empty object on success).</param>
+        /// <param name="timestamp">Response timestamp (in seconds).</param>
+        public InlineResponse2004(int code = default(int), string message = default(string), Object data = default(Object), int timestamp = default(int))
         {
-            this.Time = time;
-            this.Value = value;
+            this.Code = code;
+            this.Message = message;
+            this.Data = data;
+            this.Timestamp = timestamp;
         }
 
         /// <summary>
-        /// Gets or Sets Time
+        /// Return code, 0 means success
         /// </summary>
-        [DataMember(Name="time")]
-        public long Time { get; set; }
+        /// <value>Return code, 0 means success</value>
+        [DataMember(Name="code")]
+        public int Code { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Response message
         /// </summary>
-        [DataMember(Name="value")]
-        public string Value { get; set; }
+        /// <value>Response message</value>
+        [DataMember(Name="message")]
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Redemption result (empty object on success)
+        /// </summary>
+        /// <value>Redemption result (empty object on success)</value>
+        [DataMember(Name="data")]
+        public Object Data { get; set; }
+
+        /// <summary>
+        /// Response timestamp (in seconds)
+        /// </summary>
+        /// <value>Response timestamp (in seconds)</value>
+        [DataMember(Name="timestamp")]
+        public int Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -61,8 +81,10 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2004 {\n");
-            sb.Append("  Time: ").Append(Time).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,13 +120,22 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Time == input.Time ||
-                    this.Time.Equals(input.Time)
+                    this.Code == input.Code ||
+                    this.Code.Equals(input.Code)
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
                 );
         }
 
@@ -117,9 +148,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

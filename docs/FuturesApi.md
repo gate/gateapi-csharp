@@ -1525,7 +1525,7 @@ Name | Type | Description  | Notes
 
 <a name="getleverage"></a>
 # **GetLeverage**
-> FuturesLeverage GetLeverage (string settle, string contract, string posMarginMode = null, string dualSide = null)
+> FuturesLeverage GetLeverage (string settle, string contract, string posMarginMode, string dualSide)
 
 Get Leverage Information for Specified Mode
 
@@ -1552,8 +1552,8 @@ namespace Example
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
             var contract = "BTC_USDT";  // string | Futures contract
-            var posMarginMode = "isolated";  // string | Position Margin Mode, required for split position mode, values: isolated/cross. (optional) 
-            var dualSide = "dual_long";  // string | dual_long - Long, dual_short - Short (optional) 
+            var posMarginMode = "isolated";  // string | Position Margin Mode, required for split position mode, values: isolated/cross.
+            var dualSide = "dual_long";  // string | dual_long - Long, dual_short - Short
 
             try
             {
@@ -1579,8 +1579,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
  **contract** | **string**| Futures contract | 
- **posMarginMode** | **string**| Position Margin Mode, required for split position mode, values: isolated/cross. | [optional] 
- **dualSide** | **string**| dual_long - Long, dual_short - Short | [optional] 
+ **posMarginMode** | **string**| Position Margin Mode, required for split position mode, values: isolated/cross. | 
+ **dualSide** | **string**| dual_long - Long, dual_short - Short | 
 
 ### Return type
 
@@ -1916,7 +1916,7 @@ Name | Type | Description  | Notes
 
 <a name="updatedualcomppositioncrossmode"></a>
 # **UpdateDualCompPositionCrossMode**
-> List&lt;Position&gt; UpdateDualCompPositionCrossMode (string settle, InlineObject inlineObject)
+> List&lt;Position&gt; UpdateDualCompPositionCrossMode (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest)
 
 Switch Between Cross and Isolated Margin Modes Under Hedge Mode
 
@@ -1940,12 +1940,12 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
-            var inlineObject = new InlineObject(); // InlineObject | 
+            var updateDualCompPositionCrossModeRequest = new UpdateDualCompPositionCrossModeRequest(); // UpdateDualCompPositionCrossModeRequest | 
 
             try
             {
                 // Switch Between Cross and Isolated Margin Modes Under Hedge Mode
-                List<Position> result = apiInstance.UpdateDualCompPositionCrossMode(settle, inlineObject);
+                List<Position> result = apiInstance.UpdateDualCompPositionCrossMode(settle, updateDualCompPositionCrossModeRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1965,7 +1965,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
- **inlineObject** | [**InlineObject**](InlineObject.md)|  | 
+ **updateDualCompPositionCrossModeRequest** | [**UpdateDualCompPositionCrossModeRequest**](UpdateDualCompPositionCrossModeRequest.md)|  | 
 
 ### Return type
 
@@ -4017,7 +4017,7 @@ Name | Type | Description  | Notes
 
 <a name="createtrailorder"></a>
 # **CreateTrailOrder**
-> InlineResponse201 CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder)
+> CreateTrailOrderResponse CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder)
 
 Create trail order
 
@@ -4046,7 +4046,7 @@ namespace Example
             try
             {
                 // Create trail order
-                InlineResponse201 result = apiInstance.CreateTrailOrder(settle, createTrailOrder);
+                CreateTrailOrderResponse result = apiInstance.CreateTrailOrder(settle, createTrailOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4070,7 +4070,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**CreateTrailOrderResponse**](CreateTrailOrderResponse.md)
 
 ### Authorization
 
@@ -4090,7 +4090,7 @@ Name | Type | Description  | Notes
 
 <a name="stoptrailorder"></a>
 # **StopTrailOrder**
-> InlineResponse200 StopTrailOrder (string settle, StopTrailOrder stopTrailOrder)
+> TrailOrderResponse StopTrailOrder (string settle, StopTrailOrder stopTrailOrder)
 
 Terminate trail order
 
@@ -4119,7 +4119,7 @@ namespace Example
             try
             {
                 // Terminate trail order
-                InlineResponse200 result = apiInstance.StopTrailOrder(settle, stopTrailOrder);
+                TrailOrderResponse result = apiInstance.StopTrailOrder(settle, stopTrailOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4143,7 +4143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**TrailOrderResponse**](TrailOrderResponse.md)
 
 ### Authorization
 
@@ -4163,7 +4163,7 @@ Name | Type | Description  | Notes
 
 <a name="stopalltrailorders"></a>
 # **StopAllTrailOrders**
-> InlineResponse2001 StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
+> TrailOrderListResponse StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
 
 Batch terminate trail orders
 
@@ -4192,7 +4192,7 @@ namespace Example
             try
             {
                 // Batch terminate trail orders
-                InlineResponse2001 result = apiInstance.StopAllTrailOrders(settle, stopAllTrailOrders);
+                TrailOrderListResponse result = apiInstance.StopAllTrailOrders(settle, stopAllTrailOrders);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4216,7 +4216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**TrailOrderListResponse**](TrailOrderListResponse.md)
 
 ### Authorization
 
@@ -4236,7 +4236,7 @@ Name | Type | Description  | Notes
 
 <a name="gettrailorders"></a>
 # **GetTrailOrders**
-> InlineResponse2001 GetTrailOrders (string settle, string contract = null, bool? isFinished = null, long? startAt = null, long? endAt = null, int? pageNum = null, int? pageSize = null, int? sortBy = null, bool? hideCancel = null, int? relatedPosition = null, bool? sortByTrigger = null, int? reduceOnly = null, int? side = null)
+> TrailOrderListResponse GetTrailOrders (string settle, string contract = null, bool? isFinished = null, long? startAt = null, long? endAt = null, int? pageNum = null, int? pageSize = null, int? sortBy = null, bool? hideCancel = null, int? relatedPosition = null, bool? sortByTrigger = null, int? reduceOnly = null, int? side = null)
 
 Get trail order list
 
@@ -4276,7 +4276,7 @@ namespace Example
             try
             {
                 // Get trail order list
-                InlineResponse2001 result = apiInstance.GetTrailOrders(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
+                TrailOrderListResponse result = apiInstance.GetTrailOrders(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4311,7 +4311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**TrailOrderListResponse**](TrailOrderListResponse.md)
 
 ### Authorization
 
@@ -4331,7 +4331,7 @@ Name | Type | Description  | Notes
 
 <a name="gettrailorderdetail"></a>
 # **GetTrailOrderDetail**
-> InlineResponse2002 GetTrailOrderDetail (string settle, long id)
+> TrailOrderDetailResponse GetTrailOrderDetail (string settle, long id)
 
 Get trail order details
 
@@ -4360,7 +4360,7 @@ namespace Example
             try
             {
                 // Get trail order details
-                InlineResponse2002 result = apiInstance.GetTrailOrderDetail(settle, id);
+                TrailOrderDetailResponse result = apiInstance.GetTrailOrderDetail(settle, id);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4384,7 +4384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**TrailOrderDetailResponse**](TrailOrderDetailResponse.md)
 
 ### Authorization
 
@@ -4404,7 +4404,7 @@ Name | Type | Description  | Notes
 
 <a name="updatetrailorder"></a>
 # **UpdateTrailOrder**
-> InlineResponse200 UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder)
+> TrailOrderResponse UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder)
 
 Update trail order
 
@@ -4433,7 +4433,7 @@ namespace Example
             try
             {
                 // Update trail order
-                InlineResponse200 result = apiInstance.UpdateTrailOrder(settle, updateTrailOrder);
+                TrailOrderResponse result = apiInstance.UpdateTrailOrder(settle, updateTrailOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4457,7 +4457,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**TrailOrderResponse**](TrailOrderResponse.md)
 
 ### Authorization
 
@@ -4477,7 +4477,7 @@ Name | Type | Description  | Notes
 
 <a name="gettrailorderchangelog"></a>
 # **GetTrailOrderChangeLog**
-> InlineResponse2003 GetTrailOrderChangeLog (string settle, long id, int? pageNum = null, int? pageSize = null)
+> TrailOrderChangeLogResponse GetTrailOrderChangeLog (string settle, long id, int? pageNum = null, int? pageSize = null)
 
 Get trail order user modification records
 
@@ -4508,7 +4508,7 @@ namespace Example
             try
             {
                 // Get trail order user modification records
-                InlineResponse2003 result = apiInstance.GetTrailOrderChangeLog(settle, id, pageNum, pageSize);
+                TrailOrderChangeLogResponse result = apiInstance.GetTrailOrderChangeLog(settle, id, pageNum, pageSize);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4534,7 +4534,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**TrailOrderChangeLogResponse**](TrailOrderChangeLogResponse.md)
 
 ### Authorization
 
@@ -4779,7 +4779,7 @@ Name | Type | Description  | Notes
 
 <a name="getpricetriggeredorder"></a>
 # **GetPriceTriggeredOrder**
-> FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, int orderId)
+> FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, long orderId)
 
 Query single auto order details
 
@@ -4803,7 +4803,7 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
-            var orderId = 56;  // int | ID returned when order is successfully created
+            var orderId = 56;  // long | ID returned when order is successfully created
 
             try
             {
@@ -4828,7 +4828,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
- **orderId** | **int**| ID returned when order is successfully created | 
+ **orderId** | **long**| ID returned when order is successfully created | 
 
 ### Return type
 
@@ -4852,7 +4852,7 @@ Name | Type | Description  | Notes
 
 <a name="cancelpricetriggeredorder"></a>
 # **CancelPriceTriggeredOrder**
-> FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, int orderId)
+> FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, long orderId)
 
 Cancel single auto order
 
@@ -4876,7 +4876,7 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
-            var orderId = 56;  // int | ID returned when order is successfully created
+            var orderId = 56;  // long | ID returned when order is successfully created
 
             try
             {
@@ -4901,7 +4901,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
- **orderId** | **int**| ID returned when order is successfully created | 
+ **orderId** | **long**| ID returned when order is successfully created | 
 
 ### Return type
 
@@ -4925,7 +4925,7 @@ Name | Type | Description  | Notes
 
 <a name="updatepricetriggeredorder"></a>
 # **UpdatePriceTriggeredOrder**
-> TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+> TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
 
 Modify a Single Auto Order
 
@@ -4949,7 +4949,7 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
-            var orderId = 56;  // int | ID returned when order is successfully created
+            var orderId = 56;  // long | ID returned when order is successfully created
             var futuresUpdatePriceTriggeredOrder = new FuturesUpdatePriceTriggeredOrder(); // FuturesUpdatePriceTriggeredOrder | 
 
             try
@@ -4975,7 +4975,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
- **orderId** | **int**| ID returned when order is successfully created | 
+ **orderId** | **long**| ID returned when order is successfully created | 
  **futuresUpdatePriceTriggeredOrder** | [**FuturesUpdatePriceTriggeredOrder**](FuturesUpdatePriceTriggeredOrder.md)|  | 
 
 ### Return type

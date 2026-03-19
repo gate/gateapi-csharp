@@ -5,7 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Orders** | [**List&lt;TrailOrder&gt;**](TrailOrder.md) |  | [optional] 
+**Code** | **int** | Return code, 0 means success | 
+**Message** | **string** | Response message | 
+**Data** | [**InlineResponse2001Data**](InlineResponse2001Data.md) |  | 
+**Timestamp** | **int** | Response timestamp (in seconds) | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

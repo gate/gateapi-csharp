@@ -33,48 +33,53 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2009" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse2009() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2009" /> class.
-        /// </summary>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        /// <param name="data">data (required).</param>
-        /// <param name="timestamp">timestamp (required).</param>
-        public InlineResponse2009(int code = default(int), string message = default(string), InlineResponse2009Data data = default(InlineResponse2009Data), int timestamp = default(int))
+        /// <param name="code">Status code, 200 &#x3D; success.</param>
+        /// <param name="label">Status label.</param>
+        /// <param name="message">Status message.</param>
+        /// <param name="requestId">Request ID.</param>
+        /// <param name="data">data.</param>
+        public InlineResponse2009(int code = default(int), string label = default(string), string message = default(string), string requestId = default(string), InlineResponse2009Data data = default(InlineResponse2009Data))
         {
             this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2009 and cannot be null");
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse2009 and cannot be null");
-            this.Timestamp = timestamp;
+            this.Label = label;
+            this.Message = message;
+            this.RequestId = requestId;
+            this.Data = data;
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Status code, 200 &#x3D; success
         /// </summary>
+        /// <value>Status code, 200 &#x3D; success</value>
         [DataMember(Name="code")]
         public int Code { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Status label
         /// </summary>
+        /// <value>Status label</value>
+        [DataMember(Name="label")]
+        public string Label { get; set; }
+
+        /// <summary>
+        /// Status message
+        /// </summary>
+        /// <value>Status message</value>
         [DataMember(Name="message")]
         public string Message { get; set; }
+
+        /// <summary>
+        /// Request ID
+        /// </summary>
+        /// <value>Request ID</value>
+        [DataMember(Name="request_id")]
+        public string RequestId { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
         public InlineResponse2009Data Data { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Timestamp
-        /// </summary>
-        [DataMember(Name="timestamp")]
-        public int Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -85,9 +90,10 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2009 {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  RequestId: ").Append(RequestId).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
-            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,18 +133,24 @@ namespace Io.Gate.GateApi.Model
                     this.Code.Equals(input.Code)
                 ) && 
                 (
+                    this.Label == input.Label ||
+                    (this.Label != null &&
+                    this.Label.Equals(input.Label))
+                ) && 
+                (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
                 ) && 
                 (
+                    this.RequestId == input.RequestId ||
+                    (this.RequestId != null &&
+                    this.RequestId.Equals(input.RequestId))
+                ) && 
+                (
                     this.Data == input.Data ||
                     (this.Data != null &&
                     this.Data.Equals(input.Data))
-                ) && 
-                (
-                    this.Timestamp == input.Timestamp ||
-                    this.Timestamp.Equals(input.Timestamp)
                 );
         }
 
@@ -152,11 +164,14 @@ namespace Io.Gate.GateApi.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Label != null)
+                    hashCode = hashCode * 59 + this.Label.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.RequestId != null)
+                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 if (this.Data != null)
                     hashCode = hashCode * 59 + this.Data.GetHashCode();
-                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

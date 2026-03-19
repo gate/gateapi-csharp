@@ -121,8 +121,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency names for querying in an array, separated by commas, maximum 10 currencies</param>
-        /// <returns>List&lt;UnifiedBorrowable1&gt;</returns>
-        List<UnifiedBorrowable1> GetUnifiedBorrowableList (List<string> currencies);
+        /// <returns>List&lt;UnifiedBorrowable&gt;</returns>
+        List<UnifiedBorrowable> GetUnifiedBorrowableList (List<string> currencies);
 
         /// <summary>
         /// Batch query unified account maximum borrowable amount
@@ -132,8 +132,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency names for querying in an array, separated by commas, maximum 10 currencies</param>
-        /// <returns>ApiResponse of List&lt;UnifiedBorrowable1&gt;</returns>
-        ApiResponse<List<UnifiedBorrowable1>> GetUnifiedBorrowableListWithHttpInfo (List<string> currencies);
+        /// <returns>ApiResponse of List&lt;UnifiedBorrowable&gt;</returns>
+        ApiResponse<List<UnifiedBorrowable>> GetUnifiedBorrowableListWithHttpInfo (List<string> currencies);
         /// <summary>
         /// Query loans
         /// </summary>
@@ -614,8 +614,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency names for querying in an array, separated by commas, maximum 10 currencies</param>
-        /// <returns>Task of List&lt;UnifiedBorrowable1&gt;</returns>
-        Task<List<UnifiedBorrowable1>> GetUnifiedBorrowableListAsync (List<string> currencies);
+        /// <returns>Task of List&lt;UnifiedBorrowable&gt;</returns>
+        Task<List<UnifiedBorrowable>> GetUnifiedBorrowableListAsync (List<string> currencies);
 
         /// <summary>
         /// Batch query unified account maximum borrowable amount
@@ -625,8 +625,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency names for querying in an array, separated by commas, maximum 10 currencies</param>
-        /// <returns>Task of ApiResponse (List&lt;UnifiedBorrowable1&gt;)</returns>
-        Task<ApiResponse<List<UnifiedBorrowable1>>> GetUnifiedBorrowableListAsyncWithHttpInfo (List<string> currencies);
+        /// <returns>Task of ApiResponse (List&lt;UnifiedBorrowable&gt;)</returns>
+        Task<ApiResponse<List<UnifiedBorrowable>>> GetUnifiedBorrowableListAsyncWithHttpInfo (List<string> currencies);
         /// <summary>
         /// Query loans
         /// </summary>
@@ -1607,10 +1607,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency names for querying in an array, separated by commas, maximum 10 currencies</param>
-        /// <returns>List&lt;UnifiedBorrowable1&gt;</returns>
-        public List<UnifiedBorrowable1> GetUnifiedBorrowableList (List<string> currencies)
+        /// <returns>List&lt;UnifiedBorrowable&gt;</returns>
+        public List<UnifiedBorrowable> GetUnifiedBorrowableList (List<string> currencies)
         {
-             ApiResponse<List<UnifiedBorrowable1>> localVarResponse = GetUnifiedBorrowableListWithHttpInfo(currencies);
+             ApiResponse<List<UnifiedBorrowable>> localVarResponse = GetUnifiedBorrowableListWithHttpInfo(currencies);
              return localVarResponse.Data;
         }
 
@@ -1619,8 +1619,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency names for querying in an array, separated by commas, maximum 10 currencies</param>
-        /// <returns>ApiResponse of List&lt;UnifiedBorrowable1&gt;</returns>
-        public ApiResponse<List<UnifiedBorrowable1>> GetUnifiedBorrowableListWithHttpInfo (List<string> currencies)
+        /// <returns>ApiResponse of List&lt;UnifiedBorrowable&gt;</returns>
+        public ApiResponse<List<UnifiedBorrowable>> GetUnifiedBorrowableListWithHttpInfo (List<string> currencies)
         {
             // verify the required parameter 'currencies' is set
             if (currencies == null)
@@ -1648,7 +1648,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<UnifiedBorrowable1>>("/unified/batch_borrowable", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<UnifiedBorrowable>>("/unified/batch_borrowable", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1664,10 +1664,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency names for querying in an array, separated by commas, maximum 10 currencies</param>
-        /// <returns>Task of List&lt;UnifiedBorrowable1&gt;</returns>
-        public async Task<List<UnifiedBorrowable1>> GetUnifiedBorrowableListAsync (List<string> currencies)
+        /// <returns>Task of List&lt;UnifiedBorrowable&gt;</returns>
+        public async Task<List<UnifiedBorrowable>> GetUnifiedBorrowableListAsync (List<string> currencies)
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<UnifiedBorrowable1>> localVarResponse = await GetUnifiedBorrowableListAsyncWithHttpInfo(currencies);
+             Io.Gate.GateApi.Client.ApiResponse<List<UnifiedBorrowable>> localVarResponse = await GetUnifiedBorrowableListAsyncWithHttpInfo(currencies);
              return localVarResponse.Data;
 
         }
@@ -1677,8 +1677,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currencies">Specify currency names for querying in an array, separated by commas, maximum 10 currencies</param>
-        /// <returns>Task of ApiResponse (List&lt;UnifiedBorrowable1&gt;)</returns>
-        public async Task<ApiResponse<List<UnifiedBorrowable1>>> GetUnifiedBorrowableListAsyncWithHttpInfo (List<string> currencies)
+        /// <returns>Task of ApiResponse (List&lt;UnifiedBorrowable&gt;)</returns>
+        public async Task<ApiResponse<List<UnifiedBorrowable>>> GetUnifiedBorrowableListAsyncWithHttpInfo (List<string> currencies)
         {
             // verify the required parameter 'currencies' is set
             if (currencies == null)
@@ -1708,7 +1708,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<UnifiedBorrowable1>>("/unified/batch_borrowable", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<UnifiedBorrowable>>("/unified/batch_borrowable", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

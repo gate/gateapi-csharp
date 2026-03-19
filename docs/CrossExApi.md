@@ -110,7 +110,7 @@ No authorization required
 
 <a name="listcrossexrulerisklimits"></a>
 # **ListCrossexRuleRiskLimits**
-> List&lt;InlineResponse20027&gt; ListCrossexRuleRiskLimits (string symbols)
+> List&lt;CrossexRiskLimit&gt; ListCrossexRuleRiskLimits (string symbols)
 
 [Public Interface] Query Risk Limit Information
 
@@ -138,7 +138,7 @@ namespace Example
             try
             {
                 // [Public Interface] Query Risk Limit Information
-                List<InlineResponse20027> result = apiInstance.ListCrossexRuleRiskLimits(symbols);
+                List<CrossexRiskLimit> result = apiInstance.ListCrossexRuleRiskLimits(symbols);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20027&gt;**](InlineResponse20027.md)
+[**List&lt;CrossexRiskLimit&gt;**](CrossexRiskLimit.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ No authorization required
 
 <a name="listcrossextransfercoins"></a>
 # **ListCrossexTransferCoins**
-> List&lt;InlineResponse20028&gt; ListCrossexTransferCoins (string coin = null)
+> List&lt;CrossexTransferCoin&gt; ListCrossexTransferCoins (string coin = null)
 
 [Public Interface] Query Supported Transfer Currencies
 
@@ -209,7 +209,7 @@ namespace Example
             try
             {
                 // [Public Interface] Query Supported Transfer Currencies
-                List<InlineResponse20028> result = apiInstance.ListCrossexTransferCoins(coin);
+                List<CrossexTransferCoin> result = apiInstance.ListCrossexTransferCoins(coin);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20028&gt;**](InlineResponse20028.md)
+[**List&lt;CrossexTransferCoin&gt;**](CrossexTransferCoin.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ No authorization required
 
 <a name="listcrossextransfers"></a>
 # **ListCrossexTransfers**
-> List&lt;InlineResponse20029&gt; ListCrossexTransfers (string coin = null, string orderId = null, int? from = null, int? to = null, int? page = null, int? limit = null)
+> List&lt;CrossexTransferRecord&gt; ListCrossexTransfers (string coin = null, string orderId = null, int? from = null, int? to = null, int? page = null, int? limit = null)
 
 Query Fund Transfer History
 
@@ -287,7 +287,7 @@ namespace Example
             try
             {
                 // Query Fund Transfer History
-                List<InlineResponse20029> result = apiInstance.ListCrossexTransfers(coin, orderId, from, to, page, limit);
+                List<CrossexTransferRecord> result = apiInstance.ListCrossexTransfers(coin, orderId, from, to, page, limit);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20029&gt;**](InlineResponse20029.md)
+[**List&lt;CrossexTransferRecord&gt;**](CrossexTransferRecord.md)
 
 ### Authorization
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossextransfer"></a>
 # **CreateCrossexTransfer**
-> InlineResponse20030 CreateCrossexTransfer (CrossexTransferRequest crossexTransferRequest = null)
+> CrossexTransferResponse CreateCrossexTransfer (CrossexTransferRequest crossexTransferRequest = null)
 
 Fund Transfer
 
@@ -365,7 +365,7 @@ namespace Example
             try
             {
                 // Fund Transfer
-                InlineResponse20030 result = apiInstance.CreateCrossexTransfer(crossexTransferRequest);
+                CrossexTransferResponse result = apiInstance.CreateCrossexTransfer(crossexTransferRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**CrossexTransferResponse**](CrossexTransferResponse.md)
 
 ### Authorization
 
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossexorder"></a>
 # **CreateCrossexOrder**
-> InlineResponse20031 CreateCrossexOrder (CrossexOrderRequest crossexOrderRequest = null)
+> CrossexOrderActionResponse CreateCrossexOrder (CrossexOrderRequest crossexOrderRequest = null)
 
 Create an order
 
@@ -438,7 +438,7 @@ namespace Example
             try
             {
                 // Create an order
-                InlineResponse20031 result = apiInstance.CreateCrossexOrder(crossexOrderRequest);
+                CrossexOrderActionResponse result = apiInstance.CreateCrossexOrder(crossexOrderRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**CrossexOrderActionResponse**](CrossexOrderActionResponse.md)
 
 ### Authorization
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 
 <a name="getcrossexorder"></a>
 # **GetCrossexOrder**
-> InlineResponse20032 GetCrossexOrder (string orderId)
+> CrossexOrder GetCrossexOrder (string orderId)
 
 Query order details
 
@@ -511,7 +511,7 @@ namespace Example
             try
             {
                 // Query order details
-                InlineResponse20032 result = apiInstance.GetCrossexOrder(orderId);
+                CrossexOrder result = apiInstance.GetCrossexOrder(orderId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**CrossexOrder**](CrossexOrder.md)
 
 ### Authorization
 
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexorder"></a>
 # **UpdateCrossexOrder**
-> InlineResponse20033 UpdateCrossexOrder (string orderId, CrossexOrderUpdateRequest crossexOrderUpdateRequest = null)
+> CrossexOrderActionResponse UpdateCrossexOrder (string orderId, CrossexOrderUpdateRequest crossexOrderUpdateRequest = null)
 
 Modify Order
 
@@ -585,7 +585,7 @@ namespace Example
             try
             {
                 // Modify Order
-                InlineResponse20033 result = apiInstance.UpdateCrossexOrder(orderId, crossexOrderUpdateRequest);
+                CrossexOrderActionResponse result = apiInstance.UpdateCrossexOrder(orderId, crossexOrderUpdateRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**CrossexOrderActionResponse**](CrossexOrderActionResponse.md)
 
 ### Authorization
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 <a name="cancelcrossexorder"></a>
 # **CancelCrossexOrder**
-> Object CancelCrossexOrder (string orderId)
+> CrossexOrderActionResponse CancelCrossexOrder (string orderId)
 
 Cancel Order
 
@@ -659,7 +659,7 @@ namespace Example
             try
             {
                 // Cancel Order
-                Object result = apiInstance.CancelCrossexOrder(orderId);
+                CrossexOrderActionResponse result = apiInstance.CancelCrossexOrder(orderId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -682,7 +682,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CrossexOrderActionResponse**](CrossexOrderActionResponse.md)
 
 ### Authorization
 
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossexconvertquote"></a>
 # **CreateCrossexConvertQuote**
-> InlineResponse20034 CreateCrossexConvertQuote (CrossexConvertQuoteRequest crossexConvertQuoteRequest = null)
+> CrossexConvertQuoteResponse CreateCrossexConvertQuote (CrossexConvertQuoteRequest crossexConvertQuoteRequest = null)
 
 Flash Swap Inquiry
 
@@ -732,7 +732,7 @@ namespace Example
             try
             {
                 // Flash Swap Inquiry
-                InlineResponse20034 result = apiInstance.CreateCrossexConvertQuote(crossexConvertQuoteRequest);
+                CrossexConvertQuoteResponse result = apiInstance.CreateCrossexConvertQuote(crossexConvertQuoteRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -755,7 +755,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20034**](InlineResponse20034.md)
+[**CrossexConvertQuoteResponse**](CrossexConvertQuoteResponse.md)
 
 ### Authorization
 
@@ -848,7 +848,7 @@ Name | Type | Description  | Notes
 
 <a name="getcrossexaccount"></a>
 # **GetCrossexAccount**
-> InlineResponse20035 GetCrossexAccount (string exchangeType = null)
+> CrossexAccount GetCrossexAccount (string exchangeType = null)
 
 Query Account Assets
 
@@ -878,7 +878,7 @@ namespace Example
             try
             {
                 // Query Account Assets
-                InlineResponse20035 result = apiInstance.GetCrossexAccount(exchangeType);
+                CrossexAccount result = apiInstance.GetCrossexAccount(exchangeType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -901,7 +901,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20035**](InlineResponse20035.md)
+[**CrossexAccount**](CrossexAccount.md)
 
 ### Authorization
 
@@ -921,7 +921,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexaccount"></a>
 # **UpdateCrossexAccount**
-> InlineResponse202 UpdateCrossexAccount (CrossexAccountUpdateRequest crossexAccountUpdateRequest = null)
+> CrossexAccountUpdateResponse UpdateCrossexAccount (CrossexAccountUpdateRequest crossexAccountUpdateRequest = null)
 
 Modify Account Contract Position Mode and Account Mode
 
@@ -951,7 +951,7 @@ namespace Example
             try
             {
                 // Modify Account Contract Position Mode and Account Mode
-                InlineResponse202 result = apiInstance.UpdateCrossexAccount(crossexAccountUpdateRequest);
+                CrossexAccountUpdateResponse result = apiInstance.UpdateCrossexAccount(crossexAccountUpdateRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -974,7 +974,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse202**](InlineResponse202.md)
+[**CrossexAccountUpdateResponse**](CrossexAccountUpdateResponse.md)
 
 ### Authorization
 
@@ -1067,7 +1067,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexpositionsleverage"></a>
 # **UpdateCrossexPositionsLeverage**
-> InlineResponse2021 UpdateCrossexPositionsLeverage (CrossexLeverageRequest crossexLeverageRequest = null)
+> CrossexLeverageResponse UpdateCrossexPositionsLeverage (CrossexLeverageRequest crossexLeverageRequest = null)
 
 Modify Contract Trading Pair Leverage Multiplier
 
@@ -1097,7 +1097,7 @@ namespace Example
             try
             {
                 // Modify Contract Trading Pair Leverage Multiplier
-                InlineResponse2021 result = apiInstance.UpdateCrossexPositionsLeverage(crossexLeverageRequest);
+                CrossexLeverageResponse result = apiInstance.UpdateCrossexPositionsLeverage(crossexLeverageRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1120,7 +1120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2021**](InlineResponse2021.md)
+[**CrossexLeverageResponse**](CrossexLeverageResponse.md)
 
 ### Authorization
 
@@ -1213,7 +1213,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecrossexmarginpositionsleverage"></a>
 # **UpdateCrossexMarginPositionsLeverage**
-> InlineResponse2021 UpdateCrossexMarginPositionsLeverage (CrossexLeverageRequest crossexLeverageRequest = null)
+> CrossexLeverageResponse UpdateCrossexMarginPositionsLeverage (CrossexLeverageRequest crossexLeverageRequest = null)
 
 Modify Leveraged Trading Pair Leverage Multiplier
 
@@ -1243,7 +1243,7 @@ namespace Example
             try
             {
                 // Modify Leveraged Trading Pair Leverage Multiplier
-                InlineResponse2021 result = apiInstance.UpdateCrossexMarginPositionsLeverage(crossexLeverageRequest);
+                CrossexLeverageResponse result = apiInstance.UpdateCrossexMarginPositionsLeverage(crossexLeverageRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1266,7 +1266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2021**](InlineResponse2021.md)
+[**CrossexLeverageResponse**](CrossexLeverageResponse.md)
 
 ### Authorization
 
@@ -1286,7 +1286,7 @@ Name | Type | Description  | Notes
 
 <a name="closecrossexposition"></a>
 # **CloseCrossexPosition**
-> InlineResponse20031 CloseCrossexPosition (CrossexClosePositionRequest crossexClosePositionRequest = null)
+> CrossexOrderActionResponse CloseCrossexPosition (CrossexClosePositionRequest crossexClosePositionRequest = null)
 
 Full Close Position
 
@@ -1316,7 +1316,7 @@ namespace Example
             try
             {
                 // Full Close Position
-                InlineResponse20031 result = apiInstance.CloseCrossexPosition(crossexClosePositionRequest);
+                CrossexOrderActionResponse result = apiInstance.CloseCrossexPosition(crossexClosePositionRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1339,7 +1339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**CrossexOrderActionResponse**](CrossexOrderActionResponse.md)
 
 ### Authorization
 
@@ -1359,7 +1359,7 @@ Name | Type | Description  | Notes
 
 <a name="getcrossexinterestrate"></a>
 # **GetCrossexInterestRate**
-> List&lt;InlineResponse20036&gt; GetCrossexInterestRate (string coin = null, string exchangeType = null)
+> List&lt;CrossexInterestRate&gt; GetCrossexInterestRate (string coin = null, string exchangeType = null)
 
 Query margin asset interest rates
 
@@ -1390,7 +1390,7 @@ namespace Example
             try
             {
                 // Query margin asset interest rates
-                List<InlineResponse20036> result = apiInstance.GetCrossexInterestRate(coin, exchangeType);
+                List<CrossexInterestRate> result = apiInstance.GetCrossexInterestRate(coin, exchangeType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1414,7 +1414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20036&gt;**](InlineResponse20036.md)
+[**List&lt;CrossexInterestRate&gt;**](CrossexInterestRate.md)
 
 ### Authorization
 
@@ -1434,7 +1434,7 @@ Name | Type | Description  | Notes
 
 <a name="getcrossexfee"></a>
 # **GetCrossexFee**
-> InlineResponse20037 GetCrossexFee ()
+> CrossexFee GetCrossexFee ()
 
 Query User Fee Rates
 
@@ -1463,7 +1463,7 @@ namespace Example
             try
             {
                 // Query User Fee Rates
-                InlineResponse20037 result = apiInstance.GetCrossexFee();
+                CrossexFee result = apiInstance.GetCrossexFee();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1483,7 +1483,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20037**](InlineResponse20037.md)
+[**CrossexFee**](CrossexFee.md)
 
 ### Authorization
 
@@ -1503,7 +1503,7 @@ This endpoint does not need any parameter.
 
 <a name="listcrossexpositions"></a>
 # **ListCrossexPositions**
-> List&lt;InlineResponse20038&gt; ListCrossexPositions (string symbol = null, string exchangeType = null)
+> List&lt;CrossexPosition&gt; ListCrossexPositions (string symbol = null, string exchangeType = null)
 
 Query Contract Positions
 
@@ -1534,7 +1534,7 @@ namespace Example
             try
             {
                 // Query Contract Positions
-                List<InlineResponse20038> result = apiInstance.ListCrossexPositions(symbol, exchangeType);
+                List<CrossexPosition> result = apiInstance.ListCrossexPositions(symbol, exchangeType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1558,7 +1558,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20038&gt;**](InlineResponse20038.md)
+[**List&lt;CrossexPosition&gt;**](CrossexPosition.md)
 
 ### Authorization
 
@@ -1578,7 +1578,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexmarginpositions"></a>
 # **ListCrossexMarginPositions**
-> List&lt;InlineResponse20039&gt; ListCrossexMarginPositions (string symbol = null, string exchangeType = null)
+> List&lt;CrossexMarginPosition&gt; ListCrossexMarginPositions (string symbol = null, string exchangeType = null)
 
 Query Leveraged Positions
 
@@ -1609,7 +1609,7 @@ namespace Example
             try
             {
                 // Query Leveraged Positions
-                List<InlineResponse20039> result = apiInstance.ListCrossexMarginPositions(symbol, exchangeType);
+                List<CrossexMarginPosition> result = apiInstance.ListCrossexMarginPositions(symbol, exchangeType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1633,7 +1633,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20039&gt;**](InlineResponse20039.md)
+[**List&lt;CrossexMarginPosition&gt;**](CrossexMarginPosition.md)
 
 ### Authorization
 
@@ -1653,7 +1653,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexadlrank"></a>
 # **ListCrossexAdlRank**
-> List&lt;InlineResponse20040&gt; ListCrossexAdlRank (string symbol)
+> List&lt;CrossexAdlRank&gt; ListCrossexAdlRank (string symbol)
 
 Query ADL Position Reduction Ranking
 
@@ -1683,7 +1683,7 @@ namespace Example
             try
             {
                 // Query ADL Position Reduction Ranking
-                List<InlineResponse20040> result = apiInstance.ListCrossexAdlRank(symbol);
+                List<CrossexAdlRank> result = apiInstance.ListCrossexAdlRank(symbol);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1706,7 +1706,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20040&gt;**](InlineResponse20040.md)
+[**List&lt;CrossexAdlRank&gt;**](CrossexAdlRank.md)
 
 ### Authorization
 
@@ -1726,7 +1726,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexopenorders"></a>
 # **ListCrossexOpenOrders**
-> List&lt;InlineResponse20032&gt; ListCrossexOpenOrders (string symbol = null, string exchangeType = null, string businessType = null)
+> List&lt;CrossexOrder&gt; ListCrossexOpenOrders (string symbol = null, string exchangeType = null, string businessType = null)
 
 Query All Current Open Orders
 
@@ -1758,7 +1758,7 @@ namespace Example
             try
             {
                 // Query All Current Open Orders
-                List<InlineResponse20032> result = apiInstance.ListCrossexOpenOrders(symbol, exchangeType, businessType);
+                List<CrossexOrder> result = apiInstance.ListCrossexOpenOrders(symbol, exchangeType, businessType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1783,7 +1783,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20032&gt;**](InlineResponse20032.md)
+[**List&lt;CrossexOrder&gt;**](CrossexOrder.md)
 
 ### Authorization
 
@@ -1803,7 +1803,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexhistoryorders"></a>
 # **ListCrossexHistoryOrders**
-> List&lt;InlineResponse20041&gt; ListCrossexHistoryOrders (int? page = null, int? limit = null, string symbol = null, int? from = null, int? to = null)
+> List&lt;CrossexOrder&gt; ListCrossexHistoryOrders (int? page = null, int? limit = null, string symbol = null, int? from = null, int? to = null)
 
 queryorderhistory
 
@@ -1837,7 +1837,7 @@ namespace Example
             try
             {
                 // queryorderhistory
-                List<InlineResponse20041> result = apiInstance.ListCrossexHistoryOrders(page, limit, symbol, from, to);
+                List<CrossexOrder> result = apiInstance.ListCrossexHistoryOrders(page, limit, symbol, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1864,7 +1864,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20041&gt;**](InlineResponse20041.md)
+[**List&lt;CrossexOrder&gt;**](CrossexOrder.md)
 
 ### Authorization
 
@@ -1884,7 +1884,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexhistorypositions"></a>
 # **ListCrossexHistoryPositions**
-> List&lt;InlineResponse20042&gt; ListCrossexHistoryPositions (int? page = null, int? limit = null, string symbol = null, int? from = null, int? to = null)
+> List&lt;CrossexHistoricalPosition&gt; ListCrossexHistoryPositions (int? page = null, int? limit = null, string symbol = null, int? from = null, int? to = null)
 
 Query Contract Position History
 
@@ -1918,7 +1918,7 @@ namespace Example
             try
             {
                 // Query Contract Position History
-                List<InlineResponse20042> result = apiInstance.ListCrossexHistoryPositions(page, limit, symbol, from, to);
+                List<CrossexHistoricalPosition> result = apiInstance.ListCrossexHistoryPositions(page, limit, symbol, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1945,7 +1945,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20042&gt;**](InlineResponse20042.md)
+[**List&lt;CrossexHistoricalPosition&gt;**](CrossexHistoricalPosition.md)
 
 ### Authorization
 
@@ -1965,7 +1965,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexhistorymarginpositions"></a>
 # **ListCrossexHistoryMarginPositions**
-> List&lt;InlineResponse20043&gt; ListCrossexHistoryMarginPositions (int? page = null, int? limit = null, string symbol = null, int? from = null, int? to = null)
+> List&lt;CrossexHistoricalMarginPosition&gt; ListCrossexHistoryMarginPositions (int? page = null, int? limit = null, string symbol = null, int? from = null, int? to = null)
 
 Query Leveraged Position History
 
@@ -1999,7 +1999,7 @@ namespace Example
             try
             {
                 // Query Leveraged Position History
-                List<InlineResponse20043> result = apiInstance.ListCrossexHistoryMarginPositions(page, limit, symbol, from, to);
+                List<CrossexHistoricalMarginPosition> result = apiInstance.ListCrossexHistoryMarginPositions(page, limit, symbol, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -2026,7 +2026,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20043&gt;**](InlineResponse20043.md)
+[**List&lt;CrossexHistoricalMarginPosition&gt;**](CrossexHistoricalMarginPosition.md)
 
 ### Authorization
 
@@ -2046,7 +2046,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexhistorymargininterests"></a>
 # **ListCrossexHistoryMarginInterests**
-> List&lt;InlineResponse20044&gt; ListCrossexHistoryMarginInterests (string symbol = null, int? from = null, int? to = null, int? page = null, int? limit = null, string exchangeType = null)
+> List&lt;CrossexMarginInterestRecord&gt; ListCrossexHistoryMarginInterests (string symbol = null, int? from = null, int? to = null, int? page = null, int? limit = null, string exchangeType = null)
 
 Query Leveraged Interest Deduction History
 
@@ -2081,7 +2081,7 @@ namespace Example
             try
             {
                 // Query Leveraged Interest Deduction History
-                List<InlineResponse20044> result = apiInstance.ListCrossexHistoryMarginInterests(symbol, from, to, page, limit, exchangeType);
+                List<CrossexMarginInterestRecord> result = apiInstance.ListCrossexHistoryMarginInterests(symbol, from, to, page, limit, exchangeType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -2109,7 +2109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20044&gt;**](InlineResponse20044.md)
+[**List&lt;CrossexMarginInterestRecord&gt;**](CrossexMarginInterestRecord.md)
 
 ### Authorization
 
@@ -2129,7 +2129,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexhistorytrades"></a>
 # **ListCrossexHistoryTrades**
-> List&lt;InlineResponse20045&gt; ListCrossexHistoryTrades (int? page = null, int? limit = null, string symbol = null, int? from = null, int? to = null)
+> List&lt;CrossexTrade&gt; ListCrossexHistoryTrades (int? page = null, int? limit = null, string symbol = null, int? from = null, int? to = null)
 
 queryfilledhistory
 
@@ -2163,7 +2163,7 @@ namespace Example
             try
             {
                 // queryfilledhistory
-                List<InlineResponse20045> result = apiInstance.ListCrossexHistoryTrades(page, limit, symbol, from, to);
+                List<CrossexTrade> result = apiInstance.ListCrossexHistoryTrades(page, limit, symbol, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -2190,7 +2190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20045&gt;**](InlineResponse20045.md)
+[**List&lt;CrossexTrade&gt;**](CrossexTrade.md)
 
 ### Authorization
 
@@ -2210,7 +2210,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexaccountbook"></a>
 # **ListCrossexAccountBook**
-> List&lt;InlineResponse20046&gt; ListCrossexAccountBook (int? page = null, int? limit = null, string coin = null, int? from = null, int? to = null)
+> List&lt;CrossexAccountBookRecord&gt; ListCrossexAccountBook (int? page = null, int? limit = null, string coin = null, int? from = null, int? to = null)
 
 Query Account Asset Change History
 
@@ -2244,7 +2244,7 @@ namespace Example
             try
             {
                 // Query Account Asset Change History
-                List<InlineResponse20046> result = apiInstance.ListCrossexAccountBook(page, limit, coin, from, to);
+                List<CrossexAccountBookRecord> result = apiInstance.ListCrossexAccountBook(page, limit, coin, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -2271,7 +2271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20046&gt;**](InlineResponse20046.md)
+[**List&lt;CrossexAccountBookRecord&gt;**](CrossexAccountBookRecord.md)
 
 ### Authorization
 
@@ -2291,7 +2291,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexcoindiscountrate"></a>
 # **ListCrossexCoinDiscountRate**
-> List&lt;InlineResponse20047&gt; ListCrossexCoinDiscountRate (string coin = null, string exchangeType = null)
+> List&lt;CrossexCoinDiscountRate&gt; ListCrossexCoinDiscountRate (string coin = null, string exchangeType = null)
 
 Query currency discount rate (discount rate of margin currency in isolated exchange mode)
 
@@ -2322,7 +2322,7 @@ namespace Example
             try
             {
                 // Query currency discount rate (discount rate of margin currency in isolated exchange mode)
-                List<InlineResponse20047> result = apiInstance.ListCrossexCoinDiscountRate(coin, exchangeType);
+                List<CrossexCoinDiscountRate> result = apiInstance.ListCrossexCoinDiscountRate(coin, exchangeType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -2346,7 +2346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20047&gt;**](InlineResponse20047.md)
+[**List&lt;CrossexCoinDiscountRate&gt;**](CrossexCoinDiscountRate.md)
 
 ### Authorization
 

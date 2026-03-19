@@ -9,6 +9,12 @@ Method | HTTP request | Description
 [**CreateFlashSwapOrder**](FlashSwapApi.md#createflashswaporder) | **POST** /flash_swap/orders | Create a flash swap order
 [**GetFlashSwapOrder**](FlashSwapApi.md#getflashswaporder) | **GET** /flash_swap/orders/{order_id} | Query single flash swap order
 [**PreviewFlashSwapOrder**](FlashSwapApi.md#previewflashswaporder) | **POST** /flash_swap/orders/preview | Flash swap order preview
+[**CreateFlashSwapMultiCurrencyManyToOneOrder**](FlashSwapApi.md#createflashswapmulticurrencymanytooneorder) | **POST** /flash-swap/multi-currency/many-to-one/order/create | Flash Swap - Multi-currency exchange - Place order (many-to-one)
+[**PreviewFlashSwapMultiCurrencyManyToOneOrder**](FlashSwapApi.md#previewflashswapmulticurrencymanytooneorder) | **POST** /flash-swap/multi-currency/many-to-one/order/preview | Flash Swap - Multi-currency exchange - Preview (many-to-one)
+[**CreateFlashSwapOrderV1**](FlashSwapApi.md#createflashswaporderv1) | **POST** /flash-swap/order/create | Flash Swap - Place order (one-to-one)
+[**CreateFlashSwapMultiCurrencyOneToManyOrder**](FlashSwapApi.md#createflashswapmulticurrencyonetomanyorder) | **POST** /flash-swap/multi-currency/one-to-many/order/create | Flash Swap - Multi-currency exchange - Place order (one-to-many)
+[**PreviewFlashSwapMultiCurrencyOneToManyOrder**](FlashSwapApi.md#previewflashswapmulticurrencyonetomanyorder) | **POST** /flash-swap/multi-currency/one-to-many/order/preview | Flash Swap - Multi-currency exchange - Preview (one-to-many)
+[**PreviewFlashSwapOrderV1**](FlashSwapApi.md#previewflashswaporderv1) | **GET** /flash-swap/order/preview | Flash Swap - Preview (one-to-one)
 
 
 <a name="listflashswapcurrencypair"></a>
@@ -379,6 +385,462 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Flash swap order preview successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createflashswapmulticurrencymanytooneorder"></a>
+# **CreateFlashSwapMultiCurrencyManyToOneOrder**
+> FlashSwapMultiCurrencyManyToOneOrderCreateResp CreateFlashSwapMultiCurrencyManyToOneOrder (FlashSwapMultiCurrencyManyToOneOrderCreateReq flashSwapMultiCurrencyManyToOneOrderCreateReq)
+
+Flash Swap - Multi-currency exchange - Place order (many-to-one)
+
+Create a multi-currency to single target currency exchange order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateFlashSwapMultiCurrencyManyToOneOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FlashSwapApi(config);
+            var flashSwapMultiCurrencyManyToOneOrderCreateReq = new FlashSwapMultiCurrencyManyToOneOrderCreateReq(); // FlashSwapMultiCurrencyManyToOneOrderCreateReq | 
+
+            try
+            {
+                // Flash Swap - Multi-currency exchange - Place order (many-to-one)
+                FlashSwapMultiCurrencyManyToOneOrderCreateResp result = apiInstance.CreateFlashSwapMultiCurrencyManyToOneOrder(flashSwapMultiCurrencyManyToOneOrderCreateReq);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FlashSwapApi.CreateFlashSwapMultiCurrencyManyToOneOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **flashSwapMultiCurrencyManyToOneOrderCreateReq** | [**FlashSwapMultiCurrencyManyToOneOrderCreateReq**](FlashSwapMultiCurrencyManyToOneOrderCreateReq.md)|  | 
+
+### Return type
+
+[**FlashSwapMultiCurrencyManyToOneOrderCreateResp**](FlashSwapMultiCurrencyManyToOneOrderCreateResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Invalid parameters |  -  |
+| **404** | Record does not exist |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="previewflashswapmulticurrencymanytooneorder"></a>
+# **PreviewFlashSwapMultiCurrencyManyToOneOrder**
+> FlashSwapMultiCurrencyManyToOneOrderPreviewResp PreviewFlashSwapMultiCurrencyManyToOneOrder (FlashSwapMultiCurrencyManyToOneOrderPreviewReq flashSwapMultiCurrencyManyToOneOrderPreviewReq)
+
+Flash Swap - Multi-currency exchange - Preview (many-to-one)
+
+Preview quote for multi-currency to single target currency exchange
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class PreviewFlashSwapMultiCurrencyManyToOneOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FlashSwapApi(config);
+            var flashSwapMultiCurrencyManyToOneOrderPreviewReq = new FlashSwapMultiCurrencyManyToOneOrderPreviewReq(); // FlashSwapMultiCurrencyManyToOneOrderPreviewReq | 
+
+            try
+            {
+                // Flash Swap - Multi-currency exchange - Preview (many-to-one)
+                FlashSwapMultiCurrencyManyToOneOrderPreviewResp result = apiInstance.PreviewFlashSwapMultiCurrencyManyToOneOrder(flashSwapMultiCurrencyManyToOneOrderPreviewReq);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FlashSwapApi.PreviewFlashSwapMultiCurrencyManyToOneOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **flashSwapMultiCurrencyManyToOneOrderPreviewReq** | [**FlashSwapMultiCurrencyManyToOneOrderPreviewReq**](FlashSwapMultiCurrencyManyToOneOrderPreviewReq.md)|  | 
+
+### Return type
+
+[**FlashSwapMultiCurrencyManyToOneOrderPreviewResp**](FlashSwapMultiCurrencyManyToOneOrderPreviewResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Invalid parameters |  -  |
+| **404** | Record does not exist |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createflashswaporderv1"></a>
+# **CreateFlashSwapOrderV1**
+> FlashSwapOrderCreateResp CreateFlashSwapOrderV1 (FlashSwapOrderCreateReq flashSwapOrderCreateReq)
+
+Flash Swap - Place order (one-to-one)
+
+Submit a one-to-one flash swap order. A quote_id must be obtained from the preview endpoint first
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateFlashSwapOrderV1Example
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FlashSwapApi(config);
+            var flashSwapOrderCreateReq = new FlashSwapOrderCreateReq(); // FlashSwapOrderCreateReq | 
+
+            try
+            {
+                // Flash Swap - Place order (one-to-one)
+                FlashSwapOrderCreateResp result = apiInstance.CreateFlashSwapOrderV1(flashSwapOrderCreateReq);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FlashSwapApi.CreateFlashSwapOrderV1: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **flashSwapOrderCreateReq** | [**FlashSwapOrderCreateReq**](FlashSwapOrderCreateReq.md)|  | 
+
+### Return type
+
+[**FlashSwapOrderCreateResp**](FlashSwapOrderCreateResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Invalid parameters |  -  |
+| **404** | Record does not exist |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createflashswapmulticurrencyonetomanyorder"></a>
+# **CreateFlashSwapMultiCurrencyOneToManyOrder**
+> FlashSwapMultiCurrencyOneToManyOrderCreateResp CreateFlashSwapMultiCurrencyOneToManyOrder (FlashSwapMultiCurrencyOneToManyOrderCreateReq flashSwapMultiCurrencyOneToManyOrderCreateReq)
+
+Flash Swap - Multi-currency exchange - Place order (one-to-many)
+
+Create a single currency to multiple target currencies exchange order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateFlashSwapMultiCurrencyOneToManyOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FlashSwapApi(config);
+            var flashSwapMultiCurrencyOneToManyOrderCreateReq = new FlashSwapMultiCurrencyOneToManyOrderCreateReq(); // FlashSwapMultiCurrencyOneToManyOrderCreateReq | 
+
+            try
+            {
+                // Flash Swap - Multi-currency exchange - Place order (one-to-many)
+                FlashSwapMultiCurrencyOneToManyOrderCreateResp result = apiInstance.CreateFlashSwapMultiCurrencyOneToManyOrder(flashSwapMultiCurrencyOneToManyOrderCreateReq);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FlashSwapApi.CreateFlashSwapMultiCurrencyOneToManyOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **flashSwapMultiCurrencyOneToManyOrderCreateReq** | [**FlashSwapMultiCurrencyOneToManyOrderCreateReq**](FlashSwapMultiCurrencyOneToManyOrderCreateReq.md)|  | 
+
+### Return type
+
+[**FlashSwapMultiCurrencyOneToManyOrderCreateResp**](FlashSwapMultiCurrencyOneToManyOrderCreateResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Invalid parameters |  -  |
+| **404** | Record does not exist |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="previewflashswapmulticurrencyonetomanyorder"></a>
+# **PreviewFlashSwapMultiCurrencyOneToManyOrder**
+> FlashSwapMultiCurrencyOneToManyOrderPreviewResp PreviewFlashSwapMultiCurrencyOneToManyOrder (FlashSwapMultiCurrencyOneToManyOrderPreviewReq flashSwapMultiCurrencyOneToManyOrderPreviewReq)
+
+Flash Swap - Multi-currency exchange - Preview (one-to-many)
+
+Preview quote for single currency to multiple target currencies exchange
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class PreviewFlashSwapMultiCurrencyOneToManyOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FlashSwapApi(config);
+            var flashSwapMultiCurrencyOneToManyOrderPreviewReq = new FlashSwapMultiCurrencyOneToManyOrderPreviewReq(); // FlashSwapMultiCurrencyOneToManyOrderPreviewReq | 
+
+            try
+            {
+                // Flash Swap - Multi-currency exchange - Preview (one-to-many)
+                FlashSwapMultiCurrencyOneToManyOrderPreviewResp result = apiInstance.PreviewFlashSwapMultiCurrencyOneToManyOrder(flashSwapMultiCurrencyOneToManyOrderPreviewReq);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FlashSwapApi.PreviewFlashSwapMultiCurrencyOneToManyOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **flashSwapMultiCurrencyOneToManyOrderPreviewReq** | [**FlashSwapMultiCurrencyOneToManyOrderPreviewReq**](FlashSwapMultiCurrencyOneToManyOrderPreviewReq.md)|  | 
+
+### Return type
+
+[**FlashSwapMultiCurrencyOneToManyOrderPreviewResp**](FlashSwapMultiCurrencyOneToManyOrderPreviewResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Invalid parameters |  -  |
+| **404** | Record does not exist |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="previewflashswaporderv1"></a>
+# **PreviewFlashSwapOrderV1**
+> FlashSwapOrderPreviewResp PreviewFlashSwapOrderV1 (string sellAsset, string buyAsset, string sellAmount = null, string buyAmount = null)
+
+Flash Swap - Preview (one-to-one)
+
+Get one-to-one flash swap quote. Either sell_amount or buy_amount must be specified
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class PreviewFlashSwapOrderV1Example
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FlashSwapApi(config);
+            var sellAsset = "sellAsset_example";  // string | Currency to sell
+            var buyAsset = "buyAsset_example";  // string | Currency to buy
+            var sellAmount = "sellAmount_example";  // string | Sell amount, either this or buy_amount must be specified (optional) 
+            var buyAmount = "buyAmount_example";  // string | Buy amount, either this or sell_amount must be specified (optional) 
+
+            try
+            {
+                // Flash Swap - Preview (one-to-one)
+                FlashSwapOrderPreviewResp result = apiInstance.PreviewFlashSwapOrderV1(sellAsset, buyAsset, sellAmount, buyAmount);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FlashSwapApi.PreviewFlashSwapOrderV1: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sellAsset** | **string**| Currency to sell | 
+ **buyAsset** | **string**| Currency to buy | 
+ **sellAmount** | **string**| Sell amount, either this or buy_amount must be specified | [optional] 
+ **buyAmount** | **string**| Buy amount, either this or sell_amount must be specified | [optional] 
+
+### Return type
+
+[**FlashSwapOrderPreviewResp**](FlashSwapOrderPreviewResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Invalid parameters |  -  |
+| **404** | Record does not exist |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

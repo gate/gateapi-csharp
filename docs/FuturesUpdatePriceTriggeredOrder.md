@@ -8,7 +8,7 @@ Modify Price Order Details
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Settle** | **string** | Settlement Currency (e.g., USDT, BTC) | [optional] 
-**OrderId** | **int** | ID of the Pending Take-Profit/Stop-Loss Trigger Order | 
+**OrderId** | **long** | ID of the Pending Take-Profit/Stop-Loss Trigger Order | 
 **Size** | **long** | Modified Contract Quantity. Full Close: 0; Partial Close: Positive/Negative values indicate direction (consistent with the creation interface logic). | [optional] 
 **Price** | **string** | Represents the modified trading price. A value of 0 indicates a market order. | [optional] 
 **TriggerPrice** | **string** | Modified Trigger Price | [optional] 

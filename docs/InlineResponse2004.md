@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Time** | **long** |  | [optional] 
-**Value** | **string** |  | [optional] 
+**Code** | **int** | Return code, 0 means success | [optional] 
+**Message** | **string** | Response message | [optional] 
+**Data** | [**Object**](.md) | Redemption result (empty object on success) | [optional] 
+**Timestamp** | **int** | Response timestamp (in seconds) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

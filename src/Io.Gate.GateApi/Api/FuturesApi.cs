@@ -551,10 +551,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
-        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
         /// <returns>FuturesLeverage</returns>
-        FuturesLeverage GetLeverage (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string));
+        FuturesLeverage GetLeverage (string settle, string contract, string posMarginMode, string dualSide);
 
         /// <summary>
         /// Get Leverage Information for Specified Mode
@@ -565,10 +565,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
-        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
         /// <returns>ApiResponse of FuturesLeverage</returns>
-        ApiResponse<FuturesLeverage> GetLeverageWithHttpInfo (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string));
+        ApiResponse<FuturesLeverage> GetLeverageWithHttpInfo (string settle, string contract, string posMarginMode, string dualSide);
         /// <summary>
         /// Update position margin
         /// </summary>
@@ -683,9 +683,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="inlineObject"></param>
+        /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>List&lt;Position&gt;</returns>
-        List<Position> UpdateDualCompPositionCrossMode (string settle, InlineObject inlineObject);
+        List<Position> UpdateDualCompPositionCrossMode (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest);
 
         /// <summary>
         /// Switch Between Cross and Isolated Margin Modes Under Hedge Mode
@@ -695,9 +695,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="inlineObject"></param>
+        /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
-        ApiResponse<List<Position>> UpdateDualCompPositionCrossModeWithHttpInfo (string settle, InlineObject inlineObject);
+        ApiResponse<List<Position>> UpdateDualCompPositionCrossModeWithHttpInfo (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest);
         /// <summary>
         /// Update position risk limit
         /// </summary>
@@ -1407,8 +1407,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="createTrailOrder"></param>
-        /// <returns>InlineResponse201</returns>
-        InlineResponse201 CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder);
+        /// <returns>CreateTrailOrderResponse</returns>
+        CreateTrailOrderResponse CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder);
 
         /// <summary>
         /// Create trail order
@@ -1419,8 +1419,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="createTrailOrder"></param>
-        /// <returns>ApiResponse of InlineResponse201</returns>
-        ApiResponse<InlineResponse201> CreateTrailOrderWithHttpInfo (string settle, CreateTrailOrder createTrailOrder);
+        /// <returns>ApiResponse of CreateTrailOrderResponse</returns>
+        ApiResponse<CreateTrailOrderResponse> CreateTrailOrderWithHttpInfo (string settle, CreateTrailOrder createTrailOrder);
         /// <summary>
         /// Terminate trail order
         /// </summary>
@@ -1430,8 +1430,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopTrailOrder"></param>
-        /// <returns>InlineResponse200</returns>
-        InlineResponse200 StopTrailOrder (string settle, StopTrailOrder stopTrailOrder);
+        /// <returns>TrailOrderResponse</returns>
+        TrailOrderResponse StopTrailOrder (string settle, StopTrailOrder stopTrailOrder);
 
         /// <summary>
         /// Terminate trail order
@@ -1442,8 +1442,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopTrailOrder"></param>
-        /// <returns>ApiResponse of InlineResponse200</returns>
-        ApiResponse<InlineResponse200> StopTrailOrderWithHttpInfo (string settle, StopTrailOrder stopTrailOrder);
+        /// <returns>ApiResponse of TrailOrderResponse</returns>
+        ApiResponse<TrailOrderResponse> StopTrailOrderWithHttpInfo (string settle, StopTrailOrder stopTrailOrder);
         /// <summary>
         /// Batch terminate trail orders
         /// </summary>
@@ -1453,8 +1453,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>InlineResponse2001</returns>
-        InlineResponse2001 StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders);
+        /// <returns>TrailOrderListResponse</returns>
+        TrailOrderListResponse StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders);
 
         /// <summary>
         /// Batch terminate trail orders
@@ -1465,8 +1465,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>ApiResponse of InlineResponse2001</returns>
-        ApiResponse<InlineResponse2001> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
+        /// <returns>ApiResponse of TrailOrderListResponse</returns>
+        ApiResponse<TrailOrderListResponse> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
         /// <summary>
         /// Get trail order list
         /// </summary>
@@ -1487,8 +1487,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>InlineResponse2001</returns>
-        InlineResponse2001 GetTrailOrders (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <returns>TrailOrderListResponse</returns>
+        TrailOrderListResponse GetTrailOrders (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
 
         /// <summary>
         /// Get trail order list
@@ -1510,8 +1510,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2001</returns>
-        ApiResponse<InlineResponse2001> GetTrailOrdersWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <returns>ApiResponse of TrailOrderListResponse</returns>
+        ApiResponse<TrailOrderListResponse> GetTrailOrdersWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
         /// <summary>
         /// Get trail order details
         /// </summary>
@@ -1521,8 +1521,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="id">Order ID</param>
-        /// <returns>InlineResponse2002</returns>
-        InlineResponse2002 GetTrailOrderDetail (string settle, long id);
+        /// <returns>TrailOrderDetailResponse</returns>
+        TrailOrderDetailResponse GetTrailOrderDetail (string settle, long id);
 
         /// <summary>
         /// Get trail order details
@@ -1533,8 +1533,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="id">Order ID</param>
-        /// <returns>ApiResponse of InlineResponse2002</returns>
-        ApiResponse<InlineResponse2002> GetTrailOrderDetailWithHttpInfo (string settle, long id);
+        /// <returns>ApiResponse of TrailOrderDetailResponse</returns>
+        ApiResponse<TrailOrderDetailResponse> GetTrailOrderDetailWithHttpInfo (string settle, long id);
         /// <summary>
         /// Update trail order
         /// </summary>
@@ -1544,8 +1544,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="updateTrailOrder"></param>
-        /// <returns>InlineResponse200</returns>
-        InlineResponse200 UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder);
+        /// <returns>TrailOrderResponse</returns>
+        TrailOrderResponse UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder);
 
         /// <summary>
         /// Update trail order
@@ -1556,8 +1556,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="updateTrailOrder"></param>
-        /// <returns>ApiResponse of InlineResponse200</returns>
-        ApiResponse<InlineResponse200> UpdateTrailOrderWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder);
+        /// <returns>ApiResponse of TrailOrderResponse</returns>
+        ApiResponse<TrailOrderResponse> UpdateTrailOrderWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder);
         /// <summary>
         /// Get trail order user modification records
         /// </summary>
@@ -1569,8 +1569,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
-        /// <returns>InlineResponse2003</returns>
-        InlineResponse2003 GetTrailOrderChangeLog (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
+        /// <returns>TrailOrderChangeLogResponse</returns>
+        TrailOrderChangeLogResponse GetTrailOrderChangeLog (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
 
         /// <summary>
         /// Get trail order user modification records
@@ -1583,8 +1583,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
-        /// <returns>ApiResponse of InlineResponse2003</returns>
-        ApiResponse<InlineResponse2003> GetTrailOrderChangeLogWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
+        /// <returns>ApiResponse of TrailOrderChangeLogResponse</returns>
+        ApiResponse<TrailOrderChangeLogResponse> GetTrailOrderChangeLogWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Query auto order list
         /// </summary>
@@ -1670,7 +1670,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
-        FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, int orderId);
+        FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, long orderId);
 
         /// <summary>
         /// Query single auto order details
@@ -1682,7 +1682,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
-        ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, int orderId);
+        ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, long orderId);
         /// <summary>
         /// Cancel single auto order
         /// </summary>
@@ -1693,7 +1693,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
-        FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, int orderId);
+        FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, long orderId);
 
         /// <summary>
         /// Cancel single auto order
@@ -1705,7 +1705,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
-        ApiResponse<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderWithHttpInfo (string settle, int orderId);
+        ApiResponse<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderWithHttpInfo (string settle, long orderId);
         /// <summary>
         /// Modify a Single Auto Order
         /// </summary>
@@ -1717,7 +1717,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
-        TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
 
         /// <summary>
         /// Modify a Single Auto Order
@@ -1730,7 +1730,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
-        ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
         #endregion Synchronous Operations
     }
 
@@ -2264,10 +2264,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
-        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
         /// <returns>Task of FuturesLeverage</returns>
-        Task<FuturesLeverage> GetLeverageAsync (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string));
+        Task<FuturesLeverage> GetLeverageAsync (string settle, string contract, string posMarginMode, string dualSide);
 
         /// <summary>
         /// Get Leverage Information for Specified Mode
@@ -2278,10 +2278,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
-        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
         /// <returns>Task of ApiResponse (FuturesLeverage)</returns>
-        Task<ApiResponse<FuturesLeverage>> GetLeverageAsyncWithHttpInfo (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string));
+        Task<ApiResponse<FuturesLeverage>> GetLeverageAsyncWithHttpInfo (string settle, string contract, string posMarginMode, string dualSide);
         /// <summary>
         /// Update position margin
         /// </summary>
@@ -2396,9 +2396,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="inlineObject"></param>
+        /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>Task of List&lt;Position&gt;</returns>
-        Task<List<Position>> UpdateDualCompPositionCrossModeAsync (string settle, InlineObject inlineObject);
+        Task<List<Position>> UpdateDualCompPositionCrossModeAsync (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest);
 
         /// <summary>
         /// Switch Between Cross and Isolated Margin Modes Under Hedge Mode
@@ -2408,9 +2408,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="inlineObject"></param>
+        /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
-        Task<ApiResponse<List<Position>>> UpdateDualCompPositionCrossModeAsyncWithHttpInfo (string settle, InlineObject inlineObject);
+        Task<ApiResponse<List<Position>>> UpdateDualCompPositionCrossModeAsyncWithHttpInfo (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest);
         /// <summary>
         /// Update position risk limit
         /// </summary>
@@ -3120,8 +3120,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="createTrailOrder"></param>
-        /// <returns>Task of InlineResponse201</returns>
-        Task<InlineResponse201> CreateTrailOrderAsync (string settle, CreateTrailOrder createTrailOrder);
+        /// <returns>Task of CreateTrailOrderResponse</returns>
+        Task<CreateTrailOrderResponse> CreateTrailOrderAsync (string settle, CreateTrailOrder createTrailOrder);
 
         /// <summary>
         /// Create trail order
@@ -3132,8 +3132,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="createTrailOrder"></param>
-        /// <returns>Task of ApiResponse (InlineResponse201)</returns>
-        Task<ApiResponse<InlineResponse201>> CreateTrailOrderAsyncWithHttpInfo (string settle, CreateTrailOrder createTrailOrder);
+        /// <returns>Task of ApiResponse (CreateTrailOrderResponse)</returns>
+        Task<ApiResponse<CreateTrailOrderResponse>> CreateTrailOrderAsyncWithHttpInfo (string settle, CreateTrailOrder createTrailOrder);
         /// <summary>
         /// Terminate trail order
         /// </summary>
@@ -3143,8 +3143,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopTrailOrder"></param>
-        /// <returns>Task of InlineResponse200</returns>
-        Task<InlineResponse200> StopTrailOrderAsync (string settle, StopTrailOrder stopTrailOrder);
+        /// <returns>Task of TrailOrderResponse</returns>
+        Task<TrailOrderResponse> StopTrailOrderAsync (string settle, StopTrailOrder stopTrailOrder);
 
         /// <summary>
         /// Terminate trail order
@@ -3155,8 +3155,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopTrailOrder"></param>
-        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        Task<ApiResponse<InlineResponse200>> StopTrailOrderAsyncWithHttpInfo (string settle, StopTrailOrder stopTrailOrder);
+        /// <returns>Task of ApiResponse (TrailOrderResponse)</returns>
+        Task<ApiResponse<TrailOrderResponse>> StopTrailOrderAsyncWithHttpInfo (string settle, StopTrailOrder stopTrailOrder);
         /// <summary>
         /// Batch terminate trail orders
         /// </summary>
@@ -3166,8 +3166,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>Task of InlineResponse2001</returns>
-        Task<InlineResponse2001> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders);
+        /// <returns>Task of TrailOrderListResponse</returns>
+        Task<TrailOrderListResponse> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders);
 
         /// <summary>
         /// Batch terminate trail orders
@@ -3178,8 +3178,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        Task<ApiResponse<InlineResponse2001>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
+        /// <returns>Task of ApiResponse (TrailOrderListResponse)</returns>
+        Task<ApiResponse<TrailOrderListResponse>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
         /// <summary>
         /// Get trail order list
         /// </summary>
@@ -3200,8 +3200,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>Task of InlineResponse2001</returns>
-        Task<InlineResponse2001> GetTrailOrdersAsync (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <returns>Task of TrailOrderListResponse</returns>
+        Task<TrailOrderListResponse> GetTrailOrdersAsync (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
 
         /// <summary>
         /// Get trail order list
@@ -3223,8 +3223,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        Task<ApiResponse<InlineResponse2001>> GetTrailOrdersAsyncWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <returns>Task of ApiResponse (TrailOrderListResponse)</returns>
+        Task<ApiResponse<TrailOrderListResponse>> GetTrailOrdersAsyncWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
         /// <summary>
         /// Get trail order details
         /// </summary>
@@ -3234,8 +3234,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="id">Order ID</param>
-        /// <returns>Task of InlineResponse2002</returns>
-        Task<InlineResponse2002> GetTrailOrderDetailAsync (string settle, long id);
+        /// <returns>Task of TrailOrderDetailResponse</returns>
+        Task<TrailOrderDetailResponse> GetTrailOrderDetailAsync (string settle, long id);
 
         /// <summary>
         /// Get trail order details
@@ -3246,8 +3246,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="id">Order ID</param>
-        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
-        Task<ApiResponse<InlineResponse2002>> GetTrailOrderDetailAsyncWithHttpInfo (string settle, long id);
+        /// <returns>Task of ApiResponse (TrailOrderDetailResponse)</returns>
+        Task<ApiResponse<TrailOrderDetailResponse>> GetTrailOrderDetailAsyncWithHttpInfo (string settle, long id);
         /// <summary>
         /// Update trail order
         /// </summary>
@@ -3257,8 +3257,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="updateTrailOrder"></param>
-        /// <returns>Task of InlineResponse200</returns>
-        Task<InlineResponse200> UpdateTrailOrderAsync (string settle, UpdateTrailOrder updateTrailOrder);
+        /// <returns>Task of TrailOrderResponse</returns>
+        Task<TrailOrderResponse> UpdateTrailOrderAsync (string settle, UpdateTrailOrder updateTrailOrder);
 
         /// <summary>
         /// Update trail order
@@ -3269,8 +3269,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="updateTrailOrder"></param>
-        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        Task<ApiResponse<InlineResponse200>> UpdateTrailOrderAsyncWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder);
+        /// <returns>Task of ApiResponse (TrailOrderResponse)</returns>
+        Task<ApiResponse<TrailOrderResponse>> UpdateTrailOrderAsyncWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder);
         /// <summary>
         /// Get trail order user modification records
         /// </summary>
@@ -3282,8 +3282,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
-        /// <returns>Task of InlineResponse2003</returns>
-        Task<InlineResponse2003> GetTrailOrderChangeLogAsync (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
+        /// <returns>Task of TrailOrderChangeLogResponse</returns>
+        Task<TrailOrderChangeLogResponse> GetTrailOrderChangeLogAsync (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
 
         /// <summary>
         /// Get trail order user modification records
@@ -3296,8 +3296,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-        Task<ApiResponse<InlineResponse2003>> GetTrailOrderChangeLogAsyncWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
+        /// <returns>Task of ApiResponse (TrailOrderChangeLogResponse)</returns>
+        Task<ApiResponse<TrailOrderChangeLogResponse>> GetTrailOrderChangeLogAsyncWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Query auto order list
         /// </summary>
@@ -3383,7 +3383,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
-        Task<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderAsync (string settle, int orderId);
+        Task<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderAsync (string settle, long orderId);
 
         /// <summary>
         /// Query single auto order details
@@ -3395,7 +3395,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
-        Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId);
+        Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId);
         /// <summary>
         /// Cancel single auto order
         /// </summary>
@@ -3406,7 +3406,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
-        Task<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderAsync (string settle, int orderId);
+        Task<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderAsync (string settle, long orderId);
 
         /// <summary>
         /// Cancel single auto order
@@ -3418,7 +3418,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
-        Task<ApiResponse<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId);
+        Task<ApiResponse<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId);
         /// <summary>
         /// Modify a Single Auto Order
         /// </summary>
@@ -3430,7 +3430,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
-        Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
 
         /// <summary>
         /// Modify a Single Auto Order
@@ -3443,7 +3443,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
-        Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
         #endregion Asynchronous Operations
     }
 
@@ -6457,10 +6457,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
-        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
         /// <returns>FuturesLeverage</returns>
-        public FuturesLeverage GetLeverage (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string))
+        public FuturesLeverage GetLeverage (string settle, string contract, string posMarginMode, string dualSide)
         {
              ApiResponse<FuturesLeverage> localVarResponse = GetLeverageWithHttpInfo(settle, contract, posMarginMode, dualSide);
              return localVarResponse.Data;
@@ -6472,10 +6472,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
-        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
         /// <returns>ApiResponse of FuturesLeverage</returns>
-        public ApiResponse<FuturesLeverage> GetLeverageWithHttpInfo (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string))
+        public ApiResponse<FuturesLeverage> GetLeverageWithHttpInfo (string settle, string contract, string posMarginMode, string dualSide)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -6484,6 +6484,14 @@ namespace Io.Gate.GateApi.Api
             // verify the required parameter 'contract' is set
             if (contract == null)
                 throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->GetLeverage");
+
+            // verify the required parameter 'posMarginMode' is set
+            if (posMarginMode == null)
+                throw new ApiException(400, "Missing required parameter 'posMarginMode' when calling FuturesApi->GetLeverage");
+
+            // verify the required parameter 'dualSide' is set
+            if (dualSide == null)
+                throw new ApiException(400, "Missing required parameter 'dualSide' when calling FuturesApi->GetLeverage");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -6503,14 +6511,8 @@ namespace Io.Gate.GateApi.Api
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
             localVarRequestOptions.PathParameters.Add("contract", ClientUtils.ParameterToString(contract)); // path parameter
-            if (posMarginMode != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pos_margin_mode", posMarginMode));
-            }
-            if (dualSide != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "dual_side", dualSide));
-            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pos_margin_mode", posMarginMode));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "dual_side", dualSide));
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -6533,10 +6535,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
-        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
         /// <returns>Task of FuturesLeverage</returns>
-        public async Task<FuturesLeverage> GetLeverageAsync (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string))
+        public async Task<FuturesLeverage> GetLeverageAsync (string settle, string contract, string posMarginMode, string dualSide)
         {
              Io.Gate.GateApi.Client.ApiResponse<FuturesLeverage> localVarResponse = await GetLeverageAsyncWithHttpInfo(settle, contract, posMarginMode, dualSide);
              return localVarResponse.Data;
@@ -6549,10 +6551,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="contract">Futures contract</param>
-        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross. (optional)</param>
-        /// <param name="dualSide">dual_long - Long, dual_short - Short (optional)</param>
+        /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
+        /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
         /// <returns>Task of ApiResponse (FuturesLeverage)</returns>
-        public async Task<ApiResponse<FuturesLeverage>> GetLeverageAsyncWithHttpInfo (string settle, string contract, string posMarginMode = default(string), string dualSide = default(string))
+        public async Task<ApiResponse<FuturesLeverage>> GetLeverageAsyncWithHttpInfo (string settle, string contract, string posMarginMode, string dualSide)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -6561,6 +6563,14 @@ namespace Io.Gate.GateApi.Api
             // verify the required parameter 'contract' is set
             if (contract == null)
                 throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->GetLeverage");
+
+            // verify the required parameter 'posMarginMode' is set
+            if (posMarginMode == null)
+                throw new ApiException(400, "Missing required parameter 'posMarginMode' when calling FuturesApi->GetLeverage");
+
+            // verify the required parameter 'dualSide' is set
+            if (dualSide == null)
+                throw new ApiException(400, "Missing required parameter 'dualSide' when calling FuturesApi->GetLeverage");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -6581,14 +6591,8 @@ namespace Io.Gate.GateApi.Api
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
             localVarRequestOptions.PathParameters.Add("contract", ClientUtils.ParameterToString(contract)); // path parameter
-            if (posMarginMode != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pos_margin_mode", posMarginMode));
-            }
-            if (dualSide != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "dual_side", dualSide));
-            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "pos_margin_mode", posMarginMode));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "dual_side", dualSide));
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -7229,11 +7233,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="inlineObject"></param>
+        /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>List&lt;Position&gt;</returns>
-        public List<Position> UpdateDualCompPositionCrossMode (string settle, InlineObject inlineObject)
+        public List<Position> UpdateDualCompPositionCrossMode (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest)
         {
-             ApiResponse<List<Position>> localVarResponse = UpdateDualCompPositionCrossModeWithHttpInfo(settle, inlineObject);
+             ApiResponse<List<Position>> localVarResponse = UpdateDualCompPositionCrossModeWithHttpInfo(settle, updateDualCompPositionCrossModeRequest);
              return localVarResponse.Data;
         }
 
@@ -7242,17 +7246,17 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="inlineObject"></param>
+        /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
-        public ApiResponse<List<Position>> UpdateDualCompPositionCrossModeWithHttpInfo (string settle, InlineObject inlineObject)
+        public ApiResponse<List<Position>> UpdateDualCompPositionCrossModeWithHttpInfo (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
                 throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdateDualCompPositionCrossMode");
 
-            // verify the required parameter 'inlineObject' is set
-            if (inlineObject == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject' when calling FuturesApi->UpdateDualCompPositionCrossMode");
+            // verify the required parameter 'updateDualCompPositionCrossModeRequest' is set
+            if (updateDualCompPositionCrossModeRequest == null)
+                throw new ApiException(400, "Missing required parameter 'updateDualCompPositionCrossModeRequest' when calling FuturesApi->UpdateDualCompPositionCrossMode");
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -7272,7 +7276,7 @@ namespace Io.Gate.GateApi.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
-            localVarRequestOptions.Data = inlineObject;
+            localVarRequestOptions.Data = updateDualCompPositionCrossModeRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -7294,11 +7298,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="inlineObject"></param>
+        /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>Task of List&lt;Position&gt;</returns>
-        public async Task<List<Position>> UpdateDualCompPositionCrossModeAsync (string settle, InlineObject inlineObject)
+        public async Task<List<Position>> UpdateDualCompPositionCrossModeAsync (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<Position>> localVarResponse = await UpdateDualCompPositionCrossModeAsyncWithHttpInfo(settle, inlineObject);
+             Io.Gate.GateApi.Client.ApiResponse<List<Position>> localVarResponse = await UpdateDualCompPositionCrossModeAsyncWithHttpInfo(settle, updateDualCompPositionCrossModeRequest);
              return localVarResponse.Data;
 
         }
@@ -7308,17 +7312,17 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="inlineObject"></param>
+        /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
-        public async Task<ApiResponse<List<Position>>> UpdateDualCompPositionCrossModeAsyncWithHttpInfo (string settle, InlineObject inlineObject)
+        public async Task<ApiResponse<List<Position>>> UpdateDualCompPositionCrossModeAsyncWithHttpInfo (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
                 throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdateDualCompPositionCrossMode");
 
-            // verify the required parameter 'inlineObject' is set
-            if (inlineObject == null)
-                throw new ApiException(400, "Missing required parameter 'inlineObject' when calling FuturesApi->UpdateDualCompPositionCrossMode");
+            // verify the required parameter 'updateDualCompPositionCrossModeRequest' is set
+            if (updateDualCompPositionCrossModeRequest == null)
+                throw new ApiException(400, "Missing required parameter 'updateDualCompPositionCrossModeRequest' when calling FuturesApi->UpdateDualCompPositionCrossMode");
 
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -7339,7 +7343,7 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
-            localVarRequestOptions.Data = inlineObject;
+            localVarRequestOptions.Data = updateDualCompPositionCrossModeRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -11379,10 +11383,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="createTrailOrder"></param>
-        /// <returns>InlineResponse201</returns>
-        public InlineResponse201 CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder)
+        /// <returns>CreateTrailOrderResponse</returns>
+        public CreateTrailOrderResponse CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder)
         {
-             ApiResponse<InlineResponse201> localVarResponse = CreateTrailOrderWithHttpInfo(settle, createTrailOrder);
+             ApiResponse<CreateTrailOrderResponse> localVarResponse = CreateTrailOrderWithHttpInfo(settle, createTrailOrder);
              return localVarResponse.Data;
         }
 
@@ -11392,8 +11396,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="createTrailOrder"></param>
-        /// <returns>ApiResponse of InlineResponse201</returns>
-        public ApiResponse<InlineResponse201> CreateTrailOrderWithHttpInfo (string settle, CreateTrailOrder createTrailOrder)
+        /// <returns>ApiResponse of CreateTrailOrderResponse</returns>
+        public ApiResponse<CreateTrailOrderResponse> CreateTrailOrderWithHttpInfo (string settle, CreateTrailOrder createTrailOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -11427,7 +11431,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse201>("/futures/{settle}/autoorder/v1/trail/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CreateTrailOrderResponse>("/futures/{settle}/autoorder/v1/trail/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -11444,10 +11448,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="createTrailOrder"></param>
-        /// <returns>Task of InlineResponse201</returns>
-        public async Task<InlineResponse201> CreateTrailOrderAsync (string settle, CreateTrailOrder createTrailOrder)
+        /// <returns>Task of CreateTrailOrderResponse</returns>
+        public async Task<CreateTrailOrderResponse> CreateTrailOrderAsync (string settle, CreateTrailOrder createTrailOrder)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse201> localVarResponse = await CreateTrailOrderAsyncWithHttpInfo(settle, createTrailOrder);
+             Io.Gate.GateApi.Client.ApiResponse<CreateTrailOrderResponse> localVarResponse = await CreateTrailOrderAsyncWithHttpInfo(settle, createTrailOrder);
              return localVarResponse.Data;
 
         }
@@ -11458,8 +11462,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="createTrailOrder"></param>
-        /// <returns>Task of ApiResponse (InlineResponse201)</returns>
-        public async Task<ApiResponse<InlineResponse201>> CreateTrailOrderAsyncWithHttpInfo (string settle, CreateTrailOrder createTrailOrder)
+        /// <returns>Task of ApiResponse (CreateTrailOrderResponse)</returns>
+        public async Task<ApiResponse<CreateTrailOrderResponse>> CreateTrailOrderAsyncWithHttpInfo (string settle, CreateTrailOrder createTrailOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -11495,7 +11499,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse201>("/futures/{settle}/autoorder/v1/trail/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateTrailOrderResponse>("/futures/{settle}/autoorder/v1/trail/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -11512,10 +11516,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopTrailOrder"></param>
-        /// <returns>InlineResponse200</returns>
-        public InlineResponse200 StopTrailOrder (string settle, StopTrailOrder stopTrailOrder)
+        /// <returns>TrailOrderResponse</returns>
+        public TrailOrderResponse StopTrailOrder (string settle, StopTrailOrder stopTrailOrder)
         {
-             ApiResponse<InlineResponse200> localVarResponse = StopTrailOrderWithHttpInfo(settle, stopTrailOrder);
+             ApiResponse<TrailOrderResponse> localVarResponse = StopTrailOrderWithHttpInfo(settle, stopTrailOrder);
              return localVarResponse.Data;
         }
 
@@ -11525,8 +11529,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopTrailOrder"></param>
-        /// <returns>ApiResponse of InlineResponse200</returns>
-        public ApiResponse<InlineResponse200> StopTrailOrderWithHttpInfo (string settle, StopTrailOrder stopTrailOrder)
+        /// <returns>ApiResponse of TrailOrderResponse</returns>
+        public ApiResponse<TrailOrderResponse> StopTrailOrderWithHttpInfo (string settle, StopTrailOrder stopTrailOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -11560,7 +11564,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse200>("/futures/{settle}/autoorder/v1/trail/stop", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TrailOrderResponse>("/futures/{settle}/autoorder/v1/trail/stop", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -11577,10 +11581,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopTrailOrder"></param>
-        /// <returns>Task of InlineResponse200</returns>
-        public async Task<InlineResponse200> StopTrailOrderAsync (string settle, StopTrailOrder stopTrailOrder)
+        /// <returns>Task of TrailOrderResponse</returns>
+        public async Task<TrailOrderResponse> StopTrailOrderAsync (string settle, StopTrailOrder stopTrailOrder)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse200> localVarResponse = await StopTrailOrderAsyncWithHttpInfo(settle, stopTrailOrder);
+             Io.Gate.GateApi.Client.ApiResponse<TrailOrderResponse> localVarResponse = await StopTrailOrderAsyncWithHttpInfo(settle, stopTrailOrder);
              return localVarResponse.Data;
 
         }
@@ -11591,8 +11595,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopTrailOrder"></param>
-        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        public async Task<ApiResponse<InlineResponse200>> StopTrailOrderAsyncWithHttpInfo (string settle, StopTrailOrder stopTrailOrder)
+        /// <returns>Task of ApiResponse (TrailOrderResponse)</returns>
+        public async Task<ApiResponse<TrailOrderResponse>> StopTrailOrderAsyncWithHttpInfo (string settle, StopTrailOrder stopTrailOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -11628,7 +11632,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse200>("/futures/{settle}/autoorder/v1/trail/stop", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TrailOrderResponse>("/futures/{settle}/autoorder/v1/trail/stop", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -11645,10 +11649,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>InlineResponse2001</returns>
-        public InlineResponse2001 StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
+        /// <returns>TrailOrderListResponse</returns>
+        public TrailOrderListResponse StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
         {
-             ApiResponse<InlineResponse2001> localVarResponse = StopAllTrailOrdersWithHttpInfo(settle, stopAllTrailOrders);
+             ApiResponse<TrailOrderListResponse> localVarResponse = StopAllTrailOrdersWithHttpInfo(settle, stopAllTrailOrders);
              return localVarResponse.Data;
         }
 
@@ -11658,8 +11662,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>ApiResponse of InlineResponse2001</returns>
-        public ApiResponse<InlineResponse2001> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
+        /// <returns>ApiResponse of TrailOrderListResponse</returns>
+        public ApiResponse<TrailOrderListResponse> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -11693,7 +11697,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse2001>("/futures/{settle}/autoorder/v1/trail/stop_all", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TrailOrderListResponse>("/futures/{settle}/autoorder/v1/trail/stop_all", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -11710,10 +11714,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>Task of InlineResponse2001</returns>
-        public async Task<InlineResponse2001> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders)
+        /// <returns>Task of TrailOrderListResponse</returns>
+        public async Task<TrailOrderListResponse> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2001> localVarResponse = await StopAllTrailOrdersAsyncWithHttpInfo(settle, stopAllTrailOrders);
+             Io.Gate.GateApi.Client.ApiResponse<TrailOrderListResponse> localVarResponse = await StopAllTrailOrdersAsyncWithHttpInfo(settle, stopAllTrailOrders);
              return localVarResponse.Data;
 
         }
@@ -11724,8 +11728,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        public async Task<ApiResponse<InlineResponse2001>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
+        /// <returns>Task of ApiResponse (TrailOrderListResponse)</returns>
+        public async Task<ApiResponse<TrailOrderListResponse>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -11761,7 +11765,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2001>("/futures/{settle}/autoorder/v1/trail/stop_all", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TrailOrderListResponse>("/futures/{settle}/autoorder/v1/trail/stop_all", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -11789,10 +11793,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>InlineResponse2001</returns>
-        public InlineResponse2001 GetTrailOrders (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        /// <returns>TrailOrderListResponse</returns>
+        public TrailOrderListResponse GetTrailOrders (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
         {
-             ApiResponse<InlineResponse2001> localVarResponse = GetTrailOrdersWithHttpInfo(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
+             ApiResponse<TrailOrderListResponse> localVarResponse = GetTrailOrdersWithHttpInfo(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
              return localVarResponse.Data;
         }
 
@@ -11813,8 +11817,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2001</returns>
-        public ApiResponse<InlineResponse2001> GetTrailOrdersWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        /// <returns>ApiResponse of TrailOrderListResponse</returns>
+        public ApiResponse<TrailOrderListResponse> GetTrailOrdersWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -11890,7 +11894,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse2001>("/futures/{settle}/autoorder/v1/trail/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrailOrderListResponse>("/futures/{settle}/autoorder/v1/trail/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -11918,10 +11922,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>Task of InlineResponse2001</returns>
-        public async Task<InlineResponse2001> GetTrailOrdersAsync (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        /// <returns>Task of TrailOrderListResponse</returns>
+        public async Task<TrailOrderListResponse> GetTrailOrdersAsync (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2001> localVarResponse = await GetTrailOrdersAsyncWithHttpInfo(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
+             Io.Gate.GateApi.Client.ApiResponse<TrailOrderListResponse> localVarResponse = await GetTrailOrdersAsyncWithHttpInfo(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
              return localVarResponse.Data;
 
         }
@@ -11943,8 +11947,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        public async Task<ApiResponse<InlineResponse2001>> GetTrailOrdersAsyncWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        /// <returns>Task of ApiResponse (TrailOrderListResponse)</returns>
+        public async Task<ApiResponse<TrailOrderListResponse>> GetTrailOrdersAsyncWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12022,7 +12026,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2001>("/futures/{settle}/autoorder/v1/trail/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrailOrderListResponse>("/futures/{settle}/autoorder/v1/trail/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -12039,10 +12043,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="id">Order ID</param>
-        /// <returns>InlineResponse2002</returns>
-        public InlineResponse2002 GetTrailOrderDetail (string settle, long id)
+        /// <returns>TrailOrderDetailResponse</returns>
+        public TrailOrderDetailResponse GetTrailOrderDetail (string settle, long id)
         {
-             ApiResponse<InlineResponse2002> localVarResponse = GetTrailOrderDetailWithHttpInfo(settle, id);
+             ApiResponse<TrailOrderDetailResponse> localVarResponse = GetTrailOrderDetailWithHttpInfo(settle, id);
              return localVarResponse.Data;
         }
 
@@ -12052,8 +12056,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="id">Order ID</param>
-        /// <returns>ApiResponse of InlineResponse2002</returns>
-        public ApiResponse<InlineResponse2002> GetTrailOrderDetailWithHttpInfo (string settle, long id)
+        /// <returns>ApiResponse of TrailOrderDetailResponse</returns>
+        public ApiResponse<TrailOrderDetailResponse> GetTrailOrderDetailWithHttpInfo (string settle, long id)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12082,7 +12086,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse2002>("/futures/{settle}/autoorder/v1/trail/detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrailOrderDetailResponse>("/futures/{settle}/autoorder/v1/trail/detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -12099,10 +12103,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="id">Order ID</param>
-        /// <returns>Task of InlineResponse2002</returns>
-        public async Task<InlineResponse2002> GetTrailOrderDetailAsync (string settle, long id)
+        /// <returns>Task of TrailOrderDetailResponse</returns>
+        public async Task<TrailOrderDetailResponse> GetTrailOrderDetailAsync (string settle, long id)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2002> localVarResponse = await GetTrailOrderDetailAsyncWithHttpInfo(settle, id);
+             Io.Gate.GateApi.Client.ApiResponse<TrailOrderDetailResponse> localVarResponse = await GetTrailOrderDetailAsyncWithHttpInfo(settle, id);
              return localVarResponse.Data;
 
         }
@@ -12113,8 +12117,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="id">Order ID</param>
-        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
-        public async Task<ApiResponse<InlineResponse2002>> GetTrailOrderDetailAsyncWithHttpInfo (string settle, long id)
+        /// <returns>Task of ApiResponse (TrailOrderDetailResponse)</returns>
+        public async Task<ApiResponse<TrailOrderDetailResponse>> GetTrailOrderDetailAsyncWithHttpInfo (string settle, long id)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12145,7 +12149,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2002>("/futures/{settle}/autoorder/v1/trail/detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrailOrderDetailResponse>("/futures/{settle}/autoorder/v1/trail/detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -12162,10 +12166,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="updateTrailOrder"></param>
-        /// <returns>InlineResponse200</returns>
-        public InlineResponse200 UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder)
+        /// <returns>TrailOrderResponse</returns>
+        public TrailOrderResponse UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder)
         {
-             ApiResponse<InlineResponse200> localVarResponse = UpdateTrailOrderWithHttpInfo(settle, updateTrailOrder);
+             ApiResponse<TrailOrderResponse> localVarResponse = UpdateTrailOrderWithHttpInfo(settle, updateTrailOrder);
              return localVarResponse.Data;
         }
 
@@ -12175,8 +12179,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="updateTrailOrder"></param>
-        /// <returns>ApiResponse of InlineResponse200</returns>
-        public ApiResponse<InlineResponse200> UpdateTrailOrderWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder)
+        /// <returns>ApiResponse of TrailOrderResponse</returns>
+        public ApiResponse<TrailOrderResponse> UpdateTrailOrderWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12210,7 +12214,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse200>("/futures/{settle}/autoorder/v1/trail/update", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TrailOrderResponse>("/futures/{settle}/autoorder/v1/trail/update", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -12227,10 +12231,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="updateTrailOrder"></param>
-        /// <returns>Task of InlineResponse200</returns>
-        public async Task<InlineResponse200> UpdateTrailOrderAsync (string settle, UpdateTrailOrder updateTrailOrder)
+        /// <returns>Task of TrailOrderResponse</returns>
+        public async Task<TrailOrderResponse> UpdateTrailOrderAsync (string settle, UpdateTrailOrder updateTrailOrder)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse200> localVarResponse = await UpdateTrailOrderAsyncWithHttpInfo(settle, updateTrailOrder);
+             Io.Gate.GateApi.Client.ApiResponse<TrailOrderResponse> localVarResponse = await UpdateTrailOrderAsyncWithHttpInfo(settle, updateTrailOrder);
              return localVarResponse.Data;
 
         }
@@ -12241,8 +12245,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="updateTrailOrder"></param>
-        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        public async Task<ApiResponse<InlineResponse200>> UpdateTrailOrderAsyncWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder)
+        /// <returns>Task of ApiResponse (TrailOrderResponse)</returns>
+        public async Task<ApiResponse<TrailOrderResponse>> UpdateTrailOrderAsyncWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12278,7 +12282,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse200>("/futures/{settle}/autoorder/v1/trail/update", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TrailOrderResponse>("/futures/{settle}/autoorder/v1/trail/update", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -12297,10 +12301,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
-        /// <returns>InlineResponse2003</returns>
-        public InlineResponse2003 GetTrailOrderChangeLog (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
+        /// <returns>TrailOrderChangeLogResponse</returns>
+        public TrailOrderChangeLogResponse GetTrailOrderChangeLog (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
         {
-             ApiResponse<InlineResponse2003> localVarResponse = GetTrailOrderChangeLogWithHttpInfo(settle, id, pageNum, pageSize);
+             ApiResponse<TrailOrderChangeLogResponse> localVarResponse = GetTrailOrderChangeLogWithHttpInfo(settle, id, pageNum, pageSize);
              return localVarResponse.Data;
         }
 
@@ -12312,8 +12316,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
-        /// <returns>ApiResponse of InlineResponse2003</returns>
-        public ApiResponse<InlineResponse2003> GetTrailOrderChangeLogWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
+        /// <returns>ApiResponse of TrailOrderChangeLogResponse</returns>
+        public ApiResponse<TrailOrderChangeLogResponse> GetTrailOrderChangeLogWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12350,7 +12354,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse2003>("/futures/{settle}/autoorder/v1/trail/change_log", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrailOrderChangeLogResponse>("/futures/{settle}/autoorder/v1/trail/change_log", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -12369,10 +12373,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
-        /// <returns>Task of InlineResponse2003</returns>
-        public async Task<InlineResponse2003> GetTrailOrderChangeLogAsync (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
+        /// <returns>Task of TrailOrderChangeLogResponse</returns>
+        public async Task<TrailOrderChangeLogResponse> GetTrailOrderChangeLogAsync (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2003> localVarResponse = await GetTrailOrderChangeLogAsyncWithHttpInfo(settle, id, pageNum, pageSize);
+             Io.Gate.GateApi.Client.ApiResponse<TrailOrderChangeLogResponse> localVarResponse = await GetTrailOrderChangeLogAsyncWithHttpInfo(settle, id, pageNum, pageSize);
              return localVarResponse.Data;
 
         }
@@ -12385,8 +12389,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-        public async Task<ApiResponse<InlineResponse2003>> GetTrailOrderChangeLogAsyncWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
+        /// <returns>Task of ApiResponse (TrailOrderChangeLogResponse)</returns>
+        public async Task<ApiResponse<TrailOrderChangeLogResponse>> GetTrailOrderChangeLogAsyncWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12425,7 +12429,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2003>("/futures/{settle}/autoorder/v1/trail/change_log", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrailOrderChangeLogResponse>("/futures/{settle}/autoorder/v1/trail/change_log", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -12872,7 +12876,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
-        public FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, int orderId)
+        public FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, long orderId)
         {
              ApiResponse<FuturesPriceTriggeredOrder> localVarResponse = GetPriceTriggeredOrderWithHttpInfo(settle, orderId);
              return localVarResponse.Data;
@@ -12885,7 +12889,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
-        public ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, int orderId)
+        public ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, long orderId)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12932,7 +12936,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
-        public async Task<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderAsync (string settle, int orderId)
+        public async Task<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderAsync (string settle, long orderId)
         {
              Io.Gate.GateApi.Client.ApiResponse<FuturesPriceTriggeredOrder> localVarResponse = await GetPriceTriggeredOrderAsyncWithHttpInfo(settle, orderId);
              return localVarResponse.Data;
@@ -12946,7 +12950,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
-        public async Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId)
+        public async Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12995,7 +12999,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
-        public FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, int orderId)
+        public FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, long orderId)
         {
              ApiResponse<FuturesPriceTriggeredOrder> localVarResponse = CancelPriceTriggeredOrderWithHttpInfo(settle, orderId);
              return localVarResponse.Data;
@@ -13008,7 +13012,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
-        public ApiResponse<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderWithHttpInfo (string settle, int orderId)
+        public ApiResponse<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderWithHttpInfo (string settle, long orderId)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -13055,7 +13059,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
-        public async Task<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderAsync (string settle, int orderId)
+        public async Task<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderAsync (string settle, long orderId)
         {
              Io.Gate.GateApi.Client.ApiResponse<FuturesPriceTriggeredOrder> localVarResponse = await CancelPriceTriggeredOrderAsyncWithHttpInfo(settle, orderId);
              return localVarResponse.Data;
@@ -13069,7 +13073,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
-        public async Task<ApiResponse<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId)
+        public async Task<ApiResponse<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -13119,7 +13123,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
-        public TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
              ApiResponse<TriggerOrderResponse> localVarResponse = UpdatePriceTriggeredOrderWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
              return localVarResponse.Data;
@@ -13133,7 +13137,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
-        public ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -13187,7 +13191,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
-        public async Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public async Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
              Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse> localVarResponse = await UpdatePriceTriggeredOrderAsyncWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
              return localVarResponse.Data;
@@ -13202,7 +13206,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
-        public async Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, int orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public async Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)

@@ -33,31 +33,44 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2008" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse2008() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2008" /> class.
-        /// </summary>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        public InlineResponse2008(int code = default(int), string message = default(string))
+        /// <param name="code">Status code, 0 &#x3D; success.</param>
+        /// <param name="label">Error identifier code. Empty string on success, machine-readable error label on error.</param>
+        /// <param name="msg">Status message.</param>
+        /// <param name="data">data.</param>
+        public InlineResponse2008(int code = default(int), string label = default(string), string msg = default(string), InlineResponse2008Data data = default(InlineResponse2008Data))
         {
             this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2008 and cannot be null");
+            this.Label = label;
+            this.Msg = msg;
+            this.Data = data;
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Status code, 0 &#x3D; success
         /// </summary>
+        /// <value>Status code, 0 &#x3D; success</value>
         [DataMember(Name="code")]
         public int Code { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Error identifier code. Empty string on success, machine-readable error label on error
         /// </summary>
-        [DataMember(Name="message")]
-        public string Message { get; set; }
+        /// <value>Error identifier code. Empty string on success, machine-readable error label on error</value>
+        [DataMember(Name="label")]
+        public string Label { get; set; }
+
+        /// <summary>
+        /// Status message
+        /// </summary>
+        /// <value>Status message</value>
+        [DataMember(Name="msg")]
+        public string Msg { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Data
+        /// </summary>
+        [DataMember(Name="data")]
+        public InlineResponse2008Data Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,7 +81,9 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2008 {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
+            sb.Append("  Msg: ").Append(Msg).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -108,9 +123,19 @@ namespace Io.Gate.GateApi.Model
                     this.Code.Equals(input.Code)
                 ) && 
                 (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
+                    this.Label == input.Label ||
+                    (this.Label != null &&
+                    this.Label.Equals(input.Label))
+                ) && 
+                (
+                    this.Msg == input.Msg ||
+                    (this.Msg != null &&
+                    this.Msg.Equals(input.Msg))
+                ) && 
+                (
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
                 );
         }
 
@@ -124,8 +149,12 @@ namespace Io.Gate.GateApi.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Label != null)
+                    hashCode = hashCode * 59 + this.Label.GetHashCode();
+                if (this.Msg != null)
+                    hashCode = hashCode * 59 + this.Msg.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }

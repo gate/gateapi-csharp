@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 <a name="getunifiedborrowablelist"></a>
 # **GetUnifiedBorrowableList**
-> List&lt;UnifiedBorrowable1&gt; GetUnifiedBorrowableList (List<string> currencies)
+> List&lt;UnifiedBorrowable&gt; GetUnifiedBorrowableList (List<string> currencies)
 
 Batch query unified account maximum borrowable amount
 
@@ -346,7 +346,7 @@ namespace Example
             try
             {
                 // Batch query unified account maximum borrowable amount
-                List<UnifiedBorrowable1> result = apiInstance.GetUnifiedBorrowableList(currencies);
+                List<UnifiedBorrowable> result = apiInstance.GetUnifiedBorrowableList(currencies);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;UnifiedBorrowable1&gt;**](UnifiedBorrowable1.md)
+[**List&lt;UnifiedBorrowable&gt;**](UnifiedBorrowable.md)
 
 ### Authorization
 

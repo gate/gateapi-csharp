@@ -219,8 +219,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
         /// <param name="from">Start time of the query record. If not specified, defaults to 30 days before the current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
-        /// <returns>List&lt;BrokerTransaction&gt;</returns>
-        List<BrokerTransaction> RebateBrokerTransactionHistory (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?));
+        /// <returns>List&lt;BrokerTransactionHistory&gt;</returns>
+        List<BrokerTransactionHistory> RebateBrokerTransactionHistory (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?));
 
         /// <summary>
         /// Broker obtains user&#39;s trading history
@@ -234,8 +234,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
         /// <param name="from">Start time of the query record. If not specified, defaults to 30 days before the current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
-        /// <returns>ApiResponse of List&lt;BrokerTransaction&gt;</returns>
-        ApiResponse<List<BrokerTransaction>> RebateBrokerTransactionHistoryWithHttpInfo (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?));
+        /// <returns>ApiResponse of List&lt;BrokerTransactionHistory&gt;</returns>
+        ApiResponse<List<BrokerTransactionHistory>> RebateBrokerTransactionHistoryWithHttpInfo (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?));
         /// <summary>
         /// User obtains rebate information
         /// </summary>
@@ -276,6 +276,44 @@ namespace Io.Gate.GateApi.Api
         /// <param name="userIdList">Query user ID list, separated by commas. If more than 100, only 100 will be returned</param>
         /// <returns>ApiResponse of UserSubRelation</returns>
         ApiResponse<UserSubRelation> UserSubRelationWithHttpInfo (string userIdList);
+        /// <summary>
+        /// Get recent partner application records
+        /// </summary>
+        /// <remarks>
+        /// 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>PartnerApplicationResponse</returns>
+        PartnerApplicationResponse GetPartnerApplicationRecent ();
+
+        /// <summary>
+        /// Get recent partner application records
+        /// </summary>
+        /// <remarks>
+        /// 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of PartnerApplicationResponse</returns>
+        ApiResponse<PartnerApplicationResponse> GetPartnerApplicationRecentWithHttpInfo ();
+        /// <summary>
+        /// Check partner application eligibility
+        /// </summary>
+        /// <remarks>
+        /// 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>EligibilityResponse</returns>
+        EligibilityResponse GetPartnerEligibility ();
+
+        /// <summary>
+        /// Check partner application eligibility
+        /// </summary>
+        /// <remarks>
+        /// 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of EligibilityResponse</returns>
+        ApiResponse<EligibilityResponse> GetPartnerEligibilityWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -477,8 +515,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
         /// <param name="from">Start time of the query record. If not specified, defaults to 30 days before the current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
-        /// <returns>Task of List&lt;BrokerTransaction&gt;</returns>
-        Task<List<BrokerTransaction>> RebateBrokerTransactionHistoryAsync (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?));
+        /// <returns>Task of List&lt;BrokerTransactionHistory&gt;</returns>
+        Task<List<BrokerTransactionHistory>> RebateBrokerTransactionHistoryAsync (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?));
 
         /// <summary>
         /// Broker obtains user&#39;s trading history
@@ -492,8 +530,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
         /// <param name="from">Start time of the query record. If not specified, defaults to 30 days before the current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;BrokerTransaction&gt;)</returns>
-        Task<ApiResponse<List<BrokerTransaction>>> RebateBrokerTransactionHistoryAsyncWithHttpInfo (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?));
+        /// <returns>Task of ApiResponse (List&lt;BrokerTransactionHistory&gt;)</returns>
+        Task<ApiResponse<List<BrokerTransactionHistory>>> RebateBrokerTransactionHistoryAsyncWithHttpInfo (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?));
         /// <summary>
         /// User obtains rebate information
         /// </summary>
@@ -534,6 +572,44 @@ namespace Io.Gate.GateApi.Api
         /// <param name="userIdList">Query user ID list, separated by commas. If more than 100, only 100 will be returned</param>
         /// <returns>Task of ApiResponse (UserSubRelation)</returns>
         Task<ApiResponse<UserSubRelation>> UserSubRelationAsyncWithHttpInfo (string userIdList);
+        /// <summary>
+        /// Get recent partner application records
+        /// </summary>
+        /// <remarks>
+        /// 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of PartnerApplicationResponse</returns>
+        Task<PartnerApplicationResponse> GetPartnerApplicationRecentAsync ();
+
+        /// <summary>
+        /// Get recent partner application records
+        /// </summary>
+        /// <remarks>
+        /// 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (PartnerApplicationResponse)</returns>
+        Task<ApiResponse<PartnerApplicationResponse>> GetPartnerApplicationRecentAsyncWithHttpInfo ();
+        /// <summary>
+        /// Check partner application eligibility
+        /// </summary>
+        /// <remarks>
+        /// 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of EligibilityResponse</returns>
+        Task<EligibilityResponse> GetPartnerEligibilityAsync ();
+
+        /// <summary>
+        /// Check partner application eligibility
+        /// </summary>
+        /// <remarks>
+        /// 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (EligibilityResponse)</returns>
+        Task<ApiResponse<EligibilityResponse>> GetPartnerEligibilityAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -1677,10 +1753,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
         /// <param name="from">Start time of the query record. If not specified, defaults to 30 days before the current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
-        /// <returns>List&lt;BrokerTransaction&gt;</returns>
-        public List<BrokerTransaction> RebateBrokerTransactionHistory (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?))
+        /// <returns>List&lt;BrokerTransactionHistory&gt;</returns>
+        public List<BrokerTransactionHistory> RebateBrokerTransactionHistory (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?))
         {
-             ApiResponse<List<BrokerTransaction>> localVarResponse = RebateBrokerTransactionHistoryWithHttpInfo(limit, offset, userId, from, to);
+             ApiResponse<List<BrokerTransactionHistory>> localVarResponse = RebateBrokerTransactionHistoryWithHttpInfo(limit, offset, userId, from, to);
              return localVarResponse.Data;
         }
 
@@ -1693,8 +1769,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
         /// <param name="from">Start time of the query record. If not specified, defaults to 30 days before the current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
-        /// <returns>ApiResponse of List&lt;BrokerTransaction&gt;</returns>
-        public ApiResponse<List<BrokerTransaction>> RebateBrokerTransactionHistoryWithHttpInfo (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?))
+        /// <returns>ApiResponse of List&lt;BrokerTransactionHistory&gt;</returns>
+        public ApiResponse<List<BrokerTransactionHistory>> RebateBrokerTransactionHistoryWithHttpInfo (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1737,7 +1813,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<BrokerTransaction>>("/rebate/broker/transaction_history", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<BrokerTransactionHistory>>("/rebate/broker/transaction_history", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1757,10 +1833,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
         /// <param name="from">Start time of the query record. If not specified, defaults to 30 days before the current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
-        /// <returns>Task of List&lt;BrokerTransaction&gt;</returns>
-        public async Task<List<BrokerTransaction>> RebateBrokerTransactionHistoryAsync (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?))
+        /// <returns>Task of List&lt;BrokerTransactionHistory&gt;</returns>
+        public async Task<List<BrokerTransactionHistory>> RebateBrokerTransactionHistoryAsync (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<BrokerTransaction>> localVarResponse = await RebateBrokerTransactionHistoryAsyncWithHttpInfo(limit, offset, userId, from, to);
+             Io.Gate.GateApi.Client.ApiResponse<List<BrokerTransactionHistory>> localVarResponse = await RebateBrokerTransactionHistoryAsyncWithHttpInfo(limit, offset, userId, from, to);
              return localVarResponse.Data;
 
         }
@@ -1774,8 +1850,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="userId">User ID. If not specified, all user records will be returned (optional)</param>
         /// <param name="from">Start time of the query record. If not specified, defaults to 30 days before the current time (optional)</param>
         /// <param name="to">End timestamp for the query, defaults to current time if not specified (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;BrokerTransaction&gt;)</returns>
-        public async Task<ApiResponse<List<BrokerTransaction>>> RebateBrokerTransactionHistoryAsyncWithHttpInfo (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?))
+        /// <returns>Task of ApiResponse (List&lt;BrokerTransactionHistory&gt;)</returns>
+        public async Task<ApiResponse<List<BrokerTransactionHistory>>> RebateBrokerTransactionHistoryAsyncWithHttpInfo (int? limit = default(int?), int? offset = default(int?), long? userId = default(long?), long? from = default(long?), long? to = default(long?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1820,7 +1896,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<BrokerTransaction>>("/rebate/broker/transaction_history", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<BrokerTransactionHistory>>("/rebate/broker/transaction_history", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2045,6 +2121,212 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UserSubRelation", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get recent partner application records 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>PartnerApplicationResponse</returns>
+        public PartnerApplicationResponse GetPartnerApplicationRecent ()
+        {
+             ApiResponse<PartnerApplicationResponse> localVarResponse = GetPartnerApplicationRecentWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get recent partner application records 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of PartnerApplicationResponse</returns>
+        public ApiResponse<PartnerApplicationResponse> GetPartnerApplicationRecentWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<PartnerApplicationResponse>("/rebate/partner/applications/recent", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetPartnerApplicationRecent", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get recent partner application records 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of PartnerApplicationResponse</returns>
+        public async Task<PartnerApplicationResponse> GetPartnerApplicationRecentAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<PartnerApplicationResponse> localVarResponse = await GetPartnerApplicationRecentAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get recent partner application records 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (PartnerApplicationResponse)</returns>
+        public async Task<ApiResponse<PartnerApplicationResponse>> GetPartnerApplicationRecentAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<PartnerApplicationResponse>("/rebate/partner/applications/recent", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetPartnerApplicationRecent", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Check partner application eligibility 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>EligibilityResponse</returns>
+        public EligibilityResponse GetPartnerEligibility ()
+        {
+             ApiResponse<EligibilityResponse> localVarResponse = GetPartnerEligibilityWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Check partner application eligibility 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of EligibilityResponse</returns>
+        public ApiResponse<EligibilityResponse> GetPartnerEligibilityWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<EligibilityResponse>("/rebate/partner/eligibility", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetPartnerEligibility", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Check partner application eligibility 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of EligibilityResponse</returns>
+        public async Task<EligibilityResponse> GetPartnerEligibilityAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<EligibilityResponse> localVarResponse = await GetPartnerEligibilityAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Check partner application eligibility 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (EligibilityResponse)</returns>
+        public async Task<ApiResponse<EligibilityResponse>> GetPartnerEligibilityAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<EligibilityResponse>("/rebate/partner/eligibility", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetPartnerEligibility", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

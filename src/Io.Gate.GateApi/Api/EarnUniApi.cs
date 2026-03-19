@@ -246,8 +246,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp in seconds, maximum span 30 days</param>
         /// <param name="to">End timestamp in seconds, maximum span 30 days</param>
         /// <param name="asset">Currency name</param>
-        /// <returns>List&lt;InlineResponse2004&gt;</returns>
-        List<InlineResponse2004> ListUniChart (long from, long to, string asset);
+        /// <returns>List&lt;UniChartPoint&gt;</returns>
+        List<UniChartPoint> ListUniChart (long from, long to, string asset);
 
         /// <summary>
         /// UniLoan currency annualized trend chart
@@ -259,8 +259,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp in seconds, maximum span 30 days</param>
         /// <param name="to">End timestamp in seconds, maximum span 30 days</param>
         /// <param name="asset">Currency name</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse2004&gt;</returns>
-        ApiResponse<List<InlineResponse2004>> ListUniChartWithHttpInfo (long from, long to, string asset);
+        /// <returns>ApiResponse of List&lt;UniChartPoint&gt;</returns>
+        ApiResponse<List<UniChartPoint>> ListUniChartWithHttpInfo (long from, long to, string asset);
         /// <summary>
         /// Currency estimated annualized interest rate
         /// </summary>
@@ -268,8 +268,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;InlineResponse2005&gt;</returns>
-        List<InlineResponse2005> ListUniRate ();
+        /// <returns>List&lt;UniEstimatedRate&gt;</returns>
+        List<UniEstimatedRate> ListUniRate ();
 
         /// <summary>
         /// Currency estimated annualized interest rate
@@ -278,8 +278,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;InlineResponse2005&gt;</returns>
-        ApiResponse<List<InlineResponse2005>> ListUniRateWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;UniEstimatedRate&gt;</returns>
+        ApiResponse<List<UniEstimatedRate>> ListUniRateWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -508,8 +508,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp in seconds, maximum span 30 days</param>
         /// <param name="to">End timestamp in seconds, maximum span 30 days</param>
         /// <param name="asset">Currency name</param>
-        /// <returns>Task of List&lt;InlineResponse2004&gt;</returns>
-        Task<List<InlineResponse2004>> ListUniChartAsync (long from, long to, string asset);
+        /// <returns>Task of List&lt;UniChartPoint&gt;</returns>
+        Task<List<UniChartPoint>> ListUniChartAsync (long from, long to, string asset);
 
         /// <summary>
         /// UniLoan currency annualized trend chart
@@ -521,8 +521,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp in seconds, maximum span 30 days</param>
         /// <param name="to">End timestamp in seconds, maximum span 30 days</param>
         /// <param name="asset">Currency name</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse2004&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse2004>>> ListUniChartAsyncWithHttpInfo (long from, long to, string asset);
+        /// <returns>Task of ApiResponse (List&lt;UniChartPoint&gt;)</returns>
+        Task<ApiResponse<List<UniChartPoint>>> ListUniChartAsyncWithHttpInfo (long from, long to, string asset);
         /// <summary>
         /// Currency estimated annualized interest rate
         /// </summary>
@@ -530,8 +530,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;InlineResponse2005&gt;</returns>
-        Task<List<InlineResponse2005>> ListUniRateAsync ();
+        /// <returns>Task of List&lt;UniEstimatedRate&gt;</returns>
+        Task<List<UniEstimatedRate>> ListUniRateAsync ();
 
         /// <summary>
         /// Currency estimated annualized interest rate
@@ -540,8 +540,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse2005&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse2005>>> ListUniRateAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;UniEstimatedRate&gt;)</returns>
+        Task<ApiResponse<List<UniEstimatedRate>>> ListUniRateAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -1822,10 +1822,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp in seconds, maximum span 30 days</param>
         /// <param name="to">End timestamp in seconds, maximum span 30 days</param>
         /// <param name="asset">Currency name</param>
-        /// <returns>List&lt;InlineResponse2004&gt;</returns>
-        public List<InlineResponse2004> ListUniChart (long from, long to, string asset)
+        /// <returns>List&lt;UniChartPoint&gt;</returns>
+        public List<UniChartPoint> ListUniChart (long from, long to, string asset)
         {
-             ApiResponse<List<InlineResponse2004>> localVarResponse = ListUniChartWithHttpInfo(from, to, asset);
+             ApiResponse<List<UniChartPoint>> localVarResponse = ListUniChartWithHttpInfo(from, to, asset);
              return localVarResponse.Data;
         }
 
@@ -1836,8 +1836,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp in seconds, maximum span 30 days</param>
         /// <param name="to">End timestamp in seconds, maximum span 30 days</param>
         /// <param name="asset">Currency name</param>
-        /// <returns>ApiResponse of List&lt;InlineResponse2004&gt;</returns>
-        public ApiResponse<List<InlineResponse2004>> ListUniChartWithHttpInfo (long from, long to, string asset)
+        /// <returns>ApiResponse of List&lt;UniChartPoint&gt;</returns>
+        public ApiResponse<List<UniChartPoint>> ListUniChartWithHttpInfo (long from, long to, string asset)
         {
             // verify the required parameter 'asset' is set
             if (asset == null)
@@ -1867,7 +1867,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse2004>>("/earn/uni/chart", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<UniChartPoint>>("/earn/uni/chart", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1885,10 +1885,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp in seconds, maximum span 30 days</param>
         /// <param name="to">End timestamp in seconds, maximum span 30 days</param>
         /// <param name="asset">Currency name</param>
-        /// <returns>Task of List&lt;InlineResponse2004&gt;</returns>
-        public async Task<List<InlineResponse2004>> ListUniChartAsync (long from, long to, string asset)
+        /// <returns>Task of List&lt;UniChartPoint&gt;</returns>
+        public async Task<List<UniChartPoint>> ListUniChartAsync (long from, long to, string asset)
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse2004>> localVarResponse = await ListUniChartAsyncWithHttpInfo(from, to, asset);
+             Io.Gate.GateApi.Client.ApiResponse<List<UniChartPoint>> localVarResponse = await ListUniChartAsyncWithHttpInfo(from, to, asset);
              return localVarResponse.Data;
 
         }
@@ -1900,8 +1900,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="from">Start timestamp in seconds, maximum span 30 days</param>
         /// <param name="to">End timestamp in seconds, maximum span 30 days</param>
         /// <param name="asset">Currency name</param>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse2004&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse2004>>> ListUniChartAsyncWithHttpInfo (long from, long to, string asset)
+        /// <returns>Task of ApiResponse (List&lt;UniChartPoint&gt;)</returns>
+        public async Task<ApiResponse<List<UniChartPoint>>> ListUniChartAsyncWithHttpInfo (long from, long to, string asset)
         {
             // verify the required parameter 'asset' is set
             if (asset == null)
@@ -1933,7 +1933,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse2004>>("/earn/uni/chart", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<UniChartPoint>>("/earn/uni/chart", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1948,10 +1948,10 @@ namespace Io.Gate.GateApi.Api
         /// Currency estimated annualized interest rate 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;InlineResponse2005&gt;</returns>
-        public List<InlineResponse2005> ListUniRate ()
+        /// <returns>List&lt;UniEstimatedRate&gt;</returns>
+        public List<UniEstimatedRate> ListUniRate ()
         {
-             ApiResponse<List<InlineResponse2005>> localVarResponse = ListUniRateWithHttpInfo();
+             ApiResponse<List<UniEstimatedRate>> localVarResponse = ListUniRateWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -1959,8 +1959,8 @@ namespace Io.Gate.GateApi.Api
         /// Currency estimated annualized interest rate 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;InlineResponse2005&gt;</returns>
-        public ApiResponse<List<InlineResponse2005>> ListUniRateWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;UniEstimatedRate&gt;</returns>
+        public ApiResponse<List<UniEstimatedRate>> ListUniRateWithHttpInfo ()
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1983,7 +1983,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse2005>>("/earn/uni/rate", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<UniEstimatedRate>>("/earn/uni/rate", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1998,10 +1998,10 @@ namespace Io.Gate.GateApi.Api
         /// Currency estimated annualized interest rate 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;InlineResponse2005&gt;</returns>
-        public async Task<List<InlineResponse2005>> ListUniRateAsync ()
+        /// <returns>Task of List&lt;UniEstimatedRate&gt;</returns>
+        public async Task<List<UniEstimatedRate>> ListUniRateAsync ()
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse2005>> localVarResponse = await ListUniRateAsyncWithHttpInfo();
+             Io.Gate.GateApi.Client.ApiResponse<List<UniEstimatedRate>> localVarResponse = await ListUniRateAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -2010,8 +2010,8 @@ namespace Io.Gate.GateApi.Api
         /// Currency estimated annualized interest rate 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse2005&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse2005>>> ListUniRateAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;UniEstimatedRate&gt;)</returns>
+        public async Task<ApiResponse<List<UniEstimatedRate>>> ListUniRateAsyncWithHttpInfo ()
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2036,7 +2036,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse2005>>("/earn/uni/rate", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<UniEstimatedRate>>("/earn/uni/rate", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

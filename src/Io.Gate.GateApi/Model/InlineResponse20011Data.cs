@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse20011Data
+    /// Activity entry data
     /// </summary>
     [DataContract]
     public partial class InlineResponse20011Data :  IEquatable<InlineResponse20011Data>, IValidatableObject
@@ -38,50 +38,69 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20011Data" /> class.
         /// </summary>
-        /// <param name="pn">pn (required).</param>
-        /// <param name="ps">ps (required).</param>
-        /// <param name="totalPn">totalPn (required).</param>
-        /// <param name="count">count (required).</param>
-        /// <param name="list">list (required).</param>
-        public InlineResponse20011Data(int pn = default(int), int ps = default(int), int totalPn = default(int), int count = default(int), List<InlineResponse20011DataList> list = default(List<InlineResponse20011DataList>))
+        /// <param name="iconUrl">Activity entry icon URL (light mode) (required).</param>
+        /// <param name="iconUrlDark">Activity entry icon URL (dark mode) (required).</param>
+        /// <param name="sourceType">Source type, e.g., activity for campaign (required).</param>
+        /// <param name="title">Activity entry title (required).</param>
+        /// <param name="urlType">Redirect link type, e.g., h5 for H5 page (required).</param>
+        /// <param name="url">Activity entry redirect URL (required).</param>
+        public InlineResponse20011Data(string iconUrl = default(string), string iconUrlDark = default(string), string sourceType = default(string), string title = default(string), string urlType = default(string), string url = default(string))
         {
-            this.Pn = pn;
-            this.Ps = ps;
-            this.TotalPn = totalPn;
-            this.Count = count;
-            // to ensure "list" is required (not null)
-            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20011Data and cannot be null");
+            // to ensure "iconUrl" is required (not null)
+            this.IconUrl = iconUrl ?? throw new ArgumentNullException("iconUrl", "iconUrl is a required property for InlineResponse20011Data and cannot be null");
+            // to ensure "iconUrlDark" is required (not null)
+            this.IconUrlDark = iconUrlDark ?? throw new ArgumentNullException("iconUrlDark", "iconUrlDark is a required property for InlineResponse20011Data and cannot be null");
+            // to ensure "sourceType" is required (not null)
+            this.SourceType = sourceType ?? throw new ArgumentNullException("sourceType", "sourceType is a required property for InlineResponse20011Data and cannot be null");
+            // to ensure "title" is required (not null)
+            this.Title = title ?? throw new ArgumentNullException("title", "title is a required property for InlineResponse20011Data and cannot be null");
+            // to ensure "urlType" is required (not null)
+            this.UrlType = urlType ?? throw new ArgumentNullException("urlType", "urlType is a required property for InlineResponse20011Data and cannot be null");
+            // to ensure "url" is required (not null)
+            this.Url = url ?? throw new ArgumentNullException("url", "url is a required property for InlineResponse20011Data and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets Pn
+        /// Activity entry icon URL (light mode)
         /// </summary>
-        [DataMember(Name="pn")]
-        public int Pn { get; set; }
+        /// <value>Activity entry icon URL (light mode)</value>
+        [DataMember(Name="icon_url")]
+        public string IconUrl { get; set; }
 
         /// <summary>
-        /// Gets or Sets Ps
+        /// Activity entry icon URL (dark mode)
         /// </summary>
-        [DataMember(Name="ps")]
-        public int Ps { get; set; }
+        /// <value>Activity entry icon URL (dark mode)</value>
+        [DataMember(Name="icon_url_dark")]
+        public string IconUrlDark { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPn
+        /// Source type, e.g., activity for campaign
         /// </summary>
-        [DataMember(Name="total_pn")]
-        public int TotalPn { get; set; }
+        /// <value>Source type, e.g., activity for campaign</value>
+        [DataMember(Name="source_type")]
+        public string SourceType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Count
+        /// Activity entry title
         /// </summary>
-        [DataMember(Name="count")]
-        public int Count { get; set; }
+        /// <value>Activity entry title</value>
+        [DataMember(Name="title")]
+        public string Title { get; set; }
 
         /// <summary>
-        /// Gets or Sets List
+        /// Redirect link type, e.g., h5 for H5 page
         /// </summary>
-        [DataMember(Name="list")]
-        public List<InlineResponse20011DataList> List { get; set; }
+        /// <value>Redirect link type, e.g., h5 for H5 page</value>
+        [DataMember(Name="url_type")]
+        public string UrlType { get; set; }
+
+        /// <summary>
+        /// Activity entry redirect URL
+        /// </summary>
+        /// <value>Activity entry redirect URL</value>
+        [DataMember(Name="url")]
+        public string Url { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -91,11 +110,12 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20011Data {\n");
-            sb.Append("  Pn: ").Append(Pn).Append("\n");
-            sb.Append("  Ps: ").Append(Ps).Append("\n");
-            sb.Append("  TotalPn: ").Append(TotalPn).Append("\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
-            sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("  IconUrl: ").Append(IconUrl).Append("\n");
+            sb.Append("  IconUrlDark: ").Append(IconUrlDark).Append("\n");
+            sb.Append("  SourceType: ").Append(SourceType).Append("\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  UrlType: ").Append(UrlType).Append("\n");
+            sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,26 +151,34 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Pn == input.Pn ||
-                    this.Pn.Equals(input.Pn)
+                    this.IconUrl == input.IconUrl ||
+                    (this.IconUrl != null &&
+                    this.IconUrl.Equals(input.IconUrl))
                 ) && 
                 (
-                    this.Ps == input.Ps ||
-                    this.Ps.Equals(input.Ps)
+                    this.IconUrlDark == input.IconUrlDark ||
+                    (this.IconUrlDark != null &&
+                    this.IconUrlDark.Equals(input.IconUrlDark))
                 ) && 
                 (
-                    this.TotalPn == input.TotalPn ||
-                    this.TotalPn.Equals(input.TotalPn)
+                    this.SourceType == input.SourceType ||
+                    (this.SourceType != null &&
+                    this.SourceType.Equals(input.SourceType))
                 ) && 
                 (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
+                    this.Title == input.Title ||
+                    (this.Title != null &&
+                    this.Title.Equals(input.Title))
                 ) && 
                 (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
+                    this.UrlType == input.UrlType ||
+                    (this.UrlType != null &&
+                    this.UrlType.Equals(input.UrlType))
+                ) && 
+                (
+                    this.Url == input.Url ||
+                    (this.Url != null &&
+                    this.Url.Equals(input.Url))
                 );
         }
 
@@ -163,12 +191,18 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Pn.GetHashCode();
-                hashCode = hashCode * 59 + this.Ps.GetHashCode();
-                hashCode = hashCode * 59 + this.TotalPn.GetHashCode();
-                hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                if (this.IconUrl != null)
+                    hashCode = hashCode * 59 + this.IconUrl.GetHashCode();
+                if (this.IconUrlDark != null)
+                    hashCode = hashCode * 59 + this.IconUrlDark.GetHashCode();
+                if (this.SourceType != null)
+                    hashCode = hashCode * 59 + this.SourceType.GetHashCode();
+                if (this.Title != null)
+                    hashCode = hashCode * 59 + this.Title.GetHashCode();
+                if (this.UrlType != null)
+                    hashCode = hashCode * 59 + this.UrlType.GetHashCode();
+                if (this.Url != null)
+                    hashCode = hashCode * 59 + this.Url.GetHashCode();
                 return hashCode;
             }
         }

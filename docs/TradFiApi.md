@@ -375,7 +375,7 @@ No authorization required
 
 <a name="querysymbolticker"></a>
 # **QuerySymbolTicker**
-> Ticker2 QuerySymbolTicker (string symbol)
+> TradFiTicker QuerySymbolTicker (string symbol)
 
 Query trading symbol ticker
 
@@ -401,7 +401,7 @@ namespace Example
             try
             {
                 // Query trading symbol ticker
-                Ticker2 result = apiInstance.QuerySymbolTicker(symbol);
+                TradFiTicker result = apiInstance.QuerySymbolTicker(symbol);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Ticker2**](Ticker2.md)
+[**TradFiTicker**](TradFiTicker.md)
 
 ### Authorization
 

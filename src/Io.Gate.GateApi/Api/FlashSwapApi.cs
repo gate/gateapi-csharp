@@ -146,6 +146,138 @@ namespace Io.Gate.GateApi.Api
         /// <param name="flashSwapPreviewRequest"></param>
         /// <returns>ApiResponse of FlashSwapOrderPreview</returns>
         ApiResponse<FlashSwapOrderPreview> PreviewFlashSwapOrderWithHttpInfo (FlashSwapPreviewRequest flashSwapPreviewRequest);
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (many-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Create a multi-currency to single target currency exchange order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderCreateReq"></param>
+        /// <returns>FlashSwapMultiCurrencyManyToOneOrderCreateResp</returns>
+        FlashSwapMultiCurrencyManyToOneOrderCreateResp CreateFlashSwapMultiCurrencyManyToOneOrder (FlashSwapMultiCurrencyManyToOneOrderCreateReq flashSwapMultiCurrencyManyToOneOrderCreateReq);
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (many-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Create a multi-currency to single target currency exchange order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderCreateReq"></param>
+        /// <returns>ApiResponse of FlashSwapMultiCurrencyManyToOneOrderCreateResp</returns>
+        ApiResponse<FlashSwapMultiCurrencyManyToOneOrderCreateResp> CreateFlashSwapMultiCurrencyManyToOneOrderWithHttpInfo (FlashSwapMultiCurrencyManyToOneOrderCreateReq flashSwapMultiCurrencyManyToOneOrderCreateReq);
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (many-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Preview quote for multi-currency to single target currency exchange
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderPreviewReq"></param>
+        /// <returns>FlashSwapMultiCurrencyManyToOneOrderPreviewResp</returns>
+        FlashSwapMultiCurrencyManyToOneOrderPreviewResp PreviewFlashSwapMultiCurrencyManyToOneOrder (FlashSwapMultiCurrencyManyToOneOrderPreviewReq flashSwapMultiCurrencyManyToOneOrderPreviewReq);
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (many-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Preview quote for multi-currency to single target currency exchange
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderPreviewReq"></param>
+        /// <returns>ApiResponse of FlashSwapMultiCurrencyManyToOneOrderPreviewResp</returns>
+        ApiResponse<FlashSwapMultiCurrencyManyToOneOrderPreviewResp> PreviewFlashSwapMultiCurrencyManyToOneOrderWithHttpInfo (FlashSwapMultiCurrencyManyToOneOrderPreviewReq flashSwapMultiCurrencyManyToOneOrderPreviewReq);
+        /// <summary>
+        /// Flash Swap - Place order (one-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Submit a one-to-one flash swap order. A quote_id must be obtained from the preview endpoint first
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapOrderCreateReq"></param>
+        /// <returns>FlashSwapOrderCreateResp</returns>
+        FlashSwapOrderCreateResp CreateFlashSwapOrderV1 (FlashSwapOrderCreateReq flashSwapOrderCreateReq);
+
+        /// <summary>
+        /// Flash Swap - Place order (one-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Submit a one-to-one flash swap order. A quote_id must be obtained from the preview endpoint first
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapOrderCreateReq"></param>
+        /// <returns>ApiResponse of FlashSwapOrderCreateResp</returns>
+        ApiResponse<FlashSwapOrderCreateResp> CreateFlashSwapOrderV1WithHttpInfo (FlashSwapOrderCreateReq flashSwapOrderCreateReq);
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (one-to-many)
+        /// </summary>
+        /// <remarks>
+        /// Create a single currency to multiple target currencies exchange order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderCreateReq"></param>
+        /// <returns>FlashSwapMultiCurrencyOneToManyOrderCreateResp</returns>
+        FlashSwapMultiCurrencyOneToManyOrderCreateResp CreateFlashSwapMultiCurrencyOneToManyOrder (FlashSwapMultiCurrencyOneToManyOrderCreateReq flashSwapMultiCurrencyOneToManyOrderCreateReq);
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (one-to-many)
+        /// </summary>
+        /// <remarks>
+        /// Create a single currency to multiple target currencies exchange order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderCreateReq"></param>
+        /// <returns>ApiResponse of FlashSwapMultiCurrencyOneToManyOrderCreateResp</returns>
+        ApiResponse<FlashSwapMultiCurrencyOneToManyOrderCreateResp> CreateFlashSwapMultiCurrencyOneToManyOrderWithHttpInfo (FlashSwapMultiCurrencyOneToManyOrderCreateReq flashSwapMultiCurrencyOneToManyOrderCreateReq);
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (one-to-many)
+        /// </summary>
+        /// <remarks>
+        /// Preview quote for single currency to multiple target currencies exchange
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderPreviewReq"></param>
+        /// <returns>FlashSwapMultiCurrencyOneToManyOrderPreviewResp</returns>
+        FlashSwapMultiCurrencyOneToManyOrderPreviewResp PreviewFlashSwapMultiCurrencyOneToManyOrder (FlashSwapMultiCurrencyOneToManyOrderPreviewReq flashSwapMultiCurrencyOneToManyOrderPreviewReq);
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (one-to-many)
+        /// </summary>
+        /// <remarks>
+        /// Preview quote for single currency to multiple target currencies exchange
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderPreviewReq"></param>
+        /// <returns>ApiResponse of FlashSwapMultiCurrencyOneToManyOrderPreviewResp</returns>
+        ApiResponse<FlashSwapMultiCurrencyOneToManyOrderPreviewResp> PreviewFlashSwapMultiCurrencyOneToManyOrderWithHttpInfo (FlashSwapMultiCurrencyOneToManyOrderPreviewReq flashSwapMultiCurrencyOneToManyOrderPreviewReq);
+        /// <summary>
+        /// Flash Swap - Preview (one-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Get one-to-one flash swap quote. Either sell_amount or buy_amount must be specified
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellAsset">Currency to sell</param>
+        /// <param name="buyAsset">Currency to buy</param>
+        /// <param name="sellAmount">Sell amount, either this or buy_amount must be specified (optional)</param>
+        /// <param name="buyAmount">Buy amount, either this or sell_amount must be specified (optional)</param>
+        /// <returns>FlashSwapOrderPreviewResp</returns>
+        FlashSwapOrderPreviewResp PreviewFlashSwapOrderV1 (string sellAsset, string buyAsset, string sellAmount = default(string), string buyAmount = default(string));
+
+        /// <summary>
+        /// Flash Swap - Preview (one-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Get one-to-one flash swap quote. Either sell_amount or buy_amount must be specified
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellAsset">Currency to sell</param>
+        /// <param name="buyAsset">Currency to buy</param>
+        /// <param name="sellAmount">Sell amount, either this or buy_amount must be specified (optional)</param>
+        /// <param name="buyAmount">Buy amount, either this or sell_amount must be specified (optional)</param>
+        /// <returns>ApiResponse of FlashSwapOrderPreviewResp</returns>
+        ApiResponse<FlashSwapOrderPreviewResp> PreviewFlashSwapOrderV1WithHttpInfo (string sellAsset, string buyAsset, string sellAmount = default(string), string buyAmount = default(string));
         #endregion Synchronous Operations
     }
 
@@ -274,6 +406,138 @@ namespace Io.Gate.GateApi.Api
         /// <param name="flashSwapPreviewRequest"></param>
         /// <returns>Task of ApiResponse (FlashSwapOrderPreview)</returns>
         Task<ApiResponse<FlashSwapOrderPreview>> PreviewFlashSwapOrderAsyncWithHttpInfo (FlashSwapPreviewRequest flashSwapPreviewRequest);
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (many-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Create a multi-currency to single target currency exchange order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderCreateReq"></param>
+        /// <returns>Task of FlashSwapMultiCurrencyManyToOneOrderCreateResp</returns>
+        Task<FlashSwapMultiCurrencyManyToOneOrderCreateResp> CreateFlashSwapMultiCurrencyManyToOneOrderAsync (FlashSwapMultiCurrencyManyToOneOrderCreateReq flashSwapMultiCurrencyManyToOneOrderCreateReq);
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (many-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Create a multi-currency to single target currency exchange order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderCreateReq"></param>
+        /// <returns>Task of ApiResponse (FlashSwapMultiCurrencyManyToOneOrderCreateResp)</returns>
+        Task<ApiResponse<FlashSwapMultiCurrencyManyToOneOrderCreateResp>> CreateFlashSwapMultiCurrencyManyToOneOrderAsyncWithHttpInfo (FlashSwapMultiCurrencyManyToOneOrderCreateReq flashSwapMultiCurrencyManyToOneOrderCreateReq);
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (many-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Preview quote for multi-currency to single target currency exchange
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderPreviewReq"></param>
+        /// <returns>Task of FlashSwapMultiCurrencyManyToOneOrderPreviewResp</returns>
+        Task<FlashSwapMultiCurrencyManyToOneOrderPreviewResp> PreviewFlashSwapMultiCurrencyManyToOneOrderAsync (FlashSwapMultiCurrencyManyToOneOrderPreviewReq flashSwapMultiCurrencyManyToOneOrderPreviewReq);
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (many-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Preview quote for multi-currency to single target currency exchange
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderPreviewReq"></param>
+        /// <returns>Task of ApiResponse (FlashSwapMultiCurrencyManyToOneOrderPreviewResp)</returns>
+        Task<ApiResponse<FlashSwapMultiCurrencyManyToOneOrderPreviewResp>> PreviewFlashSwapMultiCurrencyManyToOneOrderAsyncWithHttpInfo (FlashSwapMultiCurrencyManyToOneOrderPreviewReq flashSwapMultiCurrencyManyToOneOrderPreviewReq);
+        /// <summary>
+        /// Flash Swap - Place order (one-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Submit a one-to-one flash swap order. A quote_id must be obtained from the preview endpoint first
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapOrderCreateReq"></param>
+        /// <returns>Task of FlashSwapOrderCreateResp</returns>
+        Task<FlashSwapOrderCreateResp> CreateFlashSwapOrderV1Async (FlashSwapOrderCreateReq flashSwapOrderCreateReq);
+
+        /// <summary>
+        /// Flash Swap - Place order (one-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Submit a one-to-one flash swap order. A quote_id must be obtained from the preview endpoint first
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapOrderCreateReq"></param>
+        /// <returns>Task of ApiResponse (FlashSwapOrderCreateResp)</returns>
+        Task<ApiResponse<FlashSwapOrderCreateResp>> CreateFlashSwapOrderV1AsyncWithHttpInfo (FlashSwapOrderCreateReq flashSwapOrderCreateReq);
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (one-to-many)
+        /// </summary>
+        /// <remarks>
+        /// Create a single currency to multiple target currencies exchange order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderCreateReq"></param>
+        /// <returns>Task of FlashSwapMultiCurrencyOneToManyOrderCreateResp</returns>
+        Task<FlashSwapMultiCurrencyOneToManyOrderCreateResp> CreateFlashSwapMultiCurrencyOneToManyOrderAsync (FlashSwapMultiCurrencyOneToManyOrderCreateReq flashSwapMultiCurrencyOneToManyOrderCreateReq);
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (one-to-many)
+        /// </summary>
+        /// <remarks>
+        /// Create a single currency to multiple target currencies exchange order
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderCreateReq"></param>
+        /// <returns>Task of ApiResponse (FlashSwapMultiCurrencyOneToManyOrderCreateResp)</returns>
+        Task<ApiResponse<FlashSwapMultiCurrencyOneToManyOrderCreateResp>> CreateFlashSwapMultiCurrencyOneToManyOrderAsyncWithHttpInfo (FlashSwapMultiCurrencyOneToManyOrderCreateReq flashSwapMultiCurrencyOneToManyOrderCreateReq);
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (one-to-many)
+        /// </summary>
+        /// <remarks>
+        /// Preview quote for single currency to multiple target currencies exchange
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderPreviewReq"></param>
+        /// <returns>Task of FlashSwapMultiCurrencyOneToManyOrderPreviewResp</returns>
+        Task<FlashSwapMultiCurrencyOneToManyOrderPreviewResp> PreviewFlashSwapMultiCurrencyOneToManyOrderAsync (FlashSwapMultiCurrencyOneToManyOrderPreviewReq flashSwapMultiCurrencyOneToManyOrderPreviewReq);
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (one-to-many)
+        /// </summary>
+        /// <remarks>
+        /// Preview quote for single currency to multiple target currencies exchange
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderPreviewReq"></param>
+        /// <returns>Task of ApiResponse (FlashSwapMultiCurrencyOneToManyOrderPreviewResp)</returns>
+        Task<ApiResponse<FlashSwapMultiCurrencyOneToManyOrderPreviewResp>> PreviewFlashSwapMultiCurrencyOneToManyOrderAsyncWithHttpInfo (FlashSwapMultiCurrencyOneToManyOrderPreviewReq flashSwapMultiCurrencyOneToManyOrderPreviewReq);
+        /// <summary>
+        /// Flash Swap - Preview (one-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Get one-to-one flash swap quote. Either sell_amount or buy_amount must be specified
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellAsset">Currency to sell</param>
+        /// <param name="buyAsset">Currency to buy</param>
+        /// <param name="sellAmount">Sell amount, either this or buy_amount must be specified (optional)</param>
+        /// <param name="buyAmount">Buy amount, either this or sell_amount must be specified (optional)</param>
+        /// <returns>Task of FlashSwapOrderPreviewResp</returns>
+        Task<FlashSwapOrderPreviewResp> PreviewFlashSwapOrderV1Async (string sellAsset, string buyAsset, string sellAmount = default(string), string buyAmount = default(string));
+
+        /// <summary>
+        /// Flash Swap - Preview (one-to-one)
+        /// </summary>
+        /// <remarks>
+        /// Get one-to-one flash swap quote. Either sell_amount or buy_amount must be specified
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellAsset">Currency to sell</param>
+        /// <param name="buyAsset">Currency to buy</param>
+        /// <param name="sellAmount">Sell amount, either this or buy_amount must be specified (optional)</param>
+        /// <param name="buyAmount">Buy amount, either this or sell_amount must be specified (optional)</param>
+        /// <returns>Task of ApiResponse (FlashSwapOrderPreviewResp)</returns>
+        Task<ApiResponse<FlashSwapOrderPreviewResp>> PreviewFlashSwapOrderV1AsyncWithHttpInfo (string sellAsset, string buyAsset, string sellAmount = default(string), string buyAmount = default(string));
         #endregion Asynchronous Operations
     }
 
@@ -1045,6 +1309,756 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PreviewFlashSwapOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (many-to-one) Create a multi-currency to single target currency exchange order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderCreateReq"></param>
+        /// <returns>FlashSwapMultiCurrencyManyToOneOrderCreateResp</returns>
+        public FlashSwapMultiCurrencyManyToOneOrderCreateResp CreateFlashSwapMultiCurrencyManyToOneOrder (FlashSwapMultiCurrencyManyToOneOrderCreateReq flashSwapMultiCurrencyManyToOneOrderCreateReq)
+        {
+             ApiResponse<FlashSwapMultiCurrencyManyToOneOrderCreateResp> localVarResponse = CreateFlashSwapMultiCurrencyManyToOneOrderWithHttpInfo(flashSwapMultiCurrencyManyToOneOrderCreateReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (many-to-one) Create a multi-currency to single target currency exchange order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderCreateReq"></param>
+        /// <returns>ApiResponse of FlashSwapMultiCurrencyManyToOneOrderCreateResp</returns>
+        public ApiResponse<FlashSwapMultiCurrencyManyToOneOrderCreateResp> CreateFlashSwapMultiCurrencyManyToOneOrderWithHttpInfo (FlashSwapMultiCurrencyManyToOneOrderCreateReq flashSwapMultiCurrencyManyToOneOrderCreateReq)
+        {
+            // verify the required parameter 'flashSwapMultiCurrencyManyToOneOrderCreateReq' is set
+            if (flashSwapMultiCurrencyManyToOneOrderCreateReq == null)
+                throw new ApiException(400, "Missing required parameter 'flashSwapMultiCurrencyManyToOneOrderCreateReq' when calling FlashSwapApi->CreateFlashSwapMultiCurrencyManyToOneOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = flashSwapMultiCurrencyManyToOneOrderCreateReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyManyToOneOrderCreateResp>("/flash-swap/multi-currency/many-to-one/order/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateFlashSwapMultiCurrencyManyToOneOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (many-to-one) Create a multi-currency to single target currency exchange order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderCreateReq"></param>
+        /// <returns>Task of FlashSwapMultiCurrencyManyToOneOrderCreateResp</returns>
+        public async Task<FlashSwapMultiCurrencyManyToOneOrderCreateResp> CreateFlashSwapMultiCurrencyManyToOneOrderAsync (FlashSwapMultiCurrencyManyToOneOrderCreateReq flashSwapMultiCurrencyManyToOneOrderCreateReq)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FlashSwapMultiCurrencyManyToOneOrderCreateResp> localVarResponse = await CreateFlashSwapMultiCurrencyManyToOneOrderAsyncWithHttpInfo(flashSwapMultiCurrencyManyToOneOrderCreateReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (many-to-one) Create a multi-currency to single target currency exchange order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderCreateReq"></param>
+        /// <returns>Task of ApiResponse (FlashSwapMultiCurrencyManyToOneOrderCreateResp)</returns>
+        public async Task<ApiResponse<FlashSwapMultiCurrencyManyToOneOrderCreateResp>> CreateFlashSwapMultiCurrencyManyToOneOrderAsyncWithHttpInfo (FlashSwapMultiCurrencyManyToOneOrderCreateReq flashSwapMultiCurrencyManyToOneOrderCreateReq)
+        {
+            // verify the required parameter 'flashSwapMultiCurrencyManyToOneOrderCreateReq' is set
+            if (flashSwapMultiCurrencyManyToOneOrderCreateReq == null)
+                throw new ApiException(400, "Missing required parameter 'flashSwapMultiCurrencyManyToOneOrderCreateReq' when calling FlashSwapApi->CreateFlashSwapMultiCurrencyManyToOneOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = flashSwapMultiCurrencyManyToOneOrderCreateReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyManyToOneOrderCreateResp>("/flash-swap/multi-currency/many-to-one/order/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateFlashSwapMultiCurrencyManyToOneOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (many-to-one) Preview quote for multi-currency to single target currency exchange
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderPreviewReq"></param>
+        /// <returns>FlashSwapMultiCurrencyManyToOneOrderPreviewResp</returns>
+        public FlashSwapMultiCurrencyManyToOneOrderPreviewResp PreviewFlashSwapMultiCurrencyManyToOneOrder (FlashSwapMultiCurrencyManyToOneOrderPreviewReq flashSwapMultiCurrencyManyToOneOrderPreviewReq)
+        {
+             ApiResponse<FlashSwapMultiCurrencyManyToOneOrderPreviewResp> localVarResponse = PreviewFlashSwapMultiCurrencyManyToOneOrderWithHttpInfo(flashSwapMultiCurrencyManyToOneOrderPreviewReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (many-to-one) Preview quote for multi-currency to single target currency exchange
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderPreviewReq"></param>
+        /// <returns>ApiResponse of FlashSwapMultiCurrencyManyToOneOrderPreviewResp</returns>
+        public ApiResponse<FlashSwapMultiCurrencyManyToOneOrderPreviewResp> PreviewFlashSwapMultiCurrencyManyToOneOrderWithHttpInfo (FlashSwapMultiCurrencyManyToOneOrderPreviewReq flashSwapMultiCurrencyManyToOneOrderPreviewReq)
+        {
+            // verify the required parameter 'flashSwapMultiCurrencyManyToOneOrderPreviewReq' is set
+            if (flashSwapMultiCurrencyManyToOneOrderPreviewReq == null)
+                throw new ApiException(400, "Missing required parameter 'flashSwapMultiCurrencyManyToOneOrderPreviewReq' when calling FlashSwapApi->PreviewFlashSwapMultiCurrencyManyToOneOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = flashSwapMultiCurrencyManyToOneOrderPreviewReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyManyToOneOrderPreviewResp>("/flash-swap/multi-currency/many-to-one/order/preview", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PreviewFlashSwapMultiCurrencyManyToOneOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (many-to-one) Preview quote for multi-currency to single target currency exchange
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderPreviewReq"></param>
+        /// <returns>Task of FlashSwapMultiCurrencyManyToOneOrderPreviewResp</returns>
+        public async Task<FlashSwapMultiCurrencyManyToOneOrderPreviewResp> PreviewFlashSwapMultiCurrencyManyToOneOrderAsync (FlashSwapMultiCurrencyManyToOneOrderPreviewReq flashSwapMultiCurrencyManyToOneOrderPreviewReq)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FlashSwapMultiCurrencyManyToOneOrderPreviewResp> localVarResponse = await PreviewFlashSwapMultiCurrencyManyToOneOrderAsyncWithHttpInfo(flashSwapMultiCurrencyManyToOneOrderPreviewReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (many-to-one) Preview quote for multi-currency to single target currency exchange
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyManyToOneOrderPreviewReq"></param>
+        /// <returns>Task of ApiResponse (FlashSwapMultiCurrencyManyToOneOrderPreviewResp)</returns>
+        public async Task<ApiResponse<FlashSwapMultiCurrencyManyToOneOrderPreviewResp>> PreviewFlashSwapMultiCurrencyManyToOneOrderAsyncWithHttpInfo (FlashSwapMultiCurrencyManyToOneOrderPreviewReq flashSwapMultiCurrencyManyToOneOrderPreviewReq)
+        {
+            // verify the required parameter 'flashSwapMultiCurrencyManyToOneOrderPreviewReq' is set
+            if (flashSwapMultiCurrencyManyToOneOrderPreviewReq == null)
+                throw new ApiException(400, "Missing required parameter 'flashSwapMultiCurrencyManyToOneOrderPreviewReq' when calling FlashSwapApi->PreviewFlashSwapMultiCurrencyManyToOneOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = flashSwapMultiCurrencyManyToOneOrderPreviewReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyManyToOneOrderPreviewResp>("/flash-swap/multi-currency/many-to-one/order/preview", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PreviewFlashSwapMultiCurrencyManyToOneOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Place order (one-to-one) Submit a one-to-one flash swap order. A quote_id must be obtained from the preview endpoint first
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapOrderCreateReq"></param>
+        /// <returns>FlashSwapOrderCreateResp</returns>
+        public FlashSwapOrderCreateResp CreateFlashSwapOrderV1 (FlashSwapOrderCreateReq flashSwapOrderCreateReq)
+        {
+             ApiResponse<FlashSwapOrderCreateResp> localVarResponse = CreateFlashSwapOrderV1WithHttpInfo(flashSwapOrderCreateReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Flash Swap - Place order (one-to-one) Submit a one-to-one flash swap order. A quote_id must be obtained from the preview endpoint first
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapOrderCreateReq"></param>
+        /// <returns>ApiResponse of FlashSwapOrderCreateResp</returns>
+        public ApiResponse<FlashSwapOrderCreateResp> CreateFlashSwapOrderV1WithHttpInfo (FlashSwapOrderCreateReq flashSwapOrderCreateReq)
+        {
+            // verify the required parameter 'flashSwapOrderCreateReq' is set
+            if (flashSwapOrderCreateReq == null)
+                throw new ApiException(400, "Missing required parameter 'flashSwapOrderCreateReq' when calling FlashSwapApi->CreateFlashSwapOrderV1");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = flashSwapOrderCreateReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<FlashSwapOrderCreateResp>("/flash-swap/order/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateFlashSwapOrderV1", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Place order (one-to-one) Submit a one-to-one flash swap order. A quote_id must be obtained from the preview endpoint first
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapOrderCreateReq"></param>
+        /// <returns>Task of FlashSwapOrderCreateResp</returns>
+        public async Task<FlashSwapOrderCreateResp> CreateFlashSwapOrderV1Async (FlashSwapOrderCreateReq flashSwapOrderCreateReq)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FlashSwapOrderCreateResp> localVarResponse = await CreateFlashSwapOrderV1AsyncWithHttpInfo(flashSwapOrderCreateReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Flash Swap - Place order (one-to-one) Submit a one-to-one flash swap order. A quote_id must be obtained from the preview endpoint first
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapOrderCreateReq"></param>
+        /// <returns>Task of ApiResponse (FlashSwapOrderCreateResp)</returns>
+        public async Task<ApiResponse<FlashSwapOrderCreateResp>> CreateFlashSwapOrderV1AsyncWithHttpInfo (FlashSwapOrderCreateReq flashSwapOrderCreateReq)
+        {
+            // verify the required parameter 'flashSwapOrderCreateReq' is set
+            if (flashSwapOrderCreateReq == null)
+                throw new ApiException(400, "Missing required parameter 'flashSwapOrderCreateReq' when calling FlashSwapApi->CreateFlashSwapOrderV1");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = flashSwapOrderCreateReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapOrderCreateResp>("/flash-swap/order/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateFlashSwapOrderV1", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (one-to-many) Create a single currency to multiple target currencies exchange order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderCreateReq"></param>
+        /// <returns>FlashSwapMultiCurrencyOneToManyOrderCreateResp</returns>
+        public FlashSwapMultiCurrencyOneToManyOrderCreateResp CreateFlashSwapMultiCurrencyOneToManyOrder (FlashSwapMultiCurrencyOneToManyOrderCreateReq flashSwapMultiCurrencyOneToManyOrderCreateReq)
+        {
+             ApiResponse<FlashSwapMultiCurrencyOneToManyOrderCreateResp> localVarResponse = CreateFlashSwapMultiCurrencyOneToManyOrderWithHttpInfo(flashSwapMultiCurrencyOneToManyOrderCreateReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (one-to-many) Create a single currency to multiple target currencies exchange order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderCreateReq"></param>
+        /// <returns>ApiResponse of FlashSwapMultiCurrencyOneToManyOrderCreateResp</returns>
+        public ApiResponse<FlashSwapMultiCurrencyOneToManyOrderCreateResp> CreateFlashSwapMultiCurrencyOneToManyOrderWithHttpInfo (FlashSwapMultiCurrencyOneToManyOrderCreateReq flashSwapMultiCurrencyOneToManyOrderCreateReq)
+        {
+            // verify the required parameter 'flashSwapMultiCurrencyOneToManyOrderCreateReq' is set
+            if (flashSwapMultiCurrencyOneToManyOrderCreateReq == null)
+                throw new ApiException(400, "Missing required parameter 'flashSwapMultiCurrencyOneToManyOrderCreateReq' when calling FlashSwapApi->CreateFlashSwapMultiCurrencyOneToManyOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = flashSwapMultiCurrencyOneToManyOrderCreateReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyOneToManyOrderCreateResp>("/flash-swap/multi-currency/one-to-many/order/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateFlashSwapMultiCurrencyOneToManyOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (one-to-many) Create a single currency to multiple target currencies exchange order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderCreateReq"></param>
+        /// <returns>Task of FlashSwapMultiCurrencyOneToManyOrderCreateResp</returns>
+        public async Task<FlashSwapMultiCurrencyOneToManyOrderCreateResp> CreateFlashSwapMultiCurrencyOneToManyOrderAsync (FlashSwapMultiCurrencyOneToManyOrderCreateReq flashSwapMultiCurrencyOneToManyOrderCreateReq)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FlashSwapMultiCurrencyOneToManyOrderCreateResp> localVarResponse = await CreateFlashSwapMultiCurrencyOneToManyOrderAsyncWithHttpInfo(flashSwapMultiCurrencyOneToManyOrderCreateReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Place order (one-to-many) Create a single currency to multiple target currencies exchange order
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderCreateReq"></param>
+        /// <returns>Task of ApiResponse (FlashSwapMultiCurrencyOneToManyOrderCreateResp)</returns>
+        public async Task<ApiResponse<FlashSwapMultiCurrencyOneToManyOrderCreateResp>> CreateFlashSwapMultiCurrencyOneToManyOrderAsyncWithHttpInfo (FlashSwapMultiCurrencyOneToManyOrderCreateReq flashSwapMultiCurrencyOneToManyOrderCreateReq)
+        {
+            // verify the required parameter 'flashSwapMultiCurrencyOneToManyOrderCreateReq' is set
+            if (flashSwapMultiCurrencyOneToManyOrderCreateReq == null)
+                throw new ApiException(400, "Missing required parameter 'flashSwapMultiCurrencyOneToManyOrderCreateReq' when calling FlashSwapApi->CreateFlashSwapMultiCurrencyOneToManyOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = flashSwapMultiCurrencyOneToManyOrderCreateReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyOneToManyOrderCreateResp>("/flash-swap/multi-currency/one-to-many/order/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateFlashSwapMultiCurrencyOneToManyOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (one-to-many) Preview quote for single currency to multiple target currencies exchange
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderPreviewReq"></param>
+        /// <returns>FlashSwapMultiCurrencyOneToManyOrderPreviewResp</returns>
+        public FlashSwapMultiCurrencyOneToManyOrderPreviewResp PreviewFlashSwapMultiCurrencyOneToManyOrder (FlashSwapMultiCurrencyOneToManyOrderPreviewReq flashSwapMultiCurrencyOneToManyOrderPreviewReq)
+        {
+             ApiResponse<FlashSwapMultiCurrencyOneToManyOrderPreviewResp> localVarResponse = PreviewFlashSwapMultiCurrencyOneToManyOrderWithHttpInfo(flashSwapMultiCurrencyOneToManyOrderPreviewReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (one-to-many) Preview quote for single currency to multiple target currencies exchange
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderPreviewReq"></param>
+        /// <returns>ApiResponse of FlashSwapMultiCurrencyOneToManyOrderPreviewResp</returns>
+        public ApiResponse<FlashSwapMultiCurrencyOneToManyOrderPreviewResp> PreviewFlashSwapMultiCurrencyOneToManyOrderWithHttpInfo (FlashSwapMultiCurrencyOneToManyOrderPreviewReq flashSwapMultiCurrencyOneToManyOrderPreviewReq)
+        {
+            // verify the required parameter 'flashSwapMultiCurrencyOneToManyOrderPreviewReq' is set
+            if (flashSwapMultiCurrencyOneToManyOrderPreviewReq == null)
+                throw new ApiException(400, "Missing required parameter 'flashSwapMultiCurrencyOneToManyOrderPreviewReq' when calling FlashSwapApi->PreviewFlashSwapMultiCurrencyOneToManyOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = flashSwapMultiCurrencyOneToManyOrderPreviewReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyOneToManyOrderPreviewResp>("/flash-swap/multi-currency/one-to-many/order/preview", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PreviewFlashSwapMultiCurrencyOneToManyOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (one-to-many) Preview quote for single currency to multiple target currencies exchange
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderPreviewReq"></param>
+        /// <returns>Task of FlashSwapMultiCurrencyOneToManyOrderPreviewResp</returns>
+        public async Task<FlashSwapMultiCurrencyOneToManyOrderPreviewResp> PreviewFlashSwapMultiCurrencyOneToManyOrderAsync (FlashSwapMultiCurrencyOneToManyOrderPreviewReq flashSwapMultiCurrencyOneToManyOrderPreviewReq)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FlashSwapMultiCurrencyOneToManyOrderPreviewResp> localVarResponse = await PreviewFlashSwapMultiCurrencyOneToManyOrderAsyncWithHttpInfo(flashSwapMultiCurrencyOneToManyOrderPreviewReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Flash Swap - Multi-currency exchange - Preview (one-to-many) Preview quote for single currency to multiple target currencies exchange
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="flashSwapMultiCurrencyOneToManyOrderPreviewReq"></param>
+        /// <returns>Task of ApiResponse (FlashSwapMultiCurrencyOneToManyOrderPreviewResp)</returns>
+        public async Task<ApiResponse<FlashSwapMultiCurrencyOneToManyOrderPreviewResp>> PreviewFlashSwapMultiCurrencyOneToManyOrderAsyncWithHttpInfo (FlashSwapMultiCurrencyOneToManyOrderPreviewReq flashSwapMultiCurrencyOneToManyOrderPreviewReq)
+        {
+            // verify the required parameter 'flashSwapMultiCurrencyOneToManyOrderPreviewReq' is set
+            if (flashSwapMultiCurrencyOneToManyOrderPreviewReq == null)
+                throw new ApiException(400, "Missing required parameter 'flashSwapMultiCurrencyOneToManyOrderPreviewReq' when calling FlashSwapApi->PreviewFlashSwapMultiCurrencyOneToManyOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = flashSwapMultiCurrencyOneToManyOrderPreviewReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyOneToManyOrderPreviewResp>("/flash-swap/multi-currency/one-to-many/order/preview", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PreviewFlashSwapMultiCurrencyOneToManyOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Preview (one-to-one) Get one-to-one flash swap quote. Either sell_amount or buy_amount must be specified
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellAsset">Currency to sell</param>
+        /// <param name="buyAsset">Currency to buy</param>
+        /// <param name="sellAmount">Sell amount, either this or buy_amount must be specified (optional)</param>
+        /// <param name="buyAmount">Buy amount, either this or sell_amount must be specified (optional)</param>
+        /// <returns>FlashSwapOrderPreviewResp</returns>
+        public FlashSwapOrderPreviewResp PreviewFlashSwapOrderV1 (string sellAsset, string buyAsset, string sellAmount = default(string), string buyAmount = default(string))
+        {
+             ApiResponse<FlashSwapOrderPreviewResp> localVarResponse = PreviewFlashSwapOrderV1WithHttpInfo(sellAsset, buyAsset, sellAmount, buyAmount);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Flash Swap - Preview (one-to-one) Get one-to-one flash swap quote. Either sell_amount or buy_amount must be specified
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellAsset">Currency to sell</param>
+        /// <param name="buyAsset">Currency to buy</param>
+        /// <param name="sellAmount">Sell amount, either this or buy_amount must be specified (optional)</param>
+        /// <param name="buyAmount">Buy amount, either this or sell_amount must be specified (optional)</param>
+        /// <returns>ApiResponse of FlashSwapOrderPreviewResp</returns>
+        public ApiResponse<FlashSwapOrderPreviewResp> PreviewFlashSwapOrderV1WithHttpInfo (string sellAsset, string buyAsset, string sellAmount = default(string), string buyAmount = default(string))
+        {
+            // verify the required parameter 'sellAsset' is set
+            if (sellAsset == null)
+                throw new ApiException(400, "Missing required parameter 'sellAsset' when calling FlashSwapApi->PreviewFlashSwapOrderV1");
+
+            // verify the required parameter 'buyAsset' is set
+            if (buyAsset == null)
+                throw new ApiException(400, "Missing required parameter 'buyAsset' when calling FlashSwapApi->PreviewFlashSwapOrderV1");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sell_asset", sellAsset));
+            if (sellAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sell_amount", sellAmount));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "buy_asset", buyAsset));
+            if (buyAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "buy_amount", buyAmount));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<FlashSwapOrderPreviewResp>("/flash-swap/order/preview", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PreviewFlashSwapOrderV1", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Flash Swap - Preview (one-to-one) Get one-to-one flash swap quote. Either sell_amount or buy_amount must be specified
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellAsset">Currency to sell</param>
+        /// <param name="buyAsset">Currency to buy</param>
+        /// <param name="sellAmount">Sell amount, either this or buy_amount must be specified (optional)</param>
+        /// <param name="buyAmount">Buy amount, either this or sell_amount must be specified (optional)</param>
+        /// <returns>Task of FlashSwapOrderPreviewResp</returns>
+        public async Task<FlashSwapOrderPreviewResp> PreviewFlashSwapOrderV1Async (string sellAsset, string buyAsset, string sellAmount = default(string), string buyAmount = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FlashSwapOrderPreviewResp> localVarResponse = await PreviewFlashSwapOrderV1AsyncWithHttpInfo(sellAsset, buyAsset, sellAmount, buyAmount);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Flash Swap - Preview (one-to-one) Get one-to-one flash swap quote. Either sell_amount or buy_amount must be specified
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sellAsset">Currency to sell</param>
+        /// <param name="buyAsset">Currency to buy</param>
+        /// <param name="sellAmount">Sell amount, either this or buy_amount must be specified (optional)</param>
+        /// <param name="buyAmount">Buy amount, either this or sell_amount must be specified (optional)</param>
+        /// <returns>Task of ApiResponse (FlashSwapOrderPreviewResp)</returns>
+        public async Task<ApiResponse<FlashSwapOrderPreviewResp>> PreviewFlashSwapOrderV1AsyncWithHttpInfo (string sellAsset, string buyAsset, string sellAmount = default(string), string buyAmount = default(string))
+        {
+            // verify the required parameter 'sellAsset' is set
+            if (sellAsset == null)
+                throw new ApiException(400, "Missing required parameter 'sellAsset' when calling FlashSwapApi->PreviewFlashSwapOrderV1");
+
+            // verify the required parameter 'buyAsset' is set
+            if (buyAsset == null)
+                throw new ApiException(400, "Missing required parameter 'buyAsset' when calling FlashSwapApi->PreviewFlashSwapOrderV1");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sell_asset", sellAsset));
+            if (sellAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sell_amount", sellAmount));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "buy_asset", buyAsset));
+            if (buyAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "buy_amount", buyAmount));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FlashSwapOrderPreviewResp>("/flash-swap/order/preview", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PreviewFlashSwapOrderV1", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

@@ -38,29 +38,19 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineObject" /> class.
         /// </summary>
-        /// <param name="mode">Cross/isolated margin mode. ISOLATED - isolated margin, CROSS - cross margin (required).</param>
-        /// <param name="contract">Futures market (required).</param>
-        public InlineObject(string mode = default(string), string contract = default(string))
+        /// <param name="orderId">Order ID (required).</param>
+        public InlineObject(string orderId = default(string))
         {
-            // to ensure "mode" is required (not null)
-            this.Mode = mode ?? throw new ArgumentNullException("mode", "mode is a required property for InlineObject and cannot be null");
-            // to ensure "contract" is required (not null)
-            this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for InlineObject and cannot be null");
+            // to ensure "orderId" is required (not null)
+            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for InlineObject and cannot be null");
         }
 
         /// <summary>
-        /// Cross/isolated margin mode. ISOLATED - isolated margin, CROSS - cross margin
+        /// Order ID
         /// </summary>
-        /// <value>Cross/isolated margin mode. ISOLATED - isolated margin, CROSS - cross margin</value>
-        [DataMember(Name="mode")]
-        public string Mode { get; set; }
-
-        /// <summary>
-        /// Futures market
-        /// </summary>
-        /// <value>Futures market</value>
-        [DataMember(Name="contract")]
-        public string Contract { get; set; }
+        /// <value>Order ID</value>
+        [DataMember(Name="order_id")]
+        public string OrderId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,8 +60,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineObject {\n");
-            sb.Append("  Mode: ").Append(Mode).Append("\n");
-            sb.Append("  Contract: ").Append(Contract).Append("\n");
+            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,14 +96,9 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.Contract == input.Contract ||
-                    (this.Contract != null &&
-                    this.Contract.Equals(input.Contract))
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 );
         }
 
@@ -127,10 +111,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.Contract != null)
-                    hashCode = hashCode * 59 + this.Contract.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 return hashCode;
             }
         }

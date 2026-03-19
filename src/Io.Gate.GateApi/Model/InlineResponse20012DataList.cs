@@ -33,108 +33,207 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20012DataList" /> class.
         /// </summary>
-        /// <param name="id">Order ID.</param>
-        /// <param name="tradeNo">Transaction reference number.</param>
-        /// <param name="payCoin">Payment currency.</param>
-        /// <param name="payAmount">Payment amount.</param>
-        /// <param name="getCoin">Received currency.</param>
-        /// <param name="getAmount">Received amount.</param>
-        /// <param name="rate">Exchange rate.</param>
-        /// <param name="rateReci">Reciprocal of the exchange rate.</param>
-        /// <param name="status">PROCESSING: in progress / DONE: completed / FAILED: failed.</param>
-        /// <param name="createTimest">timetimestamp.</param>
-        /// <param name="createTime">Created time.</param>
-        public InlineResponse20012DataList(int id = default(int), string tradeNo = default(string), string payCoin = default(string), string payAmount = default(string), string getCoin = default(string), string getAmount = default(string), string rate = default(string), string rateReci = default(string), string status = default(string), int createTimest = default(int), string createTime = default(string))
+        [JsonConstructorAttribute]
+        protected InlineResponse20012DataList() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20012DataList" /> class.
+        /// </summary>
+        /// <param name="id">Activity ID (required).</param>
+        /// <param name="typeId">Activity type ID (required).</param>
+        /// <param name="typeName">Activity type name (required).</param>
+        /// <param name="competitionName">Activity name (required).</param>
+        /// <param name="startAt">Activity start time (Unix timestamp, in seconds) (required).</param>
+        /// <param name="endAt">Activity end time (Unix timestamp, in seconds) (required).</param>
+        /// <param name="img">Activity image URL (light mode) (required).</param>
+        /// <param name="imgDark">Activity image URL (dark mode) (required).</param>
+        /// <param name="url">Activity redirect link (required).</param>
+        /// <param name="hot">Popularity score (required).</param>
+        /// <param name="masterOneLine">Main title first line (required).</param>
+        /// <param name="masterTwoLine">Main title second line (required).</param>
+        /// <param name="slaveOneLine">Subtitle first line (required).</param>
+        /// <param name="slaveTwoLine">Subtitle second line (required).</param>
+        /// <param name="competitionTitle">Activity title (required).</param>
+        /// <param name="topId">Pin ID, 0 means not pinned (required).</param>
+        /// <param name="parentId">Parent activity ID, 0 means no parent activity (required).</param>
+        /// <param name="newImg">New activity image URL (light mode) (required).</param>
+        /// <param name="newImgDark">New activity image URL (dark mode) (required).</param>
+        /// <param name="tag">Activity tag list (required).</param>
+        public InlineResponse20012DataList(int id = default(int), int typeId = default(int), string typeName = default(string), string competitionName = default(string), int startAt = default(int), int endAt = default(int), string img = default(string), string imgDark = default(string), string url = default(string), int hot = default(int), string masterOneLine = default(string), string masterTwoLine = default(string), string slaveOneLine = default(string), string slaveTwoLine = default(string), string competitionTitle = default(string), int topId = default(int), int parentId = default(int), string newImg = default(string), string newImgDark = default(string), List<string> tag = default(List<string>))
         {
             this.Id = id;
-            this.TradeNo = tradeNo;
-            this.PayCoin = payCoin;
-            this.PayAmount = payAmount;
-            this.GetCoin = getCoin;
-            this.GetAmount = getAmount;
-            this.Rate = rate;
-            this.RateReci = rateReci;
-            this.Status = status;
-            this.CreateTimest = createTimest;
-            this.CreateTime = createTime;
+            this.TypeId = typeId;
+            // to ensure "typeName" is required (not null)
+            this.TypeName = typeName ?? throw new ArgumentNullException("typeName", "typeName is a required property for InlineResponse20012DataList and cannot be null");
+            // to ensure "competitionName" is required (not null)
+            this.CompetitionName = competitionName ?? throw new ArgumentNullException("competitionName", "competitionName is a required property for InlineResponse20012DataList and cannot be null");
+            this.StartAt = startAt;
+            this.EndAt = endAt;
+            // to ensure "img" is required (not null)
+            this.Img = img ?? throw new ArgumentNullException("img", "img is a required property for InlineResponse20012DataList and cannot be null");
+            // to ensure "imgDark" is required (not null)
+            this.ImgDark = imgDark ?? throw new ArgumentNullException("imgDark", "imgDark is a required property for InlineResponse20012DataList and cannot be null");
+            // to ensure "url" is required (not null)
+            this.Url = url ?? throw new ArgumentNullException("url", "url is a required property for InlineResponse20012DataList and cannot be null");
+            this.Hot = hot;
+            // to ensure "masterOneLine" is required (not null)
+            this.MasterOneLine = masterOneLine ?? throw new ArgumentNullException("masterOneLine", "masterOneLine is a required property for InlineResponse20012DataList and cannot be null");
+            // to ensure "masterTwoLine" is required (not null)
+            this.MasterTwoLine = masterTwoLine ?? throw new ArgumentNullException("masterTwoLine", "masterTwoLine is a required property for InlineResponse20012DataList and cannot be null");
+            // to ensure "slaveOneLine" is required (not null)
+            this.SlaveOneLine = slaveOneLine ?? throw new ArgumentNullException("slaveOneLine", "slaveOneLine is a required property for InlineResponse20012DataList and cannot be null");
+            // to ensure "slaveTwoLine" is required (not null)
+            this.SlaveTwoLine = slaveTwoLine ?? throw new ArgumentNullException("slaveTwoLine", "slaveTwoLine is a required property for InlineResponse20012DataList and cannot be null");
+            // to ensure "competitionTitle" is required (not null)
+            this.CompetitionTitle = competitionTitle ?? throw new ArgumentNullException("competitionTitle", "competitionTitle is a required property for InlineResponse20012DataList and cannot be null");
+            this.TopId = topId;
+            this.ParentId = parentId;
+            // to ensure "newImg" is required (not null)
+            this.NewImg = newImg ?? throw new ArgumentNullException("newImg", "newImg is a required property for InlineResponse20012DataList and cannot be null");
+            // to ensure "newImgDark" is required (not null)
+            this.NewImgDark = newImgDark ?? throw new ArgumentNullException("newImgDark", "newImgDark is a required property for InlineResponse20012DataList and cannot be null");
+            // to ensure "tag" is required (not null)
+            this.Tag = tag ?? throw new ArgumentNullException("tag", "tag is a required property for InlineResponse20012DataList and cannot be null");
         }
 
         /// <summary>
-        /// Order ID
+        /// Activity ID
         /// </summary>
-        /// <value>Order ID</value>
+        /// <value>Activity ID</value>
         [DataMember(Name="id")]
         public int Id { get; set; }
 
         /// <summary>
-        /// Transaction reference number
+        /// Activity type ID
         /// </summary>
-        /// <value>Transaction reference number</value>
-        [DataMember(Name="trade_no")]
-        public string TradeNo { get; set; }
+        /// <value>Activity type ID</value>
+        [DataMember(Name="type_id")]
+        public int TypeId { get; set; }
 
         /// <summary>
-        /// Payment currency
+        /// Activity type name
         /// </summary>
-        /// <value>Payment currency</value>
-        [DataMember(Name="pay_coin")]
-        public string PayCoin { get; set; }
+        /// <value>Activity type name</value>
+        [DataMember(Name="type_name")]
+        public string TypeName { get; set; }
 
         /// <summary>
-        /// Payment amount
+        /// Activity name
         /// </summary>
-        /// <value>Payment amount</value>
-        [DataMember(Name="pay_amount")]
-        public string PayAmount { get; set; }
+        /// <value>Activity name</value>
+        [DataMember(Name="competition_name")]
+        public string CompetitionName { get; set; }
 
         /// <summary>
-        /// Received currency
+        /// Activity start time (Unix timestamp, in seconds)
         /// </summary>
-        /// <value>Received currency</value>
-        [DataMember(Name="get_coin")]
-        public string GetCoin { get; set; }
+        /// <value>Activity start time (Unix timestamp, in seconds)</value>
+        [DataMember(Name="start_at")]
+        public int StartAt { get; set; }
 
         /// <summary>
-        /// Received amount
+        /// Activity end time (Unix timestamp, in seconds)
         /// </summary>
-        /// <value>Received amount</value>
-        [DataMember(Name="get_amount")]
-        public string GetAmount { get; set; }
+        /// <value>Activity end time (Unix timestamp, in seconds)</value>
+        [DataMember(Name="end_at")]
+        public int EndAt { get; set; }
 
         /// <summary>
-        /// Exchange rate
+        /// Activity image URL (light mode)
         /// </summary>
-        /// <value>Exchange rate</value>
-        [DataMember(Name="rate")]
-        public string Rate { get; set; }
+        /// <value>Activity image URL (light mode)</value>
+        [DataMember(Name="img")]
+        public string Img { get; set; }
 
         /// <summary>
-        /// Reciprocal of the exchange rate
+        /// Activity image URL (dark mode)
         /// </summary>
-        /// <value>Reciprocal of the exchange rate</value>
-        [DataMember(Name="rate_reci")]
-        public string RateReci { get; set; }
+        /// <value>Activity image URL (dark mode)</value>
+        [DataMember(Name="img_dark")]
+        public string ImgDark { get; set; }
 
         /// <summary>
-        /// PROCESSING: in progress / DONE: completed / FAILED: failed
+        /// Activity redirect link
         /// </summary>
-        /// <value>PROCESSING: in progress / DONE: completed / FAILED: failed</value>
-        [DataMember(Name="status")]
-        public string Status { get; set; }
+        /// <value>Activity redirect link</value>
+        [DataMember(Name="url")]
+        public string Url { get; set; }
 
         /// <summary>
-        /// timetimestamp
+        /// Popularity score
         /// </summary>
-        /// <value>timetimestamp</value>
-        [DataMember(Name="create_timest")]
-        public int CreateTimest { get; set; }
+        /// <value>Popularity score</value>
+        [DataMember(Name="hot")]
+        public int Hot { get; set; }
 
         /// <summary>
-        /// Created time
+        /// Main title first line
         /// </summary>
-        /// <value>Created time</value>
-        [DataMember(Name="create_time")]
-        public string CreateTime { get; set; }
+        /// <value>Main title first line</value>
+        [DataMember(Name="master_one_line")]
+        public string MasterOneLine { get; set; }
+
+        /// <summary>
+        /// Main title second line
+        /// </summary>
+        /// <value>Main title second line</value>
+        [DataMember(Name="master_two_line")]
+        public string MasterTwoLine { get; set; }
+
+        /// <summary>
+        /// Subtitle first line
+        /// </summary>
+        /// <value>Subtitle first line</value>
+        [DataMember(Name="slave_one_line")]
+        public string SlaveOneLine { get; set; }
+
+        /// <summary>
+        /// Subtitle second line
+        /// </summary>
+        /// <value>Subtitle second line</value>
+        [DataMember(Name="slave_two_line")]
+        public string SlaveTwoLine { get; set; }
+
+        /// <summary>
+        /// Activity title
+        /// </summary>
+        /// <value>Activity title</value>
+        [DataMember(Name="competition_title")]
+        public string CompetitionTitle { get; set; }
+
+        /// <summary>
+        /// Pin ID, 0 means not pinned
+        /// </summary>
+        /// <value>Pin ID, 0 means not pinned</value>
+        [DataMember(Name="top_id")]
+        public int TopId { get; set; }
+
+        /// <summary>
+        /// Parent activity ID, 0 means no parent activity
+        /// </summary>
+        /// <value>Parent activity ID, 0 means no parent activity</value>
+        [DataMember(Name="parent_id")]
+        public int ParentId { get; set; }
+
+        /// <summary>
+        /// New activity image URL (light mode)
+        /// </summary>
+        /// <value>New activity image URL (light mode)</value>
+        [DataMember(Name="new_img")]
+        public string NewImg { get; set; }
+
+        /// <summary>
+        /// New activity image URL (dark mode)
+        /// </summary>
+        /// <value>New activity image URL (dark mode)</value>
+        [DataMember(Name="new_img_dark")]
+        public string NewImgDark { get; set; }
+
+        /// <summary>
+        /// Activity tag list
+        /// </summary>
+        /// <value>Activity tag list</value>
+        [DataMember(Name="tag")]
+        public List<string> Tag { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -145,16 +244,25 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20012DataList {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  TradeNo: ").Append(TradeNo).Append("\n");
-            sb.Append("  PayCoin: ").Append(PayCoin).Append("\n");
-            sb.Append("  PayAmount: ").Append(PayAmount).Append("\n");
-            sb.Append("  GetCoin: ").Append(GetCoin).Append("\n");
-            sb.Append("  GetAmount: ").Append(GetAmount).Append("\n");
-            sb.Append("  Rate: ").Append(Rate).Append("\n");
-            sb.Append("  RateReci: ").Append(RateReci).Append("\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  CreateTimest: ").Append(CreateTimest).Append("\n");
-            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  TypeId: ").Append(TypeId).Append("\n");
+            sb.Append("  TypeName: ").Append(TypeName).Append("\n");
+            sb.Append("  CompetitionName: ").Append(CompetitionName).Append("\n");
+            sb.Append("  StartAt: ").Append(StartAt).Append("\n");
+            sb.Append("  EndAt: ").Append(EndAt).Append("\n");
+            sb.Append("  Img: ").Append(Img).Append("\n");
+            sb.Append("  ImgDark: ").Append(ImgDark).Append("\n");
+            sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  Hot: ").Append(Hot).Append("\n");
+            sb.Append("  MasterOneLine: ").Append(MasterOneLine).Append("\n");
+            sb.Append("  MasterTwoLine: ").Append(MasterTwoLine).Append("\n");
+            sb.Append("  SlaveOneLine: ").Append(SlaveOneLine).Append("\n");
+            sb.Append("  SlaveTwoLine: ").Append(SlaveTwoLine).Append("\n");
+            sb.Append("  CompetitionTitle: ").Append(CompetitionTitle).Append("\n");
+            sb.Append("  TopId: ").Append(TopId).Append("\n");
+            sb.Append("  ParentId: ").Append(ParentId).Append("\n");
+            sb.Append("  NewImg: ").Append(NewImg).Append("\n");
+            sb.Append("  NewImgDark: ").Append(NewImgDark).Append("\n");
+            sb.Append("  Tag: ").Append(Tag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -194,53 +302,94 @@ namespace Io.Gate.GateApi.Model
                     this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.TradeNo == input.TradeNo ||
-                    (this.TradeNo != null &&
-                    this.TradeNo.Equals(input.TradeNo))
+                    this.TypeId == input.TypeId ||
+                    this.TypeId.Equals(input.TypeId)
                 ) && 
                 (
-                    this.PayCoin == input.PayCoin ||
-                    (this.PayCoin != null &&
-                    this.PayCoin.Equals(input.PayCoin))
+                    this.TypeName == input.TypeName ||
+                    (this.TypeName != null &&
+                    this.TypeName.Equals(input.TypeName))
                 ) && 
                 (
-                    this.PayAmount == input.PayAmount ||
-                    (this.PayAmount != null &&
-                    this.PayAmount.Equals(input.PayAmount))
+                    this.CompetitionName == input.CompetitionName ||
+                    (this.CompetitionName != null &&
+                    this.CompetitionName.Equals(input.CompetitionName))
                 ) && 
                 (
-                    this.GetCoin == input.GetCoin ||
-                    (this.GetCoin != null &&
-                    this.GetCoin.Equals(input.GetCoin))
+                    this.StartAt == input.StartAt ||
+                    this.StartAt.Equals(input.StartAt)
                 ) && 
                 (
-                    this.GetAmount == input.GetAmount ||
-                    (this.GetAmount != null &&
-                    this.GetAmount.Equals(input.GetAmount))
+                    this.EndAt == input.EndAt ||
+                    this.EndAt.Equals(input.EndAt)
                 ) && 
                 (
-                    this.Rate == input.Rate ||
-                    (this.Rate != null &&
-                    this.Rate.Equals(input.Rate))
+                    this.Img == input.Img ||
+                    (this.Img != null &&
+                    this.Img.Equals(input.Img))
                 ) && 
                 (
-                    this.RateReci == input.RateReci ||
-                    (this.RateReci != null &&
-                    this.RateReci.Equals(input.RateReci))
+                    this.ImgDark == input.ImgDark ||
+                    (this.ImgDark != null &&
+                    this.ImgDark.Equals(input.ImgDark))
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    this.Url == input.Url ||
+                    (this.Url != null &&
+                    this.Url.Equals(input.Url))
                 ) && 
                 (
-                    this.CreateTimest == input.CreateTimest ||
-                    this.CreateTimest.Equals(input.CreateTimest)
+                    this.Hot == input.Hot ||
+                    this.Hot.Equals(input.Hot)
                 ) && 
                 (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
+                    this.MasterOneLine == input.MasterOneLine ||
+                    (this.MasterOneLine != null &&
+                    this.MasterOneLine.Equals(input.MasterOneLine))
+                ) && 
+                (
+                    this.MasterTwoLine == input.MasterTwoLine ||
+                    (this.MasterTwoLine != null &&
+                    this.MasterTwoLine.Equals(input.MasterTwoLine))
+                ) && 
+                (
+                    this.SlaveOneLine == input.SlaveOneLine ||
+                    (this.SlaveOneLine != null &&
+                    this.SlaveOneLine.Equals(input.SlaveOneLine))
+                ) && 
+                (
+                    this.SlaveTwoLine == input.SlaveTwoLine ||
+                    (this.SlaveTwoLine != null &&
+                    this.SlaveTwoLine.Equals(input.SlaveTwoLine))
+                ) && 
+                (
+                    this.CompetitionTitle == input.CompetitionTitle ||
+                    (this.CompetitionTitle != null &&
+                    this.CompetitionTitle.Equals(input.CompetitionTitle))
+                ) && 
+                (
+                    this.TopId == input.TopId ||
+                    this.TopId.Equals(input.TopId)
+                ) && 
+                (
+                    this.ParentId == input.ParentId ||
+                    this.ParentId.Equals(input.ParentId)
+                ) && 
+                (
+                    this.NewImg == input.NewImg ||
+                    (this.NewImg != null &&
+                    this.NewImg.Equals(input.NewImg))
+                ) && 
+                (
+                    this.NewImgDark == input.NewImgDark ||
+                    (this.NewImgDark != null &&
+                    this.NewImgDark.Equals(input.NewImgDark))
+                ) && 
+                (
+                    this.Tag == input.Tag ||
+                    this.Tag != null &&
+                    input.Tag != null &&
+                    this.Tag.SequenceEqual(input.Tag)
                 );
         }
 
@@ -254,25 +403,38 @@ namespace Io.Gate.GateApi.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.TradeNo != null)
-                    hashCode = hashCode * 59 + this.TradeNo.GetHashCode();
-                if (this.PayCoin != null)
-                    hashCode = hashCode * 59 + this.PayCoin.GetHashCode();
-                if (this.PayAmount != null)
-                    hashCode = hashCode * 59 + this.PayAmount.GetHashCode();
-                if (this.GetCoin != null)
-                    hashCode = hashCode * 59 + this.GetCoin.GetHashCode();
-                if (this.GetAmount != null)
-                    hashCode = hashCode * 59 + this.GetAmount.GetHashCode();
-                if (this.Rate != null)
-                    hashCode = hashCode * 59 + this.Rate.GetHashCode();
-                if (this.RateReci != null)
-                    hashCode = hashCode * 59 + this.RateReci.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                hashCode = hashCode * 59 + this.CreateTimest.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.TypeId.GetHashCode();
+                if (this.TypeName != null)
+                    hashCode = hashCode * 59 + this.TypeName.GetHashCode();
+                if (this.CompetitionName != null)
+                    hashCode = hashCode * 59 + this.CompetitionName.GetHashCode();
+                hashCode = hashCode * 59 + this.StartAt.GetHashCode();
+                hashCode = hashCode * 59 + this.EndAt.GetHashCode();
+                if (this.Img != null)
+                    hashCode = hashCode * 59 + this.Img.GetHashCode();
+                if (this.ImgDark != null)
+                    hashCode = hashCode * 59 + this.ImgDark.GetHashCode();
+                if (this.Url != null)
+                    hashCode = hashCode * 59 + this.Url.GetHashCode();
+                hashCode = hashCode * 59 + this.Hot.GetHashCode();
+                if (this.MasterOneLine != null)
+                    hashCode = hashCode * 59 + this.MasterOneLine.GetHashCode();
+                if (this.MasterTwoLine != null)
+                    hashCode = hashCode * 59 + this.MasterTwoLine.GetHashCode();
+                if (this.SlaveOneLine != null)
+                    hashCode = hashCode * 59 + this.SlaveOneLine.GetHashCode();
+                if (this.SlaveTwoLine != null)
+                    hashCode = hashCode * 59 + this.SlaveTwoLine.GetHashCode();
+                if (this.CompetitionTitle != null)
+                    hashCode = hashCode * 59 + this.CompetitionTitle.GetHashCode();
+                hashCode = hashCode * 59 + this.TopId.GetHashCode();
+                hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                if (this.NewImg != null)
+                    hashCode = hashCode * 59 + this.NewImg.GetHashCode();
+                if (this.NewImgDark != null)
+                    hashCode = hashCode * 59 + this.NewImgDark.GetHashCode();
+                if (this.Tag != null)
+                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 return hashCode;
             }
         }

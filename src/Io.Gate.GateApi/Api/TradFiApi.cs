@@ -142,8 +142,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading symbol code</param>
-        /// <returns>Ticker2</returns>
-        Ticker2 QuerySymbolTicker (string symbol);
+        /// <returns>TradFiTicker</returns>
+        TradFiTicker QuerySymbolTicker (string symbol);
 
         /// <summary>
         /// Query trading symbol ticker
@@ -153,8 +153,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading symbol code</param>
-        /// <returns>ApiResponse of Ticker2</returns>
-        ApiResponse<Ticker2> QuerySymbolTickerWithHttpInfo (string symbol);
+        /// <returns>ApiResponse of TradFiTicker</returns>
+        ApiResponse<TradFiTicker> QuerySymbolTickerWithHttpInfo (string symbol);
         /// <summary>
         /// Create TradFi user
         /// </summary>
@@ -570,8 +570,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading symbol code</param>
-        /// <returns>Task of Ticker2</returns>
-        Task<Ticker2> QuerySymbolTickerAsync (string symbol);
+        /// <returns>Task of TradFiTicker</returns>
+        Task<TradFiTicker> QuerySymbolTickerAsync (string symbol);
 
         /// <summary>
         /// Query trading symbol ticker
@@ -581,8 +581,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading symbol code</param>
-        /// <returns>Task of ApiResponse (Ticker2)</returns>
-        Task<ApiResponse<Ticker2>> QuerySymbolTickerAsyncWithHttpInfo (string symbol);
+        /// <returns>Task of ApiResponse (TradFiTicker)</returns>
+        Task<ApiResponse<TradFiTicker>> QuerySymbolTickerAsyncWithHttpInfo (string symbol);
         /// <summary>
         /// Create TradFi user
         /// </summary>
@@ -1576,10 +1576,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading symbol code</param>
-        /// <returns>Ticker2</returns>
-        public Ticker2 QuerySymbolTicker (string symbol)
+        /// <returns>TradFiTicker</returns>
+        public TradFiTicker QuerySymbolTicker (string symbol)
         {
-             ApiResponse<Ticker2> localVarResponse = QuerySymbolTickerWithHttpInfo(symbol);
+             ApiResponse<TradFiTicker> localVarResponse = QuerySymbolTickerWithHttpInfo(symbol);
              return localVarResponse.Data;
         }
 
@@ -1588,8 +1588,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading symbol code</param>
-        /// <returns>ApiResponse of Ticker2</returns>
-        public ApiResponse<Ticker2> QuerySymbolTickerWithHttpInfo (string symbol)
+        /// <returns>ApiResponse of TradFiTicker</returns>
+        public ApiResponse<TradFiTicker> QuerySymbolTickerWithHttpInfo (string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
@@ -1615,7 +1615,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Ticker2>("/tradfi/symbols/{symbol}/tickers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TradFiTicker>("/tradfi/symbols/{symbol}/tickers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1631,10 +1631,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading symbol code</param>
-        /// <returns>Task of Ticker2</returns>
-        public async Task<Ticker2> QuerySymbolTickerAsync (string symbol)
+        /// <returns>Task of TradFiTicker</returns>
+        public async Task<TradFiTicker> QuerySymbolTickerAsync (string symbol)
         {
-             Io.Gate.GateApi.Client.ApiResponse<Ticker2> localVarResponse = await QuerySymbolTickerAsyncWithHttpInfo(symbol);
+             Io.Gate.GateApi.Client.ApiResponse<TradFiTicker> localVarResponse = await QuerySymbolTickerAsyncWithHttpInfo(symbol);
              return localVarResponse.Data;
 
         }
@@ -1644,8 +1644,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading symbol code</param>
-        /// <returns>Task of ApiResponse (Ticker2)</returns>
-        public async Task<ApiResponse<Ticker2>> QuerySymbolTickerAsyncWithHttpInfo (string symbol)
+        /// <returns>Task of ApiResponse (TradFiTicker)</returns>
+        public async Task<ApiResponse<TradFiTicker>> QuerySymbolTickerAsyncWithHttpInfo (string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
@@ -1673,7 +1673,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Ticker2>("/tradfi/symbols/{symbol}/tickers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TradFiTicker>("/tradfi/symbols/{symbol}/tickers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

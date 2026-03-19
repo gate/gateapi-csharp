@@ -1,0 +1,19 @@
+
+# Io.Gate.GateApi.Model.P2pAdsListItem
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Index** | **int** | Serial number | [optional] 
+**Asset** | **string** | Cryptocurrency | [optional] 
+**FiatUnit** | **string** | Fiat currency | [optional] 
+**AdvNo** | **int** | Ad ID | [optional] 
+**Price** | **string** | Price | [optional] 
+**MaxSingleTransAmount** | **string** | Maximum Cryptocurrency Amount | [optional] 
+**MinSingleTransAmount** | **string** | Minimum Cryptocurrency Amount | [optional] 
+**NickName** | **string** | Advertiser Nickname | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)

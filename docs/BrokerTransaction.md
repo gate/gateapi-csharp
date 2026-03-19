@@ -5,8 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Total** | **long** | Total | [optional] 
-**List** | [**List&lt;BrokerTransaction1&gt;**](BrokerTransaction1.md) | List of transaction history | [optional] 
+**TransactionTime** | **long** | Transaction Time. (unix timestamp) | [optional] 
+**UserId** | **long** | User ID | [optional] 
+**GroupName** | **string** | Group name | [optional] 
+**Fee** | **string** | Fee amount (USDT) | [optional] 
+**CurrencyPair** | **string** | Currency pair | [optional] 
+**Amount** | **string** | Transaction amount | [optional] 
+**FeeAsset** | **string** | Fee currency | [optional] 
+**Source** | **string** | Commission transaction type: Spot, Futures, Options, Alpha、TradFi | [optional] 
+**SubBrokerInfo** | [**BrokerCommissionSubBrokerInfo**](BrokerCommissionSubBrokerInfo.md) |  | [optional] 
+**AlphaContractAddr** | **string** | Alpha contract address | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

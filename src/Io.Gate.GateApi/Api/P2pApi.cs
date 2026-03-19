@@ -34,8 +34,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20014</returns>
-        InlineResponse20014 P2pMerchantAccountGetUserInfo ();
+        /// <returns>P2pMerchantUserInfoResponse</returns>
+        P2pMerchantUserInfoResponse P2pMerchantAccountGetUserInfo ();
 
         /// <summary>
         /// Get account information
@@ -44,8 +44,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20014</returns>
-        ApiResponse<InlineResponse20014> P2pMerchantAccountGetUserInfoWithHttpInfo ();
+        /// <returns>ApiResponse of P2pMerchantUserInfoResponse</returns>
+        ApiResponse<P2pMerchantUserInfoResponse> P2pMerchantAccountGetUserInfoWithHttpInfo ();
         /// <summary>
         /// Get counterparty information
         /// </summary>
@@ -54,8 +54,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCounterpartyUserInfoRequest"></param>
-        /// <returns>InlineResponse20015</returns>
-        InlineResponse20015 P2pMerchantAccountGetCounterpartyUserInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest);
+        /// <returns>P2pCounterpartyUserInfoResponse</returns>
+        P2pCounterpartyUserInfoResponse P2pMerchantAccountGetCounterpartyUserInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest);
 
         /// <summary>
         /// Get counterparty information
@@ -65,8 +65,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCounterpartyUserInfoRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20015</returns>
-        ApiResponse<InlineResponse20015> P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest);
+        /// <returns>ApiResponse of P2pCounterpartyUserInfoResponse</returns>
+        ApiResponse<P2pCounterpartyUserInfoResponse> P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest);
         /// <summary>
         /// Get payment method list
         /// </summary>
@@ -75,8 +75,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMyselfPaymentRequest"> (optional)</param>
-        /// <returns>InlineResponse20016</returns>
-        InlineResponse20016 P2pMerchantAccountGetMyselfPayment (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest));
+        /// <returns>P2pPaymentMethodsResponse</returns>
+        P2pPaymentMethodsResponse P2pMerchantAccountGetMyselfPayment (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest));
 
         /// <summary>
         /// Get payment method list
@@ -86,8 +86,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMyselfPaymentRequest"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20016</returns>
-        ApiResponse<InlineResponse20016> P2pMerchantAccountGetMyselfPaymentWithHttpInfo (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest));
+        /// <returns>ApiResponse of P2pPaymentMethodsResponse</returns>
+        ApiResponse<P2pPaymentMethodsResponse> P2pMerchantAccountGetMyselfPaymentWithHttpInfo (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest));
         /// <summary>
         /// Get pending orders
         /// </summary>
@@ -96,8 +96,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getPendingTransactionListRequest"></param>
-        /// <returns>InlineResponse20017</returns>
-        InlineResponse20017 P2pMerchantTransactionGetPendingTransactionList (GetPendingTransactionListRequest getPendingTransactionListRequest);
+        /// <returns>P2pTransactionListResponse</returns>
+        P2pTransactionListResponse P2pMerchantTransactionGetPendingTransactionList (GetPendingTransactionListRequest getPendingTransactionListRequest);
 
         /// <summary>
         /// Get pending orders
@@ -107,8 +107,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getPendingTransactionListRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20017</returns>
-        ApiResponse<InlineResponse20017> P2pMerchantTransactionGetPendingTransactionListWithHttpInfo (GetPendingTransactionListRequest getPendingTransactionListRequest);
+        /// <returns>ApiResponse of P2pTransactionListResponse</returns>
+        ApiResponse<P2pTransactionListResponse> P2pMerchantTransactionGetPendingTransactionListWithHttpInfo (GetPendingTransactionListRequest getPendingTransactionListRequest);
         /// <summary>
         /// Get all/historical orders
         /// </summary>
@@ -117,8 +117,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCompletedTransactionListRequest"></param>
-        /// <returns>InlineResponse20017</returns>
-        InlineResponse20017 P2pMerchantTransactionGetCompletedTransactionList (GetCompletedTransactionListRequest getCompletedTransactionListRequest);
+        /// <returns>P2pTransactionListResponse</returns>
+        P2pTransactionListResponse P2pMerchantTransactionGetCompletedTransactionList (GetCompletedTransactionListRequest getCompletedTransactionListRequest);
 
         /// <summary>
         /// Get all/historical orders
@@ -128,8 +128,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCompletedTransactionListRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20017</returns>
-        ApiResponse<InlineResponse20017> P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo (GetCompletedTransactionListRequest getCompletedTransactionListRequest);
+        /// <returns>ApiResponse of P2pTransactionListResponse</returns>
+        ApiResponse<P2pTransactionListResponse> P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo (GetCompletedTransactionListRequest getCompletedTransactionListRequest);
         /// <summary>
         /// Query order details
         /// </summary>
@@ -138,8 +138,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getTransactionDetailsRequest"></param>
-        /// <returns>InlineResponse20018</returns>
-        InlineResponse20018 P2pMerchantTransactionGetTransactionDetails (GetTransactionDetailsRequest getTransactionDetailsRequest);
+        /// <returns>P2pTransactionDetailResponse</returns>
+        P2pTransactionDetailResponse P2pMerchantTransactionGetTransactionDetails (GetTransactionDetailsRequest getTransactionDetailsRequest);
 
         /// <summary>
         /// Query order details
@@ -149,8 +149,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getTransactionDetailsRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20018</returns>
-        ApiResponse<InlineResponse20018> P2pMerchantTransactionGetTransactionDetailsWithHttpInfo (GetTransactionDetailsRequest getTransactionDetailsRequest);
+        /// <returns>ApiResponse of P2pTransactionDetailResponse</returns>
+        ApiResponse<P2pTransactionDetailResponse> P2pMerchantTransactionGetTransactionDetailsWithHttpInfo (GetTransactionDetailsRequest getTransactionDetailsRequest);
         /// <summary>
         /// Confirm payment
         /// </summary>
@@ -159,8 +159,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmPayment"></param>
-        /// <returns>InlineResponse20019</returns>
-        InlineResponse20019 P2pMerchantTransactionConfirmPayment (ConfirmPayment confirmPayment);
+        /// <returns>P2pTransactionActionResponse</returns>
+        P2pTransactionActionResponse P2pMerchantTransactionConfirmPayment (ConfirmPayment confirmPayment);
 
         /// <summary>
         /// Confirm payment
@@ -170,8 +170,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmPayment"></param>
-        /// <returns>ApiResponse of InlineResponse20019</returns>
-        ApiResponse<InlineResponse20019> P2pMerchantTransactionConfirmPaymentWithHttpInfo (ConfirmPayment confirmPayment);
+        /// <returns>ApiResponse of P2pTransactionActionResponse</returns>
+        ApiResponse<P2pTransactionActionResponse> P2pMerchantTransactionConfirmPaymentWithHttpInfo (ConfirmPayment confirmPayment);
         /// <summary>
         /// Confirm receipt
         /// </summary>
@@ -180,8 +180,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmReceipt"></param>
-        /// <returns>InlineResponse20019</returns>
-        InlineResponse20019 P2pMerchantTransactionConfirmReceipt (ConfirmReceipt confirmReceipt);
+        /// <returns>P2pTransactionActionResponse</returns>
+        P2pTransactionActionResponse P2pMerchantTransactionConfirmReceipt (ConfirmReceipt confirmReceipt);
 
         /// <summary>
         /// Confirm receipt
@@ -191,8 +191,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmReceipt"></param>
-        /// <returns>ApiResponse of InlineResponse20019</returns>
-        ApiResponse<InlineResponse20019> P2pMerchantTransactionConfirmReceiptWithHttpInfo (ConfirmReceipt confirmReceipt);
+        /// <returns>ApiResponse of P2pTransactionActionResponse</returns>
+        ApiResponse<P2pTransactionActionResponse> P2pMerchantTransactionConfirmReceiptWithHttpInfo (ConfirmReceipt confirmReceipt);
         /// <summary>
         /// Cancel order
         /// </summary>
@@ -201,8 +201,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancelOrder"></param>
-        /// <returns>InlineResponse20019</returns>
-        InlineResponse20019 P2pMerchantTransactionCancel (CancelOrder cancelOrder);
+        /// <returns>P2pTransactionActionResponse</returns>
+        P2pTransactionActionResponse P2pMerchantTransactionCancel (CancelOrder cancelOrder);
 
         /// <summary>
         /// Cancel order
@@ -212,8 +212,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancelOrder"></param>
-        /// <returns>ApiResponse of InlineResponse20019</returns>
-        ApiResponse<InlineResponse20019> P2pMerchantTransactionCancelWithHttpInfo (CancelOrder cancelOrder);
+        /// <returns>ApiResponse of P2pTransactionActionResponse</returns>
+        ApiResponse<P2pTransactionActionResponse> P2pMerchantTransactionCancelWithHttpInfo (CancelOrder cancelOrder);
         /// <summary>
         /// Publish ad order
         /// </summary>
@@ -244,8 +244,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>InlineResponse20020</returns>
-        InlineResponse20020 P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
+        /// <returns>P2pAdsUpdateStatusResponse</returns>
+        P2pAdsUpdateStatusResponse P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
 
         /// <summary>
         /// Update ad status
@@ -256,8 +256,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20020</returns>
-        ApiResponse<InlineResponse20020> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
+        /// <returns>ApiResponse of P2pAdsUpdateStatusResponse</returns>
+        ApiResponse<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
         /// <summary>
         /// Query ad details
         /// </summary>
@@ -266,8 +266,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsDetailRequest"></param>
-        /// <returns>InlineResponse20021</returns>
-        InlineResponse20021 P2pMerchantBooksAdsDetail (AdsDetailRequest adsDetailRequest);
+        /// <returns>P2pAdDetailResponse</returns>
+        P2pAdDetailResponse P2pMerchantBooksAdsDetail (AdsDetailRequest adsDetailRequest);
 
         /// <summary>
         /// Query ad details
@@ -277,8 +277,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsDetailRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20021</returns>
-        ApiResponse<InlineResponse20021> P2pMerchantBooksAdsDetailWithHttpInfo (AdsDetailRequest adsDetailRequest);
+        /// <returns>ApiResponse of P2pAdDetailResponse</returns>
+        ApiResponse<P2pAdDetailResponse> P2pMerchantBooksAdsDetailWithHttpInfo (AdsDetailRequest adsDetailRequest);
         /// <summary>
         /// Get my ad list
         /// </summary>
@@ -287,8 +287,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="myAdsListRequest"> (optional)</param>
-        /// <returns>InlineResponse20022</returns>
-        InlineResponse20022 P2pMerchantBooksMyAdsList (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest));
+        /// <returns>P2pMyAdsListResponse</returns>
+        P2pMyAdsListResponse P2pMerchantBooksMyAdsList (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest));
 
         /// <summary>
         /// Get my ad list
@@ -298,8 +298,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="myAdsListRequest"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20022</returns>
-        ApiResponse<InlineResponse20022> P2pMerchantBooksMyAdsListWithHttpInfo (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest));
+        /// <returns>ApiResponse of P2pMyAdsListResponse</returns>
+        ApiResponse<P2pMyAdsListResponse> P2pMerchantBooksMyAdsListWithHttpInfo (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest));
         /// <summary>
         /// Get Advertisement List
         /// </summary>
@@ -308,8 +308,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsListRequest"></param>
-        /// <returns>InlineResponse20023</returns>
-        InlineResponse20023 P2pMerchantBooksAdsList (AdsListRequest adsListRequest);
+        /// <returns>P2pAdsListResponse</returns>
+        P2pAdsListResponse P2pMerchantBooksAdsList (AdsListRequest adsListRequest);
 
         /// <summary>
         /// Get Advertisement List
@@ -319,8 +319,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsListRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20023</returns>
-        ApiResponse<InlineResponse20023> P2pMerchantBooksAdsListWithHttpInfo (AdsListRequest adsListRequest);
+        /// <returns>ApiResponse of P2pAdsListResponse</returns>
+        ApiResponse<P2pAdsListResponse> P2pMerchantBooksAdsListWithHttpInfo (AdsListRequest adsListRequest);
         /// <summary>
         /// Get chat history
         /// </summary>
@@ -329,8 +329,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getChatsListRequest"></param>
-        /// <returns>InlineResponse20024</returns>
-        InlineResponse20024 P2pMerchantChatGetChatsList (GetChatsListRequest getChatsListRequest);
+        /// <returns>P2pChatListResponse</returns>
+        P2pChatListResponse P2pMerchantChatGetChatsList (GetChatsListRequest getChatsListRequest);
 
         /// <summary>
         /// Get chat history
@@ -340,8 +340,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getChatsListRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20024</returns>
-        ApiResponse<InlineResponse20024> P2pMerchantChatGetChatsListWithHttpInfo (GetChatsListRequest getChatsListRequest);
+        /// <returns>ApiResponse of P2pChatListResponse</returns>
+        ApiResponse<P2pChatListResponse> P2pMerchantChatGetChatsListWithHttpInfo (GetChatsListRequest getChatsListRequest);
         /// <summary>
         /// Send text message
         /// </summary>
@@ -350,8 +350,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
-        /// <returns>InlineResponse20025</returns>
-        InlineResponse20025 P2pMerchantChatSendChatMessage (SendChatMessageRequest sendChatMessageRequest);
+        /// <returns>P2pSendChatMessageResponse</returns>
+        P2pSendChatMessageResponse P2pMerchantChatSendChatMessage (SendChatMessageRequest sendChatMessageRequest);
 
         /// <summary>
         /// Send text message
@@ -361,8 +361,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20025</returns>
-        ApiResponse<InlineResponse20025> P2pMerchantChatSendChatMessageWithHttpInfo (SendChatMessageRequest sendChatMessageRequest);
+        /// <returns>ApiResponse of P2pSendChatMessageResponse</returns>
+        ApiResponse<P2pSendChatMessageResponse> P2pMerchantChatSendChatMessageWithHttpInfo (SendChatMessageRequest sendChatMessageRequest);
         /// <summary>
         /// Upload chat file
         /// </summary>
@@ -371,8 +371,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadChatFile"></param>
-        /// <returns>InlineResponse20026</returns>
-        InlineResponse20026 P2pMerchantChatUploadChatFile (UploadChatFile uploadChatFile);
+        /// <returns>P2pUploadChatFileResponse</returns>
+        P2pUploadChatFileResponse P2pMerchantChatUploadChatFile (UploadChatFile uploadChatFile);
 
         /// <summary>
         /// Upload chat file
@@ -382,8 +382,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadChatFile"></param>
-        /// <returns>ApiResponse of InlineResponse20026</returns>
-        ApiResponse<InlineResponse20026> P2pMerchantChatUploadChatFileWithHttpInfo (UploadChatFile uploadChatFile);
+        /// <returns>ApiResponse of P2pUploadChatFileResponse</returns>
+        ApiResponse<P2pUploadChatFileResponse> P2pMerchantChatUploadChatFileWithHttpInfo (UploadChatFile uploadChatFile);
         #endregion Synchronous Operations
     }
 
@@ -400,8 +400,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20014</returns>
-        Task<InlineResponse20014> P2pMerchantAccountGetUserInfoAsync ();
+        /// <returns>Task of P2pMerchantUserInfoResponse</returns>
+        Task<P2pMerchantUserInfoResponse> P2pMerchantAccountGetUserInfoAsync ();
 
         /// <summary>
         /// Get account information
@@ -410,8 +410,8 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-        Task<ApiResponse<InlineResponse20014>> P2pMerchantAccountGetUserInfoAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (P2pMerchantUserInfoResponse)</returns>
+        Task<ApiResponse<P2pMerchantUserInfoResponse>> P2pMerchantAccountGetUserInfoAsyncWithHttpInfo ();
         /// <summary>
         /// Get counterparty information
         /// </summary>
@@ -420,8 +420,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCounterpartyUserInfoRequest"></param>
-        /// <returns>Task of InlineResponse20015</returns>
-        Task<InlineResponse20015> P2pMerchantAccountGetCounterpartyUserInfoAsync (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest);
+        /// <returns>Task of P2pCounterpartyUserInfoResponse</returns>
+        Task<P2pCounterpartyUserInfoResponse> P2pMerchantAccountGetCounterpartyUserInfoAsync (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest);
 
         /// <summary>
         /// Get counterparty information
@@ -431,8 +431,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCounterpartyUserInfoRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
-        Task<ApiResponse<InlineResponse20015>> P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest);
+        /// <returns>Task of ApiResponse (P2pCounterpartyUserInfoResponse)</returns>
+        Task<ApiResponse<P2pCounterpartyUserInfoResponse>> P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest);
         /// <summary>
         /// Get payment method list
         /// </summary>
@@ -441,8 +441,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMyselfPaymentRequest"> (optional)</param>
-        /// <returns>Task of InlineResponse20016</returns>
-        Task<InlineResponse20016> P2pMerchantAccountGetMyselfPaymentAsync (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest));
+        /// <returns>Task of P2pPaymentMethodsResponse</returns>
+        Task<P2pPaymentMethodsResponse> P2pMerchantAccountGetMyselfPaymentAsync (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest));
 
         /// <summary>
         /// Get payment method list
@@ -452,8 +452,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMyselfPaymentRequest"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-        Task<ApiResponse<InlineResponse20016>> P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest));
+        /// <returns>Task of ApiResponse (P2pPaymentMethodsResponse)</returns>
+        Task<ApiResponse<P2pPaymentMethodsResponse>> P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest));
         /// <summary>
         /// Get pending orders
         /// </summary>
@@ -462,8 +462,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getPendingTransactionListRequest"></param>
-        /// <returns>Task of InlineResponse20017</returns>
-        Task<InlineResponse20017> P2pMerchantTransactionGetPendingTransactionListAsync (GetPendingTransactionListRequest getPendingTransactionListRequest);
+        /// <returns>Task of P2pTransactionListResponse</returns>
+        Task<P2pTransactionListResponse> P2pMerchantTransactionGetPendingTransactionListAsync (GetPendingTransactionListRequest getPendingTransactionListRequest);
 
         /// <summary>
         /// Get pending orders
@@ -473,8 +473,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getPendingTransactionListRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-        Task<ApiResponse<InlineResponse20017>> P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo (GetPendingTransactionListRequest getPendingTransactionListRequest);
+        /// <returns>Task of ApiResponse (P2pTransactionListResponse)</returns>
+        Task<ApiResponse<P2pTransactionListResponse>> P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo (GetPendingTransactionListRequest getPendingTransactionListRequest);
         /// <summary>
         /// Get all/historical orders
         /// </summary>
@@ -483,8 +483,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCompletedTransactionListRequest"></param>
-        /// <returns>Task of InlineResponse20017</returns>
-        Task<InlineResponse20017> P2pMerchantTransactionGetCompletedTransactionListAsync (GetCompletedTransactionListRequest getCompletedTransactionListRequest);
+        /// <returns>Task of P2pTransactionListResponse</returns>
+        Task<P2pTransactionListResponse> P2pMerchantTransactionGetCompletedTransactionListAsync (GetCompletedTransactionListRequest getCompletedTransactionListRequest);
 
         /// <summary>
         /// Get all/historical orders
@@ -494,8 +494,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCompletedTransactionListRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-        Task<ApiResponse<InlineResponse20017>> P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo (GetCompletedTransactionListRequest getCompletedTransactionListRequest);
+        /// <returns>Task of ApiResponse (P2pTransactionListResponse)</returns>
+        Task<ApiResponse<P2pTransactionListResponse>> P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo (GetCompletedTransactionListRequest getCompletedTransactionListRequest);
         /// <summary>
         /// Query order details
         /// </summary>
@@ -504,8 +504,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getTransactionDetailsRequest"></param>
-        /// <returns>Task of InlineResponse20018</returns>
-        Task<InlineResponse20018> P2pMerchantTransactionGetTransactionDetailsAsync (GetTransactionDetailsRequest getTransactionDetailsRequest);
+        /// <returns>Task of P2pTransactionDetailResponse</returns>
+        Task<P2pTransactionDetailResponse> P2pMerchantTransactionGetTransactionDetailsAsync (GetTransactionDetailsRequest getTransactionDetailsRequest);
 
         /// <summary>
         /// Query order details
@@ -515,8 +515,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getTransactionDetailsRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
-        Task<ApiResponse<InlineResponse20018>> P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo (GetTransactionDetailsRequest getTransactionDetailsRequest);
+        /// <returns>Task of ApiResponse (P2pTransactionDetailResponse)</returns>
+        Task<ApiResponse<P2pTransactionDetailResponse>> P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo (GetTransactionDetailsRequest getTransactionDetailsRequest);
         /// <summary>
         /// Confirm payment
         /// </summary>
@@ -525,8 +525,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmPayment"></param>
-        /// <returns>Task of InlineResponse20019</returns>
-        Task<InlineResponse20019> P2pMerchantTransactionConfirmPaymentAsync (ConfirmPayment confirmPayment);
+        /// <returns>Task of P2pTransactionActionResponse</returns>
+        Task<P2pTransactionActionResponse> P2pMerchantTransactionConfirmPaymentAsync (ConfirmPayment confirmPayment);
 
         /// <summary>
         /// Confirm payment
@@ -536,8 +536,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmPayment"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        Task<ApiResponse<InlineResponse20019>> P2pMerchantTransactionConfirmPaymentAsyncWithHttpInfo (ConfirmPayment confirmPayment);
+        /// <returns>Task of ApiResponse (P2pTransactionActionResponse)</returns>
+        Task<ApiResponse<P2pTransactionActionResponse>> P2pMerchantTransactionConfirmPaymentAsyncWithHttpInfo (ConfirmPayment confirmPayment);
         /// <summary>
         /// Confirm receipt
         /// </summary>
@@ -546,8 +546,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmReceipt"></param>
-        /// <returns>Task of InlineResponse20019</returns>
-        Task<InlineResponse20019> P2pMerchantTransactionConfirmReceiptAsync (ConfirmReceipt confirmReceipt);
+        /// <returns>Task of P2pTransactionActionResponse</returns>
+        Task<P2pTransactionActionResponse> P2pMerchantTransactionConfirmReceiptAsync (ConfirmReceipt confirmReceipt);
 
         /// <summary>
         /// Confirm receipt
@@ -557,8 +557,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmReceipt"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        Task<ApiResponse<InlineResponse20019>> P2pMerchantTransactionConfirmReceiptAsyncWithHttpInfo (ConfirmReceipt confirmReceipt);
+        /// <returns>Task of ApiResponse (P2pTransactionActionResponse)</returns>
+        Task<ApiResponse<P2pTransactionActionResponse>> P2pMerchantTransactionConfirmReceiptAsyncWithHttpInfo (ConfirmReceipt confirmReceipt);
         /// <summary>
         /// Cancel order
         /// </summary>
@@ -567,8 +567,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancelOrder"></param>
-        /// <returns>Task of InlineResponse20019</returns>
-        Task<InlineResponse20019> P2pMerchantTransactionCancelAsync (CancelOrder cancelOrder);
+        /// <returns>Task of P2pTransactionActionResponse</returns>
+        Task<P2pTransactionActionResponse> P2pMerchantTransactionCancelAsync (CancelOrder cancelOrder);
 
         /// <summary>
         /// Cancel order
@@ -578,8 +578,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancelOrder"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        Task<ApiResponse<InlineResponse20019>> P2pMerchantTransactionCancelAsyncWithHttpInfo (CancelOrder cancelOrder);
+        /// <returns>Task of ApiResponse (P2pTransactionActionResponse)</returns>
+        Task<ApiResponse<P2pTransactionActionResponse>> P2pMerchantTransactionCancelAsyncWithHttpInfo (CancelOrder cancelOrder);
         /// <summary>
         /// Publish ad order
         /// </summary>
@@ -610,8 +610,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of InlineResponse20020</returns>
-        Task<InlineResponse20020> P2pMerchantBooksAdsUpdateStatusAsync (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
+        /// <returns>Task of P2pAdsUpdateStatusResponse</returns>
+        Task<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusAsync (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
 
         /// <summary>
         /// Update ad status
@@ -622,8 +622,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
-        Task<ApiResponse<InlineResponse20020>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
+        /// <returns>Task of ApiResponse (P2pAdsUpdateStatusResponse)</returns>
+        Task<ApiResponse<P2pAdsUpdateStatusResponse>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
         /// <summary>
         /// Query ad details
         /// </summary>
@@ -632,8 +632,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsDetailRequest"></param>
-        /// <returns>Task of InlineResponse20021</returns>
-        Task<InlineResponse20021> P2pMerchantBooksAdsDetailAsync (AdsDetailRequest adsDetailRequest);
+        /// <returns>Task of P2pAdDetailResponse</returns>
+        Task<P2pAdDetailResponse> P2pMerchantBooksAdsDetailAsync (AdsDetailRequest adsDetailRequest);
 
         /// <summary>
         /// Query ad details
@@ -643,8 +643,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsDetailRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20021)</returns>
-        Task<ApiResponse<InlineResponse20021>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (AdsDetailRequest adsDetailRequest);
+        /// <returns>Task of ApiResponse (P2pAdDetailResponse)</returns>
+        Task<ApiResponse<P2pAdDetailResponse>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (AdsDetailRequest adsDetailRequest);
         /// <summary>
         /// Get my ad list
         /// </summary>
@@ -653,8 +653,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="myAdsListRequest"> (optional)</param>
-        /// <returns>Task of InlineResponse20022</returns>
-        Task<InlineResponse20022> P2pMerchantBooksMyAdsListAsync (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest));
+        /// <returns>Task of P2pMyAdsListResponse</returns>
+        Task<P2pMyAdsListResponse> P2pMerchantBooksMyAdsListAsync (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest));
 
         /// <summary>
         /// Get my ad list
@@ -664,8 +664,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="myAdsListRequest"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20022)</returns>
-        Task<ApiResponse<InlineResponse20022>> P2pMerchantBooksMyAdsListAsyncWithHttpInfo (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest));
+        /// <returns>Task of ApiResponse (P2pMyAdsListResponse)</returns>
+        Task<ApiResponse<P2pMyAdsListResponse>> P2pMerchantBooksMyAdsListAsyncWithHttpInfo (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest));
         /// <summary>
         /// Get Advertisement List
         /// </summary>
@@ -674,8 +674,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsListRequest"></param>
-        /// <returns>Task of InlineResponse20023</returns>
-        Task<InlineResponse20023> P2pMerchantBooksAdsListAsync (AdsListRequest adsListRequest);
+        /// <returns>Task of P2pAdsListResponse</returns>
+        Task<P2pAdsListResponse> P2pMerchantBooksAdsListAsync (AdsListRequest adsListRequest);
 
         /// <summary>
         /// Get Advertisement List
@@ -685,8 +685,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsListRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
-        Task<ApiResponse<InlineResponse20023>> P2pMerchantBooksAdsListAsyncWithHttpInfo (AdsListRequest adsListRequest);
+        /// <returns>Task of ApiResponse (P2pAdsListResponse)</returns>
+        Task<ApiResponse<P2pAdsListResponse>> P2pMerchantBooksAdsListAsyncWithHttpInfo (AdsListRequest adsListRequest);
         /// <summary>
         /// Get chat history
         /// </summary>
@@ -695,8 +695,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getChatsListRequest"></param>
-        /// <returns>Task of InlineResponse20024</returns>
-        Task<InlineResponse20024> P2pMerchantChatGetChatsListAsync (GetChatsListRequest getChatsListRequest);
+        /// <returns>Task of P2pChatListResponse</returns>
+        Task<P2pChatListResponse> P2pMerchantChatGetChatsListAsync (GetChatsListRequest getChatsListRequest);
 
         /// <summary>
         /// Get chat history
@@ -706,8 +706,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getChatsListRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-        Task<ApiResponse<InlineResponse20024>> P2pMerchantChatGetChatsListAsyncWithHttpInfo (GetChatsListRequest getChatsListRequest);
+        /// <returns>Task of ApiResponse (P2pChatListResponse)</returns>
+        Task<ApiResponse<P2pChatListResponse>> P2pMerchantChatGetChatsListAsyncWithHttpInfo (GetChatsListRequest getChatsListRequest);
         /// <summary>
         /// Send text message
         /// </summary>
@@ -716,8 +716,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
-        /// <returns>Task of InlineResponse20025</returns>
-        Task<InlineResponse20025> P2pMerchantChatSendChatMessageAsync (SendChatMessageRequest sendChatMessageRequest);
+        /// <returns>Task of P2pSendChatMessageResponse</returns>
+        Task<P2pSendChatMessageResponse> P2pMerchantChatSendChatMessageAsync (SendChatMessageRequest sendChatMessageRequest);
 
         /// <summary>
         /// Send text message
@@ -727,8 +727,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-        Task<ApiResponse<InlineResponse20025>> P2pMerchantChatSendChatMessageAsyncWithHttpInfo (SendChatMessageRequest sendChatMessageRequest);
+        /// <returns>Task of ApiResponse (P2pSendChatMessageResponse)</returns>
+        Task<ApiResponse<P2pSendChatMessageResponse>> P2pMerchantChatSendChatMessageAsyncWithHttpInfo (SendChatMessageRequest sendChatMessageRequest);
         /// <summary>
         /// Upload chat file
         /// </summary>
@@ -737,8 +737,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadChatFile"></param>
-        /// <returns>Task of InlineResponse20026</returns>
-        Task<InlineResponse20026> P2pMerchantChatUploadChatFileAsync (UploadChatFile uploadChatFile);
+        /// <returns>Task of P2pUploadChatFileResponse</returns>
+        Task<P2pUploadChatFileResponse> P2pMerchantChatUploadChatFileAsync (UploadChatFile uploadChatFile);
 
         /// <summary>
         /// Upload chat file
@@ -748,8 +748,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadChatFile"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20026)</returns>
-        Task<ApiResponse<InlineResponse20026>> P2pMerchantChatUploadChatFileAsyncWithHttpInfo (UploadChatFile uploadChatFile);
+        /// <returns>Task of ApiResponse (P2pUploadChatFileResponse)</returns>
+        Task<ApiResponse<P2pUploadChatFileResponse>> P2pMerchantChatUploadChatFileAsyncWithHttpInfo (UploadChatFile uploadChatFile);
         #endregion Asynchronous Operations
     }
 
@@ -874,10 +874,10 @@ namespace Io.Gate.GateApi.Api
         /// Get account information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20014</returns>
-        public InlineResponse20014 P2pMerchantAccountGetUserInfo ()
+        /// <returns>P2pMerchantUserInfoResponse</returns>
+        public P2pMerchantUserInfoResponse P2pMerchantAccountGetUserInfo ()
         {
-             ApiResponse<InlineResponse20014> localVarResponse = P2pMerchantAccountGetUserInfoWithHttpInfo();
+             ApiResponse<P2pMerchantUserInfoResponse> localVarResponse = P2pMerchantAccountGetUserInfoWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -885,8 +885,8 @@ namespace Io.Gate.GateApi.Api
         /// Get account information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20014</returns>
-        public ApiResponse<InlineResponse20014> P2pMerchantAccountGetUserInfoWithHttpInfo ()
+        /// <returns>ApiResponse of P2pMerchantUserInfoResponse</returns>
+        public ApiResponse<P2pMerchantUserInfoResponse> P2pMerchantAccountGetUserInfoWithHttpInfo ()
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -909,7 +909,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20014>("/p2p/merchant/account/get_user_info", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pMerchantUserInfoResponse>("/p2p/merchant/account/get_user_info", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -924,10 +924,10 @@ namespace Io.Gate.GateApi.Api
         /// Get account information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20014</returns>
-        public async Task<InlineResponse20014> P2pMerchantAccountGetUserInfoAsync ()
+        /// <returns>Task of P2pMerchantUserInfoResponse</returns>
+        public async Task<P2pMerchantUserInfoResponse> P2pMerchantAccountGetUserInfoAsync ()
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20014> localVarResponse = await P2pMerchantAccountGetUserInfoAsyncWithHttpInfo();
+             Io.Gate.GateApi.Client.ApiResponse<P2pMerchantUserInfoResponse> localVarResponse = await P2pMerchantAccountGetUserInfoAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -936,8 +936,8 @@ namespace Io.Gate.GateApi.Api
         /// Get account information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-        public async Task<ApiResponse<InlineResponse20014>> P2pMerchantAccountGetUserInfoAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (P2pMerchantUserInfoResponse)</returns>
+        public async Task<ApiResponse<P2pMerchantUserInfoResponse>> P2pMerchantAccountGetUserInfoAsyncWithHttpInfo ()
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -962,7 +962,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20014>("/p2p/merchant/account/get_user_info", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pMerchantUserInfoResponse>("/p2p/merchant/account/get_user_info", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -978,10 +978,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCounterpartyUserInfoRequest"></param>
-        /// <returns>InlineResponse20015</returns>
-        public InlineResponse20015 P2pMerchantAccountGetCounterpartyUserInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest)
+        /// <returns>P2pCounterpartyUserInfoResponse</returns>
+        public P2pCounterpartyUserInfoResponse P2pMerchantAccountGetCounterpartyUserInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest)
         {
-             ApiResponse<InlineResponse20015> localVarResponse = P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo(getCounterpartyUserInfoRequest);
+             ApiResponse<P2pCounterpartyUserInfoResponse> localVarResponse = P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo(getCounterpartyUserInfoRequest);
              return localVarResponse.Data;
         }
 
@@ -990,8 +990,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCounterpartyUserInfoRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20015</returns>
-        public ApiResponse<InlineResponse20015> P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest)
+        /// <returns>ApiResponse of P2pCounterpartyUserInfoResponse</returns>
+        public ApiResponse<P2pCounterpartyUserInfoResponse> P2pMerchantAccountGetCounterpartyUserInfoWithHttpInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest)
         {
             // verify the required parameter 'getCounterpartyUserInfoRequest' is set
             if (getCounterpartyUserInfoRequest == null)
@@ -1020,7 +1020,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20015>("/p2p/merchant/account/get_counterparty_user_info", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pCounterpartyUserInfoResponse>("/p2p/merchant/account/get_counterparty_user_info", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1036,10 +1036,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCounterpartyUserInfoRequest"></param>
-        /// <returns>Task of InlineResponse20015</returns>
-        public async Task<InlineResponse20015> P2pMerchantAccountGetCounterpartyUserInfoAsync (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest)
+        /// <returns>Task of P2pCounterpartyUserInfoResponse</returns>
+        public async Task<P2pCounterpartyUserInfoResponse> P2pMerchantAccountGetCounterpartyUserInfoAsync (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20015> localVarResponse = await P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo(getCounterpartyUserInfoRequest);
+             Io.Gate.GateApi.Client.ApiResponse<P2pCounterpartyUserInfoResponse> localVarResponse = await P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo(getCounterpartyUserInfoRequest);
              return localVarResponse.Data;
 
         }
@@ -1049,8 +1049,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCounterpartyUserInfoRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
-        public async Task<ApiResponse<InlineResponse20015>> P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest)
+        /// <returns>Task of ApiResponse (P2pCounterpartyUserInfoResponse)</returns>
+        public async Task<ApiResponse<P2pCounterpartyUserInfoResponse>> P2pMerchantAccountGetCounterpartyUserInfoAsyncWithHttpInfo (GetCounterpartyUserInfoRequest getCounterpartyUserInfoRequest)
         {
             // verify the required parameter 'getCounterpartyUserInfoRequest' is set
             if (getCounterpartyUserInfoRequest == null)
@@ -1081,7 +1081,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20015>("/p2p/merchant/account/get_counterparty_user_info", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pCounterpartyUserInfoResponse>("/p2p/merchant/account/get_counterparty_user_info", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1097,10 +1097,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMyselfPaymentRequest"> (optional)</param>
-        /// <returns>InlineResponse20016</returns>
-        public InlineResponse20016 P2pMerchantAccountGetMyselfPayment (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest))
+        /// <returns>P2pPaymentMethodsResponse</returns>
+        public P2pPaymentMethodsResponse P2pMerchantAccountGetMyselfPayment (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest))
         {
-             ApiResponse<InlineResponse20016> localVarResponse = P2pMerchantAccountGetMyselfPaymentWithHttpInfo(getMyselfPaymentRequest);
+             ApiResponse<P2pPaymentMethodsResponse> localVarResponse = P2pMerchantAccountGetMyselfPaymentWithHttpInfo(getMyselfPaymentRequest);
              return localVarResponse.Data;
         }
 
@@ -1109,8 +1109,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMyselfPaymentRequest"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20016</returns>
-        public ApiResponse<InlineResponse20016> P2pMerchantAccountGetMyselfPaymentWithHttpInfo (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest))
+        /// <returns>ApiResponse of P2pPaymentMethodsResponse</returns>
+        public ApiResponse<P2pPaymentMethodsResponse> P2pMerchantAccountGetMyselfPaymentWithHttpInfo (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1135,7 +1135,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20016>("/p2p/merchant/account/get_myself_payment", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pPaymentMethodsResponse>("/p2p/merchant/account/get_myself_payment", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1151,10 +1151,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMyselfPaymentRequest"> (optional)</param>
-        /// <returns>Task of InlineResponse20016</returns>
-        public async Task<InlineResponse20016> P2pMerchantAccountGetMyselfPaymentAsync (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest))
+        /// <returns>Task of P2pPaymentMethodsResponse</returns>
+        public async Task<P2pPaymentMethodsResponse> P2pMerchantAccountGetMyselfPaymentAsync (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20016> localVarResponse = await P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo(getMyselfPaymentRequest);
+             Io.Gate.GateApi.Client.ApiResponse<P2pPaymentMethodsResponse> localVarResponse = await P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo(getMyselfPaymentRequest);
              return localVarResponse.Data;
 
         }
@@ -1164,8 +1164,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMyselfPaymentRequest"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-        public async Task<ApiResponse<InlineResponse20016>> P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest))
+        /// <returns>Task of ApiResponse (P2pPaymentMethodsResponse)</returns>
+        public async Task<ApiResponse<P2pPaymentMethodsResponse>> P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1192,7 +1192,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20016>("/p2p/merchant/account/get_myself_payment", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pPaymentMethodsResponse>("/p2p/merchant/account/get_myself_payment", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1208,10 +1208,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getPendingTransactionListRequest"></param>
-        /// <returns>InlineResponse20017</returns>
-        public InlineResponse20017 P2pMerchantTransactionGetPendingTransactionList (GetPendingTransactionListRequest getPendingTransactionListRequest)
+        /// <returns>P2pTransactionListResponse</returns>
+        public P2pTransactionListResponse P2pMerchantTransactionGetPendingTransactionList (GetPendingTransactionListRequest getPendingTransactionListRequest)
         {
-             ApiResponse<InlineResponse20017> localVarResponse = P2pMerchantTransactionGetPendingTransactionListWithHttpInfo(getPendingTransactionListRequest);
+             ApiResponse<P2pTransactionListResponse> localVarResponse = P2pMerchantTransactionGetPendingTransactionListWithHttpInfo(getPendingTransactionListRequest);
              return localVarResponse.Data;
         }
 
@@ -1220,8 +1220,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getPendingTransactionListRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20017</returns>
-        public ApiResponse<InlineResponse20017> P2pMerchantTransactionGetPendingTransactionListWithHttpInfo (GetPendingTransactionListRequest getPendingTransactionListRequest)
+        /// <returns>ApiResponse of P2pTransactionListResponse</returns>
+        public ApiResponse<P2pTransactionListResponse> P2pMerchantTransactionGetPendingTransactionListWithHttpInfo (GetPendingTransactionListRequest getPendingTransactionListRequest)
         {
             // verify the required parameter 'getPendingTransactionListRequest' is set
             if (getPendingTransactionListRequest == null)
@@ -1250,7 +1250,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20017>("/p2p/merchant/transaction/get_pending_transaction_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pTransactionListResponse>("/p2p/merchant/transaction/get_pending_transaction_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1266,10 +1266,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getPendingTransactionListRequest"></param>
-        /// <returns>Task of InlineResponse20017</returns>
-        public async Task<InlineResponse20017> P2pMerchantTransactionGetPendingTransactionListAsync (GetPendingTransactionListRequest getPendingTransactionListRequest)
+        /// <returns>Task of P2pTransactionListResponse</returns>
+        public async Task<P2pTransactionListResponse> P2pMerchantTransactionGetPendingTransactionListAsync (GetPendingTransactionListRequest getPendingTransactionListRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20017> localVarResponse = await P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo(getPendingTransactionListRequest);
+             Io.Gate.GateApi.Client.ApiResponse<P2pTransactionListResponse> localVarResponse = await P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo(getPendingTransactionListRequest);
              return localVarResponse.Data;
 
         }
@@ -1279,8 +1279,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getPendingTransactionListRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-        public async Task<ApiResponse<InlineResponse20017>> P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo (GetPendingTransactionListRequest getPendingTransactionListRequest)
+        /// <returns>Task of ApiResponse (P2pTransactionListResponse)</returns>
+        public async Task<ApiResponse<P2pTransactionListResponse>> P2pMerchantTransactionGetPendingTransactionListAsyncWithHttpInfo (GetPendingTransactionListRequest getPendingTransactionListRequest)
         {
             // verify the required parameter 'getPendingTransactionListRequest' is set
             if (getPendingTransactionListRequest == null)
@@ -1311,7 +1311,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20017>("/p2p/merchant/transaction/get_pending_transaction_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pTransactionListResponse>("/p2p/merchant/transaction/get_pending_transaction_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1327,10 +1327,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCompletedTransactionListRequest"></param>
-        /// <returns>InlineResponse20017</returns>
-        public InlineResponse20017 P2pMerchantTransactionGetCompletedTransactionList (GetCompletedTransactionListRequest getCompletedTransactionListRequest)
+        /// <returns>P2pTransactionListResponse</returns>
+        public P2pTransactionListResponse P2pMerchantTransactionGetCompletedTransactionList (GetCompletedTransactionListRequest getCompletedTransactionListRequest)
         {
-             ApiResponse<InlineResponse20017> localVarResponse = P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo(getCompletedTransactionListRequest);
+             ApiResponse<P2pTransactionListResponse> localVarResponse = P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo(getCompletedTransactionListRequest);
              return localVarResponse.Data;
         }
 
@@ -1339,8 +1339,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCompletedTransactionListRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20017</returns>
-        public ApiResponse<InlineResponse20017> P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo (GetCompletedTransactionListRequest getCompletedTransactionListRequest)
+        /// <returns>ApiResponse of P2pTransactionListResponse</returns>
+        public ApiResponse<P2pTransactionListResponse> P2pMerchantTransactionGetCompletedTransactionListWithHttpInfo (GetCompletedTransactionListRequest getCompletedTransactionListRequest)
         {
             // verify the required parameter 'getCompletedTransactionListRequest' is set
             if (getCompletedTransactionListRequest == null)
@@ -1369,7 +1369,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20017>("/p2p/merchant/transaction/get_completed_transaction_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pTransactionListResponse>("/p2p/merchant/transaction/get_completed_transaction_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1385,10 +1385,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCompletedTransactionListRequest"></param>
-        /// <returns>Task of InlineResponse20017</returns>
-        public async Task<InlineResponse20017> P2pMerchantTransactionGetCompletedTransactionListAsync (GetCompletedTransactionListRequest getCompletedTransactionListRequest)
+        /// <returns>Task of P2pTransactionListResponse</returns>
+        public async Task<P2pTransactionListResponse> P2pMerchantTransactionGetCompletedTransactionListAsync (GetCompletedTransactionListRequest getCompletedTransactionListRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20017> localVarResponse = await P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo(getCompletedTransactionListRequest);
+             Io.Gate.GateApi.Client.ApiResponse<P2pTransactionListResponse> localVarResponse = await P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo(getCompletedTransactionListRequest);
              return localVarResponse.Data;
 
         }
@@ -1398,8 +1398,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getCompletedTransactionListRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-        public async Task<ApiResponse<InlineResponse20017>> P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo (GetCompletedTransactionListRequest getCompletedTransactionListRequest)
+        /// <returns>Task of ApiResponse (P2pTransactionListResponse)</returns>
+        public async Task<ApiResponse<P2pTransactionListResponse>> P2pMerchantTransactionGetCompletedTransactionListAsyncWithHttpInfo (GetCompletedTransactionListRequest getCompletedTransactionListRequest)
         {
             // verify the required parameter 'getCompletedTransactionListRequest' is set
             if (getCompletedTransactionListRequest == null)
@@ -1430,7 +1430,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20017>("/p2p/merchant/transaction/get_completed_transaction_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pTransactionListResponse>("/p2p/merchant/transaction/get_completed_transaction_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1446,10 +1446,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getTransactionDetailsRequest"></param>
-        /// <returns>InlineResponse20018</returns>
-        public InlineResponse20018 P2pMerchantTransactionGetTransactionDetails (GetTransactionDetailsRequest getTransactionDetailsRequest)
+        /// <returns>P2pTransactionDetailResponse</returns>
+        public P2pTransactionDetailResponse P2pMerchantTransactionGetTransactionDetails (GetTransactionDetailsRequest getTransactionDetailsRequest)
         {
-             ApiResponse<InlineResponse20018> localVarResponse = P2pMerchantTransactionGetTransactionDetailsWithHttpInfo(getTransactionDetailsRequest);
+             ApiResponse<P2pTransactionDetailResponse> localVarResponse = P2pMerchantTransactionGetTransactionDetailsWithHttpInfo(getTransactionDetailsRequest);
              return localVarResponse.Data;
         }
 
@@ -1458,8 +1458,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getTransactionDetailsRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20018</returns>
-        public ApiResponse<InlineResponse20018> P2pMerchantTransactionGetTransactionDetailsWithHttpInfo (GetTransactionDetailsRequest getTransactionDetailsRequest)
+        /// <returns>ApiResponse of P2pTransactionDetailResponse</returns>
+        public ApiResponse<P2pTransactionDetailResponse> P2pMerchantTransactionGetTransactionDetailsWithHttpInfo (GetTransactionDetailsRequest getTransactionDetailsRequest)
         {
             // verify the required parameter 'getTransactionDetailsRequest' is set
             if (getTransactionDetailsRequest == null)
@@ -1488,7 +1488,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20018>("/p2p/merchant/transaction/get_transaction_details", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pTransactionDetailResponse>("/p2p/merchant/transaction/get_transaction_details", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1504,10 +1504,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getTransactionDetailsRequest"></param>
-        /// <returns>Task of InlineResponse20018</returns>
-        public async Task<InlineResponse20018> P2pMerchantTransactionGetTransactionDetailsAsync (GetTransactionDetailsRequest getTransactionDetailsRequest)
+        /// <returns>Task of P2pTransactionDetailResponse</returns>
+        public async Task<P2pTransactionDetailResponse> P2pMerchantTransactionGetTransactionDetailsAsync (GetTransactionDetailsRequest getTransactionDetailsRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20018> localVarResponse = await P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo(getTransactionDetailsRequest);
+             Io.Gate.GateApi.Client.ApiResponse<P2pTransactionDetailResponse> localVarResponse = await P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo(getTransactionDetailsRequest);
              return localVarResponse.Data;
 
         }
@@ -1517,8 +1517,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getTransactionDetailsRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
-        public async Task<ApiResponse<InlineResponse20018>> P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo (GetTransactionDetailsRequest getTransactionDetailsRequest)
+        /// <returns>Task of ApiResponse (P2pTransactionDetailResponse)</returns>
+        public async Task<ApiResponse<P2pTransactionDetailResponse>> P2pMerchantTransactionGetTransactionDetailsAsyncWithHttpInfo (GetTransactionDetailsRequest getTransactionDetailsRequest)
         {
             // verify the required parameter 'getTransactionDetailsRequest' is set
             if (getTransactionDetailsRequest == null)
@@ -1549,7 +1549,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20018>("/p2p/merchant/transaction/get_transaction_details", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pTransactionDetailResponse>("/p2p/merchant/transaction/get_transaction_details", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1565,10 +1565,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmPayment"></param>
-        /// <returns>InlineResponse20019</returns>
-        public InlineResponse20019 P2pMerchantTransactionConfirmPayment (ConfirmPayment confirmPayment)
+        /// <returns>P2pTransactionActionResponse</returns>
+        public P2pTransactionActionResponse P2pMerchantTransactionConfirmPayment (ConfirmPayment confirmPayment)
         {
-             ApiResponse<InlineResponse20019> localVarResponse = P2pMerchantTransactionConfirmPaymentWithHttpInfo(confirmPayment);
+             ApiResponse<P2pTransactionActionResponse> localVarResponse = P2pMerchantTransactionConfirmPaymentWithHttpInfo(confirmPayment);
              return localVarResponse.Data;
         }
 
@@ -1577,8 +1577,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmPayment"></param>
-        /// <returns>ApiResponse of InlineResponse20019</returns>
-        public ApiResponse<InlineResponse20019> P2pMerchantTransactionConfirmPaymentWithHttpInfo (ConfirmPayment confirmPayment)
+        /// <returns>ApiResponse of P2pTransactionActionResponse</returns>
+        public ApiResponse<P2pTransactionActionResponse> P2pMerchantTransactionConfirmPaymentWithHttpInfo (ConfirmPayment confirmPayment)
         {
             // verify the required parameter 'confirmPayment' is set
             if (confirmPayment == null)
@@ -1607,7 +1607,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20019>("/p2p/merchant/transaction/confirm-payment", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pTransactionActionResponse>("/p2p/merchant/transaction/confirm-payment", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1623,10 +1623,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmPayment"></param>
-        /// <returns>Task of InlineResponse20019</returns>
-        public async Task<InlineResponse20019> P2pMerchantTransactionConfirmPaymentAsync (ConfirmPayment confirmPayment)
+        /// <returns>Task of P2pTransactionActionResponse</returns>
+        public async Task<P2pTransactionActionResponse> P2pMerchantTransactionConfirmPaymentAsync (ConfirmPayment confirmPayment)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20019> localVarResponse = await P2pMerchantTransactionConfirmPaymentAsyncWithHttpInfo(confirmPayment);
+             Io.Gate.GateApi.Client.ApiResponse<P2pTransactionActionResponse> localVarResponse = await P2pMerchantTransactionConfirmPaymentAsyncWithHttpInfo(confirmPayment);
              return localVarResponse.Data;
 
         }
@@ -1636,8 +1636,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmPayment"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        public async Task<ApiResponse<InlineResponse20019>> P2pMerchantTransactionConfirmPaymentAsyncWithHttpInfo (ConfirmPayment confirmPayment)
+        /// <returns>Task of ApiResponse (P2pTransactionActionResponse)</returns>
+        public async Task<ApiResponse<P2pTransactionActionResponse>> P2pMerchantTransactionConfirmPaymentAsyncWithHttpInfo (ConfirmPayment confirmPayment)
         {
             // verify the required parameter 'confirmPayment' is set
             if (confirmPayment == null)
@@ -1668,7 +1668,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20019>("/p2p/merchant/transaction/confirm-payment", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pTransactionActionResponse>("/p2p/merchant/transaction/confirm-payment", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1684,10 +1684,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmReceipt"></param>
-        /// <returns>InlineResponse20019</returns>
-        public InlineResponse20019 P2pMerchantTransactionConfirmReceipt (ConfirmReceipt confirmReceipt)
+        /// <returns>P2pTransactionActionResponse</returns>
+        public P2pTransactionActionResponse P2pMerchantTransactionConfirmReceipt (ConfirmReceipt confirmReceipt)
         {
-             ApiResponse<InlineResponse20019> localVarResponse = P2pMerchantTransactionConfirmReceiptWithHttpInfo(confirmReceipt);
+             ApiResponse<P2pTransactionActionResponse> localVarResponse = P2pMerchantTransactionConfirmReceiptWithHttpInfo(confirmReceipt);
              return localVarResponse.Data;
         }
 
@@ -1696,8 +1696,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmReceipt"></param>
-        /// <returns>ApiResponse of InlineResponse20019</returns>
-        public ApiResponse<InlineResponse20019> P2pMerchantTransactionConfirmReceiptWithHttpInfo (ConfirmReceipt confirmReceipt)
+        /// <returns>ApiResponse of P2pTransactionActionResponse</returns>
+        public ApiResponse<P2pTransactionActionResponse> P2pMerchantTransactionConfirmReceiptWithHttpInfo (ConfirmReceipt confirmReceipt)
         {
             // verify the required parameter 'confirmReceipt' is set
             if (confirmReceipt == null)
@@ -1726,7 +1726,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20019>("/p2p/merchant/transaction/confirm-receipt", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pTransactionActionResponse>("/p2p/merchant/transaction/confirm-receipt", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1742,10 +1742,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmReceipt"></param>
-        /// <returns>Task of InlineResponse20019</returns>
-        public async Task<InlineResponse20019> P2pMerchantTransactionConfirmReceiptAsync (ConfirmReceipt confirmReceipt)
+        /// <returns>Task of P2pTransactionActionResponse</returns>
+        public async Task<P2pTransactionActionResponse> P2pMerchantTransactionConfirmReceiptAsync (ConfirmReceipt confirmReceipt)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20019> localVarResponse = await P2pMerchantTransactionConfirmReceiptAsyncWithHttpInfo(confirmReceipt);
+             Io.Gate.GateApi.Client.ApiResponse<P2pTransactionActionResponse> localVarResponse = await P2pMerchantTransactionConfirmReceiptAsyncWithHttpInfo(confirmReceipt);
              return localVarResponse.Data;
 
         }
@@ -1755,8 +1755,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="confirmReceipt"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        public async Task<ApiResponse<InlineResponse20019>> P2pMerchantTransactionConfirmReceiptAsyncWithHttpInfo (ConfirmReceipt confirmReceipt)
+        /// <returns>Task of ApiResponse (P2pTransactionActionResponse)</returns>
+        public async Task<ApiResponse<P2pTransactionActionResponse>> P2pMerchantTransactionConfirmReceiptAsyncWithHttpInfo (ConfirmReceipt confirmReceipt)
         {
             // verify the required parameter 'confirmReceipt' is set
             if (confirmReceipt == null)
@@ -1787,7 +1787,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20019>("/p2p/merchant/transaction/confirm-receipt", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pTransactionActionResponse>("/p2p/merchant/transaction/confirm-receipt", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1803,10 +1803,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancelOrder"></param>
-        /// <returns>InlineResponse20019</returns>
-        public InlineResponse20019 P2pMerchantTransactionCancel (CancelOrder cancelOrder)
+        /// <returns>P2pTransactionActionResponse</returns>
+        public P2pTransactionActionResponse P2pMerchantTransactionCancel (CancelOrder cancelOrder)
         {
-             ApiResponse<InlineResponse20019> localVarResponse = P2pMerchantTransactionCancelWithHttpInfo(cancelOrder);
+             ApiResponse<P2pTransactionActionResponse> localVarResponse = P2pMerchantTransactionCancelWithHttpInfo(cancelOrder);
              return localVarResponse.Data;
         }
 
@@ -1815,8 +1815,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancelOrder"></param>
-        /// <returns>ApiResponse of InlineResponse20019</returns>
-        public ApiResponse<InlineResponse20019> P2pMerchantTransactionCancelWithHttpInfo (CancelOrder cancelOrder)
+        /// <returns>ApiResponse of P2pTransactionActionResponse</returns>
+        public ApiResponse<P2pTransactionActionResponse> P2pMerchantTransactionCancelWithHttpInfo (CancelOrder cancelOrder)
         {
             // verify the required parameter 'cancelOrder' is set
             if (cancelOrder == null)
@@ -1845,7 +1845,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20019>("/p2p/merchant/transaction/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pTransactionActionResponse>("/p2p/merchant/transaction/cancel", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1861,10 +1861,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancelOrder"></param>
-        /// <returns>Task of InlineResponse20019</returns>
-        public async Task<InlineResponse20019> P2pMerchantTransactionCancelAsync (CancelOrder cancelOrder)
+        /// <returns>Task of P2pTransactionActionResponse</returns>
+        public async Task<P2pTransactionActionResponse> P2pMerchantTransactionCancelAsync (CancelOrder cancelOrder)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20019> localVarResponse = await P2pMerchantTransactionCancelAsyncWithHttpInfo(cancelOrder);
+             Io.Gate.GateApi.Client.ApiResponse<P2pTransactionActionResponse> localVarResponse = await P2pMerchantTransactionCancelAsyncWithHttpInfo(cancelOrder);
              return localVarResponse.Data;
 
         }
@@ -1874,8 +1874,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancelOrder"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        public async Task<ApiResponse<InlineResponse20019>> P2pMerchantTransactionCancelAsyncWithHttpInfo (CancelOrder cancelOrder)
+        /// <returns>Task of ApiResponse (P2pTransactionActionResponse)</returns>
+        public async Task<ApiResponse<P2pTransactionActionResponse>> P2pMerchantTransactionCancelAsyncWithHttpInfo (CancelOrder cancelOrder)
         {
             // verify the required parameter 'cancelOrder' is set
             if (cancelOrder == null)
@@ -1906,7 +1906,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20019>("/p2p/merchant/transaction/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pTransactionActionResponse>("/p2p/merchant/transaction/cancel", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2042,10 +2042,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>InlineResponse20020</returns>
-        public InlineResponse20020 P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
+        /// <returns>P2pAdsUpdateStatusResponse</returns>
+        public P2pAdsUpdateStatusResponse P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
         {
-             ApiResponse<InlineResponse20020> localVarResponse = P2pMerchantBooksAdsUpdateStatusWithHttpInfo(adsUpdateStatus, tradeType);
+             ApiResponse<P2pAdsUpdateStatusResponse> localVarResponse = P2pMerchantBooksAdsUpdateStatusWithHttpInfo(adsUpdateStatus, tradeType);
              return localVarResponse.Data;
         }
 
@@ -2055,8 +2055,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20020</returns>
-        public ApiResponse<InlineResponse20020> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
+        /// <returns>ApiResponse of P2pAdsUpdateStatusResponse</returns>
+        public ApiResponse<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
         {
             // verify the required parameter 'adsUpdateStatus' is set
             if (adsUpdateStatus == null)
@@ -2089,7 +2089,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20020>("/p2p/merchant/books/ads_update_status", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pAdsUpdateStatusResponse>("/p2p/merchant/books/ads_update_status", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2106,10 +2106,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of InlineResponse20020</returns>
-        public async Task<InlineResponse20020> P2pMerchantBooksAdsUpdateStatusAsync (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
+        /// <returns>Task of P2pAdsUpdateStatusResponse</returns>
+        public async Task<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusAsync (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20020> localVarResponse = await P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo(adsUpdateStatus, tradeType);
+             Io.Gate.GateApi.Client.ApiResponse<P2pAdsUpdateStatusResponse> localVarResponse = await P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo(adsUpdateStatus, tradeType);
              return localVarResponse.Data;
 
         }
@@ -2120,8 +2120,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
         /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
-        public async Task<ApiResponse<InlineResponse20020>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
+        /// <returns>Task of ApiResponse (P2pAdsUpdateStatusResponse)</returns>
+        public async Task<ApiResponse<P2pAdsUpdateStatusResponse>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
         {
             // verify the required parameter 'adsUpdateStatus' is set
             if (adsUpdateStatus == null)
@@ -2156,7 +2156,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20020>("/p2p/merchant/books/ads_update_status", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pAdsUpdateStatusResponse>("/p2p/merchant/books/ads_update_status", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2172,10 +2172,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsDetailRequest"></param>
-        /// <returns>InlineResponse20021</returns>
-        public InlineResponse20021 P2pMerchantBooksAdsDetail (AdsDetailRequest adsDetailRequest)
+        /// <returns>P2pAdDetailResponse</returns>
+        public P2pAdDetailResponse P2pMerchantBooksAdsDetail (AdsDetailRequest adsDetailRequest)
         {
-             ApiResponse<InlineResponse20021> localVarResponse = P2pMerchantBooksAdsDetailWithHttpInfo(adsDetailRequest);
+             ApiResponse<P2pAdDetailResponse> localVarResponse = P2pMerchantBooksAdsDetailWithHttpInfo(adsDetailRequest);
              return localVarResponse.Data;
         }
 
@@ -2184,8 +2184,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsDetailRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20021</returns>
-        public ApiResponse<InlineResponse20021> P2pMerchantBooksAdsDetailWithHttpInfo (AdsDetailRequest adsDetailRequest)
+        /// <returns>ApiResponse of P2pAdDetailResponse</returns>
+        public ApiResponse<P2pAdDetailResponse> P2pMerchantBooksAdsDetailWithHttpInfo (AdsDetailRequest adsDetailRequest)
         {
             // verify the required parameter 'adsDetailRequest' is set
             if (adsDetailRequest == null)
@@ -2214,7 +2214,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20021>("/p2p/merchant/books/ads_detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pAdDetailResponse>("/p2p/merchant/books/ads_detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2230,10 +2230,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsDetailRequest"></param>
-        /// <returns>Task of InlineResponse20021</returns>
-        public async Task<InlineResponse20021> P2pMerchantBooksAdsDetailAsync (AdsDetailRequest adsDetailRequest)
+        /// <returns>Task of P2pAdDetailResponse</returns>
+        public async Task<P2pAdDetailResponse> P2pMerchantBooksAdsDetailAsync (AdsDetailRequest adsDetailRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20021> localVarResponse = await P2pMerchantBooksAdsDetailAsyncWithHttpInfo(adsDetailRequest);
+             Io.Gate.GateApi.Client.ApiResponse<P2pAdDetailResponse> localVarResponse = await P2pMerchantBooksAdsDetailAsyncWithHttpInfo(adsDetailRequest);
              return localVarResponse.Data;
 
         }
@@ -2243,8 +2243,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsDetailRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20021)</returns>
-        public async Task<ApiResponse<InlineResponse20021>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (AdsDetailRequest adsDetailRequest)
+        /// <returns>Task of ApiResponse (P2pAdDetailResponse)</returns>
+        public async Task<ApiResponse<P2pAdDetailResponse>> P2pMerchantBooksAdsDetailAsyncWithHttpInfo (AdsDetailRequest adsDetailRequest)
         {
             // verify the required parameter 'adsDetailRequest' is set
             if (adsDetailRequest == null)
@@ -2275,7 +2275,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20021>("/p2p/merchant/books/ads_detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pAdDetailResponse>("/p2p/merchant/books/ads_detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2291,10 +2291,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="myAdsListRequest"> (optional)</param>
-        /// <returns>InlineResponse20022</returns>
-        public InlineResponse20022 P2pMerchantBooksMyAdsList (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest))
+        /// <returns>P2pMyAdsListResponse</returns>
+        public P2pMyAdsListResponse P2pMerchantBooksMyAdsList (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest))
         {
-             ApiResponse<InlineResponse20022> localVarResponse = P2pMerchantBooksMyAdsListWithHttpInfo(myAdsListRequest);
+             ApiResponse<P2pMyAdsListResponse> localVarResponse = P2pMerchantBooksMyAdsListWithHttpInfo(myAdsListRequest);
              return localVarResponse.Data;
         }
 
@@ -2303,8 +2303,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="myAdsListRequest"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20022</returns>
-        public ApiResponse<InlineResponse20022> P2pMerchantBooksMyAdsListWithHttpInfo (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest))
+        /// <returns>ApiResponse of P2pMyAdsListResponse</returns>
+        public ApiResponse<P2pMyAdsListResponse> P2pMerchantBooksMyAdsListWithHttpInfo (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2329,7 +2329,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20022>("/p2p/merchant/books/my_ads_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pMyAdsListResponse>("/p2p/merchant/books/my_ads_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2345,10 +2345,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="myAdsListRequest"> (optional)</param>
-        /// <returns>Task of InlineResponse20022</returns>
-        public async Task<InlineResponse20022> P2pMerchantBooksMyAdsListAsync (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest))
+        /// <returns>Task of P2pMyAdsListResponse</returns>
+        public async Task<P2pMyAdsListResponse> P2pMerchantBooksMyAdsListAsync (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20022> localVarResponse = await P2pMerchantBooksMyAdsListAsyncWithHttpInfo(myAdsListRequest);
+             Io.Gate.GateApi.Client.ApiResponse<P2pMyAdsListResponse> localVarResponse = await P2pMerchantBooksMyAdsListAsyncWithHttpInfo(myAdsListRequest);
              return localVarResponse.Data;
 
         }
@@ -2358,8 +2358,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="myAdsListRequest"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20022)</returns>
-        public async Task<ApiResponse<InlineResponse20022>> P2pMerchantBooksMyAdsListAsyncWithHttpInfo (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest))
+        /// <returns>Task of ApiResponse (P2pMyAdsListResponse)</returns>
+        public async Task<ApiResponse<P2pMyAdsListResponse>> P2pMerchantBooksMyAdsListAsyncWithHttpInfo (MyAdsListRequest myAdsListRequest = default(MyAdsListRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2386,7 +2386,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20022>("/p2p/merchant/books/my_ads_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pMyAdsListResponse>("/p2p/merchant/books/my_ads_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2402,10 +2402,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsListRequest"></param>
-        /// <returns>InlineResponse20023</returns>
-        public InlineResponse20023 P2pMerchantBooksAdsList (AdsListRequest adsListRequest)
+        /// <returns>P2pAdsListResponse</returns>
+        public P2pAdsListResponse P2pMerchantBooksAdsList (AdsListRequest adsListRequest)
         {
-             ApiResponse<InlineResponse20023> localVarResponse = P2pMerchantBooksAdsListWithHttpInfo(adsListRequest);
+             ApiResponse<P2pAdsListResponse> localVarResponse = P2pMerchantBooksAdsListWithHttpInfo(adsListRequest);
              return localVarResponse.Data;
         }
 
@@ -2414,8 +2414,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsListRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20023</returns>
-        public ApiResponse<InlineResponse20023> P2pMerchantBooksAdsListWithHttpInfo (AdsListRequest adsListRequest)
+        /// <returns>ApiResponse of P2pAdsListResponse</returns>
+        public ApiResponse<P2pAdsListResponse> P2pMerchantBooksAdsListWithHttpInfo (AdsListRequest adsListRequest)
         {
             // verify the required parameter 'adsListRequest' is set
             if (adsListRequest == null)
@@ -2444,7 +2444,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20023>("/p2p/merchant/books/ads_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pAdsListResponse>("/p2p/merchant/books/ads_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2460,10 +2460,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsListRequest"></param>
-        /// <returns>Task of InlineResponse20023</returns>
-        public async Task<InlineResponse20023> P2pMerchantBooksAdsListAsync (AdsListRequest adsListRequest)
+        /// <returns>Task of P2pAdsListResponse</returns>
+        public async Task<P2pAdsListResponse> P2pMerchantBooksAdsListAsync (AdsListRequest adsListRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20023> localVarResponse = await P2pMerchantBooksAdsListAsyncWithHttpInfo(adsListRequest);
+             Io.Gate.GateApi.Client.ApiResponse<P2pAdsListResponse> localVarResponse = await P2pMerchantBooksAdsListAsyncWithHttpInfo(adsListRequest);
              return localVarResponse.Data;
 
         }
@@ -2473,8 +2473,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsListRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
-        public async Task<ApiResponse<InlineResponse20023>> P2pMerchantBooksAdsListAsyncWithHttpInfo (AdsListRequest adsListRequest)
+        /// <returns>Task of ApiResponse (P2pAdsListResponse)</returns>
+        public async Task<ApiResponse<P2pAdsListResponse>> P2pMerchantBooksAdsListAsyncWithHttpInfo (AdsListRequest adsListRequest)
         {
             // verify the required parameter 'adsListRequest' is set
             if (adsListRequest == null)
@@ -2505,7 +2505,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20023>("/p2p/merchant/books/ads_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pAdsListResponse>("/p2p/merchant/books/ads_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2521,10 +2521,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getChatsListRequest"></param>
-        /// <returns>InlineResponse20024</returns>
-        public InlineResponse20024 P2pMerchantChatGetChatsList (GetChatsListRequest getChatsListRequest)
+        /// <returns>P2pChatListResponse</returns>
+        public P2pChatListResponse P2pMerchantChatGetChatsList (GetChatsListRequest getChatsListRequest)
         {
-             ApiResponse<InlineResponse20024> localVarResponse = P2pMerchantChatGetChatsListWithHttpInfo(getChatsListRequest);
+             ApiResponse<P2pChatListResponse> localVarResponse = P2pMerchantChatGetChatsListWithHttpInfo(getChatsListRequest);
              return localVarResponse.Data;
         }
 
@@ -2533,8 +2533,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getChatsListRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20024</returns>
-        public ApiResponse<InlineResponse20024> P2pMerchantChatGetChatsListWithHttpInfo (GetChatsListRequest getChatsListRequest)
+        /// <returns>ApiResponse of P2pChatListResponse</returns>
+        public ApiResponse<P2pChatListResponse> P2pMerchantChatGetChatsListWithHttpInfo (GetChatsListRequest getChatsListRequest)
         {
             // verify the required parameter 'getChatsListRequest' is set
             if (getChatsListRequest == null)
@@ -2563,7 +2563,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20024>("/p2p/merchant/chat/get_chats_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pChatListResponse>("/p2p/merchant/chat/get_chats_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2579,10 +2579,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getChatsListRequest"></param>
-        /// <returns>Task of InlineResponse20024</returns>
-        public async Task<InlineResponse20024> P2pMerchantChatGetChatsListAsync (GetChatsListRequest getChatsListRequest)
+        /// <returns>Task of P2pChatListResponse</returns>
+        public async Task<P2pChatListResponse> P2pMerchantChatGetChatsListAsync (GetChatsListRequest getChatsListRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20024> localVarResponse = await P2pMerchantChatGetChatsListAsyncWithHttpInfo(getChatsListRequest);
+             Io.Gate.GateApi.Client.ApiResponse<P2pChatListResponse> localVarResponse = await P2pMerchantChatGetChatsListAsyncWithHttpInfo(getChatsListRequest);
              return localVarResponse.Data;
 
         }
@@ -2592,8 +2592,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getChatsListRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-        public async Task<ApiResponse<InlineResponse20024>> P2pMerchantChatGetChatsListAsyncWithHttpInfo (GetChatsListRequest getChatsListRequest)
+        /// <returns>Task of ApiResponse (P2pChatListResponse)</returns>
+        public async Task<ApiResponse<P2pChatListResponse>> P2pMerchantChatGetChatsListAsyncWithHttpInfo (GetChatsListRequest getChatsListRequest)
         {
             // verify the required parameter 'getChatsListRequest' is set
             if (getChatsListRequest == null)
@@ -2624,7 +2624,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20024>("/p2p/merchant/chat/get_chats_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pChatListResponse>("/p2p/merchant/chat/get_chats_list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2640,10 +2640,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
-        /// <returns>InlineResponse20025</returns>
-        public InlineResponse20025 P2pMerchantChatSendChatMessage (SendChatMessageRequest sendChatMessageRequest)
+        /// <returns>P2pSendChatMessageResponse</returns>
+        public P2pSendChatMessageResponse P2pMerchantChatSendChatMessage (SendChatMessageRequest sendChatMessageRequest)
         {
-             ApiResponse<InlineResponse20025> localVarResponse = P2pMerchantChatSendChatMessageWithHttpInfo(sendChatMessageRequest);
+             ApiResponse<P2pSendChatMessageResponse> localVarResponse = P2pMerchantChatSendChatMessageWithHttpInfo(sendChatMessageRequest);
              return localVarResponse.Data;
         }
 
@@ -2652,8 +2652,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
-        /// <returns>ApiResponse of InlineResponse20025</returns>
-        public ApiResponse<InlineResponse20025> P2pMerchantChatSendChatMessageWithHttpInfo (SendChatMessageRequest sendChatMessageRequest)
+        /// <returns>ApiResponse of P2pSendChatMessageResponse</returns>
+        public ApiResponse<P2pSendChatMessageResponse> P2pMerchantChatSendChatMessageWithHttpInfo (SendChatMessageRequest sendChatMessageRequest)
         {
             // verify the required parameter 'sendChatMessageRequest' is set
             if (sendChatMessageRequest == null)
@@ -2682,7 +2682,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20025>("/p2p/merchant/chat/send_chat_message", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pSendChatMessageResponse>("/p2p/merchant/chat/send_chat_message", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2698,10 +2698,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
-        /// <returns>Task of InlineResponse20025</returns>
-        public async Task<InlineResponse20025> P2pMerchantChatSendChatMessageAsync (SendChatMessageRequest sendChatMessageRequest)
+        /// <returns>Task of P2pSendChatMessageResponse</returns>
+        public async Task<P2pSendChatMessageResponse> P2pMerchantChatSendChatMessageAsync (SendChatMessageRequest sendChatMessageRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20025> localVarResponse = await P2pMerchantChatSendChatMessageAsyncWithHttpInfo(sendChatMessageRequest);
+             Io.Gate.GateApi.Client.ApiResponse<P2pSendChatMessageResponse> localVarResponse = await P2pMerchantChatSendChatMessageAsyncWithHttpInfo(sendChatMessageRequest);
              return localVarResponse.Data;
 
         }
@@ -2711,8 +2711,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-        public async Task<ApiResponse<InlineResponse20025>> P2pMerchantChatSendChatMessageAsyncWithHttpInfo (SendChatMessageRequest sendChatMessageRequest)
+        /// <returns>Task of ApiResponse (P2pSendChatMessageResponse)</returns>
+        public async Task<ApiResponse<P2pSendChatMessageResponse>> P2pMerchantChatSendChatMessageAsyncWithHttpInfo (SendChatMessageRequest sendChatMessageRequest)
         {
             // verify the required parameter 'sendChatMessageRequest' is set
             if (sendChatMessageRequest == null)
@@ -2743,7 +2743,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20025>("/p2p/merchant/chat/send_chat_message", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pSendChatMessageResponse>("/p2p/merchant/chat/send_chat_message", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2759,10 +2759,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadChatFile"></param>
-        /// <returns>InlineResponse20026</returns>
-        public InlineResponse20026 P2pMerchantChatUploadChatFile (UploadChatFile uploadChatFile)
+        /// <returns>P2pUploadChatFileResponse</returns>
+        public P2pUploadChatFileResponse P2pMerchantChatUploadChatFile (UploadChatFile uploadChatFile)
         {
-             ApiResponse<InlineResponse20026> localVarResponse = P2pMerchantChatUploadChatFileWithHttpInfo(uploadChatFile);
+             ApiResponse<P2pUploadChatFileResponse> localVarResponse = P2pMerchantChatUploadChatFileWithHttpInfo(uploadChatFile);
              return localVarResponse.Data;
         }
 
@@ -2771,8 +2771,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadChatFile"></param>
-        /// <returns>ApiResponse of InlineResponse20026</returns>
-        public ApiResponse<InlineResponse20026> P2pMerchantChatUploadChatFileWithHttpInfo (UploadChatFile uploadChatFile)
+        /// <returns>ApiResponse of P2pUploadChatFileResponse</returns>
+        public ApiResponse<P2pUploadChatFileResponse> P2pMerchantChatUploadChatFileWithHttpInfo (UploadChatFile uploadChatFile)
         {
             // verify the required parameter 'uploadChatFile' is set
             if (uploadChatFile == null)
@@ -2801,7 +2801,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20026>("/p2p/merchant/chat/upload_chat_file", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pUploadChatFileResponse>("/p2p/merchant/chat/upload_chat_file", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2817,10 +2817,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadChatFile"></param>
-        /// <returns>Task of InlineResponse20026</returns>
-        public async Task<InlineResponse20026> P2pMerchantChatUploadChatFileAsync (UploadChatFile uploadChatFile)
+        /// <returns>Task of P2pUploadChatFileResponse</returns>
+        public async Task<P2pUploadChatFileResponse> P2pMerchantChatUploadChatFileAsync (UploadChatFile uploadChatFile)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20026> localVarResponse = await P2pMerchantChatUploadChatFileAsyncWithHttpInfo(uploadChatFile);
+             Io.Gate.GateApi.Client.ApiResponse<P2pUploadChatFileResponse> localVarResponse = await P2pMerchantChatUploadChatFileAsyncWithHttpInfo(uploadChatFile);
              return localVarResponse.Data;
 
         }
@@ -2830,8 +2830,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uploadChatFile"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20026)</returns>
-        public async Task<ApiResponse<InlineResponse20026>> P2pMerchantChatUploadChatFileAsyncWithHttpInfo (UploadChatFile uploadChatFile)
+        /// <returns>Task of ApiResponse (P2pUploadChatFileResponse)</returns>
+        public async Task<ApiResponse<P2pUploadChatFileResponse>> P2pMerchantChatUploadChatFileAsyncWithHttpInfo (UploadChatFile uploadChatFile)
         {
             // verify the required parameter 'uploadChatFile' is set
             if (uploadChatFile == null)
@@ -2862,7 +2862,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20026>("/p2p/merchant/chat/upload_chat_file", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pUploadChatFileResponse>("/p2p/merchant/chat/upload_chat_file", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

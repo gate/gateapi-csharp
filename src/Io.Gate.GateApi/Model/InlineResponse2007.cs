@@ -31,29 +31,66 @@ namespace Io.Gate.GateApi.Model
     public partial class InlineResponse2007 :  IEquatable<InlineResponse2007>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2007" /> class.
+        /// Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse2007() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2007" /> class.
-        /// </summary>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        /// <param name="timestamp">timestamp (required).</param>
-        public InlineResponse2007(int code = default(int), string message = default(string), int timestamp = default(int))
+        /// <value>Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CodeEnum
         {
-            this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2007 and cannot be null");
-            this.Timestamp = timestamp;
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_2002
+            /// </summary>
+            NUMBER_2002 = 2002,
+
+            /// <summary>
+            /// Enum value NUMBER_50105
+            /// </summary>
+            NUMBER_50105 = 50105,
+
+            /// <summary>
+            /// Enum value NUMBER_10001
+            /// </summary>
+            NUMBER_10001 = 10001,
+
+            /// <summary>
+            /// Enum value NUMBER_10000
+            /// </summary>
+            NUMBER_10000 = 10000
+
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)
         /// </summary>
+        /// <value>Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)</value>
         [DataMember(Name="code")]
-        public int Code { get; set; }
+        public CodeEnum? Code { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse2007" /> class.
+        /// </summary>
+        /// <param name="code">Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info).</param>
+        /// <param name="label">Error identifier code. Empty string on success, machine-readable error label on error.</param>
+        /// <param name="message">message.</param>
+        /// <param name="data">data.</param>
+        public InlineResponse2007(CodeEnum? code = default(CodeEnum?), string label = default(string), string message = default(string), InlineResponse2007Data data = default(InlineResponse2007Data))
+        {
+            this.Code = code;
+            this.Label = label;
+            this.Message = message;
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Error identifier code. Empty string on success, machine-readable error label on error
+        /// </summary>
+        /// <value>Error identifier code. Empty string on success, machine-readable error label on error</value>
+        [DataMember(Name="label")]
+        public string Label { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
@@ -62,10 +99,10 @@ namespace Io.Gate.GateApi.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// Gets or Sets Timestamp
+        /// Gets or Sets Data
         /// </summary>
-        [DataMember(Name="timestamp")]
-        public int Timestamp { get; set; }
+        [DataMember(Name="data")]
+        public InlineResponse2007Data Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -76,8 +113,9 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2007 {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,13 +155,19 @@ namespace Io.Gate.GateApi.Model
                     this.Code.Equals(input.Code)
                 ) && 
                 (
+                    this.Label == input.Label ||
+                    (this.Label != null &&
+                    this.Label.Equals(input.Label))
+                ) && 
+                (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
                 ) && 
                 (
-                    this.Timestamp == input.Timestamp ||
-                    this.Timestamp.Equals(input.Timestamp)
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
                 );
         }
 
@@ -137,9 +181,12 @@ namespace Io.Gate.GateApi.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Label != null)
+                    hashCode = hashCode * 59 + this.Label.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
-                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }

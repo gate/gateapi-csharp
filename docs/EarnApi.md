@@ -18,6 +18,12 @@ Method | HTTP request | Description
 [**OrderList**](EarnApi.md#orderlist) | **GET** /earn/staking/order_list | List of on-chain coin-earning orders
 [**AwardList**](EarnApi.md#awardlist) | **GET** /earn/staking/award_list | On-chain coin-earning dividend records
 [**AssetList**](EarnApi.md#assetlist) | **GET** /earn/staking/assets | On-chain coin-earning assets
+[**ListEarnFixedTermProducts**](EarnApi.md#listearnfixedtermproducts) | **GET** /earn/fixed-term/product | Get product list
+[**ListEarnFixedTermProductsByAsset**](EarnApi.md#listearnfixedtermproductsbyasset) | **GET** /earn/fixed-term/product/{asset}/list | Get product list by single currency
+[**ListEarnFixedTermLends**](EarnApi.md#listearnfixedtermlends) | **GET** /earn/fixed-term/user/lend | Subscription list
+[**CreateEarnFixedTermLend**](EarnApi.md#createearnfixedtermlend) | **POST** /earn/fixed-term/user/lend | Subscription
+[**CreateEarnFixedTermPreRedeem**](EarnApi.md#createearnfixedtermpreredeem) | **POST** /earn/fixed-term/user/pre-redeem | Redeem
+[**ListEarnFixedTermHistory**](EarnApi.md#listearnfixedtermhistory) | **GET** /earn/fixed-term/user/history | Subscription history
 
 
 <a name="swapeth2"></a>
@@ -1027,6 +1033,480 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listearnfixedtermproducts"></a>
+# **ListEarnFixedTermProducts**
+> InlineResponse200 ListEarnFixedTermProducts (int page, int limit, string asset = null, int? type = null)
+
+Get product list
+
+Query fixed-term earn product list. Supports filtering by currency, product type, status, etc. Returns product interest rate, lock-up period, quota, and reward campaign information
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListEarnFixedTermProductsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            var apiInstance = new EarnApi(config);
+            var page = 1;  // int | Page number
+            var limit = 100;  // int | Page size
+            var asset = "USDT";  // string | Currency (optional) 
+            var type = 1;  // int? | Product type: 1 for regular, 2 for VIP (optional) 
+
+            try
+            {
+                // Get product list
+                InlineResponse200 result = apiInstance.ListEarnFixedTermProducts(page, limit, asset, type);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListEarnFixedTermProducts: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number | 
+ **limit** | **int**| Page size | 
+ **asset** | **string**| Currency | [optional] 
+ **type** | **int?**| Product type: 1 for regular, 2 for VIP | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Product list retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listearnfixedtermproductsbyasset"></a>
+# **ListEarnFixedTermProductsByAsset**
+> InlineResponse2001 ListEarnFixedTermProductsByAsset (string asset, string type = null)
+
+Get product list by single currency
+
+Sort by product term in ascending order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListEarnFixedTermProductsByAssetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            var apiInstance = new EarnApi(config);
+            var asset = "USDT";  // string | Currency name, e.g., USDT, BTC
+            var type = "1";  // string | Product type: \"\" or 1 for regular product list, 2 for VIP product list, 0 for all products (optional) 
+
+            try
+            {
+                // Get product list by single currency
+                InlineResponse2001 result = apiInstance.ListEarnFixedTermProductsByAsset(asset, type);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListEarnFixedTermProductsByAsset: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset** | **string**| Currency name, e.g., USDT, BTC | 
+ **type** | **string**| Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products | [optional] 
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Single currency product list retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listearnfixedtermlends"></a>
+# **ListEarnFixedTermLends**
+> InlineResponse2002 ListEarnFixedTermLends (string orderType, int page, int limit, int? productId = null, long? orderId = null, string asset = null, int? subBusiness = null, string businessFilter = null)
+
+Subscription list
+
+Query the user's fixed-term earn subscription order list. Supports filtering by product, currency, order type, etc. Returns order details, earnings, rewards, and interest rate boost coupon information
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListEarnFixedTermLendsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var orderType = "1";  // string | Order type: 1 for current orders, 2 for historical orders
+            var page = 1;  // int | Page number
+            var limit = 10;  // int | Page size
+            var productId = 56;  // int? | Product ID (optional) 
+            var orderId = 56;  // long? | Order ID (optional) 
+            var asset = "asset_example";  // string | Currency (optional) 
+            var subBusiness = 56;  // int? | Sub-business (optional) 
+            var businessFilter = "[{\"business\":1, \"sub_business\": 0},{\"business\":2, \"sub_business\": 0}]";  // string | Business filter conditions, JSON array format, e.g., [{\"business\":1, \"sub_business\": 0}]. business: 1 for regular, 2 for VIP (optional) 
+
+            try
+            {
+                // Subscription list
+                InlineResponse2002 result = apiInstance.ListEarnFixedTermLends(orderType, page, limit, productId, orderId, asset, subBusiness, businessFilter);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListEarnFixedTermLends: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderType** | **string**| Order type: 1 for current orders, 2 for historical orders | 
+ **page** | **int**| Page number | 
+ **limit** | **int**| Page size | 
+ **productId** | **int?**| Product ID | [optional] 
+ **orderId** | **long?**| Order ID | [optional] 
+ **asset** | **string**| Currency | [optional] 
+ **subBusiness** | **int?**| Sub-business | [optional] 
+ **businessFilter** | **string**| Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP | [optional] 
+
+### Return type
+
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Subscription order list retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createearnfixedtermlend"></a>
+# **CreateEarnFixedTermLend**
+> InlineResponse2003 CreateEarnFixedTermLend (FixedTermLendRequest fixedTermLendRequest = null)
+
+Subscription
+
+Subscribe to a fixed-term earn product by specifying the product ID and subscription amount. Optionally enable auto-renewal and apply an interest rate boost coupon
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateEarnFixedTermLendExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var fixedTermLendRequest = new FixedTermLendRequest(); // FixedTermLendRequest |  (optional) 
+
+            try
+            {
+                // Subscription
+                InlineResponse2003 result = apiInstance.CreateEarnFixedTermLend(fixedTermLendRequest);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.CreateEarnFixedTermLend: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fixedTermLendRequest** | [**FixedTermLendRequest**](FixedTermLendRequest.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse2003**](InlineResponse2003.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Subscription successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createearnfixedtermpreredeem"></a>
+# **CreateEarnFixedTermPreRedeem**
+> InlineResponse2004 CreateEarnFixedTermPreRedeem (InlineObject inlineObject = null)
+
+Redeem
+
+Early redemption of a fixed-term earn order, order ID is required
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateEarnFixedTermPreRedeemExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var inlineObject = new InlineObject(); // InlineObject |  (optional) 
+
+            try
+            {
+                // Redeem
+                InlineResponse2004 result = apiInstance.CreateEarnFixedTermPreRedeem(inlineObject);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.CreateEarnFixedTermPreRedeem: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inlineObject** | [**InlineObject**](InlineObject.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse2004**](InlineResponse2004.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Redemption successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listearnfixedtermhistory"></a>
+# **ListEarnFixedTermHistory**
+> InlineResponse2005 ListEarnFixedTermHistory (string type, int page, int limit, int? productId = null, string orderId = null, string asset = null, int? startAt = null, int? endAt = null, int? subBusiness = null, string businessFilter = null)
+
+Subscription history
+
+Query the user's fixed-term earn history records. Supports filtering by type (subscription, redemption, interest, bonus rewards) and time range
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListEarnFixedTermHistoryExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var type = "1";  // string | 1 for subscription, 2 for redemption, 3 for interest, 4 for bonus reward
+            var page = 1;  // int | Page number
+            var limit = 10;  // int | Page size
+            var productId = 56;  // int? | Product ID (optional) 
+            var orderId = "orderId_example";  // string | Order ID (optional) 
+            var asset = "asset_example";  // string | Currency (optional) 
+            var startAt = 56;  // int? | Start timestamp (optional) 
+            var endAt = 56;  // int? | End Timestamp (optional) 
+            var subBusiness = 56;  // int? | Sub-business (optional) 
+            var businessFilter = "[{\"business\":1, \"sub_business\": 0},{\"business\":2, \"sub_business\": 0}]";  // string | Business filter conditions, JSON array format, e.g., [{\"business\":1, \"sub_business\": 0}]. business: 1 for regular, 2 for VIP (optional) 
+
+            try
+            {
+                // Subscription history
+                InlineResponse2005 result = apiInstance.ListEarnFixedTermHistory(type, page, limit, productId, orderId, asset, startAt, endAt, subBusiness, businessFilter);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListEarnFixedTermHistory: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **string**| 1 for subscription, 2 for redemption, 3 for interest, 4 for bonus reward | 
+ **page** | **int**| Page number | 
+ **limit** | **int**| Page size | 
+ **productId** | **int?**| Product ID | [optional] 
+ **orderId** | **string**| Order ID | [optional] 
+ **asset** | **string**| Currency | [optional] 
+ **startAt** | **int?**| Start timestamp | [optional] 
+ **endAt** | **int?**| End Timestamp | [optional] 
+ **subBusiness** | **int?**| Sub-business | [optional] 
+ **businessFilter** | **string**| Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP | [optional] 
+
+### Return type
+
+[**InlineResponse2005**](InlineResponse2005.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | History records retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

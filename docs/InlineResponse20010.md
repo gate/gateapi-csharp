@@ -5,10 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | **int** |  | 
-**Message** | **string** |  | 
-**Data** | [**InlineResponse20010Data**](InlineResponse20010Data.md) |  | 
-**Timestamp** | **int** |  | 
+**Success** | **bool** | Whether redemption was successful | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -33,17 +33,51 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2001" /> class.
         /// </summary>
-        /// <param name="orders">orders.</param>
-        public InlineResponse2001(List<TrailOrder> orders = default(List<TrailOrder>))
+        [JsonConstructorAttribute]
+        protected InlineResponse2001() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse2001" /> class.
+        /// </summary>
+        /// <param name="code">Return code, 0 means success (required).</param>
+        /// <param name="message">Response message (required).</param>
+        /// <param name="data">data (required).</param>
+        /// <param name="timestamp">Response timestamp (in seconds) (required).</param>
+        public InlineResponse2001(int code = default(int), string message = default(string), InlineResponse2001Data data = default(InlineResponse2001Data), int timestamp = default(int))
         {
-            this.Orders = orders;
+            this.Code = code;
+            // to ensure "message" is required (not null)
+            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse2001 and cannot be null");
+            // to ensure "data" is required (not null)
+            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse2001 and cannot be null");
+            this.Timestamp = timestamp;
         }
 
         /// <summary>
-        /// Gets or Sets Orders
+        /// Return code, 0 means success
         /// </summary>
-        [DataMember(Name="orders")]
-        public List<TrailOrder> Orders { get; set; }
+        /// <value>Return code, 0 means success</value>
+        [DataMember(Name="code")]
+        public int Code { get; set; }
+
+        /// <summary>
+        /// Response message
+        /// </summary>
+        /// <value>Response message</value>
+        [DataMember(Name="message")]
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Data
+        /// </summary>
+        [DataMember(Name="data")]
+        public InlineResponse2001Data Data { get; set; }
+
+        /// <summary>
+        /// Response timestamp (in seconds)
+        /// </summary>
+        /// <value>Response timestamp (in seconds)</value>
+        [DataMember(Name="timestamp")]
+        public int Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -53,7 +87,10 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2001 {\n");
-            sb.Append("  Orders: ").Append(Orders).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -89,10 +126,22 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Orders == input.Orders ||
-                    this.Orders != null &&
-                    input.Orders != null &&
-                    this.Orders.SequenceEqual(input.Orders)
+                    this.Code == input.Code ||
+                    this.Code.Equals(input.Code)
+                ) && 
+                (
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
                 );
         }
 
@@ -105,8 +154,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Orders != null)
-                    hashCode = hashCode * 59 + this.Orders.GetHashCode();
+                hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

@@ -179,8 +179,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query currency information by currency symbol (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>List&lt;Currency2&gt;</returns>
-        List<Currency2> ListAlphaCurrencies (string currency = default(string), int? limit = default(int?), int? page = default(int?));
+        /// <returns>List&lt;AlphaCurrency&gt;</returns>
+        List<AlphaCurrency> ListAlphaCurrencies (string currency = default(string), int? limit = default(int?), int? page = default(int?));
 
         /// <summary>
         /// Query currency information
@@ -192,8 +192,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query currency information by currency symbol (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>ApiResponse of List&lt;Currency2&gt;</returns>
-        ApiResponse<List<Currency2>> ListAlphaCurrenciesWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?));
+        /// <returns>ApiResponse of List&lt;AlphaCurrency&gt;</returns>
+        ApiResponse<List<AlphaCurrency>> ListAlphaCurrenciesWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?));
         /// <summary>
         /// Query currency ticker
         /// </summary>
@@ -407,8 +407,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query currency information by currency symbol (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of List&lt;Currency2&gt;</returns>
-        Task<List<Currency2>> ListAlphaCurrenciesAsync (string currency = default(string), int? limit = default(int?), int? page = default(int?));
+        /// <returns>Task of List&lt;AlphaCurrency&gt;</returns>
+        Task<List<AlphaCurrency>> ListAlphaCurrenciesAsync (string currency = default(string), int? limit = default(int?), int? page = default(int?));
 
         /// <summary>
         /// Query currency information
@@ -420,8 +420,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query currency information by currency symbol (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of ApiResponse (List&lt;Currency2&gt;)</returns>
-        Task<ApiResponse<List<Currency2>>> ListAlphaCurrenciesAsyncWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?));
+        /// <returns>Task of ApiResponse (List&lt;AlphaCurrency&gt;)</returns>
+        Task<ApiResponse<List<AlphaCurrency>>> ListAlphaCurrenciesAsyncWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?));
         /// <summary>
         /// Query currency ticker
         /// </summary>
@@ -1391,10 +1391,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query currency information by currency symbol (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>List&lt;Currency2&gt;</returns>
-        public List<Currency2> ListAlphaCurrencies (string currency = default(string), int? limit = default(int?), int? page = default(int?))
+        /// <returns>List&lt;AlphaCurrency&gt;</returns>
+        public List<AlphaCurrency> ListAlphaCurrencies (string currency = default(string), int? limit = default(int?), int? page = default(int?))
         {
-             ApiResponse<List<Currency2>> localVarResponse = ListAlphaCurrenciesWithHttpInfo(currency, limit, page);
+             ApiResponse<List<AlphaCurrency>> localVarResponse = ListAlphaCurrenciesWithHttpInfo(currency, limit, page);
              return localVarResponse.Data;
         }
 
@@ -1405,8 +1405,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query currency information by currency symbol (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>ApiResponse of List&lt;Currency2&gt;</returns>
-        public ApiResponse<List<Currency2>> ListAlphaCurrenciesWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?))
+        /// <returns>ApiResponse of List&lt;AlphaCurrency&gt;</returns>
+        public ApiResponse<List<AlphaCurrency>> ListAlphaCurrenciesWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1439,7 +1439,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<Currency2>>("/alpha/currencies", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<AlphaCurrency>>("/alpha/currencies", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1457,10 +1457,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query currency information by currency symbol (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of List&lt;Currency2&gt;</returns>
-        public async Task<List<Currency2>> ListAlphaCurrenciesAsync (string currency = default(string), int? limit = default(int?), int? page = default(int?))
+        /// <returns>Task of List&lt;AlphaCurrency&gt;</returns>
+        public async Task<List<AlphaCurrency>> ListAlphaCurrenciesAsync (string currency = default(string), int? limit = default(int?), int? page = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<Currency2>> localVarResponse = await ListAlphaCurrenciesAsyncWithHttpInfo(currency, limit, page);
+             Io.Gate.GateApi.Client.ApiResponse<List<AlphaCurrency>> localVarResponse = await ListAlphaCurrenciesAsyncWithHttpInfo(currency, limit, page);
              return localVarResponse.Data;
 
         }
@@ -1472,8 +1472,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Query currency information by currency symbol (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of ApiResponse (List&lt;Currency2&gt;)</returns>
-        public async Task<ApiResponse<List<Currency2>>> ListAlphaCurrenciesAsyncWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?))
+        /// <returns>Task of ApiResponse (List&lt;AlphaCurrency&gt;)</returns>
+        public async Task<ApiResponse<List<AlphaCurrency>>> ListAlphaCurrenciesAsyncWithHttpInfo (string currency = default(string), int? limit = default(int?), int? page = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1508,7 +1508,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Currency2>>("/alpha/currencies", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<AlphaCurrency>>("/alpha/currencies", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

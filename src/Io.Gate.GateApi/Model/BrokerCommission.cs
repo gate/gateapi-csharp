@@ -35,7 +35,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="total">Total.</param>
         /// <param name="list">List of commission history.</param>
-        public BrokerCommission(long total = default(long), List<BrokerCommission1> list = default(List<BrokerCommission1>))
+        public BrokerCommission(long total = default(long), List<BrokerCommissionItem> list = default(List<BrokerCommissionItem>))
         {
             this.Total = total;
             this.List = list;
@@ -53,7 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of commission history</value>
         [DataMember(Name="list")]
-        public List<BrokerCommission1> List { get; set; }
+        public List<BrokerCommissionItem> List { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
