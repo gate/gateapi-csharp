@@ -257,8 +257,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertOrderRequest"> (optional)</param>
-        /// <returns>Object</returns>
-        Object CreateCrossexConvertOrder (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
+        /// <returns>CrossexConvertOrderResponse</returns>
+        CrossexConvertOrderResponse CreateCrossexConvertOrder (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
 
         /// <summary>
         /// Flash Swap Transaction
@@ -268,8 +268,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertOrderRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> CreateCrossexConvertOrderWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
+        /// <returns>ApiResponse of CrossexConvertOrderResponse</returns>
+        ApiResponse<CrossexConvertOrderResponse> CreateCrossexConvertOrderWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
         /// <summary>
         /// Query Account Assets
         /// </summary>
@@ -447,8 +447,8 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>CrossexFee</returns>
-        CrossexFee GetCrossexFee ();
+        /// <returns>List&lt;InlineResponse2006&gt;</returns>
+        List<InlineResponse2006> GetCrossexFee ();
 
         /// <summary>
         /// Query User Fee Rates
@@ -457,8 +457,8 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of CrossexFee</returns>
-        ApiResponse<CrossexFee> GetCrossexFeeWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;InlineResponse2006&gt;</returns>
+        ApiResponse<List<InlineResponse2006>> GetCrossexFeeWithHttpInfo ();
         /// <summary>
         /// Query Contract Positions
         /// </summary>
@@ -989,8 +989,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertOrderRequest"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        Task<Object> CreateCrossexConvertOrderAsync (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
+        /// <returns>Task of CrossexConvertOrderResponse</returns>
+        Task<CrossexConvertOrderResponse> CreateCrossexConvertOrderAsync (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
 
         /// <summary>
         /// Flash Swap Transaction
@@ -1000,8 +1000,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertOrderRequest"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<Object>> CreateCrossexConvertOrderAsyncWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
+        /// <returns>Task of ApiResponse (CrossexConvertOrderResponse)</returns>
+        Task<ApiResponse<CrossexConvertOrderResponse>> CreateCrossexConvertOrderAsyncWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest));
         /// <summary>
         /// Query Account Assets
         /// </summary>
@@ -1179,8 +1179,8 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of CrossexFee</returns>
-        Task<CrossexFee> GetCrossexFeeAsync ();
+        /// <returns>Task of List&lt;InlineResponse2006&gt;</returns>
+        Task<List<InlineResponse2006>> GetCrossexFeeAsync ();
 
         /// <summary>
         /// Query User Fee Rates
@@ -1189,8 +1189,8 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (CrossexFee)</returns>
-        Task<ApiResponse<CrossexFee>> GetCrossexFeeAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse2006&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse2006>>> GetCrossexFeeAsyncWithHttpInfo ();
         /// <summary>
         /// Query Contract Positions
         /// </summary>
@@ -2809,10 +2809,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertOrderRequest"> (optional)</param>
-        /// <returns>Object</returns>
-        public Object CreateCrossexConvertOrder (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
+        /// <returns>CrossexConvertOrderResponse</returns>
+        public CrossexConvertOrderResponse CreateCrossexConvertOrder (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
         {
-             ApiResponse<Object> localVarResponse = CreateCrossexConvertOrderWithHttpInfo(crossexConvertOrderRequest);
+             ApiResponse<CrossexConvertOrderResponse> localVarResponse = CreateCrossexConvertOrderWithHttpInfo(crossexConvertOrderRequest);
              return localVarResponse.Data;
         }
 
@@ -2821,8 +2821,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertOrderRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> CreateCrossexConvertOrderWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
+        /// <returns>ApiResponse of CrossexConvertOrderResponse</returns>
+        public ApiResponse<CrossexConvertOrderResponse> CreateCrossexConvertOrderWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2847,7 +2847,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/crossex/convert/orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CrossexConvertOrderResponse>("/crossex/convert/orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2863,10 +2863,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertOrderRequest"> (optional)</param>
-        /// <returns>Task of Object</returns>
-        public async Task<Object> CreateCrossexConvertOrderAsync (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
+        /// <returns>Task of CrossexConvertOrderResponse</returns>
+        public async Task<CrossexConvertOrderResponse> CreateCrossexConvertOrderAsync (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<Object> localVarResponse = await CreateCrossexConvertOrderAsyncWithHttpInfo(crossexConvertOrderRequest);
+             Io.Gate.GateApi.Client.ApiResponse<CrossexConvertOrderResponse> localVarResponse = await CreateCrossexConvertOrderAsyncWithHttpInfo(crossexConvertOrderRequest);
              return localVarResponse.Data;
 
         }
@@ -2876,8 +2876,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertOrderRequest"> (optional)</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<Object>> CreateCrossexConvertOrderAsyncWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
+        /// <returns>Task of ApiResponse (CrossexConvertOrderResponse)</returns>
+        public async Task<ApiResponse<CrossexConvertOrderResponse>> CreateCrossexConvertOrderAsyncWithHttpInfo (CrossexConvertOrderRequest crossexConvertOrderRequest = default(CrossexConvertOrderRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2904,7 +2904,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/crossex/convert/orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CrossexConvertOrderResponse>("/crossex/convert/orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3835,10 +3835,10 @@ namespace Io.Gate.GateApi.Api
         /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>CrossexFee</returns>
-        public CrossexFee GetCrossexFee ()
+        /// <returns>List&lt;InlineResponse2006&gt;</returns>
+        public List<InlineResponse2006> GetCrossexFee ()
         {
-             ApiResponse<CrossexFee> localVarResponse = GetCrossexFeeWithHttpInfo();
+             ApiResponse<List<InlineResponse2006>> localVarResponse = GetCrossexFeeWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -3846,8 +3846,8 @@ namespace Io.Gate.GateApi.Api
         /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of CrossexFee</returns>
-        public ApiResponse<CrossexFee> GetCrossexFeeWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;InlineResponse2006&gt;</returns>
+        public ApiResponse<List<InlineResponse2006>> GetCrossexFeeWithHttpInfo ()
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3870,7 +3870,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<CrossexFee>("/crossex/fee", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse2006>>("/crossex/fee", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3885,10 +3885,10 @@ namespace Io.Gate.GateApi.Api
         /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of CrossexFee</returns>
-        public async Task<CrossexFee> GetCrossexFeeAsync ()
+        /// <returns>Task of List&lt;InlineResponse2006&gt;</returns>
+        public async Task<List<InlineResponse2006>> GetCrossexFeeAsync ()
         {
-             Io.Gate.GateApi.Client.ApiResponse<CrossexFee> localVarResponse = await GetCrossexFeeAsyncWithHttpInfo();
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse2006>> localVarResponse = await GetCrossexFeeAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -3897,8 +3897,8 @@ namespace Io.Gate.GateApi.Api
         /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (CrossexFee)</returns>
-        public async Task<ApiResponse<CrossexFee>> GetCrossexFeeAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse2006&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse2006>>> GetCrossexFeeAsyncWithHttpInfo ()
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3923,7 +3923,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<CrossexFee>("/crossex/fee", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse2006>>("/crossex/fee", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

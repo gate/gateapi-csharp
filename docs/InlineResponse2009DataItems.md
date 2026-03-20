@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse2008DataItems
+# Io.Gate.GateApi.Model.InlineResponse2009DataItems
 
 ## Properties
 

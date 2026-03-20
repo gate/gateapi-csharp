@@ -31,68 +31,74 @@ namespace Io.Gate.GateApi.Model
     public partial class InlineResponse2006 :  IEquatable<InlineResponse2006>, IValidatableObject
     {
         /// <summary>
-        /// Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed
+        /// Initializes a new instance of the <see cref="InlineResponse2006" /> class.
         /// </summary>
-        /// <value>Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum CodeEnum
-        {
-            /// <summary>
-            /// Enum value NUMBER_0
-            /// </summary>
-            NUMBER_0 = 0,
-
-            /// <summary>
-            /// Enum value NUMBER_2002
-            /// </summary>
-            NUMBER_2002 = 2002,
-
-            /// <summary>
-            /// Enum value NUMBER_50105
-            /// </summary>
-            NUMBER_50105 = 50105
-
-        }
-
-        /// <summary>
-        /// Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed
-        /// </summary>
-        /// <value>Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed</value>
-        [DataMember(Name="code")]
-        public CodeEnum? Code { get; set; }
+        [JsonConstructorAttribute]
+        protected InlineResponse2006() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2006" /> class.
         /// </summary>
-        /// <param name="code">Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed.</param>
-        /// <param name="label">Error identifier code. Empty string on success, machine-readable error label on error.</param>
-        /// <param name="message">message.</param>
-        /// <param name="data">data.</param>
-        public InlineResponse2006(CodeEnum? code = default(CodeEnum?), string label = default(string), string message = default(string), InlineResponse2006Data data = default(InlineResponse2006Data))
+        /// <param name="exchangeType">Exchange.</param>
+        /// <param name="spotMakerFee">spotMakerfee rate (required).</param>
+        /// <param name="spotTakerFee">spotTakerfee rate (required).</param>
+        /// <param name="futureMakerFee">contractMakerfee rate (required).</param>
+        /// <param name="futureTakerFee">contractTakerfee rate (required).</param>
+        /// <param name="specialFeeList">specialFeeList (required).</param>
+        public InlineResponse2006(string exchangeType = default(string), string spotMakerFee = default(string), string spotTakerFee = default(string), string futureMakerFee = default(string), string futureTakerFee = default(string), List<CrossexSpecialFee> specialFeeList = default(List<CrossexSpecialFee>))
         {
-            this.Code = code;
-            this.Label = label;
-            this.Message = message;
-            this.Data = data;
+            // to ensure "spotMakerFee" is required (not null)
+            this.SpotMakerFee = spotMakerFee ?? throw new ArgumentNullException("spotMakerFee", "spotMakerFee is a required property for InlineResponse2006 and cannot be null");
+            // to ensure "spotTakerFee" is required (not null)
+            this.SpotTakerFee = spotTakerFee ?? throw new ArgumentNullException("spotTakerFee", "spotTakerFee is a required property for InlineResponse2006 and cannot be null");
+            // to ensure "futureMakerFee" is required (not null)
+            this.FutureMakerFee = futureMakerFee ?? throw new ArgumentNullException("futureMakerFee", "futureMakerFee is a required property for InlineResponse2006 and cannot be null");
+            // to ensure "futureTakerFee" is required (not null)
+            this.FutureTakerFee = futureTakerFee ?? throw new ArgumentNullException("futureTakerFee", "futureTakerFee is a required property for InlineResponse2006 and cannot be null");
+            // to ensure "specialFeeList" is required (not null)
+            this.SpecialFeeList = specialFeeList ?? throw new ArgumentNullException("specialFeeList", "specialFeeList is a required property for InlineResponse2006 and cannot be null");
+            this.ExchangeType = exchangeType;
         }
 
         /// <summary>
-        /// Error identifier code. Empty string on success, machine-readable error label on error
+        /// Exchange
         /// </summary>
-        /// <value>Error identifier code. Empty string on success, machine-readable error label on error</value>
-        [DataMember(Name="label")]
-        public string Label { get; set; }
+        /// <value>Exchange</value>
+        [DataMember(Name="exchange_type")]
+        public string ExchangeType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// spotMakerfee rate
         /// </summary>
-        [DataMember(Name="message")]
-        public string Message { get; set; }
+        /// <value>spotMakerfee rate</value>
+        [DataMember(Name="spot_maker_fee")]
+        public string SpotMakerFee { get; set; }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// spotTakerfee rate
         /// </summary>
-        [DataMember(Name="data")]
-        public InlineResponse2006Data Data { get; set; }
+        /// <value>spotTakerfee rate</value>
+        [DataMember(Name="spot_taker_fee")]
+        public string SpotTakerFee { get; set; }
+
+        /// <summary>
+        /// contractMakerfee rate
+        /// </summary>
+        /// <value>contractMakerfee rate</value>
+        [DataMember(Name="future_maker_fee")]
+        public string FutureMakerFee { get; set; }
+
+        /// <summary>
+        /// contractTakerfee rate
+        /// </summary>
+        /// <value>contractTakerfee rate</value>
+        [DataMember(Name="future_taker_fee")]
+        public string FutureTakerFee { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SpecialFeeList
+        /// </summary>
+        [DataMember(Name="special_fee_list")]
+        public List<CrossexSpecialFee> SpecialFeeList { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -102,10 +108,12 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2006 {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Label: ").Append(Label).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
+            sb.Append("  SpotMakerFee: ").Append(SpotMakerFee).Append("\n");
+            sb.Append("  SpotTakerFee: ").Append(SpotTakerFee).Append("\n");
+            sb.Append("  FutureMakerFee: ").Append(FutureMakerFee).Append("\n");
+            sb.Append("  FutureTakerFee: ").Append(FutureTakerFee).Append("\n");
+            sb.Append("  SpecialFeeList: ").Append(SpecialFeeList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,23 +149,35 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Code == input.Code ||
-                    this.Code.Equals(input.Code)
+                    this.ExchangeType == input.ExchangeType ||
+                    (this.ExchangeType != null &&
+                    this.ExchangeType.Equals(input.ExchangeType))
                 ) && 
                 (
-                    this.Label == input.Label ||
-                    (this.Label != null &&
-                    this.Label.Equals(input.Label))
+                    this.SpotMakerFee == input.SpotMakerFee ||
+                    (this.SpotMakerFee != null &&
+                    this.SpotMakerFee.Equals(input.SpotMakerFee))
                 ) && 
                 (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
+                    this.SpotTakerFee == input.SpotTakerFee ||
+                    (this.SpotTakerFee != null &&
+                    this.SpotTakerFee.Equals(input.SpotTakerFee))
                 ) && 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.FutureMakerFee == input.FutureMakerFee ||
+                    (this.FutureMakerFee != null &&
+                    this.FutureMakerFee.Equals(input.FutureMakerFee))
+                ) && 
+                (
+                    this.FutureTakerFee == input.FutureTakerFee ||
+                    (this.FutureTakerFee != null &&
+                    this.FutureTakerFee.Equals(input.FutureTakerFee))
+                ) && 
+                (
+                    this.SpecialFeeList == input.SpecialFeeList ||
+                    this.SpecialFeeList != null &&
+                    input.SpecialFeeList != null &&
+                    this.SpecialFeeList.SequenceEqual(input.SpecialFeeList)
                 );
         }
 
@@ -170,13 +190,18 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Label != null)
-                    hashCode = hashCode * 59 + this.Label.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.ExchangeType != null)
+                    hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
+                if (this.SpotMakerFee != null)
+                    hashCode = hashCode * 59 + this.SpotMakerFee.GetHashCode();
+                if (this.SpotTakerFee != null)
+                    hashCode = hashCode * 59 + this.SpotTakerFee.GetHashCode();
+                if (this.FutureMakerFee != null)
+                    hashCode = hashCode * 59 + this.FutureMakerFee.GetHashCode();
+                if (this.FutureTakerFee != null)
+                    hashCode = hashCode * 59 + this.FutureTakerFee.GetHashCode();
+                if (this.SpecialFeeList != null)
+                    hashCode = hashCode * 59 + this.SpecialFeeList.GetHashCode();
                 return hashCode;
             }
         }

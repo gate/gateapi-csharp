@@ -34,8 +34,8 @@ namespace Io.Gate.GateApi.Api
         /// Query user&#39;s Activity Center entry information, including activity icon and redirect link
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20011</returns>
-        InlineResponse20011 GetMyActivityEntry ();
+        /// <returns>InlineResponse20012</returns>
+        InlineResponse20012 GetMyActivityEntry ();
 
         /// <summary>
         /// My activity entry
@@ -44,39 +44,39 @@ namespace Io.Gate.GateApi.Api
         /// Query user&#39;s Activity Center entry information, including activity icon and redirect link
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20011</returns>
-        ApiResponse<InlineResponse20011> GetMyActivityEntryWithHttpInfo ();
-        /// <summary>
-        /// Recommended activity list
-        /// </summary>
-        /// <remarks>
-        /// Query recommended activity list from Activity Center, supports pagination and sorting
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="recommendType">Recommendation type: hot for popular activities, type for filtering by activity type (type_ids), scenario for matching by activity name (optional)</param>
-        /// <param name="typeIds">Activity type ID, multiple IDs separated by commas (supports filtering by activity type through this field) (optional)</param>
-        /// <param name="keywords">Activity name. When scenario type is used, keyword matching is applied (optional)</param>
-        /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
-        /// <param name="pageSize">Items per page (optional, default to 10)</param>
-        /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
-        /// <returns>InlineResponse20012</returns>
-        InlineResponse20012 ListActivities (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string));
-
-        /// <summary>
-        /// Recommended activity list
-        /// </summary>
-        /// <remarks>
-        /// Query recommended activity list from Activity Center, supports pagination and sorting
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="recommendType">Recommendation type: hot for popular activities, type for filtering by activity type (type_ids), scenario for matching by activity name (optional)</param>
-        /// <param name="typeIds">Activity type ID, multiple IDs separated by commas (supports filtering by activity type through this field) (optional)</param>
-        /// <param name="keywords">Activity name. When scenario type is used, keyword matching is applied (optional)</param>
-        /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
-        /// <param name="pageSize">Items per page (optional, default to 10)</param>
-        /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
         /// <returns>ApiResponse of InlineResponse20012</returns>
-        ApiResponse<InlineResponse20012> ListActivitiesWithHttpInfo (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string));
+        ApiResponse<InlineResponse20012> GetMyActivityEntryWithHttpInfo ();
+        /// <summary>
+        /// Recommended activity list
+        /// </summary>
+        /// <remarks>
+        /// Query recommended activity list from Activity Center, supports pagination and sorting
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="recommendType">Recommendation type: hot for popular activities, type for filtering by activity type (type_ids), scenario for matching by activity name (optional)</param>
+        /// <param name="typeIds">Activity type ID, multiple IDs separated by commas (supports filtering by activity type through this field) (optional)</param>
+        /// <param name="keywords">Activity name. When scenario type is used, keyword matching is applied (optional)</param>
+        /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Items per page (optional, default to 10)</param>
+        /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
+        /// <returns>InlineResponse20013</returns>
+        InlineResponse20013 ListActivities (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string));
+
+        /// <summary>
+        /// Recommended activity list
+        /// </summary>
+        /// <remarks>
+        /// Query recommended activity list from Activity Center, supports pagination and sorting
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="recommendType">Recommendation type: hot for popular activities, type for filtering by activity type (type_ids), scenario for matching by activity name (optional)</param>
+        /// <param name="typeIds">Activity type ID, multiple IDs separated by commas (supports filtering by activity type through this field) (optional)</param>
+        /// <param name="keywords">Activity name. When scenario type is used, keyword matching is applied (optional)</param>
+        /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Items per page (optional, default to 10)</param>
+        /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20013</returns>
+        ApiResponse<InlineResponse20013> ListActivitiesWithHttpInfo (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string));
         /// <summary>
         /// Activity type list
         /// </summary>
@@ -84,8 +84,8 @@ namespace Io.Gate.GateApi.Api
         /// Query all activity types supported by Activity Center
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20013</returns>
-        InlineResponse20013 ListActivityTypes ();
+        /// <returns>InlineResponse20014</returns>
+        InlineResponse20014 ListActivityTypes ();
 
         /// <summary>
         /// Activity type list
@@ -94,8 +94,8 @@ namespace Io.Gate.GateApi.Api
         /// Query all activity types supported by Activity Center
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20013</returns>
-        ApiResponse<InlineResponse20013> ListActivityTypesWithHttpInfo ();
+        /// <returns>ApiResponse of InlineResponse20014</returns>
+        ApiResponse<InlineResponse20014> ListActivityTypesWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -112,8 +112,8 @@ namespace Io.Gate.GateApi.Api
         /// Query user&#39;s Activity Center entry information, including activity icon and redirect link
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20011</returns>
-        Task<InlineResponse20011> GetMyActivityEntryAsync ();
+        /// <returns>Task of InlineResponse20012</returns>
+        Task<InlineResponse20012> GetMyActivityEntryAsync ();
 
         /// <summary>
         /// My activity entry
@@ -122,39 +122,39 @@ namespace Io.Gate.GateApi.Api
         /// Query user&#39;s Activity Center entry information, including activity icon and redirect link
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        Task<ApiResponse<InlineResponse20011>> GetMyActivityEntryAsyncWithHttpInfo ();
-        /// <summary>
-        /// Recommended activity list
-        /// </summary>
-        /// <remarks>
-        /// Query recommended activity list from Activity Center, supports pagination and sorting
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="recommendType">Recommendation type: hot for popular activities, type for filtering by activity type (type_ids), scenario for matching by activity name (optional)</param>
-        /// <param name="typeIds">Activity type ID, multiple IDs separated by commas (supports filtering by activity type through this field) (optional)</param>
-        /// <param name="keywords">Activity name. When scenario type is used, keyword matching is applied (optional)</param>
-        /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
-        /// <param name="pageSize">Items per page (optional, default to 10)</param>
-        /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        Task<InlineResponse20012> ListActivitiesAsync (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string));
-
-        /// <summary>
-        /// Recommended activity list
-        /// </summary>
-        /// <remarks>
-        /// Query recommended activity list from Activity Center, supports pagination and sorting
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="recommendType">Recommendation type: hot for popular activities, type for filtering by activity type (type_ids), scenario for matching by activity name (optional)</param>
-        /// <param name="typeIds">Activity type ID, multiple IDs separated by commas (supports filtering by activity type through this field) (optional)</param>
-        /// <param name="keywords">Activity name. When scenario type is used, keyword matching is applied (optional)</param>
-        /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
-        /// <param name="pageSize">Items per page (optional, default to 10)</param>
-        /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        Task<ApiResponse<InlineResponse20012>> ListActivitiesAsyncWithHttpInfo (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string));
+        Task<ApiResponse<InlineResponse20012>> GetMyActivityEntryAsyncWithHttpInfo ();
+        /// <summary>
+        /// Recommended activity list
+        /// </summary>
+        /// <remarks>
+        /// Query recommended activity list from Activity Center, supports pagination and sorting
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="recommendType">Recommendation type: hot for popular activities, type for filtering by activity type (type_ids), scenario for matching by activity name (optional)</param>
+        /// <param name="typeIds">Activity type ID, multiple IDs separated by commas (supports filtering by activity type through this field) (optional)</param>
+        /// <param name="keywords">Activity name. When scenario type is used, keyword matching is applied (optional)</param>
+        /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Items per page (optional, default to 10)</param>
+        /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
+        /// <returns>Task of InlineResponse20013</returns>
+        Task<InlineResponse20013> ListActivitiesAsync (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string));
+
+        /// <summary>
+        /// Recommended activity list
+        /// </summary>
+        /// <remarks>
+        /// Query recommended activity list from Activity Center, supports pagination and sorting
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="recommendType">Recommendation type: hot for popular activities, type for filtering by activity type (type_ids), scenario for matching by activity name (optional)</param>
+        /// <param name="typeIds">Activity type ID, multiple IDs separated by commas (supports filtering by activity type through this field) (optional)</param>
+        /// <param name="keywords">Activity name. When scenario type is used, keyword matching is applied (optional)</param>
+        /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Items per page (optional, default to 10)</param>
+        /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
+        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
+        Task<ApiResponse<InlineResponse20013>> ListActivitiesAsyncWithHttpInfo (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string));
         /// <summary>
         /// Activity type list
         /// </summary>
@@ -162,8 +162,8 @@ namespace Io.Gate.GateApi.Api
         /// Query all activity types supported by Activity Center
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20013</returns>
-        Task<InlineResponse20013> ListActivityTypesAsync ();
+        /// <returns>Task of InlineResponse20014</returns>
+        Task<InlineResponse20014> ListActivityTypesAsync ();
 
         /// <summary>
         /// Activity type list
@@ -172,8 +172,8 @@ namespace Io.Gate.GateApi.Api
         /// Query all activity types supported by Activity Center
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        Task<ApiResponse<InlineResponse20013>> ListActivityTypesAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
+        Task<ApiResponse<InlineResponse20014>> ListActivityTypesAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -298,119 +298,119 @@ namespace Io.Gate.GateApi.Api
         /// My activity entry Query user&#39;s Activity Center entry information, including activity icon and redirect link
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20011</returns>
-        public InlineResponse20011 GetMyActivityEntry ()
-        {
-             ApiResponse<InlineResponse20011> localVarResponse = GetMyActivityEntryWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// My activity entry Query user&#39;s Activity Center entry information, including activity icon and redirect link
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20011</returns>
-        public ApiResponse<InlineResponse20011> GetMyActivityEntryWithHttpInfo ()
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20011>("/rewards/activity/my-activity-entry", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetMyActivityEntry", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// My activity entry Query user&#39;s Activity Center entry information, including activity icon and redirect link
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20011</returns>
-        public async Task<InlineResponse20011> GetMyActivityEntryAsync ()
-        {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20011> localVarResponse = await GetMyActivityEntryAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// My activity entry Query user&#39;s Activity Center entry information, including activity icon and redirect link
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        public async Task<ApiResponse<InlineResponse20011>> GetMyActivityEntryAsyncWithHttpInfo ()
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20011>("/rewards/activity/my-activity-entry", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetMyActivityEntry", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Recommended activity list Query recommended activity list from Activity Center, supports pagination and sorting
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="recommendType">Recommendation type: hot for popular activities, type for filtering by activity type (type_ids), scenario for matching by activity name (optional)</param>
-        /// <param name="typeIds">Activity type ID, multiple IDs separated by commas (supports filtering by activity type through this field) (optional)</param>
-        /// <param name="keywords">Activity name. When scenario type is used, keyword matching is applied (optional)</param>
-        /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
-        /// <param name="pageSize">Items per page (optional, default to 10)</param>
-        /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
         /// <returns>InlineResponse20012</returns>
-        public InlineResponse20012 ListActivities (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string))
+        public InlineResponse20012 GetMyActivityEntry ()
         {
-             ApiResponse<InlineResponse20012> localVarResponse = ListActivitiesWithHttpInfo(recommendType, typeIds, keywords, page, pageSize, sortBy);
+             ApiResponse<InlineResponse20012> localVarResponse = GetMyActivityEntryWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// My activity entry Query user&#39;s Activity Center entry information, including activity icon and redirect link
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of InlineResponse20012</returns>
+        public ApiResponse<InlineResponse20012> GetMyActivityEntryWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InlineResponse20012>("/rewards/activity/my-activity-entry", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetMyActivityEntry", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// My activity entry Query user&#39;s Activity Center entry information, including activity icon and redirect link
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of InlineResponse20012</returns>
+        public async Task<InlineResponse20012> GetMyActivityEntryAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20012> localVarResponse = await GetMyActivityEntryAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// My activity entry Query user&#39;s Activity Center entry information, including activity icon and redirect link
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
+        public async Task<ApiResponse<InlineResponse20012>> GetMyActivityEntryAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20012>("/rewards/activity/my-activity-entry", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetMyActivityEntry", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Recommended activity list Query recommended activity list from Activity Center, supports pagination and sorting
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="recommendType">Recommendation type: hot for popular activities, type for filtering by activity type (type_ids), scenario for matching by activity name (optional)</param>
+        /// <param name="typeIds">Activity type ID, multiple IDs separated by commas (supports filtering by activity type through this field) (optional)</param>
+        /// <param name="keywords">Activity name. When scenario type is used, keyword matching is applied (optional)</param>
+        /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Items per page (optional, default to 10)</param>
+        /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
+        /// <returns>InlineResponse20013</returns>
+        public InlineResponse20013 ListActivities (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string))
+        {
+             ApiResponse<InlineResponse20013> localVarResponse = ListActivitiesWithHttpInfo(recommendType, typeIds, keywords, page, pageSize, sortBy);
              return localVarResponse.Data;
         }
 
@@ -424,8 +424,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Items per page (optional, default to 10)</param>
         /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        public ApiResponse<InlineResponse20012> ListActivitiesWithHttpInfo (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string))
+        /// <returns>ApiResponse of InlineResponse20013</returns>
+        public ApiResponse<InlineResponse20013> ListActivitiesWithHttpInfo (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -472,7 +472,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20012>("/rewards/activity/activity-list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20013>("/rewards/activity/activity-list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -493,10 +493,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Items per page (optional, default to 10)</param>
         /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        public async Task<InlineResponse20012> ListActivitiesAsync (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string))
+        /// <returns>Task of InlineResponse20013</returns>
+        public async Task<InlineResponse20013> ListActivitiesAsync (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20012> localVarResponse = await ListActivitiesAsyncWithHttpInfo(recommendType, typeIds, keywords, page, pageSize, sortBy);
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20013> localVarResponse = await ListActivitiesAsyncWithHttpInfo(recommendType, typeIds, keywords, page, pageSize, sortBy);
              return localVarResponse.Data;
 
         }
@@ -511,8 +511,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Items per page (optional, default to 10)</param>
         /// <param name="sortBy">Sort order, e.g., hot for sorting by popularity (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        public async Task<ApiResponse<InlineResponse20012>> ListActivitiesAsyncWithHttpInfo (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string))
+        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
+        public async Task<ApiResponse<InlineResponse20013>> ListActivitiesAsyncWithHttpInfo (string recommendType = default(string), string typeIds = default(string), string keywords = default(string), int? page = default(int?), int? pageSize = default(int?), string sortBy = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -561,7 +561,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20012>("/rewards/activity/activity-list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20013>("/rewards/activity/activity-list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -576,10 +576,10 @@ namespace Io.Gate.GateApi.Api
         /// Activity type list Query all activity types supported by Activity Center
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse20013</returns>
-        public InlineResponse20013 ListActivityTypes ()
+        /// <returns>InlineResponse20014</returns>
+        public InlineResponse20014 ListActivityTypes ()
         {
-             ApiResponse<InlineResponse20013> localVarResponse = ListActivityTypesWithHttpInfo();
+             ApiResponse<InlineResponse20014> localVarResponse = ListActivityTypesWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -587,8 +587,8 @@ namespace Io.Gate.GateApi.Api
         /// Activity type list Query all activity types supported by Activity Center
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse20013</returns>
-        public ApiResponse<InlineResponse20013> ListActivityTypesWithHttpInfo ()
+        /// <returns>ApiResponse of InlineResponse20014</returns>
+        public ApiResponse<InlineResponse20014> ListActivityTypesWithHttpInfo ()
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -609,7 +609,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20013>("/rewards/activity/activity-type", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20014>("/rewards/activity/activity-type", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -624,10 +624,10 @@ namespace Io.Gate.GateApi.Api
         /// Activity type list Query all activity types supported by Activity Center
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse20013</returns>
-        public async Task<InlineResponse20013> ListActivityTypesAsync ()
+        /// <returns>Task of InlineResponse20014</returns>
+        public async Task<InlineResponse20014> ListActivityTypesAsync ()
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20013> localVarResponse = await ListActivityTypesAsyncWithHttpInfo();
+             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20014> localVarResponse = await ListActivityTypesAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -636,8 +636,8 @@ namespace Io.Gate.GateApi.Api
         /// Activity type list Query all activity types supported by Activity Center
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        public async Task<ApiResponse<InlineResponse20013>> ListActivityTypesAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
+        public async Task<ApiResponse<InlineResponse20014>> ListActivityTypesAsyncWithHttpInfo ()
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -660,7 +660,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20013>("/rewards/activity/activity-type", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20014>("/rewards/activity/activity-type", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

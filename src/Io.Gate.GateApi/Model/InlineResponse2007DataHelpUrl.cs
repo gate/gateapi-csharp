@@ -25,35 +25,35 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Returned when code&#x3D;0; empty object {} otherwise
+    /// Help Center Link
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2007Data :  IEquatable<InlineResponse2007Data>, IValidatableObject
+    public partial class InlineResponse2007DataHelpUrl :  IEquatable<InlineResponse2007DataHelpUrl>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2007Data" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse2007DataHelpUrl" /> class.
         /// </summary>
-        /// <param name="nextPage">Whether there is a next page. &#x60;true&#x60; means more data is available. Pass the &#x60;id&#x60; of the last record as &#x60;last_id&#x60; and &#x60;expire_time_order_by&#x60; as &#x60;expire_time&#x60; in the next request.</param>
-        /// <param name="list">Coupon object array, see field details below.</param>
-        public InlineResponse2007Data(bool nextPage = default(bool), List<InlineResponse2007DataList> list = default(List<InlineResponse2007DataList>))
+        /// <param name="web">Web Help Link.</param>
+        /// <param name="app">App Help Link.</param>
+        public InlineResponse2007DataHelpUrl(string web = default(string), string app = default(string))
         {
-            this.NextPage = nextPage;
-            this.List = list;
+            this.Web = web;
+            this.App = app;
         }
 
         /// <summary>
-        /// Whether there is a next page. &#x60;true&#x60; means more data is available. Pass the &#x60;id&#x60; of the last record as &#x60;last_id&#x60; and &#x60;expire_time_order_by&#x60; as &#x60;expire_time&#x60; in the next request
+        /// Web Help Link
         /// </summary>
-        /// <value>Whether there is a next page. &#x60;true&#x60; means more data is available. Pass the &#x60;id&#x60; of the last record as &#x60;last_id&#x60; and &#x60;expire_time_order_by&#x60; as &#x60;expire_time&#x60; in the next request</value>
-        [DataMember(Name="next_page")]
-        public bool NextPage { get; set; }
+        /// <value>Web Help Link</value>
+        [DataMember(Name="web")]
+        public string Web { get; set; }
 
         /// <summary>
-        /// Coupon object array, see field details below
+        /// App Help Link
         /// </summary>
-        /// <value>Coupon object array, see field details below</value>
-        [DataMember(Name="list")]
-        public List<InlineResponse2007DataList> List { get; set; }
+        /// <value>App Help Link</value>
+        [DataMember(Name="app")]
+        public string App { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +62,9 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2007Data {\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
-            sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("class InlineResponse2007DataHelpUrl {\n");
+            sb.Append("  Web: ").Append(Web).Append("\n");
+            sb.Append("  App: ").Append(App).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,29 +85,29 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2007Data);
+            return this.Equals(input as InlineResponse2007DataHelpUrl);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2007Data instances are equal
+        /// Returns true if InlineResponse2007DataHelpUrl instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2007Data to be compared</param>
+        /// <param name="input">Instance of InlineResponse2007DataHelpUrl to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2007Data input)
+        public bool Equals(InlineResponse2007DataHelpUrl input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.NextPage == input.NextPage ||
-                    this.NextPage.Equals(input.NextPage)
+                    this.Web == input.Web ||
+                    (this.Web != null &&
+                    this.Web.Equals(input.Web))
                 ) && 
                 (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
+                    this.App == input.App ||
+                    (this.App != null &&
+                    this.App.Equals(input.App))
                 );
         }
 
@@ -120,9 +120,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.NextPage.GetHashCode();
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                if (this.Web != null)
+                    hashCode = hashCode * 59 + this.Web.GetHashCode();
+                if (this.App != null)
+                    hashCode = hashCode * 59 + this.App.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse2006DataProgressConfig
+# Io.Gate.GateApi.Model.InlineResponse2007DataProgressConfig
 
 Progress bar configuration. All fields are empty strings when has_progress is false
 

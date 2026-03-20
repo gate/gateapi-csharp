@@ -33,51 +33,18 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20011" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected InlineResponse20011() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20011" /> class.
-        /// </summary>
-        /// <param name="code">Response status code, 0 means success (required).</param>
-        /// <param name="message">响应消息，成功时为 \&quot;success\&quot; (required).</param>
-        /// <param name="data">data (required).</param>
-        /// <param name="timestamp">Server timestamp (milliseconds) (required).</param>
-        public InlineResponse20011(int code = default(int), string message = default(string), InlineResponse20011Data data = default(InlineResponse20011Data), long timestamp = default(long))
+        /// <param name="success">Whether redemption was successful.</param>
+        public InlineResponse20011(bool success = default(bool))
         {
-            this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse20011 and cannot be null");
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse20011 and cannot be null");
-            this.Timestamp = timestamp;
+            this.Success = success;
         }
 
         /// <summary>
-        /// Response status code, 0 means success
+        /// Whether redemption was successful
         /// </summary>
-        /// <value>Response status code, 0 means success</value>
-        [DataMember(Name="code")]
-        public int Code { get; set; }
-
-        /// <summary>
-        /// 响应消息，成功时为 \&quot;success\&quot;
-        /// </summary>
-        /// <value>响应消息，成功时为 \&quot;success\&quot;</value>
-        [DataMember(Name="message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Data
-        /// </summary>
-        [DataMember(Name="data")]
-        public InlineResponse20011Data Data { get; set; }
-
-        /// <summary>
-        /// Server timestamp (milliseconds)
-        /// </summary>
-        /// <value>Server timestamp (milliseconds)</value>
-        [DataMember(Name="timestamp")]
-        public long Timestamp { get; set; }
+        /// <value>Whether redemption was successful</value>
+        [DataMember(Name="success")]
+        public bool Success { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -87,10 +54,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20011 {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
-            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  Success: ").Append(Success).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -126,22 +90,8 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Code == input.Code ||
-                    this.Code.Equals(input.Code)
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                ) && 
-                (
-                    this.Timestamp == input.Timestamp ||
-                    this.Timestamp.Equals(input.Timestamp)
+                    this.Success == input.Success ||
+                    this.Success.Equals(input.Success)
                 );
         }
 
@@ -154,12 +104,7 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
-                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                hashCode = hashCode * 59 + this.Success.GetHashCode();
                 return hashCode;
             }
         }

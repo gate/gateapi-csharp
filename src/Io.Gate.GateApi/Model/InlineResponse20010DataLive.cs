@@ -28,10 +28,10 @@ namespace Io.Gate.GateApi.Model
     /// Live stream information (has value when content_type&#x3D;streaming)
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2009DataLive :  IEquatable<InlineResponse2009DataLive>, IValidatableObject
+    public partial class InlineResponse20010DataLive :  IEquatable<InlineResponse20010DataLive>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2009DataLive" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20010DataLive" /> class.
         /// </summary>
         /// <param name="id">Live ID.</param>
         /// <param name="uid">Anchor User ID.</param>
@@ -45,7 +45,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="sessionId">Session ID.</param>
         /// <param name="host">host.</param>
         /// <param name="status">Live stream status (e.g., streaming).</param>
-        public InlineResponse2009DataLive(string id = default(string), string uid = default(string), string chatGroupId = default(string), string name = default(string), string cover = default(string), string startedAt = default(string), bool subscriptionRequired = default(bool), int hotWeight = default(int), int liveType = default(int), string sessionId = default(string), InlineResponse2009DataLiveHost host = default(InlineResponse2009DataLiveHost), string status = default(string))
+        public InlineResponse20010DataLive(string id = default(string), string uid = default(string), string chatGroupId = default(string), string name = default(string), string cover = default(string), string startedAt = default(string), bool subscriptionRequired = default(bool), int hotWeight = default(int), int liveType = default(int), string sessionId = default(string), InlineResponse20010DataLiveHost host = default(InlineResponse20010DataLiveHost), string status = default(string))
         {
             this.Id = id;
             this.Uid = uid;
@@ -135,7 +135,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Host
         /// </summary>
         [DataMember(Name="host")]
-        public InlineResponse2009DataLiveHost Host { get; set; }
+        public InlineResponse20010DataLiveHost Host { get; set; }
 
         /// <summary>
         /// Live stream status (e.g., streaming)
@@ -151,7 +151,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2009DataLive {\n");
+            sb.Append("class InlineResponse20010DataLive {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Uid: ").Append(Uid).Append("\n");
             sb.Append("  ChatGroupId: ").Append(ChatGroupId).Append("\n");
@@ -184,15 +184,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2009DataLive);
+            return this.Equals(input as InlineResponse20010DataLive);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2009DataLive instances are equal
+        /// Returns true if InlineResponse20010DataLive instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2009DataLive to be compared</param>
+        /// <param name="input">Instance of InlineResponse20010DataLive to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2009DataLive input)
+        public bool Equals(InlineResponse20010DataLive input)
         {
             if (input == null)
                 return false;

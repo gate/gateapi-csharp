@@ -775,7 +775,7 @@ Name | Type | Description  | Notes
 
 <a name="createcrossexconvertorder"></a>
 # **CreateCrossexConvertOrder**
-> Object CreateCrossexConvertOrder (CrossexConvertOrderRequest crossexConvertOrderRequest = null)
+> CrossexConvertOrderResponse CreateCrossexConvertOrder (CrossexConvertOrderRequest crossexConvertOrderRequest = null)
 
 Flash Swap Transaction
 
@@ -805,7 +805,7 @@ namespace Example
             try
             {
                 // Flash Swap Transaction
-                Object result = apiInstance.CreateCrossexConvertOrder(crossexConvertOrderRequest);
+                CrossexConvertOrderResponse result = apiInstance.CreateCrossexConvertOrder(crossexConvertOrderRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -828,7 +828,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CrossexConvertOrderResponse**](CrossexConvertOrderResponse.md)
 
 ### Authorization
 
@@ -1434,7 +1434,7 @@ Name | Type | Description  | Notes
 
 <a name="getcrossexfee"></a>
 # **GetCrossexFee**
-> CrossexFee GetCrossexFee ()
+> List&lt;InlineResponse2006&gt; GetCrossexFee ()
 
 Query User Fee Rates
 
@@ -1463,7 +1463,7 @@ namespace Example
             try
             {
                 // Query User Fee Rates
-                CrossexFee result = apiInstance.GetCrossexFee();
+                List<InlineResponse2006> result = apiInstance.GetCrossexFee();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1483,7 +1483,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CrossexFee**](CrossexFee.md)
+[**List&lt;InlineResponse2006&gt;**](InlineResponse2006.md)
 
 ### Authorization
 

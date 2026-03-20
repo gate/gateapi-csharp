@@ -25,42 +25,26 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse2009DataList
+    /// InlineResponse20010Data
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2009DataList :  IEquatable<InlineResponse2009DataList>, IValidatableObject
+    public partial class InlineResponse20010Data :  IEquatable<InlineResponse20010Data>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2009DataList" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20010Data" /> class.
         /// </summary>
-        /// <param name="contentType">Content type: streaming &#x3D; live broadcast, video &#x3D; replay video.</param>
-        /// <param name="live">live.</param>
-        /// <param name="video">video.</param>
-        public InlineResponse2009DataList(string contentType = default(string), InlineResponse2009DataLive live = default(InlineResponse2009DataLive), InlineResponse2009DataVideo video = default(InlineResponse2009DataVideo))
+        /// <param name="list">Live stream/replay list.</param>
+        public InlineResponse20010Data(List<InlineResponse20010DataList> list = default(List<InlineResponse20010DataList>))
         {
-            this.ContentType = contentType;
-            this.Live = live;
-            this.Video = video;
+            this.List = list;
         }
 
         /// <summary>
-        /// Content type: streaming &#x3D; live broadcast, video &#x3D; replay video
+        /// Live stream/replay list
         /// </summary>
-        /// <value>Content type: streaming &#x3D; live broadcast, video &#x3D; replay video</value>
-        [DataMember(Name="content_type")]
-        public string ContentType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Live
-        /// </summary>
-        [DataMember(Name="live")]
-        public InlineResponse2009DataLive Live { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Video
-        /// </summary>
-        [DataMember(Name="video")]
-        public InlineResponse2009DataVideo Video { get; set; }
+        /// <value>Live stream/replay list</value>
+        [DataMember(Name="list")]
+        public List<InlineResponse20010DataList> List { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,10 +53,8 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2009DataList {\n");
-            sb.Append("  ContentType: ").Append(ContentType).Append("\n");
-            sb.Append("  Live: ").Append(Live).Append("\n");
-            sb.Append("  Video: ").Append(Video).Append("\n");
+            sb.Append("class InlineResponse20010Data {\n");
+            sb.Append("  List: ").Append(List).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,34 +75,25 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2009DataList);
+            return this.Equals(input as InlineResponse20010Data);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2009DataList instances are equal
+        /// Returns true if InlineResponse20010Data instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2009DataList to be compared</param>
+        /// <param name="input">Instance of InlineResponse20010Data to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2009DataList input)
+        public bool Equals(InlineResponse20010Data input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
-                    this.Live == input.Live ||
-                    (this.Live != null &&
-                    this.Live.Equals(input.Live))
-                ) && 
-                (
-                    this.Video == input.Video ||
-                    (this.Video != null &&
-                    this.Video.Equals(input.Video))
+                    this.List == input.List ||
+                    this.List != null &&
+                    input.List != null &&
+                    this.List.SequenceEqual(input.List)
                 );
         }
 
@@ -133,12 +106,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
-                if (this.Live != null)
-                    hashCode = hashCode * 59 + this.Live.GetHashCode();
-                if (this.Video != null)
-                    hashCode = hashCode * 59 + this.Video.GetHashCode();
+                if (this.List != null)
+                    hashCode = hashCode * 59 + this.List.GetHashCode();
                 return hashCode;
             }
         }

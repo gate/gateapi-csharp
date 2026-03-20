@@ -33,18 +33,53 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20010" /> class.
         /// </summary>
-        /// <param name="success">Whether redemption was successful.</param>
-        public InlineResponse20010(bool success = default(bool))
+        /// <param name="code">Status code, 200 &#x3D; success.</param>
+        /// <param name="label">Status label.</param>
+        /// <param name="message">Status message.</param>
+        /// <param name="requestId">Request ID.</param>
+        /// <param name="data">data.</param>
+        public InlineResponse20010(int code = default(int), string label = default(string), string message = default(string), string requestId = default(string), InlineResponse20010Data data = default(InlineResponse20010Data))
         {
-            this.Success = success;
+            this.Code = code;
+            this.Label = label;
+            this.Message = message;
+            this.RequestId = requestId;
+            this.Data = data;
         }
 
         /// <summary>
-        /// Whether redemption was successful
+        /// Status code, 200 &#x3D; success
         /// </summary>
-        /// <value>Whether redemption was successful</value>
-        [DataMember(Name="success")]
-        public bool Success { get; set; }
+        /// <value>Status code, 200 &#x3D; success</value>
+        [DataMember(Name="code")]
+        public int Code { get; set; }
+
+        /// <summary>
+        /// Status label
+        /// </summary>
+        /// <value>Status label</value>
+        [DataMember(Name="label")]
+        public string Label { get; set; }
+
+        /// <summary>
+        /// Status message
+        /// </summary>
+        /// <value>Status message</value>
+        [DataMember(Name="message")]
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Request ID
+        /// </summary>
+        /// <value>Request ID</value>
+        [DataMember(Name="request_id")]
+        public string RequestId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Data
+        /// </summary>
+        [DataMember(Name="data")]
+        public InlineResponse20010Data Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +89,11 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20010 {\n");
-            sb.Append("  Success: ").Append(Success).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  RequestId: ").Append(RequestId).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,8 +129,28 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Success == input.Success ||
-                    this.Success.Equals(input.Success)
+                    this.Code == input.Code ||
+                    this.Code.Equals(input.Code)
+                ) && 
+                (
+                    this.Label == input.Label ||
+                    (this.Label != null &&
+                    this.Label.Equals(input.Label))
+                ) && 
+                (
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.RequestId == input.RequestId ||
+                    (this.RequestId != null &&
+                    this.RequestId.Equals(input.RequestId))
+                ) && 
+                (
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
                 );
         }
 
@@ -104,7 +163,15 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Success.GetHashCode();
+                hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Label != null)
+                    hashCode = hashCode * 59 + this.Label.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.RequestId != null)
+                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }

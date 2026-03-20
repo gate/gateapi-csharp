@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="UidPushWithdrawalResp" /> class.
         /// </summary>
         /// <param name="id">Order ID.</param>
-        public UidPushWithdrawalResp(long id = default(long))
+        public UidPushWithdrawalResp(string id = default(string))
         {
             this.Id = id;
         }
@@ -44,7 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id")]
-        public long Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -91,7 +91,8 @@ namespace Io.Gate.GateApi.Model
             return 
                 (
                     this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -104,7 +105,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }

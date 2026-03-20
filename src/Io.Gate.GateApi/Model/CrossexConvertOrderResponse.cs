@@ -25,35 +25,42 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Returned when code&#x3D;0; empty object {} otherwise
+    /// CrossexConvertOrderResponse
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2007Data :  IEquatable<InlineResponse2007Data>, IValidatableObject
+    public partial class CrossexConvertOrderResponse :  IEquatable<CrossexConvertOrderResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2007Data" /> class.
+        /// Initializes a new instance of the <see cref="CrossexConvertOrderResponse" /> class.
         /// </summary>
-        /// <param name="nextPage">Whether there is a next page. &#x60;true&#x60; means more data is available. Pass the &#x60;id&#x60; of the last record as &#x60;last_id&#x60; and &#x60;expire_time_order_by&#x60; as &#x60;expire_time&#x60; in the next request.</param>
-        /// <param name="list">Coupon object array, see field details below.</param>
-        public InlineResponse2007Data(bool nextPage = default(bool), List<InlineResponse2007DataList> list = default(List<InlineResponse2007DataList>))
+        [JsonConstructorAttribute]
+        protected CrossexConvertOrderResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CrossexConvertOrderResponse" /> class.
+        /// </summary>
+        /// <param name="orderId">Order ID (required).</param>
+        /// <param name="text">Order ID (cannot be customized) (required).</param>
+        public CrossexConvertOrderResponse(string orderId = default(string), string text = default(string))
         {
-            this.NextPage = nextPage;
-            this.List = list;
+            // to ensure "orderId" is required (not null)
+            this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for CrossexConvertOrderResponse and cannot be null");
+            // to ensure "text" is required (not null)
+            this.Text = text ?? throw new ArgumentNullException("text", "text is a required property for CrossexConvertOrderResponse and cannot be null");
         }
 
         /// <summary>
-        /// Whether there is a next page. &#x60;true&#x60; means more data is available. Pass the &#x60;id&#x60; of the last record as &#x60;last_id&#x60; and &#x60;expire_time_order_by&#x60; as &#x60;expire_time&#x60; in the next request
+        /// Order ID
         /// </summary>
-        /// <value>Whether there is a next page. &#x60;true&#x60; means more data is available. Pass the &#x60;id&#x60; of the last record as &#x60;last_id&#x60; and &#x60;expire_time_order_by&#x60; as &#x60;expire_time&#x60; in the next request</value>
-        [DataMember(Name="next_page")]
-        public bool NextPage { get; set; }
+        /// <value>Order ID</value>
+        [DataMember(Name="order_id")]
+        public string OrderId { get; set; }
 
         /// <summary>
-        /// Coupon object array, see field details below
+        /// Order ID (cannot be customized)
         /// </summary>
-        /// <value>Coupon object array, see field details below</value>
-        [DataMember(Name="list")]
-        public List<InlineResponse2007DataList> List { get; set; }
+        /// <value>Order ID (cannot be customized)</value>
+        [DataMember(Name="text")]
+        public string Text { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +69,9 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2007Data {\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
-            sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("class CrossexConvertOrderResponse {\n");
+            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,29 +92,29 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2007Data);
+            return this.Equals(input as CrossexConvertOrderResponse);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2007Data instances are equal
+        /// Returns true if CrossexConvertOrderResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2007Data to be compared</param>
+        /// <param name="input">Instance of CrossexConvertOrderResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2007Data input)
+        public bool Equals(CrossexConvertOrderResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.NextPage == input.NextPage ||
-                    this.NextPage.Equals(input.NextPage)
+                    this.OrderId == input.OrderId ||
+                    (this.OrderId != null &&
+                    this.OrderId.Equals(input.OrderId))
                 ) && 
                 (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
+                    this.Text == input.Text ||
+                    (this.Text != null &&
+                    this.Text.Equals(input.Text))
                 );
         }
 
@@ -120,9 +127,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.NextPage.GetHashCode();
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                if (this.OrderId != null)
+                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.Text != null)
+                    hashCode = hashCode * 59 + this.Text.GetHashCode();
                 return hashCode;
             }
         }

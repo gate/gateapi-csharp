@@ -25,10 +25,10 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse2006DataList
+    /// InlineResponse2007DataList
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2006DataList :  IEquatable<InlineResponse2006DataList>, IValidatableObject
+    public partial class InlineResponse2007DataList :  IEquatable<InlineResponse2007DataList>, IValidatableObject
     {
         /// <summary>
         /// Coupon status. Regular coupon: NOT_ACTIVE (pending activation), ACTIVATED (activated), TO_BE_USED (to be used), EXPIRED (expired), RECYCLED (recycled), INVALID (invalidated), USED (used), UNKNOWN (unknown), LOCKED (locked, P2P only). Task coupon: TASK_START (task not started), TASK_WAIT (task in progress), TASK_DONE (task completed, processing), TASK_EXPIRED (task not completed, expired), TASK_NOT_STARTED_EXPIRED (not started, expired), TASK_RECEIVE_SUCCESS (reward claimed successfully), TASK_RECEIVE_FAIL (reward claim failed)
@@ -167,7 +167,7 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="is_task_coupon")]
         public IsTaskCouponEnum? IsTaskCoupon { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2006DataList" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse2007DataList" /> class.
         /// </summary>
         /// <param name="id">Coupon distribution record ID (coupon_send_issuing_log.id), used as &#x60;last_id&#x60; for cursor-based pagination.</param>
         /// <param name="detailsId">User coupon detail table primary key (separate table per type). This field is 0 for task coupons, has value for regular coupons.</param>
@@ -195,7 +195,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="taskExpireAt">Task expiration timestamp (Unix). Currently fixed at 0, reserved field.</param>
         /// <param name="taskCompletedAt">Task completion timestamp (Unix). Currently fixed at 0, reserved field.</param>
         /// <param name="extra">Extension fields. List endpoint always returns empty array [], only the detail endpoint has values.</param>
-        public InlineResponse2006DataList(int id = default(int), int detailsId = default(int), string couponType = default(string), string name = default(string), string amount = default(string), string originAmount = default(string), string currency = default(string), string ruleNew = default(string), StatusEnum? status = default(StatusEnum?), InlineResponse2006DataJumpUrl jumpUrl = default(InlineResponse2006DataJumpUrl), InlineResponse2006DataHelpUrl helpUrl = default(InlineResponse2006DataHelpUrl), int expireTime = default(int), int expireTimeOrderBy = default(int), int expireSecond = default(int), bool hasUsageHistory = default(bool), bool hasProgress = default(bool), InlineResponse2006DataProgressConfig progressConfig = default(InlineResponse2006DataProgressConfig), Object activationInfo = default(Object), IsTaskCouponEnum? isTaskCoupon = default(IsTaskCouponEnum?), bool upgradeToast = default(bool), string taskTitle = default(string), string taskDesc = default(string), int taskStartAt = default(int), int taskExpireAt = default(int), int taskCompletedAt = default(int), List<Object> extra = default(List<Object>))
+        public InlineResponse2007DataList(int id = default(int), int detailsId = default(int), string couponType = default(string), string name = default(string), string amount = default(string), string originAmount = default(string), string currency = default(string), string ruleNew = default(string), StatusEnum? status = default(StatusEnum?), InlineResponse2007DataJumpUrl jumpUrl = default(InlineResponse2007DataJumpUrl), InlineResponse2007DataHelpUrl helpUrl = default(InlineResponse2007DataHelpUrl), int expireTime = default(int), int expireTimeOrderBy = default(int), int expireSecond = default(int), bool hasUsageHistory = default(bool), bool hasProgress = default(bool), InlineResponse2007DataProgressConfig progressConfig = default(InlineResponse2007DataProgressConfig), Object activationInfo = default(Object), IsTaskCouponEnum? isTaskCoupon = default(IsTaskCouponEnum?), bool upgradeToast = default(bool), string taskTitle = default(string), string taskDesc = default(string), int taskStartAt = default(int), int taskExpireAt = default(int), int taskCompletedAt = default(int), List<Object> extra = default(List<Object>))
         {
             this.Id = id;
             this.DetailsId = detailsId;
@@ -285,13 +285,13 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets JumpUrl
         /// </summary>
         [DataMember(Name="jump_url")]
-        public InlineResponse2006DataJumpUrl JumpUrl { get; set; }
+        public InlineResponse2007DataJumpUrl JumpUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets HelpUrl
         /// </summary>
         [DataMember(Name="help_url")]
-        public InlineResponse2006DataHelpUrl HelpUrl { get; set; }
+        public InlineResponse2007DataHelpUrl HelpUrl { get; set; }
 
         /// <summary>
         /// Expiration time (Unix timestamp). Some types replace this with actual expiration time after activation or use (e.g., contract_bonus uses expired_timest after activation). Point card type returns 0
@@ -332,7 +332,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets ProgressConfig
         /// </summary>
         [DataMember(Name="progress_config")]
-        public InlineResponse2006DataProgressConfig ProgressConfig { get; set; }
+        public InlineResponse2007DataProgressConfig ProgressConfig { get; set; }
 
         /// <summary>
         /// Type-specific activation information. Types without specific fields return empty object {}. Fields by type: interest_voucher&#x3D;{supported_pairs,transaction_type}; contract_bonus_new&#x3D;{received_expired_hour}; contract_bonus&#x3D;{check_unified_account_mode,received_expired_days,abtest}; commission_rebate&#x3D;{market,market_name}; robot_bonus&#x3D;{designated_bots}; position_voucher&#x3D;{symbols,leverage,need_user_funds,user_funds_amount,position_bonus}; tradfi_position_voucher&#x3D;{symbols,leverage,position_bonus}; etf_voucher&#x3D;{currency_markets,amount}
@@ -397,7 +397,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2006DataList {\n");
+            sb.Append("class InlineResponse2007DataList {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DetailsId: ").Append(DetailsId).Append("\n");
             sb.Append("  CouponType: ").Append(CouponType).Append("\n");
@@ -444,15 +444,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2006DataList);
+            return this.Equals(input as InlineResponse2007DataList);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2006DataList instances are equal
+        /// Returns true if InlineResponse2007DataList instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2006DataList to be compared</param>
+        /// <param name="input">Instance of InlineResponse2007DataList to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2006DataList input)
+        public bool Equals(InlineResponse2007DataList input)
         {
             if (input == null)
                 return false;

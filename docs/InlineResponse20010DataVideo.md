@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse2009DataVideo
+# Io.Gate.GateApi.Model.InlineResponse20010DataVideo
 
 Replay video information (has value when content_type&#x3D;video)
 

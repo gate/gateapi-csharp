@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getmyactivityentry"></a>
 # **GetMyActivityEntry**
-> InlineResponse20011 GetMyActivityEntry ()
+> InlineResponse20012 GetMyActivityEntry ()
 
 My activity entry
 
@@ -40,7 +40,7 @@ namespace Example
             try
             {
                 // My activity entry
-                InlineResponse20011 result = apiInstance.GetMyActivityEntry();
+                InlineResponse20012 result = apiInstance.GetMyActivityEntry();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -60,7 +60,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ This endpoint does not need any parameter.
 
 <a name="listactivities"></a>
 # **ListActivities**
-> InlineResponse20012 ListActivities (string recommendType = null, string typeIds = null, string keywords = null, int? page = null, int? pageSize = null, string sortBy = null)
+> InlineResponse20013 ListActivities (string recommendType = null, string typeIds = null, string keywords = null, int? page = null, int? pageSize = null, string sortBy = null)
 
 Recommended activity list
 
@@ -115,7 +115,7 @@ namespace Example
             try
             {
                 // Recommended activity list
-                InlineResponse20012 result = apiInstance.ListActivities(recommendType, typeIds, keywords, page, pageSize, sortBy);
+                InlineResponse20013 result = apiInstance.ListActivities(recommendType, typeIds, keywords, page, pageSize, sortBy);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 <a name="listactivitytypes"></a>
 # **ListActivityTypes**
-> InlineResponse20013 ListActivityTypes ()
+> InlineResponse20014 ListActivityTypes ()
 
 Activity type list
 
@@ -190,7 +190,7 @@ namespace Example
             try
             {
                 // Activity type list
-                InlineResponse20013 result = apiInstance.ListActivityTypes();
+                InlineResponse20014 result = apiInstance.ListActivityTypes();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -210,7 +210,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 

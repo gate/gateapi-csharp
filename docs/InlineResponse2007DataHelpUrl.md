@@ -1,15 +1,14 @@
 
-# Io.Gate.GateApi.Model.InlineResponse2006DataJumpUrl
+# Io.Gate.GateApi.Model.InlineResponse2007DataHelpUrl
 
-Redirect Link
+Help Center Link
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Web** | **string** | Web Redirect Link | [optional] 
-**App** | **string** | App Redirect Link | [optional] 
-**MiniApp** | **string** | Mini Program Redirect Link (empty string for most types) | [optional] 
+**Web** | **string** | Web Help Link | [optional] 
+**App** | **string** | App Help Link | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

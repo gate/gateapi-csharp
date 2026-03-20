@@ -25,35 +25,41 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Returned when code&#x3D;0; empty object {} otherwise
+    /// InlineResponse20014DataList
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2006Data :  IEquatable<InlineResponse2006Data>, IValidatableObject
+    public partial class InlineResponse20014DataList :  IEquatable<InlineResponse20014DataList>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2006Data" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20014DataList" /> class.
         /// </summary>
-        /// <param name="nextPage">Whether there is a next page. &#x60;true&#x60; means more data is available. Pass the &#x60;id&#x60; of the last record as &#x60;last_id&#x60; and &#x60;expire_time_order_by&#x60; as &#x60;expire_time&#x60; in the next request.</param>
-        /// <param name="list">Coupon object array, see field details below.</param>
-        public InlineResponse2006Data(bool nextPage = default(bool), List<InlineResponse2006DataList> list = default(List<InlineResponse2006DataList>))
+        [JsonConstructorAttribute]
+        protected InlineResponse20014DataList() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20014DataList" /> class.
+        /// </summary>
+        /// <param name="id">Activity type ID (required).</param>
+        /// <param name="name">Activity type name (required).</param>
+        public InlineResponse20014DataList(int id = default(int), string name = default(string))
         {
-            this.NextPage = nextPage;
-            this.List = list;
+            this.Id = id;
+            // to ensure "name" is required (not null)
+            this.Name = name ?? throw new ArgumentNullException("name", "name is a required property for InlineResponse20014DataList and cannot be null");
         }
 
         /// <summary>
-        /// Whether there is a next page. &#x60;true&#x60; means more data is available. Pass the &#x60;id&#x60; of the last record as &#x60;last_id&#x60; and &#x60;expire_time_order_by&#x60; as &#x60;expire_time&#x60; in the next request
+        /// Activity type ID
         /// </summary>
-        /// <value>Whether there is a next page. &#x60;true&#x60; means more data is available. Pass the &#x60;id&#x60; of the last record as &#x60;last_id&#x60; and &#x60;expire_time_order_by&#x60; as &#x60;expire_time&#x60; in the next request</value>
-        [DataMember(Name="next_page")]
-        public bool NextPage { get; set; }
+        /// <value>Activity type ID</value>
+        [DataMember(Name="id")]
+        public int Id { get; set; }
 
         /// <summary>
-        /// Coupon object array, see field details below
+        /// Activity type name
         /// </summary>
-        /// <value>Coupon object array, see field details below</value>
-        [DataMember(Name="list")]
-        public List<InlineResponse2006DataList> List { get; set; }
+        /// <value>Activity type name</value>
+        [DataMember(Name="name")]
+        public string Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +68,9 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2006Data {\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
-            sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("class InlineResponse20014DataList {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,29 +91,28 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2006Data);
+            return this.Equals(input as InlineResponse20014DataList);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2006Data instances are equal
+        /// Returns true if InlineResponse20014DataList instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2006Data to be compared</param>
+        /// <param name="input">Instance of InlineResponse20014DataList to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2006Data input)
+        public bool Equals(InlineResponse20014DataList input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.NextPage == input.NextPage ||
-                    this.NextPage.Equals(input.NextPage)
+                    this.Id == input.Id ||
+                    this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -120,9 +125,9 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.NextPage.GetHashCode();
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

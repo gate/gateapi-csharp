@@ -28,10 +28,10 @@ namespace Io.Gate.GateApi.Model
     /// Replay video information (has value when content_type&#x3D;video)
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2009DataVideo :  IEquatable<InlineResponse2009DataVideo>, IValidatableObject
+    public partial class InlineResponse20010DataVideo :  IEquatable<InlineResponse20010DataVideo>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2009DataVideo" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20010DataVideo" /> class.
         /// </summary>
         /// <param name="id">Video ID.</param>
         /// <param name="streamId">Live stream ID.</param>
@@ -51,7 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="endedAtType">End time type.</param>
         /// <param name="tier">Author level.</param>
         /// <param name="tag">Tag.</param>
-        public InlineResponse2009DataVideo(string id = default(string), string streamId = default(string), string title = default(string), string avatar = default(string), string nick = default(string), string nickEn = default(string), string cover = default(string), int watched = default(int), bool subscriptionRequired = default(bool), bool hasSubscribed = default(bool), int duration = default(int), int weight = default(int), string momentsUid = default(string), string sessionId = default(string), string endedAtFormat = default(string), int endedAtType = default(int), int tier = default(int), string tag = default(string))
+        public InlineResponse20010DataVideo(string id = default(string), string streamId = default(string), string title = default(string), string avatar = default(string), string nick = default(string), string nickEn = default(string), string cover = default(string), int watched = default(int), bool subscriptionRequired = default(bool), bool hasSubscribed = default(bool), int duration = default(int), int weight = default(int), string momentsUid = default(string), string sessionId = default(string), string endedAtFormat = default(string), int endedAtType = default(int), int tier = default(int), string tag = default(string))
         {
             this.Id = id;
             this.StreamId = streamId;
@@ -206,7 +206,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2009DataVideo {\n");
+            sb.Append("class InlineResponse20010DataVideo {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  StreamId: ").Append(StreamId).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
@@ -245,15 +245,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2009DataVideo);
+            return this.Equals(input as InlineResponse20010DataVideo);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2009DataVideo instances are equal
+        /// Returns true if InlineResponse20010DataVideo instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2009DataVideo to be compared</param>
+        /// <param name="input">Instance of InlineResponse20010DataVideo to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2009DataVideo input)
+        public bool Equals(InlineResponse20010DataVideo input)
         {
             if (input == null)
                 return false;

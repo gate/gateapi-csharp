@@ -28,16 +28,16 @@ namespace Io.Gate.GateApi.Model
     /// Progress bar configuration. All fields are empty strings when has_progress is false
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2006DataProgressConfig :  IEquatable<InlineResponse2006DataProgressConfig>, IValidatableObject
+    public partial class InlineResponse2007DataProgressConfig :  IEquatable<InlineResponse2007DataProgressConfig>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2006DataProgressConfig" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse2007DataProgressConfig" /> class.
         /// </summary>
         /// <param name="totalBalance">Total Required Amount.</param>
         /// <param name="currentUsed">Used Amount.</param>
         /// <param name="currentAchived">Amount achieved (note: field name is spelled as achived).</param>
         /// <param name="currency">Progress unit (e.g., &#39;USDT&#39;).</param>
-        public InlineResponse2006DataProgressConfig(string totalBalance = default(string), string currentUsed = default(string), string currentAchived = default(string), string currency = default(string))
+        public InlineResponse2007DataProgressConfig(string totalBalance = default(string), string currentUsed = default(string), string currentAchived = default(string), string currency = default(string))
         {
             this.TotalBalance = totalBalance;
             this.CurrentUsed = currentUsed;
@@ -80,7 +80,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2006DataProgressConfig {\n");
+            sb.Append("class InlineResponse2007DataProgressConfig {\n");
             sb.Append("  TotalBalance: ").Append(TotalBalance).Append("\n");
             sb.Append("  CurrentUsed: ").Append(CurrentUsed).Append("\n");
             sb.Append("  CurrentAchived: ").Append(CurrentAchived).Append("\n");
@@ -105,15 +105,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2006DataProgressConfig);
+            return this.Equals(input as InlineResponse2007DataProgressConfig);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2006DataProgressConfig instances are equal
+        /// Returns true if InlineResponse2007DataProgressConfig instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2006DataProgressConfig to be compared</param>
+        /// <param name="input">Instance of InlineResponse2007DataProgressConfig to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2006DataProgressConfig input)
+        public bool Equals(InlineResponse2007DataProgressConfig input)
         {
             if (input == null)
                 return false;

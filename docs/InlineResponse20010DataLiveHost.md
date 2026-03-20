@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse2009DataLiveHost
+# Io.Gate.GateApi.Model.InlineResponse20010DataLiveHost
 
 Streamer information
 

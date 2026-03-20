@@ -46,7 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="liabilityCoin">Debt Currency (required).</param>
         /// <param name="interest">Interest (required).</param>
         /// <param name="interestRate">interest rate (required).</param>
-        /// <param name="interestType">Interest deduction type (&#x60;PERIODIC_POSITION&#x60;: periodic position interest; &#x60;PERIODIC_OPEN_ORDER&#x60;: periodic open-order interest; &#x60;IMMEDIATE_OPEN_ORDER&#x60;: interest charged on order opening) (required).</param>
+        /// <param name="interestType">Interest deduction type (&#x60;PERIODIC_POSITION&#x60; hourly interest on position, &#x60;PERIODIC_OPEN_ORDER&#x60; hourly interest on open orders, &#x60;IMMEDIATE_OPEN_ORDER&#x60; interest charged on order placement, &#x60;PERIODIC_ISOLATED&#x60; hourly interest on debt) (required).</param>
         /// <param name="createTime">Created time (required).</param>
         /// <param name="exchangeType">Exchange (required).</param>
         public CrossexMarginInterestRecord(string userId = default(string), string symbol = default(string), string interestId = default(string), string liabilityId = default(string), string liability = default(string), string liabilityCoin = default(string), string interest = default(string), string interestRate = default(string), string interestType = default(string), string createTime = default(string), string exchangeType = default(string))
@@ -132,9 +132,9 @@ namespace Io.Gate.GateApi.Model
         public string InterestRate { get; set; }
 
         /// <summary>
-        /// Interest deduction type (&#x60;PERIODIC_POSITION&#x60;: periodic position interest; &#x60;PERIODIC_OPEN_ORDER&#x60;: periodic open-order interest; &#x60;IMMEDIATE_OPEN_ORDER&#x60;: interest charged on order opening)
+        /// Interest deduction type (&#x60;PERIODIC_POSITION&#x60; hourly interest on position, &#x60;PERIODIC_OPEN_ORDER&#x60; hourly interest on open orders, &#x60;IMMEDIATE_OPEN_ORDER&#x60; interest charged on order placement, &#x60;PERIODIC_ISOLATED&#x60; hourly interest on debt)
         /// </summary>
-        /// <value>Interest deduction type (&#x60;PERIODIC_POSITION&#x60;: periodic position interest; &#x60;PERIODIC_OPEN_ORDER&#x60;: periodic open-order interest; &#x60;IMMEDIATE_OPEN_ORDER&#x60;: interest charged on order opening)</value>
+        /// <value>Interest deduction type (&#x60;PERIODIC_POSITION&#x60; hourly interest on position, &#x60;PERIODIC_OPEN_ORDER&#x60; hourly interest on open orders, &#x60;IMMEDIATE_OPEN_ORDER&#x60; interest charged on order placement, &#x60;PERIODIC_ISOLATED&#x60; hourly interest on debt)</value>
         [DataMember(Name="interest_type")]
         public string InterestType { get; set; }
 

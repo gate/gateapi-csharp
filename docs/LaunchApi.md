@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 <a name="redeemlaunchpool"></a>
 # **RedeemLaunchPool**
-> InlineResponse20010 RedeemLaunchPool (RedeemV4 redeemV4)
+> InlineResponse20011 RedeemLaunchPool (RedeemV4 redeemV4)
 
 Redeem LaunchPool staked assets
 
@@ -202,7 +202,7 @@ namespace Example
             try
             {
                 // Redeem LaunchPool staked assets
-                InlineResponse20010 result = apiInstance.RedeemLaunchPool(redeemV4);
+                InlineResponse20011 result = apiInstance.RedeemLaunchPool(redeemV4);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 

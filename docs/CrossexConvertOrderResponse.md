@@ -1,14 +1,12 @@
 
-# Io.Gate.GateApi.Model.InlineResponse2006DataHelpUrl
-
-Help Center Link
+# Io.Gate.GateApi.Model.CrossexConvertOrderResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Web** | **string** | Web Help Link | [optional] 
-**App** | **string** | App Help Link | [optional] 
+**OrderId** | **string** | Order ID | 
+**Text** | **string** | Order ID (cannot be customized) | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

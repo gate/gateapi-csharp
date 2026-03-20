@@ -1,11 +1,12 @@
 
-# Io.Gate.GateApi.Model.InlineResponse20011
+# Io.Gate.GateApi.Model.InlineResponse20014DataList
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Success** | **bool** | Whether redemption was successful | [optional] 
+**Id** | **int** | Activity type ID | 
+**Name** | **string** | Activity type name | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

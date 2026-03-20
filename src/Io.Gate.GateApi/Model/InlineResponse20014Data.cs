@@ -25,44 +25,32 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Redirect Link
+    /// Activity type data
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2006DataJumpUrl :  IEquatable<InlineResponse2006DataJumpUrl>, IValidatableObject
+    public partial class InlineResponse20014Data :  IEquatable<InlineResponse20014Data>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2006DataJumpUrl" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20014Data" /> class.
         /// </summary>
-        /// <param name="web">Web Redirect Link.</param>
-        /// <param name="app">App Redirect Link.</param>
-        /// <param name="miniApp">Mini Program Redirect Link (empty string for most types).</param>
-        public InlineResponse2006DataJumpUrl(string web = default(string), string app = default(string), string miniApp = default(string))
+        [JsonConstructorAttribute]
+        protected InlineResponse20014Data() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20014Data" /> class.
+        /// </summary>
+        /// <param name="list">Activity type list (required).</param>
+        public InlineResponse20014Data(List<InlineResponse20014DataList> list = default(List<InlineResponse20014DataList>))
         {
-            this.Web = web;
-            this.App = app;
-            this.MiniApp = miniApp;
+            // to ensure "list" is required (not null)
+            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20014Data and cannot be null");
         }
 
         /// <summary>
-        /// Web Redirect Link
+        /// Activity type list
         /// </summary>
-        /// <value>Web Redirect Link</value>
-        [DataMember(Name="web")]
-        public string Web { get; set; }
-
-        /// <summary>
-        /// App Redirect Link
-        /// </summary>
-        /// <value>App Redirect Link</value>
-        [DataMember(Name="app")]
-        public string App { get; set; }
-
-        /// <summary>
-        /// Mini Program Redirect Link (empty string for most types)
-        /// </summary>
-        /// <value>Mini Program Redirect Link (empty string for most types)</value>
-        [DataMember(Name="mini_app")]
-        public string MiniApp { get; set; }
+        /// <value>Activity type list</value>
+        [DataMember(Name="list")]
+        public List<InlineResponse20014DataList> List { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,10 +59,8 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2006DataJumpUrl {\n");
-            sb.Append("  Web: ").Append(Web).Append("\n");
-            sb.Append("  App: ").Append(App).Append("\n");
-            sb.Append("  MiniApp: ").Append(MiniApp).Append("\n");
+            sb.Append("class InlineResponse20014Data {\n");
+            sb.Append("  List: ").Append(List).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,34 +81,25 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2006DataJumpUrl);
+            return this.Equals(input as InlineResponse20014Data);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2006DataJumpUrl instances are equal
+        /// Returns true if InlineResponse20014Data instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2006DataJumpUrl to be compared</param>
+        /// <param name="input">Instance of InlineResponse20014Data to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2006DataJumpUrl input)
+        public bool Equals(InlineResponse20014Data input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Web == input.Web ||
-                    (this.Web != null &&
-                    this.Web.Equals(input.Web))
-                ) && 
-                (
-                    this.App == input.App ||
-                    (this.App != null &&
-                    this.App.Equals(input.App))
-                ) && 
-                (
-                    this.MiniApp == input.MiniApp ||
-                    (this.MiniApp != null &&
-                    this.MiniApp.Equals(input.MiniApp))
+                    this.List == input.List ||
+                    this.List != null &&
+                    input.List != null &&
+                    this.List.SequenceEqual(input.List)
                 );
         }
 
@@ -135,12 +112,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Web != null)
-                    hashCode = hashCode * 59 + this.Web.GetHashCode();
-                if (this.App != null)
-                    hashCode = hashCode * 59 + this.App.GetHashCode();
-                if (this.MiniApp != null)
-                    hashCode = hashCode * 59 + this.MiniApp.GetHashCode();
+                if (this.List != null)
+                    hashCode = hashCode * 59 + this.List.GetHashCode();
                 return hashCode;
             }
         }

@@ -31,26 +31,59 @@ namespace Io.Gate.GateApi.Model
     public partial class InlineResponse2008 :  IEquatable<InlineResponse2008>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2008" /> class.
+        /// Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)
         /// </summary>
-        /// <param name="code">Status code, 0 &#x3D; success.</param>
-        /// <param name="label">Error identifier code. Empty string on success, machine-readable error label on error.</param>
-        /// <param name="msg">Status message.</param>
-        /// <param name="data">data.</param>
-        public InlineResponse2008(int code = default(int), string label = default(string), string msg = default(string), InlineResponse2008Data data = default(InlineResponse2008Data))
+        /// <value>Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CodeEnum
         {
-            this.Code = code;
-            this.Label = label;
-            this.Msg = msg;
-            this.Data = data;
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_2002
+            /// </summary>
+            NUMBER_2002 = 2002,
+
+            /// <summary>
+            /// Enum value NUMBER_50105
+            /// </summary>
+            NUMBER_50105 = 50105,
+
+            /// <summary>
+            /// Enum value NUMBER_10001
+            /// </summary>
+            NUMBER_10001 = 10001,
+
+            /// <summary>
+            /// Enum value NUMBER_10000
+            /// </summary>
+            NUMBER_10000 = 10000
+
         }
 
         /// <summary>
-        /// Status code, 0 &#x3D; success
+        /// Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)
         /// </summary>
-        /// <value>Status code, 0 &#x3D; success</value>
+        /// <value>Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)</value>
         [DataMember(Name="code")]
-        public int Code { get; set; }
+        public CodeEnum? Code { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse2008" /> class.
+        /// </summary>
+        /// <param name="code">Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info).</param>
+        /// <param name="label">Error identifier code. Empty string on success, machine-readable error label on error.</param>
+        /// <param name="message">message.</param>
+        /// <param name="data">data.</param>
+        public InlineResponse2008(CodeEnum? code = default(CodeEnum?), string label = default(string), string message = default(string), InlineResponse2008Data data = default(InlineResponse2008Data))
+        {
+            this.Code = code;
+            this.Label = label;
+            this.Message = message;
+            this.Data = data;
+        }
 
         /// <summary>
         /// Error identifier code. Empty string on success, machine-readable error label on error
@@ -60,11 +93,10 @@ namespace Io.Gate.GateApi.Model
         public string Label { get; set; }
 
         /// <summary>
-        /// Status message
+        /// Gets or Sets Message
         /// </summary>
-        /// <value>Status message</value>
-        [DataMember(Name="msg")]
-        public string Msg { get; set; }
+        [DataMember(Name="message")]
+        public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
@@ -82,7 +114,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class InlineResponse2008 {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
-            sb.Append("  Msg: ").Append(Msg).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -128,9 +160,9 @@ namespace Io.Gate.GateApi.Model
                     this.Label.Equals(input.Label))
                 ) && 
                 (
-                    this.Msg == input.Msg ||
-                    (this.Msg != null &&
-                    this.Msg.Equals(input.Msg))
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
                 ) && 
                 (
                     this.Data == input.Data ||
@@ -151,8 +183,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Code.GetHashCode();
                 if (this.Label != null)
                     hashCode = hashCode * 59 + this.Label.GetHashCode();
-                if (this.Msg != null)
-                    hashCode = hashCode * 59 + this.Msg.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.Data != null)
                     hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;

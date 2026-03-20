@@ -28,17 +28,17 @@ namespace Io.Gate.GateApi.Model
     /// Streamer information
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2009DataLiveHost :  IEquatable<InlineResponse2009DataLiveHost>, IValidatableObject
+    public partial class InlineResponse20010DataLiveHost :  IEquatable<InlineResponse20010DataLiveHost>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2009DataLiveHost" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20010DataLiveHost" /> class.
         /// </summary>
         /// <param name="id">Streamer ID.</param>
         /// <param name="name">Streamer nickname.</param>
         /// <param name="avatar">Streamer avatar URL.</param>
         /// <param name="fans">Follower count.</param>
         /// <param name="tier">Streamer level.</param>
-        public InlineResponse2009DataLiveHost(string id = default(string), string name = default(string), string avatar = default(string), int fans = default(int), int tier = default(int))
+        public InlineResponse20010DataLiveHost(string id = default(string), string name = default(string), string avatar = default(string), int fans = default(int), int tier = default(int))
         {
             this.Id = id;
             this.Name = name;
@@ -89,7 +89,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2009DataLiveHost {\n");
+            sb.Append("class InlineResponse20010DataLiveHost {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Avatar: ").Append(Avatar).Append("\n");
@@ -115,15 +115,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2009DataLiveHost);
+            return this.Equals(input as InlineResponse20010DataLiveHost);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2009DataLiveHost instances are equal
+        /// Returns true if InlineResponse20010DataLiveHost instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2009DataLiveHost to be compared</param>
+        /// <param name="input">Instance of InlineResponse20010DataLiveHost to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2009DataLiveHost input)
+        public bool Equals(InlineResponse20010DataLiveHost input)
         {
             if (input == null)
                 return false;

@@ -25,13 +25,13 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse2008DataItems
+    /// InlineResponse2009DataItems
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2008DataItems :  IEquatable<InlineResponse2008DataItems>, IValidatableObject
+    public partial class InlineResponse2009DataItems :  IEquatable<InlineResponse2009DataItems>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2008DataItems" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse2009DataItems" /> class.
         /// </summary>
         /// <param name="id">Post ID.</param>
         /// <param name="content">Post content.</param>
@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="nickname">Author nickname.</param>
         /// <param name="likeCount">Like count.</param>
         /// <param name="pageView">View count.</param>
-        public InlineResponse2008DataItems(long id = default(long), string content = default(string), string image = default(string), string avatar = default(string), string nickname = default(string), long likeCount = default(long), long pageView = default(long))
+        public InlineResponse2009DataItems(long id = default(long), string content = default(string), string image = default(string), string avatar = default(string), string nickname = default(string), long likeCount = default(long), long pageView = default(long))
         {
             this.Id = id;
             this.Content = content;
@@ -107,7 +107,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2008DataItems {\n");
+            sb.Append("class InlineResponse2009DataItems {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Content: ").Append(Content).Append("\n");
             sb.Append("  Image: ").Append(Image).Append("\n");
@@ -135,15 +135,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2008DataItems);
+            return this.Equals(input as InlineResponse2009DataItems);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2008DataItems instances are equal
+        /// Returns true if InlineResponse2009DataItems instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2008DataItems to be compared</param>
+        /// <param name="input">Instance of InlineResponse2009DataItems to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2008DataItems input)
+        public bool Equals(InlineResponse2009DataItems input)
         {
             if (input == null)
                 return false;

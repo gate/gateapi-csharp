@@ -38,28 +38,202 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20013DataList" /> class.
         /// </summary>
-        /// <param name="id">Activity type ID (required).</param>
-        /// <param name="name">Activity type name (required).</param>
-        public InlineResponse20013DataList(int id = default(int), string name = default(string))
+        /// <param name="id">Activity ID (required).</param>
+        /// <param name="typeId">Activity type ID (required).</param>
+        /// <param name="typeName">Activity type name (required).</param>
+        /// <param name="competitionName">Activity name (required).</param>
+        /// <param name="startAt">Activity start time (Unix timestamp, in seconds) (required).</param>
+        /// <param name="endAt">Activity end time (Unix timestamp, in seconds) (required).</param>
+        /// <param name="img">Activity image URL (light mode) (required).</param>
+        /// <param name="imgDark">Activity image URL (dark mode) (required).</param>
+        /// <param name="url">Activity redirect link (required).</param>
+        /// <param name="hot">Popularity score (required).</param>
+        /// <param name="masterOneLine">Main title first line (required).</param>
+        /// <param name="masterTwoLine">Main title second line (required).</param>
+        /// <param name="slaveOneLine">Subtitle first line (required).</param>
+        /// <param name="slaveTwoLine">Subtitle second line (required).</param>
+        /// <param name="competitionTitle">Activity title (required).</param>
+        /// <param name="topId">Pin ID, 0 means not pinned (required).</param>
+        /// <param name="parentId">Parent activity ID, 0 means no parent activity (required).</param>
+        /// <param name="newImg">New activity image URL (light mode) (required).</param>
+        /// <param name="newImgDark">New activity image URL (dark mode) (required).</param>
+        /// <param name="tag">Activity tag list (required).</param>
+        public InlineResponse20013DataList(int id = default(int), int typeId = default(int), string typeName = default(string), string competitionName = default(string), int startAt = default(int), int endAt = default(int), string img = default(string), string imgDark = default(string), string url = default(string), int hot = default(int), string masterOneLine = default(string), string masterTwoLine = default(string), string slaveOneLine = default(string), string slaveTwoLine = default(string), string competitionTitle = default(string), int topId = default(int), int parentId = default(int), string newImg = default(string), string newImgDark = default(string), List<string> tag = default(List<string>))
         {
             this.Id = id;
-            // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name", "name is a required property for InlineResponse20013DataList and cannot be null");
+            this.TypeId = typeId;
+            // to ensure "typeName" is required (not null)
+            this.TypeName = typeName ?? throw new ArgumentNullException("typeName", "typeName is a required property for InlineResponse20013DataList and cannot be null");
+            // to ensure "competitionName" is required (not null)
+            this.CompetitionName = competitionName ?? throw new ArgumentNullException("competitionName", "competitionName is a required property for InlineResponse20013DataList and cannot be null");
+            this.StartAt = startAt;
+            this.EndAt = endAt;
+            // to ensure "img" is required (not null)
+            this.Img = img ?? throw new ArgumentNullException("img", "img is a required property for InlineResponse20013DataList and cannot be null");
+            // to ensure "imgDark" is required (not null)
+            this.ImgDark = imgDark ?? throw new ArgumentNullException("imgDark", "imgDark is a required property for InlineResponse20013DataList and cannot be null");
+            // to ensure "url" is required (not null)
+            this.Url = url ?? throw new ArgumentNullException("url", "url is a required property for InlineResponse20013DataList and cannot be null");
+            this.Hot = hot;
+            // to ensure "masterOneLine" is required (not null)
+            this.MasterOneLine = masterOneLine ?? throw new ArgumentNullException("masterOneLine", "masterOneLine is a required property for InlineResponse20013DataList and cannot be null");
+            // to ensure "masterTwoLine" is required (not null)
+            this.MasterTwoLine = masterTwoLine ?? throw new ArgumentNullException("masterTwoLine", "masterTwoLine is a required property for InlineResponse20013DataList and cannot be null");
+            // to ensure "slaveOneLine" is required (not null)
+            this.SlaveOneLine = slaveOneLine ?? throw new ArgumentNullException("slaveOneLine", "slaveOneLine is a required property for InlineResponse20013DataList and cannot be null");
+            // to ensure "slaveTwoLine" is required (not null)
+            this.SlaveTwoLine = slaveTwoLine ?? throw new ArgumentNullException("slaveTwoLine", "slaveTwoLine is a required property for InlineResponse20013DataList and cannot be null");
+            // to ensure "competitionTitle" is required (not null)
+            this.CompetitionTitle = competitionTitle ?? throw new ArgumentNullException("competitionTitle", "competitionTitle is a required property for InlineResponse20013DataList and cannot be null");
+            this.TopId = topId;
+            this.ParentId = parentId;
+            // to ensure "newImg" is required (not null)
+            this.NewImg = newImg ?? throw new ArgumentNullException("newImg", "newImg is a required property for InlineResponse20013DataList and cannot be null");
+            // to ensure "newImgDark" is required (not null)
+            this.NewImgDark = newImgDark ?? throw new ArgumentNullException("newImgDark", "newImgDark is a required property for InlineResponse20013DataList and cannot be null");
+            // to ensure "tag" is required (not null)
+            this.Tag = tag ?? throw new ArgumentNullException("tag", "tag is a required property for InlineResponse20013DataList and cannot be null");
         }
+
+        /// <summary>
+        /// Activity ID
+        /// </summary>
+        /// <value>Activity ID</value>
+        [DataMember(Name="id")]
+        public int Id { get; set; }
 
         /// <summary>
         /// Activity type ID
         /// </summary>
         /// <value>Activity type ID</value>
-        [DataMember(Name="id")]
-        public int Id { get; set; }
+        [DataMember(Name="type_id")]
+        public int TypeId { get; set; }
 
         /// <summary>
         /// Activity type name
         /// </summary>
         /// <value>Activity type name</value>
-        [DataMember(Name="name")]
-        public string Name { get; set; }
+        [DataMember(Name="type_name")]
+        public string TypeName { get; set; }
+
+        /// <summary>
+        /// Activity name
+        /// </summary>
+        /// <value>Activity name</value>
+        [DataMember(Name="competition_name")]
+        public string CompetitionName { get; set; }
+
+        /// <summary>
+        /// Activity start time (Unix timestamp, in seconds)
+        /// </summary>
+        /// <value>Activity start time (Unix timestamp, in seconds)</value>
+        [DataMember(Name="start_at")]
+        public int StartAt { get; set; }
+
+        /// <summary>
+        /// Activity end time (Unix timestamp, in seconds)
+        /// </summary>
+        /// <value>Activity end time (Unix timestamp, in seconds)</value>
+        [DataMember(Name="end_at")]
+        public int EndAt { get; set; }
+
+        /// <summary>
+        /// Activity image URL (light mode)
+        /// </summary>
+        /// <value>Activity image URL (light mode)</value>
+        [DataMember(Name="img")]
+        public string Img { get; set; }
+
+        /// <summary>
+        /// Activity image URL (dark mode)
+        /// </summary>
+        /// <value>Activity image URL (dark mode)</value>
+        [DataMember(Name="img_dark")]
+        public string ImgDark { get; set; }
+
+        /// <summary>
+        /// Activity redirect link
+        /// </summary>
+        /// <value>Activity redirect link</value>
+        [DataMember(Name="url")]
+        public string Url { get; set; }
+
+        /// <summary>
+        /// Popularity score
+        /// </summary>
+        /// <value>Popularity score</value>
+        [DataMember(Name="hot")]
+        public int Hot { get; set; }
+
+        /// <summary>
+        /// Main title first line
+        /// </summary>
+        /// <value>Main title first line</value>
+        [DataMember(Name="master_one_line")]
+        public string MasterOneLine { get; set; }
+
+        /// <summary>
+        /// Main title second line
+        /// </summary>
+        /// <value>Main title second line</value>
+        [DataMember(Name="master_two_line")]
+        public string MasterTwoLine { get; set; }
+
+        /// <summary>
+        /// Subtitle first line
+        /// </summary>
+        /// <value>Subtitle first line</value>
+        [DataMember(Name="slave_one_line")]
+        public string SlaveOneLine { get; set; }
+
+        /// <summary>
+        /// Subtitle second line
+        /// </summary>
+        /// <value>Subtitle second line</value>
+        [DataMember(Name="slave_two_line")]
+        public string SlaveTwoLine { get; set; }
+
+        /// <summary>
+        /// Activity title
+        /// </summary>
+        /// <value>Activity title</value>
+        [DataMember(Name="competition_title")]
+        public string CompetitionTitle { get; set; }
+
+        /// <summary>
+        /// Pin ID, 0 means not pinned
+        /// </summary>
+        /// <value>Pin ID, 0 means not pinned</value>
+        [DataMember(Name="top_id")]
+        public int TopId { get; set; }
+
+        /// <summary>
+        /// Parent activity ID, 0 means no parent activity
+        /// </summary>
+        /// <value>Parent activity ID, 0 means no parent activity</value>
+        [DataMember(Name="parent_id")]
+        public int ParentId { get; set; }
+
+        /// <summary>
+        /// New activity image URL (light mode)
+        /// </summary>
+        /// <value>New activity image URL (light mode)</value>
+        [DataMember(Name="new_img")]
+        public string NewImg { get; set; }
+
+        /// <summary>
+        /// New activity image URL (dark mode)
+        /// </summary>
+        /// <value>New activity image URL (dark mode)</value>
+        [DataMember(Name="new_img_dark")]
+        public string NewImgDark { get; set; }
+
+        /// <summary>
+        /// Activity tag list
+        /// </summary>
+        /// <value>Activity tag list</value>
+        [DataMember(Name="tag")]
+        public List<string> Tag { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,7 +244,25 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20013DataList {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  TypeId: ").Append(TypeId).Append("\n");
+            sb.Append("  TypeName: ").Append(TypeName).Append("\n");
+            sb.Append("  CompetitionName: ").Append(CompetitionName).Append("\n");
+            sb.Append("  StartAt: ").Append(StartAt).Append("\n");
+            sb.Append("  EndAt: ").Append(EndAt).Append("\n");
+            sb.Append("  Img: ").Append(Img).Append("\n");
+            sb.Append("  ImgDark: ").Append(ImgDark).Append("\n");
+            sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  Hot: ").Append(Hot).Append("\n");
+            sb.Append("  MasterOneLine: ").Append(MasterOneLine).Append("\n");
+            sb.Append("  MasterTwoLine: ").Append(MasterTwoLine).Append("\n");
+            sb.Append("  SlaveOneLine: ").Append(SlaveOneLine).Append("\n");
+            sb.Append("  SlaveTwoLine: ").Append(SlaveTwoLine).Append("\n");
+            sb.Append("  CompetitionTitle: ").Append(CompetitionTitle).Append("\n");
+            sb.Append("  TopId: ").Append(TopId).Append("\n");
+            sb.Append("  ParentId: ").Append(ParentId).Append("\n");
+            sb.Append("  NewImg: ").Append(NewImg).Append("\n");
+            sb.Append("  NewImgDark: ").Append(NewImgDark).Append("\n");
+            sb.Append("  Tag: ").Append(Tag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,9 +302,94 @@ namespace Io.Gate.GateApi.Model
                     this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.TypeId == input.TypeId ||
+                    this.TypeId.Equals(input.TypeId)
+                ) && 
+                (
+                    this.TypeName == input.TypeName ||
+                    (this.TypeName != null &&
+                    this.TypeName.Equals(input.TypeName))
+                ) && 
+                (
+                    this.CompetitionName == input.CompetitionName ||
+                    (this.CompetitionName != null &&
+                    this.CompetitionName.Equals(input.CompetitionName))
+                ) && 
+                (
+                    this.StartAt == input.StartAt ||
+                    this.StartAt.Equals(input.StartAt)
+                ) && 
+                (
+                    this.EndAt == input.EndAt ||
+                    this.EndAt.Equals(input.EndAt)
+                ) && 
+                (
+                    this.Img == input.Img ||
+                    (this.Img != null &&
+                    this.Img.Equals(input.Img))
+                ) && 
+                (
+                    this.ImgDark == input.ImgDark ||
+                    (this.ImgDark != null &&
+                    this.ImgDark.Equals(input.ImgDark))
+                ) && 
+                (
+                    this.Url == input.Url ||
+                    (this.Url != null &&
+                    this.Url.Equals(input.Url))
+                ) && 
+                (
+                    this.Hot == input.Hot ||
+                    this.Hot.Equals(input.Hot)
+                ) && 
+                (
+                    this.MasterOneLine == input.MasterOneLine ||
+                    (this.MasterOneLine != null &&
+                    this.MasterOneLine.Equals(input.MasterOneLine))
+                ) && 
+                (
+                    this.MasterTwoLine == input.MasterTwoLine ||
+                    (this.MasterTwoLine != null &&
+                    this.MasterTwoLine.Equals(input.MasterTwoLine))
+                ) && 
+                (
+                    this.SlaveOneLine == input.SlaveOneLine ||
+                    (this.SlaveOneLine != null &&
+                    this.SlaveOneLine.Equals(input.SlaveOneLine))
+                ) && 
+                (
+                    this.SlaveTwoLine == input.SlaveTwoLine ||
+                    (this.SlaveTwoLine != null &&
+                    this.SlaveTwoLine.Equals(input.SlaveTwoLine))
+                ) && 
+                (
+                    this.CompetitionTitle == input.CompetitionTitle ||
+                    (this.CompetitionTitle != null &&
+                    this.CompetitionTitle.Equals(input.CompetitionTitle))
+                ) && 
+                (
+                    this.TopId == input.TopId ||
+                    this.TopId.Equals(input.TopId)
+                ) && 
+                (
+                    this.ParentId == input.ParentId ||
+                    this.ParentId.Equals(input.ParentId)
+                ) && 
+                (
+                    this.NewImg == input.NewImg ||
+                    (this.NewImg != null &&
+                    this.NewImg.Equals(input.NewImg))
+                ) && 
+                (
+                    this.NewImgDark == input.NewImgDark ||
+                    (this.NewImgDark != null &&
+                    this.NewImgDark.Equals(input.NewImgDark))
+                ) && 
+                (
+                    this.Tag == input.Tag ||
+                    this.Tag != null &&
+                    input.Tag != null &&
+                    this.Tag.SequenceEqual(input.Tag)
                 );
         }
 
@@ -126,8 +403,38 @@ namespace Io.Gate.GateApi.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.TypeId.GetHashCode();
+                if (this.TypeName != null)
+                    hashCode = hashCode * 59 + this.TypeName.GetHashCode();
+                if (this.CompetitionName != null)
+                    hashCode = hashCode * 59 + this.CompetitionName.GetHashCode();
+                hashCode = hashCode * 59 + this.StartAt.GetHashCode();
+                hashCode = hashCode * 59 + this.EndAt.GetHashCode();
+                if (this.Img != null)
+                    hashCode = hashCode * 59 + this.Img.GetHashCode();
+                if (this.ImgDark != null)
+                    hashCode = hashCode * 59 + this.ImgDark.GetHashCode();
+                if (this.Url != null)
+                    hashCode = hashCode * 59 + this.Url.GetHashCode();
+                hashCode = hashCode * 59 + this.Hot.GetHashCode();
+                if (this.MasterOneLine != null)
+                    hashCode = hashCode * 59 + this.MasterOneLine.GetHashCode();
+                if (this.MasterTwoLine != null)
+                    hashCode = hashCode * 59 + this.MasterTwoLine.GetHashCode();
+                if (this.SlaveOneLine != null)
+                    hashCode = hashCode * 59 + this.SlaveOneLine.GetHashCode();
+                if (this.SlaveTwoLine != null)
+                    hashCode = hashCode * 59 + this.SlaveTwoLine.GetHashCode();
+                if (this.CompetitionTitle != null)
+                    hashCode = hashCode * 59 + this.CompetitionTitle.GetHashCode();
+                hashCode = hashCode * 59 + this.TopId.GetHashCode();
+                hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                if (this.NewImg != null)
+                    hashCode = hashCode * 59 + this.NewImg.GetHashCode();
+                if (this.NewImgDark != null)
+                    hashCode = hashCode * 59 + this.NewImgDark.GetHashCode();
+                if (this.Tag != null)
+                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 return hashCode;
             }
         }

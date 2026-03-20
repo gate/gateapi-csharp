@@ -25,52 +25,59 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// InlineResponse2009
+    /// InlineResponse20014
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2009 :  IEquatable<InlineResponse2009>, IValidatableObject
+    public partial class InlineResponse20014 :  IEquatable<InlineResponse20014>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2009" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20014" /> class.
         /// </summary>
-        /// <param name="code">Status code, 0 &#x3D; success.</param>
-        /// <param name="label">Error identifier code. Empty string on success, machine-readable error label on error.</param>
-        /// <param name="msg">Status message.</param>
-        /// <param name="data">data.</param>
-        public InlineResponse2009(int code = default(int), string label = default(string), string msg = default(string), InlineResponse2009Data data = default(InlineResponse2009Data))
+        [JsonConstructorAttribute]
+        protected InlineResponse20014() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20014" /> class.
+        /// </summary>
+        /// <param name="code">Response status code, 0 means success (required).</param>
+        /// <param name="message">响应消息，成功时为 \&quot;success\&quot; (required).</param>
+        /// <param name="data">data (required).</param>
+        /// <param name="timestamp">Server timestamp (milliseconds) (required).</param>
+        public InlineResponse20014(int code = default(int), string message = default(string), InlineResponse20014Data data = default(InlineResponse20014Data), long timestamp = default(long))
         {
             this.Code = code;
-            this.Label = label;
-            this.Msg = msg;
-            this.Data = data;
+            // to ensure "message" is required (not null)
+            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for InlineResponse20014 and cannot be null");
+            // to ensure "data" is required (not null)
+            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for InlineResponse20014 and cannot be null");
+            this.Timestamp = timestamp;
         }
 
         /// <summary>
-        /// Status code, 0 &#x3D; success
+        /// Response status code, 0 means success
         /// </summary>
-        /// <value>Status code, 0 &#x3D; success</value>
+        /// <value>Response status code, 0 means success</value>
         [DataMember(Name="code")]
         public int Code { get; set; }
 
         /// <summary>
-        /// Error identifier code. Empty string on success, machine-readable error label on error
+        /// 响应消息，成功时为 \&quot;success\&quot;
         /// </summary>
-        /// <value>Error identifier code. Empty string on success, machine-readable error label on error</value>
-        [DataMember(Name="label")]
-        public string Label { get; set; }
-
-        /// <summary>
-        /// Status message
-        /// </summary>
-        /// <value>Status message</value>
-        [DataMember(Name="msg")]
-        public string Msg { get; set; }
+        /// <value>响应消息，成功时为 \&quot;success\&quot;</value>
+        [DataMember(Name="message")]
+        public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
-        public InlineResponse2009Data Data { get; set; }
+        public InlineResponse20014Data Data { get; set; }
+
+        /// <summary>
+        /// Server timestamp (milliseconds)
+        /// </summary>
+        /// <value>Server timestamp (milliseconds)</value>
+        [DataMember(Name="timestamp")]
+        public long Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,11 +86,11 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2009 {\n");
+            sb.Append("class InlineResponse20014 {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Label: ").Append(Label).Append("\n");
-            sb.Append("  Msg: ").Append(Msg).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,15 +111,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2009);
+            return this.Equals(input as InlineResponse20014);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2009 instances are equal
+        /// Returns true if InlineResponse20014 instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2009 to be compared</param>
+        /// <param name="input">Instance of InlineResponse20014 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2009 input)
+        public bool Equals(InlineResponse20014 input)
         {
             if (input == null)
                 return false;
@@ -123,19 +130,18 @@ namespace Io.Gate.GateApi.Model
                     this.Code.Equals(input.Code)
                 ) && 
                 (
-                    this.Label == input.Label ||
-                    (this.Label != null &&
-                    this.Label.Equals(input.Label))
-                ) && 
-                (
-                    this.Msg == input.Msg ||
-                    (this.Msg != null &&
-                    this.Msg.Equals(input.Msg))
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
                 ) && 
                 (
                     this.Data == input.Data ||
                     (this.Data != null &&
                     this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
                 );
         }
 
@@ -149,12 +155,11 @@ namespace Io.Gate.GateApi.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Label != null)
-                    hashCode = hashCode * 59 + this.Label.GetHashCode();
-                if (this.Msg != null)
-                    hashCode = hashCode * 59 + this.Msg.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.Data != null)
                     hashCode = hashCode * 59 + this.Data.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

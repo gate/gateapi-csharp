@@ -33,18 +33,27 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2009Data" /> class.
         /// </summary>
-        /// <param name="list">Live stream/replay list.</param>
-        public InlineResponse2009Data(List<InlineResponse2009DataList> list = default(List<InlineResponse2009DataList>))
+        /// <param name="total">Total number of results.</param>
+        /// <param name="items">Search result list.</param>
+        public InlineResponse2009Data(int total = default(int), List<InlineResponse2009DataItems> items = default(List<InlineResponse2009DataItems>))
         {
-            this.List = list;
+            this.Total = total;
+            this.Items = items;
         }
 
         /// <summary>
-        /// Live stream/replay list
+        /// Total number of results
         /// </summary>
-        /// <value>Live stream/replay list</value>
-        [DataMember(Name="list")]
-        public List<InlineResponse2009DataList> List { get; set; }
+        /// <value>Total number of results</value>
+        [DataMember(Name="total")]
+        public int Total { get; set; }
+
+        /// <summary>
+        /// Search result list
+        /// </summary>
+        /// <value>Search result list</value>
+        [DataMember(Name="items")]
+        public List<InlineResponse2009DataItems> Items { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +63,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponse2009Data {\n");
-            sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("  Total: ").Append(Total).Append("\n");
+            sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,10 +100,14 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
+                    this.Total == input.Total ||
+                    this.Total.Equals(input.Total)
+                ) && 
+                (
+                    this.Items == input.Items ||
+                    this.Items != null &&
+                    input.Items != null &&
+                    this.Items.SequenceEqual(input.Items)
                 );
         }
 
@@ -106,8 +120,9 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Items != null)
+                    hashCode = hashCode * 59 + this.Items.GetHashCode();
                 return hashCode;
             }
         }

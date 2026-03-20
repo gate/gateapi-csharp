@@ -25,35 +25,42 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Help Center Link
+    /// InlineResponse20010DataList
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2006DataHelpUrl :  IEquatable<InlineResponse2006DataHelpUrl>, IValidatableObject
+    public partial class InlineResponse20010DataList :  IEquatable<InlineResponse20010DataList>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse2006DataHelpUrl" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20010DataList" /> class.
         /// </summary>
-        /// <param name="web">Web Help Link.</param>
-        /// <param name="app">App Help Link.</param>
-        public InlineResponse2006DataHelpUrl(string web = default(string), string app = default(string))
+        /// <param name="contentType">Content type: streaming &#x3D; live broadcast, video &#x3D; replay video.</param>
+        /// <param name="live">live.</param>
+        /// <param name="video">video.</param>
+        public InlineResponse20010DataList(string contentType = default(string), InlineResponse20010DataLive live = default(InlineResponse20010DataLive), InlineResponse20010DataVideo video = default(InlineResponse20010DataVideo))
         {
-            this.Web = web;
-            this.App = app;
+            this.ContentType = contentType;
+            this.Live = live;
+            this.Video = video;
         }
 
         /// <summary>
-        /// Web Help Link
+        /// Content type: streaming &#x3D; live broadcast, video &#x3D; replay video
         /// </summary>
-        /// <value>Web Help Link</value>
-        [DataMember(Name="web")]
-        public string Web { get; set; }
+        /// <value>Content type: streaming &#x3D; live broadcast, video &#x3D; replay video</value>
+        [DataMember(Name="content_type")]
+        public string ContentType { get; set; }
 
         /// <summary>
-        /// App Help Link
+        /// Gets or Sets Live
         /// </summary>
-        /// <value>App Help Link</value>
-        [DataMember(Name="app")]
-        public string App { get; set; }
+        [DataMember(Name="live")]
+        public InlineResponse20010DataLive Live { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Video
+        /// </summary>
+        [DataMember(Name="video")]
+        public InlineResponse20010DataVideo Video { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +69,10 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2006DataHelpUrl {\n");
-            sb.Append("  Web: ").Append(Web).Append("\n");
-            sb.Append("  App: ").Append(App).Append("\n");
+            sb.Append("class InlineResponse20010DataList {\n");
+            sb.Append("  ContentType: ").Append(ContentType).Append("\n");
+            sb.Append("  Live: ").Append(Live).Append("\n");
+            sb.Append("  Video: ").Append(Video).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,29 +93,34 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InlineResponse2006DataHelpUrl);
+            return this.Equals(input as InlineResponse20010DataList);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2006DataHelpUrl instances are equal
+        /// Returns true if InlineResponse20010DataList instances are equal
         /// </summary>
-        /// <param name="input">Instance of InlineResponse2006DataHelpUrl to be compared</param>
+        /// <param name="input">Instance of InlineResponse20010DataList to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2006DataHelpUrl input)
+        public bool Equals(InlineResponse20010DataList input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Web == input.Web ||
-                    (this.Web != null &&
-                    this.Web.Equals(input.Web))
+                    this.ContentType == input.ContentType ||
+                    (this.ContentType != null &&
+                    this.ContentType.Equals(input.ContentType))
                 ) && 
                 (
-                    this.App == input.App ||
-                    (this.App != null &&
-                    this.App.Equals(input.App))
+                    this.Live == input.Live ||
+                    (this.Live != null &&
+                    this.Live.Equals(input.Live))
+                ) && 
+                (
+                    this.Video == input.Video ||
+                    (this.Video != null &&
+                    this.Video.Equals(input.Video))
                 );
         }
 
@@ -120,10 +133,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Web != null)
-                    hashCode = hashCode * 59 + this.Web.GetHashCode();
-                if (this.App != null)
-                    hashCode = hashCode * 59 + this.App.GetHashCode();
+                if (this.ContentType != null)
+                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
+                if (this.Live != null)
+                    hashCode = hashCode * 59 + this.Live.GetHashCode();
+                if (this.Video != null)
+                    hashCode = hashCode * 59 + this.Video.GetHashCode();
                 return hashCode;
             }
         }

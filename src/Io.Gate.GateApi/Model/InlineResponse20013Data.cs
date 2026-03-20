@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Activity type data
+    /// Activity list data
     /// </summary>
     [DataContract]
     public partial class InlineResponse20013Data :  IEquatable<InlineResponse20013Data>, IValidatableObject
@@ -38,19 +38,65 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20013Data" /> class.
         /// </summary>
-        /// <param name="list">Activity type list (required).</param>
-        public InlineResponse20013Data(List<InlineResponse20013DataList> list = default(List<InlineResponse20013DataList>))
+        /// <param name="list">Activity list (required).</param>
+        /// <param name="page">Current page number (required).</param>
+        /// <param name="pageSize">Items per page (required).</param>
+        /// <param name="pageCount">Total pages (required).</param>
+        /// <param name="totalCount">Total Records (required).</param>
+        /// <param name="url">Activity Center page link (required).</param>
+        public InlineResponse20013Data(List<InlineResponse20013DataList> list = default(List<InlineResponse20013DataList>), int page = default(int), int pageSize = default(int), int pageCount = default(int), int totalCount = default(int), string url = default(string))
         {
             // to ensure "list" is required (not null)
             this.List = list ?? throw new ArgumentNullException("list", "list is a required property for InlineResponse20013Data and cannot be null");
+            this.Page = page;
+            this.PageSize = pageSize;
+            this.PageCount = pageCount;
+            this.TotalCount = totalCount;
+            // to ensure "url" is required (not null)
+            this.Url = url ?? throw new ArgumentNullException("url", "url is a required property for InlineResponse20013Data and cannot be null");
         }
 
         /// <summary>
-        /// Activity type list
+        /// Activity list
         /// </summary>
-        /// <value>Activity type list</value>
+        /// <value>Activity list</value>
         [DataMember(Name="list")]
         public List<InlineResponse20013DataList> List { get; set; }
+
+        /// <summary>
+        /// Current page number
+        /// </summary>
+        /// <value>Current page number</value>
+        [DataMember(Name="page")]
+        public int Page { get; set; }
+
+        /// <summary>
+        /// Items per page
+        /// </summary>
+        /// <value>Items per page</value>
+        [DataMember(Name="pageSize")]
+        public int PageSize { get; set; }
+
+        /// <summary>
+        /// Total pages
+        /// </summary>
+        /// <value>Total pages</value>
+        [DataMember(Name="pageCount")]
+        public int PageCount { get; set; }
+
+        /// <summary>
+        /// Total Records
+        /// </summary>
+        /// <value>Total Records</value>
+        [DataMember(Name="totalCount")]
+        public int TotalCount { get; set; }
+
+        /// <summary>
+        /// Activity Center page link
+        /// </summary>
+        /// <value>Activity Center page link</value>
+        [DataMember(Name="url")]
+        public string Url { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -61,6 +107,11 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class InlineResponse20013Data {\n");
             sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("  Page: ").Append(Page).Append("\n");
+            sb.Append("  PageSize: ").Append(PageSize).Append("\n");
+            sb.Append("  PageCount: ").Append(PageCount).Append("\n");
+            sb.Append("  TotalCount: ").Append(TotalCount).Append("\n");
+            sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -100,6 +151,27 @@ namespace Io.Gate.GateApi.Model
                     this.List != null &&
                     input.List != null &&
                     this.List.SequenceEqual(input.List)
+                ) && 
+                (
+                    this.Page == input.Page ||
+                    this.Page.Equals(input.Page)
+                ) && 
+                (
+                    this.PageSize == input.PageSize ||
+                    this.PageSize.Equals(input.PageSize)
+                ) && 
+                (
+                    this.PageCount == input.PageCount ||
+                    this.PageCount.Equals(input.PageCount)
+                ) && 
+                (
+                    this.TotalCount == input.TotalCount ||
+                    this.TotalCount.Equals(input.TotalCount)
+                ) && 
+                (
+                    this.Url == input.Url ||
+                    (this.Url != null &&
+                    this.Url.Equals(input.Url))
                 );
         }
 
@@ -114,6 +186,12 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.List != null)
                     hashCode = hashCode * 59 + this.List.GetHashCode();
+                hashCode = hashCode * 59 + this.Page.GetHashCode();
+                hashCode = hashCode * 59 + this.PageSize.GetHashCode();
+                hashCode = hashCode * 59 + this.PageCount.GetHashCode();
+                hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.Url != null)
+                    hashCode = hashCode * 59 + this.Url.GetHashCode();
                 return hashCode;
             }
         }

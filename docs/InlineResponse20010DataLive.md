@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.InlineResponse2009DataLive
+# Io.Gate.GateApi.Model.InlineResponse20010DataLive
 
 Live stream information (has value when content_type&#x3D;streaming)
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **HotWeight** | **int** | Popularity weight | [optional] 
 **LiveType** | **int** | Live stream type | [optional] 
 **SessionId** | **string** | Session ID | [optional] 
-**Host** | [**InlineResponse2009DataLiveHost**](InlineResponse2009DataLiveHost.md) |  | [optional] 
+**Host** | [**InlineResponse20010DataLiveHost**](InlineResponse20010DataLiveHost.md) |  | [optional] 
 **Status** | **string** | Live stream status (e.g., streaming) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
