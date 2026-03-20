@@ -33,28 +33,30 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UnifiedAccount" /> class.
         /// </summary>
+        /// <param name="mode">Unified account mode: - classic: Classic account mode - multi_currency: Multi-currency margin mode - portfolio: Portfolio margin mode - single_currency: Single-currency margin mode.</param>
         /// <param name="userId">User ID.</param>
         /// <param name="refreshTime">Last refresh time.</param>
         /// <param name="locked">Whether the account is locked, valid in cross-currency margin/combined margin mode, false in other modes such as single-currency margin mode.</param>
         /// <param name="balances">balances.</param>
         /// <param name="total">Total account assets converted to USD, i.e. the sum of &#x60;(available + freeze) * price&#x60; in all currencies (deprecated, to be removed, replaced by unified_account_total).</param>
         /// <param name="borrowed">Total borrowed amount converted to USD, i.e. the sum of &#x60;borrowed * price&#x60; of all currencies (excluding point cards), valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
-        /// <param name="totalInitialMargin">Total initial margin, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
-        /// <param name="totalMarginBalance">Total margin balance, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
-        /// <param name="totalMaintenanceMargin">Total maintenance margin is valid in cross-currency margin/combined margin mode, and is 0 in other modes such as single-currency margin mode.</param>
-        /// <param name="totalInitialMarginRate">Total initial margin rate, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
-        /// <param name="totalMaintenanceMarginRate">Total maintenance margin rate, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
+        /// <param name="totalInitialMargin">Total initial margin (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode.</param>
+        /// <param name="totalMarginBalance">Total margin balance (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode.</param>
+        /// <param name="totalMaintenanceMargin">Total maintenance margin (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode.</param>
+        /// <param name="totalInitialMarginRate">Total initial margin rate (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode.</param>
+        /// <param name="totalMaintenanceMarginRate">Total maintenance margin rate (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode.</param>
         /// <param name="totalAvailableMargin">Available margin amount, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
-        /// <param name="unifiedAccountTotal">Total unified account assets, valid in single currency margin/cross-currency margin/combined margin mode.</param>
-        /// <param name="unifiedAccountTotalLiab">Total unified account borrowed amount, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
-        /// <param name="unifiedAccountTotalEquity">Total unified account equity, valid in single currency margin/cross-currency margin/combined margin mode.</param>
+        /// <param name="unifiedAccountTotal">Total unified account assets, includes both cross and isolated total assets in single-currency/multi-currency mode, only cross total assets in portfolio margin mode.</param>
+        /// <param name="unifiedAccountTotalLiab">Total unified account borrowed, i.e. total cross borrowed, effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode.</param>
+        /// <param name="unifiedAccountTotalEquity">Total unified account equity, includes both cross and isolated total equity in single-currency/multi-currency mode, only cross total equity in portfolio margin mode.</param>
         /// <param name="spotOrderLoss">Spot Pending Order Loss, in USDT, effective only in Cross-Currency Margin Mode and Portfolio Margin Mode..</param>
         /// <param name="optionsOrderLoss">Option Pending Order Loss, in USDT, effective only in Portfolio Margin Mode..</param>
         /// <param name="spotHedge">Spot hedging status: true - enabled, false - disabled.</param>
         /// <param name="useFunding">Whether to use Earn funds as margin.</param>
         /// <param name="isAllCollateral">Whether all currencies are used as margin: true - all currencies as margin, false - no.</param>
-        public UnifiedAccount(long userId = default(long), long refreshTime = default(long), bool locked = default(bool), Dictionary<string, UnifiedBalance> balances = default(Dictionary<string, UnifiedBalance>), string total = default(string), string borrowed = default(string), string totalInitialMargin = default(string), string totalMarginBalance = default(string), string totalMaintenanceMargin = default(string), string totalInitialMarginRate = default(string), string totalMaintenanceMarginRate = default(string), string totalAvailableMargin = default(string), string unifiedAccountTotal = default(string), string unifiedAccountTotalLiab = default(string), string unifiedAccountTotalEquity = default(string), string spotOrderLoss = default(string), string optionsOrderLoss = default(string), bool spotHedge = default(bool), bool useFunding = default(bool), bool isAllCollateral = default(bool))
+        public UnifiedAccount(string mode = default(string), long userId = default(long), long refreshTime = default(long), bool locked = default(bool), Dictionary<string, UnifiedBalance> balances = default(Dictionary<string, UnifiedBalance>), string total = default(string), string borrowed = default(string), string totalInitialMargin = default(string), string totalMarginBalance = default(string), string totalMaintenanceMargin = default(string), string totalInitialMarginRate = default(string), string totalMaintenanceMarginRate = default(string), string totalAvailableMargin = default(string), string unifiedAccountTotal = default(string), string unifiedAccountTotalLiab = default(string), string unifiedAccountTotalEquity = default(string), string spotOrderLoss = default(string), string optionsOrderLoss = default(string), bool spotHedge = default(bool), bool useFunding = default(bool), bool isAllCollateral = default(bool))
         {
+            this.Mode = mode;
             this.UserId = userId;
             this.RefreshTime = refreshTime;
             this.Locked = locked;
@@ -76,6 +78,13 @@ namespace Io.Gate.GateApi.Model
             this.UseFunding = useFunding;
             this.IsAllCollateral = isAllCollateral;
         }
+
+        /// <summary>
+        /// Unified account mode: - classic: Classic account mode - multi_currency: Multi-currency margin mode - portfolio: Portfolio margin mode - single_currency: Single-currency margin mode
+        /// </summary>
+        /// <value>Unified account mode: - classic: Classic account mode - multi_currency: Multi-currency margin mode - portfolio: Portfolio margin mode - single_currency: Single-currency margin mode</value>
+        [DataMember(Name="mode")]
+        public string Mode { get; set; }
 
         /// <summary>
         /// User ID
@@ -119,37 +128,37 @@ namespace Io.Gate.GateApi.Model
         public string Borrowed { get; set; }
 
         /// <summary>
-        /// Total initial margin, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode
+        /// Total initial margin (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode
         /// </summary>
-        /// <value>Total initial margin, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode</value>
+        /// <value>Total initial margin (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode</value>
         [DataMember(Name="total_initial_margin")]
         public string TotalInitialMargin { get; set; }
 
         /// <summary>
-        /// Total margin balance, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode
+        /// Total margin balance (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode
         /// </summary>
-        /// <value>Total margin balance, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode</value>
+        /// <value>Total margin balance (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode</value>
         [DataMember(Name="total_margin_balance")]
         public string TotalMarginBalance { get; set; }
 
         /// <summary>
-        /// Total maintenance margin is valid in cross-currency margin/combined margin mode, and is 0 in other modes such as single-currency margin mode
+        /// Total maintenance margin (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode
         /// </summary>
-        /// <value>Total maintenance margin is valid in cross-currency margin/combined margin mode, and is 0 in other modes such as single-currency margin mode</value>
+        /// <value>Total maintenance margin (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode</value>
         [DataMember(Name="total_maintenance_margin")]
         public string TotalMaintenanceMargin { get; set; }
 
         /// <summary>
-        /// Total initial margin rate, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode
+        /// Total initial margin rate (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode
         /// </summary>
-        /// <value>Total initial margin rate, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode</value>
+        /// <value>Total initial margin rate (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode</value>
         [DataMember(Name="total_initial_margin_rate")]
         public string TotalInitialMarginRate { get; set; }
 
         /// <summary>
-        /// Total maintenance margin rate, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode
+        /// Total maintenance margin rate (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode
         /// </summary>
-        /// <value>Total maintenance margin rate, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode</value>
+        /// <value>Total maintenance margin rate (cross), effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode</value>
         [DataMember(Name="total_maintenance_margin_rate")]
         public string TotalMaintenanceMarginRate { get; set; }
 
@@ -161,30 +170,30 @@ namespace Io.Gate.GateApi.Model
         public string TotalAvailableMargin { get; set; }
 
         /// <summary>
-        /// Total unified account assets, valid in single currency margin/cross-currency margin/combined margin mode
+        /// Total unified account assets, includes both cross and isolated total assets in single-currency/multi-currency mode, only cross total assets in portfolio margin mode
         /// </summary>
-        /// <value>Total unified account assets, valid in single currency margin/cross-currency margin/combined margin mode</value>
+        /// <value>Total unified account assets, includes both cross and isolated total assets in single-currency/multi-currency mode, only cross total assets in portfolio margin mode</value>
         [DataMember(Name="unified_account_total")]
         public string UnifiedAccountTotal { get; set; }
 
         /// <summary>
-        /// Total unified account borrowed amount, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode
+        /// Total unified account borrowed, i.e. total cross borrowed, effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode
         /// </summary>
-        /// <value>Total unified account borrowed amount, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode</value>
+        /// <value>Total unified account borrowed, i.e. total cross borrowed, effective in multi-currency margin/portfolio margin mode, 0 in single-currency margin mode</value>
         [DataMember(Name="unified_account_total_liab")]
         public string UnifiedAccountTotalLiab { get; set; }
 
         /// <summary>
-        /// Total unified account equity, valid in single currency margin/cross-currency margin/combined margin mode
+        /// Total unified account equity, includes both cross and isolated total equity in single-currency/multi-currency mode, only cross total equity in portfolio margin mode
         /// </summary>
-        /// <value>Total unified account equity, valid in single currency margin/cross-currency margin/combined margin mode</value>
+        /// <value>Total unified account equity, includes both cross and isolated total equity in single-currency/multi-currency mode, only cross total equity in portfolio margin mode</value>
         [DataMember(Name="unified_account_total_equity")]
         public string UnifiedAccountTotalEquity { get; set; }
 
         /// <summary>
-        /// Actual leverage ratio, valid in cross-currency margin/combined margin mode
+        /// Account leverage multiplier, effective in multi-currency/portfolio margin mode (deprecated). Currency leverage query API: GET /unified/leverage/user_currency_setting
         /// </summary>
-        /// <value>Actual leverage ratio, valid in cross-currency margin/combined margin mode</value>
+        /// <value>Account leverage multiplier, effective in multi-currency/portfolio margin mode (deprecated). Currency leverage query API: GET /unified/leverage/user_currency_setting</value>
         [DataMember(Name="leverage", EmitDefaultValue=false)]
         public string Leverage { get; private set; }
 
@@ -231,6 +240,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class UnifiedAccount {\n");
+            sb.Append("  Mode: ").Append(Mode).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("  RefreshTime: ").Append(RefreshTime).Append("\n");
             sb.Append("  Locked: ").Append(Locked).Append("\n");
@@ -286,6 +296,11 @@ namespace Io.Gate.GateApi.Model
                 return false;
 
             return 
+                (
+                    this.Mode == input.Mode ||
+                    (this.Mode != null &&
+                    this.Mode.Equals(input.Mode))
+                ) && 
                 (
                     this.UserId == input.UserId ||
                     this.UserId.Equals(input.UserId)
@@ -397,6 +412,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Mode != null)
+                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 hashCode = hashCode * 59 + this.RefreshTime.GetHashCode();
                 hashCode = hashCode * 59 + this.Locked.GetHashCode();

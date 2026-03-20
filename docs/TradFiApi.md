@@ -247,6 +247,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
             var apiInstance = new TradFiApi(config);
             var symbols = "EURUSD,XAGUSD";  // string | Trading symbol code list (comma-separated, max 10 symbols)
 
@@ -280,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 

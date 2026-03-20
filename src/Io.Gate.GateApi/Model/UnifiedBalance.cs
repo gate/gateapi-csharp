@@ -33,27 +33,28 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UnifiedBalance" /> class.
         /// </summary>
-        /// <param name="available">Available balance, valid in single currency margin/cross-currency margin/combined margin mode, calculation varies by mode.</param>
-        /// <param name="freeze">Locked balance, valid in single currency margin/cross-currency margin/combined margin mode.</param>
+        /// <param name="available">Cross available balance, deducted futures isolated margin occupation and frozen amount (futures isolated occupation, i.e. futures isolated balance), effective in single-currency/multi-currency/portfolio margin mode..</param>
+        /// <param name="freeze">Frozen amount, effective in single-currency/multi-currency/portfolio margin mode.</param>
         /// <param name="borrowed">Borrowed amount, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
         /// <param name="negativeLiab">Negative balance borrowing, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
         /// <param name="futuresPosLiab">Contract opening position borrowing currency (abandoned, to be offline field).</param>
-        /// <param name="equity">Equity, valid in single currency margin/cross currency margin/combined margin mode.</param>
+        /// <param name="equity">Currency equity amount (cross), effective in single-currency/multi-currency/portfolio margin mode.</param>
         /// <param name="totalFreeze">Total frozen (deprecated, to be removed).</param>
         /// <param name="totalLiab">Total borrowed amount, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
         /// <param name="spotInUse">The amount of spot hedging is valid in the combined margin mode, and is 0 in other margin modes such as single currency and cross-currency margin modes.</param>
         /// <param name="funding">Uniloan financial management amount, effective when turned on as a unified account margin switch.</param>
         /// <param name="fundingVersion">Funding version.</param>
         /// <param name="crossBalance">Full margin balance is valid in single currency margin mode, and is 0 in other modes such as cross currency margin/combined margin mode.</param>
-        /// <param name="isoBalance">Isolated Margin Balance applies to Single-Currency Margin Mode and Cross-Currency Margin Mode, and is 0 in other modes such as Portfolio Margin Mode..</param>
-        /// <param name="im">Full-position initial margin is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode.</param>
-        /// <param name="mm">Cross margin maintenance margin, valid in single-currency margin mode, 0 in other modes such as cross-currency margin/combined margin mode.</param>
-        /// <param name="imr">Full-position initial margin rate is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode.</param>
-        /// <param name="mmr">Full-position maintenance margin rate is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode.</param>
-        /// <param name="marginBalance">Full margin balance is valid in single currency margin mode and is 0 in other modes such as cross currency margin/combined margin mode.</param>
-        /// <param name="availableMargin">Cross margin available balance, valid in single currency margin mode, 0 in other modes such as cross-currency margin/combined margin mode.</param>
+        /// <param name="isoBalance">Futures isolated balance, effective in single-currency and multi-currency margin mode, 0 in portfolio margin mode.</param>
+        /// <param name="im">Cross initial margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode.</param>
+        /// <param name="mm">Cross maintenance margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode.</param>
+        /// <param name="imr">Cross initial margin rate, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode.</param>
+        /// <param name="mmr">Cross maintenance margin rate, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode.</param>
+        /// <param name="marginBalance">Cross margin balance, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode.</param>
+        /// <param name="availableMargin">Cross available margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode.</param>
         /// <param name="enabledCollateral">Currency enabled as margin: true - Enabled, false - Disabled.</param>
-        public UnifiedBalance(string available = default(string), string freeze = default(string), string borrowed = default(string), string negativeLiab = default(string), string futuresPosLiab = default(string), string equity = default(string), string totalFreeze = default(string), string totalLiab = default(string), string spotInUse = default(string), string funding = default(string), string fundingVersion = default(string), string crossBalance = default(string), string isoBalance = default(string), string im = default(string), string mm = default(string), string imr = default(string), string mmr = default(string), string marginBalance = default(string), string availableMargin = default(string), bool enabledCollateral = default(bool))
+        /// <param name="balanceVersion">Balance version number.</param>
+        public UnifiedBalance(string available = default(string), string freeze = default(string), string borrowed = default(string), string negativeLiab = default(string), string futuresPosLiab = default(string), string equity = default(string), string totalFreeze = default(string), string totalLiab = default(string), string spotInUse = default(string), string funding = default(string), string fundingVersion = default(string), string crossBalance = default(string), string isoBalance = default(string), string im = default(string), string mm = default(string), string imr = default(string), string mmr = default(string), string marginBalance = default(string), string availableMargin = default(string), bool enabledCollateral = default(bool), decimal balanceVersion = default(decimal))
         {
             this.Available = available;
             this.Freeze = freeze;
@@ -75,19 +76,20 @@ namespace Io.Gate.GateApi.Model
             this.MarginBalance = marginBalance;
             this.AvailableMargin = availableMargin;
             this.EnabledCollateral = enabledCollateral;
+            this.BalanceVersion = balanceVersion;
         }
 
         /// <summary>
-        /// Available balance, valid in single currency margin/cross-currency margin/combined margin mode, calculation varies by mode
+        /// Cross available balance, deducted futures isolated margin occupation and frozen amount (futures isolated occupation, i.e. futures isolated balance), effective in single-currency/multi-currency/portfolio margin mode.
         /// </summary>
-        /// <value>Available balance, valid in single currency margin/cross-currency margin/combined margin mode, calculation varies by mode</value>
+        /// <value>Cross available balance, deducted futures isolated margin occupation and frozen amount (futures isolated occupation, i.e. futures isolated balance), effective in single-currency/multi-currency/portfolio margin mode.</value>
         [DataMember(Name="available")]
         public string Available { get; set; }
 
         /// <summary>
-        /// Locked balance, valid in single currency margin/cross-currency margin/combined margin mode
+        /// Frozen amount, effective in single-currency/multi-currency/portfolio margin mode
         /// </summary>
-        /// <value>Locked balance, valid in single currency margin/cross-currency margin/combined margin mode</value>
+        /// <value>Frozen amount, effective in single-currency/multi-currency/portfolio margin mode</value>
         [DataMember(Name="freeze")]
         public string Freeze { get; set; }
 
@@ -113,9 +115,9 @@ namespace Io.Gate.GateApi.Model
         public string FuturesPosLiab { get; set; }
 
         /// <summary>
-        /// Equity, valid in single currency margin/cross currency margin/combined margin mode
+        /// Currency equity amount (cross), effective in single-currency/multi-currency/portfolio margin mode
         /// </summary>
-        /// <value>Equity, valid in single currency margin/cross currency margin/combined margin mode</value>
+        /// <value>Currency equity amount (cross), effective in single-currency/multi-currency/portfolio margin mode</value>
         [DataMember(Name="equity")]
         public string Equity { get; set; }
 
@@ -162,51 +164,51 @@ namespace Io.Gate.GateApi.Model
         public string CrossBalance { get; set; }
 
         /// <summary>
-        /// Isolated Margin Balance applies to Single-Currency Margin Mode and Cross-Currency Margin Mode, and is 0 in other modes such as Portfolio Margin Mode.
+        /// Futures isolated balance, effective in single-currency and multi-currency margin mode, 0 in portfolio margin mode
         /// </summary>
-        /// <value>Isolated Margin Balance applies to Single-Currency Margin Mode and Cross-Currency Margin Mode, and is 0 in other modes such as Portfolio Margin Mode.</value>
+        /// <value>Futures isolated balance, effective in single-currency and multi-currency margin mode, 0 in portfolio margin mode</value>
         [DataMember(Name="iso_balance")]
         public string IsoBalance { get; set; }
 
         /// <summary>
-        /// Full-position initial margin is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode
+        /// Cross initial margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode
         /// </summary>
-        /// <value>Full-position initial margin is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode</value>
+        /// <value>Cross initial margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="im")]
         public string Im { get; set; }
 
         /// <summary>
-        /// Cross margin maintenance margin, valid in single-currency margin mode, 0 in other modes such as cross-currency margin/combined margin mode
+        /// Cross maintenance margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode
         /// </summary>
-        /// <value>Cross margin maintenance margin, valid in single-currency margin mode, 0 in other modes such as cross-currency margin/combined margin mode</value>
+        /// <value>Cross maintenance margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="mm")]
         public string Mm { get; set; }
 
         /// <summary>
-        /// Full-position initial margin rate is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode
+        /// Cross initial margin rate, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode
         /// </summary>
-        /// <value>Full-position initial margin rate is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode</value>
+        /// <value>Cross initial margin rate, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="imr")]
         public string Imr { get; set; }
 
         /// <summary>
-        /// Full-position maintenance margin rate is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode
+        /// Cross maintenance margin rate, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode
         /// </summary>
-        /// <value>Full-position maintenance margin rate is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode</value>
+        /// <value>Cross maintenance margin rate, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="mmr")]
         public string Mmr { get; set; }
 
         /// <summary>
-        /// Full margin balance is valid in single currency margin mode and is 0 in other modes such as cross currency margin/combined margin mode
+        /// Cross margin balance, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode
         /// </summary>
-        /// <value>Full margin balance is valid in single currency margin mode and is 0 in other modes such as cross currency margin/combined margin mode</value>
+        /// <value>Cross margin balance, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="margin_balance")]
         public string MarginBalance { get; set; }
 
         /// <summary>
-        /// Cross margin available balance, valid in single currency margin mode, 0 in other modes such as cross-currency margin/combined margin mode
+        /// Cross available margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode
         /// </summary>
-        /// <value>Cross margin available balance, valid in single currency margin mode, 0 in other modes such as cross-currency margin/combined margin mode</value>
+        /// <value>Cross available margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="available_margin")]
         public string AvailableMargin { get; set; }
 
@@ -216,6 +218,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Currency enabled as margin: true - Enabled, false - Disabled</value>
         [DataMember(Name="enabled_collateral")]
         public bool EnabledCollateral { get; set; }
+
+        /// <summary>
+        /// Balance version number
+        /// </summary>
+        /// <value>Balance version number</value>
+        [DataMember(Name="balance_version")]
+        public decimal BalanceVersion { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -245,6 +254,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  MarginBalance: ").Append(MarginBalance).Append("\n");
             sb.Append("  AvailableMargin: ").Append(AvailableMargin).Append("\n");
             sb.Append("  EnabledCollateral: ").Append(EnabledCollateral).Append("\n");
+            sb.Append("  BalanceVersion: ").Append(BalanceVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -377,6 +387,10 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.EnabledCollateral == input.EnabledCollateral ||
                     this.EnabledCollateral.Equals(input.EnabledCollateral)
+                ) && 
+                (
+                    this.BalanceVersion == input.BalanceVersion ||
+                    this.BalanceVersion.Equals(input.BalanceVersion)
                 );
         }
 
@@ -428,6 +442,7 @@ namespace Io.Gate.GateApi.Model
                 if (this.AvailableMargin != null)
                     hashCode = hashCode * 59 + this.AvailableMargin.GetHashCode();
                 hashCode = hashCode * 59 + this.EnabledCollateral.GetHashCode();
+                hashCode = hashCode * 59 + this.BalanceVersion.GetHashCode();
                 return hashCode;
             }
         }
