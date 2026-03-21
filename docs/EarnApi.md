@@ -1038,7 +1038,7 @@ Name | Type | Description  | Notes
 
 <a name="listearnfixedtermproducts"></a>
 # **ListEarnFixedTermProducts**
-> InlineResponse200 ListEarnFixedTermProducts (int page, int limit, string asset = null, int? type = null)
+> ListEarnFixedTermProductsResponse ListEarnFixedTermProducts (int page, int limit, string asset = null, int? type = null)
 
 Get product list
 
@@ -1069,7 +1069,7 @@ namespace Example
             try
             {
                 // Get product list
-                InlineResponse200 result = apiInstance.ListEarnFixedTermProducts(page, limit, asset, type);
+                ListEarnFixedTermProductsResponse result = apiInstance.ListEarnFixedTermProducts(page, limit, asset, type);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1095,7 +1095,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**ListEarnFixedTermProductsResponse**](ListEarnFixedTermProductsResponse.md)
 
 ### Authorization
 
@@ -1115,7 +1115,7 @@ No authorization required
 
 <a name="listearnfixedtermproductsbyasset"></a>
 # **ListEarnFixedTermProductsByAsset**
-> InlineResponse2001 ListEarnFixedTermProductsByAsset (string asset, string type = null)
+> ListEarnFixedTermProductsByAssetResponse ListEarnFixedTermProductsByAsset (string asset, string type = null)
 
 Get product list by single currency
 
@@ -1144,7 +1144,7 @@ namespace Example
             try
             {
                 // Get product list by single currency
-                InlineResponse2001 result = apiInstance.ListEarnFixedTermProductsByAsset(asset, type);
+                ListEarnFixedTermProductsByAssetResponse result = apiInstance.ListEarnFixedTermProductsByAsset(asset, type);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1168,7 +1168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**ListEarnFixedTermProductsByAssetResponse**](ListEarnFixedTermProductsByAssetResponse.md)
 
 ### Authorization
 
@@ -1188,7 +1188,7 @@ No authorization required
 
 <a name="listearnfixedtermlends"></a>
 # **ListEarnFixedTermLends**
-> InlineResponse2002 ListEarnFixedTermLends (string orderType, int page, int limit, int? productId = null, long? orderId = null, string asset = null, int? subBusiness = null, string businessFilter = null)
+> ListEarnFixedTermLendsResponse ListEarnFixedTermLends (string orderType, int page, int limit, int? productId = null, long? orderId = null, string asset = null, int? subBusiness = null, string businessFilter = null)
 
 Subscription list
 
@@ -1225,7 +1225,7 @@ namespace Example
             try
             {
                 // Subscription list
-                InlineResponse2002 result = apiInstance.ListEarnFixedTermLends(orderType, page, limit, productId, orderId, asset, subBusiness, businessFilter);
+                ListEarnFixedTermLendsResponse result = apiInstance.ListEarnFixedTermLends(orderType, page, limit, productId, orderId, asset, subBusiness, businessFilter);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1255,7 +1255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**ListEarnFixedTermLendsResponse**](ListEarnFixedTermLendsResponse.md)
 
 ### Authorization
 
@@ -1275,7 +1275,7 @@ Name | Type | Description  | Notes
 
 <a name="createearnfixedtermlend"></a>
 # **CreateEarnFixedTermLend**
-> InlineResponse2003 CreateEarnFixedTermLend (FixedTermLendRequest fixedTermLendRequest = null)
+> CreateEarnFixedTermLendResponse CreateEarnFixedTermLend (FixedTermLendRequest fixedTermLendRequest = null)
 
 Subscription
 
@@ -1305,7 +1305,7 @@ namespace Example
             try
             {
                 // Subscription
-                InlineResponse2003 result = apiInstance.CreateEarnFixedTermLend(fixedTermLendRequest);
+                CreateEarnFixedTermLendResponse result = apiInstance.CreateEarnFixedTermLend(fixedTermLendRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1328,7 +1328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**CreateEarnFixedTermLendResponse**](CreateEarnFixedTermLendResponse.md)
 
 ### Authorization
 
@@ -1348,7 +1348,7 @@ Name | Type | Description  | Notes
 
 <a name="createearnfixedtermpreredeem"></a>
 # **CreateEarnFixedTermPreRedeem**
-> InlineResponse2004 CreateEarnFixedTermPreRedeem (InlineObject inlineObject = null)
+> CreateEarnFixedTermPreRedeemResponse CreateEarnFixedTermPreRedeem (EarnFixedTermPreRedeemRequest earnFixedTermPreRedeemRequest = null)
 
 Redeem
 
@@ -1373,12 +1373,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new EarnApi(config);
-            var inlineObject = new InlineObject(); // InlineObject |  (optional) 
+            var earnFixedTermPreRedeemRequest = new EarnFixedTermPreRedeemRequest(); // EarnFixedTermPreRedeemRequest |  (optional) 
 
             try
             {
                 // Redeem
-                InlineResponse2004 result = apiInstance.CreateEarnFixedTermPreRedeem(inlineObject);
+                CreateEarnFixedTermPreRedeemResponse result = apiInstance.CreateEarnFixedTermPreRedeem(earnFixedTermPreRedeemRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1397,11 +1397,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject** | [**InlineObject**](InlineObject.md)|  | [optional] 
+ **earnFixedTermPreRedeemRequest** | [**EarnFixedTermPreRedeemRequest**](EarnFixedTermPreRedeemRequest.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**CreateEarnFixedTermPreRedeemResponse**](CreateEarnFixedTermPreRedeemResponse.md)
 
 ### Authorization
 
@@ -1421,7 +1421,7 @@ Name | Type | Description  | Notes
 
 <a name="listearnfixedtermhistory"></a>
 # **ListEarnFixedTermHistory**
-> InlineResponse2005 ListEarnFixedTermHistory (string type, int page, int limit, int? productId = null, string orderId = null, string asset = null, int? startAt = null, int? endAt = null, int? subBusiness = null, string businessFilter = null)
+> ListEarnFixedTermHistoryResponse ListEarnFixedTermHistory (string type, int page, int limit, int? productId = null, string orderId = null, string asset = null, int? startAt = null, int? endAt = null, int? subBusiness = null, string businessFilter = null)
 
 Subscription history
 
@@ -1460,7 +1460,7 @@ namespace Example
             try
             {
                 // Subscription history
-                InlineResponse2005 result = apiInstance.ListEarnFixedTermHistory(type, page, limit, productId, orderId, asset, startAt, endAt, subBusiness, businessFilter);
+                ListEarnFixedTermHistoryResponse result = apiInstance.ListEarnFixedTermHistory(type, page, limit, productId, orderId, asset, startAt, endAt, subBusiness, businessFilter);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1492,7 +1492,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**ListEarnFixedTermHistoryResponse**](ListEarnFixedTermHistoryResponse.md)
 
 ### Authorization
 

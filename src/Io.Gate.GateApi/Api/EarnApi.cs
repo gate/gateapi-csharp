@@ -356,8 +356,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>InlineResponse200</returns>
-        InlineResponse200 ListEarnFixedTermProducts (int page, int limit, string asset = default(string), int? type = default(int?));
+        /// <returns>ListEarnFixedTermProductsResponse</returns>
+        ListEarnFixedTermProductsResponse ListEarnFixedTermProducts (int page, int limit, string asset = default(string), int? type = default(int?));
 
         /// <summary>
         /// Get product list
@@ -370,8 +370,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>ApiResponse of InlineResponse200</returns>
-        ApiResponse<InlineResponse200> ListEarnFixedTermProductsWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?));
+        /// <returns>ApiResponse of ListEarnFixedTermProductsResponse</returns>
+        ApiResponse<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?));
         /// <summary>
         /// Get product list by single currency
         /// </summary>
@@ -381,8 +381,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">Currency name, e.g., USDT, BTC</param>
         /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
-        /// <returns>InlineResponse2001</returns>
-        InlineResponse2001 ListEarnFixedTermProductsByAsset (string asset, string type = default(string));
+        /// <returns>ListEarnFixedTermProductsByAssetResponse</returns>
+        ListEarnFixedTermProductsByAssetResponse ListEarnFixedTermProductsByAsset (string asset, string type = default(string));
 
         /// <summary>
         /// Get product list by single currency
@@ -393,8 +393,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">Currency name, e.g., USDT, BTC</param>
         /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2001</returns>
-        ApiResponse<InlineResponse2001> ListEarnFixedTermProductsByAssetWithHttpInfo (string asset, string type = default(string));
+        /// <returns>ApiResponse of ListEarnFixedTermProductsByAssetResponse</returns>
+        ApiResponse<ListEarnFixedTermProductsByAssetResponse> ListEarnFixedTermProductsByAssetWithHttpInfo (string asset, string type = default(string));
         /// <summary>
         /// Subscription list
         /// </summary>
@@ -410,8 +410,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Currency (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>InlineResponse2002</returns>
-        InlineResponse2002 ListEarnFixedTermLends (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
+        /// <returns>ListEarnFixedTermLendsResponse</returns>
+        ListEarnFixedTermLendsResponse ListEarnFixedTermLends (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
 
         /// <summary>
         /// Subscription list
@@ -428,8 +428,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Currency (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2002</returns>
-        ApiResponse<InlineResponse2002> ListEarnFixedTermLendsWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
+        /// <returns>ApiResponse of ListEarnFixedTermLendsResponse</returns>
+        ApiResponse<ListEarnFixedTermLendsResponse> ListEarnFixedTermLendsWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
         /// <summary>
         /// Subscription
         /// </summary>
@@ -438,8 +438,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fixedTermLendRequest"> (optional)</param>
-        /// <returns>InlineResponse2003</returns>
-        InlineResponse2003 CreateEarnFixedTermLend (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
+        /// <returns>CreateEarnFixedTermLendResponse</returns>
+        CreateEarnFixedTermLendResponse CreateEarnFixedTermLend (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
 
         /// <summary>
         /// Subscription
@@ -449,8 +449,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fixedTermLendRequest"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2003</returns>
-        ApiResponse<InlineResponse2003> CreateEarnFixedTermLendWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
+        /// <returns>ApiResponse of CreateEarnFixedTermLendResponse</returns>
+        ApiResponse<CreateEarnFixedTermLendResponse> CreateEarnFixedTermLendWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
         /// <summary>
         /// Redeem
         /// </summary>
@@ -458,9 +458,9 @@ namespace Io.Gate.GateApi.Api
         /// Early redemption of a fixed-term earn order, order ID is required
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject"> (optional)</param>
-        /// <returns>InlineResponse2004</returns>
-        InlineResponse2004 CreateEarnFixedTermPreRedeem (InlineObject inlineObject = default(InlineObject));
+        /// <param name="earnFixedTermPreRedeemRequest"> (optional)</param>
+        /// <returns>CreateEarnFixedTermPreRedeemResponse</returns>
+        CreateEarnFixedTermPreRedeemResponse CreateEarnFixedTermPreRedeem (EarnFixedTermPreRedeemRequest earnFixedTermPreRedeemRequest = default(EarnFixedTermPreRedeemRequest));
 
         /// <summary>
         /// Redeem
@@ -469,9 +469,9 @@ namespace Io.Gate.GateApi.Api
         /// Early redemption of a fixed-term earn order, order ID is required
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2004</returns>
-        ApiResponse<InlineResponse2004> CreateEarnFixedTermPreRedeemWithHttpInfo (InlineObject inlineObject = default(InlineObject));
+        /// <param name="earnFixedTermPreRedeemRequest"> (optional)</param>
+        /// <returns>ApiResponse of CreateEarnFixedTermPreRedeemResponse</returns>
+        ApiResponse<CreateEarnFixedTermPreRedeemResponse> CreateEarnFixedTermPreRedeemWithHttpInfo (EarnFixedTermPreRedeemRequest earnFixedTermPreRedeemRequest = default(EarnFixedTermPreRedeemRequest));
         /// <summary>
         /// Subscription history
         /// </summary>
@@ -489,8 +489,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="endAt">End Timestamp (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>InlineResponse2005</returns>
-        InlineResponse2005 ListEarnFixedTermHistory (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
+        /// <returns>ListEarnFixedTermHistoryResponse</returns>
+        ListEarnFixedTermHistoryResponse ListEarnFixedTermHistory (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
 
         /// <summary>
         /// Subscription history
@@ -509,8 +509,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="endAt">End Timestamp (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2005</returns>
-        ApiResponse<InlineResponse2005> ListEarnFixedTermHistoryWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
+        /// <returns>ApiResponse of ListEarnFixedTermHistoryResponse</returns>
+        ApiResponse<ListEarnFixedTermHistoryResponse> ListEarnFixedTermHistoryWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
         #endregion Synchronous Operations
     }
 
@@ -849,8 +849,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of InlineResponse200</returns>
-        Task<InlineResponse200> ListEarnFixedTermProductsAsync (int page, int limit, string asset = default(string), int? type = default(int?));
+        /// <returns>Task of ListEarnFixedTermProductsResponse</returns>
+        Task<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsAsync (int page, int limit, string asset = default(string), int? type = default(int?));
 
         /// <summary>
         /// Get product list
@@ -863,8 +863,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        Task<ApiResponse<InlineResponse200>> ListEarnFixedTermProductsAsyncWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?));
+        /// <returns>Task of ApiResponse (ListEarnFixedTermProductsResponse)</returns>
+        Task<ApiResponse<ListEarnFixedTermProductsResponse>> ListEarnFixedTermProductsAsyncWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?));
         /// <summary>
         /// Get product list by single currency
         /// </summary>
@@ -874,8 +874,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">Currency name, e.g., USDT, BTC</param>
         /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
-        /// <returns>Task of InlineResponse2001</returns>
-        Task<InlineResponse2001> ListEarnFixedTermProductsByAssetAsync (string asset, string type = default(string));
+        /// <returns>Task of ListEarnFixedTermProductsByAssetResponse</returns>
+        Task<ListEarnFixedTermProductsByAssetResponse> ListEarnFixedTermProductsByAssetAsync (string asset, string type = default(string));
 
         /// <summary>
         /// Get product list by single currency
@@ -886,8 +886,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">Currency name, e.g., USDT, BTC</param>
         /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        Task<ApiResponse<InlineResponse2001>> ListEarnFixedTermProductsByAssetAsyncWithHttpInfo (string asset, string type = default(string));
+        /// <returns>Task of ApiResponse (ListEarnFixedTermProductsByAssetResponse)</returns>
+        Task<ApiResponse<ListEarnFixedTermProductsByAssetResponse>> ListEarnFixedTermProductsByAssetAsyncWithHttpInfo (string asset, string type = default(string));
         /// <summary>
         /// Subscription list
         /// </summary>
@@ -903,8 +903,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Currency (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of InlineResponse2002</returns>
-        Task<InlineResponse2002> ListEarnFixedTermLendsAsync (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
+        /// <returns>Task of ListEarnFixedTermLendsResponse</returns>
+        Task<ListEarnFixedTermLendsResponse> ListEarnFixedTermLendsAsync (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
 
         /// <summary>
         /// Subscription list
@@ -921,8 +921,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Currency (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
-        Task<ApiResponse<InlineResponse2002>> ListEarnFixedTermLendsAsyncWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
+        /// <returns>Task of ApiResponse (ListEarnFixedTermLendsResponse)</returns>
+        Task<ApiResponse<ListEarnFixedTermLendsResponse>> ListEarnFixedTermLendsAsyncWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string));
         /// <summary>
         /// Subscription
         /// </summary>
@@ -931,8 +931,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fixedTermLendRequest"> (optional)</param>
-        /// <returns>Task of InlineResponse2003</returns>
-        Task<InlineResponse2003> CreateEarnFixedTermLendAsync (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
+        /// <returns>Task of CreateEarnFixedTermLendResponse</returns>
+        Task<CreateEarnFixedTermLendResponse> CreateEarnFixedTermLendAsync (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
 
         /// <summary>
         /// Subscription
@@ -942,8 +942,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fixedTermLendRequest"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-        Task<ApiResponse<InlineResponse2003>> CreateEarnFixedTermLendAsyncWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
+        /// <returns>Task of ApiResponse (CreateEarnFixedTermLendResponse)</returns>
+        Task<ApiResponse<CreateEarnFixedTermLendResponse>> CreateEarnFixedTermLendAsyncWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest));
         /// <summary>
         /// Redeem
         /// </summary>
@@ -951,9 +951,9 @@ namespace Io.Gate.GateApi.Api
         /// Early redemption of a fixed-term earn order, order ID is required
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject"> (optional)</param>
-        /// <returns>Task of InlineResponse2004</returns>
-        Task<InlineResponse2004> CreateEarnFixedTermPreRedeemAsync (InlineObject inlineObject = default(InlineObject));
+        /// <param name="earnFixedTermPreRedeemRequest"> (optional)</param>
+        /// <returns>Task of CreateEarnFixedTermPreRedeemResponse</returns>
+        Task<CreateEarnFixedTermPreRedeemResponse> CreateEarnFixedTermPreRedeemAsync (EarnFixedTermPreRedeemRequest earnFixedTermPreRedeemRequest = default(EarnFixedTermPreRedeemRequest));
 
         /// <summary>
         /// Redeem
@@ -962,9 +962,9 @@ namespace Io.Gate.GateApi.Api
         /// Early redemption of a fixed-term earn order, order ID is required
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2004)</returns>
-        Task<ApiResponse<InlineResponse2004>> CreateEarnFixedTermPreRedeemAsyncWithHttpInfo (InlineObject inlineObject = default(InlineObject));
+        /// <param name="earnFixedTermPreRedeemRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (CreateEarnFixedTermPreRedeemResponse)</returns>
+        Task<ApiResponse<CreateEarnFixedTermPreRedeemResponse>> CreateEarnFixedTermPreRedeemAsyncWithHttpInfo (EarnFixedTermPreRedeemRequest earnFixedTermPreRedeemRequest = default(EarnFixedTermPreRedeemRequest));
         /// <summary>
         /// Subscription history
         /// </summary>
@@ -982,8 +982,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="endAt">End Timestamp (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of InlineResponse2005</returns>
-        Task<InlineResponse2005> ListEarnFixedTermHistoryAsync (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
+        /// <returns>Task of ListEarnFixedTermHistoryResponse</returns>
+        Task<ListEarnFixedTermHistoryResponse> ListEarnFixedTermHistoryAsync (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
 
         /// <summary>
         /// Subscription history
@@ -1002,8 +1002,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="endAt">End Timestamp (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
-        Task<ApiResponse<InlineResponse2005>> ListEarnFixedTermHistoryAsyncWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
+        /// <returns>Task of ApiResponse (ListEarnFixedTermHistoryResponse)</returns>
+        Task<ApiResponse<ListEarnFixedTermHistoryResponse>> ListEarnFixedTermHistoryAsyncWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string));
         #endregion Asynchronous Operations
     }
 
@@ -2892,10 +2892,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>InlineResponse200</returns>
-        public InlineResponse200 ListEarnFixedTermProducts (int page, int limit, string asset = default(string), int? type = default(int?))
+        /// <returns>ListEarnFixedTermProductsResponse</returns>
+        public ListEarnFixedTermProductsResponse ListEarnFixedTermProducts (int page, int limit, string asset = default(string), int? type = default(int?))
         {
-             ApiResponse<InlineResponse200> localVarResponse = ListEarnFixedTermProductsWithHttpInfo(page, limit, asset, type);
+             ApiResponse<ListEarnFixedTermProductsResponse> localVarResponse = ListEarnFixedTermProductsWithHttpInfo(page, limit, asset, type);
              return localVarResponse.Data;
         }
 
@@ -2907,8 +2907,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>ApiResponse of InlineResponse200</returns>
-        public ApiResponse<InlineResponse200> ListEarnFixedTermProductsWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?))
+        /// <returns>ApiResponse of ListEarnFixedTermProductsResponse</returns>
+        public ApiResponse<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2939,7 +2939,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse200>("/earn/fixed-term/product", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListEarnFixedTermProductsResponse>("/earn/fixed-term/product", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2958,10 +2958,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of InlineResponse200</returns>
-        public async Task<InlineResponse200> ListEarnFixedTermProductsAsync (int page, int limit, string asset = default(string), int? type = default(int?))
+        /// <returns>Task of ListEarnFixedTermProductsResponse</returns>
+        public async Task<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsAsync (int page, int limit, string asset = default(string), int? type = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse200> localVarResponse = await ListEarnFixedTermProductsAsyncWithHttpInfo(page, limit, asset, type);
+             Io.Gate.GateApi.Client.ApiResponse<ListEarnFixedTermProductsResponse> localVarResponse = await ListEarnFixedTermProductsAsyncWithHttpInfo(page, limit, asset, type);
              return localVarResponse.Data;
 
         }
@@ -2974,8 +2974,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        public async Task<ApiResponse<InlineResponse200>> ListEarnFixedTermProductsAsyncWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?))
+        /// <returns>Task of ApiResponse (ListEarnFixedTermProductsResponse)</returns>
+        public async Task<ApiResponse<ListEarnFixedTermProductsResponse>> ListEarnFixedTermProductsAsyncWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3008,7 +3008,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse200>("/earn/fixed-term/product", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListEarnFixedTermProductsResponse>("/earn/fixed-term/product", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3025,10 +3025,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">Currency name, e.g., USDT, BTC</param>
         /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
-        /// <returns>InlineResponse2001</returns>
-        public InlineResponse2001 ListEarnFixedTermProductsByAsset (string asset, string type = default(string))
+        /// <returns>ListEarnFixedTermProductsByAssetResponse</returns>
+        public ListEarnFixedTermProductsByAssetResponse ListEarnFixedTermProductsByAsset (string asset, string type = default(string))
         {
-             ApiResponse<InlineResponse2001> localVarResponse = ListEarnFixedTermProductsByAssetWithHttpInfo(asset, type);
+             ApiResponse<ListEarnFixedTermProductsByAssetResponse> localVarResponse = ListEarnFixedTermProductsByAssetWithHttpInfo(asset, type);
              return localVarResponse.Data;
         }
 
@@ -3038,8 +3038,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">Currency name, e.g., USDT, BTC</param>
         /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2001</returns>
-        public ApiResponse<InlineResponse2001> ListEarnFixedTermProductsByAssetWithHttpInfo (string asset, string type = default(string))
+        /// <returns>ApiResponse of ListEarnFixedTermProductsByAssetResponse</returns>
+        public ApiResponse<ListEarnFixedTermProductsByAssetResponse> ListEarnFixedTermProductsByAssetWithHttpInfo (string asset, string type = default(string))
         {
             // verify the required parameter 'asset' is set
             if (asset == null)
@@ -3069,7 +3069,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse2001>("/earn/fixed-term/product/{asset}/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListEarnFixedTermProductsByAssetResponse>("/earn/fixed-term/product/{asset}/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3086,10 +3086,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">Currency name, e.g., USDT, BTC</param>
         /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
-        /// <returns>Task of InlineResponse2001</returns>
-        public async Task<InlineResponse2001> ListEarnFixedTermProductsByAssetAsync (string asset, string type = default(string))
+        /// <returns>Task of ListEarnFixedTermProductsByAssetResponse</returns>
+        public async Task<ListEarnFixedTermProductsByAssetResponse> ListEarnFixedTermProductsByAssetAsync (string asset, string type = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2001> localVarResponse = await ListEarnFixedTermProductsByAssetAsyncWithHttpInfo(asset, type);
+             Io.Gate.GateApi.Client.ApiResponse<ListEarnFixedTermProductsByAssetResponse> localVarResponse = await ListEarnFixedTermProductsByAssetAsyncWithHttpInfo(asset, type);
              return localVarResponse.Data;
 
         }
@@ -3100,8 +3100,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">Currency name, e.g., USDT, BTC</param>
         /// <param name="type">Product type: \&quot;\&quot; or 1 for regular product list, 2 for VIP product list, 0 for all products (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        public async Task<ApiResponse<InlineResponse2001>> ListEarnFixedTermProductsByAssetAsyncWithHttpInfo (string asset, string type = default(string))
+        /// <returns>Task of ApiResponse (ListEarnFixedTermProductsByAssetResponse)</returns>
+        public async Task<ApiResponse<ListEarnFixedTermProductsByAssetResponse>> ListEarnFixedTermProductsByAssetAsyncWithHttpInfo (string asset, string type = default(string))
         {
             // verify the required parameter 'asset' is set
             if (asset == null)
@@ -3133,7 +3133,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2001>("/earn/fixed-term/product/{asset}/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListEarnFixedTermProductsByAssetResponse>("/earn/fixed-term/product/{asset}/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3156,10 +3156,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Currency (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>InlineResponse2002</returns>
-        public InlineResponse2002 ListEarnFixedTermLends (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
+        /// <returns>ListEarnFixedTermLendsResponse</returns>
+        public ListEarnFixedTermLendsResponse ListEarnFixedTermLends (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
         {
-             ApiResponse<InlineResponse2002> localVarResponse = ListEarnFixedTermLendsWithHttpInfo(orderType, page, limit, productId, orderId, asset, subBusiness, businessFilter);
+             ApiResponse<ListEarnFixedTermLendsResponse> localVarResponse = ListEarnFixedTermLendsWithHttpInfo(orderType, page, limit, productId, orderId, asset, subBusiness, businessFilter);
              return localVarResponse.Data;
         }
 
@@ -3175,8 +3175,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Currency (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2002</returns>
-        public ApiResponse<InlineResponse2002> ListEarnFixedTermLendsWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
+        /// <returns>ApiResponse of ListEarnFixedTermLendsResponse</returns>
+        public ApiResponse<ListEarnFixedTermLendsResponse> ListEarnFixedTermLendsWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
         {
             // verify the required parameter 'orderType' is set
             if (orderType == null)
@@ -3226,7 +3226,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse2002>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListEarnFixedTermLendsResponse>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3249,10 +3249,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Currency (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of InlineResponse2002</returns>
-        public async Task<InlineResponse2002> ListEarnFixedTermLendsAsync (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
+        /// <returns>Task of ListEarnFixedTermLendsResponse</returns>
+        public async Task<ListEarnFixedTermLendsResponse> ListEarnFixedTermLendsAsync (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2002> localVarResponse = await ListEarnFixedTermLendsAsyncWithHttpInfo(orderType, page, limit, productId, orderId, asset, subBusiness, businessFilter);
+             Io.Gate.GateApi.Client.ApiResponse<ListEarnFixedTermLendsResponse> localVarResponse = await ListEarnFixedTermLendsAsyncWithHttpInfo(orderType, page, limit, productId, orderId, asset, subBusiness, businessFilter);
              return localVarResponse.Data;
 
         }
@@ -3269,8 +3269,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="asset">Currency (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
-        public async Task<ApiResponse<InlineResponse2002>> ListEarnFixedTermLendsAsyncWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
+        /// <returns>Task of ApiResponse (ListEarnFixedTermLendsResponse)</returns>
+        public async Task<ApiResponse<ListEarnFixedTermLendsResponse>> ListEarnFixedTermLendsAsyncWithHttpInfo (string orderType, int page, int limit, int? productId = default(int?), long? orderId = default(long?), string asset = default(string), int? subBusiness = default(int?), string businessFilter = default(string))
         {
             // verify the required parameter 'orderType' is set
             if (orderType == null)
@@ -3322,7 +3322,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2002>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListEarnFixedTermLendsResponse>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3338,10 +3338,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fixedTermLendRequest"> (optional)</param>
-        /// <returns>InlineResponse2003</returns>
-        public InlineResponse2003 CreateEarnFixedTermLend (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
+        /// <returns>CreateEarnFixedTermLendResponse</returns>
+        public CreateEarnFixedTermLendResponse CreateEarnFixedTermLend (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
         {
-             ApiResponse<InlineResponse2003> localVarResponse = CreateEarnFixedTermLendWithHttpInfo(fixedTermLendRequest);
+             ApiResponse<CreateEarnFixedTermLendResponse> localVarResponse = CreateEarnFixedTermLendWithHttpInfo(fixedTermLendRequest);
              return localVarResponse.Data;
         }
 
@@ -3350,8 +3350,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fixedTermLendRequest"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2003</returns>
-        public ApiResponse<InlineResponse2003> CreateEarnFixedTermLendWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
+        /// <returns>ApiResponse of CreateEarnFixedTermLendResponse</returns>
+        public ApiResponse<CreateEarnFixedTermLendResponse> CreateEarnFixedTermLendWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3376,7 +3376,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse2003>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CreateEarnFixedTermLendResponse>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3392,10 +3392,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fixedTermLendRequest"> (optional)</param>
-        /// <returns>Task of InlineResponse2003</returns>
-        public async Task<InlineResponse2003> CreateEarnFixedTermLendAsync (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
+        /// <returns>Task of CreateEarnFixedTermLendResponse</returns>
+        public async Task<CreateEarnFixedTermLendResponse> CreateEarnFixedTermLendAsync (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2003> localVarResponse = await CreateEarnFixedTermLendAsyncWithHttpInfo(fixedTermLendRequest);
+             Io.Gate.GateApi.Client.ApiResponse<CreateEarnFixedTermLendResponse> localVarResponse = await CreateEarnFixedTermLendAsyncWithHttpInfo(fixedTermLendRequest);
              return localVarResponse.Data;
 
         }
@@ -3405,8 +3405,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fixedTermLendRequest"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-        public async Task<ApiResponse<InlineResponse2003>> CreateEarnFixedTermLendAsyncWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
+        /// <returns>Task of ApiResponse (CreateEarnFixedTermLendResponse)</returns>
+        public async Task<ApiResponse<CreateEarnFixedTermLendResponse>> CreateEarnFixedTermLendAsyncWithHttpInfo (FixedTermLendRequest fixedTermLendRequest = default(FixedTermLendRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3433,7 +3433,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2003>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateEarnFixedTermLendResponse>("/earn/fixed-term/user/lend", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3448,11 +3448,11 @@ namespace Io.Gate.GateApi.Api
         /// Redeem Early redemption of a fixed-term earn order, order ID is required
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject"> (optional)</param>
-        /// <returns>InlineResponse2004</returns>
-        public InlineResponse2004 CreateEarnFixedTermPreRedeem (InlineObject inlineObject = default(InlineObject))
+        /// <param name="earnFixedTermPreRedeemRequest"> (optional)</param>
+        /// <returns>CreateEarnFixedTermPreRedeemResponse</returns>
+        public CreateEarnFixedTermPreRedeemResponse CreateEarnFixedTermPreRedeem (EarnFixedTermPreRedeemRequest earnFixedTermPreRedeemRequest = default(EarnFixedTermPreRedeemRequest))
         {
-             ApiResponse<InlineResponse2004> localVarResponse = CreateEarnFixedTermPreRedeemWithHttpInfo(inlineObject);
+             ApiResponse<CreateEarnFixedTermPreRedeemResponse> localVarResponse = CreateEarnFixedTermPreRedeemWithHttpInfo(earnFixedTermPreRedeemRequest);
              return localVarResponse.Data;
         }
 
@@ -3460,9 +3460,9 @@ namespace Io.Gate.GateApi.Api
         /// Redeem Early redemption of a fixed-term earn order, order ID is required
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject"> (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2004</returns>
-        public ApiResponse<InlineResponse2004> CreateEarnFixedTermPreRedeemWithHttpInfo (InlineObject inlineObject = default(InlineObject))
+        /// <param name="earnFixedTermPreRedeemRequest"> (optional)</param>
+        /// <returns>ApiResponse of CreateEarnFixedTermPreRedeemResponse</returns>
+        public ApiResponse<CreateEarnFixedTermPreRedeemResponse> CreateEarnFixedTermPreRedeemWithHttpInfo (EarnFixedTermPreRedeemRequest earnFixedTermPreRedeemRequest = default(EarnFixedTermPreRedeemRequest))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3481,13 +3481,13 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = inlineObject;
+            localVarRequestOptions.Data = earnFixedTermPreRedeemRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse2004>("/earn/fixed-term/user/pre-redeem", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CreateEarnFixedTermPreRedeemResponse>("/earn/fixed-term/user/pre-redeem", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3502,11 +3502,11 @@ namespace Io.Gate.GateApi.Api
         /// Redeem Early redemption of a fixed-term earn order, order ID is required
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject"> (optional)</param>
-        /// <returns>Task of InlineResponse2004</returns>
-        public async Task<InlineResponse2004> CreateEarnFixedTermPreRedeemAsync (InlineObject inlineObject = default(InlineObject))
+        /// <param name="earnFixedTermPreRedeemRequest"> (optional)</param>
+        /// <returns>Task of CreateEarnFixedTermPreRedeemResponse</returns>
+        public async Task<CreateEarnFixedTermPreRedeemResponse> CreateEarnFixedTermPreRedeemAsync (EarnFixedTermPreRedeemRequest earnFixedTermPreRedeemRequest = default(EarnFixedTermPreRedeemRequest))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2004> localVarResponse = await CreateEarnFixedTermPreRedeemAsyncWithHttpInfo(inlineObject);
+             Io.Gate.GateApi.Client.ApiResponse<CreateEarnFixedTermPreRedeemResponse> localVarResponse = await CreateEarnFixedTermPreRedeemAsyncWithHttpInfo(earnFixedTermPreRedeemRequest);
              return localVarResponse.Data;
 
         }
@@ -3515,9 +3515,9 @@ namespace Io.Gate.GateApi.Api
         /// Redeem Early redemption of a fixed-term earn order, order ID is required
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="inlineObject"> (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2004)</returns>
-        public async Task<ApiResponse<InlineResponse2004>> CreateEarnFixedTermPreRedeemAsyncWithHttpInfo (InlineObject inlineObject = default(InlineObject))
+        /// <param name="earnFixedTermPreRedeemRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (CreateEarnFixedTermPreRedeemResponse)</returns>
+        public async Task<ApiResponse<CreateEarnFixedTermPreRedeemResponse>> CreateEarnFixedTermPreRedeemAsyncWithHttpInfo (EarnFixedTermPreRedeemRequest earnFixedTermPreRedeemRequest = default(EarnFixedTermPreRedeemRequest))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3537,14 +3537,14 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = inlineObject;
+            localVarRequestOptions.Data = earnFixedTermPreRedeemRequest;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse2004>("/earn/fixed-term/user/pre-redeem", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateEarnFixedTermPreRedeemResponse>("/earn/fixed-term/user/pre-redeem", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3569,10 +3569,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="endAt">End Timestamp (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>InlineResponse2005</returns>
-        public InlineResponse2005 ListEarnFixedTermHistory (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
+        /// <returns>ListEarnFixedTermHistoryResponse</returns>
+        public ListEarnFixedTermHistoryResponse ListEarnFixedTermHistory (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
         {
-             ApiResponse<InlineResponse2005> localVarResponse = ListEarnFixedTermHistoryWithHttpInfo(type, page, limit, productId, orderId, asset, startAt, endAt, subBusiness, businessFilter);
+             ApiResponse<ListEarnFixedTermHistoryResponse> localVarResponse = ListEarnFixedTermHistoryWithHttpInfo(type, page, limit, productId, orderId, asset, startAt, endAt, subBusiness, businessFilter);
              return localVarResponse.Data;
         }
 
@@ -3590,8 +3590,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="endAt">End Timestamp (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2005</returns>
-        public ApiResponse<InlineResponse2005> ListEarnFixedTermHistoryWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
+        /// <returns>ApiResponse of ListEarnFixedTermHistoryResponse</returns>
+        public ApiResponse<ListEarnFixedTermHistoryResponse> ListEarnFixedTermHistoryWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
         {
             // verify the required parameter 'type' is set
             if (type == null)
@@ -3649,7 +3649,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse2005>("/earn/fixed-term/user/history", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListEarnFixedTermHistoryResponse>("/earn/fixed-term/user/history", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3674,10 +3674,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="endAt">End Timestamp (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of InlineResponse2005</returns>
-        public async Task<InlineResponse2005> ListEarnFixedTermHistoryAsync (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
+        /// <returns>Task of ListEarnFixedTermHistoryResponse</returns>
+        public async Task<ListEarnFixedTermHistoryResponse> ListEarnFixedTermHistoryAsync (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2005> localVarResponse = await ListEarnFixedTermHistoryAsyncWithHttpInfo(type, page, limit, productId, orderId, asset, startAt, endAt, subBusiness, businessFilter);
+             Io.Gate.GateApi.Client.ApiResponse<ListEarnFixedTermHistoryResponse> localVarResponse = await ListEarnFixedTermHistoryAsyncWithHttpInfo(type, page, limit, productId, orderId, asset, startAt, endAt, subBusiness, businessFilter);
              return localVarResponse.Data;
 
         }
@@ -3696,8 +3696,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="endAt">End Timestamp (optional)</param>
         /// <param name="subBusiness">Sub-business (optional)</param>
         /// <param name="businessFilter">Business filter conditions, JSON array format, e.g., [{\&quot;business\&quot;:1, \&quot;sub_business\&quot;: 0}]. business: 1 for regular, 2 for VIP (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
-        public async Task<ApiResponse<InlineResponse2005>> ListEarnFixedTermHistoryAsyncWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
+        /// <returns>Task of ApiResponse (ListEarnFixedTermHistoryResponse)</returns>
+        public async Task<ApiResponse<ListEarnFixedTermHistoryResponse>> ListEarnFixedTermHistoryAsyncWithHttpInfo (string type, int page, int limit, int? productId = default(int?), string orderId = default(string), string asset = default(string), int? startAt = default(int?), int? endAt = default(int?), int? subBusiness = default(int?), string businessFilter = default(string))
         {
             // verify the required parameter 'type' is set
             if (type == null)
@@ -3757,7 +3757,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2005>("/earn/fixed-term/user/history", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListEarnFixedTermHistoryResponse>("/earn/fixed-term/user/history", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

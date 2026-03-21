@@ -41,8 +41,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderBy">Sort order. &#x60;latest&#x60; &#x3D; by latest claim time descending (default); &#x60;expired&#x60; &#x3D; by expiration time ascending (optional, default to latest)</param>
         /// <param name="type">Coupon type filter. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus) (optional)</param>
         /// <param name="isTaskCoupon">Task Coupon Filter. &#x60;0&#x60; &#x3D; Return only regular coupons; &#x60;1&#x60; &#x3D; Return only task coupons; Omit to return both (optional)</param>
-        /// <returns>InlineResponse2007</returns>
-        InlineResponse2007 ListUserCoupons (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?));
+        /// <returns>ListUserCouponsResponse</returns>
+        ListUserCouponsResponse ListUserCoupons (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?));
 
         /// <summary>
         /// Coupon Center list
@@ -58,8 +58,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderBy">Sort order. &#x60;latest&#x60; &#x3D; by latest claim time descending (default); &#x60;expired&#x60; &#x3D; by expiration time ascending (optional, default to latest)</param>
         /// <param name="type">Coupon type filter. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus) (optional)</param>
         /// <param name="isTaskCoupon">Task Coupon Filter. &#x60;0&#x60; &#x3D; Return only regular coupons; &#x60;1&#x60; &#x3D; Return only task coupons; Omit to return both (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2007</returns>
-        ApiResponse<InlineResponse2007> ListUserCouponsWithHttpInfo (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?));
+        /// <returns>ApiResponse of ListUserCouponsResponse</returns>
+        ApiResponse<ListUserCouponsResponse> ListUserCouponsWithHttpInfo (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?));
         /// <summary>
         /// Coupon Center details
         /// </summary>
@@ -70,8 +70,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="couponType">Coupon type enum. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus)</param>
         /// <param name="detailId">Coupon ID. **Regular coupon**: pass &#x60;details_id&#x60; from the list (primary key of each type&#39;s user coupon table); **Task coupon**: pass &#x60;id&#x60; from the list (primary key of the distribution record table)</param>
         /// <param name="isTaskCoupon">Coupon source type. &#x60;0&#x60; &#x3D; regular coupon (default); &#x60;1&#x60; &#x3D; task coupon. This parameter determines the query logic for &#x60;detail_id&#x60; (optional, default to 0)</param>
-        /// <returns>InlineResponse2008</returns>
-        InlineResponse2008 GetUserCouponDetail (string couponType, int detailId, int? isTaskCoupon = default(int?));
+        /// <returns>GetUserCouponDetailResponse</returns>
+        GetUserCouponDetailResponse GetUserCouponDetail (string couponType, int detailId, int? isTaskCoupon = default(int?));
 
         /// <summary>
         /// Coupon Center details
@@ -83,8 +83,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="couponType">Coupon type enum. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus)</param>
         /// <param name="detailId">Coupon ID. **Regular coupon**: pass &#x60;details_id&#x60; from the list (primary key of each type&#39;s user coupon table); **Task coupon**: pass &#x60;id&#x60; from the list (primary key of the distribution record table)</param>
         /// <param name="isTaskCoupon">Coupon source type. &#x60;0&#x60; &#x3D; regular coupon (default); &#x60;1&#x60; &#x3D; task coupon. This parameter determines the query logic for &#x60;detail_id&#x60; (optional, default to 0)</param>
-        /// <returns>ApiResponse of InlineResponse2008</returns>
-        ApiResponse<InlineResponse2008> GetUserCouponDetailWithHttpInfo (string couponType, int detailId, int? isTaskCoupon = default(int?));
+        /// <returns>ApiResponse of GetUserCouponDetailResponse</returns>
+        ApiResponse<GetUserCouponDetailResponse> GetUserCouponDetailWithHttpInfo (string couponType, int detailId, int? isTaskCoupon = default(int?));
         #endregion Synchronous Operations
     }
 
@@ -108,8 +108,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderBy">Sort order. &#x60;latest&#x60; &#x3D; by latest claim time descending (default); &#x60;expired&#x60; &#x3D; by expiration time ascending (optional, default to latest)</param>
         /// <param name="type">Coupon type filter. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus) (optional)</param>
         /// <param name="isTaskCoupon">Task Coupon Filter. &#x60;0&#x60; &#x3D; Return only regular coupons; &#x60;1&#x60; &#x3D; Return only task coupons; Omit to return both (optional)</param>
-        /// <returns>Task of InlineResponse2007</returns>
-        Task<InlineResponse2007> ListUserCouponsAsync (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?));
+        /// <returns>Task of ListUserCouponsResponse</returns>
+        Task<ListUserCouponsResponse> ListUserCouponsAsync (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?));
 
         /// <summary>
         /// Coupon Center list
@@ -125,8 +125,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderBy">Sort order. &#x60;latest&#x60; &#x3D; by latest claim time descending (default); &#x60;expired&#x60; &#x3D; by expiration time ascending (optional, default to latest)</param>
         /// <param name="type">Coupon type filter. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus) (optional)</param>
         /// <param name="isTaskCoupon">Task Coupon Filter. &#x60;0&#x60; &#x3D; Return only regular coupons; &#x60;1&#x60; &#x3D; Return only task coupons; Omit to return both (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        Task<ApiResponse<InlineResponse2007>> ListUserCouponsAsyncWithHttpInfo (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?));
+        /// <returns>Task of ApiResponse (ListUserCouponsResponse)</returns>
+        Task<ApiResponse<ListUserCouponsResponse>> ListUserCouponsAsyncWithHttpInfo (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?));
         /// <summary>
         /// Coupon Center details
         /// </summary>
@@ -137,8 +137,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="couponType">Coupon type enum. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus)</param>
         /// <param name="detailId">Coupon ID. **Regular coupon**: pass &#x60;details_id&#x60; from the list (primary key of each type&#39;s user coupon table); **Task coupon**: pass &#x60;id&#x60; from the list (primary key of the distribution record table)</param>
         /// <param name="isTaskCoupon">Coupon source type. &#x60;0&#x60; &#x3D; regular coupon (default); &#x60;1&#x60; &#x3D; task coupon. This parameter determines the query logic for &#x60;detail_id&#x60; (optional, default to 0)</param>
-        /// <returns>Task of InlineResponse2008</returns>
-        Task<InlineResponse2008> GetUserCouponDetailAsync (string couponType, int detailId, int? isTaskCoupon = default(int?));
+        /// <returns>Task of GetUserCouponDetailResponse</returns>
+        Task<GetUserCouponDetailResponse> GetUserCouponDetailAsync (string couponType, int detailId, int? isTaskCoupon = default(int?));
 
         /// <summary>
         /// Coupon Center details
@@ -150,8 +150,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="couponType">Coupon type enum. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus)</param>
         /// <param name="detailId">Coupon ID. **Regular coupon**: pass &#x60;details_id&#x60; from the list (primary key of each type&#39;s user coupon table); **Task coupon**: pass &#x60;id&#x60; from the list (primary key of the distribution record table)</param>
         /// <param name="isTaskCoupon">Coupon source type. &#x60;0&#x60; &#x3D; regular coupon (default); &#x60;1&#x60; &#x3D; task coupon. This parameter determines the query logic for &#x60;detail_id&#x60; (optional, default to 0)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        Task<ApiResponse<InlineResponse2008>> GetUserCouponDetailAsyncWithHttpInfo (string couponType, int detailId, int? isTaskCoupon = default(int?));
+        /// <returns>Task of ApiResponse (GetUserCouponDetailResponse)</returns>
+        Task<ApiResponse<GetUserCouponDetailResponse>> GetUserCouponDetailAsyncWithHttpInfo (string couponType, int detailId, int? isTaskCoupon = default(int?));
         #endregion Asynchronous Operations
     }
 
@@ -283,10 +283,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderBy">Sort order. &#x60;latest&#x60; &#x3D; by latest claim time descending (default); &#x60;expired&#x60; &#x3D; by expiration time ascending (optional, default to latest)</param>
         /// <param name="type">Coupon type filter. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus) (optional)</param>
         /// <param name="isTaskCoupon">Task Coupon Filter. &#x60;0&#x60; &#x3D; Return only regular coupons; &#x60;1&#x60; &#x3D; Return only task coupons; Omit to return both (optional)</param>
-        /// <returns>InlineResponse2007</returns>
-        public InlineResponse2007 ListUserCoupons (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?))
+        /// <returns>ListUserCouponsResponse</returns>
+        public ListUserCouponsResponse ListUserCoupons (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?))
         {
-             ApiResponse<InlineResponse2007> localVarResponse = ListUserCouponsWithHttpInfo(expired, limit, lastId, expireTime, orderBy, type, isTaskCoupon);
+             ApiResponse<ListUserCouponsResponse> localVarResponse = ListUserCouponsWithHttpInfo(expired, limit, lastId, expireTime, orderBy, type, isTaskCoupon);
              return localVarResponse.Data;
         }
 
@@ -301,8 +301,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderBy">Sort order. &#x60;latest&#x60; &#x3D; by latest claim time descending (default); &#x60;expired&#x60; &#x3D; by expiration time ascending (optional, default to latest)</param>
         /// <param name="type">Coupon type filter. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus) (optional)</param>
         /// <param name="isTaskCoupon">Task Coupon Filter. &#x60;0&#x60; &#x3D; Return only regular coupons; &#x60;1&#x60; &#x3D; Return only task coupons; Omit to return both (optional)</param>
-        /// <returns>ApiResponse of InlineResponse2007</returns>
-        public ApiResponse<InlineResponse2007> ListUserCouponsWithHttpInfo (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?))
+        /// <returns>ApiResponse of ListUserCouponsResponse</returns>
+        public ApiResponse<ListUserCouponsResponse> ListUserCouponsWithHttpInfo (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -353,7 +353,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse2007>("/coupon/user-coupon-list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListUserCouponsResponse>("/coupon/user-coupon-list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -375,10 +375,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderBy">Sort order. &#x60;latest&#x60; &#x3D; by latest claim time descending (default); &#x60;expired&#x60; &#x3D; by expiration time ascending (optional, default to latest)</param>
         /// <param name="type">Coupon type filter. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus) (optional)</param>
         /// <param name="isTaskCoupon">Task Coupon Filter. &#x60;0&#x60; &#x3D; Return only regular coupons; &#x60;1&#x60; &#x3D; Return only task coupons; Omit to return both (optional)</param>
-        /// <returns>Task of InlineResponse2007</returns>
-        public async Task<InlineResponse2007> ListUserCouponsAsync (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?))
+        /// <returns>Task of ListUserCouponsResponse</returns>
+        public async Task<ListUserCouponsResponse> ListUserCouponsAsync (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2007> localVarResponse = await ListUserCouponsAsyncWithHttpInfo(expired, limit, lastId, expireTime, orderBy, type, isTaskCoupon);
+             Io.Gate.GateApi.Client.ApiResponse<ListUserCouponsResponse> localVarResponse = await ListUserCouponsAsyncWithHttpInfo(expired, limit, lastId, expireTime, orderBy, type, isTaskCoupon);
              return localVarResponse.Data;
 
         }
@@ -394,8 +394,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderBy">Sort order. &#x60;latest&#x60; &#x3D; by latest claim time descending (default); &#x60;expired&#x60; &#x3D; by expiration time ascending (optional, default to latest)</param>
         /// <param name="type">Coupon type filter. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus) (optional)</param>
         /// <param name="isTaskCoupon">Task Coupon Filter. &#x60;0&#x60; &#x3D; Return only regular coupons; &#x60;1&#x60; &#x3D; Return only task coupons; Omit to return both (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        public async Task<ApiResponse<InlineResponse2007>> ListUserCouponsAsyncWithHttpInfo (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?))
+        /// <returns>Task of ApiResponse (ListUserCouponsResponse)</returns>
+        public async Task<ApiResponse<ListUserCouponsResponse>> ListUserCouponsAsyncWithHttpInfo (int? expired = default(int?), int? limit = default(int?), int? lastId = default(int?), int? expireTime = default(int?), string orderBy = default(string), string type = default(string), int? isTaskCoupon = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -448,7 +448,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2007>("/coupon/user-coupon-list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListUserCouponsResponse>("/coupon/user-coupon-list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -466,10 +466,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="couponType">Coupon type enum. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus)</param>
         /// <param name="detailId">Coupon ID. **Regular coupon**: pass &#x60;details_id&#x60; from the list (primary key of each type&#39;s user coupon table); **Task coupon**: pass &#x60;id&#x60; from the list (primary key of the distribution record table)</param>
         /// <param name="isTaskCoupon">Coupon source type. &#x60;0&#x60; &#x3D; regular coupon (default); &#x60;1&#x60; &#x3D; task coupon. This parameter determines the query logic for &#x60;detail_id&#x60; (optional, default to 0)</param>
-        /// <returns>InlineResponse2008</returns>
-        public InlineResponse2008 GetUserCouponDetail (string couponType, int detailId, int? isTaskCoupon = default(int?))
+        /// <returns>GetUserCouponDetailResponse</returns>
+        public GetUserCouponDetailResponse GetUserCouponDetail (string couponType, int detailId, int? isTaskCoupon = default(int?))
         {
-             ApiResponse<InlineResponse2008> localVarResponse = GetUserCouponDetailWithHttpInfo(couponType, detailId, isTaskCoupon);
+             ApiResponse<GetUserCouponDetailResponse> localVarResponse = GetUserCouponDetailWithHttpInfo(couponType, detailId, isTaskCoupon);
              return localVarResponse.Data;
         }
 
@@ -480,8 +480,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="couponType">Coupon type enum. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus)</param>
         /// <param name="detailId">Coupon ID. **Regular coupon**: pass &#x60;details_id&#x60; from the list (primary key of each type&#39;s user coupon table); **Task coupon**: pass &#x60;id&#x60; from the list (primary key of the distribution record table)</param>
         /// <param name="isTaskCoupon">Coupon source type. &#x60;0&#x60; &#x3D; regular coupon (default); &#x60;1&#x60; &#x3D; task coupon. This parameter determines the query logic for &#x60;detail_id&#x60; (optional, default to 0)</param>
-        /// <returns>ApiResponse of InlineResponse2008</returns>
-        public ApiResponse<InlineResponse2008> GetUserCouponDetailWithHttpInfo (string couponType, int detailId, int? isTaskCoupon = default(int?))
+        /// <returns>ApiResponse of GetUserCouponDetailResponse</returns>
+        public ApiResponse<GetUserCouponDetailResponse> GetUserCouponDetailWithHttpInfo (string couponType, int detailId, int? isTaskCoupon = default(int?))
         {
             // verify the required parameter 'couponType' is set
             if (couponType == null)
@@ -514,7 +514,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse2008>("/coupon/user-coupon-detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetUserCouponDetailResponse>("/coupon/user-coupon-detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -532,10 +532,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="couponType">Coupon type enum. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus)</param>
         /// <param name="detailId">Coupon ID. **Regular coupon**: pass &#x60;details_id&#x60; from the list (primary key of each type&#39;s user coupon table); **Task coupon**: pass &#x60;id&#x60; from the list (primary key of the distribution record table)</param>
         /// <param name="isTaskCoupon">Coupon source type. &#x60;0&#x60; &#x3D; regular coupon (default); &#x60;1&#x60; &#x3D; task coupon. This parameter determines the query logic for &#x60;detail_id&#x60; (optional, default to 0)</param>
-        /// <returns>Task of InlineResponse2008</returns>
-        public async Task<InlineResponse2008> GetUserCouponDetailAsync (string couponType, int detailId, int? isTaskCoupon = default(int?))
+        /// <returns>Task of GetUserCouponDetailResponse</returns>
+        public async Task<GetUserCouponDetailResponse> GetUserCouponDetailAsync (string couponType, int detailId, int? isTaskCoupon = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2008> localVarResponse = await GetUserCouponDetailAsyncWithHttpInfo(couponType, detailId, isTaskCoupon);
+             Io.Gate.GateApi.Client.ApiResponse<GetUserCouponDetailResponse> localVarResponse = await GetUserCouponDetailAsyncWithHttpInfo(couponType, detailId, isTaskCoupon);
              return localVarResponse.Data;
 
         }
@@ -547,8 +547,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="couponType">Coupon type enum. If not specified, all supported types are returned. Available values: &#x60;position_voucher&#x60; (position voucher), &#x60;tradfi_position_voucher&#x60; (TradFi position voucher), &#x60;contract_bonus&#x60; (futures bonus), &#x60;contract_bonus_new&#x60; (futures trial coupon), &#x60;commission_rebate&#x60; (commission rebate coupon), &#x60;hold_bonus&#x60; (earn trial bonus), &#x60;point&#x60; (point card), &#x60;financial_rate&#x60; (interest rate boost coupon), &#x60;robot_bonus&#x60; (trading bot bonus), &#x60;loss_protection_copier&#x60; (copy trading loss protection), &#x60;vip_card&#x60; (VIP trial card), &#x60;interest_voucher&#x60; (margin interest discount coupon), &#x60;p2p&#x60; (P2P trading deduction coupon), &#x60;cash&#x60; (cash coupon), &#x60;crypto_loan_interest&#x60; (crypto loan interest discount coupon), &#x60;copy_trading&#x60; (copy trading bonus), &#x60;alpha_voucher&#x60; (Alpha cash coupon), &#x60;etf_voucher&#x60; (ETF trial bonus)</param>
         /// <param name="detailId">Coupon ID. **Regular coupon**: pass &#x60;details_id&#x60; from the list (primary key of each type&#39;s user coupon table); **Task coupon**: pass &#x60;id&#x60; from the list (primary key of the distribution record table)</param>
         /// <param name="isTaskCoupon">Coupon source type. &#x60;0&#x60; &#x3D; regular coupon (default); &#x60;1&#x60; &#x3D; task coupon. This parameter determines the query logic for &#x60;detail_id&#x60; (optional, default to 0)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        public async Task<ApiResponse<InlineResponse2008>> GetUserCouponDetailAsyncWithHttpInfo (string couponType, int detailId, int? isTaskCoupon = default(int?))
+        /// <returns>Task of ApiResponse (GetUserCouponDetailResponse)</returns>
+        public async Task<ApiResponse<GetUserCouponDetailResponse>> GetUserCouponDetailAsyncWithHttpInfo (string couponType, int detailId, int? isTaskCoupon = default(int?))
         {
             // verify the required parameter 'couponType' is set
             if (couponType == null)
@@ -583,7 +583,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2008>("/coupon/user-coupon-detail", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetUserCouponDetailResponse>("/coupon/user-coupon-detail", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

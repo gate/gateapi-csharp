@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="listusercoupons"></a>
 # **ListUserCoupons**
-> InlineResponse2007 ListUserCoupons (int? expired = null, int? limit = null, int? lastId = null, int? expireTime = null, string orderBy = null, string type = null, int? isTaskCoupon = null)
+> ListUserCouponsResponse ListUserCoupons (int? expired = null, int? limit = null, int? lastId = null, int? expireTime = null, string orderBy = null, string type = null, int? isTaskCoupon = null)
 
 Coupon Center list
 
@@ -46,7 +46,7 @@ namespace Example
             try
             {
                 // Coupon Center list
-                InlineResponse2007 result = apiInstance.ListUserCoupons(expired, limit, lastId, expireTime, orderBy, type, isTaskCoupon);
+                ListUserCouponsResponse result = apiInstance.ListUserCoupons(expired, limit, lastId, expireTime, orderBy, type, isTaskCoupon);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**ListUserCouponsResponse**](ListUserCouponsResponse.md)
 
 ### Authorization
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 <a name="getusercoupondetail"></a>
 # **GetUserCouponDetail**
-> InlineResponse2008 GetUserCouponDetail (string couponType, int detailId, int? isTaskCoupon = null)
+> GetUserCouponDetailResponse GetUserCouponDetail (string couponType, int detailId, int? isTaskCoupon = null)
 
 Coupon Center details
 
@@ -127,7 +127,7 @@ namespace Example
             try
             {
                 // Coupon Center details
-                InlineResponse2008 result = apiInstance.GetUserCouponDetail(couponType, detailId, isTaskCoupon);
+                GetUserCouponDetailResponse result = apiInstance.GetUserCouponDetail(couponType, detailId, isTaskCoupon);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**GetUserCouponDetailResponse**](GetUserCouponDetailResponse.md)
 
 ### Authorization
 

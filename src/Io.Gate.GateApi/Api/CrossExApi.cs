@@ -447,8 +447,8 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;InlineResponse2006&gt;</returns>
-        List<InlineResponse2006> GetCrossexFee ();
+        /// <returns>List&lt;InlineResponse200&gt;</returns>
+        List<InlineResponse200> GetCrossexFee ();
 
         /// <summary>
         /// Query User Fee Rates
@@ -457,8 +457,8 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;InlineResponse2006&gt;</returns>
-        ApiResponse<List<InlineResponse2006>> GetCrossexFeeWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;InlineResponse200&gt;</returns>
+        ApiResponse<List<InlineResponse200>> GetCrossexFeeWithHttpInfo ();
         /// <summary>
         /// Query Contract Positions
         /// </summary>
@@ -1179,8 +1179,8 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;InlineResponse2006&gt;</returns>
-        Task<List<InlineResponse2006>> GetCrossexFeeAsync ();
+        /// <returns>Task of List&lt;InlineResponse200&gt;</returns>
+        Task<List<InlineResponse200>> GetCrossexFeeAsync ();
 
         /// <summary>
         /// Query User Fee Rates
@@ -1189,8 +1189,8 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse2006&gt;)</returns>
-        Task<ApiResponse<List<InlineResponse2006>>> GetCrossexFeeAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse200&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse200>>> GetCrossexFeeAsyncWithHttpInfo ();
         /// <summary>
         /// Query Contract Positions
         /// </summary>
@@ -3835,10 +3835,10 @@ namespace Io.Gate.GateApi.Api
         /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;InlineResponse2006&gt;</returns>
-        public List<InlineResponse2006> GetCrossexFee ()
+        /// <returns>List&lt;InlineResponse200&gt;</returns>
+        public List<InlineResponse200> GetCrossexFee ()
         {
-             ApiResponse<List<InlineResponse2006>> localVarResponse = GetCrossexFeeWithHttpInfo();
+             ApiResponse<List<InlineResponse200>> localVarResponse = GetCrossexFeeWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -3846,8 +3846,8 @@ namespace Io.Gate.GateApi.Api
         /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;InlineResponse2006&gt;</returns>
-        public ApiResponse<List<InlineResponse2006>> GetCrossexFeeWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;InlineResponse200&gt;</returns>
+        public ApiResponse<List<InlineResponse200>> GetCrossexFeeWithHttpInfo ()
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3870,7 +3870,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<InlineResponse2006>>("/crossex/fee", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<InlineResponse200>>("/crossex/fee", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3885,10 +3885,10 @@ namespace Io.Gate.GateApi.Api
         /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;InlineResponse2006&gt;</returns>
-        public async Task<List<InlineResponse2006>> GetCrossexFeeAsync ()
+        /// <returns>Task of List&lt;InlineResponse200&gt;</returns>
+        public async Task<List<InlineResponse200>> GetCrossexFeeAsync ()
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse2006>> localVarResponse = await GetCrossexFeeAsyncWithHttpInfo();
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse200>> localVarResponse = await GetCrossexFeeAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -3897,8 +3897,8 @@ namespace Io.Gate.GateApi.Api
         /// Query User Fee Rates Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;InlineResponse2006&gt;)</returns>
-        public async Task<ApiResponse<List<InlineResponse2006>>> GetCrossexFeeAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse200&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse200>>> GetCrossexFeeAsyncWithHttpInfo ()
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3923,7 +3923,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse2006>>("/crossex/fee", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse200>>("/crossex/fee", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

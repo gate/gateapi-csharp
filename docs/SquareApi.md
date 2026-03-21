@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="listsquareaisearch"></a>
 # **ListSquareAiSearch**
-> InlineResponse2009 ListSquareAiSearch (string keyword = null, string currency = null, int? timeRange = null, int? sort = null, int? limit = null, int? page = null)
+> ListSquareAiSearchResponse ListSquareAiSearch (string keyword = null, string currency = null, int? timeRange = null, int? sort = null, int? limit = null, int? page = null)
 
 AI MCP Dynamic Search
 
@@ -43,7 +43,7 @@ namespace Example
             try
             {
                 // AI MCP Dynamic Search
-                InlineResponse2009 result = apiInstance.ListSquareAiSearch(keyword, currency, timeRange, sort, limit, page);
+                ListSquareAiSearchResponse result = apiInstance.ListSquareAiSearch(keyword, currency, timeRange, sort, limit, page);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**ListSquareAiSearchResponse**](ListSquareAiSearchResponse.md)
 
 ### Authorization
 
@@ -92,7 +92,7 @@ No authorization required
 
 <a name="listlivereplay"></a>
 # **ListLiveReplay**
-> InlineResponse20010 ListLiveReplay (string tag = null, string coin = null, string sort = null, int? limit = null)
+> ListLiveReplayResponse ListLiveReplay (string tag = null, string coin = null, string sort = null, int? limit = null)
 
 Gate AI Assistant live stream data retrieval
 
@@ -123,7 +123,7 @@ namespace Example
             try
             {
                 // Gate AI Assistant live stream data retrieval
-                InlineResponse20010 result = apiInstance.ListLiveReplay(tag, coin, sort, limit);
+                ListLiveReplayResponse result = apiInstance.ListLiveReplay(tag, coin, sort, limit);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**ListLiveReplayResponse**](ListLiveReplayResponse.md)
 
 ### Authorization
 

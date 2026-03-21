@@ -741,8 +741,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotPriceTriggeredOrder"></param>
-        /// <returns>TriggerOrderResponse1</returns>
-        TriggerOrderResponse1 CreateSpotPriceTriggeredOrder (SpotPriceTriggeredOrder spotPriceTriggeredOrder);
+        /// <returns>TriggerOrderResponse</returns>
+        TriggerOrderResponse CreateSpotPriceTriggeredOrder (SpotPriceTriggeredOrder spotPriceTriggeredOrder);
 
         /// <summary>
         /// Create price-triggered order
@@ -752,8 +752,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotPriceTriggeredOrder"></param>
-        /// <returns>ApiResponse of TriggerOrderResponse1</returns>
-        ApiResponse<TriggerOrderResponse1> CreateSpotPriceTriggeredOrderWithHttpInfo (SpotPriceTriggeredOrder spotPriceTriggeredOrder);
+        /// <returns>ApiResponse of TriggerOrderResponse</returns>
+        ApiResponse<TriggerOrderResponse> CreateSpotPriceTriggeredOrderWithHttpInfo (SpotPriceTriggeredOrder spotPriceTriggeredOrder);
         /// <summary>
         /// Cancel all auto orders
         /// </summary>
@@ -1542,8 +1542,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotPriceTriggeredOrder"></param>
-        /// <returns>Task of TriggerOrderResponse1</returns>
-        Task<TriggerOrderResponse1> CreateSpotPriceTriggeredOrderAsync (SpotPriceTriggeredOrder spotPriceTriggeredOrder);
+        /// <returns>Task of TriggerOrderResponse</returns>
+        Task<TriggerOrderResponse> CreateSpotPriceTriggeredOrderAsync (SpotPriceTriggeredOrder spotPriceTriggeredOrder);
 
         /// <summary>
         /// Create price-triggered order
@@ -1553,8 +1553,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotPriceTriggeredOrder"></param>
-        /// <returns>Task of ApiResponse (TriggerOrderResponse1)</returns>
-        Task<ApiResponse<TriggerOrderResponse1>> CreateSpotPriceTriggeredOrderAsyncWithHttpInfo (SpotPriceTriggeredOrder spotPriceTriggeredOrder);
+        /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
+        Task<ApiResponse<TriggerOrderResponse>> CreateSpotPriceTriggeredOrderAsyncWithHttpInfo (SpotPriceTriggeredOrder spotPriceTriggeredOrder);
         /// <summary>
         /// Cancel all auto orders
         /// </summary>
@@ -5681,10 +5681,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotPriceTriggeredOrder"></param>
-        /// <returns>TriggerOrderResponse1</returns>
-        public TriggerOrderResponse1 CreateSpotPriceTriggeredOrder (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
+        /// <returns>TriggerOrderResponse</returns>
+        public TriggerOrderResponse CreateSpotPriceTriggeredOrder (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
         {
-             ApiResponse<TriggerOrderResponse1> localVarResponse = CreateSpotPriceTriggeredOrderWithHttpInfo(spotPriceTriggeredOrder);
+             ApiResponse<TriggerOrderResponse> localVarResponse = CreateSpotPriceTriggeredOrderWithHttpInfo(spotPriceTriggeredOrder);
              return localVarResponse.Data;
         }
 
@@ -5693,8 +5693,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotPriceTriggeredOrder"></param>
-        /// <returns>ApiResponse of TriggerOrderResponse1</returns>
-        public ApiResponse<TriggerOrderResponse1> CreateSpotPriceTriggeredOrderWithHttpInfo (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
+        /// <returns>ApiResponse of TriggerOrderResponse</returns>
+        public ApiResponse<TriggerOrderResponse> CreateSpotPriceTriggeredOrderWithHttpInfo (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
         {
             // verify the required parameter 'spotPriceTriggeredOrder' is set
             if (spotPriceTriggeredOrder == null)
@@ -5723,7 +5723,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TriggerOrderResponse1>("/spot/price_orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TriggerOrderResponse>("/spot/price_orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -5739,10 +5739,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotPriceTriggeredOrder"></param>
-        /// <returns>Task of TriggerOrderResponse1</returns>
-        public async Task<TriggerOrderResponse1> CreateSpotPriceTriggeredOrderAsync (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
+        /// <returns>Task of TriggerOrderResponse</returns>
+        public async Task<TriggerOrderResponse> CreateSpotPriceTriggeredOrderAsync (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
         {
-             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse1> localVarResponse = await CreateSpotPriceTriggeredOrderAsyncWithHttpInfo(spotPriceTriggeredOrder);
+             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse> localVarResponse = await CreateSpotPriceTriggeredOrderAsyncWithHttpInfo(spotPriceTriggeredOrder);
              return localVarResponse.Data;
 
         }
@@ -5752,8 +5752,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotPriceTriggeredOrder"></param>
-        /// <returns>Task of ApiResponse (TriggerOrderResponse1)</returns>
-        public async Task<ApiResponse<TriggerOrderResponse1>> CreateSpotPriceTriggeredOrderAsyncWithHttpInfo (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
+        /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
+        public async Task<ApiResponse<TriggerOrderResponse>> CreateSpotPriceTriggeredOrderAsyncWithHttpInfo (SpotPriceTriggeredOrder spotPriceTriggeredOrder)
         {
             // verify the required parameter 'spotPriceTriggeredOrder' is set
             if (spotPriceTriggeredOrder == null)
@@ -5784,7 +5784,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TriggerOrderResponse1>("/spot/price_orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TriggerOrderResponse>("/spot/price_orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

@@ -40,8 +40,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sort">Sort order: 0 &#x3D; most popular (default), 1 &#x3D; latest (optional, default to 0)</param>
         /// <param name="limit">Return count, 1-50, default 10 (optional, default to 10)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>InlineResponse2009</returns>
-        InlineResponse2009 ListSquareAiSearch (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?));
+        /// <returns>ListSquareAiSearchResponse</returns>
+        ListSquareAiSearchResponse ListSquareAiSearch (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?));
 
         /// <summary>
         /// AI MCP Dynamic Search
@@ -56,8 +56,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sort">Sort order: 0 &#x3D; most popular (default), 1 &#x3D; latest (optional, default to 0)</param>
         /// <param name="limit">Return count, 1-50, default 10 (optional, default to 10)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>ApiResponse of InlineResponse2009</returns>
-        ApiResponse<InlineResponse2009> ListSquareAiSearchWithHttpInfo (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?));
+        /// <returns>ApiResponse of ListSquareAiSearchResponse</returns>
+        ApiResponse<ListSquareAiSearchResponse> ListSquareAiSearchWithHttpInfo (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?));
         /// <summary>
         /// Gate AI Assistant live stream data retrieval
         /// </summary>
@@ -69,8 +69,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Filter by currency name (e.g., BTC, ETH) (optional)</param>
         /// <param name="sort">Sort order: hot &#x3D; most popular (default), new &#x3D; latest (optional, default to hot)</param>
         /// <param name="limit">Return count, 1-10, default 3 (optional, default to 3)</param>
-        /// <returns>InlineResponse20010</returns>
-        InlineResponse20010 ListLiveReplay (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?));
+        /// <returns>ListLiveReplayResponse</returns>
+        ListLiveReplayResponse ListLiveReplay (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
         /// Gate AI Assistant live stream data retrieval
@@ -83,8 +83,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Filter by currency name (e.g., BTC, ETH) (optional)</param>
         /// <param name="sort">Sort order: hot &#x3D; most popular (default), new &#x3D; latest (optional, default to hot)</param>
         /// <param name="limit">Return count, 1-10, default 3 (optional, default to 3)</param>
-        /// <returns>ApiResponse of InlineResponse20010</returns>
-        ApiResponse<InlineResponse20010> ListLiveReplayWithHttpInfo (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?));
+        /// <returns>ApiResponse of ListLiveReplayResponse</returns>
+        ApiResponse<ListLiveReplayResponse> ListLiveReplayWithHttpInfo (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?));
         #endregion Synchronous Operations
     }
 
@@ -107,8 +107,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sort">Sort order: 0 &#x3D; most popular (default), 1 &#x3D; latest (optional, default to 0)</param>
         /// <param name="limit">Return count, 1-50, default 10 (optional, default to 10)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of InlineResponse2009</returns>
-        Task<InlineResponse2009> ListSquareAiSearchAsync (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?));
+        /// <returns>Task of ListSquareAiSearchResponse</returns>
+        Task<ListSquareAiSearchResponse> ListSquareAiSearchAsync (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?));
 
         /// <summary>
         /// AI MCP Dynamic Search
@@ -123,8 +123,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sort">Sort order: 0 &#x3D; most popular (default), 1 &#x3D; latest (optional, default to 0)</param>
         /// <param name="limit">Return count, 1-50, default 10 (optional, default to 10)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
-        Task<ApiResponse<InlineResponse2009>> ListSquareAiSearchAsyncWithHttpInfo (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?));
+        /// <returns>Task of ApiResponse (ListSquareAiSearchResponse)</returns>
+        Task<ApiResponse<ListSquareAiSearchResponse>> ListSquareAiSearchAsyncWithHttpInfo (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?));
         /// <summary>
         /// Gate AI Assistant live stream data retrieval
         /// </summary>
@@ -136,8 +136,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Filter by currency name (e.g., BTC, ETH) (optional)</param>
         /// <param name="sort">Sort order: hot &#x3D; most popular (default), new &#x3D; latest (optional, default to hot)</param>
         /// <param name="limit">Return count, 1-10, default 3 (optional, default to 3)</param>
-        /// <returns>Task of InlineResponse20010</returns>
-        Task<InlineResponse20010> ListLiveReplayAsync (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?));
+        /// <returns>Task of ListLiveReplayResponse</returns>
+        Task<ListLiveReplayResponse> ListLiveReplayAsync (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
         /// Gate AI Assistant live stream data retrieval
@@ -150,8 +150,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Filter by currency name (e.g., BTC, ETH) (optional)</param>
         /// <param name="sort">Sort order: hot &#x3D; most popular (default), new &#x3D; latest (optional, default to hot)</param>
         /// <param name="limit">Return count, 1-10, default 3 (optional, default to 3)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-        Task<ApiResponse<InlineResponse20010>> ListLiveReplayAsyncWithHttpInfo (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?));
+        /// <returns>Task of ApiResponse (ListLiveReplayResponse)</returns>
+        Task<ApiResponse<ListLiveReplayResponse>> ListLiveReplayAsyncWithHttpInfo (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?));
         #endregion Asynchronous Operations
     }
 
@@ -282,10 +282,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sort">Sort order: 0 &#x3D; most popular (default), 1 &#x3D; latest (optional, default to 0)</param>
         /// <param name="limit">Return count, 1-50, default 10 (optional, default to 10)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>InlineResponse2009</returns>
-        public InlineResponse2009 ListSquareAiSearch (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?))
+        /// <returns>ListSquareAiSearchResponse</returns>
+        public ListSquareAiSearchResponse ListSquareAiSearch (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?))
         {
-             ApiResponse<InlineResponse2009> localVarResponse = ListSquareAiSearchWithHttpInfo(keyword, currency, timeRange, sort, limit, page);
+             ApiResponse<ListSquareAiSearchResponse> localVarResponse = ListSquareAiSearchWithHttpInfo(keyword, currency, timeRange, sort, limit, page);
              return localVarResponse.Data;
         }
 
@@ -299,8 +299,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sort">Sort order: 0 &#x3D; most popular (default), 1 &#x3D; latest (optional, default to 0)</param>
         /// <param name="limit">Return count, 1-50, default 10 (optional, default to 10)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>ApiResponse of InlineResponse2009</returns>
-        public ApiResponse<InlineResponse2009> ListSquareAiSearchWithHttpInfo (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?))
+        /// <returns>ApiResponse of ListSquareAiSearchResponse</returns>
+        public ApiResponse<ListSquareAiSearchResponse> ListSquareAiSearchWithHttpInfo (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -345,7 +345,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse2009>("/social/message/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListSquareAiSearchResponse>("/social/message/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -366,10 +366,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sort">Sort order: 0 &#x3D; most popular (default), 1 &#x3D; latest (optional, default to 0)</param>
         /// <param name="limit">Return count, 1-50, default 10 (optional, default to 10)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of InlineResponse2009</returns>
-        public async Task<InlineResponse2009> ListSquareAiSearchAsync (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?))
+        /// <returns>Task of ListSquareAiSearchResponse</returns>
+        public async Task<ListSquareAiSearchResponse> ListSquareAiSearchAsync (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse2009> localVarResponse = await ListSquareAiSearchAsyncWithHttpInfo(keyword, currency, timeRange, sort, limit, page);
+             Io.Gate.GateApi.Client.ApiResponse<ListSquareAiSearchResponse> localVarResponse = await ListSquareAiSearchAsyncWithHttpInfo(keyword, currency, timeRange, sort, limit, page);
              return localVarResponse.Data;
 
         }
@@ -384,8 +384,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sort">Sort order: 0 &#x3D; most popular (default), 1 &#x3D; latest (optional, default to 0)</param>
         /// <param name="limit">Return count, 1-50, default 10 (optional, default to 10)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
-        /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
-        public async Task<ApiResponse<InlineResponse2009>> ListSquareAiSearchAsyncWithHttpInfo (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?))
+        /// <returns>Task of ApiResponse (ListSquareAiSearchResponse)</returns>
+        public async Task<ApiResponse<ListSquareAiSearchResponse>> ListSquareAiSearchAsyncWithHttpInfo (string keyword = default(string), string currency = default(string), int? timeRange = default(int?), int? sort = default(int?), int? limit = default(int?), int? page = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -432,7 +432,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2009>("/social/message/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListSquareAiSearchResponse>("/social/message/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -451,10 +451,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Filter by currency name (e.g., BTC, ETH) (optional)</param>
         /// <param name="sort">Sort order: hot &#x3D; most popular (default), new &#x3D; latest (optional, default to hot)</param>
         /// <param name="limit">Return count, 1-10, default 3 (optional, default to 3)</param>
-        /// <returns>InlineResponse20010</returns>
-        public InlineResponse20010 ListLiveReplay (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?))
+        /// <returns>ListLiveReplayResponse</returns>
+        public ListLiveReplayResponse ListLiveReplay (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?))
         {
-             ApiResponse<InlineResponse20010> localVarResponse = ListLiveReplayWithHttpInfo(tag, coin, sort, limit);
+             ApiResponse<ListLiveReplayResponse> localVarResponse = ListLiveReplayWithHttpInfo(tag, coin, sort, limit);
              return localVarResponse.Data;
         }
 
@@ -466,8 +466,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Filter by currency name (e.g., BTC, ETH) (optional)</param>
         /// <param name="sort">Sort order: hot &#x3D; most popular (default), new &#x3D; latest (optional, default to hot)</param>
         /// <param name="limit">Return count, 1-10, default 3 (optional, default to 3)</param>
-        /// <returns>ApiResponse of InlineResponse20010</returns>
-        public ApiResponse<InlineResponse20010> ListLiveReplayWithHttpInfo (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?))
+        /// <returns>ApiResponse of ListLiveReplayResponse</returns>
+        public ApiResponse<ListLiveReplayResponse> ListLiveReplayWithHttpInfo (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -504,7 +504,7 @@ namespace Io.Gate.GateApi.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<InlineResponse20010>("/social/live/tag_coin_live_replay", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListLiveReplayResponse>("/social/live/tag_coin_live_replay", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -523,10 +523,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Filter by currency name (e.g., BTC, ETH) (optional)</param>
         /// <param name="sort">Sort order: hot &#x3D; most popular (default), new &#x3D; latest (optional, default to hot)</param>
         /// <param name="limit">Return count, 1-10, default 3 (optional, default to 3)</param>
-        /// <returns>Task of InlineResponse20010</returns>
-        public async Task<InlineResponse20010> ListLiveReplayAsync (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?))
+        /// <returns>Task of ListLiveReplayResponse</returns>
+        public async Task<ListLiveReplayResponse> ListLiveReplayAsync (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20010> localVarResponse = await ListLiveReplayAsyncWithHttpInfo(tag, coin, sort, limit);
+             Io.Gate.GateApi.Client.ApiResponse<ListLiveReplayResponse> localVarResponse = await ListLiveReplayAsyncWithHttpInfo(tag, coin, sort, limit);
              return localVarResponse.Data;
 
         }
@@ -539,8 +539,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Filter by currency name (e.g., BTC, ETH) (optional)</param>
         /// <param name="sort">Sort order: hot &#x3D; most popular (default), new &#x3D; latest (optional, default to hot)</param>
         /// <param name="limit">Return count, 1-10, default 3 (optional, default to 3)</param>
-        /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-        public async Task<ApiResponse<InlineResponse20010>> ListLiveReplayAsyncWithHttpInfo (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?))
+        /// <returns>Task of ApiResponse (ListLiveReplayResponse)</returns>
+        public async Task<ApiResponse<ListLiveReplayResponse>> ListLiveReplayAsyncWithHttpInfo (string tag = default(string), string coin = default(string), string sort = default(string), int? limit = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -579,7 +579,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20010>("/social/live/tag_coin_live_replay", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListLiveReplayResponse>("/social/live/tag_coin_live_replay", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

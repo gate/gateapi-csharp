@@ -1434,7 +1434,7 @@ Name | Type | Description  | Notes
 
 <a name="getcrossexfee"></a>
 # **GetCrossexFee**
-> List&lt;InlineResponse2006&gt; GetCrossexFee ()
+> List&lt;InlineResponse200&gt; GetCrossexFee ()
 
 Query User Fee Rates
 
@@ -1463,7 +1463,7 @@ namespace Example
             try
             {
                 // Query User Fee Rates
-                List<InlineResponse2006> result = apiInstance.GetCrossexFee();
+                List<InlineResponse200> result = apiInstance.GetCrossexFee();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1483,7 +1483,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;InlineResponse2006&gt;**](InlineResponse2006.md)
+[**List&lt;InlineResponse200&gt;**](InlineResponse200.md)
 
 ### Authorization
 

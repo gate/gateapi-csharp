@@ -89,8 +89,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="redeemV4"></param>
-        /// <returns>InlineResponse20011</returns>
-        InlineResponse20011 RedeemLaunchPool (RedeemV4 redeemV4);
+        /// <returns>RedeemLaunchPoolResponse</returns>
+        RedeemLaunchPoolResponse RedeemLaunchPool (RedeemV4 redeemV4);
 
         /// <summary>
         /// Redeem LaunchPool staked assets
@@ -100,8 +100,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="redeemV4"></param>
-        /// <returns>ApiResponse of InlineResponse20011</returns>
-        ApiResponse<InlineResponse20011> RedeemLaunchPoolWithHttpInfo (RedeemV4 redeemV4);
+        /// <returns>ApiResponse of RedeemLaunchPoolResponse</returns>
+        ApiResponse<RedeemLaunchPoolResponse> RedeemLaunchPoolWithHttpInfo (RedeemV4 redeemV4);
         /// <summary>
         /// Query user pledge records
         /// </summary>
@@ -233,8 +233,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="redeemV4"></param>
-        /// <returns>Task of InlineResponse20011</returns>
-        Task<InlineResponse20011> RedeemLaunchPoolAsync (RedeemV4 redeemV4);
+        /// <returns>Task of RedeemLaunchPoolResponse</returns>
+        Task<RedeemLaunchPoolResponse> RedeemLaunchPoolAsync (RedeemV4 redeemV4);
 
         /// <summary>
         /// Redeem LaunchPool staked assets
@@ -244,8 +244,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="redeemV4"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        Task<ApiResponse<InlineResponse20011>> RedeemLaunchPoolAsyncWithHttpInfo (RedeemV4 redeemV4);
+        /// <returns>Task of ApiResponse (RedeemLaunchPoolResponse)</returns>
+        Task<ApiResponse<RedeemLaunchPoolResponse>> RedeemLaunchPoolAsyncWithHttpInfo (RedeemV4 redeemV4);
         /// <summary>
         /// Query user pledge records
         /// </summary>
@@ -733,10 +733,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="redeemV4"></param>
-        /// <returns>InlineResponse20011</returns>
-        public InlineResponse20011 RedeemLaunchPool (RedeemV4 redeemV4)
+        /// <returns>RedeemLaunchPoolResponse</returns>
+        public RedeemLaunchPoolResponse RedeemLaunchPool (RedeemV4 redeemV4)
         {
-             ApiResponse<InlineResponse20011> localVarResponse = RedeemLaunchPoolWithHttpInfo(redeemV4);
+             ApiResponse<RedeemLaunchPoolResponse> localVarResponse = RedeemLaunchPoolWithHttpInfo(redeemV4);
              return localVarResponse.Data;
         }
 
@@ -745,8 +745,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="redeemV4"></param>
-        /// <returns>ApiResponse of InlineResponse20011</returns>
-        public ApiResponse<InlineResponse20011> RedeemLaunchPoolWithHttpInfo (RedeemV4 redeemV4)
+        /// <returns>ApiResponse of RedeemLaunchPoolResponse</returns>
+        public ApiResponse<RedeemLaunchPoolResponse> RedeemLaunchPoolWithHttpInfo (RedeemV4 redeemV4)
         {
             // verify the required parameter 'redeemV4' is set
             if (redeemV4 == null)
@@ -775,7 +775,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<InlineResponse20011>("/launch/redeem", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<RedeemLaunchPoolResponse>("/launch/redeem", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -791,10 +791,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="redeemV4"></param>
-        /// <returns>Task of InlineResponse20011</returns>
-        public async Task<InlineResponse20011> RedeemLaunchPoolAsync (RedeemV4 redeemV4)
+        /// <returns>Task of RedeemLaunchPoolResponse</returns>
+        public async Task<RedeemLaunchPoolResponse> RedeemLaunchPoolAsync (RedeemV4 redeemV4)
         {
-             Io.Gate.GateApi.Client.ApiResponse<InlineResponse20011> localVarResponse = await RedeemLaunchPoolAsyncWithHttpInfo(redeemV4);
+             Io.Gate.GateApi.Client.ApiResponse<RedeemLaunchPoolResponse> localVarResponse = await RedeemLaunchPoolAsyncWithHttpInfo(redeemV4);
              return localVarResponse.Data;
 
         }
@@ -804,8 +804,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="redeemV4"></param>
-        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        public async Task<ApiResponse<InlineResponse20011>> RedeemLaunchPoolAsyncWithHttpInfo (RedeemV4 redeemV4)
+        /// <returns>Task of ApiResponse (RedeemLaunchPoolResponse)</returns>
+        public async Task<ApiResponse<RedeemLaunchPoolResponse>> RedeemLaunchPoolAsyncWithHttpInfo (RedeemV4 redeemV4)
         {
             // verify the required parameter 'redeemV4' is set
             if (redeemV4 == null)
@@ -836,7 +836,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InlineResponse20011>("/launch/redeem", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<RedeemLaunchPoolResponse>("/launch/redeem", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
