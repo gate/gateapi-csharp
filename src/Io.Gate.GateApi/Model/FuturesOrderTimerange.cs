@@ -28,7 +28,7 @@ namespace Io.Gate.GateApi.Model
     /// Futures order details
     /// </summary>
     [DataContract]
-    public partial class FuturesOrder :  IEquatable<FuturesOrder>, IValidatableObject
+    public partial class FuturesOrderTimerange :  IEquatable<FuturesOrderTimerange>, IValidatableObject
     {
         /// <summary>
         /// How the order was finished:  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set - position_closed: cancelled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention
@@ -232,12 +232,12 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="stp_act")]
         public StpActEnum? StpAct { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="FuturesOrder" /> class.
+        /// Initializes a new instance of the <see cref="FuturesOrderTimerange" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected FuturesOrder() { }
+        protected FuturesOrderTimerange() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="FuturesOrder" /> class.
+        /// Initializes a new instance of the <see cref="FuturesOrderTimerange" /> class.
         /// </summary>
         /// <param name="contract">Futures contract (required).</param>
         /// <param name="size">Required. Trading quantity. Positive for buy, negative for sell. Set to 0 for close position orders. (required).</param>
@@ -252,14 +252,14 @@ namespace Io.Gate.GateApi.Model
         /// <param name="pid">Position ID.</param>
         /// <param name="marketOrderSlipRatio">Custom maximum slippage rate for market orders. If not provided, the default contract settings will be used.</param>
         /// <param name="posMarginMode">Position Margin Mode isolated - Isolated Margin, cross - Cross Margin, only passed in simple split position mode.</param>
-        public FuturesOrder(string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long pid = default(long), string marketOrderSlipRatio = default(string), string posMarginMode = default(string))
+        public FuturesOrderTimerange(string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long pid = default(long), string marketOrderSlipRatio = default(string), string posMarginMode = default(string))
         {
             // to ensure "contract" is required (not null)
-            this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for FuturesOrder and cannot be null");
+            this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for FuturesOrderTimerange and cannot be null");
             // to ensure "size" is required (not null)
-            this.Size = size ?? throw new ArgumentNullException("size", "size is a required property for FuturesOrder and cannot be null");
+            this.Size = size ?? throw new ArgumentNullException("size", "size is a required property for FuturesOrderTimerange and cannot be null");
             // to ensure "price" is required (not null)
-            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for FuturesOrder and cannot be null");
+            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for FuturesOrderTimerange and cannot be null");
             this.Iceberg = iceberg;
             this.Close = close;
             this.ReduceOnly = reduceOnly;
@@ -298,14 +298,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>OrderUpdateTime</value>
         [DataMember(Name="update_time", EmitDefaultValue=false)]
-        public double UpdateTime { get; private set; }
+        public string UpdateTime { get; private set; }
 
         /// <summary>
         /// Order finished time. Not returned if order is open
         /// </summary>
         /// <value>Order finished time. Not returned if order is open</value>
         [DataMember(Name="finish_time", EmitDefaultValue=false)]
-        public double FinishTime { get; private set; }
+        public string FinishTime { get; private set; }
 
         /// <summary>
         /// Futures contract
@@ -454,7 +454,7 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class FuturesOrder {\n");
+            sb.Append("class FuturesOrderTimerange {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
@@ -505,15 +505,15 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FuturesOrder);
+            return this.Equals(input as FuturesOrderTimerange);
         }
 
         /// <summary>
-        /// Returns true if FuturesOrder instances are equal
+        /// Returns true if FuturesOrderTimerange instances are equal
         /// </summary>
-        /// <param name="input">Instance of FuturesOrder to be compared</param>
+        /// <param name="input">Instance of FuturesOrderTimerange to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(FuturesOrder input)
+        public bool Equals(FuturesOrderTimerange input)
         {
             if (input == null)
                 return false;
@@ -533,11 +533,13 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.UpdateTime == input.UpdateTime ||
-                    this.UpdateTime.Equals(input.UpdateTime)
+                    (this.UpdateTime != null &&
+                    this.UpdateTime.Equals(input.UpdateTime))
                 ) && 
                 (
                     this.FinishTime == input.FinishTime ||
-                    this.FinishTime.Equals(input.FinishTime)
+                    (this.FinishTime != null &&
+                    this.FinishTime.Equals(input.FinishTime))
                 ) && 
                 (
                     this.FinishAs == input.FinishAs ||
@@ -665,8 +667,10 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
                 hashCode = hashCode * 59 + this.User.GetHashCode();
                 hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
+                if (this.UpdateTime != null)
+                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.FinishTime != null)
+                    hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
                 hashCode = hashCode * 59 + this.FinishAs.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Contract != null)

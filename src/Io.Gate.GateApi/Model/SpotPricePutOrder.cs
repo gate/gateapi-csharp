@@ -143,7 +143,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>time_in_force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only </value>
         [DataMember(Name="time_in_force")]
-        public TimeInForceEnum? TimeInForce { get; set; }
+        public TimeInForceEnum TimeInForce { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SpotPricePutOrder" /> class.
         /// </summary>
@@ -157,11 +157,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="price">Order price (required).</param>
         /// <param name="amount">Trading quantity, refers to the trading quantity of the trading currency, i.e., the currency that needs to be traded, for example, the quantity of BTC in BTC_USDT. (required).</param>
         /// <param name="account">Trading account type. Unified account must be set to &#x60;unified&#x60;  - normal: spot trading - margin: margin trading - unified: unified account  (required) (default to AccountEnum.Normal).</param>
-        /// <param name="timeInForce">time_in_force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only  (default to TimeInForceEnum.Gtc).</param>
+        /// <param name="timeInForce">time_in_force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only  (required) (default to TimeInForceEnum.Gtc).</param>
         /// <param name="autoBorrow">Whether to borrow coins automatically (default to false).</param>
         /// <param name="autoRepay">Whether to repay the loan automatically (default to false).</param>
         /// <param name="text">The source of the order, including: - web: Web - api: API call - app: Mobile app.</param>
-        public SpotPricePutOrder(TypeEnum? type = TypeEnum.Limit, SideEnum side = default(SideEnum), string price = default(string), string amount = default(string), AccountEnum account = AccountEnum.Normal, TimeInForceEnum? timeInForce = TimeInForceEnum.Gtc, bool autoBorrow = false, bool autoRepay = false, string text = default(string))
+        public SpotPricePutOrder(TypeEnum? type = TypeEnum.Limit, SideEnum side = default(SideEnum), string price = default(string), string amount = default(string), AccountEnum account = AccountEnum.Normal, TimeInForceEnum timeInForce = TimeInForceEnum.Gtc, bool autoBorrow = false, bool autoRepay = false, string text = default(string))
         {
             this.Side = side;
             // to ensure "price" is required (not null)
@@ -169,8 +169,8 @@ namespace Io.Gate.GateApi.Model
             // to ensure "amount" is required (not null)
             this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for SpotPricePutOrder and cannot be null");
             this.Account = account;
-            this.Type = type;
             this.TimeInForce = timeInForce;
+            this.Type = type;
             this.AutoBorrow = autoBorrow;
             this.AutoRepay = autoRepay;
             this.Text = text;

@@ -67,19 +67,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="contract">Futures contract (required).</param>
         /// <param name="size">Represents the number of contracts that need to be closed, full closing: size&#x3D;0 Partial closing: plan-close-short-position size&gt;0  Partial closing: plan-close-long-position size&lt;0.</param>
+        /// <param name="amount">Same as &#x60;size&#x60;; used for decimal contract size. When both &#x60;size&#x60; and &#x60;amount&#x60; are provided, &#x60;amount&#x60; takes precedence..</param>
         /// <param name="price">Order price. Set to 0 to use market price (required).</param>
         /// <param name="close">When fully closing a position in single-position mode, close must be set to true to execute the close operation. When partially closing a position in single-position mode or in dual-position mode, close can be left unset or set to false. (default to false).</param>
         /// <param name="tif">Time in force strategy, default is gtc, market orders currently only support ioc mode  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled (default to TifEnum.Gtc).</param>
         /// <param name="text">The source of the order, including: - web: Web - api: API call - app: Mobile app.</param>
         /// <param name="reduceOnly">When set to true, perform automatic position reduction operation. Set to true to ensure that the order will not open a new position, and is only used to close or reduce positions (default to false).</param>
         /// <param name="autoSize">One-way Mode: auto_size is not required Hedge Mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions Hedge Mode partial closing (size≠0): auto_size is not required.</param>
-        public FuturesInitialOrder(string contract = default(string), long size = default(long), string price = default(string), bool close = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), bool reduceOnly = false, string autoSize = default(string))
+        public FuturesInitialOrder(string contract = default(string), long size = default(long), string amount = default(string), string price = default(string), bool close = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), bool reduceOnly = false, string autoSize = default(string))
         {
             // to ensure "contract" is required (not null)
             this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for FuturesInitialOrder and cannot be null");
             // to ensure "price" is required (not null)
             this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for FuturesInitialOrder and cannot be null");
             this.Size = size;
+            this.Amount = amount;
             this.Close = close;
             this.Tif = tif;
             this.Text = text;
@@ -100,6 +102,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Represents the number of contracts that need to be closed, full closing: size&#x3D;0 Partial closing: plan-close-short-position size&gt;0  Partial closing: plan-close-long-position size&lt;0</value>
         [DataMember(Name="size")]
         public long Size { get; set; }
+
+        /// <summary>
+        /// Same as &#x60;size&#x60;; used for decimal contract size. When both &#x60;size&#x60; and &#x60;amount&#x60; are provided, &#x60;amount&#x60; takes precedence.
+        /// </summary>
+        /// <value>Same as &#x60;size&#x60;; used for decimal contract size. When both &#x60;size&#x60; and &#x60;amount&#x60; are provided, &#x60;amount&#x60; takes precedence.</value>
+        [DataMember(Name="amount")]
+        public string Amount { get; set; }
 
         /// <summary>
         /// Order price. Set to 0 to use market price
@@ -160,6 +169,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class FuturesInitialOrder {\n");
             sb.Append("  Contract: ").Append(Contract).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
+            sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("  Close: ").Append(Close).Append("\n");
             sb.Append("  Tif: ").Append(Tif).Append("\n");
@@ -212,6 +222,11 @@ namespace Io.Gate.GateApi.Model
                     this.Size.Equals(input.Size)
                 ) && 
                 (
+                    this.Amount == input.Amount ||
+                    (this.Amount != null &&
+                    this.Amount.Equals(input.Amount))
+                ) && 
+                (
                     this.Price == input.Price ||
                     (this.Price != null &&
                     this.Price.Equals(input.Price))
@@ -260,6 +275,8 @@ namespace Io.Gate.GateApi.Model
                 if (this.Contract != null)
                     hashCode = hashCode * 59 + this.Contract.GetHashCode();
                 hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Amount != null)
+                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 hashCode = hashCode * 59 + this.Close.GetHashCode();

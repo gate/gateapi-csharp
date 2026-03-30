@@ -1,5 +1,5 @@
 
-# Io.Gate.GateApi.Model.FuturesOrder
+# Io.Gate.GateApi.Model.FuturesOrderTimerange
 
 Futures order details
 
@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Id** | **long** | Futures order ID | [optional] [readonly] 
 **User** | **int** | User ID | [optional] [readonly] 
 **CreateTime** | **double** | Creation time of order | [optional] [readonly] 
-**UpdateTime** | **double** | OrderUpdateTime | [optional] [readonly] 
-**FinishTime** | **double** | Order finished time. Not returned if order is open | [optional] [readonly] 
+**UpdateTime** | **string** | OrderUpdateTime | [optional] [readonly] 
+**FinishTime** | **string** | Order finished time. Not returned if order is open | [optional] [readonly] 
 **FinishAs** | **string** | How the order was finished:  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set - position_closed: cancelled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention | [optional] [readonly] 
 **Status** | **string** | Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed | [optional] [readonly] 
 **Contract** | **string** | Futures contract | 

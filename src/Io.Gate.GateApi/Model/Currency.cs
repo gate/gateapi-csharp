@@ -45,7 +45,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="chains">All links corresponding to coins.</param>
         /// <param name="totalSupply">Total supply.</param>
         /// <param name="marketCap">Market cap.</param>
-        public Currency(string currency = default(string), string name = default(string), bool delisted = default(bool), bool withdrawDisabled = default(bool), bool withdrawDelayed = default(bool), bool depositDisabled = default(bool), bool tradeDisabled = default(bool), string fixedRate = default(string), string chain = default(string), List<SpotCurrencyChain> chains = default(List<SpotCurrencyChain>), string totalSupply = default(string), string marketCap = default(string))
+        /// <param name="category">币种分类  - stocks: 股票 - metals: 金属 - indices: 指数 - forex: 外汇 - commodities: 大宗商品.</param>
+        public Currency(string currency = default(string), string name = default(string), bool delisted = default(bool), bool withdrawDisabled = default(bool), bool withdrawDelayed = default(bool), bool depositDisabled = default(bool), bool tradeDisabled = default(bool), string fixedRate = default(string), string chain = default(string), List<SpotCurrencyChain> chains = default(List<SpotCurrencyChain>), string totalSupply = default(string), string marketCap = default(string), List<string> category = default(List<string>))
         {
             this._Currency = currency;
             this.Name = name;
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
             this.Chains = chains;
             this.TotalSupply = totalSupply;
             this.MarketCap = marketCap;
+            this.Category = category;
         }
 
         /// <summary>
@@ -146,6 +148,13 @@ namespace Io.Gate.GateApi.Model
         public string MarketCap { get; set; }
 
         /// <summary>
+        /// 币种分类  - stocks: 股票 - metals: 金属 - indices: 指数 - forex: 外汇 - commodities: 大宗商品
+        /// </summary>
+        /// <value>币种分类  - stocks: 股票 - metals: 金属 - indices: 指数 - forex: 外汇 - commodities: 大宗商品</value>
+        [DataMember(Name="category")]
+        public List<string> Category { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -165,6 +174,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Chains: ").Append(Chains).Append("\n");
             sb.Append("  TotalSupply: ").Append(TotalSupply).Append("\n");
             sb.Append("  MarketCap: ").Append(MarketCap).Append("\n");
+            sb.Append("  Category: ").Append(Category).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -254,6 +264,12 @@ namespace Io.Gate.GateApi.Model
                     this.MarketCap == input.MarketCap ||
                     (this.MarketCap != null &&
                     this.MarketCap.Equals(input.MarketCap))
+                ) && 
+                (
+                    this.Category == input.Category ||
+                    this.Category != null &&
+                    input.Category != null &&
+                    this.Category.SequenceEqual(input.Category)
                 );
         }
 
@@ -285,6 +301,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.TotalSupply.GetHashCode();
                 if (this.MarketCap != null)
                     hashCode = hashCode * 59 + this.MarketCap.GetHashCode();
+                if (this.Category != null)
+                    hashCode = hashCode * 59 + this.Category.GetHashCode();
                 return hashCode;
             }
         }

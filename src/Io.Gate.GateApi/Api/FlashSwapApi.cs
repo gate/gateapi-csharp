@@ -1362,7 +1362,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyManyToOneOrderCreateResp>("/flash-swap/multi-currency/many-to-one/order/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyManyToOneOrderCreateResp>("/flash_swap/multi-currency/many-to-one/order/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1423,7 +1423,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyManyToOneOrderCreateResp>("/flash-swap/multi-currency/many-to-one/order/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyManyToOneOrderCreateResp>("/flash_swap/multi-currency/many-to-one/order/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1481,7 +1481,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyManyToOneOrderPreviewResp>("/flash-swap/multi-currency/many-to-one/order/preview", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyManyToOneOrderPreviewResp>("/flash_swap/multi-currency/many-to-one/order/preview", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1542,7 +1542,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyManyToOneOrderPreviewResp>("/flash-swap/multi-currency/many-to-one/order/preview", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyManyToOneOrderPreviewResp>("/flash_swap/multi-currency/many-to-one/order/preview", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1600,7 +1600,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<FlashSwapOrderCreateResp>("/flash-swap/order/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<FlashSwapOrderCreateResp>("/flash_swap/order/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1661,7 +1661,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapOrderCreateResp>("/flash-swap/order/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapOrderCreateResp>("/flash_swap/order/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1719,7 +1719,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyOneToManyOrderCreateResp>("/flash-swap/multi-currency/one-to-many/order/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyOneToManyOrderCreateResp>("/flash_swap/multi-currency/one-to-many/order/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1780,7 +1780,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyOneToManyOrderCreateResp>("/flash-swap/multi-currency/one-to-many/order/create", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyOneToManyOrderCreateResp>("/flash_swap/multi-currency/one-to-many/order/create", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1838,7 +1838,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyOneToManyOrderPreviewResp>("/flash-swap/multi-currency/one-to-many/order/preview", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<FlashSwapMultiCurrencyOneToManyOrderPreviewResp>("/flash_swap/multi-currency/one-to-many/order/preview", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1899,7 +1899,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyOneToManyOrderPreviewResp>("/flash-swap/multi-currency/one-to-many/order/preview", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<FlashSwapMultiCurrencyOneToManyOrderPreviewResp>("/flash_swap/multi-currency/one-to-many/order/preview", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1975,7 +1975,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<FlashSwapOrderPreviewResp>("/flash-swap/order/preview", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<FlashSwapOrderPreviewResp>("/flash_swap/order/preview", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2054,7 +2054,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<FlashSwapOrderPreviewResp>("/flash-swap/order/preview", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FlashSwapOrderPreviewResp>("/flash_swap/order/preview", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
