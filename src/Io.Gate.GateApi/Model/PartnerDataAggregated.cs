@@ -91,75 +91,6 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="business_type")]
         public BusinessTypeEnum BusinessType { get; set; }
         /// <summary>
-        /// Business type description
-        /// </summary>
-        /// <value>Business type description</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum BusinessTypeDescEnum
-        {
-            /// <summary>
-            /// Enum value 
-            /// </summary>
-            [EnumMember(Value = "全部")]
-             = 1,
-
-            /// <summary>
-            /// Enum value 
-            /// </summary>
-            [EnumMember(Value = "现货")]
-             = 2,
-
-            /// <summary>
-            /// Enum value 
-            /// </summary>
-            [EnumMember(Value = "合约")]
-             = 3,
-
-            /// <summary>
-            /// Enum value Alpha
-            /// </summary>
-            [EnumMember(Value = "Alpha")]
-            Alpha = 4,
-
-            /// <summary>
-            /// Enum value Web3
-            /// </summary>
-            [EnumMember(Value = "Web3")]
-            Web3 = 5,
-
-            /// <summary>
-            /// Enum value PerpsDEX
-            /// </summary>
-            [EnumMember(Value = "Perps(DEX)")]
-            PerpsDEX = 6,
-
-            /// <summary>
-            /// Enum value ExchangeAll
-            /// </summary>
-            [EnumMember(Value = "Exchange All")]
-            ExchangeAll = 7,
-
-            /// <summary>
-            /// Enum value Web3All
-            /// </summary>
-            [EnumMember(Value = "Web3 All")]
-            Web3All = 8,
-
-            /// <summary>
-            /// Enum value TradFi
-            /// </summary>
-            [EnumMember(Value = "TradFi")]
-            TradFi = 9
-
-        }
-
-        /// <summary>
-        /// Business type description
-        /// </summary>
-        /// <value>Business type description</value>
-        [DataMember(Name="business_type_desc")]
-        public BusinessTypeDescEnum BusinessTypeDesc { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="PartnerDataAggregated" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -174,8 +105,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="tradingUserCount">交易人数，字符串形式（与线上 JSON 序列化一致）  仅在 business_type&#x3D;0（全部）时返回具体数值，其他业务类型返回 null (required).</param>
         /// <param name="timeRangeDesc">Time range description (required).</param>
         /// <param name="businessType">Business Type (required).</param>
-        /// <param name="businessTypeDesc">Business type description (required).</param>
-        public PartnerDataAggregated(string rebateAmount = default(string), string tradeVolume = default(string), string netFee = default(string), int customerCount = default(int), string tradingUserCount = default(string), string timeRangeDesc = default(string), BusinessTypeEnum businessType = default(BusinessTypeEnum), BusinessTypeDescEnum businessTypeDesc = default(BusinessTypeDescEnum))
+        /// <param name="businessTypeDesc">业务类型描述，可取值：全部, 现货, 合约, Alpha, Web3, Perps(DEX), Exchange All, Web3 All, TradFi (required).</param>
+        public PartnerDataAggregated(string rebateAmount = default(string), string tradeVolume = default(string), string netFee = default(string), int customerCount = default(int), string tradingUserCount = default(string), string timeRangeDesc = default(string), BusinessTypeEnum businessType = default(BusinessTypeEnum), string businessTypeDesc = default(string))
         {
             // to ensure "rebateAmount" is required (not null)
             this.RebateAmount = rebateAmount ?? throw new ArgumentNullException("rebateAmount", "rebateAmount is a required property for PartnerDataAggregated and cannot be null");
@@ -189,7 +120,8 @@ namespace Io.Gate.GateApi.Model
             // to ensure "timeRangeDesc" is required (not null)
             this.TimeRangeDesc = timeRangeDesc ?? throw new ArgumentNullException("timeRangeDesc", "timeRangeDesc is a required property for PartnerDataAggregated and cannot be null");
             this.BusinessType = businessType;
-            this.BusinessTypeDesc = businessTypeDesc;
+            // to ensure "businessTypeDesc" is required (not null)
+            this.BusinessTypeDesc = businessTypeDesc ?? throw new ArgumentNullException("businessTypeDesc", "businessTypeDesc is a required property for PartnerDataAggregated and cannot be null");
         }
 
         /// <summary>
@@ -233,6 +165,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Time range description</value>
         [DataMember(Name="time_range_desc")]
         public string TimeRangeDesc { get; set; }
+
+        /// <summary>
+        /// 业务类型描述，可取值：全部, 现货, 合约, Alpha, Web3, Perps(DEX), Exchange All, Web3 All, TradFi
+        /// </summary>
+        /// <value>业务类型描述，可取值：全部, 现货, 合约, Alpha, Web3, Perps(DEX), Exchange All, Web3 All, TradFi</value>
+        [DataMember(Name="business_type_desc")]
+        public string BusinessTypeDesc { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -319,7 +258,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.BusinessTypeDesc == input.BusinessTypeDesc ||
-                    this.BusinessTypeDesc.Equals(input.BusinessTypeDesc)
+                    (this.BusinessTypeDesc != null &&
+                    this.BusinessTypeDesc.Equals(input.BusinessTypeDesc))
                 );
         }
 
@@ -344,7 +284,8 @@ namespace Io.Gate.GateApi.Model
                 if (this.TimeRangeDesc != null)
                     hashCode = hashCode * 59 + this.TimeRangeDesc.GetHashCode();
                 hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
-                hashCode = hashCode * 59 + this.BusinessTypeDesc.GetHashCode();
+                if (this.BusinessTypeDesc != null)
+                    hashCode = hashCode * 59 + this.BusinessTypeDesc.GetHashCode();
                 return hashCode;
             }
         }
