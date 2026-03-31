@@ -314,6 +314,31 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of EligibilityResponse</returns>
         ApiResponse<EligibilityResponse> GetPartnerEligibilityWithHttpInfo ();
+        /// <summary>
+        /// Aggregated partner agent statistics
+        /// </summary>
+        /// <remarks>
+        /// 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
+        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
+        /// <returns>PartnerDataAggregatedResponse</returns>
+        PartnerDataAggregatedResponse GetPartnerAgentDataAggregated (string startDate = default(string), string endDate = default(string), int? businessType = default(int?));
+
+        /// <summary>
+        /// Aggregated partner agent statistics
+        /// </summary>
+        /// <remarks>
+        /// 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
+        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
+        /// <returns>ApiResponse of PartnerDataAggregatedResponse</returns>
+        ApiResponse<PartnerDataAggregatedResponse> GetPartnerAgentDataAggregatedWithHttpInfo (string startDate = default(string), string endDate = default(string), int? businessType = default(int?));
         #endregion Synchronous Operations
     }
 
@@ -610,6 +635,31 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (EligibilityResponse)</returns>
         Task<ApiResponse<EligibilityResponse>> GetPartnerEligibilityAsyncWithHttpInfo ();
+        /// <summary>
+        /// Aggregated partner agent statistics
+        /// </summary>
+        /// <remarks>
+        /// 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
+        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
+        /// <returns>Task of PartnerDataAggregatedResponse</returns>
+        Task<PartnerDataAggregatedResponse> GetPartnerAgentDataAggregatedAsync (string startDate = default(string), string endDate = default(string), int? businessType = default(int?));
+
+        /// <summary>
+        /// Aggregated partner agent statistics
+        /// </summary>
+        /// <remarks>
+        /// 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
+        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
+        /// <returns>Task of ApiResponse (PartnerDataAggregatedResponse)</returns>
+        Task<ApiResponse<PartnerDataAggregatedResponse>> GetPartnerAgentDataAggregatedAsyncWithHttpInfo (string startDate = default(string), string endDate = default(string), int? businessType = default(int?));
         #endregion Asynchronous Operations
     }
 
@@ -2327,6 +2377,145 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetPartnerEligibility", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Aggregated partner agent statistics 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
+        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
+        /// <returns>PartnerDataAggregatedResponse</returns>
+        public PartnerDataAggregatedResponse GetPartnerAgentDataAggregated (string startDate = default(string), string endDate = default(string), int? businessType = default(int?))
+        {
+             ApiResponse<PartnerDataAggregatedResponse> localVarResponse = GetPartnerAgentDataAggregatedWithHttpInfo(startDate, endDate, businessType);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Aggregated partner agent statistics 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
+        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
+        /// <returns>ApiResponse of PartnerDataAggregatedResponse</returns>
+        public ApiResponse<PartnerDataAggregatedResponse> GetPartnerAgentDataAggregatedWithHttpInfo (string startDate = default(string), string endDate = default(string), int? businessType = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (startDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_date", startDate));
+            }
+            if (endDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_date", endDate));
+            }
+            if (businessType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "business_type", businessType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<PartnerDataAggregatedResponse>("/rebate/partner/data/aggregated", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetPartnerAgentDataAggregated", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Aggregated partner agent statistics 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
+        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
+        /// <returns>Task of PartnerDataAggregatedResponse</returns>
+        public async Task<PartnerDataAggregatedResponse> GetPartnerAgentDataAggregatedAsync (string startDate = default(string), string endDate = default(string), int? businessType = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<PartnerDataAggregatedResponse> localVarResponse = await GetPartnerAgentDataAggregatedAsyncWithHttpInfo(startDate, endDate, businessType);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Aggregated partner agent statistics 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
+        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
+        /// <returns>Task of ApiResponse (PartnerDataAggregatedResponse)</returns>
+        public async Task<ApiResponse<PartnerDataAggregatedResponse>> GetPartnerAgentDataAggregatedAsyncWithHttpInfo (string startDate = default(string), string endDate = default(string), int? businessType = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (startDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_date", startDate));
+            }
+            if (endDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_date", endDate));
+            }
+            if (businessType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "business_type", businessType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<PartnerDataAggregatedResponse>("/rebate/partner/data/aggregated", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetPartnerAgentDataAggregated", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

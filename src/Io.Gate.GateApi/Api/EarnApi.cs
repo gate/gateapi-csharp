@@ -122,9 +122,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="findCoin"></param>
+        /// <param name="cointype">Currency type: swap - voucher; lock - locked position; debt - US Treasury bond. (optional)</param>
         /// <returns>List&lt;Object&gt;</returns>
-        List<Object> FindCoin (FindCoin findCoin);
+        List<Object> FindCoin (string cointype = default(string));
 
         /// <summary>
         /// Staking coins
@@ -133,9 +133,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="findCoin"></param>
+        /// <param name="cointype">Currency type: swap - voucher; lock - locked position; debt - US Treasury bond. (optional)</param>
         /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        ApiResponse<List<Object>> FindCoinWithHttpInfo (FindCoin findCoin);
+        ApiResponse<List<Object>> FindCoinWithHttpInfo (string cointype = default(string));
         /// <summary>
         /// On-chain token swap for earned coins
         /// </summary>
@@ -230,6 +230,245 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Currency name (optional)</param>
         /// <returns>ApiResponse of List&lt;Object&gt;</returns>
         ApiResponse<List<Object>> AssetListWithHttpInfo (string coin = default(string));
+        /// <summary>
+        /// Create auto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanCreate"></param>
+        /// <returns>AutoInvestPlanCreateResp</returns>
+        AutoInvestPlanCreateResp CreateAutoInvestPlan (AutoInvestPlanCreate autoInvestPlanCreate);
+
+        /// <summary>
+        /// Create auto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanCreate"></param>
+        /// <returns>ApiResponse of AutoInvestPlanCreateResp</returns>
+        ApiResponse<AutoInvestPlanCreateResp> CreateAutoInvestPlanWithHttpInfo (AutoInvestPlanCreate autoInvestPlanCreate);
+        /// <summary>
+        /// UpdateAuto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanUpdate"></param>
+        /// <returns></returns>
+        void UpdateAutoInvestPlan (AutoInvestPlanUpdate autoInvestPlanUpdate);
+
+        /// <summary>
+        /// UpdateAuto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanUpdate"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> UpdateAutoInvestPlanWithHttpInfo (AutoInvestPlanUpdate autoInvestPlanUpdate);
+        /// <summary>
+        /// StopAuto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanStop"></param>
+        /// <returns></returns>
+        void StopAutoInvestPlan (AutoInvestPlanStop autoInvestPlanStop);
+
+        /// <summary>
+        /// StopAuto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanStop"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> StopAutoInvestPlanWithHttpInfo (AutoInvestPlanStop autoInvestPlanStop);
+        /// <summary>
+        /// Add position immediately
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanAddPosition"></param>
+        /// <returns></returns>
+        void AddPositionAutoInvestPlan (AutoInvestPlanAddPosition autoInvestPlanAddPosition);
+
+        /// <summary>
+        /// Add position immediately
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanAddPosition"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> AddPositionAutoInvestPlanWithHttpInfo (AutoInvestPlanAddPosition autoInvestPlanAddPosition);
+        /// <summary>
+        /// QueryCurrencies supporting auto invest
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planMoney">Pricing currency，Optional: USDT or BTC，Default: USDT (optional)</param>
+        /// <returns>List&lt;AutoInvestCoinsItem&gt;</returns>
+        List<AutoInvestCoinsItem> ListAutoInvestCoins (string planMoney = default(string));
+
+        /// <summary>
+        /// QueryCurrencies supporting auto invest
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planMoney">Pricing currency，Optional: USDT or BTC，Default: USDT (optional)</param>
+        /// <returns>ApiResponse of List&lt;AutoInvestCoinsItem&gt;</returns>
+        ApiResponse<List<AutoInvestCoinsItem>> ListAutoInvestCoinsWithHttpInfo (string planMoney = default(string));
+        /// <summary>
+        /// Get minimum investment amount
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestMinInvestAmount"></param>
+        /// <returns>AutoInvestMinInvestAmountResp</returns>
+        AutoInvestMinInvestAmountResp GetAutoInvestMinAmount (AutoInvestMinInvestAmount autoInvestMinInvestAmount);
+
+        /// <summary>
+        /// Get minimum investment amount
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestMinInvestAmount"></param>
+        /// <returns>ApiResponse of AutoInvestMinInvestAmountResp</returns>
+        ApiResponse<AutoInvestMinInvestAmountResp> GetAutoInvestMinAmountWithHttpInfo (AutoInvestMinInvestAmount autoInvestMinInvestAmount);
+        /// <summary>
+        /// List plan execution records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>AutoInvestPlanRecordsResp</returns>
+        AutoInvestPlanRecordsResp ListAutoInvestPlanRecords (long planId, long? page = default(long?), long? pageSize = default(long?));
+
+        /// <summary>
+        /// List plan execution records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>ApiResponse of AutoInvestPlanRecordsResp</returns>
+        ApiResponse<AutoInvestPlanRecordsResp> ListAutoInvestPlanRecordsWithHttpInfo (long planId, long? page = default(long?), long? pageSize = default(long?));
+        /// <summary>
+        /// List plan execution recordsDetails（OrderDetails）
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="recordId">Record ID</param>
+        /// <returns>List&lt;AutoInvestOrderItem&gt;</returns>
+        List<AutoInvestOrderItem> ListAutoInvestOrders (long planId, long recordId);
+
+        /// <summary>
+        /// List plan execution recordsDetails（OrderDetails）
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="recordId">Record ID</param>
+        /// <returns>ApiResponse of List&lt;AutoInvestOrderItem&gt;</returns>
+        ApiResponse<List<AutoInvestOrderItem>> ListAutoInvestOrdersWithHttpInfo (long planId, long recordId);
+        /// <summary>
+        /// List investment currency configuration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;AutoInvestConfigItem&gt;</returns>
+        List<AutoInvestConfigItem> ListAutoInvestConfig ();
+
+        /// <summary>
+        /// List investment currency configuration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;AutoInvestConfigItem&gt;</returns>
+        ApiResponse<List<AutoInvestConfigItem>> ListAutoInvestConfigWithHttpInfo ();
+        /// <summary>
+        /// QueryAuto invest planDetails
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <returns>AutoInvestPlanDetail</returns>
+        AutoInvestPlanDetail GetAutoInvestPlanDetail (long planId);
+
+        /// <summary>
+        /// QueryAuto invest planDetails
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <returns>ApiResponse of AutoInvestPlanDetail</returns>
+        ApiResponse<AutoInvestPlanDetail> GetAutoInvestPlanDetailWithHttpInfo (long planId);
+        /// <summary>
+        /// QueryAuto invest planList
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Plan status，History history，Active active</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>AutoInvestPlanListInfoResp</returns>
+        AutoInvestPlanListInfoResp ListAutoInvestPlans (string status, long? page = default(long?), long? pageSize = default(long?));
+
+        /// <summary>
+        /// QueryAuto invest planList
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Plan status，History history，Active active</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>ApiResponse of AutoInvestPlanListInfoResp</returns>
+        ApiResponse<AutoInvestPlanListInfoResp> ListAutoInvestPlansWithHttpInfo (string status, long? page = default(long?), long? pageSize = default(long?));
         /// <summary>
         /// Get product list
         /// </summary>
@@ -500,9 +739,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="findCoin"></param>
+        /// <param name="cointype">Currency type: swap - voucher; lock - locked position; debt - US Treasury bond. (optional)</param>
         /// <returns>Task of List&lt;Object&gt;</returns>
-        Task<List<Object>> FindCoinAsync (FindCoin findCoin);
+        Task<List<Object>> FindCoinAsync (string cointype = default(string));
 
         /// <summary>
         /// Staking coins
@@ -511,9 +750,9 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="findCoin"></param>
+        /// <param name="cointype">Currency type: swap - voucher; lock - locked position; debt - US Treasury bond. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        Task<ApiResponse<List<Object>>> FindCoinAsyncWithHttpInfo (FindCoin findCoin);
+        Task<ApiResponse<List<Object>>> FindCoinAsyncWithHttpInfo (string cointype = default(string));
         /// <summary>
         /// On-chain token swap for earned coins
         /// </summary>
@@ -608,6 +847,245 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Currency name (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
         Task<ApiResponse<List<Object>>> AssetListAsyncWithHttpInfo (string coin = default(string));
+        /// <summary>
+        /// Create auto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanCreate"></param>
+        /// <returns>Task of AutoInvestPlanCreateResp</returns>
+        Task<AutoInvestPlanCreateResp> CreateAutoInvestPlanAsync (AutoInvestPlanCreate autoInvestPlanCreate);
+
+        /// <summary>
+        /// Create auto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanCreate"></param>
+        /// <returns>Task of ApiResponse (AutoInvestPlanCreateResp)</returns>
+        Task<ApiResponse<AutoInvestPlanCreateResp>> CreateAutoInvestPlanAsyncWithHttpInfo (AutoInvestPlanCreate autoInvestPlanCreate);
+        /// <summary>
+        /// UpdateAuto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanUpdate"></param>
+        /// <returns>Task of void</returns>
+        Task UpdateAutoInvestPlanAsync (AutoInvestPlanUpdate autoInvestPlanUpdate);
+
+        /// <summary>
+        /// UpdateAuto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanUpdate"></param>
+        /// <returns>Task of ApiResponse</returns>
+        Task<ApiResponse<Object>> UpdateAutoInvestPlanAsyncWithHttpInfo (AutoInvestPlanUpdate autoInvestPlanUpdate);
+        /// <summary>
+        /// StopAuto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanStop"></param>
+        /// <returns>Task of void</returns>
+        Task StopAutoInvestPlanAsync (AutoInvestPlanStop autoInvestPlanStop);
+
+        /// <summary>
+        /// StopAuto invest plan
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanStop"></param>
+        /// <returns>Task of ApiResponse</returns>
+        Task<ApiResponse<Object>> StopAutoInvestPlanAsyncWithHttpInfo (AutoInvestPlanStop autoInvestPlanStop);
+        /// <summary>
+        /// Add position immediately
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanAddPosition"></param>
+        /// <returns>Task of void</returns>
+        Task AddPositionAutoInvestPlanAsync (AutoInvestPlanAddPosition autoInvestPlanAddPosition);
+
+        /// <summary>
+        /// Add position immediately
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanAddPosition"></param>
+        /// <returns>Task of ApiResponse</returns>
+        Task<ApiResponse<Object>> AddPositionAutoInvestPlanAsyncWithHttpInfo (AutoInvestPlanAddPosition autoInvestPlanAddPosition);
+        /// <summary>
+        /// QueryCurrencies supporting auto invest
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planMoney">Pricing currency，Optional: USDT or BTC，Default: USDT (optional)</param>
+        /// <returns>Task of List&lt;AutoInvestCoinsItem&gt;</returns>
+        Task<List<AutoInvestCoinsItem>> ListAutoInvestCoinsAsync (string planMoney = default(string));
+
+        /// <summary>
+        /// QueryCurrencies supporting auto invest
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planMoney">Pricing currency，Optional: USDT or BTC，Default: USDT (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;AutoInvestCoinsItem&gt;)</returns>
+        Task<ApiResponse<List<AutoInvestCoinsItem>>> ListAutoInvestCoinsAsyncWithHttpInfo (string planMoney = default(string));
+        /// <summary>
+        /// Get minimum investment amount
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestMinInvestAmount"></param>
+        /// <returns>Task of AutoInvestMinInvestAmountResp</returns>
+        Task<AutoInvestMinInvestAmountResp> GetAutoInvestMinAmountAsync (AutoInvestMinInvestAmount autoInvestMinInvestAmount);
+
+        /// <summary>
+        /// Get minimum investment amount
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestMinInvestAmount"></param>
+        /// <returns>Task of ApiResponse (AutoInvestMinInvestAmountResp)</returns>
+        Task<ApiResponse<AutoInvestMinInvestAmountResp>> GetAutoInvestMinAmountAsyncWithHttpInfo (AutoInvestMinInvestAmount autoInvestMinInvestAmount);
+        /// <summary>
+        /// List plan execution records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of AutoInvestPlanRecordsResp</returns>
+        Task<AutoInvestPlanRecordsResp> ListAutoInvestPlanRecordsAsync (long planId, long? page = default(long?), long? pageSize = default(long?));
+
+        /// <summary>
+        /// List plan execution records
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of ApiResponse (AutoInvestPlanRecordsResp)</returns>
+        Task<ApiResponse<AutoInvestPlanRecordsResp>> ListAutoInvestPlanRecordsAsyncWithHttpInfo (long planId, long? page = default(long?), long? pageSize = default(long?));
+        /// <summary>
+        /// List plan execution recordsDetails（OrderDetails）
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="recordId">Record ID</param>
+        /// <returns>Task of List&lt;AutoInvestOrderItem&gt;</returns>
+        Task<List<AutoInvestOrderItem>> ListAutoInvestOrdersAsync (long planId, long recordId);
+
+        /// <summary>
+        /// List plan execution recordsDetails（OrderDetails）
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="recordId">Record ID</param>
+        /// <returns>Task of ApiResponse (List&lt;AutoInvestOrderItem&gt;)</returns>
+        Task<ApiResponse<List<AutoInvestOrderItem>>> ListAutoInvestOrdersAsyncWithHttpInfo (long planId, long recordId);
+        /// <summary>
+        /// List investment currency configuration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;AutoInvestConfigItem&gt;</returns>
+        Task<List<AutoInvestConfigItem>> ListAutoInvestConfigAsync ();
+
+        /// <summary>
+        /// List investment currency configuration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;AutoInvestConfigItem&gt;)</returns>
+        Task<ApiResponse<List<AutoInvestConfigItem>>> ListAutoInvestConfigAsyncWithHttpInfo ();
+        /// <summary>
+        /// QueryAuto invest planDetails
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <returns>Task of AutoInvestPlanDetail</returns>
+        Task<AutoInvestPlanDetail> GetAutoInvestPlanDetailAsync (long planId);
+
+        /// <summary>
+        /// QueryAuto invest planDetails
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <returns>Task of ApiResponse (AutoInvestPlanDetail)</returns>
+        Task<ApiResponse<AutoInvestPlanDetail>> GetAutoInvestPlanDetailAsyncWithHttpInfo (long planId);
+        /// <summary>
+        /// QueryAuto invest planList
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Plan status，History history，Active active</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of AutoInvestPlanListInfoResp</returns>
+        Task<AutoInvestPlanListInfoResp> ListAutoInvestPlansAsync (string status, long? page = default(long?), long? pageSize = default(long?));
+
+        /// <summary>
+        /// QueryAuto invest planList
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Plan status，History history，Active active</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of ApiResponse (AutoInvestPlanListInfoResp)</returns>
+        Task<ApiResponse<AutoInvestPlanListInfoResp>> ListAutoInvestPlansAsyncWithHttpInfo (string status, long? page = default(long?), long? pageSize = default(long?));
         /// <summary>
         /// Get product list
         /// </summary>
@@ -1382,11 +1860,11 @@ namespace Io.Gate.GateApi.Api
         /// Staking coins 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="findCoin"></param>
+        /// <param name="cointype">Currency type: swap - voucher; lock - locked position; debt - US Treasury bond. (optional)</param>
         /// <returns>List&lt;Object&gt;</returns>
-        public List<Object> FindCoin (FindCoin findCoin)
+        public List<Object> FindCoin (string cointype = default(string))
         {
-             ApiResponse<List<Object>> localVarResponse = FindCoinWithHttpInfo(findCoin);
+             ApiResponse<List<Object>> localVarResponse = FindCoinWithHttpInfo(cointype);
              return localVarResponse.Data;
         }
 
@@ -1394,18 +1872,13 @@ namespace Io.Gate.GateApi.Api
         /// Staking coins 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="findCoin"></param>
+        /// <param name="cointype">Currency type: swap - voucher; lock - locked position; debt - US Treasury bond. (optional)</param>
         /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        public ApiResponse<List<Object>> FindCoinWithHttpInfo (FindCoin findCoin)
+        public ApiResponse<List<Object>> FindCoinWithHttpInfo (string cointype = default(string))
         {
-            // verify the required parameter 'findCoin' is set
-            if (findCoin == null)
-                throw new ApiException(400, "Missing required parameter 'findCoin' when calling EarnApi->FindCoin");
-
             RequestOptions localVarRequestOptions = new RequestOptions();
 
             string[] _contentTypes = {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -1419,7 +1892,10 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = findCoin;
+            if (cointype != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "cointype", cointype));
+            }
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -1440,11 +1916,11 @@ namespace Io.Gate.GateApi.Api
         /// Staking coins 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="findCoin"></param>
+        /// <param name="cointype">Currency type: swap - voucher; lock - locked position; debt - US Treasury bond. (optional)</param>
         /// <returns>Task of List&lt;Object&gt;</returns>
-        public async Task<List<Object>> FindCoinAsync (FindCoin findCoin)
+        public async Task<List<Object>> FindCoinAsync (string cointype = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<Object>> localVarResponse = await FindCoinAsyncWithHttpInfo(findCoin);
+             Io.Gate.GateApi.Client.ApiResponse<List<Object>> localVarResponse = await FindCoinAsyncWithHttpInfo(cointype);
              return localVarResponse.Data;
 
         }
@@ -1453,19 +1929,14 @@ namespace Io.Gate.GateApi.Api
         /// Staking coins 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="findCoin"></param>
+        /// <param name="cointype">Currency type: swap - voucher; lock - locked position; debt - US Treasury bond. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        public async Task<ApiResponse<List<Object>>> FindCoinAsyncWithHttpInfo (FindCoin findCoin)
+        public async Task<ApiResponse<List<Object>>> FindCoinAsyncWithHttpInfo (string cointype = default(string))
         {
-            // verify the required parameter 'findCoin' is set
-            if (findCoin == null)
-                throw new ApiException(400, "Missing required parameter 'findCoin' when calling EarnApi->FindCoin");
-
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -1479,7 +1950,10 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.Data = findCoin;
+            if (cointype != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "cointype", cointype));
+            }
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -2015,6 +2489,1305 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AssetList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create auto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanCreate"></param>
+        /// <returns>AutoInvestPlanCreateResp</returns>
+        public AutoInvestPlanCreateResp CreateAutoInvestPlan (AutoInvestPlanCreate autoInvestPlanCreate)
+        {
+             ApiResponse<AutoInvestPlanCreateResp> localVarResponse = CreateAutoInvestPlanWithHttpInfo(autoInvestPlanCreate);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create auto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanCreate"></param>
+        /// <returns>ApiResponse of AutoInvestPlanCreateResp</returns>
+        public ApiResponse<AutoInvestPlanCreateResp> CreateAutoInvestPlanWithHttpInfo (AutoInvestPlanCreate autoInvestPlanCreate)
+        {
+            // verify the required parameter 'autoInvestPlanCreate' is set
+            if (autoInvestPlanCreate == null)
+                throw new ApiException(400, "Missing required parameter 'autoInvestPlanCreate' when calling EarnApi->CreateAutoInvestPlan");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = autoInvestPlanCreate;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<AutoInvestPlanCreateResp>("/earn/autoinvest/plans/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateAutoInvestPlan", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create auto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanCreate"></param>
+        /// <returns>Task of AutoInvestPlanCreateResp</returns>
+        public async Task<AutoInvestPlanCreateResp> CreateAutoInvestPlanAsync (AutoInvestPlanCreate autoInvestPlanCreate)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<AutoInvestPlanCreateResp> localVarResponse = await CreateAutoInvestPlanAsyncWithHttpInfo(autoInvestPlanCreate);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create auto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanCreate"></param>
+        /// <returns>Task of ApiResponse (AutoInvestPlanCreateResp)</returns>
+        public async Task<ApiResponse<AutoInvestPlanCreateResp>> CreateAutoInvestPlanAsyncWithHttpInfo (AutoInvestPlanCreate autoInvestPlanCreate)
+        {
+            // verify the required parameter 'autoInvestPlanCreate' is set
+            if (autoInvestPlanCreate == null)
+                throw new ApiException(400, "Missing required parameter 'autoInvestPlanCreate' when calling EarnApi->CreateAutoInvestPlan");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = autoInvestPlanCreate;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<AutoInvestPlanCreateResp>("/earn/autoinvest/plans/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateAutoInvestPlan", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// UpdateAuto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanUpdate"></param>
+        /// <returns></returns>
+        public void UpdateAutoInvestPlan (AutoInvestPlanUpdate autoInvestPlanUpdate)
+        {
+             UpdateAutoInvestPlanWithHttpInfo(autoInvestPlanUpdate);
+        }
+
+        /// <summary>
+        /// UpdateAuto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanUpdate"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> UpdateAutoInvestPlanWithHttpInfo (AutoInvestPlanUpdate autoInvestPlanUpdate)
+        {
+            // verify the required parameter 'autoInvestPlanUpdate' is set
+            if (autoInvestPlanUpdate == null)
+                throw new ApiException(400, "Missing required parameter 'autoInvestPlanUpdate' when calling EarnApi->UpdateAutoInvestPlan");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = autoInvestPlanUpdate;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/earn/autoinvest/plans/update", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateAutoInvestPlan", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// UpdateAuto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanUpdate"></param>
+        /// <returns>Task of void</returns>
+        public async Task UpdateAutoInvestPlanAsync (AutoInvestPlanUpdate autoInvestPlanUpdate)
+        {
+             await UpdateAutoInvestPlanAsyncWithHttpInfo(autoInvestPlanUpdate);
+
+        }
+
+        /// <summary>
+        /// UpdateAuto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanUpdate"></param>
+        /// <returns>Task of ApiResponse</returns>
+        public async Task<ApiResponse<Object>> UpdateAutoInvestPlanAsyncWithHttpInfo (AutoInvestPlanUpdate autoInvestPlanUpdate)
+        {
+            // verify the required parameter 'autoInvestPlanUpdate' is set
+            if (autoInvestPlanUpdate == null)
+                throw new ApiException(400, "Missing required parameter 'autoInvestPlanUpdate' when calling EarnApi->UpdateAutoInvestPlan");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = autoInvestPlanUpdate;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/earn/autoinvest/plans/update", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateAutoInvestPlan", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// StopAuto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanStop"></param>
+        /// <returns></returns>
+        public void StopAutoInvestPlan (AutoInvestPlanStop autoInvestPlanStop)
+        {
+             StopAutoInvestPlanWithHttpInfo(autoInvestPlanStop);
+        }
+
+        /// <summary>
+        /// StopAuto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanStop"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> StopAutoInvestPlanWithHttpInfo (AutoInvestPlanStop autoInvestPlanStop)
+        {
+            // verify the required parameter 'autoInvestPlanStop' is set
+            if (autoInvestPlanStop == null)
+                throw new ApiException(400, "Missing required parameter 'autoInvestPlanStop' when calling EarnApi->StopAutoInvestPlan");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = autoInvestPlanStop;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/earn/autoinvest/plans/stop", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopAutoInvestPlan", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// StopAuto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanStop"></param>
+        /// <returns>Task of void</returns>
+        public async Task StopAutoInvestPlanAsync (AutoInvestPlanStop autoInvestPlanStop)
+        {
+             await StopAutoInvestPlanAsyncWithHttpInfo(autoInvestPlanStop);
+
+        }
+
+        /// <summary>
+        /// StopAuto invest plan 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanStop"></param>
+        /// <returns>Task of ApiResponse</returns>
+        public async Task<ApiResponse<Object>> StopAutoInvestPlanAsyncWithHttpInfo (AutoInvestPlanStop autoInvestPlanStop)
+        {
+            // verify the required parameter 'autoInvestPlanStop' is set
+            if (autoInvestPlanStop == null)
+                throw new ApiException(400, "Missing required parameter 'autoInvestPlanStop' when calling EarnApi->StopAutoInvestPlan");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = autoInvestPlanStop;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/earn/autoinvest/plans/stop", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopAutoInvestPlan", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add position immediately 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanAddPosition"></param>
+        /// <returns></returns>
+        public void AddPositionAutoInvestPlan (AutoInvestPlanAddPosition autoInvestPlanAddPosition)
+        {
+             AddPositionAutoInvestPlanWithHttpInfo(autoInvestPlanAddPosition);
+        }
+
+        /// <summary>
+        /// Add position immediately 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanAddPosition"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> AddPositionAutoInvestPlanWithHttpInfo (AutoInvestPlanAddPosition autoInvestPlanAddPosition)
+        {
+            // verify the required parameter 'autoInvestPlanAddPosition' is set
+            if (autoInvestPlanAddPosition == null)
+                throw new ApiException(400, "Missing required parameter 'autoInvestPlanAddPosition' when calling EarnApi->AddPositionAutoInvestPlan");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = autoInvestPlanAddPosition;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/earn/autoinvest/plans/add_position", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddPositionAutoInvestPlan", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add position immediately 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanAddPosition"></param>
+        /// <returns>Task of void</returns>
+        public async Task AddPositionAutoInvestPlanAsync (AutoInvestPlanAddPosition autoInvestPlanAddPosition)
+        {
+             await AddPositionAutoInvestPlanAsyncWithHttpInfo(autoInvestPlanAddPosition);
+
+        }
+
+        /// <summary>
+        /// Add position immediately 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestPlanAddPosition"></param>
+        /// <returns>Task of ApiResponse</returns>
+        public async Task<ApiResponse<Object>> AddPositionAutoInvestPlanAsyncWithHttpInfo (AutoInvestPlanAddPosition autoInvestPlanAddPosition)
+        {
+            // verify the required parameter 'autoInvestPlanAddPosition' is set
+            if (autoInvestPlanAddPosition == null)
+                throw new ApiException(400, "Missing required parameter 'autoInvestPlanAddPosition' when calling EarnApi->AddPositionAutoInvestPlan");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = autoInvestPlanAddPosition;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/earn/autoinvest/plans/add_position", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddPositionAutoInvestPlan", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// QueryCurrencies supporting auto invest 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planMoney">Pricing currency，Optional: USDT or BTC，Default: USDT (optional)</param>
+        /// <returns>List&lt;AutoInvestCoinsItem&gt;</returns>
+        public List<AutoInvestCoinsItem> ListAutoInvestCoins (string planMoney = default(string))
+        {
+             ApiResponse<List<AutoInvestCoinsItem>> localVarResponse = ListAutoInvestCoinsWithHttpInfo(planMoney);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// QueryCurrencies supporting auto invest 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planMoney">Pricing currency，Optional: USDT or BTC，Default: USDT (optional)</param>
+        /// <returns>ApiResponse of List&lt;AutoInvestCoinsItem&gt;</returns>
+        public ApiResponse<List<AutoInvestCoinsItem>> ListAutoInvestCoinsWithHttpInfo (string planMoney = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (planMoney != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "plan_money", planMoney));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<AutoInvestCoinsItem>>("/earn/autoinvest/coins", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAutoInvestCoins", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// QueryCurrencies supporting auto invest 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planMoney">Pricing currency，Optional: USDT or BTC，Default: USDT (optional)</param>
+        /// <returns>Task of List&lt;AutoInvestCoinsItem&gt;</returns>
+        public async Task<List<AutoInvestCoinsItem>> ListAutoInvestCoinsAsync (string planMoney = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<AutoInvestCoinsItem>> localVarResponse = await ListAutoInvestCoinsAsyncWithHttpInfo(planMoney);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// QueryCurrencies supporting auto invest 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planMoney">Pricing currency，Optional: USDT or BTC，Default: USDT (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;AutoInvestCoinsItem&gt;)</returns>
+        public async Task<ApiResponse<List<AutoInvestCoinsItem>>> ListAutoInvestCoinsAsyncWithHttpInfo (string planMoney = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (planMoney != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "plan_money", planMoney));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<AutoInvestCoinsItem>>("/earn/autoinvest/coins", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAutoInvestCoins", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get minimum investment amount 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestMinInvestAmount"></param>
+        /// <returns>AutoInvestMinInvestAmountResp</returns>
+        public AutoInvestMinInvestAmountResp GetAutoInvestMinAmount (AutoInvestMinInvestAmount autoInvestMinInvestAmount)
+        {
+             ApiResponse<AutoInvestMinInvestAmountResp> localVarResponse = GetAutoInvestMinAmountWithHttpInfo(autoInvestMinInvestAmount);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get minimum investment amount 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestMinInvestAmount"></param>
+        /// <returns>ApiResponse of AutoInvestMinInvestAmountResp</returns>
+        public ApiResponse<AutoInvestMinInvestAmountResp> GetAutoInvestMinAmountWithHttpInfo (AutoInvestMinInvestAmount autoInvestMinInvestAmount)
+        {
+            // verify the required parameter 'autoInvestMinInvestAmount' is set
+            if (autoInvestMinInvestAmount == null)
+                throw new ApiException(400, "Missing required parameter 'autoInvestMinInvestAmount' when calling EarnApi->GetAutoInvestMinAmount");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = autoInvestMinInvestAmount;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<AutoInvestMinInvestAmountResp>("/earn/autoinvest/min_invest_amount", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAutoInvestMinAmount", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get minimum investment amount 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestMinInvestAmount"></param>
+        /// <returns>Task of AutoInvestMinInvestAmountResp</returns>
+        public async Task<AutoInvestMinInvestAmountResp> GetAutoInvestMinAmountAsync (AutoInvestMinInvestAmount autoInvestMinInvestAmount)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<AutoInvestMinInvestAmountResp> localVarResponse = await GetAutoInvestMinAmountAsyncWithHttpInfo(autoInvestMinInvestAmount);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get minimum investment amount 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="autoInvestMinInvestAmount"></param>
+        /// <returns>Task of ApiResponse (AutoInvestMinInvestAmountResp)</returns>
+        public async Task<ApiResponse<AutoInvestMinInvestAmountResp>> GetAutoInvestMinAmountAsyncWithHttpInfo (AutoInvestMinInvestAmount autoInvestMinInvestAmount)
+        {
+            // verify the required parameter 'autoInvestMinInvestAmount' is set
+            if (autoInvestMinInvestAmount == null)
+                throw new ApiException(400, "Missing required parameter 'autoInvestMinInvestAmount' when calling EarnApi->GetAutoInvestMinAmount");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = autoInvestMinInvestAmount;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<AutoInvestMinInvestAmountResp>("/earn/autoinvest/min_invest_amount", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAutoInvestMinAmount", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List plan execution records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>AutoInvestPlanRecordsResp</returns>
+        public AutoInvestPlanRecordsResp ListAutoInvestPlanRecords (long planId, long? page = default(long?), long? pageSize = default(long?))
+        {
+             ApiResponse<AutoInvestPlanRecordsResp> localVarResponse = ListAutoInvestPlanRecordsWithHttpInfo(planId, page, pageSize);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List plan execution records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>ApiResponse of AutoInvestPlanRecordsResp</returns>
+        public ApiResponse<AutoInvestPlanRecordsResp> ListAutoInvestPlanRecordsWithHttpInfo (long planId, long? page = default(long?), long? pageSize = default(long?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "plan_id", planId));
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<AutoInvestPlanRecordsResp>("/earn/autoinvest/plans/records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAutoInvestPlanRecords", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List plan execution records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of AutoInvestPlanRecordsResp</returns>
+        public async Task<AutoInvestPlanRecordsResp> ListAutoInvestPlanRecordsAsync (long planId, long? page = default(long?), long? pageSize = default(long?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<AutoInvestPlanRecordsResp> localVarResponse = await ListAutoInvestPlanRecordsAsyncWithHttpInfo(planId, page, pageSize);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List plan execution records 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of ApiResponse (AutoInvestPlanRecordsResp)</returns>
+        public async Task<ApiResponse<AutoInvestPlanRecordsResp>> ListAutoInvestPlanRecordsAsyncWithHttpInfo (long planId, long? page = default(long?), long? pageSize = default(long?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "plan_id", planId));
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AutoInvestPlanRecordsResp>("/earn/autoinvest/plans/records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAutoInvestPlanRecords", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List plan execution recordsDetails（OrderDetails） 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="recordId">Record ID</param>
+        /// <returns>List&lt;AutoInvestOrderItem&gt;</returns>
+        public List<AutoInvestOrderItem> ListAutoInvestOrders (long planId, long recordId)
+        {
+             ApiResponse<List<AutoInvestOrderItem>> localVarResponse = ListAutoInvestOrdersWithHttpInfo(planId, recordId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List plan execution recordsDetails（OrderDetails） 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="recordId">Record ID</param>
+        /// <returns>ApiResponse of List&lt;AutoInvestOrderItem&gt;</returns>
+        public ApiResponse<List<AutoInvestOrderItem>> ListAutoInvestOrdersWithHttpInfo (long planId, long recordId)
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "plan_id", planId));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "record_id", recordId));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<AutoInvestOrderItem>>("/earn/autoinvest/orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAutoInvestOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List plan execution recordsDetails（OrderDetails） 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="recordId">Record ID</param>
+        /// <returns>Task of List&lt;AutoInvestOrderItem&gt;</returns>
+        public async Task<List<AutoInvestOrderItem>> ListAutoInvestOrdersAsync (long planId, long recordId)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<AutoInvestOrderItem>> localVarResponse = await ListAutoInvestOrdersAsyncWithHttpInfo(planId, recordId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List plan execution recordsDetails（OrderDetails） 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <param name="recordId">Record ID</param>
+        /// <returns>Task of ApiResponse (List&lt;AutoInvestOrderItem&gt;)</returns>
+        public async Task<ApiResponse<List<AutoInvestOrderItem>>> ListAutoInvestOrdersAsyncWithHttpInfo (long planId, long recordId)
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "plan_id", planId));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "record_id", recordId));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<AutoInvestOrderItem>>("/earn/autoinvest/orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAutoInvestOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List investment currency configuration 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;AutoInvestConfigItem&gt;</returns>
+        public List<AutoInvestConfigItem> ListAutoInvestConfig ()
+        {
+             ApiResponse<List<AutoInvestConfigItem>> localVarResponse = ListAutoInvestConfigWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List investment currency configuration 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;AutoInvestConfigItem&gt;</returns>
+        public ApiResponse<List<AutoInvestConfigItem>> ListAutoInvestConfigWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<AutoInvestConfigItem>>("/earn/autoinvest/config", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAutoInvestConfig", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List investment currency configuration 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;AutoInvestConfigItem&gt;</returns>
+        public async Task<List<AutoInvestConfigItem>> ListAutoInvestConfigAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<AutoInvestConfigItem>> localVarResponse = await ListAutoInvestConfigAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List investment currency configuration 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;AutoInvestConfigItem&gt;)</returns>
+        public async Task<ApiResponse<List<AutoInvestConfigItem>>> ListAutoInvestConfigAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<AutoInvestConfigItem>>("/earn/autoinvest/config", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAutoInvestConfig", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// QueryAuto invest planDetails 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <returns>AutoInvestPlanDetail</returns>
+        public AutoInvestPlanDetail GetAutoInvestPlanDetail (long planId)
+        {
+             ApiResponse<AutoInvestPlanDetail> localVarResponse = GetAutoInvestPlanDetailWithHttpInfo(planId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// QueryAuto invest planDetails 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <returns>ApiResponse of AutoInvestPlanDetail</returns>
+        public ApiResponse<AutoInvestPlanDetail> GetAutoInvestPlanDetailWithHttpInfo (long planId)
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "plan_id", planId));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<AutoInvestPlanDetail>("/earn/autoinvest/plans/detail", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAutoInvestPlanDetail", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// QueryAuto invest planDetails 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <returns>Task of AutoInvestPlanDetail</returns>
+        public async Task<AutoInvestPlanDetail> GetAutoInvestPlanDetailAsync (long planId)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<AutoInvestPlanDetail> localVarResponse = await GetAutoInvestPlanDetailAsyncWithHttpInfo(planId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// QueryAuto invest planDetails 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Plan ID</param>
+        /// <returns>Task of ApiResponse (AutoInvestPlanDetail)</returns>
+        public async Task<ApiResponse<AutoInvestPlanDetail>> GetAutoInvestPlanDetailAsyncWithHttpInfo (long planId)
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "plan_id", planId));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AutoInvestPlanDetail>("/earn/autoinvest/plans/detail", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAutoInvestPlanDetail", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// QueryAuto invest planList 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Plan status，History history，Active active</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>AutoInvestPlanListInfoResp</returns>
+        public AutoInvestPlanListInfoResp ListAutoInvestPlans (string status, long? page = default(long?), long? pageSize = default(long?))
+        {
+             ApiResponse<AutoInvestPlanListInfoResp> localVarResponse = ListAutoInvestPlansWithHttpInfo(status, page, pageSize);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// QueryAuto invest planList 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Plan status，History history，Active active</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>ApiResponse of AutoInvestPlanListInfoResp</returns>
+        public ApiResponse<AutoInvestPlanListInfoResp> ListAutoInvestPlansWithHttpInfo (string status, long? page = default(long?), long? pageSize = default(long?))
+        {
+            // verify the required parameter 'status' is set
+            if (status == null)
+                throw new ApiException(400, "Missing required parameter 'status' when calling EarnApi->ListAutoInvestPlans");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<AutoInvestPlanListInfoResp>("/earn/autoinvest/plans/list_info", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAutoInvestPlans", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// QueryAuto invest planList 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Plan status，History history，Active active</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of AutoInvestPlanListInfoResp</returns>
+        public async Task<AutoInvestPlanListInfoResp> ListAutoInvestPlansAsync (string status, long? page = default(long?), long? pageSize = default(long?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<AutoInvestPlanListInfoResp> localVarResponse = await ListAutoInvestPlansAsyncWithHttpInfo(status, page, pageSize);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// QueryAuto invest planList 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Plan status，History history，Active active</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of ApiResponse (AutoInvestPlanListInfoResp)</returns>
+        public async Task<ApiResponse<AutoInvestPlanListInfoResp>> ListAutoInvestPlansAsyncWithHttpInfo (string status, long? page = default(long?), long? pageSize = default(long?))
+        {
+            // verify the required parameter 'status' is set
+            if (status == null)
+                throw new ApiException(400, "Missing required parameter 'status' when calling EarnApi->ListAutoInvestPlans");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AutoInvestPlanListInfoResp>("/earn/autoinvest/plans/list_info", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAutoInvestPlans", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

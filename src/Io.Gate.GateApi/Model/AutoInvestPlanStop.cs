@@ -25,26 +25,31 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// FindCoin
+    /// StopAuto invest planRequest
     /// </summary>
     [DataContract]
-    public partial class FindCoin :  IEquatable<FindCoin>, IValidatableObject
+    public partial class AutoInvestPlanStop :  IEquatable<AutoInvestPlanStop>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="FindCoin" /> class.
+        /// Initializes a new instance of the <see cref="AutoInvestPlanStop" /> class.
         /// </summary>
-        /// <param name="cointype">Currency type: swap - voucher; lock - locked position; debt - US Treasury bond..</param>
-        public FindCoin(string cointype = default(string))
+        [JsonConstructorAttribute]
+        protected AutoInvestPlanStop() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoInvestPlanStop" /> class.
+        /// </summary>
+        /// <param name="planId">Plan ID (required).</param>
+        public AutoInvestPlanStop(long planId = default(long))
         {
-            this.Cointype = cointype;
+            this.PlanId = planId;
         }
 
         /// <summary>
-        /// Currency type: swap - voucher; lock - locked position; debt - US Treasury bond.
+        /// Plan ID
         /// </summary>
-        /// <value>Currency type: swap - voucher; lock - locked position; debt - US Treasury bond.</value>
-        [DataMember(Name="cointype")]
-        public string Cointype { get; set; }
+        /// <value>Plan ID</value>
+        [DataMember(Name="plan_id")]
+        public long PlanId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -53,8 +58,8 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class FindCoin {\n");
-            sb.Append("  Cointype: ").Append(Cointype).Append("\n");
+            sb.Append("class AutoInvestPlanStop {\n");
+            sb.Append("  PlanId: ").Append(PlanId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,24 +80,23 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FindCoin);
+            return this.Equals(input as AutoInvestPlanStop);
         }
 
         /// <summary>
-        /// Returns true if FindCoin instances are equal
+        /// Returns true if AutoInvestPlanStop instances are equal
         /// </summary>
-        /// <param name="input">Instance of FindCoin to be compared</param>
+        /// <param name="input">Instance of AutoInvestPlanStop to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(FindCoin input)
+        public bool Equals(AutoInvestPlanStop input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Cointype == input.Cointype ||
-                    (this.Cointype != null &&
-                    this.Cointype.Equals(input.Cointype))
+                    this.PlanId == input.PlanId ||
+                    this.PlanId.Equals(input.PlanId)
                 );
         }
 
@@ -105,8 +109,7 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Cointype != null)
-                    hashCode = hashCode * 59 + this.Cointype.GetHashCode();
+                hashCode = hashCode * 59 + this.PlanId.GetHashCode();
                 return hashCode;
             }
         }

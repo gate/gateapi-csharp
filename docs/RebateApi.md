@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**UserSubRelation**](RebateApi.md#usersubrelation) | **GET** /rebate/user/sub_relation | User subordinate relationship
 [**GetPartnerApplicationRecent**](RebateApi.md#getpartnerapplicationrecent) | **GET** /rebate/partner/applications/recent | Get recent partner application records
 [**GetPartnerEligibility**](RebateApi.md#getpartnereligibility) | **GET** /rebate/partner/eligibility | Check partner application eligibility
+[**GetPartnerAgentDataAggregated**](RebateApi.md#getpartneragentdataaggregated) | **GET** /rebate/partner/data/aggregated | Aggregated partner agent statistics
 
 
 <a name="agencytransactionhistory"></a>
@@ -865,6 +866,86 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getpartneragentdataaggregated"></a>
+# **GetPartnerAgentDataAggregated**
+> PartnerDataAggregatedResponse GetPartnerAgentDataAggregated (string startDate = null, string endDate = null, int? businessType = null)
+
+Aggregated partner agent statistics
+
+查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 `trading_user_count` 仅在 `business_type=0`（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetPartnerAgentDataAggregatedExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new RebateApi(config);
+            var startDate = "2024-01-01 00:00:00";  // string | 查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional) 
+            var endDate = "2024-01-07 23:59:59";  // string | 查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional) 
+            var businessType = 0;  // int? | Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional)  (default to 0)
+
+            try
+            {
+                // Aggregated partner agent statistics
+                PartnerDataAggregatedResponse result = apiInstance.GetPartnerAgentDataAggregated(startDate, endDate, businessType);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling RebateApi.GetPartnerAgentDataAggregated: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **string**| 查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 | [optional] 
+ **endDate** | **string**| 查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 | [optional] 
+ **businessType** | **int?**| Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi | [optional] [default to 0]
+
+### Return type
+
+[**PartnerDataAggregatedResponse**](PartnerDataAggregatedResponse.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
+| **400** | Invalid request parameters |  -  |
+| **401** | Unauthorized access |  -  |
+| **403** | Access denied |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

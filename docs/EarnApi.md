@@ -13,6 +13,17 @@ Method | HTTP request | Description
 [**OrderList**](EarnApi.md#orderlist) | **GET** /earn/staking/order_list | List of on-chain coin-earning orders
 [**AwardList**](EarnApi.md#awardlist) | **GET** /earn/staking/award_list | On-chain coin-earning dividend records
 [**AssetList**](EarnApi.md#assetlist) | **GET** /earn/staking/assets | On-chain coin-earning assets
+[**CreateAutoInvestPlan**](EarnApi.md#createautoinvestplan) | **POST** /earn/autoinvest/plans/create | Create auto invest plan
+[**UpdateAutoInvestPlan**](EarnApi.md#updateautoinvestplan) | **POST** /earn/autoinvest/plans/update | UpdateAuto invest plan
+[**StopAutoInvestPlan**](EarnApi.md#stopautoinvestplan) | **POST** /earn/autoinvest/plans/stop | StopAuto invest plan
+[**AddPositionAutoInvestPlan**](EarnApi.md#addpositionautoinvestplan) | **POST** /earn/autoinvest/plans/add_position | Add position immediately
+[**ListAutoInvestCoins**](EarnApi.md#listautoinvestcoins) | **GET** /earn/autoinvest/coins | QueryCurrencies supporting auto invest
+[**GetAutoInvestMinAmount**](EarnApi.md#getautoinvestminamount) | **POST** /earn/autoinvest/min_invest_amount | Get minimum investment amount
+[**ListAutoInvestPlanRecords**](EarnApi.md#listautoinvestplanrecords) | **GET** /earn/autoinvest/plans/records | List plan execution records
+[**ListAutoInvestOrders**](EarnApi.md#listautoinvestorders) | **GET** /earn/autoinvest/orders | List plan execution recordsDetails（OrderDetails）
+[**ListAutoInvestConfig**](EarnApi.md#listautoinvestconfig) | **GET** /earn/autoinvest/config | List investment currency configuration
+[**GetAutoInvestPlanDetail**](EarnApi.md#getautoinvestplandetail) | **GET** /earn/autoinvest/plans/detail | QueryAuto invest planDetails
+[**ListAutoInvestPlans**](EarnApi.md#listautoinvestplans) | **GET** /earn/autoinvest/plans/list_info | QueryAuto invest planList
 [**ListEarnFixedTermProducts**](EarnApi.md#listearnfixedtermproducts) | **GET** /earn/fixed-term/product | Get product list
 [**ListEarnFixedTermProductsByAsset**](EarnApi.md#listearnfixedtermproductsbyasset) | **GET** /earn/fixed-term/product/{asset}/list | Get product list by single currency
 [**ListEarnFixedTermLends**](EarnApi.md#listearnfixedtermlends) | **GET** /earn/fixed-term/user/lend | Subscription list
@@ -307,7 +318,7 @@ This endpoint does not need any parameter.
 
 <a name="findcoin"></a>
 # **FindCoin**
-> List&lt;Object&gt; FindCoin (FindCoin findCoin)
+> List&lt;Object&gt; FindCoin (string cointype = null)
 
 Staking coins
 
@@ -330,12 +341,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new EarnApi(config);
-            var findCoin = new FindCoin(); // FindCoin | 
+            var cointype = "cointype_example";  // string | Currency type: swap - voucher; lock - locked position; debt - US Treasury bond. (optional) 
 
             try
             {
                 // Staking coins
-                List<Object> result = apiInstance.FindCoin(findCoin);
+                List<Object> result = apiInstance.FindCoin(cointype);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -354,7 +365,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **findCoin** | [**FindCoin**](FindCoin.md)|  | 
+ **cointype** | **string**| Currency type: swap - voucher; lock - locked position; debt - US Treasury bond. | [optional] 
 
 ### Return type
 
@@ -366,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -653,6 +664,790 @@ Name | Type | Description  | Notes
 ### Return type
 
 **List<Object>**
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createautoinvestplan"></a>
+# **CreateAutoInvestPlan**
+> AutoInvestPlanCreateResp CreateAutoInvestPlan (AutoInvestPlanCreate autoInvestPlanCreate)
+
+Create auto invest plan
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateAutoInvestPlanExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var autoInvestPlanCreate = new AutoInvestPlanCreate(); // AutoInvestPlanCreate | 
+
+            try
+            {
+                // Create auto invest plan
+                AutoInvestPlanCreateResp result = apiInstance.CreateAutoInvestPlan(autoInvestPlanCreate);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.CreateAutoInvestPlan: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **autoInvestPlanCreate** | [**AutoInvestPlanCreate**](AutoInvestPlanCreate.md)|  | 
+
+### Return type
+
+[**AutoInvestPlanCreateResp**](AutoInvestPlanCreateResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Created successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updateautoinvestplan"></a>
+# **UpdateAutoInvestPlan**
+> void UpdateAutoInvestPlan (AutoInvestPlanUpdate autoInvestPlanUpdate)
+
+UpdateAuto invest plan
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class UpdateAutoInvestPlanExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var autoInvestPlanUpdate = new AutoInvestPlanUpdate(); // AutoInvestPlanUpdate | 
+
+            try
+            {
+                // UpdateAuto invest plan
+                apiInstance.UpdateAutoInvestPlan(autoInvestPlanUpdate);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.UpdateAutoInvestPlan: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **autoInvestPlanUpdate** | [**AutoInvestPlanUpdate**](AutoInvestPlanUpdate.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Updated successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="stopautoinvestplan"></a>
+# **StopAutoInvestPlan**
+> void StopAutoInvestPlan (AutoInvestPlanStop autoInvestPlanStop)
+
+StopAuto invest plan
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class StopAutoInvestPlanExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var autoInvestPlanStop = new AutoInvestPlanStop(); // AutoInvestPlanStop | 
+
+            try
+            {
+                // StopAuto invest plan
+                apiInstance.StopAutoInvestPlan(autoInvestPlanStop);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.StopAutoInvestPlan: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **autoInvestPlanStop** | [**AutoInvestPlanStop**](AutoInvestPlanStop.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Stopped successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="addpositionautoinvestplan"></a>
+# **AddPositionAutoInvestPlan**
+> void AddPositionAutoInvestPlan (AutoInvestPlanAddPosition autoInvestPlanAddPosition)
+
+Add position immediately
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class AddPositionAutoInvestPlanExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var autoInvestPlanAddPosition = new AutoInvestPlanAddPosition(); // AutoInvestPlanAddPosition | 
+
+            try
+            {
+                // Add position immediately
+                apiInstance.AddPositionAutoInvestPlan(autoInvestPlanAddPosition);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.AddPositionAutoInvestPlan: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **autoInvestPlanAddPosition** | [**AutoInvestPlanAddPosition**](AutoInvestPlanAddPosition.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Add PositionSuccess |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listautoinvestcoins"></a>
+# **ListAutoInvestCoins**
+> List&lt;AutoInvestCoinsItem&gt; ListAutoInvestCoins (string planMoney = null)
+
+QueryCurrencies supporting auto invest
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListAutoInvestCoinsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var planMoney = "USDT";  // string | Pricing currency，Optional: USDT or BTC，Default: USDT (optional) 
+
+            try
+            {
+                // QueryCurrencies supporting auto invest
+                List<AutoInvestCoinsItem> result = apiInstance.ListAutoInvestCoins(planMoney);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListAutoInvestCoins: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **planMoney** | **string**| Pricing currency，Optional: USDT or BTC，Default: USDT | [optional] 
+
+### Return type
+
+[**List&lt;AutoInvestCoinsItem&gt;**](AutoInvestCoinsItem.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getautoinvestminamount"></a>
+# **GetAutoInvestMinAmount**
+> AutoInvestMinInvestAmountResp GetAutoInvestMinAmount (AutoInvestMinInvestAmount autoInvestMinInvestAmount)
+
+Get minimum investment amount
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetAutoInvestMinAmountExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var autoInvestMinInvestAmount = new AutoInvestMinInvestAmount(); // AutoInvestMinInvestAmount | 
+
+            try
+            {
+                // Get minimum investment amount
+                AutoInvestMinInvestAmountResp result = apiInstance.GetAutoInvestMinAmount(autoInvestMinInvestAmount);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.GetAutoInvestMinAmount: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **autoInvestMinInvestAmount** | [**AutoInvestMinInvestAmount**](AutoInvestMinInvestAmount.md)|  | 
+
+### Return type
+
+[**AutoInvestMinInvestAmountResp**](AutoInvestMinInvestAmountResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listautoinvestplanrecords"></a>
+# **ListAutoInvestPlanRecords**
+> AutoInvestPlanRecordsResp ListAutoInvestPlanRecords (long planId, long? page = null, long? pageSize = null)
+
+List plan execution records
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListAutoInvestPlanRecordsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var planId = 141378;  // long | Plan ID
+            var page = 1;  // long? | page number (optional) 
+            var pageSize = 10;  // long? | Items per page，Maximum 100 (optional) 
+
+            try
+            {
+                // List plan execution records
+                AutoInvestPlanRecordsResp result = apiInstance.ListAutoInvestPlanRecords(planId, page, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListAutoInvestPlanRecords: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **planId** | **long**| Plan ID | 
+ **page** | **long?**| page number | [optional] 
+ **pageSize** | **long?**| Items per page，Maximum 100 | [optional] 
+
+### Return type
+
+[**AutoInvestPlanRecordsResp**](AutoInvestPlanRecordsResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listautoinvestorders"></a>
+# **ListAutoInvestOrders**
+> List&lt;AutoInvestOrderItem&gt; ListAutoInvestOrders (long planId, long recordId)
+
+List plan execution recordsDetails（OrderDetails）
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListAutoInvestOrdersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var planId = 142583;  // long | Plan ID
+            var recordId = 1770805384904919;  // long | Record ID
+
+            try
+            {
+                // List plan execution recordsDetails（OrderDetails）
+                List<AutoInvestOrderItem> result = apiInstance.ListAutoInvestOrders(planId, recordId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListAutoInvestOrders: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **planId** | **long**| Plan ID | 
+ **recordId** | **long**| Record ID | 
+
+### Return type
+
+[**List&lt;AutoInvestOrderItem&gt;**](AutoInvestOrderItem.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listautoinvestconfig"></a>
+# **ListAutoInvestConfig**
+> List&lt;AutoInvestConfigItem&gt; ListAutoInvestConfig ()
+
+List investment currency configuration
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListAutoInvestConfigExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+
+            try
+            {
+                // List investment currency configuration
+                List<AutoInvestConfigItem> result = apiInstance.ListAutoInvestConfig();
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListAutoInvestConfig: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;AutoInvestConfigItem&gt;**](AutoInvestConfigItem.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getautoinvestplandetail"></a>
+# **GetAutoInvestPlanDetail**
+> AutoInvestPlanDetail GetAutoInvestPlanDetail (long planId)
+
+QueryAuto invest planDetails
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetAutoInvestPlanDetailExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var planId = 142609;  // long | Plan ID
+
+            try
+            {
+                // QueryAuto invest planDetails
+                AutoInvestPlanDetail result = apiInstance.GetAutoInvestPlanDetail(planId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.GetAutoInvestPlanDetail: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **planId** | **long**| Plan ID | 
+
+### Return type
+
+[**AutoInvestPlanDetail**](AutoInvestPlanDetail.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listautoinvestplans"></a>
+# **ListAutoInvestPlans**
+> AutoInvestPlanListInfoResp ListAutoInvestPlans (string status, long? page = null, long? pageSize = null)
+
+QueryAuto invest planList
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListAutoInvestPlansExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var status = "active";  // string | Plan status，History history，Active active
+            var page = 56;  // long? | page number (optional) 
+            var pageSize = 56;  // long? | Items per page，Maximum 100 (optional) 
+
+            try
+            {
+                // QueryAuto invest planList
+                AutoInvestPlanListInfoResp result = apiInstance.ListAutoInvestPlans(status, page, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListAutoInvestPlans: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **status** | **string**| Plan status，History history，Active active | 
+ **page** | **long?**| page number | [optional] 
+ **pageSize** | **long?**| Items per page，Maximum 100 | [optional] 
+
+### Return type
+
+[**AutoInvestPlanListInfoResp**](AutoInvestPlanListInfoResp.md)
 
 ### Authorization
 
