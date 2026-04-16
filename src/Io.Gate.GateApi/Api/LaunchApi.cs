@@ -162,6 +162,272 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Reward currency (optional)</param>
         /// <returns>ApiResponse of List&lt;LaunchPoolV4RewardRecord&gt;</returns>
         ApiResponse<List<LaunchPoolV4RewardRecord>> ListLaunchPoolRewardRecordsWithHttpInfo (long? page = default(long?), long? pageSize = default(long?), long? startTime = default(long?), long? endTime = default(long?), string coin = default(string));
+        /// <summary>
+        /// 查询HODLer Airdrop活动列表
+        /// </summary>
+        /// <remarks>
+        /// 获取HODLer Airdrop活动列表，支持按状态、币种/项目名称、参与情况筛选。此接口无需用户登录，登录用户可获取个人参与信息。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选，可选值：ACTIVE（进行中+预热中）、UNDERWAY（进行中）、PREHEAT（预热中）、FINISH（已结束），不传返回全部 (optional)</param>
+        /// <param name="keyword">币种/项目名称关键词，模糊匹配 (optional)</param>
+        /// <param name="join">参与情况筛选：0全部（默认），1仅已参与 (optional, default to 0)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>List&lt;HodlerAirdropV4ProjectItem&gt;</returns>
+        List<HodlerAirdropV4ProjectItem> GetHodlerAirdropProjectList (string status = default(string), string keyword = default(string), int? join = default(int?), int? page = default(int?), int? size = default(int?));
+
+        /// <summary>
+        /// 查询HODLer Airdrop活动列表
+        /// </summary>
+        /// <remarks>
+        /// 获取HODLer Airdrop活动列表，支持按状态、币种/项目名称、参与情况筛选。此接口无需用户登录，登录用户可获取个人参与信息。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选，可选值：ACTIVE（进行中+预热中）、UNDERWAY（进行中）、PREHEAT（预热中）、FINISH（已结束），不传返回全部 (optional)</param>
+        /// <param name="keyword">币种/项目名称关键词，模糊匹配 (optional)</param>
+        /// <param name="join">参与情况筛选：0全部（默认），1仅已参与 (optional, default to 0)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>ApiResponse of List&lt;HodlerAirdropV4ProjectItem&gt;</returns>
+        ApiResponse<List<HodlerAirdropV4ProjectItem>> GetHodlerAirdropProjectListWithHttpInfo (string status = default(string), string keyword = default(string), int? join = default(int?), int? page = default(int?), int? size = default(int?));
+        /// <summary>
+        /// 参与HODLer Airdrop活动
+        /// </summary>
+        /// <remarks>
+        /// 参与指定的HODLer Airdrop活动，需持有GT。此接口需要用户登录认证，且须满足KYC要求，不支持子账户、企业/机构用户。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="hodlerAirdropV4OrderRequest"></param>
+        /// <returns>HodlerAirdropV4OrderResponse</returns>
+        HodlerAirdropV4OrderResponse HodlerAirdropOrder (HodlerAirdropV4OrderRequest hodlerAirdropV4OrderRequest);
+
+        /// <summary>
+        /// 参与HODLer Airdrop活动
+        /// </summary>
+        /// <remarks>
+        /// 参与指定的HODLer Airdrop活动，需持有GT。此接口需要用户登录认证，且须满足KYC要求，不支持子账户、企业/机构用户。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="hodlerAirdropV4OrderRequest"></param>
+        /// <returns>ApiResponse of HodlerAirdropV4OrderResponse</returns>
+        ApiResponse<HodlerAirdropV4OrderResponse> HodlerAirdropOrderWithHttpInfo (HodlerAirdropV4OrderRequest hodlerAirdropV4OrderRequest);
+        /// <summary>
+        /// 查询HODLer Airdrop参与记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的HODLer Airdrop参与记录，返回每个活动的有效持仓和空投金额。此接口需要用户登录认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>List&lt;HodlerAirdropV4UserOrderRecord&gt;</returns>
+        List<HodlerAirdropV4UserOrderRecord> GetHodlerAirdropUserOrderRecords (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?));
+
+        /// <summary>
+        /// 查询HODLer Airdrop参与记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的HODLer Airdrop参与记录，返回每个活动的有效持仓和空投金额。此接口需要用户登录认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>ApiResponse of List&lt;HodlerAirdropV4UserOrderRecord&gt;</returns>
+        ApiResponse<List<HodlerAirdropV4UserOrderRecord>> GetHodlerAirdropUserOrderRecordsWithHttpInfo (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?));
+        /// <summary>
+        /// 查询HODLer Airdrop空投记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户已获得的HODLer Airdrop空投发放记录，包含基础空投、额外空投和自动兑换状态。此接口需要用户登录认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>List&lt;HodlerAirdropV4UserAirdropRecord&gt;</returns>
+        List<HodlerAirdropV4UserAirdropRecord> GetHodlerAirdropUserAirdropRecords (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?));
+
+        /// <summary>
+        /// 查询HODLer Airdrop空投记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户已获得的HODLer Airdrop空投发放记录，包含基础空投、额外空投和自动兑换状态。此接口需要用户登录认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>ApiResponse of List&lt;HodlerAirdropV4UserAirdropRecord&gt;</returns>
+        ApiResponse<List<HodlerAirdropV4UserAirdropRecord>> GetHodlerAirdropUserAirdropRecordsWithHttpInfo (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?));
+        /// <summary>
+        /// 查询活动列表
+        /// </summary>
+        /// <remarks>
+        /// 支持多维度筛选 CandyDrop 活动，每次查询返回列表排序的前十条数据。不需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选：ongoing(进行中)、upcoming(即将开始)、ended(已结束)，不传则返回全部 (optional)</param>
+        /// <param name="ruleName">任务类型筛选：spot(现货)、futures(合约)、deposit(充值)、invite(邀请)、trading_bot(交易机器人)、simple_earn(余币宝)、first_deposit(首笔入金)、alpha(Alpha)、flash_swap(闪兑)、tradfi(TradFi)、etf(ETF) (optional)</param>
+        /// <param name="registerStatus">参与情况筛选：registered(已参与)、unregistered(未参与)，不传则返回全部 (optional)</param>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="limit">返回条数，默认10，最大30 (optional, default to 10)</param>
+        /// <param name="offset">偏移量，默认0 (optional, default to 0)</param>
+        /// <returns>List&lt;CandyDropV4ActivityCd01&gt;</returns>
+        List<CandyDropV4ActivityCd01> GetCandyDropActivityListV4 (string status = default(string), string ruleName = default(string), string registerStatus = default(string), string currency = default(string), int? limit = default(int?), int? offset = default(int?));
+
+        /// <summary>
+        /// 查询活动列表
+        /// </summary>
+        /// <remarks>
+        /// 支持多维度筛选 CandyDrop 活动，每次查询返回列表排序的前十条数据。不需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选：ongoing(进行中)、upcoming(即将开始)、ended(已结束)，不传则返回全部 (optional)</param>
+        /// <param name="ruleName">任务类型筛选：spot(现货)、futures(合约)、deposit(充值)、invite(邀请)、trading_bot(交易机器人)、simple_earn(余币宝)、first_deposit(首笔入金)、alpha(Alpha)、flash_swap(闪兑)、tradfi(TradFi)、etf(ETF) (optional)</param>
+        /// <param name="registerStatus">参与情况筛选：registered(已参与)、unregistered(未参与)，不传则返回全部 (optional)</param>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="limit">返回条数，默认10，最大30 (optional, default to 10)</param>
+        /// <param name="offset">偏移量，默认0 (optional, default to 0)</param>
+        /// <returns>ApiResponse of List&lt;CandyDropV4ActivityCd01&gt;</returns>
+        ApiResponse<List<CandyDropV4ActivityCd01>> GetCandyDropActivityListV4WithHttpInfo (string status = default(string), string ruleName = default(string), string registerStatus = default(string), string currency = default(string), int? limit = default(int?), int? offset = default(int?));
+        /// <summary>
+        /// 报名参与活动
+        /// </summary>
+        /// <remarks>
+        /// 报名参与特定 CandyDrop 活动。需要登录，需要 API Key 签名认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="candyDropV4RegisterReqCd02"></param>
+        /// <returns>CandyDropV4RegisterRespCd02</returns>
+        CandyDropV4RegisterRespCd02 RegisterCandyDropV4 (CandyDropV4RegisterReqCd02 candyDropV4RegisterReqCd02);
+
+        /// <summary>
+        /// 报名参与活动
+        /// </summary>
+        /// <remarks>
+        /// 报名参与特定 CandyDrop 活动。需要登录，需要 API Key 签名认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="candyDropV4RegisterReqCd02"></param>
+        /// <returns>ApiResponse of CandyDropV4RegisterRespCd02</returns>
+        ApiResponse<CandyDropV4RegisterRespCd02> RegisterCandyDropV4WithHttpInfo (CandyDropV4RegisterReqCd02 candyDropV4RegisterReqCd02);
+        /// <summary>
+        /// 查询活动规则
+        /// </summary>
+        /// <remarks>
+        /// 查询特定活动的规则，包括奖池及对应任务数据。不需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>CandyDropV4ActivityRulesCd03</returns>
+        CandyDropV4ActivityRulesCd03 GetCandyDropActivityRulesV4 (long? activityId = default(long?), string currency = default(string));
+
+        /// <summary>
+        /// 查询活动规则
+        /// </summary>
+        /// <remarks>
+        /// 查询特定活动的规则，包括奖池及对应任务数据。不需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>ApiResponse of CandyDropV4ActivityRulesCd03</returns>
+        ApiResponse<CandyDropV4ActivityRulesCd03> GetCandyDropActivityRulesV4WithHttpInfo (long? activityId = default(long?), string currency = default(string));
+        /// <summary>
+        /// 查询任务完成进度
+        /// </summary>
+        /// <remarks>
+        /// 查询进行中且已报名/参与的任务完成进度。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>CandyDropV4TaskProgressCd04</returns>
+        CandyDropV4TaskProgressCd04 GetCandyDropTaskProgressV4 (long? activityId = default(long?), string currency = default(string));
+
+        /// <summary>
+        /// 查询任务完成进度
+        /// </summary>
+        /// <remarks>
+        /// 查询进行中且已报名/参与的任务完成进度。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>ApiResponse of CandyDropV4TaskProgressCd04</returns>
+        ApiResponse<CandyDropV4TaskProgressCd04> GetCandyDropTaskProgressV4WithHttpInfo (long? activityId = default(long?), string currency = default(string));
+        /// <summary>
+        /// 查询参与记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的 CandyDrop 参与详情。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="status">状态筛选：ongoing(进行中)、awaiting_draw(待开奖)、won(已中奖)、not_win(未中奖) (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>List&lt;CandyDropV4ParticipationRecordCd05&gt;</returns>
+        List<CandyDropV4ParticipationRecordCd05> GetCandyDropParticipationRecordsV4 (string currency = default(string), string status = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?));
+
+        /// <summary>
+        /// 查询参与记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的 CandyDrop 参与详情。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="status">状态筛选：ongoing(进行中)、awaiting_draw(待开奖)、won(已中奖)、not_win(未中奖) (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>ApiResponse of List&lt;CandyDropV4ParticipationRecordCd05&gt;</returns>
+        ApiResponse<List<CandyDropV4ParticipationRecordCd05>> GetCandyDropParticipationRecordsV4WithHttpInfo (string currency = default(string), string status = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?));
+        /// <summary>
+        /// 查询空投记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的 CandyDrop 空投详情。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>List&lt;CandyDropV4AirdropRecordCd06&gt;</returns>
+        List<CandyDropV4AirdropRecordCd06> GetCandyDropAirdropRecordsV4 (string currency = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?));
+
+        /// <summary>
+        /// 查询空投记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的 CandyDrop 空投详情。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>ApiResponse of List&lt;CandyDropV4AirdropRecordCd06&gt;</returns>
+        ApiResponse<List<CandyDropV4AirdropRecordCd06>> GetCandyDropAirdropRecordsV4WithHttpInfo (string currency = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?));
         #endregion Synchronous Operations
     }
 
@@ -306,6 +572,272 @@ namespace Io.Gate.GateApi.Api
         /// <param name="coin">Reward currency (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;LaunchPoolV4RewardRecord&gt;)</returns>
         Task<ApiResponse<List<LaunchPoolV4RewardRecord>>> ListLaunchPoolRewardRecordsAsyncWithHttpInfo (long? page = default(long?), long? pageSize = default(long?), long? startTime = default(long?), long? endTime = default(long?), string coin = default(string));
+        /// <summary>
+        /// 查询HODLer Airdrop活动列表
+        /// </summary>
+        /// <remarks>
+        /// 获取HODLer Airdrop活动列表，支持按状态、币种/项目名称、参与情况筛选。此接口无需用户登录，登录用户可获取个人参与信息。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选，可选值：ACTIVE（进行中+预热中）、UNDERWAY（进行中）、PREHEAT（预热中）、FINISH（已结束），不传返回全部 (optional)</param>
+        /// <param name="keyword">币种/项目名称关键词，模糊匹配 (optional)</param>
+        /// <param name="join">参与情况筛选：0全部（默认），1仅已参与 (optional, default to 0)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of List&lt;HodlerAirdropV4ProjectItem&gt;</returns>
+        Task<List<HodlerAirdropV4ProjectItem>> GetHodlerAirdropProjectListAsync (string status = default(string), string keyword = default(string), int? join = default(int?), int? page = default(int?), int? size = default(int?));
+
+        /// <summary>
+        /// 查询HODLer Airdrop活动列表
+        /// </summary>
+        /// <remarks>
+        /// 获取HODLer Airdrop活动列表，支持按状态、币种/项目名称、参与情况筛选。此接口无需用户登录，登录用户可获取个人参与信息。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选，可选值：ACTIVE（进行中+预热中）、UNDERWAY（进行中）、PREHEAT（预热中）、FINISH（已结束），不传返回全部 (optional)</param>
+        /// <param name="keyword">币种/项目名称关键词，模糊匹配 (optional)</param>
+        /// <param name="join">参与情况筛选：0全部（默认），1仅已参与 (optional, default to 0)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (List&lt;HodlerAirdropV4ProjectItem&gt;)</returns>
+        Task<ApiResponse<List<HodlerAirdropV4ProjectItem>>> GetHodlerAirdropProjectListAsyncWithHttpInfo (string status = default(string), string keyword = default(string), int? join = default(int?), int? page = default(int?), int? size = default(int?));
+        /// <summary>
+        /// 参与HODLer Airdrop活动
+        /// </summary>
+        /// <remarks>
+        /// 参与指定的HODLer Airdrop活动，需持有GT。此接口需要用户登录认证，且须满足KYC要求，不支持子账户、企业/机构用户。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="hodlerAirdropV4OrderRequest"></param>
+        /// <returns>Task of HodlerAirdropV4OrderResponse</returns>
+        Task<HodlerAirdropV4OrderResponse> HodlerAirdropOrderAsync (HodlerAirdropV4OrderRequest hodlerAirdropV4OrderRequest);
+
+        /// <summary>
+        /// 参与HODLer Airdrop活动
+        /// </summary>
+        /// <remarks>
+        /// 参与指定的HODLer Airdrop活动，需持有GT。此接口需要用户登录认证，且须满足KYC要求，不支持子账户、企业/机构用户。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="hodlerAirdropV4OrderRequest"></param>
+        /// <returns>Task of ApiResponse (HodlerAirdropV4OrderResponse)</returns>
+        Task<ApiResponse<HodlerAirdropV4OrderResponse>> HodlerAirdropOrderAsyncWithHttpInfo (HodlerAirdropV4OrderRequest hodlerAirdropV4OrderRequest);
+        /// <summary>
+        /// 查询HODLer Airdrop参与记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的HODLer Airdrop参与记录，返回每个活动的有效持仓和空投金额。此接口需要用户登录认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of List&lt;HodlerAirdropV4UserOrderRecord&gt;</returns>
+        Task<List<HodlerAirdropV4UserOrderRecord>> GetHodlerAirdropUserOrderRecordsAsync (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?));
+
+        /// <summary>
+        /// 查询HODLer Airdrop参与记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的HODLer Airdrop参与记录，返回每个活动的有效持仓和空投金额。此接口需要用户登录认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (List&lt;HodlerAirdropV4UserOrderRecord&gt;)</returns>
+        Task<ApiResponse<List<HodlerAirdropV4UserOrderRecord>>> GetHodlerAirdropUserOrderRecordsAsyncWithHttpInfo (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?));
+        /// <summary>
+        /// 查询HODLer Airdrop空投记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户已获得的HODLer Airdrop空投发放记录，包含基础空投、额外空投和自动兑换状态。此接口需要用户登录认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of List&lt;HodlerAirdropV4UserAirdropRecord&gt;</returns>
+        Task<List<HodlerAirdropV4UserAirdropRecord>> GetHodlerAirdropUserAirdropRecordsAsync (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?));
+
+        /// <summary>
+        /// 查询HODLer Airdrop空投记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户已获得的HODLer Airdrop空投发放记录，包含基础空投、额外空投和自动兑换状态。此接口需要用户登录认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (List&lt;HodlerAirdropV4UserAirdropRecord&gt;)</returns>
+        Task<ApiResponse<List<HodlerAirdropV4UserAirdropRecord>>> GetHodlerAirdropUserAirdropRecordsAsyncWithHttpInfo (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?));
+        /// <summary>
+        /// 查询活动列表
+        /// </summary>
+        /// <remarks>
+        /// 支持多维度筛选 CandyDrop 活动，每次查询返回列表排序的前十条数据。不需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选：ongoing(进行中)、upcoming(即将开始)、ended(已结束)，不传则返回全部 (optional)</param>
+        /// <param name="ruleName">任务类型筛选：spot(现货)、futures(合约)、deposit(充值)、invite(邀请)、trading_bot(交易机器人)、simple_earn(余币宝)、first_deposit(首笔入金)、alpha(Alpha)、flash_swap(闪兑)、tradfi(TradFi)、etf(ETF) (optional)</param>
+        /// <param name="registerStatus">参与情况筛选：registered(已参与)、unregistered(未参与)，不传则返回全部 (optional)</param>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="limit">返回条数，默认10，最大30 (optional, default to 10)</param>
+        /// <param name="offset">偏移量，默认0 (optional, default to 0)</param>
+        /// <returns>Task of List&lt;CandyDropV4ActivityCd01&gt;</returns>
+        Task<List<CandyDropV4ActivityCd01>> GetCandyDropActivityListV4Async (string status = default(string), string ruleName = default(string), string registerStatus = default(string), string currency = default(string), int? limit = default(int?), int? offset = default(int?));
+
+        /// <summary>
+        /// 查询活动列表
+        /// </summary>
+        /// <remarks>
+        /// 支持多维度筛选 CandyDrop 活动，每次查询返回列表排序的前十条数据。不需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选：ongoing(进行中)、upcoming(即将开始)、ended(已结束)，不传则返回全部 (optional)</param>
+        /// <param name="ruleName">任务类型筛选：spot(现货)、futures(合约)、deposit(充值)、invite(邀请)、trading_bot(交易机器人)、simple_earn(余币宝)、first_deposit(首笔入金)、alpha(Alpha)、flash_swap(闪兑)、tradfi(TradFi)、etf(ETF) (optional)</param>
+        /// <param name="registerStatus">参与情况筛选：registered(已参与)、unregistered(未参与)，不传则返回全部 (optional)</param>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="limit">返回条数，默认10，最大30 (optional, default to 10)</param>
+        /// <param name="offset">偏移量，默认0 (optional, default to 0)</param>
+        /// <returns>Task of ApiResponse (List&lt;CandyDropV4ActivityCd01&gt;)</returns>
+        Task<ApiResponse<List<CandyDropV4ActivityCd01>>> GetCandyDropActivityListV4AsyncWithHttpInfo (string status = default(string), string ruleName = default(string), string registerStatus = default(string), string currency = default(string), int? limit = default(int?), int? offset = default(int?));
+        /// <summary>
+        /// 报名参与活动
+        /// </summary>
+        /// <remarks>
+        /// 报名参与特定 CandyDrop 活动。需要登录，需要 API Key 签名认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="candyDropV4RegisterReqCd02"></param>
+        /// <returns>Task of CandyDropV4RegisterRespCd02</returns>
+        Task<CandyDropV4RegisterRespCd02> RegisterCandyDropV4Async (CandyDropV4RegisterReqCd02 candyDropV4RegisterReqCd02);
+
+        /// <summary>
+        /// 报名参与活动
+        /// </summary>
+        /// <remarks>
+        /// 报名参与特定 CandyDrop 活动。需要登录，需要 API Key 签名认证。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="candyDropV4RegisterReqCd02"></param>
+        /// <returns>Task of ApiResponse (CandyDropV4RegisterRespCd02)</returns>
+        Task<ApiResponse<CandyDropV4RegisterRespCd02>> RegisterCandyDropV4AsyncWithHttpInfo (CandyDropV4RegisterReqCd02 candyDropV4RegisterReqCd02);
+        /// <summary>
+        /// 查询活动规则
+        /// </summary>
+        /// <remarks>
+        /// 查询特定活动的规则，包括奖池及对应任务数据。不需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>Task of CandyDropV4ActivityRulesCd03</returns>
+        Task<CandyDropV4ActivityRulesCd03> GetCandyDropActivityRulesV4Async (long? activityId = default(long?), string currency = default(string));
+
+        /// <summary>
+        /// 查询活动规则
+        /// </summary>
+        /// <remarks>
+        /// 查询特定活动的规则，包括奖池及对应任务数据。不需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>Task of ApiResponse (CandyDropV4ActivityRulesCd03)</returns>
+        Task<ApiResponse<CandyDropV4ActivityRulesCd03>> GetCandyDropActivityRulesV4AsyncWithHttpInfo (long? activityId = default(long?), string currency = default(string));
+        /// <summary>
+        /// 查询任务完成进度
+        /// </summary>
+        /// <remarks>
+        /// 查询进行中且已报名/参与的任务完成进度。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>Task of CandyDropV4TaskProgressCd04</returns>
+        Task<CandyDropV4TaskProgressCd04> GetCandyDropTaskProgressV4Async (long? activityId = default(long?), string currency = default(string));
+
+        /// <summary>
+        /// 查询任务完成进度
+        /// </summary>
+        /// <remarks>
+        /// 查询进行中且已报名/参与的任务完成进度。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>Task of ApiResponse (CandyDropV4TaskProgressCd04)</returns>
+        Task<ApiResponse<CandyDropV4TaskProgressCd04>> GetCandyDropTaskProgressV4AsyncWithHttpInfo (long? activityId = default(long?), string currency = default(string));
+        /// <summary>
+        /// 查询参与记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的 CandyDrop 参与详情。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="status">状态筛选：ongoing(进行中)、awaiting_draw(待开奖)、won(已中奖)、not_win(未中奖) (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>Task of List&lt;CandyDropV4ParticipationRecordCd05&gt;</returns>
+        Task<List<CandyDropV4ParticipationRecordCd05>> GetCandyDropParticipationRecordsV4Async (string currency = default(string), string status = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?));
+
+        /// <summary>
+        /// 查询参与记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的 CandyDrop 参与详情。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="status">状态筛选：ongoing(进行中)、awaiting_draw(待开奖)、won(已中奖)、not_win(未中奖) (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (List&lt;CandyDropV4ParticipationRecordCd05&gt;)</returns>
+        Task<ApiResponse<List<CandyDropV4ParticipationRecordCd05>>> GetCandyDropParticipationRecordsV4AsyncWithHttpInfo (string currency = default(string), string status = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?));
+        /// <summary>
+        /// 查询空投记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的 CandyDrop 空投详情。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>Task of List&lt;CandyDropV4AirdropRecordCd06&gt;</returns>
+        Task<List<CandyDropV4AirdropRecordCd06>> GetCandyDropAirdropRecordsV4Async (string currency = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?));
+
+        /// <summary>
+        /// 查询空投记录
+        /// </summary>
+        /// <remarks>
+        /// 查询用户的 CandyDrop 空投详情。需要登录。
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (List&lt;CandyDropV4AirdropRecordCd06&gt;)</returns>
+        Task<ApiResponse<List<CandyDropV4AirdropRecordCd06>>> GetCandyDropAirdropRecordsV4AsyncWithHttpInfo (string currency = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?));
         #endregion Asynchronous Operations
     }
 
@@ -1179,6 +1711,1488 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListLaunchPoolRewardRecords", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop活动列表 获取HODLer Airdrop活动列表，支持按状态、币种/项目名称、参与情况筛选。此接口无需用户登录，登录用户可获取个人参与信息。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选，可选值：ACTIVE（进行中+预热中）、UNDERWAY（进行中）、PREHEAT（预热中）、FINISH（已结束），不传返回全部 (optional)</param>
+        /// <param name="keyword">币种/项目名称关键词，模糊匹配 (optional)</param>
+        /// <param name="join">参与情况筛选：0全部（默认），1仅已参与 (optional, default to 0)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>List&lt;HodlerAirdropV4ProjectItem&gt;</returns>
+        public List<HodlerAirdropV4ProjectItem> GetHodlerAirdropProjectList (string status = default(string), string keyword = default(string), int? join = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+             ApiResponse<List<HodlerAirdropV4ProjectItem>> localVarResponse = GetHodlerAirdropProjectListWithHttpInfo(status, keyword, join, page, size);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop活动列表 获取HODLer Airdrop活动列表，支持按状态、币种/项目名称、参与情况筛选。此接口无需用户登录，登录用户可获取个人参与信息。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选，可选值：ACTIVE（进行中+预热中）、UNDERWAY（进行中）、PREHEAT（预热中）、FINISH（已结束），不传返回全部 (optional)</param>
+        /// <param name="keyword">币种/项目名称关键词，模糊匹配 (optional)</param>
+        /// <param name="join">参与情况筛选：0全部（默认），1仅已参与 (optional, default to 0)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>ApiResponse of List&lt;HodlerAirdropV4ProjectItem&gt;</returns>
+        public ApiResponse<List<HodlerAirdropV4ProjectItem>> GetHodlerAirdropProjectListWithHttpInfo (string status = default(string), string keyword = default(string), int? join = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (keyword != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "keyword", keyword));
+            }
+            if (join != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "join", join));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "size", size));
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<HodlerAirdropV4ProjectItem>>("/launch/hodler-airdrop/project-list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetHodlerAirdropProjectList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop活动列表 获取HODLer Airdrop活动列表，支持按状态、币种/项目名称、参与情况筛选。此接口无需用户登录，登录用户可获取个人参与信息。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选，可选值：ACTIVE（进行中+预热中）、UNDERWAY（进行中）、PREHEAT（预热中）、FINISH（已结束），不传返回全部 (optional)</param>
+        /// <param name="keyword">币种/项目名称关键词，模糊匹配 (optional)</param>
+        /// <param name="join">参与情况筛选：0全部（默认），1仅已参与 (optional, default to 0)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of List&lt;HodlerAirdropV4ProjectItem&gt;</returns>
+        public async Task<List<HodlerAirdropV4ProjectItem>> GetHodlerAirdropProjectListAsync (string status = default(string), string keyword = default(string), int? join = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<HodlerAirdropV4ProjectItem>> localVarResponse = await GetHodlerAirdropProjectListAsyncWithHttpInfo(status, keyword, join, page, size);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop活动列表 获取HODLer Airdrop活动列表，支持按状态、币种/项目名称、参与情况筛选。此接口无需用户登录，登录用户可获取个人参与信息。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选，可选值：ACTIVE（进行中+预热中）、UNDERWAY（进行中）、PREHEAT（预热中）、FINISH（已结束），不传返回全部 (optional)</param>
+        /// <param name="keyword">币种/项目名称关键词，模糊匹配 (optional)</param>
+        /// <param name="join">参与情况筛选：0全部（默认），1仅已参与 (optional, default to 0)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (List&lt;HodlerAirdropV4ProjectItem&gt;)</returns>
+        public async Task<ApiResponse<List<HodlerAirdropV4ProjectItem>>> GetHodlerAirdropProjectListAsyncWithHttpInfo (string status = default(string), string keyword = default(string), int? join = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (keyword != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "keyword", keyword));
+            }
+            if (join != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "join", join));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "size", size));
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<HodlerAirdropV4ProjectItem>>("/launch/hodler-airdrop/project-list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetHodlerAirdropProjectList", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 参与HODLer Airdrop活动 参与指定的HODLer Airdrop活动，需持有GT。此接口需要用户登录认证，且须满足KYC要求，不支持子账户、企业/机构用户。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="hodlerAirdropV4OrderRequest"></param>
+        /// <returns>HodlerAirdropV4OrderResponse</returns>
+        public HodlerAirdropV4OrderResponse HodlerAirdropOrder (HodlerAirdropV4OrderRequest hodlerAirdropV4OrderRequest)
+        {
+             ApiResponse<HodlerAirdropV4OrderResponse> localVarResponse = HodlerAirdropOrderWithHttpInfo(hodlerAirdropV4OrderRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 参与HODLer Airdrop活动 参与指定的HODLer Airdrop活动，需持有GT。此接口需要用户登录认证，且须满足KYC要求，不支持子账户、企业/机构用户。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="hodlerAirdropV4OrderRequest"></param>
+        /// <returns>ApiResponse of HodlerAirdropV4OrderResponse</returns>
+        public ApiResponse<HodlerAirdropV4OrderResponse> HodlerAirdropOrderWithHttpInfo (HodlerAirdropV4OrderRequest hodlerAirdropV4OrderRequest)
+        {
+            // verify the required parameter 'hodlerAirdropV4OrderRequest' is set
+            if (hodlerAirdropV4OrderRequest == null)
+                throw new ApiException(400, "Missing required parameter 'hodlerAirdropV4OrderRequest' when calling LaunchApi->HodlerAirdropOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = hodlerAirdropV4OrderRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<HodlerAirdropV4OrderResponse>("/launch/hodler-airdrop/order", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HodlerAirdropOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 参与HODLer Airdrop活动 参与指定的HODLer Airdrop活动，需持有GT。此接口需要用户登录认证，且须满足KYC要求，不支持子账户、企业/机构用户。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="hodlerAirdropV4OrderRequest"></param>
+        /// <returns>Task of HodlerAirdropV4OrderResponse</returns>
+        public async Task<HodlerAirdropV4OrderResponse> HodlerAirdropOrderAsync (HodlerAirdropV4OrderRequest hodlerAirdropV4OrderRequest)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<HodlerAirdropV4OrderResponse> localVarResponse = await HodlerAirdropOrderAsyncWithHttpInfo(hodlerAirdropV4OrderRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 参与HODLer Airdrop活动 参与指定的HODLer Airdrop活动，需持有GT。此接口需要用户登录认证，且须满足KYC要求，不支持子账户、企业/机构用户。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="hodlerAirdropV4OrderRequest"></param>
+        /// <returns>Task of ApiResponse (HodlerAirdropV4OrderResponse)</returns>
+        public async Task<ApiResponse<HodlerAirdropV4OrderResponse>> HodlerAirdropOrderAsyncWithHttpInfo (HodlerAirdropV4OrderRequest hodlerAirdropV4OrderRequest)
+        {
+            // verify the required parameter 'hodlerAirdropV4OrderRequest' is set
+            if (hodlerAirdropV4OrderRequest == null)
+                throw new ApiException(400, "Missing required parameter 'hodlerAirdropV4OrderRequest' when calling LaunchApi->HodlerAirdropOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = hodlerAirdropV4OrderRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<HodlerAirdropV4OrderResponse>("/launch/hodler-airdrop/order", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HodlerAirdropOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop参与记录 查询用户的HODLer Airdrop参与记录，返回每个活动的有效持仓和空投金额。此接口需要用户登录认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>List&lt;HodlerAirdropV4UserOrderRecord&gt;</returns>
+        public List<HodlerAirdropV4UserOrderRecord> GetHodlerAirdropUserOrderRecords (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+             ApiResponse<List<HodlerAirdropV4UserOrderRecord>> localVarResponse = GetHodlerAirdropUserOrderRecordsWithHttpInfo(keyword, startTimest, endTimest, page, size);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop参与记录 查询用户的HODLer Airdrop参与记录，返回每个活动的有效持仓和空投金额。此接口需要用户登录认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>ApiResponse of List&lt;HodlerAirdropV4UserOrderRecord&gt;</returns>
+        public ApiResponse<List<HodlerAirdropV4UserOrderRecord>> GetHodlerAirdropUserOrderRecordsWithHttpInfo (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (keyword != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "keyword", keyword));
+            }
+            if (startTimest != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_timest", startTimest));
+            }
+            if (endTimest != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_timest", endTimest));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "size", size));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<HodlerAirdropV4UserOrderRecord>>("/launch/hodler-airdrop/user-order-records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetHodlerAirdropUserOrderRecords", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop参与记录 查询用户的HODLer Airdrop参与记录，返回每个活动的有效持仓和空投金额。此接口需要用户登录认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of List&lt;HodlerAirdropV4UserOrderRecord&gt;</returns>
+        public async Task<List<HodlerAirdropV4UserOrderRecord>> GetHodlerAirdropUserOrderRecordsAsync (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<HodlerAirdropV4UserOrderRecord>> localVarResponse = await GetHodlerAirdropUserOrderRecordsAsyncWithHttpInfo(keyword, startTimest, endTimest, page, size);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop参与记录 查询用户的HODLer Airdrop参与记录，返回每个活动的有效持仓和空投金额。此接口需要用户登录认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (List&lt;HodlerAirdropV4UserOrderRecord&gt;)</returns>
+        public async Task<ApiResponse<List<HodlerAirdropV4UserOrderRecord>>> GetHodlerAirdropUserOrderRecordsAsyncWithHttpInfo (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (keyword != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "keyword", keyword));
+            }
+            if (startTimest != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_timest", startTimest));
+            }
+            if (endTimest != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_timest", endTimest));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "size", size));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<HodlerAirdropV4UserOrderRecord>>("/launch/hodler-airdrop/user-order-records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetHodlerAirdropUserOrderRecords", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop空投记录 查询用户已获得的HODLer Airdrop空投发放记录，包含基础空投、额外空投和自动兑换状态。此接口需要用户登录认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>List&lt;HodlerAirdropV4UserAirdropRecord&gt;</returns>
+        public List<HodlerAirdropV4UserAirdropRecord> GetHodlerAirdropUserAirdropRecords (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+             ApiResponse<List<HodlerAirdropV4UserAirdropRecord>> localVarResponse = GetHodlerAirdropUserAirdropRecordsWithHttpInfo(keyword, startTimest, endTimest, page, size);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop空投记录 查询用户已获得的HODLer Airdrop空投发放记录，包含基础空投、额外空投和自动兑换状态。此接口需要用户登录认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>ApiResponse of List&lt;HodlerAirdropV4UserAirdropRecord&gt;</returns>
+        public ApiResponse<List<HodlerAirdropV4UserAirdropRecord>> GetHodlerAirdropUserAirdropRecordsWithHttpInfo (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (keyword != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "keyword", keyword));
+            }
+            if (startTimest != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_timest", startTimest));
+            }
+            if (endTimest != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_timest", endTimest));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "size", size));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<HodlerAirdropV4UserAirdropRecord>>("/launch/hodler-airdrop/user-airdrop-records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetHodlerAirdropUserAirdropRecords", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop空投记录 查询用户已获得的HODLer Airdrop空投发放记录，包含基础空投、额外空投和自动兑换状态。此接口需要用户登录认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of List&lt;HodlerAirdropV4UserAirdropRecord&gt;</returns>
+        public async Task<List<HodlerAirdropV4UserAirdropRecord>> GetHodlerAirdropUserAirdropRecordsAsync (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<HodlerAirdropV4UserAirdropRecord>> localVarResponse = await GetHodlerAirdropUserAirdropRecordsAsyncWithHttpInfo(keyword, startTimest, endTimest, page, size);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 查询HODLer Airdrop空投记录 查询用户已获得的HODLer Airdrop空投发放记录，包含基础空投、额外空投和自动兑换状态。此接口需要用户登录认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="keyword">币种名称关键词筛选 (optional)</param>
+        /// <param name="startTimest">开始时间戳（秒） (optional)</param>
+        /// <param name="endTimest">结束时间戳（秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="size">每页条数，默认10 (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (List&lt;HodlerAirdropV4UserAirdropRecord&gt;)</returns>
+        public async Task<ApiResponse<List<HodlerAirdropV4UserAirdropRecord>>> GetHodlerAirdropUserAirdropRecordsAsyncWithHttpInfo (string keyword = default(string), int? startTimest = default(int?), int? endTimest = default(int?), int? page = default(int?), int? size = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (keyword != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "keyword", keyword));
+            }
+            if (startTimest != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_timest", startTimest));
+            }
+            if (endTimest != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_timest", endTimest));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "size", size));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<HodlerAirdropV4UserAirdropRecord>>("/launch/hodler-airdrop/user-airdrop-records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetHodlerAirdropUserAirdropRecords", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询活动列表 支持多维度筛选 CandyDrop 活动，每次查询返回列表排序的前十条数据。不需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选：ongoing(进行中)、upcoming(即将开始)、ended(已结束)，不传则返回全部 (optional)</param>
+        /// <param name="ruleName">任务类型筛选：spot(现货)、futures(合约)、deposit(充值)、invite(邀请)、trading_bot(交易机器人)、simple_earn(余币宝)、first_deposit(首笔入金)、alpha(Alpha)、flash_swap(闪兑)、tradfi(TradFi)、etf(ETF) (optional)</param>
+        /// <param name="registerStatus">参与情况筛选：registered(已参与)、unregistered(未参与)，不传则返回全部 (optional)</param>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="limit">返回条数，默认10，最大30 (optional, default to 10)</param>
+        /// <param name="offset">偏移量，默认0 (optional, default to 0)</param>
+        /// <returns>List&lt;CandyDropV4ActivityCd01&gt;</returns>
+        public List<CandyDropV4ActivityCd01> GetCandyDropActivityListV4 (string status = default(string), string ruleName = default(string), string registerStatus = default(string), string currency = default(string), int? limit = default(int?), int? offset = default(int?))
+        {
+             ApiResponse<List<CandyDropV4ActivityCd01>> localVarResponse = GetCandyDropActivityListV4WithHttpInfo(status, ruleName, registerStatus, currency, limit, offset);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 查询活动列表 支持多维度筛选 CandyDrop 活动，每次查询返回列表排序的前十条数据。不需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选：ongoing(进行中)、upcoming(即将开始)、ended(已结束)，不传则返回全部 (optional)</param>
+        /// <param name="ruleName">任务类型筛选：spot(现货)、futures(合约)、deposit(充值)、invite(邀请)、trading_bot(交易机器人)、simple_earn(余币宝)、first_deposit(首笔入金)、alpha(Alpha)、flash_swap(闪兑)、tradfi(TradFi)、etf(ETF) (optional)</param>
+        /// <param name="registerStatus">参与情况筛选：registered(已参与)、unregistered(未参与)，不传则返回全部 (optional)</param>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="limit">返回条数，默认10，最大30 (optional, default to 10)</param>
+        /// <param name="offset">偏移量，默认0 (optional, default to 0)</param>
+        /// <returns>ApiResponse of List&lt;CandyDropV4ActivityCd01&gt;</returns>
+        public ApiResponse<List<CandyDropV4ActivityCd01>> GetCandyDropActivityListV4WithHttpInfo (string status = default(string), string ruleName = default(string), string registerStatus = default(string), string currency = default(string), int? limit = default(int?), int? offset = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (ruleName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "rule_name", ruleName));
+            }
+            if (registerStatus != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "register_status", registerStatus));
+            }
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (offset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "offset", offset));
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<CandyDropV4ActivityCd01>>("/launch/candydrop/activity-list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCandyDropActivityListV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询活动列表 支持多维度筛选 CandyDrop 活动，每次查询返回列表排序的前十条数据。不需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选：ongoing(进行中)、upcoming(即将开始)、ended(已结束)，不传则返回全部 (optional)</param>
+        /// <param name="ruleName">任务类型筛选：spot(现货)、futures(合约)、deposit(充值)、invite(邀请)、trading_bot(交易机器人)、simple_earn(余币宝)、first_deposit(首笔入金)、alpha(Alpha)、flash_swap(闪兑)、tradfi(TradFi)、etf(ETF) (optional)</param>
+        /// <param name="registerStatus">参与情况筛选：registered(已参与)、unregistered(未参与)，不传则返回全部 (optional)</param>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="limit">返回条数，默认10，最大30 (optional, default to 10)</param>
+        /// <param name="offset">偏移量，默认0 (optional, default to 0)</param>
+        /// <returns>Task of List&lt;CandyDropV4ActivityCd01&gt;</returns>
+        public async Task<List<CandyDropV4ActivityCd01>> GetCandyDropActivityListV4Async (string status = default(string), string ruleName = default(string), string registerStatus = default(string), string currency = default(string), int? limit = default(int?), int? offset = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<CandyDropV4ActivityCd01>> localVarResponse = await GetCandyDropActivityListV4AsyncWithHttpInfo(status, ruleName, registerStatus, currency, limit, offset);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 查询活动列表 支持多维度筛选 CandyDrop 活动，每次查询返回列表排序的前十条数据。不需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">活动状态筛选：ongoing(进行中)、upcoming(即将开始)、ended(已结束)，不传则返回全部 (optional)</param>
+        /// <param name="ruleName">任务类型筛选：spot(现货)、futures(合约)、deposit(充值)、invite(邀请)、trading_bot(交易机器人)、simple_earn(余币宝)、first_deposit(首笔入金)、alpha(Alpha)、flash_swap(闪兑)、tradfi(TradFi)、etf(ETF) (optional)</param>
+        /// <param name="registerStatus">参与情况筛选：registered(已参与)、unregistered(未参与)，不传则返回全部 (optional)</param>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="limit">返回条数，默认10，最大30 (optional, default to 10)</param>
+        /// <param name="offset">偏移量，默认0 (optional, default to 0)</param>
+        /// <returns>Task of ApiResponse (List&lt;CandyDropV4ActivityCd01&gt;)</returns>
+        public async Task<ApiResponse<List<CandyDropV4ActivityCd01>>> GetCandyDropActivityListV4AsyncWithHttpInfo (string status = default(string), string ruleName = default(string), string registerStatus = default(string), string currency = default(string), int? limit = default(int?), int? offset = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (ruleName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "rule_name", ruleName));
+            }
+            if (registerStatus != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "register_status", registerStatus));
+            }
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (offset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "offset", offset));
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<CandyDropV4ActivityCd01>>("/launch/candydrop/activity-list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCandyDropActivityListV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 报名参与活动 报名参与特定 CandyDrop 活动。需要登录，需要 API Key 签名认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="candyDropV4RegisterReqCd02"></param>
+        /// <returns>CandyDropV4RegisterRespCd02</returns>
+        public CandyDropV4RegisterRespCd02 RegisterCandyDropV4 (CandyDropV4RegisterReqCd02 candyDropV4RegisterReqCd02)
+        {
+             ApiResponse<CandyDropV4RegisterRespCd02> localVarResponse = RegisterCandyDropV4WithHttpInfo(candyDropV4RegisterReqCd02);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 报名参与活动 报名参与特定 CandyDrop 活动。需要登录，需要 API Key 签名认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="candyDropV4RegisterReqCd02"></param>
+        /// <returns>ApiResponse of CandyDropV4RegisterRespCd02</returns>
+        public ApiResponse<CandyDropV4RegisterRespCd02> RegisterCandyDropV4WithHttpInfo (CandyDropV4RegisterReqCd02 candyDropV4RegisterReqCd02)
+        {
+            // verify the required parameter 'candyDropV4RegisterReqCd02' is set
+            if (candyDropV4RegisterReqCd02 == null)
+                throw new ApiException(400, "Missing required parameter 'candyDropV4RegisterReqCd02' when calling LaunchApi->RegisterCandyDropV4");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = candyDropV4RegisterReqCd02;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CandyDropV4RegisterRespCd02>("/launch/candydrop/register", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RegisterCandyDropV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 报名参与活动 报名参与特定 CandyDrop 活动。需要登录，需要 API Key 签名认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="candyDropV4RegisterReqCd02"></param>
+        /// <returns>Task of CandyDropV4RegisterRespCd02</returns>
+        public async Task<CandyDropV4RegisterRespCd02> RegisterCandyDropV4Async (CandyDropV4RegisterReqCd02 candyDropV4RegisterReqCd02)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<CandyDropV4RegisterRespCd02> localVarResponse = await RegisterCandyDropV4AsyncWithHttpInfo(candyDropV4RegisterReqCd02);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 报名参与活动 报名参与特定 CandyDrop 活动。需要登录，需要 API Key 签名认证。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="candyDropV4RegisterReqCd02"></param>
+        /// <returns>Task of ApiResponse (CandyDropV4RegisterRespCd02)</returns>
+        public async Task<ApiResponse<CandyDropV4RegisterRespCd02>> RegisterCandyDropV4AsyncWithHttpInfo (CandyDropV4RegisterReqCd02 candyDropV4RegisterReqCd02)
+        {
+            // verify the required parameter 'candyDropV4RegisterReqCd02' is set
+            if (candyDropV4RegisterReqCd02 == null)
+                throw new ApiException(400, "Missing required parameter 'candyDropV4RegisterReqCd02' when calling LaunchApi->RegisterCandyDropV4");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = candyDropV4RegisterReqCd02;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CandyDropV4RegisterRespCd02>("/launch/candydrop/register", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RegisterCandyDropV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询活动规则 查询特定活动的规则，包括奖池及对应任务数据。不需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>CandyDropV4ActivityRulesCd03</returns>
+        public CandyDropV4ActivityRulesCd03 GetCandyDropActivityRulesV4 (long? activityId = default(long?), string currency = default(string))
+        {
+             ApiResponse<CandyDropV4ActivityRulesCd03> localVarResponse = GetCandyDropActivityRulesV4WithHttpInfo(activityId, currency);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 查询活动规则 查询特定活动的规则，包括奖池及对应任务数据。不需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>ApiResponse of CandyDropV4ActivityRulesCd03</returns>
+        public ApiResponse<CandyDropV4ActivityRulesCd03> GetCandyDropActivityRulesV4WithHttpInfo (long? activityId = default(long?), string currency = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (activityId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "activity_id", activityId));
+            }
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<CandyDropV4ActivityRulesCd03>("/launch/candydrop/activity-rules", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCandyDropActivityRulesV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询活动规则 查询特定活动的规则，包括奖池及对应任务数据。不需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>Task of CandyDropV4ActivityRulesCd03</returns>
+        public async Task<CandyDropV4ActivityRulesCd03> GetCandyDropActivityRulesV4Async (long? activityId = default(long?), string currency = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<CandyDropV4ActivityRulesCd03> localVarResponse = await GetCandyDropActivityRulesV4AsyncWithHttpInfo(activityId, currency);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 查询活动规则 查询特定活动的规则，包括奖池及对应任务数据。不需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>Task of ApiResponse (CandyDropV4ActivityRulesCd03)</returns>
+        public async Task<ApiResponse<CandyDropV4ActivityRulesCd03>> GetCandyDropActivityRulesV4AsyncWithHttpInfo (long? activityId = default(long?), string currency = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (activityId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "activity_id", activityId));
+            }
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CandyDropV4ActivityRulesCd03>("/launch/candydrop/activity-rules", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCandyDropActivityRulesV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询任务完成进度 查询进行中且已报名/参与的任务完成进度。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>CandyDropV4TaskProgressCd04</returns>
+        public CandyDropV4TaskProgressCd04 GetCandyDropTaskProgressV4 (long? activityId = default(long?), string currency = default(string))
+        {
+             ApiResponse<CandyDropV4TaskProgressCd04> localVarResponse = GetCandyDropTaskProgressV4WithHttpInfo(activityId, currency);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 查询任务完成进度 查询进行中且已报名/参与的任务完成进度。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>ApiResponse of CandyDropV4TaskProgressCd04</returns>
+        public ApiResponse<CandyDropV4TaskProgressCd04> GetCandyDropTaskProgressV4WithHttpInfo (long? activityId = default(long?), string currency = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (activityId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "activity_id", activityId));
+            }
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<CandyDropV4TaskProgressCd04>("/launch/candydrop/task-progress", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCandyDropTaskProgressV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询任务完成进度 查询进行中且已报名/参与的任务完成进度。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>Task of CandyDropV4TaskProgressCd04</returns>
+        public async Task<CandyDropV4TaskProgressCd04> GetCandyDropTaskProgressV4Async (long? activityId = default(long?), string currency = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<CandyDropV4TaskProgressCd04> localVarResponse = await GetCandyDropTaskProgressV4AsyncWithHttpInfo(activityId, currency);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 查询任务完成进度 查询进行中且已报名/参与的任务完成进度。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="activityId">活动ID，与 currency 二选一，至少须传其一 (optional)</param>
+        /// <param name="currency">项目/币种名称，与 activity_id 二选一，至少须传其一 (optional)</param>
+        /// <returns>Task of ApiResponse (CandyDropV4TaskProgressCd04)</returns>
+        public async Task<ApiResponse<CandyDropV4TaskProgressCd04>> GetCandyDropTaskProgressV4AsyncWithHttpInfo (long? activityId = default(long?), string currency = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (activityId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "activity_id", activityId));
+            }
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CandyDropV4TaskProgressCd04>("/launch/candydrop/task-progress", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCandyDropTaskProgressV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询参与记录 查询用户的 CandyDrop 参与详情。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="status">状态筛选：ongoing(进行中)、awaiting_draw(待开奖)、won(已中奖)、not_win(未中奖) (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>List&lt;CandyDropV4ParticipationRecordCd05&gt;</returns>
+        public List<CandyDropV4ParticipationRecordCd05> GetCandyDropParticipationRecordsV4 (string currency = default(string), string status = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?))
+        {
+             ApiResponse<List<CandyDropV4ParticipationRecordCd05>> localVarResponse = GetCandyDropParticipationRecordsV4WithHttpInfo(currency, status, startTime, endTime, page, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 查询参与记录 查询用户的 CandyDrop 参与详情。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="status">状态筛选：ongoing(进行中)、awaiting_draw(待开奖)、won(已中奖)、not_win(未中奖) (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>ApiResponse of List&lt;CandyDropV4ParticipationRecordCd05&gt;</returns>
+        public ApiResponse<List<CandyDropV4ParticipationRecordCd05>> GetCandyDropParticipationRecordsV4WithHttpInfo (string currency = default(string), string status = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_time", startTime));
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_time", endTime));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<CandyDropV4ParticipationRecordCd05>>("/launch/candydrop/participation-records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCandyDropParticipationRecordsV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询参与记录 查询用户的 CandyDrop 参与详情。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="status">状态筛选：ongoing(进行中)、awaiting_draw(待开奖)、won(已中奖)、not_win(未中奖) (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>Task of List&lt;CandyDropV4ParticipationRecordCd05&gt;</returns>
+        public async Task<List<CandyDropV4ParticipationRecordCd05>> GetCandyDropParticipationRecordsV4Async (string currency = default(string), string status = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<CandyDropV4ParticipationRecordCd05>> localVarResponse = await GetCandyDropParticipationRecordsV4AsyncWithHttpInfo(currency, status, startTime, endTime, page, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 查询参与记录 查询用户的 CandyDrop 参与详情。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="status">状态筛选：ongoing(进行中)、awaiting_draw(待开奖)、won(已中奖)、not_win(未中奖) (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (List&lt;CandyDropV4ParticipationRecordCd05&gt;)</returns>
+        public async Task<ApiResponse<List<CandyDropV4ParticipationRecordCd05>>> GetCandyDropParticipationRecordsV4AsyncWithHttpInfo (string currency = default(string), string status = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_time", startTime));
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_time", endTime));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<CandyDropV4ParticipationRecordCd05>>("/launch/candydrop/participation-records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCandyDropParticipationRecordsV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询空投记录 查询用户的 CandyDrop 空投详情。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>List&lt;CandyDropV4AirdropRecordCd06&gt;</returns>
+        public List<CandyDropV4AirdropRecordCd06> GetCandyDropAirdropRecordsV4 (string currency = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?))
+        {
+             ApiResponse<List<CandyDropV4AirdropRecordCd06>> localVarResponse = GetCandyDropAirdropRecordsV4WithHttpInfo(currency, startTime, endTime, page, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 查询空投记录 查询用户的 CandyDrop 空投详情。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>ApiResponse of List&lt;CandyDropV4AirdropRecordCd06&gt;</returns>
+        public ApiResponse<List<CandyDropV4AirdropRecordCd06>> GetCandyDropAirdropRecordsV4WithHttpInfo (string currency = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_time", startTime));
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_time", endTime));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<CandyDropV4AirdropRecordCd06>>("/launch/candydrop/airdrop-records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCandyDropAirdropRecordsV4", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// 查询空投记录 查询用户的 CandyDrop 空投详情。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>Task of List&lt;CandyDropV4AirdropRecordCd06&gt;</returns>
+        public async Task<List<CandyDropV4AirdropRecordCd06>> GetCandyDropAirdropRecordsV4Async (string currency = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<CandyDropV4AirdropRecordCd06>> localVarResponse = await GetCandyDropAirdropRecordsV4AsyncWithHttpInfo(currency, startTime, endTime, page, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 查询空投记录 查询用户的 CandyDrop 空投详情。需要登录。
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">币种名称筛选 (optional)</param>
+        /// <param name="startTime">开始时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="endTime">结束时间（Unix 时间戳秒） (optional)</param>
+        /// <param name="page">页码，默认1 (optional, default to 1)</param>
+        /// <param name="limit">每页条数，默认10，最大30 (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (List&lt;CandyDropV4AirdropRecordCd06&gt;)</returns>
+        public async Task<ApiResponse<List<CandyDropV4AirdropRecordCd06>>> GetCandyDropAirdropRecordsV4AsyncWithHttpInfo (string currency = default(string), long? startTime = default(long?), long? endTime = default(long?), int? page = default(int?), int? limit = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+            if (startTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_time", startTime));
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_time", endTime));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<CandyDropV4AirdropRecordCd06>>("/launch/candydrop/airdrop-records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCandyDropAirdropRecordsV4", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

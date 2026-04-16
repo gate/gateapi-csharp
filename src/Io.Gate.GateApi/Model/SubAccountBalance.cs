@@ -35,10 +35,12 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="uid">User ID.</param>
         /// <param name="available">Available balances of currencies.</param>
-        public SubAccountBalance(string uid = default(string), Dictionary<string, string> available = default(Dictionary<string, string>))
+        /// <param name="locking">Locked amount by currency.</param>
+        public SubAccountBalance(string uid = default(string), Dictionary<string, string> available = default(Dictionary<string, string>), Dictionary<string, string> locking = default(Dictionary<string, string>))
         {
             this.Uid = uid;
             this.Available = available;
+            this.Locking = locking;
         }
 
         /// <summary>
@@ -56,6 +58,13 @@ namespace Io.Gate.GateApi.Model
         public Dictionary<string, string> Available { get; set; }
 
         /// <summary>
+        /// Locked amount by currency
+        /// </summary>
+        /// <value>Locked amount by currency</value>
+        [DataMember(Name="locking")]
+        public Dictionary<string, string> Locking { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -65,6 +74,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class SubAccountBalance {\n");
             sb.Append("  Uid: ").Append(Uid).Append("\n");
             sb.Append("  Available: ").Append(Available).Append("\n");
+            sb.Append("  Locking: ").Append(Locking).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,6 +119,12 @@ namespace Io.Gate.GateApi.Model
                     this.Available != null &&
                     input.Available != null &&
                     this.Available.SequenceEqual(input.Available)
+                ) && 
+                (
+                    this.Locking == input.Locking ||
+                    this.Locking != null &&
+                    input.Locking != null &&
+                    this.Locking.SequenceEqual(input.Locking)
                 );
         }
 
@@ -125,6 +141,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Uid.GetHashCode();
                 if (this.Available != null)
                     hashCode = hashCode * 59 + this.Available.GetHashCode();
+                if (this.Locking != null)
+                    hashCode = hashCode * 59 + this.Locking.GetHashCode();
                 return hashCode;
             }
         }

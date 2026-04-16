@@ -148,6 +148,13 @@ namespace Io.Gate.GateApi.Model
         public long Id { get; private set; }
 
         /// <summary>
+        /// String form of the auto order ID; the same order as numeric &#x60;id&#x60;, as the decimal string of &#x60;id&#x60; to avoid int64 precision loss in JavaScript and similar environments. Prefer this field to display the order ID or when a string unique identifier is needed; one-to-one with &#x60;id&#x60;. Same meaning as the field of the same name in futures price-trigger REST APIs and in &#x60;futures.orders&#x60; / &#x60;futures.autoorders&#x60; WebSocket pushes.
+        /// </summary>
+        /// <value>String form of the auto order ID; the same order as numeric &#x60;id&#x60;, as the decimal string of &#x60;id&#x60; to avoid int64 precision loss in JavaScript and similar environments. Prefer this field to display the order ID or when a string unique identifier is needed; one-to-one with &#x60;id&#x60;. Same meaning as the field of the same name in futures price-trigger REST APIs and in &#x60;futures.orders&#x60; / &#x60;futures.autoorders&#x60; WebSocket pushes.</value>
+        [DataMember(Name="id_string", EmitDefaultValue=false)]
+        public string IdString { get; private set; }
+
+        /// <summary>
         /// User ID
         /// </summary>
         /// <value>User ID</value>
@@ -207,6 +214,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Initial: ").Append(Initial).Append("\n");
             sb.Append("  Trigger: ").Append(Trigger).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  IdString: ").Append(IdString).Append("\n");
             sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
             sb.Append("  FinishTime: ").Append(FinishTime).Append("\n");
@@ -265,6 +273,11 @@ namespace Io.Gate.GateApi.Model
                     this.Id.Equals(input.Id)
                 ) && 
                 (
+                    this.IdString == input.IdString ||
+                    (this.IdString != null &&
+                    this.IdString.Equals(input.IdString))
+                ) && 
+                (
                     this.User == input.User ||
                     this.User.Equals(input.User)
                 ) && 
@@ -318,6 +331,8 @@ namespace Io.Gate.GateApi.Model
                 if (this.Trigger != null)
                     hashCode = hashCode * 59 + this.Trigger.GetHashCode();
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.IdString != null)
+                    hashCode = hashCode * 59 + this.IdString.GetHashCode();
                 hashCode = hashCode * 59 + this.User.GetHashCode();
                 hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 hashCode = hashCode * 59 + this.FinishTime.GetHashCode();

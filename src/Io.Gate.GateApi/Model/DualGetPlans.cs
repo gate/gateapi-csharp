@@ -39,8 +39,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="exerciseCurrency">Strike Token.</param>
         /// <param name="exercisePrice">Strike price.</param>
         /// <param name="deliveryTime">Settlement time.</param>
-        /// <param name="minCopies">Minimum Units.</param>
-        /// <param name="maxCopies">Maximum Units.</param>
+        /// <param name="minCopies">Minimum share count.</param>
+        /// <param name="maxCopies">Maximum share count.</param>
         /// <param name="perValue">Value Per Unit (deprecated).</param>
         /// <param name="apyDisplay">Annual Yield.</param>
         /// <param name="startTime">Start Time.</param>
@@ -106,16 +106,16 @@ namespace Io.Gate.GateApi.Model
         public int DeliveryTime { get; set; }
 
         /// <summary>
-        /// Minimum Units
+        /// Minimum share count
         /// </summary>
-        /// <value>Minimum Units</value>
+        /// <value>Minimum share count</value>
         [DataMember(Name="min_copies")]
         public int MinCopies { get; set; }
 
         /// <summary>
-        /// Maximum Units
+        /// Maximum share count
         /// </summary>
-        /// <value>Maximum Units</value>
+        /// <value>Maximum share count</value>
         [DataMember(Name="max_copies")]
         public int MaxCopies { get; set; }
 

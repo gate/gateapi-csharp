@@ -277,8 +277,10 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned. Default 20, max 100. (optional, default to 100)</param>
         /// <returns>List&lt;SubAccountBalance&gt;</returns>
-        List<SubAccountBalance> ListSubAccountBalances (string subUid = default(string));
+        List<SubAccountBalance> ListSubAccountBalances (string subUid = default(string), int? page = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// Query sub-account balance information
@@ -288,8 +290,10 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned. Default 20, max 100. (optional, default to 100)</param>
         /// <returns>ApiResponse of List&lt;SubAccountBalance&gt;</returns>
-        ApiResponse<List<SubAccountBalance>> ListSubAccountBalancesWithHttpInfo (string subUid = default(string));
+        ApiResponse<List<SubAccountBalance>> ListSubAccountBalancesWithHttpInfo (string subUid = default(string), int? page = default(int?), int? limit = default(int?));
         /// <summary>
         /// Query sub-account isolated margin account balance information
         /// </summary>
@@ -800,8 +804,10 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned. Default 20, max 100. (optional, default to 100)</param>
         /// <returns>Task of List&lt;SubAccountBalance&gt;</returns>
-        Task<List<SubAccountBalance>> ListSubAccountBalancesAsync (string subUid = default(string));
+        Task<List<SubAccountBalance>> ListSubAccountBalancesAsync (string subUid = default(string), int? page = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// Query sub-account balance information
@@ -811,8 +817,10 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned. Default 20, max 100. (optional, default to 100)</param>
         /// <returns>Task of ApiResponse (List&lt;SubAccountBalance&gt;)</returns>
-        Task<ApiResponse<List<SubAccountBalance>>> ListSubAccountBalancesAsyncWithHttpInfo (string subUid = default(string));
+        Task<ApiResponse<List<SubAccountBalance>>> ListSubAccountBalancesAsyncWithHttpInfo (string subUid = default(string), int? page = default(int?), int? limit = default(int?));
         /// <summary>
         /// Query sub-account isolated margin account balance information
         /// </summary>
@@ -2543,10 +2551,12 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned. Default 20, max 100. (optional, default to 100)</param>
         /// <returns>List&lt;SubAccountBalance&gt;</returns>
-        public List<SubAccountBalance> ListSubAccountBalances (string subUid = default(string))
+        public List<SubAccountBalance> ListSubAccountBalances (string subUid = default(string), int? page = default(int?), int? limit = default(int?))
         {
-             ApiResponse<List<SubAccountBalance>> localVarResponse = ListSubAccountBalancesWithHttpInfo(subUid);
+             ApiResponse<List<SubAccountBalance>> localVarResponse = ListSubAccountBalancesWithHttpInfo(subUid, page, limit);
              return localVarResponse.Data;
         }
 
@@ -2555,8 +2565,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned. Default 20, max 100. (optional, default to 100)</param>
         /// <returns>ApiResponse of List&lt;SubAccountBalance&gt;</returns>
-        public ApiResponse<List<SubAccountBalance>> ListSubAccountBalancesWithHttpInfo (string subUid = default(string))
+        public ApiResponse<List<SubAccountBalance>> ListSubAccountBalancesWithHttpInfo (string subUid = default(string), int? page = default(int?), int? limit = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2577,6 +2589,14 @@ namespace Io.Gate.GateApi.Api
             if (subUid != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sub_uid", subUid));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (apiv4) required
@@ -2599,10 +2619,12 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned. Default 20, max 100. (optional, default to 100)</param>
         /// <returns>Task of List&lt;SubAccountBalance&gt;</returns>
-        public async Task<List<SubAccountBalance>> ListSubAccountBalancesAsync (string subUid = default(string))
+        public async Task<List<SubAccountBalance>> ListSubAccountBalancesAsync (string subUid = default(string), int? page = default(int?), int? limit = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<SubAccountBalance>> localVarResponse = await ListSubAccountBalancesAsyncWithHttpInfo(subUid);
+             Io.Gate.GateApi.Client.ApiResponse<List<SubAccountBalance>> localVarResponse = await ListSubAccountBalancesAsyncWithHttpInfo(subUid, page, limit);
              return localVarResponse.Data;
 
         }
@@ -2612,8 +2634,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subUid">Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned. Default 20, max 100. (optional, default to 100)</param>
         /// <returns>Task of ApiResponse (List&lt;SubAccountBalance&gt;)</returns>
-        public async Task<ApiResponse<List<SubAccountBalance>>> ListSubAccountBalancesAsyncWithHttpInfo (string subUid = default(string))
+        public async Task<ApiResponse<List<SubAccountBalance>>> ListSubAccountBalancesAsyncWithHttpInfo (string subUid = default(string), int? page = default(int?), int? limit = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -2635,6 +2659,14 @@ namespace Io.Gate.GateApi.Api
             if (subUid != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sub_uid", subUid));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (apiv4) required

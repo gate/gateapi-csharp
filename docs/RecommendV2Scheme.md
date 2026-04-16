@@ -1,13 +1,13 @@
 
-# Io.Gate.GateApi.Model.CreateOrderData
-
-Order result
+# Io.Gate.GateApi.Model.RecommendV2Scheme
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Queue Task ID (not task ID) | [optional] 
+**Name** | **string** |  | 
+**Priority** | **int** |  | 
+**Ratio** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

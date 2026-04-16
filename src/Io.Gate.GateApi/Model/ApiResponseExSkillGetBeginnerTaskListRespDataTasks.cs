@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Beginner task information
+    /// 入门任务信息。&#x60;task_center_id&#x60; 与 &#x60;status&#x60; 列入 required：二者均允许为 0（注册任务、待领取下载任务）， 且避免 Go SDK 对整型零值使用 omitempty 导致客户端序列化时丢失字段。
     /// </summary>
     [DataContract]
     public partial class ApiResponseExSkillGetBeginnerTaskListRespDataTasks :  IEquatable<ApiResponseExSkillGetBeginnerTaskListRespDataTasks>, IValidatableObject
@@ -61,9 +61,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="prize_type")]
         public PrizeTypeEnum? PrizeType { get; set; }
         /// <summary>
-        /// Task status: 0 &#x3D; unclaimed, 1 &#x3D; claimed, 2 &#x3D; reward pending, 3 &#x3D; rewarding, 4 &#x3D; completed, 5 &#x3D; expired
+        /// 任务状态：0&#x3D;未领取（典型为待领取下载任务） 1&#x3D;已领取/进行中 2&#x3D;已完成待领奖 3&#x3D;发奖中 4&#x3D;已完成/已结算 5&#x3D;已过期
         /// </summary>
-        /// <value>Task status: 0 &#x3D; unclaimed, 1 &#x3D; claimed, 2 &#x3D; reward pending, 3 &#x3D; rewarding, 4 &#x3D; completed, 5 &#x3D; expired</value>
+        /// <value>任务状态：0&#x3D;未领取（典型为待领取下载任务） 1&#x3D;已领取/进行中 2&#x3D;已完成待领奖 3&#x3D;发奖中 4&#x3D;已完成/已结算 5&#x3D;已过期</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -100,34 +100,39 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Task status: 0 &#x3D; unclaimed, 1 &#x3D; claimed, 2 &#x3D; reward pending, 3 &#x3D; rewarding, 4 &#x3D; completed, 5 &#x3D; expired
+        /// 任务状态：0&#x3D;未领取（典型为待领取下载任务） 1&#x3D;已领取/进行中 2&#x3D;已完成待领奖 3&#x3D;发奖中 4&#x3D;已完成/已结算 5&#x3D;已过期
         /// </summary>
-        /// <value>Task status: 0 &#x3D; unclaimed, 1 &#x3D; claimed, 2 &#x3D; reward pending, 3 &#x3D; rewarding, 4 &#x3D; completed, 5 &#x3D; expired</value>
+        /// <value>任务状态：0&#x3D;未领取（典型为待领取下载任务） 1&#x3D;已领取/进行中 2&#x3D;已完成待领奖 3&#x3D;发奖中 4&#x3D;已完成/已结算 5&#x3D;已过期</value>
         [DataMember(Name="status")]
-        public StatusEnum? Status { get; set; }
+        public StatusEnum Status { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiResponseExSkillGetBeginnerTaskListRespDataTasks" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected ApiResponseExSkillGetBeginnerTaskListRespDataTasks() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseExSkillGetBeginnerTaskListRespDataTasks" /> class.
         /// </summary>
         /// <param name="welfareTaskId">Rewards Center task ID.</param>
-        /// <param name="taskCenterId">Task center task ID (fixed at 0 for registration tasks).</param>
-        /// <param name="taskType">Task type: 1 &#x3D; KYC level-2 verification, 2 &#x3D; spot, 3 &#x3D; futures, 4 &#x3D; referral, 5 &#x3D; quantitative, 6 &#x3D; earn, 7 &#x3D; startup, 8 &#x3D; first deposit, 10 &#x3D; registration task, 11 &#x3D; onboarding task.</param>
+        /// <param name="taskCenterId">Task center task ID (fixed at 0 for registration tasks) (required).</param>
+        /// <param name="taskType">任务类型：1&#x3D;KYC二级认证 2&#x3D;现货 3&#x3D;合约 4&#x3D;邀请 5&#x3D;量化 6&#x3D;余币宝 7&#x3D;startup 8&#x3D;首次入金 10&#x3D;注册任务 11&#x3D;引导任务 23&#x3D;下载任务.</param>
         /// <param name="taskName">Task name.</param>
         /// <param name="taskDesc">Task description, may contain &lt;span&gt; highlight tags.</param>
         /// <param name="rewardNum">Reward value.</param>
         /// <param name="rewardUnit">Reward unit (e.g., USDT, BTC).</param>
         /// <param name="prizeType">Reward type: 1 &#x3D; points, 2 &#x3D; regular coupon, 3 &#x3D; VIP coupon.</param>
-        /// <param name="status">Task status: 0 &#x3D; unclaimed, 1 &#x3D; claimed, 2 &#x3D; reward pending, 3 &#x3D; rewarding, 4 &#x3D; completed, 5 &#x3D; expired.</param>
-        public ApiResponseExSkillGetBeginnerTaskListRespDataTasks(long welfareTaskId = default(long), long taskCenterId = default(long), int taskType = default(int), string taskName = default(string), string taskDesc = default(string), string rewardNum = default(string), string rewardUnit = default(string), PrizeTypeEnum? prizeType = default(PrizeTypeEnum?), StatusEnum? status = default(StatusEnum?))
+        /// <param name="status">任务状态：0&#x3D;未领取（典型为待领取下载任务） 1&#x3D;已领取/进行中 2&#x3D;已完成待领奖 3&#x3D;发奖中 4&#x3D;已完成/已结算 5&#x3D;已过期 (required).</param>
+        public ApiResponseExSkillGetBeginnerTaskListRespDataTasks(long welfareTaskId = default(long), long taskCenterId = default(long), int taskType = default(int), string taskName = default(string), string taskDesc = default(string), string rewardNum = default(string), string rewardUnit = default(string), PrizeTypeEnum? prizeType = default(PrizeTypeEnum?), StatusEnum status = default(StatusEnum))
         {
-            this.WelfareTaskId = welfareTaskId;
             this.TaskCenterId = taskCenterId;
+            this.Status = status;
+            this.WelfareTaskId = welfareTaskId;
             this.TaskType = taskType;
             this.TaskName = taskName;
             this.TaskDesc = taskDesc;
             this.RewardNum = rewardNum;
             this.RewardUnit = rewardUnit;
             this.PrizeType = prizeType;
-            this.Status = status;
         }
 
         /// <summary>
@@ -145,9 +150,9 @@ namespace Io.Gate.GateApi.Model
         public long TaskCenterId { get; set; }
 
         /// <summary>
-        /// Task type: 1 &#x3D; KYC level-2 verification, 2 &#x3D; spot, 3 &#x3D; futures, 4 &#x3D; referral, 5 &#x3D; quantitative, 6 &#x3D; earn, 7 &#x3D; startup, 8 &#x3D; first deposit, 10 &#x3D; registration task, 11 &#x3D; onboarding task
+        /// 任务类型：1&#x3D;KYC二级认证 2&#x3D;现货 3&#x3D;合约 4&#x3D;邀请 5&#x3D;量化 6&#x3D;余币宝 7&#x3D;startup 8&#x3D;首次入金 10&#x3D;注册任务 11&#x3D;引导任务 23&#x3D;下载任务
         /// </summary>
-        /// <value>Task type: 1 &#x3D; KYC level-2 verification, 2 &#x3D; spot, 3 &#x3D; futures, 4 &#x3D; referral, 5 &#x3D; quantitative, 6 &#x3D; earn, 7 &#x3D; startup, 8 &#x3D; first deposit, 10 &#x3D; registration task, 11 &#x3D; onboarding task</value>
+        /// <value>任务类型：1&#x3D;KYC二级认证 2&#x3D;现货 3&#x3D;合约 4&#x3D;邀请 5&#x3D;量化 6&#x3D;余币宝 7&#x3D;startup 8&#x3D;首次入金 10&#x3D;注册任务 11&#x3D;引导任务 23&#x3D;下载任务</value>
         [DataMember(Name="task_type")]
         public int TaskType { get; set; }
 

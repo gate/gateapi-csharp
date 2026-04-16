@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CommissionTime** | **long** | Commission time (Unix timestamp in seconds) | [optional] 
 **UserId** | **long** | User ID | [optional] 
 **GroupName** | **string** | Group name | [optional] 
-**CommissionAmount** | **string** | Transaction amount | [optional] 
+**CommissionAmount** | **string** | Commission amount | [optional] 
 **CommissionAsset** | **string** | Commission Asset | [optional] 
 **Source** | **string** | Commission source: SPOT - Spot commission, FUTURES - Futures commission | [optional] 
 

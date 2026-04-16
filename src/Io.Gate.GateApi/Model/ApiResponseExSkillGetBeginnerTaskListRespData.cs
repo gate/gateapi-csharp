@@ -33,16 +33,16 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseExSkillGetBeginnerTaskListRespData" /> class.
         /// </summary>
-        /// <param name="tasks">Beginner task list (registration tasks first, onboarding tasks after).</param>
+        /// <param name="tasks">入门任务列表（注册任务在前，引导任务在后；满足条件时会额外返回一条待领取下载任务）.</param>
         public ApiResponseExSkillGetBeginnerTaskListRespData(List<ApiResponseExSkillGetBeginnerTaskListRespDataTasks> tasks = default(List<ApiResponseExSkillGetBeginnerTaskListRespDataTasks>))
         {
             this.Tasks = tasks;
         }
 
         /// <summary>
-        /// Beginner task list (registration tasks first, onboarding tasks after)
+        /// 入门任务列表（注册任务在前，引导任务在后；满足条件时会额外返回一条待领取下载任务）
         /// </summary>
-        /// <value>Beginner task list (registration tasks first, onboarding tasks after)</value>
+        /// <value>入门任务列表（注册任务在前，引导任务在后；满足条件时会额外返回一条待领取下载任务）</value>
         [DataMember(Name="tasks")]
         public List<ApiResponseExSkillGetBeginnerTaskListRespDataTasks> Tasks { get; set; }
 

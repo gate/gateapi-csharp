@@ -36,7 +36,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="commissionTime">Commission time (Unix timestamp in seconds).</param>
         /// <param name="userId">User ID.</param>
         /// <param name="groupName">Group name.</param>
-        /// <param name="commissionAmount">Transaction amount.</param>
+        /// <param name="commissionAmount">Commission amount.</param>
         /// <param name="commissionAsset">Commission Asset.</param>
         /// <param name="source">Commission source: SPOT - Spot commission, FUTURES - Futures commission.</param>
         public AgencyCommission(long commissionTime = default(long), long userId = default(long), string groupName = default(string), string commissionAmount = default(string), string commissionAsset = default(string), string source = default(string))
@@ -71,9 +71,9 @@ namespace Io.Gate.GateApi.Model
         public string GroupName { get; set; }
 
         /// <summary>
-        /// Transaction amount
+        /// Commission amount
         /// </summary>
-        /// <value>Transaction amount</value>
+        /// <value>Commission amount</value>
         [DataMember(Name="commission_amount")]
         public string CommissionAmount { get; set; }
 

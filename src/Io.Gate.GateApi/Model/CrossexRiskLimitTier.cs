@@ -40,15 +40,18 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="minRiskLimitValue">Minimum risk limit value (required).</param>
         /// <param name="maxRiskLimitValue">Maximum risk limit value (required).</param>
+        /// <param name="quickCalAmount">Quick-calculation amount (required).</param>
         /// <param name="leverageMax">Maximum leverage (required).</param>
         /// <param name="maintenanceRate">Maintenance margin rate (required).</param>
         /// <param name="tier">Tier (required).</param>
-        public CrossexRiskLimitTier(string minRiskLimitValue = default(string), string maxRiskLimitValue = default(string), string leverageMax = default(string), string maintenanceRate = default(string), string tier = default(string))
+        public CrossexRiskLimitTier(string minRiskLimitValue = default(string), string maxRiskLimitValue = default(string), string quickCalAmount = default(string), string leverageMax = default(string), string maintenanceRate = default(string), string tier = default(string))
         {
             // to ensure "minRiskLimitValue" is required (not null)
             this.MinRiskLimitValue = minRiskLimitValue ?? throw new ArgumentNullException("minRiskLimitValue", "minRiskLimitValue is a required property for CrossexRiskLimitTier and cannot be null");
             // to ensure "maxRiskLimitValue" is required (not null)
             this.MaxRiskLimitValue = maxRiskLimitValue ?? throw new ArgumentNullException("maxRiskLimitValue", "maxRiskLimitValue is a required property for CrossexRiskLimitTier and cannot be null");
+            // to ensure "quickCalAmount" is required (not null)
+            this.QuickCalAmount = quickCalAmount ?? throw new ArgumentNullException("quickCalAmount", "quickCalAmount is a required property for CrossexRiskLimitTier and cannot be null");
             // to ensure "leverageMax" is required (not null)
             this.LeverageMax = leverageMax ?? throw new ArgumentNullException("leverageMax", "leverageMax is a required property for CrossexRiskLimitTier and cannot be null");
             // to ensure "maintenanceRate" is required (not null)
@@ -70,6 +73,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Maximum risk limit value</value>
         [DataMember(Name="max_risk_limit_value")]
         public string MaxRiskLimitValue { get; set; }
+
+        /// <summary>
+        /// Quick-calculation amount
+        /// </summary>
+        /// <value>Quick-calculation amount</value>
+        [DataMember(Name="quick_cal_amount")]
+        public string QuickCalAmount { get; set; }
 
         /// <summary>
         /// Maximum leverage
@@ -102,6 +112,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class CrossexRiskLimitTier {\n");
             sb.Append("  MinRiskLimitValue: ").Append(MinRiskLimitValue).Append("\n");
             sb.Append("  MaxRiskLimitValue: ").Append(MaxRiskLimitValue).Append("\n");
+            sb.Append("  QuickCalAmount: ").Append(QuickCalAmount).Append("\n");
             sb.Append("  LeverageMax: ").Append(LeverageMax).Append("\n");
             sb.Append("  MaintenanceRate: ").Append(MaintenanceRate).Append("\n");
             sb.Append("  Tier: ").Append(Tier).Append("\n");
@@ -150,6 +161,11 @@ namespace Io.Gate.GateApi.Model
                     this.MaxRiskLimitValue.Equals(input.MaxRiskLimitValue))
                 ) && 
                 (
+                    this.QuickCalAmount == input.QuickCalAmount ||
+                    (this.QuickCalAmount != null &&
+                    this.QuickCalAmount.Equals(input.QuickCalAmount))
+                ) && 
+                (
                     this.LeverageMax == input.LeverageMax ||
                     (this.LeverageMax != null &&
                     this.LeverageMax.Equals(input.LeverageMax))
@@ -179,6 +195,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.MinRiskLimitValue.GetHashCode();
                 if (this.MaxRiskLimitValue != null)
                     hashCode = hashCode * 59 + this.MaxRiskLimitValue.GetHashCode();
+                if (this.QuickCalAmount != null)
+                    hashCode = hashCode * 59 + this.QuickCalAmount.GetHashCode();
                 if (this.LeverageMax != null)
                     hashCode = hashCode * 59 + this.LeverageMax.GetHashCode();
                 if (this.MaintenanceRate != null)

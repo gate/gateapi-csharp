@@ -44,7 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="address">Withdrawal address.</param>
         /// <param name="type">Business Type.</param>
         /// <param name="failReason">Reason for withdrawal failure. Has a value when status &#x3D; CANCEL, empty for all other statuses.</param>
-        /// <param name="timestamp2">Withdrawal final time, i.e.: withdrawal cancellation time or withdrawal success time When status &#x3D; CANCEL, corresponds to cancellation time When status &#x3D; DONE and block_number &gt; 0, it is the withdrawal success time.</param>
+        /// <param name="timestamp2">Withdrawal final time, i.e.: withdrawal cancellation time or withdrawal success time When status &#x3D; CANCEL, corresponds to cancellation time When status &#x3D; DONE, it is the withdrawal success time.</param>
         /// <param name="memo">Additional remarks with regards to the withdrawal.</param>
         /// <param name="chain">Name of the chain used in withdrawals (required).</param>
         public WithdrawalRecord(string withdrawOrderId = default(string), string amount = default(string), string currency = default(string), string address = default(string), string type = default(string), string failReason = default(string), string timestamp2 = default(string), string memo = default(string), string chain = default(string))
@@ -141,9 +141,9 @@ namespace Io.Gate.GateApi.Model
         public string FailReason { get; set; }
 
         /// <summary>
-        /// Withdrawal final time, i.e.: withdrawal cancellation time or withdrawal success time When status &#x3D; CANCEL, corresponds to cancellation time When status &#x3D; DONE and block_number &gt; 0, it is the withdrawal success time
+        /// Withdrawal final time, i.e.: withdrawal cancellation time or withdrawal success time When status &#x3D; CANCEL, corresponds to cancellation time When status &#x3D; DONE, it is the withdrawal success time
         /// </summary>
-        /// <value>Withdrawal final time, i.e.: withdrawal cancellation time or withdrawal success time When status &#x3D; CANCEL, corresponds to cancellation time When status &#x3D; DONE and block_number &gt; 0, it is the withdrawal success time</value>
+        /// <value>Withdrawal final time, i.e.: withdrawal cancellation time or withdrawal success time When status &#x3D; CANCEL, corresponds to cancellation time When status &#x3D; DONE, it is the withdrawal success time</value>
         [DataMember(Name="timestamp2")]
         public string Timestamp2 { get; set; }
 
@@ -155,9 +155,9 @@ namespace Io.Gate.GateApi.Model
         public string Memo { get; set; }
 
         /// <summary>
-        /// Transaction Status  - BCODE: Deposit Code Operation - CANCEL: Cancelled - CANCELPEND: Withdrawal Cancellation Pending - DONE: Completed (Only considered truly on-chain when block_number &gt; 0) - EXTPEND: Sent and Waiting for Confirmation - FAIL: On-Chain Failure Pending Confirmation - FVERIFY: Facial Verification in Progress - LOCKED: Wallet-Side Order Locked - MANUAL: Pending Manual Review - REJECT: Rejected - REQUEST: Request in Progress - REVIEW: Under Review 
+        /// Transaction Status  - BCODE: Deposit Code Operation - CANCEL: Cancelled - CANCELPEND: Withdrawal Cancellation Pending - DONE: Completed - EXTPEND: Sent and Waiting for Confirmation - FAIL: On-Chain Failure Pending Confirmation - FVERIFY: Facial Verification in Progress - LOCKED: Wallet-Side Order Locked - MANUAL: Pending Manual Review - REJECT: Rejected - REQUEST: Request in Progress - REVIEW: Under Review 
         /// </summary>
-        /// <value>Transaction Status  - BCODE: Deposit Code Operation - CANCEL: Cancelled - CANCELPEND: Withdrawal Cancellation Pending - DONE: Completed (Only considered truly on-chain when block_number &gt; 0) - EXTPEND: Sent and Waiting for Confirmation - FAIL: On-Chain Failure Pending Confirmation - FVERIFY: Facial Verification in Progress - LOCKED: Wallet-Side Order Locked - MANUAL: Pending Manual Review - REJECT: Rejected - REQUEST: Request in Progress - REVIEW: Under Review </value>
+        /// <value>Transaction Status  - BCODE: Deposit Code Operation - CANCEL: Cancelled - CANCELPEND: Withdrawal Cancellation Pending - DONE: Completed - EXTPEND: Sent and Waiting for Confirmation - FAIL: On-Chain Failure Pending Confirmation - FVERIFY: Facial Verification in Progress - LOCKED: Wallet-Side Order Locked - MANUAL: Pending Manual Review - REJECT: Rejected - REQUEST: Request in Progress - REVIEW: Under Review </value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; private set; }
 

@@ -105,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="fundingInterval">Funding application interval, unit in seconds.</param>
         /// <param name="fundingNextApply">Next funding time.</param>
         /// <param name="riskLimitBase">Base risk limit (deprecated).</param>
+        /// <param name="interestRate">Interest rate parameter used in funding rate and premium-related calculations for perpetual contracts. Returned as a string decimal ratio (e.g. &#x60;0.0003&#x60;), same convention as &#x60;funding_rate&#x60; (ratio, not percent)..</param>
         /// <param name="riskLimitStep">Risk limit adjustment step (deprecated).</param>
         /// <param name="riskLimitMax">Maximum risk limit allowed by the contract (deprecated). It is recommended to use /futures/{settle}/risk_limit_tiers to query risk limits.</param>
         /// <param name="orderSizeMin">Minimum order size allowed by the contract.</param>
@@ -131,8 +132,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="marketOrderSlipRatio">The maximum slippage allowed for market orders, with the slippage rate calculated based on the latest market price.</param>
         /// <param name="marketOrderSizeMax">The maximum number of contracts supported for market orders, with a default value of 0. When the default value is used, the maximum number of contracts is limited by the &#x60;order_size_max&#x60; field.</param>
         /// <param name="fundingRateLimit">Upper and lower limits of funding rate.</param>
+        /// <param name="contractType">Contract classification type, e.g. stocks, metals, indices, forex, commodities, etc..</param>
         /// <param name="fundingImpactValue">Funding rate depth impact value.</param>
-        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), bool enableDecimal = default(bool), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string marketOrderSlipRatio = default(string), string marketOrderSizeMax = default(string), string fundingRateLimit = default(string), string fundingImpactValue = default(string))
+        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string interestRate = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), bool enableDecimal = default(bool), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string marketOrderSlipRatio = default(string), string marketOrderSizeMax = default(string), string fundingRateLimit = default(string), string contractType = default(string), string fundingImpactValue = default(string))
         {
             this.Name = name;
             this.Type = type;
@@ -152,6 +154,7 @@ namespace Io.Gate.GateApi.Model
             this.FundingInterval = fundingInterval;
             this.FundingNextApply = fundingNextApply;
             this.RiskLimitBase = riskLimitBase;
+            this.InterestRate = interestRate;
             this.RiskLimitStep = riskLimitStep;
             this.RiskLimitMax = riskLimitMax;
             this.OrderSizeMin = orderSizeMin;
@@ -178,6 +181,7 @@ namespace Io.Gate.GateApi.Model
             this.MarketOrderSlipRatio = marketOrderSlipRatio;
             this.MarketOrderSizeMax = marketOrderSizeMax;
             this.FundingRateLimit = fundingRateLimit;
+            this.ContractType = contractType;
             this.FundingImpactValue = fundingImpactValue;
         }
 
@@ -292,6 +296,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Base risk limit (deprecated)</value>
         [DataMember(Name="risk_limit_base")]
         public string RiskLimitBase { get; set; }
+
+        /// <summary>
+        /// Interest rate parameter used in funding rate and premium-related calculations for perpetual contracts. Returned as a string decimal ratio (e.g. &#x60;0.0003&#x60;), same convention as &#x60;funding_rate&#x60; (ratio, not percent).
+        /// </summary>
+        /// <value>Interest rate parameter used in funding rate and premium-related calculations for perpetual contracts. Returned as a string decimal ratio (e.g. &#x60;0.0003&#x60;), same convention as &#x60;funding_rate&#x60; (ratio, not percent).</value>
+        [DataMember(Name="interest_rate")]
+        public string InterestRate { get; set; }
 
         /// <summary>
         /// Risk limit adjustment step (deprecated)
@@ -476,6 +487,13 @@ namespace Io.Gate.GateApi.Model
         public string FundingRateLimit { get; set; }
 
         /// <summary>
+        /// Contract classification type, e.g. stocks, metals, indices, forex, commodities, etc.
+        /// </summary>
+        /// <value>Contract classification type, e.g. stocks, metals, indices, forex, commodities, etc.</value>
+        [DataMember(Name="contract_type")]
+        public string ContractType { get; set; }
+
+        /// <summary>
         /// Funding rate depth impact value
         /// </summary>
         /// <value>Funding rate depth impact value</value>
@@ -508,6 +526,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  FundingInterval: ").Append(FundingInterval).Append("\n");
             sb.Append("  FundingNextApply: ").Append(FundingNextApply).Append("\n");
             sb.Append("  RiskLimitBase: ").Append(RiskLimitBase).Append("\n");
+            sb.Append("  InterestRate: ").Append(InterestRate).Append("\n");
             sb.Append("  RiskLimitStep: ").Append(RiskLimitStep).Append("\n");
             sb.Append("  RiskLimitMax: ").Append(RiskLimitMax).Append("\n");
             sb.Append("  OrderSizeMin: ").Append(OrderSizeMin).Append("\n");
@@ -534,6 +553,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  MarketOrderSlipRatio: ").Append(MarketOrderSlipRatio).Append("\n");
             sb.Append("  MarketOrderSizeMax: ").Append(MarketOrderSizeMax).Append("\n");
             sb.Append("  FundingRateLimit: ").Append(FundingRateLimit).Append("\n");
+            sb.Append("  ContractType: ").Append(ContractType).Append("\n");
             sb.Append("  FundingImpactValue: ").Append(FundingImpactValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -656,6 +676,11 @@ namespace Io.Gate.GateApi.Model
                     this.RiskLimitBase.Equals(input.RiskLimitBase))
                 ) && 
                 (
+                    this.InterestRate == input.InterestRate ||
+                    (this.InterestRate != null &&
+                    this.InterestRate.Equals(input.InterestRate))
+                ) && 
+                (
                     this.RiskLimitStep == input.RiskLimitStep ||
                     (this.RiskLimitStep != null &&
                     this.RiskLimitStep.Equals(input.RiskLimitStep))
@@ -774,6 +799,11 @@ namespace Io.Gate.GateApi.Model
                     this.FundingRateLimit.Equals(input.FundingRateLimit))
                 ) && 
                 (
+                    this.ContractType == input.ContractType ||
+                    (this.ContractType != null &&
+                    this.ContractType.Equals(input.ContractType))
+                ) && 
+                (
                     this.FundingImpactValue == input.FundingImpactValue ||
                     (this.FundingImpactValue != null &&
                     this.FundingImpactValue.Equals(input.FundingImpactValue))
@@ -821,6 +851,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.FundingNextApply.GetHashCode();
                 if (this.RiskLimitBase != null)
                     hashCode = hashCode * 59 + this.RiskLimitBase.GetHashCode();
+                if (this.InterestRate != null)
+                    hashCode = hashCode * 59 + this.InterestRate.GetHashCode();
                 if (this.RiskLimitStep != null)
                     hashCode = hashCode * 59 + this.RiskLimitStep.GetHashCode();
                 if (this.RiskLimitMax != null)
@@ -861,6 +893,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.MarketOrderSizeMax.GetHashCode();
                 if (this.FundingRateLimit != null)
                     hashCode = hashCode * 59 + this.FundingRateLimit.GetHashCode();
+                if (this.ContractType != null)
+                    hashCode = hashCode * 59 + this.ContractType.GetHashCode();
                 if (this.FundingImpactValue != null)
                     hashCode = hashCode * 59 + this.FundingImpactValue.GetHashCode();
                 return hashCode;

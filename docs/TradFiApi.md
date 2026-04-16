@@ -805,7 +805,7 @@ This endpoint does not need any parameter.
 
 <a name="createtradfiorder"></a>
 # **CreateTradFiOrder**
-> CreateOrder CreateTradFiOrder (TradFiOrderRequest tradFiOrderRequest)
+> CreateOrder2 CreateTradFiOrder (TradFiOrderRequest tradFiOrderRequest)
 
 Create an order
 
@@ -833,7 +833,7 @@ namespace Example
             try
             {
                 // Create an order
-                CreateOrder result = apiInstance.CreateTradFiOrder(tradFiOrderRequest);
+                CreateOrder2 result = apiInstance.CreateTradFiOrder(tradFiOrderRequest);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -856,7 +856,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateOrder**](CreateOrder.md)
+[**CreateOrder2**](CreateOrder2.md)
 
 ### Authorization
 

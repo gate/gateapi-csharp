@@ -105,7 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="tradingUserCount">交易人数，字符串形式（与线上 JSON 序列化一致）  仅在 business_type&#x3D;0（全部）时返回具体数值，其他业务类型返回 null (required).</param>
         /// <param name="timeRangeDesc">Time range description (required).</param>
         /// <param name="businessType">Business Type (required).</param>
-        /// <param name="businessTypeDesc">业务类型描述，可取值：全部, 现货, 合约, Alpha, Web3, Perps(DEX), Exchange All, Web3 All, TradFi (required).</param>
+        /// <param name="businessTypeDesc">Business type description. Allowed values: All, Spot, Futures, Alpha, Web3, Perps (DEX), Exchange All, Web3 All, TradFi (required).</param>
         public PartnerDataAggregated(string rebateAmount = default(string), string tradeVolume = default(string), string netFee = default(string), int customerCount = default(int), string tradingUserCount = default(string), string timeRangeDesc = default(string), BusinessTypeEnum businessType = default(BusinessTypeEnum), string businessTypeDesc = default(string))
         {
             // to ensure "rebateAmount" is required (not null)
@@ -167,9 +167,9 @@ namespace Io.Gate.GateApi.Model
         public string TimeRangeDesc { get; set; }
 
         /// <summary>
-        /// 业务类型描述，可取值：全部, 现货, 合约, Alpha, Web3, Perps(DEX), Exchange All, Web3 All, TradFi
+        /// Business type description. Allowed values: All, Spot, Futures, Alpha, Web3, Perps (DEX), Exchange All, Web3 All, TradFi
         /// </summary>
-        /// <value>业务类型描述，可取值：全部, 现货, 合约, Alpha, Web3, Perps(DEX), Exchange All, Web3 All, TradFi</value>
+        /// <value>Business type description. Allowed values: All, Spot, Futures, Alpha, Web3, Perps (DEX), Exchange All, Web3 All, TradFi</value>
         [DataMember(Name="business_type_desc")]
         public string BusinessTypeDesc { get; set; }
 

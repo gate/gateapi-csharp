@@ -25,26 +25,35 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Order result
+    /// 领取奖励结果
     /// </summary>
     [DataContract]
-    public partial class CreateOrderData :  IEquatable<CreateOrderData>, IValidatableObject
+    public partial class ApiResponseExSkillClaimRewardRespData :  IEquatable<ApiResponseExSkillClaimRewardRespData>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateOrderData" /> class.
+        /// Initializes a new instance of the <see cref="ApiResponseExSkillClaimRewardRespData" /> class.
         /// </summary>
-        /// <param name="id">Queue Task ID (not task ID).</param>
-        public CreateOrderData(string id = default(string))
+        /// <param name="hasMNTask">是否为 m 选 n 奖池任务。为 true 时仅提示跳转，不实际发奖.</param>
+        /// <param name="couponFullName">卡券奖励全称。非卡券奖励或无法解析时为空字符串.</param>
+        public ApiResponseExSkillClaimRewardRespData(bool hasMNTask = default(bool), string couponFullName = default(string))
         {
-            this.Id = id;
+            this.HasMNTask = hasMNTask;
+            this.CouponFullName = couponFullName;
         }
 
         /// <summary>
-        /// Queue Task ID (not task ID)
+        /// 是否为 m 选 n 奖池任务。为 true 时仅提示跳转，不实际发奖
         /// </summary>
-        /// <value>Queue Task ID (not task ID)</value>
-        [DataMember(Name="id")]
-        public string Id { get; set; }
+        /// <value>是否为 m 选 n 奖池任务。为 true 时仅提示跳转，不实际发奖</value>
+        [DataMember(Name="has_m_n_task")]
+        public bool HasMNTask { get; set; }
+
+        /// <summary>
+        /// 卡券奖励全称。非卡券奖励或无法解析时为空字符串
+        /// </summary>
+        /// <value>卡券奖励全称。非卡券奖励或无法解析时为空字符串</value>
+        [DataMember(Name="coupon_full_name")]
+        public string CouponFullName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -53,8 +62,9 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateOrderData {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class ApiResponseExSkillClaimRewardRespData {\n");
+            sb.Append("  HasMNTask: ").Append(HasMNTask).Append("\n");
+            sb.Append("  CouponFullName: ").Append(CouponFullName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,24 +85,28 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateOrderData);
+            return this.Equals(input as ApiResponseExSkillClaimRewardRespData);
         }
 
         /// <summary>
-        /// Returns true if CreateOrderData instances are equal
+        /// Returns true if ApiResponseExSkillClaimRewardRespData instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateOrderData to be compared</param>
+        /// <param name="input">Instance of ApiResponseExSkillClaimRewardRespData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateOrderData input)
+        public bool Equals(ApiResponseExSkillClaimRewardRespData input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.HasMNTask == input.HasMNTask ||
+                    this.HasMNTask.Equals(input.HasMNTask)
+                ) && 
+                (
+                    this.CouponFullName == input.CouponFullName ||
+                    (this.CouponFullName != null &&
+                    this.CouponFullName.Equals(input.CouponFullName))
                 );
         }
 
@@ -105,8 +119,9 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.HasMNTask.GetHashCode();
+                if (this.CouponFullName != null)
+                    hashCode = hashCode * 59 + this.CouponFullName.GetHashCode();
                 return hashCode;
             }
         }

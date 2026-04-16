@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="feeAsset">Fee currency.</param>
         /// <param name="currencyPair">Currency pair.</param>
         /// <param name="amount">Transaction amount.</param>
-        /// <param name="amountAsset">Commission Asset.</param>
+        /// <param name="amountAsset">Transaction amount currency.</param>
         /// <param name="source">Commission source: SPOT - Spot commission, FUTURES - Futures commission.</param>
         public AgencyTransaction(long transactionTime = default(long), long userId = default(long), string groupName = default(string), string fee = default(string), string feeAsset = default(string), string currencyPair = default(string), string amount = default(string), string amountAsset = default(string), string source = default(string))
         {
@@ -105,9 +105,9 @@ namespace Io.Gate.GateApi.Model
         public string Amount { get; set; }
 
         /// <summary>
-        /// Commission Asset
+        /// Transaction amount currency
         /// </summary>
-        /// <value>Commission Asset</value>
+        /// <value>Transaction amount currency</value>
         [DataMember(Name="amount_asset")]
         public string AmountAsset { get; set; }
 

@@ -8,6 +8,10 @@ Method | HTTP request | Description
 [**ListDualOrders**](EarnApi.md#listdualorders) | **GET** /earn/dual/orders | Dual Investment order list
 [**PlaceDualOrder**](EarnApi.md#placedualorder) | **POST** /earn/dual/orders | Place Dual Investment order
 [**ListDualBalance**](EarnApi.md#listdualbalance) | **GET** /earn/dual/balance | Dual-Currency Earning Assets
+[**GetDualOrderRefundPreview**](EarnApi.md#getdualorderrefundpreview) | **GET** /earn/dual/order-refund-preview | Dual-currency early redemption preview
+[**PlaceDualOrderRefund**](EarnApi.md#placedualorderrefund) | **POST** /earn/dual/order-refund | Dual-currency order early redemption
+[**ModifyDualOrderReinvest**](EarnApi.md#modifydualorderreinvest) | **POST** /earn/dual/modify-order-reinvest | Modify dual-currency order reinvest
+[**GetDualProjectRecommend**](EarnApi.md#getdualprojectrecommend) | **GET** /earn/dual/project-recommend | Dual-currency recommended projects
 [**FindCoin**](EarnApi.md#findcoin) | **GET** /earn/staking/coins | Staking coins
 [**SwapStakingCoin**](EarnApi.md#swapstakingcoin) | **POST** /earn/staking/swap | On-chain token swap for earned coins
 [**OrderList**](EarnApi.md#orderlist) | **GET** /earn/staking/order_list | List of on-chain coin-earning orders
@@ -34,7 +38,7 @@ Method | HTTP request | Description
 
 <a name="listdualinvestmentplans"></a>
 # **ListDualInvestmentPlans**
-> List&lt;DualGetPlans&gt; ListDualInvestmentPlans (long? planId = null)
+> List&lt;DualGetPlans&gt; ListDualInvestmentPlans (long? planId = null, string coin = null, string type = null, string quoteCurrency = null, string sort = null, int? page = null, int? pageSize = null)
 
 Dual Investment product list
 
@@ -56,11 +60,17 @@ namespace Example
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new EarnApi(config);
             var planId = 1;  // long? | Financial project ID (optional) 
+            var coin = "BTC";  // string | Investment Token (optional) 
+            var type = "call";  // string | Type enum: `put` — buy low; `call` — sell high (optional) 
+            var quoteCurrency = "quoteCurrency_example";  // string | Settlement currency enum: defaults to USDT; GUSD optional (optional) 
+            var sort = "sort_example";  // string | Sort field enum: `apy` — highest APY first `short-period` — shortest tenor first `multiple` — highest premium first (optional) 
+            var page = 1;  // int? | page number (optional) 
+            var pageSize = 3;  // int? | Items per page (optional) 
 
             try
             {
                 // Dual Investment product list
-                List<DualGetPlans> result = apiInstance.ListDualInvestmentPlans(planId);
+                List<DualGetPlans> result = apiInstance.ListDualInvestmentPlans(planId, coin, type, quoteCurrency, sort, page, pageSize);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -80,6 +90,12 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **planId** | **long?**| Financial project ID | [optional] 
+ **coin** | **string**| Investment Token | [optional] 
+ **type** | **string**| Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high | [optional] 
+ **quoteCurrency** | **string**| Settlement currency enum: defaults to USDT; GUSD optional | [optional] 
+ **sort** | **string**| Sort field enum: &#x60;apy&#x60; — highest APY first &#x60;short-period&#x60; — shortest tenor first &#x60;multiple&#x60; — highest premium first | [optional] 
+ **page** | **int?**| page number | [optional] 
+ **pageSize** | **int?**| Items per page | [optional] 
 
 ### Return type
 
@@ -103,7 +119,7 @@ No authorization required
 
 <a name="listdualorders"></a>
 # **ListDualOrders**
-> List&lt;DualGetOrders&gt; ListDualOrders (long? from = null, long? to = null, int? page = null, int? limit = null)
+> List&lt;DualGetOrders&gt; ListDualOrders (long? from = null, long? to = null, string type = null, string status = null, string coin = null, int? page = null, int? limit = null)
 
 Dual Investment order list
 
@@ -128,13 +144,16 @@ namespace Example
             var apiInstance = new EarnApi(config);
             var from = 1740727000;  // long? | Start settlement time (optional) 
             var to = 1740729000;  // long? | End settlement time (optional) 
+            var type = "put";  // string | Type enum: `put` — buy low; `call` — sell high (optional) 
+            var status = "HOLD";  // string | Order status enum: `HOLD` — open position `REPAY` — historical position `PROCESSING` — position active `SETTLEMENT_PROCESSING` — settlement in progress `ALL` — all (optional) 
+            var coin = "BTC";  // string | Investment Token (optional) 
             var page = 1;  // int? | Page number (optional)  (default to 1)
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
 
             try
             {
                 // Dual Investment order list
-                List<DualGetOrders> result = apiInstance.ListDualOrders(from, to, page, limit);
+                List<DualGetOrders> result = apiInstance.ListDualOrders(from, to, type, status, coin, page, limit);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -155,6 +174,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **from** | **long?**| Start settlement time | [optional] 
  **to** | **long?**| End settlement time | [optional] 
+ **type** | **string**| Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high | [optional] 
+ **status** | **string**| Order status enum: &#x60;HOLD&#x60; — open position &#x60;REPAY&#x60; — historical position &#x60;PROCESSING&#x60; — position active &#x60;SETTLEMENT_PROCESSING&#x60; — settlement in progress &#x60;ALL&#x60; — all | [optional] 
+ **coin** | **string**| Investment Token | [optional] 
  **page** | **int?**| Page number | [optional] [default to 1]
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
 
@@ -299,6 +321,294 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**DualGetBalance**](DualGetBalance.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getdualorderrefundpreview"></a>
+# **GetDualOrderRefundPreview**
+> DualOrderRefundPreview GetDualOrderRefundPreview (string orderId)
+
+Dual-currency early redemption preview
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetDualOrderRefundPreviewExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var orderId = "9497";  // string | Order ID
+
+            try
+            {
+                // Dual-currency early redemption preview
+                DualOrderRefundPreview result = apiInstance.GetDualOrderRefundPreview(orderId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.GetDualOrderRefundPreview: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | **string**| Order ID | 
+
+### Return type
+
+[**DualOrderRefundPreview**](DualOrderRefundPreview.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="placedualorderrefund"></a>
+# **PlaceDualOrderRefund**
+> void PlaceDualOrderRefund (DualOrderRefundParams dualOrderRefundParams)
+
+Dual-currency order early redemption
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class PlaceDualOrderRefundExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var dualOrderRefundParams = new DualOrderRefundParams(); // DualOrderRefundParams | 
+
+            try
+            {
+                // Dual-currency order early redemption
+                apiInstance.PlaceDualOrderRefund(dualOrderRefundParams);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.PlaceDualOrderRefund: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dualOrderRefundParams** | [**DualOrderRefundParams**](DualOrderRefundParams.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Redemption successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="modifydualorderreinvest"></a>
+# **ModifyDualOrderReinvest**
+> void ModifyDualOrderReinvest (DualModifyOrderReinvestParams dualModifyOrderReinvestParams)
+
+Modify dual-currency order reinvest
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ModifyDualOrderReinvestExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var dualModifyOrderReinvestParams = new DualModifyOrderReinvestParams(); // DualModifyOrderReinvestParams | 
+
+            try
+            {
+                // Modify dual-currency order reinvest
+                apiInstance.ModifyDualOrderReinvest(dualModifyOrderReinvestParams);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ModifyDualOrderReinvest: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dualModifyOrderReinvestParams** | [**DualModifyOrderReinvestParams**](DualModifyOrderReinvestParams.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Updated successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getdualprojectrecommend"></a>
+# **GetDualProjectRecommend**
+> List&lt;DualProjectRecommend&gt; GetDualProjectRecommend (string mode = null, string coin = null, string type = null, string historyPids = null)
+
+Dual-currency recommended projects
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetDualProjectRecommendExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var mode = "normal";  // string | Sort mode; default `normal`: `senior` — curated picks (APR/tenor) `apy_up` — APY ascending `ep_down` — target price descending `ep_up` — target price ascending `dt_down` — maturity time descending `dt_up` — maturity time ascending (optional) 
+            var coin = "ETH";  // string | Investment Token (optional) 
+            var type = "call";  // string | `call`: sell high; `put`: buy low (optional) 
+            var historyPids = "110656,110652";  // string | Comma-separated project IDs to exclude already recommended items (optional) 
+
+            try
+            {
+                // Dual-currency recommended projects
+                List<DualProjectRecommend> result = apiInstance.GetDualProjectRecommend(mode, coin, type, historyPids);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.GetDualProjectRecommend: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mode** | **string**| Sort mode; default &#x60;normal&#x60;: &#x60;senior&#x60; — curated picks (APR/tenor) &#x60;apy_up&#x60; — APY ascending &#x60;ep_down&#x60; — target price descending &#x60;ep_up&#x60; — target price ascending &#x60;dt_down&#x60; — maturity time descending &#x60;dt_up&#x60; — maturity time ascending | [optional] 
+ **coin** | **string**| Investment Token | [optional] 
+ **type** | **string**| &#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low | [optional] 
+ **historyPids** | **string**| Comma-separated project IDs to exclude already recommended items | [optional] 
+
+### Return type
+
+[**List&lt;DualProjectRecommend&gt;**](DualProjectRecommend.md)
 
 ### Authorization
 

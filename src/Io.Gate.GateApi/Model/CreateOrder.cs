@@ -33,26 +33,91 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrder" /> class.
         /// </summary>
-        /// <param name="timestamp">Server timestamp (milliseconds).</param>
-        /// <param name="data">data.</param>
-        public CreateOrder(long timestamp = default(long), CreateOrderData data = default(CreateOrderData))
+        [JsonConstructorAttribute]
+        protected CreateOrder() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateOrder" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="userId">userId (required).</param>
+        /// <param name="from">from (required).</param>
+        /// <param name="to">to (required).</param>
+        /// <param name="source">source (required).</param>
+        /// <param name="appId">appId (required).</param>
+        /// <param name="clientReqId">clientReqId (required).</param>
+        /// <param name="status">status (required).</param>
+        /// <param name="createTime">createTime (required).</param>
+        public CreateOrder(long id = default(long), int userId = default(int), List<CreateOrderDetail> from = default(List<CreateOrderDetail>), List<CreateOrderDetail> to = default(List<CreateOrderDetail>), string source = default(string), string appId = default(string), string clientReqId = default(string), int status = default(int), long createTime = default(long))
         {
-            this.Timestamp = timestamp;
-            this.Data = data;
+            this.Id = id;
+            this.UserId = userId;
+            // to ensure "from" is required (not null)
+            this.From = from ?? throw new ArgumentNullException("from", "from is a required property for CreateOrder and cannot be null");
+            // to ensure "to" is required (not null)
+            this.To = to ?? throw new ArgumentNullException("to", "to is a required property for CreateOrder and cannot be null");
+            // to ensure "source" is required (not null)
+            this.Source = source ?? throw new ArgumentNullException("source", "source is a required property for CreateOrder and cannot be null");
+            // to ensure "appId" is required (not null)
+            this.AppId = appId ?? throw new ArgumentNullException("appId", "appId is a required property for CreateOrder and cannot be null");
+            // to ensure "clientReqId" is required (not null)
+            this.ClientReqId = clientReqId ?? throw new ArgumentNullException("clientReqId", "clientReqId is a required property for CreateOrder and cannot be null");
+            this.Status = status;
+            this.CreateTime = createTime;
         }
 
         /// <summary>
-        /// Server timestamp (milliseconds)
+        /// Gets or Sets Id
         /// </summary>
-        /// <value>Server timestamp (milliseconds)</value>
-        [DataMember(Name="timestamp")]
-        public long Timestamp { get; set; }
+        [DataMember(Name="id")]
+        public long Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets UserId
         /// </summary>
-        [DataMember(Name="data")]
-        public CreateOrderData Data { get; set; }
+        [DataMember(Name="user_id")]
+        public int UserId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets From
+        /// </summary>
+        [DataMember(Name="from")]
+        public List<CreateOrderDetail> From { get; set; }
+
+        /// <summary>
+        /// Gets or Sets To
+        /// </summary>
+        [DataMember(Name="to")]
+        public List<CreateOrderDetail> To { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Source
+        /// </summary>
+        [DataMember(Name="source")]
+        public string Source { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AppId
+        /// </summary>
+        [DataMember(Name="app_id")]
+        public string AppId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ClientReqId
+        /// </summary>
+        [DataMember(Name="client_req_id")]
+        public string ClientReqId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name="status")]
+        public int Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreateTime
+        /// </summary>
+        [DataMember(Name="create_time")]
+        public long CreateTime { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,8 +127,15 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateOrder {\n");
-            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  UserId: ").Append(UserId).Append("\n");
+            sb.Append("  From: ").Append(From).Append("\n");
+            sb.Append("  To: ").Append(To).Append("\n");
+            sb.Append("  Source: ").Append(Source).Append("\n");
+            sb.Append("  AppId: ").Append(AppId).Append("\n");
+            sb.Append("  ClientReqId: ").Append(ClientReqId).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,13 +171,47 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Timestamp == input.Timestamp ||
-                    this.Timestamp.Equals(input.Timestamp)
+                    this.Id == input.Id ||
+                    this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.UserId == input.UserId ||
+                    this.UserId.Equals(input.UserId)
+                ) && 
+                (
+                    this.From == input.From ||
+                    this.From != null &&
+                    input.From != null &&
+                    this.From.SequenceEqual(input.From)
+                ) && 
+                (
+                    this.To == input.To ||
+                    this.To != null &&
+                    input.To != null &&
+                    this.To.SequenceEqual(input.To)
+                ) && 
+                (
+                    this.Source == input.Source ||
+                    (this.Source != null &&
+                    this.Source.Equals(input.Source))
+                ) && 
+                (
+                    this.AppId == input.AppId ||
+                    (this.AppId != null &&
+                    this.AppId.Equals(input.AppId))
+                ) && 
+                (
+                    this.ClientReqId == input.ClientReqId ||
+                    (this.ClientReqId != null &&
+                    this.ClientReqId.Equals(input.ClientReqId))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    this.Status.Equals(input.Status)
+                ) && 
+                (
+                    this.CreateTime == input.CreateTime ||
+                    this.CreateTime.Equals(input.CreateTime)
                 );
         }
 
@@ -118,9 +224,20 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.From != null)
+                    hashCode = hashCode * 59 + this.From.GetHashCode();
+                if (this.To != null)
+                    hashCode = hashCode * 59 + this.To.GetHashCode();
+                if (this.Source != null)
+                    hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.AppId != null)
+                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.ClientReqId != null)
+                    hashCode = hashCode * 59 + this.ClientReqId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -788,7 +788,7 @@ Name | Type | Description  | Notes
 
 <a name="listsubaccountbalances"></a>
 # **ListSubAccountBalances**
-> List&lt;SubAccountBalance&gt; ListSubAccountBalances (string subUid = null)
+> List&lt;SubAccountBalance&gt; ListSubAccountBalances (string subUid = null, int? page = null, int? limit = null)
 
 Query sub-account balance information
 
@@ -812,11 +812,13 @@ namespace Example
 
             var apiInstance = new WalletApi(config);
             var subUid = "10003";  // string | Sub-account user ID, you can query multiple records separated by `,`. If not specified, it will return records of all sub-accounts (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of records returned. Default 20, max 100. (optional)  (default to 100)
 
             try
             {
                 // Query sub-account balance information
-                List<SubAccountBalance> result = apiInstance.ListSubAccountBalances(subUid);
+                List<SubAccountBalance> result = apiInstance.ListSubAccountBalances(subUid, page, limit);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -836,6 +838,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subUid** | **string**| Sub-account user ID, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return records of all sub-accounts | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of records returned. Default 20, max 100. | [optional] [default to 100]
 
 ### Return type
 

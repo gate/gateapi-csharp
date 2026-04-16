@@ -33,18 +33,23 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseExSkillGetBeginnerTaskListResp" /> class.
         /// </summary>
-        /// <param name="code">Business error code: 0 &#x3D; success, 1007 &#x3D; no task data, 1008 &#x3D; not logged in.</param>
+        [JsonConstructorAttribute]
+        protected ApiResponseExSkillGetBeginnerTaskListResp() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiResponseExSkillGetBeginnerTaskListResp" /> class.
+        /// </summary>
+        /// <param name="code">Business error code: 0 &#x3D; success, 1007 &#x3D; no task data, 1008 &#x3D; not logged in (required).</param>
         /// <param name="label">Error identifier code. Empty string on success, machine-readable error label on error.</param>
         /// <param name="message">Error description.</param>
         /// <param name="data">data.</param>
-        /// <param name="timestamp">Server timestamp (milliseconds).</param>
+        /// <param name="timestamp">Server timestamp (milliseconds) (required).</param>
         public ApiResponseExSkillGetBeginnerTaskListResp(int code = default(int), string label = default(string), string message = default(string), ApiResponseExSkillGetBeginnerTaskListRespData data = default(ApiResponseExSkillGetBeginnerTaskListRespData), long timestamp = default(long))
         {
             this.Code = code;
+            this.Timestamp = timestamp;
             this.Label = label;
             this.Message = message;
             this.Data = data;
-            this.Timestamp = timestamp;
         }
 
         /// <summary>

@@ -270,8 +270,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tradFiOrderRequest"></param>
-        /// <returns>CreateOrder</returns>
-        CreateOrder CreateTradFiOrder (TradFiOrderRequest tradFiOrderRequest);
+        /// <returns>CreateOrder2</returns>
+        CreateOrder2 CreateTradFiOrder (TradFiOrderRequest tradFiOrderRequest);
 
         /// <summary>
         /// Create an order
@@ -281,8 +281,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tradFiOrderRequest"></param>
-        /// <returns>ApiResponse of CreateOrder</returns>
-        ApiResponse<CreateOrder> CreateTradFiOrderWithHttpInfo (TradFiOrderRequest tradFiOrderRequest);
+        /// <returns>ApiResponse of CreateOrder2</returns>
+        ApiResponse<CreateOrder2> CreateTradFiOrderWithHttpInfo (TradFiOrderRequest tradFiOrderRequest);
         /// <summary>
         /// Modify order
         /// </summary>
@@ -698,8 +698,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tradFiOrderRequest"></param>
-        /// <returns>Task of CreateOrder</returns>
-        Task<CreateOrder> CreateTradFiOrderAsync (TradFiOrderRequest tradFiOrderRequest);
+        /// <returns>Task of CreateOrder2</returns>
+        Task<CreateOrder2> CreateTradFiOrderAsync (TradFiOrderRequest tradFiOrderRequest);
 
         /// <summary>
         /// Create an order
@@ -709,8 +709,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tradFiOrderRequest"></param>
-        /// <returns>Task of ApiResponse (CreateOrder)</returns>
-        Task<ApiResponse<CreateOrder>> CreateTradFiOrderAsyncWithHttpInfo (TradFiOrderRequest tradFiOrderRequest);
+        /// <returns>Task of ApiResponse (CreateOrder2)</returns>
+        Task<ApiResponse<CreateOrder2>> CreateTradFiOrderAsyncWithHttpInfo (TradFiOrderRequest tradFiOrderRequest);
         /// <summary>
         /// Modify order
         /// </summary>
@@ -2284,10 +2284,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tradFiOrderRequest"></param>
-        /// <returns>CreateOrder</returns>
-        public CreateOrder CreateTradFiOrder (TradFiOrderRequest tradFiOrderRequest)
+        /// <returns>CreateOrder2</returns>
+        public CreateOrder2 CreateTradFiOrder (TradFiOrderRequest tradFiOrderRequest)
         {
-             ApiResponse<CreateOrder> localVarResponse = CreateTradFiOrderWithHttpInfo(tradFiOrderRequest);
+             ApiResponse<CreateOrder2> localVarResponse = CreateTradFiOrderWithHttpInfo(tradFiOrderRequest);
              return localVarResponse.Data;
         }
 
@@ -2296,8 +2296,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tradFiOrderRequest"></param>
-        /// <returns>ApiResponse of CreateOrder</returns>
-        public ApiResponse<CreateOrder> CreateTradFiOrderWithHttpInfo (TradFiOrderRequest tradFiOrderRequest)
+        /// <returns>ApiResponse of CreateOrder2</returns>
+        public ApiResponse<CreateOrder2> CreateTradFiOrderWithHttpInfo (TradFiOrderRequest tradFiOrderRequest)
         {
             // verify the required parameter 'tradFiOrderRequest' is set
             if (tradFiOrderRequest == null)
@@ -2326,7 +2326,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<CreateOrder>("/tradfi/orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CreateOrder2>("/tradfi/orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2342,10 +2342,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tradFiOrderRequest"></param>
-        /// <returns>Task of CreateOrder</returns>
-        public async Task<CreateOrder> CreateTradFiOrderAsync (TradFiOrderRequest tradFiOrderRequest)
+        /// <returns>Task of CreateOrder2</returns>
+        public async Task<CreateOrder2> CreateTradFiOrderAsync (TradFiOrderRequest tradFiOrderRequest)
         {
-             Io.Gate.GateApi.Client.ApiResponse<CreateOrder> localVarResponse = await CreateTradFiOrderAsyncWithHttpInfo(tradFiOrderRequest);
+             Io.Gate.GateApi.Client.ApiResponse<CreateOrder2> localVarResponse = await CreateTradFiOrderAsyncWithHttpInfo(tradFiOrderRequest);
              return localVarResponse.Data;
 
         }
@@ -2355,8 +2355,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tradFiOrderRequest"></param>
-        /// <returns>Task of ApiResponse (CreateOrder)</returns>
-        public async Task<ApiResponse<CreateOrder>> CreateTradFiOrderAsyncWithHttpInfo (TradFiOrderRequest tradFiOrderRequest)
+        /// <returns>Task of ApiResponse (CreateOrder2)</returns>
+        public async Task<ApiResponse<CreateOrder2>> CreateTradFiOrderAsyncWithHttpInfo (TradFiOrderRequest tradFiOrderRequest)
         {
             // verify the required parameter 'tradFiOrderRequest' is set
             if (tradFiOrderRequest == null)
@@ -2387,7 +2387,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateOrder>("/tradfi/orders", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateOrder2>("/tradfi/orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
