@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **StrategyType** | **StrategyType** |  | 
 **Market** | **string** |  | 
 **Status** | **string** |  | 
-**BaseInfo** | [**Dictionary&lt;string, AnyType&gt;**](AnyType.md) | 基础信息，字段按策略类型动态变化 | 
-**Metrics** | [**Dictionary&lt;string, AnyType&gt;**](AnyType.md) | 指标信息，字段按策略类型动态变化 | 
-**Position** | [**Dictionary&lt;string, AnyType&gt;**](AnyType.md) | 仓位或持仓信息，字段按策略类型动态变化 | [optional] 
+**BaseInfo** | **Dictionary&lt;string, string&gt;** | 基础信息，字段按策略类型动态变化 | 
+**Metrics** | **Dictionary&lt;string, string&gt;** | 指标信息，字段按策略类型动态变化 | 
+**Position** | **Dictionary&lt;string, string&gt;** | 仓位或持仓信息，字段按策略类型动态变化 | [optional] 
 **StopSupported** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

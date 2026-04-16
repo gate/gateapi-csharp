@@ -51,7 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="metrics">指标信息，字段按策略类型动态变化 (required).</param>
         /// <param name="position">仓位或持仓信息，字段按策略类型动态变化.</param>
         /// <param name="stopSupported">stopSupported (required).</param>
-        public AIHubPortfolioDetailData(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string market = default(string), string status = default(string), Dictionary<string, AnyType> baseInfo = default(Dictionary<string, AnyType>), Dictionary<string, AnyType> metrics = default(Dictionary<string, AnyType>), Dictionary<string, AnyType> position = default(Dictionary<string, AnyType>), bool stopSupported = default(bool))
+        public AIHubPortfolioDetailData(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string market = default(string), string status = default(string), Dictionary<string, string> baseInfo = default(Dictionary<string, string>), Dictionary<string, string> metrics = default(Dictionary<string, string>), Dictionary<string, string> position = default(Dictionary<string, string>), bool stopSupported = default(bool))
         {
             // to ensure "strategyId" is required (not null)
             this.StrategyId = strategyId ?? throw new ArgumentNullException("strategyId", "strategyId is a required property for AIHubPortfolioDetailData and cannot be null");
@@ -91,21 +91,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>基础信息，字段按策略类型动态变化</value>
         [DataMember(Name="base_info")]
-        public Dictionary<string, AnyType> BaseInfo { get; set; }
+        public Dictionary<string, string> BaseInfo { get; set; }
 
         /// <summary>
         /// 指标信息，字段按策略类型动态变化
         /// </summary>
         /// <value>指标信息，字段按策略类型动态变化</value>
         [DataMember(Name="metrics")]
-        public Dictionary<string, AnyType> Metrics { get; set; }
+        public Dictionary<string, string> Metrics { get; set; }
 
         /// <summary>
         /// 仓位或持仓信息，字段按策略类型动态变化
         /// </summary>
         /// <value>仓位或持仓信息，字段按策略类型动态变化</value>
         [DataMember(Name="position")]
-        public Dictionary<string, AnyType> Position { get; set; }
+        public Dictionary<string, string> Position { get; set; }
 
         /// <summary>
         /// Gets or Sets StopSupported

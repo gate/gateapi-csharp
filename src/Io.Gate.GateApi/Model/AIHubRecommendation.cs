@@ -51,7 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="maxDrawdown">maxDrawdown.</param>
         /// <param name="summary">summary (required).</param>
         /// <param name="strategyParamsPreview">推荐参数预览；按策略类型动态变化.</param>
-        public AIHubRecommendation(string recommendationId = default(string), string market = default(string), StrategyType strategyType = default(StrategyType), string strategyName = default(string), string backtestApr = default(string), string maxDrawdown = default(string), string summary = default(string), Dictionary<string, AnyType> strategyParamsPreview = default(Dictionary<string, AnyType>))
+        public AIHubRecommendation(string recommendationId = default(string), string market = default(string), StrategyType strategyType = default(StrategyType), string strategyName = default(string), string backtestApr = default(string), string maxDrawdown = default(string), string summary = default(string), Dictionary<string, string> strategyParamsPreview = default(Dictionary<string, string>))
         {
             // to ensure "recommendationId" is required (not null)
             this.RecommendationId = recommendationId ?? throw new ArgumentNullException("recommendationId", "recommendationId is a required property for AIHubRecommendation and cannot be null");
@@ -108,7 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>推荐参数预览；按策略类型动态变化</value>
         [DataMember(Name="strategy_params_preview")]
-        public Dictionary<string, AnyType> StrategyParamsPreview { get; set; }
+        public Dictionary<string, string> StrategyParamsPreview { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
