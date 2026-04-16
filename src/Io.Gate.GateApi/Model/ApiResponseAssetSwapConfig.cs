@@ -41,9 +41,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="code">业务错误码，0 表示成功 (required).</param>
         /// <param name="label">错误标识码，成功时为空字符串.</param>
         /// <param name="message">描述信息 (required).</param>
-        /// <param name="data">成功时为前端配置（ConfigResp），失败时为 null (required).</param>
+        /// <param name="data">成功时为前端配置，失败时为 null (required).</param>
         /// <param name="timestamp">Server timestamp (milliseconds) (required).</param>
-        public ApiResponseAssetSwapConfig(int code = default(int), string label = default(string), string message = default(string), ConfigResp data = default(ConfigResp), long timestamp = default(long))
+        public ApiResponseAssetSwapConfig(int code = default(int), string label = default(string), string message = default(string), AssetSwapFrontend data = default(AssetSwapFrontend), long timestamp = default(long))
         {
             this.Code = code;
             // to ensure "message" is required (not null)
@@ -76,11 +76,11 @@ namespace Io.Gate.GateApi.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// 成功时为前端配置（ConfigResp），失败时为 null
+        /// 成功时为前端配置，失败时为 null
         /// </summary>
-        /// <value>成功时为前端配置（ConfigResp），失败时为 null</value>
+        /// <value>成功时为前端配置，失败时为 null</value>
         [DataMember(Name="data")]
-        public ConfigResp Data { get; set; }
+        public AssetSwapFrontend Data { get; set; }
 
         /// <summary>
         /// Server timestamp (milliseconds)
