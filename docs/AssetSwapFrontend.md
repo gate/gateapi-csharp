@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **BannerReappearIntervalHours** | **int** |  | 
 **ConvertCurrencies** | **List&lt;string&gt;** |  | 
 **ConvertCurrenciesV2** | [**List&lt;ConvertCurrenciesV2Item&gt;**](ConvertCurrenciesV2Item.md) |  | 
-**Default** | **Dictionary&lt;string, string&gt;** | 字符串键到字符串值的映射，对应 Go 的 map[string]string。 | 
+**Default** | **Dictionary&lt;string, string&gt;** | Mapping of string keys to string values, corresponding to Go&#39;s map[string]string. | 
 **MaxSelectCurrencies** | **int** |  | 
 **MinEvaluateValue** | **string** |  | 
 **Recommend** | [**Recommend**](Recommend.md) |  | 
-**RecommendV2** | **Dictionary&lt;string, List&lt;RecommendV2Strategy&gt;&gt;** | 策略分组键到 RecommendV2Strategy 列表的映射。 | 
+**RecommendV2** | **Dictionary&lt;string, List&lt;RecommendV2Strategy&gt;&gt;** | Mapping of strategy grouping keys to RecommendV2Strategy lists. | 
 **TitleTips** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

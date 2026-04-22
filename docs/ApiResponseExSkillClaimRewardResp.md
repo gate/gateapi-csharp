@@ -1,13 +1,13 @@
 
 # Io.Gate.GateApi.Model.ApiResponseExSkillClaimRewardResp
 
-领取任务奖励响应
+Receive mission reward response
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | **int** | 业务错误码，0 表示成功 | [optional] 
+**Code** | **int** | Business error code, 0 means success | [optional] 
 **Label** | **string** | Error identifier code. Empty string on success, machine-readable error label on error | [optional] 
 **Message** | **string** | Error description | [optional] 
 **Data** | [**ApiResponseExSkillClaimRewardRespData**](ApiResponseExSkillClaimRewardRespData.md) |  | [optional] 

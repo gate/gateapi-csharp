@@ -33,11 +33,11 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CandyDropV4TaskProgressCd04" /> class.
         /// </summary>
-        /// <param name="currency">项目/币种名称.</param>
-        /// <param name="totalRewards">总奖池.</param>
-        /// <param name="startTime">活动开始时间（UTC格式化）.</param>
-        /// <param name="endTime">活动结束时间（UTC格式化）.</param>
-        /// <param name="tasks">已领取任务的进度列表.</param>
+        /// <param name="currency">Project/currency name.</param>
+        /// <param name="totalRewards">total prize pool.</param>
+        /// <param name="startTime">Event start time (UTC formatted).</param>
+        /// <param name="endTime">Event end time (UTC format).</param>
+        /// <param name="tasks">Progress list of tasks received.</param>
         public CandyDropV4TaskProgressCd04(string currency = default(string), string totalRewards = default(string), string startTime = default(string), string endTime = default(string), List<CandyDropV4TaskProgressItemCd04> tasks = default(List<CandyDropV4TaskProgressItemCd04>))
         {
             this.Currency = currency;
@@ -48,37 +48,37 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 项目/币种名称
+        /// Project/currency name
         /// </summary>
-        /// <value>项目/币种名称</value>
+        /// <value>Project/currency name</value>
         [DataMember(Name="currency")]
         public string Currency { get; set; }
 
         /// <summary>
-        /// 总奖池
+        /// total prize pool
         /// </summary>
-        /// <value>总奖池</value>
+        /// <value>total prize pool</value>
         [DataMember(Name="total_rewards")]
         public string TotalRewards { get; set; }
 
         /// <summary>
-        /// 活动开始时间（UTC格式化）
+        /// Event start time (UTC formatted)
         /// </summary>
-        /// <value>活动开始时间（UTC格式化）</value>
+        /// <value>Event start time (UTC formatted)</value>
         [DataMember(Name="start_time")]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 活动结束时间（UTC格式化）
+        /// Event end time (UTC format)
         /// </summary>
-        /// <value>活动结束时间（UTC格式化）</value>
+        /// <value>Event end time (UTC format)</value>
         [DataMember(Name="end_time")]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 已领取任务的进度列表
+        /// Progress list of tasks received
         /// </summary>
-        /// <value>已领取任务的进度列表</value>
+        /// <value>Progress list of tasks received</value>
         [DataMember(Name="tasks")]
         public List<CandyDropV4TaskProgressItemCd04> Tasks { get; set; }
 

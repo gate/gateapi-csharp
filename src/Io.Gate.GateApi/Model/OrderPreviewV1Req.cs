@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 资产配置优化**预览**请求。&#x60;from&#x60; 为卖出数量；&#x60;to&#x60; 为目标币种及**分配比例 ratio**（不是绝对数量）。 正式下单请使用 &#x60;OrderCreateV1Req&#x60;，其 &#x60;to&#x60; 为 &#x60;amount&#x60;。
+    /// Asset allocation optimization **preview** request. &#x60;from&#x60; is the selling quantity; &#x60;to&#x60; is the target currency and **distribution ratio ratio** (not the absolute quantity). Please use &#x60;OrderCreateV1Req&#x60; to place a formal order, and its &#x60;to&#x60; is &#x60;amount&#x60;.
     /// </summary>
     [DataContract]
     public partial class OrderPreviewV1Req :  IEquatable<OrderPreviewV1Req>, IValidatableObject
@@ -38,8 +38,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderPreviewV1Req" /> class.
         /// </summary>
-        /// <param name="from">卖出侧；每项为币种 + 换出数量 &#x60;amount&#x60;（字符串十进制）。 (required).</param>
-        /// <param name="to">目标侧；每项为币种 + **比例** &#x60;ratio&#x60;（字符串十进制，如 &#x60;0.5&#x60;）。 典型来源：&#x60;GET /asset-swap/config&#x60; → &#x60;recommend_v2&#x60; 某分组下策略的 &#x60;schemes[].name&#x60; / &#x60;schemes[].ratio&#x60;。 (required).</param>
+        /// <param name="from">Sell ​​side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal). (required).</param>
+        /// <param name="to">Target side; each item is currency + **ratio** &#x60;ratio&#x60; (string decimal, such as &#x60;0.5&#x60;). Typical source: &#x60;GET /asset-swap/config&#x60; → &#x60;recommend_v2&#x60; &#x60;schemes[].name&#x60; / &#x60;schemes[].ratio&#x60; of the strategy under a certain group. (required).</param>
         public OrderPreviewV1Req(List<PreviewFromParam> from = default(List<PreviewFromParam>), List<PreviewToParam> to = default(List<PreviewToParam>))
         {
             // to ensure "from" is required (not null)
@@ -49,16 +49,16 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 卖出侧；每项为币种 + 换出数量 &#x60;amount&#x60;（字符串十进制）。
+        /// Sell ​​side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal).
         /// </summary>
-        /// <value>卖出侧；每项为币种 + 换出数量 &#x60;amount&#x60;（字符串十进制）。</value>
+        /// <value>Sell ​​side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal).</value>
         [DataMember(Name="from")]
         public List<PreviewFromParam> From { get; set; }
 
         /// <summary>
-        /// 目标侧；每项为币种 + **比例** &#x60;ratio&#x60;（字符串十进制，如 &#x60;0.5&#x60;）。 典型来源：&#x60;GET /asset-swap/config&#x60; → &#x60;recommend_v2&#x60; 某分组下策略的 &#x60;schemes[].name&#x60; / &#x60;schemes[].ratio&#x60;。
+        /// Target side; each item is currency + **ratio** &#x60;ratio&#x60; (string decimal, such as &#x60;0.5&#x60;). Typical source: &#x60;GET /asset-swap/config&#x60; → &#x60;recommend_v2&#x60; &#x60;schemes[].name&#x60; / &#x60;schemes[].ratio&#x60; of the strategy under a certain group.
         /// </summary>
-        /// <value>目标侧；每项为币种 + **比例** &#x60;ratio&#x60;（字符串十进制，如 &#x60;0.5&#x60;）。 典型来源：&#x60;GET /asset-swap/config&#x60; → &#x60;recommend_v2&#x60; 某分组下策略的 &#x60;schemes[].name&#x60; / &#x60;schemes[].ratio&#x60;。</value>
+        /// <value>Target side; each item is currency + **ratio** &#x60;ratio&#x60; (string decimal, such as &#x60;0.5&#x60;). Typical source: &#x60;GET /asset-swap/config&#x60; → &#x60;recommend_v2&#x60; &#x60;schemes[].name&#x60; / &#x60;schemes[].ratio&#x60; of the strategy under a certain group.</value>
         [DataMember(Name="to")]
         public List<PreviewToParam> To { get; set; }
 

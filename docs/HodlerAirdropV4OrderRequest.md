@@ -1,13 +1,13 @@
 
 # Io.Gate.GateApi.Model.HodlerAirdropV4OrderRequest
 
-参与活动请求体
+Participation activity request body
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HodlerId** | **int** | 活动ID，必填 | 
+**HodlerId** | **int** | Activity ID, required | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

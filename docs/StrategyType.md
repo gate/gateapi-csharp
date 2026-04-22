@@ -1,7 +1,7 @@
 
 # Io.Gate.GateApi.Model.StrategyType
 
-AIHub 支持的完整策略类型枚举。
+The complete enumeration of policy types supported by AIHub.
 
 ## Properties
 

@@ -9,16 +9,16 @@ Method | HTTP request | Description
 [**RedeemLaunchPool**](LaunchApi.md#redeemlaunchpool) | **POST** /launch/redeem | Redeem LaunchPool staked assets
 [**ListLaunchPoolPledgeRecords**](LaunchApi.md#listlaunchpoolpledgerecords) | **GET** /launch/user-pledge-records | Query user pledge records
 [**ListLaunchPoolRewardRecords**](LaunchApi.md#listlaunchpoolrewardrecords) | **GET** /launch/get-user-reward-records | Query user reward records
-[**GetHodlerAirdropProjectList**](LaunchApi.md#gethodlerairdropprojectlist) | **GET** /launch/hodler-airdrop/project-list | 查询HODLer Airdrop活动列表
-[**HodlerAirdropOrder**](LaunchApi.md#hodlerairdroporder) | **POST** /launch/hodler-airdrop/order | 参与HODLer Airdrop活动
-[**GetHodlerAirdropUserOrderRecords**](LaunchApi.md#gethodlerairdropuserorderrecords) | **GET** /launch/hodler-airdrop/user-order-records | 查询HODLer Airdrop参与记录
-[**GetHodlerAirdropUserAirdropRecords**](LaunchApi.md#gethodlerairdropuserairdroprecords) | **GET** /launch/hodler-airdrop/user-airdrop-records | 查询HODLer Airdrop空投记录
-[**GetCandyDropActivityListV4**](LaunchApi.md#getcandydropactivitylistv4) | **GET** /launch/candydrop/activity-list | 查询活动列表
-[**RegisterCandyDropV4**](LaunchApi.md#registercandydropv4) | **POST** /launch/candydrop/register | 报名参与活动
-[**GetCandyDropActivityRulesV4**](LaunchApi.md#getcandydropactivityrulesv4) | **GET** /launch/candydrop/activity-rules | 查询活动规则
-[**GetCandyDropTaskProgressV4**](LaunchApi.md#getcandydroptaskprogressv4) | **GET** /launch/candydrop/task-progress | 查询任务完成进度
-[**GetCandyDropParticipationRecordsV4**](LaunchApi.md#getcandydropparticipationrecordsv4) | **GET** /launch/candydrop/participation-records | 查询参与记录
-[**GetCandyDropAirdropRecordsV4**](LaunchApi.md#getcandydropairdroprecordsv4) | **GET** /launch/candydrop/airdrop-records | 查询空投记录
+[**GetHodlerAirdropProjectList**](LaunchApi.md#gethodlerairdropprojectlist) | **GET** /launch/hodler-airdrop/project-list | Check the list of HODLer Airdrop activities
+[**HodlerAirdropOrder**](LaunchApi.md#hodlerairdroporder) | **POST** /launch/hodler-airdrop/order | Participate in the HODLer Airdrop event
+[**GetHodlerAirdropUserOrderRecords**](LaunchApi.md#gethodlerairdropuserorderrecords) | **GET** /launch/hodler-airdrop/user-order-records | Check HODLer Airdrop participation records
+[**GetHodlerAirdropUserAirdropRecords**](LaunchApi.md#gethodlerairdropuserairdroprecords) | **GET** /launch/hodler-airdrop/user-airdrop-records | Query HODLer Airdrop records
+[**GetCandyDropActivityListV4**](LaunchApi.md#getcandydropactivitylistv4) | **GET** /launch/candydrop/activity-list | Query activity list
+[**RegisterCandyDropV4**](LaunchApi.md#registercandydropv4) | **POST** /launch/candydrop/register | Sign up for events
+[**GetCandyDropActivityRulesV4**](LaunchApi.md#getcandydropactivityrulesv4) | **GET** /launch/candydrop/activity-rules | Query activity rules
+[**GetCandyDropTaskProgressV4**](LaunchApi.md#getcandydroptaskprogressv4) | **GET** /launch/candydrop/task-progress | Query task completion progress
+[**GetCandyDropParticipationRecordsV4**](LaunchApi.md#getcandydropparticipationrecordsv4) | **GET** /launch/candydrop/participation-records | Query participation records
+[**GetCandyDropAirdropRecordsV4**](LaunchApi.md#getcandydropairdroprecordsv4) | **GET** /launch/candydrop/airdrop-records | Query airdrop records
 
 
 <a name="listlaunchpoolprojects"></a>
@@ -427,9 +427,9 @@ Name | Type | Description  | Notes
 # **GetHodlerAirdropProjectList**
 > List&lt;HodlerAirdropV4ProjectItem&gt; GetHodlerAirdropProjectList (string status = null, string keyword = null, int? join = null, int? page = null, int? size = null)
 
-查询HODLer Airdrop活动列表
+Check the list of HODLer Airdrop activities
 
-获取HODLer Airdrop活动列表，支持按状态、币种/项目名称、参与情况筛选。此接口无需用户登录，登录用户可获取个人参与信息。
+Get the HODLer Airdrop activity list, which supports filtering by status, currency/project name, and participation status. This interface does not require user login, and logged in users can obtain personal participation information.
 
 ### Example
 ```csharp
@@ -448,15 +448,15 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new LaunchApi(config);
-            var status = "status_example";  // string | 活动状态筛选，可选值：ACTIVE（进行中+预热中）、UNDERWAY（进行中）、PREHEAT（预热中）、FINISH（已结束），不传返回全部 (optional) 
-            var keyword = "keyword_example";  // string | 币种/项目名称关键词，模糊匹配 (optional) 
-            var join = 0;  // int? | 参与情况筛选：0全部（默认），1仅已参与 (optional)  (default to 0)
-            var page = 1;  // int? | 页码，默认1 (optional)  (default to 1)
-            var size = 10;  // int? | 每页条数，默认10 (optional)  (default to 10)
+            var status = "status_example";  // string | Activity status filtering, optional values: ACTIVE (in progress + preheating), UNDERWAY (in progress), PREHEAT (preheating), FINISH (ended), return all if not passed (optional) 
+            var keyword = "keyword_example";  // string | Currency/project name keywords, fuzzy matching (optional) 
+            var join = 0;  // int? | Participation filter: 0 all (default), 1 only participated (optional)  (default to 0)
+            var page = 1;  // int? | Page number, default 1 (optional)  (default to 1)
+            var size = 10;  // int? | Number of items per page, default 10 (optional)  (default to 10)
 
             try
             {
-                // 查询HODLer Airdrop活动列表
+                // Check the list of HODLer Airdrop activities
                 List<HodlerAirdropV4ProjectItem> result = apiInstance.GetHodlerAirdropProjectList(status, keyword, join, page, size);
                 Debug.WriteLine(result);
             }
@@ -476,11 +476,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **string**| 活动状态筛选，可选值：ACTIVE（进行中+预热中）、UNDERWAY（进行中）、PREHEAT（预热中）、FINISH（已结束），不传返回全部 | [optional] 
- **keyword** | **string**| 币种/项目名称关键词，模糊匹配 | [optional] 
- **join** | **int?**| 参与情况筛选：0全部（默认），1仅已参与 | [optional] [default to 0]
- **page** | **int?**| 页码，默认1 | [optional] [default to 1]
- **size** | **int?**| 每页条数，默认10 | [optional] [default to 10]
+ **status** | **string**| Activity status filtering, optional values: ACTIVE (in progress + preheating), UNDERWAY (in progress), PREHEAT (preheating), FINISH (ended), return all if not passed | [optional] 
+ **keyword** | **string**| Currency/project name keywords, fuzzy matching | [optional] 
+ **join** | **int?**| Participation filter: 0 all (default), 1 only participated | [optional] [default to 0]
+ **page** | **int?**| Page number, default 1 | [optional] [default to 1]
+ **size** | **int?**| Number of items per page, default 10 | [optional] [default to 10]
 
 ### Return type
 
@@ -507,9 +507,9 @@ No authorization required
 # **HodlerAirdropOrder**
 > HodlerAirdropV4OrderResponse HodlerAirdropOrder (HodlerAirdropV4OrderRequest hodlerAirdropV4OrderRequest)
 
-参与HODLer Airdrop活动
+Participate in the HODLer Airdrop event
 
-参与指定的HODLer Airdrop活动，需持有GT。此接口需要用户登录认证，且须满足KYC要求，不支持子账户、企业/机构用户。
+To participate in designated HODLer Airdrop activities, you need to hold GT. This interface requires user login authentication and must meet KYC requirements. It does not support sub-accounts and enterprise/institutional users.
 
 ### Example
 ```csharp
@@ -534,7 +534,7 @@ namespace Example
 
             try
             {
-                // 参与HODLer Airdrop活动
+                // Participate in the HODLer Airdrop event
                 HodlerAirdropV4OrderResponse result = apiInstance.HodlerAirdropOrder(hodlerAirdropV4OrderRequest);
                 Debug.WriteLine(result);
             }
@@ -572,9 +572,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | 成功参与活动 |  -  |
-| **400** | 请求参数错误或业务校验失败（KYC不足、子账户限制、企业用户限制等） |  -  |
-| **401** | 用户未登录 |  -  |
+| **200** | Successfully participated in the event |  -  |
+| **400** | Incorrect request parameters or failed business verification (insufficient KYC, sub-account restrictions, enterprise user restrictions, etc.) |  -  |
+| **401** | User is not logged in |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -582,9 +582,9 @@ Name | Type | Description  | Notes
 # **GetHodlerAirdropUserOrderRecords**
 > List&lt;HodlerAirdropV4UserOrderRecord&gt; GetHodlerAirdropUserOrderRecords (string keyword = null, int? startTimest = null, int? endTimest = null, int? page = null, int? size = null)
 
-查询HODLer Airdrop参与记录
+Check HODLer Airdrop participation records
 
-查询用户的HODLer Airdrop参与记录，返回每个活动的有效持仓和空投金额。此接口需要用户登录认证。
+Query the user's HODLer Airdrop participation record and return the effective holdings and airdrop amount of each activity. This interface requires user login authentication.
 
 ### Example
 ```csharp
@@ -605,15 +605,15 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new LaunchApi(config);
-            var keyword = "keyword_example";  // string | 币种名称关键词筛选 (optional) 
-            var startTimest = 56;  // int? | 开始时间戳（秒） (optional) 
-            var endTimest = 56;  // int? | 结束时间戳（秒） (optional) 
-            var page = 1;  // int? | 页码，默认1 (optional)  (default to 1)
-            var size = 10;  // int? | 每页条数，默认10 (optional)  (default to 10)
+            var keyword = "keyword_example";  // string | Currency name keyword filtering (optional) 
+            var startTimest = 56;  // int? | Start timestamp (seconds) (optional) 
+            var endTimest = 56;  // int? | end timestamp (seconds) (optional) 
+            var page = 1;  // int? | Page number, default 1 (optional)  (default to 1)
+            var size = 10;  // int? | Number of items per page, default 10 (optional)  (default to 10)
 
             try
             {
-                // 查询HODLer Airdrop参与记录
+                // Check HODLer Airdrop participation records
                 List<HodlerAirdropV4UserOrderRecord> result = apiInstance.GetHodlerAirdropUserOrderRecords(keyword, startTimest, endTimest, page, size);
                 Debug.WriteLine(result);
             }
@@ -633,11 +633,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keyword** | **string**| 币种名称关键词筛选 | [optional] 
- **startTimest** | **int?**| 开始时间戳（秒） | [optional] 
- **endTimest** | **int?**| 结束时间戳（秒） | [optional] 
- **page** | **int?**| 页码，默认1 | [optional] [default to 1]
- **size** | **int?**| 每页条数，默认10 | [optional] [default to 10]
+ **keyword** | **string**| Currency name keyword filtering | [optional] 
+ **startTimest** | **int?**| Start timestamp (seconds) | [optional] 
+ **endTimest** | **int?**| end timestamp (seconds) | [optional] 
+ **page** | **int?**| Page number, default 1 | [optional] [default to 1]
+ **size** | **int?**| Number of items per page, default 10 | [optional] [default to 10]
 
 ### Return type
 
@@ -655,9 +655,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | 成功返回参与记录列表 |  -  |
+| **200** | Successfully returned the participation record list |  -  |
 | **400** | Invalid request parameters |  -  |
-| **401** | 用户未登录 |  -  |
+| **401** | User is not logged in |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -665,9 +665,9 @@ Name | Type | Description  | Notes
 # **GetHodlerAirdropUserAirdropRecords**
 > List&lt;HodlerAirdropV4UserAirdropRecord&gt; GetHodlerAirdropUserAirdropRecords (string keyword = null, int? startTimest = null, int? endTimest = null, int? page = null, int? size = null)
 
-查询HODLer Airdrop空投记录
+Query HODLer Airdrop records
 
-查询用户已获得的HODLer Airdrop空投发放记录，包含基础空投、额外空投和自动兑换状态。此接口需要用户登录认证。
+Query the HODLer Airdrop airdrop distribution record that the user has obtained, including basic airdrops, additional airdrops and automatic redemption status. This interface requires user login authentication.
 
 ### Example
 ```csharp
@@ -688,15 +688,15 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new LaunchApi(config);
-            var keyword = "keyword_example";  // string | 币种名称关键词筛选 (optional) 
-            var startTimest = 56;  // int? | 开始时间戳（秒） (optional) 
-            var endTimest = 56;  // int? | 结束时间戳（秒） (optional) 
-            var page = 1;  // int? | 页码，默认1 (optional)  (default to 1)
-            var size = 10;  // int? | 每页条数，默认10 (optional)  (default to 10)
+            var keyword = "keyword_example";  // string | Currency name keyword filtering (optional) 
+            var startTimest = 56;  // int? | Start timestamp (seconds) (optional) 
+            var endTimest = 56;  // int? | end timestamp (seconds) (optional) 
+            var page = 1;  // int? | Page number, default 1 (optional)  (default to 1)
+            var size = 10;  // int? | Number of items per page, default 10 (optional)  (default to 10)
 
             try
             {
-                // 查询HODLer Airdrop空投记录
+                // Query HODLer Airdrop records
                 List<HodlerAirdropV4UserAirdropRecord> result = apiInstance.GetHodlerAirdropUserAirdropRecords(keyword, startTimest, endTimest, page, size);
                 Debug.WriteLine(result);
             }
@@ -716,11 +716,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keyword** | **string**| 币种名称关键词筛选 | [optional] 
- **startTimest** | **int?**| 开始时间戳（秒） | [optional] 
- **endTimest** | **int?**| 结束时间戳（秒） | [optional] 
- **page** | **int?**| 页码，默认1 | [optional] [default to 1]
- **size** | **int?**| 每页条数，默认10 | [optional] [default to 10]
+ **keyword** | **string**| Currency name keyword filtering | [optional] 
+ **startTimest** | **int?**| Start timestamp (seconds) | [optional] 
+ **endTimest** | **int?**| end timestamp (seconds) | [optional] 
+ **page** | **int?**| Page number, default 1 | [optional] [default to 1]
+ **size** | **int?**| Number of items per page, default 10 | [optional] [default to 10]
 
 ### Return type
 
@@ -738,9 +738,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | 成功返回空投记录列表 |  -  |
+| **200** | Successfully returns the airdrop record list |  -  |
 | **400** | Invalid request parameters |  -  |
-| **401** | 用户未登录 |  -  |
+| **401** | User is not logged in |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -748,9 +748,9 @@ Name | Type | Description  | Notes
 # **GetCandyDropActivityListV4**
 > List&lt;CandyDropV4ActivityCd01&gt; GetCandyDropActivityListV4 (string status = null, string ruleName = null, string registerStatus = null, string currency = null, int? limit = null, int? offset = null)
 
-查询活动列表
+Query activity list
 
-支持多维度筛选 CandyDrop 活动，每次查询返回列表排序的前十条数据。不需要登录。
+Supports multi-dimensional filtering of CandyDrop activities, and each query returns the top ten data sorted by the list. No login required.
 
 ### Example
 ```csharp
@@ -769,16 +769,16 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new LaunchApi(config);
-            var status = "status_example";  // string | 活动状态筛选：ongoing(进行中)、upcoming(即将开始)、ended(已结束)，不传则返回全部 (optional) 
-            var ruleName = "ruleName_example";  // string | 任务类型筛选：spot(现货)、futures(合约)、deposit(充值)、invite(邀请)、trading_bot(交易机器人)、simple_earn(余币宝)、first_deposit(首笔入金)、alpha(Alpha)、flash_swap(闪兑)、tradfi(TradFi)、etf(ETF) (optional) 
-            var registerStatus = "registerStatus_example";  // string | 参与情况筛选：registered(已参与)、unregistered(未参与)，不传则返回全部 (optional) 
-            var currency = "currency_example";  // string | 币种名称筛选 (optional) 
-            var limit = 10;  // int? | 返回条数，默认10，最大30 (optional)  (default to 10)
-            var offset = 0;  // int? | 偏移量，默认0 (optional)  (default to 0)
+            var status = "status_example";  // string | Activity status filtering: ongoing (in progress), upcoming (about to start), ended (ended), if not passed, all will be returned (optional) 
+            var ruleName = "ruleName_example";  // string | Task type filtering: spot (spot), futures (contract), deposit (recharge), invite (invitation), trading_bot (trading robot), simple_earn (Yu Bibao), first_deposit (first deposit), alpha (Alpha), flash_swap (flash swap), tradfi (TradFi), etf (ETF) (optional) 
+            var registerStatus = "registerStatus_example";  // string | Participation status screening: registered (already participated), unregistered (not participated), if not passed, all will be returned (optional) 
+            var currency = "currency_example";  // string | Currency name filter (optional) 
+            var limit = 10;  // int? | Number of items returned, default 10, maximum 30 (optional)  (default to 10)
+            var offset = 0;  // int? | Offset, default 0 (optional)  (default to 0)
 
             try
             {
-                // 查询活动列表
+                // Query activity list
                 List<CandyDropV4ActivityCd01> result = apiInstance.GetCandyDropActivityListV4(status, ruleName, registerStatus, currency, limit, offset);
                 Debug.WriteLine(result);
             }
@@ -798,12 +798,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **string**| 活动状态筛选：ongoing(进行中)、upcoming(即将开始)、ended(已结束)，不传则返回全部 | [optional] 
- **ruleName** | **string**| 任务类型筛选：spot(现货)、futures(合约)、deposit(充值)、invite(邀请)、trading_bot(交易机器人)、simple_earn(余币宝)、first_deposit(首笔入金)、alpha(Alpha)、flash_swap(闪兑)、tradfi(TradFi)、etf(ETF) | [optional] 
- **registerStatus** | **string**| 参与情况筛选：registered(已参与)、unregistered(未参与)，不传则返回全部 | [optional] 
- **currency** | **string**| 币种名称筛选 | [optional] 
- **limit** | **int?**| 返回条数，默认10，最大30 | [optional] [default to 10]
- **offset** | **int?**| 偏移量，默认0 | [optional] [default to 0]
+ **status** | **string**| Activity status filtering: ongoing (in progress), upcoming (about to start), ended (ended), if not passed, all will be returned | [optional] 
+ **ruleName** | **string**| Task type filtering: spot (spot), futures (contract), deposit (recharge), invite (invitation), trading_bot (trading robot), simple_earn (Yu Bibao), first_deposit (first deposit), alpha (Alpha), flash_swap (flash swap), tradfi (TradFi), etf (ETF) | [optional] 
+ **registerStatus** | **string**| Participation status screening: registered (already participated), unregistered (not participated), if not passed, all will be returned | [optional] 
+ **currency** | **string**| Currency name filter | [optional] 
+ **limit** | **int?**| Number of items returned, default 10, maximum 30 | [optional] [default to 10]
+ **offset** | **int?**| Offset, default 0 | [optional] [default to 0]
 
 ### Return type
 
@@ -821,7 +821,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | 成功返回活动列表数组 |  -  |
+| **200** | Successfully returns the activity list array |  -  |
 | **400** | Invalid request parameters |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -830,9 +830,9 @@ No authorization required
 # **RegisterCandyDropV4**
 > CandyDropV4RegisterRespCd02 RegisterCandyDropV4 (CandyDropV4RegisterReqCd02 candyDropV4RegisterReqCd02)
 
-报名参与活动
+Sign up for events
 
-报名参与特定 CandyDrop 活动。需要登录，需要 API Key 签名认证。
+Sign up for select CandyDrop events. Login is required and API Key signature authentication is required.
 
 ### Example
 ```csharp
@@ -857,7 +857,7 @@ namespace Example
 
             try
             {
-                // 报名参与活动
+                // Sign up for events
                 CandyDropV4RegisterRespCd02 result = apiInstance.RegisterCandyDropV4(candyDropV4RegisterReqCd02);
                 Debug.WriteLine(result);
             }
@@ -895,7 +895,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | 报名成功 |  -  |
+| **200** | Registration successful |  -  |
 | **400** | Request failed |  -  |
 | **401** | User not authenticated |  -  |
 
@@ -905,9 +905,9 @@ Name | Type | Description  | Notes
 # **GetCandyDropActivityRulesV4**
 > CandyDropV4ActivityRulesCd03 GetCandyDropActivityRulesV4 (long? activityId = null, string currency = null)
 
-查询活动规则
+Query activity rules
 
-查询特定活动的规则，包括奖池及对应任务数据。不需要登录。
+Query the rules of a specific activity, including prize pool and corresponding task data. No login required.
 
 ### Example
 ```csharp
@@ -926,12 +926,12 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new LaunchApi(config);
-            var activityId = 56;  // long? | 活动ID，与 currency 二选一，至少须传其一 (optional) 
-            var currency = "currency_example";  // string | 项目/币种名称，与 activity_id 二选一，至少须传其一 (optional) 
+            var activityId = 56;  // long? | Activity ID, choose one from currency, at least one of them must be passed (optional) 
+            var currency = "currency_example";  // string | Project/currency name, choose one from activity_id, at least one of them must be passed (optional) 
 
             try
             {
-                // 查询活动规则
+                // Query activity rules
                 CandyDropV4ActivityRulesCd03 result = apiInstance.GetCandyDropActivityRulesV4(activityId, currency);
                 Debug.WriteLine(result);
             }
@@ -951,8 +951,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityId** | **long?**| 活动ID，与 currency 二选一，至少须传其一 | [optional] 
- **currency** | **string**| 项目/币种名称，与 activity_id 二选一，至少须传其一 | [optional] 
+ **activityId** | **long?**| Activity ID, choose one from currency, at least one of them must be passed | [optional] 
+ **currency** | **string**| Project/currency name, choose one from activity_id, at least one of them must be passed | [optional] 
 
 ### Return type
 
@@ -970,7 +970,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | 成功返回活动规则 |  -  |
+| **200** | Successful return to activity rules |  -  |
 | **400** | Invalid request parameters |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -979,9 +979,9 @@ No authorization required
 # **GetCandyDropTaskProgressV4**
 > CandyDropV4TaskProgressCd04 GetCandyDropTaskProgressV4 (long? activityId = null, string currency = null)
 
-查询任务完成进度
+Query task completion progress
 
-查询进行中且已报名/参与的任务完成进度。需要登录。
+Check the completion progress of tasks that are in progress and have been registered/participated. Login required.
 
 ### Example
 ```csharp
@@ -1002,12 +1002,12 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new LaunchApi(config);
-            var activityId = 56;  // long? | 活动ID，与 currency 二选一，至少须传其一 (optional) 
-            var currency = "currency_example";  // string | 项目/币种名称，与 activity_id 二选一，至少须传其一 (optional) 
+            var activityId = 56;  // long? | Activity ID, choose one from currency, at least one of them must be passed (optional) 
+            var currency = "currency_example";  // string | Project/currency name, choose one from activity_id, at least one of them must be passed (optional) 
 
             try
             {
-                // 查询任务完成进度
+                // Query task completion progress
                 CandyDropV4TaskProgressCd04 result = apiInstance.GetCandyDropTaskProgressV4(activityId, currency);
                 Debug.WriteLine(result);
             }
@@ -1027,8 +1027,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityId** | **long?**| 活动ID，与 currency 二选一，至少须传其一 | [optional] 
- **currency** | **string**| 项目/币种名称，与 activity_id 二选一，至少须传其一 | [optional] 
+ **activityId** | **long?**| Activity ID, choose one from currency, at least one of them must be passed | [optional] 
+ **currency** | **string**| Project/currency name, choose one from activity_id, at least one of them must be passed | [optional] 
 
 ### Return type
 
@@ -1046,7 +1046,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | 成功返回任务进度 |  -  |
+| **200** | Successfully return task progress |  -  |
 | **400** | Invalid request parameters |  -  |
 | **401** | User not authenticated |  -  |
 
@@ -1056,9 +1056,9 @@ Name | Type | Description  | Notes
 # **GetCandyDropParticipationRecordsV4**
 > List&lt;CandyDropV4ParticipationRecordCd05&gt; GetCandyDropParticipationRecordsV4 (string currency = null, string status = null, long? startTime = null, long? endTime = null, int? page = null, int? limit = null)
 
-查询参与记录
+Query participation records
 
-查询用户的 CandyDrop 参与详情。需要登录。
+Query the user's CandyDrop participation details. Login required.
 
 ### Example
 ```csharp
@@ -1079,16 +1079,16 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new LaunchApi(config);
-            var currency = "currency_example";  // string | 币种名称筛选 (optional) 
-            var status = "status_example";  // string | 状态筛选：ongoing(进行中)、awaiting_draw(待开奖)、won(已中奖)、not_win(未中奖) (optional) 
-            var startTime = 56;  // long? | 开始时间（Unix 时间戳秒） (optional) 
-            var endTime = 56;  // long? | 结束时间（Unix 时间戳秒） (optional) 
-            var page = 1;  // int? | 页码，默认1 (optional)  (default to 1)
-            var limit = 10;  // int? | 每页条数，默认10，最大30 (optional)  (default to 10)
+            var currency = "currency_example";  // string | Currency name filter (optional) 
+            var status = "status_example";  // string | Status filtering: ongoing (in progress), awaiting_draw (to be drawn), won (already won), not_win (not won) (optional) 
+            var startTime = 56;  // long? | Start time (Unix timestamp seconds) (optional) 
+            var endTime = 56;  // long? | End time (Unix timestamp seconds) (optional) 
+            var page = 1;  // int? | Page number, default 1 (optional)  (default to 1)
+            var limit = 10;  // int? | Number of items per page, default 10, maximum 30 (optional)  (default to 10)
 
             try
             {
-                // 查询参与记录
+                // Query participation records
                 List<CandyDropV4ParticipationRecordCd05> result = apiInstance.GetCandyDropParticipationRecordsV4(currency, status, startTime, endTime, page, limit);
                 Debug.WriteLine(result);
             }
@@ -1108,12 +1108,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| 币种名称筛选 | [optional] 
- **status** | **string**| 状态筛选：ongoing(进行中)、awaiting_draw(待开奖)、won(已中奖)、not_win(未中奖) | [optional] 
- **startTime** | **long?**| 开始时间（Unix 时间戳秒） | [optional] 
- **endTime** | **long?**| 结束时间（Unix 时间戳秒） | [optional] 
- **page** | **int?**| 页码，默认1 | [optional] [default to 1]
- **limit** | **int?**| 每页条数，默认10，最大30 | [optional] [default to 10]
+ **currency** | **string**| Currency name filter | [optional] 
+ **status** | **string**| Status filtering: ongoing (in progress), awaiting_draw (to be drawn), won (already won), not_win (not won) | [optional] 
+ **startTime** | **long?**| Start time (Unix timestamp seconds) | [optional] 
+ **endTime** | **long?**| End time (Unix timestamp seconds) | [optional] 
+ **page** | **int?**| Page number, default 1 | [optional] [default to 1]
+ **limit** | **int?**| Number of items per page, default 10, maximum 30 | [optional] [default to 10]
 
 ### Return type
 
@@ -1131,7 +1131,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | 成功返回参与记录列表 |  -  |
+| **200** | Successfully returned the participation record list |  -  |
 | **400** | Invalid request parameters |  -  |
 | **401** | User not authenticated |  -  |
 
@@ -1141,9 +1141,9 @@ Name | Type | Description  | Notes
 # **GetCandyDropAirdropRecordsV4**
 > List&lt;CandyDropV4AirdropRecordCd06&gt; GetCandyDropAirdropRecordsV4 (string currency = null, long? startTime = null, long? endTime = null, int? page = null, int? limit = null)
 
-查询空投记录
+Query airdrop records
 
-查询用户的 CandyDrop 空投详情。需要登录。
+Query the user's CandyDrop airdrop details. Login required.
 
 ### Example
 ```csharp
@@ -1164,15 +1164,15 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new LaunchApi(config);
-            var currency = "currency_example";  // string | 币种名称筛选 (optional) 
-            var startTime = 56;  // long? | 开始时间（Unix 时间戳秒） (optional) 
-            var endTime = 56;  // long? | 结束时间（Unix 时间戳秒） (optional) 
-            var page = 1;  // int? | 页码，默认1 (optional)  (default to 1)
-            var limit = 10;  // int? | 每页条数，默认10，最大30 (optional)  (default to 10)
+            var currency = "currency_example";  // string | Currency name filter (optional) 
+            var startTime = 56;  // long? | Start time (Unix timestamp seconds) (optional) 
+            var endTime = 56;  // long? | End time (Unix timestamp seconds) (optional) 
+            var page = 1;  // int? | Page number, default 1 (optional)  (default to 1)
+            var limit = 10;  // int? | Number of items per page, default 10, maximum 30 (optional)  (default to 10)
 
             try
             {
-                // 查询空投记录
+                // Query airdrop records
                 List<CandyDropV4AirdropRecordCd06> result = apiInstance.GetCandyDropAirdropRecordsV4(currency, startTime, endTime, page, limit);
                 Debug.WriteLine(result);
             }
@@ -1192,11 +1192,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| 币种名称筛选 | [optional] 
- **startTime** | **long?**| 开始时间（Unix 时间戳秒） | [optional] 
- **endTime** | **long?**| 结束时间（Unix 时间戳秒） | [optional] 
- **page** | **int?**| 页码，默认1 | [optional] [default to 1]
- **limit** | **int?**| 每页条数，默认10，最大30 | [optional] [default to 10]
+ **currency** | **string**| Currency name filter | [optional] 
+ **startTime** | **long?**| Start time (Unix timestamp seconds) | [optional] 
+ **endTime** | **long?**| End time (Unix timestamp seconds) | [optional] 
+ **page** | **int?**| Page number, default 1 | [optional] [default to 1]
+ **limit** | **int?**| Number of items per page, default 10, maximum 30 | [optional] [default to 10]
 
 ### Return type
 
@@ -1214,7 +1214,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | 成功返回空投记录列表 |  -  |
+| **200** | Successfully returns the airdrop record list |  -  |
 | **400** | Invalid request parameters |  -  |
 | **401** | User not authenticated |  -  |
 

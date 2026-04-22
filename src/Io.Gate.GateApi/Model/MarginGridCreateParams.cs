@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 杠杆网格策略的创建参数。
+    /// Creation parameters for the Leverage Grid strategy.
     /// </summary>
     [DataContract]
     public partial class MarginGridCreateParams :  IEquatable<MarginGridCreateParams>, IValidatableObject

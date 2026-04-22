@@ -1,7 +1,7 @@
 
 # Io.Gate.GateApi.Model.ContractMartingaleDirection
 
-合约马丁策略支持的方向枚举，和 App 原始接口保持一致。
+The direction enumeration supported by the contract Martin strategy is consistent with the original interface of the App.
 
 ## Properties
 

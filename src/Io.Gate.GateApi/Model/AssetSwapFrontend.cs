@@ -42,11 +42,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="bannerReappearIntervalHours">bannerReappearIntervalHours (required).</param>
         /// <param name="convertCurrencies">convertCurrencies (required).</param>
         /// <param name="convertCurrenciesV2">convertCurrenciesV2 (required).</param>
-        /// <param name="_default">字符串键到字符串值的映射，对应 Go 的 map[string]string。 (required).</param>
+        /// <param name="_default">Mapping of string keys to string values, corresponding to Go&#39;s map[string]string. (required).</param>
         /// <param name="maxSelectCurrencies">maxSelectCurrencies (required).</param>
         /// <param name="minEvaluateValue">minEvaluateValue (required).</param>
         /// <param name="recommend">recommend (required).</param>
-        /// <param name="recommendV2">策略分组键到 RecommendV2Strategy 列表的映射。 (required).</param>
+        /// <param name="recommendV2">Mapping of strategy grouping keys to RecommendV2Strategy lists. (required).</param>
         /// <param name="titleTips">titleTips (required).</param>
         public AssetSwapFrontend(List<int> assetEvaluateRange = default(List<int>), int bannerReappearIntervalHours = default(int), List<string> convertCurrencies = default(List<string>), List<ConvertCurrenciesV2Item> convertCurrenciesV2 = default(List<ConvertCurrenciesV2Item>), Dictionary<string, string> _default = default(Dictionary<string, string>), int maxSelectCurrencies = default(int), string minEvaluateValue = default(string), Recommend recommend = default(Recommend), Dictionary<string, List<RecommendV2Strategy>> recommendV2 = default(Dictionary<string, List<RecommendV2Strategy>>), string titleTips = default(string))
         {
@@ -95,9 +95,9 @@ namespace Io.Gate.GateApi.Model
         public List<ConvertCurrenciesV2Item> ConvertCurrenciesV2 { get; set; }
 
         /// <summary>
-        /// 字符串键到字符串值的映射，对应 Go 的 map[string]string。
+        /// Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.
         /// </summary>
-        /// <value>字符串键到字符串值的映射，对应 Go 的 map[string]string。</value>
+        /// <value>Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.</value>
         [DataMember(Name="default")]
         public Dictionary<string, string> Default { get; set; }
 
@@ -120,9 +120,9 @@ namespace Io.Gate.GateApi.Model
         public Recommend Recommend { get; set; }
 
         /// <summary>
-        /// 策略分组键到 RecommendV2Strategy 列表的映射。
+        /// Mapping of strategy grouping keys to RecommendV2Strategy lists.
         /// </summary>
-        /// <value>策略分组键到 RecommendV2Strategy 列表的映射。</value>
+        /// <value>Mapping of strategy grouping keys to RecommendV2Strategy lists.</value>
         [DataMember(Name="recommend_v2")]
         public Dictionary<string, List<RecommendV2Strategy>> RecommendV2 { get; set; }
 

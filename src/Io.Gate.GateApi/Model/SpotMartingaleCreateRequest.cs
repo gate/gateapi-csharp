@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 创建现货马丁策略的请求体。
+    /// Create the request body of the Spot Martin strategy.
     /// </summary>
     [DataContract]
     public partial class SpotMartingaleCreateRequest :  IEquatable<SpotMartingaleCreateRequest>, IValidatableObject

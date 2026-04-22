@@ -38,10 +38,10 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Recommend" /> class.
         /// </summary>
-        /// <param name="balance">字符串键到字符串值的映射，对应 Go 的 map[string]string。 (required).</param>
-        /// <param name="btcFaith">字符串键到字符串值的映射，对应 Go 的 map[string]string。 (required).</param>
-        /// <param name="conservative">字符串键到字符串值的映射，对应 Go 的 map[string]string。 (required).</param>
-        /// <param name="gtFaith">字符串键到字符串值的映射，对应 Go 的 map[string]string。 (required).</param>
+        /// <param name="balance">Mapping of string keys to string values, corresponding to Go&#39;s map[string]string. (required).</param>
+        /// <param name="btcFaith">Mapping of string keys to string values, corresponding to Go&#39;s map[string]string. (required).</param>
+        /// <param name="conservative">Mapping of string keys to string values, corresponding to Go&#39;s map[string]string. (required).</param>
+        /// <param name="gtFaith">Mapping of string keys to string values, corresponding to Go&#39;s map[string]string. (required).</param>
         public Recommend(Dictionary<string, string> balance = default(Dictionary<string, string>), Dictionary<string, string> btcFaith = default(Dictionary<string, string>), Dictionary<string, string> conservative = default(Dictionary<string, string>), Dictionary<string, string> gtFaith = default(Dictionary<string, string>))
         {
             // to ensure "balance" is required (not null)
@@ -55,30 +55,30 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 字符串键到字符串值的映射，对应 Go 的 map[string]string。
+        /// Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.
         /// </summary>
-        /// <value>字符串键到字符串值的映射，对应 Go 的 map[string]string。</value>
+        /// <value>Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.</value>
         [DataMember(Name="balance")]
         public Dictionary<string, string> Balance { get; set; }
 
         /// <summary>
-        /// 字符串键到字符串值的映射，对应 Go 的 map[string]string。
+        /// Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.
         /// </summary>
-        /// <value>字符串键到字符串值的映射，对应 Go 的 map[string]string。</value>
+        /// <value>Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.</value>
         [DataMember(Name="btc_faith")]
         public Dictionary<string, string> BtcFaith { get; set; }
 
         /// <summary>
-        /// 字符串键到字符串值的映射，对应 Go 的 map[string]string。
+        /// Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.
         /// </summary>
-        /// <value>字符串键到字符串值的映射，对应 Go 的 map[string]string。</value>
+        /// <value>Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.</value>
         [DataMember(Name="conservative")]
         public Dictionary<string, string> Conservative { get; set; }
 
         /// <summary>
-        /// 字符串键到字符串值的映射，对应 Go 的 map[string]string。
+        /// Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.
         /// </summary>
-        /// <value>字符串键到字符串值的映射，对应 Go 的 map[string]string。</value>
+        /// <value>Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.</value>
         [DataMember(Name="gt_faith")]
         public Dictionary<string, string> GtFaith { get; set; }
 

@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 资产配置优化-配置统一响应
+    /// Asset allocation optimization - configure unified response
     /// </summary>
     [DataContract]
     public partial class ApiResponseAssetSwapConfig :  IEquatable<ApiResponseAssetSwapConfig>, IValidatableObject
@@ -38,10 +38,10 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseAssetSwapConfig" /> class.
         /// </summary>
-        /// <param name="code">业务错误码，0 表示成功 (required).</param>
-        /// <param name="label">错误标识码，成功时为空字符串.</param>
-        /// <param name="message">描述信息 (required).</param>
-        /// <param name="data">成功时为前端配置，失败时为 null (required).</param>
+        /// <param name="code">Business error code, 0 means success (required).</param>
+        /// <param name="label">Error identification code, empty string on success.</param>
+        /// <param name="message">Description information (required).</param>
+        /// <param name="data">Front-end configuration on success, null on failure (required).</param>
         /// <param name="timestamp">Server timestamp (milliseconds) (required).</param>
         public ApiResponseAssetSwapConfig(int code = default(int), string label = default(string), string message = default(string), AssetSwapFrontend data = default(AssetSwapFrontend), long timestamp = default(long))
         {
@@ -55,30 +55,30 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 业务错误码，0 表示成功
+        /// Business error code, 0 means success
         /// </summary>
-        /// <value>业务错误码，0 表示成功</value>
+        /// <value>Business error code, 0 means success</value>
         [DataMember(Name="code")]
         public int Code { get; set; }
 
         /// <summary>
-        /// 错误标识码，成功时为空字符串
+        /// Error identification code, empty string on success
         /// </summary>
-        /// <value>错误标识码，成功时为空字符串</value>
+        /// <value>Error identification code, empty string on success</value>
         [DataMember(Name="label")]
         public string Label { get; set; }
 
         /// <summary>
-        /// 描述信息
+        /// Description information
         /// </summary>
-        /// <value>描述信息</value>
+        /// <value>Description information</value>
         [DataMember(Name="message")]
         public string Message { get; set; }
 
         /// <summary>
-        /// 成功时为前端配置，失败时为 null
+        /// Front-end configuration on success, null on failure
         /// </summary>
-        /// <value>成功时为前端配置，失败时为 null</value>
+        /// <value>Front-end configuration on success, null on failure</value>
         [DataMember(Name="data")]
         public AssetSwapFrontend Data { get; set; }
 

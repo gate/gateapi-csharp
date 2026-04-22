@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 运行中策略列表数据。
+    /// Running policy list data.
     /// </summary>
     [DataContract]
     public partial class AIHubPortfolioRunningData :  IEquatable<AIHubPortfolioRunningData>, IValidatableObject

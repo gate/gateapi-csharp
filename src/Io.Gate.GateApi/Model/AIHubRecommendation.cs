@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 单条策略推荐信息。
+    /// A single piece of strategy recommendation information.
     /// </summary>
     [DataContract]
     public partial class AIHubRecommendation :  IEquatable<AIHubRecommendation>, IValidatableObject
@@ -50,7 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="backtestApr">backtestApr.</param>
         /// <param name="maxDrawdown">maxDrawdown.</param>
         /// <param name="summary">summary (required).</param>
-        /// <param name="strategyParamsPreview">推荐参数预览；按策略类型动态变化.</param>
+        /// <param name="strategyParamsPreview">Recommended parameter preview; dynamic changes by strategy type.</param>
         public AIHubRecommendation(string recommendationId = default(string), string market = default(string), StrategyType strategyType = default(StrategyType), string strategyName = default(string), string backtestApr = default(string), string maxDrawdown = default(string), string summary = default(string), Dictionary<string, string> strategyParamsPreview = default(Dictionary<string, string>))
         {
             // to ensure "recommendationId" is required (not null)
@@ -104,9 +104,9 @@ namespace Io.Gate.GateApi.Model
         public string Summary { get; set; }
 
         /// <summary>
-        /// 推荐参数预览；按策略类型动态变化
+        /// Recommended parameter preview; dynamic changes by strategy type
         /// </summary>
-        /// <value>推荐参数预览；按策略类型动态变化</value>
+        /// <value>Recommended parameter preview; dynamic changes by strategy type</value>
         [DataMember(Name="strategy_params_preview")]
         public Dictionary<string, string> StrategyParamsPreview { get; set; }
 

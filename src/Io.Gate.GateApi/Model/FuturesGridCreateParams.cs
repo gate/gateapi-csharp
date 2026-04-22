@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 合约网格策略的创建参数。
+    /// Creation parameters for the contract grid strategy.
     /// </summary>
     [DataContract]
     public partial class FuturesGridCreateParams :  IEquatable<FuturesGridCreateParams>, IValidatableObject

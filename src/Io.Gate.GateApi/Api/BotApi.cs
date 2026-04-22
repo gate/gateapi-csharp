@@ -28,317 +28,317 @@ namespace Io.Gate.GateApi.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 获取 AIHub 策略推荐
+        /// Get AIHub strategy recommendations
         /// </summary>
         /// <remarks>
         /// discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="market">交易对，例如 &#x60;BTC_USDT&#x60; (optional)</param>
-        /// <param name="strategyType">推荐目标策略类型；&#x60;contract_martingale&#x60; 不允许 (optional)</param>
-        /// <param name="direction">行情方向 (optional)</param>
-        /// <param name="investAmount">投入金额，字符串透传 (optional)</param>
-        /// <param name="scene">推荐场景；为空时 bot-service 可按实现逻辑自动推断 (optional)</param>
-        /// <param name="refreshRecommendationId">推荐刷新上下文。&#x60;scene&#x3D;refresh&#x60; 时使用；当 &#x60;scene&#x60; 为空但该字段存在时，bot-service 也会自动判定为 &#x60;refresh&#x60;。 正式最小格式为 &#x60;strategy_type|market&#x60;；若直接透传上一条推荐的 &#x60;recommendation_id&#x60;，第三段 &#x60;backtest_id&#x60; 会被忽略。 (optional)</param>
-        /// <param name="limit">返回数量；&#x60;scene&#x3D;filter&#x60; 时实际结果最多 10 条 (optional)</param>
-        /// <param name="maxDrawdownLte">最大回撤上限 (optional)</param>
-        /// <param name="backtestAprGte">回测年化下限 (optional)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="market">Trading pair, such as &#x60;BTC_USDT&#x60; (optional)</param>
+        /// <param name="strategyType">Recommended target policy type; &#x60;contract_martingale&#x60; not allowed (optional)</param>
+        /// <param name="direction">Market direction (optional)</param>
+        /// <param name="investAmount">Investment amount, string transparent transmission (optional)</param>
+        /// <param name="scene">Recommended scenario; when empty, bot-service can automatically infer according to the implementation logic. (optional)</param>
+        /// <param name="refreshRecommendationId">It is recommended to refresh the context. Used when &#x60;scene&#x3D;refresh&#x60; is used; when &#x60;scene&#x60; is empty but the field exists, bot-service will also automatically determine as &#x60;refresh&#x60;. The official minimum format is &#x60;strategy_type|market&#x60;; if the &#x60;recommendation_id&#x60; of the previous recommendation is directly passed through, the third paragraph &#x60;backtest_id&#x60; will be ignored. (optional)</param>
+        /// <param name="limit">Return quantity; when &#x60;scene&#x3D;filter&#x60; is used, the actual results are up to 10 (optional)</param>
+        /// <param name="maxDrawdownLte">Maximum drawdown limit (optional)</param>
+        /// <param name="backtestAprGte">Backtest annualized lower limit (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubDiscoverSuccessResponse</returns>
         AIHubDiscoverSuccessResponse GetAIHubStrategyRecommend (string market = default(string), string strategyType = default(string), string direction = default(string), string investAmount = default(string), string scene = default(string), string refreshRecommendationId = default(string), int? limit = default(int?), string maxDrawdownLte = default(string), string backtestAprGte = default(string), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 获取 AIHub 策略推荐
+        /// Get AIHub strategy recommendations
         /// </summary>
         /// <remarks>
         /// discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="market">交易对，例如 &#x60;BTC_USDT&#x60; (optional)</param>
-        /// <param name="strategyType">推荐目标策略类型；&#x60;contract_martingale&#x60; 不允许 (optional)</param>
-        /// <param name="direction">行情方向 (optional)</param>
-        /// <param name="investAmount">投入金额，字符串透传 (optional)</param>
-        /// <param name="scene">推荐场景；为空时 bot-service 可按实现逻辑自动推断 (optional)</param>
-        /// <param name="refreshRecommendationId">推荐刷新上下文。&#x60;scene&#x3D;refresh&#x60; 时使用；当 &#x60;scene&#x60; 为空但该字段存在时，bot-service 也会自动判定为 &#x60;refresh&#x60;。 正式最小格式为 &#x60;strategy_type|market&#x60;；若直接透传上一条推荐的 &#x60;recommendation_id&#x60;，第三段 &#x60;backtest_id&#x60; 会被忽略。 (optional)</param>
-        /// <param name="limit">返回数量；&#x60;scene&#x3D;filter&#x60; 时实际结果最多 10 条 (optional)</param>
-        /// <param name="maxDrawdownLte">最大回撤上限 (optional)</param>
-        /// <param name="backtestAprGte">回测年化下限 (optional)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="market">Trading pair, such as &#x60;BTC_USDT&#x60; (optional)</param>
+        /// <param name="strategyType">Recommended target policy type; &#x60;contract_martingale&#x60; not allowed (optional)</param>
+        /// <param name="direction">Market direction (optional)</param>
+        /// <param name="investAmount">Investment amount, string transparent transmission (optional)</param>
+        /// <param name="scene">Recommended scenario; when empty, bot-service can automatically infer according to the implementation logic. (optional)</param>
+        /// <param name="refreshRecommendationId">It is recommended to refresh the context. Used when &#x60;scene&#x3D;refresh&#x60; is used; when &#x60;scene&#x60; is empty but the field exists, bot-service will also automatically determine as &#x60;refresh&#x60;. The official minimum format is &#x60;strategy_type|market&#x60;; if the &#x60;recommendation_id&#x60; of the previous recommendation is directly passed through, the third paragraph &#x60;backtest_id&#x60; will be ignored. (optional)</param>
+        /// <param name="limit">Return quantity; when &#x60;scene&#x3D;filter&#x60; is used, the actual results are up to 10 (optional)</param>
+        /// <param name="maxDrawdownLte">Maximum drawdown limit (optional)</param>
+        /// <param name="backtestAprGte">Backtest annualized lower limit (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubDiscoverSuccessResponse</returns>
         ApiResponse<AIHubDiscoverSuccessResponse> GetAIHubStrategyRecommendWithHttpInfo (string market = default(string), string strategyType = default(string), string direction = default(string), string investAmount = default(string), string scene = default(string), string refreshRecommendationId = default(string), int? limit = default(int?), string maxDrawdownLte = default(string), string backtestAprGte = default(string), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建现货网格
+        /// Create spot grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建现货网格策略。
+        /// Create a spot grid strategy based on the incoming parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         AIHubCreateSuccessResponse PostAIHubSpotGridCreate (SpotGridCreateRequest spotGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建现货网格
+        /// Create spot grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建现货网格策略。
+        /// Create a spot grid strategy based on the incoming parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         ApiResponse<AIHubCreateSuccessResponse> PostAIHubSpotGridCreateWithHttpInfo (SpotGridCreateRequest spotGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建杠杆网格
+        /// Create a lever grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建杠杆网格策略。
+        /// Create a leverage grid strategy based on the passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marginGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         AIHubCreateSuccessResponse PostAIHubMarginGridCreate (MarginGridCreateRequest marginGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建杠杆网格
+        /// Create a lever grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建杠杆网格策略。
+        /// Create a leverage grid strategy based on the passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marginGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         ApiResponse<AIHubCreateSuccessResponse> PostAIHubMarginGridCreateWithHttpInfo (MarginGridCreateRequest marginGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建无限网格
+        /// Create infinite grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建无限网格策略。
+        /// Create an infinite grid strategy based on passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="infiniteGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         AIHubCreateSuccessResponse PostAIHubInfiniteGridCreate (InfiniteGridCreateRequest infiniteGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建无限网格
+        /// Create infinite grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建无限网格策略。
+        /// Create an infinite grid strategy based on passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="infiniteGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         ApiResponse<AIHubCreateSuccessResponse> PostAIHubInfiniteGridCreateWithHttpInfo (InfiniteGridCreateRequest infiniteGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建合约网格
+        /// Create a contract grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建合约网格策略。
+        /// Create a contract grid strategy based on the incoming parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="futuresGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         AIHubCreateSuccessResponse PostAIHubFuturesGridCreate (FuturesGridCreateRequest futuresGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建合约网格
+        /// Create a contract grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建合约网格策略。
+        /// Create a contract grid strategy based on the incoming parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="futuresGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         ApiResponse<AIHubCreateSuccessResponse> PostAIHubFuturesGridCreateWithHttpInfo (FuturesGridCreateRequest futuresGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建现货马丁
+        /// Create Spot Martin
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建现货马丁策略。
+        /// Create a spot Martin strategy based on the passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         AIHubCreateSuccessResponse PostAIHubSpotMartingaleCreate (SpotMartingaleCreateRequest spotMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建现货马丁
+        /// Create Spot Martin
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建现货马丁策略。
+        /// Create a spot Martin strategy based on the passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         ApiResponse<AIHubCreateSuccessResponse> PostAIHubSpotMartingaleCreateWithHttpInfo (SpotMartingaleCreateRequest spotMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建合约马丁
+        /// Create contract martin
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建合约马丁策略。
+        /// Create a contract Martin strategy based on the input parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contractMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         AIHubCreateSuccessResponse PostAIHubContractMartingaleCreate (ContractMartingaleCreateRequest contractMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建合约马丁
+        /// Create contract martin
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建合约马丁策略。
+        /// Create a contract Martin strategy based on the input parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contractMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         ApiResponse<AIHubCreateSuccessResponse> PostAIHubContractMartingaleCreateWithHttpInfo (ContractMartingaleCreateRequest contractMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 查询运行中策略列表
+        /// Query the list of running policies
         /// </summary>
         /// <remarks>
-        /// 查询当前用户运行中的 AIHub 策略列表，支持按策略类型、交易对和分页条件过滤。
+        /// Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyType">按策略类型过滤 (optional)</param>
-        /// <param name="market">按交易对过滤 (optional)</param>
-        /// <param name="page">页码，默认 1 (optional, default to 1)</param>
-        /// <param name="pageSize">分页大小，默认 20，最大 50 (optional, default to 20)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyType">Filter by policy type (optional)</param>
+        /// <param name="market">Filter by trading pair (optional)</param>
+        /// <param name="page">Page number, default 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Paging size, default 20, maximum 50 (optional, default to 20)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubPortfolioRunningSuccessResponse</returns>
         AIHubPortfolioRunningSuccessResponse GetAIHubPortfolioRunning (string strategyType = default(string), string market = default(string), int? page = default(int?), int? pageSize = default(int?), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 查询运行中策略列表
+        /// Query the list of running policies
         /// </summary>
         /// <remarks>
-        /// 查询当前用户运行中的 AIHub 策略列表，支持按策略类型、交易对和分页条件过滤。
+        /// Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyType">按策略类型过滤 (optional)</param>
-        /// <param name="market">按交易对过滤 (optional)</param>
-        /// <param name="page">页码，默认 1 (optional, default to 1)</param>
-        /// <param name="pageSize">分页大小，默认 20，最大 50 (optional, default to 20)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyType">Filter by policy type (optional)</param>
+        /// <param name="market">Filter by trading pair (optional)</param>
+        /// <param name="page">Page number, default 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Paging size, default 20, maximum 50 (optional, default to 20)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubPortfolioRunningSuccessResponse</returns>
         ApiResponse<AIHubPortfolioRunningSuccessResponse> GetAIHubPortfolioRunningWithHttpInfo (string strategyType = default(string), string market = default(string), int? page = default(int?), int? pageSize = default(int?), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 查询单策略详情
+        /// Query order policy details
         /// </summary>
         /// <remarks>
-        /// 请求中必须同时传 &#x60;strategy_id&#x60; 与 &#x60;strategy_type&#x60;，其中 &#x60;strategy_type&#x60; 用于按策略类型分发到底层详情实现。
+        /// Both &#x60;strategy_id&#x60; and &#x60;strategy_type&#x60; must be passed in the request, where &#x60;strategy_type&#x60; is used to distribute to the underlying detailed implementation by strategy type.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyId">策略 ID</param>
-        /// <param name="strategyType">策略类型；用于底层详情分发</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyId">Policy ID</param>
+        /// <param name="strategyType">Policy type; used for underlying detail distribution</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubPortfolioDetailSuccessResponse</returns>
         AIHubPortfolioDetailSuccessResponse GetAIHubPortfolioDetail (string strategyId, string strategyType, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 查询单策略详情
+        /// Query order policy details
         /// </summary>
         /// <remarks>
-        /// 请求中必须同时传 &#x60;strategy_id&#x60; 与 &#x60;strategy_type&#x60;，其中 &#x60;strategy_type&#x60; 用于按策略类型分发到底层详情实现。
+        /// Both &#x60;strategy_id&#x60; and &#x60;strategy_type&#x60; must be passed in the request, where &#x60;strategy_type&#x60; is used to distribute to the underlying detailed implementation by strategy type.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyId">策略 ID</param>
-        /// <param name="strategyType">策略类型；用于底层详情分发</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyId">Policy ID</param>
+        /// <param name="strategyType">Policy type; used for underlying detail distribution</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubPortfolioDetailSuccessResponse</returns>
         ApiResponse<AIHubPortfolioDetailSuccessResponse> GetAIHubPortfolioDetailWithHttpInfo (string strategyId, string strategyType, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 终止单个运行中策略
+        /// Terminate a single running policy
         /// </summary>
         /// <remarks>
-        /// 单次请求只允许终止一个策略。 风险提示与二次确认由 OpenClaw 上层承担；本接口只负责执行 stop。
+        /// Only one policy is allowed to be terminated per request. Risk warning and secondary confirmation are borne by the upper layer of OpenClaw; this interface is only responsible for executing stop.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="aIHubPortfolioStopRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubPortfolioStopSuccessResponse</returns>
         AIHubPortfolioStopSuccessResponse PostAIHubPortfolioStop (AIHubPortfolioStopRequest aIHubPortfolioStopRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 终止单个运行中策略
+        /// Terminate a single running policy
         /// </summary>
         /// <remarks>
-        /// 单次请求只允许终止一个策略。 风险提示与二次确认由 OpenClaw 上层承担；本接口只负责执行 stop。
+        /// Only one policy is allowed to be terminated per request. Risk warning and secondary confirmation are borne by the upper layer of OpenClaw; this interface is only responsible for executing stop.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="aIHubPortfolioStopRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubPortfolioStopSuccessResponse</returns>
         ApiResponse<AIHubPortfolioStopSuccessResponse> PostAIHubPortfolioStopWithHttpInfo (AIHubPortfolioStopRequest aIHubPortfolioStopRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         #endregion Synchronous Operations
@@ -351,317 +351,317 @@ namespace Io.Gate.GateApi.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 获取 AIHub 策略推荐
+        /// Get AIHub strategy recommendations
         /// </summary>
         /// <remarks>
         /// discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="market">交易对，例如 &#x60;BTC_USDT&#x60; (optional)</param>
-        /// <param name="strategyType">推荐目标策略类型；&#x60;contract_martingale&#x60; 不允许 (optional)</param>
-        /// <param name="direction">行情方向 (optional)</param>
-        /// <param name="investAmount">投入金额，字符串透传 (optional)</param>
-        /// <param name="scene">推荐场景；为空时 bot-service 可按实现逻辑自动推断 (optional)</param>
-        /// <param name="refreshRecommendationId">推荐刷新上下文。&#x60;scene&#x3D;refresh&#x60; 时使用；当 &#x60;scene&#x60; 为空但该字段存在时，bot-service 也会自动判定为 &#x60;refresh&#x60;。 正式最小格式为 &#x60;strategy_type|market&#x60;；若直接透传上一条推荐的 &#x60;recommendation_id&#x60;，第三段 &#x60;backtest_id&#x60; 会被忽略。 (optional)</param>
-        /// <param name="limit">返回数量；&#x60;scene&#x3D;filter&#x60; 时实际结果最多 10 条 (optional)</param>
-        /// <param name="maxDrawdownLte">最大回撤上限 (optional)</param>
-        /// <param name="backtestAprGte">回测年化下限 (optional)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="market">Trading pair, such as &#x60;BTC_USDT&#x60; (optional)</param>
+        /// <param name="strategyType">Recommended target policy type; &#x60;contract_martingale&#x60; not allowed (optional)</param>
+        /// <param name="direction">Market direction (optional)</param>
+        /// <param name="investAmount">Investment amount, string transparent transmission (optional)</param>
+        /// <param name="scene">Recommended scenario; when empty, bot-service can automatically infer according to the implementation logic. (optional)</param>
+        /// <param name="refreshRecommendationId">It is recommended to refresh the context. Used when &#x60;scene&#x3D;refresh&#x60; is used; when &#x60;scene&#x60; is empty but the field exists, bot-service will also automatically determine as &#x60;refresh&#x60;. The official minimum format is &#x60;strategy_type|market&#x60;; if the &#x60;recommendation_id&#x60; of the previous recommendation is directly passed through, the third paragraph &#x60;backtest_id&#x60; will be ignored. (optional)</param>
+        /// <param name="limit">Return quantity; when &#x60;scene&#x3D;filter&#x60; is used, the actual results are up to 10 (optional)</param>
+        /// <param name="maxDrawdownLte">Maximum drawdown limit (optional)</param>
+        /// <param name="backtestAprGte">Backtest annualized lower limit (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubDiscoverSuccessResponse</returns>
         Task<AIHubDiscoverSuccessResponse> GetAIHubStrategyRecommendAsync (string market = default(string), string strategyType = default(string), string direction = default(string), string investAmount = default(string), string scene = default(string), string refreshRecommendationId = default(string), int? limit = default(int?), string maxDrawdownLte = default(string), string backtestAprGte = default(string), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 获取 AIHub 策略推荐
+        /// Get AIHub strategy recommendations
         /// </summary>
         /// <remarks>
         /// discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="market">交易对，例如 &#x60;BTC_USDT&#x60; (optional)</param>
-        /// <param name="strategyType">推荐目标策略类型；&#x60;contract_martingale&#x60; 不允许 (optional)</param>
-        /// <param name="direction">行情方向 (optional)</param>
-        /// <param name="investAmount">投入金额，字符串透传 (optional)</param>
-        /// <param name="scene">推荐场景；为空时 bot-service 可按实现逻辑自动推断 (optional)</param>
-        /// <param name="refreshRecommendationId">推荐刷新上下文。&#x60;scene&#x3D;refresh&#x60; 时使用；当 &#x60;scene&#x60; 为空但该字段存在时，bot-service 也会自动判定为 &#x60;refresh&#x60;。 正式最小格式为 &#x60;strategy_type|market&#x60;；若直接透传上一条推荐的 &#x60;recommendation_id&#x60;，第三段 &#x60;backtest_id&#x60; 会被忽略。 (optional)</param>
-        /// <param name="limit">返回数量；&#x60;scene&#x3D;filter&#x60; 时实际结果最多 10 条 (optional)</param>
-        /// <param name="maxDrawdownLte">最大回撤上限 (optional)</param>
-        /// <param name="backtestAprGte">回测年化下限 (optional)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="market">Trading pair, such as &#x60;BTC_USDT&#x60; (optional)</param>
+        /// <param name="strategyType">Recommended target policy type; &#x60;contract_martingale&#x60; not allowed (optional)</param>
+        /// <param name="direction">Market direction (optional)</param>
+        /// <param name="investAmount">Investment amount, string transparent transmission (optional)</param>
+        /// <param name="scene">Recommended scenario; when empty, bot-service can automatically infer according to the implementation logic. (optional)</param>
+        /// <param name="refreshRecommendationId">It is recommended to refresh the context. Used when &#x60;scene&#x3D;refresh&#x60; is used; when &#x60;scene&#x60; is empty but the field exists, bot-service will also automatically determine as &#x60;refresh&#x60;. The official minimum format is &#x60;strategy_type|market&#x60;; if the &#x60;recommendation_id&#x60; of the previous recommendation is directly passed through, the third paragraph &#x60;backtest_id&#x60; will be ignored. (optional)</param>
+        /// <param name="limit">Return quantity; when &#x60;scene&#x3D;filter&#x60; is used, the actual results are up to 10 (optional)</param>
+        /// <param name="maxDrawdownLte">Maximum drawdown limit (optional)</param>
+        /// <param name="backtestAprGte">Backtest annualized lower limit (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubDiscoverSuccessResponse)</returns>
         Task<ApiResponse<AIHubDiscoverSuccessResponse>> GetAIHubStrategyRecommendAsyncWithHttpInfo (string market = default(string), string strategyType = default(string), string direction = default(string), string investAmount = default(string), string scene = default(string), string refreshRecommendationId = default(string), int? limit = default(int?), string maxDrawdownLte = default(string), string backtestAprGte = default(string), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建现货网格
+        /// Create spot grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建现货网格策略。
+        /// Create a spot grid strategy based on the incoming parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         Task<AIHubCreateSuccessResponse> PostAIHubSpotGridCreateAsync (SpotGridCreateRequest spotGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建现货网格
+        /// Create spot grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建现货网格策略。
+        /// Create a spot grid strategy based on the incoming parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubSpotGridCreateAsyncWithHttpInfo (SpotGridCreateRequest spotGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建杠杆网格
+        /// Create a lever grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建杠杆网格策略。
+        /// Create a leverage grid strategy based on the passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marginGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         Task<AIHubCreateSuccessResponse> PostAIHubMarginGridCreateAsync (MarginGridCreateRequest marginGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建杠杆网格
+        /// Create a lever grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建杠杆网格策略。
+        /// Create a leverage grid strategy based on the passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marginGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubMarginGridCreateAsyncWithHttpInfo (MarginGridCreateRequest marginGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建无限网格
+        /// Create infinite grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建无限网格策略。
+        /// Create an infinite grid strategy based on passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="infiniteGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         Task<AIHubCreateSuccessResponse> PostAIHubInfiniteGridCreateAsync (InfiniteGridCreateRequest infiniteGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建无限网格
+        /// Create infinite grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建无限网格策略。
+        /// Create an infinite grid strategy based on passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="infiniteGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubInfiniteGridCreateAsyncWithHttpInfo (InfiniteGridCreateRequest infiniteGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建合约网格
+        /// Create a contract grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建合约网格策略。
+        /// Create a contract grid strategy based on the incoming parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="futuresGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         Task<AIHubCreateSuccessResponse> PostAIHubFuturesGridCreateAsync (FuturesGridCreateRequest futuresGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建合约网格
+        /// Create a contract grid
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建合约网格策略。
+        /// Create a contract grid strategy based on the incoming parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="futuresGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubFuturesGridCreateAsyncWithHttpInfo (FuturesGridCreateRequest futuresGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建现货马丁
+        /// Create Spot Martin
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建现货马丁策略。
+        /// Create a spot Martin strategy based on the passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         Task<AIHubCreateSuccessResponse> PostAIHubSpotMartingaleCreateAsync (SpotMartingaleCreateRequest spotMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建现货马丁
+        /// Create Spot Martin
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建现货马丁策略。
+        /// Create a spot Martin strategy based on the passed parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubSpotMartingaleCreateAsyncWithHttpInfo (SpotMartingaleCreateRequest spotMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 创建合约马丁
+        /// Create contract martin
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建合约马丁策略。
+        /// Create a contract Martin strategy based on the input parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contractMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         Task<AIHubCreateSuccessResponse> PostAIHubContractMartingaleCreateAsync (ContractMartingaleCreateRequest contractMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 创建合约马丁
+        /// Create contract martin
         /// </summary>
         /// <remarks>
-        /// 根据传入参数创建合约马丁策略。
+        /// Create a contract Martin strategy based on the input parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contractMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubContractMartingaleCreateAsyncWithHttpInfo (ContractMartingaleCreateRequest contractMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 查询运行中策略列表
+        /// Query the list of running policies
         /// </summary>
         /// <remarks>
-        /// 查询当前用户运行中的 AIHub 策略列表，支持按策略类型、交易对和分页条件过滤。
+        /// Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyType">按策略类型过滤 (optional)</param>
-        /// <param name="market">按交易对过滤 (optional)</param>
-        /// <param name="page">页码，默认 1 (optional, default to 1)</param>
-        /// <param name="pageSize">分页大小，默认 20，最大 50 (optional, default to 20)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyType">Filter by policy type (optional)</param>
+        /// <param name="market">Filter by trading pair (optional)</param>
+        /// <param name="page">Page number, default 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Paging size, default 20, maximum 50 (optional, default to 20)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubPortfolioRunningSuccessResponse</returns>
         Task<AIHubPortfolioRunningSuccessResponse> GetAIHubPortfolioRunningAsync (string strategyType = default(string), string market = default(string), int? page = default(int?), int? pageSize = default(int?), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 查询运行中策略列表
+        /// Query the list of running policies
         /// </summary>
         /// <remarks>
-        /// 查询当前用户运行中的 AIHub 策略列表，支持按策略类型、交易对和分页条件过滤。
+        /// Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyType">按策略类型过滤 (optional)</param>
-        /// <param name="market">按交易对过滤 (optional)</param>
-        /// <param name="page">页码，默认 1 (optional, default to 1)</param>
-        /// <param name="pageSize">分页大小，默认 20，最大 50 (optional, default to 20)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyType">Filter by policy type (optional)</param>
+        /// <param name="market">Filter by trading pair (optional)</param>
+        /// <param name="page">Page number, default 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Paging size, default 20, maximum 50 (optional, default to 20)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubPortfolioRunningSuccessResponse)</returns>
         Task<ApiResponse<AIHubPortfolioRunningSuccessResponse>> GetAIHubPortfolioRunningAsyncWithHttpInfo (string strategyType = default(string), string market = default(string), int? page = default(int?), int? pageSize = default(int?), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 查询单策略详情
+        /// Query order policy details
         /// </summary>
         /// <remarks>
-        /// 请求中必须同时传 &#x60;strategy_id&#x60; 与 &#x60;strategy_type&#x60;，其中 &#x60;strategy_type&#x60; 用于按策略类型分发到底层详情实现。
+        /// Both &#x60;strategy_id&#x60; and &#x60;strategy_type&#x60; must be passed in the request, where &#x60;strategy_type&#x60; is used to distribute to the underlying detailed implementation by strategy type.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyId">策略 ID</param>
-        /// <param name="strategyType">策略类型；用于底层详情分发</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyId">Policy ID</param>
+        /// <param name="strategyType">Policy type; used for underlying detail distribution</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubPortfolioDetailSuccessResponse</returns>
         Task<AIHubPortfolioDetailSuccessResponse> GetAIHubPortfolioDetailAsync (string strategyId, string strategyType, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 查询单策略详情
+        /// Query order policy details
         /// </summary>
         /// <remarks>
-        /// 请求中必须同时传 &#x60;strategy_id&#x60; 与 &#x60;strategy_type&#x60;，其中 &#x60;strategy_type&#x60; 用于按策略类型分发到底层详情实现。
+        /// Both &#x60;strategy_id&#x60; and &#x60;strategy_type&#x60; must be passed in the request, where &#x60;strategy_type&#x60; is used to distribute to the underlying detailed implementation by strategy type.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyId">策略 ID</param>
-        /// <param name="strategyType">策略类型；用于底层详情分发</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyId">Policy ID</param>
+        /// <param name="strategyType">Policy type; used for underlying detail distribution</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubPortfolioDetailSuccessResponse)</returns>
         Task<ApiResponse<AIHubPortfolioDetailSuccessResponse>> GetAIHubPortfolioDetailAsyncWithHttpInfo (string strategyId, string strategyType, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// 终止单个运行中策略
+        /// Terminate a single running policy
         /// </summary>
         /// <remarks>
-        /// 单次请求只允许终止一个策略。 风险提示与二次确认由 OpenClaw 上层承担；本接口只负责执行 stop。
+        /// Only one policy is allowed to be terminated per request. Risk warning and secondary confirmation are borne by the upper layer of OpenClaw; this interface is only responsible for executing stop.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="aIHubPortfolioStopRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubPortfolioStopSuccessResponse</returns>
         Task<AIHubPortfolioStopSuccessResponse> PostAIHubPortfolioStopAsync (AIHubPortfolioStopRequest aIHubPortfolioStopRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// 终止单个运行中策略
+        /// Terminate a single running policy
         /// </summary>
         /// <remarks>
-        /// 单次请求只允许终止一个策略。 风险提示与二次确认由 OpenClaw 上层承担；本接口只负责执行 stop。
+        /// Only one policy is allowed to be terminated per request. Risk warning and secondary confirmation are borne by the upper layer of OpenClaw; this interface is only responsible for executing stop.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="aIHubPortfolioStopRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubPortfolioStopSuccessResponse)</returns>
         Task<ApiResponse<AIHubPortfolioStopSuccessResponse>> PostAIHubPortfolioStopAsyncWithHttpInfo (AIHubPortfolioStopRequest aIHubPortfolioStopRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         #endregion Asynchronous Operations
@@ -785,22 +785,22 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 获取 AIHub 策略推荐 discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
+        /// Get AIHub strategy recommendations discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="market">交易对，例如 &#x60;BTC_USDT&#x60; (optional)</param>
-        /// <param name="strategyType">推荐目标策略类型；&#x60;contract_martingale&#x60; 不允许 (optional)</param>
-        /// <param name="direction">行情方向 (optional)</param>
-        /// <param name="investAmount">投入金额，字符串透传 (optional)</param>
-        /// <param name="scene">推荐场景；为空时 bot-service 可按实现逻辑自动推断 (optional)</param>
-        /// <param name="refreshRecommendationId">推荐刷新上下文。&#x60;scene&#x3D;refresh&#x60; 时使用；当 &#x60;scene&#x60; 为空但该字段存在时，bot-service 也会自动判定为 &#x60;refresh&#x60;。 正式最小格式为 &#x60;strategy_type|market&#x60;；若直接透传上一条推荐的 &#x60;recommendation_id&#x60;，第三段 &#x60;backtest_id&#x60; 会被忽略。 (optional)</param>
-        /// <param name="limit">返回数量；&#x60;scene&#x3D;filter&#x60; 时实际结果最多 10 条 (optional)</param>
-        /// <param name="maxDrawdownLte">最大回撤上限 (optional)</param>
-        /// <param name="backtestAprGte">回测年化下限 (optional)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="market">Trading pair, such as &#x60;BTC_USDT&#x60; (optional)</param>
+        /// <param name="strategyType">Recommended target policy type; &#x60;contract_martingale&#x60; not allowed (optional)</param>
+        /// <param name="direction">Market direction (optional)</param>
+        /// <param name="investAmount">Investment amount, string transparent transmission (optional)</param>
+        /// <param name="scene">Recommended scenario; when empty, bot-service can automatically infer according to the implementation logic. (optional)</param>
+        /// <param name="refreshRecommendationId">It is recommended to refresh the context. Used when &#x60;scene&#x3D;refresh&#x60; is used; when &#x60;scene&#x60; is empty but the field exists, bot-service will also automatically determine as &#x60;refresh&#x60;. The official minimum format is &#x60;strategy_type|market&#x60;; if the &#x60;recommendation_id&#x60; of the previous recommendation is directly passed through, the third paragraph &#x60;backtest_id&#x60; will be ignored. (optional)</param>
+        /// <param name="limit">Return quantity; when &#x60;scene&#x3D;filter&#x60; is used, the actual results are up to 10 (optional)</param>
+        /// <param name="maxDrawdownLte">Maximum drawdown limit (optional)</param>
+        /// <param name="backtestAprGte">Backtest annualized lower limit (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubDiscoverSuccessResponse</returns>
         public AIHubDiscoverSuccessResponse GetAIHubStrategyRecommend (string market = default(string), string strategyType = default(string), string direction = default(string), string investAmount = default(string), string scene = default(string), string refreshRecommendationId = default(string), int? limit = default(int?), string maxDrawdownLte = default(string), string backtestAprGte = default(string), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -809,22 +809,22 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 获取 AIHub 策略推荐 discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
+        /// Get AIHub strategy recommendations discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="market">交易对，例如 &#x60;BTC_USDT&#x60; (optional)</param>
-        /// <param name="strategyType">推荐目标策略类型；&#x60;contract_martingale&#x60; 不允许 (optional)</param>
-        /// <param name="direction">行情方向 (optional)</param>
-        /// <param name="investAmount">投入金额，字符串透传 (optional)</param>
-        /// <param name="scene">推荐场景；为空时 bot-service 可按实现逻辑自动推断 (optional)</param>
-        /// <param name="refreshRecommendationId">推荐刷新上下文。&#x60;scene&#x3D;refresh&#x60; 时使用；当 &#x60;scene&#x60; 为空但该字段存在时，bot-service 也会自动判定为 &#x60;refresh&#x60;。 正式最小格式为 &#x60;strategy_type|market&#x60;；若直接透传上一条推荐的 &#x60;recommendation_id&#x60;，第三段 &#x60;backtest_id&#x60; 会被忽略。 (optional)</param>
-        /// <param name="limit">返回数量；&#x60;scene&#x3D;filter&#x60; 时实际结果最多 10 条 (optional)</param>
-        /// <param name="maxDrawdownLte">最大回撤上限 (optional)</param>
-        /// <param name="backtestAprGte">回测年化下限 (optional)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="market">Trading pair, such as &#x60;BTC_USDT&#x60; (optional)</param>
+        /// <param name="strategyType">Recommended target policy type; &#x60;contract_martingale&#x60; not allowed (optional)</param>
+        /// <param name="direction">Market direction (optional)</param>
+        /// <param name="investAmount">Investment amount, string transparent transmission (optional)</param>
+        /// <param name="scene">Recommended scenario; when empty, bot-service can automatically infer according to the implementation logic. (optional)</param>
+        /// <param name="refreshRecommendationId">It is recommended to refresh the context. Used when &#x60;scene&#x3D;refresh&#x60; is used; when &#x60;scene&#x60; is empty but the field exists, bot-service will also automatically determine as &#x60;refresh&#x60;. The official minimum format is &#x60;strategy_type|market&#x60;; if the &#x60;recommendation_id&#x60; of the previous recommendation is directly passed through, the third paragraph &#x60;backtest_id&#x60; will be ignored. (optional)</param>
+        /// <param name="limit">Return quantity; when &#x60;scene&#x3D;filter&#x60; is used, the actual results are up to 10 (optional)</param>
+        /// <param name="maxDrawdownLte">Maximum drawdown limit (optional)</param>
+        /// <param name="backtestAprGte">Backtest annualized lower limit (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubDiscoverSuccessResponse</returns>
         public ApiResponse<AIHubDiscoverSuccessResponse> GetAIHubStrategyRecommendWithHttpInfo (string market = default(string), string strategyType = default(string), string direction = default(string), string investAmount = default(string), string scene = default(string), string refreshRecommendationId = default(string), int? limit = default(int?), string maxDrawdownLte = default(string), string backtestAprGte = default(string), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -913,22 +913,22 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 获取 AIHub 策略推荐 discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
+        /// Get AIHub strategy recommendations discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="market">交易对，例如 &#x60;BTC_USDT&#x60; (optional)</param>
-        /// <param name="strategyType">推荐目标策略类型；&#x60;contract_martingale&#x60; 不允许 (optional)</param>
-        /// <param name="direction">行情方向 (optional)</param>
-        /// <param name="investAmount">投入金额，字符串透传 (optional)</param>
-        /// <param name="scene">推荐场景；为空时 bot-service 可按实现逻辑自动推断 (optional)</param>
-        /// <param name="refreshRecommendationId">推荐刷新上下文。&#x60;scene&#x3D;refresh&#x60; 时使用；当 &#x60;scene&#x60; 为空但该字段存在时，bot-service 也会自动判定为 &#x60;refresh&#x60;。 正式最小格式为 &#x60;strategy_type|market&#x60;；若直接透传上一条推荐的 &#x60;recommendation_id&#x60;，第三段 &#x60;backtest_id&#x60; 会被忽略。 (optional)</param>
-        /// <param name="limit">返回数量；&#x60;scene&#x3D;filter&#x60; 时实际结果最多 10 条 (optional)</param>
-        /// <param name="maxDrawdownLte">最大回撤上限 (optional)</param>
-        /// <param name="backtestAprGte">回测年化下限 (optional)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="market">Trading pair, such as &#x60;BTC_USDT&#x60; (optional)</param>
+        /// <param name="strategyType">Recommended target policy type; &#x60;contract_martingale&#x60; not allowed (optional)</param>
+        /// <param name="direction">Market direction (optional)</param>
+        /// <param name="investAmount">Investment amount, string transparent transmission (optional)</param>
+        /// <param name="scene">Recommended scenario; when empty, bot-service can automatically infer according to the implementation logic. (optional)</param>
+        /// <param name="refreshRecommendationId">It is recommended to refresh the context. Used when &#x60;scene&#x3D;refresh&#x60; is used; when &#x60;scene&#x60; is empty but the field exists, bot-service will also automatically determine as &#x60;refresh&#x60;. The official minimum format is &#x60;strategy_type|market&#x60;; if the &#x60;recommendation_id&#x60; of the previous recommendation is directly passed through, the third paragraph &#x60;backtest_id&#x60; will be ignored. (optional)</param>
+        /// <param name="limit">Return quantity; when &#x60;scene&#x3D;filter&#x60; is used, the actual results are up to 10 (optional)</param>
+        /// <param name="maxDrawdownLte">Maximum drawdown limit (optional)</param>
+        /// <param name="backtestAprGte">Backtest annualized lower limit (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubDiscoverSuccessResponse</returns>
         public async Task<AIHubDiscoverSuccessResponse> GetAIHubStrategyRecommendAsync (string market = default(string), string strategyType = default(string), string direction = default(string), string investAmount = default(string), string scene = default(string), string refreshRecommendationId = default(string), int? limit = default(int?), string maxDrawdownLte = default(string), string backtestAprGte = default(string), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -938,22 +938,22 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 获取 AIHub 策略推荐 discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
+        /// Get AIHub strategy recommendations discover 域唯一正式接口。  支持场景： - &#x60;top1&#x60; - &#x60;bundle&#x60; - &#x60;filter&#x60; - &#x60;refresh&#x60;  约束： - 主动推荐池仅包含 &#x60;spot_grid&#x60;、&#x60;futures_grid&#x60;、&#x60;spot_martingale&#x60; - 可返回但不主动推荐 &#x60;infinite_grid&#x60;、&#x60;margin_grid&#x60; - 不得返回 &#x60;contract_martingale&#x60;、&#x60;smart-position&#x60;、&#x60;spot-future-arbitrage&#x60; - &#x60;scene&#x3D;filter&#x60; 时只允许按 &#x60;market&#x60;、&#x60;backtest_apr_gte&#x60;、&#x60;max_drawdown_lte&#x60; 过滤 - &#x60;scene&#x3D;refresh&#x60; 通过 &#x60;refresh_recommendation_id&#x60; 承接刷新上下文；正式最小格式只要求 &#x60;strategy_type|market&#x60; - 若上游直接透传上一条推荐的 &#x60;recommendation_id&#x60;，其中第三段 &#x60;backtest_id&#x60; 当前会被忽略
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="market">交易对，例如 &#x60;BTC_USDT&#x60; (optional)</param>
-        /// <param name="strategyType">推荐目标策略类型；&#x60;contract_martingale&#x60; 不允许 (optional)</param>
-        /// <param name="direction">行情方向 (optional)</param>
-        /// <param name="investAmount">投入金额，字符串透传 (optional)</param>
-        /// <param name="scene">推荐场景；为空时 bot-service 可按实现逻辑自动推断 (optional)</param>
-        /// <param name="refreshRecommendationId">推荐刷新上下文。&#x60;scene&#x3D;refresh&#x60; 时使用；当 &#x60;scene&#x60; 为空但该字段存在时，bot-service 也会自动判定为 &#x60;refresh&#x60;。 正式最小格式为 &#x60;strategy_type|market&#x60;；若直接透传上一条推荐的 &#x60;recommendation_id&#x60;，第三段 &#x60;backtest_id&#x60; 会被忽略。 (optional)</param>
-        /// <param name="limit">返回数量；&#x60;scene&#x3D;filter&#x60; 时实际结果最多 10 条 (optional)</param>
-        /// <param name="maxDrawdownLte">最大回撤上限 (optional)</param>
-        /// <param name="backtestAprGte">回测年化下限 (optional)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="market">Trading pair, such as &#x60;BTC_USDT&#x60; (optional)</param>
+        /// <param name="strategyType">Recommended target policy type; &#x60;contract_martingale&#x60; not allowed (optional)</param>
+        /// <param name="direction">Market direction (optional)</param>
+        /// <param name="investAmount">Investment amount, string transparent transmission (optional)</param>
+        /// <param name="scene">Recommended scenario; when empty, bot-service can automatically infer according to the implementation logic. (optional)</param>
+        /// <param name="refreshRecommendationId">It is recommended to refresh the context. Used when &#x60;scene&#x3D;refresh&#x60; is used; when &#x60;scene&#x60; is empty but the field exists, bot-service will also automatically determine as &#x60;refresh&#x60;. The official minimum format is &#x60;strategy_type|market&#x60;; if the &#x60;recommendation_id&#x60; of the previous recommendation is directly passed through, the third paragraph &#x60;backtest_id&#x60; will be ignored. (optional)</param>
+        /// <param name="limit">Return quantity; when &#x60;scene&#x3D;filter&#x60; is used, the actual results are up to 10 (optional)</param>
+        /// <param name="maxDrawdownLte">Maximum drawdown limit (optional)</param>
+        /// <param name="backtestAprGte">Backtest annualized lower limit (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubDiscoverSuccessResponse)</returns>
         public async Task<ApiResponse<AIHubDiscoverSuccessResponse>> GetAIHubStrategyRecommendAsyncWithHttpInfo (string market = default(string), string strategyType = default(string), string direction = default(string), string investAmount = default(string), string scene = default(string), string refreshRecommendationId = default(string), int? limit = default(int?), string maxDrawdownLte = default(string), string backtestAprGte = default(string), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1044,14 +1044,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建现货网格 根据传入参数创建现货网格策略。
+        /// Create spot grid Create a spot grid strategy based on the incoming parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         public AIHubCreateSuccessResponse PostAIHubSpotGridCreate (SpotGridCreateRequest spotGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1060,14 +1060,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建现货网格 根据传入参数创建现货网格策略。
+        /// Create spot grid Create a spot grid strategy based on the incoming parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         public ApiResponse<AIHubCreateSuccessResponse> PostAIHubSpotGridCreateWithHttpInfo (SpotGridCreateRequest spotGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1126,14 +1126,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建现货网格 根据传入参数创建现货网格策略。
+        /// Create spot grid Create a spot grid strategy based on the incoming parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         public async Task<AIHubCreateSuccessResponse> PostAIHubSpotGridCreateAsync (SpotGridCreateRequest spotGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1143,14 +1143,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建现货网格 根据传入参数创建现货网格策略。
+        /// Create spot grid Create a spot grid strategy based on the incoming parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         public async Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubSpotGridCreateAsyncWithHttpInfo (SpotGridCreateRequest spotGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1211,14 +1211,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建杠杆网格 根据传入参数创建杠杆网格策略。
+        /// Create a lever grid Create a leverage grid strategy based on the passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marginGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         public AIHubCreateSuccessResponse PostAIHubMarginGridCreate (MarginGridCreateRequest marginGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1227,14 +1227,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建杠杆网格 根据传入参数创建杠杆网格策略。
+        /// Create a lever grid Create a leverage grid strategy based on the passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marginGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         public ApiResponse<AIHubCreateSuccessResponse> PostAIHubMarginGridCreateWithHttpInfo (MarginGridCreateRequest marginGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1293,14 +1293,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建杠杆网格 根据传入参数创建杠杆网格策略。
+        /// Create a lever grid Create a leverage grid strategy based on the passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marginGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         public async Task<AIHubCreateSuccessResponse> PostAIHubMarginGridCreateAsync (MarginGridCreateRequest marginGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1310,14 +1310,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建杠杆网格 根据传入参数创建杠杆网格策略。
+        /// Create a lever grid Create a leverage grid strategy based on the passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="marginGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         public async Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubMarginGridCreateAsyncWithHttpInfo (MarginGridCreateRequest marginGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1378,14 +1378,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建无限网格 根据传入参数创建无限网格策略。
+        /// Create infinite grid Create an infinite grid strategy based on passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="infiniteGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         public AIHubCreateSuccessResponse PostAIHubInfiniteGridCreate (InfiniteGridCreateRequest infiniteGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1394,14 +1394,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建无限网格 根据传入参数创建无限网格策略。
+        /// Create infinite grid Create an infinite grid strategy based on passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="infiniteGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         public ApiResponse<AIHubCreateSuccessResponse> PostAIHubInfiniteGridCreateWithHttpInfo (InfiniteGridCreateRequest infiniteGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1460,14 +1460,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建无限网格 根据传入参数创建无限网格策略。
+        /// Create infinite grid Create an infinite grid strategy based on passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="infiniteGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         public async Task<AIHubCreateSuccessResponse> PostAIHubInfiniteGridCreateAsync (InfiniteGridCreateRequest infiniteGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1477,14 +1477,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建无限网格 根据传入参数创建无限网格策略。
+        /// Create infinite grid Create an infinite grid strategy based on passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="infiniteGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         public async Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubInfiniteGridCreateAsyncWithHttpInfo (InfiniteGridCreateRequest infiniteGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1545,14 +1545,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建合约网格 根据传入参数创建合约网格策略。
+        /// Create a contract grid Create a contract grid strategy based on the incoming parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="futuresGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         public AIHubCreateSuccessResponse PostAIHubFuturesGridCreate (FuturesGridCreateRequest futuresGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1561,14 +1561,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建合约网格 根据传入参数创建合约网格策略。
+        /// Create a contract grid Create a contract grid strategy based on the incoming parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="futuresGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         public ApiResponse<AIHubCreateSuccessResponse> PostAIHubFuturesGridCreateWithHttpInfo (FuturesGridCreateRequest futuresGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1627,14 +1627,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建合约网格 根据传入参数创建合约网格策略。
+        /// Create a contract grid Create a contract grid strategy based on the incoming parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="futuresGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         public async Task<AIHubCreateSuccessResponse> PostAIHubFuturesGridCreateAsync (FuturesGridCreateRequest futuresGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1644,14 +1644,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建合约网格 根据传入参数创建合约网格策略。
+        /// Create a contract grid Create a contract grid strategy based on the incoming parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="futuresGridCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         public async Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubFuturesGridCreateAsyncWithHttpInfo (FuturesGridCreateRequest futuresGridCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1712,14 +1712,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建现货马丁 根据传入参数创建现货马丁策略。
+        /// Create Spot Martin Create a spot Martin strategy based on the passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         public AIHubCreateSuccessResponse PostAIHubSpotMartingaleCreate (SpotMartingaleCreateRequest spotMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1728,14 +1728,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建现货马丁 根据传入参数创建现货马丁策略。
+        /// Create Spot Martin Create a spot Martin strategy based on the passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         public ApiResponse<AIHubCreateSuccessResponse> PostAIHubSpotMartingaleCreateWithHttpInfo (SpotMartingaleCreateRequest spotMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1794,14 +1794,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建现货马丁 根据传入参数创建现货马丁策略。
+        /// Create Spot Martin Create a spot Martin strategy based on the passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         public async Task<AIHubCreateSuccessResponse> PostAIHubSpotMartingaleCreateAsync (SpotMartingaleCreateRequest spotMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1811,14 +1811,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建现货马丁 根据传入参数创建现货马丁策略。
+        /// Create Spot Martin Create a spot Martin strategy based on the passed parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         public async Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubSpotMartingaleCreateAsyncWithHttpInfo (SpotMartingaleCreateRequest spotMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1879,14 +1879,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建合约马丁 根据传入参数创建合约马丁策略。
+        /// Create contract martin Create a contract Martin strategy based on the input parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contractMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubCreateSuccessResponse</returns>
         public AIHubCreateSuccessResponse PostAIHubContractMartingaleCreate (ContractMartingaleCreateRequest contractMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1895,14 +1895,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建合约马丁 根据传入参数创建合约马丁策略。
+        /// Create contract martin Create a contract Martin strategy based on the input parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contractMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         public ApiResponse<AIHubCreateSuccessResponse> PostAIHubContractMartingaleCreateWithHttpInfo (ContractMartingaleCreateRequest contractMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1961,14 +1961,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建合约马丁 根据传入参数创建合约马丁策略。
+        /// Create contract martin Create a contract Martin strategy based on the input parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contractMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubCreateSuccessResponse</returns>
         public async Task<AIHubCreateSuccessResponse> PostAIHubContractMartingaleCreateAsync (ContractMartingaleCreateRequest contractMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -1978,14 +1978,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 创建合约马丁 根据传入参数创建合约马丁策略。
+        /// Create contract martin Create a contract Martin strategy based on the input parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contractMartingaleCreateRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         public async Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubContractMartingaleCreateAsyncWithHttpInfo (ContractMartingaleCreateRequest contractMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2046,17 +2046,17 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 查询运行中策略列表 查询当前用户运行中的 AIHub 策略列表，支持按策略类型、交易对和分页条件过滤。
+        /// Query the list of running policies Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyType">按策略类型过滤 (optional)</param>
-        /// <param name="market">按交易对过滤 (optional)</param>
-        /// <param name="page">页码，默认 1 (optional, default to 1)</param>
-        /// <param name="pageSize">分页大小，默认 20，最大 50 (optional, default to 20)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyType">Filter by policy type (optional)</param>
+        /// <param name="market">Filter by trading pair (optional)</param>
+        /// <param name="page">Page number, default 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Paging size, default 20, maximum 50 (optional, default to 20)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubPortfolioRunningSuccessResponse</returns>
         public AIHubPortfolioRunningSuccessResponse GetAIHubPortfolioRunning (string strategyType = default(string), string market = default(string), int? page = default(int?), int? pageSize = default(int?), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2065,17 +2065,17 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 查询运行中策略列表 查询当前用户运行中的 AIHub 策略列表，支持按策略类型、交易对和分页条件过滤。
+        /// Query the list of running policies Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyType">按策略类型过滤 (optional)</param>
-        /// <param name="market">按交易对过滤 (optional)</param>
-        /// <param name="page">页码，默认 1 (optional, default to 1)</param>
-        /// <param name="pageSize">分页大小，默认 20，最大 50 (optional, default to 20)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyType">Filter by policy type (optional)</param>
+        /// <param name="market">Filter by trading pair (optional)</param>
+        /// <param name="page">Page number, default 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Paging size, default 20, maximum 50 (optional, default to 20)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubPortfolioRunningSuccessResponse</returns>
         public ApiResponse<AIHubPortfolioRunningSuccessResponse> GetAIHubPortfolioRunningWithHttpInfo (string strategyType = default(string), string market = default(string), int? page = default(int?), int? pageSize = default(int?), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2144,17 +2144,17 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 查询运行中策略列表 查询当前用户运行中的 AIHub 策略列表，支持按策略类型、交易对和分页条件过滤。
+        /// Query the list of running policies Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyType">按策略类型过滤 (optional)</param>
-        /// <param name="market">按交易对过滤 (optional)</param>
-        /// <param name="page">页码，默认 1 (optional, default to 1)</param>
-        /// <param name="pageSize">分页大小，默认 20，最大 50 (optional, default to 20)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyType">Filter by policy type (optional)</param>
+        /// <param name="market">Filter by trading pair (optional)</param>
+        /// <param name="page">Page number, default 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Paging size, default 20, maximum 50 (optional, default to 20)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubPortfolioRunningSuccessResponse</returns>
         public async Task<AIHubPortfolioRunningSuccessResponse> GetAIHubPortfolioRunningAsync (string strategyType = default(string), string market = default(string), int? page = default(int?), int? pageSize = default(int?), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2164,17 +2164,17 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 查询运行中策略列表 查询当前用户运行中的 AIHub 策略列表，支持按策略类型、交易对和分页条件过滤。
+        /// Query the list of running policies Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyType">按策略类型过滤 (optional)</param>
-        /// <param name="market">按交易对过滤 (optional)</param>
-        /// <param name="page">页码，默认 1 (optional, default to 1)</param>
-        /// <param name="pageSize">分页大小，默认 20，最大 50 (optional, default to 20)</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyType">Filter by policy type (optional)</param>
+        /// <param name="market">Filter by trading pair (optional)</param>
+        /// <param name="page">Page number, default 1 (optional, default to 1)</param>
+        /// <param name="pageSize">Paging size, default 20, maximum 50 (optional, default to 20)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubPortfolioRunningSuccessResponse)</returns>
         public async Task<ApiResponse<AIHubPortfolioRunningSuccessResponse>> GetAIHubPortfolioRunningAsyncWithHttpInfo (string strategyType = default(string), string market = default(string), int? page = default(int?), int? pageSize = default(int?), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2245,15 +2245,15 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 查询单策略详情 请求中必须同时传 &#x60;strategy_id&#x60; 与 &#x60;strategy_type&#x60;，其中 &#x60;strategy_type&#x60; 用于按策略类型分发到底层详情实现。
+        /// Query order policy details Both &#x60;strategy_id&#x60; and &#x60;strategy_type&#x60; must be passed in the request, where &#x60;strategy_type&#x60; is used to distribute to the underlying detailed implementation by strategy type.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyId">策略 ID</param>
-        /// <param name="strategyType">策略类型；用于底层详情分发</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyId">Policy ID</param>
+        /// <param name="strategyType">Policy type; used for underlying detail distribution</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubPortfolioDetailSuccessResponse</returns>
         public AIHubPortfolioDetailSuccessResponse GetAIHubPortfolioDetail (string strategyId, string strategyType, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2262,15 +2262,15 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 查询单策略详情 请求中必须同时传 &#x60;strategy_id&#x60; 与 &#x60;strategy_type&#x60;，其中 &#x60;strategy_type&#x60; 用于按策略类型分发到底层详情实现。
+        /// Query order policy details Both &#x60;strategy_id&#x60; and &#x60;strategy_type&#x60; must be passed in the request, where &#x60;strategy_type&#x60; is used to distribute to the underlying detailed implementation by strategy type.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyId">策略 ID</param>
-        /// <param name="strategyType">策略类型；用于底层详情分发</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyId">Policy ID</param>
+        /// <param name="strategyType">Policy type; used for underlying detail distribution</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubPortfolioDetailSuccessResponse</returns>
         public ApiResponse<AIHubPortfolioDetailSuccessResponse> GetAIHubPortfolioDetailWithHttpInfo (string strategyId, string strategyType, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2333,15 +2333,15 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 查询单策略详情 请求中必须同时传 &#x60;strategy_id&#x60; 与 &#x60;strategy_type&#x60;，其中 &#x60;strategy_type&#x60; 用于按策略类型分发到底层详情实现。
+        /// Query order policy details Both &#x60;strategy_id&#x60; and &#x60;strategy_type&#x60; must be passed in the request, where &#x60;strategy_type&#x60; is used to distribute to the underlying detailed implementation by strategy type.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyId">策略 ID</param>
-        /// <param name="strategyType">策略类型；用于底层详情分发</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyId">Policy ID</param>
+        /// <param name="strategyType">Policy type; used for underlying detail distribution</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubPortfolioDetailSuccessResponse</returns>
         public async Task<AIHubPortfolioDetailSuccessResponse> GetAIHubPortfolioDetailAsync (string strategyId, string strategyType, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2351,15 +2351,15 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 查询单策略详情 请求中必须同时传 &#x60;strategy_id&#x60; 与 &#x60;strategy_type&#x60;，其中 &#x60;strategy_type&#x60; 用于按策略类型分发到底层详情实现。
+        /// Query order policy details Both &#x60;strategy_id&#x60; and &#x60;strategy_type&#x60; must be passed in the request, where &#x60;strategy_type&#x60; is used to distribute to the underlying detailed implementation by strategy type.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="strategyId">策略 ID</param>
-        /// <param name="strategyType">策略类型；用于底层详情分发</param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="strategyId">Policy ID</param>
+        /// <param name="strategyType">Policy type; used for underlying detail distribution</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubPortfolioDetailSuccessResponse)</returns>
         public async Task<ApiResponse<AIHubPortfolioDetailSuccessResponse>> GetAIHubPortfolioDetailAsyncWithHttpInfo (string strategyId, string strategyType, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2424,14 +2424,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 终止单个运行中策略 单次请求只允许终止一个策略。 风险提示与二次确认由 OpenClaw 上层承担；本接口只负责执行 stop。
+        /// Terminate a single running policy Only one policy is allowed to be terminated per request. Risk warning and secondary confirmation are borne by the upper layer of OpenClaw; this interface is only responsible for executing stop.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="aIHubPortfolioStopRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>AIHubPortfolioStopSuccessResponse</returns>
         public AIHubPortfolioStopSuccessResponse PostAIHubPortfolioStop (AIHubPortfolioStopRequest aIHubPortfolioStopRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2440,14 +2440,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 终止单个运行中策略 单次请求只允许终止一个策略。 风险提示与二次确认由 OpenClaw 上层承担；本接口只负责执行 stop。
+        /// Terminate a single running policy Only one policy is allowed to be terminated per request. Risk warning and secondary confirmation are borne by the upper layer of OpenClaw; this interface is only responsible for executing stop.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="aIHubPortfolioStopRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>ApiResponse of AIHubPortfolioStopSuccessResponse</returns>
         public ApiResponse<AIHubPortfolioStopSuccessResponse> PostAIHubPortfolioStopWithHttpInfo (AIHubPortfolioStopRequest aIHubPortfolioStopRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2506,14 +2506,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 终止单个运行中策略 单次请求只允许终止一个策略。 风险提示与二次确认由 OpenClaw 上层承担；本接口只负责执行 stop。
+        /// Terminate a single running policy Only one policy is allowed to be terminated per request. Risk warning and secondary confirmation are borne by the upper layer of OpenClaw; this interface is only responsible for executing stop.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="aIHubPortfolioStopRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of AIHubPortfolioStopSuccessResponse</returns>
         public async Task<AIHubPortfolioStopSuccessResponse> PostAIHubPortfolioStopAsync (AIHubPortfolioStopRequest aIHubPortfolioStopRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {
@@ -2523,14 +2523,14 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// 终止单个运行中策略 单次请求只允许终止一个策略。 风险提示与二次确认由 OpenClaw 上层承担；本接口只负责执行 stop。
+        /// Terminate a single running policy Only one policy is allowed to be terminated per request. Risk warning and secondary confirmation are borne by the upper layer of OpenClaw; this interface is only responsible for executing stop.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="aIHubPortfolioStopRequest"></param>
-        /// <param name="xGateServiceId">调用来源标识；如有需要由 APIv4 注入 (optional)</param>
-        /// <param name="xGateAppLang">语言上下文，例如 &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
-        /// <param name="xRequestId">请求链路 ID；调用方可透传 (optional)</param>
-        /// <param name="xTraceId">trace header；可由 APIv4 统一生成 (optional)</param>
+        /// <param name="xGateServiceId">Call source identifier; injected by APIv4 if necessary (optional)</param>
+        /// <param name="xGateAppLang">Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; (optional)</param>
+        /// <param name="xRequestId">Request link ID; caller can transmit transparently (optional)</param>
+        /// <param name="xTraceId">trace header; can be generated uniformly by APIv4 (optional)</param>
         /// <returns>Task of ApiResponse (AIHubPortfolioStopSuccessResponse)</returns>
         public async Task<ApiResponse<AIHubPortfolioStopSuccessResponse>> PostAIHubPortfolioStopAsyncWithHttpInfo (AIHubPortfolioStopRequest aIHubPortfolioStopRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string))
         {

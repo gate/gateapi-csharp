@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 参与活动响应
+    /// Participate in event response
     /// </summary>
     [DataContract]
     public partial class HodlerAirdropV4OrderResponse :  IEquatable<HodlerAirdropV4OrderResponse>, IValidatableObject
@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="HodlerAirdropV4OrderResponse" /> class.
         /// </summary>
-        /// <param name="interestCoin">获得空投的币种列表 (required).</param>
+        /// <param name="interestCoin">Get the list of airdropped currencies (required).</param>
         public HodlerAirdropV4OrderResponse(List<string> interestCoin = default(List<string>))
         {
             // to ensure "interestCoin" is required (not null)
@@ -46,9 +46,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 获得空投的币种列表
+        /// Get the list of airdropped currencies
         /// </summary>
-        /// <value>获得空投的币种列表</value>
+        /// <value>Get the list of airdropped currencies</value>
         [DataMember(Name="interest_coin")]
         public List<string> InterestCoin { get; set; }
 

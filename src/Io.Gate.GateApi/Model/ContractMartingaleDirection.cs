@@ -25,9 +25,9 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 合约马丁策略支持的方向枚举，和 App 原始接口保持一致。
+    /// The direction enumeration supported by the contract Martin strategy is consistent with the original interface of the App.
     /// </summary>
-    /// <value>合约马丁策略支持的方向枚举，和 App 原始接口保持一致。</value>
+    /// <value>The direction enumeration supported by the contract Martin strategy is consistent with the original interface of the App.</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 预览请求的卖出侧单项：币种 + 数量。语义与 &#x60;CreateParam&#x60; 在 &#x60;from&#x60; 侧类似（均为 &#x60;asset&#x60; + &#x60;amount&#x60;）。
+    /// Preview the selling side of the request: currency + quantity. The semantics are similar to &#x60;CreateParam&#x60; on the &#x60;from&#x60; side (both &#x60;asset&#x60; + &#x60;amount&#x60;).
     /// </summary>
     [DataContract]
     public partial class PreviewFromParam :  IEquatable<PreviewFromParam>, IValidatableObject
@@ -38,8 +38,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PreviewFromParam" /> class.
         /// </summary>
-        /// <param name="asset">要换出的币种符号。 (required).</param>
-        /// <param name="amount">该币种换出数量，十进制字符串。 (required).</param>
+        /// <param name="asset">The currency symbol to be swapped out. (required).</param>
+        /// <param name="amount">The currency swap quantity, decimal string. (required).</param>
         public PreviewFromParam(string asset = default(string), string amount = default(string))
         {
             // to ensure "asset" is required (not null)
@@ -49,16 +49,16 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 要换出的币种符号。
+        /// The currency symbol to be swapped out.
         /// </summary>
-        /// <value>要换出的币种符号。</value>
+        /// <value>The currency symbol to be swapped out.</value>
         [DataMember(Name="asset")]
         public string Asset { get; set; }
 
         /// <summary>
-        /// 该币种换出数量，十进制字符串。
+        /// The currency swap quantity, decimal string.
         /// </summary>
-        /// <value>该币种换出数量，十进制字符串。</value>
+        /// <value>The currency swap quantity, decimal string.</value>
         [DataMember(Name="amount")]
         public string Amount { get; set; }
 

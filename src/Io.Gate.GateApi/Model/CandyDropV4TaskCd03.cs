@@ -33,9 +33,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CandyDropV4TaskCd03" /> class.
         /// </summary>
-        /// <param name="taskName">任务主标题.</param>
-        /// <param name="taskDesc">任务副标题，无则返回 -.</param>
-        /// <param name="exclusiveLabel">专属任务标签文案，未配置则返回 -.</param>
+        /// <param name="taskName">Task main title.</param>
+        /// <param name="taskDesc">Task subtitle, if none is returned -.</param>
+        /// <param name="exclusiveLabel">Exclusive task label copywriting, if not configured, it will return -.</param>
         public CandyDropV4TaskCd03(string taskName = default(string), string taskDesc = default(string), string exclusiveLabel = default(string))
         {
             this.TaskName = taskName;
@@ -44,23 +44,23 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 任务主标题
+        /// Task main title
         /// </summary>
-        /// <value>任务主标题</value>
+        /// <value>Task main title</value>
         [DataMember(Name="task_name")]
         public string TaskName { get; set; }
 
         /// <summary>
-        /// 任务副标题，无则返回 -
+        /// Task subtitle, if none is returned -
         /// </summary>
-        /// <value>任务副标题，无则返回 -</value>
+        /// <value>Task subtitle, if none is returned -</value>
         [DataMember(Name="task_desc")]
         public string TaskDesc { get; set; }
 
         /// <summary>
-        /// 专属任务标签文案，未配置则返回 -
+        /// Exclusive task label copywriting, if not configured, it will return -
         /// </summary>
-        /// <value>专属任务标签文案，未配置则返回 -</value>
+        /// <value>Exclusive task label copywriting, if not configured, it will return -</value>
         [DataMember(Name="exclusive_label")]
         public string ExclusiveLabel { get; set; }
 

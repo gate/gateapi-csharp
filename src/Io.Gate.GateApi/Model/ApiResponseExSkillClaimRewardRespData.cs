@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 领取奖励结果
+    /// Get reward results
     /// </summary>
     [DataContract]
     public partial class ApiResponseExSkillClaimRewardRespData :  IEquatable<ApiResponseExSkillClaimRewardRespData>, IValidatableObject
@@ -33,8 +33,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseExSkillClaimRewardRespData" /> class.
         /// </summary>
-        /// <param name="hasMNTask">是否为 m 选 n 奖池任务。为 true 时仅提示跳转，不实际发奖.</param>
-        /// <param name="couponFullName">卡券奖励全称。非卡券奖励或无法解析时为空字符串.</param>
+        /// <param name="hasMNTask">Whether to choose n prize pool tasks for m. When it is true, it only prompts a jump and does not actually issue prizes..</param>
+        /// <param name="couponFullName">The full name of the card reward. It is an empty string when it is not a coupon reward or cannot be parsed..</param>
         public ApiResponseExSkillClaimRewardRespData(bool hasMNTask = default(bool), string couponFullName = default(string))
         {
             this.HasMNTask = hasMNTask;
@@ -42,16 +42,16 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 是否为 m 选 n 奖池任务。为 true 时仅提示跳转，不实际发奖
+        /// Whether to choose n prize pool tasks for m. When it is true, it only prompts a jump and does not actually issue prizes.
         /// </summary>
-        /// <value>是否为 m 选 n 奖池任务。为 true 时仅提示跳转，不实际发奖</value>
+        /// <value>Whether to choose n prize pool tasks for m. When it is true, it only prompts a jump and does not actually issue prizes.</value>
         [DataMember(Name="has_m_n_task")]
         public bool HasMNTask { get; set; }
 
         /// <summary>
-        /// 卡券奖励全称。非卡券奖励或无法解析时为空字符串
+        /// The full name of the card reward. It is an empty string when it is not a coupon reward or cannot be parsed.
         /// </summary>
-        /// <value>卡券奖励全称。非卡券奖励或无法解析时为空字符串</value>
+        /// <value>The full name of the card reward. It is an empty string when it is not a coupon reward or cannot be parsed.</value>
         [DataMember(Name="coupon_full_name")]
         public string CouponFullName { get; set; }
 

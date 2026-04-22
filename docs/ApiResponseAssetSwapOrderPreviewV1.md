@@ -1,16 +1,16 @@
 
 # Io.Gate.GateApi.Model.ApiResponseAssetSwapOrderPreviewV1
 
-资产配置优化-预览统一响应
+Asset allocation optimization-preview unified response
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | **int** | 业务错误码，0 表示成功 | 
-**Label** | **string** | 错误标识码，成功时为空字符串 | [optional] 
-**Message** | **string** | 描述信息 | 
-**Data** | [**OrderPreviewV1Resp**](OrderPreviewV1Resp.md) | 成功时为预览结果，失败时为 null | 
+**Code** | **int** | Business error code, 0 means success | 
+**Label** | **string** | Error identification code, empty string on success | [optional] 
+**Message** | **string** | Description information | 
+**Data** | [**OrderPreviewV1Resp**](OrderPreviewV1Resp.md) | Preview result when successful, null when failed | 
 **Timestamp** | **long** | Server timestamp (milliseconds) | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

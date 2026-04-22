@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 入门任务信息。&#x60;task_center_id&#x60; 与 &#x60;status&#x60; 列入 required：二者均允许为 0（注册任务、待领取下载任务）， 且避免 Go SDK 对整型零值使用 omitempty 导致客户端序列化时丢失字段。
+    /// Getting started mission information. &#x60;task_center_id&#x60; and &#x60;status&#x60; are included in required: both are allowed to be 0 (registration tasks, download tasks to be received), And avoid Go SDK using omitempty for integer zero values, which will cause fields to be lost during client serialization.
     /// </summary>
     [DataContract]
     public partial class ApiResponseExSkillGetBeginnerTaskListRespDataTasks :  IEquatable<ApiResponseExSkillGetBeginnerTaskListRespDataTasks>, IValidatableObject
@@ -61,9 +61,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="prize_type")]
         public PrizeTypeEnum? PrizeType { get; set; }
         /// <summary>
-        /// 任务状态：0&#x3D;未领取（典型为待领取下载任务） 1&#x3D;已领取/进行中 2&#x3D;已完成待领奖 3&#x3D;发奖中 4&#x3D;已完成/已结算 5&#x3D;已过期
+        /// Task status: 0&#x3D;Not claimed (typically a download task waiting to be claimed) 1&#x3D;Received/in progress 2&#x3D;Completed and waiting to be claimed 3&#x3D;Rewards in progress 4&#x3D;Completed/settled 5&#x3D;Expired
         /// </summary>
-        /// <value>任务状态：0&#x3D;未领取（典型为待领取下载任务） 1&#x3D;已领取/进行中 2&#x3D;已完成待领奖 3&#x3D;发奖中 4&#x3D;已完成/已结算 5&#x3D;已过期</value>
+        /// <value>Task status: 0&#x3D;Not claimed (typically a download task waiting to be claimed) 1&#x3D;Received/in progress 2&#x3D;Completed and waiting to be claimed 3&#x3D;Rewards in progress 4&#x3D;Completed/settled 5&#x3D;Expired</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -100,9 +100,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 任务状态：0&#x3D;未领取（典型为待领取下载任务） 1&#x3D;已领取/进行中 2&#x3D;已完成待领奖 3&#x3D;发奖中 4&#x3D;已完成/已结算 5&#x3D;已过期
+        /// Task status: 0&#x3D;Not claimed (typically a download task waiting to be claimed) 1&#x3D;Received/in progress 2&#x3D;Completed and waiting to be claimed 3&#x3D;Rewards in progress 4&#x3D;Completed/settled 5&#x3D;Expired
         /// </summary>
-        /// <value>任务状态：0&#x3D;未领取（典型为待领取下载任务） 1&#x3D;已领取/进行中 2&#x3D;已完成待领奖 3&#x3D;发奖中 4&#x3D;已完成/已结算 5&#x3D;已过期</value>
+        /// <value>Task status: 0&#x3D;Not claimed (typically a download task waiting to be claimed) 1&#x3D;Received/in progress 2&#x3D;Completed and waiting to be claimed 3&#x3D;Rewards in progress 4&#x3D;Completed/settled 5&#x3D;Expired</value>
         [DataMember(Name="status")]
         public StatusEnum Status { get; set; }
         /// <summary>
@@ -115,13 +115,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="welfareTaskId">Rewards Center task ID.</param>
         /// <param name="taskCenterId">Task center task ID (fixed at 0 for registration tasks) (required).</param>
-        /// <param name="taskType">任务类型：1&#x3D;KYC二级认证 2&#x3D;现货 3&#x3D;合约 4&#x3D;邀请 5&#x3D;量化 6&#x3D;余币宝 7&#x3D;startup 8&#x3D;首次入金 10&#x3D;注册任务 11&#x3D;引导任务 23&#x3D;下载任务.</param>
+        /// <param name="taskType">Task type: 1&#x3D;KYC secondary certification 2&#x3D;Spot 3&#x3D;Contract 4&#x3D;Invitation 5&#x3D;Quantification 6&#x3D;Yu Bibao 7&#x3D;startup 8&#x3D;First deposit 10&#x3D;Registration task 11&#x3D;Guide task 23&#x3D;Download task.</param>
         /// <param name="taskName">Task name.</param>
         /// <param name="taskDesc">Task description, may contain &lt;span&gt; highlight tags.</param>
         /// <param name="rewardNum">Reward value.</param>
         /// <param name="rewardUnit">Reward unit (e.g., USDT, BTC).</param>
         /// <param name="prizeType">Reward type: 1 &#x3D; points, 2 &#x3D; regular coupon, 3 &#x3D; VIP coupon.</param>
-        /// <param name="status">任务状态：0&#x3D;未领取（典型为待领取下载任务） 1&#x3D;已领取/进行中 2&#x3D;已完成待领奖 3&#x3D;发奖中 4&#x3D;已完成/已结算 5&#x3D;已过期 (required).</param>
+        /// <param name="status">Task status: 0&#x3D;Not claimed (typically a download task waiting to be claimed) 1&#x3D;Received/in progress 2&#x3D;Completed and waiting to be claimed 3&#x3D;Rewards in progress 4&#x3D;Completed/settled 5&#x3D;Expired (required).</param>
         public ApiResponseExSkillGetBeginnerTaskListRespDataTasks(long welfareTaskId = default(long), long taskCenterId = default(long), int taskType = default(int), string taskName = default(string), string taskDesc = default(string), string rewardNum = default(string), string rewardUnit = default(string), PrizeTypeEnum? prizeType = default(PrizeTypeEnum?), StatusEnum status = default(StatusEnum))
         {
             this.TaskCenterId = taskCenterId;
@@ -150,9 +150,9 @@ namespace Io.Gate.GateApi.Model
         public long TaskCenterId { get; set; }
 
         /// <summary>
-        /// 任务类型：1&#x3D;KYC二级认证 2&#x3D;现货 3&#x3D;合约 4&#x3D;邀请 5&#x3D;量化 6&#x3D;余币宝 7&#x3D;startup 8&#x3D;首次入金 10&#x3D;注册任务 11&#x3D;引导任务 23&#x3D;下载任务
+        /// Task type: 1&#x3D;KYC secondary certification 2&#x3D;Spot 3&#x3D;Contract 4&#x3D;Invitation 5&#x3D;Quantification 6&#x3D;Yu Bibao 7&#x3D;startup 8&#x3D;First deposit 10&#x3D;Registration task 11&#x3D;Guide task 23&#x3D;Download task
         /// </summary>
-        /// <value>任务类型：1&#x3D;KYC二级认证 2&#x3D;现货 3&#x3D;合约 4&#x3D;邀请 5&#x3D;量化 6&#x3D;余币宝 7&#x3D;startup 8&#x3D;首次入金 10&#x3D;注册任务 11&#x3D;引导任务 23&#x3D;下载任务</value>
+        /// <value>Task type: 1&#x3D;KYC secondary certification 2&#x3D;Spot 3&#x3D;Contract 4&#x3D;Invitation 5&#x3D;Quantification 6&#x3D;Yu Bibao 7&#x3D;startup 8&#x3D;First deposit 10&#x3D;Registration task 11&#x3D;Guide task 23&#x3D;Download task</value>
         [DataMember(Name="task_type")]
         public int TaskType { get; set; }
 

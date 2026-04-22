@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// v4接口统一错误响应
+    /// v4 interface unified error response
     /// </summary>
     [DataContract]
     public partial class HodlerAirdropV4ErrorResponse :  IEquatable<HodlerAirdropV4ErrorResponse>, IValidatableObject
@@ -96,7 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="HodlerAirdropV4ErrorResponse" /> class.
         /// </summary>
         /// <param name="label">Error label (required).</param>
-        /// <param name="message">错误信息（多语言） (required).</param>
+        /// <param name="message">Error messages (multilingual) (required).</param>
         public HodlerAirdropV4ErrorResponse(LabelEnum label = default(LabelEnum), string message = default(string))
         {
             this.Label = label;
@@ -105,9 +105,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 错误信息（多语言）
+        /// Error messages (multilingual)
         /// </summary>
-        /// <value>错误信息（多语言）</value>
+        /// <value>Error messages (multilingual)</value>
         [DataMember(Name="message")]
         public string Message { get; set; }
 

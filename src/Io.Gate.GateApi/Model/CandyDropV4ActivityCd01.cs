@@ -34,13 +34,13 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="CandyDropV4ActivityCd01" /> class.
         /// </summary>
         /// <param name="id">Activity ID.</param>
-        /// <param name="currency">项目/币种名称.</param>
-        /// <param name="totalRewards">总奖池.</param>
-        /// <param name="startTime">活动开始时间（UTC格式化）.</param>
-        /// <param name="endTime">活动结束时间（UTC格式化）.</param>
-        /// <param name="ruleName">任务类型列表.</param>
-        /// <param name="participants">参与人数.</param>
-        /// <param name="userMaxRewards">最高可得奖励.</param>
+        /// <param name="currency">Project/currency name.</param>
+        /// <param name="totalRewards">total prize pool.</param>
+        /// <param name="startTime">Event start time (UTC formatted).</param>
+        /// <param name="endTime">Event end time (UTC format).</param>
+        /// <param name="ruleName">Task type list.</param>
+        /// <param name="participants">Number of participants.</param>
+        /// <param name="userMaxRewards">Maximum reward available.</param>
         public CandyDropV4ActivityCd01(long id = default(long), string currency = default(string), string totalRewards = default(string), string startTime = default(string), string endTime = default(string), List<string> ruleName = default(List<string>), long participants = default(long), string userMaxRewards = default(string))
         {
             this.Id = id;
@@ -61,51 +61,51 @@ namespace Io.Gate.GateApi.Model
         public long Id { get; set; }
 
         /// <summary>
-        /// 项目/币种名称
+        /// Project/currency name
         /// </summary>
-        /// <value>项目/币种名称</value>
+        /// <value>Project/currency name</value>
         [DataMember(Name="currency")]
         public string Currency { get; set; }
 
         /// <summary>
-        /// 总奖池
+        /// total prize pool
         /// </summary>
-        /// <value>总奖池</value>
+        /// <value>total prize pool</value>
         [DataMember(Name="total_rewards")]
         public string TotalRewards { get; set; }
 
         /// <summary>
-        /// 活动开始时间（UTC格式化）
+        /// Event start time (UTC formatted)
         /// </summary>
-        /// <value>活动开始时间（UTC格式化）</value>
+        /// <value>Event start time (UTC formatted)</value>
         [DataMember(Name="start_time")]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 活动结束时间（UTC格式化）
+        /// Event end time (UTC format)
         /// </summary>
-        /// <value>活动结束时间（UTC格式化）</value>
+        /// <value>Event end time (UTC format)</value>
         [DataMember(Name="end_time")]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 任务类型列表
+        /// Task type list
         /// </summary>
-        /// <value>任务类型列表</value>
+        /// <value>Task type list</value>
         [DataMember(Name="rule_name")]
         public List<string> RuleName { get; set; }
 
         /// <summary>
-        /// 参与人数
+        /// Number of participants
         /// </summary>
-        /// <value>参与人数</value>
+        /// <value>Number of participants</value>
         [DataMember(Name="participants")]
         public long Participants { get; set; }
 
         /// <summary>
-        /// 最高可得奖励
+        /// Maximum reward available
         /// </summary>
-        /// <value>最高可得奖励</value>
+        /// <value>Maximum reward available</value>
         [DataMember(Name="user_max_rewards")]
         public string UserMaxRewards { get; set; }
 

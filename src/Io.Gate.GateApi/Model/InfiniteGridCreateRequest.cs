@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 创建无限网格策略的请求体。
+    /// Create the request body for the infinite grid policy.
     /// </summary>
     [DataContract]
     public partial class InfiniteGridCreateRequest :  IEquatable<InfiniteGridCreateRequest>, IValidatableObject

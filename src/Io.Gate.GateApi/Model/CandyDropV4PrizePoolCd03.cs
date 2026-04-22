@@ -33,10 +33,10 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CandyDropV4PrizePoolCd03" /> class.
         /// </summary>
-        /// <param name="prizePoolType">奖池类型.</param>
-        /// <param name="prizeAll">奖池总额度.</param>
-        /// <param name="prizeLimit">每人瓜分上限.</param>
-        /// <param name="tasks">任务列表.</param>
+        /// <param name="prizePoolType">Prize pool type.</param>
+        /// <param name="prizeAll">Total prize pool amount.</param>
+        /// <param name="prizeLimit">Maximum share per person.</param>
+        /// <param name="tasks">task list.</param>
         public CandyDropV4PrizePoolCd03(int prizePoolType = default(int), string prizeAll = default(string), string prizeLimit = default(string), List<CandyDropV4TaskCd03> tasks = default(List<CandyDropV4TaskCd03>))
         {
             this.PrizePoolType = prizePoolType;
@@ -46,30 +46,30 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 奖池类型
+        /// Prize pool type
         /// </summary>
-        /// <value>奖池类型</value>
+        /// <value>Prize pool type</value>
         [DataMember(Name="prize_pool_type")]
         public int PrizePoolType { get; set; }
 
         /// <summary>
-        /// 奖池总额度
+        /// Total prize pool amount
         /// </summary>
-        /// <value>奖池总额度</value>
+        /// <value>Total prize pool amount</value>
         [DataMember(Name="prize_all")]
         public string PrizeAll { get; set; }
 
         /// <summary>
-        /// 每人瓜分上限
+        /// Maximum share per person
         /// </summary>
-        /// <value>每人瓜分上限</value>
+        /// <value>Maximum share per person</value>
         [DataMember(Name="prize_limit")]
         public string PrizeLimit { get; set; }
 
         /// <summary>
-        /// 任务列表
+        /// task list
         /// </summary>
-        /// <value>任务列表</value>
+        /// <value>task list</value>
         [DataMember(Name="tasks")]
         public List<CandyDropV4TaskCd03> Tasks { get; set; }
 

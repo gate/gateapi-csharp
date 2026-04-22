@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 查询运行中策略列表成功时的响应体。
+    /// The response body when querying the running policy list is successful.
     /// </summary>
     [DataContract]
     public partial class AIHubPortfolioRunningSuccessResponse :  IEquatable<AIHubPortfolioRunningSuccessResponse>, IValidatableObject

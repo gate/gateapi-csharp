@@ -25,15 +25,15 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// HODLer Airdrop活动列表项
+    /// HODLer Airdrop activity list item
     /// </summary>
     [DataContract]
     public partial class HodlerAirdropV4ProjectItem :  IEquatable<HodlerAirdropV4ProjectItem>, IValidatableObject
     {
         /// <summary>
-        /// 项目状态
+        /// Project status
         /// </summary>
-        /// <value>项目状态</value>
+        /// <value>Project status</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -58,9 +58,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 项目状态
+        /// Project status
         /// </summary>
-        /// <value>项目状态</value>
+        /// <value>Project status</value>
         [DataMember(Name="status")]
         public StatusEnum Status { get; set; }
         /// <summary>
@@ -73,14 +73,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="hodlerId">Product ID (required).</param>
         /// <param name="name">Product Name (required).</param>
-        /// <param name="asset">空投币种 (required).</param>
-        /// <param name="status">项目状态 (required).</param>
-        /// <param name="totalAmount">空投总量 (required).</param>
-        /// <param name="openTimest">活动开始时间，格式 Y-m-d H:i:s，UTC (required).</param>
-        /// <param name="closeTimest">活动结束时间，格式 Y-m-d H:i:s，UTC (required).</param>
-        /// <param name="perGtRewardToken">每枚GT可获得的空投币数量，计算中时返回空字符串.</param>
-        /// <param name="userCount">参与人数.</param>
-        /// <param name="maxQueueAmount">个人参与GT上限.</param>
+        /// <param name="asset">Airdrop currency (required).</param>
+        /// <param name="status">Project status (required).</param>
+        /// <param name="totalAmount">Total airdrop amount (required).</param>
+        /// <param name="openTimest">Event start time, format Y-m-d H:i:s, UTC (required).</param>
+        /// <param name="closeTimest">Event end time, format Y-m-d H:i:s, UTC (required).</param>
+        /// <param name="perGtRewardToken">The number of airdrop coins that can be obtained for each GT. When the calculation is in progress, an empty string is returned..</param>
+        /// <param name="userCount">Number of participants.</param>
+        /// <param name="maxQueueAmount">Personal GT limit.</param>
         public HodlerAirdropV4ProjectItem(string hodlerId = default(string), string name = default(string), string asset = default(string), StatusEnum status = default(StatusEnum), string totalAmount = default(string), string openTimest = default(string), string closeTimest = default(string), string perGtRewardToken = default(string), string userCount = default(string), string maxQueueAmount = default(string))
         {
             // to ensure "hodlerId" is required (not null)
@@ -116,51 +116,51 @@ namespace Io.Gate.GateApi.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 空投币种
+        /// Airdrop currency
         /// </summary>
-        /// <value>空投币种</value>
+        /// <value>Airdrop currency</value>
         [DataMember(Name="asset")]
         public string Asset { get; set; }
 
         /// <summary>
-        /// 空投总量
+        /// Total airdrop amount
         /// </summary>
-        /// <value>空投总量</value>
+        /// <value>Total airdrop amount</value>
         [DataMember(Name="total_amount")]
         public string TotalAmount { get; set; }
 
         /// <summary>
-        /// 活动开始时间，格式 Y-m-d H:i:s，UTC
+        /// Event start time, format Y-m-d H:i:s, UTC
         /// </summary>
-        /// <value>活动开始时间，格式 Y-m-d H:i:s，UTC</value>
+        /// <value>Event start time, format Y-m-d H:i:s, UTC</value>
         [DataMember(Name="open_timest")]
         public string OpenTimest { get; set; }
 
         /// <summary>
-        /// 活动结束时间，格式 Y-m-d H:i:s，UTC
+        /// Event end time, format Y-m-d H:i:s, UTC
         /// </summary>
-        /// <value>活动结束时间，格式 Y-m-d H:i:s，UTC</value>
+        /// <value>Event end time, format Y-m-d H:i:s, UTC</value>
         [DataMember(Name="close_timest")]
         public string CloseTimest { get; set; }
 
         /// <summary>
-        /// 每枚GT可获得的空投币数量，计算中时返回空字符串
+        /// The number of airdrop coins that can be obtained for each GT. When the calculation is in progress, an empty string is returned.
         /// </summary>
-        /// <value>每枚GT可获得的空投币数量，计算中时返回空字符串</value>
+        /// <value>The number of airdrop coins that can be obtained for each GT. When the calculation is in progress, an empty string is returned.</value>
         [DataMember(Name="per_gt_reward_token")]
         public string PerGtRewardToken { get; set; }
 
         /// <summary>
-        /// 参与人数
+        /// Number of participants
         /// </summary>
-        /// <value>参与人数</value>
+        /// <value>Number of participants</value>
         [DataMember(Name="user_count")]
         public string UserCount { get; set; }
 
         /// <summary>
-        /// 个人参与GT上限
+        /// Personal GT limit
         /// </summary>
-        /// <value>个人参与GT上限</value>
+        /// <value>Personal GT limit</value>
         [DataMember(Name="max_queue_amount")]
         public string MaxQueueAmount { get; set; }
 

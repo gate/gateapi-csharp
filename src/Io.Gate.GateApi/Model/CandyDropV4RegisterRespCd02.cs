@@ -33,16 +33,16 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CandyDropV4RegisterRespCd02" /> class.
         /// </summary>
-        /// <param name="success">是否报名成功.</param>
+        /// <param name="success">Whether the registration is successful.</param>
         public CandyDropV4RegisterRespCd02(bool success = default(bool))
         {
             this.Success = success;
         }
 
         /// <summary>
-        /// 是否报名成功
+        /// Whether the registration is successful
         /// </summary>
-        /// <value>是否报名成功</value>
+        /// <value>Whether the registration is successful</value>
         [DataMember(Name="success")]
         public bool Success { get; set; }
 

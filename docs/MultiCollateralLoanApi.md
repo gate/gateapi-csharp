@@ -834,7 +834,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new MultiCollateralLoanApi(config);
-            var currencies = new List<string>(); // List<string> | Specify currency name query array, separated by commas, maximum 100 items
+            var currencies = new List<string>(); // List<string> | Specify currency name query array, separated by commas, maximum 100
             var vipLevel = "\"0\"";  // string | VIP level, defaults to 0 if not specified (optional)  (default to "0")
 
             try
@@ -859,7 +859,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencies** | [**List&lt;string&gt;**](string.md)| Specify currency name query array, separated by commas, maximum 100 items | 
+ **currencies** | [**List&lt;string&gt;**](string.md)| Specify currency name query array, separated by commas, maximum 100 | 
  **vipLevel** | **string**| VIP level, defaults to 0 if not specified | [optional] [default to &quot;0&quot;]
 
 ### Return type

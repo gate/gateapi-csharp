@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 获取策略推荐成功时的响应体。
+    /// Get the response body when the strategy recommendation is successful.
     /// </summary>
     [DataContract]
     public partial class AIHubDiscoverSuccessResponse :  IEquatable<AIHubDiscoverSuccessResponse>, IValidatableObject

@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 策略详情数据。
+    /// Policy details data.
     /// </summary>
     [DataContract]
     public partial class AIHubPortfolioDetailData :  IEquatable<AIHubPortfolioDetailData>, IValidatableObject
@@ -47,9 +47,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="strategyType">strategyType (required).</param>
         /// <param name="market">market (required).</param>
         /// <param name="status">status (required).</param>
-        /// <param name="baseInfo">基础信息，字段按策略类型动态变化 (required).</param>
-        /// <param name="metrics">指标信息，字段按策略类型动态变化 (required).</param>
-        /// <param name="position">仓位或持仓信息，字段按策略类型动态变化.</param>
+        /// <param name="baseInfo">Basic information, fields change dynamically according to strategy type (required).</param>
+        /// <param name="metrics">Indicator information, fields change dynamically according to strategy type (required).</param>
+        /// <param name="position">Position or position information, fields dynamically change according to strategy type.</param>
         /// <param name="stopSupported">stopSupported (required).</param>
         public AIHubPortfolioDetailData(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string market = default(string), string status = default(string), Dictionary<string, string> baseInfo = default(Dictionary<string, string>), Dictionary<string, string> metrics = default(Dictionary<string, string>), Dictionary<string, string> position = default(Dictionary<string, string>), bool stopSupported = default(bool))
         {
@@ -87,23 +87,23 @@ namespace Io.Gate.GateApi.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 基础信息，字段按策略类型动态变化
+        /// Basic information, fields change dynamically according to strategy type
         /// </summary>
-        /// <value>基础信息，字段按策略类型动态变化</value>
+        /// <value>Basic information, fields change dynamically according to strategy type</value>
         [DataMember(Name="base_info")]
         public Dictionary<string, string> BaseInfo { get; set; }
 
         /// <summary>
-        /// 指标信息，字段按策略类型动态变化
+        /// Indicator information, fields change dynamically according to strategy type
         /// </summary>
-        /// <value>指标信息，字段按策略类型动态变化</value>
+        /// <value>Indicator information, fields change dynamically according to strategy type</value>
         [DataMember(Name="metrics")]
         public Dictionary<string, string> Metrics { get; set; }
 
         /// <summary>
-        /// 仓位或持仓信息，字段按策略类型动态变化
+        /// Position or position information, fields dynamically change according to strategy type
         /// </summary>
-        /// <value>仓位或持仓信息，字段按策略类型动态变化</value>
+        /// <value>Position or position information, fields dynamically change according to strategy type</value>
         [DataMember(Name="position")]
         public Dictionary<string, string> Position { get; set; }
 

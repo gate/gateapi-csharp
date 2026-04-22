@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 创建策略成功后返回的策略信息。
+    /// Policy information returned after the policy is successfully created.
     /// </summary>
     [DataContract]
     public partial class AIHubCreateData :  IEquatable<AIHubCreateData>, IValidatableObject
@@ -46,7 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="strategyId">strategyId (required).</param>
         /// <param name="strategyType">strategyType (required).</param>
         /// <param name="market">market (required).</param>
-        /// <param name="status">创建成功后的初始状态，通常为 &#x60;running&#x60; (required).</param>
+        /// <param name="status">The initial state after successful creation, usually &#x60;running&#x60; (required).</param>
         /// <param name="jumpUrl">jumpUrl.</param>
         public AIHubCreateData(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string market = default(string), string status = default(string), string jumpUrl = default(string))
         {
@@ -73,9 +73,9 @@ namespace Io.Gate.GateApi.Model
         public string Market { get; set; }
 
         /// <summary>
-        /// 创建成功后的初始状态，通常为 &#x60;running&#x60;
+        /// The initial state after successful creation, usually &#x60;running&#x60;
         /// </summary>
-        /// <value>创建成功后的初始状态，通常为 &#x60;running&#x60;</value>
+        /// <value>The initial state after successful creation, usually &#x60;running&#x60;</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 

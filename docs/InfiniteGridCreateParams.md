@@ -1,15 +1,15 @@
 
 # Io.Gate.GateApi.Model.InfiniteGridCreateParams
 
-无限网格策略的创建参数。
+Creation parameters for infinite grid strategies.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Money** | **string** |  | 
-**PriceFloor** | **string** | 价格地板 | 
-**ProfitPerGrid** | **string** | 每格利润 | 
+**PriceFloor** | **string** | price floor | 
+**ProfitPerGrid** | **string** | Profit per square | 
 **GridNum** | **int** |  | 
 **PriceType** | **int** |  | 
 **TriggerPrice** | **string** |  | [optional] 

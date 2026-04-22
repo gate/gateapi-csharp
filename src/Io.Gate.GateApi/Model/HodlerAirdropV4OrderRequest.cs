@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 参与活动请求体
+    /// Participation activity request body
     /// </summary>
     [DataContract]
     public partial class HodlerAirdropV4OrderRequest :  IEquatable<HodlerAirdropV4OrderRequest>, IValidatableObject
@@ -38,16 +38,16 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="HodlerAirdropV4OrderRequest" /> class.
         /// </summary>
-        /// <param name="hodlerId">活动ID，必填 (required).</param>
+        /// <param name="hodlerId">Activity ID, required (required).</param>
         public HodlerAirdropV4OrderRequest(int hodlerId = default(int))
         {
             this.HodlerId = hodlerId;
         }
 
         /// <summary>
-        /// 活动ID，必填
+        /// Activity ID, required
         /// </summary>
-        /// <value>活动ID，必填</value>
+        /// <value>Activity ID, required</value>
         [DataMember(Name="hodler_id")]
         public int HodlerId { get; set; }
 

@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Currency** | **string** | 项目/币种名称 | [optional] 
-**TotalRewards** | **string** | 总奖池 | [optional] 
-**StartTime** | **string** | 活动开始时间（UTC格式化） | [optional] 
-**EndTime** | **string** | 活动结束时间（UTC格式化） | [optional] 
-**Tasks** | [**List&lt;CandyDropV4TaskProgressItemCd04&gt;**](CandyDropV4TaskProgressItemCd04.md) | 已领取任务的进度列表 | [optional] 
+**Currency** | **string** | Project/currency name | [optional] 
+**TotalRewards** | **string** | total prize pool | [optional] 
+**StartTime** | **string** | Event start time (UTC formatted) | [optional] 
+**EndTime** | **string** | Event end time (UTC format) | [optional] 
+**Tasks** | [**List&lt;CandyDropV4TaskProgressItemCd04&gt;**](CandyDropV4TaskProgressItemCd04.md) | Progress list of tasks received | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

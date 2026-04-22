@@ -33,11 +33,11 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CandyDropV4ActivityRulesCd03" /> class.
         /// </summary>
-        /// <param name="currency">项目/币种名称.</param>
-        /// <param name="totalRewards">总奖池.</param>
-        /// <param name="startTime">活动开始时间（UTC格式化）.</param>
-        /// <param name="endTime">活动结束时间（UTC格式化）.</param>
-        /// <param name="prizePools">奖池列表.</param>
+        /// <param name="currency">Project/currency name.</param>
+        /// <param name="totalRewards">total prize pool.</param>
+        /// <param name="startTime">Event start time (UTC formatted).</param>
+        /// <param name="endTime">Event end time (UTC format).</param>
+        /// <param name="prizePools">Prize pool list.</param>
         public CandyDropV4ActivityRulesCd03(string currency = default(string), string totalRewards = default(string), string startTime = default(string), string endTime = default(string), List<CandyDropV4PrizePoolCd03> prizePools = default(List<CandyDropV4PrizePoolCd03>))
         {
             this.Currency = currency;
@@ -48,37 +48,37 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 项目/币种名称
+        /// Project/currency name
         /// </summary>
-        /// <value>项目/币种名称</value>
+        /// <value>Project/currency name</value>
         [DataMember(Name="currency")]
         public string Currency { get; set; }
 
         /// <summary>
-        /// 总奖池
+        /// total prize pool
         /// </summary>
-        /// <value>总奖池</value>
+        /// <value>total prize pool</value>
         [DataMember(Name="total_rewards")]
         public string TotalRewards { get; set; }
 
         /// <summary>
-        /// 活动开始时间（UTC格式化）
+        /// Event start time (UTC formatted)
         /// </summary>
-        /// <value>活动开始时间（UTC格式化）</value>
+        /// <value>Event start time (UTC formatted)</value>
         [DataMember(Name="start_time")]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 活动结束时间（UTC格式化）
+        /// Event end time (UTC format)
         /// </summary>
-        /// <value>活动结束时间（UTC格式化）</value>
+        /// <value>Event end time (UTC format)</value>
         [DataMember(Name="end_time")]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 奖池列表
+        /// Prize pool list
         /// </summary>
-        /// <value>奖池列表</value>
+        /// <value>Prize pool list</value>
         [DataMember(Name="prize_pools")]
         public List<CandyDropV4PrizePoolCd03> PrizePools { get; set; }
 

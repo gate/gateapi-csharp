@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 终止运行中策略的请求体。
+    /// The request body to terminate a running policy.
     /// </summary>
     [DataContract]
     public partial class AIHubPortfolioStopRequest :  IEquatable<AIHubPortfolioStopRequest>, IValidatableObject

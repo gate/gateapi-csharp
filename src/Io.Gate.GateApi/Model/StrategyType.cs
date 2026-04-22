@@ -25,9 +25,9 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// AIHub 支持的完整策略类型枚举。
+    /// The complete enumeration of policy types supported by AIHub.
     /// </summary>
-    /// <value>AIHub 支持的完整策略类型枚举。</value>
+    /// <value>The complete enumeration of policy types supported by AIHub.</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

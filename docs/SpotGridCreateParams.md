@@ -1,16 +1,16 @@
 
 # Io.Gate.GateApi.Model.SpotGridCreateParams
 
-现货网格策略的创建参数。
+Creation parameters for the spot grid strategy.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Money** | **string** | 投入金额 | 
+**Money** | **string** | Amount of investment | 
 **LowPrice** | **string** | Range lower limit | 
 **HighPrice** | **string** | Range upper limit | 
-**GridNum** | **int** | 网格数量 | 
+**GridNum** | **int** | Number of grids | 
 **PriceType** | **int** |  | 
 **TriggerPrice** | **string** |  | [optional] 
 **StopProfit** | **string** |  | [optional] 

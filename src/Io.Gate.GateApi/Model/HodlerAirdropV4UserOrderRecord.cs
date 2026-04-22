@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 用户参与记录单项
+    /// User participation record single item
     /// </summary>
     [DataContract]
     public partial class HodlerAirdropV4UserOrderRecord :  IEquatable<HodlerAirdropV4UserOrderRecord>, IValidatableObject
@@ -39,11 +39,11 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="HodlerAirdropV4UserOrderRecord" /> class.
         /// </summary>
         /// <param name="hodlerId">Product ID (required).</param>
-        /// <param name="asset">空投币种 (required).</param>
-        /// <param name="userGtAvgAmount">有效持仓GT数量（参与活动时持有的GT平均数量）.</param>
-        /// <param name="receiveAmountBase">基础空投金额，活动结束前为空字符串.</param>
-        /// <param name="receiveAmountExt">额外空投金额（余币宝加成），活动结束前为空字符串.</param>
-        /// <param name="closeTimest">活动结束时间，格式 Y-m-d H:i:s，UTC (required).</param>
+        /// <param name="asset">Airdrop currency (required).</param>
+        /// <param name="userGtAvgAmount">Effective number of GT positions (average number of GT held when participating in the event).</param>
+        /// <param name="receiveAmountBase">Basic airdrop amount, it will be an empty string before the end of the activity.</param>
+        /// <param name="receiveAmountExt">Additional airdrop amount (Yubibao bonus), it will be an empty string before the end of the event.</param>
+        /// <param name="closeTimest">Event end time, format Y-m-d H:i:s, UTC (required).</param>
         public HodlerAirdropV4UserOrderRecord(string hodlerId = default(string), string asset = default(string), string userGtAvgAmount = default(string), string receiveAmountBase = default(string), string receiveAmountExt = default(string), string closeTimest = default(string))
         {
             // to ensure "hodlerId" is required (not null)
@@ -65,37 +65,37 @@ namespace Io.Gate.GateApi.Model
         public string HodlerId { get; set; }
 
         /// <summary>
-        /// 空投币种
+        /// Airdrop currency
         /// </summary>
-        /// <value>空投币种</value>
+        /// <value>Airdrop currency</value>
         [DataMember(Name="asset")]
         public string Asset { get; set; }
 
         /// <summary>
-        /// 有效持仓GT数量（参与活动时持有的GT平均数量）
+        /// Effective number of GT positions (average number of GT held when participating in the event)
         /// </summary>
-        /// <value>有效持仓GT数量（参与活动时持有的GT平均数量）</value>
+        /// <value>Effective number of GT positions (average number of GT held when participating in the event)</value>
         [DataMember(Name="user_gt_avg_amount")]
         public string UserGtAvgAmount { get; set; }
 
         /// <summary>
-        /// 基础空投金额，活动结束前为空字符串
+        /// Basic airdrop amount, it will be an empty string before the end of the activity
         /// </summary>
-        /// <value>基础空投金额，活动结束前为空字符串</value>
+        /// <value>Basic airdrop amount, it will be an empty string before the end of the activity</value>
         [DataMember(Name="receive_amount_base")]
         public string ReceiveAmountBase { get; set; }
 
         /// <summary>
-        /// 额外空投金额（余币宝加成），活动结束前为空字符串
+        /// Additional airdrop amount (Yubibao bonus), it will be an empty string before the end of the event
         /// </summary>
-        /// <value>额外空投金额（余币宝加成），活动结束前为空字符串</value>
+        /// <value>Additional airdrop amount (Yubibao bonus), it will be an empty string before the end of the event</value>
         [DataMember(Name="receive_amount_ext")]
         public string ReceiveAmountExt { get; set; }
 
         /// <summary>
-        /// 活动结束时间，格式 Y-m-d H:i:s，UTC
+        /// Event end time, format Y-m-d H:i:s, UTC
         /// </summary>
-        /// <value>活动结束时间，格式 Y-m-d H:i:s，UTC</value>
+        /// <value>Event end time, format Y-m-d H:i:s, UTC</value>
         [DataMember(Name="close_timest")]
         public string CloseTimest { get; set; }
 

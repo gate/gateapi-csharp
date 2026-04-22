@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 无限网格策略的创建参数。
+    /// Creation parameters for infinite grid strategies.
     /// </summary>
     [DataContract]
     public partial class InfiniteGridCreateParams :  IEquatable<InfiniteGridCreateParams>, IValidatableObject
@@ -61,8 +61,8 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="InfiniteGridCreateParams" /> class.
         /// </summary>
         /// <param name="money">money (required).</param>
-        /// <param name="priceFloor">价格地板 (required).</param>
-        /// <param name="profitPerGrid">每格利润 (required).</param>
+        /// <param name="priceFloor">price floor (required).</param>
+        /// <param name="profitPerGrid">Profit per square (required).</param>
         /// <param name="gridNum">gridNum (required).</param>
         /// <param name="priceType">priceType (required).</param>
         /// <param name="triggerPrice">triggerPrice.</param>
@@ -94,16 +94,16 @@ namespace Io.Gate.GateApi.Model
         public string Money { get; set; }
 
         /// <summary>
-        /// 价格地板
+        /// price floor
         /// </summary>
-        /// <value>价格地板</value>
+        /// <value>price floor</value>
         [DataMember(Name="price_floor")]
         public string PriceFloor { get; set; }
 
         /// <summary>
-        /// 每格利润
+        /// Profit per square
         /// </summary>
-        /// <value>每格利润</value>
+        /// <value>Profit per square</value>
         [DataMember(Name="profit_per_grid")]
         public string ProfitPerGrid { get; set; }
 

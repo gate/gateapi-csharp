@@ -285,7 +285,7 @@ namespace Io.Gate.GateApi.Api
         /// Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
+        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100</param>
         /// <param name="vipLevel">VIP level, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
         /// <returns>List&lt;CollateralCurrentRate&gt;</returns>
         List<CollateralCurrentRate> GetMultiCollateralCurrentRate (List<string> currencies, string vipLevel = default(string));
@@ -297,7 +297,7 @@ namespace Io.Gate.GateApi.Api
         /// Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
+        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100</param>
         /// <param name="vipLevel">VIP level, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
         /// <returns>ApiResponse of List&lt;CollateralCurrentRate&gt;</returns>
         ApiResponse<List<CollateralCurrentRate>> GetMultiCollateralCurrentRateWithHttpInfo (List<string> currencies, string vipLevel = default(string));
@@ -568,7 +568,7 @@ namespace Io.Gate.GateApi.Api
         /// Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
+        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100</param>
         /// <param name="vipLevel">VIP level, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
         /// <returns>Task of List&lt;CollateralCurrentRate&gt;</returns>
         Task<List<CollateralCurrentRate>> GetMultiCollateralCurrentRateAsync (List<string> currencies, string vipLevel = default(string));
@@ -580,7 +580,7 @@ namespace Io.Gate.GateApi.Api
         /// Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
+        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100</param>
         /// <param name="vipLevel">VIP level, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
         /// <returns>Task of ApiResponse (List&lt;CollateralCurrentRate&gt;)</returns>
         Task<ApiResponse<List<CollateralCurrentRate>>> GetMultiCollateralCurrentRateAsyncWithHttpInfo (List<string> currencies, string vipLevel = default(string));
@@ -2101,7 +2101,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency&#39;s current interest rate Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
+        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100</param>
         /// <param name="vipLevel">VIP level, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
         /// <returns>List&lt;CollateralCurrentRate&gt;</returns>
         public List<CollateralCurrentRate> GetMultiCollateralCurrentRate (List<string> currencies, string vipLevel = default(string))
@@ -2114,7 +2114,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency&#39;s current interest rate Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
+        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100</param>
         /// <param name="vipLevel">VIP level, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
         /// <returns>ApiResponse of List&lt;CollateralCurrentRate&gt;</returns>
         public ApiResponse<List<CollateralCurrentRate>> GetMultiCollateralCurrentRateWithHttpInfo (List<string> currencies, string vipLevel = default(string))
@@ -2162,7 +2162,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency&#39;s current interest rate Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
+        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100</param>
         /// <param name="vipLevel">VIP level, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
         /// <returns>Task of List&lt;CollateralCurrentRate&gt;</returns>
         public async Task<List<CollateralCurrentRate>> GetMultiCollateralCurrentRateAsync (List<string> currencies, string vipLevel = default(string))
@@ -2176,7 +2176,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency&#39;s current interest rate Query the current interest rate of the currency in the previous hour, the current interest rate is updated every hour
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100 items</param>
+        /// <param name="currencies">Specify currency name query array, separated by commas, maximum 100</param>
         /// <param name="vipLevel">VIP level, defaults to 0 if not specified (optional, default to &quot;0&quot;)</param>
         /// <returns>Task of ApiResponse (List&lt;CollateralCurrentRate&gt;)</returns>
         public async Task<ApiResponse<List<CollateralCurrentRate>>> GetMultiCollateralCurrentRateAsyncWithHttpInfo (List<string> currencies, string vipLevel = default(string))

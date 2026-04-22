@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 现货网格策略的创建参数。
+    /// Creation parameters for the spot grid strategy.
     /// </summary>
     [DataContract]
     public partial class SpotGridCreateParams :  IEquatable<SpotGridCreateParams>, IValidatableObject
@@ -60,10 +60,10 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SpotGridCreateParams" /> class.
         /// </summary>
-        /// <param name="money">投入金额 (required).</param>
+        /// <param name="money">Amount of investment (required).</param>
         /// <param name="lowPrice">Range lower limit (required).</param>
         /// <param name="highPrice">Range upper limit (required).</param>
-        /// <param name="gridNum">网格数量 (required).</param>
+        /// <param name="gridNum">Number of grids (required).</param>
         /// <param name="priceType">priceType (required).</param>
         /// <param name="triggerPrice">triggerPrice.</param>
         /// <param name="stopProfit">stopProfit.</param>
@@ -88,9 +88,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 投入金额
+        /// Amount of investment
         /// </summary>
-        /// <value>投入金额</value>
+        /// <value>Amount of investment</value>
         [DataMember(Name="money")]
         public string Money { get; set; }
 
@@ -109,9 +109,9 @@ namespace Io.Gate.GateApi.Model
         public string HighPrice { get; set; }
 
         /// <summary>
-        /// 网格数量
+        /// Number of grids
         /// </summary>
-        /// <value>网格数量</value>
+        /// <value>Number of grids</value>
         [DataMember(Name="grid_num")]
         public int GridNum { get; set; }
 

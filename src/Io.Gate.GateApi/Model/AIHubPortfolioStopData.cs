@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 终止策略成功后返回的结果信息。
+    /// The result information returned after the termination strategy is successful.
     /// </summary>
     [DataContract]
     public partial class AIHubPortfolioStopData :  IEquatable<AIHubPortfolioStopData>, IValidatableObject
@@ -45,7 +45,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="strategyId">strategyId (required).</param>
         /// <param name="strategyType">strategyType (required).</param>
-        /// <param name="status">当前实现返回 &#x60;stopping&#x60; (required).</param>
+        /// <param name="status">The current implementation returns &#x60;stopping&#x60; (required).</param>
         /// <param name="resultMessage">resultMessage (required).</param>
         public AIHubPortfolioStopData(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string status = default(string), string resultMessage = default(string))
         {
@@ -65,9 +65,9 @@ namespace Io.Gate.GateApi.Model
         public string StrategyId { get; set; }
 
         /// <summary>
-        /// 当前实现返回 &#x60;stopping&#x60;
+        /// The current implementation returns &#x60;stopping&#x60;
         /// </summary>
-        /// <value>当前实现返回 &#x60;stopping&#x60;</value>
+        /// <value>The current implementation returns &#x60;stopping&#x60;</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 

@@ -35,8 +35,8 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="id">Activity ID.</param>
         /// <param name="currency">Product Name.</param>
-        /// <param name="status">项目状态：ongoing/awaiting_draw/won/not_win.</param>
-        /// <param name="registerTime">参与时间（UTC格式化）.</param>
+        /// <param name="status">Project status: ongoing/awaiting_draw/won/not_win.</param>
+        /// <param name="registerTime">Participation time (UTC formatted).</param>
         public CandyDropV4ParticipationRecordCd05(long id = default(long), string currency = default(string), string status = default(string), string registerTime = default(string))
         {
             this.Id = id;
@@ -60,16 +60,16 @@ namespace Io.Gate.GateApi.Model
         public string Currency { get; set; }
 
         /// <summary>
-        /// 项目状态：ongoing/awaiting_draw/won/not_win
+        /// Project status: ongoing/awaiting_draw/won/not_win
         /// </summary>
-        /// <value>项目状态：ongoing/awaiting_draw/won/not_win</value>
+        /// <value>Project status: ongoing/awaiting_draw/won/not_win</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 
         /// <summary>
-        /// 参与时间（UTC格式化）
+        /// Participation time (UTC formatted)
         /// </summary>
-        /// <value>参与时间（UTC格式化）</value>
+        /// <value>Participation time (UTC formatted)</value>
         [DataMember(Name="register_time")]
         public string RegisterTime { get; set; }
 

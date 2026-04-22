@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 策略推荐结果数据。
+    /// Strategy recommendation result data.
     /// </summary>
     [DataContract]
     public partial class AIHubDiscoverData :  IEquatable<AIHubDiscoverData>, IValidatableObject
@@ -45,7 +45,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="scene">scene (required).</param>
         /// <param name="recommendations">recommendations (required).</param>
-        /// <param name="unsupportedFilters">本期不支持的筛选条件 (required).</param>
+        /// <param name="unsupportedFilters">Filter conditions not supported in this issue (required).</param>
         public AIHubDiscoverData(DiscoverScene scene = default(DiscoverScene), List<AIHubRecommendation> recommendations = default(List<AIHubRecommendation>), List<string> unsupportedFilters = default(List<string>))
         {
             this.Scene = scene;
@@ -62,9 +62,9 @@ namespace Io.Gate.GateApi.Model
         public List<AIHubRecommendation> Recommendations { get; set; }
 
         /// <summary>
-        /// 本期不支持的筛选条件
+        /// Filter conditions not supported in this issue
         /// </summary>
-        /// <value>本期不支持的筛选条件</value>
+        /// <value>Filter conditions not supported in this issue</value>
         [DataMember(Name="unsupported_filters")]
         public List<string> UnsupportedFilters { get; set; }
 

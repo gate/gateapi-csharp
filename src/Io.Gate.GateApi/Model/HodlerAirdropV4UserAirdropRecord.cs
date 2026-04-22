@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 用户空投发放记录单项
+    /// User airdrop distribution record single item
     /// </summary>
     [DataContract]
     public partial class HodlerAirdropV4UserAirdropRecord :  IEquatable<HodlerAirdropV4UserAirdropRecord>, IValidatableObject
@@ -39,11 +39,11 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="HodlerAirdropV4UserAirdropRecord" /> class.
         /// </summary>
         /// <param name="hodlerId">Product ID (required).</param>
-        /// <param name="asset">空投币种 (required).</param>
-        /// <param name="receiveAmountBase">基础空投金额.</param>
-        /// <param name="receiveAmountExt">额外空投金额（余币宝加成）.</param>
-        /// <param name="deliveryTimest">空投发放时间，格式 Y-m-d H:i:s，UTC；未发放时可能为空字符串 (required).</param>
-        /// <param name="exchange">自动兑换状态，0未兑换 1已兑换为GT.</param>
+        /// <param name="asset">Airdrop currency (required).</param>
+        /// <param name="receiveAmountBase">Basic airdrop amount.</param>
+        /// <param name="receiveAmountExt">Additional airdrop amount (Yubibao bonus).</param>
+        /// <param name="deliveryTimest">Airdrop distribution time, format Y-m-d H:i:s, UTC; may be an empty string when not distributed (required).</param>
+        /// <param name="exchange">Automatic exchange status, 0 has not been exchanged, 1 has been exchanged for GT.</param>
         public HodlerAirdropV4UserAirdropRecord(string hodlerId = default(string), string asset = default(string), string receiveAmountBase = default(string), string receiveAmountExt = default(string), string deliveryTimest = default(string), string exchange = default(string))
         {
             // to ensure "hodlerId" is required (not null)
@@ -65,37 +65,37 @@ namespace Io.Gate.GateApi.Model
         public string HodlerId { get; set; }
 
         /// <summary>
-        /// 空投币种
+        /// Airdrop currency
         /// </summary>
-        /// <value>空投币种</value>
+        /// <value>Airdrop currency</value>
         [DataMember(Name="asset")]
         public string Asset { get; set; }
 
         /// <summary>
-        /// 基础空投金额
+        /// Basic airdrop amount
         /// </summary>
-        /// <value>基础空投金额</value>
+        /// <value>Basic airdrop amount</value>
         [DataMember(Name="receive_amount_base")]
         public string ReceiveAmountBase { get; set; }
 
         /// <summary>
-        /// 额外空投金额（余币宝加成）
+        /// Additional airdrop amount (Yubibao bonus)
         /// </summary>
-        /// <value>额外空投金额（余币宝加成）</value>
+        /// <value>Additional airdrop amount (Yubibao bonus)</value>
         [DataMember(Name="receive_amount_ext")]
         public string ReceiveAmountExt { get; set; }
 
         /// <summary>
-        /// 空投发放时间，格式 Y-m-d H:i:s，UTC；未发放时可能为空字符串
+        /// Airdrop distribution time, format Y-m-d H:i:s, UTC; may be an empty string when not distributed
         /// </summary>
-        /// <value>空投发放时间，格式 Y-m-d H:i:s，UTC；未发放时可能为空字符串</value>
+        /// <value>Airdrop distribution time, format Y-m-d H:i:s, UTC; may be an empty string when not distributed</value>
         [DataMember(Name="delivery_timest")]
         public string DeliveryTimest { get; set; }
 
         /// <summary>
-        /// 自动兑换状态，0未兑换 1已兑换为GT
+        /// Automatic exchange status, 0 has not been exchanged, 1 has been exchanged for GT
         /// </summary>
-        /// <value>自动兑换状态，0未兑换 1已兑换为GT</value>
+        /// <value>Automatic exchange status, 0 has not been exchanged, 1 has been exchanged for GT</value>
         [DataMember(Name="exchange")]
         public string Exchange { get; set; }
 

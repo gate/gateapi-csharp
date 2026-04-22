@@ -1,13 +1,13 @@
 
 # Io.Gate.GateApi.Model.HodlerAirdropV4OrderResponse
 
-参与活动响应
+Participate in event response
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InterestCoin** | **List&lt;string&gt;** | 获得空投的币种列表 | 
+**InterestCoin** | **List&lt;string&gt;** | Get the list of airdropped currencies | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -1,7 +1,7 @@
 
 # Io.Gate.GateApi.Model.AIHubCreateSuccessResponse
 
-创建策略成功时的响应体。
+The response body when the creation strategy is successful.
 
 ## Properties
 

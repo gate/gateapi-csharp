@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 终止策略成功时的响应体。
+    /// The response body when the termination strategy is successful.
     /// </summary>
     [DataContract]
     public partial class AIHubPortfolioStopSuccessResponse :  IEquatable<AIHubPortfolioStopSuccessResponse>, IValidatableObject

@@ -33,9 +33,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CandyDropV4TaskProgressItemCd04" /> class.
         /// </summary>
-        /// <param name="taskName">任务主标题.</param>
-        /// <param name="taskDesc">任务副标题.</param>
-        /// <param name="value">任务进度数据（交易量/充值量等）.</param>
+        /// <param name="taskName">Task main title.</param>
+        /// <param name="taskDesc">Task subtitle.</param>
+        /// <param name="value">Task progress data (transaction volume/recharge volume, etc.).</param>
         public CandyDropV4TaskProgressItemCd04(string taskName = default(string), string taskDesc = default(string), string value = default(string))
         {
             this.TaskName = taskName;
@@ -44,23 +44,23 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 任务主标题
+        /// Task main title
         /// </summary>
-        /// <value>任务主标题</value>
+        /// <value>Task main title</value>
         [DataMember(Name="task_name")]
         public string TaskName { get; set; }
 
         /// <summary>
-        /// 任务副标题
+        /// Task subtitle
         /// </summary>
-        /// <value>任务副标题</value>
+        /// <value>Task subtitle</value>
         [DataMember(Name="task_desc")]
         public string TaskDesc { get; set; }
 
         /// <summary>
-        /// 任务进度数据（交易量/充值量等）
+        /// Task progress data (transaction volume/recharge volume, etc.)
         /// </summary>
-        /// <value>任务进度数据（交易量/充值量等）</value>
+        /// <value>Task progress data (transaction volume/recharge volume, etc.)</value>
         [DataMember(Name="value")]
         public string Value { get; set; }
 

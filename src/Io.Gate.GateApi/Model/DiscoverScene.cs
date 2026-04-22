@@ -25,9 +25,9 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 策略推荐接口支持的场景枚举。
+    /// Enumeration of scenarios supported by the policy recommendation interface.
     /// </summary>
-    /// <value>策略推荐接口支持的场景枚举。</value>
+    /// <value>Enumeration of scenarios supported by the policy recommendation interface.</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

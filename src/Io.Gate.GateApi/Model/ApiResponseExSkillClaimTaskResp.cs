@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// 领取任务响应
+    /// Receive task response
     /// </summary>
     [DataContract]
     public partial class ApiResponseExSkillClaimTaskResp :  IEquatable<ApiResponseExSkillClaimTaskResp>, IValidatableObject
@@ -33,10 +33,10 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseExSkillClaimTaskResp" /> class.
         /// </summary>
-        /// <param name="code">业务错误码，0 表示成功.</param>
+        /// <param name="code">Business error code, 0 means success.</param>
         /// <param name="label">Error identifier code. Empty string on success, machine-readable error label on error.</param>
         /// <param name="message">Error description.</param>
-        /// <param name="data">成功时为空对象 {}.</param>
+        /// <param name="data">Empty object {} on success.</param>
         /// <param name="timestamp">Server timestamp (milliseconds).</param>
         public ApiResponseExSkillClaimTaskResp(int code = default(int), string label = default(string), string message = default(string), Object data = default(Object), long timestamp = default(long))
         {
@@ -48,9 +48,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 业务错误码，0 表示成功
+        /// Business error code, 0 means success
         /// </summary>
-        /// <value>业务错误码，0 表示成功</value>
+        /// <value>Business error code, 0 means success</value>
         [DataMember(Name="code")]
         public int Code { get; set; }
 
@@ -69,9 +69,9 @@ namespace Io.Gate.GateApi.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// 成功时为空对象 {}
+        /// Empty object {} on success
         /// </summary>
-        /// <value>成功时为空对象 {}</value>
+        /// <value>Empty object {} on success</value>
         [DataMember(Name="data")]
         public Object Data { get; set; }
 

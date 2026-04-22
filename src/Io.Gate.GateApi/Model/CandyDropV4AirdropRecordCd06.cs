@@ -34,9 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="CandyDropV4AirdropRecordCd06" /> class.
         /// </summary>
         /// <param name="currency">Product Name.</param>
-        /// <param name="airdropTime">空投时间（UTC格式化）.</param>
-        /// <param name="rewards">空投奖励.</param>
-        /// <param name="convertAmount">自动兑换金额.</param>
+        /// <param name="airdropTime">Airdrop time (UTC format).</param>
+        /// <param name="rewards">Airdrop rewards.</param>
+        /// <param name="convertAmount">Automatic exchange amount.</param>
         public CandyDropV4AirdropRecordCd06(string currency = default(string), string airdropTime = default(string), string rewards = default(string), string convertAmount = default(string))
         {
             this.Currency = currency;
@@ -53,23 +53,23 @@ namespace Io.Gate.GateApi.Model
         public string Currency { get; set; }
 
         /// <summary>
-        /// 空投时间（UTC格式化）
+        /// Airdrop time (UTC format)
         /// </summary>
-        /// <value>空投时间（UTC格式化）</value>
+        /// <value>Airdrop time (UTC format)</value>
         [DataMember(Name="airdrop_time")]
         public string AirdropTime { get; set; }
 
         /// <summary>
-        /// 空投奖励
+        /// Airdrop rewards
         /// </summary>
-        /// <value>空投奖励</value>
+        /// <value>Airdrop rewards</value>
         [DataMember(Name="rewards")]
         public string Rewards { get; set; }
 
         /// <summary>
-        /// 自动兑换金额
+        /// Automatic exchange amount
         /// </summary>
-        /// <value>自动兑换金额</value>
+        /// <value>Automatic exchange amount</value>
         [DataMember(Name="convert_amount")]
         public string ConvertAmount { get; set; }
 

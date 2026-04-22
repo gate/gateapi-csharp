@@ -1,7 +1,7 @@
 
 # Io.Gate.GateApi.Model.AIHubCreateData
 
-创建策略成功后返回的策略信息。
+Policy information returned after the policy is successfully created.
 
 ## Properties
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **StrategyId** | **string** |  | 
 **StrategyType** | **StrategyType** |  | 
 **Market** | **string** |  | 
-**Status** | **string** | 创建成功后的初始状态，通常为 &#x60;running&#x60; | 
+**Status** | **string** | The initial state after successful creation, usually &#x60;running&#x60; | 
 **JumpUrl** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -38,8 +38,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CandyDropV4RegisterReqCd02" /> class.
         /// </summary>
-        /// <param name="activityId">活动ID（可选，与 currency 配合使用）.</param>
-        /// <param name="currency">项目/币种名称（必填） (required).</param>
+        /// <param name="activityId">Activity ID (optional, used with currency).</param>
+        /// <param name="currency">Project/currency name (required) (required).</param>
         public CandyDropV4RegisterReqCd02(long activityId = default(long), string currency = default(string))
         {
             // to ensure "currency" is required (not null)
@@ -48,16 +48,16 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 活动ID（可选，与 currency 配合使用）
+        /// Activity ID (optional, used with currency)
         /// </summary>
-        /// <value>活动ID（可选，与 currency 配合使用）</value>
+        /// <value>Activity ID (optional, used with currency)</value>
         [DataMember(Name="activity_id")]
         public long ActivityId { get; set; }
 
         /// <summary>
-        /// 项目/币种名称（必填）
+        /// Project/currency name (required)
         /// </summary>
-        /// <value>项目/币种名称（必填）</value>
+        /// <value>Project/currency name (required)</value>
         [DataMember(Name="currency")]
         public string Currency { get; set; }
 
