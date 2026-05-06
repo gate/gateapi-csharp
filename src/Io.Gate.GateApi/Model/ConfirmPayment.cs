@@ -38,25 +38,26 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfirmPayment" /> class.
         /// </summary>
-        /// <param name="tradeId">tradeId (required).</param>
-        /// <param name="paymentMethod">paymentMethod (required).</param>
-        public ConfirmPayment(string tradeId = default(string), string paymentMethod = default(string))
+        /// <param name="txid">Order ID (required).</param>
+        /// <param name="paymentMethod">Payment type used for this payment; optional but must be among order-supported types. Use &#x60;supported_pay_types&#x60; on the order or &#x60;pay_type&#x60; list, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;..</param>
+        public ConfirmPayment(string txid = default(string), string paymentMethod = default(string))
         {
-            // to ensure "tradeId" is required (not null)
-            this.TradeId = tradeId ?? throw new ArgumentNullException("tradeId", "tradeId is a required property for ConfirmPayment and cannot be null");
-            // to ensure "paymentMethod" is required (not null)
-            this.PaymentMethod = paymentMethod ?? throw new ArgumentNullException("paymentMethod", "paymentMethod is a required property for ConfirmPayment and cannot be null");
+            // to ensure "txid" is required (not null)
+            this.Txid = txid ?? throw new ArgumentNullException("txid", "txid is a required property for ConfirmPayment and cannot be null");
+            this.PaymentMethod = paymentMethod;
         }
 
         /// <summary>
-        /// Gets or Sets TradeId
+        /// Order ID
         /// </summary>
-        [DataMember(Name="trade_id")]
-        public string TradeId { get; set; }
+        /// <value>Order ID</value>
+        [DataMember(Name="txid")]
+        public string Txid { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentMethod
+        /// Payment type used for this payment; optional but must be among order-supported types. Use &#x60;supported_pay_types&#x60; on the order or &#x60;pay_type&#x60; list, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.
         /// </summary>
+        /// <value>Payment type used for this payment; optional but must be among order-supported types. Use &#x60;supported_pay_types&#x60; on the order or &#x60;pay_type&#x60; list, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.</value>
         [DataMember(Name="payment_method")]
         public string PaymentMethod { get; set; }
 
@@ -68,7 +69,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ConfirmPayment {\n");
-            sb.Append("  TradeId: ").Append(TradeId).Append("\n");
+            sb.Append("  Txid: ").Append(Txid).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -105,9 +106,9 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.TradeId == input.TradeId ||
-                    (this.TradeId != null &&
-                    this.TradeId.Equals(input.TradeId))
+                    this.Txid == input.Txid ||
+                    (this.Txid != null &&
+                    this.Txid.Equals(input.Txid))
                 ) && 
                 (
                     this.PaymentMethod == input.PaymentMethod ||
@@ -125,8 +126,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TradeId != null)
-                    hashCode = hashCode * 59 + this.TradeId.GetHashCode();
+                if (this.Txid != null)
+                    hashCode = hashCode * 59 + this.Txid.GetHashCode();
                 if (this.PaymentMethod != null)
                     hashCode = hashCode * 59 + this.PaymentMethod.GetHashCode();
                 return hashCode;

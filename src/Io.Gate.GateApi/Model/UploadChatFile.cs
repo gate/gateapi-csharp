@@ -31,6 +31,45 @@ namespace Io.Gate.GateApi.Model
     public partial class UploadChatFile :  IEquatable<UploadChatFile>, IValidatableObject
     {
         /// <summary>
+        /// File MIME type: supports &#x60;image/jpeg&#x60;, &#x60;image/jpg&#x60;, &#x60;image/png&#x60;, &#x60;video/mp4&#x60;.
+        /// </summary>
+        /// <value>File MIME type: supports &#x60;image/jpeg&#x60;, &#x60;image/jpg&#x60;, &#x60;image/png&#x60;, &#x60;video/mp4&#x60;.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ImageContentTypeEnum
+        {
+            /// <summary>
+            /// Enum value ImageJpeg
+            /// </summary>
+            [EnumMember(Value = "image/jpeg")]
+            ImageJpeg = 1,
+
+            /// <summary>
+            /// Enum value ImageJpg
+            /// </summary>
+            [EnumMember(Value = "image/jpg")]
+            ImageJpg = 2,
+
+            /// <summary>
+            /// Enum value ImagePng
+            /// </summary>
+            [EnumMember(Value = "image/png")]
+            ImagePng = 3,
+
+            /// <summary>
+            /// Enum value VideoMp4
+            /// </summary>
+            [EnumMember(Value = "video/mp4")]
+            VideoMp4 = 4
+
+        }
+
+        /// <summary>
+        /// File MIME type: supports &#x60;image/jpeg&#x60;, &#x60;image/jpg&#x60;, &#x60;image/png&#x60;, &#x60;video/mp4&#x60;.
+        /// </summary>
+        /// <value>File MIME type: supports &#x60;image/jpeg&#x60;, &#x60;image/jpg&#x60;, &#x60;image/png&#x60;, &#x60;video/mp4&#x60;.</value>
+        [DataMember(Name="image_content_type")]
+        public ImageContentTypeEnum ImageContentType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="UploadChatFile" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -38,27 +77,19 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadChatFile" /> class.
         /// </summary>
-        /// <param name="imageContentType">File type, currently only images and videos are supported (required).</param>
-        /// <param name="base64Img">File content (base64 encoded) (required).</param>
-        public UploadChatFile(string imageContentType = default(string), string base64Img = default(string))
+        /// <param name="imageContentType">File MIME type: supports &#x60;image/jpeg&#x60;, &#x60;image/jpg&#x60;, &#x60;image/png&#x60;, &#x60;video/mp4&#x60;. (required).</param>
+        /// <param name="base64Img">Base64 file content; max 20 MB. (required).</param>
+        public UploadChatFile(ImageContentTypeEnum imageContentType = default(ImageContentTypeEnum), string base64Img = default(string))
         {
-            // to ensure "imageContentType" is required (not null)
-            this.ImageContentType = imageContentType ?? throw new ArgumentNullException("imageContentType", "imageContentType is a required property for UploadChatFile and cannot be null");
+            this.ImageContentType = imageContentType;
             // to ensure "base64Img" is required (not null)
             this.Base64Img = base64Img ?? throw new ArgumentNullException("base64Img", "base64Img is a required property for UploadChatFile and cannot be null");
         }
 
         /// <summary>
-        /// File type, currently only images and videos are supported
+        /// Base64 file content; max 20 MB.
         /// </summary>
-        /// <value>File type, currently only images and videos are supported</value>
-        [DataMember(Name="image_content_type")]
-        public string ImageContentType { get; set; }
-
-        /// <summary>
-        /// File content (base64 encoded)
-        /// </summary>
-        /// <value>File content (base64 encoded)</value>
+        /// <value>Base64 file content; max 20 MB.</value>
         [DataMember(Name="base64_img")]
         public string Base64Img { get; set; }
 
@@ -108,8 +139,7 @@ namespace Io.Gate.GateApi.Model
             return 
                 (
                     this.ImageContentType == input.ImageContentType ||
-                    (this.ImageContentType != null &&
-                    this.ImageContentType.Equals(input.ImageContentType))
+                    this.ImageContentType.Equals(input.ImageContentType)
                 ) && 
                 (
                     this.Base64Img == input.Base64Img ||
@@ -127,8 +157,7 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ImageContentType != null)
-                    hashCode = hashCode * 59 + this.ImageContentType.GetHashCode();
+                hashCode = hashCode * 59 + this.ImageContentType.GetHashCode();
                 if (this.Base64Img != null)
                     hashCode = hashCode * 59 + this.Base64Img.GetHashCode();
                 return hashCode;

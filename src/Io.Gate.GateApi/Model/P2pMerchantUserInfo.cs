@@ -36,9 +36,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="isSelf">Whether self.</param>
         /// <param name="userTimest">User registration time (formatted string).</param>
         /// <param name="counterpartiesNum">Number of counterparties.</param>
-        /// <param name="emailVerified">Whether email is verified.</param>
-        /// <param name="verified">Whether KYC verification is completed.</param>
-        /// <param name="hasPhone">Whether phone is bound.</param>
+        /// <param name="emailVerified">Whether email is verified. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="verified">Whether KYC is completed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="hasPhone">Whether a phone number is bound. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         /// <param name="userName">Username.</param>
         /// <param name="userNote">User note information.</param>
         /// <param name="completeTransactions">Total completed orders.</param>
@@ -49,17 +49,17 @@ namespace Io.Gate.GateApi.Model
         /// <param name="completeTransactionsMonth">Number of completed orders in last 30 days.</param>
         /// <param name="completeRateMonth">Completion rate in last 30 days.</param>
         /// <param name="ordersBuyRateMonth">Buy order ratio in last 30 days.</param>
-        /// <param name="isBlack">Whether blocked.</param>
-        /// <param name="isFollow">Whether following.</param>
-        /// <param name="haveTraded">Whether traded with self.</param>
+        /// <param name="isBlack">Whether the user is blocked. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="isFollow">Whether you follow this user. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="haveTraded">Whether you have traded with this user before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         /// <param name="bizUid">Encrypted UID.</param>
         /// <param name="blueVip">Blue V Crown Shield.</param>
         /// <param name="workStatus">Merchant work status.</param>
         /// <param name="registrationDays">Registration days.</param>
         /// <param name="firstTradeDays">Days since first trade.</param>
-        /// <param name="needReplenish">Whether margin replenishment is needed.</param>
+        /// <param name="needReplenish">Whether additional margin is required. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         /// <param name="merchantInfo">merchantInfo.</param>
-        /// <param name="onlineStatus">Merchant online status.</param>
+        /// <param name="onlineStatus">Merchant online status: &#x60;1&#x60; online; &#x60;0&#x60; offline..</param>
         /// <param name="workHours">Merchant online status details.</param>
         /// <param name="transactionsMonth">30-day transaction volume.</param>
         /// <param name="transactionsAll">Total transaction volume.</param>
@@ -121,23 +121,23 @@ namespace Io.Gate.GateApi.Model
         public int CounterpartiesNum { get; set; }
 
         /// <summary>
-        /// Whether email is verified
+        /// Whether email is verified. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether email is verified</value>
+        /// <value>Whether email is verified. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="email_verified")]
         public string EmailVerified { get; set; }
 
         /// <summary>
-        /// Whether KYC verification is completed
+        /// Whether KYC is completed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether KYC verification is completed</value>
+        /// <value>Whether KYC is completed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="verified")]
         public string Verified { get; set; }
 
         /// <summary>
-        /// Whether phone is bound
+        /// Whether a phone number is bound. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether phone is bound</value>
+        /// <value>Whether a phone number is bound. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="has_phone")]
         public string HasPhone { get; set; }
 
@@ -212,23 +212,23 @@ namespace Io.Gate.GateApi.Model
         public decimal OrdersBuyRateMonth { get; set; }
 
         /// <summary>
-        /// Whether blocked
+        /// Whether the user is blocked. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether blocked</value>
+        /// <value>Whether the user is blocked. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_black")]
         public int IsBlack { get; set; }
 
         /// <summary>
-        /// Whether following
+        /// Whether you follow this user. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether following</value>
+        /// <value>Whether you follow this user. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_follow")]
         public int IsFollow { get; set; }
 
         /// <summary>
-        /// Whether traded with self
+        /// Whether you have traded with this user before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether traded with self</value>
+        /// <value>Whether you have traded with this user before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="have_traded")]
         public int HaveTraded { get; set; }
 
@@ -268,9 +268,9 @@ namespace Io.Gate.GateApi.Model
         public int FirstTradeDays { get; set; }
 
         /// <summary>
-        /// Whether margin replenishment is needed
+        /// Whether additional margin is required. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether margin replenishment is needed</value>
+        /// <value>Whether additional margin is required. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="need_replenish")]
         public int NeedReplenish { get; set; }
 
@@ -281,9 +281,9 @@ namespace Io.Gate.GateApi.Model
         public P2pMerchantMarketInfo MerchantInfo { get; set; }
 
         /// <summary>
-        /// Merchant online status
+        /// Merchant online status: &#x60;1&#x60; online; &#x60;0&#x60; offline.
         /// </summary>
-        /// <value>Merchant online status</value>
+        /// <value>Merchant online status: &#x60;1&#x60; online; &#x60;0&#x60; offline.</value>
         [DataMember(Name="online_status")]
         public int OnlineStatus { get; set; }
 

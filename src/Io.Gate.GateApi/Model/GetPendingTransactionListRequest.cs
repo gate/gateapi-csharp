@@ -31,6 +31,33 @@ namespace Io.Gate.GateApi.Model
     public partial class GetPendingTransactionListRequest :  IEquatable<GetPendingTransactionListRequest>, IValidatableObject
     {
         /// <summary>
+        /// Order tab: &#x60;pending&#x60; in progress (&#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;TEMP&#x60;); &#x60;dispute&#x60; in dispute; default &#x60;pending&#x60;.
+        /// </summary>
+        /// <value>Order tab: &#x60;pending&#x60; in progress (&#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;TEMP&#x60;); &#x60;dispute&#x60; in dispute; default &#x60;pending&#x60;.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum OrderTabEnum
+        {
+            /// <summary>
+            /// Enum value Pending
+            /// </summary>
+            [EnumMember(Value = "pending")]
+            Pending = 1,
+
+            /// <summary>
+            /// Enum value Dispute
+            /// </summary>
+            [EnumMember(Value = "dispute")]
+            Dispute = 2
+
+        }
+
+        /// <summary>
+        /// Order tab: &#x60;pending&#x60; in progress (&#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;TEMP&#x60;); &#x60;dispute&#x60; in dispute; default &#x60;pending&#x60;.
+        /// </summary>
+        /// <value>Order tab: &#x60;pending&#x60; in progress (&#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;TEMP&#x60;); &#x60;dispute&#x60; in dispute; default &#x60;pending&#x60;.</value>
+        [DataMember(Name="order_tab")]
+        public OrderTabEnum? OrderTab { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="GetPendingTransactionListRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -38,15 +65,15 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetPendingTransactionListRequest" /> class.
         /// </summary>
-        /// <param name="cryptoCurrency">Cryptocurrency (required).</param>
+        /// <param name="cryptoCurrency">Cryptocurrency symbol. (required).</param>
         /// <param name="fiatCurrency">Fiat currency (required).</param>
-        /// <param name="orderTab">Order tab, default: pending (pending: In Progress (pending: AND status in (&#39;OPEN&#39;,&#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In Dispute (status in (&#39;ACCEPT&#39;,&#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;))).</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All).</param>
-        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED).</param>
+        /// <param name="orderTab">Order tab: &#x60;pending&#x60; in progress (&#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;TEMP&#x60;); &#x60;dispute&#x60; in dispute; default &#x60;pending&#x60;..</param>
+        /// <param name="selectType">Order side filter: &#x60;buy&#x60; buy orders; &#x60;sell&#x60; sell orders; empty: all..</param>
+        /// <param name="status">Order status filter. &#x60;open&#x60; unpaid (&#x60;OPEN&#x60;); &#x60;paid&#x60; paid (&#x60;PAID&#x60;); &#x60;locked&#x60; locked (&#x60;LOCKED&#x60;); &#x60;dispute&#x60; in dispute; empty or omitted uses the default range for &#x60;order_tab&#x60;..</param>
         /// <param name="txid">Order ID.</param>
         /// <param name="startTime">Start timestamp, default is 00:00 89 days ago.</param>
         /// <param name="endTime">End timestamp, default is 23:59:59 today.</param>
-        public GetPendingTransactionListRequest(string cryptoCurrency = default(string), string fiatCurrency = default(string), string orderTab = default(string), string selectType = default(string), string status = default(string), int txid = default(int), int startTime = default(int), int endTime = default(int))
+        public GetPendingTransactionListRequest(string cryptoCurrency = default(string), string fiatCurrency = default(string), OrderTabEnum? orderTab = default(OrderTabEnum?), string selectType = default(string), string status = default(string), int txid = default(int), int startTime = default(int), int endTime = default(int))
         {
             // to ensure "cryptoCurrency" is required (not null)
             this.CryptoCurrency = cryptoCurrency ?? throw new ArgumentNullException("cryptoCurrency", "cryptoCurrency is a required property for GetPendingTransactionListRequest and cannot be null");
@@ -61,9 +88,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Cryptocurrency
+        /// Cryptocurrency symbol.
         /// </summary>
-        /// <value>Cryptocurrency</value>
+        /// <value>Cryptocurrency symbol.</value>
         [DataMember(Name="crypto_currency")]
         public string CryptoCurrency { get; set; }
 
@@ -75,23 +102,16 @@ namespace Io.Gate.GateApi.Model
         public string FiatCurrency { get; set; }
 
         /// <summary>
-        /// Order tab, default: pending (pending: In Progress (pending: AND status in (&#39;OPEN&#39;,&#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In Dispute (status in (&#39;ACCEPT&#39;,&#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;)))
+        /// Order side filter: &#x60;buy&#x60; buy orders; &#x60;sell&#x60; sell orders; empty: all.
         /// </summary>
-        /// <value>Order tab, default: pending (pending: In Progress (pending: AND status in (&#39;OPEN&#39;,&#39;PAID&#39;, &#39;LOCKED&#39;, &#39;TEMP&#39;)); dispute: In Dispute (status in (&#39;ACCEPT&#39;,&#39;BCLOSED&#39;, &#39;CANCEL&#39;, &#39;BECANCEL&#39;, &#39;SCLOSED&#39;, &#39;SCANCEL&#39;)))</value>
-        [DataMember(Name="order_tab")]
-        public string OrderTab { get; set; }
-
-        /// <summary>
-        /// Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All)
-        /// </summary>
-        /// <value>Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All)</value>
+        /// <value>Order side filter: &#x60;buy&#x60; buy orders; &#x60;sell&#x60; sell orders; empty: all.</value>
         [DataMember(Name="select_type")]
         public string SelectType { get; set; }
 
         /// <summary>
-        /// Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED)
+        /// Order status filter. &#x60;open&#x60; unpaid (&#x60;OPEN&#x60;); &#x60;paid&#x60; paid (&#x60;PAID&#x60;); &#x60;locked&#x60; locked (&#x60;LOCKED&#x60;); &#x60;dispute&#x60; in dispute; empty or omitted uses the default range for &#x60;order_tab&#x60;.
         /// </summary>
-        /// <value>Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED)</value>
+        /// <value>Order status filter. &#x60;open&#x60; unpaid (&#x60;OPEN&#x60;); &#x60;paid&#x60; paid (&#x60;PAID&#x60;); &#x60;locked&#x60; locked (&#x60;LOCKED&#x60;); &#x60;dispute&#x60; in dispute; empty or omitted uses the default range for &#x60;order_tab&#x60;.</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 
@@ -178,8 +198,7 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.OrderTab == input.OrderTab ||
-                    (this.OrderTab != null &&
-                    this.OrderTab.Equals(input.OrderTab))
+                    this.OrderTab.Equals(input.OrderTab)
                 ) && 
                 (
                     this.SelectType == input.SelectType ||
@@ -218,8 +237,7 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.CryptoCurrency.GetHashCode();
                 if (this.FiatCurrency != null)
                     hashCode = hashCode * 59 + this.FiatCurrency.GetHashCode();
-                if (this.OrderTab != null)
-                    hashCode = hashCode * 59 + this.OrderTab.GetHashCode();
+                hashCode = hashCode * 59 + this.OrderTab.GetHashCode();
                 if (this.SelectType != null)
                     hashCode = hashCode * 59 + this.SelectType.GetHashCode();
                 if (this.Status != null)

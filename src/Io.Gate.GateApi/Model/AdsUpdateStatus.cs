@@ -31,6 +31,36 @@ namespace Io.Gate.GateApi.Model
     public partial class AdsUpdateStatus :  IEquatable<AdsUpdateStatus>, IValidatableObject
     {
         /// <summary>
+        /// Ad status. &#x60;1&#x60;: listed; &#x60;3&#x60;: delisted; &#x60;4&#x60;: closed.
+        /// </summary>
+        /// <value>Ad status. &#x60;1&#x60;: listed; &#x60;3&#x60;: delisted; &#x60;4&#x60;: closed.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AdvStatusEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1,
+
+            /// <summary>
+            /// Enum value NUMBER_3
+            /// </summary>
+            NUMBER_3 = 3,
+
+            /// <summary>
+            /// Enum value NUMBER_4
+            /// </summary>
+            NUMBER_4 = 4
+
+        }
+
+        /// <summary>
+        /// Ad status. &#x60;1&#x60;: listed; &#x60;3&#x60;: delisted; &#x60;4&#x60;: closed.
+        /// </summary>
+        /// <value>Ad status. &#x60;1&#x60;: listed; &#x60;3&#x60;: delisted; &#x60;4&#x60;: closed.</value>
+        [DataMember(Name="adv_status")]
+        public AdvStatusEnum AdvStatus { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="AdsUpdateStatus" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -38,27 +68,20 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AdsUpdateStatus" /> class.
         /// </summary>
-        /// <param name="advNo">Ad ID (required).</param>
-        /// <param name="advStatus">Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed (required).</param>
-        public AdsUpdateStatus(int advNo = default(int), int advStatus = default(int))
+        /// <param name="advNo">Advertisement ID. (required).</param>
+        /// <param name="advStatus">Ad status. &#x60;1&#x60;: listed; &#x60;3&#x60;: delisted; &#x60;4&#x60;: closed. (required).</param>
+        public AdsUpdateStatus(int advNo = default(int), AdvStatusEnum advStatus = default(AdvStatusEnum))
         {
             this.AdvNo = advNo;
             this.AdvStatus = advStatus;
         }
 
         /// <summary>
-        /// Ad ID
+        /// Advertisement ID.
         /// </summary>
-        /// <value>Ad ID</value>
+        /// <value>Advertisement ID.</value>
         [DataMember(Name="adv_no")]
         public int AdvNo { get; set; }
-
-        /// <summary>
-        /// Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed
-        /// </summary>
-        /// <value>Ad status: 1&#x3D;Active, 3&#x3D;Inactive, 4&#x3D;Closed</value>
-        [DataMember(Name="adv_status")]
-        public int AdvStatus { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

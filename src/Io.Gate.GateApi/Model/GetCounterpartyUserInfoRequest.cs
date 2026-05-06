@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetCounterpartyUserInfoRequest" /> class.
         /// </summary>
-        /// <param name="bizUid">Counterparty UID (encrypted) (required).</param>
+        /// <param name="bizUid">Counterparty crypto UID from order list or detail field &#x60;its_uid&#x60;. (required).</param>
         public GetCounterpartyUserInfoRequest(string bizUid = default(string))
         {
             // to ensure "bizUid" is required (not null)
@@ -46,9 +46,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Counterparty UID (encrypted)
+        /// Counterparty crypto UID from order list or detail field &#x60;its_uid&#x60;.
         /// </summary>
-        /// <value>Counterparty UID (encrypted)</value>
+        /// <value>Counterparty crypto UID from order list or detail field &#x60;its_uid&#x60;.</value>
         [DataMember(Name="biz_uid")]
         public string BizUid { get; set; }
 

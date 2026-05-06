@@ -25,14 +25,15 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Creation parameters for infinite grid strategies.
+    /// 无限网格策略的创建参数。  与 App 口径对齐：**仅** &#x60;money&#x60;、&#x60;price_floor&#x60;、&#x60;profit_per_grid&#x60; 为必填； &#x60;grid_num&#x60;、&#x60;price_type&#x60; 可选（不传时由服务端按默认处理）。
     /// </summary>
     [DataContract]
     public partial class InfiniteGridCreateParams :  IEquatable<InfiniteGridCreateParams>, IValidatableObject
     {
         /// <summary>
-        /// Defines PriceType
+        /// Optional. &#x60;0&#x60; arithmetic grid; &#x60;1&#x60; geometric; omit for server defaults.
         /// </summary>
+        /// <value>Optional. &#x60;0&#x60; arithmetic grid; &#x60;1&#x60; geometric; omit for server defaults.</value>
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -48,10 +49,11 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Gets or Sets PriceType
+        /// Optional. &#x60;0&#x60; arithmetic grid; &#x60;1&#x60; geometric; omit for server defaults.
         /// </summary>
+        /// <value>Optional. &#x60;0&#x60; arithmetic grid; &#x60;1&#x60; geometric; omit for server defaults.</value>
         [DataMember(Name="price_type")]
-        public PriceTypeEnum PriceType { get; set; }
+        public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InfiniteGridCreateParams" /> class.
         /// </summary>
@@ -63,14 +65,14 @@ namespace Io.Gate.GateApi.Model
         /// <param name="money">money (required).</param>
         /// <param name="priceFloor">price floor (required).</param>
         /// <param name="profitPerGrid">Profit per square (required).</param>
-        /// <param name="gridNum">gridNum (required).</param>
-        /// <param name="priceType">priceType (required).</param>
+        /// <param name="gridNum">Optional; may be omitted like in the app..</param>
+        /// <param name="priceType">Optional. &#x60;0&#x60; arithmetic grid; &#x60;1&#x60; geometric; omit for server defaults..</param>
         /// <param name="triggerPrice">triggerPrice.</param>
         /// <param name="stopProfit">stopProfit.</param>
         /// <param name="stopLoss">stopLoss.</param>
         /// <param name="profitSharingRatio">profitSharingRatio.</param>
         /// <param name="isUseBase">isUseBase.</param>
-        public InfiniteGridCreateParams(string money = default(string), string priceFloor = default(string), string profitPerGrid = default(string), int gridNum = default(int), PriceTypeEnum priceType = default(PriceTypeEnum), string triggerPrice = default(string), string stopProfit = default(string), string stopLoss = default(string), string profitSharingRatio = default(string), bool isUseBase = default(bool))
+        public InfiniteGridCreateParams(string money = default(string), string priceFloor = default(string), string profitPerGrid = default(string), int gridNum = default(int), PriceTypeEnum? priceType = default(PriceTypeEnum?), string triggerPrice = default(string), string stopProfit = default(string), string stopLoss = default(string), string profitSharingRatio = default(string), bool isUseBase = default(bool))
         {
             // to ensure "money" is required (not null)
             this.Money = money ?? throw new ArgumentNullException("money", "money is a required property for InfiniteGridCreateParams and cannot be null");
@@ -108,8 +110,9 @@ namespace Io.Gate.GateApi.Model
         public string ProfitPerGrid { get; set; }
 
         /// <summary>
-        /// Gets or Sets GridNum
+        /// Optional; may be omitted like in the app.
         /// </summary>
+        /// <value>Optional; may be omitted like in the app.</value>
         [DataMember(Name="grid_num")]
         public int GridNum { get; set; }
 

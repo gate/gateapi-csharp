@@ -33,16 +33,16 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetMyselfPaymentRequest" /> class.
         /// </summary>
-        /// <param name="fiat">Fiat currency.</param>
+        /// <param name="fiat">Fiat currency; omit to return all available payment methods..</param>
         public GetMyselfPaymentRequest(string fiat = default(string))
         {
             this.Fiat = fiat;
         }
 
         /// <summary>
-        /// Fiat currency
+        /// Fiat currency; omit to return all available payment methods.
         /// </summary>
-        /// <value>Fiat currency</value>
+        /// <value>Fiat currency; omit to return all available payment methods.</value>
         [DataMember(Name="fiat")]
         public string Fiat { get; set; }
 

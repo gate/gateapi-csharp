@@ -38,32 +38,35 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CancelOrder" /> class.
         /// </summary>
-        /// <param name="tradeId">tradeId (required).</param>
-        /// <param name="reasonId">reasonId.</param>
-        /// <param name="reasonMemo">reasonMemo.</param>
-        public CancelOrder(string tradeId = default(string), string reasonId = default(string), string reasonMemo = default(string))
+        /// <param name="txid">Order ID (required).</param>
+        /// <param name="reasonId">Cancel reason ID. &#x60;1&#x60; no longer want to buy; &#x60;2&#x60; cannot reach seller; &#x60;3&#x60; will not pay; &#x60;4&#x60; seller account not real; &#x60;5&#x60; payout account issue; &#x60;6&#x60; price mismatch; &#x60;7&#x60; mutually agreed cancel; &#x60;8&#x60; poor communication; &#x60;9&#x60; other; &#x60;10&#x60; seller cannot release with refund; &#x60;11&#x60; terms not met; &#x60;12&#x60; seller payout risk-controlled..</param>
+        /// <param name="reasonMemo">Extra cancel notes when &#x60;reason_id&#x60; is &#x60;9&#x60; or explanation is required..</param>
+        public CancelOrder(string txid = default(string), string reasonId = default(string), string reasonMemo = default(string))
         {
-            // to ensure "tradeId" is required (not null)
-            this.TradeId = tradeId ?? throw new ArgumentNullException("tradeId", "tradeId is a required property for CancelOrder and cannot be null");
+            // to ensure "txid" is required (not null)
+            this.Txid = txid ?? throw new ArgumentNullException("txid", "txid is a required property for CancelOrder and cannot be null");
             this.ReasonId = reasonId;
             this.ReasonMemo = reasonMemo;
         }
 
         /// <summary>
-        /// Gets or Sets TradeId
+        /// Order ID
         /// </summary>
-        [DataMember(Name="trade_id")]
-        public string TradeId { get; set; }
+        /// <value>Order ID</value>
+        [DataMember(Name="txid")]
+        public string Txid { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReasonId
+        /// Cancel reason ID. &#x60;1&#x60; no longer want to buy; &#x60;2&#x60; cannot reach seller; &#x60;3&#x60; will not pay; &#x60;4&#x60; seller account not real; &#x60;5&#x60; payout account issue; &#x60;6&#x60; price mismatch; &#x60;7&#x60; mutually agreed cancel; &#x60;8&#x60; poor communication; &#x60;9&#x60; other; &#x60;10&#x60; seller cannot release with refund; &#x60;11&#x60; terms not met; &#x60;12&#x60; seller payout risk-controlled.
         /// </summary>
+        /// <value>Cancel reason ID. &#x60;1&#x60; no longer want to buy; &#x60;2&#x60; cannot reach seller; &#x60;3&#x60; will not pay; &#x60;4&#x60; seller account not real; &#x60;5&#x60; payout account issue; &#x60;6&#x60; price mismatch; &#x60;7&#x60; mutually agreed cancel; &#x60;8&#x60; poor communication; &#x60;9&#x60; other; &#x60;10&#x60; seller cannot release with refund; &#x60;11&#x60; terms not met; &#x60;12&#x60; seller payout risk-controlled.</value>
         [DataMember(Name="reason_id")]
         public string ReasonId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReasonMemo
+        /// Extra cancel notes when &#x60;reason_id&#x60; is &#x60;9&#x60; or explanation is required.
         /// </summary>
+        /// <value>Extra cancel notes when &#x60;reason_id&#x60; is &#x60;9&#x60; or explanation is required.</value>
         [DataMember(Name="reason_memo")]
         public string ReasonMemo { get; set; }
 
@@ -75,7 +78,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CancelOrder {\n");
-            sb.Append("  TradeId: ").Append(TradeId).Append("\n");
+            sb.Append("  Txid: ").Append(Txid).Append("\n");
             sb.Append("  ReasonId: ").Append(ReasonId).Append("\n");
             sb.Append("  ReasonMemo: ").Append(ReasonMemo).Append("\n");
             sb.Append("}\n");
@@ -113,9 +116,9 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.TradeId == input.TradeId ||
-                    (this.TradeId != null &&
-                    this.TradeId.Equals(input.TradeId))
+                    this.Txid == input.Txid ||
+                    (this.Txid != null &&
+                    this.Txid.Equals(input.Txid))
                 ) && 
                 (
                     this.ReasonId == input.ReasonId ||
@@ -138,8 +141,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TradeId != null)
-                    hashCode = hashCode * 59 + this.TradeId.GetHashCode();
+                if (this.Txid != null)
+                    hashCode = hashCode * 59 + this.Txid.GetHashCode();
                 if (this.ReasonId != null)
                     hashCode = hashCode * 59 + this.ReasonId.GetHashCode();
                 if (this.ReasonMemo != null)

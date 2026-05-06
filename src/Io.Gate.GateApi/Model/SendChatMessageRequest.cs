@@ -31,6 +31,31 @@ namespace Io.Gate.GateApi.Model
     public partial class SendChatMessageRequest :  IEquatable<SendChatMessageRequest>, IValidatableObject
     {
         /// <summary>
+        /// Message type: &#x60;0&#x60; text; &#x60;1&#x60; file (image or video); defaults to &#x60;0&#x60;.
+        /// </summary>
+        /// <value>Message type: &#x60;0&#x60; text; &#x60;1&#x60; file (image or video); defaults to &#x60;0&#x60;.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TypeEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1
+
+        }
+
+        /// <summary>
+        /// Message type: &#x60;0&#x60; text; &#x60;1&#x60; file (image or video); defaults to &#x60;0&#x60;.
+        /// </summary>
+        /// <value>Message type: &#x60;0&#x60; text; &#x60;1&#x60; file (image or video); defaults to &#x60;0&#x60;.</value>
+        [DataMember(Name="type")]
+        public TypeEnum? Type { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="SendChatMessageRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -39,9 +64,9 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="SendChatMessageRequest" /> class.
         /// </summary>
         /// <param name="txid">Order ID (required).</param>
-        /// <param name="type">0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided.</param>
-        /// <param name="message">Message content (required).</param>
-        public SendChatMessageRequest(int txid = default(int), int type = default(int), string message = default(string))
+        /// <param name="type">Message type: &#x60;0&#x60; text; &#x60;1&#x60; file (image or video); defaults to &#x60;0&#x60;..</param>
+        /// <param name="message">Message body. For &#x60;type&#x3D;0&#x60;, plain text up to 500 characters; for &#x60;type&#x3D;1&#x60;, pass the &#x60;file_key&#x60; returned by &#x60;upload_chat_file&#x60;. (required).</param>
+        public SendChatMessageRequest(int txid = default(int), TypeEnum? type = default(TypeEnum?), string message = default(string))
         {
             this.Txid = txid;
             // to ensure "message" is required (not null)
@@ -57,16 +82,9 @@ namespace Io.Gate.GateApi.Model
         public int Txid { get; set; }
 
         /// <summary>
-        /// 0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided
+        /// Message body. For &#x60;type&#x3D;0&#x60;, plain text up to 500 characters; for &#x60;type&#x3D;1&#x60;, pass the &#x60;file_key&#x60; returned by &#x60;upload_chat_file&#x60;.
         /// </summary>
-        /// <value>0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided</value>
-        [DataMember(Name="type")]
-        public int Type { get; set; }
-
-        /// <summary>
-        /// Message content
-        /// </summary>
-        /// <value>Message content</value>
+        /// <value>Message body. For &#x60;type&#x3D;0&#x60;, plain text up to 500 characters; for &#x60;type&#x3D;1&#x60;, pass the &#x60;file_key&#x60; returned by &#x60;upload_chat_file&#x60;.</value>
         [DataMember(Name="message")]
         public string Message { get; set; }
 

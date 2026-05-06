@@ -43,13 +43,13 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ContractMartingaleCreateParams" /> class.
         /// </summary>
-        /// <param name="investAmount">investAmount (required).</param>
+        /// <param name="investAmount">Margin allocated; the server converts it to initial contract size using live contract price, contract multiplier, and minimum lot size. (required).</param>
         /// <param name="priceDeviation">priceDeviation (required).</param>
         /// <param name="maxOrders">maxOrders (required).</param>
         /// <param name="takeProfitRatio">takeProfitRatio (required).</param>
         /// <param name="direction">direction (required).</param>
         /// <param name="leverage">leverage (required).</param>
-        /// <param name="stopLossPrice">stopLossPrice.</param>
+        /// <param name="stopLossPrice">Legacy field name. The AIHub &#x60;contract_martingale&#x60; creation path does not map this field today; follow contract martingale rules from the underlying API. MCP tooling must match bot-service behavior..</param>
         /// <param name="profitSharingRatio">profitSharingRatio.</param>
         public ContractMartingaleCreateParams(string investAmount = default(string), string priceDeviation = default(string), int maxOrders = default(int), string takeProfitRatio = default(string), ContractMartingaleDirection direction = default(ContractMartingaleDirection), string leverage = default(string), string stopLossPrice = default(string), string profitSharingRatio = default(string))
         {
@@ -68,8 +68,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Gets or Sets InvestAmount
+        /// Margin allocated; the server converts it to initial contract size using live contract price, contract multiplier, and minimum lot size.
         /// </summary>
+        /// <value>Margin allocated; the server converts it to initial contract size using live contract price, contract multiplier, and minimum lot size.</value>
         [DataMember(Name="invest_amount")]
         public string InvestAmount { get; set; }
 
@@ -98,8 +99,9 @@ namespace Io.Gate.GateApi.Model
         public string Leverage { get; set; }
 
         /// <summary>
-        /// Gets or Sets StopLossPrice
+        /// Legacy field name. The AIHub &#x60;contract_martingale&#x60; creation path does not map this field today; follow contract martingale rules from the underlying API. MCP tooling must match bot-service behavior.
         /// </summary>
+        /// <value>Legacy field name. The AIHub &#x60;contract_martingale&#x60; creation path does not map this field today; follow contract martingale rules from the underlying API. MCP tooling must match bot-service behavior.</value>
         [DataMember(Name="stop_loss_price")]
         public string StopLossPrice { get; set; }
 

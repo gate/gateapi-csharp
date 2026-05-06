@@ -38,9 +38,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AdsListRequest" /> class.
         /// </summary>
-        /// <param name="asset">Cryptocurrency (required).</param>
+        /// <param name="asset">Cryptocurrency symbol. (required).</param>
         /// <param name="fiatUnit">Fiat currency (required).</param>
-        /// <param name="tradeType">Buy/Sell, sell/buy (required).</param>
+        /// <param name="tradeType">Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad. (required).</param>
         public AdsListRequest(string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
         {
             // to ensure "asset" is required (not null)
@@ -52,9 +52,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Cryptocurrency
+        /// Cryptocurrency symbol.
         /// </summary>
-        /// <value>Cryptocurrency</value>
+        /// <value>Cryptocurrency symbol.</value>
         [DataMember(Name="asset")]
         public string Asset { get; set; }
 
@@ -66,9 +66,9 @@ namespace Io.Gate.GateApi.Model
         public string FiatUnit { get; set; }
 
         /// <summary>
-        /// Buy/Sell, sell/buy
+        /// Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad.
         /// </summary>
-        /// <value>Buy/Sell, sell/buy</value>
+        /// <value>Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad.</value>
         [DataMember(Name="trade_type")]
         public string TradeType { get; set; }
 

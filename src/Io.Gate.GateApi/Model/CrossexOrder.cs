@@ -38,33 +38,33 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CrossexOrder" /> class.
         /// </summary>
-        /// <param name="userId">userId (required).</param>
+        /// <param name="userId">User ID (required).</param>
         /// <param name="orderId">Order ID (required).</param>
-        /// <param name="text">Customer-defined order ID (required).</param>
-        /// <param name="state">Order State:  NEW: The order is legal and waiting to be sent to the exchange  OPEN: The order has been placed on the orderbook of the exchange  PARTIALLY_FILLED: The order has been partially completed  FILLED: The order has been fully executed  FAIL: The order verification in CrossEx did not pass. Please check the order reason  REJECT：The order was rejected by the exchange. Please check the order reason (required).</param>
-        /// <param name="symbol">Trading pair unique identifier ,example: BINANCE_SPOT_BTC_USDT, BINANCE_FUTURE_BTC_USDT (required).</param>
-        /// <param name="side">Side(BUY,SELL) (required).</param>
-        /// <param name="type">Type(LIMIT, MARKET) (required).</param>
-        /// <param name="attribute">COMMON, LIQ, REDUCE, ADL (required).</param>
-        /// <param name="exchangeType">Exchange type(BINANCE,OKX,GATE,BYBIT) (required).</param>
-        /// <param name="businessType">Business type(SPOT,FUTURE,MARGIN) (required).</param>
-        /// <param name="qty">Order base quantity (required).</param>
-        /// <param name="quoteQty">Order quote quantity (required).</param>
-        /// <param name="price">Order price (required).</param>
-        /// <param name="timeInForce">Timeinforce (default GTC, enums:GTC,IOC,FOK,POC) (required).</param>
-        /// <param name="executedQty">Executed quantity (required).</param>
-        /// <param name="executedAmount">Executed quote quantity (required).</param>
-        /// <param name="executedAvgPrice">Average transaction price (required).</param>
-        /// <param name="feeCoin">Transaction fee coin (required).</param>
-        /// <param name="fee">Transaction fee amount (required).</param>
-        /// <param name="reduceOnly">Reduce position orders only, \&quot;true\&quot; or \&quot;false\&quot; (required).</param>
-        /// <param name="leverage">Order leverage (required).</param>
-        /// <param name="reason">Fail message (required).</param>
-        /// <param name="lastExecutedQty">Last transaction quantity (required).</param>
-        /// <param name="lastExecutedPrice">Last transaction price (required).</param>
-        /// <param name="lastExecutedAmount">Last transaction amount (required).</param>
-        /// <param name="positionSide">Position side(NONE/LONG/SHORT) (required).</param>
-        /// <param name="createTime">Create time (required).</param>
+        /// <param name="text">Client-defined order ID. (required).</param>
+        /// <param name="state">订单状态：  NEW：订单已通过校验，等待发送到交易所  OPEN：订单已挂在交易所订单簿上  PARTIALLY_FILLED：订单已部分成交  FILLED：订单已完全成交  FAIL：CrossEx 内部校验未通过，请查看 reason 字段了解失败原因  REJECT：订单被交易所拒绝，请查看 reason 字段了解失败原因 (required).</param>
+        /// <param name="symbol">Unique trading pair identifiers, e.g. &#x60;BINANCE_SPOT_BTC_USDT&#x60;, &#x60;BINANCE_FUTURE_BTC_USDT&#x60;. (required).</param>
+        /// <param name="side">Side (&#x60;BUY&#x60; buy / &#x60;SELL&#x60; sell). (required).</param>
+        /// <param name="type">Order type (&#x60;LIMIT&#x60; limit / &#x60;MARKET&#x60; market). (required).</param>
+        /// <param name="attribute">Order attributes (&#x60;COMMON&#x60; normal / &#x60;LIQ&#x60; liquidation takeover / &#x60;REDUCE&#x60; liquidation reduction / &#x60;ADL&#x60; auto-deleverage). (required).</param>
+        /// <param name="exchangeType">Exchange type (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60;). (required).</param>
+        /// <param name="businessType">Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin). (required).</param>
+        /// <param name="qty">Order quantity in the base currency. (required).</param>
+        /// <param name="quoteQty">Order quantity in the quote currency. (required).</param>
+        /// <param name="price">Order price. (required).</param>
+        /// <param name="timeInForce">Time in force (default &#x60;GTC&#x60;; enum: &#x60;GTC&#x60; / &#x60;IOC&#x60; / &#x60;FOK&#x60; / &#x60;POC&#x60;). (required).</param>
+        /// <param name="executedQty">Filled base amount. (required).</param>
+        /// <param name="executedAmount">Filled quote amount. (required).</param>
+        /// <param name="executedAvgPrice">Average Filled Price (required).</param>
+        /// <param name="feeCoin">Fee currency (required).</param>
+        /// <param name="fee">Fee amount. (required).</param>
+        /// <param name="reduceOnly">Reduce-only order (&#x60;\&quot;true\&quot;&#x60; or &#x60;\&quot;false\&quot;&#x60;). (required).</param>
+        /// <param name="leverage">Order leverage multiplier. (required).</param>
+        /// <param name="reason">Failure reason description. (required).</param>
+        /// <param name="lastExecutedQty">Base quantity of the latest fill. (required).</param>
+        /// <param name="lastExecutedPrice">Price of the latest fill. (required).</param>
+        /// <param name="lastExecutedAmount">Quote amount of the latest fill. (required).</param>
+        /// <param name="positionSide">Position side (&#x60;NONE&#x60; flat / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short). (required).</param>
+        /// <param name="createTime">Created time (required).</param>
         /// <param name="updateTime">Update time (required).</param>
         public CrossexOrder(string userId = default(string), string orderId = default(string), string text = default(string), string state = default(string), string symbol = default(string), string side = default(string), string type = default(string), string attribute = default(string), string exchangeType = default(string), string businessType = default(string), string qty = default(string), string quoteQty = default(string), string price = default(string), string timeInForce = default(string), string executedQty = default(string), string executedAmount = default(string), string executedAvgPrice = default(string), string feeCoin = default(string), string fee = default(string), string reduceOnly = default(string), string leverage = default(string), string reason = default(string), string lastExecutedQty = default(string), string lastExecutedPrice = default(string), string lastExecutedAmount = default(string), string positionSide = default(string), string createTime = default(string), string updateTime = default(string))
         {
@@ -127,8 +127,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Gets or Sets UserId
+        /// User ID
         /// </summary>
+        /// <value>User ID</value>
         [DataMember(Name="user_id")]
         public string UserId { get; set; }
 
@@ -140,177 +141,177 @@ namespace Io.Gate.GateApi.Model
         public string OrderId { get; set; }
 
         /// <summary>
-        /// Customer-defined order ID
+        /// Client-defined order ID.
         /// </summary>
-        /// <value>Customer-defined order ID</value>
+        /// <value>Client-defined order ID.</value>
         [DataMember(Name="text")]
         public string Text { get; set; }
 
         /// <summary>
-        /// Order State:  NEW: The order is legal and waiting to be sent to the exchange  OPEN: The order has been placed on the orderbook of the exchange  PARTIALLY_FILLED: The order has been partially completed  FILLED: The order has been fully executed  FAIL: The order verification in CrossEx did not pass. Please check the order reason  REJECT：The order was rejected by the exchange. Please check the order reason
+        /// 订单状态：  NEW：订单已通过校验，等待发送到交易所  OPEN：订单已挂在交易所订单簿上  PARTIALLY_FILLED：订单已部分成交  FILLED：订单已完全成交  FAIL：CrossEx 内部校验未通过，请查看 reason 字段了解失败原因  REJECT：订单被交易所拒绝，请查看 reason 字段了解失败原因
         /// </summary>
-        /// <value>Order State:  NEW: The order is legal and waiting to be sent to the exchange  OPEN: The order has been placed on the orderbook of the exchange  PARTIALLY_FILLED: The order has been partially completed  FILLED: The order has been fully executed  FAIL: The order verification in CrossEx did not pass. Please check the order reason  REJECT：The order was rejected by the exchange. Please check the order reason</value>
+        /// <value>订单状态：  NEW：订单已通过校验，等待发送到交易所  OPEN：订单已挂在交易所订单簿上  PARTIALLY_FILLED：订单已部分成交  FILLED：订单已完全成交  FAIL：CrossEx 内部校验未通过，请查看 reason 字段了解失败原因  REJECT：订单被交易所拒绝，请查看 reason 字段了解失败原因</value>
         [DataMember(Name="state")]
         public string State { get; set; }
 
         /// <summary>
-        /// Trading pair unique identifier ,example: BINANCE_SPOT_BTC_USDT, BINANCE_FUTURE_BTC_USDT
+        /// Unique trading pair identifiers, e.g. &#x60;BINANCE_SPOT_BTC_USDT&#x60;, &#x60;BINANCE_FUTURE_BTC_USDT&#x60;.
         /// </summary>
-        /// <value>Trading pair unique identifier ,example: BINANCE_SPOT_BTC_USDT, BINANCE_FUTURE_BTC_USDT</value>
+        /// <value>Unique trading pair identifiers, e.g. &#x60;BINANCE_SPOT_BTC_USDT&#x60;, &#x60;BINANCE_FUTURE_BTC_USDT&#x60;.</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Side(BUY,SELL)
+        /// Side (&#x60;BUY&#x60; buy / &#x60;SELL&#x60; sell).
         /// </summary>
-        /// <value>Side(BUY,SELL)</value>
+        /// <value>Side (&#x60;BUY&#x60; buy / &#x60;SELL&#x60; sell).</value>
         [DataMember(Name="side")]
         public string Side { get; set; }
 
         /// <summary>
-        /// Type(LIMIT, MARKET)
+        /// Order type (&#x60;LIMIT&#x60; limit / &#x60;MARKET&#x60; market).
         /// </summary>
-        /// <value>Type(LIMIT, MARKET)</value>
+        /// <value>Order type (&#x60;LIMIT&#x60; limit / &#x60;MARKET&#x60; market).</value>
         [DataMember(Name="type")]
         public string Type { get; set; }
 
         /// <summary>
-        /// COMMON, LIQ, REDUCE, ADL
+        /// Order attributes (&#x60;COMMON&#x60; normal / &#x60;LIQ&#x60; liquidation takeover / &#x60;REDUCE&#x60; liquidation reduction / &#x60;ADL&#x60; auto-deleverage).
         /// </summary>
-        /// <value>COMMON, LIQ, REDUCE, ADL</value>
+        /// <value>Order attributes (&#x60;COMMON&#x60; normal / &#x60;LIQ&#x60; liquidation takeover / &#x60;REDUCE&#x60; liquidation reduction / &#x60;ADL&#x60; auto-deleverage).</value>
         [DataMember(Name="attribute")]
         public string Attribute { get; set; }
 
         /// <summary>
-        /// Exchange type(BINANCE,OKX,GATE,BYBIT)
+        /// Exchange type (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60;).
         /// </summary>
-        /// <value>Exchange type(BINANCE,OKX,GATE,BYBIT)</value>
+        /// <value>Exchange type (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60;).</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 
         /// <summary>
-        /// Business type(SPOT,FUTURE,MARGIN)
+        /// Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin).
         /// </summary>
-        /// <value>Business type(SPOT,FUTURE,MARGIN)</value>
+        /// <value>Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin).</value>
         [DataMember(Name="business_type")]
         public string BusinessType { get; set; }
 
         /// <summary>
-        /// Order base quantity
+        /// Order quantity in the base currency.
         /// </summary>
-        /// <value>Order base quantity</value>
+        /// <value>Order quantity in the base currency.</value>
         [DataMember(Name="qty")]
         public string Qty { get; set; }
 
         /// <summary>
-        /// Order quote quantity
+        /// Order quantity in the quote currency.
         /// </summary>
-        /// <value>Order quote quantity</value>
+        /// <value>Order quantity in the quote currency.</value>
         [DataMember(Name="quote_qty")]
         public string QuoteQty { get; set; }
 
         /// <summary>
-        /// Order price
+        /// Order price.
         /// </summary>
-        /// <value>Order price</value>
+        /// <value>Order price.</value>
         [DataMember(Name="price")]
         public string Price { get; set; }
 
         /// <summary>
-        /// Timeinforce (default GTC, enums:GTC,IOC,FOK,POC)
+        /// Time in force (default &#x60;GTC&#x60;; enum: &#x60;GTC&#x60; / &#x60;IOC&#x60; / &#x60;FOK&#x60; / &#x60;POC&#x60;).
         /// </summary>
-        /// <value>Timeinforce (default GTC, enums:GTC,IOC,FOK,POC)</value>
+        /// <value>Time in force (default &#x60;GTC&#x60;; enum: &#x60;GTC&#x60; / &#x60;IOC&#x60; / &#x60;FOK&#x60; / &#x60;POC&#x60;).</value>
         [DataMember(Name="time_in_force")]
         public string TimeInForce { get; set; }
 
         /// <summary>
-        /// Executed quantity
+        /// Filled base amount.
         /// </summary>
-        /// <value>Executed quantity</value>
+        /// <value>Filled base amount.</value>
         [DataMember(Name="executed_qty")]
         public string ExecutedQty { get; set; }
 
         /// <summary>
-        /// Executed quote quantity
+        /// Filled quote amount.
         /// </summary>
-        /// <value>Executed quote quantity</value>
+        /// <value>Filled quote amount.</value>
         [DataMember(Name="executed_amount")]
         public string ExecutedAmount { get; set; }
 
         /// <summary>
-        /// Average transaction price
+        /// Average Filled Price
         /// </summary>
-        /// <value>Average transaction price</value>
+        /// <value>Average Filled Price</value>
         [DataMember(Name="executed_avg_price")]
         public string ExecutedAvgPrice { get; set; }
 
         /// <summary>
-        /// Transaction fee coin
+        /// Fee currency
         /// </summary>
-        /// <value>Transaction fee coin</value>
+        /// <value>Fee currency</value>
         [DataMember(Name="fee_coin")]
         public string FeeCoin { get; set; }
 
         /// <summary>
-        /// Transaction fee amount
+        /// Fee amount.
         /// </summary>
-        /// <value>Transaction fee amount</value>
+        /// <value>Fee amount.</value>
         [DataMember(Name="fee")]
         public string Fee { get; set; }
 
         /// <summary>
-        /// Reduce position orders only, \&quot;true\&quot; or \&quot;false\&quot;
+        /// Reduce-only order (&#x60;\&quot;true\&quot;&#x60; or &#x60;\&quot;false\&quot;&#x60;).
         /// </summary>
-        /// <value>Reduce position orders only, \&quot;true\&quot; or \&quot;false\&quot;</value>
+        /// <value>Reduce-only order (&#x60;\&quot;true\&quot;&#x60; or &#x60;\&quot;false\&quot;&#x60;).</value>
         [DataMember(Name="reduce_only")]
         public string ReduceOnly { get; set; }
 
         /// <summary>
-        /// Order leverage
+        /// Order leverage multiplier.
         /// </summary>
-        /// <value>Order leverage</value>
+        /// <value>Order leverage multiplier.</value>
         [DataMember(Name="leverage")]
         public string Leverage { get; set; }
 
         /// <summary>
-        /// Fail message
+        /// Failure reason description.
         /// </summary>
-        /// <value>Fail message</value>
+        /// <value>Failure reason description.</value>
         [DataMember(Name="reason")]
         public string Reason { get; set; }
 
         /// <summary>
-        /// Last transaction quantity
+        /// Base quantity of the latest fill.
         /// </summary>
-        /// <value>Last transaction quantity</value>
+        /// <value>Base quantity of the latest fill.</value>
         [DataMember(Name="last_executed_qty")]
         public string LastExecutedQty { get; set; }
 
         /// <summary>
-        /// Last transaction price
+        /// Price of the latest fill.
         /// </summary>
-        /// <value>Last transaction price</value>
+        /// <value>Price of the latest fill.</value>
         [DataMember(Name="last_executed_price")]
         public string LastExecutedPrice { get; set; }
 
         /// <summary>
-        /// Last transaction amount
+        /// Quote amount of the latest fill.
         /// </summary>
-        /// <value>Last transaction amount</value>
+        /// <value>Quote amount of the latest fill.</value>
         [DataMember(Name="last_executed_amount")]
         public string LastExecutedAmount { get; set; }
 
         /// <summary>
-        /// Position side(NONE/LONG/SHORT)
+        /// Position side (&#x60;NONE&#x60; flat / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short).
         /// </summary>
-        /// <value>Position side(NONE/LONG/SHORT)</value>
+        /// <value>Position side (&#x60;NONE&#x60; flat / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short).</value>
         [DataMember(Name="position_side")]
         public string PositionSide { get; set; }
 
         /// <summary>
-        /// Create time
+        /// Created time
         /// </summary>
-        /// <value>Create time</value>
+        /// <value>Created time</value>
         [DataMember(Name="create_time")]
         public string CreateTime { get; set; }
 

@@ -38,20 +38,20 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Symbol" /> class.
         /// </summary>
-        /// <param name="symbol">ExchangeType_BusinessType_Base_Counter (required).</param>
-        /// <param name="exchangeType">BINANCE,OKX,GATE,BYBIT,CROSSEX (required).</param>
-        /// <param name="businessType">SPOT, FUTURE, MARGIN (required).</param>
-        /// <param name="state">live/suspend (required).</param>
-        /// <param name="minSize">Minimum order quantity (required).</param>
-        /// <param name="minNotional">Minimum order value (required).</param>
-        /// <param name="lotSize">Quantity step size (required).</param>
-        /// <param name="tickSize">Price step size (required).</param>
-        /// <param name="maxNumOrders">Maximum number of pending orders (required).</param>
-        /// <param name="maxMarketSize">Maximum order quantity at market price (required).</param>
-        /// <param name="maxLimitSize">Maximum order quantity at limit price (required).</param>
-        /// <param name="contractSize">contract multiplier (required).</param>
-        /// <param name="liquidationFee">Liquidation rate (required).</param>
-        /// <param name="delistTime">Millisecond timestamp,0 is normal (required).</param>
+        /// <param name="symbol">Unique trading pair identifier in the form ExchangeType_BusinessType_Base_Counter. (required).</param>
+        /// <param name="exchangeType">Exchange type (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;CROSSEX&#x60;). (required).</param>
+        /// <param name="businessType">Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin). (required).</param>
+        /// <param name="state">Status (&#x60;live&#x60; running / &#x60;suspend&#x60; paused). (required).</param>
+        /// <param name="minSize">Minimum order size allowed by the contract (required).</param>
+        /// <param name="minNotional">Minimum Order Value (required).</param>
+        /// <param name="lotSize">Quantity Step (required).</param>
+        /// <param name="tickSize">Price Step (required).</param>
+        /// <param name="maxNumOrders">maximumopen orderamount (required).</param>
+        /// <param name="maxMarketSize">Maximum Market Order Quantity (required).</param>
+        /// <param name="maxLimitSize">Maximum order quantity for limit orders. (required).</param>
+        /// <param name="contractSize">Contract Multiplier (required).</param>
+        /// <param name="liquidationFee">Liquidation Fee Rate (required).</param>
+        /// <param name="delistTime">Millisecond timestamp; &#x60;0&#x60; means not delisted. (required).</param>
         public Symbol(string symbol = default(string), string exchangeType = default(string), string businessType = default(string), string state = default(string), string minSize = default(string), string minNotional = default(string), string lotSize = default(string), string tickSize = default(string), string maxNumOrders = default(string), string maxMarketSize = default(string), string maxLimitSize = default(string), string contractSize = default(string), string liquidationFee = default(string), string delistTime = default(string))
         {
             // to ensure "symbol" is required (not null)
@@ -85,100 +85,100 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// ExchangeType_BusinessType_Base_Counter
+        /// Unique trading pair identifier in the form ExchangeType_BusinessType_Base_Counter.
         /// </summary>
-        /// <value>ExchangeType_BusinessType_Base_Counter</value>
+        /// <value>Unique trading pair identifier in the form ExchangeType_BusinessType_Base_Counter.</value>
         [DataMember(Name="symbol")]
         public string _Symbol { get; set; }
 
         /// <summary>
-        /// BINANCE,OKX,GATE,BYBIT,CROSSEX
+        /// Exchange type (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;CROSSEX&#x60;).
         /// </summary>
-        /// <value>BINANCE,OKX,GATE,BYBIT,CROSSEX</value>
+        /// <value>Exchange type (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;CROSSEX&#x60;).</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 
         /// <summary>
-        /// SPOT, FUTURE, MARGIN
+        /// Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin).
         /// </summary>
-        /// <value>SPOT, FUTURE, MARGIN</value>
+        /// <value>Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin).</value>
         [DataMember(Name="business_type")]
         public string BusinessType { get; set; }
 
         /// <summary>
-        /// live/suspend
+        /// Status (&#x60;live&#x60; running / &#x60;suspend&#x60; paused).
         /// </summary>
-        /// <value>live/suspend</value>
+        /// <value>Status (&#x60;live&#x60; running / &#x60;suspend&#x60; paused).</value>
         [DataMember(Name="state")]
         public string State { get; set; }
 
         /// <summary>
-        /// Minimum order quantity
+        /// Minimum order size allowed by the contract
         /// </summary>
-        /// <value>Minimum order quantity</value>
+        /// <value>Minimum order size allowed by the contract</value>
         [DataMember(Name="min_size")]
         public string MinSize { get; set; }
 
         /// <summary>
-        /// Minimum order value
+        /// Minimum Order Value
         /// </summary>
-        /// <value>Minimum order value</value>
+        /// <value>Minimum Order Value</value>
         [DataMember(Name="min_notional")]
         public string MinNotional { get; set; }
 
         /// <summary>
-        /// Quantity step size
+        /// Quantity Step
         /// </summary>
-        /// <value>Quantity step size</value>
+        /// <value>Quantity Step</value>
         [DataMember(Name="lot_size")]
         public string LotSize { get; set; }
 
         /// <summary>
-        /// Price step size
+        /// Price Step
         /// </summary>
-        /// <value>Price step size</value>
+        /// <value>Price Step</value>
         [DataMember(Name="tick_size")]
         public string TickSize { get; set; }
 
         /// <summary>
-        /// Maximum number of pending orders
+        /// maximumopen orderamount
         /// </summary>
-        /// <value>Maximum number of pending orders</value>
+        /// <value>maximumopen orderamount</value>
         [DataMember(Name="max_num_orders")]
         public string MaxNumOrders { get; set; }
 
         /// <summary>
-        /// Maximum order quantity at market price
+        /// Maximum Market Order Quantity
         /// </summary>
-        /// <value>Maximum order quantity at market price</value>
+        /// <value>Maximum Market Order Quantity</value>
         [DataMember(Name="max_market_size")]
         public string MaxMarketSize { get; set; }
 
         /// <summary>
-        /// Maximum order quantity at limit price
+        /// Maximum order quantity for limit orders.
         /// </summary>
-        /// <value>Maximum order quantity at limit price</value>
+        /// <value>Maximum order quantity for limit orders.</value>
         [DataMember(Name="max_limit_size")]
         public string MaxLimitSize { get; set; }
 
         /// <summary>
-        /// contract multiplier
+        /// Contract Multiplier
         /// </summary>
-        /// <value>contract multiplier</value>
+        /// <value>Contract Multiplier</value>
         [DataMember(Name="contract_size")]
         public string ContractSize { get; set; }
 
         /// <summary>
-        /// Liquidation rate
+        /// Liquidation Fee Rate
         /// </summary>
-        /// <value>Liquidation rate</value>
+        /// <value>Liquidation Fee Rate</value>
         [DataMember(Name="liquidation_fee")]
         public string LiquidationFee { get; set; }
 
         /// <summary>
-        /// Millisecond timestamp,0 is normal
+        /// Millisecond timestamp; &#x60;0&#x60; means not delisted.
         /// </summary>
-        /// <value>Millisecond timestamp,0 is normal</value>
+        /// <value>Millisecond timestamp; &#x60;0&#x60; means not delisted.</value>
         [DataMember(Name="delist_time")]
         public string DelistTime { get; set; }
 

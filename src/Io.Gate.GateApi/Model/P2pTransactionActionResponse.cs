@@ -33,33 +33,63 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pTransactionActionResponse" /> class.
         /// </summary>
-        /// <param name="code">code.</param>
-        /// <param name="message">message.</param>
-        /// <param name="timestamp">timestamp.</param>
-        public P2pTransactionActionResponse(int code = default(int), string message = default(string), int timestamp = default(int))
+        /// <param name="timestamp">Response timestamp..</param>
+        /// <param name="method">Placeholder for request method..</param>
+        /// <param name="code">Response code, 0 means success.</param>
+        /// <param name="message">Response message.</param>
+        /// <param name="data">Empty object on success..</param>
+        /// <param name="version">API version..</param>
+        public P2pTransactionActionResponse(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), Object data = default(Object), string version = default(string))
         {
+            this.Timestamp = timestamp;
+            this.Method = method;
             this.Code = code;
             this.Message = message;
-            this.Timestamp = timestamp;
+            this.Data = data;
+            this.Version = version;
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Response timestamp.
         /// </summary>
+        /// <value>Response timestamp.</value>
+        [DataMember(Name="timestamp")]
+        public decimal Timestamp { get; set; }
+
+        /// <summary>
+        /// Placeholder for request method.
+        /// </summary>
+        /// <value>Placeholder for request method.</value>
+        [DataMember(Name="method")]
+        public string Method { get; set; }
+
+        /// <summary>
+        /// Response code, 0 means success
+        /// </summary>
+        /// <value>Response code, 0 means success</value>
         [DataMember(Name="code")]
         public int Code { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Response message
         /// </summary>
+        /// <value>Response message</value>
         [DataMember(Name="message")]
         public string Message { get; set; }
 
         /// <summary>
-        /// Gets or Sets Timestamp
+        /// Empty object on success.
         /// </summary>
-        [DataMember(Name="timestamp")]
-        public int Timestamp { get; set; }
+        /// <value>Empty object on success.</value>
+        [DataMember(Name="data")]
+        public Object Data { get; set; }
+
+        /// <summary>
+        /// API version.
+        /// </summary>
+        /// <value>API version.</value>
+        [DataMember(Name="version")]
+        public string Version { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,9 +99,12 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class P2pTransactionActionResponse {\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  Method: ").Append(Method).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +140,15 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
+                ) && 
+                (
+                    this.Method == input.Method ||
+                    (this.Method != null &&
+                    this.Method.Equals(input.Method))
+                ) && 
+                (
                     this.Code == input.Code ||
                     this.Code.Equals(input.Code)
                 ) && 
@@ -116,8 +158,14 @@ namespace Io.Gate.GateApi.Model
                     this.Message.Equals(input.Message))
                 ) && 
                 (
-                    this.Timestamp == input.Timestamp ||
-                    this.Timestamp.Equals(input.Timestamp)
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Version == input.Version ||
+                    (this.Version != null &&
+                    this.Version.Equals(input.Version))
                 );
         }
 
@@ -130,10 +178,16 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.Method != null)
+                    hashCode = hashCode * 59 + this.Method.GetHashCode();
                 hashCode = hashCode * 59 + this.Code.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
-                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.Version != null)
+                    hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

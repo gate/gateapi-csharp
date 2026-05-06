@@ -33,26 +33,26 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pChatMessagePayload" /> class.
         /// </summary>
-        /// <param name="status">Order status when message was sent.</param>
+        /// <param name="status">Order status when sending a message. Typical values: &#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;, &#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;..</param>
         /// <param name="text">Message content.</param>
         /// <param name="paymentVoucher">Payment voucher.</param>
-        /// <param name="reasonId">Cancellation reason ID.</param>
+        /// <param name="reasonId">Cancel reason ID. &#x60;1&#x60; no longer want to buy; &#x60;2&#x60; cannot reach seller; &#x60;3&#x60; will not pay; &#x60;4&#x60; seller account not real; &#x60;5&#x60; payout account issue; &#x60;6&#x60; price mismatch; &#x60;7&#x60; mutually agreed cancel; &#x60;8&#x60; poor communication; &#x60;9&#x60; other; &#x60;10&#x60; seller cannot release with refund; &#x60;11&#x60; terms not met; &#x60;12&#x60; seller payout risk-controlled..</param>
         /// <param name="toastId">Cancellation reason popup.</param>
-        /// <param name="reasonMemo">Cancellation reason title.</param>
+        /// <param name="reasonMemo">Cancel reason description..</param>
         /// <param name="cancelTime">Cancellation time.</param>
-        /// <param name="sellerConfirm">Whether seller confirmed the reason.</param>
+        /// <param name="sellerConfirm">Seller confirmation of cancel reason: &#x60;0&#x60; pending; &#x60;1&#x60; confirmed; &#x60;2&#x60; rejected..</param>
         /// <param name="id">Payment method information ID.</param>
         /// <param name="accountDes">Payment method description.</param>
         /// <param name="payType">Payment method type.</param>
         /// <param name="file">Payment method file link.</param>
         /// <param name="fileKey">Payment method file key.</param>
-        /// <param name="account">Payment method name.</param>
+        /// <param name="account">Payment account or masked payment account..</param>
         /// <param name="memo">Payment method note.</param>
         /// <param name="code">Payment method code.</param>
         /// <param name="memoExt">Payment method additional note.</param>
         /// <param name="tradeTips">Payment method tip.</param>
         /// <param name="realName">Payment method username.</param>
-        /// <param name="isDelete">Whether deleted.</param>
+        /// <param name="isDelete">Whether the payment method was deleted. &#x60;1&#x60;: deleted; &#x60;0&#x60;: not deleted..</param>
         /// <param name="payName">Payment method full name.</param>
         public P2pChatMessagePayload(string status = default(string), string text = default(string), List<string> paymentVoucher = default(List<string>), int reasonId = default(int), int toastId = default(int), string reasonMemo = default(string), int cancelTime = default(int), int sellerConfirm = default(int), string id = default(string), string accountDes = default(string), string payType = default(string), string file = default(string), string fileKey = default(string), string account = default(string), string memo = default(string), string code = default(string), string memoExt = default(string), string tradeTips = default(string), string realName = default(string), int isDelete = default(int), string payName = default(string))
         {
@@ -80,9 +80,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Order status when message was sent
+        /// Order status when sending a message. Typical values: &#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;, &#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;.
         /// </summary>
-        /// <value>Order status when message was sent</value>
+        /// <value>Order status when sending a message. Typical values: &#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;, &#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;.</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 
@@ -101,9 +101,9 @@ namespace Io.Gate.GateApi.Model
         public List<string> PaymentVoucher { get; set; }
 
         /// <summary>
-        /// Cancellation reason ID
+        /// Cancel reason ID. &#x60;1&#x60; no longer want to buy; &#x60;2&#x60; cannot reach seller; &#x60;3&#x60; will not pay; &#x60;4&#x60; seller account not real; &#x60;5&#x60; payout account issue; &#x60;6&#x60; price mismatch; &#x60;7&#x60; mutually agreed cancel; &#x60;8&#x60; poor communication; &#x60;9&#x60; other; &#x60;10&#x60; seller cannot release with refund; &#x60;11&#x60; terms not met; &#x60;12&#x60; seller payout risk-controlled.
         /// </summary>
-        /// <value>Cancellation reason ID</value>
+        /// <value>Cancel reason ID. &#x60;1&#x60; no longer want to buy; &#x60;2&#x60; cannot reach seller; &#x60;3&#x60; will not pay; &#x60;4&#x60; seller account not real; &#x60;5&#x60; payout account issue; &#x60;6&#x60; price mismatch; &#x60;7&#x60; mutually agreed cancel; &#x60;8&#x60; poor communication; &#x60;9&#x60; other; &#x60;10&#x60; seller cannot release with refund; &#x60;11&#x60; terms not met; &#x60;12&#x60; seller payout risk-controlled.</value>
         [DataMember(Name="reason_id")]
         public int ReasonId { get; set; }
 
@@ -115,9 +115,9 @@ namespace Io.Gate.GateApi.Model
         public int ToastId { get; set; }
 
         /// <summary>
-        /// Cancellation reason title
+        /// Cancel reason description.
         /// </summary>
-        /// <value>Cancellation reason title</value>
+        /// <value>Cancel reason description.</value>
         [DataMember(Name="reason_memo")]
         public string ReasonMemo { get; set; }
 
@@ -129,9 +129,9 @@ namespace Io.Gate.GateApi.Model
         public int CancelTime { get; set; }
 
         /// <summary>
-        /// Whether seller confirmed the reason
+        /// Seller confirmation of cancel reason: &#x60;0&#x60; pending; &#x60;1&#x60; confirmed; &#x60;2&#x60; rejected.
         /// </summary>
-        /// <value>Whether seller confirmed the reason</value>
+        /// <value>Seller confirmation of cancel reason: &#x60;0&#x60; pending; &#x60;1&#x60; confirmed; &#x60;2&#x60; rejected.</value>
         [DataMember(Name="seller_confirm")]
         public int SellerConfirm { get; set; }
 
@@ -171,9 +171,9 @@ namespace Io.Gate.GateApi.Model
         public string FileKey { get; set; }
 
         /// <summary>
-        /// Payment method name
+        /// Payment account or masked payment account.
         /// </summary>
-        /// <value>Payment method name</value>
+        /// <value>Payment account or masked payment account.</value>
         [DataMember(Name="account")]
         public string Account { get; set; }
 
@@ -213,9 +213,9 @@ namespace Io.Gate.GateApi.Model
         public string RealName { get; set; }
 
         /// <summary>
-        /// Whether deleted
+        /// Whether the payment method was deleted. &#x60;1&#x60;: deleted; &#x60;0&#x60;: not deleted.
         /// </summary>
-        /// <value>Whether deleted</value>
+        /// <value>Whether the payment method was deleted. &#x60;1&#x60;: deleted; &#x60;0&#x60;: not deleted.</value>
         [DataMember(Name="is_delete")]
         public int IsDelete { get; set; }
 

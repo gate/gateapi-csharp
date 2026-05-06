@@ -38,8 +38,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="fiatUnit">Fiat currency.</param>
         /// <param name="advNo">Ad ID.</param>
         /// <param name="price">Price.</param>
-        /// <param name="maxSingleTransAmount">Maximum Cryptocurrency Amount.</param>
-        /// <param name="minSingleTransAmount">Minimum Cryptocurrency Amount.</param>
+        /// <param name="maxSingleTransAmount">Maximum crypto size per trade..</param>
+        /// <param name="minSingleTransAmount">Minimum crypto size per trade..</param>
         /// <param name="nickName">Advertiser Nickname.</param>
         public P2pAdsListItem(int index = default(int), string asset = default(string), string fiatUnit = default(string), int advNo = default(int), string price = default(string), string maxSingleTransAmount = default(string), string minSingleTransAmount = default(string), string nickName = default(string))
         {
@@ -89,16 +89,16 @@ namespace Io.Gate.GateApi.Model
         public string Price { get; set; }
 
         /// <summary>
-        /// Maximum Cryptocurrency Amount
+        /// Maximum crypto size per trade.
         /// </summary>
-        /// <value>Maximum Cryptocurrency Amount</value>
+        /// <value>Maximum crypto size per trade.</value>
         [DataMember(Name="max_single_trans_amount")]
         public string MaxSingleTransAmount { get; set; }
 
         /// <summary>
-        /// Minimum Cryptocurrency Amount
+        /// Minimum crypto size per trade.
         /// </summary>
-        /// <value>Minimum Cryptocurrency Amount</value>
+        /// <value>Minimum crypto size per trade.</value>
         [DataMember(Name="min_single_trans_amount")]
         public string MinSingleTransAmount { get; set; }
 

@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchantbooksplacebizpushorder"></a>
 # **P2pMerchantBooksPlaceBizPushOrder**
-> Object P2pMerchantBooksPlaceBizPushOrder (PlaceBizPushOrder placeBizPushOrder)
+> P2pMerchantBooksPlaceBizPushOrderResponse P2pMerchantBooksPlaceBizPushOrder (PlaceBizPushOrder placeBizPushOrder)
 
 Publish ad order
 
@@ -688,7 +688,7 @@ namespace Example
             try
             {
                 // Publish ad order
-                Object result = apiInstance.P2pMerchantBooksPlaceBizPushOrder(placeBizPushOrder);
+                P2pMerchantBooksPlaceBizPushOrderResponse result = apiInstance.P2pMerchantBooksPlaceBizPushOrder(placeBizPushOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -711,7 +711,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**P2pMerchantBooksPlaceBizPushOrderResponse**](P2pMerchantBooksPlaceBizPushOrderResponse.md)
 
 ### Authorization
 
@@ -731,7 +731,7 @@ Name | Type | Description  | Notes
 
 <a name="p2pmerchantbooksadsupdatestatus"></a>
 # **P2pMerchantBooksAdsUpdateStatus**
-> P2pAdsUpdateStatusResponse P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus, string tradeType = null)
+> P2pAdsUpdateStatusResponse P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus)
 
 Update ad status
 
@@ -755,12 +755,11 @@ namespace Example
 
             var apiInstance = new P2pApi(config);
             var adsUpdateStatus = new AdsUpdateStatus(); // AdsUpdateStatus | 
-            var tradeType = "sell";  // string | Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional) 
 
             try
             {
                 // Update ad status
-                P2pAdsUpdateStatusResponse result = apiInstance.P2pMerchantBooksAdsUpdateStatus(adsUpdateStatus, tradeType);
+                P2pAdsUpdateStatusResponse result = apiInstance.P2pMerchantBooksAdsUpdateStatus(adsUpdateStatus);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -780,7 +779,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **adsUpdateStatus** | [**AdsUpdateStatus**](AdsUpdateStatus.md)|  | 
- **tradeType** | **string**| Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  | [optional] 
 
 ### Return type
 

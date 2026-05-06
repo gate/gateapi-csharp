@@ -28,7 +28,7 @@ namespace Io.Gate.GateApi.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// [Public Interface] Query Trading Pair Information
+        /// 查询币对信息
         /// </summary>
         /// <remarks>
         /// Query Trading Pair Information
@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Api
         List<Symbol> ListCrossexRuleSymbols (string symbols = default(string));
 
         /// <summary>
-        /// [Public Interface] Query Trading Pair Information
+        /// 查询币对信息
         /// </summary>
         /// <remarks>
         /// Query Trading Pair Information
@@ -49,7 +49,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;Symbol&gt;</returns>
         ApiResponse<List<Symbol>> ListCrossexRuleSymbolsWithHttpInfo (string symbols = default(string));
         /// <summary>
-        /// [Public Interface] Query Risk Limit Information
+        /// 查询风险限额信息
         /// </summary>
         /// <remarks>
         /// Query risk limit information for futures/margin trading pairs
@@ -60,7 +60,7 @@ namespace Io.Gate.GateApi.Api
         List<CrossexRiskLimit> ListCrossexRuleRiskLimits (string symbols);
 
         /// <summary>
-        /// [Public Interface] Query Risk Limit Information
+        /// 查询风险限额信息
         /// </summary>
         /// <remarks>
         /// Query risk limit information for futures/margin trading pairs
@@ -70,7 +70,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;CrossexRiskLimit&gt;</returns>
         ApiResponse<List<CrossexRiskLimit>> ListCrossexRuleRiskLimitsWithHttpInfo (string symbols);
         /// <summary>
-        /// [Public Interface] Query Supported Transfer Currencies
+        /// 查询划转币种支持
         /// </summary>
         /// <remarks>
         /// Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
@@ -81,7 +81,7 @@ namespace Io.Gate.GateApi.Api
         List<CrossexTransferCoin> ListCrossexTransferCoins (string coin = default(string));
 
         /// <summary>
-        /// [Public Interface] Query Supported Transfer Currencies
+        /// 查询划转币种支持
         /// </summary>
         /// <remarks>
         /// Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
@@ -708,10 +708,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="statementType">Bill entry type. (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>List&lt;CrossexAccountBookRecord&gt;</returns>
-        List<CrossexAccountBookRecord> ListCrossexAccountBook (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
+        List<CrossexAccountBookRecord> ListCrossexAccountBook (int? page = default(int?), int? limit = default(int?), string coin = default(string), string statementType = default(string), int? from = default(int?), int? to = default(int?));
 
         /// <summary>
         /// Query Account Asset Change History
@@ -723,12 +724,13 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="statementType">Bill entry type. (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>ApiResponse of List&lt;CrossexAccountBookRecord&gt;</returns>
-        ApiResponse<List<CrossexAccountBookRecord>> ListCrossexAccountBookWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
+        ApiResponse<List<CrossexAccountBookRecord>> ListCrossexAccountBookWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), string statementType = default(string), int? from = default(int?), int? to = default(int?));
         /// <summary>
-        /// Query currency discount rate (discount rate of margin currency in isolated exchange mode)
+        /// Query Currency Discount Rate
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -740,7 +742,7 @@ namespace Io.Gate.GateApi.Api
         List<CrossexCoinDiscountRate> ListCrossexCoinDiscountRate (string coin = default(string), string exchangeType = default(string));
 
         /// <summary>
-        /// Query currency discount rate (discount rate of margin currency in isolated exchange mode)
+        /// Query Currency Discount Rate
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -760,7 +762,7 @@ namespace Io.Gate.GateApi.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// [Public Interface] Query Trading Pair Information
+        /// 查询币对信息
         /// </summary>
         /// <remarks>
         /// Query Trading Pair Information
@@ -771,7 +773,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<Symbol>> ListCrossexRuleSymbolsAsync (string symbols = default(string));
 
         /// <summary>
-        /// [Public Interface] Query Trading Pair Information
+        /// 查询币对信息
         /// </summary>
         /// <remarks>
         /// Query Trading Pair Information
@@ -781,7 +783,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;Symbol&gt;)</returns>
         Task<ApiResponse<List<Symbol>>> ListCrossexRuleSymbolsAsyncWithHttpInfo (string symbols = default(string));
         /// <summary>
-        /// [Public Interface] Query Risk Limit Information
+        /// 查询风险限额信息
         /// </summary>
         /// <remarks>
         /// Query risk limit information for futures/margin trading pairs
@@ -792,7 +794,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<CrossexRiskLimit>> ListCrossexRuleRiskLimitsAsync (string symbols);
 
         /// <summary>
-        /// [Public Interface] Query Risk Limit Information
+        /// 查询风险限额信息
         /// </summary>
         /// <remarks>
         /// Query risk limit information for futures/margin trading pairs
@@ -802,7 +804,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;CrossexRiskLimit&gt;)</returns>
         Task<ApiResponse<List<CrossexRiskLimit>>> ListCrossexRuleRiskLimitsAsyncWithHttpInfo (string symbols);
         /// <summary>
-        /// [Public Interface] Query Supported Transfer Currencies
+        /// 查询划转币种支持
         /// </summary>
         /// <remarks>
         /// Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
@@ -813,7 +815,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<CrossexTransferCoin>> ListCrossexTransferCoinsAsync (string coin = default(string));
 
         /// <summary>
-        /// [Public Interface] Query Supported Transfer Currencies
+        /// 查询划转币种支持
         /// </summary>
         /// <remarks>
         /// Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
@@ -1440,10 +1442,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="statementType">Bill entry type. (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>Task of List&lt;CrossexAccountBookRecord&gt;</returns>
-        Task<List<CrossexAccountBookRecord>> ListCrossexAccountBookAsync (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
+        Task<List<CrossexAccountBookRecord>> ListCrossexAccountBookAsync (int? page = default(int?), int? limit = default(int?), string coin = default(string), string statementType = default(string), int? from = default(int?), int? to = default(int?));
 
         /// <summary>
         /// Query Account Asset Change History
@@ -1455,12 +1458,13 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="statementType">Bill entry type. (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;CrossexAccountBookRecord&gt;)</returns>
-        Task<ApiResponse<List<CrossexAccountBookRecord>>> ListCrossexAccountBookAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?));
+        Task<ApiResponse<List<CrossexAccountBookRecord>>> ListCrossexAccountBookAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), string statementType = default(string), int? from = default(int?), int? to = default(int?));
         /// <summary>
-        /// Query currency discount rate (discount rate of margin currency in isolated exchange mode)
+        /// Query Currency Discount Rate
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -1472,7 +1476,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<CrossexCoinDiscountRate>> ListCrossexCoinDiscountRateAsync (string coin = default(string), string exchangeType = default(string));
 
         /// <summary>
-        /// Query currency discount rate (discount rate of margin currency in isolated exchange mode)
+        /// Query Currency Discount Rate
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -1603,7 +1607,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Trading Pair Information Query Trading Pair Information
+        /// 查询币对信息 Query Trading Pair Information
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
@@ -1615,7 +1619,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Trading Pair Information Query Trading Pair Information
+        /// 查询币对信息 Query Trading Pair Information
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
@@ -1657,7 +1661,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Trading Pair Information Query Trading Pair Information
+        /// 查询币对信息 Query Trading Pair Information
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
@@ -1670,7 +1674,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Trading Pair Information Query Trading Pair Information
+        /// 查询币对信息 Query Trading Pair Information
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">币对列表，多个以逗号分隔 示例值: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
@@ -1714,7 +1718,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Risk Limit Information Query risk limit information for futures/margin trading pairs
+        /// 查询风险限额信息 Query risk limit information for futures/margin trading pairs
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
@@ -1726,7 +1730,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Risk Limit Information Query risk limit information for futures/margin trading pairs
+        /// 查询风险限额信息 Query risk limit information for futures/margin trading pairs
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
@@ -1769,7 +1773,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Risk Limit Information Query risk limit information for futures/margin trading pairs
+        /// 查询风险限额信息 Query risk limit information for futures/margin trading pairs
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
@@ -1782,7 +1786,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Risk Limit Information Query risk limit information for futures/margin trading pairs
+        /// 查询风险限额信息 Query risk limit information for futures/margin trading pairs
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Trading Pair List, multiple separated by commas Example values: BINANCE_FUTURE_ADA_USDT,GATE_MARGIN_ADA_USDT</param>
@@ -1827,7 +1831,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Supported Transfer Currencies Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// 查询划转币种支持 Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
@@ -1839,7 +1843,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Supported Transfer Currencies Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// 查询划转币种支持 Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
@@ -1881,7 +1885,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Supported Transfer Currencies Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// 查询划转币种支持 Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
@@ -1894,7 +1898,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// [Public Interface] Query Supported Transfer Currencies Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// 查询划转币种支持 Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Currency (optional)</param>
@@ -5278,12 +5282,13 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="statementType">Bill entry type. (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>List&lt;CrossexAccountBookRecord&gt;</returns>
-        public List<CrossexAccountBookRecord> ListCrossexAccountBook (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
+        public List<CrossexAccountBookRecord> ListCrossexAccountBook (int? page = default(int?), int? limit = default(int?), string coin = default(string), string statementType = default(string), int? from = default(int?), int? to = default(int?))
         {
-             ApiResponse<List<CrossexAccountBookRecord>> localVarResponse = ListCrossexAccountBookWithHttpInfo(page, limit, coin, from, to);
+             ApiResponse<List<CrossexAccountBookRecord>> localVarResponse = ListCrossexAccountBookWithHttpInfo(page, limit, coin, statementType, from, to);
              return localVarResponse.Data;
         }
 
@@ -5294,10 +5299,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="statementType">Bill entry type. (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>ApiResponse of List&lt;CrossexAccountBookRecord&gt;</returns>
-        public ApiResponse<List<CrossexAccountBookRecord>> ListCrossexAccountBookWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
+        public ApiResponse<List<CrossexAccountBookRecord>> ListCrossexAccountBookWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), string statementType = default(string), int? from = default(int?), int? to = default(int?))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -5326,6 +5332,10 @@ namespace Io.Gate.GateApi.Api
             if (coin != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (statementType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "statement_type", statementType));
             }
             if (from != null)
             {
@@ -5358,12 +5368,13 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="statementType">Bill entry type. (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>Task of List&lt;CrossexAccountBookRecord&gt;</returns>
-        public async Task<List<CrossexAccountBookRecord>> ListCrossexAccountBookAsync (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
+        public async Task<List<CrossexAccountBookRecord>> ListCrossexAccountBookAsync (int? page = default(int?), int? limit = default(int?), string coin = default(string), string statementType = default(string), int? from = default(int?), int? to = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<CrossexAccountBookRecord>> localVarResponse = await ListCrossexAccountBookAsyncWithHttpInfo(page, limit, coin, from, to);
+             Io.Gate.GateApi.Client.ApiResponse<List<CrossexAccountBookRecord>> localVarResponse = await ListCrossexAccountBookAsyncWithHttpInfo(page, limit, coin, statementType, from, to);
              return localVarResponse.Data;
 
         }
@@ -5375,10 +5386,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="page">Page number (optional)</param>
         /// <param name="limit">Maximum number returned by list, max 1000 (optional)</param>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
+        /// <param name="statementType">Bill entry type. (optional)</param>
         /// <param name="from">Start Millisecond Timestamp (optional)</param>
         /// <param name="to">End Millisecond Timestamp (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;CrossexAccountBookRecord&gt;)</returns>
-        public async Task<ApiResponse<List<CrossexAccountBookRecord>>> ListCrossexAccountBookAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), int? from = default(int?), int? to = default(int?))
+        public async Task<ApiResponse<List<CrossexAccountBookRecord>>> ListCrossexAccountBookAsyncWithHttpInfo (int? page = default(int?), int? limit = default(int?), string coin = default(string), string statementType = default(string), int? from = default(int?), int? to = default(int?))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -5409,6 +5421,10 @@ namespace Io.Gate.GateApi.Api
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
             }
+            if (statementType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "statement_type", statementType));
+            }
             if (from != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
@@ -5435,7 +5451,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query currency discount rate (discount rate of margin currency in isolated exchange mode) Rate Limit: 200 requests per 10 seconds
+        /// Query Currency Discount Rate Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
@@ -5448,7 +5464,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query currency discount rate (discount rate of margin currency in isolated exchange mode) Rate Limit: 200 requests per 10 seconds
+        /// Query Currency Discount Rate Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
@@ -5497,7 +5513,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query currency discount rate (discount rate of margin currency in isolated exchange mode) Rate Limit: 200 requests per 10 seconds
+        /// Query Currency Discount Rate Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
@@ -5511,7 +5527,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query currency discount rate (discount rate of margin currency in isolated exchange mode) Rate Limit: 200 requests per 10 seconds
+        /// Query Currency Discount Rate Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>

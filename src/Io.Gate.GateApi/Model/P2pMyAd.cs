@@ -33,20 +33,20 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pMyAd" /> class.
         /// </summary>
-        /// <param name="type">Ad buy/sell direction.</param>
+        /// <param name="type">Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad..</param>
         /// <param name="rate">Price.</param>
         /// <param name="originalRate">Original price.</param>
-        /// <param name="amount">Remaining cryptocurrency amount of ad.</param>
+        /// <param name="amount">Remaining crypto amount on the ad..</param>
         /// <param name="total">Remaining fiat amount of ad.</param>
         /// <param name="limitTotal">Single order limit range (cryptocurrency).</param>
         /// <param name="limitFiat">Single order limit range (fiat).</param>
         /// <param name="minAmount">Minimum quantity per order.</param>
         /// <param name="maxAmount">Maximum quantity per order.</param>
         /// <param name="payTypeNum">Payment method ID list.</param>
-        /// <param name="payTypeJson">Payment method configuration details.</param>
+        /// <param name="payTypeJson">JSON map of payment type -&gt; payment method ID..</param>
         /// <param name="expireMin">Ad expiration time (minutes).</param>
         /// <param name="tierLimit">VIP limit.</param>
-        /// <param name="advertisersLimit">Whether merchant trading restriction is allowed.</param>
+        /// <param name="advertisersLimit">Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes..</param>
         /// <param name="regTimeLimit">Registration time limit.</param>
         /// <param name="verifiedLimit">KYC level limit.</param>
         /// <param name="minCompletedLimit">Minimum limit of completed orders by counterparty.</param>
@@ -54,24 +54,24 @@ namespace Io.Gate.GateApi.Model
         /// <param name="userCountryLimit">KYC nationality restriction.</param>
         /// <param name="completedRateLimit">30-day completion rate limit.</param>
         /// <param name="userOrdersLimit">Maximum order limit for counterparty.</param>
-        /// <param name="hidePayment">Whether to hide payment method.</param>
-        /// <param name="currencyType">Digital currency.</param>
+        /// <param name="hidePayment">Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible..</param>
+        /// <param name="currencyType">Cryptocurrency symbol..</param>
         /// <param name="wantType">Fiat currency.</param>
         /// <param name="tradeTips">Trading terms.</param>
-        /// <param name="newHand">Special ad type.</param>
-        /// <param name="id">Ad ID.</param>
-        /// <param name="status">Ad status.</param>
+        /// <param name="newHand">Special ad type. &#x60;0&#x60; normal; &#x60;1&#x60; newcomer guide; &#x60;2&#x60; newcomer discount; &#x60;3&#x60; featured promo; &#x60;4&#x60; KOL ad; &#x60;5&#x60; coupon ad..</param>
+        /// <param name="id">Advertisement ID..</param>
+        /// <param name="status">Ad status: &#x60;OPEN&#x60; listed; &#x60;OFFLIN&#x60; delisted; &#x60;CLOSED&#x60; closed; &#x60;CANCEL&#x60; canceled..</param>
         /// <param name="lockedAmount">Ad frozen amount.</param>
         /// <param name="hideRate">Hidden price.</param>
-        /// <param name="isOutTime">Whether ad is currently expired.</param>
-        /// <param name="rateRefId">Floating price reference configuration.</param>
+        /// <param name="isOutTime">Whether the ad timed out. &#x60;1&#x60;: timed out; &#x60;0&#x60;: not yet..</param>
+        /// <param name="rateRefId">Floating reference: &#x60;1&#x60; platform; &#x60;2&#x60; Gate; &#x60;3&#x60; spot; &#x60;&lt;&#x3D; 0&#x60; means fixed price..</param>
         /// <param name="rateOffset">Floating ratio.</param>
-        /// <param name="rateFixed">Reference price type: 0&#x3D;Floating, 1&#x3D;Fixed.</param>
-        /// <param name="floatTrend">Floating order direction.</param>
-        /// <param name="inDispute">Whether ad has disputed transactions.</param>
+        /// <param name="rateFixed">Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed..</param>
+        /// <param name="floatTrend">Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown..</param>
+        /// <param name="inDispute">Whether the ad had a disputed trade. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         /// <param name="autoReply">Auto reply data.</param>
         /// <param name="timestamp">Ad creation time.</param>
-        /// <param name="isHedge">Auto delegation.</param>
+        /// <param name="isHedge">Whether auto-delegation is enabled. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         public P2pMyAd(string type = default(string), string rate = default(string), string originalRate = default(string), string amount = default(string), string total = default(string), string limitTotal = default(string), string limitFiat = default(string), string minAmount = default(string), string maxAmount = default(string), string payTypeNum = default(string), string payTypeJson = default(string), string expireMin = default(string), string tierLimit = default(string), int advertisersLimit = default(int), int regTimeLimit = default(int), int verifiedLimit = default(int), int minCompletedLimit = default(int), int maxCompletedLimit = default(int), int userCountryLimit = default(int), decimal completedRateLimit = default(decimal), int userOrdersLimit = default(int), string hidePayment = default(string), string currencyType = default(string), string wantType = default(string), string tradeTips = default(string), int newHand = default(int), string id = default(string), string status = default(string), string lockedAmount = default(string), string hideRate = default(string), int isOutTime = default(int), int rateRefId = default(int), string rateOffset = default(string), int rateFixed = default(int), int floatTrend = default(int), int inDispute = default(int), string autoReply = default(string), int timestamp = default(int), int isHedge = default(int))
         {
             this.Type = type;
@@ -116,9 +116,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Ad buy/sell direction
+        /// Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad.
         /// </summary>
-        /// <value>Ad buy/sell direction</value>
+        /// <value>Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad.</value>
         [DataMember(Name="type")]
         public string Type { get; set; }
 
@@ -137,9 +137,9 @@ namespace Io.Gate.GateApi.Model
         public string OriginalRate { get; set; }
 
         /// <summary>
-        /// Remaining cryptocurrency amount of ad
+        /// Remaining crypto amount on the ad.
         /// </summary>
-        /// <value>Remaining cryptocurrency amount of ad</value>
+        /// <value>Remaining crypto amount on the ad.</value>
         [DataMember(Name="amount")]
         public string Amount { get; set; }
 
@@ -186,9 +186,9 @@ namespace Io.Gate.GateApi.Model
         public string PayTypeNum { get; set; }
 
         /// <summary>
-        /// Payment method configuration details
+        /// JSON map of payment type -&gt; payment method ID.
         /// </summary>
-        /// <value>Payment method configuration details</value>
+        /// <value>JSON map of payment type -&gt; payment method ID.</value>
         [DataMember(Name="pay_type_json")]
         public string PayTypeJson { get; set; }
 
@@ -207,9 +207,9 @@ namespace Io.Gate.GateApi.Model
         public string TierLimit { get; set; }
 
         /// <summary>
-        /// Whether merchant trading restriction is allowed
+        /// Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes.
         /// </summary>
-        /// <value>Whether merchant trading restriction is allowed</value>
+        /// <value>Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes.</value>
         [DataMember(Name="advertisers_limit")]
         public int AdvertisersLimit { get; set; }
 
@@ -263,16 +263,16 @@ namespace Io.Gate.GateApi.Model
         public int UserOrdersLimit { get; set; }
 
         /// <summary>
-        /// Whether to hide payment method
+        /// Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible.
         /// </summary>
-        /// <value>Whether to hide payment method</value>
+        /// <value>Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible.</value>
         [DataMember(Name="hide_payment")]
         public string HidePayment { get; set; }
 
         /// <summary>
-        /// Digital currency
+        /// Cryptocurrency symbol.
         /// </summary>
-        /// <value>Digital currency</value>
+        /// <value>Cryptocurrency symbol.</value>
         [DataMember(Name="currencyType")]
         public string CurrencyType { get; set; }
 
@@ -291,23 +291,23 @@ namespace Io.Gate.GateApi.Model
         public string TradeTips { get; set; }
 
         /// <summary>
-        /// Special ad type
+        /// Special ad type. &#x60;0&#x60; normal; &#x60;1&#x60; newcomer guide; &#x60;2&#x60; newcomer discount; &#x60;3&#x60; featured promo; &#x60;4&#x60; KOL ad; &#x60;5&#x60; coupon ad.
         /// </summary>
-        /// <value>Special ad type</value>
+        /// <value>Special ad type. &#x60;0&#x60; normal; &#x60;1&#x60; newcomer guide; &#x60;2&#x60; newcomer discount; &#x60;3&#x60; featured promo; &#x60;4&#x60; KOL ad; &#x60;5&#x60; coupon ad.</value>
         [DataMember(Name="new_hand")]
         public int NewHand { get; set; }
 
         /// <summary>
-        /// Ad ID
+        /// Advertisement ID.
         /// </summary>
-        /// <value>Ad ID</value>
+        /// <value>Advertisement ID.</value>
         [DataMember(Name="id")]
         public string Id { get; set; }
 
         /// <summary>
-        /// Ad status
+        /// Ad status: &#x60;OPEN&#x60; listed; &#x60;OFFLIN&#x60; delisted; &#x60;CLOSED&#x60; closed; &#x60;CANCEL&#x60; canceled.
         /// </summary>
-        /// <value>Ad status</value>
+        /// <value>Ad status: &#x60;OPEN&#x60; listed; &#x60;OFFLIN&#x60; delisted; &#x60;CLOSED&#x60; closed; &#x60;CANCEL&#x60; canceled.</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 
@@ -326,16 +326,16 @@ namespace Io.Gate.GateApi.Model
         public string HideRate { get; set; }
 
         /// <summary>
-        /// Whether ad is currently expired
+        /// Whether the ad timed out. &#x60;1&#x60;: timed out; &#x60;0&#x60;: not yet.
         /// </summary>
-        /// <value>Whether ad is currently expired</value>
+        /// <value>Whether the ad timed out. &#x60;1&#x60;: timed out; &#x60;0&#x60;: not yet.</value>
         [DataMember(Name="is_out_time")]
         public int IsOutTime { get; set; }
 
         /// <summary>
-        /// Floating price reference configuration
+        /// Floating reference: &#x60;1&#x60; platform; &#x60;2&#x60; Gate; &#x60;3&#x60; spot; &#x60;&lt;&#x3D; 0&#x60; means fixed price.
         /// </summary>
-        /// <value>Floating price reference configuration</value>
+        /// <value>Floating reference: &#x60;1&#x60; platform; &#x60;2&#x60; Gate; &#x60;3&#x60; spot; &#x60;&lt;&#x3D; 0&#x60; means fixed price.</value>
         [DataMember(Name="rate_ref_id")]
         public int RateRefId { get; set; }
 
@@ -347,23 +347,23 @@ namespace Io.Gate.GateApi.Model
         public string RateOffset { get; set; }
 
         /// <summary>
-        /// Reference price type: 0&#x3D;Floating, 1&#x3D;Fixed
+        /// Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed.
         /// </summary>
-        /// <value>Reference price type: 0&#x3D;Floating, 1&#x3D;Fixed</value>
+        /// <value>Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed.</value>
         [DataMember(Name="rate_fixed")]
         public int RateFixed { get; set; }
 
         /// <summary>
-        /// Floating order direction
+        /// Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown.
         /// </summary>
-        /// <value>Floating order direction</value>
+        /// <value>Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown.</value>
         [DataMember(Name="float_trend")]
         public int FloatTrend { get; set; }
 
         /// <summary>
-        /// Whether ad has disputed transactions
+        /// Whether the ad had a disputed trade. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether ad has disputed transactions</value>
+        /// <value>Whether the ad had a disputed trade. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="in_dispute")]
         public int InDispute { get; set; }
 
@@ -382,9 +382,9 @@ namespace Io.Gate.GateApi.Model
         public int Timestamp { get; set; }
 
         /// <summary>
-        /// Auto delegation
+        /// Whether auto-delegation is enabled. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Auto delegation</value>
+        /// <value>Whether auto-delegation is enabled. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_hedge")]
         public int IsHedge { get; set; }
 

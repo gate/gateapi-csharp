@@ -50,8 +50,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="backtestApr">backtestApr.</param>
         /// <param name="maxDrawdown">maxDrawdown.</param>
         /// <param name="summary">summary (required).</param>
-        /// <param name="strategyParamsPreview">Recommended parameter preview; dynamic changes by strategy type.</param>
-        public AIHubRecommendation(string recommendationId = default(string), string market = default(string), StrategyType strategyType = default(StrategyType), string strategyName = default(string), string backtestApr = default(string), string maxDrawdown = default(string), string summary = default(string), Dictionary<string, string> strategyParamsPreview = default(Dictionary<string, string>))
+        /// <param name="strategyParamsPreview">Recommended-parameter preview as JSON text (string-encoded so clients deserialize it consistently). The value is a serialized JSON object whose structure varies by strategy type; callers or upper-layer models must parse it..</param>
+        public AIHubRecommendation(string recommendationId = default(string), string market = default(string), StrategyType strategyType = default(StrategyType), string strategyName = default(string), string backtestApr = default(string), string maxDrawdown = default(string), string summary = default(string), string strategyParamsPreview = default(string))
         {
             // to ensure "recommendationId" is required (not null)
             this.RecommendationId = recommendationId ?? throw new ArgumentNullException("recommendationId", "recommendationId is a required property for AIHubRecommendation and cannot be null");
@@ -104,11 +104,11 @@ namespace Io.Gate.GateApi.Model
         public string Summary { get; set; }
 
         /// <summary>
-        /// Recommended parameter preview; dynamic changes by strategy type
+        /// Recommended-parameter preview as JSON text (string-encoded so clients deserialize it consistently). The value is a serialized JSON object whose structure varies by strategy type; callers or upper-layer models must parse it.
         /// </summary>
-        /// <value>Recommended parameter preview; dynamic changes by strategy type</value>
+        /// <value>Recommended-parameter preview as JSON text (string-encoded so clients deserialize it consistently). The value is a serialized JSON object whose structure varies by strategy type; callers or upper-layer models must parse it.</value>
         [DataMember(Name="strategy_params_preview")]
-        public Dictionary<string, string> StrategyParamsPreview { get; set; }
+        public string StrategyParamsPreview { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -196,9 +196,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.StrategyParamsPreview == input.StrategyParamsPreview ||
-                    this.StrategyParamsPreview != null &&
-                    input.StrategyParamsPreview != null &&
-                    this.StrategyParamsPreview.SequenceEqual(input.StrategyParamsPreview)
+                    (this.StrategyParamsPreview != null &&
+                    this.StrategyParamsPreview.Equals(input.StrategyParamsPreview))
                 );
         }
 

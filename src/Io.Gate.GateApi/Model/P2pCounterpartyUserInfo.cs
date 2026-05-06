@@ -34,9 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="P2pCounterpartyUserInfo" /> class.
         /// </summary>
         /// <param name="userTimest">User registration time (formatted string).</param>
-        /// <param name="emailVerified">Whether email is verified.</param>
-        /// <param name="verified">Whether KYC verification is completed.</param>
-        /// <param name="hasPhone">Whether phone is bound.</param>
+        /// <param name="emailVerified">Whether email is verified. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="verified">Whether KYC is completed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="hasPhone">Whether a phone number is bound. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         /// <param name="userName">Username.</param>
         /// <param name="userNote">User note information.</param>
         /// <param name="completeTransactions">Total completed orders.</param>
@@ -46,8 +46,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="cancelledUsedTimeMonth">Cancellation time in last 30 days.</param>
         /// <param name="completeTransactionsMonth">Number of completed orders in last 30 days.</param>
         /// <param name="completeRateMonth">Completion rate in last 30 days.</param>
-        /// <param name="isFollow">Whether following.</param>
-        /// <param name="haveTraded">Whether traded with self.</param>
+        /// <param name="isFollow">Whether you follow this user. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="haveTraded">Whether you have traded with this user before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         /// <param name="bizUid">Encrypted UID.</param>
         /// <param name="registrationDays">Registration days.</param>
         /// <param name="firstTradeDays">Days since first trade.</param>
@@ -83,23 +83,23 @@ namespace Io.Gate.GateApi.Model
         public string UserTimest { get; set; }
 
         /// <summary>
-        /// Whether email is verified
+        /// Whether email is verified. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether email is verified</value>
+        /// <value>Whether email is verified. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="email_verified")]
         public string EmailVerified { get; set; }
 
         /// <summary>
-        /// Whether KYC verification is completed
+        /// Whether KYC is completed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether KYC verification is completed</value>
+        /// <value>Whether KYC is completed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="verified")]
         public string Verified { get; set; }
 
         /// <summary>
-        /// Whether phone is bound
+        /// Whether a phone number is bound. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether phone is bound</value>
+        /// <value>Whether a phone number is bound. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="has_phone")]
         public string HasPhone { get; set; }
 
@@ -167,16 +167,16 @@ namespace Io.Gate.GateApi.Model
         public decimal CompleteRateMonth { get; set; }
 
         /// <summary>
-        /// Whether following
+        /// Whether you follow this user. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether following</value>
+        /// <value>Whether you follow this user. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_follow")]
         public int IsFollow { get; set; }
 
         /// <summary>
-        /// Whether traded with self
+        /// Whether you have traded with this user before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether traded with self</value>
+        /// <value>Whether you have traded with this user before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="have_traded")]
         public int HaveTraded { get; set; }
 

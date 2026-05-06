@@ -40,17 +40,17 @@ namespace Io.Gate.GateApi.Model
         /// <param name="bankbranch">Bank branch name.</param>
         /// <param name="bankcity">Bank city.</param>
         /// <param name="bankprov">Bank province.</param>
-        /// <param name="bankaddr">Bank card number.</param>
+        /// <param name="bankaddr">Bank card number or masked card number..</param>
         /// <param name="bankdesc">Bank note.</param>
         /// <param name="holdUid">Cardholder UID.</param>
         /// <param name="holdUsername">Cardholder name.</param>
-        /// <param name="realName">userfirst name.</param>
+        /// <param name="realName">User verified display name..</param>
         /// <param name="id">User&#39;s currently bound payment method (primary key ID).</param>
         /// <param name="accountDes">Payment method description.</param>
         /// <param name="payType">Payment method type.</param>
         /// <param name="file">Payment method file link.</param>
         /// <param name="fileKey">Payment method file key.</param>
-        /// <param name="account">Payment method name.</param>
+        /// <param name="account">Payment account or masked payment account..</param>
         /// <param name="memo">Payment method note.</param>
         /// <param name="code">Payment method code.</param>
         /// <param name="memoExt">Payment method additional note.</param>
@@ -131,9 +131,9 @@ namespace Io.Gate.GateApi.Model
         public string Bankprov { get; set; }
 
         /// <summary>
-        /// Bank card number
+        /// Bank card number or masked card number.
         /// </summary>
-        /// <value>Bank card number</value>
+        /// <value>Bank card number or masked card number.</value>
         [DataMember(Name="bankaddr")]
         public string Bankaddr { get; set; }
 
@@ -148,7 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// Cardholder UID
         /// </summary>
         /// <value>Cardholder UID</value>
-        [DataMember(Name="holdUid")]
+        [DataMember(Name="hold_uid")]
         public int HoldUid { get; set; }
 
         /// <summary>
@@ -159,9 +159,9 @@ namespace Io.Gate.GateApi.Model
         public string HoldUsername { get; set; }
 
         /// <summary>
-        /// userfirst name
+        /// User verified display name.
         /// </summary>
-        /// <value>userfirst name</value>
+        /// <value>User verified display name.</value>
         [DataMember(Name="real_name")]
         public string RealName { get; set; }
 
@@ -201,9 +201,9 @@ namespace Io.Gate.GateApi.Model
         public string FileKey { get; set; }
 
         /// <summary>
-        /// Payment method name
+        /// Payment account or masked payment account.
         /// </summary>
-        /// <value>Payment method name</value>
+        /// <value>Payment account or masked payment account.</value>
         [DataMember(Name="account")]
         public string Account { get; set; }
 

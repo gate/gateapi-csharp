@@ -31,6 +31,45 @@ namespace Io.Gate.GateApi.Model
     public partial class PlaceBizPushOrder :  IEquatable<PlaceBizPushOrder>, IValidatableObject
     {
         /// <summary>
+        /// Ad operation type. &#x60;0&#x60;: publish sell ad; &#x60;1&#x60;: publish buy ad; &#x60;2&#x60;: edit sell ad; &#x60;3&#x60;: edit buy ad.
+        /// </summary>
+        /// <value>Ad operation type. &#x60;0&#x60;: publish sell ad; &#x60;1&#x60;: publish buy ad; &#x60;2&#x60;: edit sell ad; &#x60;3&#x60;: edit buy ad.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TypeEnum
+        {
+            /// <summary>
+            /// Enum value _0
+            /// </summary>
+            [EnumMember(Value = "0")]
+            _0 = 1,
+
+            /// <summary>
+            /// Enum value _1
+            /// </summary>
+            [EnumMember(Value = "1")]
+            _1 = 2,
+
+            /// <summary>
+            /// Enum value _2
+            /// </summary>
+            [EnumMember(Value = "2")]
+            _2 = 3,
+
+            /// <summary>
+            /// Enum value _3
+            /// </summary>
+            [EnumMember(Value = "3")]
+            _3 = 4
+
+        }
+
+        /// <summary>
+        /// Ad operation type. &#x60;0&#x60;: publish sell ad; &#x60;1&#x60;: publish buy ad; &#x60;2&#x60;: edit sell ad; &#x60;3&#x60;: edit buy ad.
+        /// </summary>
+        /// <value>Ad operation type. &#x60;0&#x60;: publish sell ad; &#x60;1&#x60;: publish buy ad; &#x60;2&#x60;: edit sell ad; &#x60;3&#x60;: edit buy ad.</value>
+        [DataMember(Name="type")]
+        public TypeEnum Type { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PlaceBizPushOrder" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -38,41 +77,40 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PlaceBizPushOrder" /> class.
         /// </summary>
-        /// <param name="currencyType">Cryptocurrency (required).</param>
+        /// <param name="currencyType">Cryptocurrency symbol. (required).</param>
         /// <param name="exchangeType">Fiat currency (required).</param>
-        /// <param name="type">Ad type: 0&#x3D;Sell, 1&#x3D;Buy, 2&#x3D;Edit sell, 3&#x3D;Edit buy (required).</param>
-        /// <param name="unitPrice">Unit price (required).</param>
-        /// <param name="number">Size (required).</param>
-        /// <param name="payType">Payment method (required).</param>
-        /// <param name="payTypeJson">Payment method JSON string.</param>
-        /// <param name="rateFixed">Price type: 0-Floating price, 1-Fixed price.</param>
-        /// <param name="oid">Ad ID when editing.</param>
-        /// <param name="minAmount">Minimum transaction amount per order (required).</param>
-        /// <param name="maxAmount">Maximum transaction amount per order (required).</param>
-        /// <param name="tierLimit">Order tier limit.</param>
-        /// <param name="verifiedLimit">Verification level limit.</param>
-        /// <param name="regTimeLimit">Registration time limit.</param>
-        /// <param name="advertisersLimit">Advertiser restriction.</param>
-        /// <param name="hidePayment">Whether to hide payment method: 1&#x3D;Yes, 0&#x3D;No.</param>
-        /// <param name="expireMin">Ad expiration time (minutes).</param>
-        /// <param name="tradeTips">Trading terms.</param>
-        /// <param name="autoReply">Auto reply.</param>
-        /// <param name="minCompletedLimit">Minimum limit of completed orders.</param>
-        /// <param name="maxCompletedLimit">Maximum limit of completed orders.</param>
-        /// <param name="completedRateLimit">30-day completion rate limit.</param>
-        /// <param name="userCountryLimit">KYC nationality restriction.</param>
-        /// <param name="userOrderLimit">Order count limit.</param>
-        /// <param name="rateReferenceId">Reference exchange rate ID.</param>
-        /// <param name="rateOffset">Reference exchange rate offset.</param>
-        /// <param name="floatTrend">444.</param>
-        public PlaceBizPushOrder(string currencyType = default(string), string exchangeType = default(string), string type = default(string), string unitPrice = default(string), string number = default(string), string payType = default(string), string payTypeJson = default(string), string rateFixed = default(string), string oid = default(string), string minAmount = default(string), string maxAmount = default(string), string tierLimit = default(string), string verifiedLimit = default(string), string regTimeLimit = default(string), string advertisersLimit = default(string), string hidePayment = default(string), string expireMin = default(string), string tradeTips = default(string), string autoReply = default(string), string minCompletedLimit = default(string), string maxCompletedLimit = default(string), string completedRateLimit = default(string), string userCountryLimit = default(string), string userOrderLimit = default(string), string rateReferenceId = default(string), string rateOffset = default(string), string floatTrend = default(string))
+        /// <param name="type">Ad operation type. &#x60;0&#x60;: publish sell ad; &#x60;1&#x60;: publish buy ad; &#x60;2&#x60;: edit sell ad; &#x60;3&#x60;: edit buy ad. (required).</param>
+        /// <param name="unitPrice">Per-unit price in fixed-price mode. (required).</param>
+        /// <param name="number">Ad amount priced in &#x60;currencyType&#x60;. (required).</param>
+        /// <param name="payType">Payment types, comma-separated; from pay type list &#x60;pay_type&#x60;, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;. (required).</param>
+        /// <param name="payTypeJson">JSON map of payment type -&gt; user&#39;s payment method ID..</param>
+        /// <param name="rateFixed">Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed..</param>
+        /// <param name="oid">Pass ad ID when editing; omit or empty when publishing a new ad..</param>
+        /// <param name="minAmount">Minimum trade amount in &#x60;exchangeType&#x60;. (required).</param>
+        /// <param name="maxAmount">Maximum amount per trade in &#x60;exchangeType&#x60; fiat units. (required).</param>
+        /// <param name="tierLimit">Minimum counterparty VIP level; &#x60;0&#x60; means no requirement..</param>
+        /// <param name="verifiedLimit">Minimum counterparty verification level; &#x60;0&#x60; means no limit..</param>
+        /// <param name="regTimeLimit">Minimum counterparty account age in days; &#x60;0&#x60; means no limit..</param>
+        /// <param name="advertisersLimit">Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes..</param>
+        /// <param name="expireMin">Payment timeout in minutes..</param>
+        /// <param name="tradeTips">Ad trading terms shown to the taker..</param>
+        /// <param name="autoReply">Auto-reply message after order creation..</param>
+        /// <param name="minCompletedLimit">Minimum completed orders for counterparty; &#x60;-1&#x60; unlimited..</param>
+        /// <param name="maxCompletedLimit">Maximum completed orders for counterparty; &#x60;-1&#x60; unlimited..</param>
+        /// <param name="completedRateLimit">Counterparty minimum 30-day completion rate; &#x60;-1&#x60; means no limit..</param>
+        /// <param name="userCountryLimit">KYC nationality restriction; &#x60;-1&#x60; means no restriction..</param>
+        /// <param name="userOrderLimit">Maximum concurrent orders allowed for the counterparty. &#x60;-1&#x60;: unlimited..</param>
+        /// <param name="rateReferenceId">Floating price reference. &#x60;1&#x60;: platform reference; &#x60;2&#x60;: Gate reference; &#x60;3&#x60;: spot reference..</param>
+        /// <param name="rateOffset">Absolute floating offset ratio, e.g. &#x60;0.5&#x60; means 0.5%..</param>
+        /// <param name="floatTrend">Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown..</param>
+        /// <param name="teamPaymentUid">Team payee UID; optional for non-team merchants..</param>
+        public PlaceBizPushOrder(string currencyType = default(string), string exchangeType = default(string), TypeEnum type = default(TypeEnum), string unitPrice = default(string), string number = default(string), string payType = default(string), string payTypeJson = default(string), string rateFixed = default(string), string oid = default(string), string minAmount = default(string), string maxAmount = default(string), string tierLimit = default(string), string verifiedLimit = default(string), string regTimeLimit = default(string), string advertisersLimit = default(string), string expireMin = default(string), string tradeTips = default(string), string autoReply = default(string), string minCompletedLimit = default(string), string maxCompletedLimit = default(string), string completedRateLimit = default(string), string userCountryLimit = default(string), string userOrderLimit = default(string), string rateReferenceId = default(string), string rateOffset = default(string), string floatTrend = default(string), string teamPaymentUid = default(string))
         {
             // to ensure "currencyType" is required (not null)
             this.CurrencyType = currencyType ?? throw new ArgumentNullException("currencyType", "currencyType is a required property for PlaceBizPushOrder and cannot be null");
             // to ensure "exchangeType" is required (not null)
             this.ExchangeType = exchangeType ?? throw new ArgumentNullException("exchangeType", "exchangeType is a required property for PlaceBizPushOrder and cannot be null");
-            // to ensure "type" is required (not null)
-            this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for PlaceBizPushOrder and cannot be null");
+            this.Type = type;
             // to ensure "unitPrice" is required (not null)
             this.UnitPrice = unitPrice ?? throw new ArgumentNullException("unitPrice", "unitPrice is a required property for PlaceBizPushOrder and cannot be null");
             // to ensure "number" is required (not null)
@@ -90,7 +128,6 @@ namespace Io.Gate.GateApi.Model
             this.VerifiedLimit = verifiedLimit;
             this.RegTimeLimit = regTimeLimit;
             this.AdvertisersLimit = advertisersLimit;
-            this.HidePayment = hidePayment;
             this.ExpireMin = expireMin;
             this.TradeTips = tradeTips;
             this.AutoReply = autoReply;
@@ -102,12 +139,13 @@ namespace Io.Gate.GateApi.Model
             this.RateReferenceId = rateReferenceId;
             this.RateOffset = rateOffset;
             this.FloatTrend = floatTrend;
+            this.TeamPaymentUid = teamPaymentUid;
         }
 
         /// <summary>
-        /// Cryptocurrency
+        /// Cryptocurrency symbol.
         /// </summary>
-        /// <value>Cryptocurrency</value>
+        /// <value>Cryptocurrency symbol.</value>
         [DataMember(Name="currencyType")]
         public string CurrencyType { get; set; }
 
@@ -119,179 +157,172 @@ namespace Io.Gate.GateApi.Model
         public string ExchangeType { get; set; }
 
         /// <summary>
-        /// Ad type: 0&#x3D;Sell, 1&#x3D;Buy, 2&#x3D;Edit sell, 3&#x3D;Edit buy
+        /// Per-unit price in fixed-price mode.
         /// </summary>
-        /// <value>Ad type: 0&#x3D;Sell, 1&#x3D;Buy, 2&#x3D;Edit sell, 3&#x3D;Edit buy</value>
-        [DataMember(Name="type")]
-        public string Type { get; set; }
-
-        /// <summary>
-        /// Unit price
-        /// </summary>
-        /// <value>Unit price</value>
+        /// <value>Per-unit price in fixed-price mode.</value>
         [DataMember(Name="unitPrice")]
         public string UnitPrice { get; set; }
 
         /// <summary>
-        /// Size
+        /// Ad amount priced in &#x60;currencyType&#x60;.
         /// </summary>
-        /// <value>Size</value>
+        /// <value>Ad amount priced in &#x60;currencyType&#x60;.</value>
         [DataMember(Name="number")]
         public string Number { get; set; }
 
         /// <summary>
-        /// Payment method
+        /// Payment types, comma-separated; from pay type list &#x60;pay_type&#x60;, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.
         /// </summary>
-        /// <value>Payment method</value>
+        /// <value>Payment types, comma-separated; from pay type list &#x60;pay_type&#x60;, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.</value>
         [DataMember(Name="payType")]
         public string PayType { get; set; }
 
         /// <summary>
-        /// Payment method JSON string
+        /// JSON map of payment type -&gt; user&#39;s payment method ID.
         /// </summary>
-        /// <value>Payment method JSON string</value>
+        /// <value>JSON map of payment type -&gt; user&#39;s payment method ID.</value>
         [DataMember(Name="pay_type_json")]
         public string PayTypeJson { get; set; }
 
         /// <summary>
-        /// Price type: 0-Floating price, 1-Fixed price
+        /// Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed.
         /// </summary>
-        /// <value>Price type: 0-Floating price, 1-Fixed price</value>
+        /// <value>Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed.</value>
         [DataMember(Name="rateFixed")]
         public string RateFixed { get; set; }
 
         /// <summary>
-        /// Ad ID when editing
+        /// Pass ad ID when editing; omit or empty when publishing a new ad.
         /// </summary>
-        /// <value>Ad ID when editing</value>
+        /// <value>Pass ad ID when editing; omit or empty when publishing a new ad.</value>
         [DataMember(Name="oid")]
         public string Oid { get; set; }
 
         /// <summary>
-        /// Minimum transaction amount per order
+        /// Minimum trade amount in &#x60;exchangeType&#x60;.
         /// </summary>
-        /// <value>Minimum transaction amount per order</value>
+        /// <value>Minimum trade amount in &#x60;exchangeType&#x60;.</value>
         [DataMember(Name="minAmount")]
         public string MinAmount { get; set; }
 
         /// <summary>
-        /// Maximum transaction amount per order
+        /// Maximum amount per trade in &#x60;exchangeType&#x60; fiat units.
         /// </summary>
-        /// <value>Maximum transaction amount per order</value>
+        /// <value>Maximum amount per trade in &#x60;exchangeType&#x60; fiat units.</value>
         [DataMember(Name="maxAmount")]
         public string MaxAmount { get; set; }
 
         /// <summary>
-        /// Order tier limit
+        /// Minimum counterparty VIP level; &#x60;0&#x60; means no requirement.
         /// </summary>
-        /// <value>Order tier limit</value>
+        /// <value>Minimum counterparty VIP level; &#x60;0&#x60; means no requirement.</value>
         [DataMember(Name="tierLimit")]
         public string TierLimit { get; set; }
 
         /// <summary>
-        /// Verification level limit
+        /// Minimum counterparty verification level; &#x60;0&#x60; means no limit.
         /// </summary>
-        /// <value>Verification level limit</value>
+        /// <value>Minimum counterparty verification level; &#x60;0&#x60; means no limit.</value>
         [DataMember(Name="verifiedLimit")]
         public string VerifiedLimit { get; set; }
 
         /// <summary>
-        /// Registration time limit
+        /// Minimum counterparty account age in days; &#x60;0&#x60; means no limit.
         /// </summary>
-        /// <value>Registration time limit</value>
+        /// <value>Minimum counterparty account age in days; &#x60;0&#x60; means no limit.</value>
         [DataMember(Name="regTimeLimit")]
         public string RegTimeLimit { get; set; }
 
         /// <summary>
-        /// Advertiser restriction
+        /// Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes.
         /// </summary>
-        /// <value>Advertiser restriction</value>
+        /// <value>Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes.</value>
         [DataMember(Name="advertisersLimit")]
         public string AdvertisersLimit { get; set; }
 
         /// <summary>
-        /// Whether to hide payment method: 1&#x3D;Yes, 0&#x3D;No
+        /// Payment timeout in minutes.
         /// </summary>
-        /// <value>Whether to hide payment method: 1&#x3D;Yes, 0&#x3D;No</value>
-        [DataMember(Name="hide_payment")]
-        public string HidePayment { get; set; }
-
-        /// <summary>
-        /// Ad expiration time (minutes)
-        /// </summary>
-        /// <value>Ad expiration time (minutes)</value>
+        /// <value>Payment timeout in minutes.</value>
         [DataMember(Name="expire_min")]
         public string ExpireMin { get; set; }
 
         /// <summary>
-        /// Trading terms
+        /// Ad trading terms shown to the taker.
         /// </summary>
-        /// <value>Trading terms</value>
+        /// <value>Ad trading terms shown to the taker.</value>
         [DataMember(Name="trade_tips")]
         public string TradeTips { get; set; }
 
         /// <summary>
-        /// Auto reply
+        /// Auto-reply message after order creation.
         /// </summary>
-        /// <value>Auto reply</value>
+        /// <value>Auto-reply message after order creation.</value>
         [DataMember(Name="auto_reply")]
         public string AutoReply { get; set; }
 
         /// <summary>
-        /// Minimum limit of completed orders
+        /// Minimum completed orders for counterparty; &#x60;-1&#x60; unlimited.
         /// </summary>
-        /// <value>Minimum limit of completed orders</value>
+        /// <value>Minimum completed orders for counterparty; &#x60;-1&#x60; unlimited.</value>
         [DataMember(Name="min_completed_limit")]
         public string MinCompletedLimit { get; set; }
 
         /// <summary>
-        /// Maximum limit of completed orders
+        /// Maximum completed orders for counterparty; &#x60;-1&#x60; unlimited.
         /// </summary>
-        /// <value>Maximum limit of completed orders</value>
+        /// <value>Maximum completed orders for counterparty; &#x60;-1&#x60; unlimited.</value>
         [DataMember(Name="max_completed_limit")]
         public string MaxCompletedLimit { get; set; }
 
         /// <summary>
-        /// 30-day completion rate limit
+        /// Counterparty minimum 30-day completion rate; &#x60;-1&#x60; means no limit.
         /// </summary>
-        /// <value>30-day completion rate limit</value>
+        /// <value>Counterparty minimum 30-day completion rate; &#x60;-1&#x60; means no limit.</value>
         [DataMember(Name="completed_rate_limit")]
         public string CompletedRateLimit { get; set; }
 
         /// <summary>
-        /// KYC nationality restriction
+        /// KYC nationality restriction; &#x60;-1&#x60; means no restriction.
         /// </summary>
-        /// <value>KYC nationality restriction</value>
+        /// <value>KYC nationality restriction; &#x60;-1&#x60; means no restriction.</value>
         [DataMember(Name="user_country_limit")]
         public string UserCountryLimit { get; set; }
 
         /// <summary>
-        /// Order count limit
+        /// Maximum concurrent orders allowed for the counterparty. &#x60;-1&#x60;: unlimited.
         /// </summary>
-        /// <value>Order count limit</value>
+        /// <value>Maximum concurrent orders allowed for the counterparty. &#x60;-1&#x60;: unlimited.</value>
         [DataMember(Name="user_order_limit")]
         public string UserOrderLimit { get; set; }
 
         /// <summary>
-        /// Reference exchange rate ID
+        /// Floating price reference. &#x60;1&#x60;: platform reference; &#x60;2&#x60;: Gate reference; &#x60;3&#x60;: spot reference.
         /// </summary>
-        /// <value>Reference exchange rate ID</value>
+        /// <value>Floating price reference. &#x60;1&#x60;: platform reference; &#x60;2&#x60;: Gate reference; &#x60;3&#x60;: spot reference.</value>
         [DataMember(Name="rateReferenceId")]
         public string RateReferenceId { get; set; }
 
         /// <summary>
-        /// Reference exchange rate offset
+        /// Absolute floating offset ratio, e.g. &#x60;0.5&#x60; means 0.5%.
         /// </summary>
-        /// <value>Reference exchange rate offset</value>
+        /// <value>Absolute floating offset ratio, e.g. &#x60;0.5&#x60; means 0.5%.</value>
         [DataMember(Name="rateOffset")]
         public string RateOffset { get; set; }
 
         /// <summary>
-        /// 444
+        /// Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown.
         /// </summary>
-        /// <value>444</value>
+        /// <value>Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown.</value>
         [DataMember(Name="float_trend")]
         public string FloatTrend { get; set; }
+
+        /// <summary>
+        /// Team payee UID; optional for non-team merchants.
+        /// </summary>
+        /// <value>Team payee UID; optional for non-team merchants.</value>
+        [DataMember(Name="team_payment_uid")]
+        public string TeamPaymentUid { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -316,7 +347,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  VerifiedLimit: ").Append(VerifiedLimit).Append("\n");
             sb.Append("  RegTimeLimit: ").Append(RegTimeLimit).Append("\n");
             sb.Append("  AdvertisersLimit: ").Append(AdvertisersLimit).Append("\n");
-            sb.Append("  HidePayment: ").Append(HidePayment).Append("\n");
             sb.Append("  ExpireMin: ").Append(ExpireMin).Append("\n");
             sb.Append("  TradeTips: ").Append(TradeTips).Append("\n");
             sb.Append("  AutoReply: ").Append(AutoReply).Append("\n");
@@ -328,6 +358,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  RateReferenceId: ").Append(RateReferenceId).Append("\n");
             sb.Append("  RateOffset: ").Append(RateOffset).Append("\n");
             sb.Append("  FloatTrend: ").Append(FloatTrend).Append("\n");
+            sb.Append("  TeamPaymentUid: ").Append(TeamPaymentUid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -374,8 +405,7 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.Type.Equals(input.Type)
                 ) && 
                 (
                     this.UnitPrice == input.UnitPrice ||
@@ -438,11 +468,6 @@ namespace Io.Gate.GateApi.Model
                     this.AdvertisersLimit.Equals(input.AdvertisersLimit))
                 ) && 
                 (
-                    this.HidePayment == input.HidePayment ||
-                    (this.HidePayment != null &&
-                    this.HidePayment.Equals(input.HidePayment))
-                ) && 
-                (
                     this.ExpireMin == input.ExpireMin ||
                     (this.ExpireMin != null &&
                     this.ExpireMin.Equals(input.ExpireMin))
@@ -496,6 +521,11 @@ namespace Io.Gate.GateApi.Model
                     this.FloatTrend == input.FloatTrend ||
                     (this.FloatTrend != null &&
                     this.FloatTrend.Equals(input.FloatTrend))
+                ) && 
+                (
+                    this.TeamPaymentUid == input.TeamPaymentUid ||
+                    (this.TeamPaymentUid != null &&
+                    this.TeamPaymentUid.Equals(input.TeamPaymentUid))
                 );
         }
 
@@ -512,8 +542,7 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.CurrencyType.GetHashCode();
                 if (this.ExchangeType != null)
                     hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.UnitPrice != null)
                     hashCode = hashCode * 59 + this.UnitPrice.GetHashCode();
                 if (this.Number != null)
@@ -538,8 +567,6 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.RegTimeLimit.GetHashCode();
                 if (this.AdvertisersLimit != null)
                     hashCode = hashCode * 59 + this.AdvertisersLimit.GetHashCode();
-                if (this.HidePayment != null)
-                    hashCode = hashCode * 59 + this.HidePayment.GetHashCode();
                 if (this.ExpireMin != null)
                     hashCode = hashCode * 59 + this.ExpireMin.GetHashCode();
                 if (this.TradeTips != null)
@@ -562,6 +589,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.RateOffset.GetHashCode();
                 if (this.FloatTrend != null)
                     hashCode = hashCode * 59 + this.FloatTrend.GetHashCode();
+                if (this.TeamPaymentUid != null)
+                    hashCode = hashCode * 59 + this.TeamPaymentUid.GetHashCode();
                 return hashCode;
             }
         }

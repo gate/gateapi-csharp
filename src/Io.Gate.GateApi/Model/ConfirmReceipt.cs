@@ -38,18 +38,19 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfirmReceipt" /> class.
         /// </summary>
-        /// <param name="tradeId">tradeId (required).</param>
-        public ConfirmReceipt(string tradeId = default(string))
+        /// <param name="txid">Order ID (required).</param>
+        public ConfirmReceipt(string txid = default(string))
         {
-            // to ensure "tradeId" is required (not null)
-            this.TradeId = tradeId ?? throw new ArgumentNullException("tradeId", "tradeId is a required property for ConfirmReceipt and cannot be null");
+            // to ensure "txid" is required (not null)
+            this.Txid = txid ?? throw new ArgumentNullException("txid", "txid is a required property for ConfirmReceipt and cannot be null");
         }
 
         /// <summary>
-        /// Gets or Sets TradeId
+        /// Order ID
         /// </summary>
-        [DataMember(Name="trade_id")]
-        public string TradeId { get; set; }
+        /// <value>Order ID</value>
+        [DataMember(Name="txid")]
+        public string Txid { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -59,7 +60,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ConfirmReceipt {\n");
-            sb.Append("  TradeId: ").Append(TradeId).Append("\n");
+            sb.Append("  Txid: ").Append(Txid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,9 +96,9 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.TradeId == input.TradeId ||
-                    (this.TradeId != null &&
-                    this.TradeId.Equals(input.TradeId))
+                    this.Txid == input.Txid ||
+                    (this.Txid != null &&
+                    this.Txid.Equals(input.Txid))
                 );
         }
 
@@ -110,8 +111,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TradeId != null)
-                    hashCode = hashCode * 59 + this.TradeId.GetHashCode();
+                if (this.Txid != null)
+                    hashCode = hashCode * 59 + this.Txid.GetHashCode();
                 return hashCode;
             }
         }

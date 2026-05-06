@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Creation parameters of spot martin strategy.
+    /// 现货马丁策略的创建参数（对应 &#x60;MartingaleBot&#x60; 序列化字段）。  - **止损**：使用 &#x60;stop_loss_per_cycle&#x60;（每轮止损比例），与 App 一致；**不使用** &#x60;stop_loss_price&#x60;。 - 可选 **&#x60;trigger_price&#x60;**：触发价。 - &#x60;stop_loss_per_cycle&#x60; 若传入且大于 0，服务端校验区间约为 &#x60;0.001&#x60;～&#x60;0.9999&#x60;（与 &#x60;check_martingale&#x60; 一致）。
     /// </summary>
     [DataContract]
     public partial class SpotMartingaleCreateParams :  IEquatable<SpotMartingaleCreateParams>, IValidatableObject
@@ -39,12 +39,13 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="SpotMartingaleCreateParams" /> class.
         /// </summary>
         /// <param name="investAmount">investAmount (required).</param>
-        /// <param name="priceDeviation">priceDeviation (required).</param>
+        /// <param name="priceDeviation">Add-position deviation ratio as a decimal string (e.g. a 2% drop is &#x60;0.02&#x60;). (required).</param>
         /// <param name="maxOrders">maxOrders (required).</param>
-        /// <param name="takeProfitRatio">takeProfitRatio (required).</param>
-        /// <param name="stopLossPrice">stopLossPrice.</param>
+        /// <param name="takeProfitRatio">Take-profit ratio per round as a decimal string. (required).</param>
+        /// <param name="stopLossPerCycle">Stop-loss ratio per round as a decimal string; optional; aligned with app &#x60;stop_loss_per_cycle&#x60;..</param>
+        /// <param name="triggerPrice">Trigger price; optional..</param>
         /// <param name="profitSharingRatio">profitSharingRatio.</param>
-        public SpotMartingaleCreateParams(string investAmount = default(string), string priceDeviation = default(string), int maxOrders = default(int), string takeProfitRatio = default(string), string stopLossPrice = default(string), string profitSharingRatio = default(string))
+        public SpotMartingaleCreateParams(string investAmount = default(string), string priceDeviation = default(string), int maxOrders = default(int), string takeProfitRatio = default(string), string stopLossPerCycle = default(string), string triggerPrice = default(string), string profitSharingRatio = default(string))
         {
             // to ensure "investAmount" is required (not null)
             this.InvestAmount = investAmount ?? throw new ArgumentNullException("investAmount", "investAmount is a required property for SpotMartingaleCreateParams and cannot be null");
@@ -53,7 +54,8 @@ namespace Io.Gate.GateApi.Model
             this.MaxOrders = maxOrders;
             // to ensure "takeProfitRatio" is required (not null)
             this.TakeProfitRatio = takeProfitRatio ?? throw new ArgumentNullException("takeProfitRatio", "takeProfitRatio is a required property for SpotMartingaleCreateParams and cannot be null");
-            this.StopLossPrice = stopLossPrice;
+            this.StopLossPerCycle = stopLossPerCycle;
+            this.TriggerPrice = triggerPrice;
             this.ProfitSharingRatio = profitSharingRatio;
         }
 
@@ -64,8 +66,9 @@ namespace Io.Gate.GateApi.Model
         public string InvestAmount { get; set; }
 
         /// <summary>
-        /// Gets or Sets PriceDeviation
+        /// Add-position deviation ratio as a decimal string (e.g. a 2% drop is &#x60;0.02&#x60;).
         /// </summary>
+        /// <value>Add-position deviation ratio as a decimal string (e.g. a 2% drop is &#x60;0.02&#x60;).</value>
         [DataMember(Name="price_deviation")]
         public string PriceDeviation { get; set; }
 
@@ -76,16 +79,25 @@ namespace Io.Gate.GateApi.Model
         public int MaxOrders { get; set; }
 
         /// <summary>
-        /// Gets or Sets TakeProfitRatio
+        /// Take-profit ratio per round as a decimal string.
         /// </summary>
+        /// <value>Take-profit ratio per round as a decimal string.</value>
         [DataMember(Name="take_profit_ratio")]
         public string TakeProfitRatio { get; set; }
 
         /// <summary>
-        /// Gets or Sets StopLossPrice
+        /// Stop-loss ratio per round as a decimal string; optional; aligned with app &#x60;stop_loss_per_cycle&#x60;.
         /// </summary>
-        [DataMember(Name="stop_loss_price")]
-        public string StopLossPrice { get; set; }
+        /// <value>Stop-loss ratio per round as a decimal string; optional; aligned with app &#x60;stop_loss_per_cycle&#x60;.</value>
+        [DataMember(Name="stop_loss_per_cycle")]
+        public string StopLossPerCycle { get; set; }
+
+        /// <summary>
+        /// Trigger price; optional.
+        /// </summary>
+        /// <value>Trigger price; optional.</value>
+        [DataMember(Name="trigger_price")]
+        public string TriggerPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets ProfitSharingRatio
@@ -105,7 +117,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  PriceDeviation: ").Append(PriceDeviation).Append("\n");
             sb.Append("  MaxOrders: ").Append(MaxOrders).Append("\n");
             sb.Append("  TakeProfitRatio: ").Append(TakeProfitRatio).Append("\n");
-            sb.Append("  StopLossPrice: ").Append(StopLossPrice).Append("\n");
+            sb.Append("  StopLossPerCycle: ").Append(StopLossPerCycle).Append("\n");
+            sb.Append("  TriggerPrice: ").Append(TriggerPrice).Append("\n");
             sb.Append("  ProfitSharingRatio: ").Append(ProfitSharingRatio).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -161,9 +174,14 @@ namespace Io.Gate.GateApi.Model
                     this.TakeProfitRatio.Equals(input.TakeProfitRatio))
                 ) && 
                 (
-                    this.StopLossPrice == input.StopLossPrice ||
-                    (this.StopLossPrice != null &&
-                    this.StopLossPrice.Equals(input.StopLossPrice))
+                    this.StopLossPerCycle == input.StopLossPerCycle ||
+                    (this.StopLossPerCycle != null &&
+                    this.StopLossPerCycle.Equals(input.StopLossPerCycle))
+                ) && 
+                (
+                    this.TriggerPrice == input.TriggerPrice ||
+                    (this.TriggerPrice != null &&
+                    this.TriggerPrice.Equals(input.TriggerPrice))
                 ) && 
                 (
                     this.ProfitSharingRatio == input.ProfitSharingRatio ||
@@ -188,8 +206,10 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.MaxOrders.GetHashCode();
                 if (this.TakeProfitRatio != null)
                     hashCode = hashCode * 59 + this.TakeProfitRatio.GetHashCode();
-                if (this.StopLossPrice != null)
-                    hashCode = hashCode * 59 + this.StopLossPrice.GetHashCode();
+                if (this.StopLossPerCycle != null)
+                    hashCode = hashCode * 59 + this.StopLossPerCycle.GetHashCode();
+                if (this.TriggerPrice != null)
+                    hashCode = hashCode * 59 + this.TriggerPrice.GetHashCode();
                 if (this.ProfitSharingRatio != null)
                     hashCode = hashCode * 59 + this.ProfitSharingRatio.GetHashCode();
                 return hashCode;

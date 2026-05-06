@@ -33,79 +33,55 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pTransactionDetail" /> class.
         /// </summary>
-        /// <param name="isSell">Whether sell order.</param>
+        /// <param name="isSell">Whether the current user is the seller. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         /// <param name="txid">Order ID.</param>
         /// <param name="orderid">Order ID.</param>
         /// <param name="timest">Order creation timestamp.</param>
         /// <param name="lastPayTime">Payment deadline.</param>
-        /// <param name="remainPayTime">Remaining payment time.</param>
-        /// <param name="currencyType">Cryptocurrency type.</param>
-        /// <param name="wantType">Fiat currency type.</param>
-        /// <param name="rate">Price.</param>
-        /// <param name="amount">Size.</param>
-        /// <param name="total">Fiat amount.</param>
-        /// <param name="status">Order Status.</param>
-        /// <param name="reasonId">Cancellation reason ID.</param>
-        /// <param name="reasonDesc">Cancellation reason.</param>
-        /// <param name="toastId">Popup ID.</param>
+        /// <param name="remainPayTime">Seconds left to pay; &#x60;&lt;&#x3D; 0&#x60; means overdue..</param>
+        /// <param name="currencyType">Cryptocurrency symbol..</param>
+        /// <param name="wantType">Fiat currency.</param>
+        /// <param name="symbol">Fiat currency symbol.</param>
+        /// <param name="rate">Order price in &#x60;want_type&#x60; units..</param>
+        /// <param name="amount">Order size in cryptocurrency..</param>
+        /// <param name="total">Total fiat amount of the order..</param>
+        /// <param name="status">Display status: &#x60;unpay&#x60; unpaid; &#x60;hide_payment&#x60; unpaid with payment info hidden; &#x60;paid&#x60; buyer paid; &#x60;unconfirmed&#x60; awaiting seller confirmation; &#x60;locked&#x60; locked; &#x60;finished&#x60; done; &#x60;cancel&#x60; canceled; &#x60;expired&#x60; expired; &#x60;bclosed&#x60; arbitration filled; &#x60;sclosed&#x60; arbitration canceled..</param>
+        /// <param name="reasonId">Cancel reason ID; empty string means none. Examples: &#x60;1&#x60; no longer want to buy; &#x60;2&#x60; cannot reach seller; &#x60;3&#x60; will not pay; &#x60;4&#x60; seller did not provide a real account; &#x60;6&#x60; price/amount mismatch; &#x60;9&#x60; other; &#x60;10&#x60; seller cannot release and refund issued; &#x60;11&#x60; terms not met; &#x60;12&#x60; seller payout account risk-controlled..</param>
+        /// <param name="reasonDesc">Cancel reason description..</param>
         /// <param name="cancelTime">Cancellation time.</param>
-        /// <param name="sellerConfirm">Whether seller confirmed the reason.</param>
-        /// <param name="inAppeal">Whether in dispute.</param>
-        /// <param name="disputeTime">Appeal time limit.</param>
-        /// <param name="cancelable">Whether order cancellation is allowed.</param>
-        /// <param name="hidePayment">Whether to hide payment method.</param>
+        /// <param name="inAppeal">Whether a dispute is active. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="disputeTime">Earliest timestamp when a dispute may be opened..</param>
+        /// <param name="cancelable">Whether cancellation is allowed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="hidePayment">Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible..</param>
         /// <param name="tradeTips">Trading terms.</param>
-        /// <param name="showBank">Whether to display bank.</param>
+        /// <param name="showBank">Whether to show bank transfer details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide..</param>
         /// <param name="bankname">Bank name.</param>
         /// <param name="bankbranch">Bank branch name.</param>
-        /// <param name="bankid">Bank ID.</param>
+        /// <param name="bankid">Bank account or masked account..</param>
         /// <param name="bankHolderRealname">Bank cardholder name.</param>
-        /// <param name="showAli">Whether to display Alipay.</param>
+        /// <param name="showAli">Whether to show Alipay details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide..</param>
         /// <param name="aliname">Alipay account name.</param>
-        /// <param name="isAlicode">Whether Alipay QR code exists.</param>
-        /// <param name="showWechat">Whether to display WeChat.</param>
+        /// <param name="isAlicode">Whether an Alipay QR exists. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="showWechat">Whether to show WeChat details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide..</param>
         /// <param name="wename">WeChat account name.</param>
-        /// <param name="showOthers">Whether to display other payment methods.</param>
+        /// <param name="showOthers">Whether to show other payment methods. &#x60;1&#x60;: show; &#x60;0&#x60;: hide..</param>
         /// <param name="payOthers">Other payment methods.</param>
-        /// <param name="selPaytype">Payment type.</param>
-        /// <param name="itsUid">Counterparty UID.</param>
-        /// <param name="itsIsBlueVip">Whether counterparty is Blue V.</param>
-        /// <param name="itsTier">Counterparty VIP tier.</param>
-        /// <param name="itsAvatar">Counterparty avatar.</param>
+        /// <param name="selPaytype">Selected payment type for this order, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;..</param>
+        /// <param name="itsUid">Counterparty crypto UID..</param>
         /// <param name="itsNickname">Counterparty nickname.</param>
-        /// <param name="itsRealname">Counterparty username.</param>
-        /// <param name="isFollow">Whether following.</param>
-        /// <param name="isBlack">Whether blocked.</param>
-        /// <param name="haveTraded">Whether traded before.</param>
-        /// <param name="appealUnread">Unread appeals.</param>
-        /// <param name="appealAllowCancel">Whether appeal cancellation is allowed.</param>
-        /// <param name="appealVerdictHasOpen">Appeal result (including pending appeals).</param>
-        /// <param name="imUnread">IM unread.</param>
-        /// <param name="message">Review content.</param>
-        /// <param name="score">Rating.</param>
+        /// <param name="itsRealname">Counterparty real name or verified display name..</param>
+        /// <param name="haveTraded">Whether you traded with the counterparty before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="appealAllowCancel">Whether the dispute can be withdrawn. &#x60;1&#x60;: allowed; &#x60;0&#x60;: not allowed..</param>
+        /// <param name="appealVerdictHasOpen">Dispute outcome or in-dispute notice text..</param>
+        /// <param name="imUnread">Unread chat message count..</param>
         /// <param name="paymentVoucherUrl">Payment voucher.</param>
-        /// <param name="completeNumber">Counterparty transaction volume.</param>
-        /// <param name="completeRateMonth">Counterparty completion rate.</param>
-        /// <param name="checkJournalAccount">Whether transaction record is verified.</param>
-        /// <param name="showJournalAccount">Whether to display transaction records.</param>
-        /// <param name="isFreezeGuarantee">Whether margin is frozen.</param>
-        /// <param name="usdtLeftGuarantee">Remaining USDT margin.</param>
-        /// <param name="guaranteeCurrType">Margin currency type.</param>
-        /// <param name="timestPaid">Payment time.</param>
-        /// <param name="state">Order Status.</param>
-        /// <param name="releaseCoinSwitch">Coin release switch configuration.</param>
-        /// <param name="ownRealname">Username.</param>
-        /// <param name="confirmationUseTimeMonth">Average confirmation time in last 30 days.</param>
-        /// <param name="isRiskUser">Whether risk user.</param>
-        /// <param name="isXt">Whether XT order.</param>
-        /// <param name="orderType">Order Type.</param>
-        /// <param name="symbol">Fiat currency symbol.</param>
-        /// <param name="isShowReceive">Whether to show confirm receipt during appeal.</param>
-        /// <param name="isTaker">Whether regular user.</param>
-        /// <param name="isOnline">Merchant online status.</param>
+        /// <param name="timestPaid">Timestamp when the buyer confirmed payment..</param>
+        /// <param name="ownRealname">Current user&#39;s real name or verified display name..</param>
+        /// <param name="orderType">Order type: &#x60;1&#x60; standard; &#x60;2&#x60; partner; &#x60;3&#x60; flash swap; &#x60;4&#x60; Web3..</param>
+        /// <param name="isShowReceive">Whether to show confirm-receipt during dispute. &#x60;1&#x60;: show; &#x60;0&#x60;: hide..</param>
         /// <param name="showSellerContactInfo">Whether to display seller contact information.</param>
-        /// <param name="supportedPayTypes">Payment methods supported by current order.</param>
-        public P2pTransactionDetail(int isSell = default(int), int txid = default(int), int orderid = default(int), int timest = default(int), int lastPayTime = default(int), int remainPayTime = default(int), string currencyType = default(string), string wantType = default(string), string rate = default(string), string amount = default(string), string total = default(string), string status = default(string), string reasonId = default(string), string reasonDesc = default(string), int toastId = default(int), string cancelTime = default(string), int sellerConfirm = default(int), int inAppeal = default(int), int disputeTime = default(int), int cancelable = default(int), int hidePayment = default(int), string tradeTips = default(string), string showBank = default(string), string bankname = default(string), string bankbranch = default(string), string bankid = default(string), string bankHolderRealname = default(string), string showAli = default(string), string aliname = default(string), int isAlicode = default(int), string showWechat = default(string), string wename = default(string), string showOthers = default(string), List<string> payOthers = default(List<string>), string selPaytype = default(string), string itsUid = default(string), int itsIsBlueVip = default(int), int itsTier = default(int), string itsAvatar = default(string), string itsNickname = default(string), string itsRealname = default(string), int isFollow = default(int), int isBlack = default(int), int haveTraded = default(int), int appealUnread = default(int), int appealAllowCancel = default(int), string appealVerdictHasOpen = default(string), int imUnread = default(int), string message = default(string), string score = default(string), List<string> paymentVoucherUrl = default(List<string>), int completeNumber = default(int), string completeRateMonth = default(string), bool checkJournalAccount = default(bool), bool showJournalAccount = default(bool), int isFreezeGuarantee = default(int), string usdtLeftGuarantee = default(string), string guaranteeCurrType = default(string), int timestPaid = default(int), string state = default(string), int releaseCoinSwitch = default(int), string ownRealname = default(string), int confirmationUseTimeMonth = default(int), int isRiskUser = default(int), int isXt = default(int), int orderType = default(int), string symbol = default(string), int isShowReceive = default(int), int isTaker = default(int), int isOnline = default(int), bool showSellerContactInfo = default(bool), List<string> supportedPayTypes = default(List<string>))
+        /// <param name="supportedPayTypes">Supported payment method types for the order, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;..</param>
+        public P2pTransactionDetail(int isSell = default(int), int txid = default(int), int orderid = default(int), int timest = default(int), int lastPayTime = default(int), int remainPayTime = default(int), string currencyType = default(string), string wantType = default(string), string symbol = default(string), string rate = default(string), string amount = default(string), string total = default(string), string status = default(string), string reasonId = default(string), string reasonDesc = default(string), string cancelTime = default(string), int inAppeal = default(int), int disputeTime = default(int), int cancelable = default(int), int hidePayment = default(int), string tradeTips = default(string), string showBank = default(string), string bankname = default(string), string bankbranch = default(string), string bankid = default(string), string bankHolderRealname = default(string), string showAli = default(string), string aliname = default(string), int isAlicode = default(int), string showWechat = default(string), string wename = default(string), string showOthers = default(string), List<P2pTransactionDetailPayOthers> payOthers = default(List<P2pTransactionDetailPayOthers>), string selPaytype = default(string), string itsUid = default(string), string itsNickname = default(string), string itsRealname = default(string), int haveTraded = default(int), int appealAllowCancel = default(int), string appealVerdictHasOpen = default(string), int imUnread = default(int), List<string> paymentVoucherUrl = default(List<string>), int timestPaid = default(int), string ownRealname = default(string), int orderType = default(int), int isShowReceive = default(int), bool showSellerContactInfo = default(bool), List<string> supportedPayTypes = default(List<string>))
         {
             this.IsSell = isSell;
             this.Txid = txid;
@@ -115,15 +91,14 @@ namespace Io.Gate.GateApi.Model
             this.RemainPayTime = remainPayTime;
             this.CurrencyType = currencyType;
             this.WantType = wantType;
+            this.Symbol = symbol;
             this.Rate = rate;
             this.Amount = amount;
             this.Total = total;
             this.Status = status;
             this.ReasonId = reasonId;
             this.ReasonDesc = reasonDesc;
-            this.ToastId = toastId;
             this.CancelTime = cancelTime;
-            this.SellerConfirm = sellerConfirm;
             this.InAppeal = inAppeal;
             this.DisputeTime = disputeTime;
             this.Cancelable = cancelable;
@@ -143,48 +118,25 @@ namespace Io.Gate.GateApi.Model
             this.PayOthers = payOthers;
             this.SelPaytype = selPaytype;
             this.ItsUid = itsUid;
-            this.ItsIsBlueVip = itsIsBlueVip;
-            this.ItsTier = itsTier;
-            this.ItsAvatar = itsAvatar;
             this.ItsNickname = itsNickname;
             this.ItsRealname = itsRealname;
-            this.IsFollow = isFollow;
-            this.IsBlack = isBlack;
             this.HaveTraded = haveTraded;
-            this.AppealUnread = appealUnread;
             this.AppealAllowCancel = appealAllowCancel;
             this.AppealVerdictHasOpen = appealVerdictHasOpen;
             this.ImUnread = imUnread;
-            this.Message = message;
-            this.Score = score;
             this.PaymentVoucherUrl = paymentVoucherUrl;
-            this.CompleteNumber = completeNumber;
-            this.CompleteRateMonth = completeRateMonth;
-            this.CheckJournalAccount = checkJournalAccount;
-            this.ShowJournalAccount = showJournalAccount;
-            this.IsFreezeGuarantee = isFreezeGuarantee;
-            this.UsdtLeftGuarantee = usdtLeftGuarantee;
-            this.GuaranteeCurrType = guaranteeCurrType;
             this.TimestPaid = timestPaid;
-            this.State = state;
-            this.ReleaseCoinSwitch = releaseCoinSwitch;
             this.OwnRealname = ownRealname;
-            this.ConfirmationUseTimeMonth = confirmationUseTimeMonth;
-            this.IsRiskUser = isRiskUser;
-            this.IsXt = isXt;
             this.OrderType = orderType;
-            this.Symbol = symbol;
             this.IsShowReceive = isShowReceive;
-            this.IsTaker = isTaker;
-            this.IsOnline = isOnline;
             this.ShowSellerContactInfo = showSellerContactInfo;
             this.SupportedPayTypes = supportedPayTypes;
         }
 
         /// <summary>
-        /// Whether sell order
+        /// Whether the current user is the seller. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether sell order</value>
+        /// <value>Whether the current user is the seller. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_sell")]
         public int IsSell { get; set; }
 
@@ -217,74 +169,74 @@ namespace Io.Gate.GateApi.Model
         public int LastPayTime { get; set; }
 
         /// <summary>
-        /// Remaining payment time
+        /// Seconds left to pay; &#x60;&lt;&#x3D; 0&#x60; means overdue.
         /// </summary>
-        /// <value>Remaining payment time</value>
+        /// <value>Seconds left to pay; &#x60;&lt;&#x3D; 0&#x60; means overdue.</value>
         [DataMember(Name="remain_pay_time")]
         public int RemainPayTime { get; set; }
 
         /// <summary>
-        /// Cryptocurrency type
+        /// Cryptocurrency symbol.
         /// </summary>
-        /// <value>Cryptocurrency type</value>
-        [DataMember(Name="currencyType")]
+        /// <value>Cryptocurrency symbol.</value>
+        [DataMember(Name="currency_type")]
         public string CurrencyType { get; set; }
 
         /// <summary>
-        /// Fiat currency type
+        /// Fiat currency
         /// </summary>
-        /// <value>Fiat currency type</value>
+        /// <value>Fiat currency</value>
         [DataMember(Name="want_type")]
         public string WantType { get; set; }
 
         /// <summary>
-        /// Price
+        /// Fiat currency symbol
         /// </summary>
-        /// <value>Price</value>
+        /// <value>Fiat currency symbol</value>
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
+
+        /// <summary>
+        /// Order price in &#x60;want_type&#x60; units.
+        /// </summary>
+        /// <value>Order price in &#x60;want_type&#x60; units.</value>
         [DataMember(Name="rate")]
         public string Rate { get; set; }
 
         /// <summary>
-        /// Size
+        /// Order size in cryptocurrency.
         /// </summary>
-        /// <value>Size</value>
+        /// <value>Order size in cryptocurrency.</value>
         [DataMember(Name="amount")]
         public string Amount { get; set; }
 
         /// <summary>
-        /// Fiat amount
+        /// Total fiat amount of the order.
         /// </summary>
-        /// <value>Fiat amount</value>
+        /// <value>Total fiat amount of the order.</value>
         [DataMember(Name="total")]
         public string Total { get; set; }
 
         /// <summary>
-        /// Order Status
+        /// Display status: &#x60;unpay&#x60; unpaid; &#x60;hide_payment&#x60; unpaid with payment info hidden; &#x60;paid&#x60; buyer paid; &#x60;unconfirmed&#x60; awaiting seller confirmation; &#x60;locked&#x60; locked; &#x60;finished&#x60; done; &#x60;cancel&#x60; canceled; &#x60;expired&#x60; expired; &#x60;bclosed&#x60; arbitration filled; &#x60;sclosed&#x60; arbitration canceled.
         /// </summary>
-        /// <value>Order Status</value>
+        /// <value>Display status: &#x60;unpay&#x60; unpaid; &#x60;hide_payment&#x60; unpaid with payment info hidden; &#x60;paid&#x60; buyer paid; &#x60;unconfirmed&#x60; awaiting seller confirmation; &#x60;locked&#x60; locked; &#x60;finished&#x60; done; &#x60;cancel&#x60; canceled; &#x60;expired&#x60; expired; &#x60;bclosed&#x60; arbitration filled; &#x60;sclosed&#x60; arbitration canceled.</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 
         /// <summary>
-        /// Cancellation reason ID
+        /// Cancel reason ID; empty string means none. Examples: &#x60;1&#x60; no longer want to buy; &#x60;2&#x60; cannot reach seller; &#x60;3&#x60; will not pay; &#x60;4&#x60; seller did not provide a real account; &#x60;6&#x60; price/amount mismatch; &#x60;9&#x60; other; &#x60;10&#x60; seller cannot release and refund issued; &#x60;11&#x60; terms not met; &#x60;12&#x60; seller payout account risk-controlled.
         /// </summary>
-        /// <value>Cancellation reason ID</value>
+        /// <value>Cancel reason ID; empty string means none. Examples: &#x60;1&#x60; no longer want to buy; &#x60;2&#x60; cannot reach seller; &#x60;3&#x60; will not pay; &#x60;4&#x60; seller did not provide a real account; &#x60;6&#x60; price/amount mismatch; &#x60;9&#x60; other; &#x60;10&#x60; seller cannot release and refund issued; &#x60;11&#x60; terms not met; &#x60;12&#x60; seller payout account risk-controlled.</value>
         [DataMember(Name="reason_id")]
         public string ReasonId { get; set; }
 
         /// <summary>
-        /// Cancellation reason
+        /// Cancel reason description.
         /// </summary>
-        /// <value>Cancellation reason</value>
+        /// <value>Cancel reason description.</value>
         [DataMember(Name="reason_desc")]
         public string ReasonDesc { get; set; }
-
-        /// <summary>
-        /// Popup ID
-        /// </summary>
-        /// <value>Popup ID</value>
-        [DataMember(Name="toast_id")]
-        public int ToastId { get; set; }
 
         /// <summary>
         /// Cancellation time
@@ -294,37 +246,30 @@ namespace Io.Gate.GateApi.Model
         public string CancelTime { get; set; }
 
         /// <summary>
-        /// Whether seller confirmed the reason
+        /// Whether a dispute is active. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether seller confirmed the reason</value>
-        [DataMember(Name="seller_confirm")]
-        public int SellerConfirm { get; set; }
-
-        /// <summary>
-        /// Whether in dispute
-        /// </summary>
-        /// <value>Whether in dispute</value>
+        /// <value>Whether a dispute is active. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="in_appeal")]
         public int InAppeal { get; set; }
 
         /// <summary>
-        /// Appeal time limit
+        /// Earliest timestamp when a dispute may be opened.
         /// </summary>
-        /// <value>Appeal time limit</value>
+        /// <value>Earliest timestamp when a dispute may be opened.</value>
         [DataMember(Name="dispute_time")]
         public int DisputeTime { get; set; }
 
         /// <summary>
-        /// Whether order cancellation is allowed
+        /// Whether cancellation is allowed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether order cancellation is allowed</value>
+        /// <value>Whether cancellation is allowed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="cancelable")]
         public int Cancelable { get; set; }
 
         /// <summary>
-        /// Whether to hide payment method
+        /// Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible.
         /// </summary>
-        /// <value>Whether to hide payment method</value>
+        /// <value>Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible.</value>
         [DataMember(Name="hide_payment")]
         public int HidePayment { get; set; }
 
@@ -336,9 +281,9 @@ namespace Io.Gate.GateApi.Model
         public string TradeTips { get; set; }
 
         /// <summary>
-        /// Whether to display bank
+        /// Whether to show bank transfer details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.
         /// </summary>
-        /// <value>Whether to display bank</value>
+        /// <value>Whether to show bank transfer details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.</value>
         [DataMember(Name="show_bank")]
         public string ShowBank { get; set; }
 
@@ -357,9 +302,9 @@ namespace Io.Gate.GateApi.Model
         public string Bankbranch { get; set; }
 
         /// <summary>
-        /// Bank ID
+        /// Bank account or masked account.
         /// </summary>
-        /// <value>Bank ID</value>
+        /// <value>Bank account or masked account.</value>
         [DataMember(Name="bankid")]
         public string Bankid { get; set; }
 
@@ -371,9 +316,9 @@ namespace Io.Gate.GateApi.Model
         public string BankHolderRealname { get; set; }
 
         /// <summary>
-        /// Whether to display Alipay
+        /// Whether to show Alipay details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.
         /// </summary>
-        /// <value>Whether to display Alipay</value>
+        /// <value>Whether to show Alipay details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.</value>
         [DataMember(Name="show_ali")]
         public string ShowAli { get; set; }
 
@@ -385,16 +330,16 @@ namespace Io.Gate.GateApi.Model
         public string Aliname { get; set; }
 
         /// <summary>
-        /// Whether Alipay QR code exists
+        /// Whether an Alipay QR exists. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether Alipay QR code exists</value>
+        /// <value>Whether an Alipay QR exists. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_alicode")]
         public int IsAlicode { get; set; }
 
         /// <summary>
-        /// Whether to display WeChat
+        /// Whether to show WeChat details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.
         /// </summary>
-        /// <value>Whether to display WeChat</value>
+        /// <value>Whether to show WeChat details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.</value>
         [DataMember(Name="show_wechat")]
         public string ShowWechat { get; set; }
 
@@ -406,9 +351,9 @@ namespace Io.Gate.GateApi.Model
         public string Wename { get; set; }
 
         /// <summary>
-        /// Whether to display other payment methods
+        /// Whether to show other payment methods. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.
         /// </summary>
-        /// <value>Whether to display other payment methods</value>
+        /// <value>Whether to show other payment methods. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.</value>
         [DataMember(Name="show_others")]
         public string ShowOthers { get; set; }
 
@@ -417,42 +362,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Other payment methods</value>
         [DataMember(Name="pay_others")]
-        public List<string> PayOthers { get; set; }
+        public List<P2pTransactionDetailPayOthers> PayOthers { get; set; }
 
         /// <summary>
-        /// Payment type
+        /// Selected payment type for this order, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.
         /// </summary>
-        /// <value>Payment type</value>
+        /// <value>Selected payment type for this order, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.</value>
         [DataMember(Name="sel_paytype")]
         public string SelPaytype { get; set; }
 
         /// <summary>
-        /// Counterparty UID
+        /// Counterparty crypto UID.
         /// </summary>
-        /// <value>Counterparty UID</value>
+        /// <value>Counterparty crypto UID.</value>
         [DataMember(Name="its_uid")]
         public string ItsUid { get; set; }
-
-        /// <summary>
-        /// Whether counterparty is Blue V
-        /// </summary>
-        /// <value>Whether counterparty is Blue V</value>
-        [DataMember(Name="its_is_blue_vip")]
-        public int ItsIsBlueVip { get; set; }
-
-        /// <summary>
-        /// Counterparty VIP tier
-        /// </summary>
-        /// <value>Counterparty VIP tier</value>
-        [DataMember(Name="its_tier")]
-        public int ItsTier { get; set; }
-
-        /// <summary>
-        /// Counterparty avatar
-        /// </summary>
-        /// <value>Counterparty avatar</value>
-        [DataMember(Name="its_avatar")]
-        public string ItsAvatar { get; set; }
 
         /// <summary>
         /// Counterparty nickname
@@ -462,74 +386,39 @@ namespace Io.Gate.GateApi.Model
         public string ItsNickname { get; set; }
 
         /// <summary>
-        /// Counterparty username
+        /// Counterparty real name or verified display name.
         /// </summary>
-        /// <value>Counterparty username</value>
+        /// <value>Counterparty real name or verified display name.</value>
         [DataMember(Name="its_realname")]
         public string ItsRealname { get; set; }
 
         /// <summary>
-        /// Whether following
+        /// Whether you traded with the counterparty before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether following</value>
-        [DataMember(Name="is_follow")]
-        public int IsFollow { get; set; }
-
-        /// <summary>
-        /// Whether blocked
-        /// </summary>
-        /// <value>Whether blocked</value>
-        [DataMember(Name="is_black")]
-        public int IsBlack { get; set; }
-
-        /// <summary>
-        /// Whether traded before
-        /// </summary>
-        /// <value>Whether traded before</value>
+        /// <value>Whether you traded with the counterparty before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="have_traded")]
         public int HaveTraded { get; set; }
 
         /// <summary>
-        /// Unread appeals
+        /// Whether the dispute can be withdrawn. &#x60;1&#x60;: allowed; &#x60;0&#x60;: not allowed.
         /// </summary>
-        /// <value>Unread appeals</value>
-        [DataMember(Name="appeal_unread")]
-        public int AppealUnread { get; set; }
-
-        /// <summary>
-        /// Whether appeal cancellation is allowed
-        /// </summary>
-        /// <value>Whether appeal cancellation is allowed</value>
+        /// <value>Whether the dispute can be withdrawn. &#x60;1&#x60;: allowed; &#x60;0&#x60;: not allowed.</value>
         [DataMember(Name="appeal_allow_cancel")]
         public int AppealAllowCancel { get; set; }
 
         /// <summary>
-        /// Appeal result (including pending appeals)
+        /// Dispute outcome or in-dispute notice text.
         /// </summary>
-        /// <value>Appeal result (including pending appeals)</value>
+        /// <value>Dispute outcome or in-dispute notice text.</value>
         [DataMember(Name="appeal_verdict_has_open")]
         public string AppealVerdictHasOpen { get; set; }
 
         /// <summary>
-        /// IM unread
+        /// Unread chat message count.
         /// </summary>
-        /// <value>IM unread</value>
+        /// <value>Unread chat message count.</value>
         [DataMember(Name="im_unread")]
         public int ImUnread { get; set; }
-
-        /// <summary>
-        /// Review content
-        /// </summary>
-        /// <value>Review content</value>
-        [DataMember(Name="message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Rating
-        /// </summary>
-        /// <value>Rating</value>
-        [DataMember(Name="score")]
-        public string Score { get; set; }
 
         /// <summary>
         /// Payment voucher
@@ -539,137 +428,32 @@ namespace Io.Gate.GateApi.Model
         public List<string> PaymentVoucherUrl { get; set; }
 
         /// <summary>
-        /// Counterparty transaction volume
+        /// Timestamp when the buyer confirmed payment.
         /// </summary>
-        /// <value>Counterparty transaction volume</value>
-        [DataMember(Name="complete_number")]
-        public int CompleteNumber { get; set; }
-
-        /// <summary>
-        /// Counterparty completion rate
-        /// </summary>
-        /// <value>Counterparty completion rate</value>
-        [DataMember(Name="complete_rate_month")]
-        public string CompleteRateMonth { get; set; }
-
-        /// <summary>
-        /// Whether transaction record is verified
-        /// </summary>
-        /// <value>Whether transaction record is verified</value>
-        [DataMember(Name="check_journal_account")]
-        public bool CheckJournalAccount { get; set; }
-
-        /// <summary>
-        /// Whether to display transaction records
-        /// </summary>
-        /// <value>Whether to display transaction records</value>
-        [DataMember(Name="show_journal_account")]
-        public bool ShowJournalAccount { get; set; }
-
-        /// <summary>
-        /// Whether margin is frozen
-        /// </summary>
-        /// <value>Whether margin is frozen</value>
-        [DataMember(Name="is_freeze_guarantee")]
-        public int IsFreezeGuarantee { get; set; }
-
-        /// <summary>
-        /// Remaining USDT margin
-        /// </summary>
-        /// <value>Remaining USDT margin</value>
-        [DataMember(Name="usdt_left_guarantee")]
-        public string UsdtLeftGuarantee { get; set; }
-
-        /// <summary>
-        /// Margin currency type
-        /// </summary>
-        /// <value>Margin currency type</value>
-        [DataMember(Name="guarantee_curr_type")]
-        public string GuaranteeCurrType { get; set; }
-
-        /// <summary>
-        /// Payment time
-        /// </summary>
-        /// <value>Payment time</value>
+        /// <value>Timestamp when the buyer confirmed payment.</value>
         [DataMember(Name="timest_paid")]
         public int TimestPaid { get; set; }
 
         /// <summary>
-        /// Order Status
+        /// Current user&#39;s real name or verified display name.
         /// </summary>
-        /// <value>Order Status</value>
-        [DataMember(Name="state")]
-        public string State { get; set; }
-
-        /// <summary>
-        /// Coin release switch configuration
-        /// </summary>
-        /// <value>Coin release switch configuration</value>
-        [DataMember(Name="release_coin_switch")]
-        public int ReleaseCoinSwitch { get; set; }
-
-        /// <summary>
-        /// Username
-        /// </summary>
-        /// <value>Username</value>
+        /// <value>Current user&#39;s real name or verified display name.</value>
         [DataMember(Name="own_realname")]
         public string OwnRealname { get; set; }
 
         /// <summary>
-        /// Average confirmation time in last 30 days
+        /// Order type: &#x60;1&#x60; standard; &#x60;2&#x60; partner; &#x60;3&#x60; flash swap; &#x60;4&#x60; Web3.
         /// </summary>
-        /// <value>Average confirmation time in last 30 days</value>
-        [DataMember(Name="confirmation_use_time_month")]
-        public int ConfirmationUseTimeMonth { get; set; }
-
-        /// <summary>
-        /// Whether risk user
-        /// </summary>
-        /// <value>Whether risk user</value>
-        [DataMember(Name="is_risk_user")]
-        public int IsRiskUser { get; set; }
-
-        /// <summary>
-        /// Whether XT order
-        /// </summary>
-        /// <value>Whether XT order</value>
-        [DataMember(Name="is_xt")]
-        public int IsXt { get; set; }
-
-        /// <summary>
-        /// Order Type
-        /// </summary>
-        /// <value>Order Type</value>
+        /// <value>Order type: &#x60;1&#x60; standard; &#x60;2&#x60; partner; &#x60;3&#x60; flash swap; &#x60;4&#x60; Web3.</value>
         [DataMember(Name="order_type")]
         public int OrderType { get; set; }
 
         /// <summary>
-        /// Fiat currency symbol
+        /// Whether to show confirm-receipt during dispute. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.
         /// </summary>
-        /// <value>Fiat currency symbol</value>
-        [DataMember(Name="symbol")]
-        public string Symbol { get; set; }
-
-        /// <summary>
-        /// Whether to show confirm receipt during appeal
-        /// </summary>
-        /// <value>Whether to show confirm receipt during appeal</value>
+        /// <value>Whether to show confirm-receipt during dispute. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.</value>
         [DataMember(Name="is_show_receive")]
         public int IsShowReceive { get; set; }
-
-        /// <summary>
-        /// Whether regular user
-        /// </summary>
-        /// <value>Whether regular user</value>
-        [DataMember(Name="is_taker")]
-        public int IsTaker { get; set; }
-
-        /// <summary>
-        /// Merchant online status
-        /// </summary>
-        /// <value>Merchant online status</value>
-        [DataMember(Name="is_online")]
-        public int IsOnline { get; set; }
 
         /// <summary>
         /// Whether to display seller contact information
@@ -679,9 +463,9 @@ namespace Io.Gate.GateApi.Model
         public bool ShowSellerContactInfo { get; set; }
 
         /// <summary>
-        /// Payment methods supported by current order
+        /// Supported payment method types for the order, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.
         /// </summary>
-        /// <value>Payment methods supported by current order</value>
+        /// <value>Supported payment method types for the order, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.</value>
         [DataMember(Name="supported_pay_types")]
         public List<string> SupportedPayTypes { get; set; }
 
@@ -701,15 +485,14 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  RemainPayTime: ").Append(RemainPayTime).Append("\n");
             sb.Append("  CurrencyType: ").Append(CurrencyType).Append("\n");
             sb.Append("  WantType: ").Append(WantType).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  Rate: ").Append(Rate).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  ReasonId: ").Append(ReasonId).Append("\n");
             sb.Append("  ReasonDesc: ").Append(ReasonDesc).Append("\n");
-            sb.Append("  ToastId: ").Append(ToastId).Append("\n");
             sb.Append("  CancelTime: ").Append(CancelTime).Append("\n");
-            sb.Append("  SellerConfirm: ").Append(SellerConfirm).Append("\n");
             sb.Append("  InAppeal: ").Append(InAppeal).Append("\n");
             sb.Append("  DisputeTime: ").Append(DisputeTime).Append("\n");
             sb.Append("  Cancelable: ").Append(Cancelable).Append("\n");
@@ -729,40 +512,17 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  PayOthers: ").Append(PayOthers).Append("\n");
             sb.Append("  SelPaytype: ").Append(SelPaytype).Append("\n");
             sb.Append("  ItsUid: ").Append(ItsUid).Append("\n");
-            sb.Append("  ItsIsBlueVip: ").Append(ItsIsBlueVip).Append("\n");
-            sb.Append("  ItsTier: ").Append(ItsTier).Append("\n");
-            sb.Append("  ItsAvatar: ").Append(ItsAvatar).Append("\n");
             sb.Append("  ItsNickname: ").Append(ItsNickname).Append("\n");
             sb.Append("  ItsRealname: ").Append(ItsRealname).Append("\n");
-            sb.Append("  IsFollow: ").Append(IsFollow).Append("\n");
-            sb.Append("  IsBlack: ").Append(IsBlack).Append("\n");
             sb.Append("  HaveTraded: ").Append(HaveTraded).Append("\n");
-            sb.Append("  AppealUnread: ").Append(AppealUnread).Append("\n");
             sb.Append("  AppealAllowCancel: ").Append(AppealAllowCancel).Append("\n");
             sb.Append("  AppealVerdictHasOpen: ").Append(AppealVerdictHasOpen).Append("\n");
             sb.Append("  ImUnread: ").Append(ImUnread).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Score: ").Append(Score).Append("\n");
             sb.Append("  PaymentVoucherUrl: ").Append(PaymentVoucherUrl).Append("\n");
-            sb.Append("  CompleteNumber: ").Append(CompleteNumber).Append("\n");
-            sb.Append("  CompleteRateMonth: ").Append(CompleteRateMonth).Append("\n");
-            sb.Append("  CheckJournalAccount: ").Append(CheckJournalAccount).Append("\n");
-            sb.Append("  ShowJournalAccount: ").Append(ShowJournalAccount).Append("\n");
-            sb.Append("  IsFreezeGuarantee: ").Append(IsFreezeGuarantee).Append("\n");
-            sb.Append("  UsdtLeftGuarantee: ").Append(UsdtLeftGuarantee).Append("\n");
-            sb.Append("  GuaranteeCurrType: ").Append(GuaranteeCurrType).Append("\n");
             sb.Append("  TimestPaid: ").Append(TimestPaid).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  ReleaseCoinSwitch: ").Append(ReleaseCoinSwitch).Append("\n");
             sb.Append("  OwnRealname: ").Append(OwnRealname).Append("\n");
-            sb.Append("  ConfirmationUseTimeMonth: ").Append(ConfirmationUseTimeMonth).Append("\n");
-            sb.Append("  IsRiskUser: ").Append(IsRiskUser).Append("\n");
-            sb.Append("  IsXt: ").Append(IsXt).Append("\n");
             sb.Append("  OrderType: ").Append(OrderType).Append("\n");
-            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  IsShowReceive: ").Append(IsShowReceive).Append("\n");
-            sb.Append("  IsTaker: ").Append(IsTaker).Append("\n");
-            sb.Append("  IsOnline: ").Append(IsOnline).Append("\n");
             sb.Append("  ShowSellerContactInfo: ").Append(ShowSellerContactInfo).Append("\n");
             sb.Append("  SupportedPayTypes: ").Append(SupportedPayTypes).Append("\n");
             sb.Append("}\n");
@@ -834,6 +594,11 @@ namespace Io.Gate.GateApi.Model
                     this.WantType.Equals(input.WantType))
                 ) && 
                 (
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
+                ) && 
+                (
                     this.Rate == input.Rate ||
                     (this.Rate != null &&
                     this.Rate.Equals(input.Rate))
@@ -864,17 +629,9 @@ namespace Io.Gate.GateApi.Model
                     this.ReasonDesc.Equals(input.ReasonDesc))
                 ) && 
                 (
-                    this.ToastId == input.ToastId ||
-                    this.ToastId.Equals(input.ToastId)
-                ) && 
-                (
                     this.CancelTime == input.CancelTime ||
                     (this.CancelTime != null &&
                     this.CancelTime.Equals(input.CancelTime))
-                ) && 
-                (
-                    this.SellerConfirm == input.SellerConfirm ||
-                    this.SellerConfirm.Equals(input.SellerConfirm)
                 ) && 
                 (
                     this.InAppeal == input.InAppeal ||
@@ -968,19 +725,6 @@ namespace Io.Gate.GateApi.Model
                     this.ItsUid.Equals(input.ItsUid))
                 ) && 
                 (
-                    this.ItsIsBlueVip == input.ItsIsBlueVip ||
-                    this.ItsIsBlueVip.Equals(input.ItsIsBlueVip)
-                ) && 
-                (
-                    this.ItsTier == input.ItsTier ||
-                    this.ItsTier.Equals(input.ItsTier)
-                ) && 
-                (
-                    this.ItsAvatar == input.ItsAvatar ||
-                    (this.ItsAvatar != null &&
-                    this.ItsAvatar.Equals(input.ItsAvatar))
-                ) && 
-                (
                     this.ItsNickname == input.ItsNickname ||
                     (this.ItsNickname != null &&
                     this.ItsNickname.Equals(input.ItsNickname))
@@ -991,20 +735,8 @@ namespace Io.Gate.GateApi.Model
                     this.ItsRealname.Equals(input.ItsRealname))
                 ) && 
                 (
-                    this.IsFollow == input.IsFollow ||
-                    this.IsFollow.Equals(input.IsFollow)
-                ) && 
-                (
-                    this.IsBlack == input.IsBlack ||
-                    this.IsBlack.Equals(input.IsBlack)
-                ) && 
-                (
                     this.HaveTraded == input.HaveTraded ||
                     this.HaveTraded.Equals(input.HaveTraded)
-                ) && 
-                (
-                    this.AppealUnread == input.AppealUnread ||
-                    this.AppealUnread.Equals(input.AppealUnread)
                 ) && 
                 (
                     this.AppealAllowCancel == input.AppealAllowCancel ||
@@ -1020,64 +752,14 @@ namespace Io.Gate.GateApi.Model
                     this.ImUnread.Equals(input.ImUnread)
                 ) && 
                 (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Score == input.Score ||
-                    (this.Score != null &&
-                    this.Score.Equals(input.Score))
-                ) && 
-                (
                     this.PaymentVoucherUrl == input.PaymentVoucherUrl ||
                     this.PaymentVoucherUrl != null &&
                     input.PaymentVoucherUrl != null &&
                     this.PaymentVoucherUrl.SequenceEqual(input.PaymentVoucherUrl)
                 ) && 
                 (
-                    this.CompleteNumber == input.CompleteNumber ||
-                    this.CompleteNumber.Equals(input.CompleteNumber)
-                ) && 
-                (
-                    this.CompleteRateMonth == input.CompleteRateMonth ||
-                    (this.CompleteRateMonth != null &&
-                    this.CompleteRateMonth.Equals(input.CompleteRateMonth))
-                ) && 
-                (
-                    this.CheckJournalAccount == input.CheckJournalAccount ||
-                    this.CheckJournalAccount.Equals(input.CheckJournalAccount)
-                ) && 
-                (
-                    this.ShowJournalAccount == input.ShowJournalAccount ||
-                    this.ShowJournalAccount.Equals(input.ShowJournalAccount)
-                ) && 
-                (
-                    this.IsFreezeGuarantee == input.IsFreezeGuarantee ||
-                    this.IsFreezeGuarantee.Equals(input.IsFreezeGuarantee)
-                ) && 
-                (
-                    this.UsdtLeftGuarantee == input.UsdtLeftGuarantee ||
-                    (this.UsdtLeftGuarantee != null &&
-                    this.UsdtLeftGuarantee.Equals(input.UsdtLeftGuarantee))
-                ) && 
-                (
-                    this.GuaranteeCurrType == input.GuaranteeCurrType ||
-                    (this.GuaranteeCurrType != null &&
-                    this.GuaranteeCurrType.Equals(input.GuaranteeCurrType))
-                ) && 
-                (
                     this.TimestPaid == input.TimestPaid ||
                     this.TimestPaid.Equals(input.TimestPaid)
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.ReleaseCoinSwitch == input.ReleaseCoinSwitch ||
-                    this.ReleaseCoinSwitch.Equals(input.ReleaseCoinSwitch)
                 ) && 
                 (
                     this.OwnRealname == input.OwnRealname ||
@@ -1085,37 +767,12 @@ namespace Io.Gate.GateApi.Model
                     this.OwnRealname.Equals(input.OwnRealname))
                 ) && 
                 (
-                    this.ConfirmationUseTimeMonth == input.ConfirmationUseTimeMonth ||
-                    this.ConfirmationUseTimeMonth.Equals(input.ConfirmationUseTimeMonth)
-                ) && 
-                (
-                    this.IsRiskUser == input.IsRiskUser ||
-                    this.IsRiskUser.Equals(input.IsRiskUser)
-                ) && 
-                (
-                    this.IsXt == input.IsXt ||
-                    this.IsXt.Equals(input.IsXt)
-                ) && 
-                (
                     this.OrderType == input.OrderType ||
                     this.OrderType.Equals(input.OrderType)
                 ) && 
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
-                ) && 
-                (
                     this.IsShowReceive == input.IsShowReceive ||
                     this.IsShowReceive.Equals(input.IsShowReceive)
-                ) && 
-                (
-                    this.IsTaker == input.IsTaker ||
-                    this.IsTaker.Equals(input.IsTaker)
-                ) && 
-                (
-                    this.IsOnline == input.IsOnline ||
-                    this.IsOnline.Equals(input.IsOnline)
                 ) && 
                 (
                     this.ShowSellerContactInfo == input.ShowSellerContactInfo ||
@@ -1148,6 +805,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.CurrencyType.GetHashCode();
                 if (this.WantType != null)
                     hashCode = hashCode * 59 + this.WantType.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
                 if (this.Rate != null)
                     hashCode = hashCode * 59 + this.Rate.GetHashCode();
                 if (this.Amount != null)
@@ -1160,10 +819,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.ReasonId.GetHashCode();
                 if (this.ReasonDesc != null)
                     hashCode = hashCode * 59 + this.ReasonDesc.GetHashCode();
-                hashCode = hashCode * 59 + this.ToastId.GetHashCode();
                 if (this.CancelTime != null)
                     hashCode = hashCode * 59 + this.CancelTime.GetHashCode();
-                hashCode = hashCode * 59 + this.SellerConfirm.GetHashCode();
                 hashCode = hashCode * 59 + this.InAppeal.GetHashCode();
                 hashCode = hashCode * 59 + this.DisputeTime.GetHashCode();
                 hashCode = hashCode * 59 + this.Cancelable.GetHashCode();
@@ -1197,53 +854,22 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.SelPaytype.GetHashCode();
                 if (this.ItsUid != null)
                     hashCode = hashCode * 59 + this.ItsUid.GetHashCode();
-                hashCode = hashCode * 59 + this.ItsIsBlueVip.GetHashCode();
-                hashCode = hashCode * 59 + this.ItsTier.GetHashCode();
-                if (this.ItsAvatar != null)
-                    hashCode = hashCode * 59 + this.ItsAvatar.GetHashCode();
                 if (this.ItsNickname != null)
                     hashCode = hashCode * 59 + this.ItsNickname.GetHashCode();
                 if (this.ItsRealname != null)
                     hashCode = hashCode * 59 + this.ItsRealname.GetHashCode();
-                hashCode = hashCode * 59 + this.IsFollow.GetHashCode();
-                hashCode = hashCode * 59 + this.IsBlack.GetHashCode();
                 hashCode = hashCode * 59 + this.HaveTraded.GetHashCode();
-                hashCode = hashCode * 59 + this.AppealUnread.GetHashCode();
                 hashCode = hashCode * 59 + this.AppealAllowCancel.GetHashCode();
                 if (this.AppealVerdictHasOpen != null)
                     hashCode = hashCode * 59 + this.AppealVerdictHasOpen.GetHashCode();
                 hashCode = hashCode * 59 + this.ImUnread.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Score != null)
-                    hashCode = hashCode * 59 + this.Score.GetHashCode();
                 if (this.PaymentVoucherUrl != null)
                     hashCode = hashCode * 59 + this.PaymentVoucherUrl.GetHashCode();
-                hashCode = hashCode * 59 + this.CompleteNumber.GetHashCode();
-                if (this.CompleteRateMonth != null)
-                    hashCode = hashCode * 59 + this.CompleteRateMonth.GetHashCode();
-                hashCode = hashCode * 59 + this.CheckJournalAccount.GetHashCode();
-                hashCode = hashCode * 59 + this.ShowJournalAccount.GetHashCode();
-                hashCode = hashCode * 59 + this.IsFreezeGuarantee.GetHashCode();
-                if (this.UsdtLeftGuarantee != null)
-                    hashCode = hashCode * 59 + this.UsdtLeftGuarantee.GetHashCode();
-                if (this.GuaranteeCurrType != null)
-                    hashCode = hashCode * 59 + this.GuaranteeCurrType.GetHashCode();
                 hashCode = hashCode * 59 + this.TimestPaid.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                hashCode = hashCode * 59 + this.ReleaseCoinSwitch.GetHashCode();
                 if (this.OwnRealname != null)
                     hashCode = hashCode * 59 + this.OwnRealname.GetHashCode();
-                hashCode = hashCode * 59 + this.ConfirmationUseTimeMonth.GetHashCode();
-                hashCode = hashCode * 59 + this.IsRiskUser.GetHashCode();
-                hashCode = hashCode * 59 + this.IsXt.GetHashCode();
                 hashCode = hashCode * 59 + this.OrderType.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
                 hashCode = hashCode * 59 + this.IsShowReceive.GetHashCode();
-                hashCode = hashCode * 59 + this.IsTaker.GetHashCode();
-                hashCode = hashCode * 59 + this.IsOnline.GetHashCode();
                 hashCode = hashCode * 59 + this.ShowSellerContactInfo.GetHashCode();
                 if (this.SupportedPayTypes != null)
                     hashCode = hashCode * 59 + this.SupportedPayTypes.GetHashCode();

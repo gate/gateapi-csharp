@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AdsDetailRequest" /> class.
         /// </summary>
-        /// <param name="advNo">advNo (required).</param>
+        /// <param name="advNo">Advertisement ID. (required).</param>
         public AdsDetailRequest(string advNo = default(string))
         {
             // to ensure "advNo" is required (not null)
@@ -46,8 +46,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Gets or Sets AdvNo
+        /// Advertisement ID.
         /// </summary>
+        /// <value>Advertisement ID.</value>
         [DataMember(Name="adv_no")]
         public string AdvNo { get; set; }
 

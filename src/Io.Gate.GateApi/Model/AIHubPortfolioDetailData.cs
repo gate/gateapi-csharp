@@ -47,11 +47,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="strategyType">strategyType (required).</param>
         /// <param name="market">market (required).</param>
         /// <param name="status">status (required).</param>
-        /// <param name="baseInfo">Basic information, fields change dynamically according to strategy type (required).</param>
-        /// <param name="metrics">Indicator information, fields change dynamically according to strategy type (required).</param>
-        /// <param name="position">Position or position information, fields dynamically change according to strategy type.</param>
+        /// <param name="baseInfo">baseInfo (required).</param>
+        /// <param name="metrics">metrics (required).</param>
+        /// <param name="position">position.</param>
         /// <param name="stopSupported">stopSupported (required).</param>
-        public AIHubPortfolioDetailData(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string market = default(string), string status = default(string), Dictionary<string, string> baseInfo = default(Dictionary<string, string>), Dictionary<string, string> metrics = default(Dictionary<string, string>), Dictionary<string, string> position = default(Dictionary<string, string>), bool stopSupported = default(bool))
+        public AIHubPortfolioDetailData(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string market = default(string), string status = default(string), AIHubPortfolioBaseInfo baseInfo = default(AIHubPortfolioBaseInfo), AIHubPortfolioMetrics metrics = default(AIHubPortfolioMetrics), AIHubPortfolioPosition position = default(AIHubPortfolioPosition), bool stopSupported = default(bool))
         {
             // to ensure "strategyId" is required (not null)
             this.StrategyId = strategyId ?? throw new ArgumentNullException("strategyId", "strategyId is a required property for AIHubPortfolioDetailData and cannot be null");
@@ -87,25 +87,22 @@ namespace Io.Gate.GateApi.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// Basic information, fields change dynamically according to strategy type
+        /// Gets or Sets BaseInfo
         /// </summary>
-        /// <value>Basic information, fields change dynamically according to strategy type</value>
         [DataMember(Name="base_info")]
-        public Dictionary<string, string> BaseInfo { get; set; }
+        public AIHubPortfolioBaseInfo BaseInfo { get; set; }
 
         /// <summary>
-        /// Indicator information, fields change dynamically according to strategy type
+        /// Gets or Sets Metrics
         /// </summary>
-        /// <value>Indicator information, fields change dynamically according to strategy type</value>
         [DataMember(Name="metrics")]
-        public Dictionary<string, string> Metrics { get; set; }
+        public AIHubPortfolioMetrics Metrics { get; set; }
 
         /// <summary>
-        /// Position or position information, fields dynamically change according to strategy type
+        /// Gets or Sets Position
         /// </summary>
-        /// <value>Position or position information, fields dynamically change according to strategy type</value>
         [DataMember(Name="position")]
-        public Dictionary<string, string> Position { get; set; }
+        public AIHubPortfolioPosition Position { get; set; }
 
         /// <summary>
         /// Gets or Sets StopSupported
@@ -184,21 +181,18 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.BaseInfo == input.BaseInfo ||
-                    this.BaseInfo != null &&
-                    input.BaseInfo != null &&
-                    this.BaseInfo.SequenceEqual(input.BaseInfo)
+                    (this.BaseInfo != null &&
+                    this.BaseInfo.Equals(input.BaseInfo))
                 ) && 
                 (
                     this.Metrics == input.Metrics ||
-                    this.Metrics != null &&
-                    input.Metrics != null &&
-                    this.Metrics.SequenceEqual(input.Metrics)
+                    (this.Metrics != null &&
+                    this.Metrics.Equals(input.Metrics))
                 ) && 
                 (
                     this.Position == input.Position ||
-                    this.Position != null &&
-                    input.Position != null &&
-                    this.Position.SequenceEqual(input.Position)
+                    (this.Position != null &&
+                    this.Position.Equals(input.Position))
                 ) && 
                 (
                     this.StopSupported == input.StopSupported ||

@@ -369,7 +369,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Currency</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
-        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>List&lt;SavedAddress&gt;</returns>
         List<SavedAddress> ListSavedAddress (string currency, string chain = default(string), string limit = default(string), int? page = default(int?));
 
@@ -383,7 +383,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Currency</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
-        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>ApiResponse of List&lt;SavedAddress&gt;</returns>
         ApiResponse<List<SavedAddress>> ListSavedAddressWithHttpInfo (string currency, string chain = default(string), string limit = default(string), int? page = default(int?));
         /// <summary>
@@ -896,7 +896,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Currency</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
-        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>Task of List&lt;SavedAddress&gt;</returns>
         Task<List<SavedAddress>> ListSavedAddressAsync (string currency, string chain = default(string), string limit = default(string), int? page = default(int?));
 
@@ -910,7 +910,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Currency</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
-        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>Task of ApiResponse (List&lt;SavedAddress&gt;)</returns>
         Task<ApiResponse<List<SavedAddress>>> ListSavedAddressAsyncWithHttpInfo (string currency, string chain = default(string), string limit = default(string), int? page = default(int?));
         /// <summary>
@@ -3049,7 +3049,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Currency</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
-        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>List&lt;SavedAddress&gt;</returns>
         public List<SavedAddress> ListSavedAddress (string currency, string chain = default(string), string limit = default(string), int? page = default(int?))
         {
@@ -3064,7 +3064,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Currency</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
-        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>ApiResponse of List&lt;SavedAddress&gt;</returns>
         public ApiResponse<List<SavedAddress>> ListSavedAddressWithHttpInfo (string currency, string chain = default(string), string limit = default(string), int? page = default(int?))
         {
@@ -3124,7 +3124,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Currency</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
-        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>Task of List&lt;SavedAddress&gt;</returns>
         public async Task<List<SavedAddress>> ListSavedAddressAsync (string currency, string chain = default(string), string limit = default(string), int? page = default(int?))
         {
@@ -3140,7 +3140,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currency">Currency</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
-        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>Task of ApiResponse (List&lt;SavedAddress&gt;)</returns>
         public async Task<ApiResponse<List<SavedAddress>>> ListSavedAddressAsyncWithHttpInfo (string currency, string chain = default(string), string limit = default(string), int? page = default(int?))
         {

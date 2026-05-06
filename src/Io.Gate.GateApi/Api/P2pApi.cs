@@ -222,8 +222,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
-        /// <returns>Object</returns>
-        Object P2pMerchantBooksPlaceBizPushOrder (PlaceBizPushOrder placeBizPushOrder);
+        /// <returns>P2pMerchantBooksPlaceBizPushOrderResponse</returns>
+        P2pMerchantBooksPlaceBizPushOrderResponse P2pMerchantBooksPlaceBizPushOrder (PlaceBizPushOrder placeBizPushOrder);
 
         /// <summary>
         /// Publish ad order
@@ -233,8 +233,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> P2pMerchantBooksPlaceBizPushOrderWithHttpInfo (PlaceBizPushOrder placeBizPushOrder);
+        /// <returns>ApiResponse of P2pMerchantBooksPlaceBizPushOrderResponse</returns>
+        ApiResponse<P2pMerchantBooksPlaceBizPushOrderResponse> P2pMerchantBooksPlaceBizPushOrderWithHttpInfo (PlaceBizPushOrder placeBizPushOrder);
         /// <summary>
         /// Update ad status
         /// </summary>
@@ -243,9 +243,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>P2pAdsUpdateStatusResponse</returns>
-        P2pAdsUpdateStatusResponse P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
+        P2pAdsUpdateStatusResponse P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus);
 
         /// <summary>
         /// Update ad status
@@ -255,9 +254,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>ApiResponse of P2pAdsUpdateStatusResponse</returns>
-        ApiResponse<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
+        ApiResponse<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (AdsUpdateStatus adsUpdateStatus);
         /// <summary>
         /// Query ad details
         /// </summary>
@@ -588,8 +586,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
-        /// <returns>Task of Object</returns>
-        Task<Object> P2pMerchantBooksPlaceBizPushOrderAsync (PlaceBizPushOrder placeBizPushOrder);
+        /// <returns>Task of P2pMerchantBooksPlaceBizPushOrderResponse</returns>
+        Task<P2pMerchantBooksPlaceBizPushOrderResponse> P2pMerchantBooksPlaceBizPushOrderAsync (PlaceBizPushOrder placeBizPushOrder);
 
         /// <summary>
         /// Publish ad order
@@ -599,8 +597,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<Object>> P2pMerchantBooksPlaceBizPushOrderAsyncWithHttpInfo (PlaceBizPushOrder placeBizPushOrder);
+        /// <returns>Task of ApiResponse (P2pMerchantBooksPlaceBizPushOrderResponse)</returns>
+        Task<ApiResponse<P2pMerchantBooksPlaceBizPushOrderResponse>> P2pMerchantBooksPlaceBizPushOrderAsyncWithHttpInfo (PlaceBizPushOrder placeBizPushOrder);
         /// <summary>
         /// Update ad status
         /// </summary>
@@ -609,9 +607,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>Task of P2pAdsUpdateStatusResponse</returns>
-        Task<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusAsync (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
+        Task<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusAsync (AdsUpdateStatus adsUpdateStatus);
 
         /// <summary>
         /// Update ad status
@@ -621,9 +618,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>Task of ApiResponse (P2pAdsUpdateStatusResponse)</returns>
-        Task<ApiResponse<P2pAdsUpdateStatusResponse>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string));
+        Task<ApiResponse<P2pAdsUpdateStatusResponse>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (AdsUpdateStatus adsUpdateStatus);
         /// <summary>
         /// Query ad details
         /// </summary>
@@ -1922,10 +1918,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
-        /// <returns>Object</returns>
-        public Object P2pMerchantBooksPlaceBizPushOrder (PlaceBizPushOrder placeBizPushOrder)
+        /// <returns>P2pMerchantBooksPlaceBizPushOrderResponse</returns>
+        public P2pMerchantBooksPlaceBizPushOrderResponse P2pMerchantBooksPlaceBizPushOrder (PlaceBizPushOrder placeBizPushOrder)
         {
-             ApiResponse<Object> localVarResponse = P2pMerchantBooksPlaceBizPushOrderWithHttpInfo(placeBizPushOrder);
+             ApiResponse<P2pMerchantBooksPlaceBizPushOrderResponse> localVarResponse = P2pMerchantBooksPlaceBizPushOrderWithHttpInfo(placeBizPushOrder);
              return localVarResponse.Data;
         }
 
@@ -1934,8 +1930,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> P2pMerchantBooksPlaceBizPushOrderWithHttpInfo (PlaceBizPushOrder placeBizPushOrder)
+        /// <returns>ApiResponse of P2pMerchantBooksPlaceBizPushOrderResponse</returns>
+        public ApiResponse<P2pMerchantBooksPlaceBizPushOrderResponse> P2pMerchantBooksPlaceBizPushOrderWithHttpInfo (PlaceBizPushOrder placeBizPushOrder)
         {
             // verify the required parameter 'placeBizPushOrder' is set
             if (placeBizPushOrder == null)
@@ -1964,7 +1960,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/p2p/merchant/books/place_biz_push_order", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<P2pMerchantBooksPlaceBizPushOrderResponse>("/p2p/merchant/books/place_biz_push_order", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1980,10 +1976,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
-        /// <returns>Task of Object</returns>
-        public async Task<Object> P2pMerchantBooksPlaceBizPushOrderAsync (PlaceBizPushOrder placeBizPushOrder)
+        /// <returns>Task of P2pMerchantBooksPlaceBizPushOrderResponse</returns>
+        public async Task<P2pMerchantBooksPlaceBizPushOrderResponse> P2pMerchantBooksPlaceBizPushOrderAsync (PlaceBizPushOrder placeBizPushOrder)
         {
-             Io.Gate.GateApi.Client.ApiResponse<Object> localVarResponse = await P2pMerchantBooksPlaceBizPushOrderAsyncWithHttpInfo(placeBizPushOrder);
+             Io.Gate.GateApi.Client.ApiResponse<P2pMerchantBooksPlaceBizPushOrderResponse> localVarResponse = await P2pMerchantBooksPlaceBizPushOrderAsyncWithHttpInfo(placeBizPushOrder);
              return localVarResponse.Data;
 
         }
@@ -1993,8 +1989,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<Object>> P2pMerchantBooksPlaceBizPushOrderAsyncWithHttpInfo (PlaceBizPushOrder placeBizPushOrder)
+        /// <returns>Task of ApiResponse (P2pMerchantBooksPlaceBizPushOrderResponse)</returns>
+        public async Task<ApiResponse<P2pMerchantBooksPlaceBizPushOrderResponse>> P2pMerchantBooksPlaceBizPushOrderAsyncWithHttpInfo (PlaceBizPushOrder placeBizPushOrder)
         {
             // verify the required parameter 'placeBizPushOrder' is set
             if (placeBizPushOrder == null)
@@ -2025,7 +2021,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/p2p/merchant/books/place_biz_push_order", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pMerchantBooksPlaceBizPushOrderResponse>("/p2p/merchant/books/place_biz_push_order", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2041,11 +2037,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>P2pAdsUpdateStatusResponse</returns>
-        public P2pAdsUpdateStatusResponse P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
+        public P2pAdsUpdateStatusResponse P2pMerchantBooksAdsUpdateStatus (AdsUpdateStatus adsUpdateStatus)
         {
-             ApiResponse<P2pAdsUpdateStatusResponse> localVarResponse = P2pMerchantBooksAdsUpdateStatusWithHttpInfo(adsUpdateStatus, tradeType);
+             ApiResponse<P2pAdsUpdateStatusResponse> localVarResponse = P2pMerchantBooksAdsUpdateStatusWithHttpInfo(adsUpdateStatus);
              return localVarResponse.Data;
         }
 
@@ -2054,9 +2049,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>ApiResponse of P2pAdsUpdateStatusResponse</returns>
-        public ApiResponse<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
+        public ApiResponse<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusWithHttpInfo (AdsUpdateStatus adsUpdateStatus)
         {
             // verify the required parameter 'adsUpdateStatus' is set
             if (adsUpdateStatus == null)
@@ -2079,10 +2073,6 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            if (tradeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "trade_type", tradeType));
-            }
             localVarRequestOptions.Data = adsUpdateStatus;
 
             // authentication (apiv4) required
@@ -2105,11 +2095,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>Task of P2pAdsUpdateStatusResponse</returns>
-        public async Task<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusAsync (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
+        public async Task<P2pAdsUpdateStatusResponse> P2pMerchantBooksAdsUpdateStatusAsync (AdsUpdateStatus adsUpdateStatus)
         {
-             Io.Gate.GateApi.Client.ApiResponse<P2pAdsUpdateStatusResponse> localVarResponse = await P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo(adsUpdateStatus, tradeType);
+             Io.Gate.GateApi.Client.ApiResponse<P2pAdsUpdateStatusResponse> localVarResponse = await P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo(adsUpdateStatus);
              return localVarResponse.Data;
 
         }
@@ -2119,9 +2108,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adsUpdateStatus"></param>
-        /// <param name="tradeType">Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional)</param>
         /// <returns>Task of ApiResponse (P2pAdsUpdateStatusResponse)</returns>
-        public async Task<ApiResponse<P2pAdsUpdateStatusResponse>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (AdsUpdateStatus adsUpdateStatus, string tradeType = default(string))
+        public async Task<ApiResponse<P2pAdsUpdateStatusResponse>> P2pMerchantBooksAdsUpdateStatusAsyncWithHttpInfo (AdsUpdateStatus adsUpdateStatus)
         {
             // verify the required parameter 'adsUpdateStatus' is set
             if (adsUpdateStatus == null)
@@ -2145,10 +2133,6 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            if (tradeType != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "trade_type", tradeType));
-            }
             localVarRequestOptions.Data = adsUpdateStatus;
 
             // authentication (apiv4) required

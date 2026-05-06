@@ -4,9 +4,9 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListCrossexRuleSymbols**](CrossExApi.md#listcrossexrulesymbols) | **GET** /crossex/rule/symbols | [Public Interface] Query Trading Pair Information
-[**ListCrossexRuleRiskLimits**](CrossExApi.md#listcrossexrulerisklimits) | **GET** /crossex/rule/risk_limits | [Public Interface] Query Risk Limit Information
-[**ListCrossexTransferCoins**](CrossExApi.md#listcrossextransfercoins) | **GET** /crossex/transfers/coin | [Public Interface] Query Supported Transfer Currencies
+[**ListCrossexRuleSymbols**](CrossExApi.md#listcrossexrulesymbols) | **GET** /crossex/rule/symbols | 查询币对信息
+[**ListCrossexRuleRiskLimits**](CrossExApi.md#listcrossexrulerisklimits) | **GET** /crossex/rule/risk_limits | 查询风险限额信息
+[**ListCrossexTransferCoins**](CrossExApi.md#listcrossextransfercoins) | **GET** /crossex/transfers/coin | 查询划转币种支持
 [**ListCrossexTransfers**](CrossExApi.md#listcrossextransfers) | **GET** /crossex/transfers | Query Fund Transfer History
 [**CreateCrossexTransfer**](CrossExApi.md#createcrossextransfer) | **POST** /crossex/transfers | Fund Transfer
 [**CreateCrossexOrder**](CrossExApi.md#createcrossexorder) | **POST** /crossex/orders | Create an order
@@ -34,14 +34,14 @@ Method | HTTP request | Description
 [**ListCrossexHistoryMarginInterests**](CrossExApi.md#listcrossexhistorymargininterests) | **GET** /crossex/history_margin_interests | Query Leveraged Interest Deduction History
 [**ListCrossexHistoryTrades**](CrossExApi.md#listcrossexhistorytrades) | **GET** /crossex/history_trades | queryfilledhistory
 [**ListCrossexAccountBook**](CrossExApi.md#listcrossexaccountbook) | **GET** /crossex/account_book | Query Account Asset Change History
-[**ListCrossexCoinDiscountRate**](CrossExApi.md#listcrossexcoindiscountrate) | **GET** /crossex/coin_discount_rate | Query currency discount rate (discount rate of margin currency in isolated exchange mode)
+[**ListCrossexCoinDiscountRate**](CrossExApi.md#listcrossexcoindiscountrate) | **GET** /crossex/coin_discount_rate | Query Currency Discount Rate
 
 
 <a name="listcrossexrulesymbols"></a>
 # **ListCrossexRuleSymbols**
 > List&lt;Symbol&gt; ListCrossexRuleSymbols (string symbols = null)
 
-[Public Interface] Query Trading Pair Information
+查询币对信息
 
 Query Trading Pair Information
 
@@ -66,7 +66,7 @@ namespace Example
 
             try
             {
-                // [Public Interface] Query Trading Pair Information
+                // 查询币对信息
                 List<Symbol> result = apiInstance.ListCrossexRuleSymbols(symbols);
                 Debug.WriteLine(result);
             }
@@ -112,7 +112,7 @@ No authorization required
 # **ListCrossexRuleRiskLimits**
 > List&lt;CrossexRiskLimit&gt; ListCrossexRuleRiskLimits (string symbols)
 
-[Public Interface] Query Risk Limit Information
+查询风险限额信息
 
 Query risk limit information for futures/margin trading pairs
 
@@ -137,7 +137,7 @@ namespace Example
 
             try
             {
-                // [Public Interface] Query Risk Limit Information
+                // 查询风险限额信息
                 List<CrossexRiskLimit> result = apiInstance.ListCrossexRuleRiskLimits(symbols);
                 Debug.WriteLine(result);
             }
@@ -183,7 +183,7 @@ No authorization required
 # **ListCrossexTransferCoins**
 > List&lt;CrossexTransferCoin&gt; ListCrossexTransferCoins (string coin = null)
 
-[Public Interface] Query Supported Transfer Currencies
+查询划转币种支持
 
 Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
 
@@ -208,7 +208,7 @@ namespace Example
 
             try
             {
-                // [Public Interface] Query Supported Transfer Currencies
+                // 查询划转币种支持
                 List<CrossexTransferCoin> result = apiInstance.ListCrossexTransferCoins(coin);
                 Debug.WriteLine(result);
             }
@@ -282,7 +282,7 @@ namespace Example
             var from = 1750681141933;  // int? | Start timestamp for the query (optional) 
             var to = 1750681141933;  // int? | End timestamp for the query, defaults to current time if not specified (optional) 
             var page = 1;  // int? | Page number (optional) 
-            var limit = 10,20,30;  // int? | Maximum number returned by list, max 1000 (optional) 
+            var limit = 100;  // int? | Maximum number returned by list, max 1000 (optional) 
 
             try
             {
@@ -1753,7 +1753,7 @@ namespace Example
             var apiInstance = new CrossExApi(config);
             var symbol = "BINANCE_FUTURE_ADA_USDT";  // string | Trading Pair (optional) 
             var exchangeType = "BINANCE";  // string | Exchange (optional) 
-            var businessType = "FUTURE、MARGIN";  // string | Business Type (optional) 
+            var businessType = "FUTURE";  // string | Business Type (optional) 
 
             try
             {
@@ -2210,7 +2210,7 @@ Name | Type | Description  | Notes
 
 <a name="listcrossexaccountbook"></a>
 # **ListCrossexAccountBook**
-> List&lt;CrossexAccountBookRecord&gt; ListCrossexAccountBook (int? page = null, int? limit = null, string coin = null, int? from = null, int? to = null)
+> List&lt;CrossexAccountBookRecord&gt; ListCrossexAccountBook (int? page = null, int? limit = null, string coin = null, string statementType = null, int? from = null, int? to = null)
 
 Query Account Asset Change History
 
@@ -2238,13 +2238,14 @@ namespace Example
             var page = 56;  // int? | Page number (optional) 
             var limit = 56;  // int? | Maximum number returned by list, max 1000 (optional) 
             var coin = "coin_example";  // string | Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  (optional) 
+            var statementType = "statementType_example";  // string | Bill entry type. (optional) 
             var from = 56;  // int? | Start Millisecond Timestamp (optional) 
             var to = 56;  // int? | End Millisecond Timestamp (optional) 
 
             try
             {
                 // Query Account Asset Change History
-                List<CrossexAccountBookRecord> result = apiInstance.ListCrossexAccountBook(page, limit, coin, from, to);
+                List<CrossexAccountBookRecord> result = apiInstance.ListCrossexAccountBook(page, limit, coin, statementType, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -2266,6 +2267,7 @@ Name | Type | Description  | Notes
  **page** | **int?**| Page number | [optional] 
  **limit** | **int?**| Maximum number returned by list, max 1000 | [optional] 
  **coin** | **string**| Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  | [optional] 
+ **statementType** | **string**| Bill entry type. | [optional] 
  **from** | **int?**| Start Millisecond Timestamp | [optional] 
  **to** | **int?**| End Millisecond Timestamp | [optional] 
 
@@ -2293,7 +2295,7 @@ Name | Type | Description  | Notes
 # **ListCrossexCoinDiscountRate**
 > List&lt;CrossexCoinDiscountRate&gt; ListCrossexCoinDiscountRate (string coin = null, string exchangeType = null)
 
-Query currency discount rate (discount rate of margin currency in isolated exchange mode)
+Query Currency Discount Rate
 
 Rate Limit: 200 requests per 10 seconds
 
@@ -2321,7 +2323,7 @@ namespace Example
 
             try
             {
-                // Query currency discount rate (discount rate of margin currency in isolated exchange mode)
+                // Query Currency Discount Rate
                 List<CrossexCoinDiscountRate> result = apiInstance.ListCrossexCoinDiscountRate(coin, exchangeType);
                 Debug.WriteLine(result);
             }

@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="currency">Currency changed.</param>
         /// <param name="change">Amount changed. Positive value means transferring in, while negative out.</param>
         /// <param name="balance">Balance after change.</param>
-        /// <param name="type">Account book type. Please refer to [account book type](#accountbook-type) for more detail.</param>
+        /// <param name="type">Account change type; deprecated (see &#x60;code&#x60; for account change type encoding).</param>
         /// <param name="code">Account change code, see [Asset Record Code] (Asset Record Code).</param>
         /// <param name="text">Additional information.</param>
         public SpotAccountBook(string id = default(string), long time = default(long), string currency = default(string), string change = default(string), string balance = default(string), string type = default(string), string code = default(string), string text = default(string))
@@ -89,9 +89,9 @@ namespace Io.Gate.GateApi.Model
         public string Balance { get; set; }
 
         /// <summary>
-        /// Account book type. Please refer to [account book type](#accountbook-type) for more detail
+        /// Account change type; deprecated (see &#x60;code&#x60; for account change type encoding)
         /// </summary>
-        /// <value>Account book type. Please refer to [account book type](#accountbook-type) for more detail</value>
+        /// <value>Account change type; deprecated (see &#x60;code&#x60; for account change type encoding)</value>
         [DataMember(Name="type")]
         public string Type { get; set; }
 

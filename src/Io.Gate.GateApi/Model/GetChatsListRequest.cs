@@ -33,14 +33,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetChatsListRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected GetChatsListRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetChatsListRequest" /> class.
-        /// </summary>
-        /// <param name="txid">Order ID (required).</param>
-        /// <param name="lastreceived">Pagination timestamp (forward).</param>
-        /// <param name="firstreceived">Pagination timestamp (backward).</param>
+        /// <param name="txid">Order ID; omit or &#x60;0&#x60; to return the latest order with chat for the user..</param>
+        /// <param name="lastreceived">Timestamp of the last received message for backward incremental fetch; omit on first load..</param>
+        /// <param name="firstreceived">Timestamp of first received message for paging backward; omit on first load..</param>
         public GetChatsListRequest(int txid = default(int), int lastreceived = default(int), int firstreceived = default(int))
         {
             this.Txid = txid;
@@ -49,23 +44,23 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Order ID
+        /// Order ID; omit or &#x60;0&#x60; to return the latest order with chat for the user.
         /// </summary>
-        /// <value>Order ID</value>
+        /// <value>Order ID; omit or &#x60;0&#x60; to return the latest order with chat for the user.</value>
         [DataMember(Name="txid")]
         public int Txid { get; set; }
 
         /// <summary>
-        /// Pagination timestamp (forward)
+        /// Timestamp of the last received message for backward incremental fetch; omit on first load.
         /// </summary>
-        /// <value>Pagination timestamp (forward)</value>
+        /// <value>Timestamp of the last received message for backward incremental fetch; omit on first load.</value>
         [DataMember(Name="lastreceived")]
         public int Lastreceived { get; set; }
 
         /// <summary>
-        /// Pagination timestamp (backward)
+        /// Timestamp of first received message for paging backward; omit on first load.
         /// </summary>
-        /// <value>Pagination timestamp (backward)</value>
+        /// <value>Timestamp of first received message for paging backward; omit on first load.</value>
         [DataMember(Name="firstreceived")]
         public int Firstreceived { get; set; }
 

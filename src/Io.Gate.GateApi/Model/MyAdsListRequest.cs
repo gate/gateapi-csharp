@@ -33,9 +33,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MyAdsListRequest" /> class.
         /// </summary>
-        /// <param name="asset">Cryptocurrency.</param>
-        /// <param name="fiatUnit">Fiat currency.</param>
-        /// <param name="tradeType">Buy/Sell.</param>
+        /// <param name="asset">Crypto asset; omit to skip asset filter..</param>
+        /// <param name="fiatUnit">Fiat currency; omit to skip fiat filter..</param>
+        /// <param name="tradeType">Ad side: &#x60;buy&#x60; for buy-crypto ads, &#x60;sell&#x60; for sell-crypto ads; omit for all sides..</param>
         public MyAdsListRequest(string asset = default(string), string fiatUnit = default(string), string tradeType = default(string))
         {
             this.Asset = asset;
@@ -44,23 +44,23 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Cryptocurrency
+        /// Crypto asset; omit to skip asset filter.
         /// </summary>
-        /// <value>Cryptocurrency</value>
+        /// <value>Crypto asset; omit to skip asset filter.</value>
         [DataMember(Name="asset")]
         public string Asset { get; set; }
 
         /// <summary>
-        /// Fiat currency
+        /// Fiat currency; omit to skip fiat filter.
         /// </summary>
-        /// <value>Fiat currency</value>
+        /// <value>Fiat currency; omit to skip fiat filter.</value>
         [DataMember(Name="fiat_unit")]
         public string FiatUnit { get; set; }
 
         /// <summary>
-        /// Buy/Sell
+        /// Ad side: &#x60;buy&#x60; for buy-crypto ads, &#x60;sell&#x60; for sell-crypto ads; omit for all sides.
         /// </summary>
-        /// <value>Buy/Sell</value>
+        /// <value>Ad side: &#x60;buy&#x60; for buy-crypto ads, &#x60;sell&#x60; for sell-crypto ads; omit for all sides.</value>
         [DataMember(Name="trade_type")]
         public string TradeType { get; set; }
 

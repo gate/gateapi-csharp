@@ -33,16 +33,16 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pAdsUpdateStatusResult" /> class.
         /// </summary>
-        /// <param name="status">Ad status after successful update.</param>
+        /// <param name="status">Ad status after update: &#x60;1&#x60; listed; &#x60;3&#x60; delisted; &#x60;4&#x60; closed..</param>
         public P2pAdsUpdateStatusResult(int status = default(int))
         {
             this.Status = status;
         }
 
         /// <summary>
-        /// Ad status after successful update
+        /// Ad status after update: &#x60;1&#x60; listed; &#x60;3&#x60; delisted; &#x60;4&#x60; closed.
         /// </summary>
-        /// <value>Ad status after successful update</value>
+        /// <value>Ad status after update: &#x60;1&#x60; listed; &#x60;3&#x60; delisted; &#x60;4&#x60; closed.</value>
         [DataMember(Name="status")]
         public int Status { get; set; }
 

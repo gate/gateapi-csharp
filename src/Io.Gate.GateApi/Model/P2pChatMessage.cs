@@ -33,20 +33,18 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pChatMessage" /> class.
         /// </summary>
-        /// <param name="isSell">Whether seller.</param>
-        /// <param name="msgType">Message type.</param>
-        /// <param name="msg">Message content.</param>
+        /// <param name="isSell">Whether the current user is the seller. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="msgType">Message type: &#x60;0&#x60; text; &#x60;1&#x60; file; &#x60;2&#x60; template; &#x60;3&#x60; order-share; &#x60;4&#x60; payment-share; &#x60;5&#x60; status update..</param>
+        /// <param name="msg">Message content; for file messages, usually URL or file key..</param>
         /// <param name="username">Message sender username.</param>
         /// <param name="timest">Message timestamp.</param>
         /// <param name="msgObj">msgObj.</param>
-        /// <param name="uid">Message sender UID.</param>
-        /// <param name="type">Message type.</param>
+        /// <param name="uid">Sender&#39;s crypto UID; system messages may use &#x60;System&#x60; or an empty string..</param>
+        /// <param name="type">Display type: &#x60;1&#x60; file message; &#x60;2&#x60; system message..</param>
         /// <param name="pic">File link.</param>
         /// <param name="fileKey">File key.</param>
-        /// <param name="fileType">File type.</param>
-        /// <param name="width">Image width.</param>
-        /// <param name="height">Image height.</param>
-        public P2pChatMessage(int isSell = default(int), int msgType = default(int), string msg = default(string), string username = default(string), int timest = default(int), P2pChatMessagePayload msgObj = default(P2pChatMessagePayload), string uid = default(string), int type = default(int), string pic = default(string), string fileKey = default(string), string fileType = default(string), string width = default(string), string height = default(string))
+        /// <param name="fileType">File type: &#x60;image&#x60; for images, &#x60;video&#x60; for videos..</param>
+        public P2pChatMessage(int isSell = default(int), int msgType = default(int), string msg = default(string), string username = default(string), int timest = default(int), P2pChatMessagePayload msgObj = default(P2pChatMessagePayload), string uid = default(string), int type = default(int), string pic = default(string), string fileKey = default(string), string fileType = default(string))
         {
             this.IsSell = isSell;
             this.MsgType = msgType;
@@ -59,28 +57,26 @@ namespace Io.Gate.GateApi.Model
             this.Pic = pic;
             this.FileKey = fileKey;
             this.FileType = fileType;
-            this.Width = width;
-            this.Height = height;
         }
 
         /// <summary>
-        /// Whether seller
+        /// Whether the current user is the seller. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether seller</value>
+        /// <value>Whether the current user is the seller. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_sell")]
         public int IsSell { get; set; }
 
         /// <summary>
-        /// Message type
+        /// Message type: &#x60;0&#x60; text; &#x60;1&#x60; file; &#x60;2&#x60; template; &#x60;3&#x60; order-share; &#x60;4&#x60; payment-share; &#x60;5&#x60; status update.
         /// </summary>
-        /// <value>Message type</value>
+        /// <value>Message type: &#x60;0&#x60; text; &#x60;1&#x60; file; &#x60;2&#x60; template; &#x60;3&#x60; order-share; &#x60;4&#x60; payment-share; &#x60;5&#x60; status update.</value>
         [DataMember(Name="msg_type")]
         public int MsgType { get; set; }
 
         /// <summary>
-        /// Message content
+        /// Message content; for file messages, usually URL or file key.
         /// </summary>
-        /// <value>Message content</value>
+        /// <value>Message content; for file messages, usually URL or file key.</value>
         [DataMember(Name="msg")]
         public string Msg { get; set; }
 
@@ -105,16 +101,16 @@ namespace Io.Gate.GateApi.Model
         public P2pChatMessagePayload MsgObj { get; set; }
 
         /// <summary>
-        /// Message sender UID
+        /// Sender&#39;s crypto UID; system messages may use &#x60;System&#x60; or an empty string.
         /// </summary>
-        /// <value>Message sender UID</value>
+        /// <value>Sender&#39;s crypto UID; system messages may use &#x60;System&#x60; or an empty string.</value>
         [DataMember(Name="uid")]
         public string Uid { get; set; }
 
         /// <summary>
-        /// Message type
+        /// Display type: &#x60;1&#x60; file message; &#x60;2&#x60; system message.
         /// </summary>
-        /// <value>Message type</value>
+        /// <value>Display type: &#x60;1&#x60; file message; &#x60;2&#x60; system message.</value>
         [DataMember(Name="type")]
         public int Type { get; set; }
 
@@ -133,25 +129,11 @@ namespace Io.Gate.GateApi.Model
         public string FileKey { get; set; }
 
         /// <summary>
-        /// File type
+        /// File type: &#x60;image&#x60; for images, &#x60;video&#x60; for videos.
         /// </summary>
-        /// <value>File type</value>
+        /// <value>File type: &#x60;image&#x60; for images, &#x60;video&#x60; for videos.</value>
         [DataMember(Name="file_type")]
         public string FileType { get; set; }
-
-        /// <summary>
-        /// Image width
-        /// </summary>
-        /// <value>Image width</value>
-        [DataMember(Name="width")]
-        public string Width { get; set; }
-
-        /// <summary>
-        /// Image height
-        /// </summary>
-        /// <value>Image height</value>
-        [DataMember(Name="height")]
-        public string Height { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -172,8 +154,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Pic: ").Append(Pic).Append("\n");
             sb.Append("  FileKey: ").Append(FileKey).Append("\n");
             sb.Append("  FileType: ").Append(FileType).Append("\n");
-            sb.Append("  Width: ").Append(Width).Append("\n");
-            sb.Append("  Height: ").Append(Height).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -258,16 +238,6 @@ namespace Io.Gate.GateApi.Model
                     this.FileType == input.FileType ||
                     (this.FileType != null &&
                     this.FileType.Equals(input.FileType))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
                 );
         }
 
@@ -298,10 +268,6 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.FileKey.GetHashCode();
                 if (this.FileType != null)
                     hashCode = hashCode * 59 + this.FileType.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
                 return hashCode;
             }
         }

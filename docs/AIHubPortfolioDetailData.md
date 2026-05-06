@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **StrategyType** | **StrategyType** |  | 
 **Market** | **string** |  | 
 **Status** | **string** |  | 
-**BaseInfo** | **Dictionary&lt;string, string&gt;** | Basic information, fields change dynamically according to strategy type | 
-**Metrics** | **Dictionary&lt;string, string&gt;** | Indicator information, fields change dynamically according to strategy type | 
-**Position** | **Dictionary&lt;string, string&gt;** | Position or position information, fields dynamically change according to strategy type | [optional] 
+**BaseInfo** | [**AIHubPortfolioBaseInfo**](AIHubPortfolioBaseInfo.md) |  | 
+**Metrics** | [**AIHubPortfolioMetrics**](AIHubPortfolioMetrics.md) |  | 
+**Position** | [**AIHubPortfolioPosition**](AIHubPortfolioPosition.md) |  | [optional] 
 **StopSupported** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

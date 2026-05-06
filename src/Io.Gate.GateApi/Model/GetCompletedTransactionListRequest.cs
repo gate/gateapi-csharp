@@ -38,16 +38,16 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetCompletedTransactionListRequest" /> class.
         /// </summary>
-        /// <param name="cryptoCurrency">Cryptocurrency (required).</param>
+        /// <param name="cryptoCurrency">Cryptocurrency symbol. (required).</param>
         /// <param name="fiatCurrency">Fiat currency (required).</param>
-        /// <param name="selectType">Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All).</param>
-        /// <param name="status">Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED).</param>
+        /// <param name="selectType">Order side filter: &#x60;buy&#x60; buy orders; &#x60;sell&#x60; sell orders; empty: all..</param>
+        /// <param name="status">Order status filter. &#x60;closed&#x60;: filled (&#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;); &#x60;cancel&#x60;: canceled (&#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;); &#x60;locked&#x60;: locked (&#x60;LOCKED&#x60;); &#x60;open&#x60;: unpaid (&#x60;OPEN&#x60;); &#x60;paid&#x60;: paid (&#x60;PAID&#x60;); &#x60;completed&#x60;: finished or canceled (&#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;, &#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;); Empty or omitted uses the endpoint default range..</param>
         /// <param name="txid">Order ID.</param>
         /// <param name="startTime">Start timestamp, default is 00:00 89 days ago.</param>
         /// <param name="endTime">End timestamp, default is 23:59:59 today.</param>
-        /// <param name="queryDispute">1: Include appeal status, 0: None.</param>
-        /// <param name="page">page number.</param>
-        /// <param name="perPage">Number of orders per page.</param>
+        /// <param name="queryDispute">Whether to flag dispute status in the response. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="page">Page number starting at 1; values below 1 are treated as 1..</param>
+        /// <param name="perPage">Orders per page; default 10, max 200..</param>
         public GetCompletedTransactionListRequest(string cryptoCurrency = default(string), string fiatCurrency = default(string), string selectType = default(string), string status = default(string), int txid = default(int), int startTime = default(int), int endTime = default(int), int queryDispute = default(int), int page = default(int), int perPage = default(int))
         {
             // to ensure "cryptoCurrency" is required (not null)
@@ -65,9 +65,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Cryptocurrency
+        /// Cryptocurrency symbol.
         /// </summary>
-        /// <value>Cryptocurrency</value>
+        /// <value>Cryptocurrency symbol.</value>
         [DataMember(Name="crypto_currency")]
         public string CryptoCurrency { get; set; }
 
@@ -79,16 +79,16 @@ namespace Io.Gate.GateApi.Model
         public string FiatCurrency { get; set; }
 
         /// <summary>
-        /// Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All)
+        /// Order side filter: &#x60;buy&#x60; buy orders; &#x60;sell&#x60; sell orders; empty: all.
         /// </summary>
-        /// <value>Buy/Sell (sell&#x3D;Sell, buy&#x3D;Buy, others&#x3D;All)</value>
+        /// <value>Order side filter: &#x60;buy&#x60; buy orders; &#x60;sell&#x60; sell orders; empty: all.</value>
         [DataMember(Name="select_type")]
         public string SelectType { get; set; }
 
         /// <summary>
-        /// Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED)
+        /// Order status filter. &#x60;closed&#x60;: filled (&#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;); &#x60;cancel&#x60;: canceled (&#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;); &#x60;locked&#x60;: locked (&#x60;LOCKED&#x60;); &#x60;open&#x60;: unpaid (&#x60;OPEN&#x60;); &#x60;paid&#x60;: paid (&#x60;PAID&#x60;); &#x60;completed&#x60;: finished or canceled (&#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;, &#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;); Empty or omitted uses the endpoint default range.
         /// </summary>
-        /// <value>Order Status (dispute: Disputed Order; closed: ACCEPT, BCLOSED; cancel: CANCEL, BECANCEL, SCLOSED, SCANCEL; locked: LOCKED; open: OPEN; paid: PAID; completed: CANCEL, BECANCEL, SCLOSED, SCANCEL, ACCEPT, BCLOSED)</value>
+        /// <value>Order status filter. &#x60;closed&#x60;: filled (&#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;); &#x60;cancel&#x60;: canceled (&#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;); &#x60;locked&#x60;: locked (&#x60;LOCKED&#x60;); &#x60;open&#x60;: unpaid (&#x60;OPEN&#x60;); &#x60;paid&#x60;: paid (&#x60;PAID&#x60;); &#x60;completed&#x60;: finished or canceled (&#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;, &#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;); Empty or omitted uses the endpoint default range.</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 
@@ -114,23 +114,23 @@ namespace Io.Gate.GateApi.Model
         public int EndTime { get; set; }
 
         /// <summary>
-        /// 1: Include appeal status, 0: None
+        /// Whether to flag dispute status in the response. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>1: Include appeal status, 0: None</value>
+        /// <value>Whether to flag dispute status in the response. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="query_dispute")]
         public int QueryDispute { get; set; }
 
         /// <summary>
-        /// page number
+        /// Page number starting at 1; values below 1 are treated as 1.
         /// </summary>
-        /// <value>page number</value>
+        /// <value>Page number starting at 1; values below 1 are treated as 1.</value>
         [DataMember(Name="page")]
         public int Page { get; set; }
 
         /// <summary>
-        /// Number of orders per page
+        /// Orders per page; default 10, max 200.
         /// </summary>
-        /// <value>Number of orders per page</value>
+        /// <value>Orders per page; default 10, max 200.</value>
         [DataMember(Name="per_page")]
         public int PerPage { get; set; }
 

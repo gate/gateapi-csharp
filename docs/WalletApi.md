@@ -1104,7 +1104,7 @@ namespace Example
             var currency = "USDT";  // string | Currency
             var chain = "\"\"";  // string | Chain name (optional)  (default to "")
             var limit = "\"50\"";  // string | Maximum number returned, up to 100 (optional)  (default to "50")
-            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var page = 1;  // int? | page number (optional)  (default to 1)
 
             try
             {
@@ -1131,7 +1131,7 @@ Name | Type | Description  | Notes
  **currency** | **string**| Currency | 
  **chain** | **string**| Chain name | [optional] [default to &quot;&quot;]
  **limit** | **string**| Maximum number returned, up to 100 | [optional] [default to &quot;50&quot;]
- **page** | **int?**| Page number | [optional] [default to 1]
+ **page** | **int?**| page number | [optional] [default to 1]
 
 ### Return type
 

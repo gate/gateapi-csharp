@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="GetTransactionDetailsRequest" /> class.
         /// </summary>
         /// <param name="txid">Order ID (required).</param>
-        /// <param name="channel">Empty or web3.</param>
+        /// <param name="channel">Channel tag: omit or empty for normal P2P; use &#x60;web3&#x60; for Web3 orders..</param>
         public GetTransactionDetailsRequest(int txid = default(int), string channel = default(string))
         {
             this.Txid = txid;
@@ -54,9 +54,9 @@ namespace Io.Gate.GateApi.Model
         public int Txid { get; set; }
 
         /// <summary>
-        /// Empty or web3
+        /// Channel tag: omit or empty for normal P2P; use &#x60;web3&#x60; for Web3 orders.
         /// </summary>
-        /// <value>Empty or web3</value>
+        /// <value>Channel tag: omit or empty for normal P2P; use &#x60;web3&#x60; for Web3 orders.</value>
         [DataMember(Name="channel")]
         public string Channel { get; set; }
 

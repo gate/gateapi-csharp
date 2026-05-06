@@ -8,8 +8,8 @@ Send chat message request
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Txid** | **int** | Order ID | 
-**Type** | **int** | 0&#x3D;Text, 1&#x3D;File (video or image), default is 0 if not provided | [optional] 
-**Message** | **string** | Message content | 
+**Type** | **int** | Message type: &#x60;0&#x60; text; &#x60;1&#x60; file (image or video); defaults to &#x60;0&#x60;. | [optional] 
+**Message** | **string** | Message body. For &#x60;type&#x3D;0&#x60;, plain text up to 500 characters; for &#x60;type&#x3D;1&#x60;, pass the &#x60;file_key&#x60; returned by &#x60;upload_chat_file&#x60;. | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

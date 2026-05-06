@@ -33,48 +33,44 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pAdDetail" /> class.
         /// </summary>
-        /// <param name="rate">Price.</param>
-        /// <param name="type">Buy/Sell order.</param>
-        /// <param name="amount">Cryptocurrency amount.</param>
-        /// <param name="minAmount">Minimum limit.</param>
-        /// <param name="maxAmount">Maximum limit.</param>
+        /// <param name="rate">Advertisement price..</param>
+        /// <param name="type">Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad..</param>
+        /// <param name="amount">Remaining crypto amount on the ad..</param>
+        /// <param name="minAmount">Minimum trade amount in &#x60;want_type&#x60;..</param>
+        /// <param name="maxAmount">Maximum trade amount priced in &#x60;want_type&#x60;..</param>
         /// <param name="total">Fiat amount.</param>
-        /// <param name="payAli">Whether Alipay payment is supported.</param>
-        /// <param name="payBank">Whether bank payment is supported.</param>
-        /// <param name="payPaypal">Whether PayPal payment is supported.</param>
-        /// <param name="payWechat">Whether WeChat payment is supported.</param>
+        /// <param name="payAli">Whether Alipay is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="payBank">Whether bank transfer is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="payPaypal">Whether PayPal is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="payWechat">Whether WeChat Pay is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         /// <param name="payTypeNum">Payment method ID list.</param>
-        /// <param name="payTypeJson">Payment method list.</param>
+        /// <param name="payTypeJson">JSON map of payment type -&gt; payment method ID..</param>
         /// <param name="lockedAmount">Locked amount.</param>
         /// <param name="orderid">Order ID.</param>
         /// <param name="timestamp">Created time.</param>
-        /// <param name="currencyType">Cryptocurrency type.</param>
+        /// <param name="currencyType">Cryptocurrency symbol..</param>
         /// <param name="wantType">Fiat type.</param>
         /// <param name="hideRate">Hidden price.</param>
         /// <param name="tradeTips">Trading terms.</param>
         /// <param name="autoReply">Auto reply.</param>
-        /// <param name="newHand">Merchant-friendly order.</param>
-        /// <param name="rateRefId">Floating price reference ID: 1&#x3D;Platform reference price, 3&#x3D;Spot reference price (≤0 means fixed price, &gt;0 means floating price).</param>
+        /// <param name="rateRefId">Floating reference: &#x60;1&#x60; platform; &#x60;2&#x60; Gate; &#x60;3&#x60; spot; &#x60;&lt;&#x3D; 0&#x60; means fixed price..</param>
         /// <param name="rateOffset">Floating ratio (absolute value).</param>
-        /// <param name="status">Status.</param>
-        /// <param name="rateFixed">0&#x3D;Floating, 1&#x3D;Fixed.</param>
-        /// <param name="floatTrend">0&#x3D;Upward float, 1&#x3D;Downward float.</param>
+        /// <param name="status">Ad status: &#x60;OPEN&#x60; listed; &#x60;OFFLIN&#x60; delisted; &#x60;CLOSED&#x60; closed; &#x60;CANCEL&#x60; canceled..</param>
+        /// <param name="rateFixed">Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed..</param>
+        /// <param name="floatTrend">Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown..</param>
         /// <param name="expireMin">Timeout (minutes).</param>
         /// <param name="tierLimit">Tier limit.</param>
         /// <param name="regTimeLimit">Registration time limit.</param>
-        /// <param name="advertisersLimit">Do not trade with advertisers, advertiser limit: 0&#x3D;No limit, 1&#x3D;Limit.</param>
-        /// <param name="verifiedLimit">kyclimit.</param>
+        /// <param name="advertisersLimit">Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes..</param>
         /// <param name="minCompletedLimit">Minimum limit of completed orders.</param>
         /// <param name="maxCompletedLimit">Maximum limit of completed orders.</param>
         /// <param name="userOrdersLimit">Order count limit.</param>
         /// <param name="completedRateLimit">30-day completion rate limit.</param>
-        /// <param name="userCountryLimit">KYC nationality restriction.</param>
         /// <param name="limitCountryCn">Restricted nationality (Chinese).</param>
         /// <param name="limitCountryEn">Restricted nationality (English).</param>
-        /// <param name="isHedge">Whether auto delegation.</param>
-        /// <param name="hidePayment">Whether to hide payment method.</param>
-        /// <param name="fee">fee.</param>
-        public P2pAdDetail(string rate = default(string), string type = default(string), string amount = default(string), string minAmount = default(string), string maxAmount = default(string), string total = default(string), int payAli = default(int), int payBank = default(int), int payPaypal = default(int), int payWechat = default(int), string payTypeNum = default(string), string payTypeJson = default(string), string lockedAmount = default(string), int orderid = default(int), int timestamp = default(int), string currencyType = default(string), string wantType = default(string), string hideRate = default(string), string tradeTips = default(string), string autoReply = default(string), string newHand = default(string), int rateRefId = default(int), decimal rateOffset = default(decimal), string status = default(string), int rateFixed = default(int), int floatTrend = default(int), int expireMin = default(int), int tierLimit = default(int), int regTimeLimit = default(int), int advertisersLimit = default(int), int verifiedLimit = default(int), int minCompletedLimit = default(int), int maxCompletedLimit = default(int), int userOrdersLimit = default(int), decimal completedRateLimit = default(decimal), int userCountryLimit = default(int), string limitCountryCn = default(string), string limitCountryEn = default(string), int isHedge = default(int), int hidePayment = default(int), int fee = default(int))
+        /// <param name="isHedge">Whether auto-delegation is enabled. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
+        /// <param name="hidePayment">Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible..</param>
+        public P2pAdDetail(string rate = default(string), string type = default(string), string amount = default(string), string minAmount = default(string), string maxAmount = default(string), string total = default(string), int payAli = default(int), int payBank = default(int), int payPaypal = default(int), int payWechat = default(int), string payTypeNum = default(string), string payTypeJson = default(string), string lockedAmount = default(string), int orderid = default(int), int timestamp = default(int), string currencyType = default(string), string wantType = default(string), string hideRate = default(string), string tradeTips = default(string), string autoReply = default(string), int rateRefId = default(int), decimal rateOffset = default(decimal), string status = default(string), int rateFixed = default(int), int floatTrend = default(int), int expireMin = default(int), int tierLimit = default(int), int regTimeLimit = default(int), int advertisersLimit = default(int), int minCompletedLimit = default(int), int maxCompletedLimit = default(int), int userOrdersLimit = default(int), decimal completedRateLimit = default(decimal), string limitCountryCn = default(string), string limitCountryEn = default(string), int isHedge = default(int), int hidePayment = default(int))
         {
             this.Rate = rate;
             this.Type = type;
@@ -96,7 +92,6 @@ namespace Io.Gate.GateApi.Model
             this.HideRate = hideRate;
             this.TradeTips = tradeTips;
             this.AutoReply = autoReply;
-            this.NewHand = newHand;
             this.RateRefId = rateRefId;
             this.RateOffset = rateOffset;
             this.Status = status;
@@ -106,51 +101,48 @@ namespace Io.Gate.GateApi.Model
             this.TierLimit = tierLimit;
             this.RegTimeLimit = regTimeLimit;
             this.AdvertisersLimit = advertisersLimit;
-            this.VerifiedLimit = verifiedLimit;
             this.MinCompletedLimit = minCompletedLimit;
             this.MaxCompletedLimit = maxCompletedLimit;
             this.UserOrdersLimit = userOrdersLimit;
             this.CompletedRateLimit = completedRateLimit;
-            this.UserCountryLimit = userCountryLimit;
             this.LimitCountryCn = limitCountryCn;
             this.LimitCountryEn = limitCountryEn;
             this.IsHedge = isHedge;
             this.HidePayment = hidePayment;
-            this.Fee = fee;
         }
 
         /// <summary>
-        /// Price
+        /// Advertisement price.
         /// </summary>
-        /// <value>Price</value>
+        /// <value>Advertisement price.</value>
         [DataMember(Name="rate")]
         public string Rate { get; set; }
 
         /// <summary>
-        /// Buy/Sell order
+        /// Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad.
         /// </summary>
-        /// <value>Buy/Sell order</value>
+        /// <value>Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad.</value>
         [DataMember(Name="type")]
         public string Type { get; set; }
 
         /// <summary>
-        /// Cryptocurrency amount
+        /// Remaining crypto amount on the ad.
         /// </summary>
-        /// <value>Cryptocurrency amount</value>
+        /// <value>Remaining crypto amount on the ad.</value>
         [DataMember(Name="amount")]
         public string Amount { get; set; }
 
         /// <summary>
-        /// Minimum limit
+        /// Minimum trade amount in &#x60;want_type&#x60;.
         /// </summary>
-        /// <value>Minimum limit</value>
+        /// <value>Minimum trade amount in &#x60;want_type&#x60;.</value>
         [DataMember(Name="min_amount")]
         public string MinAmount { get; set; }
 
         /// <summary>
-        /// Maximum limit
+        /// Maximum trade amount priced in &#x60;want_type&#x60;.
         /// </summary>
-        /// <value>Maximum limit</value>
+        /// <value>Maximum trade amount priced in &#x60;want_type&#x60;.</value>
         [DataMember(Name="max_amount")]
         public string MaxAmount { get; set; }
 
@@ -162,30 +154,30 @@ namespace Io.Gate.GateApi.Model
         public string Total { get; set; }
 
         /// <summary>
-        /// Whether Alipay payment is supported
+        /// Whether Alipay is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether Alipay payment is supported</value>
+        /// <value>Whether Alipay is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="pay_ali")]
         public int PayAli { get; set; }
 
         /// <summary>
-        /// Whether bank payment is supported
+        /// Whether bank transfer is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether bank payment is supported</value>
+        /// <value>Whether bank transfer is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="pay_bank")]
         public int PayBank { get; set; }
 
         /// <summary>
-        /// Whether PayPal payment is supported
+        /// Whether PayPal is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether PayPal payment is supported</value>
+        /// <value>Whether PayPal is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="pay_paypal")]
         public int PayPaypal { get; set; }
 
         /// <summary>
-        /// Whether WeChat payment is supported
+        /// Whether WeChat Pay is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether WeChat payment is supported</value>
+        /// <value>Whether WeChat Pay is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="pay_wechat")]
         public int PayWechat { get; set; }
 
@@ -197,9 +189,9 @@ namespace Io.Gate.GateApi.Model
         public string PayTypeNum { get; set; }
 
         /// <summary>
-        /// Payment method list
+        /// JSON map of payment type -&gt; payment method ID.
         /// </summary>
-        /// <value>Payment method list</value>
+        /// <value>JSON map of payment type -&gt; payment method ID.</value>
         [DataMember(Name="pay_type_json")]
         public string PayTypeJson { get; set; }
 
@@ -225,10 +217,10 @@ namespace Io.Gate.GateApi.Model
         public int Timestamp { get; set; }
 
         /// <summary>
-        /// Cryptocurrency type
+        /// Cryptocurrency symbol.
         /// </summary>
-        /// <value>Cryptocurrency type</value>
-        [DataMember(Name="currencyType")]
+        /// <value>Cryptocurrency symbol.</value>
+        [DataMember(Name="currency_type")]
         public string CurrencyType { get; set; }
 
         /// <summary>
@@ -260,16 +252,9 @@ namespace Io.Gate.GateApi.Model
         public string AutoReply { get; set; }
 
         /// <summary>
-        /// Merchant-friendly order
+        /// Floating reference: &#x60;1&#x60; platform; &#x60;2&#x60; Gate; &#x60;3&#x60; spot; &#x60;&lt;&#x3D; 0&#x60; means fixed price.
         /// </summary>
-        /// <value>Merchant-friendly order</value>
-        [DataMember(Name="new_hand")]
-        public string NewHand { get; set; }
-
-        /// <summary>
-        /// Floating price reference ID: 1&#x3D;Platform reference price, 3&#x3D;Spot reference price (≤0 means fixed price, &gt;0 means floating price)
-        /// </summary>
-        /// <value>Floating price reference ID: 1&#x3D;Platform reference price, 3&#x3D;Spot reference price (≤0 means fixed price, &gt;0 means floating price)</value>
+        /// <value>Floating reference: &#x60;1&#x60; platform; &#x60;2&#x60; Gate; &#x60;3&#x60; spot; &#x60;&lt;&#x3D; 0&#x60; means fixed price.</value>
         [DataMember(Name="rate_ref_id")]
         public int RateRefId { get; set; }
 
@@ -281,23 +266,23 @@ namespace Io.Gate.GateApi.Model
         public decimal RateOffset { get; set; }
 
         /// <summary>
-        /// Status
+        /// Ad status: &#x60;OPEN&#x60; listed; &#x60;OFFLIN&#x60; delisted; &#x60;CLOSED&#x60; closed; &#x60;CANCEL&#x60; canceled.
         /// </summary>
-        /// <value>Status</value>
+        /// <value>Ad status: &#x60;OPEN&#x60; listed; &#x60;OFFLIN&#x60; delisted; &#x60;CLOSED&#x60; closed; &#x60;CANCEL&#x60; canceled.</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 
         /// <summary>
-        /// 0&#x3D;Floating, 1&#x3D;Fixed
+        /// Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed.
         /// </summary>
-        /// <value>0&#x3D;Floating, 1&#x3D;Fixed</value>
+        /// <value>Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed.</value>
         [DataMember(Name="rate_fixed")]
         public int RateFixed { get; set; }
 
         /// <summary>
-        /// 0&#x3D;Upward float, 1&#x3D;Downward float
+        /// Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown.
         /// </summary>
-        /// <value>0&#x3D;Upward float, 1&#x3D;Downward float</value>
+        /// <value>Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown.</value>
         [DataMember(Name="float_trend")]
         public int FloatTrend { get; set; }
 
@@ -323,18 +308,11 @@ namespace Io.Gate.GateApi.Model
         public int RegTimeLimit { get; set; }
 
         /// <summary>
-        /// Do not trade with advertisers, advertiser limit: 0&#x3D;No limit, 1&#x3D;Limit
+        /// Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes.
         /// </summary>
-        /// <value>Do not trade with advertisers, advertiser limit: 0&#x3D;No limit, 1&#x3D;Limit</value>
+        /// <value>Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes.</value>
         [DataMember(Name="advertisers_limit")]
         public int AdvertisersLimit { get; set; }
-
-        /// <summary>
-        /// kyclimit
-        /// </summary>
-        /// <value>kyclimit</value>
-        [DataMember(Name="verified_limit")]
-        public int VerifiedLimit { get; set; }
 
         /// <summary>
         /// Minimum limit of completed orders
@@ -365,13 +343,6 @@ namespace Io.Gate.GateApi.Model
         public decimal CompletedRateLimit { get; set; }
 
         /// <summary>
-        /// KYC nationality restriction
-        /// </summary>
-        /// <value>KYC nationality restriction</value>
-        [DataMember(Name="user_country_limit")]
-        public int UserCountryLimit { get; set; }
-
-        /// <summary>
         /// Restricted nationality (Chinese)
         /// </summary>
         /// <value>Restricted nationality (Chinese)</value>
@@ -386,25 +357,18 @@ namespace Io.Gate.GateApi.Model
         public string LimitCountryEn { get; set; }
 
         /// <summary>
-        /// Whether auto delegation
+        /// Whether auto-delegation is enabled. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.
         /// </summary>
-        /// <value>Whether auto delegation</value>
+        /// <value>Whether auto-delegation is enabled. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_hedge")]
         public int IsHedge { get; set; }
 
         /// <summary>
-        /// Whether to hide payment method
+        /// Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible.
         /// </summary>
-        /// <value>Whether to hide payment method</value>
+        /// <value>Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible.</value>
         [DataMember(Name="hide_payment")]
         public int HidePayment { get; set; }
-
-        /// <summary>
-        /// fee
-        /// </summary>
-        /// <value>fee</value>
-        [DataMember(Name="fee")]
-        public int Fee { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -434,7 +398,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  HideRate: ").Append(HideRate).Append("\n");
             sb.Append("  TradeTips: ").Append(TradeTips).Append("\n");
             sb.Append("  AutoReply: ").Append(AutoReply).Append("\n");
-            sb.Append("  NewHand: ").Append(NewHand).Append("\n");
             sb.Append("  RateRefId: ").Append(RateRefId).Append("\n");
             sb.Append("  RateOffset: ").Append(RateOffset).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -444,17 +407,14 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  TierLimit: ").Append(TierLimit).Append("\n");
             sb.Append("  RegTimeLimit: ").Append(RegTimeLimit).Append("\n");
             sb.Append("  AdvertisersLimit: ").Append(AdvertisersLimit).Append("\n");
-            sb.Append("  VerifiedLimit: ").Append(VerifiedLimit).Append("\n");
             sb.Append("  MinCompletedLimit: ").Append(MinCompletedLimit).Append("\n");
             sb.Append("  MaxCompletedLimit: ").Append(MaxCompletedLimit).Append("\n");
             sb.Append("  UserOrdersLimit: ").Append(UserOrdersLimit).Append("\n");
             sb.Append("  CompletedRateLimit: ").Append(CompletedRateLimit).Append("\n");
-            sb.Append("  UserCountryLimit: ").Append(UserCountryLimit).Append("\n");
             sb.Append("  LimitCountryCn: ").Append(LimitCountryCn).Append("\n");
             sb.Append("  LimitCountryEn: ").Append(LimitCountryEn).Append("\n");
             sb.Append("  IsHedge: ").Append(IsHedge).Append("\n");
             sb.Append("  HidePayment: ").Append(HidePayment).Append("\n");
-            sb.Append("  Fee: ").Append(Fee).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -584,11 +544,6 @@ namespace Io.Gate.GateApi.Model
                     this.AutoReply.Equals(input.AutoReply))
                 ) && 
                 (
-                    this.NewHand == input.NewHand ||
-                    (this.NewHand != null &&
-                    this.NewHand.Equals(input.NewHand))
-                ) && 
-                (
                     this.RateRefId == input.RateRefId ||
                     this.RateRefId.Equals(input.RateRefId)
                 ) && 
@@ -626,10 +581,6 @@ namespace Io.Gate.GateApi.Model
                     this.AdvertisersLimit.Equals(input.AdvertisersLimit)
                 ) && 
                 (
-                    this.VerifiedLimit == input.VerifiedLimit ||
-                    this.VerifiedLimit.Equals(input.VerifiedLimit)
-                ) && 
-                (
                     this.MinCompletedLimit == input.MinCompletedLimit ||
                     this.MinCompletedLimit.Equals(input.MinCompletedLimit)
                 ) && 
@@ -644,10 +595,6 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.CompletedRateLimit == input.CompletedRateLimit ||
                     this.CompletedRateLimit.Equals(input.CompletedRateLimit)
-                ) && 
-                (
-                    this.UserCountryLimit == input.UserCountryLimit ||
-                    this.UserCountryLimit.Equals(input.UserCountryLimit)
                 ) && 
                 (
                     this.LimitCountryCn == input.LimitCountryCn ||
@@ -666,10 +613,6 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.HidePayment == input.HidePayment ||
                     this.HidePayment.Equals(input.HidePayment)
-                ) && 
-                (
-                    this.Fee == input.Fee ||
-                    this.Fee.Equals(input.Fee)
                 );
         }
 
@@ -716,8 +659,6 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.TradeTips.GetHashCode();
                 if (this.AutoReply != null)
                     hashCode = hashCode * 59 + this.AutoReply.GetHashCode();
-                if (this.NewHand != null)
-                    hashCode = hashCode * 59 + this.NewHand.GetHashCode();
                 hashCode = hashCode * 59 + this.RateRefId.GetHashCode();
                 hashCode = hashCode * 59 + this.RateOffset.GetHashCode();
                 if (this.Status != null)
@@ -728,19 +669,16 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.TierLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.RegTimeLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.AdvertisersLimit.GetHashCode();
-                hashCode = hashCode * 59 + this.VerifiedLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.MinCompletedLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.MaxCompletedLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.UserOrdersLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.CompletedRateLimit.GetHashCode();
-                hashCode = hashCode * 59 + this.UserCountryLimit.GetHashCode();
                 if (this.LimitCountryCn != null)
                     hashCode = hashCode * 59 + this.LimitCountryCn.GetHashCode();
                 if (this.LimitCountryEn != null)
                     hashCode = hashCode * 59 + this.LimitCountryEn.GetHashCode();
                 hashCode = hashCode * 59 + this.IsHedge.GetHashCode();
                 hashCode = hashCode * 59 + this.HidePayment.GetHashCode();
-                hashCode = hashCode * 59 + this.Fee.GetHashCode();
                 return hashCode;
             }
         }

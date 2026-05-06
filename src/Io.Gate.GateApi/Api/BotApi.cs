@@ -192,7 +192,7 @@ namespace Io.Gate.GateApi.Api
         /// Create Spot Martin
         /// </summary>
         /// <remarks>
-        /// Create a spot Martin strategy based on the passed parameters.
+        /// 根据传入参数创建现货马丁策略。  止损口径与 App / &#x60;MartingaleBot&#x60; 一致： - 使用 **&#x60;create_params.stop_loss_per_cycle&#x60;**（每轮止损比例，小数字符串），**不要**使用 &#x60;stop_loss_price&#x60; 表达创建侧止损。 - 详情页展示的「止损价」由引擎按轮次计算；创建侧可选 **&#x60;create_params.trigger_price&#x60;**（触发价）。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
@@ -207,7 +207,7 @@ namespace Io.Gate.GateApi.Api
         /// Create Spot Martin
         /// </summary>
         /// <remarks>
-        /// Create a spot Martin strategy based on the passed parameters.
+        /// 根据传入参数创建现货马丁策略。  止损口径与 App / &#x60;MartingaleBot&#x60; 一致： - 使用 **&#x60;create_params.stop_loss_per_cycle&#x60;**（每轮止损比例，小数字符串），**不要**使用 &#x60;stop_loss_price&#x60; 表达创建侧止损。 - 详情页展示的「止损价」由引擎按轮次计算；创建侧可选 **&#x60;create_params.trigger_price&#x60;**（触发价）。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
@@ -515,7 +515,7 @@ namespace Io.Gate.GateApi.Api
         /// Create Spot Martin
         /// </summary>
         /// <remarks>
-        /// Create a spot Martin strategy based on the passed parameters.
+        /// 根据传入参数创建现货马丁策略。  止损口径与 App / &#x60;MartingaleBot&#x60; 一致： - 使用 **&#x60;create_params.stop_loss_per_cycle&#x60;**（每轮止损比例，小数字符串），**不要**使用 &#x60;stop_loss_price&#x60; 表达创建侧止损。 - 详情页展示的「止损价」由引擎按轮次计算；创建侧可选 **&#x60;create_params.trigger_price&#x60;**（触发价）。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
@@ -530,7 +530,7 @@ namespace Io.Gate.GateApi.Api
         /// Create Spot Martin
         /// </summary>
         /// <remarks>
-        /// Create a spot Martin strategy based on the passed parameters.
+        /// 根据传入参数创建现货马丁策略。  止损口径与 App / &#x60;MartingaleBot&#x60; 一致： - 使用 **&#x60;create_params.stop_loss_per_cycle&#x60;**（每轮止损比例，小数字符串），**不要**使用 &#x60;stop_loss_price&#x60; 表达创建侧止损。 - 详情页展示的「止损价」由引擎按轮次计算；创建侧可选 **&#x60;create_params.trigger_price&#x60;**（触发价）。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
@@ -1712,7 +1712,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create Spot Martin Create a spot Martin strategy based on the passed parameters.
+        /// Create Spot Martin 根据传入参数创建现货马丁策略。  止损口径与 App / &#x60;MartingaleBot&#x60; 一致： - 使用 **&#x60;create_params.stop_loss_per_cycle&#x60;**（每轮止损比例，小数字符串），**不要**使用 &#x60;stop_loss_price&#x60; 表达创建侧止损。 - 详情页展示的「止损价」由引擎按轮次计算；创建侧可选 **&#x60;create_params.trigger_price&#x60;**（触发价）。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
@@ -1728,7 +1728,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create Spot Martin Create a spot Martin strategy based on the passed parameters.
+        /// Create Spot Martin 根据传入参数创建现货马丁策略。  止损口径与 App / &#x60;MartingaleBot&#x60; 一致： - 使用 **&#x60;create_params.stop_loss_per_cycle&#x60;**（每轮止损比例，小数字符串），**不要**使用 &#x60;stop_loss_price&#x60; 表达创建侧止损。 - 详情页展示的「止损价」由引擎按轮次计算；创建侧可选 **&#x60;create_params.trigger_price&#x60;**（触发价）。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
@@ -1794,7 +1794,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create Spot Martin Create a spot Martin strategy based on the passed parameters.
+        /// Create Spot Martin 根据传入参数创建现货马丁策略。  止损口径与 App / &#x60;MartingaleBot&#x60; 一致： - 使用 **&#x60;create_params.stop_loss_per_cycle&#x60;**（每轮止损比例，小数字符串），**不要**使用 &#x60;stop_loss_price&#x60; 表达创建侧止损。 - 详情页展示的「止损价」由引擎按轮次计算；创建侧可选 **&#x60;create_params.trigger_price&#x60;**（触发价）。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>
@@ -1811,7 +1811,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create Spot Martin Create a spot Martin strategy based on the passed parameters.
+        /// Create Spot Martin 根据传入参数创建现货马丁策略。  止损口径与 App / &#x60;MartingaleBot&#x60; 一致： - 使用 **&#x60;create_params.stop_loss_per_cycle&#x60;**（每轮止损比例，小数字符串），**不要**使用 &#x60;stop_loss_price&#x60; 表达创建侧止损。 - 详情页展示的「止损价」由引擎按轮次计算；创建侧可选 **&#x60;create_params.trigger_price&#x60;**（触发价）。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spotMartingaleCreateRequest"></param>

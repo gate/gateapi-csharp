@@ -301,7 +301,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="type">Order Type   - limit : Limit Order - market : Market Order (default to TypeEnum.Limit).</param>
         /// <param name="account">Account type, spot - spot account, margin - leveraged account, unified - unified account (default to &quot;spot&quot;).</param>
         /// <param name="side">Buy or sell order (required).</param>
-        /// <param name="amount">交易数量 &#x60;type&#x60;为&#x60;limit&#x60;时，指交易货币，即需要交易的货币，如&#x60;BTC_USDT&#x60;中指&#x60;BTC&#x60;。 &#x60;type&#x60;为&#x60;market&#x60;时，根据买卖不同指代不同 - &#x60;side&#x60; : &#x60;buy&#x60; 指代计价货币，&#x60;BTC_USDT&#x60;中指&#x60;USDT&#x60; - &#x60;side&#x60; : &#x60;sell&#x60; 指代交易货币，&#x60;BTC_USDT&#x60;中指&#x60;BTC&#x60; (required).</param>
+        /// <param name="amount">Trade amount When &#x60;type&#x60; is &#x60;limit&#x60;, this is the base currency to trade (the currency being bought or sold), e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60;. When &#x60;type&#x60; is &#x60;market&#x60;, the meaning depends on the side: - &#x60;side&#x60;: &#x60;buy&#x60; refers to the quote currency, e.g. &#x60;USDT&#x60; in &#x60;BTC_USDT&#x60; - &#x60;side&#x60;: &#x60;sell&#x60; refers to the base currency, e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60; (required).</param>
         /// <param name="price">Trading price, required when &#x60;type&#x60;&#x3D;&#x60;limit&#x60;.</param>
         /// <param name="timeInForce">Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none Only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported when &#x60;type&#x60;&#x3D;&#x60;market&#x60; (default to TimeInForceEnum.Gtc).</param>
         /// <param name="iceberg">Amount to display for the iceberg order. Null or 0 for normal orders. Hiding all amount is not supported.</param>
@@ -395,9 +395,9 @@ namespace Io.Gate.GateApi.Model
         public string Account { get; set; }
 
         /// <summary>
-        /// 交易数量 &#x60;type&#x60;为&#x60;limit&#x60;时，指交易货币，即需要交易的货币，如&#x60;BTC_USDT&#x60;中指&#x60;BTC&#x60;。 &#x60;type&#x60;为&#x60;market&#x60;时，根据买卖不同指代不同 - &#x60;side&#x60; : &#x60;buy&#x60; 指代计价货币，&#x60;BTC_USDT&#x60;中指&#x60;USDT&#x60; - &#x60;side&#x60; : &#x60;sell&#x60; 指代交易货币，&#x60;BTC_USDT&#x60;中指&#x60;BTC&#x60;
+        /// Trade amount When &#x60;type&#x60; is &#x60;limit&#x60;, this is the base currency to trade (the currency being bought or sold), e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60;. When &#x60;type&#x60; is &#x60;market&#x60;, the meaning depends on the side: - &#x60;side&#x60;: &#x60;buy&#x60; refers to the quote currency, e.g. &#x60;USDT&#x60; in &#x60;BTC_USDT&#x60; - &#x60;side&#x60;: &#x60;sell&#x60; refers to the base currency, e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60;
         /// </summary>
-        /// <value>交易数量 &#x60;type&#x60;为&#x60;limit&#x60;时，指交易货币，即需要交易的货币，如&#x60;BTC_USDT&#x60;中指&#x60;BTC&#x60;。 &#x60;type&#x60;为&#x60;market&#x60;时，根据买卖不同指代不同 - &#x60;side&#x60; : &#x60;buy&#x60; 指代计价货币，&#x60;BTC_USDT&#x60;中指&#x60;USDT&#x60; - &#x60;side&#x60; : &#x60;sell&#x60; 指代交易货币，&#x60;BTC_USDT&#x60;中指&#x60;BTC&#x60;</value>
+        /// <value>Trade amount When &#x60;type&#x60; is &#x60;limit&#x60;, this is the base currency to trade (the currency being bought or sold), e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60;. When &#x60;type&#x60; is &#x60;market&#x60;, the meaning depends on the side: - &#x60;side&#x60;: &#x60;buy&#x60; refers to the quote currency, e.g. &#x60;USDT&#x60; in &#x60;BTC_USDT&#x60; - &#x60;side&#x60;: &#x60;sell&#x60; refers to the base currency, e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60;</value>
         [DataMember(Name="amount")]
         public string Amount { get; set; }
 

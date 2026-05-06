@@ -37,8 +37,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="memo">Payment tip (displayed on homepage only).</param>
         /// <param name="hasHistory">Whether historical records exist.</param>
         /// <param name="txid">Order ID.</param>
-        /// <param name="sRVTM">Timestamp of the latest message.</param>
-        /// <param name="orderStatus">Order Status.</param>
+        /// <param name="sRVTM">Timestamp of the latest message..</param>
+        /// <param name="orderStatus">Raw order status in DB; typical values: &#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;, &#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;..</param>
         public P2pChatListResult(List<P2pChatMessage> messages = default(List<P2pChatMessage>), string memo = default(string), bool hasHistory = default(bool), int txid = default(int), int sRVTM = default(int), string orderStatus = default(string))
         {
             this.Messages = messages;
@@ -78,16 +78,16 @@ namespace Io.Gate.GateApi.Model
         public int Txid { get; set; }
 
         /// <summary>
-        /// Timestamp of the latest message
+        /// Timestamp of the latest message.
         /// </summary>
-        /// <value>Timestamp of the latest message</value>
+        /// <value>Timestamp of the latest message.</value>
         [DataMember(Name="SRVTM")]
         public int SRVTM { get; set; }
 
         /// <summary>
-        /// Order Status
+        /// Raw order status in DB; typical values: &#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;, &#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;.
         /// </summary>
-        /// <value>Order Status</value>
+        /// <value>Raw order status in DB; typical values: &#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;, &#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;.</value>
         [DataMember(Name="order_status")]
         public string OrderStatus { get; set; }
 
