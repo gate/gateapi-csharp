@@ -311,7 +311,7 @@ This endpoint does not need any parameter.
 
 <a name="createotcbank"></a>
 # **CreateOtcBank**
-> OtcBankCreateResponse CreateOtcBank (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = null, string agentBankName = null, string agentBankSwift = null)
+> OtcBankCreateResponse CreateOtcBank (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string documentationFile, string remittanceLineNumber = null, string agentBankName = null, string agentBankSwift = null)
 
 Create bank card
 
@@ -342,7 +342,7 @@ namespace Example
             var bankAddress = "bankAddress_example";  // string | 
             var iban = "iban_example";  // string | 
             var swift = "swift_example";  // string | 
-            var documentationFile = null;  // System.IO.Stream | Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).
+            var documentationFile = "documentationFile_example";  // string | 开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）
             var remittanceLineNumber = "remittanceLineNumber_example";  // string |  (optional) 
             var agentBankName = "agentBankName_example";  // string |  (optional) 
             var agentBankSwift = "agentBankSwift_example";  // string |  (optional) 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
  **bankAddress** | **string**|  | 
  **iban** | **string**|  | 
  **swift** | **string**|  | 
- **documentationFile** | **System.IO.Stream****System.IO.Stream**| Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment). | 
+ **documentationFile** | **string**| 开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准） | 
  **remittanceLineNumber** | **string**|  | [optional] 
  **agentBankName** | **string**|  | [optional] 
  **agentBankSwift** | **string**|  | [optional] 

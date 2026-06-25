@@ -47,8 +47,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="remittanceLineNumber">remittanceLineNumber.</param>
         /// <param name="agentBankName">agentBankName.</param>
         /// <param name="agentBankSwift">agentBankSwift.</param>
-        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment). (required).</param>
-        public OtcBankCreateMultipartRequest(string bankAccountName = default(string), string bankName = default(string), string bankCountry = default(string), string bankAddress = default(string), string iban = default(string), string swift = default(string), string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string), System.IO.Stream documentationFile = default(System.IO.Stream))
+        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准） (required).</param>
+        public OtcBankCreateMultipartRequest(string bankAccountName = default(string), string bankName = default(string), string bankCountry = default(string), string bankAddress = default(string), string iban = default(string), string swift = default(string), string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string), string documentationFile = default(string))
         {
             // to ensure "bankAccountName" is required (not null)
             this.BankAccountName = bankAccountName ?? throw new ArgumentNullException("bankAccountName", "bankAccountName is a required property for OtcBankCreateMultipartRequest and cannot be null");
@@ -124,11 +124,11 @@ namespace Io.Gate.GateApi.Model
         public string AgentBankSwift { get; set; }
 
         /// <summary>
-        /// Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).
+        /// 开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）
         /// </summary>
-        /// <value>Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</value>
+        /// <value>开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</value>
         [DataMember(Name="documentation_file")]
-        public System.IO.Stream DocumentationFile { get; set; }
+        public string DocumentationFile { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

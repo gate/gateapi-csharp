@@ -122,12 +122,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
         /// <returns>OtcBankCreateResponse</returns>
-        OtcBankCreateResponse CreateOtcBank (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
+        OtcBankCreateResponse CreateOtcBank (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
 
         /// <summary>
         /// Create bank card
@@ -142,12 +142,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
         /// <returns>ApiResponse of OtcBankCreateResponse</returns>
-        ApiResponse<OtcBankCreateResponse> CreateOtcBankWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
+        ApiResponse<OtcBankCreateResponse> CreateOtcBankWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
         /// <summary>
         /// Delete bank card
         /// </summary>
@@ -506,12 +506,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
         /// <returns>Task of OtcBankCreateResponse</returns>
-        Task<OtcBankCreateResponse> CreateOtcBankAsync (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
+        Task<OtcBankCreateResponse> CreateOtcBankAsync (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
 
         /// <summary>
         /// Create bank card
@@ -526,12 +526,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
         /// <returns>Task of ApiResponse (OtcBankCreateResponse)</returns>
-        Task<ApiResponse<OtcBankCreateResponse>> CreateOtcBankAsyncWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
+        Task<ApiResponse<OtcBankCreateResponse>> CreateOtcBankAsyncWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
         /// <summary>
         /// Delete bank card
         /// </summary>
@@ -1376,12 +1376,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
         /// <returns>OtcBankCreateResponse</returns>
-        public OtcBankCreateResponse CreateOtcBank (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
+        public OtcBankCreateResponse CreateOtcBank (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
         {
              ApiResponse<OtcBankCreateResponse> localVarResponse = CreateOtcBankWithHttpInfo(bankAccountName, bankName, bankCountry, bankAddress, iban, swift, documentationFile, remittanceLineNumber, agentBankName, agentBankSwift);
              return localVarResponse.Data;
@@ -1397,12 +1397,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
         /// <returns>ApiResponse of OtcBankCreateResponse</returns>
-        public ApiResponse<OtcBankCreateResponse> CreateOtcBankWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
+        public ApiResponse<OtcBankCreateResponse> CreateOtcBankWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
         {
             // verify the required parameter 'bankAccountName' is set
             if (bankAccountName == null)
@@ -1467,7 +1467,7 @@ namespace Io.Gate.GateApi.Api
             {
                 localVarRequestOptions.FormParameters.Add("agent_bank_swift", ClientUtils.ParameterToString(agentBankSwift)); // form parameter
             }
-            localVarRequestOptions.FileParameters.Add("documentation_file", documentationFile);
+            localVarRequestOptions.FormParameters.Add("documentation_file", ClientUtils.ParameterToString(documentationFile)); // form parameter
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
@@ -1494,12 +1494,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
         /// <returns>Task of OtcBankCreateResponse</returns>
-        public async Task<OtcBankCreateResponse> CreateOtcBankAsync (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
+        public async Task<OtcBankCreateResponse> CreateOtcBankAsync (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
         {
              Io.Gate.GateApi.Client.ApiResponse<OtcBankCreateResponse> localVarResponse = await CreateOtcBankAsyncWithHttpInfo(bankAccountName, bankName, bankCountry, bankAddress, iban, swift, documentationFile, remittanceLineNumber, agentBankName, agentBankSwift);
              return localVarResponse.Data;
@@ -1516,12 +1516,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
         /// <returns>Task of ApiResponse (OtcBankCreateResponse)</returns>
-        public async Task<ApiResponse<OtcBankCreateResponse>> CreateOtcBankAsyncWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
+        public async Task<ApiResponse<OtcBankCreateResponse>> CreateOtcBankAsyncWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
         {
             // verify the required parameter 'bankAccountName' is set
             if (bankAccountName == null)
@@ -1587,7 +1587,7 @@ namespace Io.Gate.GateApi.Api
             {
                 localVarRequestOptions.FormParameters.Add("agent_bank_swift", ClientUtils.ParameterToString(agentBankSwift)); // form parameter
             }
-            localVarRequestOptions.FileParameters.Add("documentation_file", documentationFile);
+            localVarRequestOptions.FormParameters.Add("documentation_file", ClientUtils.ParameterToString(documentationFile)); // form parameter
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
