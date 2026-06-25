@@ -360,32 +360,34 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;SubAccountCrossMarginBalance&gt;</returns>
         ApiResponse<List<SubAccountCrossMarginBalance>> ListSubAccountCrossMarginBalancesWithHttpInfo (string subUid = default(string));
         /// <summary>
-        /// Query withdrawal address whitelist
+        /// Query saved address
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency</param>
+        /// <param name="currency">Currency (optional)</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
+        /// <param name="verified">1 means verified address, 0 means normal address, empty string means no limit (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
         /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>List&lt;SavedAddress&gt;</returns>
-        List<SavedAddress> ListSavedAddress (string currency, string chain = default(string), string limit = default(string), int? page = default(int?));
+        List<SavedAddress> ListSavedAddress (string currency = default(string), string chain = default(string), string verified = default(string), string limit = default(string), int? page = default(int?));
 
         /// <summary>
-        /// Query withdrawal address whitelist
+        /// Query saved address
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency</param>
+        /// <param name="currency">Currency (optional)</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
+        /// <param name="verified">1 means verified address, 0 means normal address, empty string means no limit (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
         /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>ApiResponse of List&lt;SavedAddress&gt;</returns>
-        ApiResponse<List<SavedAddress>> ListSavedAddressWithHttpInfo (string currency, string chain = default(string), string limit = default(string), int? page = default(int?));
+        ApiResponse<List<SavedAddress>> ListSavedAddressWithHttpInfo (string currency = default(string), string chain = default(string), string verified = default(string), string limit = default(string), int? page = default(int?));
         /// <summary>
         /// Query personal trading fees
         /// </summary>
@@ -887,32 +889,34 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;SubAccountCrossMarginBalance&gt;)</returns>
         Task<ApiResponse<List<SubAccountCrossMarginBalance>>> ListSubAccountCrossMarginBalancesAsyncWithHttpInfo (string subUid = default(string));
         /// <summary>
-        /// Query withdrawal address whitelist
+        /// Query saved address
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency</param>
+        /// <param name="currency">Currency (optional)</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
+        /// <param name="verified">1 means verified address, 0 means normal address, empty string means no limit (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
         /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>Task of List&lt;SavedAddress&gt;</returns>
-        Task<List<SavedAddress>> ListSavedAddressAsync (string currency, string chain = default(string), string limit = default(string), int? page = default(int?));
+        Task<List<SavedAddress>> ListSavedAddressAsync (string currency = default(string), string chain = default(string), string verified = default(string), string limit = default(string), int? page = default(int?));
 
         /// <summary>
-        /// Query withdrawal address whitelist
+        /// Query saved address
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency</param>
+        /// <param name="currency">Currency (optional)</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
+        /// <param name="verified">1 means verified address, 0 means normal address, empty string means no limit (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
         /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>Task of ApiResponse (List&lt;SavedAddress&gt;)</returns>
-        Task<ApiResponse<List<SavedAddress>>> ListSavedAddressAsyncWithHttpInfo (string currency, string chain = default(string), string limit = default(string), int? page = default(int?));
+        Task<ApiResponse<List<SavedAddress>>> ListSavedAddressAsyncWithHttpInfo (string currency = default(string), string chain = default(string), string verified = default(string), string limit = default(string), int? page = default(int?));
         /// <summary>
         /// Query personal trading fees
         /// </summary>
@@ -3043,35 +3047,33 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query withdrawal address whitelist 
+        /// Query saved address 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency</param>
+        /// <param name="currency">Currency (optional)</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
+        /// <param name="verified">1 means verified address, 0 means normal address, empty string means no limit (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
         /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>List&lt;SavedAddress&gt;</returns>
-        public List<SavedAddress> ListSavedAddress (string currency, string chain = default(string), string limit = default(string), int? page = default(int?))
+        public List<SavedAddress> ListSavedAddress (string currency = default(string), string chain = default(string), string verified = default(string), string limit = default(string), int? page = default(int?))
         {
-             ApiResponse<List<SavedAddress>> localVarResponse = ListSavedAddressWithHttpInfo(currency, chain, limit, page);
+             ApiResponse<List<SavedAddress>> localVarResponse = ListSavedAddressWithHttpInfo(currency, chain, verified, limit, page);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Query withdrawal address whitelist 
+        /// Query saved address 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency</param>
+        /// <param name="currency">Currency (optional)</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
+        /// <param name="verified">1 means verified address, 0 means normal address, empty string means no limit (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
         /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>ApiResponse of List&lt;SavedAddress&gt;</returns>
-        public ApiResponse<List<SavedAddress>> ListSavedAddressWithHttpInfo (string currency, string chain = default(string), string limit = default(string), int? page = default(int?))
+        public ApiResponse<List<SavedAddress>> ListSavedAddressWithHttpInfo (string currency = default(string), string chain = default(string), string verified = default(string), string limit = default(string), int? page = default(int?))
         {
-            // verify the required parameter 'currency' is set
-            if (currency == null)
-                throw new ApiException(400, "Missing required parameter 'currency' when calling WalletApi->ListSavedAddress");
-
             RequestOptions localVarRequestOptions = new RequestOptions();
 
             string[] _contentTypes = {
@@ -3088,10 +3090,17 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
             if (chain != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "chain", chain));
+            }
+            if (verified != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "verified", verified));
             }
             if (limit != null)
             {
@@ -3118,36 +3127,34 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query withdrawal address whitelist 
+        /// Query saved address 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency</param>
+        /// <param name="currency">Currency (optional)</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
+        /// <param name="verified">1 means verified address, 0 means normal address, empty string means no limit (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
         /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>Task of List&lt;SavedAddress&gt;</returns>
-        public async Task<List<SavedAddress>> ListSavedAddressAsync (string currency, string chain = default(string), string limit = default(string), int? page = default(int?))
+        public async Task<List<SavedAddress>> ListSavedAddressAsync (string currency = default(string), string chain = default(string), string verified = default(string), string limit = default(string), int? page = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<SavedAddress>> localVarResponse = await ListSavedAddressAsyncWithHttpInfo(currency, chain, limit, page);
+             Io.Gate.GateApi.Client.ApiResponse<List<SavedAddress>> localVarResponse = await ListSavedAddressAsyncWithHttpInfo(currency, chain, verified, limit, page);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Query withdrawal address whitelist 
+        /// Query saved address 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency</param>
+        /// <param name="currency">Currency (optional)</param>
         /// <param name="chain">Chain name (optional, default to &quot;&quot;)</param>
+        /// <param name="verified">1 means verified address, 0 means normal address, empty string means no limit (optional, default to &quot;&quot;)</param>
         /// <param name="limit">Maximum number returned, up to 100 (optional, default to &quot;50&quot;)</param>
         /// <param name="page">page number (optional, default to 1)</param>
         /// <returns>Task of ApiResponse (List&lt;SavedAddress&gt;)</returns>
-        public async Task<ApiResponse<List<SavedAddress>>> ListSavedAddressAsyncWithHttpInfo (string currency, string chain = default(string), string limit = default(string), int? page = default(int?))
+        public async Task<ApiResponse<List<SavedAddress>>> ListSavedAddressAsyncWithHttpInfo (string currency = default(string), string chain = default(string), string verified = default(string), string limit = default(string), int? page = default(int?))
         {
-            // verify the required parameter 'currency' is set
-            if (currency == null)
-                throw new ApiException(400, "Missing required parameter 'currency' when calling WalletApi->ListSavedAddress");
-
 
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3165,10 +3172,17 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
-            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
             if (chain != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "chain", chain));
+            }
+            if (verified != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "verified", verified));
             }
             if (limit != null)
             {

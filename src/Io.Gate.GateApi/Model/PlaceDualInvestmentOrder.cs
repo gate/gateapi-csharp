@@ -35,7 +35,6 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="id">Order ID.</param>
         /// <param name="planId">Product ID.</param>
-        /// <param name="copies">Units.</param>
         /// <param name="investAmount">Investment Quantity.</param>
         /// <param name="settlementAmount">Settlement Quantity.</param>
         /// <param name="createTime">Created time.</param>
@@ -50,11 +49,10 @@ namespace Io.Gate.GateApi.Model
         /// <param name="apySettlement">Settlement Annual Yield.</param>
         /// <param name="deliveryTime">Settlement time.</param>
         /// <param name="text">Custom order information.</param>
-        public PlaceDualInvestmentOrder(int id = default(int), int planId = default(int), string copies = default(string), string investAmount = default(string), string settlementAmount = default(string), int createTime = default(int), int completeTime = default(int), string status = default(string), string investCurrency = default(string), string exerciseCurrency = default(string), string exercisePrice = default(string), string settlementPrice = default(string), string settlementCurrency = default(string), string apyDisplay = default(string), string apySettlement = default(string), int deliveryTime = default(int), string text = default(string))
+        public PlaceDualInvestmentOrder(int id = default(int), int planId = default(int), string investAmount = default(string), string settlementAmount = default(string), int createTime = default(int), int completeTime = default(int), string status = default(string), string investCurrency = default(string), string exerciseCurrency = default(string), string exercisePrice = default(string), string settlementPrice = default(string), string settlementCurrency = default(string), string apyDisplay = default(string), string apySettlement = default(string), int deliveryTime = default(int), string text = default(string))
         {
             this.Id = id;
             this.PlanId = planId;
-            this.Copies = copies;
             this.InvestAmount = investAmount;
             this.SettlementAmount = settlementAmount;
             this.CreateTime = createTime;
@@ -84,13 +82,6 @@ namespace Io.Gate.GateApi.Model
         /// <value>Product ID</value>
         [DataMember(Name="plan_id")]
         public int PlanId { get; set; }
-
-        /// <summary>
-        /// Units
-        /// </summary>
-        /// <value>Units</value>
-        [DataMember(Name="copies")]
-        public string Copies { get; set; }
 
         /// <summary>
         /// Investment Quantity
@@ -200,7 +191,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class PlaceDualInvestmentOrder {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  PlanId: ").Append(PlanId).Append("\n");
-            sb.Append("  Copies: ").Append(Copies).Append("\n");
             sb.Append("  InvestAmount: ").Append(InvestAmount).Append("\n");
             sb.Append("  SettlementAmount: ").Append(SettlementAmount).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
@@ -256,11 +246,6 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.PlanId == input.PlanId ||
                     this.PlanId.Equals(input.PlanId)
-                ) && 
-                (
-                    this.Copies == input.Copies ||
-                    (this.Copies != null &&
-                    this.Copies.Equals(input.Copies))
                 ) && 
                 (
                     this.InvestAmount == input.InvestAmount ||
@@ -342,8 +327,6 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
                 hashCode = hashCode * 59 + this.PlanId.GetHashCode();
-                if (this.Copies != null)
-                    hashCode = hashCode * 59 + this.Copies.GetHashCode();
                 if (this.InvestAmount != null)
                     hashCode = hashCode * 59 + this.InvestAmount.GetHashCode();
                 if (this.SettlementAmount != null)

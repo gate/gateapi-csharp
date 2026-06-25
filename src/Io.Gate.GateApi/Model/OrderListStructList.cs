@@ -42,7 +42,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="coin">Staked and redeemed currencies (required).</param>
         /// <param name="amount">Amount (required).</param>
         /// <param name="type">Type 0-Staking 1-Redemption (required).</param>
-        /// <param name="status">Status (required).</param>
+        /// <param name="status">Status. 1 - success, 3 - delayed redemption in progress, 6 - redemption cancellation order (required).</param>
         /// <param name="redeemStamp">Redemption credit time (required).</param>
         /// <param name="createStamp">Order time (required).</param>
         /// <param name="exchangeAmount">Exchange rate (required).</param>
@@ -93,9 +93,9 @@ namespace Io.Gate.GateApi.Model
         public int Type { get; set; }
 
         /// <summary>
-        /// Status
+        /// Status. 1 - success, 3 - delayed redemption in progress, 6 - redemption cancellation order
         /// </summary>
-        /// <value>Status</value>
+        /// <value>Status. 1 - success, 3 - delayed redemption in progress, 6 - redemption cancellation order</value>
         [DataMember(Name="status")]
         public int Status { get; set; }
 

@@ -33,11 +33,29 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PositionHistoryListData" /> class.
         /// </summary>
+        /// <param name="total">Total amount.</param>
+        /// <param name="totalPage">Total pages.</param>
         /// <param name="list">Query historical position list.</param>
-        public PositionHistoryListData(List<PositionHistoryListDataList> list = default(List<PositionHistoryListDataList>))
+        public PositionHistoryListData(int total = default(int), int totalPage = default(int), List<PositionHistoryListDataList> list = default(List<PositionHistoryListDataList>))
         {
+            this.Total = total;
+            this.TotalPage = totalPage;
             this.List = list;
         }
+
+        /// <summary>
+        /// Total amount
+        /// </summary>
+        /// <value>Total amount</value>
+        [DataMember(Name="total")]
+        public int Total { get; set; }
+
+        /// <summary>
+        /// Total pages
+        /// </summary>
+        /// <value>Total pages</value>
+        [DataMember(Name="total_page")]
+        public int TotalPage { get; set; }
 
         /// <summary>
         /// Query historical position list
@@ -54,6 +72,8 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PositionHistoryListData {\n");
+            sb.Append("  Total: ").Append(Total).Append("\n");
+            sb.Append("  TotalPage: ").Append(TotalPage).Append("\n");
             sb.Append("  List: ").Append(List).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -90,6 +110,14 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
+                    this.Total == input.Total ||
+                    this.Total.Equals(input.Total)
+                ) && 
+                (
+                    this.TotalPage == input.TotalPage ||
+                    this.TotalPage.Equals(input.TotalPage)
+                ) && 
+                (
                     this.List == input.List ||
                     this.List != null &&
                     input.List != null &&
@@ -106,6 +134,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = hashCode * 59 + this.Total.GetHashCode();
+                hashCode = hashCode * 59 + this.TotalPage.GetHashCode();
                 if (this.List != null)
                     hashCode = hashCode * 59 + this.List.GetHashCode();
                 return hashCode;

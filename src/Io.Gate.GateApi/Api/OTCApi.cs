@@ -91,48 +91,193 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of OtcStableCoinOrderCreateResponse</returns>
         ApiResponse<OtcStableCoinOrderCreateResponse> CreateStableCoinOrderWithHttpInfo (OtcStableCoinOrderRequest otcStableCoinOrderRequest);
         /// <summary>
-        /// Get user&#39;s default bank account information
-        /// </summary>
-        /// <remarks>
-        /// Get user&#39;s default bank account information for order placement
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>OtcUserDefaultBankResponse</returns>
-        OtcUserDefaultBankResponse GetUserDefaultBank ();
-
-        /// <summary>
-        /// Get user&#39;s default bank account information
-        /// </summary>
-        /// <remarks>
-        /// Get user&#39;s default bank account information for order placement
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of OtcUserDefaultBankResponse</returns>
-        ApiResponse<OtcUserDefaultBankResponse> GetUserDefaultBankWithHttpInfo ();
-        /// <summary>
         /// Get user bank card list
         /// </summary>
         /// <remarks>
-        /// Get user bank card list for selecting bank card when placing orders
+        /// Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>OtcBankListResponse</returns>
-        OtcBankListResponse GetBankList ();
+        OtcBankListResponse GetBankListInnerPath ();
 
         /// <summary>
         /// Get user bank card list
         /// </summary>
         /// <remarks>
-        /// Get user bank card list for selecting bank card when placing orders
+        /// Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of OtcBankListResponse</returns>
-        ApiResponse<OtcBankListResponse> GetBankListWithHttpInfo ();
+        ApiResponse<OtcBankListResponse> GetBankListInnerPathWithHttpInfo ();
         /// <summary>
-        /// Mark fiat order as paid
+        /// Create bank card
         /// </summary>
         /// <remarks>
-        /// Mark fiat order as paid
+        /// Bind a bank card. Under the Global entity, an account with a non-matching name may enter manual review (&#x60;status&#x60; pending) and require subsequent supplementary materials. Corresponding Inner: &#x60;POST /bank/create&#x60;. Fields and protocol are subject to the production form/gateway; in some environments &#x60;bank_account_name&#x60; is passed Base64-encoded, see the integration notes for details.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankAccountName"></param>
+        /// <param name="bankName"></param>
+        /// <param name="bankCountry"></param>
+        /// <param name="bankAddress"></param>
+        /// <param name="iban"></param>
+        /// <param name="swift"></param>
+        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="remittanceLineNumber"> (optional)</param>
+        /// <param name="agentBankName"> (optional)</param>
+        /// <param name="agentBankSwift"> (optional)</param>
+        /// <returns>OtcBankCreateResponse</returns>
+        OtcBankCreateResponse CreateOtcBank (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
+
+        /// <summary>
+        /// Create bank card
+        /// </summary>
+        /// <remarks>
+        /// Bind a bank card. Under the Global entity, an account with a non-matching name may enter manual review (&#x60;status&#x60; pending) and require subsequent supplementary materials. Corresponding Inner: &#x60;POST /bank/create&#x60;. Fields and protocol are subject to the production form/gateway; in some environments &#x60;bank_account_name&#x60; is passed Base64-encoded, see the integration notes for details.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankAccountName"></param>
+        /// <param name="bankName"></param>
+        /// <param name="bankCountry"></param>
+        /// <param name="bankAddress"></param>
+        /// <param name="iban"></param>
+        /// <param name="swift"></param>
+        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="remittanceLineNumber"> (optional)</param>
+        /// <param name="agentBankName"> (optional)</param>
+        /// <param name="agentBankSwift"> (optional)</param>
+        /// <returns>ApiResponse of OtcBankCreateResponse</returns>
+        ApiResponse<OtcBankCreateResponse> CreateOtcBankWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
+        /// <summary>
+        /// Delete bank card
+        /// </summary>
+        /// <remarks>
+        /// Delete the specified bank card. Corresponds to Inner: &#x60;POST /bank/delete&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>OtcActionResponse</returns>
+        OtcActionResponse DeleteOtcBank (OtcBankIdRequest otcBankIdRequest);
+
+        /// <summary>
+        /// Delete bank card
+        /// </summary>
+        /// <remarks>
+        /// Delete the specified bank card. Corresponds to Inner: &#x60;POST /bank/delete&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        ApiResponse<OtcActionResponse> DeleteOtcBankWithHttpInfo (OtcBankIdRequest otcBankIdRequest);
+        /// <summary>
+        /// Set default bank card
+        /// </summary>
+        /// <remarks>
+        /// Set the specified bank card as default. Corresponds to Inner: &#x60;POST /bank/set_default&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>OtcActionResponse</returns>
+        OtcActionResponse SetDefaultOtcBank (OtcBankIdRequest otcBankIdRequest);
+
+        /// <summary>
+        /// Set default bank card
+        /// </summary>
+        /// <remarks>
+        /// Set the specified bank card as default. Corresponds to Inner: &#x60;POST /bank/set_default&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        ApiResponse<OtcActionResponse> SetDefaultOtcBankWithHttpInfo (OtcBankIdRequest otcBankIdRequest);
+        /// <summary>
+        /// Query the checklist of materials to supplement for a bank card
+        /// </summary>
+        /// <remarks>
+        /// **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
+        /// <returns>OtcBankSupplementChecklistResponse</returns>
+        OtcBankSupplementChecklistResponse GetOtcBankSupplementChecklist (string bankId);
+
+        /// <summary>
+        /// Query the checklist of materials to supplement for a bank card
+        /// </summary>
+        /// <remarks>
+        /// **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
+        /// <returns>ApiResponse of OtcBankSupplementChecklistResponse</returns>
+        ApiResponse<OtcBankSupplementChecklistResponse> GetOtcBankSupplementChecklistWithHttpInfo (string bankId);
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Personal)
+        /// </summary>
+        /// <remarks>
+        /// **Personal professional verification (type&#x3D;1)** users submit non-same-person/supplementary materials. Must match &#x60;user_type&#x3D;personal&#x60; returned by &#x60;GET /otc/bank/bank_supplement_checklist?bank_id&#x3D;&#x60;, otherwise the request is rejected. **multipart/form-data** is recommended: each material item is a separate file field, with field names matching the checklist &#x60;code&#x60; (&#x60;id_document_front&#x60;, &#x60;id_document_back&#x60;, &#x60;address_proof&#x60;).
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="idDocumentFront">ID document front-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="idDocumentBack">ID document back-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="addressProof">Proof-of-address file content (multipart file field, binary/Base64)</param>
+        /// <returns>OtcActionResponse</returns>
+        OtcActionResponse SubmitOtcBankPersonalSupplement (string bankId, string idDocumentFront, string idDocumentBack, string addressProof);
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Personal)
+        /// </summary>
+        /// <remarks>
+        /// **Personal professional verification (type&#x3D;1)** users submit non-same-person/supplementary materials. Must match &#x60;user_type&#x3D;personal&#x60; returned by &#x60;GET /otc/bank/bank_supplement_checklist?bank_id&#x3D;&#x60;, otherwise the request is rejected. **multipart/form-data** is recommended: each material item is a separate file field, with field names matching the checklist &#x60;code&#x60; (&#x60;id_document_front&#x60;, &#x60;id_document_back&#x60;, &#x60;address_proof&#x60;).
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="idDocumentFront">ID document front-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="idDocumentBack">ID document back-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="addressProof">Proof-of-address file content (multipart file field, binary/Base64)</param>
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        ApiResponse<OtcActionResponse> SubmitOtcBankPersonalSupplementWithHttpInfo (string bankId, string idDocumentFront, string idDocumentBack, string addressProof);
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Enterprise)
+        /// </summary>
+        /// <remarks>
+        /// **Enterprise professional verification (type&#x3D;2)** users submit supplementary materials. Must match &#x60;user_type&#x3D;enterprise&#x60; returned by the checklist. **multipart** file field names: &#x60;certificate&#x60;, &#x60;share_holders&#x60;, &#x60;passport&#x60;, &#x60;share_holding_structure&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="certificate">Business license / registration certificate file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHolders">Register of shareholders file content (multipart file field, binary/Base64)</param>
+        /// <param name="passport">Legal representative / shareholder passport file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHoldingStructure">Ownership structure chart file content (multipart file field, binary/Base64)</param>
+        /// <param name="uid"> (optional)</param>
+        /// <param name="fundsStatement">Proof-of-funds file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <param name="additional">Other supplementary material file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <returns>OtcActionResponse</returns>
+        OtcActionResponse SubmitOtcBankEnterpriseSupplement (string bankId, string certificate, string shareHolders, string passport, string shareHoldingStructure, string uid = default(string), string fundsStatement = default(string), string additional = default(string));
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Enterprise)
+        /// </summary>
+        /// <remarks>
+        /// **Enterprise professional verification (type&#x3D;2)** users submit supplementary materials. Must match &#x60;user_type&#x3D;enterprise&#x60; returned by the checklist. **multipart** file field names: &#x60;certificate&#x60;, &#x60;share_holders&#x60;, &#x60;passport&#x60;, &#x60;share_holding_structure&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="certificate">Business license / registration certificate file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHolders">Register of shareholders file content (multipart file field, binary/Base64)</param>
+        /// <param name="passport">Legal representative / shareholder passport file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHoldingStructure">Ownership structure chart file content (multipart file field, binary/Base64)</param>
+        /// <param name="uid"> (optional)</param>
+        /// <param name="fundsStatement">Proof-of-funds file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <param name="additional">Other supplementary material file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        ApiResponse<OtcActionResponse> SubmitOtcBankEnterpriseSupplementWithHttpInfo (string bankId, string certificate, string shareHolders, string passport, string shareHoldingStructure, string uid = default(string), string fundsStatement = default(string), string additional = default(string));
+        /// <summary>
+        /// Mark fiat order as paid (deposit confirmation)
+        /// </summary>
+        /// <remarks>
+        /// Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -140,10 +285,10 @@ namespace Io.Gate.GateApi.Api
         OtcActionResponse MarkOtcOrderPaid (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest);
 
         /// <summary>
-        /// Mark fiat order as paid
+        /// Mark fiat order as paid (deposit confirmation)
         /// </summary>
         /// <remarks>
-        /// Mark fiat order as paid
+        /// Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -330,48 +475,193 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (OtcStableCoinOrderCreateResponse)</returns>
         Task<ApiResponse<OtcStableCoinOrderCreateResponse>> CreateStableCoinOrderAsyncWithHttpInfo (OtcStableCoinOrderRequest otcStableCoinOrderRequest);
         /// <summary>
-        /// Get user&#39;s default bank account information
-        /// </summary>
-        /// <remarks>
-        /// Get user&#39;s default bank account information for order placement
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of OtcUserDefaultBankResponse</returns>
-        Task<OtcUserDefaultBankResponse> GetUserDefaultBankAsync ();
-
-        /// <summary>
-        /// Get user&#39;s default bank account information
-        /// </summary>
-        /// <remarks>
-        /// Get user&#39;s default bank account information for order placement
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (OtcUserDefaultBankResponse)</returns>
-        Task<ApiResponse<OtcUserDefaultBankResponse>> GetUserDefaultBankAsyncWithHttpInfo ();
-        /// <summary>
         /// Get user bank card list
         /// </summary>
         /// <remarks>
-        /// Get user bank card list for selecting bank card when placing orders
+        /// Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of OtcBankListResponse</returns>
-        Task<OtcBankListResponse> GetBankListAsync ();
+        Task<OtcBankListResponse> GetBankListInnerPathAsync ();
 
         /// <summary>
         /// Get user bank card list
         /// </summary>
         /// <remarks>
-        /// Get user bank card list for selecting bank card when placing orders
+        /// Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (OtcBankListResponse)</returns>
-        Task<ApiResponse<OtcBankListResponse>> GetBankListAsyncWithHttpInfo ();
+        Task<ApiResponse<OtcBankListResponse>> GetBankListInnerPathAsyncWithHttpInfo ();
         /// <summary>
-        /// Mark fiat order as paid
+        /// Create bank card
         /// </summary>
         /// <remarks>
-        /// Mark fiat order as paid
+        /// Bind a bank card. Under the Global entity, an account with a non-matching name may enter manual review (&#x60;status&#x60; pending) and require subsequent supplementary materials. Corresponding Inner: &#x60;POST /bank/create&#x60;. Fields and protocol are subject to the production form/gateway; in some environments &#x60;bank_account_name&#x60; is passed Base64-encoded, see the integration notes for details.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankAccountName"></param>
+        /// <param name="bankName"></param>
+        /// <param name="bankCountry"></param>
+        /// <param name="bankAddress"></param>
+        /// <param name="iban"></param>
+        /// <param name="swift"></param>
+        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="remittanceLineNumber"> (optional)</param>
+        /// <param name="agentBankName"> (optional)</param>
+        /// <param name="agentBankSwift"> (optional)</param>
+        /// <returns>Task of OtcBankCreateResponse</returns>
+        Task<OtcBankCreateResponse> CreateOtcBankAsync (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
+
+        /// <summary>
+        /// Create bank card
+        /// </summary>
+        /// <remarks>
+        /// Bind a bank card. Under the Global entity, an account with a non-matching name may enter manual review (&#x60;status&#x60; pending) and require subsequent supplementary materials. Corresponding Inner: &#x60;POST /bank/create&#x60;. Fields and protocol are subject to the production form/gateway; in some environments &#x60;bank_account_name&#x60; is passed Base64-encoded, see the integration notes for details.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankAccountName"></param>
+        /// <param name="bankName"></param>
+        /// <param name="bankCountry"></param>
+        /// <param name="bankAddress"></param>
+        /// <param name="iban"></param>
+        /// <param name="swift"></param>
+        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="remittanceLineNumber"> (optional)</param>
+        /// <param name="agentBankName"> (optional)</param>
+        /// <param name="agentBankSwift"> (optional)</param>
+        /// <returns>Task of ApiResponse (OtcBankCreateResponse)</returns>
+        Task<ApiResponse<OtcBankCreateResponse>> CreateOtcBankAsyncWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string));
+        /// <summary>
+        /// Delete bank card
+        /// </summary>
+        /// <remarks>
+        /// Delete the specified bank card. Corresponds to Inner: &#x60;POST /bank/delete&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>Task of OtcActionResponse</returns>
+        Task<OtcActionResponse> DeleteOtcBankAsync (OtcBankIdRequest otcBankIdRequest);
+
+        /// <summary>
+        /// Delete bank card
+        /// </summary>
+        /// <remarks>
+        /// Delete the specified bank card. Corresponds to Inner: &#x60;POST /bank/delete&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        Task<ApiResponse<OtcActionResponse>> DeleteOtcBankAsyncWithHttpInfo (OtcBankIdRequest otcBankIdRequest);
+        /// <summary>
+        /// Set default bank card
+        /// </summary>
+        /// <remarks>
+        /// Set the specified bank card as default. Corresponds to Inner: &#x60;POST /bank/set_default&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>Task of OtcActionResponse</returns>
+        Task<OtcActionResponse> SetDefaultOtcBankAsync (OtcBankIdRequest otcBankIdRequest);
+
+        /// <summary>
+        /// Set default bank card
+        /// </summary>
+        /// <remarks>
+        /// Set the specified bank card as default. Corresponds to Inner: &#x60;POST /bank/set_default&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        Task<ApiResponse<OtcActionResponse>> SetDefaultOtcBankAsyncWithHttpInfo (OtcBankIdRequest otcBankIdRequest);
+        /// <summary>
+        /// Query the checklist of materials to supplement for a bank card
+        /// </summary>
+        /// <remarks>
+        /// **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
+        /// <returns>Task of OtcBankSupplementChecklistResponse</returns>
+        Task<OtcBankSupplementChecklistResponse> GetOtcBankSupplementChecklistAsync (string bankId);
+
+        /// <summary>
+        /// Query the checklist of materials to supplement for a bank card
+        /// </summary>
+        /// <remarks>
+        /// **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
+        /// <returns>Task of ApiResponse (OtcBankSupplementChecklistResponse)</returns>
+        Task<ApiResponse<OtcBankSupplementChecklistResponse>> GetOtcBankSupplementChecklistAsyncWithHttpInfo (string bankId);
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Personal)
+        /// </summary>
+        /// <remarks>
+        /// **Personal professional verification (type&#x3D;1)** users submit non-same-person/supplementary materials. Must match &#x60;user_type&#x3D;personal&#x60; returned by &#x60;GET /otc/bank/bank_supplement_checklist?bank_id&#x3D;&#x60;, otherwise the request is rejected. **multipart/form-data** is recommended: each material item is a separate file field, with field names matching the checklist &#x60;code&#x60; (&#x60;id_document_front&#x60;, &#x60;id_document_back&#x60;, &#x60;address_proof&#x60;).
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="idDocumentFront">ID document front-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="idDocumentBack">ID document back-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="addressProof">Proof-of-address file content (multipart file field, binary/Base64)</param>
+        /// <returns>Task of OtcActionResponse</returns>
+        Task<OtcActionResponse> SubmitOtcBankPersonalSupplementAsync (string bankId, string idDocumentFront, string idDocumentBack, string addressProof);
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Personal)
+        /// </summary>
+        /// <remarks>
+        /// **Personal professional verification (type&#x3D;1)** users submit non-same-person/supplementary materials. Must match &#x60;user_type&#x3D;personal&#x60; returned by &#x60;GET /otc/bank/bank_supplement_checklist?bank_id&#x3D;&#x60;, otherwise the request is rejected. **multipart/form-data** is recommended: each material item is a separate file field, with field names matching the checklist &#x60;code&#x60; (&#x60;id_document_front&#x60;, &#x60;id_document_back&#x60;, &#x60;address_proof&#x60;).
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="idDocumentFront">ID document front-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="idDocumentBack">ID document back-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="addressProof">Proof-of-address file content (multipart file field, binary/Base64)</param>
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        Task<ApiResponse<OtcActionResponse>> SubmitOtcBankPersonalSupplementAsyncWithHttpInfo (string bankId, string idDocumentFront, string idDocumentBack, string addressProof);
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Enterprise)
+        /// </summary>
+        /// <remarks>
+        /// **Enterprise professional verification (type&#x3D;2)** users submit supplementary materials. Must match &#x60;user_type&#x3D;enterprise&#x60; returned by the checklist. **multipart** file field names: &#x60;certificate&#x60;, &#x60;share_holders&#x60;, &#x60;passport&#x60;, &#x60;share_holding_structure&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="certificate">Business license / registration certificate file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHolders">Register of shareholders file content (multipart file field, binary/Base64)</param>
+        /// <param name="passport">Legal representative / shareholder passport file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHoldingStructure">Ownership structure chart file content (multipart file field, binary/Base64)</param>
+        /// <param name="uid"> (optional)</param>
+        /// <param name="fundsStatement">Proof-of-funds file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <param name="additional">Other supplementary material file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <returns>Task of OtcActionResponse</returns>
+        Task<OtcActionResponse> SubmitOtcBankEnterpriseSupplementAsync (string bankId, string certificate, string shareHolders, string passport, string shareHoldingStructure, string uid = default(string), string fundsStatement = default(string), string additional = default(string));
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Enterprise)
+        /// </summary>
+        /// <remarks>
+        /// **Enterprise professional verification (type&#x3D;2)** users submit supplementary materials. Must match &#x60;user_type&#x3D;enterprise&#x60; returned by the checklist. **multipart** file field names: &#x60;certificate&#x60;, &#x60;share_holders&#x60;, &#x60;passport&#x60;, &#x60;share_holding_structure&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="certificate">Business license / registration certificate file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHolders">Register of shareholders file content (multipart file field, binary/Base64)</param>
+        /// <param name="passport">Legal representative / shareholder passport file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHoldingStructure">Ownership structure chart file content (multipart file field, binary/Base64)</param>
+        /// <param name="uid"> (optional)</param>
+        /// <param name="fundsStatement">Proof-of-funds file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <param name="additional">Other supplementary material file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        Task<ApiResponse<OtcActionResponse>> SubmitOtcBankEnterpriseSupplementAsyncWithHttpInfo (string bankId, string certificate, string shareHolders, string passport, string shareHoldingStructure, string uid = default(string), string fundsStatement = default(string), string additional = default(string));
+        /// <summary>
+        /// Mark fiat order as paid (deposit confirmation)
+        /// </summary>
+        /// <remarks>
+        /// Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -379,10 +669,10 @@ namespace Io.Gate.GateApi.Api
         Task<OtcActionResponse> MarkOtcOrderPaidAsync (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest);
 
         /// <summary>
-        /// Mark fiat order as paid
+        /// Mark fiat order as paid (deposit confirmation)
         /// </summary>
         /// <remarks>
-        /// Mark fiat order as paid
+        /// Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -974,125 +1264,22 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get user&#39;s default bank account information Get user&#39;s default bank account information for order placement
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>OtcUserDefaultBankResponse</returns>
-        public OtcUserDefaultBankResponse GetUserDefaultBank ()
-        {
-             ApiResponse<OtcUserDefaultBankResponse> localVarResponse = GetUserDefaultBankWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get user&#39;s default bank account information Get user&#39;s default bank account information for order placement
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of OtcUserDefaultBankResponse</returns>
-        public ApiResponse<OtcUserDefaultBankResponse> GetUserDefaultBankWithHttpInfo ()
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<OtcUserDefaultBankResponse>("/otc/get_user_def_bank", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetUserDefaultBank", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get user&#39;s default bank account information Get user&#39;s default bank account information for order placement
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of OtcUserDefaultBankResponse</returns>
-        public async Task<OtcUserDefaultBankResponse> GetUserDefaultBankAsync ()
-        {
-             Io.Gate.GateApi.Client.ApiResponse<OtcUserDefaultBankResponse> localVarResponse = await GetUserDefaultBankAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get user&#39;s default bank account information Get user&#39;s default bank account information for order placement
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (OtcUserDefaultBankResponse)</returns>
-        public async Task<ApiResponse<OtcUserDefaultBankResponse>> GetUserDefaultBankAsyncWithHttpInfo ()
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<OtcUserDefaultBankResponse>("/otc/get_user_def_bank", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetUserDefaultBank", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get user bank card list Get user bank card list for selecting bank card when placing orders
+        /// Get user bank card list Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>OtcBankListResponse</returns>
-        public OtcBankListResponse GetBankList ()
+        public OtcBankListResponse GetBankListInnerPath ()
         {
-             ApiResponse<OtcBankListResponse> localVarResponse = GetBankListWithHttpInfo();
+             ApiResponse<OtcBankListResponse> localVarResponse = GetBankListInnerPathWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get user bank card list Get user bank card list for selecting bank card when placing orders
+        /// Get user bank card list Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of OtcBankListResponse</returns>
-        public ApiResponse<OtcBankListResponse> GetBankListWithHttpInfo ()
+        public ApiResponse<OtcBankListResponse> GetBankListInnerPathWithHttpInfo ()
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -1115,11 +1302,11 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<OtcBankListResponse>("/otc/bank_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<OtcBankListResponse>("/otc/bank/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBankList", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetBankListInnerPath", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1127,23 +1314,23 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get user bank card list Get user bank card list for selecting bank card when placing orders
+        /// Get user bank card list Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of OtcBankListResponse</returns>
-        public async Task<OtcBankListResponse> GetBankListAsync ()
+        public async Task<OtcBankListResponse> GetBankListInnerPathAsync ()
         {
-             Io.Gate.GateApi.Client.ApiResponse<OtcBankListResponse> localVarResponse = await GetBankListAsyncWithHttpInfo();
+             Io.Gate.GateApi.Client.ApiResponse<OtcBankListResponse> localVarResponse = await GetBankListInnerPathAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get user bank card list Get user bank card list for selecting bank card when placing orders
+        /// Get user bank card list Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (OtcBankListResponse)</returns>
-        public async Task<ApiResponse<OtcBankListResponse>> GetBankListAsyncWithHttpInfo ()
+        public async Task<ApiResponse<OtcBankListResponse>> GetBankListInnerPathAsyncWithHttpInfo ()
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -1168,11 +1355,11 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<OtcBankListResponse>("/otc/bank_list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OtcBankListResponse>("/otc/bank/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBankList", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetBankListInnerPath", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1180,7 +1367,973 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Mark fiat order as paid Mark fiat order as paid
+        /// Create bank card Bind a bank card. Under the Global entity, an account with a non-matching name may enter manual review (&#x60;status&#x60; pending) and require subsequent supplementary materials. Corresponding Inner: &#x60;POST /bank/create&#x60;. Fields and protocol are subject to the production form/gateway; in some environments &#x60;bank_account_name&#x60; is passed Base64-encoded, see the integration notes for details.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankAccountName"></param>
+        /// <param name="bankName"></param>
+        /// <param name="bankCountry"></param>
+        /// <param name="bankAddress"></param>
+        /// <param name="iban"></param>
+        /// <param name="swift"></param>
+        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="remittanceLineNumber"> (optional)</param>
+        /// <param name="agentBankName"> (optional)</param>
+        /// <param name="agentBankSwift"> (optional)</param>
+        /// <returns>OtcBankCreateResponse</returns>
+        public OtcBankCreateResponse CreateOtcBank (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
+        {
+             ApiResponse<OtcBankCreateResponse> localVarResponse = CreateOtcBankWithHttpInfo(bankAccountName, bankName, bankCountry, bankAddress, iban, swift, documentationFile, remittanceLineNumber, agentBankName, agentBankSwift);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create bank card Bind a bank card. Under the Global entity, an account with a non-matching name may enter manual review (&#x60;status&#x60; pending) and require subsequent supplementary materials. Corresponding Inner: &#x60;POST /bank/create&#x60;. Fields and protocol are subject to the production form/gateway; in some environments &#x60;bank_account_name&#x60; is passed Base64-encoded, see the integration notes for details.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankAccountName"></param>
+        /// <param name="bankName"></param>
+        /// <param name="bankCountry"></param>
+        /// <param name="bankAddress"></param>
+        /// <param name="iban"></param>
+        /// <param name="swift"></param>
+        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="remittanceLineNumber"> (optional)</param>
+        /// <param name="agentBankName"> (optional)</param>
+        /// <param name="agentBankSwift"> (optional)</param>
+        /// <returns>ApiResponse of OtcBankCreateResponse</returns>
+        public ApiResponse<OtcBankCreateResponse> CreateOtcBankWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
+        {
+            // verify the required parameter 'bankAccountName' is set
+            if (bankAccountName == null)
+                throw new ApiException(400, "Missing required parameter 'bankAccountName' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'bankName' is set
+            if (bankName == null)
+                throw new ApiException(400, "Missing required parameter 'bankName' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'bankCountry' is set
+            if (bankCountry == null)
+                throw new ApiException(400, "Missing required parameter 'bankCountry' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'bankAddress' is set
+            if (bankAddress == null)
+                throw new ApiException(400, "Missing required parameter 'bankAddress' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'iban' is set
+            if (iban == null)
+                throw new ApiException(400, "Missing required parameter 'iban' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'swift' is set
+            if (swift == null)
+                throw new ApiException(400, "Missing required parameter 'swift' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'documentationFile' is set
+            if (documentationFile == null)
+                throw new ApiException(400, "Missing required parameter 'documentationFile' when calling OTCApi->CreateOtcBank");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.FormParameters.Add("bank_account_name", ClientUtils.ParameterToString(bankAccountName)); // form parameter
+            localVarRequestOptions.FormParameters.Add("bank_name", ClientUtils.ParameterToString(bankName)); // form parameter
+            localVarRequestOptions.FormParameters.Add("bank_country", ClientUtils.ParameterToString(bankCountry)); // form parameter
+            localVarRequestOptions.FormParameters.Add("bank_address", ClientUtils.ParameterToString(bankAddress)); // form parameter
+            localVarRequestOptions.FormParameters.Add("iban", ClientUtils.ParameterToString(iban)); // form parameter
+            localVarRequestOptions.FormParameters.Add("swift", ClientUtils.ParameterToString(swift)); // form parameter
+            if (remittanceLineNumber != null)
+            {
+                localVarRequestOptions.FormParameters.Add("remittance_line_number", ClientUtils.ParameterToString(remittanceLineNumber)); // form parameter
+            }
+            if (agentBankName != null)
+            {
+                localVarRequestOptions.FormParameters.Add("agent_bank_name", ClientUtils.ParameterToString(agentBankName)); // form parameter
+            }
+            if (agentBankSwift != null)
+            {
+                localVarRequestOptions.FormParameters.Add("agent_bank_swift", ClientUtils.ParameterToString(agentBankSwift)); // form parameter
+            }
+            localVarRequestOptions.FileParameters.Add("documentation_file", documentationFile);
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<OtcBankCreateResponse>("/otc/bank/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateOtcBank", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create bank card Bind a bank card. Under the Global entity, an account with a non-matching name may enter manual review (&#x60;status&#x60; pending) and require subsequent supplementary materials. Corresponding Inner: &#x60;POST /bank/create&#x60;. Fields and protocol are subject to the production form/gateway; in some environments &#x60;bank_account_name&#x60; is passed Base64-encoded, see the integration notes for details.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankAccountName"></param>
+        /// <param name="bankName"></param>
+        /// <param name="bankCountry"></param>
+        /// <param name="bankAddress"></param>
+        /// <param name="iban"></param>
+        /// <param name="swift"></param>
+        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="remittanceLineNumber"> (optional)</param>
+        /// <param name="agentBankName"> (optional)</param>
+        /// <param name="agentBankSwift"> (optional)</param>
+        /// <returns>Task of OtcBankCreateResponse</returns>
+        public async Task<OtcBankCreateResponse> CreateOtcBankAsync (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OtcBankCreateResponse> localVarResponse = await CreateOtcBankAsyncWithHttpInfo(bankAccountName, bankName, bankCountry, bankAddress, iban, swift, documentationFile, remittanceLineNumber, agentBankName, agentBankSwift);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create bank card Bind a bank card. Under the Global entity, an account with a non-matching name may enter manual review (&#x60;status&#x60; pending) and require subsequent supplementary materials. Corresponding Inner: &#x60;POST /bank/create&#x60;. Fields and protocol are subject to the production form/gateway; in some environments &#x60;bank_account_name&#x60; is passed Base64-encoded, see the integration notes for details.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankAccountName"></param>
+        /// <param name="bankName"></param>
+        /// <param name="bankCountry"></param>
+        /// <param name="bankAddress"></param>
+        /// <param name="iban"></param>
+        /// <param name="swift"></param>
+        /// <param name="documentationFile">Account-opening proof file (jpg/jpeg/png/pdf, etc.; single file ≤4MB — subject to production environment).</param>
+        /// <param name="remittanceLineNumber"> (optional)</param>
+        /// <param name="agentBankName"> (optional)</param>
+        /// <param name="agentBankSwift"> (optional)</param>
+        /// <returns>Task of ApiResponse (OtcBankCreateResponse)</returns>
+        public async Task<ApiResponse<OtcBankCreateResponse>> CreateOtcBankAsyncWithHttpInfo (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, System.IO.Stream documentationFile, string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string))
+        {
+            // verify the required parameter 'bankAccountName' is set
+            if (bankAccountName == null)
+                throw new ApiException(400, "Missing required parameter 'bankAccountName' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'bankName' is set
+            if (bankName == null)
+                throw new ApiException(400, "Missing required parameter 'bankName' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'bankCountry' is set
+            if (bankCountry == null)
+                throw new ApiException(400, "Missing required parameter 'bankCountry' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'bankAddress' is set
+            if (bankAddress == null)
+                throw new ApiException(400, "Missing required parameter 'bankAddress' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'iban' is set
+            if (iban == null)
+                throw new ApiException(400, "Missing required parameter 'iban' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'swift' is set
+            if (swift == null)
+                throw new ApiException(400, "Missing required parameter 'swift' when calling OTCApi->CreateOtcBank");
+
+            // verify the required parameter 'documentationFile' is set
+            if (documentationFile == null)
+                throw new ApiException(400, "Missing required parameter 'documentationFile' when calling OTCApi->CreateOtcBank");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.FormParameters.Add("bank_account_name", ClientUtils.ParameterToString(bankAccountName)); // form parameter
+            localVarRequestOptions.FormParameters.Add("bank_name", ClientUtils.ParameterToString(bankName)); // form parameter
+            localVarRequestOptions.FormParameters.Add("bank_country", ClientUtils.ParameterToString(bankCountry)); // form parameter
+            localVarRequestOptions.FormParameters.Add("bank_address", ClientUtils.ParameterToString(bankAddress)); // form parameter
+            localVarRequestOptions.FormParameters.Add("iban", ClientUtils.ParameterToString(iban)); // form parameter
+            localVarRequestOptions.FormParameters.Add("swift", ClientUtils.ParameterToString(swift)); // form parameter
+            if (remittanceLineNumber != null)
+            {
+                localVarRequestOptions.FormParameters.Add("remittance_line_number", ClientUtils.ParameterToString(remittanceLineNumber)); // form parameter
+            }
+            if (agentBankName != null)
+            {
+                localVarRequestOptions.FormParameters.Add("agent_bank_name", ClientUtils.ParameterToString(agentBankName)); // form parameter
+            }
+            if (agentBankSwift != null)
+            {
+                localVarRequestOptions.FormParameters.Add("agent_bank_swift", ClientUtils.ParameterToString(agentBankSwift)); // form parameter
+            }
+            localVarRequestOptions.FileParameters.Add("documentation_file", documentationFile);
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OtcBankCreateResponse>("/otc/bank/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateOtcBank", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete bank card Delete the specified bank card. Corresponds to Inner: &#x60;POST /bank/delete&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>OtcActionResponse</returns>
+        public OtcActionResponse DeleteOtcBank (OtcBankIdRequest otcBankIdRequest)
+        {
+             ApiResponse<OtcActionResponse> localVarResponse = DeleteOtcBankWithHttpInfo(otcBankIdRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete bank card Delete the specified bank card. Corresponds to Inner: &#x60;POST /bank/delete&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        public ApiResponse<OtcActionResponse> DeleteOtcBankWithHttpInfo (OtcBankIdRequest otcBankIdRequest)
+        {
+            // verify the required parameter 'otcBankIdRequest' is set
+            if (otcBankIdRequest == null)
+                throw new ApiException(400, "Missing required parameter 'otcBankIdRequest' when calling OTCApi->DeleteOtcBank");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = otcBankIdRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<OtcActionResponse>("/otc/bank/delete", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteOtcBank", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete bank card Delete the specified bank card. Corresponds to Inner: &#x60;POST /bank/delete&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>Task of OtcActionResponse</returns>
+        public async Task<OtcActionResponse> DeleteOtcBankAsync (OtcBankIdRequest otcBankIdRequest)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OtcActionResponse> localVarResponse = await DeleteOtcBankAsyncWithHttpInfo(otcBankIdRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Delete bank card Delete the specified bank card. Corresponds to Inner: &#x60;POST /bank/delete&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        public async Task<ApiResponse<OtcActionResponse>> DeleteOtcBankAsyncWithHttpInfo (OtcBankIdRequest otcBankIdRequest)
+        {
+            // verify the required parameter 'otcBankIdRequest' is set
+            if (otcBankIdRequest == null)
+                throw new ApiException(400, "Missing required parameter 'otcBankIdRequest' when calling OTCApi->DeleteOtcBank");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = otcBankIdRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OtcActionResponse>("/otc/bank/delete", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteOtcBank", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set default bank card Set the specified bank card as default. Corresponds to Inner: &#x60;POST /bank/set_default&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>OtcActionResponse</returns>
+        public OtcActionResponse SetDefaultOtcBank (OtcBankIdRequest otcBankIdRequest)
+        {
+             ApiResponse<OtcActionResponse> localVarResponse = SetDefaultOtcBankWithHttpInfo(otcBankIdRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set default bank card Set the specified bank card as default. Corresponds to Inner: &#x60;POST /bank/set_default&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        public ApiResponse<OtcActionResponse> SetDefaultOtcBankWithHttpInfo (OtcBankIdRequest otcBankIdRequest)
+        {
+            // verify the required parameter 'otcBankIdRequest' is set
+            if (otcBankIdRequest == null)
+                throw new ApiException(400, "Missing required parameter 'otcBankIdRequest' when calling OTCApi->SetDefaultOtcBank");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = otcBankIdRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<OtcActionResponse>("/otc/bank/set_default", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetDefaultOtcBank", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set default bank card Set the specified bank card as default. Corresponds to Inner: &#x60;POST /bank/set_default&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>Task of OtcActionResponse</returns>
+        public async Task<OtcActionResponse> SetDefaultOtcBankAsync (OtcBankIdRequest otcBankIdRequest)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OtcActionResponse> localVarResponse = await SetDefaultOtcBankAsyncWithHttpInfo(otcBankIdRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Set default bank card Set the specified bank card as default. Corresponds to Inner: &#x60;POST /bank/set_default&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="otcBankIdRequest"></param>
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        public async Task<ApiResponse<OtcActionResponse>> SetDefaultOtcBankAsyncWithHttpInfo (OtcBankIdRequest otcBankIdRequest)
+        {
+            // verify the required parameter 'otcBankIdRequest' is set
+            if (otcBankIdRequest == null)
+                throw new ApiException(400, "Missing required parameter 'otcBankIdRequest' when calling OTCApi->SetDefaultOtcBank");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = otcBankIdRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OtcActionResponse>("/otc/bank/set_default", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetDefaultOtcBank", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
+        /// <returns>OtcBankSupplementChecklistResponse</returns>
+        public OtcBankSupplementChecklistResponse GetOtcBankSupplementChecklist (string bankId)
+        {
+             ApiResponse<OtcBankSupplementChecklistResponse> localVarResponse = GetOtcBankSupplementChecklistWithHttpInfo(bankId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
+        /// <returns>ApiResponse of OtcBankSupplementChecklistResponse</returns>
+        public ApiResponse<OtcBankSupplementChecklistResponse> GetOtcBankSupplementChecklistWithHttpInfo (string bankId)
+        {
+            // verify the required parameter 'bankId' is set
+            if (bankId == null)
+                throw new ApiException(400, "Missing required parameter 'bankId' when calling OTCApi->GetOtcBankSupplementChecklist");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "bank_id", bankId));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<OtcBankSupplementChecklistResponse>("/otc/bank/bank_supplement_checklist", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetOtcBankSupplementChecklist", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
+        /// <returns>Task of OtcBankSupplementChecklistResponse</returns>
+        public async Task<OtcBankSupplementChecklistResponse> GetOtcBankSupplementChecklistAsync (string bankId)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OtcBankSupplementChecklistResponse> localVarResponse = await GetOtcBankSupplementChecklistAsyncWithHttpInfo(bankId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
+        /// <returns>Task of ApiResponse (OtcBankSupplementChecklistResponse)</returns>
+        public async Task<ApiResponse<OtcBankSupplementChecklistResponse>> GetOtcBankSupplementChecklistAsyncWithHttpInfo (string bankId)
+        {
+            // verify the required parameter 'bankId' is set
+            if (bankId == null)
+                throw new ApiException(400, "Missing required parameter 'bankId' when calling OTCApi->GetOtcBankSupplementChecklist");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "bank_id", bankId));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OtcBankSupplementChecklistResponse>("/otc/bank/bank_supplement_checklist", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetOtcBankSupplementChecklist", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Personal) **Personal professional verification (type&#x3D;1)** users submit non-same-person/supplementary materials. Must match &#x60;user_type&#x3D;personal&#x60; returned by &#x60;GET /otc/bank/bank_supplement_checklist?bank_id&#x3D;&#x60;, otherwise the request is rejected. **multipart/form-data** is recommended: each material item is a separate file field, with field names matching the checklist &#x60;code&#x60; (&#x60;id_document_front&#x60;, &#x60;id_document_back&#x60;, &#x60;address_proof&#x60;).
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="idDocumentFront">ID document front-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="idDocumentBack">ID document back-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="addressProof">Proof-of-address file content (multipart file field, binary/Base64)</param>
+        /// <returns>OtcActionResponse</returns>
+        public OtcActionResponse SubmitOtcBankPersonalSupplement (string bankId, string idDocumentFront, string idDocumentBack, string addressProof)
+        {
+             ApiResponse<OtcActionResponse> localVarResponse = SubmitOtcBankPersonalSupplementWithHttpInfo(bankId, idDocumentFront, idDocumentBack, addressProof);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Personal) **Personal professional verification (type&#x3D;1)** users submit non-same-person/supplementary materials. Must match &#x60;user_type&#x3D;personal&#x60; returned by &#x60;GET /otc/bank/bank_supplement_checklist?bank_id&#x3D;&#x60;, otherwise the request is rejected. **multipart/form-data** is recommended: each material item is a separate file field, with field names matching the checklist &#x60;code&#x60; (&#x60;id_document_front&#x60;, &#x60;id_document_back&#x60;, &#x60;address_proof&#x60;).
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="idDocumentFront">ID document front-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="idDocumentBack">ID document back-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="addressProof">Proof-of-address file content (multipart file field, binary/Base64)</param>
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        public ApiResponse<OtcActionResponse> SubmitOtcBankPersonalSupplementWithHttpInfo (string bankId, string idDocumentFront, string idDocumentBack, string addressProof)
+        {
+            // verify the required parameter 'bankId' is set
+            if (bankId == null)
+                throw new ApiException(400, "Missing required parameter 'bankId' when calling OTCApi->SubmitOtcBankPersonalSupplement");
+
+            // verify the required parameter 'idDocumentFront' is set
+            if (idDocumentFront == null)
+                throw new ApiException(400, "Missing required parameter 'idDocumentFront' when calling OTCApi->SubmitOtcBankPersonalSupplement");
+
+            // verify the required parameter 'idDocumentBack' is set
+            if (idDocumentBack == null)
+                throw new ApiException(400, "Missing required parameter 'idDocumentBack' when calling OTCApi->SubmitOtcBankPersonalSupplement");
+
+            // verify the required parameter 'addressProof' is set
+            if (addressProof == null)
+                throw new ApiException(400, "Missing required parameter 'addressProof' when calling OTCApi->SubmitOtcBankPersonalSupplement");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.FormParameters.Add("bank_id", ClientUtils.ParameterToString(bankId)); // form parameter
+            localVarRequestOptions.FormParameters.Add("id_document_front", ClientUtils.ParameterToString(idDocumentFront)); // form parameter
+            localVarRequestOptions.FormParameters.Add("id_document_back", ClientUtils.ParameterToString(idDocumentBack)); // form parameter
+            localVarRequestOptions.FormParameters.Add("address_proof", ClientUtils.ParameterToString(addressProof)); // form parameter
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<OtcActionResponse>("/otc/bank/personal/bank_supplement", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SubmitOtcBankPersonalSupplement", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Personal) **Personal professional verification (type&#x3D;1)** users submit non-same-person/supplementary materials. Must match &#x60;user_type&#x3D;personal&#x60; returned by &#x60;GET /otc/bank/bank_supplement_checklist?bank_id&#x3D;&#x60;, otherwise the request is rejected. **multipart/form-data** is recommended: each material item is a separate file field, with field names matching the checklist &#x60;code&#x60; (&#x60;id_document_front&#x60;, &#x60;id_document_back&#x60;, &#x60;address_proof&#x60;).
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="idDocumentFront">ID document front-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="idDocumentBack">ID document back-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="addressProof">Proof-of-address file content (multipart file field, binary/Base64)</param>
+        /// <returns>Task of OtcActionResponse</returns>
+        public async Task<OtcActionResponse> SubmitOtcBankPersonalSupplementAsync (string bankId, string idDocumentFront, string idDocumentBack, string addressProof)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OtcActionResponse> localVarResponse = await SubmitOtcBankPersonalSupplementAsyncWithHttpInfo(bankId, idDocumentFront, idDocumentBack, addressProof);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Personal) **Personal professional verification (type&#x3D;1)** users submit non-same-person/supplementary materials. Must match &#x60;user_type&#x3D;personal&#x60; returned by &#x60;GET /otc/bank/bank_supplement_checklist?bank_id&#x3D;&#x60;, otherwise the request is rejected. **multipart/form-data** is recommended: each material item is a separate file field, with field names matching the checklist &#x60;code&#x60; (&#x60;id_document_front&#x60;, &#x60;id_document_back&#x60;, &#x60;address_proof&#x60;).
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="idDocumentFront">ID document front-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="idDocumentBack">ID document back-side file content (multipart file field, binary/Base64)</param>
+        /// <param name="addressProof">Proof-of-address file content (multipart file field, binary/Base64)</param>
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        public async Task<ApiResponse<OtcActionResponse>> SubmitOtcBankPersonalSupplementAsyncWithHttpInfo (string bankId, string idDocumentFront, string idDocumentBack, string addressProof)
+        {
+            // verify the required parameter 'bankId' is set
+            if (bankId == null)
+                throw new ApiException(400, "Missing required parameter 'bankId' when calling OTCApi->SubmitOtcBankPersonalSupplement");
+
+            // verify the required parameter 'idDocumentFront' is set
+            if (idDocumentFront == null)
+                throw new ApiException(400, "Missing required parameter 'idDocumentFront' when calling OTCApi->SubmitOtcBankPersonalSupplement");
+
+            // verify the required parameter 'idDocumentBack' is set
+            if (idDocumentBack == null)
+                throw new ApiException(400, "Missing required parameter 'idDocumentBack' when calling OTCApi->SubmitOtcBankPersonalSupplement");
+
+            // verify the required parameter 'addressProof' is set
+            if (addressProof == null)
+                throw new ApiException(400, "Missing required parameter 'addressProof' when calling OTCApi->SubmitOtcBankPersonalSupplement");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.FormParameters.Add("bank_id", ClientUtils.ParameterToString(bankId)); // form parameter
+            localVarRequestOptions.FormParameters.Add("id_document_front", ClientUtils.ParameterToString(idDocumentFront)); // form parameter
+            localVarRequestOptions.FormParameters.Add("id_document_back", ClientUtils.ParameterToString(idDocumentBack)); // form parameter
+            localVarRequestOptions.FormParameters.Add("address_proof", ClientUtils.ParameterToString(addressProof)); // form parameter
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OtcActionResponse>("/otc/bank/personal/bank_supplement", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SubmitOtcBankPersonalSupplement", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Enterprise) **Enterprise professional verification (type&#x3D;2)** users submit supplementary materials. Must match &#x60;user_type&#x3D;enterprise&#x60; returned by the checklist. **multipart** file field names: &#x60;certificate&#x60;, &#x60;share_holders&#x60;, &#x60;passport&#x60;, &#x60;share_holding_structure&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="certificate">Business license / registration certificate file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHolders">Register of shareholders file content (multipart file field, binary/Base64)</param>
+        /// <param name="passport">Legal representative / shareholder passport file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHoldingStructure">Ownership structure chart file content (multipart file field, binary/Base64)</param>
+        /// <param name="uid"> (optional)</param>
+        /// <param name="fundsStatement">Proof-of-funds file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <param name="additional">Other supplementary material file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <returns>OtcActionResponse</returns>
+        public OtcActionResponse SubmitOtcBankEnterpriseSupplement (string bankId, string certificate, string shareHolders, string passport, string shareHoldingStructure, string uid = default(string), string fundsStatement = default(string), string additional = default(string))
+        {
+             ApiResponse<OtcActionResponse> localVarResponse = SubmitOtcBankEnterpriseSupplementWithHttpInfo(bankId, certificate, shareHolders, passport, shareHoldingStructure, uid, fundsStatement, additional);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Enterprise) **Enterprise professional verification (type&#x3D;2)** users submit supplementary materials. Must match &#x60;user_type&#x3D;enterprise&#x60; returned by the checklist. **multipart** file field names: &#x60;certificate&#x60;, &#x60;share_holders&#x60;, &#x60;passport&#x60;, &#x60;share_holding_structure&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="certificate">Business license / registration certificate file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHolders">Register of shareholders file content (multipart file field, binary/Base64)</param>
+        /// <param name="passport">Legal representative / shareholder passport file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHoldingStructure">Ownership structure chart file content (multipart file field, binary/Base64)</param>
+        /// <param name="uid"> (optional)</param>
+        /// <param name="fundsStatement">Proof-of-funds file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <param name="additional">Other supplementary material file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <returns>ApiResponse of OtcActionResponse</returns>
+        public ApiResponse<OtcActionResponse> SubmitOtcBankEnterpriseSupplementWithHttpInfo (string bankId, string certificate, string shareHolders, string passport, string shareHoldingStructure, string uid = default(string), string fundsStatement = default(string), string additional = default(string))
+        {
+            // verify the required parameter 'bankId' is set
+            if (bankId == null)
+                throw new ApiException(400, "Missing required parameter 'bankId' when calling OTCApi->SubmitOtcBankEnterpriseSupplement");
+
+            // verify the required parameter 'certificate' is set
+            if (certificate == null)
+                throw new ApiException(400, "Missing required parameter 'certificate' when calling OTCApi->SubmitOtcBankEnterpriseSupplement");
+
+            // verify the required parameter 'shareHolders' is set
+            if (shareHolders == null)
+                throw new ApiException(400, "Missing required parameter 'shareHolders' when calling OTCApi->SubmitOtcBankEnterpriseSupplement");
+
+            // verify the required parameter 'passport' is set
+            if (passport == null)
+                throw new ApiException(400, "Missing required parameter 'passport' when calling OTCApi->SubmitOtcBankEnterpriseSupplement");
+
+            // verify the required parameter 'shareHoldingStructure' is set
+            if (shareHoldingStructure == null)
+                throw new ApiException(400, "Missing required parameter 'shareHoldingStructure' when calling OTCApi->SubmitOtcBankEnterpriseSupplement");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (uid != null)
+            {
+                localVarRequestOptions.FormParameters.Add("uid", ClientUtils.ParameterToString(uid)); // form parameter
+            }
+            localVarRequestOptions.FormParameters.Add("bank_id", ClientUtils.ParameterToString(bankId)); // form parameter
+            localVarRequestOptions.FormParameters.Add("certificate", ClientUtils.ParameterToString(certificate)); // form parameter
+            localVarRequestOptions.FormParameters.Add("share_holders", ClientUtils.ParameterToString(shareHolders)); // form parameter
+            localVarRequestOptions.FormParameters.Add("passport", ClientUtils.ParameterToString(passport)); // form parameter
+            localVarRequestOptions.FormParameters.Add("share_holding_structure", ClientUtils.ParameterToString(shareHoldingStructure)); // form parameter
+            if (fundsStatement != null)
+            {
+                localVarRequestOptions.FormParameters.Add("funds_statement", ClientUtils.ParameterToString(fundsStatement)); // form parameter
+            }
+            if (additional != null)
+            {
+                localVarRequestOptions.FormParameters.Add("additional", ClientUtils.ParameterToString(additional)); // form parameter
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<OtcActionResponse>("/otc/bank/enterprise/bank_supplement", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SubmitOtcBankEnterpriseSupplement", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Enterprise) **Enterprise professional verification (type&#x3D;2)** users submit supplementary materials. Must match &#x60;user_type&#x3D;enterprise&#x60; returned by the checklist. **multipart** file field names: &#x60;certificate&#x60;, &#x60;share_holders&#x60;, &#x60;passport&#x60;, &#x60;share_holding_structure&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="certificate">Business license / registration certificate file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHolders">Register of shareholders file content (multipart file field, binary/Base64)</param>
+        /// <param name="passport">Legal representative / shareholder passport file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHoldingStructure">Ownership structure chart file content (multipart file field, binary/Base64)</param>
+        /// <param name="uid"> (optional)</param>
+        /// <param name="fundsStatement">Proof-of-funds file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <param name="additional">Other supplementary material file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <returns>Task of OtcActionResponse</returns>
+        public async Task<OtcActionResponse> SubmitOtcBankEnterpriseSupplementAsync (string bankId, string certificate, string shareHolders, string passport, string shareHoldingStructure, string uid = default(string), string fundsStatement = default(string), string additional = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OtcActionResponse> localVarResponse = await SubmitOtcBankEnterpriseSupplementAsyncWithHttpInfo(bankId, certificate, shareHolders, passport, shareHoldingStructure, uid, fundsStatement, additional);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Submit Bank Card Supplement Materials (Enterprise) **Enterprise professional verification (type&#x3D;2)** users submit supplementary materials. Must match &#x60;user_type&#x3D;enterprise&#x60; returned by the checklist. **multipart** file field names: &#x60;certificate&#x60;, &#x60;share_holders&#x60;, &#x60;passport&#x60;, &#x60;share_holding_structure&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankId"></param>
+        /// <param name="certificate">Business license / registration certificate file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHolders">Register of shareholders file content (multipart file field, binary/Base64)</param>
+        /// <param name="passport">Legal representative / shareholder passport file content (multipart file field, binary/Base64)</param>
+        /// <param name="shareHoldingStructure">Ownership structure chart file content (multipart file field, binary/Base64)</param>
+        /// <param name="uid"> (optional)</param>
+        /// <param name="fundsStatement">Proof-of-funds file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <param name="additional">Other supplementary material file content (multipart file field, binary/Base64, optional) (optional)</param>
+        /// <returns>Task of ApiResponse (OtcActionResponse)</returns>
+        public async Task<ApiResponse<OtcActionResponse>> SubmitOtcBankEnterpriseSupplementAsyncWithHttpInfo (string bankId, string certificate, string shareHolders, string passport, string shareHoldingStructure, string uid = default(string), string fundsStatement = default(string), string additional = default(string))
+        {
+            // verify the required parameter 'bankId' is set
+            if (bankId == null)
+                throw new ApiException(400, "Missing required parameter 'bankId' when calling OTCApi->SubmitOtcBankEnterpriseSupplement");
+
+            // verify the required parameter 'certificate' is set
+            if (certificate == null)
+                throw new ApiException(400, "Missing required parameter 'certificate' when calling OTCApi->SubmitOtcBankEnterpriseSupplement");
+
+            // verify the required parameter 'shareHolders' is set
+            if (shareHolders == null)
+                throw new ApiException(400, "Missing required parameter 'shareHolders' when calling OTCApi->SubmitOtcBankEnterpriseSupplement");
+
+            // verify the required parameter 'passport' is set
+            if (passport == null)
+                throw new ApiException(400, "Missing required parameter 'passport' when calling OTCApi->SubmitOtcBankEnterpriseSupplement");
+
+            // verify the required parameter 'shareHoldingStructure' is set
+            if (shareHoldingStructure == null)
+                throw new ApiException(400, "Missing required parameter 'shareHoldingStructure' when calling OTCApi->SubmitOtcBankEnterpriseSupplement");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (uid != null)
+            {
+                localVarRequestOptions.FormParameters.Add("uid", ClientUtils.ParameterToString(uid)); // form parameter
+            }
+            localVarRequestOptions.FormParameters.Add("bank_id", ClientUtils.ParameterToString(bankId)); // form parameter
+            localVarRequestOptions.FormParameters.Add("certificate", ClientUtils.ParameterToString(certificate)); // form parameter
+            localVarRequestOptions.FormParameters.Add("share_holders", ClientUtils.ParameterToString(shareHolders)); // form parameter
+            localVarRequestOptions.FormParameters.Add("passport", ClientUtils.ParameterToString(passport)); // form parameter
+            localVarRequestOptions.FormParameters.Add("share_holding_structure", ClientUtils.ParameterToString(shareHoldingStructure)); // form parameter
+            if (fundsStatement != null)
+            {
+                localVarRequestOptions.FormParameters.Add("funds_statement", ClientUtils.ParameterToString(fundsStatement)); // form parameter
+            }
+            if (additional != null)
+            {
+                localVarRequestOptions.FormParameters.Add("additional", ClientUtils.ParameterToString(additional)); // form parameter
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<OtcActionResponse>("/otc/bank/enterprise/bank_supplement", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SubmitOtcBankEnterpriseSupplement", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Mark fiat order as paid (deposit confirmation) Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -1192,7 +2345,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Mark fiat order as paid Mark fiat order as paid
+        /// Mark fiat order as paid (deposit confirmation) Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -1238,7 +2391,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Mark fiat order as paid Mark fiat order as paid
+        /// Mark fiat order as paid (deposit confirmation) Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -1251,7 +2404,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Mark fiat order as paid Mark fiat order as paid
+        /// Mark fiat order as paid (deposit confirmation) Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>

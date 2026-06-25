@@ -38,13 +38,15 @@ namespace Io.Gate.GateApi.Model
         /// <param name="size">New order size, including filled size. - If less than or equal to the filled quantity, the order will be cancelled. - The new order side must be identical to the original one. - Close order size cannot be modified. - For reduce-only orders, increasing the size may cancel other reduce-only orders. - If the price is not modified, decreasing the size will not affect the depth queue, while increasing the size will place it at the end of the current price level..</param>
         /// <param name="price">New order price.</param>
         /// <param name="amendText">Custom info during order amendment.</param>
-        public FuturesBatchAmendOrderRequest(long orderId = default(long), string text = default(string), string size = default(string), string price = default(string), string amendText = default(string))
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default).</param>
+        public FuturesBatchAmendOrderRequest(long orderId = default(long), string text = default(string), string size = default(string), string price = default(string), string amendText = default(string), string actionMode = default(string))
         {
             this.OrderId = orderId;
             this.Text = text;
             this.Size = size;
             this.Price = price;
             this.AmendText = amendText;
+            this.ActionMode = actionMode;
         }
 
         /// <summary>
@@ -83,6 +85,13 @@ namespace Io.Gate.GateApi.Model
         public string AmendText { get; set; }
 
         /// <summary>
+        /// Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default)
+        /// </summary>
+        /// <value>Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default)</value>
+        [DataMember(Name="action_mode")]
+        public string ActionMode { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -95,6 +104,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Size: ").Append(Size).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("  AmendText: ").Append(AmendText).Append("\n");
+            sb.Append("  ActionMode: ").Append(ActionMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -152,6 +162,11 @@ namespace Io.Gate.GateApi.Model
                     this.AmendText == input.AmendText ||
                     (this.AmendText != null &&
                     this.AmendText.Equals(input.AmendText))
+                ) && 
+                (
+                    this.ActionMode == input.ActionMode ||
+                    (this.ActionMode != null &&
+                    this.ActionMode.Equals(input.ActionMode))
                 );
         }
 
@@ -173,6 +188,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
                 if (this.AmendText != null)
                     hashCode = hashCode * 59 + this.AmendText.GetHashCode();
+                if (this.ActionMode != null)
+                    hashCode = hashCode * 59 + this.ActionMode.GetHashCode();
                 return hashCode;
             }
         }

@@ -46,7 +46,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="cryptoCurrency">Stablecoin (required).</param>
         /// <param name="cryptoAmount">Stablecoin amount (required).</param>
         /// <param name="rate">Exchange rate (required).</param>
-        /// <param name="transferRemark">Remark (required).</param>
+        /// <param name="transferRemark">Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code) (required).</param>
+        /// <param name="referenceCode">Unique bank transfer reference code for deposit buy orders (SGB deposit scenario; mutually exclusive with transfer_remark).</param>
         /// <param name="status">Status (required).</param>
         /// <param name="dbStatus">dbStatus (required).</param>
         /// <param name="createTime">Created time (required).</param>
@@ -54,7 +55,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="side">Quote direction (required).</param>
         /// <param name="promotionCode">Promotion code (required).</param>
         /// <param name="tradeNo">Trade number (required).</param>
-        public OtcOrderDetail(string orderId = default(string), string uid = default(string), string type = default(string), string fiatCurrency = default(string), string fiatAmount = default(string), string cryptoCurrency = default(string), string cryptoAmount = default(string), string rate = default(string), string transferRemark = default(string), string status = default(string), string dbStatus = default(string), string createTime = default(string), string memo = default(string), string side = default(string), string promotionCode = default(string), string tradeNo = default(string))
+        public OtcOrderDetail(string orderId = default(string), string uid = default(string), string type = default(string), string fiatCurrency = default(string), string fiatAmount = default(string), string cryptoCurrency = default(string), string cryptoAmount = default(string), string rate = default(string), string transferRemark = default(string), string referenceCode = default(string), string status = default(string), string dbStatus = default(string), string createTime = default(string), string memo = default(string), string side = default(string), string promotionCode = default(string), string tradeNo = default(string))
         {
             // to ensure "orderId" is required (not null)
             this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for OtcOrderDetail and cannot be null");
@@ -88,6 +89,7 @@ namespace Io.Gate.GateApi.Model
             this.PromotionCode = promotionCode ?? throw new ArgumentNullException("promotionCode", "promotionCode is a required property for OtcOrderDetail and cannot be null");
             // to ensure "tradeNo" is required (not null)
             this.TradeNo = tradeNo ?? throw new ArgumentNullException("tradeNo", "tradeNo is a required property for OtcOrderDetail and cannot be null");
+            this.ReferenceCode = referenceCode;
         }
 
         /// <summary>
@@ -147,11 +149,18 @@ namespace Io.Gate.GateApi.Model
         public string Rate { get; set; }
 
         /// <summary>
-        /// Remark
+        /// Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code)
         /// </summary>
-        /// <value>Remark</value>
+        /// <value>Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code)</value>
         [DataMember(Name="transfer_remark")]
         public string TransferRemark { get; set; }
+
+        /// <summary>
+        /// Unique bank transfer reference code for deposit buy orders (SGB deposit scenario; mutually exclusive with transfer_remark)
+        /// </summary>
+        /// <value>Unique bank transfer reference code for deposit buy orders (SGB deposit scenario; mutually exclusive with transfer_remark)</value>
+        [DataMember(Name="reference_code")]
+        public string ReferenceCode { get; set; }
 
         /// <summary>
         /// Status
@@ -218,6 +227,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  CryptoAmount: ").Append(CryptoAmount).Append("\n");
             sb.Append("  Rate: ").Append(Rate).Append("\n");
             sb.Append("  TransferRemark: ").Append(TransferRemark).Append("\n");
+            sb.Append("  ReferenceCode: ").Append(ReferenceCode).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  DbStatus: ").Append(DbStatus).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
@@ -305,6 +315,11 @@ namespace Io.Gate.GateApi.Model
                     this.TransferRemark.Equals(input.TransferRemark))
                 ) && 
                 (
+                    this.ReferenceCode == input.ReferenceCode ||
+                    (this.ReferenceCode != null &&
+                    this.ReferenceCode.Equals(input.ReferenceCode))
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
@@ -368,6 +383,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Rate.GetHashCode();
                 if (this.TransferRemark != null)
                     hashCode = hashCode * 59 + this.TransferRemark.GetHashCode();
+                if (this.ReferenceCode != null)
+                    hashCode = hashCode * 59 + this.ReferenceCode.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.DbStatus != null)

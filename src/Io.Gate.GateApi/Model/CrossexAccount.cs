@@ -51,7 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="updateTime">Update time (required).</param>
         /// <param name="accountMode">Account Mode. CROSS_EXCHANGE: Cross-Exchange Mode; ISOLATED_EXCHANGE: Split-Exchange Mode.</param>
         /// <param name="exchangeType">Exchange Type. When account_mode is CROSS_EXCHANGE, it must be CROSSEX; otherwise, it is another exchange..</param>
-        /// <param name="assets">资产列表，按交易所与币种维度返回各账户余额、保证金及盈亏明细 (required).</param>
+        /// <param name="assets">Asset list: grouped by exchange and currency, returning per-account balances, margin, and PnL details (required).</param>
         public CrossexAccount(string userId = default(string), string availableMargin = default(string), string marginBalance = default(string), string initialMargin = default(string), string maintenanceMargin = default(string), string initialMarginRate = default(string), string maintenanceMarginRate = default(string), string positionMode = default(string), string accountLimit = default(string), string createTime = default(string), string updateTime = default(string), string accountMode = default(string), string exchangeType = default(string), List<CrossexAccountAsset> assets = default(List<CrossexAccountAsset>))
         {
             // to ensure "userId" is required (not null)
@@ -173,9 +173,9 @@ namespace Io.Gate.GateApi.Model
         public string ExchangeType { get; set; }
 
         /// <summary>
-        /// 资产列表，按交易所与币种维度返回各账户余额、保证金及盈亏明细
+        /// Asset list: grouped by exchange and currency, returning per-account balances, margin, and PnL details
         /// </summary>
-        /// <value>资产列表，按交易所与币种维度返回各账户余额、保证金及盈亏明细</value>
+        /// <value>Asset list: grouped by exchange and currency, returning per-account balances, margin, and PnL details</value>
         [DataMember(Name="assets")]
         public List<CrossexAccountAsset> Assets { get; set; }
 

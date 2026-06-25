@@ -112,6 +112,13 @@ namespace Io.Gate.GateApi.Model
         public string Status { get; private set; }
 
         /// <summary>
+        /// Blocked deposit refund status. This field is returned only when the deposit record has a blocked deposit refund record with a non-empty refund status. Not returned when there is no refund record or the refund status is empty - REFUNDING: Refund in progress - REFUNDED: Refund completed - REFUND_FAILED: Refund failed - REJECTED: Refund rejected
+        /// </summary>
+        /// <value>Blocked deposit refund status. This field is returned only when the deposit record has a blocked deposit refund record with a non-empty refund status. Not returned when there is no refund record or the refund status is empty - REFUNDING: Refund in progress - REFUNDED: Refund completed - REFUND_FAILED: Refund failed - REJECTED: Refund rejected</value>
+        [DataMember(Name="refund_status", EmitDefaultValue=false)]
+        public string RefundStatus { get; private set; }
+
+        /// <summary>
         /// Name of the chain used in withdrawals
         /// </summary>
         /// <value>Name of the chain used in withdrawals</value>
@@ -134,6 +141,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  Memo: ").Append(Memo).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  RefundStatus: ").Append(RefundStatus).Append("\n");
             sb.Append("  Chain: ").Append(Chain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -210,6 +218,11 @@ namespace Io.Gate.GateApi.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
+                    this.RefundStatus == input.RefundStatus ||
+                    (this.RefundStatus != null &&
+                    this.RefundStatus.Equals(input.RefundStatus))
+                ) && 
+                (
                     this.Chain == input.Chain ||
                     (this.Chain != null &&
                     this.Chain.Equals(input.Chain))
@@ -241,6 +254,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Memo.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.RefundStatus != null)
+                    hashCode = hashCode * 59 + this.RefundStatus.GetHashCode();
                 if (this.Chain != null)
                     hashCode = hashCode * 59 + this.Chain.GetHashCode();
                 return hashCode;

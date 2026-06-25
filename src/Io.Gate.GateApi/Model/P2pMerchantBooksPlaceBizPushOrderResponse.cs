@@ -35,11 +35,11 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="timestamp">Response timestamp..</param>
         /// <param name="method">Placeholder for request method..</param>
-        /// <param name="code">Response code, 0 means success.</param>
+        /// <param name="code">Response code. 0 means success; 70305102 means the advertisement trade terms or auto reply hit off-platform traffic diversion risk control.</param>
         /// <param name="message">Response message.</param>
-        /// <param name="data">Empty object on successful publish or edit..</param>
+        /// <param name="data">data.</param>
         /// <param name="version">API version..</param>
-        public P2pMerchantBooksPlaceBizPushOrderResponse(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), Object data = default(Object), string version = default(string))
+        public P2pMerchantBooksPlaceBizPushOrderResponse(decimal timestamp = default(decimal), string method = default(string), int code = default(int), string message = default(string), P2pMerchantBooksPlaceBizPushOrderResponseData data = default(P2pMerchantBooksPlaceBizPushOrderResponseData), string version = default(string))
         {
             this.Timestamp = timestamp;
             this.Method = method;
@@ -64,9 +64,9 @@ namespace Io.Gate.GateApi.Model
         public string Method { get; set; }
 
         /// <summary>
-        /// Response code, 0 means success
+        /// Response code. 0 means success; 70305102 means the advertisement trade terms or auto reply hit off-platform traffic diversion risk control
         /// </summary>
-        /// <value>Response code, 0 means success</value>
+        /// <value>Response code. 0 means success; 70305102 means the advertisement trade terms or auto reply hit off-platform traffic diversion risk control</value>
         [DataMember(Name="code")]
         public int Code { get; set; }
 
@@ -78,11 +78,10 @@ namespace Io.Gate.GateApi.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// Empty object on successful publish or edit.
+        /// Gets or Sets Data
         /// </summary>
-        /// <value>Empty object on successful publish or edit.</value>
         [DataMember(Name="data")]
-        public Object Data { get; set; }
+        public P2pMerchantBooksPlaceBizPushOrderResponseData Data { get; set; }
 
         /// <summary>
         /// API version.

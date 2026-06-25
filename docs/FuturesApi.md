@@ -5,6 +5,7 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ListFuturesContracts**](FuturesApi.md#listfuturescontracts) | **GET** /futures/{settle}/contracts | Query all futures contracts
+[**ListFuturesContractsAll**](FuturesApi.md#listfuturescontractsall) | **GET** /futures/{settle}/contracts_all | Query all contract information (including delisted)
 [**GetFuturesContract**](FuturesApi.md#getfuturescontract) | **GET** /futures/{settle}/contracts/{contract} | Query single contract information
 [**ListFuturesOrderBook**](FuturesApi.md#listfuturesorderbook) | **GET** /futures/{settle}/order_book | Query futures market depth information
 [**ListFuturesTrades**](FuturesApi.md#listfuturestrades) | **GET** /futures/{settle}/trades | Futures market transaction records
@@ -62,12 +63,17 @@ Method | HTTP request | Description
 [**GetTrailOrderDetail**](FuturesApi.md#gettrailorderdetail) | **GET** /futures/{settle}/autoorder/v1/trail/detail | Get trail order details
 [**UpdateTrailOrder**](FuturesApi.md#updatetrailorder) | **POST** /futures/{settle}/autoorder/v1/trail/update | Update trail order
 [**GetTrailOrderChangeLog**](FuturesApi.md#gettrailorderchangelog) | **GET** /futures/{settle}/autoorder/v1/trail/change_log | Get trail order user modification records
+[**CreateChaseOrder**](FuturesApi.md#createchaseorder) | **POST** /futures/{settle}/autoorder/v1/chase/create | Create a chase order
+[**StopChaseOrder**](FuturesApi.md#stopchaseorder) | **POST** /futures/{settle}/autoorder/v1/chase/stop | Stop a chase order
+[**StopAllChaseOrders**](FuturesApi.md#stopallchaseorders) | **POST** /futures/{settle}/autoorder/v1/chase/stop_all | Stop chase orders in batch
+[**GetChaseOrders**](FuturesApi.md#getchaseorders) | **GET** /futures/{settle}/autoorder/v1/chase/list | List chase orders
+[**GetChaseOrderDetail**](FuturesApi.md#getchaseorderdetail) | **GET** /futures/{settle}/autoorder/v1/chase/detail | Get chase order detail
 [**ListPriceTriggeredOrders**](FuturesApi.md#listpricetriggeredorders) | **GET** /futures/{settle}/price_orders | Query auto order list
 [**CreatePriceTriggeredOrder**](FuturesApi.md#createpricetriggeredorder) | **POST** /futures/{settle}/price_orders | Create price-triggered order
 [**CancelPriceTriggeredOrderList**](FuturesApi.md#cancelpricetriggeredorderlist) | **DELETE** /futures/{settle}/price_orders | Cancel all auto orders
 [**GetPriceTriggeredOrder**](FuturesApi.md#getpricetriggeredorder) | **GET** /futures/{settle}/price_orders/{order_id} | Query single auto order details
 [**CancelPriceTriggeredOrder**](FuturesApi.md#cancelpricetriggeredorder) | **DELETE** /futures/{settle}/price_orders/{order_id} | Cancel single auto order
-[**UpdatePriceTriggeredOrder**](FuturesApi.md#updatepricetriggeredorder) | **PUT** /futures/{settle}/price_orders/amend/{order_id} | Modify a Single Auto Order
+[**UpdatePriceTriggeredOrder**](FuturesApi.md#updatepricetriggeredorder) | **PUT** /futures/{settle}/price_orders/amend | Modify a Single Auto Order
 
 
 <a name="listfuturescontracts"></a>
@@ -106,6 +112,79 @@ namespace Example
             catch (GateApiException e)
             {
                 Debug.Print("Exception when calling FuturesApi.ListFuturesContracts: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
+
+### Return type
+
+[**List&lt;Contract&gt;**](Contract.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | List retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listfuturescontractsall"></a>
+# **ListFuturesContractsAll**
+> List&lt;Contract&gt; ListFuturesContractsAll (string settle, int? limit = null, int? offset = null)
+
+Query all contract information (including delisted)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListFuturesContractsAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
+
+            try
+            {
+                // Query all contract information (including delisted)
+                List<Contract> result = apiInstance.ListFuturesContractsAll(settle, limit, offset);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.ListFuturesContractsAll: " + e.Message);
                 Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
@@ -2680,7 +2759,7 @@ Name | Type | Description  | Notes
 
 <a name="cancelfuturesorders"></a>
 # **CancelFuturesOrders**
-> List&lt;FuturesOrder&gt; CancelFuturesOrders (string settle, string xGateExptime = null, string contract = null, string side = null, bool? excludeReduceOnly = null, string text = null)
+> List&lt;FuturesOrder&gt; CancelFuturesOrders (string settle, string xGateExptime = null, string contract = null, string actionMode = null, string side = null, bool? excludeReduceOnly = null, string text = null)
 
 Cancel all orders with 'open' status
 
@@ -2708,6 +2787,7 @@ namespace Example
             var settle = "usdt";  // string | Settle currency
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
             var contract = "BTC_USDT";  // string | Contract Identifier; if specified, only cancel pending orders related to this contract (optional) 
+            var actionMode = "ACK";  // string | Processing Mode  When placing an order, different fields are returned based on the action_mode  - `ACK`: Asynchronous mode, returns only key order fields - `RESULT`: No clearing information - `FULL`: Full mode (default) (optional) 
             var side = "ask";  // string | Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional) 
             var excludeReduceOnly = false;  // bool? | Whether to exclude reduce-only orders (optional)  (default to false)
             var text = "cancel by user";  // string | Remark for order cancellation (optional) 
@@ -2715,7 +2795,7 @@ namespace Example
             try
             {
                 // Cancel all orders with 'open' status
-                List<FuturesOrder> result = apiInstance.CancelFuturesOrders(settle, xGateExptime, contract, side, excludeReduceOnly, text);
+                List<FuturesOrder> result = apiInstance.CancelFuturesOrders(settle, xGateExptime, contract, actionMode, side, excludeReduceOnly, text);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -2737,6 +2817,7 @@ Name | Type | Description  | Notes
  **settle** | **string**| Settle currency | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
  **contract** | **string**| Contract Identifier; if specified, only cancel pending orders related to this contract | [optional] 
+ **actionMode** | **string**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) | [optional] 
  **side** | **string**| Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders | [optional] 
  **excludeReduceOnly** | **bool?**| Whether to exclude reduce-only orders | [optional] [default to false]
  **text** | **string**| Remark for order cancellation | [optional] 
@@ -3073,7 +3154,7 @@ Name | Type | Description  | Notes
 
 <a name="cancelfuturesorder"></a>
 # **CancelFuturesOrder**
-> FuturesOrder CancelFuturesOrder (string settle, string orderId, string xGateExptime = null)
+> FuturesOrder CancelFuturesOrder (string settle, string orderId, string xGateExptime = null, string actionMode = null)
 
 Cancel single order
 
@@ -3099,11 +3180,12 @@ namespace Example
             var settle = "usdt";  // string | Settle currency
             var orderId = "12345";  // string | The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the `text` field). When using the custom `text` field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by `text`; continuing to use `text` returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by `text` indefinitely.
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
+            var actionMode = "ACK";  // string | Processing Mode  When placing an order, different fields are returned based on the action_mode  - `ACK`: Asynchronous mode, returns only key order fields - `RESULT`: No clearing information - `FULL`: Full mode (default) (optional) 
 
             try
             {
                 // Cancel single order
-                FuturesOrder result = apiInstance.CancelFuturesOrder(settle, orderId, xGateExptime);
+                FuturesOrder result = apiInstance.CancelFuturesOrder(settle, orderId, xGateExptime, actionMode);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -3125,6 +3207,7 @@ Name | Type | Description  | Notes
  **settle** | **string**| Settle currency | 
  **orderId** | **string**| The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely. | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
+ **actionMode** | **string**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) | [optional] 
 
 ### Return type
 
@@ -4552,6 +4635,389 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="createchaseorder"></a>
+# **CreateChaseOrder**
+> CreateChaseOrderResp CreateChaseOrder (string settle, CreateChaseOrderReq createChaseOrderReq)
+
+Create a chase order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateChaseOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var createChaseOrderReq = new CreateChaseOrderReq(); // CreateChaseOrderReq | 
+
+            try
+            {
+                // Create a chase order
+                CreateChaseOrderResp result = apiInstance.CreateChaseOrder(settle, createChaseOrderReq);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.CreateChaseOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **createChaseOrderReq** | [**CreateChaseOrderReq**](CreateChaseOrderReq.md)|  | 
+
+### Return type
+
+[**CreateChaseOrderResp**](CreateChaseOrderResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="stopchaseorder"></a>
+# **StopChaseOrder**
+> StopChaseOrderResp StopChaseOrder (string settle, StopChaseOrderReq stopChaseOrderReq)
+
+Stop a chase order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class StopChaseOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var stopChaseOrderReq = new StopChaseOrderReq(); // StopChaseOrderReq | 
+
+            try
+            {
+                // Stop a chase order
+                StopChaseOrderResp result = apiInstance.StopChaseOrder(settle, stopChaseOrderReq);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.StopChaseOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **stopChaseOrderReq** | [**StopChaseOrderReq**](StopChaseOrderReq.md)|  | 
+
+### Return type
+
+[**StopChaseOrderResp**](StopChaseOrderResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="stopallchaseorders"></a>
+# **StopAllChaseOrders**
+> StopAllChaseOrdersResp StopAllChaseOrders (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq)
+
+Stop chase orders in batch
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class StopAllChaseOrdersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var stopAllChaseOrdersReq = new StopAllChaseOrdersReq(); // StopAllChaseOrdersReq | 
+
+            try
+            {
+                // Stop chase orders in batch
+                StopAllChaseOrdersResp result = apiInstance.StopAllChaseOrders(settle, stopAllChaseOrdersReq);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.StopAllChaseOrders: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **stopAllChaseOrdersReq** | [**StopAllChaseOrdersReq**](StopAllChaseOrdersReq.md)|  | 
+
+### Return type
+
+[**StopAllChaseOrdersResp**](StopAllChaseOrdersResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getchaseorders"></a>
+# **GetChaseOrders**
+> GetChaseOrdersResp GetChaseOrders (string settle, int sortBy, string contract = null, bool? isFinished = null, long? startAt = null, long? endAt = null, int? pageNum = null, int? pageSize = null, bool? hideCancel = null, int? reduceOnly = null, int? side = null)
+
+List chase orders
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetChaseOrdersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var sortBy = 56;  // int | Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0
+            var contract = "contract_example";  // string | Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional) 
+            var isFinished = true;  // bool? | true to query finished orders, false to query in-progress orders (optional) 
+            var startAt = 56;  // long? | Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional) 
+            var endAt = 56;  // long? | Upper time bound for the history list, paired with start_at. Required when is_finished is true (optional) 
+            var pageNum = 56;  // int? | Page number, starting from 1 (optional) 
+            var pageSize = 56;  // int? | Page size; must be between 1 and 100 (optional) 
+            var hideCancel = true;  // bool? | When true, cancelled orders are hidden in the list (optional) 
+            var reduceOnly = 56;  // int? | OptionalBool: 0 unknown, 1 true, 2 false; used to filter by reduce-only flag (optional) 
+            var side = 56;  // int? | Filter by long/short side: 1 long, 2 short (optional) 
+
+            try
+            {
+                // List chase orders
+                GetChaseOrdersResp result = apiInstance.GetChaseOrders(settle, sortBy, contract, isFinished, startAt, endAt, pageNum, pageSize, hideCancel, reduceOnly, side);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.GetChaseOrders: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **sortBy** | **int**| Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0 | 
+ **contract** | **string**| Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase | [optional] 
+ **isFinished** | **bool?**| true to query finished orders, false to query in-progress orders | [optional] 
+ **startAt** | **long?**| Lower time bound for the history list, paired with end_at. Required when is_finished is true | [optional] 
+ **endAt** | **long?**| Upper time bound for the history list, paired with start_at. Required when is_finished is true | [optional] 
+ **pageNum** | **int?**| Page number, starting from 1 | [optional] 
+ **pageSize** | **int?**| Page size; must be between 1 and 100 | [optional] 
+ **hideCancel** | **bool?**| When true, cancelled orders are hidden in the list | [optional] 
+ **reduceOnly** | **int?**| OptionalBool: 0 unknown, 1 true, 2 false; used to filter by reduce-only flag | [optional] 
+ **side** | **int?**| Filter by long/short side: 1 long, 2 short | [optional] 
+
+### Return type
+
+[**GetChaseOrdersResp**](GetChaseOrdersResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getchaseorderdetail"></a>
+# **GetChaseOrderDetail**
+> GetChaseOrderDetailResp GetChaseOrderDetail (string settle, string id)
+
+Get chase order detail
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetChaseOrderDetailExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Settle currency
+            var id = "id_example";  // string | Order ID, must be a non-zero positive integer
+
+            try
+            {
+                // Get chase order detail
+                GetChaseOrderDetailResp result = apiInstance.GetChaseOrderDetail(settle, id);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.GetChaseOrderDetail: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Settle currency | 
+ **id** | **string**| Order ID, must be a non-zero positive integer | 
+
+### Return type
+
+[**GetChaseOrderDetailResp**](GetChaseOrderDetailResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="listpricetriggeredorders"></a>
 # **ListPriceTriggeredOrders**
 > List&lt;FuturesPriceTriggeredOrder&gt; ListPriceTriggeredOrders (string settle, string status, string contract = null, int? limit = null, int? offset = null)
@@ -4925,7 +5391,7 @@ Name | Type | Description  | Notes
 
 <a name="updatepricetriggeredorder"></a>
 # **UpdatePriceTriggeredOrder**
-> TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+> TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
 
 Modify a Single Auto Order
 
@@ -4949,13 +5415,12 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
-            var orderId = 56;  // long | ID returned when order is successfully created
             var futuresUpdatePriceTriggeredOrder = new FuturesUpdatePriceTriggeredOrder(); // FuturesUpdatePriceTriggeredOrder | 
 
             try
             {
                 // Modify a Single Auto Order
-                TriggerOrderResponse result = apiInstance.UpdatePriceTriggeredOrder(settle, orderId, futuresUpdatePriceTriggeredOrder);
+                TriggerOrderResponse result = apiInstance.UpdatePriceTriggeredOrder(settle, futuresUpdatePriceTriggeredOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4975,7 +5440,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
- **orderId** | **long**| ID returned when order is successfully created | 
  **futuresUpdatePriceTriggeredOrder** | [**FuturesUpdatePriceTriggeredOrder**](FuturesUpdatePriceTriggeredOrder.md)|  | 
 
 ### Return type

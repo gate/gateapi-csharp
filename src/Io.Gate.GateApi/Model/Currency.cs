@@ -45,7 +45,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="chains">All links corresponding to coins.</param>
         /// <param name="totalSupply">Total supply.</param>
         /// <param name="marketCap">Market cap.</param>
-        /// <param name="category">币种分类  - stocks: 股票 - metals: 金属 - indices: 指数 - forex: 外汇 - commodities: 大宗商品.</param>
+        /// <param name="category">Currency categories - stocks: Stocks - metals: Metals - indices: Indices - forex: Forex - commodities: Commodities.</param>
         public Currency(string currency = default(string), string name = default(string), bool delisted = default(bool), bool withdrawDisabled = default(bool), bool withdrawDelayed = default(bool), bool depositDisabled = default(bool), bool tradeDisabled = default(bool), string fixedRate = default(string), string chain = default(string), List<SpotCurrencyChain> chains = default(List<SpotCurrencyChain>), string totalSupply = default(string), string marketCap = default(string), List<string> category = default(List<string>))
         {
             this._Currency = currency;
@@ -148,9 +148,9 @@ namespace Io.Gate.GateApi.Model
         public string MarketCap { get; set; }
 
         /// <summary>
-        /// 币种分类  - stocks: 股票 - metals: 金属 - indices: 指数 - forex: 外汇 - commodities: 大宗商品
+        /// Currency categories - stocks: Stocks - metals: Metals - indices: Indices - forex: Forex - commodities: Commodities
         /// </summary>
-        /// <value>币种分类  - stocks: 股票 - metals: 金属 - indices: 指数 - forex: 外汇 - commodities: 大宗商品</value>
+        /// <value>Currency categories - stocks: Stocks - metals: Metals - indices: Indices - forex: Forex - commodities: Commodities</value>
         [DataMember(Name="category")]
         public List<string> Category { get; set; }
 

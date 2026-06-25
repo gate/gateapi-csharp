@@ -53,6 +53,31 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;Contract&gt;</returns>
         ApiResponse<List<Contract>> ListFuturesContractsWithHttpInfo (string settle, int? limit = default(int?), int? offset = default(int?));
         /// <summary>
+        /// Query all contract information (including delisted)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>List&lt;Contract&gt;</returns>
+        List<Contract> ListFuturesContractsAll (string settle, int? limit = default(int?), int? offset = default(int?));
+
+        /// <summary>
+        /// Query all contract information (including delisted)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>ApiResponse of List&lt;Contract&gt;</returns>
+        ApiResponse<List<Contract>> ListFuturesContractsAllWithHttpInfo (string settle, int? limit = default(int?), int? offset = default(int?));
+        /// <summary>
         /// Query single contract information
         /// </summary>
         /// <remarks>
@@ -937,11 +962,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>List&lt;FuturesOrder&gt;</returns>
-        List<FuturesOrder> CancelFuturesOrders (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
+        List<FuturesOrder> CancelFuturesOrders (string settle, string xGateExptime = default(string), string contract = default(string), string actionMode = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
 
         /// <summary>
         /// Cancel all orders with &#39;open&#39; status
@@ -953,11 +979,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>ApiResponse of List&lt;FuturesOrder&gt;</returns>
-        ApiResponse<List<FuturesOrder>> CancelFuturesOrdersWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
+        ApiResponse<List<FuturesOrder>> CancelFuturesOrdersWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string actionMode = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
         /// <summary>
         /// Query futures order list by time range
         /// </summary>
@@ -1074,8 +1101,9 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <returns>FuturesOrder</returns>
-        FuturesOrder CancelFuturesOrder (string settle, string orderId, string xGateExptime = default(string));
+        FuturesOrder CancelFuturesOrder (string settle, string orderId, string xGateExptime = default(string), string actionMode = default(string));
 
         /// <summary>
         /// Cancel single order
@@ -1087,8 +1115,9 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <returns>ApiResponse of FuturesOrder</returns>
-        ApiResponse<FuturesOrder> CancelFuturesOrderWithHttpInfo (string settle, string orderId, string xGateExptime = default(string));
+        ApiResponse<FuturesOrder> CancelFuturesOrderWithHttpInfo (string settle, string orderId, string xGateExptime = default(string), string actionMode = default(string));
         /// <summary>
         /// Query personal trading records
         /// </summary>
@@ -1586,6 +1615,139 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of TrailOrderChangeLogResponse</returns>
         ApiResponse<TrailOrderChangeLogResponse> GetTrailOrderChangeLogWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
         /// <summary>
+        /// Create a chase order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createChaseOrderReq"></param>
+        /// <returns>CreateChaseOrderResp</returns>
+        CreateChaseOrderResp CreateChaseOrder (string settle, CreateChaseOrderReq createChaseOrderReq);
+
+        /// <summary>
+        /// Create a chase order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createChaseOrderReq"></param>
+        /// <returns>ApiResponse of CreateChaseOrderResp</returns>
+        ApiResponse<CreateChaseOrderResp> CreateChaseOrderWithHttpInfo (string settle, CreateChaseOrderReq createChaseOrderReq);
+        /// <summary>
+        /// Stop a chase order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopChaseOrderReq"></param>
+        /// <returns>StopChaseOrderResp</returns>
+        StopChaseOrderResp StopChaseOrder (string settle, StopChaseOrderReq stopChaseOrderReq);
+
+        /// <summary>
+        /// Stop a chase order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopChaseOrderReq"></param>
+        /// <returns>ApiResponse of StopChaseOrderResp</returns>
+        ApiResponse<StopChaseOrderResp> StopChaseOrderWithHttpInfo (string settle, StopChaseOrderReq stopChaseOrderReq);
+        /// <summary>
+        /// Stop chase orders in batch
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllChaseOrdersReq"></param>
+        /// <returns>StopAllChaseOrdersResp</returns>
+        StopAllChaseOrdersResp StopAllChaseOrders (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq);
+
+        /// <summary>
+        /// Stop chase orders in batch
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllChaseOrdersReq"></param>
+        /// <returns>ApiResponse of StopAllChaseOrdersResp</returns>
+        ApiResponse<StopAllChaseOrdersResp> StopAllChaseOrdersWithHttpInfo (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq);
+        /// <summary>
+        /// List chase orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
+        /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
+        /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
+        /// <param name="endAt">Upper time bound for the history list, paired with start_at. Required when is_finished is true (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional)</param>
+        /// <param name="pageSize">Page size; must be between 1 and 100 (optional)</param>
+        /// <param name="hideCancel">When true, cancelled orders are hidden in the list (optional)</param>
+        /// <param name="reduceOnly">OptionalBool: 0 unknown, 1 true, 2 false; used to filter by reduce-only flag (optional)</param>
+        /// <param name="side">Filter by long/short side: 1 long, 2 short (optional)</param>
+        /// <returns>GetChaseOrdersResp</returns>
+        GetChaseOrdersResp GetChaseOrders (string settle, int sortBy, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), bool? hideCancel = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+
+        /// <summary>
+        /// List chase orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
+        /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
+        /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
+        /// <param name="endAt">Upper time bound for the history list, paired with start_at. Required when is_finished is true (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional)</param>
+        /// <param name="pageSize">Page size; must be between 1 and 100 (optional)</param>
+        /// <param name="hideCancel">When true, cancelled orders are hidden in the list (optional)</param>
+        /// <param name="reduceOnly">OptionalBool: 0 unknown, 1 true, 2 false; used to filter by reduce-only flag (optional)</param>
+        /// <param name="side">Filter by long/short side: 1 long, 2 short (optional)</param>
+        /// <returns>ApiResponse of GetChaseOrdersResp</returns>
+        ApiResponse<GetChaseOrdersResp> GetChaseOrdersWithHttpInfo (string settle, int sortBy, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), bool? hideCancel = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <summary>
+        /// Get chase order detail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID, must be a non-zero positive integer</param>
+        /// <returns>GetChaseOrderDetailResp</returns>
+        GetChaseOrderDetailResp GetChaseOrderDetail (string settle, string id);
+
+        /// <summary>
+        /// Get chase order detail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID, must be a non-zero positive integer</param>
+        /// <returns>ApiResponse of GetChaseOrderDetailResp</returns>
+        ApiResponse<GetChaseOrderDetailResp> GetChaseOrderDetailWithHttpInfo (string settle, string id);
+        /// <summary>
         /// Query auto order list
         /// </summary>
         /// <remarks>
@@ -1714,10 +1876,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
-        TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
 
         /// <summary>
         /// Modify a Single Auto Order
@@ -1727,10 +1888,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
-        ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
         #endregion Synchronous Operations
     }
 
@@ -1765,6 +1925,31 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;Contract&gt;)</returns>
         Task<ApiResponse<List<Contract>>> ListFuturesContractsAsyncWithHttpInfo (string settle, int? limit = default(int?), int? offset = default(int?));
+        /// <summary>
+        /// Query all contract information (including delisted)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>Task of List&lt;Contract&gt;</returns>
+        Task<List<Contract>> ListFuturesContractsAllAsync (string settle, int? limit = default(int?), int? offset = default(int?));
+
+        /// <summary>
+        /// Query all contract information (including delisted)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>Task of ApiResponse (List&lt;Contract&gt;)</returns>
+        Task<ApiResponse<List<Contract>>> ListFuturesContractsAllAsyncWithHttpInfo (string settle, int? limit = default(int?), int? offset = default(int?));
         /// <summary>
         /// Query single contract information
         /// </summary>
@@ -2650,11 +2835,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>Task of List&lt;FuturesOrder&gt;</returns>
-        Task<List<FuturesOrder>> CancelFuturesOrdersAsync (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
+        Task<List<FuturesOrder>> CancelFuturesOrdersAsync (string settle, string xGateExptime = default(string), string contract = default(string), string actionMode = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
 
         /// <summary>
         /// Cancel all orders with &#39;open&#39; status
@@ -2666,11 +2852,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesOrder&gt;)</returns>
-        Task<ApiResponse<List<FuturesOrder>>> CancelFuturesOrdersAsyncWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
+        Task<ApiResponse<List<FuturesOrder>>> CancelFuturesOrdersAsyncWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string actionMode = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string));
         /// <summary>
         /// Query futures order list by time range
         /// </summary>
@@ -2787,8 +2974,9 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <returns>Task of FuturesOrder</returns>
-        Task<FuturesOrder> CancelFuturesOrderAsync (string settle, string orderId, string xGateExptime = default(string));
+        Task<FuturesOrder> CancelFuturesOrderAsync (string settle, string orderId, string xGateExptime = default(string), string actionMode = default(string));
 
         /// <summary>
         /// Cancel single order
@@ -2800,8 +2988,9 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <returns>Task of ApiResponse (FuturesOrder)</returns>
-        Task<ApiResponse<FuturesOrder>> CancelFuturesOrderAsyncWithHttpInfo (string settle, string orderId, string xGateExptime = default(string));
+        Task<ApiResponse<FuturesOrder>> CancelFuturesOrderAsyncWithHttpInfo (string settle, string orderId, string xGateExptime = default(string), string actionMode = default(string));
         /// <summary>
         /// Query personal trading records
         /// </summary>
@@ -3299,6 +3488,139 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (TrailOrderChangeLogResponse)</returns>
         Task<ApiResponse<TrailOrderChangeLogResponse>> GetTrailOrderChangeLogAsyncWithHttpInfo (string settle, long id, int? pageNum = default(int?), int? pageSize = default(int?));
         /// <summary>
+        /// Create a chase order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createChaseOrderReq"></param>
+        /// <returns>Task of CreateChaseOrderResp</returns>
+        Task<CreateChaseOrderResp> CreateChaseOrderAsync (string settle, CreateChaseOrderReq createChaseOrderReq);
+
+        /// <summary>
+        /// Create a chase order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createChaseOrderReq"></param>
+        /// <returns>Task of ApiResponse (CreateChaseOrderResp)</returns>
+        Task<ApiResponse<CreateChaseOrderResp>> CreateChaseOrderAsyncWithHttpInfo (string settle, CreateChaseOrderReq createChaseOrderReq);
+        /// <summary>
+        /// Stop a chase order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopChaseOrderReq"></param>
+        /// <returns>Task of StopChaseOrderResp</returns>
+        Task<StopChaseOrderResp> StopChaseOrderAsync (string settle, StopChaseOrderReq stopChaseOrderReq);
+
+        /// <summary>
+        /// Stop a chase order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopChaseOrderReq"></param>
+        /// <returns>Task of ApiResponse (StopChaseOrderResp)</returns>
+        Task<ApiResponse<StopChaseOrderResp>> StopChaseOrderAsyncWithHttpInfo (string settle, StopChaseOrderReq stopChaseOrderReq);
+        /// <summary>
+        /// Stop chase orders in batch
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllChaseOrdersReq"></param>
+        /// <returns>Task of StopAllChaseOrdersResp</returns>
+        Task<StopAllChaseOrdersResp> StopAllChaseOrdersAsync (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq);
+
+        /// <summary>
+        /// Stop chase orders in batch
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllChaseOrdersReq"></param>
+        /// <returns>Task of ApiResponse (StopAllChaseOrdersResp)</returns>
+        Task<ApiResponse<StopAllChaseOrdersResp>> StopAllChaseOrdersAsyncWithHttpInfo (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq);
+        /// <summary>
+        /// List chase orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
+        /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
+        /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
+        /// <param name="endAt">Upper time bound for the history list, paired with start_at. Required when is_finished is true (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional)</param>
+        /// <param name="pageSize">Page size; must be between 1 and 100 (optional)</param>
+        /// <param name="hideCancel">When true, cancelled orders are hidden in the list (optional)</param>
+        /// <param name="reduceOnly">OptionalBool: 0 unknown, 1 true, 2 false; used to filter by reduce-only flag (optional)</param>
+        /// <param name="side">Filter by long/short side: 1 long, 2 short (optional)</param>
+        /// <returns>Task of GetChaseOrdersResp</returns>
+        Task<GetChaseOrdersResp> GetChaseOrdersAsync (string settle, int sortBy, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), bool? hideCancel = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+
+        /// <summary>
+        /// List chase orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
+        /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
+        /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
+        /// <param name="endAt">Upper time bound for the history list, paired with start_at. Required when is_finished is true (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional)</param>
+        /// <param name="pageSize">Page size; must be between 1 and 100 (optional)</param>
+        /// <param name="hideCancel">When true, cancelled orders are hidden in the list (optional)</param>
+        /// <param name="reduceOnly">OptionalBool: 0 unknown, 1 true, 2 false; used to filter by reduce-only flag (optional)</param>
+        /// <param name="side">Filter by long/short side: 1 long, 2 short (optional)</param>
+        /// <returns>Task of ApiResponse (GetChaseOrdersResp)</returns>
+        Task<ApiResponse<GetChaseOrdersResp>> GetChaseOrdersAsyncWithHttpInfo (string settle, int sortBy, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), bool? hideCancel = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <summary>
+        /// Get chase order detail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID, must be a non-zero positive integer</param>
+        /// <returns>Task of GetChaseOrderDetailResp</returns>
+        Task<GetChaseOrderDetailResp> GetChaseOrderDetailAsync (string settle, string id);
+
+        /// <summary>
+        /// Get chase order detail
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID, must be a non-zero positive integer</param>
+        /// <returns>Task of ApiResponse (GetChaseOrderDetailResp)</returns>
+        Task<ApiResponse<GetChaseOrderDetailResp>> GetChaseOrderDetailAsyncWithHttpInfo (string settle, string id);
+        /// <summary>
         /// Query auto order list
         /// </summary>
         /// <remarks>
@@ -3427,10 +3749,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
-        Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
 
         /// <summary>
         /// Modify a Single Auto Order
@@ -3440,10 +3761,9 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
-        Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
         #endregion Asynchronous Operations
     }
 
@@ -3695,6 +4015,143 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListFuturesContracts", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query all contract information (including delisted) 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>List&lt;Contract&gt;</returns>
+        public List<Contract> ListFuturesContractsAll (string settle, int? limit = default(int?), int? offset = default(int?))
+        {
+             ApiResponse<List<Contract>> localVarResponse = ListFuturesContractsAllWithHttpInfo(settle, limit, offset);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query all contract information (including delisted) 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>ApiResponse of List&lt;Contract&gt;</returns>
+        public ApiResponse<List<Contract>> ListFuturesContractsAllWithHttpInfo (string settle, int? limit = default(int?), int? offset = default(int?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->ListFuturesContractsAll");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (offset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "offset", offset));
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<Contract>>("/futures/{settle}/contracts_all", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListFuturesContractsAll", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query all contract information (including delisted) 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>Task of List&lt;Contract&gt;</returns>
+        public async Task<List<Contract>> ListFuturesContractsAllAsync (string settle, int? limit = default(int?), int? offset = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<Contract>> localVarResponse = await ListFuturesContractsAllAsyncWithHttpInfo(settle, limit, offset);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query all contract information (including delisted) 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
+        /// <returns>Task of ApiResponse (List&lt;Contract&gt;)</returns>
+        public async Task<ApiResponse<List<Contract>>> ListFuturesContractsAllAsyncWithHttpInfo (string settle, int? limit = default(int?), int? offset = default(int?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->ListFuturesContractsAll");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (offset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "offset", offset));
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Contract>>("/futures/{settle}/contracts_all", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListFuturesContractsAll", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -8683,13 +9140,14 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>List&lt;FuturesOrder&gt;</returns>
-        public List<FuturesOrder> CancelFuturesOrders (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
+        public List<FuturesOrder> CancelFuturesOrders (string settle, string xGateExptime = default(string), string contract = default(string), string actionMode = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
         {
-             ApiResponse<List<FuturesOrder>> localVarResponse = CancelFuturesOrdersWithHttpInfo(settle, xGateExptime, contract, side, excludeReduceOnly, text);
+             ApiResponse<List<FuturesOrder>> localVarResponse = CancelFuturesOrdersWithHttpInfo(settle, xGateExptime, contract, actionMode, side, excludeReduceOnly, text);
              return localVarResponse.Data;
         }
 
@@ -8700,11 +9158,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>ApiResponse of List&lt;FuturesOrder&gt;</returns>
-        public ApiResponse<List<FuturesOrder>> CancelFuturesOrdersWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
+        public ApiResponse<List<FuturesOrder>> CancelFuturesOrdersWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string actionMode = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -8730,6 +9189,10 @@ namespace Io.Gate.GateApi.Api
             if (contract != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            }
+            if (actionMode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "action_mode", actionMode));
             }
             if (side != null)
             {
@@ -8770,13 +9233,14 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>Task of List&lt;FuturesOrder&gt;</returns>
-        public async Task<List<FuturesOrder>> CancelFuturesOrdersAsync (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
+        public async Task<List<FuturesOrder>> CancelFuturesOrdersAsync (string settle, string xGateExptime = default(string), string contract = default(string), string actionMode = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<FuturesOrder>> localVarResponse = await CancelFuturesOrdersAsyncWithHttpInfo(settle, xGateExptime, contract, side, excludeReduceOnly, text);
+             Io.Gate.GateApi.Client.ApiResponse<List<FuturesOrder>> localVarResponse = await CancelFuturesOrdersAsyncWithHttpInfo(settle, xGateExptime, contract, actionMode, side, excludeReduceOnly, text);
              return localVarResponse.Data;
 
         }
@@ -8788,11 +9252,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <param name="side">Specify all buy orders or all sell orders, both are included if not specified. Set to bid to cancel all buy orders, set to ask to cancel all sell orders (optional)</param>
         /// <param name="excludeReduceOnly">Whether to exclude reduce-only orders (optional, default to false)</param>
         /// <param name="text">Remark for order cancellation (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesOrder&gt;)</returns>
-        public async Task<ApiResponse<List<FuturesOrder>>> CancelFuturesOrdersAsyncWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
+        public async Task<ApiResponse<List<FuturesOrder>>> CancelFuturesOrdersAsyncWithHttpInfo (string settle, string xGateExptime = default(string), string contract = default(string), string actionMode = default(string), string side = default(string), bool? excludeReduceOnly = default(bool?), string text = default(string))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -8819,6 +9284,10 @@ namespace Io.Gate.GateApi.Api
             if (contract != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            }
+            if (actionMode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "action_mode", actionMode));
             }
             if (side != null)
             {
@@ -9472,10 +9941,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <returns>FuturesOrder</returns>
-        public FuturesOrder CancelFuturesOrder (string settle, string orderId, string xGateExptime = default(string))
+        public FuturesOrder CancelFuturesOrder (string settle, string orderId, string xGateExptime = default(string), string actionMode = default(string))
         {
-             ApiResponse<FuturesOrder> localVarResponse = CancelFuturesOrderWithHttpInfo(settle, orderId, xGateExptime);
+             ApiResponse<FuturesOrder> localVarResponse = CancelFuturesOrderWithHttpInfo(settle, orderId, xGateExptime, actionMode);
              return localVarResponse.Data;
         }
 
@@ -9486,8 +9956,9 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <returns>ApiResponse of FuturesOrder</returns>
-        public ApiResponse<FuturesOrder> CancelFuturesOrderWithHttpInfo (string settle, string orderId, string xGateExptime = default(string))
+        public ApiResponse<FuturesOrder> CancelFuturesOrderWithHttpInfo (string settle, string orderId, string xGateExptime = default(string), string actionMode = default(string))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -9515,6 +9986,10 @@ namespace Io.Gate.GateApi.Api
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
             localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+            if (actionMode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "action_mode", actionMode));
+            }
             if (xGateExptime != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("x-gate-exptime", ClientUtils.ParameterToString(xGateExptime)); // header parameter
@@ -9542,10 +10017,11 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <returns>Task of FuturesOrder</returns>
-        public async Task<FuturesOrder> CancelFuturesOrderAsync (string settle, string orderId, string xGateExptime = default(string))
+        public async Task<FuturesOrder> CancelFuturesOrderAsync (string settle, string orderId, string xGateExptime = default(string), string actionMode = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<FuturesOrder> localVarResponse = await CancelFuturesOrderAsyncWithHttpInfo(settle, orderId, xGateExptime);
+             Io.Gate.GateApi.Client.ApiResponse<FuturesOrder> localVarResponse = await CancelFuturesOrderAsyncWithHttpInfo(settle, orderId, xGateExptime, actionMode);
              return localVarResponse.Data;
 
         }
@@ -9557,8 +10033,9 @@ namespace Io.Gate.GateApi.Api
         /// <param name="settle">Settle currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
         /// <returns>Task of ApiResponse (FuturesOrder)</returns>
-        public async Task<ApiResponse<FuturesOrder>> CancelFuturesOrderAsyncWithHttpInfo (string settle, string orderId, string xGateExptime = default(string))
+        public async Task<ApiResponse<FuturesOrder>> CancelFuturesOrderAsyncWithHttpInfo (string settle, string orderId, string xGateExptime = default(string), string actionMode = default(string))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -9587,6 +10064,10 @@ namespace Io.Gate.GateApi.Api
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
             localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+            if (actionMode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "action_mode", actionMode));
+            }
             if (xGateExptime != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("x-gate-exptime", ClientUtils.ParameterToString(xGateExptime)); // header parameter
@@ -12441,6 +12922,767 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
+        /// Create a chase order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createChaseOrderReq"></param>
+        /// <returns>CreateChaseOrderResp</returns>
+        public CreateChaseOrderResp CreateChaseOrder (string settle, CreateChaseOrderReq createChaseOrderReq)
+        {
+             ApiResponse<CreateChaseOrderResp> localVarResponse = CreateChaseOrderWithHttpInfo(settle, createChaseOrderReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a chase order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createChaseOrderReq"></param>
+        /// <returns>ApiResponse of CreateChaseOrderResp</returns>
+        public ApiResponse<CreateChaseOrderResp> CreateChaseOrderWithHttpInfo (string settle, CreateChaseOrderReq createChaseOrderReq)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->CreateChaseOrder");
+
+            // verify the required parameter 'createChaseOrderReq' is set
+            if (createChaseOrderReq == null)
+                throw new ApiException(400, "Missing required parameter 'createChaseOrderReq' when calling FuturesApi->CreateChaseOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = createChaseOrderReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CreateChaseOrderResp>("/futures/{settle}/autoorder/v1/chase/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateChaseOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create a chase order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createChaseOrderReq"></param>
+        /// <returns>Task of CreateChaseOrderResp</returns>
+        public async Task<CreateChaseOrderResp> CreateChaseOrderAsync (string settle, CreateChaseOrderReq createChaseOrderReq)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<CreateChaseOrderResp> localVarResponse = await CreateChaseOrderAsyncWithHttpInfo(settle, createChaseOrderReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create a chase order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="createChaseOrderReq"></param>
+        /// <returns>Task of ApiResponse (CreateChaseOrderResp)</returns>
+        public async Task<ApiResponse<CreateChaseOrderResp>> CreateChaseOrderAsyncWithHttpInfo (string settle, CreateChaseOrderReq createChaseOrderReq)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->CreateChaseOrder");
+
+            // verify the required parameter 'createChaseOrderReq' is set
+            if (createChaseOrderReq == null)
+                throw new ApiException(400, "Missing required parameter 'createChaseOrderReq' when calling FuturesApi->CreateChaseOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = createChaseOrderReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateChaseOrderResp>("/futures/{settle}/autoorder/v1/chase/create", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateChaseOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Stop a chase order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopChaseOrderReq"></param>
+        /// <returns>StopChaseOrderResp</returns>
+        public StopChaseOrderResp StopChaseOrder (string settle, StopChaseOrderReq stopChaseOrderReq)
+        {
+             ApiResponse<StopChaseOrderResp> localVarResponse = StopChaseOrderWithHttpInfo(settle, stopChaseOrderReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Stop a chase order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopChaseOrderReq"></param>
+        /// <returns>ApiResponse of StopChaseOrderResp</returns>
+        public ApiResponse<StopChaseOrderResp> StopChaseOrderWithHttpInfo (string settle, StopChaseOrderReq stopChaseOrderReq)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->StopChaseOrder");
+
+            // verify the required parameter 'stopChaseOrderReq' is set
+            if (stopChaseOrderReq == null)
+                throw new ApiException(400, "Missing required parameter 'stopChaseOrderReq' when calling FuturesApi->StopChaseOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = stopChaseOrderReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<StopChaseOrderResp>("/futures/{settle}/autoorder/v1/chase/stop", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopChaseOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Stop a chase order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopChaseOrderReq"></param>
+        /// <returns>Task of StopChaseOrderResp</returns>
+        public async Task<StopChaseOrderResp> StopChaseOrderAsync (string settle, StopChaseOrderReq stopChaseOrderReq)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<StopChaseOrderResp> localVarResponse = await StopChaseOrderAsyncWithHttpInfo(settle, stopChaseOrderReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Stop a chase order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopChaseOrderReq"></param>
+        /// <returns>Task of ApiResponse (StopChaseOrderResp)</returns>
+        public async Task<ApiResponse<StopChaseOrderResp>> StopChaseOrderAsyncWithHttpInfo (string settle, StopChaseOrderReq stopChaseOrderReq)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->StopChaseOrder");
+
+            // verify the required parameter 'stopChaseOrderReq' is set
+            if (stopChaseOrderReq == null)
+                throw new ApiException(400, "Missing required parameter 'stopChaseOrderReq' when calling FuturesApi->StopChaseOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = stopChaseOrderReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<StopChaseOrderResp>("/futures/{settle}/autoorder/v1/chase/stop", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopChaseOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Stop chase orders in batch 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllChaseOrdersReq"></param>
+        /// <returns>StopAllChaseOrdersResp</returns>
+        public StopAllChaseOrdersResp StopAllChaseOrders (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq)
+        {
+             ApiResponse<StopAllChaseOrdersResp> localVarResponse = StopAllChaseOrdersWithHttpInfo(settle, stopAllChaseOrdersReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Stop chase orders in batch 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllChaseOrdersReq"></param>
+        /// <returns>ApiResponse of StopAllChaseOrdersResp</returns>
+        public ApiResponse<StopAllChaseOrdersResp> StopAllChaseOrdersWithHttpInfo (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->StopAllChaseOrders");
+
+            // verify the required parameter 'stopAllChaseOrdersReq' is set
+            if (stopAllChaseOrdersReq == null)
+                throw new ApiException(400, "Missing required parameter 'stopAllChaseOrdersReq' when calling FuturesApi->StopAllChaseOrders");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = stopAllChaseOrdersReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<StopAllChaseOrdersResp>("/futures/{settle}/autoorder/v1/chase/stop_all", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopAllChaseOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Stop chase orders in batch 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllChaseOrdersReq"></param>
+        /// <returns>Task of StopAllChaseOrdersResp</returns>
+        public async Task<StopAllChaseOrdersResp> StopAllChaseOrdersAsync (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<StopAllChaseOrdersResp> localVarResponse = await StopAllChaseOrdersAsyncWithHttpInfo(settle, stopAllChaseOrdersReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Stop chase orders in batch 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="stopAllChaseOrdersReq"></param>
+        /// <returns>Task of ApiResponse (StopAllChaseOrdersResp)</returns>
+        public async Task<ApiResponse<StopAllChaseOrdersResp>> StopAllChaseOrdersAsyncWithHttpInfo (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->StopAllChaseOrders");
+
+            // verify the required parameter 'stopAllChaseOrdersReq' is set
+            if (stopAllChaseOrdersReq == null)
+                throw new ApiException(400, "Missing required parameter 'stopAllChaseOrdersReq' when calling FuturesApi->StopAllChaseOrders");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.Data = stopAllChaseOrdersReq;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<StopAllChaseOrdersResp>("/futures/{settle}/autoorder/v1/chase/stop_all", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopAllChaseOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List chase orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
+        /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
+        /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
+        /// <param name="endAt">Upper time bound for the history list, paired with start_at. Required when is_finished is true (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional)</param>
+        /// <param name="pageSize">Page size; must be between 1 and 100 (optional)</param>
+        /// <param name="hideCancel">When true, cancelled orders are hidden in the list (optional)</param>
+        /// <param name="reduceOnly">OptionalBool: 0 unknown, 1 true, 2 false; used to filter by reduce-only flag (optional)</param>
+        /// <param name="side">Filter by long/short side: 1 long, 2 short (optional)</param>
+        /// <returns>GetChaseOrdersResp</returns>
+        public GetChaseOrdersResp GetChaseOrders (string settle, int sortBy, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), bool? hideCancel = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        {
+             ApiResponse<GetChaseOrdersResp> localVarResponse = GetChaseOrdersWithHttpInfo(settle, sortBy, contract, isFinished, startAt, endAt, pageNum, pageSize, hideCancel, reduceOnly, side);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List chase orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
+        /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
+        /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
+        /// <param name="endAt">Upper time bound for the history list, paired with start_at. Required when is_finished is true (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional)</param>
+        /// <param name="pageSize">Page size; must be between 1 and 100 (optional)</param>
+        /// <param name="hideCancel">When true, cancelled orders are hidden in the list (optional)</param>
+        /// <param name="reduceOnly">OptionalBool: 0 unknown, 1 true, 2 false; used to filter by reduce-only flag (optional)</param>
+        /// <param name="side">Filter by long/short side: 1 long, 2 short (optional)</param>
+        /// <returns>ApiResponse of GetChaseOrdersResp</returns>
+        public ApiResponse<GetChaseOrdersResp> GetChaseOrdersWithHttpInfo (string settle, int sortBy, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), bool? hideCancel = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetChaseOrders");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            if (contract != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            }
+            if (isFinished != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "is_finished", isFinished));
+            }
+            if (startAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_at", startAt));
+            }
+            if (endAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_at", endAt));
+            }
+            if (pageNum != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_num", pageNum));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sort_by", sortBy));
+            if (hideCancel != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "hide_cancel", hideCancel));
+            }
+            if (reduceOnly != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "reduce_only", reduceOnly));
+            }
+            if (side != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "side", side));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetChaseOrdersResp>("/futures/{settle}/autoorder/v1/chase/list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetChaseOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List chase orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
+        /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
+        /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
+        /// <param name="endAt">Upper time bound for the history list, paired with start_at. Required when is_finished is true (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional)</param>
+        /// <param name="pageSize">Page size; must be between 1 and 100 (optional)</param>
+        /// <param name="hideCancel">When true, cancelled orders are hidden in the list (optional)</param>
+        /// <param name="reduceOnly">OptionalBool: 0 unknown, 1 true, 2 false; used to filter by reduce-only flag (optional)</param>
+        /// <param name="side">Filter by long/short side: 1 long, 2 short (optional)</param>
+        /// <returns>Task of GetChaseOrdersResp</returns>
+        public async Task<GetChaseOrdersResp> GetChaseOrdersAsync (string settle, int sortBy, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), bool? hideCancel = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<GetChaseOrdersResp> localVarResponse = await GetChaseOrdersAsyncWithHttpInfo(settle, sortBy, contract, isFinished, startAt, endAt, pageNum, pageSize, hideCancel, reduceOnly, side);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List chase orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
+        /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
+        /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
+        /// <param name="endAt">Upper time bound for the history list, paired with start_at. Required when is_finished is true (optional)</param>
+        /// <param name="pageNum">Page number, starting from 1 (optional)</param>
+        /// <param name="pageSize">Page size; must be between 1 and 100 (optional)</param>
+        /// <param name="hideCancel">When true, cancelled orders are hidden in the list (optional)</param>
+        /// <param name="reduceOnly">OptionalBool: 0 unknown, 1 true, 2 false; used to filter by reduce-only flag (optional)</param>
+        /// <param name="side">Filter by long/short side: 1 long, 2 short (optional)</param>
+        /// <returns>Task of ApiResponse (GetChaseOrdersResp)</returns>
+        public async Task<ApiResponse<GetChaseOrdersResp>> GetChaseOrdersAsyncWithHttpInfo (string settle, int sortBy, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), bool? hideCancel = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetChaseOrders");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            if (contract != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            }
+            if (isFinished != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "is_finished", isFinished));
+            }
+            if (startAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_at", startAt));
+            }
+            if (endAt != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_at", endAt));
+            }
+            if (pageNum != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_num", pageNum));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sort_by", sortBy));
+            if (hideCancel != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "hide_cancel", hideCancel));
+            }
+            if (reduceOnly != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "reduce_only", reduceOnly));
+            }
+            if (side != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "side", side));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetChaseOrdersResp>("/futures/{settle}/autoorder/v1/chase/list", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetChaseOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get chase order detail 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID, must be a non-zero positive integer</param>
+        /// <returns>GetChaseOrderDetailResp</returns>
+        public GetChaseOrderDetailResp GetChaseOrderDetail (string settle, string id)
+        {
+             ApiResponse<GetChaseOrderDetailResp> localVarResponse = GetChaseOrderDetailWithHttpInfo(settle, id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get chase order detail 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID, must be a non-zero positive integer</param>
+        /// <returns>ApiResponse of GetChaseOrderDetailResp</returns>
+        public ApiResponse<GetChaseOrderDetailResp> GetChaseOrderDetailWithHttpInfo (string settle, string id)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetChaseOrderDetail");
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling FuturesApi->GetChaseOrderDetail");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "id", id));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetChaseOrderDetailResp>("/futures/{settle}/autoorder/v1/chase/detail", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetChaseOrderDetail", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get chase order detail 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID, must be a non-zero positive integer</param>
+        /// <returns>Task of GetChaseOrderDetailResp</returns>
+        public async Task<GetChaseOrderDetailResp> GetChaseOrderDetailAsync (string settle, string id)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<GetChaseOrderDetailResp> localVarResponse = await GetChaseOrderDetailAsyncWithHttpInfo(settle, id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get chase order detail 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Settle currency</param>
+        /// <param name="id">Order ID, must be a non-zero positive integer</param>
+        /// <returns>Task of ApiResponse (GetChaseOrderDetailResp)</returns>
+        public async Task<ApiResponse<GetChaseOrderDetailResp>> GetChaseOrderDetailAsyncWithHttpInfo (string settle, string id)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->GetChaseOrderDetail");
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling FuturesApi->GetChaseOrderDetail");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "id", id));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetChaseOrderDetailResp>("/futures/{settle}/autoorder/v1/chase/detail", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetChaseOrderDetail", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Query auto order list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
@@ -13120,12 +14362,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
-        public TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
-             ApiResponse<TriggerOrderResponse> localVarResponse = UpdatePriceTriggeredOrderWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
+             ApiResponse<TriggerOrderResponse> localVarResponse = UpdatePriceTriggeredOrderWithHttpInfo(settle, futuresUpdatePriceTriggeredOrder);
              return localVarResponse.Data;
         }
 
@@ -13134,10 +14375,9 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
-        public ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -13165,14 +14405,13 @@ namespace Io.Gate.GateApi.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
-            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
             localVarRequestOptions.Data = futuresUpdatePriceTriggeredOrder;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<TriggerOrderResponse>("/futures/{settle}/price_orders/amend/{order_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<TriggerOrderResponse>("/futures/{settle}/price_orders/amend", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -13188,12 +14427,11 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
-        public async Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public async Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
-             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse> localVarResponse = await UpdatePriceTriggeredOrderAsyncWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
+             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse> localVarResponse = await UpdatePriceTriggeredOrderAsyncWithHttpInfo(settle, futuresUpdatePriceTriggeredOrder);
              return localVarResponse.Data;
 
         }
@@ -13203,10 +14441,9 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
-        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
-        public async Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public async Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -13235,7 +14472,6 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
-            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
             localVarRequestOptions.Data = futuresUpdatePriceTriggeredOrder;
 
             // authentication (apiv4) required
@@ -13243,7 +14479,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TriggerOrderResponse>("/futures/{settle}/price_orders/amend/{order_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TriggerOrderResponse>("/futures/{settle}/price_orders/amend", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

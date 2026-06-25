@@ -98,11 +98,11 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerDataAggregated" /> class.
         /// </summary>
-        /// <param name="rebateAmount">返佣金额，字符串格式保证精度  最多保留 6 位小数，去除尾零 (required).</param>
-        /// <param name="tradeVolume">交易量，字符串格式保证精度  最多保留 6 位小数，去除尾零 (required).</param>
-        /// <param name="netFee">净手续费，字符串格式保证精度  最多保留 6 位小数，去除尾零 (required).</param>
+        /// <param name="rebateAmount">Rebate amount as a string for precision. Up to 6 decimal places; trailing zeros removed. (required).</param>
+        /// <param name="tradeVolume">Trading volume as a string for precision. Up to 6 decimal places; trailing zeros removed. (required).</param>
+        /// <param name="netFee">Net fee as a string for precision. Up to 6 decimal places; trailing zeros removed. (required).</param>
         /// <param name="customerCount">Customer count (invited users) (required).</param>
-        /// <param name="tradingUserCount">交易人数，字符串形式（与线上 JSON 序列化一致）  仅在 business_type&#x3D;0（全部）时返回具体数值，其他业务类型返回 null (required).</param>
+        /// <param name="tradingUserCount">Transaction participant count​ (string format, consistent with online JSON serialization) only returns a specific value when business_type&#x3D;0(all), and returns nullfor other business types. (required).</param>
         /// <param name="timeRangeDesc">Time range description (required).</param>
         /// <param name="businessType">Business Type (required).</param>
         /// <param name="businessTypeDesc">Business type description; allowed values: All, Spot, Futures, Alpha, Web3, Perps (DEX), Exchange All, Web3 All, TradFi (required).</param>
@@ -125,23 +125,23 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 返佣金额，字符串格式保证精度  最多保留 6 位小数，去除尾零
+        /// Rebate amount as a string for precision. Up to 6 decimal places; trailing zeros removed.
         /// </summary>
-        /// <value>返佣金额，字符串格式保证精度  最多保留 6 位小数，去除尾零</value>
+        /// <value>Rebate amount as a string for precision. Up to 6 decimal places; trailing zeros removed.</value>
         [DataMember(Name="rebate_amount")]
         public string RebateAmount { get; set; }
 
         /// <summary>
-        /// 交易量，字符串格式保证精度  最多保留 6 位小数，去除尾零
+        /// Trading volume as a string for precision. Up to 6 decimal places; trailing zeros removed.
         /// </summary>
-        /// <value>交易量，字符串格式保证精度  最多保留 6 位小数，去除尾零</value>
+        /// <value>Trading volume as a string for precision. Up to 6 decimal places; trailing zeros removed.</value>
         [DataMember(Name="trade_volume")]
         public string TradeVolume { get; set; }
 
         /// <summary>
-        /// 净手续费，字符串格式保证精度  最多保留 6 位小数，去除尾零
+        /// Net fee as a string for precision. Up to 6 decimal places; trailing zeros removed.
         /// </summary>
-        /// <value>净手续费，字符串格式保证精度  最多保留 6 位小数，去除尾零</value>
+        /// <value>Net fee as a string for precision. Up to 6 decimal places; trailing zeros removed.</value>
         [DataMember(Name="net_fee")]
         public string NetFee { get; set; }
 
@@ -153,9 +153,9 @@ namespace Io.Gate.GateApi.Model
         public int CustomerCount { get; set; }
 
         /// <summary>
-        /// 交易人数，字符串形式（与线上 JSON 序列化一致）  仅在 business_type&#x3D;0（全部）时返回具体数值，其他业务类型返回 null
+        /// Transaction participant count​ (string format, consistent with online JSON serialization) only returns a specific value when business_type&#x3D;0(all), and returns nullfor other business types.
         /// </summary>
-        /// <value>交易人数，字符串形式（与线上 JSON 序列化一致）  仅在 business_type&#x3D;0（全部）时返回具体数值，其他业务类型返回 null</value>
+        /// <value>Transaction participant count​ (string format, consistent with online JSON serialization) only returns a specific value when business_type&#x3D;0(all), and returns nullfor other business types.</value>
         [DataMember(Name="trading_user_count")]
         public string TradingUserCount { get; set; }
 

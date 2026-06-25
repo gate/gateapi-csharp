@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**UpdateOrder**](TradFiApi.md#updateorder) | **PUT** /tradfi/orders/{order_id} | Modify order
 [**DeleteOrder**](TradFiApi.md#deleteorder) | **DELETE** /tradfi/orders/{order_id} | Cancel order
 [**QueryOrderHistoryList**](TradFiApi.md#queryorderhistorylist) | **GET** /tradfi/orders/history | Query historical order list
+[**QueryOrderLog**](TradFiApi.md#queryorderlog) | **GET** /tradfi/orders/log/{log_id} | Get order details by log ID
 [**QueryPositionList**](TradFiApi.md#querypositionlist) | **GET** /tradfi/positions | Query active position list
 [**UpdatePosition**](TradFiApi.md#updateposition) | **PUT** /tradfi/positions/{position_id} | Modify position
 [**ClosePosition**](TradFiApi.md#closeposition) | **POST** /tradfi/positions/{position_id}/close | Close position
@@ -1099,6 +1100,78 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="queryorderlog"></a>
+# **QueryOrderLog**
+> OrderLog QueryOrderLog (int logId)
+
+Get order details by log ID
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class QueryOrderLogExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new TradFiApi(config);
+            var logId = 1223;  // int | log_id returned from the order placement API
+
+            try
+            {
+                // Get order details by log ID
+                OrderLog result = apiInstance.QueryOrderLog(logId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling TradFiApi.QueryOrderLog: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **logId** | **int**| log_id returned from the order placement API | 
+
+### Return type
+
+[**OrderLog**](OrderLog.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Request success |  -  |
+| **400** | Request failed |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="querypositionlist"></a>
 # **QueryPositionList**
 > PositionList QueryPositionList ()
@@ -1317,7 +1390,7 @@ Name | Type | Description  | Notes
 
 <a name="querypositionhistorylist"></a>
 # **QueryPositionHistoryList**
-> PositionHistoryList QueryPositionHistoryList (long? beginTime = null, long? endTime = null, string symbol = null, string positionDir = null)
+> PositionHistoryList QueryPositionHistoryList (long? page = null, long? pageSize = null, long? beginTime = null, long? endTime = null, string symbol = null, string positionDir = null)
 
 Query historical position list
 
@@ -1340,6 +1413,8 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new TradFiApi(config);
+            var page = 1;  // long? | Page number; defaults to 1 if omitted. (optional) 
+            var pageSize = 10;  // long? | Page size; defaults to 10 if omitted. Maximum 100. (optional) 
             var beginTime = 56;  // long? | Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional) 
             var endTime = 56;  // long? | End time (timestamp in seconds) (optional) 
             var symbol = "symbol_example";  // string | Trading symbol (e.g., EURUSD) (optional) 
@@ -1348,7 +1423,7 @@ namespace Example
             try
             {
                 // Query historical position list
-                PositionHistoryList result = apiInstance.QueryPositionHistoryList(beginTime, endTime, symbol, positionDir);
+                PositionHistoryList result = apiInstance.QueryPositionHistoryList(page, pageSize, beginTime, endTime, symbol, positionDir);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1367,6 +1442,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **long?**| Page number; defaults to 1 if omitted. | [optional] 
+ **pageSize** | **long?**| Page size; defaults to 10 if omitted. Maximum 100. | [optional] 
  **beginTime** | **long?**| Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago | [optional] 
  **endTime** | **long?**| End time (timestamp in seconds) | [optional] 
  **symbol** | **string**| Trading symbol (e.g., EURUSD) | [optional] 

@@ -280,7 +280,7 @@ namespace Io.Gate.GateApi.Api
         /// Get recent partner application records
         /// </summary>
         /// <remarks>
-        /// 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// Get the current user&#39;s recent partner application records. This endpoint returns application records within the last 30 days, including application status, review information, application materials, and other details.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>PartnerApplicationResponse</returns>
@@ -290,7 +290,7 @@ namespace Io.Gate.GateApi.Api
         /// Get recent partner application records
         /// </summary>
         /// <remarks>
-        /// 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// Get the current user&#39;s recent partner application records. This endpoint returns application records within the last 30 days, including application status, review information, application materials, and other details.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of PartnerApplicationResponse</returns>
@@ -299,7 +299,7 @@ namespace Io.Gate.GateApi.Api
         /// Check partner application eligibility
         /// </summary>
         /// <remarks>
-        /// 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// Check whether the current user is eligible to apply as a partner. This endpoint checks multiple conditions: account status (banned or not), whether it is a sub-account, whether already a partner, KYC verification status, whether under another agent&#39;s referral chain, whether on the blacklist, and other business rule restrictions
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>EligibilityResponse</returns>
@@ -309,7 +309,7 @@ namespace Io.Gate.GateApi.Api
         /// Check partner application eligibility
         /// </summary>
         /// <remarks>
-        /// 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// Check whether the current user is eligible to apply as a partner. This endpoint checks multiple conditions: account status (banned or not), whether it is a sub-account, whether already a partner, KYC verification status, whether under another agent&#39;s referral chain, whether on the blacklist, and other business rule restrictions
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of EligibilityResponse</returns>
@@ -318,11 +318,11 @@ namespace Io.Gate.GateApi.Api
         /// Aggregated partner agent statistics
         /// </summary>
         /// <remarks>
-        /// 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// Query aggregated partner-agent statistics for a time range, including rebate amount, trading volume, net fee, customer count, and trading user count. **Notes:** - &#x60;trading_user_count&#x60; is only returned when &#x60;business_type&#x3D;0&#x60; (All). - Time parameters use UTC+8. - If no time range is passed, the last 7 days are queried by default. - Partner agents only; sub-accounts are not allowed.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
-        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="startDate">Query start time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the start of the last 7 days. (optional)</param>
+        /// <param name="endDate">Query end time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the end of the last 7 days. (optional)</param>
         /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
         /// <returns>PartnerDataAggregatedResponse</returns>
         PartnerDataAggregatedResponse GetPartnerAgentDataAggregated (string startDate = default(string), string endDate = default(string), int? businessType = default(int?));
@@ -331,11 +331,11 @@ namespace Io.Gate.GateApi.Api
         /// Aggregated partner agent statistics
         /// </summary>
         /// <remarks>
-        /// 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// Query aggregated partner-agent statistics for a time range, including rebate amount, trading volume, net fee, customer count, and trading user count. **Notes:** - &#x60;trading_user_count&#x60; is only returned when &#x60;business_type&#x3D;0&#x60; (All). - Time parameters use UTC+8. - If no time range is passed, the last 7 days are queried by default. - Partner agents only; sub-accounts are not allowed.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
-        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="startDate">Query start time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the start of the last 7 days. (optional)</param>
+        /// <param name="endDate">Query end time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the end of the last 7 days. (optional)</param>
         /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
         /// <returns>ApiResponse of PartnerDataAggregatedResponse</returns>
         ApiResponse<PartnerDataAggregatedResponse> GetPartnerAgentDataAggregatedWithHttpInfo (string startDate = default(string), string endDate = default(string), int? businessType = default(int?));
@@ -601,7 +601,7 @@ namespace Io.Gate.GateApi.Api
         /// Get recent partner application records
         /// </summary>
         /// <remarks>
-        /// 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// Get the current user&#39;s recent partner application records. This endpoint returns application records within the last 30 days, including application status, review information, application materials, and other details.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of PartnerApplicationResponse</returns>
@@ -611,7 +611,7 @@ namespace Io.Gate.GateApi.Api
         /// Get recent partner application records
         /// </summary>
         /// <remarks>
-        /// 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// Get the current user&#39;s recent partner application records. This endpoint returns application records within the last 30 days, including application status, review information, application materials, and other details.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (PartnerApplicationResponse)</returns>
@@ -620,7 +620,7 @@ namespace Io.Gate.GateApi.Api
         /// Check partner application eligibility
         /// </summary>
         /// <remarks>
-        /// 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// Check whether the current user is eligible to apply as a partner. This endpoint checks multiple conditions: account status (banned or not), whether it is a sub-account, whether already a partner, KYC verification status, whether under another agent&#39;s referral chain, whether on the blacklist, and other business rule restrictions
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of EligibilityResponse</returns>
@@ -630,7 +630,7 @@ namespace Io.Gate.GateApi.Api
         /// Check partner application eligibility
         /// </summary>
         /// <remarks>
-        /// 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// Check whether the current user is eligible to apply as a partner. This endpoint checks multiple conditions: account status (banned or not), whether it is a sub-account, whether already a partner, KYC verification status, whether under another agent&#39;s referral chain, whether on the blacklist, and other business rule restrictions
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (EligibilityResponse)</returns>
@@ -639,11 +639,11 @@ namespace Io.Gate.GateApi.Api
         /// Aggregated partner agent statistics
         /// </summary>
         /// <remarks>
-        /// 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// Query aggregated partner-agent statistics for a time range, including rebate amount, trading volume, net fee, customer count, and trading user count. **Notes:** - &#x60;trading_user_count&#x60; is only returned when &#x60;business_type&#x3D;0&#x60; (All). - Time parameters use UTC+8. - If no time range is passed, the last 7 days are queried by default. - Partner agents only; sub-accounts are not allowed.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
-        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="startDate">Query start time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the start of the last 7 days. (optional)</param>
+        /// <param name="endDate">Query end time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the end of the last 7 days. (optional)</param>
         /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
         /// <returns>Task of PartnerDataAggregatedResponse</returns>
         Task<PartnerDataAggregatedResponse> GetPartnerAgentDataAggregatedAsync (string startDate = default(string), string endDate = default(string), int? businessType = default(int?));
@@ -652,11 +652,11 @@ namespace Io.Gate.GateApi.Api
         /// Aggregated partner agent statistics
         /// </summary>
         /// <remarks>
-        /// 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// Query aggregated partner-agent statistics for a time range, including rebate amount, trading volume, net fee, customer count, and trading user count. **Notes:** - &#x60;trading_user_count&#x60; is only returned when &#x60;business_type&#x3D;0&#x60; (All). - Time parameters use UTC+8. - If no time range is passed, the last 7 days are queried by default. - Partner agents only; sub-accounts are not allowed.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
-        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="startDate">Query start time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the start of the last 7 days. (optional)</param>
+        /// <param name="endDate">Query end time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the end of the last 7 days. (optional)</param>
         /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (PartnerDataAggregatedResponse)</returns>
         Task<ApiResponse<PartnerDataAggregatedResponse>> GetPartnerAgentDataAggregatedAsyncWithHttpInfo (string startDate = default(string), string endDate = default(string), int? businessType = default(int?));
@@ -2178,7 +2178,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get recent partner application records 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// Get recent partner application records Get the current user&#39;s recent partner application records. This endpoint returns application records within the last 30 days, including application status, review information, application materials, and other details.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>PartnerApplicationResponse</returns>
@@ -2189,7 +2189,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get recent partner application records 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// Get recent partner application records Get the current user&#39;s recent partner application records. This endpoint returns application records within the last 30 days, including application status, review information, application materials, and other details.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of PartnerApplicationResponse</returns>
@@ -2228,7 +2228,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get recent partner application records 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// Get recent partner application records Get the current user&#39;s recent partner application records. This endpoint returns application records within the last 30 days, including application status, review information, application materials, and other details.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of PartnerApplicationResponse</returns>
@@ -2240,7 +2240,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get recent partner application records 获取当前用户最近的合伙人申请记录。  此接口返回用户最近 30 天内的申请记录，包括申请状态、审核信息、申请材料等详细信息。
+        /// Get recent partner application records Get the current user&#39;s recent partner application records. This endpoint returns application records within the last 30 days, including application status, review information, application materials, and other details.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (PartnerApplicationResponse)</returns>
@@ -2281,7 +2281,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Check partner application eligibility 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// Check partner application eligibility Check whether the current user is eligible to apply as a partner. This endpoint checks multiple conditions: account status (banned or not), whether it is a sub-account, whether already a partner, KYC verification status, whether under another agent&#39;s referral chain, whether on the blacklist, and other business rule restrictions
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>EligibilityResponse</returns>
@@ -2292,7 +2292,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Check partner application eligibility 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// Check partner application eligibility Check whether the current user is eligible to apply as a partner. This endpoint checks multiple conditions: account status (banned or not), whether it is a sub-account, whether already a partner, KYC verification status, whether under another agent&#39;s referral chain, whether on the blacklist, and other business rule restrictions
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of EligibilityResponse</returns>
@@ -2331,7 +2331,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Check partner application eligibility 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// Check partner application eligibility Check whether the current user is eligible to apply as a partner. This endpoint checks multiple conditions: account status (banned or not), whether it is a sub-account, whether already a partner, KYC verification status, whether under another agent&#39;s referral chain, whether on the blacklist, and other business rule restrictions
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of EligibilityResponse</returns>
@@ -2343,7 +2343,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Check partner application eligibility 检查当前用户是否有资格申请成为合伙人。  此接口会检查多个条件： - 账户状态（是否被封禁） - 是否为子账号 - 是否已经是合伙人 - KYC 认证状态 - 是否在其他代理商的邀请链下 - 是否在黑名单中 - 其他业务规则限制
+        /// Check partner application eligibility Check whether the current user is eligible to apply as a partner. This endpoint checks multiple conditions: account status (banned or not), whether it is a sub-account, whether already a partner, KYC verification status, whether under another agent&#39;s referral chain, whether on the blacklist, and other business rule restrictions
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (EligibilityResponse)</returns>
@@ -2384,11 +2384,11 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Aggregated partner agent statistics 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// Aggregated partner agent statistics Query aggregated partner-agent statistics for a time range, including rebate amount, trading volume, net fee, customer count, and trading user count. **Notes:** - &#x60;trading_user_count&#x60; is only returned when &#x60;business_type&#x3D;0&#x60; (All). - Time parameters use UTC+8. - If no time range is passed, the last 7 days are queried by default. - Partner agents only; sub-accounts are not allowed.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
-        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="startDate">Query start time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the start of the last 7 days. (optional)</param>
+        /// <param name="endDate">Query end time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the end of the last 7 days. (optional)</param>
         /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
         /// <returns>PartnerDataAggregatedResponse</returns>
         public PartnerDataAggregatedResponse GetPartnerAgentDataAggregated (string startDate = default(string), string endDate = default(string), int? businessType = default(int?))
@@ -2398,11 +2398,11 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Aggregated partner agent statistics 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// Aggregated partner agent statistics Query aggregated partner-agent statistics for a time range, including rebate amount, trading volume, net fee, customer count, and trading user count. **Notes:** - &#x60;trading_user_count&#x60; is only returned when &#x60;business_type&#x3D;0&#x60; (All). - Time parameters use UTC+8. - If no time range is passed, the last 7 days are queried by default. - Partner agents only; sub-accounts are not allowed.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
-        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="startDate">Query start time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the start of the last 7 days. (optional)</param>
+        /// <param name="endDate">Query end time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the end of the last 7 days. (optional)</param>
         /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
         /// <returns>ApiResponse of PartnerDataAggregatedResponse</returns>
         public ApiResponse<PartnerDataAggregatedResponse> GetPartnerAgentDataAggregatedWithHttpInfo (string startDate = default(string), string endDate = default(string), int? businessType = default(int?))
@@ -2452,11 +2452,11 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Aggregated partner agent statistics 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// Aggregated partner agent statistics Query aggregated partner-agent statistics for a time range, including rebate amount, trading volume, net fee, customer count, and trading user count. **Notes:** - &#x60;trading_user_count&#x60; is only returned when &#x60;business_type&#x3D;0&#x60; (All). - Time parameters use UTC+8. - If no time range is passed, the last 7 days are queried by default. - Partner agents only; sub-accounts are not allowed.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
-        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="startDate">Query start time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the start of the last 7 days. (optional)</param>
+        /// <param name="endDate">Query end time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the end of the last 7 days. (optional)</param>
         /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
         /// <returns>Task of PartnerDataAggregatedResponse</returns>
         public async Task<PartnerDataAggregatedResponse> GetPartnerAgentDataAggregatedAsync (string startDate = default(string), string endDate = default(string), int? businessType = default(int?))
@@ -2467,11 +2467,11 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Aggregated partner agent statistics 查询指定时间范围内合伙人代理的数据聚合统计，包括返佣金额、交易量、净手续费、客户数和交易人数。  **注意事项：** - 交易人数 &#x60;trading_user_count&#x60; 仅在 &#x60;business_type&#x3D;0&#x60;（全部）时返回 - 时间参数使用 UTC+8 时区 - 如不传时间参数，默认查询近 7 天数据 - 仅限合伙人代理访问，子账号无权限
+        /// Aggregated partner agent statistics Query aggregated partner-agent statistics for a time range, including rebate amount, trading volume, net fee, customer count, and trading user count. **Notes:** - &#x60;trading_user_count&#x60; is only returned when &#x60;business_type&#x3D;0&#x60; (All). - Time parameters use UTC+8. - If no time range is passed, the last 7 days are queried by default. - Partner agents only; sub-accounts are not allowed.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="startDate">查询开始时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日开始时间 (optional)</param>
-        /// <param name="endDate">查询结束时间，格式：yyyy-mm-dd hh:ii:ss（UTC+8）  不传时默认为近 7 日结束时间 (optional)</param>
+        /// <param name="startDate">Query start time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the start of the last 7 days. (optional)</param>
+        /// <param name="endDate">Query end time, format: yyyy-mm-dd hh:ii:ss (UTC+8). If omitted, defaults to the end of the last 7 days. (optional)</param>
         /// <param name="businessType">Business type filter: - 0: All (default) - 1: Spot - 2: Futures - 3: Alpha - 4: Web3 - 5: Perps (DEX) - 6: Exchange All - 7: Web3 All - 8: TradFi (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (PartnerDataAggregatedResponse)</returns>
         public async Task<ApiResponse<PartnerDataAggregatedResponse>> GetPartnerAgentDataAggregatedAsyncWithHttpInfo (string startDate = default(string), string endDate = default(string), int? businessType = default(int?))

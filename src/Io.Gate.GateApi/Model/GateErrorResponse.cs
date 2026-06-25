@@ -25,56 +25,35 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// OtcUserDefaultBankResponse
+    /// error response body format when status code is non-2xx
     /// </summary>
     [DataContract]
-    public partial class OtcUserDefaultBankResponse :  IEquatable<OtcUserDefaultBankResponse>, IValidatableObject
+    public partial class GateErrorResponse :  IEquatable<GateErrorResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OtcUserDefaultBankResponse" /> class.
+        /// Initializes a new instance of the <see cref="GateErrorResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected OtcUserDefaultBankResponse() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OtcUserDefaultBankResponse" /> class.
-        /// </summary>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        /// <param name="data">data (required).</param>
-        /// <param name="timestamp">timestamp (required).</param>
-        public OtcUserDefaultBankResponse(int code = default(int), string message = default(string), OtcUserDefaultBank data = default(OtcUserDefaultBank), int timestamp = default(int))
+        /// <param name="label">Error label.</param>
+        /// <param name="message">Detailed error message.</param>
+        public GateErrorResponse(string label = default(string), string message = default(string))
         {
-            this.Code = code;
-            // to ensure "message" is required (not null)
-            this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for OtcUserDefaultBankResponse and cannot be null");
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for OtcUserDefaultBankResponse and cannot be null");
-            this.Timestamp = timestamp;
+            this.Label = label;
+            this.Message = message;
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Error label
         /// </summary>
-        [DataMember(Name="code")]
-        public int Code { get; set; }
+        /// <value>Error label</value>
+        [DataMember(Name="label")]
+        public string Label { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Detailed error message
         /// </summary>
+        /// <value>Detailed error message</value>
         [DataMember(Name="message")]
         public string Message { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Data
-        /// </summary>
-        [DataMember(Name="data")]
-        public OtcUserDefaultBank Data { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Timestamp
-        /// </summary>
-        [DataMember(Name="timestamp")]
-        public int Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -83,11 +62,9 @@ namespace Io.Gate.GateApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class OtcUserDefaultBankResponse {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("class GateErrorResponse {\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
-            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -108,37 +85,29 @@ namespace Io.Gate.GateApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OtcUserDefaultBankResponse);
+            return this.Equals(input as GateErrorResponse);
         }
 
         /// <summary>
-        /// Returns true if OtcUserDefaultBankResponse instances are equal
+        /// Returns true if GateErrorResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of OtcUserDefaultBankResponse to be compared</param>
+        /// <param name="input">Instance of GateErrorResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OtcUserDefaultBankResponse input)
+        public bool Equals(GateErrorResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Code == input.Code ||
-                    this.Code.Equals(input.Code)
+                    this.Label == input.Label ||
+                    (this.Label != null &&
+                    this.Label.Equals(input.Label))
                 ) && 
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                ) && 
-                (
-                    this.Timestamp == input.Timestamp ||
-                    this.Timestamp.Equals(input.Timestamp)
                 );
         }
 
@@ -151,12 +120,10 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Label != null)
+                    hashCode = hashCode * 59 + this.Label.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
-                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

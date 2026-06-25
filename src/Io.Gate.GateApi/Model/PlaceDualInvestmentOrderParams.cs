@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="PlaceDualInvestmentOrderParams" /> class.
         /// </summary>
         /// <param name="planId">Product ID (required).</param>
-        /// <param name="amount">Subscription amount, mutually exclusive with copies field (required).</param>
+        /// <param name="amount">Subscription amount (required).</param>
         /// <param name="text">Order custom information. Users can set custom ID with this field. Custom fields must meet the following conditions:  1. Must start with &#x60;t-&#x60; 2. Excluding &#x60;t-&#x60;, length cannot exceed 28 bytes 3. Can only contain numbers, letters, underscore(_), hyphen(-) or dot(.) .</param>
         public PlaceDualInvestmentOrderParams(string planId = default(string), string amount = default(string), string text = default(string))
         {
@@ -58,9 +58,9 @@ namespace Io.Gate.GateApi.Model
         public string PlanId { get; set; }
 
         /// <summary>
-        /// Subscription amount, mutually exclusive with copies field
+        /// Subscription amount
         /// </summary>
-        /// <value>Subscription amount, mutually exclusive with copies field</value>
+        /// <value>Subscription amount</value>
         [DataMember(Name="amount")]
         public string Amount { get; set; }
 

@@ -235,9 +235,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="stp_act")]
         public StpActEnum? StpAct { get; set; }
         /// <summary>
-        /// 订单结束方式，包括：  - open: 等待处理 - filled: 完全成交 - cancelled: 用户撤销 - liquidate_cancelled: 爆仓撤销 - small: 订单数量太小 - depth_not_enough: 深度不足导致撤单 - trader_not_enough: 对手方不足导致撤单 - ioc: 未立即成交，因为 tif 设置为 ioc - poc: 未满足挂单策略，因为 tif 设置为 poc/rvt/rat/rpi表示只想成为maker, 经检查会成为taker被拒绝 - fok: 未立即完全成交，因为 tif 设置为 fok - stp: 订单发生自成交限制而被撤销 - price_protect_cancelled: 价格保护导致撤单 - unknown: 未知
+        /// How the order finished:  - open: Pending processing - filled: Fully filled - cancelled: Cancelled by user - liquidate_cancelled: Cancelled by liquidation - small: Order size too small - depth_not_enough: Cancelled due to insufficient order book depth - trader_not_enough: Cancelled due to insufficient counterparty liquidity - ioc: Not filled immediately because time-in-force is IOC - poc: Post-only requirement not met because time-in-force is set to poc (maker-only); rejected after being detected as taker - fok: Not fully filled immediately because time-in-force is FOK - stp: Cancelled due to self-trade prevention - price_protect_cancelled: Cancelled due to price protection - unknown: Unknown
         /// </summary>
-        /// <value>订单结束方式，包括：  - open: 等待处理 - filled: 完全成交 - cancelled: 用户撤销 - liquidate_cancelled: 爆仓撤销 - small: 订单数量太小 - depth_not_enough: 深度不足导致撤单 - trader_not_enough: 对手方不足导致撤单 - ioc: 未立即成交，因为 tif 设置为 ioc - poc: 未满足挂单策略，因为 tif 设置为 poc/rvt/rat/rpi表示只想成为maker, 经检查会成为taker被拒绝 - fok: 未立即完全成交，因为 tif 设置为 fok - stp: 订单发生自成交限制而被撤销 - price_protect_cancelled: 价格保护导致撤单 - unknown: 未知</value>
+        /// <value>How the order finished:  - open: Pending processing - filled: Fully filled - cancelled: Cancelled by user - liquidate_cancelled: Cancelled by liquidation - small: Order size too small - depth_not_enough: Cancelled due to insufficient order book depth - trader_not_enough: Cancelled due to insufficient counterparty liquidity - ioc: Not filled immediately because time-in-force is IOC - poc: Post-only requirement not met because time-in-force is set to poc (maker-only); rejected after being detected as taker - fok: Not fully filled immediately because time-in-force is FOK - stp: Cancelled due to self-trade prevention - price_protect_cancelled: Cancelled due to price protection - unknown: Unknown</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FinishAsEnum
         {
@@ -322,9 +322,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 订单结束方式，包括：  - open: 等待处理 - filled: 完全成交 - cancelled: 用户撤销 - liquidate_cancelled: 爆仓撤销 - small: 订单数量太小 - depth_not_enough: 深度不足导致撤单 - trader_not_enough: 对手方不足导致撤单 - ioc: 未立即成交，因为 tif 设置为 ioc - poc: 未满足挂单策略，因为 tif 设置为 poc/rvt/rat/rpi表示只想成为maker, 经检查会成为taker被拒绝 - fok: 未立即完全成交，因为 tif 设置为 fok - stp: 订单发生自成交限制而被撤销 - price_protect_cancelled: 价格保护导致撤单 - unknown: 未知
+        /// How the order finished:  - open: Pending processing - filled: Fully filled - cancelled: Cancelled by user - liquidate_cancelled: Cancelled by liquidation - small: Order size too small - depth_not_enough: Cancelled due to insufficient order book depth - trader_not_enough: Cancelled due to insufficient counterparty liquidity - ioc: Not filled immediately because time-in-force is IOC - poc: Post-only requirement not met because time-in-force is set to poc (maker-only); rejected after being detected as taker - fok: Not fully filled immediately because time-in-force is FOK - stp: Cancelled due to self-trade prevention - price_protect_cancelled: Cancelled due to price protection - unknown: Unknown
         /// </summary>
-        /// <value>订单结束方式，包括：  - open: 等待处理 - filled: 完全成交 - cancelled: 用户撤销 - liquidate_cancelled: 爆仓撤销 - small: 订单数量太小 - depth_not_enough: 深度不足导致撤单 - trader_not_enough: 对手方不足导致撤单 - ioc: 未立即成交，因为 tif 设置为 ioc - poc: 未满足挂单策略，因为 tif 设置为 poc/rvt/rat/rpi表示只想成为maker, 经检查会成为taker被拒绝 - fok: 未立即完全成交，因为 tif 设置为 fok - stp: 订单发生自成交限制而被撤销 - price_protect_cancelled: 价格保护导致撤单 - unknown: 未知</value>
+        /// <value>How the order finished:  - open: Pending processing - filled: Fully filled - cancelled: Cancelled by user - liquidate_cancelled: Cancelled by liquidation - small: Order size too small - depth_not_enough: Cancelled due to insufficient order book depth - trader_not_enough: Cancelled due to insufficient counterparty liquidity - ioc: Not filled immediately because time-in-force is IOC - poc: Post-only requirement not met because time-in-force is set to poc (maker-only); rejected after being detected as taker - fok: Not fully filled immediately because time-in-force is FOK - stp: Cancelled due to self-trade prevention - price_protect_cancelled: Cancelled due to price protection - unknown: Unknown</value>
         [DataMember(Name="finish_as", EmitDefaultValue=false)]
         public FinishAsEnum? FinishAs { get; set; }
         /// <summary>
@@ -348,7 +348,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="autoRepay">Enable or disable automatic repayment for automatic borrow loan generated by cross margin order. Default is disabled. Note that:  1. This field is only effective for cross margin orders. Margin account does not support setting auto repayment for orders. 2. &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; can be both set to true in one order.</param>
         /// <param name="stpAct">Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the &#x60;STP Group&#x60;, he can pass &#x60;stp_act&#x60; to limit the user&#39;s self-trade prevetion strategy. If &#x60;stp_act&#x60; is not passed, the default is &#x60;cn&#x60; strategy。 2. When the user does not join the &#x60;STP group&#x60;, an error will be returned when passing the &#x60;stp_act&#x60; parameter。 3. If the user did not use &#39;stp_act&#39; when placing the order, &#39;stp_act&#39; will return &#39;-&#39;  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, new ones - cb: Cancel both, Both old and new orders will be cancelled.</param>
         /// <param name="slippage">Maximum supported slippage ratio for Spot Market Order Placement, calculated based on the latest market price at the time of order placement as the benchmark (Example: 0.03 means 3%).</param>
-        public BatchOrder(string orderId = default(string), string amendText = default(string), string text = default(string), bool succeeded = default(bool), string label = default(string), string message = default(string), string currencyPair = default(string), TypeEnum? type = TypeEnum.Limit, AccountEnum? account = AccountEnum.Spot, SideEnum? side = default(SideEnum?), string amount = default(string), string price = default(string), TimeInForceEnum? timeInForce = TimeInForceEnum.Gtc, string iceberg = default(string), bool autoBorrow = default(bool), bool autoRepay = default(bool), StpActEnum? stpAct = default(StpActEnum?), string slippage = default(string))
+        /// <param name="stopProfit">stopProfit.</param>
+        /// <param name="stopLoss">stopLoss.</param>
+        public BatchOrder(string orderId = default(string), string amendText = default(string), string text = default(string), bool succeeded = default(bool), string label = default(string), string message = default(string), string currencyPair = default(string), TypeEnum? type = TypeEnum.Limit, AccountEnum? account = AccountEnum.Spot, SideEnum? side = default(SideEnum?), string amount = default(string), string price = default(string), TimeInForceEnum? timeInForce = TimeInForceEnum.Gtc, string iceberg = default(string), bool autoBorrow = default(bool), bool autoRepay = default(bool), StpActEnum? stpAct = default(StpActEnum?), string slippage = default(string), SpotOrderStopProfit stopProfit = default(SpotOrderStopProfit), SpotOrderStopLoss stopLoss = default(SpotOrderStopLoss))
         {
             this.OrderId = orderId;
             this.AmendText = amendText;
@@ -368,6 +370,8 @@ namespace Io.Gate.GateApi.Model
             this.AutoRepay = autoRepay;
             this.StpAct = stpAct;
             this.Slippage = slippage;
+            this.StopProfit = stopProfit;
+            this.StopLoss = stopLoss;
         }
 
         /// <summary>
@@ -588,6 +592,18 @@ namespace Io.Gate.GateApi.Model
         public string Slippage { get; set; }
 
         /// <summary>
+        /// Gets or Sets StopProfit
+        /// </summary>
+        [DataMember(Name="stop_profit")]
+        public SpotOrderStopProfit StopProfit { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StopLoss
+        /// </summary>
+        [DataMember(Name="stop_loss")]
+        public SpotOrderStopLoss StopLoss { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -633,6 +649,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  StpAct: ").Append(StpAct).Append("\n");
             sb.Append("  FinishAs: ").Append(FinishAs).Append("\n");
             sb.Append("  Slippage: ").Append(Slippage).Append("\n");
+            sb.Append("  StopProfit: ").Append(StopProfit).Append("\n");
+            sb.Append("  StopLoss: ").Append(StopLoss).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -842,6 +860,16 @@ namespace Io.Gate.GateApi.Model
                     this.Slippage == input.Slippage ||
                     (this.Slippage != null &&
                     this.Slippage.Equals(input.Slippage))
+                ) && 
+                (
+                    this.StopProfit == input.StopProfit ||
+                    (this.StopProfit != null &&
+                    this.StopProfit.Equals(input.StopProfit))
+                ) && 
+                (
+                    this.StopLoss == input.StopLoss ||
+                    (this.StopLoss != null &&
+                    this.StopLoss.Equals(input.StopLoss))
                 );
         }
 
@@ -916,6 +944,10 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.FinishAs.GetHashCode();
                 if (this.Slippage != null)
                     hashCode = hashCode * 59 + this.Slippage.GetHashCode();
+                if (this.StopProfit != null)
+                    hashCode = hashCode * 59 + this.StopProfit.GetHashCode();
+                if (this.StopLoss != null)
+                    hashCode = hashCode * 59 + this.StopLoss.GetHashCode();
                 return hashCode;
             }
         }

@@ -109,6 +109,33 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="finish_as", EmitDefaultValue=false)]
         public FinishAsEnum? FinishAs { get; set; }
         /// <summary>
+        /// Position margin mode: &#x60;isolated&#x60; (isolated margin) or &#x60;cross&#x60; (cross margin). Returned by the server in simple split-position mode; when writing, use only the values below.
+        /// </summary>
+        /// <value>Position margin mode: &#x60;isolated&#x60; (isolated margin) or &#x60;cross&#x60; (cross margin). Returned by the server in simple split-position mode; when writing, use only the values below.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PosMarginModeEnum
+        {
+            /// <summary>
+            /// Enum value Isolated
+            /// </summary>
+            [EnumMember(Value = "isolated")]
+            Isolated = 1,
+
+            /// <summary>
+            /// Enum value Cross
+            /// </summary>
+            [EnumMember(Value = "cross")]
+            Cross = 2
+
+        }
+
+        /// <summary>
+        /// Position margin mode: &#x60;isolated&#x60; (isolated margin) or &#x60;cross&#x60; (cross margin). Returned by the server in simple split-position mode; when writing, use only the values below.
+        /// </summary>
+        /// <value>Position margin mode: &#x60;isolated&#x60; (isolated margin) or &#x60;cross&#x60; (cross margin). Returned by the server in simple split-position mode; when writing, use only the values below.</value>
+        [DataMember(Name="pos_margin_mode")]
+        public PosMarginModeEnum? PosMarginMode { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="FuturesPriceTriggeredOrder" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -119,13 +146,15 @@ namespace Io.Gate.GateApi.Model
         /// <param name="initial">initial (required).</param>
         /// <param name="trigger">trigger (required).</param>
         /// <param name="orderType">Types of take-profit and stop-loss orders, including:  - &#x60;close-long-order&#x60;: Order take-profit/stop-loss, close long position - &#x60;close-short-order&#x60;: Order take-profit/stop-loss, close short position - &#x60;close-long-position&#x60;: Position take-profit/stop-loss, used to close all long positions - &#x60;close-short-position&#x60;: Position take-profit/stop-loss, used to close all short positions - &#x60;plan-close-long-position&#x60;: Position plan take-profit/stop-loss, used to close all or partial long positions - &#x60;plan-close-short-position&#x60;: Position plan take-profit/stop-loss, used to close all or partial short positions  The two types of order take-profit/stop-loss are read-only and cannot be passed in requests.</param>
-        public FuturesPriceTriggeredOrder(FuturesInitialOrder initial = default(FuturesInitialOrder), FuturesPriceTrigger trigger = default(FuturesPriceTrigger), string orderType = default(string))
+        /// <param name="posMarginMode">Position margin mode: &#x60;isolated&#x60; (isolated margin) or &#x60;cross&#x60; (cross margin). Returned by the server in simple split-position mode; when writing, use only the values below..</param>
+        public FuturesPriceTriggeredOrder(FuturesInitialOrder initial = default(FuturesInitialOrder), FuturesPriceTrigger trigger = default(FuturesPriceTrigger), string orderType = default(string), PosMarginModeEnum? posMarginMode = default(PosMarginModeEnum?))
         {
             // to ensure "initial" is required (not null)
             this.Initial = initial ?? throw new ArgumentNullException("initial", "initial is a required property for FuturesPriceTriggeredOrder and cannot be null");
             // to ensure "trigger" is required (not null)
             this.Trigger = trigger ?? throw new ArgumentNullException("trigger", "trigger is a required property for FuturesPriceTriggeredOrder and cannot be null");
             this.OrderType = orderType;
+            this.PosMarginMode = posMarginMode;
         }
 
         /// <summary>
@@ -224,6 +253,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Reason: ").Append(Reason).Append("\n");
             sb.Append("  OrderType: ").Append(OrderType).Append("\n");
             sb.Append("  MeOrderId: ").Append(MeOrderId).Append("\n");
+            sb.Append("  PosMarginMode: ").Append(PosMarginMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -314,6 +344,10 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.MeOrderId == input.MeOrderId ||
                     this.MeOrderId.Equals(input.MeOrderId)
+                ) && 
+                (
+                    this.PosMarginMode == input.PosMarginMode ||
+                    this.PosMarginMode.Equals(input.PosMarginMode)
                 );
         }
 
@@ -344,6 +378,7 @@ namespace Io.Gate.GateApi.Model
                 if (this.OrderType != null)
                     hashCode = hashCode * 59 + this.OrderType.GetHashCode();
                 hashCode = hashCode * 59 + this.MeOrderId.GetHashCode();
+                hashCode = hashCode * 59 + this.PosMarginMode.GetHashCode();
                 return hashCode;
             }
         }

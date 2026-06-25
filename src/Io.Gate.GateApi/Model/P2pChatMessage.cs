@@ -31,6 +31,26 @@ namespace Io.Gate.GateApi.Model
     public partial class P2pChatMessage :  IEquatable<P2pChatMessage>, IValidatableObject
     {
         /// <summary>
+        /// Risk control display type. 1: off-platform traffic diversion risk; returned when a text message hits risk control
+        /// </summary>
+        /// <value>Risk control display type. 1: off-platform traffic diversion risk; returned when a text message hits risk control</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum RiskTypeEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1
+
+        }
+
+        /// <summary>
+        /// Risk control display type. 1: off-platform traffic diversion risk; returned when a text message hits risk control
+        /// </summary>
+        /// <value>Risk control display type. 1: off-platform traffic diversion risk; returned when a text message hits risk control</value>
+        [DataMember(Name="risk_type")]
+        public RiskTypeEnum? RiskType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="P2pChatMessage" /> class.
         /// </summary>
         /// <param name="isSell">Whether the current user is the seller. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
@@ -44,7 +64,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="pic">File link.</param>
         /// <param name="fileKey">File key.</param>
         /// <param name="fileType">File type: &#x60;image&#x60; for images, &#x60;video&#x60; for videos..</param>
-        public P2pChatMessage(int isSell = default(int), int msgType = default(int), string msg = default(string), string username = default(string), int timest = default(int), P2pChatMessagePayload msgObj = default(P2pChatMessagePayload), string uid = default(string), int type = default(int), string pic = default(string), string fileKey = default(string), string fileType = default(string))
+        /// <param name="riskType">Risk control display type. 1: off-platform traffic diversion risk; returned when a text message hits risk control.</param>
+        /// <param name="toastMsg">Risk control prompt message; returned only when risk_type&#x3D;1.</param>
+        public P2pChatMessage(int isSell = default(int), int msgType = default(int), string msg = default(string), string username = default(string), int timest = default(int), P2pChatMessagePayload msgObj = default(P2pChatMessagePayload), string uid = default(string), int type = default(int), string pic = default(string), string fileKey = default(string), string fileType = default(string), RiskTypeEnum? riskType = default(RiskTypeEnum?), string toastMsg = default(string))
         {
             this.IsSell = isSell;
             this.MsgType = msgType;
@@ -57,6 +79,8 @@ namespace Io.Gate.GateApi.Model
             this.Pic = pic;
             this.FileKey = fileKey;
             this.FileType = fileType;
+            this.RiskType = riskType;
+            this.ToastMsg = toastMsg;
         }
 
         /// <summary>
@@ -136,6 +160,13 @@ namespace Io.Gate.GateApi.Model
         public string FileType { get; set; }
 
         /// <summary>
+        /// Risk control prompt message; returned only when risk_type&#x3D;1
+        /// </summary>
+        /// <value>Risk control prompt message; returned only when risk_type&#x3D;1</value>
+        [DataMember(Name="toast_msg")]
+        public string ToastMsg { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -154,6 +185,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Pic: ").Append(Pic).Append("\n");
             sb.Append("  FileKey: ").Append(FileKey).Append("\n");
             sb.Append("  FileType: ").Append(FileType).Append("\n");
+            sb.Append("  RiskType: ").Append(RiskType).Append("\n");
+            sb.Append("  ToastMsg: ").Append(ToastMsg).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -238,6 +271,15 @@ namespace Io.Gate.GateApi.Model
                     this.FileType == input.FileType ||
                     (this.FileType != null &&
                     this.FileType.Equals(input.FileType))
+                ) && 
+                (
+                    this.RiskType == input.RiskType ||
+                    this.RiskType.Equals(input.RiskType)
+                ) && 
+                (
+                    this.ToastMsg == input.ToastMsg ||
+                    (this.ToastMsg != null &&
+                    this.ToastMsg.Equals(input.ToastMsg))
                 );
         }
 
@@ -268,6 +310,9 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.FileKey.GetHashCode();
                 if (this.FileType != null)
                     hashCode = hashCode * 59 + this.FileType.GetHashCode();
+                hashCode = hashCode * 59 + this.RiskType.GetHashCode();
+                if (this.ToastMsg != null)
+                    hashCode = hashCode * 59 + this.ToastMsg.GetHashCode();
                 return hashCode;
             }
         }

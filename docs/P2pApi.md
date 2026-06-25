@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**P2pMerchantAccountGetUserInfo**](P2pApi.md#p2pmerchantaccountgetuserinfo) | **POST** /p2p/merchant/account/get_user_info | Get account information
 [**P2pMerchantAccountGetCounterpartyUserInfo**](P2pApi.md#p2pmerchantaccountgetcounterpartyuserinfo) | **POST** /p2p/merchant/account/get_counterparty_user_info | Get counterparty information
 [**P2pMerchantAccountGetMyselfPayment**](P2pApi.md#p2pmerchantaccountgetmyselfpayment) | **POST** /p2p/merchant/account/get_myself_payment | Get payment method list
+[**P2pMerchantAccountSetMerchantWorkHours**](P2pApi.md#p2pmerchantaccountsetmerchantworkhours) | **POST** /p2p/merchant/account/set_merchant_work_hours | Set merchant working status and custom working hours
 [**P2pMerchantTransactionGetPendingTransactionList**](P2pApi.md#p2pmerchanttransactiongetpendingtransactionlist) | **POST** /p2p/merchant/transaction/get_pending_transaction_list | Get pending orders
 [**P2pMerchantTransactionGetCompletedTransactionList**](P2pApi.md#p2pmerchanttransactiongetcompletedtransactionlist) | **POST** /p2p/merchant/transaction/get_completed_transaction_list | Get all/historical orders
 [**P2pMerchantTransactionGetTransactionDetails**](P2pApi.md#p2pmerchanttransactiongettransactiondetails) | **POST** /p2p/merchant/transaction/get_transaction_details | Query order details
@@ -215,6 +216,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**P2pPaymentMethodsResponse**](P2pPaymentMethodsResponse.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="p2pmerchantaccountsetmerchantworkhours"></a>
+# **P2pMerchantAccountSetMerchantWorkHours**
+> P2pMerchantWorkHoursResponse P2pMerchantAccountSetMerchantWorkHours (SetMerchantWorkHoursRequest setMerchantWorkHoursRequest)
+
+Set merchant working status and custom working hours
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class P2pMerchantAccountSetMerchantWorkHoursExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new P2pApi(config);
+            var setMerchantWorkHoursRequest = new SetMerchantWorkHoursRequest(); // SetMerchantWorkHoursRequest | 
+
+            try
+            {
+                // Set merchant working status and custom working hours
+                P2pMerchantWorkHoursResponse result = apiInstance.P2pMerchantAccountSetMerchantWorkHours(setMerchantWorkHoursRequest);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling P2pApi.P2pMerchantAccountSetMerchantWorkHours: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **setMerchantWorkHoursRequest** | [**SetMerchantWorkHoursRequest**](SetMerchantWorkHoursRequest.md)|  | 
+
+### Return type
+
+[**P2pMerchantWorkHoursResponse**](P2pMerchantWorkHoursResponse.md)
 
 ### Authorization
 
@@ -664,6 +736,8 @@ Name | Type | Description  | Notes
 
 Publish ad order
 
+When publishing or editing an advertisement, trade_tips and auto_reply go through off-platform traffic diversion risk control; when hit, the advertisement is not saved, and code 70305102 with data.risk_event is returned.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -1091,6 +1165,8 @@ Name | Type | Description  | Notes
 > P2pSendChatMessageResponse P2pMerchantChatSendChatMessage (SendChatMessageRequest sendChatMessageRequest)
 
 Send text message
+
+Text messages go through off-platform traffic diversion risk control. When hit, the API still returns code 0, and data contains risk_type=1 and toast_msg.
 
 ### Example
 ```csharp

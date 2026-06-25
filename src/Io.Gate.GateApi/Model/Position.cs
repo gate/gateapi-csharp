@@ -31,6 +31,33 @@ namespace Io.Gate.GateApi.Model
     public partial class Position :  IEquatable<Position>, IValidatableObject
     {
         /// <summary>
+        /// The hedging status of the position under the Delta-neutral strategy. Including:  - &#x60;partial_hedged&#x60;: partially hedged - &#x60;full_hedged&#x60;: fully hedged
+        /// </summary>
+        /// <value>The hedging status of the position under the Delta-neutral strategy. Including:  - &#x60;partial_hedged&#x60;: partially hedged - &#x60;full_hedged&#x60;: fully hedged</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum HedgeStatusEnum
+        {
+            /// <summary>
+            /// Enum value Partialhedged
+            /// </summary>
+            [EnumMember(Value = "partial_hedged")]
+            Partialhedged = 1,
+
+            /// <summary>
+            /// Enum value Fullhedged
+            /// </summary>
+            [EnumMember(Value = "full_hedged")]
+            Fullhedged = 2
+
+        }
+
+        /// <summary>
+        /// The hedging status of the position under the Delta-neutral strategy. Including:  - &#x60;partial_hedged&#x60;: partially hedged - &#x60;full_hedged&#x60;: fully hedged
+        /// </summary>
+        /// <value>The hedging status of the position under the Delta-neutral strategy. Including:  - &#x60;partial_hedged&#x60;: partially hedged - &#x60;full_hedged&#x60;: fully hedged</value>
+        [DataMember(Name="hedge_status", EmitDefaultValue=false)]
+        public HedgeStatusEnum? HedgeStatus { get; set; }
+        /// <summary>
         /// Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode
         /// </summary>
         /// <value>Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode</value>
@@ -108,6 +135,20 @@ namespace Io.Gate.GateApi.Model
         /// <value>Position size</value>
         [DataMember(Name="size", EmitDefaultValue=false)]
         public string Size { get; private set; }
+
+        /// <summary>
+        /// The hedged position size under the Delta-neutral strategy.
+        /// </summary>
+        /// <value>The hedged position size under the Delta-neutral strategy.</value>
+        [DataMember(Name="hedged_size", EmitDefaultValue=false)]
+        public string HedgedSize { get; private set; }
+
+        /// <summary>
+        /// The unhedged position size under the Delta-neutral strategy, calculated as &#x60;max(abs(size) - abs(hedged_size), 0)&#x60;.
+        /// </summary>
+        /// <value>The unhedged position size under the Delta-neutral strategy, calculated as &#x60;max(abs(size) - abs(hedged_size), 0)&#x60;.</value>
+        [DataMember(Name="unhedged_size", EmitDefaultValue=false)]
+        public string UnhedgedSize { get; private set; }
 
         /// <summary>
         ///  leverage for isolated margin. 0 means cross margin. For leverage of cross margin, please refer to &#x60;cross_leverage_limit&#x60;.
@@ -343,6 +384,9 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  Contract: ").Append(Contract).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
+            sb.Append("  HedgeStatus: ").Append(HedgeStatus).Append("\n");
+            sb.Append("  HedgedSize: ").Append(HedgedSize).Append("\n");
+            sb.Append("  UnhedgedSize: ").Append(UnhedgedSize).Append("\n");
             sb.Append("  Leverage: ").Append(Leverage).Append("\n");
             sb.Append("  RiskLimit: ").Append(RiskLimit).Append("\n");
             sb.Append("  LeverageMax: ").Append(LeverageMax).Append("\n");
@@ -423,6 +467,20 @@ namespace Io.Gate.GateApi.Model
                     this.Size == input.Size ||
                     (this.Size != null &&
                     this.Size.Equals(input.Size))
+                ) && 
+                (
+                    this.HedgeStatus == input.HedgeStatus ||
+                    this.HedgeStatus.Equals(input.HedgeStatus)
+                ) && 
+                (
+                    this.HedgedSize == input.HedgedSize ||
+                    (this.HedgedSize != null &&
+                    this.HedgedSize.Equals(input.HedgedSize))
+                ) && 
+                (
+                    this.UnhedgedSize == input.UnhedgedSize ||
+                    (this.UnhedgedSize != null &&
+                    this.UnhedgedSize.Equals(input.UnhedgedSize))
                 ) && 
                 (
                     this.Leverage == input.Leverage ||
@@ -598,6 +656,11 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Contract.GetHashCode();
                 if (this.Size != null)
                     hashCode = hashCode * 59 + this.Size.GetHashCode();
+                hashCode = hashCode * 59 + this.HedgeStatus.GetHashCode();
+                if (this.HedgedSize != null)
+                    hashCode = hashCode * 59 + this.HedgedSize.GetHashCode();
+                if (this.UnhedgedSize != null)
+                    hashCode = hashCode * 59 + this.UnhedgedSize.GetHashCode();
                 if (this.Leverage != null)
                     hashCode = hashCode * 59 + this.Leverage.GetHashCode();
                 if (this.RiskLimit != null)

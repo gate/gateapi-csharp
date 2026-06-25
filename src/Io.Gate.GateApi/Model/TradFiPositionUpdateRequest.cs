@@ -33,8 +33,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TradFiPositionUpdateRequest" /> class.
         /// </summary>
-        /// <param name="priceTp">止盈价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止盈价 - 如不希望清空，请传接口返回的原止盈价.</param>
-        /// <param name="priceSl">止损价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止损价 - 如不希望清空，请传接口返回的原止损价.</param>
+        /// <param name="priceTp">Take Profit Price Description: - If not provided or set to \&quot;0\&quot;: The original take profit price will be cleared - If you do not want to clear it, pass the original take profit price returned by the interface.</param>
+        /// <param name="priceSl">Stop Loss Price Description: - If not provided or set to \&quot;0\&quot;: The original stop loss price will be cleared - If you do not want to clear it, pass the original stop loss price returned by the interface.</param>
         public TradFiPositionUpdateRequest(string priceTp = default(string), string priceSl = default(string))
         {
             this.PriceTp = priceTp;
@@ -42,16 +42,16 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 止盈价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止盈价 - 如不希望清空，请传接口返回的原止盈价
+        /// Take Profit Price Description: - If not provided or set to \&quot;0\&quot;: The original take profit price will be cleared - If you do not want to clear it, pass the original take profit price returned by the interface
         /// </summary>
-        /// <value>止盈价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止盈价 - 如不希望清空，请传接口返回的原止盈价</value>
+        /// <value>Take Profit Price Description: - If not provided or set to \&quot;0\&quot;: The original take profit price will be cleared - If you do not want to clear it, pass the original take profit price returned by the interface</value>
         [DataMember(Name="price_tp")]
         public string PriceTp { get; set; }
 
         /// <summary>
-        /// 止损价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止损价 - 如不希望清空，请传接口返回的原止损价
+        /// Stop Loss Price Description: - If not provided or set to \&quot;0\&quot;: The original stop loss price will be cleared - If you do not want to clear it, pass the original stop loss price returned by the interface
         /// </summary>
-        /// <value>止损价格  说明： - 不传 或 传 \&quot;0\&quot;：将清空原有止损价 - 如不希望清空，请传接口返回的原止损价</value>
+        /// <value>Stop Loss Price Description: - If not provided or set to \&quot;0\&quot;: The original stop loss price will be cleared - If you do not want to clear it, pass the original stop loss price returned by the interface</value>
         [DataMember(Name="price_sl")]
         public string PriceSl { get; set; }
 

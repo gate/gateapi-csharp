@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Fiat Order Set Paid Request Body
+    /// Request body for marking a fiat order as paid (deposit confirmation). Must include the user&#39;s payment receipt (consistent with §3.2).  **&#x60;payment_receipt_file_key&#x60; is required**; the order primary key for this path is &#x60;order_id&#x60;. When accessed via the Pay gateway using &#x60;client_order_id&#x60;, the gateway&#39;s rewritten field prevails.
     /// </summary>
     [DataContract]
     public partial class OtcMarkOrderPaidRequest :  IEquatable<OtcMarkOrderPaidRequest>, IValidatableObject
@@ -39,10 +39,17 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="OtcMarkOrderPaidRequest" /> class.
         /// </summary>
         /// <param name="orderId">Order ID (required).</param>
-        public OtcMarkOrderPaidRequest(string orderId = default(string))
+        /// <param name="clientOrderId">Client order ID (used by some gateway/Inner Pay paths, optional).</param>
+        /// <param name="paymentReceiptFileKey">User payment receipt: **required**. Stored as a file_key. Single file; jpg/jpeg/png/pdf; ≤4MB. (required).</param>
+        /// <param name="paymentReceipt">Alias compatible with &#x60;payment_receipt_file_key&#x60; (depends on the gateway&#39;s external field name).</param>
+        public OtcMarkOrderPaidRequest(string orderId = default(string), string clientOrderId = default(string), string paymentReceiptFileKey = default(string), string paymentReceipt = default(string))
         {
             // to ensure "orderId" is required (not null)
             this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for OtcMarkOrderPaidRequest and cannot be null");
+            // to ensure "paymentReceiptFileKey" is required (not null)
+            this.PaymentReceiptFileKey = paymentReceiptFileKey ?? throw new ArgumentNullException("paymentReceiptFileKey", "paymentReceiptFileKey is a required property for OtcMarkOrderPaidRequest and cannot be null");
+            this.ClientOrderId = clientOrderId;
+            this.PaymentReceipt = paymentReceipt;
         }
 
         /// <summary>
@@ -53,6 +60,27 @@ namespace Io.Gate.GateApi.Model
         public string OrderId { get; set; }
 
         /// <summary>
+        /// Client order ID (used by some gateway/Inner Pay paths, optional)
+        /// </summary>
+        /// <value>Client order ID (used by some gateway/Inner Pay paths, optional)</value>
+        [DataMember(Name="client_order_id")]
+        public string ClientOrderId { get; set; }
+
+        /// <summary>
+        /// User payment receipt: **required**. Stored as a file_key. Single file; jpg/jpeg/png/pdf; ≤4MB.
+        /// </summary>
+        /// <value>User payment receipt: **required**. Stored as a file_key. Single file; jpg/jpeg/png/pdf; ≤4MB.</value>
+        [DataMember(Name="payment_receipt_file_key")]
+        public string PaymentReceiptFileKey { get; set; }
+
+        /// <summary>
+        /// Alias compatible with &#x60;payment_receipt_file_key&#x60; (depends on the gateway&#39;s external field name)
+        /// </summary>
+        /// <value>Alias compatible with &#x60;payment_receipt_file_key&#x60; (depends on the gateway&#39;s external field name)</value>
+        [DataMember(Name="payment_receipt")]
+        public string PaymentReceipt { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -61,6 +89,9 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class OtcMarkOrderPaidRequest {\n");
             sb.Append("  OrderId: ").Append(OrderId).Append("\n");
+            sb.Append("  ClientOrderId: ").Append(ClientOrderId).Append("\n");
+            sb.Append("  PaymentReceiptFileKey: ").Append(PaymentReceiptFileKey).Append("\n");
+            sb.Append("  PaymentReceipt: ").Append(PaymentReceipt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +130,21 @@ namespace Io.Gate.GateApi.Model
                     this.OrderId == input.OrderId ||
                     (this.OrderId != null &&
                     this.OrderId.Equals(input.OrderId))
+                ) && 
+                (
+                    this.ClientOrderId == input.ClientOrderId ||
+                    (this.ClientOrderId != null &&
+                    this.ClientOrderId.Equals(input.ClientOrderId))
+                ) && 
+                (
+                    this.PaymentReceiptFileKey == input.PaymentReceiptFileKey ||
+                    (this.PaymentReceiptFileKey != null &&
+                    this.PaymentReceiptFileKey.Equals(input.PaymentReceiptFileKey))
+                ) && 
+                (
+                    this.PaymentReceipt == input.PaymentReceipt ||
+                    (this.PaymentReceipt != null &&
+                    this.PaymentReceipt.Equals(input.PaymentReceipt))
                 );
         }
 
@@ -113,6 +159,12 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.OrderId != null)
                     hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.ClientOrderId != null)
+                    hashCode = hashCode * 59 + this.ClientOrderId.GetHashCode();
+                if (this.PaymentReceiptFileKey != null)
+                    hashCode = hashCode * 59 + this.PaymentReceiptFileKey.GetHashCode();
+                if (this.PaymentReceipt != null)
+                    hashCode = hashCode * 59 + this.PaymentReceipt.GetHashCode();
                 return hashCode;
             }
         }

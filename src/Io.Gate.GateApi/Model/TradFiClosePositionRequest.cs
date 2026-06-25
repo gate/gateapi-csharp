@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class TradFiClosePositionRequest :  IEquatable<TradFiClosePositionRequest>, IValidatableObject
     {
         /// <summary>
-        /// 平仓类型  说明： - 1：部分平仓（必须传 close_volume） - 2：全平（无需传 close_volume）
+        /// Close Type Description: - 1: Partial Close (close_volume is required) - 2: Full Close (close_volume is not required)
         /// </summary>
-        /// <value>平仓类型  说明： - 1：部分平仓（必须传 close_volume） - 2：全平（无需传 close_volume）</value>
+        /// <value>Close Type Description: - 1: Partial Close (close_volume is required) - 2: Full Close (close_volume is not required)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CloseTypeEnum
         {
@@ -50,9 +50,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 平仓类型  说明： - 1：部分平仓（必须传 close_volume） - 2：全平（无需传 close_volume）
+        /// Close Type Description: - 1: Partial Close (close_volume is required) - 2: Full Close (close_volume is not required)
         /// </summary>
-        /// <value>平仓类型  说明： - 1：部分平仓（必须传 close_volume） - 2：全平（无需传 close_volume）</value>
+        /// <value>Close Type Description: - 1: Partial Close (close_volume is required) - 2: Full Close (close_volume is not required)</value>
         [DataMember(Name="close_type")]
         public CloseTypeEnum CloseType { get; set; }
         /// <summary>
@@ -63,8 +63,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TradFiClosePositionRequest" /> class.
         /// </summary>
-        /// <param name="closeType">平仓类型  说明： - 1：部分平仓（必须传 close_volume） - 2：全平（无需传 close_volume） (required).</param>
-        /// <param name="closeVolume">平仓数量  说明： - 当 close_type &#x3D; 1 时必传 - 当 close_type &#x3D; 2 时忽略该字段.</param>
+        /// <param name="closeType">Close Type Description: - 1: Partial Close (close_volume is required) - 2: Full Close (close_volume is not required) (required).</param>
+        /// <param name="closeVolume">Close Volume Description: - Required when close_type &#x3D; 1 - Ignored when close_type &#x3D; 2.</param>
         public TradFiClosePositionRequest(CloseTypeEnum closeType = default(CloseTypeEnum), string closeVolume = default(string))
         {
             this.CloseType = closeType;
@@ -72,9 +72,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// 平仓数量  说明： - 当 close_type &#x3D; 1 时必传 - 当 close_type &#x3D; 2 时忽略该字段
+        /// Close Volume Description: - Required when close_type &#x3D; 1 - Ignored when close_type &#x3D; 2
         /// </summary>
-        /// <value>平仓数量  说明： - 当 close_type &#x3D; 1 时必传 - 当 close_type &#x3D; 2 时忽略该字段</value>
+        /// <value>Close Volume Description: - Required when close_type &#x3D; 1 - Ignored when close_type &#x3D; 2</value>
         [DataMember(Name="close_volume")]
         public string CloseVolume { get; set; }
 

@@ -511,6 +511,86 @@ namespace Io.Gate.GateApi.Api
         /// <param name="unifiedCollateralReq"></param>
         /// <returns>ApiResponse of UnifiedCollateralRes</returns>
         ApiResponse<UnifiedCollateralRes> SetUnifiedCollateralWithHttpInfo (UnifiedCollateralReq unifiedCollateralReq);
+        /// <summary>
+        /// Estimated quick repayment details
+        /// </summary>
+        /// <remarks>
+        /// Available for unified account cross-currency margin mode and portfolio margin mode
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>QuickEstimatedRepayment</returns>
+        QuickEstimatedRepayment GetEstimatedQuickRepayment ();
+
+        /// <summary>
+        /// Estimated quick repayment details
+        /// </summary>
+        /// <remarks>
+        /// Available for unified account cross-currency margin mode and portfolio margin mode
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of QuickEstimatedRepayment</returns>
+        ApiResponse<QuickEstimatedRepayment> GetEstimatedQuickRepaymentWithHttpInfo ();
+        /// <summary>
+        /// Quick repayment
+        /// </summary>
+        /// <remarks>
+        /// Available for unified account cross-currency margin mode and portfolio margin mode. Use &#x60;GET /unified/estimated_quick_repayment&#x60; to query liabilities and pending repayment information.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="quickRepaymentRequest"></param>
+        /// <returns>QuickRepaymentResponse</returns>
+        QuickRepaymentResponse CreateQuickRepayment (QuickRepaymentRequest quickRepaymentRequest);
+
+        /// <summary>
+        /// Quick repayment
+        /// </summary>
+        /// <remarks>
+        /// Available for unified account cross-currency margin mode and portfolio margin mode. Use &#x60;GET /unified/estimated_quick_repayment&#x60; to query liabilities and pending repayment information.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="quickRepaymentRequest"></param>
+        /// <returns>ApiResponse of QuickRepaymentResponse</returns>
+        ApiResponse<QuickRepaymentResponse> CreateQuickRepaymentWithHttpInfo (QuickRepaymentRequest quickRepaymentRequest);
+        /// <summary>
+        /// Query the account Delta-neutral strategy mode setting
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>DeltaNeutralEnabled</returns>
+        DeltaNeutralEnabled GetUnifiedDeltaNeutral ();
+
+        /// <summary>
+        /// Query the account Delta-neutral strategy mode setting
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of DeltaNeutralEnabled</returns>
+        ApiResponse<DeltaNeutralEnabled> GetUnifiedDeltaNeutralWithHttpInfo ();
+        /// <summary>
+        /// Set the account Delta-neutral strategy mode
+        /// </summary>
+        /// <remarks>
+        /// Enable or disable the account Delta-neutral strategy mode.  Requirements for enabling: VIP level &gt;&#x3D; 4 and the account is in cross-currency margin mode; otherwise 403 is returned. Returns the enabled status after the setting takes effect.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deltaNeutralEnabled"></param>
+        /// <returns>DeltaNeutralEnabled</returns>
+        DeltaNeutralEnabled SetUnifiedDeltaNeutral (DeltaNeutralEnabled deltaNeutralEnabled);
+
+        /// <summary>
+        /// Set the account Delta-neutral strategy mode
+        /// </summary>
+        /// <remarks>
+        /// Enable or disable the account Delta-neutral strategy mode.  Requirements for enabling: VIP level &gt;&#x3D; 4 and the account is in cross-currency margin mode; otherwise 403 is returned. Returns the enabled status after the setting takes effect.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deltaNeutralEnabled"></param>
+        /// <returns>ApiResponse of DeltaNeutralEnabled</returns>
+        ApiResponse<DeltaNeutralEnabled> SetUnifiedDeltaNeutralWithHttpInfo (DeltaNeutralEnabled deltaNeutralEnabled);
         #endregion Synchronous Operations
     }
 
@@ -1004,6 +1084,86 @@ namespace Io.Gate.GateApi.Api
         /// <param name="unifiedCollateralReq"></param>
         /// <returns>Task of ApiResponse (UnifiedCollateralRes)</returns>
         Task<ApiResponse<UnifiedCollateralRes>> SetUnifiedCollateralAsyncWithHttpInfo (UnifiedCollateralReq unifiedCollateralReq);
+        /// <summary>
+        /// Estimated quick repayment details
+        /// </summary>
+        /// <remarks>
+        /// Available for unified account cross-currency margin mode and portfolio margin mode
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of QuickEstimatedRepayment</returns>
+        Task<QuickEstimatedRepayment> GetEstimatedQuickRepaymentAsync ();
+
+        /// <summary>
+        /// Estimated quick repayment details
+        /// </summary>
+        /// <remarks>
+        /// Available for unified account cross-currency margin mode and portfolio margin mode
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (QuickEstimatedRepayment)</returns>
+        Task<ApiResponse<QuickEstimatedRepayment>> GetEstimatedQuickRepaymentAsyncWithHttpInfo ();
+        /// <summary>
+        /// Quick repayment
+        /// </summary>
+        /// <remarks>
+        /// Available for unified account cross-currency margin mode and portfolio margin mode. Use &#x60;GET /unified/estimated_quick_repayment&#x60; to query liabilities and pending repayment information.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="quickRepaymentRequest"></param>
+        /// <returns>Task of QuickRepaymentResponse</returns>
+        Task<QuickRepaymentResponse> CreateQuickRepaymentAsync (QuickRepaymentRequest quickRepaymentRequest);
+
+        /// <summary>
+        /// Quick repayment
+        /// </summary>
+        /// <remarks>
+        /// Available for unified account cross-currency margin mode and portfolio margin mode. Use &#x60;GET /unified/estimated_quick_repayment&#x60; to query liabilities and pending repayment information.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="quickRepaymentRequest"></param>
+        /// <returns>Task of ApiResponse (QuickRepaymentResponse)</returns>
+        Task<ApiResponse<QuickRepaymentResponse>> CreateQuickRepaymentAsyncWithHttpInfo (QuickRepaymentRequest quickRepaymentRequest);
+        /// <summary>
+        /// Query the account Delta-neutral strategy mode setting
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of DeltaNeutralEnabled</returns>
+        Task<DeltaNeutralEnabled> GetUnifiedDeltaNeutralAsync ();
+
+        /// <summary>
+        /// Query the account Delta-neutral strategy mode setting
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (DeltaNeutralEnabled)</returns>
+        Task<ApiResponse<DeltaNeutralEnabled>> GetUnifiedDeltaNeutralAsyncWithHttpInfo ();
+        /// <summary>
+        /// Set the account Delta-neutral strategy mode
+        /// </summary>
+        /// <remarks>
+        /// Enable or disable the account Delta-neutral strategy mode.  Requirements for enabling: VIP level &gt;&#x3D; 4 and the account is in cross-currency margin mode; otherwise 403 is returned. Returns the enabled status after the setting takes effect.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deltaNeutralEnabled"></param>
+        /// <returns>Task of DeltaNeutralEnabled</returns>
+        Task<DeltaNeutralEnabled> SetUnifiedDeltaNeutralAsync (DeltaNeutralEnabled deltaNeutralEnabled);
+
+        /// <summary>
+        /// Set the account Delta-neutral strategy mode
+        /// </summary>
+        /// <remarks>
+        /// Enable or disable the account Delta-neutral strategy mode.  Requirements for enabling: VIP level &gt;&#x3D; 4 and the account is in cross-currency margin mode; otherwise 403 is returned. Returns the enabled status after the setting takes effect.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deltaNeutralEnabled"></param>
+        /// <returns>Task of ApiResponse (DeltaNeutralEnabled)</returns>
+        Task<ApiResponse<DeltaNeutralEnabled>> SetUnifiedDeltaNeutralAsyncWithHttpInfo (DeltaNeutralEnabled deltaNeutralEnabled);
         #endregion Asynchronous Operations
     }
 
@@ -3786,6 +3946,450 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SetUnifiedCollateral", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Estimated quick repayment details Available for unified account cross-currency margin mode and portfolio margin mode
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>QuickEstimatedRepayment</returns>
+        public QuickEstimatedRepayment GetEstimatedQuickRepayment ()
+        {
+             ApiResponse<QuickEstimatedRepayment> localVarResponse = GetEstimatedQuickRepaymentWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Estimated quick repayment details Available for unified account cross-currency margin mode and portfolio margin mode
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of QuickEstimatedRepayment</returns>
+        public ApiResponse<QuickEstimatedRepayment> GetEstimatedQuickRepaymentWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<QuickEstimatedRepayment>("/unified/estimated_quick_repayment", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetEstimatedQuickRepayment", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Estimated quick repayment details Available for unified account cross-currency margin mode and portfolio margin mode
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of QuickEstimatedRepayment</returns>
+        public async Task<QuickEstimatedRepayment> GetEstimatedQuickRepaymentAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<QuickEstimatedRepayment> localVarResponse = await GetEstimatedQuickRepaymentAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Estimated quick repayment details Available for unified account cross-currency margin mode and portfolio margin mode
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (QuickEstimatedRepayment)</returns>
+        public async Task<ApiResponse<QuickEstimatedRepayment>> GetEstimatedQuickRepaymentAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<QuickEstimatedRepayment>("/unified/estimated_quick_repayment", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetEstimatedQuickRepayment", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Quick repayment Available for unified account cross-currency margin mode and portfolio margin mode. Use &#x60;GET /unified/estimated_quick_repayment&#x60; to query liabilities and pending repayment information.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="quickRepaymentRequest"></param>
+        /// <returns>QuickRepaymentResponse</returns>
+        public QuickRepaymentResponse CreateQuickRepayment (QuickRepaymentRequest quickRepaymentRequest)
+        {
+             ApiResponse<QuickRepaymentResponse> localVarResponse = CreateQuickRepaymentWithHttpInfo(quickRepaymentRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Quick repayment Available for unified account cross-currency margin mode and portfolio margin mode. Use &#x60;GET /unified/estimated_quick_repayment&#x60; to query liabilities and pending repayment information.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="quickRepaymentRequest"></param>
+        /// <returns>ApiResponse of QuickRepaymentResponse</returns>
+        public ApiResponse<QuickRepaymentResponse> CreateQuickRepaymentWithHttpInfo (QuickRepaymentRequest quickRepaymentRequest)
+        {
+            // verify the required parameter 'quickRepaymentRequest' is set
+            if (quickRepaymentRequest == null)
+                throw new ApiException(400, "Missing required parameter 'quickRepaymentRequest' when calling UnifiedApi->CreateQuickRepayment");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = quickRepaymentRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<QuickRepaymentResponse>("/unified/quick_repayment", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateQuickRepayment", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Quick repayment Available for unified account cross-currency margin mode and portfolio margin mode. Use &#x60;GET /unified/estimated_quick_repayment&#x60; to query liabilities and pending repayment information.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="quickRepaymentRequest"></param>
+        /// <returns>Task of QuickRepaymentResponse</returns>
+        public async Task<QuickRepaymentResponse> CreateQuickRepaymentAsync (QuickRepaymentRequest quickRepaymentRequest)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<QuickRepaymentResponse> localVarResponse = await CreateQuickRepaymentAsyncWithHttpInfo(quickRepaymentRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Quick repayment Available for unified account cross-currency margin mode and portfolio margin mode. Use &#x60;GET /unified/estimated_quick_repayment&#x60; to query liabilities and pending repayment information.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="quickRepaymentRequest"></param>
+        /// <returns>Task of ApiResponse (QuickRepaymentResponse)</returns>
+        public async Task<ApiResponse<QuickRepaymentResponse>> CreateQuickRepaymentAsyncWithHttpInfo (QuickRepaymentRequest quickRepaymentRequest)
+        {
+            // verify the required parameter 'quickRepaymentRequest' is set
+            if (quickRepaymentRequest == null)
+                throw new ApiException(400, "Missing required parameter 'quickRepaymentRequest' when calling UnifiedApi->CreateQuickRepayment");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = quickRepaymentRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<QuickRepaymentResponse>("/unified/quick_repayment", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateQuickRepayment", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query the account Delta-neutral strategy mode setting 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>DeltaNeutralEnabled</returns>
+        public DeltaNeutralEnabled GetUnifiedDeltaNeutral ()
+        {
+             ApiResponse<DeltaNeutralEnabled> localVarResponse = GetUnifiedDeltaNeutralWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query the account Delta-neutral strategy mode setting 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of DeltaNeutralEnabled</returns>
+        public ApiResponse<DeltaNeutralEnabled> GetUnifiedDeltaNeutralWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<DeltaNeutralEnabled>("/unified/delta_neutral", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetUnifiedDeltaNeutral", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query the account Delta-neutral strategy mode setting 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of DeltaNeutralEnabled</returns>
+        public async Task<DeltaNeutralEnabled> GetUnifiedDeltaNeutralAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<DeltaNeutralEnabled> localVarResponse = await GetUnifiedDeltaNeutralAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query the account Delta-neutral strategy mode setting 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (DeltaNeutralEnabled)</returns>
+        public async Task<ApiResponse<DeltaNeutralEnabled>> GetUnifiedDeltaNeutralAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DeltaNeutralEnabled>("/unified/delta_neutral", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetUnifiedDeltaNeutral", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set the account Delta-neutral strategy mode Enable or disable the account Delta-neutral strategy mode.  Requirements for enabling: VIP level &gt;&#x3D; 4 and the account is in cross-currency margin mode; otherwise 403 is returned. Returns the enabled status after the setting takes effect.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deltaNeutralEnabled"></param>
+        /// <returns>DeltaNeutralEnabled</returns>
+        public DeltaNeutralEnabled SetUnifiedDeltaNeutral (DeltaNeutralEnabled deltaNeutralEnabled)
+        {
+             ApiResponse<DeltaNeutralEnabled> localVarResponse = SetUnifiedDeltaNeutralWithHttpInfo(deltaNeutralEnabled);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set the account Delta-neutral strategy mode Enable or disable the account Delta-neutral strategy mode.  Requirements for enabling: VIP level &gt;&#x3D; 4 and the account is in cross-currency margin mode; otherwise 403 is returned. Returns the enabled status after the setting takes effect.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deltaNeutralEnabled"></param>
+        /// <returns>ApiResponse of DeltaNeutralEnabled</returns>
+        public ApiResponse<DeltaNeutralEnabled> SetUnifiedDeltaNeutralWithHttpInfo (DeltaNeutralEnabled deltaNeutralEnabled)
+        {
+            // verify the required parameter 'deltaNeutralEnabled' is set
+            if (deltaNeutralEnabled == null)
+                throw new ApiException(400, "Missing required parameter 'deltaNeutralEnabled' when calling UnifiedApi->SetUnifiedDeltaNeutral");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = deltaNeutralEnabled;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<DeltaNeutralEnabled>("/unified/delta_neutral", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetUnifiedDeltaNeutral", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set the account Delta-neutral strategy mode Enable or disable the account Delta-neutral strategy mode.  Requirements for enabling: VIP level &gt;&#x3D; 4 and the account is in cross-currency margin mode; otherwise 403 is returned. Returns the enabled status after the setting takes effect.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deltaNeutralEnabled"></param>
+        /// <returns>Task of DeltaNeutralEnabled</returns>
+        public async Task<DeltaNeutralEnabled> SetUnifiedDeltaNeutralAsync (DeltaNeutralEnabled deltaNeutralEnabled)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<DeltaNeutralEnabled> localVarResponse = await SetUnifiedDeltaNeutralAsyncWithHttpInfo(deltaNeutralEnabled);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Set the account Delta-neutral strategy mode Enable or disable the account Delta-neutral strategy mode.  Requirements for enabling: VIP level &gt;&#x3D; 4 and the account is in cross-currency margin mode; otherwise 403 is returned. Returns the enabled status after the setting takes effect.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="deltaNeutralEnabled"></param>
+        /// <returns>Task of ApiResponse (DeltaNeutralEnabled)</returns>
+        public async Task<ApiResponse<DeltaNeutralEnabled>> SetUnifiedDeltaNeutralAsyncWithHttpInfo (DeltaNeutralEnabled deltaNeutralEnabled)
+        {
+            // verify the required parameter 'deltaNeutralEnabled' is set
+            if (deltaNeutralEnabled == null)
+                throw new ApiException(400, "Missing required parameter 'deltaNeutralEnabled' when calling UnifiedApi->SetUnifiedDeltaNeutral");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = deltaNeutralEnabled;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DeltaNeutralEnabled>("/unified/delta_neutral", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetUnifiedDeltaNeutral", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

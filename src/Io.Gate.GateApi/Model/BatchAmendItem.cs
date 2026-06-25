@@ -45,7 +45,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="price">Trading Price. Only one of &#x60;amount&#x60; or &#x60;price&#x60; can be specified.</param>
         /// <param name="amendText">Custom info during order amendment.</param>
         /// <param name="actionMode">Processing Mode: When placing an order, different fields are returned based on action_mode. This field is only valid during the request and is not included in the response result ACK: Asynchronous mode, only returns key order fields RESULT: No clearing information FULL: Full mode (default).</param>
-        public BatchAmendItem(string orderId = default(string), string currencyPair = default(string), string account = default(string), string amount = default(string), string price = default(string), string amendText = default(string), string actionMode = default(string))
+        /// <param name="stopProfit">stopProfit.</param>
+        /// <param name="stopLoss">stopLoss.</param>
+        public BatchAmendItem(string orderId = default(string), string currencyPair = default(string), string account = default(string), string amount = default(string), string price = default(string), string amendText = default(string), string actionMode = default(string), SpotOrderStopProfit stopProfit = default(SpotOrderStopProfit), SpotOrderStopLoss stopLoss = default(SpotOrderStopLoss))
         {
             // to ensure "orderId" is required (not null)
             this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for BatchAmendItem and cannot be null");
@@ -56,6 +58,8 @@ namespace Io.Gate.GateApi.Model
             this.Price = price;
             this.AmendText = amendText;
             this.ActionMode = actionMode;
+            this.StopProfit = stopProfit;
+            this.StopLoss = stopLoss;
         }
 
         /// <summary>
@@ -108,6 +112,18 @@ namespace Io.Gate.GateApi.Model
         public string ActionMode { get; set; }
 
         /// <summary>
+        /// Gets or Sets StopProfit
+        /// </summary>
+        [DataMember(Name="stop_profit")]
+        public SpotOrderStopProfit StopProfit { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StopLoss
+        /// </summary>
+        [DataMember(Name="stop_loss")]
+        public SpotOrderStopLoss StopLoss { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -122,6 +138,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Price: ").Append(Price).Append("\n");
             sb.Append("  AmendText: ").Append(AmendText).Append("\n");
             sb.Append("  ActionMode: ").Append(ActionMode).Append("\n");
+            sb.Append("  StopProfit: ").Append(StopProfit).Append("\n");
+            sb.Append("  StopLoss: ").Append(StopLoss).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -190,6 +208,16 @@ namespace Io.Gate.GateApi.Model
                     this.ActionMode == input.ActionMode ||
                     (this.ActionMode != null &&
                     this.ActionMode.Equals(input.ActionMode))
+                ) && 
+                (
+                    this.StopProfit == input.StopProfit ||
+                    (this.StopProfit != null &&
+                    this.StopProfit.Equals(input.StopProfit))
+                ) && 
+                (
+                    this.StopLoss == input.StopLoss ||
+                    (this.StopLoss != null &&
+                    this.StopLoss.Equals(input.StopLoss))
                 );
         }
 
@@ -216,6 +244,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.AmendText.GetHashCode();
                 if (this.ActionMode != null)
                     hashCode = hashCode * 59 + this.ActionMode.GetHashCode();
+                if (this.StopProfit != null)
+                    hashCode = hashCode * 59 + this.StopProfit.GetHashCode();
+                if (this.StopLoss != null)
+                    hashCode = hashCode * 59 + this.StopLoss.GetHashCode();
                 return hashCode;
             }
         }

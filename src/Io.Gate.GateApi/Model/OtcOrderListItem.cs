@@ -47,10 +47,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="cryptoCurrencyInfo">cryptoCurrencyInfo.</param>
         /// <param name="cryptoAmount">Stablecoin amount.</param>
         /// <param name="rate">Exchange rate.</param>
-        /// <param name="transferRemark">Remark.</param>
+        /// <param name="transferRemark">Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code).</param>
+        /// <param name="referenceCode">Unique bank transfer reference code for deposit buy orders (SGB deposit scenario).</param>
         /// <param name="gateBankAccountIban">Bank account.</param>
         /// <param name="promotionCode">Promotion code.</param>
-        public OtcOrderListItem(string time = default(string), int timestamp = default(int), string orderId = default(string), string tradeNo = default(string), string type = default(string), string status = default(string), string dbStatus = default(string), string fiatCurrency = default(string), OtcOrderListFiatCurrencyInfo fiatCurrencyInfo = default(OtcOrderListFiatCurrencyInfo), string fiatAmount = default(string), string cryptoCurrency = default(string), OtcOrderListCryptoCurrencyInfo cryptoCurrencyInfo = default(OtcOrderListCryptoCurrencyInfo), string cryptoAmount = default(string), string rate = default(string), string transferRemark = default(string), string gateBankAccountIban = default(string), string promotionCode = default(string))
+        public OtcOrderListItem(string time = default(string), int timestamp = default(int), string orderId = default(string), string tradeNo = default(string), string type = default(string), string status = default(string), string dbStatus = default(string), string fiatCurrency = default(string), OtcOrderListFiatCurrencyInfo fiatCurrencyInfo = default(OtcOrderListFiatCurrencyInfo), string fiatAmount = default(string), string cryptoCurrency = default(string), OtcOrderListCryptoCurrencyInfo cryptoCurrencyInfo = default(OtcOrderListCryptoCurrencyInfo), string cryptoAmount = default(string), string rate = default(string), string transferRemark = default(string), string referenceCode = default(string), string gateBankAccountIban = default(string), string promotionCode = default(string))
         {
             this.Time = time;
             this.Timestamp = timestamp;
@@ -67,6 +68,7 @@ namespace Io.Gate.GateApi.Model
             this.CryptoAmount = cryptoAmount;
             this.Rate = rate;
             this.TransferRemark = transferRemark;
+            this.ReferenceCode = referenceCode;
             this.GateBankAccountIban = gateBankAccountIban;
             this.PromotionCode = promotionCode;
         }
@@ -167,11 +169,18 @@ namespace Io.Gate.GateApi.Model
         public string Rate { get; set; }
 
         /// <summary>
-        /// Remark
+        /// Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code)
         /// </summary>
-        /// <value>Remark</value>
+        /// <value>Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code)</value>
         [DataMember(Name="transfer_remark")]
         public string TransferRemark { get; set; }
+
+        /// <summary>
+        /// Unique bank transfer reference code for deposit buy orders (SGB deposit scenario)
+        /// </summary>
+        /// <value>Unique bank transfer reference code for deposit buy orders (SGB deposit scenario)</value>
+        [DataMember(Name="reference_code")]
+        public string ReferenceCode { get; set; }
 
         /// <summary>
         /// Bank account
@@ -210,6 +219,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  CryptoAmount: ").Append(CryptoAmount).Append("\n");
             sb.Append("  Rate: ").Append(Rate).Append("\n");
             sb.Append("  TransferRemark: ").Append(TransferRemark).Append("\n");
+            sb.Append("  ReferenceCode: ").Append(ReferenceCode).Append("\n");
             sb.Append("  GateBankAccountIban: ").Append(GateBankAccountIban).Append("\n");
             sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
             sb.Append("}\n");
@@ -321,6 +331,11 @@ namespace Io.Gate.GateApi.Model
                     this.TransferRemark.Equals(input.TransferRemark))
                 ) && 
                 (
+                    this.ReferenceCode == input.ReferenceCode ||
+                    (this.ReferenceCode != null &&
+                    this.ReferenceCode.Equals(input.ReferenceCode))
+                ) && 
+                (
                     this.GateBankAccountIban == input.GateBankAccountIban ||
                     (this.GateBankAccountIban != null &&
                     this.GateBankAccountIban.Equals(input.GateBankAccountIban))
@@ -370,6 +385,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Rate.GetHashCode();
                 if (this.TransferRemark != null)
                     hashCode = hashCode * 59 + this.TransferRemark.GetHashCode();
+                if (this.ReferenceCode != null)
+                    hashCode = hashCode * 59 + this.ReferenceCode.GetHashCode();
                 if (this.GateBankAccountIban != null)
                     hashCode = hashCode * 59 + this.GateBankAccountIban.GetHashCode();
                 if (this.PromotionCode != null)

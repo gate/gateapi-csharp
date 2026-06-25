@@ -35,7 +35,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="positionMode">Requested futures position mode to modify (SINGLE/DUAL).</param>
         /// <param name="accountMode">Requested account mode to modify (CROSS_EXCHANGE/ISOLATED_EXCHANGE, default: CROSS_EXCHANGE).</param>
-        /// <param name="exchangeType">Requested exchange to modify (BINANCE/OKX/GATE/BYBIT/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode).</param>
+        /// <param name="exchangeType">Exchange targeted by the requested change (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;CROSSEX&#x60;). When account mode is &#x60;ISOLATED_EXCHANGE&#x60;, the exchange must be specified to change futures position mode..</param>
         public CrossexAccountUpdateResponse(string positionMode = default(string), string accountMode = default(string), string exchangeType = default(string))
         {
             this.PositionMode = positionMode;
@@ -58,9 +58,9 @@ namespace Io.Gate.GateApi.Model
         public string AccountMode { get; set; }
 
         /// <summary>
-        /// Requested exchange to modify (BINANCE/OKX/GATE/BYBIT/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode)
+        /// Exchange targeted by the requested change (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;CROSSEX&#x60;). When account mode is &#x60;ISOLATED_EXCHANGE&#x60;, the exchange must be specified to change futures position mode.
         /// </summary>
-        /// <value>Requested exchange to modify (BINANCE/OKX/GATE/BYBIT/CROSSEX; when account mode is ISOLATED_EXCHANGE, the exchange must be specified to modify futures position mode)</value>
+        /// <value>Exchange targeted by the requested change (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;CROSSEX&#x60;). When account mode is &#x60;ISOLATED_EXCHANGE&#x60;, the exchange must be specified to change futures position mode.</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 

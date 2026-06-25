@@ -44,7 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="rewardCoin">Reward currency (required).</param>
         /// <param name="interest">Interest amount (required).</param>
         /// <param name="fee">fee (required).</param>
-        /// <param name="status">Status (required).</param>
+        /// <param name="status">Status. 4 - success (required).</param>
         /// <param name="bonusDate">Date (required).</param>
         /// <param name="shouldBonusStamp">Scheduled distribution timestamp (required).</param>
         public AwardListStructList(int pid = default(int), string mortgageCoin = default(string), string amount = default(string), string rewardCoin = default(string), string interest = default(string), string fee = default(string), int status = default(int), string bonusDate = default(string), int shouldBonusStamp = default(int))
@@ -109,9 +109,9 @@ namespace Io.Gate.GateApi.Model
         public string Fee { get; set; }
 
         /// <summary>
-        /// Status
+        /// Status. 4 - success
         /// </summary>
-        /// <value>Status</value>
+        /// <value>Status. 4 - success</value>
         [DataMember(Name="status")]
         public int Status { get; set; }
 

@@ -252,7 +252,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="pid">Position ID.</param>
         /// <param name="marketOrderSlipRatio">Custom maximum slippage rate for market orders. If not provided, the default contract settings will be used.</param>
         /// <param name="posMarginMode">Position Margin Mode isolated - Isolated Margin, cross - Cross Margin, only passed in simple split position mode.</param>
-        public FuturesOrderTimerange(string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long pid = default(long), string marketOrderSlipRatio = default(string), string posMarginMode = default(string))
+        /// <param name="tpslTpTriggerPrice">Take profit price.</param>
+        /// <param name="tpslSlTriggerPrice">Stop loss price.</param>
+        public FuturesOrderTimerange(string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long pid = default(long), string marketOrderSlipRatio = default(string), string posMarginMode = default(string), string tpslTpTriggerPrice = default(string), string tpslSlTriggerPrice = default(string))
         {
             // to ensure "contract" is required (not null)
             this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for FuturesOrderTimerange and cannot be null");
@@ -270,6 +272,8 @@ namespace Io.Gate.GateApi.Model
             this.Pid = pid;
             this.MarketOrderSlipRatio = marketOrderSlipRatio;
             this.PosMarginMode = posMarginMode;
+            this.TpslTpTriggerPrice = tpslTpTriggerPrice;
+            this.TpslSlTriggerPrice = tpslSlTriggerPrice;
         }
 
         /// <summary>
@@ -448,6 +452,20 @@ namespace Io.Gate.GateApi.Model
         public string PosMarginMode { get; set; }
 
         /// <summary>
+        /// Take profit price
+        /// </summary>
+        /// <value>Take profit price</value>
+        [DataMember(Name="tpsl_tp_trigger_price")]
+        public string TpslTpTriggerPrice { get; set; }
+
+        /// <summary>
+        /// Stop loss price
+        /// </summary>
+        /// <value>Stop loss price</value>
+        [DataMember(Name="tpsl_sl_trigger_price")]
+        public string TpslSlTriggerPrice { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -485,6 +503,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Pid: ").Append(Pid).Append("\n");
             sb.Append("  MarketOrderSlipRatio: ").Append(MarketOrderSlipRatio).Append("\n");
             sb.Append("  PosMarginMode: ").Append(PosMarginMode).Append("\n");
+            sb.Append("  TpslTpTriggerPrice: ").Append(TpslTpTriggerPrice).Append("\n");
+            sb.Append("  TpslSlTriggerPrice: ").Append(TpslSlTriggerPrice).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -652,6 +672,16 @@ namespace Io.Gate.GateApi.Model
                     this.PosMarginMode == input.PosMarginMode ||
                     (this.PosMarginMode != null &&
                     this.PosMarginMode.Equals(input.PosMarginMode))
+                ) && 
+                (
+                    this.TpslTpTriggerPrice == input.TpslTpTriggerPrice ||
+                    (this.TpslTpTriggerPrice != null &&
+                    this.TpslTpTriggerPrice.Equals(input.TpslTpTriggerPrice))
+                ) && 
+                (
+                    this.TpslSlTriggerPrice == input.TpslSlTriggerPrice ||
+                    (this.TpslSlTriggerPrice != null &&
+                    this.TpslSlTriggerPrice.Equals(input.TpslSlTriggerPrice))
                 );
         }
 
@@ -708,6 +738,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.MarketOrderSlipRatio.GetHashCode();
                 if (this.PosMarginMode != null)
                     hashCode = hashCode * 59 + this.PosMarginMode.GetHashCode();
+                if (this.TpslTpTriggerPrice != null)
+                    hashCode = hashCode * 59 + this.TpslTpTriggerPrice.GetHashCode();
+                if (this.TpslSlTriggerPrice != null)
+                    hashCode = hashCode * 59 + this.TpslSlTriggerPrice.GetHashCode();
                 return hashCode;
             }
         }

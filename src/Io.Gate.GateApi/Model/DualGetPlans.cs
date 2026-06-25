@@ -39,14 +39,12 @@ namespace Io.Gate.GateApi.Model
         /// <param name="exerciseCurrency">Strike Token.</param>
         /// <param name="exercisePrice">Strike price.</param>
         /// <param name="deliveryTime">Settlement time.</param>
-        /// <param name="minCopies">Minimum share count.</param>
-        /// <param name="maxCopies">Maximum share count.</param>
-        /// <param name="perValue">Value Per Unit (deprecated).</param>
         /// <param name="apyDisplay">Annual Yield.</param>
+        /// <param name="minAmount">Minimum investment amount.</param>
         /// <param name="startTime">Start Time.</param>
         /// <param name="endTime">End time.</param>
-        /// <param name="status">状态:  &#x60;NOTSTARTED&#x60;-未开始 &#x60;ONGOING&#x60;-进行中 &#x60;ENDED&#x60;-已结束.</param>
-        public DualGetPlans(int id = default(int), string instrumentName = default(string), string investCurrency = default(string), string exerciseCurrency = default(string), double exercisePrice = default(double), int deliveryTime = default(int), int minCopies = default(int), int maxCopies = default(int), string perValue = default(string), string apyDisplay = default(string), int startTime = default(int), int endTime = default(int), string status = default(string))
+        /// <param name="status">Status:  &#x60;NOTSTARTED&#x60; - Not started &#x60;ONGOING&#x60; - In progress &#x60;ENDED&#x60; - Ended.</param>
+        public DualGetPlans(int id = default(int), string instrumentName = default(string), string investCurrency = default(string), string exerciseCurrency = default(string), double exercisePrice = default(double), int deliveryTime = default(int), string apyDisplay = default(string), string minAmount = default(string), int startTime = default(int), int endTime = default(int), string status = default(string))
         {
             this.Id = id;
             this.InstrumentName = instrumentName;
@@ -54,10 +52,8 @@ namespace Io.Gate.GateApi.Model
             this.ExerciseCurrency = exerciseCurrency;
             this.ExercisePrice = exercisePrice;
             this.DeliveryTime = deliveryTime;
-            this.MinCopies = minCopies;
-            this.MaxCopies = maxCopies;
-            this.PerValue = perValue;
             this.ApyDisplay = apyDisplay;
+            this.MinAmount = minAmount;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Status = status;
@@ -106,32 +102,18 @@ namespace Io.Gate.GateApi.Model
         public int DeliveryTime { get; set; }
 
         /// <summary>
-        /// Minimum share count
-        /// </summary>
-        /// <value>Minimum share count</value>
-        [DataMember(Name="min_copies")]
-        public int MinCopies { get; set; }
-
-        /// <summary>
-        /// Maximum share count
-        /// </summary>
-        /// <value>Maximum share count</value>
-        [DataMember(Name="max_copies")]
-        public int MaxCopies { get; set; }
-
-        /// <summary>
-        /// Value Per Unit (deprecated)
-        /// </summary>
-        /// <value>Value Per Unit (deprecated)</value>
-        [DataMember(Name="per_value")]
-        public string PerValue { get; set; }
-
-        /// <summary>
         /// Annual Yield
         /// </summary>
         /// <value>Annual Yield</value>
         [DataMember(Name="apy_display")]
         public string ApyDisplay { get; set; }
+
+        /// <summary>
+        /// Minimum investment amount
+        /// </summary>
+        /// <value>Minimum investment amount</value>
+        [DataMember(Name="min_amount")]
+        public string MinAmount { get; set; }
 
         /// <summary>
         /// Start Time
@@ -148,9 +130,9 @@ namespace Io.Gate.GateApi.Model
         public int EndTime { get; set; }
 
         /// <summary>
-        /// 状态:  &#x60;NOTSTARTED&#x60;-未开始 &#x60;ONGOING&#x60;-进行中 &#x60;ENDED&#x60;-已结束
+        /// Status:  &#x60;NOTSTARTED&#x60; - Not started &#x60;ONGOING&#x60; - In progress &#x60;ENDED&#x60; - Ended
         /// </summary>
-        /// <value>状态:  &#x60;NOTSTARTED&#x60;-未开始 &#x60;ONGOING&#x60;-进行中 &#x60;ENDED&#x60;-已结束</value>
+        /// <value>Status:  &#x60;NOTSTARTED&#x60; - Not started &#x60;ONGOING&#x60; - In progress &#x60;ENDED&#x60; - Ended</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 
@@ -168,10 +150,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  ExerciseCurrency: ").Append(ExerciseCurrency).Append("\n");
             sb.Append("  ExercisePrice: ").Append(ExercisePrice).Append("\n");
             sb.Append("  DeliveryTime: ").Append(DeliveryTime).Append("\n");
-            sb.Append("  MinCopies: ").Append(MinCopies).Append("\n");
-            sb.Append("  MaxCopies: ").Append(MaxCopies).Append("\n");
-            sb.Append("  PerValue: ").Append(PerValue).Append("\n");
             sb.Append("  ApyDisplay: ").Append(ApyDisplay).Append("\n");
+            sb.Append("  MinAmount: ").Append(MinAmount).Append("\n");
             sb.Append("  StartTime: ").Append(StartTime).Append("\n");
             sb.Append("  EndTime: ").Append(EndTime).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -237,22 +217,14 @@ namespace Io.Gate.GateApi.Model
                     this.DeliveryTime.Equals(input.DeliveryTime)
                 ) && 
                 (
-                    this.MinCopies == input.MinCopies ||
-                    this.MinCopies.Equals(input.MinCopies)
-                ) && 
-                (
-                    this.MaxCopies == input.MaxCopies ||
-                    this.MaxCopies.Equals(input.MaxCopies)
-                ) && 
-                (
-                    this.PerValue == input.PerValue ||
-                    (this.PerValue != null &&
-                    this.PerValue.Equals(input.PerValue))
-                ) && 
-                (
                     this.ApyDisplay == input.ApyDisplay ||
                     (this.ApyDisplay != null &&
                     this.ApyDisplay.Equals(input.ApyDisplay))
+                ) && 
+                (
+                    this.MinAmount == input.MinAmount ||
+                    (this.MinAmount != null &&
+                    this.MinAmount.Equals(input.MinAmount))
                 ) && 
                 (
                     this.StartTime == input.StartTime ||
@@ -287,12 +259,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.ExerciseCurrency.GetHashCode();
                 hashCode = hashCode * 59 + this.ExercisePrice.GetHashCode();
                 hashCode = hashCode * 59 + this.DeliveryTime.GetHashCode();
-                hashCode = hashCode * 59 + this.MinCopies.GetHashCode();
-                hashCode = hashCode * 59 + this.MaxCopies.GetHashCode();
-                if (this.PerValue != null)
-                    hashCode = hashCode * 59 + this.PerValue.GetHashCode();
                 if (this.ApyDisplay != null)
                     hashCode = hashCode * 59 + this.ApyDisplay.GetHashCode();
+                if (this.MinAmount != null)
+                    hashCode = hashCode * 59 + this.MinAmount.GetHashCode();
                 hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.Status != null)

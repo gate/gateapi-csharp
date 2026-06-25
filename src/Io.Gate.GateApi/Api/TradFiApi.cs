@@ -355,6 +355,27 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of OrderHistoryList</returns>
         ApiResponse<OrderHistoryList> QueryOrderHistoryListWithHttpInfo (long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), int? side = default(int?));
         /// <summary>
+        /// Get order details by log ID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="logId">log_id returned from the order placement API</param>
+        /// <returns>OrderLog</returns>
+        OrderLog QueryOrderLog (int logId);
+
+        /// <summary>
+        /// Get order details by log ID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="logId">log_id returned from the order placement API</param>
+        /// <returns>ApiResponse of OrderLog</returns>
+        ApiResponse<OrderLog> QueryOrderLogWithHttpInfo (int logId);
+        /// <summary>
         /// Query active position list
         /// </summary>
         /// <remarks>
@@ -426,12 +447,14 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
+        /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
         /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
         /// <returns>PositionHistoryList</returns>
-        PositionHistoryList QueryPositionHistoryList (long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string));
+        PositionHistoryList QueryPositionHistoryList (long? page = default(long?), long? pageSize = default(long?), long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string));
 
         /// <summary>
         /// Query historical position list
@@ -440,12 +463,14 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
+        /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
         /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
         /// <returns>ApiResponse of PositionHistoryList</returns>
-        ApiResponse<PositionHistoryList> QueryPositionHistoryListWithHttpInfo (long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string));
+        ApiResponse<PositionHistoryList> QueryPositionHistoryListWithHttpInfo (long? page = default(long?), long? pageSize = default(long?), long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string));
         #endregion Synchronous Operations
     }
 
@@ -783,6 +808,27 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (OrderHistoryList)</returns>
         Task<ApiResponse<OrderHistoryList>> QueryOrderHistoryListAsyncWithHttpInfo (long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), int? side = default(int?));
         /// <summary>
+        /// Get order details by log ID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="logId">log_id returned from the order placement API</param>
+        /// <returns>Task of OrderLog</returns>
+        Task<OrderLog> QueryOrderLogAsync (int logId);
+
+        /// <summary>
+        /// Get order details by log ID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="logId">log_id returned from the order placement API</param>
+        /// <returns>Task of ApiResponse (OrderLog)</returns>
+        Task<ApiResponse<OrderLog>> QueryOrderLogAsyncWithHttpInfo (int logId);
+        /// <summary>
         /// Query active position list
         /// </summary>
         /// <remarks>
@@ -854,12 +900,14 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
+        /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
         /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
         /// <returns>Task of PositionHistoryList</returns>
-        Task<PositionHistoryList> QueryPositionHistoryListAsync (long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string));
+        Task<PositionHistoryList> QueryPositionHistoryListAsync (long? page = default(long?), long? pageSize = default(long?), long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string));
 
         /// <summary>
         /// Query historical position list
@@ -868,12 +916,14 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
+        /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
         /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
         /// <returns>Task of ApiResponse (PositionHistoryList)</returns>
-        Task<ApiResponse<PositionHistoryList>> QueryPositionHistoryListAsyncWithHttpInfo (long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string));
+        Task<ApiResponse<PositionHistoryList>> QueryPositionHistoryListAsyncWithHttpInfo (long? page = default(long?), long? pageSize = default(long?), long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string));
         #endregion Asynchronous Operations
     }
 
@@ -2784,6 +2834,115 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
+        /// Get order details by log ID 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="logId">log_id returned from the order placement API</param>
+        /// <returns>OrderLog</returns>
+        public OrderLog QueryOrderLog (int logId)
+        {
+             ApiResponse<OrderLog> localVarResponse = QueryOrderLogWithHttpInfo(logId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get order details by log ID 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="logId">log_id returned from the order placement API</param>
+        /// <returns>ApiResponse of OrderLog</returns>
+        public ApiResponse<OrderLog> QueryOrderLogWithHttpInfo (int logId)
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("log_id", ClientUtils.ParameterToString(logId)); // path parameter
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<OrderLog>("/tradfi/orders/log/{log_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("QueryOrderLog", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get order details by log ID 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="logId">log_id returned from the order placement API</param>
+        /// <returns>Task of OrderLog</returns>
+        public async Task<OrderLog> QueryOrderLogAsync (int logId)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OrderLog> localVarResponse = await QueryOrderLogAsyncWithHttpInfo(logId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get order details by log ID 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="logId">log_id returned from the order placement API</param>
+        /// <returns>Task of ApiResponse (OrderLog)</returns>
+        public async Task<ApiResponse<OrderLog>> QueryOrderLogAsyncWithHttpInfo (int logId)
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("log_id", ClientUtils.ParameterToString(logId)); // path parameter
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OrderLog>("/tradfi/orders/log/{log_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("QueryOrderLog", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Query active position list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3140,14 +3299,16 @@ namespace Io.Gate.GateApi.Api
         /// Query historical position list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
+        /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
         /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
         /// <returns>PositionHistoryList</returns>
-        public PositionHistoryList QueryPositionHistoryList (long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string))
+        public PositionHistoryList QueryPositionHistoryList (long? page = default(long?), long? pageSize = default(long?), long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string))
         {
-             ApiResponse<PositionHistoryList> localVarResponse = QueryPositionHistoryListWithHttpInfo(beginTime, endTime, symbol, positionDir);
+             ApiResponse<PositionHistoryList> localVarResponse = QueryPositionHistoryListWithHttpInfo(page, pageSize, beginTime, endTime, symbol, positionDir);
              return localVarResponse.Data;
         }
 
@@ -3155,12 +3316,14 @@ namespace Io.Gate.GateApi.Api
         /// Query historical position list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
+        /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
         /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
         /// <returns>ApiResponse of PositionHistoryList</returns>
-        public ApiResponse<PositionHistoryList> QueryPositionHistoryListWithHttpInfo (long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string))
+        public ApiResponse<PositionHistoryList> QueryPositionHistoryListWithHttpInfo (long? page = default(long?), long? pageSize = default(long?), long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3178,6 +3341,14 @@ namespace Io.Gate.GateApi.Api
             var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
             if (beginTime != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "begin_time", beginTime));
@@ -3214,14 +3385,16 @@ namespace Io.Gate.GateApi.Api
         /// Query historical position list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
+        /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
         /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
         /// <returns>Task of PositionHistoryList</returns>
-        public async Task<PositionHistoryList> QueryPositionHistoryListAsync (long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string))
+        public async Task<PositionHistoryList> QueryPositionHistoryListAsync (long? page = default(long?), long? pageSize = default(long?), long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<PositionHistoryList> localVarResponse = await QueryPositionHistoryListAsyncWithHttpInfo(beginTime, endTime, symbol, positionDir);
+             Io.Gate.GateApi.Client.ApiResponse<PositionHistoryList> localVarResponse = await QueryPositionHistoryListAsyncWithHttpInfo(page, pageSize, beginTime, endTime, symbol, positionDir);
              return localVarResponse.Data;
 
         }
@@ -3230,12 +3403,14 @@ namespace Io.Gate.GateApi.Api
         /// Query historical position list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
+        /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
         /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
         /// <returns>Task of ApiResponse (PositionHistoryList)</returns>
-        public async Task<ApiResponse<PositionHistoryList>> QueryPositionHistoryListAsyncWithHttpInfo (long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string))
+        public async Task<ApiResponse<PositionHistoryList>> QueryPositionHistoryListAsyncWithHttpInfo (long? page = default(long?), long? pageSize = default(long?), long? beginTime = default(long?), long? endTime = default(long?), string symbol = default(string), string positionDir = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3254,6 +3429,14 @@ namespace Io.Gate.GateApi.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
             if (beginTime != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "begin_time", beginTime));

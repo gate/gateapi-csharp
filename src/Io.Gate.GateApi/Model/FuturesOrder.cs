@@ -252,7 +252,12 @@ namespace Io.Gate.GateApi.Model
         /// <param name="pid">Position ID.</param>
         /// <param name="marketOrderSlipRatio">Custom maximum slippage rate for market orders. If not provided, the default contract settings will be used.</param>
         /// <param name="posMarginMode">Position Margin Mode isolated - Isolated Margin, cross - Cross Margin, only passed in simple split position mode.</param>
-        public FuturesOrder(string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long pid = default(long), string marketOrderSlipRatio = default(string), string posMarginMode = default(string))
+        /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default).</param>
+        /// <param name="tpslTpTriggerPrice">Take profit price.</param>
+        /// <param name="tpslSlTriggerPrice">Stop loss price.</param>
+        /// <param name="tpslTpBboType">Take profit BBO type.</param>
+        /// <param name="tpslSlBboType">Stop loss BBO type.</param>
+        public FuturesOrder(string contract = default(string), string size = default(string), string iceberg = default(string), string price = default(string), bool close = false, bool reduceOnly = false, TifEnum? tif = TifEnum.Gtc, string text = default(string), AutoSizeEnum? autoSize = default(AutoSizeEnum?), StpActEnum? stpAct = default(StpActEnum?), long pid = default(long), string marketOrderSlipRatio = default(string), string posMarginMode = default(string), string actionMode = default(string), string tpslTpTriggerPrice = default(string), string tpslSlTriggerPrice = default(string), string tpslTpBboType = default(string), string tpslSlBboType = default(string))
         {
             // to ensure "contract" is required (not null)
             this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for FuturesOrder and cannot be null");
@@ -270,6 +275,11 @@ namespace Io.Gate.GateApi.Model
             this.Pid = pid;
             this.MarketOrderSlipRatio = marketOrderSlipRatio;
             this.PosMarginMode = posMarginMode;
+            this.ActionMode = actionMode;
+            this.TpslTpTriggerPrice = tpslTpTriggerPrice;
+            this.TpslSlTriggerPrice = tpslSlTriggerPrice;
+            this.TpslTpBboType = tpslTpBboType;
+            this.TpslSlBboType = tpslSlBboType;
         }
 
         /// <summary>
@@ -448,6 +458,41 @@ namespace Io.Gate.GateApi.Model
         public string PosMarginMode { get; set; }
 
         /// <summary>
+        /// Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default)
+        /// </summary>
+        /// <value>Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default)</value>
+        [DataMember(Name="action_mode")]
+        public string ActionMode { get; set; }
+
+        /// <summary>
+        /// Take profit price
+        /// </summary>
+        /// <value>Take profit price</value>
+        [DataMember(Name="tpsl_tp_trigger_price")]
+        public string TpslTpTriggerPrice { get; set; }
+
+        /// <summary>
+        /// Stop loss price
+        /// </summary>
+        /// <value>Stop loss price</value>
+        [DataMember(Name="tpsl_sl_trigger_price")]
+        public string TpslSlTriggerPrice { get; set; }
+
+        /// <summary>
+        /// Take profit BBO type
+        /// </summary>
+        /// <value>Take profit BBO type</value>
+        [DataMember(Name="tpsl_tp_bbo_type")]
+        public string TpslTpBboType { get; set; }
+
+        /// <summary>
+        /// Stop loss BBO type
+        /// </summary>
+        /// <value>Stop loss BBO type</value>
+        [DataMember(Name="tpsl_sl_bbo_type")]
+        public string TpslSlBboType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -485,6 +530,11 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Pid: ").Append(Pid).Append("\n");
             sb.Append("  MarketOrderSlipRatio: ").Append(MarketOrderSlipRatio).Append("\n");
             sb.Append("  PosMarginMode: ").Append(PosMarginMode).Append("\n");
+            sb.Append("  ActionMode: ").Append(ActionMode).Append("\n");
+            sb.Append("  TpslTpTriggerPrice: ").Append(TpslTpTriggerPrice).Append("\n");
+            sb.Append("  TpslSlTriggerPrice: ").Append(TpslSlTriggerPrice).Append("\n");
+            sb.Append("  TpslTpBboType: ").Append(TpslTpBboType).Append("\n");
+            sb.Append("  TpslSlBboType: ").Append(TpslSlBboType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -650,6 +700,31 @@ namespace Io.Gate.GateApi.Model
                     this.PosMarginMode == input.PosMarginMode ||
                     (this.PosMarginMode != null &&
                     this.PosMarginMode.Equals(input.PosMarginMode))
+                ) && 
+                (
+                    this.ActionMode == input.ActionMode ||
+                    (this.ActionMode != null &&
+                    this.ActionMode.Equals(input.ActionMode))
+                ) && 
+                (
+                    this.TpslTpTriggerPrice == input.TpslTpTriggerPrice ||
+                    (this.TpslTpTriggerPrice != null &&
+                    this.TpslTpTriggerPrice.Equals(input.TpslTpTriggerPrice))
+                ) && 
+                (
+                    this.TpslSlTriggerPrice == input.TpslSlTriggerPrice ||
+                    (this.TpslSlTriggerPrice != null &&
+                    this.TpslSlTriggerPrice.Equals(input.TpslSlTriggerPrice))
+                ) && 
+                (
+                    this.TpslTpBboType == input.TpslTpBboType ||
+                    (this.TpslTpBboType != null &&
+                    this.TpslTpBboType.Equals(input.TpslTpBboType))
+                ) && 
+                (
+                    this.TpslSlBboType == input.TpslSlBboType ||
+                    (this.TpslSlBboType != null &&
+                    this.TpslSlBboType.Equals(input.TpslSlBboType))
                 );
         }
 
@@ -704,6 +779,16 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.MarketOrderSlipRatio.GetHashCode();
                 if (this.PosMarginMode != null)
                     hashCode = hashCode * 59 + this.PosMarginMode.GetHashCode();
+                if (this.ActionMode != null)
+                    hashCode = hashCode * 59 + this.ActionMode.GetHashCode();
+                if (this.TpslTpTriggerPrice != null)
+                    hashCode = hashCode * 59 + this.TpslTpTriggerPrice.GetHashCode();
+                if (this.TpslSlTriggerPrice != null)
+                    hashCode = hashCode * 59 + this.TpslSlTriggerPrice.GetHashCode();
+                if (this.TpslTpBboType != null)
+                    hashCode = hashCode * 59 + this.TpslTpBboType.GetHashCode();
+                if (this.TpslSlBboType != null)
+                    hashCode = hashCode * 59 + this.TpslSlBboType.GetHashCode();
                 return hashCode;
             }
         }

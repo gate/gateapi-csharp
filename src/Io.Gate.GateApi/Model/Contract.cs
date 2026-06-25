@@ -134,7 +134,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="fundingRateLimit">Upper and lower limits of funding rate.</param>
         /// <param name="contractType">Contract classification type, e.g. stocks, metals, indices, forex, commodities, etc..</param>
         /// <param name="fundingImpactValue">Funding rate depth impact value.</param>
-        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string interestRate = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), bool enableDecimal = default(bool), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string marketOrderSlipRatio = default(string), string marketOrderSizeMax = default(string), string fundingRateLimit = default(string), string contractType = default(string), string fundingImpactValue = default(string))
+        /// <param name="enableCircuitBreaker">Whether the newly launched contract activates mark price circuit breaker (If the platform intends to activate this mechanism for a newly launched contract market to prevent significant price fluctuations and excessive liquidations after launch, an advance announcement will be made)..</param>
+        public Contract(string name = default(string), TypeEnum? type = default(TypeEnum?), string quantoMultiplier = default(string), string leverageMin = default(string), string leverageMax = default(string), string maintenanceRate = default(string), MarkTypeEnum? markType = default(MarkTypeEnum?), string markPrice = default(string), string indexPrice = default(string), string lastPrice = default(string), string makerFeeRate = default(string), string takerFeeRate = default(string), string orderPriceRound = default(string), string markPriceRound = default(string), string fundingRate = default(string), int fundingInterval = default(int), double fundingNextApply = default(double), string riskLimitBase = default(string), string interestRate = default(string), string riskLimitStep = default(string), string riskLimitMax = default(string), string orderSizeMin = default(string), bool enableDecimal = default(bool), string orderSizeMax = default(string), string orderPriceDeviate = default(string), string refDiscountRate = default(string), string refRebateRate = default(string), long orderbookId = default(long), long tradeId = default(long), string tradeSize = default(string), string positionSize = default(string), double configChangeTime = default(double), bool inDelisting = default(bool), int ordersLimit = default(int), bool enableBonus = default(bool), bool enableCredit = default(bool), double createTime = default(double), string fundingCapRatio = default(string), string status = default(string), long launchTime = default(long), long delistingTime = default(long), long delistedTime = default(long), string marketOrderSlipRatio = default(string), string marketOrderSizeMax = default(string), string fundingRateLimit = default(string), string contractType = default(string), string fundingImpactValue = default(string), bool enableCircuitBreaker = default(bool))
         {
             this.Name = name;
             this.Type = type;
@@ -183,6 +184,7 @@ namespace Io.Gate.GateApi.Model
             this.FundingRateLimit = fundingRateLimit;
             this.ContractType = contractType;
             this.FundingImpactValue = fundingImpactValue;
+            this.EnableCircuitBreaker = enableCircuitBreaker;
         }
 
         /// <summary>
@@ -501,6 +503,13 @@ namespace Io.Gate.GateApi.Model
         public string FundingImpactValue { get; set; }
 
         /// <summary>
+        /// Whether the newly launched contract activates mark price circuit breaker (If the platform intends to activate this mechanism for a newly launched contract market to prevent significant price fluctuations and excessive liquidations after launch, an advance announcement will be made).
+        /// </summary>
+        /// <value>Whether the newly launched contract activates mark price circuit breaker (If the platform intends to activate this mechanism for a newly launched contract market to prevent significant price fluctuations and excessive liquidations after launch, an advance announcement will be made).</value>
+        [DataMember(Name="enable_circuit_breaker")]
+        public bool EnableCircuitBreaker { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -555,6 +564,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  FundingRateLimit: ").Append(FundingRateLimit).Append("\n");
             sb.Append("  ContractType: ").Append(ContractType).Append("\n");
             sb.Append("  FundingImpactValue: ").Append(FundingImpactValue).Append("\n");
+            sb.Append("  EnableCircuitBreaker: ").Append(EnableCircuitBreaker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -807,6 +817,10 @@ namespace Io.Gate.GateApi.Model
                     this.FundingImpactValue == input.FundingImpactValue ||
                     (this.FundingImpactValue != null &&
                     this.FundingImpactValue.Equals(input.FundingImpactValue))
+                ) && 
+                (
+                    this.EnableCircuitBreaker == input.EnableCircuitBreaker ||
+                    this.EnableCircuitBreaker.Equals(input.EnableCircuitBreaker)
                 );
         }
 
@@ -897,6 +911,7 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.ContractType.GetHashCode();
                 if (this.FundingImpactValue != null)
                     hashCode = hashCode * 59 + this.FundingImpactValue.GetHashCode();
+                hashCode = hashCode * 59 + this.EnableCircuitBreaker.GetHashCode();
                 return hashCode;
             }
         }

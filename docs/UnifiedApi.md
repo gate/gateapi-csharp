@@ -26,6 +26,10 @@ Method | HTTP request | Description
 [**ListUnifiedCurrencies**](UnifiedApi.md#listunifiedcurrencies) | **GET** /unified/currencies | List of loan currencies supported by unified account
 [**GetHistoryLoanRate**](UnifiedApi.md#gethistoryloanrate) | **GET** /unified/history_loan_rate | Get historical lending rates
 [**SetUnifiedCollateral**](UnifiedApi.md#setunifiedcollateral) | **POST** /unified/collateral_currencies | Set collateral currency
+[**GetEstimatedQuickRepayment**](UnifiedApi.md#getestimatedquickrepayment) | **GET** /unified/estimated_quick_repayment | Estimated quick repayment details
+[**CreateQuickRepayment**](UnifiedApi.md#createquickrepayment) | **POST** /unified/quick_repayment | Quick repayment
+[**GetUnifiedDeltaNeutral**](UnifiedApi.md#getunifieddeltaneutral) | **GET** /unified/delta_neutral | Query the account Delta-neutral strategy mode setting
+[**SetUnifiedDeltaNeutral**](UnifiedApi.md#setunifieddeltaneutral) | **POST** /unified/delta_neutral | Set the account Delta-neutral strategy mode
 
 
 <a name="listunifiedaccounts"></a>
@@ -1605,6 +1609,299 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Updated successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getestimatedquickrepayment"></a>
+# **GetEstimatedQuickRepayment**
+> QuickEstimatedRepayment GetEstimatedQuickRepayment ()
+
+Estimated quick repayment details
+
+Available for unified account cross-currency margin mode and portfolio margin mode
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetEstimatedQuickRepaymentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new UnifiedApi(config);
+
+            try
+            {
+                // Estimated quick repayment details
+                QuickEstimatedRepayment result = apiInstance.GetEstimatedQuickRepayment();
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling UnifiedApi.GetEstimatedQuickRepayment: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**QuickEstimatedRepayment**](QuickEstimatedRepayment.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
+| **400** | Invalid request parameters |  -  |
+| **401** | Authentication failed |  -  |
+| **403** | Access denied (e.g. account mode does not support quick repayment) |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createquickrepayment"></a>
+# **CreateQuickRepayment**
+> QuickRepaymentResponse CreateQuickRepayment (QuickRepaymentRequest quickRepaymentRequest)
+
+Quick repayment
+
+Available for unified account cross-currency margin mode and portfolio margin mode. Use `GET /unified/estimated_quick_repayment` to query liabilities and pending repayment information.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateQuickRepaymentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new UnifiedApi(config);
+            var quickRepaymentRequest = new QuickRepaymentRequest(); // QuickRepaymentRequest | 
+
+            try
+            {
+                // Quick repayment
+                QuickRepaymentResponse result = apiInstance.CreateQuickRepayment(quickRepaymentRequest);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling UnifiedApi.CreateQuickRepayment: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **quickRepaymentRequest** | [**QuickRepaymentRequest**](QuickRepaymentRequest.md)|  | 
+
+### Return type
+
+[**QuickRepaymentResponse**](QuickRepaymentResponse.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Repayment successful |  -  |
+| **400** | Invalid request parameters |  -  |
+| **401** | Authentication failed |  -  |
+| **403** | Access denied (e.g. account mode does not support quick repayment) |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getunifieddeltaneutral"></a>
+# **GetUnifiedDeltaNeutral**
+> DeltaNeutralEnabled GetUnifiedDeltaNeutral ()
+
+Query the account Delta-neutral strategy mode setting
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetUnifiedDeltaNeutralExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new UnifiedApi(config);
+
+            try
+            {
+                // Query the account Delta-neutral strategy mode setting
+                DeltaNeutralEnabled result = apiInstance.GetUnifiedDeltaNeutral();
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling UnifiedApi.GetUnifiedDeltaNeutral: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DeltaNeutralEnabled**](DeltaNeutralEnabled.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
+| **401** | Authentication failed |  -  |
+| **403** | Access denied (e.g. insufficient VIP level or the account is not in cross-currency margin mode) |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setunifieddeltaneutral"></a>
+# **SetUnifiedDeltaNeutral**
+> DeltaNeutralEnabled SetUnifiedDeltaNeutral (DeltaNeutralEnabled deltaNeutralEnabled)
+
+Set the account Delta-neutral strategy mode
+
+Enable or disable the account Delta-neutral strategy mode.  Requirements for enabling: VIP level >= 4 and the account is in cross-currency margin mode; otherwise 403 is returned. Returns the enabled status after the setting takes effect.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class SetUnifiedDeltaNeutralExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new UnifiedApi(config);
+            var deltaNeutralEnabled = new DeltaNeutralEnabled(); // DeltaNeutralEnabled | 
+
+            try
+            {
+                // Set the account Delta-neutral strategy mode
+                DeltaNeutralEnabled result = apiInstance.SetUnifiedDeltaNeutral(deltaNeutralEnabled);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling UnifiedApi.SetUnifiedDeltaNeutral: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **deltaNeutralEnabled** | [**DeltaNeutralEnabled**](DeltaNeutralEnabled.md)|  | 
+
+### Return type
+
+[**DeltaNeutralEnabled**](DeltaNeutralEnabled.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Set successfully |  -  |
+| **400** | Invalid request parameters |  -  |
+| **401** | Authentication failed |  -  |
+| **403** | Access denied (e.g. insufficient VIP level or the account is not in cross-currency margin mode) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

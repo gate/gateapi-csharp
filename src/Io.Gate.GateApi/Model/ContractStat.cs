@@ -39,15 +39,25 @@ namespace Io.Gate.GateApi.Model
         /// <param name="longLiqSize">Long liquidation size (contracts).</param>
         /// <param name="longLiqAmount">Long liquidation amount (base currency).</param>
         /// <param name="longLiqUsd">Long liquidation volume (quote currency).</param>
+        /// <param name="longLiqUsdNew">Long liquidations in quote currency; USDT settlement: long_liq_size × multiplier × mark price.</param>
         /// <param name="shortLiqSize">Short liquidation size (contracts).</param>
         /// <param name="shortLiqAmount">Short liquidation amount (base currency).</param>
         /// <param name="shortLiqUsd">Short liquidation volume (quote currency).</param>
+        /// <param name="shortLiqUsdNew">Short liquidations in quote currency; USDT settlement: short_liq_size × multiplier × mark price.</param>
         /// <param name="openInterest">Total open interest size (contracts).</param>
         /// <param name="openInterestUsd">Total open interest volume (quote currency).</param>
         /// <param name="topLsrAccount">Top trader long/short account ratio.</param>
         /// <param name="topLsrSize">Top trader long/short position ratio.</param>
         /// <param name="markPrice">Mark price.</param>
-        public ContractStat(long time = default(long), double lsrTaker = default(double), double lsrAccount = default(double), string longLiqSize = default(string), double longLiqAmount = default(double), double longLiqUsd = default(double), string shortLiqSize = default(string), double shortLiqAmount = default(double), double shortLiqUsd = default(double), string openInterest = default(string), double openInterestUsd = default(double), double topLsrAccount = default(double), string topLsrSize = default(string), double markPrice = default(double))
+        /// <param name="topLongSize">Top long open interest (contracts).</param>
+        /// <param name="topShortSize">Top short open interest (contracts).</param>
+        /// <param name="longTakerSize">Long taker trade volume (contracts).</param>
+        /// <param name="shortTakerSize">Short taker trade volume (contracts).</param>
+        /// <param name="topLongAccount">Number of top long accounts (large holders).</param>
+        /// <param name="topShortAccount">Number of top short accounts (large holders).</param>
+        /// <param name="longUsers">Number of users holding long positions.</param>
+        /// <param name="shortUsers">Number of users holding short positions.</param>
+        public ContractStat(long time = default(long), double lsrTaker = default(double), double lsrAccount = default(double), string longLiqSize = default(string), double longLiqAmount = default(double), double longLiqUsd = default(double), double longLiqUsdNew = default(double), string shortLiqSize = default(string), double shortLiqAmount = default(double), double shortLiqUsd = default(double), double shortLiqUsdNew = default(double), string openInterest = default(string), double openInterestUsd = default(double), double topLsrAccount = default(double), string topLsrSize = default(string), double markPrice = default(double), string topLongSize = default(string), string topShortSize = default(string), string longTakerSize = default(string), string shortTakerSize = default(string), long topLongAccount = default(long), long topShortAccount = default(long), string longUsers = default(string), string shortUsers = default(string))
         {
             this.Time = time;
             this.LsrTaker = lsrTaker;
@@ -55,14 +65,24 @@ namespace Io.Gate.GateApi.Model
             this.LongLiqSize = longLiqSize;
             this.LongLiqAmount = longLiqAmount;
             this.LongLiqUsd = longLiqUsd;
+            this.LongLiqUsdNew = longLiqUsdNew;
             this.ShortLiqSize = shortLiqSize;
             this.ShortLiqAmount = shortLiqAmount;
             this.ShortLiqUsd = shortLiqUsd;
+            this.ShortLiqUsdNew = shortLiqUsdNew;
             this.OpenInterest = openInterest;
             this.OpenInterestUsd = openInterestUsd;
             this.TopLsrAccount = topLsrAccount;
             this.TopLsrSize = topLsrSize;
             this.MarkPrice = markPrice;
+            this.TopLongSize = topLongSize;
+            this.TopShortSize = topShortSize;
+            this.LongTakerSize = longTakerSize;
+            this.ShortTakerSize = shortTakerSize;
+            this.TopLongAccount = topLongAccount;
+            this.TopShortAccount = topShortAccount;
+            this.LongUsers = longUsers;
+            this.ShortUsers = shortUsers;
         }
 
         /// <summary>
@@ -108,6 +128,13 @@ namespace Io.Gate.GateApi.Model
         public double LongLiqUsd { get; set; }
 
         /// <summary>
+        /// Long liquidations in quote currency; USDT settlement: long_liq_size × multiplier × mark price
+        /// </summary>
+        /// <value>Long liquidations in quote currency; USDT settlement: long_liq_size × multiplier × mark price</value>
+        [DataMember(Name="long_liq_usd_new")]
+        public double LongLiqUsdNew { get; set; }
+
+        /// <summary>
         /// Short liquidation size (contracts)
         /// </summary>
         /// <value>Short liquidation size (contracts)</value>
@@ -127,6 +154,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Short liquidation volume (quote currency)</value>
         [DataMember(Name="short_liq_usd")]
         public double ShortLiqUsd { get; set; }
+
+        /// <summary>
+        /// Short liquidations in quote currency; USDT settlement: short_liq_size × multiplier × mark price
+        /// </summary>
+        /// <value>Short liquidations in quote currency; USDT settlement: short_liq_size × multiplier × mark price</value>
+        [DataMember(Name="short_liq_usd_new")]
+        public double ShortLiqUsdNew { get; set; }
 
         /// <summary>
         /// Total open interest size (contracts)
@@ -164,6 +198,62 @@ namespace Io.Gate.GateApi.Model
         public double MarkPrice { get; set; }
 
         /// <summary>
+        /// Top long open interest (contracts)
+        /// </summary>
+        /// <value>Top long open interest (contracts)</value>
+        [DataMember(Name="top_long_size")]
+        public string TopLongSize { get; set; }
+
+        /// <summary>
+        /// Top short open interest (contracts)
+        /// </summary>
+        /// <value>Top short open interest (contracts)</value>
+        [DataMember(Name="top_short_size")]
+        public string TopShortSize { get; set; }
+
+        /// <summary>
+        /// Long taker trade volume (contracts)
+        /// </summary>
+        /// <value>Long taker trade volume (contracts)</value>
+        [DataMember(Name="long_taker_size")]
+        public string LongTakerSize { get; set; }
+
+        /// <summary>
+        /// Short taker trade volume (contracts)
+        /// </summary>
+        /// <value>Short taker trade volume (contracts)</value>
+        [DataMember(Name="short_taker_size")]
+        public string ShortTakerSize { get; set; }
+
+        /// <summary>
+        /// Number of top long accounts (large holders)
+        /// </summary>
+        /// <value>Number of top long accounts (large holders)</value>
+        [DataMember(Name="top_long_account")]
+        public long TopLongAccount { get; set; }
+
+        /// <summary>
+        /// Number of top short accounts (large holders)
+        /// </summary>
+        /// <value>Number of top short accounts (large holders)</value>
+        [DataMember(Name="top_short_account")]
+        public long TopShortAccount { get; set; }
+
+        /// <summary>
+        /// Number of users holding long positions
+        /// </summary>
+        /// <value>Number of users holding long positions</value>
+        [DataMember(Name="long_users")]
+        public string LongUsers { get; set; }
+
+        /// <summary>
+        /// Number of users holding short positions
+        /// </summary>
+        /// <value>Number of users holding short positions</value>
+        [DataMember(Name="short_users")]
+        public string ShortUsers { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -177,14 +267,24 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  LongLiqSize: ").Append(LongLiqSize).Append("\n");
             sb.Append("  LongLiqAmount: ").Append(LongLiqAmount).Append("\n");
             sb.Append("  LongLiqUsd: ").Append(LongLiqUsd).Append("\n");
+            sb.Append("  LongLiqUsdNew: ").Append(LongLiqUsdNew).Append("\n");
             sb.Append("  ShortLiqSize: ").Append(ShortLiqSize).Append("\n");
             sb.Append("  ShortLiqAmount: ").Append(ShortLiqAmount).Append("\n");
             sb.Append("  ShortLiqUsd: ").Append(ShortLiqUsd).Append("\n");
+            sb.Append("  ShortLiqUsdNew: ").Append(ShortLiqUsdNew).Append("\n");
             sb.Append("  OpenInterest: ").Append(OpenInterest).Append("\n");
             sb.Append("  OpenInterestUsd: ").Append(OpenInterestUsd).Append("\n");
             sb.Append("  TopLsrAccount: ").Append(TopLsrAccount).Append("\n");
             sb.Append("  TopLsrSize: ").Append(TopLsrSize).Append("\n");
             sb.Append("  MarkPrice: ").Append(MarkPrice).Append("\n");
+            sb.Append("  TopLongSize: ").Append(TopLongSize).Append("\n");
+            sb.Append("  TopShortSize: ").Append(TopShortSize).Append("\n");
+            sb.Append("  LongTakerSize: ").Append(LongTakerSize).Append("\n");
+            sb.Append("  ShortTakerSize: ").Append(ShortTakerSize).Append("\n");
+            sb.Append("  TopLongAccount: ").Append(TopLongAccount).Append("\n");
+            sb.Append("  TopShortAccount: ").Append(TopShortAccount).Append("\n");
+            sb.Append("  LongUsers: ").Append(LongUsers).Append("\n");
+            sb.Append("  ShortUsers: ").Append(ShortUsers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -245,6 +345,10 @@ namespace Io.Gate.GateApi.Model
                     this.LongLiqUsd.Equals(input.LongLiqUsd)
                 ) && 
                 (
+                    this.LongLiqUsdNew == input.LongLiqUsdNew ||
+                    this.LongLiqUsdNew.Equals(input.LongLiqUsdNew)
+                ) && 
+                (
                     this.ShortLiqSize == input.ShortLiqSize ||
                     (this.ShortLiqSize != null &&
                     this.ShortLiqSize.Equals(input.ShortLiqSize))
@@ -256,6 +360,10 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.ShortLiqUsd == input.ShortLiqUsd ||
                     this.ShortLiqUsd.Equals(input.ShortLiqUsd)
+                ) && 
+                (
+                    this.ShortLiqUsdNew == input.ShortLiqUsdNew ||
+                    this.ShortLiqUsdNew.Equals(input.ShortLiqUsdNew)
                 ) && 
                 (
                     this.OpenInterest == input.OpenInterest ||
@@ -278,6 +386,44 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.MarkPrice == input.MarkPrice ||
                     this.MarkPrice.Equals(input.MarkPrice)
+                ) && 
+                (
+                    this.TopLongSize == input.TopLongSize ||
+                    (this.TopLongSize != null &&
+                    this.TopLongSize.Equals(input.TopLongSize))
+                ) && 
+                (
+                    this.TopShortSize == input.TopShortSize ||
+                    (this.TopShortSize != null &&
+                    this.TopShortSize.Equals(input.TopShortSize))
+                ) && 
+                (
+                    this.LongTakerSize == input.LongTakerSize ||
+                    (this.LongTakerSize != null &&
+                    this.LongTakerSize.Equals(input.LongTakerSize))
+                ) && 
+                (
+                    this.ShortTakerSize == input.ShortTakerSize ||
+                    (this.ShortTakerSize != null &&
+                    this.ShortTakerSize.Equals(input.ShortTakerSize))
+                ) && 
+                (
+                    this.TopLongAccount == input.TopLongAccount ||
+                    this.TopLongAccount.Equals(input.TopLongAccount)
+                ) && 
+                (
+                    this.TopShortAccount == input.TopShortAccount ||
+                    this.TopShortAccount.Equals(input.TopShortAccount)
+                ) && 
+                (
+                    this.LongUsers == input.LongUsers ||
+                    (this.LongUsers != null &&
+                    this.LongUsers.Equals(input.LongUsers))
+                ) && 
+                (
+                    this.ShortUsers == input.ShortUsers ||
+                    (this.ShortUsers != null &&
+                    this.ShortUsers.Equals(input.ShortUsers))
                 );
         }
 
@@ -297,10 +443,12 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.LongLiqSize.GetHashCode();
                 hashCode = hashCode * 59 + this.LongLiqAmount.GetHashCode();
                 hashCode = hashCode * 59 + this.LongLiqUsd.GetHashCode();
+                hashCode = hashCode * 59 + this.LongLiqUsdNew.GetHashCode();
                 if (this.ShortLiqSize != null)
                     hashCode = hashCode * 59 + this.ShortLiqSize.GetHashCode();
                 hashCode = hashCode * 59 + this.ShortLiqAmount.GetHashCode();
                 hashCode = hashCode * 59 + this.ShortLiqUsd.GetHashCode();
+                hashCode = hashCode * 59 + this.ShortLiqUsdNew.GetHashCode();
                 if (this.OpenInterest != null)
                     hashCode = hashCode * 59 + this.OpenInterest.GetHashCode();
                 hashCode = hashCode * 59 + this.OpenInterestUsd.GetHashCode();
@@ -308,6 +456,20 @@ namespace Io.Gate.GateApi.Model
                 if (this.TopLsrSize != null)
                     hashCode = hashCode * 59 + this.TopLsrSize.GetHashCode();
                 hashCode = hashCode * 59 + this.MarkPrice.GetHashCode();
+                if (this.TopLongSize != null)
+                    hashCode = hashCode * 59 + this.TopLongSize.GetHashCode();
+                if (this.TopShortSize != null)
+                    hashCode = hashCode * 59 + this.TopShortSize.GetHashCode();
+                if (this.LongTakerSize != null)
+                    hashCode = hashCode * 59 + this.LongTakerSize.GetHashCode();
+                if (this.ShortTakerSize != null)
+                    hashCode = hashCode * 59 + this.ShortTakerSize.GetHashCode();
+                hashCode = hashCode * 59 + this.TopLongAccount.GetHashCode();
+                hashCode = hashCode * 59 + this.TopShortAccount.GetHashCode();
+                if (this.LongUsers != null)
+                    hashCode = hashCode * 59 + this.LongUsers.GetHashCode();
+                if (this.ShortUsers != null)
+                    hashCode = hashCode * 59 + this.ShortUsers.GetHashCode();
                 return hashCode;
             }
         }

@@ -7,6 +7,8 @@ Response data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Total** | **int** | Total amount | [optional] 
+**TotalPage** | **int** | Total pages | [optional] 
 **List** | [**List&lt;PositionHistoryListDataList&gt;**](PositionHistoryListDataList.md) | Query historical position list | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

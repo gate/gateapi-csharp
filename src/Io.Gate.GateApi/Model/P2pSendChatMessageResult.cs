@@ -31,12 +31,62 @@ namespace Io.Gate.GateApi.Model
     public partial class P2pSendChatMessageResult :  IEquatable<P2pSendChatMessageResult>, IValidatableObject
     {
         /// <summary>
+        /// Message content type when risk control is hit. 0: text
+        /// </summary>
+        /// <value>Message content type when risk control is hit. 0: text</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MsgTypeEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0
+
+        }
+
+        /// <summary>
+        /// Message content type when risk control is hit. 0: text
+        /// </summary>
+        /// <value>Message content type when risk control is hit. 0: text</value>
+        [DataMember(Name="msg_type")]
+        public MsgTypeEnum? MsgType { get; set; }
+        /// <summary>
+        /// Risk control display type. 1: off-platform traffic diversion risk; returned only when risk control is hit
+        /// </summary>
+        /// <value>Risk control display type. 1: off-platform traffic diversion risk; returned only when risk control is hit</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum RiskTypeEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1
+
+        }
+
+        /// <summary>
+        /// Risk control display type. 1: off-platform traffic diversion risk; returned only when risk control is hit
+        /// </summary>
+        /// <value>Risk control display type. 1: off-platform traffic diversion risk; returned only when risk control is hit</value>
+        [DataMember(Name="risk_type")]
+        public RiskTypeEnum? RiskType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="P2pSendChatMessageResult" /> class.
         /// </summary>
         /// <param name="sRVTM">Timestamp when message was successfully sent (current timestamp).</param>
-        public P2pSendChatMessageResult(int sRVTM = default(int))
+        /// <param name="txid">Order ID.</param>
+        /// <param name="conversationId">Chat ID, formatted as both parties&#39; UIDs concatenated in ascending order.</param>
+        /// <param name="msgType">Message content type when risk control is hit. 0: text.</param>
+        /// <param name="riskType">Risk control display type. 1: off-platform traffic diversion risk; returned only when risk control is hit.</param>
+        /// <param name="toastMsg">Risk control prompt message; returned only when risk_type&#x3D;1.</param>
+        public P2pSendChatMessageResult(int sRVTM = default(int), int txid = default(int), string conversationId = default(string), MsgTypeEnum? msgType = default(MsgTypeEnum?), RiskTypeEnum? riskType = default(RiskTypeEnum?), string toastMsg = default(string))
         {
             this.SRVTM = sRVTM;
+            this.Txid = txid;
+            this.ConversationId = conversationId;
+            this.MsgType = msgType;
+            this.RiskType = riskType;
+            this.ToastMsg = toastMsg;
         }
 
         /// <summary>
@@ -47,6 +97,27 @@ namespace Io.Gate.GateApi.Model
         public int SRVTM { get; set; }
 
         /// <summary>
+        /// Order ID
+        /// </summary>
+        /// <value>Order ID</value>
+        [DataMember(Name="txid")]
+        public int Txid { get; set; }
+
+        /// <summary>
+        /// Chat ID, formatted as both parties&#39; UIDs concatenated in ascending order
+        /// </summary>
+        /// <value>Chat ID, formatted as both parties&#39; UIDs concatenated in ascending order</value>
+        [DataMember(Name="conversation_id")]
+        public string ConversationId { get; set; }
+
+        /// <summary>
+        /// Risk control prompt message; returned only when risk_type&#x3D;1
+        /// </summary>
+        /// <value>Risk control prompt message; returned only when risk_type&#x3D;1</value>
+        [DataMember(Name="toast_msg")]
+        public string ToastMsg { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -55,6 +126,11 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class P2pSendChatMessageResult {\n");
             sb.Append("  SRVTM: ").Append(SRVTM).Append("\n");
+            sb.Append("  Txid: ").Append(Txid).Append("\n");
+            sb.Append("  ConversationId: ").Append(ConversationId).Append("\n");
+            sb.Append("  MsgType: ").Append(MsgType).Append("\n");
+            sb.Append("  RiskType: ").Append(RiskType).Append("\n");
+            sb.Append("  ToastMsg: ").Append(ToastMsg).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,6 +168,28 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.SRVTM == input.SRVTM ||
                     this.SRVTM.Equals(input.SRVTM)
+                ) && 
+                (
+                    this.Txid == input.Txid ||
+                    this.Txid.Equals(input.Txid)
+                ) && 
+                (
+                    this.ConversationId == input.ConversationId ||
+                    (this.ConversationId != null &&
+                    this.ConversationId.Equals(input.ConversationId))
+                ) && 
+                (
+                    this.MsgType == input.MsgType ||
+                    this.MsgType.Equals(input.MsgType)
+                ) && 
+                (
+                    this.RiskType == input.RiskType ||
+                    this.RiskType.Equals(input.RiskType)
+                ) && 
+                (
+                    this.ToastMsg == input.ToastMsg ||
+                    (this.ToastMsg != null &&
+                    this.ToastMsg.Equals(input.ToastMsg))
                 );
         }
 
@@ -105,6 +203,13 @@ namespace Io.Gate.GateApi.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.SRVTM.GetHashCode();
+                hashCode = hashCode * 59 + this.Txid.GetHashCode();
+                if (this.ConversationId != null)
+                    hashCode = hashCode * 59 + this.ConversationId.GetHashCode();
+                hashCode = hashCode * 59 + this.MsgType.GetHashCode();
+                hashCode = hashCode * 59 + this.RiskType.GetHashCode();
+                if (this.ToastMsg != null)
+                    hashCode = hashCode * 59 + this.ToastMsg.GetHashCode();
                 return hashCode;
             }
         }

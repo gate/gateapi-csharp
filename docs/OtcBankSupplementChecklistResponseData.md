@@ -1,14 +1,12 @@
 
-# Io.Gate.GateApi.Model.OtcUserDefaultBankResponse
+# Io.Gate.GateApi.Model.OtcBankSupplementChecklistResponseData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | **int** |  | 
-**Message** | **string** |  | 
-**Data** | [**OtcUserDefaultBank**](OtcUserDefaultBank.md) |  | 
-**Timestamp** | **int** |  | 
+**UserType** | **string** | personal or enterprise | 
+**Items** | [**List&lt;OtcBankSupplementChecklistItem&gt;**](OtcBankSupplementChecklistItem.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

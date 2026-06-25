@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**ListSubAccountMarginBalances**](WalletApi.md#listsubaccountmarginbalances) | **GET** /wallet/sub_account_margin_balances | Query sub-account isolated margin account balance information
 [**ListSubAccountFuturesBalances**](WalletApi.md#listsubaccountfuturesbalances) | **GET** /wallet/sub_account_futures_balances | Query sub-account perpetual futures account balance information
 [**ListSubAccountCrossMarginBalances**](WalletApi.md#listsubaccountcrossmarginbalances) | **GET** /wallet/sub_account_cross_margin_balances | Query sub-account cross margin account balance information
-[**ListSavedAddress**](WalletApi.md#listsavedaddress) | **GET** /wallet/saved_address | Query withdrawal address whitelist
+[**ListSavedAddress**](WalletApi.md#listsavedaddress) | **GET** /wallet/saved_address | Query saved address
 [**GetTradeFee**](WalletApi.md#gettradefee) | **GET** /wallet/fee | Query personal trading fees
 [**GetTotalBalance**](WalletApi.md#gettotalbalance) | **GET** /wallet/total_balance | Query personal account totals
 [**ListSmallBalance**](WalletApi.md#listsmallbalance) | **GET** /wallet/small_balance | Get list of convertible small balance currencies
@@ -1078,9 +1078,9 @@ Name | Type | Description  | Notes
 
 <a name="listsavedaddress"></a>
 # **ListSavedAddress**
-> List&lt;SavedAddress&gt; ListSavedAddress (string currency, string chain = null, string limit = null, int? page = null)
+> List&lt;SavedAddress&gt; ListSavedAddress (string currency = null, string chain = null, string verified = null, string limit = null, int? page = null)
 
-Query withdrawal address whitelist
+Query saved address
 
 ### Example
 ```csharp
@@ -1101,15 +1101,16 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new WalletApi(config);
-            var currency = "USDT";  // string | Currency
+            var currency = "USDT";  // string | Currency (optional) 
             var chain = "\"\"";  // string | Chain name (optional)  (default to "")
+            var verified = "\"\"";  // string | 1 means verified address, 0 means normal address, empty string means no limit (optional)  (default to "")
             var limit = "\"50\"";  // string | Maximum number returned, up to 100 (optional)  (default to "50")
             var page = 1;  // int? | page number (optional)  (default to 1)
 
             try
             {
-                // Query withdrawal address whitelist
-                List<SavedAddress> result = apiInstance.ListSavedAddress(currency, chain, limit, page);
+                // Query saved address
+                List<SavedAddress> result = apiInstance.ListSavedAddress(currency, chain, verified, limit, page);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -1128,8 +1129,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Currency | 
+ **currency** | **string**| Currency | [optional] 
  **chain** | **string**| Chain name | [optional] [default to &quot;&quot;]
+ **verified** | **string**| 1 means verified address, 0 means normal address, empty string means no limit | [optional] [default to &quot;&quot;]
  **limit** | **string**| Maximum number returned, up to 100 | [optional] [default to &quot;50&quot;]
  **page** | **int?**| page number | [optional] [default to 1]
 

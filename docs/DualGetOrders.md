@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int** | Order ID | [optional] 
 **PlanId** | **int** | Product ID | [optional] 
-**Copies** | **string** | Units | [optional] 
 **InvestAmount** | **string** | Investment Quantity | [optional] 
 **SettlementAmount** | **string** | Settlement Quantity | [optional] 
 **CreateTime** | **int** | Created time | [optional] 

@@ -89,6 +89,27 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of P2pPaymentMethodsResponse</returns>
         ApiResponse<P2pPaymentMethodsResponse> P2pMerchantAccountGetMyselfPaymentWithHttpInfo (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest));
         /// <summary>
+        /// Set merchant working status and custom working hours
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="setMerchantWorkHoursRequest"></param>
+        /// <returns>P2pMerchantWorkHoursResponse</returns>
+        P2pMerchantWorkHoursResponse P2pMerchantAccountSetMerchantWorkHours (SetMerchantWorkHoursRequest setMerchantWorkHoursRequest);
+
+        /// <summary>
+        /// Set merchant working status and custom working hours
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="setMerchantWorkHoursRequest"></param>
+        /// <returns>ApiResponse of P2pMerchantWorkHoursResponse</returns>
+        ApiResponse<P2pMerchantWorkHoursResponse> P2pMerchantAccountSetMerchantWorkHoursWithHttpInfo (SetMerchantWorkHoursRequest setMerchantWorkHoursRequest);
+        /// <summary>
         /// Get pending orders
         /// </summary>
         /// <remarks>
@@ -218,7 +239,7 @@ namespace Io.Gate.GateApi.Api
         /// Publish ad order
         /// </summary>
         /// <remarks>
-        /// 
+        /// When publishing or editing an advertisement, trade_tips and auto_reply go through off-platform traffic diversion risk control; when hit, the advertisement is not saved, and code 70305102 with data.risk_event is returned.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
@@ -229,7 +250,7 @@ namespace Io.Gate.GateApi.Api
         /// Publish ad order
         /// </summary>
         /// <remarks>
-        /// 
+        /// When publishing or editing an advertisement, trade_tips and auto_reply go through off-platform traffic diversion risk control; when hit, the advertisement is not saved, and code 70305102 with data.risk_event is returned.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
@@ -344,7 +365,7 @@ namespace Io.Gate.GateApi.Api
         /// Send text message
         /// </summary>
         /// <remarks>
-        /// 
+        /// Text messages go through off-platform traffic diversion risk control. When hit, the API still returns code 0, and data contains risk_type&#x3D;1 and toast_msg.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
@@ -355,7 +376,7 @@ namespace Io.Gate.GateApi.Api
         /// Send text message
         /// </summary>
         /// <remarks>
-        /// 
+        /// Text messages go through off-platform traffic diversion risk control. When hit, the API still returns code 0, and data contains risk_type&#x3D;1 and toast_msg.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
@@ -452,6 +473,27 @@ namespace Io.Gate.GateApi.Api
         /// <param name="getMyselfPaymentRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (P2pPaymentMethodsResponse)</returns>
         Task<ApiResponse<P2pPaymentMethodsResponse>> P2pMerchantAccountGetMyselfPaymentAsyncWithHttpInfo (GetMyselfPaymentRequest getMyselfPaymentRequest = default(GetMyselfPaymentRequest));
+        /// <summary>
+        /// Set merchant working status and custom working hours
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="setMerchantWorkHoursRequest"></param>
+        /// <returns>Task of P2pMerchantWorkHoursResponse</returns>
+        Task<P2pMerchantWorkHoursResponse> P2pMerchantAccountSetMerchantWorkHoursAsync (SetMerchantWorkHoursRequest setMerchantWorkHoursRequest);
+
+        /// <summary>
+        /// Set merchant working status and custom working hours
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="setMerchantWorkHoursRequest"></param>
+        /// <returns>Task of ApiResponse (P2pMerchantWorkHoursResponse)</returns>
+        Task<ApiResponse<P2pMerchantWorkHoursResponse>> P2pMerchantAccountSetMerchantWorkHoursAsyncWithHttpInfo (SetMerchantWorkHoursRequest setMerchantWorkHoursRequest);
         /// <summary>
         /// Get pending orders
         /// </summary>
@@ -582,7 +624,7 @@ namespace Io.Gate.GateApi.Api
         /// Publish ad order
         /// </summary>
         /// <remarks>
-        /// 
+        /// When publishing or editing an advertisement, trade_tips and auto_reply go through off-platform traffic diversion risk control; when hit, the advertisement is not saved, and code 70305102 with data.risk_event is returned.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
@@ -593,7 +635,7 @@ namespace Io.Gate.GateApi.Api
         /// Publish ad order
         /// </summary>
         /// <remarks>
-        /// 
+        /// When publishing or editing an advertisement, trade_tips and auto_reply go through off-platform traffic diversion risk control; when hit, the advertisement is not saved, and code 70305102 with data.risk_event is returned.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
@@ -708,7 +750,7 @@ namespace Io.Gate.GateApi.Api
         /// Send text message
         /// </summary>
         /// <remarks>
-        /// 
+        /// Text messages go through off-platform traffic diversion risk control. When hit, the API still returns code 0, and data contains risk_type&#x3D;1 and toast_msg.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
@@ -719,7 +761,7 @@ namespace Io.Gate.GateApi.Api
         /// Send text message
         /// </summary>
         /// <remarks>
-        /// 
+        /// Text messages go through off-platform traffic diversion risk control. When hit, the API still returns code 0, and data contains risk_type&#x3D;1 and toast_msg.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
@@ -1193,6 +1235,125 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("P2pMerchantAccountGetMyselfPayment", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set merchant working status and custom working hours 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="setMerchantWorkHoursRequest"></param>
+        /// <returns>P2pMerchantWorkHoursResponse</returns>
+        public P2pMerchantWorkHoursResponse P2pMerchantAccountSetMerchantWorkHours (SetMerchantWorkHoursRequest setMerchantWorkHoursRequest)
+        {
+             ApiResponse<P2pMerchantWorkHoursResponse> localVarResponse = P2pMerchantAccountSetMerchantWorkHoursWithHttpInfo(setMerchantWorkHoursRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set merchant working status and custom working hours 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="setMerchantWorkHoursRequest"></param>
+        /// <returns>ApiResponse of P2pMerchantWorkHoursResponse</returns>
+        public ApiResponse<P2pMerchantWorkHoursResponse> P2pMerchantAccountSetMerchantWorkHoursWithHttpInfo (SetMerchantWorkHoursRequest setMerchantWorkHoursRequest)
+        {
+            // verify the required parameter 'setMerchantWorkHoursRequest' is set
+            if (setMerchantWorkHoursRequest == null)
+                throw new ApiException(400, "Missing required parameter 'setMerchantWorkHoursRequest' when calling P2pApi->P2pMerchantAccountSetMerchantWorkHours");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = setMerchantWorkHoursRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<P2pMerchantWorkHoursResponse>("/p2p/merchant/account/set_merchant_work_hours", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantAccountSetMerchantWorkHours", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set merchant working status and custom working hours 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="setMerchantWorkHoursRequest"></param>
+        /// <returns>Task of P2pMerchantWorkHoursResponse</returns>
+        public async Task<P2pMerchantWorkHoursResponse> P2pMerchantAccountSetMerchantWorkHoursAsync (SetMerchantWorkHoursRequest setMerchantWorkHoursRequest)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<P2pMerchantWorkHoursResponse> localVarResponse = await P2pMerchantAccountSetMerchantWorkHoursAsyncWithHttpInfo(setMerchantWorkHoursRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Set merchant working status and custom working hours 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="setMerchantWorkHoursRequest"></param>
+        /// <returns>Task of ApiResponse (P2pMerchantWorkHoursResponse)</returns>
+        public async Task<ApiResponse<P2pMerchantWorkHoursResponse>> P2pMerchantAccountSetMerchantWorkHoursAsyncWithHttpInfo (SetMerchantWorkHoursRequest setMerchantWorkHoursRequest)
+        {
+            // verify the required parameter 'setMerchantWorkHoursRequest' is set
+            if (setMerchantWorkHoursRequest == null)
+                throw new ApiException(400, "Missing required parameter 'setMerchantWorkHoursRequest' when calling P2pApi->P2pMerchantAccountSetMerchantWorkHours");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = setMerchantWorkHoursRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<P2pMerchantWorkHoursResponse>("/p2p/merchant/account/set_merchant_work_hours", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("P2pMerchantAccountSetMerchantWorkHours", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1914,7 +2075,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Publish ad order 
+        /// Publish ad order When publishing or editing an advertisement, trade_tips and auto_reply go through off-platform traffic diversion risk control; when hit, the advertisement is not saved, and code 70305102 with data.risk_event is returned.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
@@ -1926,7 +2087,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Publish ad order 
+        /// Publish ad order When publishing or editing an advertisement, trade_tips and auto_reply go through off-platform traffic diversion risk control; when hit, the advertisement is not saved, and code 70305102 with data.risk_event is returned.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
@@ -1972,7 +2133,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Publish ad order 
+        /// Publish ad order When publishing or editing an advertisement, trade_tips and auto_reply go through off-platform traffic diversion risk control; when hit, the advertisement is not saved, and code 70305102 with data.risk_event is returned.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
@@ -1985,7 +2146,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Publish ad order 
+        /// Publish ad order When publishing or editing an advertisement, trade_tips and auto_reply go through off-platform traffic diversion risk control; when hit, the advertisement is not saved, and code 70305102 with data.risk_event is returned.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="placeBizPushOrder"></param>
@@ -2620,7 +2781,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Send text message 
+        /// Send text message Text messages go through off-platform traffic diversion risk control. When hit, the API still returns code 0, and data contains risk_type&#x3D;1 and toast_msg.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
@@ -2632,7 +2793,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Send text message 
+        /// Send text message Text messages go through off-platform traffic diversion risk control. When hit, the API still returns code 0, and data contains risk_type&#x3D;1 and toast_msg.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
@@ -2678,7 +2839,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Send text message 
+        /// Send text message Text messages go through off-platform traffic diversion risk control. When hit, the API still returns code 0, and data contains risk_type&#x3D;1 and toast_msg.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>
@@ -2691,7 +2852,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Send text message 
+        /// Send text message Text messages go through off-platform traffic diversion risk control. When hit, the API still returns code 0, and data contains risk_type&#x3D;1 and toast_msg.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sendChatMessageRequest"></param>

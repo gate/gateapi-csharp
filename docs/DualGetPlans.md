@@ -11,13 +11,11 @@ Name | Type | Description | Notes
 **ExerciseCurrency** | **string** | Strike Token | [optional] 
 **ExercisePrice** | **double** | Strike price | [optional] 
 **DeliveryTime** | **int** | Settlement time | [optional] 
-**MinCopies** | **int** | Minimum share count | [optional] 
-**MaxCopies** | **int** | Maximum share count | [optional] 
-**PerValue** | **string** | Value Per Unit (deprecated) | [optional] 
 **ApyDisplay** | **string** | Annual Yield | [optional] 
+**MinAmount** | **string** | Minimum investment amount | [optional] 
 **StartTime** | **int** | Start Time | [optional] 
 **EndTime** | **int** | End time | [optional] 
-**Status** | **string** | 状态:  &#x60;NOTSTARTED&#x60;-未开始 &#x60;ONGOING&#x60;-进行中 &#x60;ENDED&#x60;-已结束 | [optional] 
+**Status** | **string** | Status:  &#x60;NOTSTARTED&#x60; - Not started &#x60;ONGOING&#x60; - In progress &#x60;ENDED&#x60; - Ended | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

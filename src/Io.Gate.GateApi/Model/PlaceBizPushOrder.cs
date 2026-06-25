@@ -93,8 +93,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="regTimeLimit">Minimum counterparty account age in days; &#x60;0&#x60; means no limit..</param>
         /// <param name="advertisersLimit">Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes..</param>
         /// <param name="expireMin">Payment timeout in minutes..</param>
-        /// <param name="tradeTips">Ad trading terms shown to the taker..</param>
-        /// <param name="autoReply">Auto-reply message after order creation..</param>
+        /// <param name="tradeTips">Advertisement trade terms displayed to ordering users; goes through off-platform traffic diversion risk control on submission, and when hit, the advertisement is not saved and code 70305102 is returned.</param>
+        /// <param name="autoReply">Auto reply content after order creation; goes through off-platform traffic diversion risk control on submission, and when hit, the advertisement is not saved and code 70305102 is returned.</param>
         /// <param name="minCompletedLimit">Minimum completed orders for counterparty; &#x60;-1&#x60; unlimited..</param>
         /// <param name="maxCompletedLimit">Maximum completed orders for counterparty; &#x60;-1&#x60; unlimited..</param>
         /// <param name="completedRateLimit">Counterparty minimum 30-day completion rate; &#x60;-1&#x60; means no limit..</param>
@@ -248,16 +248,16 @@ namespace Io.Gate.GateApi.Model
         public string ExpireMin { get; set; }
 
         /// <summary>
-        /// Ad trading terms shown to the taker.
+        /// Advertisement trade terms displayed to ordering users; goes through off-platform traffic diversion risk control on submission, and when hit, the advertisement is not saved and code 70305102 is returned
         /// </summary>
-        /// <value>Ad trading terms shown to the taker.</value>
+        /// <value>Advertisement trade terms displayed to ordering users; goes through off-platform traffic diversion risk control on submission, and when hit, the advertisement is not saved and code 70305102 is returned</value>
         [DataMember(Name="trade_tips")]
         public string TradeTips { get; set; }
 
         /// <summary>
-        /// Auto-reply message after order creation.
+        /// Auto reply content after order creation; goes through off-platform traffic diversion risk control on submission, and when hit, the advertisement is not saved and code 70305102 is returned
         /// </summary>
-        /// <value>Auto-reply message after order creation.</value>
+        /// <value>Auto reply content after order creation; goes through off-platform traffic diversion risk control on submission, and when hit, the advertisement is not saved and code 70305102 is returned</value>
         [DataMember(Name="auto_reply")]
         public string AutoReply { get; set; }
 

@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="Symbol" /> class.
         /// </summary>
         /// <param name="symbol">Unique trading pair identifier in the form ExchangeType_BusinessType_Base_Counter. (required).</param>
-        /// <param name="exchangeType">Exchange type (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;CROSSEX&#x60;). (required).</param>
+        /// <param name="exchangeType">Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (required).</param>
         /// <param name="businessType">Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin). (required).</param>
         /// <param name="state">Status (&#x60;live&#x60; running / &#x60;suspend&#x60; paused). (required).</param>
         /// <param name="minSize">Minimum order size allowed by the contract (required).</param>
@@ -92,9 +92,9 @@ namespace Io.Gate.GateApi.Model
         public string _Symbol { get; set; }
 
         /// <summary>
-        /// Exchange type (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;CROSSEX&#x60;).
+        /// Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;).
         /// </summary>
-        /// <value>Exchange type (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;CROSSEX&#x60;).</value>
+        /// <value>Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;).</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 
