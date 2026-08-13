@@ -75,7 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="asset">Asset Type.</param>
         /// <param name="type">Trading Type.</param>
         /// <param name="typeDesc">Transaction Type Description.</param>
-        /// <param name="change">Change Quantity.</param>
+        /// <param name="change">Change amount.</param>
         /// <param name="balance">Current Balance.</param>
         /// <param name="time">Occurrence Time (Second-level Timestamp).</param>
         public TransactionListDataList(string asset = default(string), TypeEnum? type = default(TypeEnum?), string typeDesc = default(string), string change = default(string), string balance = default(string), long time = default(long))
@@ -103,9 +103,9 @@ namespace Io.Gate.GateApi.Model
         public string TypeDesc { get; set; }
 
         /// <summary>
-        /// Change Quantity
+        /// Change amount
         /// </summary>
-        /// <value>Change Quantity</value>
+        /// <value>Change amount</value>
         [DataMember(Name="change")]
         public string Change { get; set; }
 

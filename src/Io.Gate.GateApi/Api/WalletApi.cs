@@ -134,6 +134,27 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;DepositRecord&gt;</returns>
         ApiResponse<List<DepositRecord>> ListDepositsWithHttpInfo (string currency = default(string), long? from = default(long?), long? to = default(long?), int? limit = default(int?), int? offset = default(int?));
         /// <summary>
+        /// Get trading account transfer
+        /// </summary>
+        /// <remarks>
+        /// Get the current user&#39;s trading account transfer details using the tx_id returned by the transfer endpoint
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txId">Transfer transaction ID</param>
+        /// <returns>AccountTransferDetail</returns>
+        AccountTransferDetail GetTransfer (string txId);
+
+        /// <summary>
+        /// Get trading account transfer
+        /// </summary>
+        /// <remarks>
+        /// Get the current user&#39;s trading account transfer details using the tx_id returned by the transfer endpoint
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txId">Transfer transaction ID</param>
+        /// <returns>ApiResponse of AccountTransferDetail</returns>
+        ApiResponse<AccountTransferDetail> GetTransferWithHttpInfo (string txId);
+        /// <summary>
         /// Transfer between trading accounts
         /// </summary>
         /// <remarks>
@@ -662,6 +683,27 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;DepositRecord&gt;)</returns>
         Task<ApiResponse<List<DepositRecord>>> ListDepositsAsyncWithHttpInfo (string currency = default(string), long? from = default(long?), long? to = default(long?), int? limit = default(int?), int? offset = default(int?));
+        /// <summary>
+        /// Get trading account transfer
+        /// </summary>
+        /// <remarks>
+        /// Get the current user&#39;s trading account transfer details using the tx_id returned by the transfer endpoint
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txId">Transfer transaction ID</param>
+        /// <returns>Task of AccountTransferDetail</returns>
+        Task<AccountTransferDetail> GetTransferAsync (string txId);
+
+        /// <summary>
+        /// Get trading account transfer
+        /// </summary>
+        /// <remarks>
+        /// Get the current user&#39;s trading account transfer details using the tx_id returned by the transfer endpoint
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txId">Transfer transaction ID</param>
+        /// <returns>Task of ApiResponse (AccountTransferDetail)</returns>
+        Task<ApiResponse<AccountTransferDetail>> GetTransferAsyncWithHttpInfo (string txId);
         /// <summary>
         /// Transfer between trading accounts
         /// </summary>
@@ -1782,6 +1824,123 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListDeposits", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get trading account transfer Get the current user&#39;s trading account transfer details using the tx_id returned by the transfer endpoint
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txId">Transfer transaction ID</param>
+        /// <returns>AccountTransferDetail</returns>
+        public AccountTransferDetail GetTransfer (string txId)
+        {
+             ApiResponse<AccountTransferDetail> localVarResponse = GetTransferWithHttpInfo(txId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get trading account transfer Get the current user&#39;s trading account transfer details using the tx_id returned by the transfer endpoint
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txId">Transfer transaction ID</param>
+        /// <returns>ApiResponse of AccountTransferDetail</returns>
+        public ApiResponse<AccountTransferDetail> GetTransferWithHttpInfo (string txId)
+        {
+            // verify the required parameter 'txId' is set
+            if (txId == null)
+                throw new ApiException(400, "Missing required parameter 'txId' when calling WalletApi->GetTransfer");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "tx_id", txId));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<AccountTransferDetail>("/wallet/transfers", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTransfer", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get trading account transfer Get the current user&#39;s trading account transfer details using the tx_id returned by the transfer endpoint
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txId">Transfer transaction ID</param>
+        /// <returns>Task of AccountTransferDetail</returns>
+        public async Task<AccountTransferDetail> GetTransferAsync (string txId)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<AccountTransferDetail> localVarResponse = await GetTransferAsyncWithHttpInfo(txId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get trading account transfer Get the current user&#39;s trading account transfer details using the tx_id returned by the transfer endpoint
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="txId">Transfer transaction ID</param>
+        /// <returns>Task of ApiResponse (AccountTransferDetail)</returns>
+        public async Task<ApiResponse<AccountTransferDetail>> GetTransferAsyncWithHttpInfo (string txId)
+        {
+            // verify the required parameter 'txId' is set
+            if (txId == null)
+                throw new ApiException(400, "Missing required parameter 'txId' when calling WalletApi->GetTransfer");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "tx_id", txId));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AccountTransferDetail>("/wallet/transfers", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTransfer", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

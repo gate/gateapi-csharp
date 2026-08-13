@@ -380,6 +380,27 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of UnifiedPortfolioOutput</returns>
         ApiResponse<UnifiedPortfolioOutput> CalculatePortfolioMarginWithHttpInfo (UnifiedPortfolioInput unifiedPortfolioInput);
         /// <summary>
+        /// Set leverage for all of the user&#39;s borrowed currencies
+        /// </summary>
+        /// <remarks>
+        /// Note the following: - Leverage cannot be changed for currencies with outstanding loans. - A leverage value above a currency&#39;s limit is capped at that limit. - Failures are not rolled back and affect only the currencies that failed. For example, if USDT has an outstanding loan, only the USDT leverage remains unchanged.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userLeverageSetting"></param>
+        /// <returns>List&lt;LeverageFailedCurrencies&gt;</returns>
+        List<LeverageFailedCurrencies> SetUserLeverage (UserLeverageSetting userLeverageSetting);
+
+        /// <summary>
+        /// Set leverage for all of the user&#39;s borrowed currencies
+        /// </summary>
+        /// <remarks>
+        /// Note the following: - Leverage cannot be changed for currencies with outstanding loans. - A leverage value above a currency&#39;s limit is capped at that limit. - Failures are not rolled back and affect only the currencies that failed. For example, if USDT has an outstanding loan, only the USDT leverage remains unchanged.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userLeverageSetting"></param>
+        /// <returns>ApiResponse of List&lt;LeverageFailedCurrencies&gt;</returns>
+        ApiResponse<List<LeverageFailedCurrencies>> SetUserLeverageWithHttpInfo (UserLeverageSetting userLeverageSetting);
+        /// <summary>
         /// Maximum and minimum currency leverage that can be set
         /// </summary>
         /// <remarks>
@@ -952,6 +973,27 @@ namespace Io.Gate.GateApi.Api
         /// <param name="unifiedPortfolioInput"></param>
         /// <returns>Task of ApiResponse (UnifiedPortfolioOutput)</returns>
         Task<ApiResponse<UnifiedPortfolioOutput>> CalculatePortfolioMarginAsyncWithHttpInfo (UnifiedPortfolioInput unifiedPortfolioInput);
+        /// <summary>
+        /// Set leverage for all of the user&#39;s borrowed currencies
+        /// </summary>
+        /// <remarks>
+        /// Note the following: - Leverage cannot be changed for currencies with outstanding loans. - A leverage value above a currency&#39;s limit is capped at that limit. - Failures are not rolled back and affect only the currencies that failed. For example, if USDT has an outstanding loan, only the USDT leverage remains unchanged.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userLeverageSetting"></param>
+        /// <returns>Task of List&lt;LeverageFailedCurrencies&gt;</returns>
+        Task<List<LeverageFailedCurrencies>> SetUserLeverageAsync (UserLeverageSetting userLeverageSetting);
+
+        /// <summary>
+        /// Set leverage for all of the user&#39;s borrowed currencies
+        /// </summary>
+        /// <remarks>
+        /// Note the following: - Leverage cannot be changed for currencies with outstanding loans. - A leverage value above a currency&#39;s limit is capped at that limit. - Failures are not rolled back and affect only the currencies that failed. For example, if USDT has an outstanding loan, only the USDT leverage remains unchanged.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userLeverageSetting"></param>
+        /// <returns>Task of ApiResponse (List&lt;LeverageFailedCurrencies&gt;)</returns>
+        Task<ApiResponse<List<LeverageFailedCurrencies>>> SetUserLeverageAsyncWithHttpInfo (UserLeverageSetting userLeverageSetting);
         /// <summary>
         /// Maximum and minimum currency leverage that can be set
         /// </summary>
@@ -3220,6 +3262,125 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CalculatePortfolioMargin", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set leverage for all of the user&#39;s borrowed currencies Note the following: - Leverage cannot be changed for currencies with outstanding loans. - A leverage value above a currency&#39;s limit is capped at that limit. - Failures are not rolled back and affect only the currencies that failed. For example, if USDT has an outstanding loan, only the USDT leverage remains unchanged.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userLeverageSetting"></param>
+        /// <returns>List&lt;LeverageFailedCurrencies&gt;</returns>
+        public List<LeverageFailedCurrencies> SetUserLeverage (UserLeverageSetting userLeverageSetting)
+        {
+             ApiResponse<List<LeverageFailedCurrencies>> localVarResponse = SetUserLeverageWithHttpInfo(userLeverageSetting);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set leverage for all of the user&#39;s borrowed currencies Note the following: - Leverage cannot be changed for currencies with outstanding loans. - A leverage value above a currency&#39;s limit is capped at that limit. - Failures are not rolled back and affect only the currencies that failed. For example, if USDT has an outstanding loan, only the USDT leverage remains unchanged.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userLeverageSetting"></param>
+        /// <returns>ApiResponse of List&lt;LeverageFailedCurrencies&gt;</returns>
+        public ApiResponse<List<LeverageFailedCurrencies>> SetUserLeverageWithHttpInfo (UserLeverageSetting userLeverageSetting)
+        {
+            // verify the required parameter 'userLeverageSetting' is set
+            if (userLeverageSetting == null)
+                throw new ApiException(400, "Missing required parameter 'userLeverageSetting' when calling UnifiedApi->SetUserLeverage");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = userLeverageSetting;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<LeverageFailedCurrencies>>("/unified/leverage/user_setting", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetUserLeverage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set leverage for all of the user&#39;s borrowed currencies Note the following: - Leverage cannot be changed for currencies with outstanding loans. - A leverage value above a currency&#39;s limit is capped at that limit. - Failures are not rolled back and affect only the currencies that failed. For example, if USDT has an outstanding loan, only the USDT leverage remains unchanged.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userLeverageSetting"></param>
+        /// <returns>Task of List&lt;LeverageFailedCurrencies&gt;</returns>
+        public async Task<List<LeverageFailedCurrencies>> SetUserLeverageAsync (UserLeverageSetting userLeverageSetting)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<LeverageFailedCurrencies>> localVarResponse = await SetUserLeverageAsyncWithHttpInfo(userLeverageSetting);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Set leverage for all of the user&#39;s borrowed currencies Note the following: - Leverage cannot be changed for currencies with outstanding loans. - A leverage value above a currency&#39;s limit is capped at that limit. - Failures are not rolled back and affect only the currencies that failed. For example, if USDT has an outstanding loan, only the USDT leverage remains unchanged.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userLeverageSetting"></param>
+        /// <returns>Task of ApiResponse (List&lt;LeverageFailedCurrencies&gt;)</returns>
+        public async Task<ApiResponse<List<LeverageFailedCurrencies>>> SetUserLeverageAsyncWithHttpInfo (UserLeverageSetting userLeverageSetting)
+        {
+            // verify the required parameter 'userLeverageSetting' is set
+            if (userLeverageSetting == null)
+                throw new ApiException(400, "Missing required parameter 'userLeverageSetting' when calling UnifiedApi->SetUserLeverage");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = userLeverageSetting;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<LeverageFailedCurrencies>>("/unified/leverage/user_setting", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetUserLeverage", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

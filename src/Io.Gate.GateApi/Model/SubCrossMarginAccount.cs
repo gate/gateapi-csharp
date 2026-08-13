@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="borrowed">Total borrowed value in USDT, i.e., the sum of all currencies&#39; &#x60;borrowed*price*discount&#x60;.</param>
         /// <param name="borrowedNet">Total borrowed value in USDT * leverage factor.</param>
         /// <param name="net">Total net assets in USDT.</param>
-        /// <param name="leverage">Position leverage.</param>
+        /// <param name="leverage">Leverage multiplier.</param>
         /// <param name="interest">Total unpaid interest in USDT, i.e., the sum of all currencies&#39; &#x60;interest*price*discount&#x60;.</param>
         /// <param name="risk">Risk rate. When it falls below 110%, liquidation will be triggered. Calculation formula: &#x60;total / (borrowed+interest)&#x60;.</param>
         /// <param name="totalInitialMargin">Total initial margin.</param>
@@ -118,9 +118,9 @@ namespace Io.Gate.GateApi.Model
         public string Net { get; set; }
 
         /// <summary>
-        /// Position leverage
+        /// Leverage multiplier
         /// </summary>
-        /// <value>Position leverage</value>
+        /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage")]
         public string Leverage { get; set; }
 

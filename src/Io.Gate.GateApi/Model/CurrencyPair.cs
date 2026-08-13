@@ -82,8 +82,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="minQuoteAmount">Minimum amount of quote currency to trade, &#x60;null&#x60; means no limit.</param>
         /// <param name="maxBaseAmount">Maximum amount of base currency to trade, &#x60;null&#x60; means no limit.</param>
         /// <param name="maxQuoteAmount">Maximum amount of quote currency to trade, &#x60;null&#x60; means no limit.</param>
-        /// <param name="amountPrecision">Amount scale.</param>
-        /// <param name="precision">Price scale.</param>
+        /// <param name="amountPrecision">Quantity precision.</param>
+        /// <param name="precision">Price precision.</param>
         /// <param name="tradeStatus">Trading status  - untradable: cannot be traded - buyable: can be bought - sellable: can be sold - tradable: can be bought and sold.</param>
         /// <param name="sellStart">Sell start unix timestamp in seconds.</param>
         /// <param name="buyStart">Buy start unix timestamp in seconds.</param>
@@ -94,8 +94,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="upRate">Maximum Quote Rise Percentage.</param>
         /// <param name="downRate">Maximum Quote Decline Percentage.</param>
         /// <param name="slippage">Maximum supported slippage ratio for Spot Market Order Placement, calculated based on the latest market price at the time of order placement as the benchmark (Example: 0.03 means 3%).</param>
-        /// <param name="marketOrderMaxStock">Maximum Market Order Quantity.</param>
-        /// <param name="marketOrderMaxMoney">Maximum Market Order Amount.</param>
+        /// <param name="marketOrderMaxStock">Maximum market order quantity. &#x60;null&#x60; or &#x60;0&#x60; means no limit.</param>
+        /// <param name="marketOrderMaxMoney">Maximum market order amount. &#x60;null&#x60; or &#x60;0&#x60; means no limit.</param>
         public CurrencyPair(string id = default(string), string _base = default(string), string baseName = default(string), string quote = default(string), string quoteName = default(string), string fee = default(string), string minBaseAmount = default(string), string minQuoteAmount = default(string), string maxBaseAmount = default(string), string maxQuoteAmount = default(string), int amountPrecision = default(int), int precision = default(int), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), long sellStart = default(long), long buyStart = default(long), long delistingTime = default(long), string type = default(string), string tradeUrl = default(string), bool stTag = default(bool), string upRate = default(string), string downRate = default(string), string slippage = default(string), string marketOrderMaxStock = default(string), string marketOrderMaxMoney = default(string))
         {
             this.Id = id;
@@ -195,16 +195,16 @@ namespace Io.Gate.GateApi.Model
         public string MaxQuoteAmount { get; set; }
 
         /// <summary>
-        /// Amount scale
+        /// Quantity precision
         /// </summary>
-        /// <value>Amount scale</value>
+        /// <value>Quantity precision</value>
         [DataMember(Name="amount_precision")]
         public int AmountPrecision { get; set; }
 
         /// <summary>
-        /// Price scale
+        /// Price precision
         /// </summary>
-        /// <value>Price scale</value>
+        /// <value>Price precision</value>
         [DataMember(Name="precision")]
         public int Precision { get; set; }
 
@@ -272,16 +272,16 @@ namespace Io.Gate.GateApi.Model
         public string Slippage { get; set; }
 
         /// <summary>
-        /// Maximum Market Order Quantity
+        /// Maximum market order quantity. &#x60;null&#x60; or &#x60;0&#x60; means no limit
         /// </summary>
-        /// <value>Maximum Market Order Quantity</value>
+        /// <value>Maximum market order quantity. &#x60;null&#x60; or &#x60;0&#x60; means no limit</value>
         [DataMember(Name="market_order_max_stock")]
         public string MarketOrderMaxStock { get; set; }
 
         /// <summary>
-        /// Maximum Market Order Amount
+        /// Maximum market order amount. &#x60;null&#x60; or &#x60;0&#x60; means no limit
         /// </summary>
-        /// <value>Maximum Market Order Amount</value>
+        /// <value>Maximum market order amount. &#x60;null&#x60; or &#x60;0&#x60; means no limit</value>
         [DataMember(Name="market_order_max_money")]
         public string MarketOrderMaxMoney { get; set; }
 

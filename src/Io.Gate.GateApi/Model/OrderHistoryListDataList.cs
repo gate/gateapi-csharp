@@ -103,9 +103,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="order_opt_type")]
         public OrderOptTypeEnum? OrderOptType { get; set; }
         /// <summary>
-        /// Order side (1&#x3D;sell, 2&#x3D;buy)
+        /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
-        /// <value>Order side (1&#x3D;sell, 2&#x3D;buy)</value>
+        /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SideEnum
         {
@@ -122,9 +122,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Order side (1&#x3D;sell, 2&#x3D;buy)
+        /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
-        /// <value>Order side (1&#x3D;sell, 2&#x3D;buy)</value>
+        /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [DataMember(Name="side")]
         public SideEnum? Side { get; set; }
         /// <summary>
@@ -132,13 +132,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="orderId">Order ID.</param>
         /// <param name="symbol">Currency pair.</param>
-        /// <param name="symbolDesc">Trading symbol description.</param>
+        /// <param name="symbolDesc">Symbol description.</param>
         /// <param name="priceType">Trade type (market&#x3D;market price, trigger&#x3D;trigger price).</param>
         /// <param name="orderOptType">Order operation type (1&#x3D;sell, 2&#x3D;buy, 3&#x3D;close long, 4&#x3D;close short, 5&#x3D;force close long, 6&#x3D;force close short).</param>
         /// <param name="state">Order status code.</param>
         /// <param name="stateDesc">Order status description.</param>
-        /// <param name="side">Order side (1&#x3D;sell, 2&#x3D;buy).</param>
-        /// <param name="volume">Order volume.</param>
+        /// <param name="side">Side (1&#x3D;sell, 2&#x3D;buy).</param>
+        /// <param name="volume">Order quantity.</param>
         /// <param name="fillVolume">Trading size.</param>
         /// <param name="closePnl">Close Position P&amp;L.</param>
         /// <param name="price">Average fill price.</param>
@@ -183,9 +183,9 @@ namespace Io.Gate.GateApi.Model
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Trading symbol description
+        /// Symbol description
         /// </summary>
-        /// <value>Trading symbol description</value>
+        /// <value>Symbol description</value>
         [DataMember(Name="symbol_desc")]
         public string SymbolDesc { get; set; }
 
@@ -204,9 +204,9 @@ namespace Io.Gate.GateApi.Model
         public string StateDesc { get; set; }
 
         /// <summary>
-        /// Order volume
+        /// Order quantity
         /// </summary>
-        /// <value>Order volume</value>
+        /// <value>Order quantity</value>
         [DataMember(Name="volume")]
         public string Volume { get; set; }
 

@@ -58,9 +58,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="price_type")]
         public PriceTypeEnum PriceType { get; set; }
         /// <summary>
-        /// Order side (1&#x3D;sell, 2&#x3D;buy)
+        /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
-        /// <value>Order side (1&#x3D;sell, 2&#x3D;buy)</value>
+        /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SideEnum
         {
@@ -77,9 +77,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Order side (1&#x3D;sell, 2&#x3D;buy)
+        /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
-        /// <value>Order side (1&#x3D;sell, 2&#x3D;buy)</value>
+        /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [DataMember(Name="side")]
         public SideEnum Side { get; set; }
         /// <summary>
@@ -92,9 +92,9 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="price">Order price (required).</param>
         /// <param name="priceType">Price type (trigger&#x3D;trigger price, market&#x3D;market price) (required).</param>
-        /// <param name="side">Order side (1&#x3D;sell, 2&#x3D;buy) (required).</param>
+        /// <param name="side">Side (1&#x3D;sell, 2&#x3D;buy) (required).</param>
         /// <param name="symbol">Trading symbol code (required).</param>
-        /// <param name="volume">Order volume (required).</param>
+        /// <param name="volume">Order quantity (required).</param>
         /// <param name="priceTp">Take profit price (optional).</param>
         /// <param name="priceSl">Stop loss price (optional).</param>
         public TradFiOrderRequest(string price = default(string), PriceTypeEnum priceType = default(PriceTypeEnum), SideEnum side = default(SideEnum), string symbol = default(string), string volume = default(string), string priceTp = default(string), string priceSl = default(string))
@@ -126,9 +126,9 @@ namespace Io.Gate.GateApi.Model
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Order volume
+        /// Order quantity
         /// </summary>
-        /// <value>Order volume</value>
+        /// <value>Order quantity</value>
         [DataMember(Name="volume")]
         public string Volume { get; set; }
 

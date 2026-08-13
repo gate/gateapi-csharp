@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserType** | **string** | personal or enterprise | 
+**UserType** | **string** | &#x60;personal&#x60; or &#x60;enterprise&#x60;, matching the supplementary document submission type; &#x60;items[].description&#x60; describes the submission requirements for each item | 
 **Items** | [**List&lt;OtcBankSupplementChecklistItem&gt;**](OtcBankSupplementChecklistItem.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

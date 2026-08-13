@@ -49,7 +49,10 @@ namespace Io.Gate.GateApi.Model
         /// <param name="side">Quote method (required).</param>
         /// <param name="orderType">Order type: FIAT (fiat) / STABLE (stablecoin) (required).</param>
         /// <param name="quoteToken">Quote token required when placing an order (required).</param>
-        public OtcQuoteResult(string type = default(string), string payCoin = default(string), string getCoin = default(string), string payAmount = default(string), string getAmount = default(string), string rate = default(string), string rateReci = default(string), string promotionCode = default(string), string side = default(string), string orderType = default(string), string quoteToken = default(string))
+        /// <param name="validityPeriod">Quote validity period (seconds).</param>
+        /// <param name="refreshLimit">Quote refresh limit.</param>
+        /// <param name="refreshLimitMsg">Quote refresh limit message.</param>
+        public OtcQuoteResult(string type = default(string), string payCoin = default(string), string getCoin = default(string), string payAmount = default(string), string getAmount = default(string), string rate = default(string), string rateReci = default(string), string promotionCode = default(string), string side = default(string), string orderType = default(string), string quoteToken = default(string), string validityPeriod = default(string), int refreshLimit = default(int), string refreshLimitMsg = default(string))
         {
             // to ensure "type" is required (not null)
             this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for OtcQuoteResult and cannot be null");
@@ -73,6 +76,9 @@ namespace Io.Gate.GateApi.Model
             this.OrderType = orderType ?? throw new ArgumentNullException("orderType", "orderType is a required property for OtcQuoteResult and cannot be null");
             // to ensure "quoteToken" is required (not null)
             this.QuoteToken = quoteToken ?? throw new ArgumentNullException("quoteToken", "quoteToken is a required property for OtcQuoteResult and cannot be null");
+            this.ValidityPeriod = validityPeriod;
+            this.RefreshLimit = refreshLimit;
+            this.RefreshLimitMsg = refreshLimitMsg;
         }
 
         /// <summary>
@@ -153,6 +159,27 @@ namespace Io.Gate.GateApi.Model
         public string QuoteToken { get; set; }
 
         /// <summary>
+        /// Quote validity period (seconds)
+        /// </summary>
+        /// <value>Quote validity period (seconds)</value>
+        [DataMember(Name="validity_period")]
+        public string ValidityPeriod { get; set; }
+
+        /// <summary>
+        /// Quote refresh limit
+        /// </summary>
+        /// <value>Quote refresh limit</value>
+        [DataMember(Name="refresh_limit")]
+        public int RefreshLimit { get; set; }
+
+        /// <summary>
+        /// Quote refresh limit message
+        /// </summary>
+        /// <value>Quote refresh limit message</value>
+        [DataMember(Name="refresh_limit_msg")]
+        public string RefreshLimitMsg { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -171,6 +198,9 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Side: ").Append(Side).Append("\n");
             sb.Append("  OrderType: ").Append(OrderType).Append("\n");
             sb.Append("  QuoteToken: ").Append(QuoteToken).Append("\n");
+            sb.Append("  ValidityPeriod: ").Append(ValidityPeriod).Append("\n");
+            sb.Append("  RefreshLimit: ").Append(RefreshLimit).Append("\n");
+            sb.Append("  RefreshLimitMsg: ").Append(RefreshLimitMsg).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -259,6 +289,20 @@ namespace Io.Gate.GateApi.Model
                     this.QuoteToken == input.QuoteToken ||
                     (this.QuoteToken != null &&
                     this.QuoteToken.Equals(input.QuoteToken))
+                ) && 
+                (
+                    this.ValidityPeriod == input.ValidityPeriod ||
+                    (this.ValidityPeriod != null &&
+                    this.ValidityPeriod.Equals(input.ValidityPeriod))
+                ) && 
+                (
+                    this.RefreshLimit == input.RefreshLimit ||
+                    this.RefreshLimit.Equals(input.RefreshLimit)
+                ) && 
+                (
+                    this.RefreshLimitMsg == input.RefreshLimitMsg ||
+                    (this.RefreshLimitMsg != null &&
+                    this.RefreshLimitMsg.Equals(input.RefreshLimitMsg))
                 );
         }
 
@@ -293,6 +337,11 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.OrderType.GetHashCode();
                 if (this.QuoteToken != null)
                     hashCode = hashCode * 59 + this.QuoteToken.GetHashCode();
+                if (this.ValidityPeriod != null)
+                    hashCode = hashCode * 59 + this.ValidityPeriod.GetHashCode();
+                hashCode = hashCode * 59 + this.RefreshLimit.GetHashCode();
+                if (this.RefreshLimitMsg != null)
+                    hashCode = hashCode * 59 + this.RefreshLimitMsg.GetHashCode();
                 return hashCode;
             }
         }

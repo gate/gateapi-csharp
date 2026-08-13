@@ -39,20 +39,21 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="Symbol" /> class.
         /// </summary>
         /// <param name="symbol">Unique trading pair identifier in the form ExchangeType_BusinessType_Base_Counter. (required).</param>
-        /// <param name="exchangeType">Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (required).</param>
+        /// <param name="exchangeType">Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (required).</param>
         /// <param name="businessType">Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin). (required).</param>
         /// <param name="state">Status (&#x60;live&#x60; running / &#x60;suspend&#x60; paused). (required).</param>
-        /// <param name="minSize">Minimum order size allowed by the contract (required).</param>
+        /// <param name="minSize">Minimum order quantity (required).</param>
         /// <param name="minNotional">Minimum Order Value (required).</param>
         /// <param name="lotSize">Quantity Step (required).</param>
         /// <param name="tickSize">Price Step (required).</param>
         /// <param name="maxNumOrders">maximumopen orderamount (required).</param>
         /// <param name="maxMarketSize">Maximum Market Order Quantity (required).</param>
         /// <param name="maxLimitSize">Maximum order quantity for limit orders. (required).</param>
-        /// <param name="contractSize">Contract Multiplier (required).</param>
+        /// <param name="contractSize">Contract multiplier (deprecated; quantity is used uniformly) (required).</param>
         /// <param name="liquidationFee">Liquidation Fee Rate (required).</param>
         /// <param name="delistTime">Millisecond timestamp; &#x60;0&#x60; means not delisted. (required).</param>
-        public Symbol(string symbol = default(string), string exchangeType = default(string), string businessType = default(string), string state = default(string), string minSize = default(string), string minNotional = default(string), string lotSize = default(string), string tickSize = default(string), string maxNumOrders = default(string), string maxMarketSize = default(string), string maxLimitSize = default(string), string contractSize = default(string), string liquidationFee = default(string), string delistTime = default(string))
+        /// <param name="supportRpi">Whether RPI order placement is supported (true if supported; false otherwise).</param>
+        public Symbol(string symbol = default(string), string exchangeType = default(string), string businessType = default(string), string state = default(string), string minSize = default(string), string minNotional = default(string), string lotSize = default(string), string tickSize = default(string), string maxNumOrders = default(string), string maxMarketSize = default(string), string maxLimitSize = default(string), string contractSize = default(string), string liquidationFee = default(string), string delistTime = default(string), string supportRpi = default(string))
         {
             // to ensure "symbol" is required (not null)
             this._Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for Symbol and cannot be null");
@@ -82,6 +83,7 @@ namespace Io.Gate.GateApi.Model
             this.LiquidationFee = liquidationFee ?? throw new ArgumentNullException("liquidationFee", "liquidationFee is a required property for Symbol and cannot be null");
             // to ensure "delistTime" is required (not null)
             this.DelistTime = delistTime ?? throw new ArgumentNullException("delistTime", "delistTime is a required property for Symbol and cannot be null");
+            this.SupportRpi = supportRpi;
         }
 
         /// <summary>
@@ -92,9 +94,9 @@ namespace Io.Gate.GateApi.Model
         public string _Symbol { get; set; }
 
         /// <summary>
-        /// Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;).
+        /// Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;).
         /// </summary>
-        /// <value>Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;).</value>
+        /// <value>Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;).</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 
@@ -113,9 +115,9 @@ namespace Io.Gate.GateApi.Model
         public string State { get; set; }
 
         /// <summary>
-        /// Minimum order size allowed by the contract
+        /// Minimum order quantity
         /// </summary>
-        /// <value>Minimum order size allowed by the contract</value>
+        /// <value>Minimum order quantity</value>
         [DataMember(Name="min_size")]
         public string MinSize { get; set; }
 
@@ -162,9 +164,9 @@ namespace Io.Gate.GateApi.Model
         public string MaxLimitSize { get; set; }
 
         /// <summary>
-        /// Contract Multiplier
+        /// Contract multiplier (deprecated; quantity is used uniformly)
         /// </summary>
-        /// <value>Contract Multiplier</value>
+        /// <value>Contract multiplier (deprecated; quantity is used uniformly)</value>
         [DataMember(Name="contract_size")]
         public string ContractSize { get; set; }
 
@@ -181,6 +183,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Millisecond timestamp; &#x60;0&#x60; means not delisted.</value>
         [DataMember(Name="delist_time")]
         public string DelistTime { get; set; }
+
+        /// <summary>
+        /// Whether RPI order placement is supported (true if supported; false otherwise)
+        /// </summary>
+        /// <value>Whether RPI order placement is supported (true if supported; false otherwise)</value>
+        [DataMember(Name="support_rpi")]
+        public string SupportRpi { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -204,6 +213,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  ContractSize: ").Append(ContractSize).Append("\n");
             sb.Append("  LiquidationFee: ").Append(LiquidationFee).Append("\n");
             sb.Append("  DelistTime: ").Append(DelistTime).Append("\n");
+            sb.Append("  SupportRpi: ").Append(SupportRpi).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -307,6 +317,11 @@ namespace Io.Gate.GateApi.Model
                     this.DelistTime == input.DelistTime ||
                     (this.DelistTime != null &&
                     this.DelistTime.Equals(input.DelistTime))
+                ) && 
+                (
+                    this.SupportRpi == input.SupportRpi ||
+                    (this.SupportRpi != null &&
+                    this.SupportRpi.Equals(input.SupportRpi))
                 );
         }
 
@@ -347,6 +362,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.LiquidationFee.GetHashCode();
                 if (this.DelistTime != null)
                     hashCode = hashCode * 59 + this.DelistTime.GetHashCode();
+                if (this.SupportRpi != null)
+                    hashCode = hashCode * 59 + this.SupportRpi.GetHashCode();
                 return hashCode;
             }
         }

@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="PositionHistoryListDataCloseDetail" /> class.
         /// </summary>
         /// <param name="marginLevel">Margin ratio (multiplied by 100).</param>
-        /// <param name="margin">Position margin.</param>
+        /// <param name="margin">Margin.</param>
         /// <param name="equity">Net equity.</param>
         /// <param name="stopOutLevel">Liquidation ratio (multiplied by 100).</param>
         public PositionHistoryListDataCloseDetail(string marginLevel = default(string), string margin = default(string), string equity = default(string), string stopOutLevel = default(string))
@@ -53,9 +53,9 @@ namespace Io.Gate.GateApi.Model
         public string MarginLevel { get; set; }
 
         /// <summary>
-        /// Position margin
+        /// Margin
         /// </summary>
-        /// <value>Position margin</value>
+        /// <value>Margin</value>
         [DataMember(Name="margin")]
         public string Margin { get; set; }
 

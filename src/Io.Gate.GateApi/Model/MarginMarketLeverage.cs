@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="MarginMarketLeverage" /> class.
         /// </summary>
         /// <param name="currencyPair">Market.</param>
-        /// <param name="leverage">Position leverage (required).</param>
+        /// <param name="leverage">Leverage multiplier (required).</param>
         public MarginMarketLeverage(string currencyPair = default(string), string leverage = default(string))
         {
             // to ensure "leverage" is required (not null)
@@ -55,9 +55,9 @@ namespace Io.Gate.GateApi.Model
         public string CurrencyPair { get; set; }
 
         /// <summary>
-        /// Position leverage
+        /// Leverage multiplier
         /// </summary>
-        /// <value>Position leverage</value>
+        /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage")]
         public string Leverage { get; set; }
 

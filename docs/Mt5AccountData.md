@@ -8,7 +8,7 @@ Response data
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Mt5Uid** | **int** | MT5 userID | [optional] 
-**Leverage** | **int** | Position leverage | [optional] 
+**Leverage** | **int** | Leverage multiplier | [optional] 
 **StopOutLevel** | **string** | Liquidation margin ratio | [optional] 
 **Status** | **int** | Account status (1&#x3D;not opened, 2&#x3D;pending review, 3&#x3D;active) | [optional] 
 

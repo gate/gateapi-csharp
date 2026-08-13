@@ -7,7 +7,7 @@ Return result includes Lever field
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Lever** | **string** | leverage | [optional] 
+**Lever** | **string** | Leverage | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

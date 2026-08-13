@@ -38,26 +38,37 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcStableCoinOrderCreateResponse" /> class.
         /// </summary>
-        /// <param name="code">code (required).</param>
-        /// <param name="message">message (required).</param>
-        public OtcStableCoinOrderCreateResponse(int code = default(int), string message = default(string))
+        /// <param name="code">Business code; 0 indicates success (required).</param>
+        /// <param name="message">Message (required).</param>
+        /// <param name="timestamp">Server Unix timestamp in seconds (required).</param>
+        public OtcStableCoinOrderCreateResponse(int code = default(int), string message = default(string), int timestamp = default(int))
         {
             this.Code = code;
             // to ensure "message" is required (not null)
             this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for OtcStableCoinOrderCreateResponse and cannot be null");
+            this.Timestamp = timestamp;
         }
 
         /// <summary>
-        /// Gets or Sets Code
+        /// Business code; 0 indicates success
         /// </summary>
+        /// <value>Business code; 0 indicates success</value>
         [DataMember(Name="code")]
         public int Code { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Message
         /// </summary>
+        /// <value>Message</value>
         [DataMember(Name="message")]
         public string Message { get; set; }
+
+        /// <summary>
+        /// Server Unix timestamp in seconds
+        /// </summary>
+        /// <value>Server Unix timestamp in seconds</value>
+        [DataMember(Name="timestamp")]
+        public int Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,6 +80,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class OtcStableCoinOrderCreateResponse {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -111,6 +123,10 @@ namespace Io.Gate.GateApi.Model
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
                 );
         }
 
@@ -126,6 +142,7 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Code.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

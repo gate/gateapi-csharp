@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="CreateUserRespData" /> class.
         /// </summary>
         /// <param name="status">Status (1&#x3D;not opened, 2&#x3D;pending review, 3&#x3D;opened).</param>
-        /// <param name="leverage">leverage.</param>
+        /// <param name="leverage">Leverage.</param>
         /// <param name="mt5Uid">mt5uid.</param>
         public CreateUserRespData(int status = default(int), int leverage = default(int), string mt5Uid = default(string))
         {
@@ -51,9 +51,9 @@ namespace Io.Gate.GateApi.Model
         public int Status { get; set; }
 
         /// <summary>
-        /// leverage
+        /// Leverage
         /// </summary>
-        /// <value>leverage</value>
+        /// <value>Leverage</value>
         [DataMember(Name="leverage")]
         public int Leverage { get; set; }
 

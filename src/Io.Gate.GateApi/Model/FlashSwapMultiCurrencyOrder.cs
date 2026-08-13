@@ -50,7 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="buyAmount">Buy amount.</param>
         /// <param name="buyAmountShow">Buy amount display value.</param>
         /// <param name="price">Exchange price.</param>
-        /// <param name="status">Order Status.</param>
+        /// <param name="status">Order status.</param>
         /// <param name="quoteId">Quote ID.</param>
         /// <param name="failedCode">Failure error code, 0 means success.</param>
         /// <param name="failedReason">Failure Reason.</param>
@@ -166,9 +166,9 @@ namespace Io.Gate.GateApi.Model
         public string Price { get; set; }
 
         /// <summary>
-        /// Order Status
+        /// Order status
         /// </summary>
-        /// <value>Order Status</value>
+        /// <value>Order status</value>
         [DataMember(Name="status")]
         public int Status { get; set; }
 

@@ -95,7 +95,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="leverage"> leverage for isolated margin. 0 means cross margin. For leverage of cross margin, please refer to &#x60;cross_leverage_limit&#x60;..</param>
         /// <param name="riskLimit">Position risk limit.</param>
-        /// <param name="margin">Position margin.</param>
+        /// <param name="margin">Margin.</param>
         /// <param name="closeOrder">closeOrder.</param>
         /// <param name="mode">Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode.</param>
         /// <param name="crossLeverageLimit">leverage for cross margin.</param>
@@ -186,9 +186,9 @@ namespace Io.Gate.GateApi.Model
         public string Value { get; private set; }
 
         /// <summary>
-        /// Position margin
+        /// Margin
         /// </summary>
-        /// <value>Position margin</value>
+        /// <value>Margin</value>
         [DataMember(Name="margin")]
         public string Margin { get; set; }
 

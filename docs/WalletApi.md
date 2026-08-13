@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**GetDepositAddress**](WalletApi.md#getdepositaddress) | **GET** /wallet/deposit_address | Generate currency deposit address
 [**ListWithdrawals**](WalletApi.md#listwithdrawals) | **GET** /wallet/withdrawals | Get withdrawal records
 [**ListDeposits**](WalletApi.md#listdeposits) | **GET** /wallet/deposits | Get deposit records
+[**GetTransfer**](WalletApi.md#gettransfer) | **GET** /wallet/transfers | Get trading account transfer
 [**Transfer**](WalletApi.md#transfer) | **POST** /wallet/transfers | Transfer between trading accounts
 [**ListSubAccountTransfers**](WalletApi.md#listsubaccounttransfers) | **GET** /wallet/sub_account_transfers | Get transfer records between main and sub accounts
 [**TransferWithSubAccount**](WalletApi.md#transferwithsubaccount) | **POST** /wallet/sub_account_transfers | Transfer between main and sub accounts
@@ -335,6 +336,79 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | List retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="gettransfer"></a>
+# **GetTransfer**
+> AccountTransferDetail GetTransfer (string txId)
+
+Get trading account transfer
+
+Get the current user's trading account transfer details using the tx_id returned by the transfer endpoint
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetTransferExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new WalletApi(config);
+            var txId = "59636381286";  // string | Transfer transaction ID
+
+            try
+            {
+                // Get trading account transfer
+                AccountTransferDetail result = apiInstance.GetTransfer(txId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling WalletApi.GetTransfer: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **txId** | **string**| Transfer transaction ID | 
+
+### Return type
+
+[**AccountTransferDetail**](AccountTransferDetail.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Trading account transfer retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

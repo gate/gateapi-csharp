@@ -40,14 +40,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="id">Account Change Record ID (required).</param>
         /// <param name="userId">User ID (required).</param>
-        /// <param name="businessId">Business ID (required).</param>
+        /// <param name="businessId">Business ID. Its meaning varies by &#x60;statement_type&#x60;. &#x60;TRANSACTION&#x60;: order ID. &#x60;TRADING_FEE&#x60;: order ID. &#x60;LIQUIDATION_FEE&#x60;: liquidation order ID. &#x60;FUNDING_FEE&#x60;: position ID and funding fee settlement time. For other types, it is a system-generated processing ID with no business meaning. (required).</param>
         /// <param name="statementType">Bill entry type. &#x60;TRANSACTION&#x60; trade &#x60;TRADING_FEE&#x60; fee &#x60;FUNDING_FEE&#x60; funding &#x60;LIQUIDATION_FEE&#x60; liquidation &#x60;TRANSFER_IN&#x60; deposit &#x60;TRANSFER_OUT&#x60; withdrawal &#x60;BANKRUPT_COMPENSATION&#x60; bankruptcy subsidy &#x60;AUTO_REPAY&#x60; margin auto-repay &#x60;INTEREST_ISOLATED&#x60; isolated-venue interest entry &#x60;ACCOUNT_MODE_CHANGE&#x60; account mode switch entry &#x60;KRAKEN_CONVERSION&#x60; conversion of other margin coins to cover a negative KRAKEN_USD balance &#x60;OTHER&#x60; other (required).</param>
         /// <param name="exchangeType">Exchange (required).</param>
         /// <param name="coin">Currency (required).</param>
+        /// <param name="symbol">Trading Pair.</param>
         /// <param name="change">Change amount (positive indicates transfer in; negative indicates transfer out) (required).</param>
         /// <param name="balance">Balance after change (required).</param>
         /// <param name="createTime">Created time (required).</param>
-        public CrossexAccountBookRecord(string id = default(string), string userId = default(string), string businessId = default(string), string statementType = default(string), string exchangeType = default(string), string coin = default(string), string change = default(string), string balance = default(string), string createTime = default(string))
+        public CrossexAccountBookRecord(string id = default(string), string userId = default(string), string businessId = default(string), string statementType = default(string), string exchangeType = default(string), string coin = default(string), string symbol = default(string), string change = default(string), string balance = default(string), string createTime = default(string))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id", "id is a required property for CrossexAccountBookRecord and cannot be null");
@@ -67,6 +68,7 @@ namespace Io.Gate.GateApi.Model
             this.Balance = balance ?? throw new ArgumentNullException("balance", "balance is a required property for CrossexAccountBookRecord and cannot be null");
             // to ensure "createTime" is required (not null)
             this.CreateTime = createTime ?? throw new ArgumentNullException("createTime", "createTime is a required property for CrossexAccountBookRecord and cannot be null");
+            this.Symbol = symbol;
         }
 
         /// <summary>
@@ -84,9 +86,9 @@ namespace Io.Gate.GateApi.Model
         public string UserId { get; set; }
 
         /// <summary>
-        /// Business ID
+        /// Business ID. Its meaning varies by &#x60;statement_type&#x60;. &#x60;TRANSACTION&#x60;: order ID. &#x60;TRADING_FEE&#x60;: order ID. &#x60;LIQUIDATION_FEE&#x60;: liquidation order ID. &#x60;FUNDING_FEE&#x60;: position ID and funding fee settlement time. For other types, it is a system-generated processing ID with no business meaning.
         /// </summary>
-        /// <value>Business ID</value>
+        /// <value>Business ID. Its meaning varies by &#x60;statement_type&#x60;. &#x60;TRANSACTION&#x60;: order ID. &#x60;TRADING_FEE&#x60;: order ID. &#x60;LIQUIDATION_FEE&#x60;: liquidation order ID. &#x60;FUNDING_FEE&#x60;: position ID and funding fee settlement time. For other types, it is a system-generated processing ID with no business meaning.</value>
         [DataMember(Name="business_id")]
         public string BusinessId { get; set; }
 
@@ -110,6 +112,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Currency</value>
         [DataMember(Name="coin")]
         public string Coin { get; set; }
+
+        /// <summary>
+        /// Trading Pair
+        /// </summary>
+        /// <value>Trading Pair</value>
+        [DataMember(Name="symbol")]
+        public string Symbol { get; set; }
 
         /// <summary>
         /// Change amount (positive indicates transfer in; negative indicates transfer out)
@@ -146,6 +155,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  StatementType: ").Append(StatementType).Append("\n");
             sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
             sb.Append("  Coin: ").Append(Coin).Append("\n");
+            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  Change: ").Append(Change).Append("\n");
             sb.Append("  Balance: ").Append(Balance).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
@@ -214,6 +224,11 @@ namespace Io.Gate.GateApi.Model
                     this.Coin.Equals(input.Coin))
                 ) && 
                 (
+                    this.Symbol == input.Symbol ||
+                    (this.Symbol != null &&
+                    this.Symbol.Equals(input.Symbol))
+                ) && 
+                (
                     this.Change == input.Change ||
                     (this.Change != null &&
                     this.Change.Equals(input.Change))
@@ -251,6 +266,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.ExchangeType.GetHashCode();
                 if (this.Coin != null)
                     hashCode = hashCode * 59 + this.Coin.GetHashCode();
+                if (this.Symbol != null)
+                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
                 if (this.Change != null)
                     hashCode = hashCode * 59 + this.Change.GetHashCode();
                 if (this.Balance != null)

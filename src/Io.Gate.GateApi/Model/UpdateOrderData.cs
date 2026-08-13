@@ -36,7 +36,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="orderId">Order ID.</param>
         /// <param name="symbol">Currency pair.</param>
         /// <param name="state">Order status code.</param>
-        /// <param name="volume">Order volume.</param>
+        /// <param name="volume">Order quantity.</param>
         /// <param name="price">Current price.</param>
         /// <param name="priceTp">Current take profit price.</param>
         /// <param name="priceSl">Current stop loss price.</param>
@@ -73,9 +73,9 @@ namespace Io.Gate.GateApi.Model
         public string State { get; set; }
 
         /// <summary>
-        /// Order volume
+        /// Order quantity
         /// </summary>
-        /// <value>Order volume</value>
+        /// <value>Order quantity</value>
         [DataMember(Name="volume")]
         public string Volume { get; set; }
 

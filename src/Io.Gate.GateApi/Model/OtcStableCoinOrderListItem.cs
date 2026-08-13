@@ -36,21 +36,25 @@ namespace Io.Gate.GateApi.Model
         /// <param name="id">Order ID.</param>
         /// <param name="tradeNo">Transaction reference number.</param>
         /// <param name="payCoin">Payment currency.</param>
+        /// <param name="payIcon">Payment currency icon.</param>
         /// <param name="payAmount">Payment amount.</param>
         /// <param name="getCoin">Received currency.</param>
+        /// <param name="getIcon">Received currency icon.</param>
         /// <param name="getAmount">Received amount.</param>
         /// <param name="rate">Exchange rate.</param>
         /// <param name="rateReci">Reciprocal of the exchange rate.</param>
         /// <param name="status">PROCESSING: in progress / DONE: completed / FAILED: failed.</param>
-        /// <param name="createTimest">timetimestamp.</param>
+        /// <param name="createTimest">Created time.</param>
         /// <param name="createTime">Created time.</param>
-        public OtcStableCoinOrderListItem(int id = default(int), string tradeNo = default(string), string payCoin = default(string), string payAmount = default(string), string getCoin = default(string), string getAmount = default(string), string rate = default(string), string rateReci = default(string), string status = default(string), int createTimest = default(int), string createTime = default(string))
+        public OtcStableCoinOrderListItem(int id = default(int), string tradeNo = default(string), string payCoin = default(string), string payIcon = default(string), string payAmount = default(string), string getCoin = default(string), string getIcon = default(string), string getAmount = default(string), string rate = default(string), string rateReci = default(string), string status = default(string), int createTimest = default(int), string createTime = default(string))
         {
             this.Id = id;
             this.TradeNo = tradeNo;
             this.PayCoin = payCoin;
+            this.PayIcon = payIcon;
             this.PayAmount = payAmount;
             this.GetCoin = getCoin;
+            this.GetIcon = getIcon;
             this.GetAmount = getAmount;
             this.Rate = rate;
             this.RateReci = rateReci;
@@ -81,6 +85,13 @@ namespace Io.Gate.GateApi.Model
         public string PayCoin { get; set; }
 
         /// <summary>
+        /// Payment currency icon
+        /// </summary>
+        /// <value>Payment currency icon</value>
+        [DataMember(Name="pay_icon")]
+        public string PayIcon { get; set; }
+
+        /// <summary>
         /// Payment amount
         /// </summary>
         /// <value>Payment amount</value>
@@ -93,6 +104,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Received currency</value>
         [DataMember(Name="get_coin")]
         public string GetCoin { get; set; }
+
+        /// <summary>
+        /// Received currency icon
+        /// </summary>
+        /// <value>Received currency icon</value>
+        [DataMember(Name="get_icon")]
+        public string GetIcon { get; set; }
 
         /// <summary>
         /// Received amount
@@ -123,9 +141,9 @@ namespace Io.Gate.GateApi.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// timetimestamp
+        /// Created time
         /// </summary>
-        /// <value>timetimestamp</value>
+        /// <value>Created time</value>
         [DataMember(Name="create_timest")]
         public int CreateTimest { get; set; }
 
@@ -147,8 +165,10 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  TradeNo: ").Append(TradeNo).Append("\n");
             sb.Append("  PayCoin: ").Append(PayCoin).Append("\n");
+            sb.Append("  PayIcon: ").Append(PayIcon).Append("\n");
             sb.Append("  PayAmount: ").Append(PayAmount).Append("\n");
             sb.Append("  GetCoin: ").Append(GetCoin).Append("\n");
+            sb.Append("  GetIcon: ").Append(GetIcon).Append("\n");
             sb.Append("  GetAmount: ").Append(GetAmount).Append("\n");
             sb.Append("  Rate: ").Append(Rate).Append("\n");
             sb.Append("  RateReci: ").Append(RateReci).Append("\n");
@@ -204,6 +224,11 @@ namespace Io.Gate.GateApi.Model
                     this.PayCoin.Equals(input.PayCoin))
                 ) && 
                 (
+                    this.PayIcon == input.PayIcon ||
+                    (this.PayIcon != null &&
+                    this.PayIcon.Equals(input.PayIcon))
+                ) && 
+                (
                     this.PayAmount == input.PayAmount ||
                     (this.PayAmount != null &&
                     this.PayAmount.Equals(input.PayAmount))
@@ -212,6 +237,11 @@ namespace Io.Gate.GateApi.Model
                     this.GetCoin == input.GetCoin ||
                     (this.GetCoin != null &&
                     this.GetCoin.Equals(input.GetCoin))
+                ) && 
+                (
+                    this.GetIcon == input.GetIcon ||
+                    (this.GetIcon != null &&
+                    this.GetIcon.Equals(input.GetIcon))
                 ) && 
                 (
                     this.GetAmount == input.GetAmount ||
@@ -258,10 +288,14 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.TradeNo.GetHashCode();
                 if (this.PayCoin != null)
                     hashCode = hashCode * 59 + this.PayCoin.GetHashCode();
+                if (this.PayIcon != null)
+                    hashCode = hashCode * 59 + this.PayIcon.GetHashCode();
                 if (this.PayAmount != null)
                     hashCode = hashCode * 59 + this.PayAmount.GetHashCode();
                 if (this.GetCoin != null)
                     hashCode = hashCode * 59 + this.GetCoin.GetHashCode();
+                if (this.GetIcon != null)
+                    hashCode = hashCode * 59 + this.GetIcon.GetHashCode();
                 if (this.GetAmount != null)
                     hashCode = hashCode * 59 + this.GetAmount.GetHashCode();
                 if (this.Rate != null)

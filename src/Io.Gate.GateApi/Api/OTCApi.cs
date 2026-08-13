@@ -73,7 +73,7 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order
         /// </summary>
         /// <remarks>
-        /// Create stablecoin order
+        /// Create a stablecoin order. All request body fields except &#x60;promotion_code&#x60; are required.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
@@ -84,7 +84,7 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order
         /// </summary>
         /// <remarks>
-        /// Create stablecoin order
+        /// Create a stablecoin order. All request body fields except &#x60;promotion_code&#x60; are required.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
@@ -94,7 +94,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list
         /// </summary>
         /// <remarks>
-        /// Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
+        /// List the user&#39;s bank cards for selecting a card when placing an order. **Default card**: use the &#x60;is_default&#x60; field in each list item (&#x60;1&#x60; indicates the default). The deprecated standalone default-bank-card endpoint is no longer required.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>OtcBankListResponse</returns>
@@ -104,7 +104,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list
         /// </summary>
         /// <remarks>
-        /// Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
+        /// List the user&#39;s bank cards for selecting a card when placing an order. **Default card**: use the &#x60;is_default&#x60; field in each list item (&#x60;1&#x60; indicates the default). The deprecated standalone default-bank-card endpoint is no longer required.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of OtcBankListResponse</returns>
@@ -122,7 +122,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
+        /// <param name="documentationFile">Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
@@ -142,7 +142,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
+        /// <param name="documentationFile">Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
@@ -194,7 +194,7 @@ namespace Io.Gate.GateApi.Api
         /// Query the checklist of materials to supplement for a bank card
         /// </summary>
         /// <remarks>
-        /// **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// **①** &#x60;bank_id&#x60; must be specified. After verifying that the card belongs to the current user and its status allows supplementary documents, the endpoint returns the required items based on the user&#39;s **approved advanced verification type** (personal/enterprise); each item&#39;s &#x60;description&#x60; states the submission requirements. Corresponding Inner endpoint: &#x60;GET /bank/bank_supplement_checklist&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
@@ -205,7 +205,7 @@ namespace Io.Gate.GateApi.Api
         /// Query the checklist of materials to supplement for a bank card
         /// </summary>
         /// <remarks>
-        /// **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// **①** &#x60;bank_id&#x60; must be specified. After verifying that the card belongs to the current user and its status allows supplementary documents, the endpoint returns the required items based on the user&#39;s **approved advanced verification type** (personal/enterprise); each item&#39;s &#x60;description&#x60; states the submission requirements. Corresponding Inner endpoint: &#x60;GET /bank/bank_supplement_checklist&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
@@ -277,7 +277,7 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid (deposit confirmation)
         /// </summary>
         /// <remarks>
-        /// Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
+        /// Mark a fiat BUY order as paid (deposit confirmation). **A user payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; supported formats are jpg/jpeg/png/pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatibility field name &#x60;payment_receipt&#x60; is subject to the gateway/live environment. The persisted field is &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (commonly associated by &#x60;client_order_id&#x60;); the Inner path corresponding to this OpenAPI endpoint, &#x60;POST /order/paid&#x60;, still primarily uses &#x60;order_id&#x60;. If the gateway standardizes on the merchant order ID, follow the gateway documentation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -288,7 +288,7 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid (deposit confirmation)
         /// </summary>
         /// <remarks>
-        /// Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
+        /// Mark a fiat BUY order as paid (deposit confirmation). **A user payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; supported formats are jpg/jpeg/png/pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatibility field name &#x60;payment_receipt&#x60; is subject to the gateway/live environment. The persisted field is &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (commonly associated by &#x60;client_order_id&#x60;); the Inner path corresponding to this OpenAPI endpoint, &#x60;POST /order/paid&#x60;, still primarily uses &#x60;order_id&#x60;. If the gateway standardizes on the merchant order ID, follow the gateway documentation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -327,7 +327,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="status">DONE: completed CANCEL: canceled PROCESSING: in progress DISBURSED: disbursed (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
         /// <returns>OtcOrderListResponse</returns>
@@ -345,7 +345,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="status">DONE: completed CANCEL: canceled PROCESSING: in progress DISBURSED: disbursed (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
         /// <returns>ApiResponse of OtcOrderListResponse</returns>
@@ -457,7 +457,7 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order
         /// </summary>
         /// <remarks>
-        /// Create stablecoin order
+        /// Create a stablecoin order. All request body fields except &#x60;promotion_code&#x60; are required.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
@@ -468,7 +468,7 @@ namespace Io.Gate.GateApi.Api
         /// Create stablecoin order
         /// </summary>
         /// <remarks>
-        /// Create stablecoin order
+        /// Create a stablecoin order. All request body fields except &#x60;promotion_code&#x60; are required.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
@@ -478,7 +478,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list
         /// </summary>
         /// <remarks>
-        /// Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
+        /// List the user&#39;s bank cards for selecting a card when placing an order. **Default card**: use the &#x60;is_default&#x60; field in each list item (&#x60;1&#x60; indicates the default). The deprecated standalone default-bank-card endpoint is no longer required.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of OtcBankListResponse</returns>
@@ -488,7 +488,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user bank card list
         /// </summary>
         /// <remarks>
-        /// Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
+        /// List the user&#39;s bank cards for selecting a card when placing an order. **Default card**: use the &#x60;is_default&#x60; field in each list item (&#x60;1&#x60; indicates the default). The deprecated standalone default-bank-card endpoint is no longer required.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (OtcBankListResponse)</returns>
@@ -506,7 +506,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
+        /// <param name="documentationFile">Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
@@ -526,7 +526,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
+        /// <param name="documentationFile">Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
@@ -578,7 +578,7 @@ namespace Io.Gate.GateApi.Api
         /// Query the checklist of materials to supplement for a bank card
         /// </summary>
         /// <remarks>
-        /// **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// **①** &#x60;bank_id&#x60; must be specified. After verifying that the card belongs to the current user and its status allows supplementary documents, the endpoint returns the required items based on the user&#39;s **approved advanced verification type** (personal/enterprise); each item&#39;s &#x60;description&#x60; states the submission requirements. Corresponding Inner endpoint: &#x60;GET /bank/bank_supplement_checklist&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
@@ -589,7 +589,7 @@ namespace Io.Gate.GateApi.Api
         /// Query the checklist of materials to supplement for a bank card
         /// </summary>
         /// <remarks>
-        /// **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// **①** &#x60;bank_id&#x60; must be specified. After verifying that the card belongs to the current user and its status allows supplementary documents, the endpoint returns the required items based on the user&#39;s **approved advanced verification type** (personal/enterprise); each item&#39;s &#x60;description&#x60; states the submission requirements. Corresponding Inner endpoint: &#x60;GET /bank/bank_supplement_checklist&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
@@ -661,7 +661,7 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid (deposit confirmation)
         /// </summary>
         /// <remarks>
-        /// Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
+        /// Mark a fiat BUY order as paid (deposit confirmation). **A user payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; supported formats are jpg/jpeg/png/pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatibility field name &#x60;payment_receipt&#x60; is subject to the gateway/live environment. The persisted field is &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (commonly associated by &#x60;client_order_id&#x60;); the Inner path corresponding to this OpenAPI endpoint, &#x60;POST /order/paid&#x60;, still primarily uses &#x60;order_id&#x60;. If the gateway standardizes on the merchant order ID, follow the gateway documentation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -672,7 +672,7 @@ namespace Io.Gate.GateApi.Api
         /// Mark fiat order as paid (deposit confirmation)
         /// </summary>
         /// <remarks>
-        /// Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
+        /// Mark a fiat BUY order as paid (deposit confirmation). **A user payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; supported formats are jpg/jpeg/png/pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatibility field name &#x60;payment_receipt&#x60; is subject to the gateway/live environment. The persisted field is &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (commonly associated by &#x60;client_order_id&#x60;); the Inner path corresponding to this OpenAPI endpoint, &#x60;POST /order/paid&#x60;, still primarily uses &#x60;order_id&#x60;. If the gateway standardizes on the merchant order ID, follow the gateway documentation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -711,7 +711,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="status">DONE: completed CANCEL: canceled PROCESSING: in progress DISBURSED: disbursed (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
         /// <returns>Task of OtcOrderListResponse</returns>
@@ -729,7 +729,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="status">DONE: completed CANCEL: canceled PROCESSING: in progress DISBURSED: disbursed (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
         /// <returns>Task of ApiResponse (OtcOrderListResponse)</returns>
@@ -1145,7 +1145,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create stablecoin order Create stablecoin order
+        /// Create stablecoin order Create a stablecoin order. All request body fields except &#x60;promotion_code&#x60; are required.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
@@ -1157,7 +1157,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create stablecoin order Create stablecoin order
+        /// Create stablecoin order Create a stablecoin order. All request body fields except &#x60;promotion_code&#x60; are required.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
@@ -1203,7 +1203,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create stablecoin order Create stablecoin order
+        /// Create stablecoin order Create a stablecoin order. All request body fields except &#x60;promotion_code&#x60; are required.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
@@ -1216,7 +1216,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create stablecoin order Create stablecoin order
+        /// Create stablecoin order Create a stablecoin order. All request body fields except &#x60;promotion_code&#x60; are required.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcStableCoinOrderRequest"></param>
@@ -1264,7 +1264,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get user bank card list Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
+        /// Get user bank card list List the user&#39;s bank cards for selecting a card when placing an order. **Default card**: use the &#x60;is_default&#x60; field in each list item (&#x60;1&#x60; indicates the default). The deprecated standalone default-bank-card endpoint is no longer required.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>OtcBankListResponse</returns>
@@ -1275,7 +1275,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get user bank card list Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
+        /// Get user bank card list List the user&#39;s bank cards for selecting a card when placing an order. **Default card**: use the &#x60;is_default&#x60; field in each list item (&#x60;1&#x60; indicates the default). The deprecated standalone default-bank-card endpoint is no longer required.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of OtcBankListResponse</returns>
@@ -1314,7 +1314,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get user bank card list Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
+        /// Get user bank card list List the user&#39;s bank cards for selecting a card when placing an order. **Default card**: use the &#x60;is_default&#x60; field in each list item (&#x60;1&#x60; indicates the default). The deprecated standalone default-bank-card endpoint is no longer required.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of OtcBankListResponse</returns>
@@ -1326,7 +1326,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get user bank card list Retrieve the user&#39;s bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field &#x60;is_default&#x60; (1&#x3D;default); there is no need to call the deprecated standalone \&quot;default bank card\&quot; endpoint. Corresponding Inner: &#x60;GET /bank_list&#x60; or &#x60;GET /bank/list&#x60;.
+        /// Get user bank card list List the user&#39;s bank cards for selecting a card when placing an order. **Default card**: use the &#x60;is_default&#x60; field in each list item (&#x60;1&#x60; indicates the default). The deprecated standalone default-bank-card endpoint is no longer required.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (OtcBankListResponse)</returns>
@@ -1376,7 +1376,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
+        /// <param name="documentationFile">Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
@@ -1397,7 +1397,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
+        /// <param name="documentationFile">Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
@@ -1494,7 +1494,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
+        /// <param name="documentationFile">Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
@@ -1516,7 +1516,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="bankAddress"></param>
         /// <param name="iban"></param>
         /// <param name="swift"></param>
-        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</param>
+        /// <param name="documentationFile">Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)</param>
         /// <param name="remittanceLineNumber"> (optional)</param>
         /// <param name="agentBankName"> (optional)</param>
         /// <param name="agentBankSwift"> (optional)</param>
@@ -1844,7 +1844,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified. After verifying that the card belongs to the current user and its status allows supplementary documents, the endpoint returns the required items based on the user&#39;s **approved advanced verification type** (personal/enterprise); each item&#39;s &#x60;description&#x60; states the submission requirements. Corresponding Inner endpoint: &#x60;GET /bank/bank_supplement_checklist&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
@@ -1856,7 +1856,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified. After verifying that the card belongs to the current user and its status allows supplementary documents, the endpoint returns the required items based on the user&#39;s **approved advanced verification type** (personal/enterprise); each item&#39;s &#x60;description&#x60; states the submission requirements. Corresponding Inner endpoint: &#x60;GET /bank/bank_supplement_checklist&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
@@ -1901,7 +1901,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified. After verifying that the card belongs to the current user and its status allows supplementary documents, the endpoint returns the required items based on the user&#39;s **approved advanced verification type** (personal/enterprise); each item&#39;s &#x60;description&#x60; states the submission requirements. Corresponding Inner endpoint: &#x60;GET /bank/bank_supplement_checklist&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
@@ -1914,7 +1914,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user&#39;s **passed professional verification type** (personal/enterprise). Corresponding Inner: &#x60;GET /bank/bank_supplement_checklist&#x60;.
+        /// Query the checklist of materials to supplement for a bank card **①** &#x60;bank_id&#x60; must be specified. After verifying that the card belongs to the current user and its status allows supplementary documents, the endpoint returns the required items based on the user&#39;s **approved advanced verification type** (personal/enterprise); each item&#39;s &#x60;description&#x60; states the submission requirements. Corresponding Inner endpoint: &#x60;GET /bank/bank_supplement_checklist&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankId">Bank card ID (otc_rds / the id returned by the list endpoint).</param>
@@ -2333,7 +2333,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Mark fiat order as paid (deposit confirmation) Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
+        /// Mark fiat order as paid (deposit confirmation) Mark a fiat BUY order as paid (deposit confirmation). **A user payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; supported formats are jpg/jpeg/png/pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatibility field name &#x60;payment_receipt&#x60; is subject to the gateway/live environment. The persisted field is &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (commonly associated by &#x60;client_order_id&#x60;); the Inner path corresponding to this OpenAPI endpoint, &#x60;POST /order/paid&#x60;, still primarily uses &#x60;order_id&#x60;. If the gateway standardizes on the merchant order ID, follow the gateway documentation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -2345,7 +2345,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Mark fiat order as paid (deposit confirmation) Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
+        /// Mark fiat order as paid (deposit confirmation) Mark a fiat BUY order as paid (deposit confirmation). **A user payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; supported formats are jpg/jpeg/png/pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatibility field name &#x60;payment_receipt&#x60; is subject to the gateway/live environment. The persisted field is &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (commonly associated by &#x60;client_order_id&#x60;); the Inner path corresponding to this OpenAPI endpoint, &#x60;POST /order/paid&#x60;, still primarily uses &#x60;order_id&#x60;. If the gateway standardizes on the merchant order ID, follow the gateway documentation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -2391,7 +2391,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Mark fiat order as paid (deposit confirmation) Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
+        /// Mark fiat order as paid (deposit confirmation) Mark a fiat BUY order as paid (deposit confirmation). **A user payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; supported formats are jpg/jpeg/png/pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatibility field name &#x60;payment_receipt&#x60; is subject to the gateway/live environment. The persisted field is &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (commonly associated by &#x60;client_order_id&#x60;); the Inner path corresponding to this OpenAPI endpoint, &#x60;POST /order/paid&#x60;, still primarily uses &#x60;order_id&#x60;. If the gateway standardizes on the merchant order ID, follow the gateway documentation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -2404,7 +2404,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Mark fiat order as paid (deposit confirmation) Mark a fiat buy order as paid (deposit confirmation). **The user&#39;s payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name &#x60;payment_receipt&#x60; is subject to the gateway/production environment. For the persisted field, see &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (orders are usually associated via &#x60;client_order_id&#x60;); this OpenAPI path maps to Inner &#x60;POST /order/paid&#x60; and still uses &#x60;order_id&#x60; as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
+        /// Mark fiat order as paid (deposit confirmation) Mark a fiat BUY order as paid (deposit confirmation). **A user payment receipt must be uploaded**: &#x60;payment_receipt_file_key&#x60; is required; supported formats are jpg/jpeg/png/pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatibility field name &#x60;payment_receipt&#x60; is subject to the gateway/live environment. The persisted field is &#x60;otc_trade_record.payment_receipt_file_key&#x60;. The Pay Inner path is &#x60;POST .../pay/order_set_paid&#x60; (commonly associated by &#x60;client_order_id&#x60;); the Inner path corresponding to this OpenAPI endpoint, &#x60;POST /order/paid&#x60;, still primarily uses &#x60;order_id&#x60;. If the gateway standardizes on the merchant order ID, follow the gateway documentation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="otcMarkOrderPaidRequest"></param>
@@ -2577,7 +2577,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="status">DONE: completed CANCEL: canceled PROCESSING: in progress DISBURSED: disbursed (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
         /// <returns>OtcOrderListResponse</returns>
@@ -2596,7 +2596,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="status">DONE: completed CANCEL: canceled PROCESSING: in progress DISBURSED: disbursed (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
         /// <returns>ApiResponse of OtcOrderListResponse</returns>
@@ -2675,7 +2675,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="status">DONE: completed CANCEL: canceled PROCESSING: in progress DISBURSED: disbursed (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
         /// <returns>Task of OtcOrderListResponse</returns>
@@ -2695,7 +2695,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="cryptoCurrency">Digital currency (optional)</param>
         /// <param name="startTime">starttime   for example : 2025-09-09 (optional)</param>
         /// <param name="endTime">endtime  for example :2025-09-09 (optional)</param>
-        /// <param name="status">DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional)</param>
+        /// <param name="status">DONE: completed CANCEL: canceled PROCESSING: in progress DISBURSED: disbursed (optional)</param>
         /// <param name="pn">Page number (optional)</param>
         /// <param name="ps">Number of items per page (optional)</param>
         /// <returns>Task of ApiResponse (OtcOrderListResponse)</returns>

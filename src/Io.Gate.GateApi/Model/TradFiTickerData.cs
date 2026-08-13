@@ -33,8 +33,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TradFiTickerData" /> class.
         /// </summary>
-        /// <param name="highestPrice">Highest price.</param>
-        /// <param name="lowestPrice">Lowest price.</param>
+        /// <param name="highestPrice">High price.</param>
+        /// <param name="lowestPrice">Low price.</param>
         /// <param name="priceChange">Price change percentage (multiplied by 100).</param>
         /// <param name="priceChangeAmount">Price change amount.</param>
         /// <param name="todayOpenPrice">Today&#39;s open price.</param>
@@ -70,16 +70,16 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Highest price
+        /// High price
         /// </summary>
-        /// <value>Highest price</value>
+        /// <value>High price</value>
         [DataMember(Name="highest_price")]
         public string HighestPrice { get; set; }
 
         /// <summary>
-        /// Lowest price
+        /// Low price
         /// </summary>
-        /// <value>Lowest price</value>
+        /// <value>Low price</value>
         [DataMember(Name="lowest_price")]
         public string LowestPrice { get; set; }
 

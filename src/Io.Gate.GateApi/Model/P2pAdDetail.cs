@@ -31,13 +31,69 @@ namespace Io.Gate.GateApi.Model
     public partial class P2pAdDetail :  IEquatable<P2pAdDetail>, IValidatableObject
     {
         /// <summary>
+        /// Trading limit unit. 0: crypto quantity, 1: fiat amount
+        /// </summary>
+        /// <value>Trading limit unit. 0: crypto quantity, 1: fiat amount</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LimitBasisEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1
+
+        }
+
+        /// <summary>
+        /// Trading limit unit. 0: crypto quantity, 1: fiat amount
+        /// </summary>
+        /// <value>Trading limit unit. 0: crypto quantity, 1: fiat amount</value>
+        [DataMember(Name="limit_basis")]
+        public LimitBasisEnum? LimitBasis { get; set; }
+        /// <summary>
+        /// Trading limit unit label. crypto: crypto quantity, fiat: fiat amount
+        /// </summary>
+        /// <value>Trading limit unit label. crypto: crypto quantity, fiat: fiat amount</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LimitBasisTextEnum
+        {
+            /// <summary>
+            /// Enum value Crypto
+            /// </summary>
+            [EnumMember(Value = "crypto")]
+            Crypto = 1,
+
+            /// <summary>
+            /// Enum value Fiat
+            /// </summary>
+            [EnumMember(Value = "fiat")]
+            Fiat = 2
+
+        }
+
+        /// <summary>
+        /// Trading limit unit label. crypto: crypto quantity, fiat: fiat amount
+        /// </summary>
+        /// <value>Trading limit unit label. crypto: crypto quantity, fiat: fiat amount</value>
+        [DataMember(Name="limit_basis_text")]
+        public LimitBasisTextEnum? LimitBasisText { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="P2pAdDetail" /> class.
         /// </summary>
         /// <param name="rate">Advertisement price..</param>
         /// <param name="type">Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad..</param>
         /// <param name="amount">Remaining crypto amount on the ad..</param>
-        /// <param name="minAmount">Minimum trade amount in &#x60;want_type&#x60;..</param>
-        /// <param name="maxAmount">Maximum trade amount priced in &#x60;want_type&#x60;..</param>
+        /// <param name="minAmount">Minimum quantity per order, denominated by currency_type.</param>
+        /// <param name="maxAmount">Maximum quantity per order, denominated by currency_type.</param>
+        /// <param name="fiatMinAmount">Minimum trade amount in &#x60;want_type&#x60;..</param>
+        /// <param name="fiatMaxAmount">Maximum trade amount priced in &#x60;want_type&#x60;..</param>
+        /// <param name="limitBasis">Trading limit unit. 0: crypto quantity, 1: fiat amount.</param>
+        /// <param name="limitBasisText">Trading limit unit label. crypto: crypto quantity, fiat: fiat amount.</param>
         /// <param name="total">Fiat amount.</param>
         /// <param name="payAli">Whether Alipay is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         /// <param name="payBank">Whether bank transfer is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
@@ -62,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="tierLimit">Tier limit.</param>
         /// <param name="regTimeLimit">Registration time limit.</param>
         /// <param name="advertisersLimit">Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes..</param>
+        /// <param name="polymarketLimit">Whether to restrict trading with Polymarket users. 0: no restriction, 1: restricted.</param>
         /// <param name="minCompletedLimit">Minimum limit of completed orders.</param>
         /// <param name="maxCompletedLimit">Maximum limit of completed orders.</param>
         /// <param name="userOrdersLimit">Order count limit.</param>
@@ -70,13 +127,17 @@ namespace Io.Gate.GateApi.Model
         /// <param name="limitCountryEn">Restricted nationality (English).</param>
         /// <param name="isHedge">Whether auto-delegation is enabled. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
         /// <param name="hidePayment">Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible..</param>
-        public P2pAdDetail(string rate = default(string), string type = default(string), string amount = default(string), string minAmount = default(string), string maxAmount = default(string), string total = default(string), int payAli = default(int), int payBank = default(int), int payPaypal = default(int), int payWechat = default(int), string payTypeNum = default(string), string payTypeJson = default(string), string lockedAmount = default(string), int orderid = default(int), int timestamp = default(int), string currencyType = default(string), string wantType = default(string), string hideRate = default(string), string tradeTips = default(string), string autoReply = default(string), int rateRefId = default(int), decimal rateOffset = default(decimal), string status = default(string), int rateFixed = default(int), int floatTrend = default(int), int expireMin = default(int), int tierLimit = default(int), int regTimeLimit = default(int), int advertisersLimit = default(int), int minCompletedLimit = default(int), int maxCompletedLimit = default(int), int userOrdersLimit = default(int), decimal completedRateLimit = default(decimal), string limitCountryCn = default(string), string limitCountryEn = default(string), int isHedge = default(int), int hidePayment = default(int))
+        public P2pAdDetail(string rate = default(string), string type = default(string), string amount = default(string), string minAmount = default(string), string maxAmount = default(string), string fiatMinAmount = default(string), string fiatMaxAmount = default(string), LimitBasisEnum? limitBasis = default(LimitBasisEnum?), LimitBasisTextEnum? limitBasisText = default(LimitBasisTextEnum?), string total = default(string), int payAli = default(int), int payBank = default(int), int payPaypal = default(int), int payWechat = default(int), string payTypeNum = default(string), string payTypeJson = default(string), string lockedAmount = default(string), int orderid = default(int), int timestamp = default(int), string currencyType = default(string), string wantType = default(string), string hideRate = default(string), string tradeTips = default(string), string autoReply = default(string), int rateRefId = default(int), decimal rateOffset = default(decimal), string status = default(string), int rateFixed = default(int), int floatTrend = default(int), int expireMin = default(int), int tierLimit = default(int), int regTimeLimit = default(int), int advertisersLimit = default(int), int polymarketLimit = default(int), int minCompletedLimit = default(int), int maxCompletedLimit = default(int), int userOrdersLimit = default(int), decimal completedRateLimit = default(decimal), string limitCountryCn = default(string), string limitCountryEn = default(string), int isHedge = default(int), int hidePayment = default(int))
         {
             this.Rate = rate;
             this.Type = type;
             this.Amount = amount;
             this.MinAmount = minAmount;
             this.MaxAmount = maxAmount;
+            this.FiatMinAmount = fiatMinAmount;
+            this.FiatMaxAmount = fiatMaxAmount;
+            this.LimitBasis = limitBasis;
+            this.LimitBasisText = limitBasisText;
             this.Total = total;
             this.PayAli = payAli;
             this.PayBank = payBank;
@@ -101,6 +162,7 @@ namespace Io.Gate.GateApi.Model
             this.TierLimit = tierLimit;
             this.RegTimeLimit = regTimeLimit;
             this.AdvertisersLimit = advertisersLimit;
+            this.PolymarketLimit = polymarketLimit;
             this.MinCompletedLimit = minCompletedLimit;
             this.MaxCompletedLimit = maxCompletedLimit;
             this.UserOrdersLimit = userOrdersLimit;
@@ -133,18 +195,32 @@ namespace Io.Gate.GateApi.Model
         public string Amount { get; set; }
 
         /// <summary>
+        /// Minimum quantity per order, denominated by currency_type
+        /// </summary>
+        /// <value>Minimum quantity per order, denominated by currency_type</value>
+        [DataMember(Name="min_amount")]
+        public string MinAmount { get; set; }
+
+        /// <summary>
+        /// Maximum quantity per order, denominated by currency_type
+        /// </summary>
+        /// <value>Maximum quantity per order, denominated by currency_type</value>
+        [DataMember(Name="max_amount")]
+        public string MaxAmount { get; set; }
+
+        /// <summary>
         /// Minimum trade amount in &#x60;want_type&#x60;.
         /// </summary>
         /// <value>Minimum trade amount in &#x60;want_type&#x60;.</value>
-        [DataMember(Name="min_amount")]
-        public string MinAmount { get; set; }
+        [DataMember(Name="fiat_min_amount")]
+        public string FiatMinAmount { get; set; }
 
         /// <summary>
         /// Maximum trade amount priced in &#x60;want_type&#x60;.
         /// </summary>
         /// <value>Maximum trade amount priced in &#x60;want_type&#x60;.</value>
-        [DataMember(Name="max_amount")]
-        public string MaxAmount { get; set; }
+        [DataMember(Name="fiat_max_amount")]
+        public string FiatMaxAmount { get; set; }
 
         /// <summary>
         /// Fiat amount
@@ -315,6 +391,13 @@ namespace Io.Gate.GateApi.Model
         public int AdvertisersLimit { get; set; }
 
         /// <summary>
+        /// Whether to restrict trading with Polymarket users. 0: no restriction, 1: restricted
+        /// </summary>
+        /// <value>Whether to restrict trading with Polymarket users. 0: no restriction, 1: restricted</value>
+        [DataMember(Name="polymarket_limit")]
+        public int PolymarketLimit { get; set; }
+
+        /// <summary>
         /// Minimum limit of completed orders
         /// </summary>
         /// <value>Minimum limit of completed orders</value>
@@ -383,6 +466,10 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  MinAmount: ").Append(MinAmount).Append("\n");
             sb.Append("  MaxAmount: ").Append(MaxAmount).Append("\n");
+            sb.Append("  FiatMinAmount: ").Append(FiatMinAmount).Append("\n");
+            sb.Append("  FiatMaxAmount: ").Append(FiatMaxAmount).Append("\n");
+            sb.Append("  LimitBasis: ").Append(LimitBasis).Append("\n");
+            sb.Append("  LimitBasisText: ").Append(LimitBasisText).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
             sb.Append("  PayAli: ").Append(PayAli).Append("\n");
             sb.Append("  PayBank: ").Append(PayBank).Append("\n");
@@ -407,6 +494,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  TierLimit: ").Append(TierLimit).Append("\n");
             sb.Append("  RegTimeLimit: ").Append(RegTimeLimit).Append("\n");
             sb.Append("  AdvertisersLimit: ").Append(AdvertisersLimit).Append("\n");
+            sb.Append("  PolymarketLimit: ").Append(PolymarketLimit).Append("\n");
             sb.Append("  MinCompletedLimit: ").Append(MinCompletedLimit).Append("\n");
             sb.Append("  MaxCompletedLimit: ").Append(MaxCompletedLimit).Append("\n");
             sb.Append("  UserOrdersLimit: ").Append(UserOrdersLimit).Append("\n");
@@ -473,6 +561,24 @@ namespace Io.Gate.GateApi.Model
                     this.MaxAmount == input.MaxAmount ||
                     (this.MaxAmount != null &&
                     this.MaxAmount.Equals(input.MaxAmount))
+                ) && 
+                (
+                    this.FiatMinAmount == input.FiatMinAmount ||
+                    (this.FiatMinAmount != null &&
+                    this.FiatMinAmount.Equals(input.FiatMinAmount))
+                ) && 
+                (
+                    this.FiatMaxAmount == input.FiatMaxAmount ||
+                    (this.FiatMaxAmount != null &&
+                    this.FiatMaxAmount.Equals(input.FiatMaxAmount))
+                ) && 
+                (
+                    this.LimitBasis == input.LimitBasis ||
+                    this.LimitBasis.Equals(input.LimitBasis)
+                ) && 
+                (
+                    this.LimitBasisText == input.LimitBasisText ||
+                    this.LimitBasisText.Equals(input.LimitBasisText)
                 ) && 
                 (
                     this.Total == input.Total ||
@@ -581,6 +687,10 @@ namespace Io.Gate.GateApi.Model
                     this.AdvertisersLimit.Equals(input.AdvertisersLimit)
                 ) && 
                 (
+                    this.PolymarketLimit == input.PolymarketLimit ||
+                    this.PolymarketLimit.Equals(input.PolymarketLimit)
+                ) && 
+                (
                     this.MinCompletedLimit == input.MinCompletedLimit ||
                     this.MinCompletedLimit.Equals(input.MinCompletedLimit)
                 ) && 
@@ -635,6 +745,12 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.MinAmount.GetHashCode();
                 if (this.MaxAmount != null)
                     hashCode = hashCode * 59 + this.MaxAmount.GetHashCode();
+                if (this.FiatMinAmount != null)
+                    hashCode = hashCode * 59 + this.FiatMinAmount.GetHashCode();
+                if (this.FiatMaxAmount != null)
+                    hashCode = hashCode * 59 + this.FiatMaxAmount.GetHashCode();
+                hashCode = hashCode * 59 + this.LimitBasis.GetHashCode();
+                hashCode = hashCode * 59 + this.LimitBasisText.GetHashCode();
                 if (this.Total != null)
                     hashCode = hashCode * 59 + this.Total.GetHashCode();
                 hashCode = hashCode * 59 + this.PayAli.GetHashCode();
@@ -669,6 +785,7 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.TierLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.RegTimeLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.AdvertisersLimit.GetHashCode();
+                hashCode = hashCode * 59 + this.PolymarketLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.MinCompletedLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.MaxCompletedLimit.GetHashCode();
                 hashCode = hashCode * 59 + this.UserOrdersLimit.GetHashCode();

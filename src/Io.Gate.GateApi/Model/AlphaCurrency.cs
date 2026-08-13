@@ -37,8 +37,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="name">Currency name.</param>
         /// <param name="chain">The main chain corresponding to the coin.</param>
         /// <param name="address">Contract Address.</param>
-        /// <param name="amountPrecision">Amount scale.</param>
-        /// <param name="precision">Price scale.</param>
+        /// <param name="amountPrecision">Quantity precision.</param>
+        /// <param name="precision">Price precision.</param>
         /// <param name="status">Currency Trading Status - &#x60;1&#x60; : Normal trading - &#x60;2&#x60; : Suspended trading - &#x60;3&#x60; : Delisted.</param>
         public AlphaCurrency(string currency = default(string), string name = default(string), string chain = default(string), string address = default(string), int amountPrecision = default(int), int precision = default(int), int status = default(int))
         {
@@ -80,16 +80,16 @@ namespace Io.Gate.GateApi.Model
         public string Address { get; set; }
 
         /// <summary>
-        /// Amount scale
+        /// Quantity precision
         /// </summary>
-        /// <value>Amount scale</value>
+        /// <value>Quantity precision</value>
         [DataMember(Name="amount_precision")]
         public int AmountPrecision { get; set; }
 
         /// <summary>
-        /// Price scale
+        /// Price precision
         /// </summary>
-        /// <value>Price scale</value>
+        /// <value>Price precision</value>
         [DataMember(Name="precision")]
         public int Precision { get; set; }
 

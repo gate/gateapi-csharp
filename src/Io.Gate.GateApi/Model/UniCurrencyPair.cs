@@ -60,9 +60,9 @@ namespace Io.Gate.GateApi.Model
         public string QuoteMinBorrowAmount { get; private set; }
 
         /// <summary>
-        /// Position leverage
+        /// Leverage multiplier
         /// </summary>
-        /// <value>Position leverage</value>
+        /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage", EmitDefaultValue=false)]
         public string Leverage { get; private set; }
 

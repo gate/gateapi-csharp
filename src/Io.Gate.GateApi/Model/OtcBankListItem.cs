@@ -38,13 +38,11 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcBankListItem" /> class.
         /// </summary>
-        /// <param name="id">Bank ID (required for order placement) (required).</param>
+        /// <param name="id">Bank card ID (used when placing an order; the synonymous &#x60;bank_id&#x60; field has been consolidated into &#x60;id&#x60;) (required).</param>
         /// <param name="bankAccountName">Bank account name (required).</param>
         /// <param name="bankName">Bank name (required).</param>
         /// <param name="bankCountry">Bank country.</param>
         /// <param name="bankAddress">Bank address.</param>
-        /// <param name="bankCode">Bank code.</param>
-        /// <param name="branchCode">Branch code.</param>
         /// <param name="iban">IBAN number.</param>
         /// <param name="swift">SWIFT code.</param>
         /// <param name="remittanceLineNumber">Remittance routing number.</param>
@@ -53,12 +51,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="submitTime">Submission time.</param>
         /// <param name="updateTime">Update time.</param>
         /// <param name="status">Status.</param>
-        /// <param name="documentationFileType">Document file type.</param>
-        /// <param name="memo">Remark.</param>
         /// <param name="isDefault">Whether it is the default bank card. 1 - Yes, 0 - No.</param>
-        /// <param name="bankId">Bank ID.</param>
-        /// <param name="documentationFileKeyUrl">Document file URL.</param>
-        public OtcBankListItem(string id = default(string), string bankAccountName = default(string), string bankName = default(string), string bankCountry = default(string), string bankAddress = default(string), string bankCode = default(string), string branchCode = default(string), string iban = default(string), string swift = default(string), string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string), string submitTime = default(string), string updateTime = default(string), string status = default(string), string documentationFileType = default(string), string memo = default(string), int isDefault = default(int), string bankId = default(string), string documentationFileKeyUrl = default(string))
+        public OtcBankListItem(string id = default(string), string bankAccountName = default(string), string bankName = default(string), string bankCountry = default(string), string bankAddress = default(string), string iban = default(string), string swift = default(string), string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string), string submitTime = default(string), string updateTime = default(string), string status = default(string), int isDefault = default(int))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id", "id is a required property for OtcBankListItem and cannot be null");
@@ -68,8 +62,6 @@ namespace Io.Gate.GateApi.Model
             this.BankName = bankName ?? throw new ArgumentNullException("bankName", "bankName is a required property for OtcBankListItem and cannot be null");
             this.BankCountry = bankCountry;
             this.BankAddress = bankAddress;
-            this.BankCode = bankCode;
-            this.BranchCode = branchCode;
             this.Iban = iban;
             this.Swift = swift;
             this.RemittanceLineNumber = remittanceLineNumber;
@@ -78,17 +70,13 @@ namespace Io.Gate.GateApi.Model
             this.SubmitTime = submitTime;
             this.UpdateTime = updateTime;
             this.Status = status;
-            this.DocumentationFileType = documentationFileType;
-            this.Memo = memo;
             this.IsDefault = isDefault;
-            this.BankId = bankId;
-            this.DocumentationFileKeyUrl = documentationFileKeyUrl;
         }
 
         /// <summary>
-        /// Bank ID (required for order placement)
+        /// Bank card ID (used when placing an order; the synonymous &#x60;bank_id&#x60; field has been consolidated into &#x60;id&#x60;)
         /// </summary>
-        /// <value>Bank ID (required for order placement)</value>
+        /// <value>Bank card ID (used when placing an order; the synonymous &#x60;bank_id&#x60; field has been consolidated into &#x60;id&#x60;)</value>
         [DataMember(Name="id")]
         public string Id { get; set; }
 
@@ -119,20 +107,6 @@ namespace Io.Gate.GateApi.Model
         /// <value>Bank address</value>
         [DataMember(Name="bank_address")]
         public string BankAddress { get; set; }
-
-        /// <summary>
-        /// Bank code
-        /// </summary>
-        /// <value>Bank code</value>
-        [DataMember(Name="bank_code")]
-        public string BankCode { get; set; }
-
-        /// <summary>
-        /// Branch code
-        /// </summary>
-        /// <value>Branch code</value>
-        [DataMember(Name="branch_code")]
-        public string BranchCode { get; set; }
 
         /// <summary>
         /// IBAN number
@@ -191,39 +165,11 @@ namespace Io.Gate.GateApi.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// Document file type
-        /// </summary>
-        /// <value>Document file type</value>
-        [DataMember(Name="documentation_file_type")]
-        public string DocumentationFileType { get; set; }
-
-        /// <summary>
-        /// Remark
-        /// </summary>
-        /// <value>Remark</value>
-        [DataMember(Name="memo")]
-        public string Memo { get; set; }
-
-        /// <summary>
         /// Whether it is the default bank card. 1 - Yes, 0 - No
         /// </summary>
         /// <value>Whether it is the default bank card. 1 - Yes, 0 - No</value>
         [DataMember(Name="is_default")]
         public int IsDefault { get; set; }
-
-        /// <summary>
-        /// Bank ID
-        /// </summary>
-        /// <value>Bank ID</value>
-        [DataMember(Name="bank_id")]
-        public string BankId { get; set; }
-
-        /// <summary>
-        /// Document file URL
-        /// </summary>
-        /// <value>Document file URL</value>
-        [DataMember(Name="documentation_file_key_url")]
-        public string DocumentationFileKeyUrl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -238,8 +184,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  BankName: ").Append(BankName).Append("\n");
             sb.Append("  BankCountry: ").Append(BankCountry).Append("\n");
             sb.Append("  BankAddress: ").Append(BankAddress).Append("\n");
-            sb.Append("  BankCode: ").Append(BankCode).Append("\n");
-            sb.Append("  BranchCode: ").Append(BranchCode).Append("\n");
             sb.Append("  Iban: ").Append(Iban).Append("\n");
             sb.Append("  Swift: ").Append(Swift).Append("\n");
             sb.Append("  RemittanceLineNumber: ").Append(RemittanceLineNumber).Append("\n");
@@ -248,11 +192,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  SubmitTime: ").Append(SubmitTime).Append("\n");
             sb.Append("  UpdateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  DocumentationFileType: ").Append(DocumentationFileType).Append("\n");
-            sb.Append("  Memo: ").Append(Memo).Append("\n");
             sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
-            sb.Append("  BankId: ").Append(BankId).Append("\n");
-            sb.Append("  DocumentationFileKeyUrl: ").Append(DocumentationFileKeyUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -313,16 +253,6 @@ namespace Io.Gate.GateApi.Model
                     this.BankAddress.Equals(input.BankAddress))
                 ) && 
                 (
-                    this.BankCode == input.BankCode ||
-                    (this.BankCode != null &&
-                    this.BankCode.Equals(input.BankCode))
-                ) && 
-                (
-                    this.BranchCode == input.BranchCode ||
-                    (this.BranchCode != null &&
-                    this.BranchCode.Equals(input.BranchCode))
-                ) && 
-                (
                     this.Iban == input.Iban ||
                     (this.Iban != null &&
                     this.Iban.Equals(input.Iban))
@@ -363,28 +293,8 @@ namespace Io.Gate.GateApi.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
-                    this.DocumentationFileType == input.DocumentationFileType ||
-                    (this.DocumentationFileType != null &&
-                    this.DocumentationFileType.Equals(input.DocumentationFileType))
-                ) && 
-                (
-                    this.Memo == input.Memo ||
-                    (this.Memo != null &&
-                    this.Memo.Equals(input.Memo))
-                ) && 
-                (
                     this.IsDefault == input.IsDefault ||
                     this.IsDefault.Equals(input.IsDefault)
-                ) && 
-                (
-                    this.BankId == input.BankId ||
-                    (this.BankId != null &&
-                    this.BankId.Equals(input.BankId))
-                ) && 
-                (
-                    this.DocumentationFileKeyUrl == input.DocumentationFileKeyUrl ||
-                    (this.DocumentationFileKeyUrl != null &&
-                    this.DocumentationFileKeyUrl.Equals(input.DocumentationFileKeyUrl))
                 );
         }
 
@@ -407,10 +317,6 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.BankCountry.GetHashCode();
                 if (this.BankAddress != null)
                     hashCode = hashCode * 59 + this.BankAddress.GetHashCode();
-                if (this.BankCode != null)
-                    hashCode = hashCode * 59 + this.BankCode.GetHashCode();
-                if (this.BranchCode != null)
-                    hashCode = hashCode * 59 + this.BranchCode.GetHashCode();
                 if (this.Iban != null)
                     hashCode = hashCode * 59 + this.Iban.GetHashCode();
                 if (this.Swift != null)
@@ -427,15 +333,7 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.DocumentationFileType != null)
-                    hashCode = hashCode * 59 + this.DocumentationFileType.GetHashCode();
-                if (this.Memo != null)
-                    hashCode = hashCode * 59 + this.Memo.GetHashCode();
                 hashCode = hashCode * 59 + this.IsDefault.GetHashCode();
-                if (this.BankId != null)
-                    hashCode = hashCode * 59 + this.BankId.GetHashCode();
-                if (this.DocumentationFileKeyUrl != null)
-                    hashCode = hashCode * 59 + this.DocumentationFileKeyUrl.GetHashCode();
                 return hashCode;
             }
         }

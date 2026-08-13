@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="CrossexLeverageRequest" /> class.
         /// </summary>
         /// <param name="symbol">Currency pair (required).</param>
-        /// <param name="leverage">leverage (required).</param>
+        /// <param name="leverage">Leverage (required).</param>
         public CrossexLeverageRequest(string symbol = default(string), string leverage = default(string))
         {
             // to ensure "symbol" is required (not null)
@@ -56,9 +56,9 @@ namespace Io.Gate.GateApi.Model
         public string Symbol { get; set; }
 
         /// <summary>
-        /// leverage
+        /// Leverage
         /// </summary>
-        /// <value>leverage</value>
+        /// <value>Leverage</value>
         [DataMember(Name="leverage")]
         public string Leverage { get; set; }
 

@@ -41,7 +41,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="userId">User ID (required).</param>
         /// <param name="symbol">Currency pair (required).</param>
         /// <param name="crossexAdlRank">CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher) (required).</param>
-        /// <param name="exchangeAdlRank">Original exchange information (BINANCE: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; GATE: 1–5, lower value ranks higher; BYBIT: 0–5, higher value ranks higher) (required).</param>
+        /// <param name="exchangeAdlRank">Exchange raw information (BINANCE: 0-4, larger numbers rank higher; OKX: 0-5, larger numbers rank higher; GATE: 1-5, smaller numbers rank higher; Kraken: 20, 40, 80, 100, smaller numbers rank higher; BYBIT: 0-5, larger numbers rank higher) (required).</param>
         public CrossexAdlRank(string userId = default(string), string symbol = default(string), string crossexAdlRank = default(string), string exchangeAdlRank = default(string))
         {
             // to ensure "userId" is required (not null)
@@ -76,9 +76,9 @@ namespace Io.Gate.GateApi.Model
         public string _CrossexAdlRank { get; set; }
 
         /// <summary>
-        /// Original exchange information (BINANCE: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; GATE: 1–5, lower value ranks higher; BYBIT: 0–5, higher value ranks higher)
+        /// Exchange raw information (BINANCE: 0-4, larger numbers rank higher; OKX: 0-5, larger numbers rank higher; GATE: 1-5, smaller numbers rank higher; Kraken: 20, 40, 80, 100, smaller numbers rank higher; BYBIT: 0-5, larger numbers rank higher)
         /// </summary>
-        /// <value>Original exchange information (BINANCE: 0–4, higher value ranks higher; OKX: 0–5, higher value ranks higher; GATE: 1–5, lower value ranks higher; BYBIT: 0–5, higher value ranks higher)</value>
+        /// <value>Exchange raw information (BINANCE: 0-4, larger numbers rank higher; OKX: 0-5, larger numbers rank higher; GATE: 1-5, smaller numbers rank higher; Kraken: 20, 40, 80, 100, smaller numbers rank higher; BYBIT: 0-5, larger numbers rank higher)</value>
         [DataMember(Name="exchange_adl_rank")]
         public string ExchangeAdlRank { get; set; }
 

@@ -41,10 +41,12 @@ namespace Io.Gate.GateApi.Model
         /// <param name="exchangeType">Exchange.</param>
         /// <param name="spotMakerFee">spotMakerfee rate (required).</param>
         /// <param name="spotTakerFee">spotTakerfee rate (required).</param>
+        /// <param name="spotRpiMakerFee">Spot RPI order maker fee rate.</param>
         /// <param name="futureMakerFee">contractMakerfee rate (required).</param>
         /// <param name="futureTakerFee">contractTakerfee rate (required).</param>
+        /// <param name="futureRpiMakerFee">Futures RPI order maker fee rate.</param>
         /// <param name="specialFeeList">specialFeeList (required).</param>
-        public InlineResponse200(string exchangeType = default(string), string spotMakerFee = default(string), string spotTakerFee = default(string), string futureMakerFee = default(string), string futureTakerFee = default(string), List<CrossexSpecialFee> specialFeeList = default(List<CrossexSpecialFee>))
+        public InlineResponse200(string exchangeType = default(string), string spotMakerFee = default(string), string spotTakerFee = default(string), string spotRpiMakerFee = default(string), string futureMakerFee = default(string), string futureTakerFee = default(string), string futureRpiMakerFee = default(string), List<CrossexSpecialFee> specialFeeList = default(List<CrossexSpecialFee>))
         {
             // to ensure "spotMakerFee" is required (not null)
             this.SpotMakerFee = spotMakerFee ?? throw new ArgumentNullException("spotMakerFee", "spotMakerFee is a required property for InlineResponse200 and cannot be null");
@@ -57,6 +59,8 @@ namespace Io.Gate.GateApi.Model
             // to ensure "specialFeeList" is required (not null)
             this.SpecialFeeList = specialFeeList ?? throw new ArgumentNullException("specialFeeList", "specialFeeList is a required property for InlineResponse200 and cannot be null");
             this.ExchangeType = exchangeType;
+            this.SpotRpiMakerFee = spotRpiMakerFee;
+            this.FutureRpiMakerFee = futureRpiMakerFee;
         }
 
         /// <summary>
@@ -81,6 +85,13 @@ namespace Io.Gate.GateApi.Model
         public string SpotTakerFee { get; set; }
 
         /// <summary>
+        /// Spot RPI order maker fee rate
+        /// </summary>
+        /// <value>Spot RPI order maker fee rate</value>
+        [DataMember(Name="spot_rpi_maker_fee")]
+        public string SpotRpiMakerFee { get; set; }
+
+        /// <summary>
         /// contractMakerfee rate
         /// </summary>
         /// <value>contractMakerfee rate</value>
@@ -93,6 +104,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>contractTakerfee rate</value>
         [DataMember(Name="future_taker_fee")]
         public string FutureTakerFee { get; set; }
+
+        /// <summary>
+        /// Futures RPI order maker fee rate
+        /// </summary>
+        /// <value>Futures RPI order maker fee rate</value>
+        [DataMember(Name="future_rpi_maker_fee")]
+        public string FutureRpiMakerFee { get; set; }
 
         /// <summary>
         /// Gets or Sets SpecialFeeList
@@ -111,8 +129,10 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  ExchangeType: ").Append(ExchangeType).Append("\n");
             sb.Append("  SpotMakerFee: ").Append(SpotMakerFee).Append("\n");
             sb.Append("  SpotTakerFee: ").Append(SpotTakerFee).Append("\n");
+            sb.Append("  SpotRpiMakerFee: ").Append(SpotRpiMakerFee).Append("\n");
             sb.Append("  FutureMakerFee: ").Append(FutureMakerFee).Append("\n");
             sb.Append("  FutureTakerFee: ").Append(FutureTakerFee).Append("\n");
+            sb.Append("  FutureRpiMakerFee: ").Append(FutureRpiMakerFee).Append("\n");
             sb.Append("  SpecialFeeList: ").Append(SpecialFeeList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -164,6 +184,11 @@ namespace Io.Gate.GateApi.Model
                     this.SpotTakerFee.Equals(input.SpotTakerFee))
                 ) && 
                 (
+                    this.SpotRpiMakerFee == input.SpotRpiMakerFee ||
+                    (this.SpotRpiMakerFee != null &&
+                    this.SpotRpiMakerFee.Equals(input.SpotRpiMakerFee))
+                ) && 
+                (
                     this.FutureMakerFee == input.FutureMakerFee ||
                     (this.FutureMakerFee != null &&
                     this.FutureMakerFee.Equals(input.FutureMakerFee))
@@ -172,6 +197,11 @@ namespace Io.Gate.GateApi.Model
                     this.FutureTakerFee == input.FutureTakerFee ||
                     (this.FutureTakerFee != null &&
                     this.FutureTakerFee.Equals(input.FutureTakerFee))
+                ) && 
+                (
+                    this.FutureRpiMakerFee == input.FutureRpiMakerFee ||
+                    (this.FutureRpiMakerFee != null &&
+                    this.FutureRpiMakerFee.Equals(input.FutureRpiMakerFee))
                 ) && 
                 (
                     this.SpecialFeeList == input.SpecialFeeList ||
@@ -196,10 +226,14 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.SpotMakerFee.GetHashCode();
                 if (this.SpotTakerFee != null)
                     hashCode = hashCode * 59 + this.SpotTakerFee.GetHashCode();
+                if (this.SpotRpiMakerFee != null)
+                    hashCode = hashCode * 59 + this.SpotRpiMakerFee.GetHashCode();
                 if (this.FutureMakerFee != null)
                     hashCode = hashCode * 59 + this.FutureMakerFee.GetHashCode();
                 if (this.FutureTakerFee != null)
                     hashCode = hashCode * 59 + this.FutureTakerFee.GetHashCode();
+                if (this.FutureRpiMakerFee != null)
+                    hashCode = hashCode * 59 + this.FutureRpiMakerFee.GetHashCode();
                 if (this.SpecialFeeList != null)
                     hashCode = hashCode * 59 + this.SpecialFeeList.GetHashCode();
                 return hashCode;

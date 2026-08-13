@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Code** | **int** |  | 
 **Message** | **string** |  | 
 **Data** | [**OtcQuoteResult**](OtcQuoteResult.md) |  | 
+**Timestamp** | **int** | Server Unix timestamp in seconds | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

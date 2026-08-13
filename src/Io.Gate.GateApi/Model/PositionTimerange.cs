@@ -35,7 +35,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="leverage">Position leverage. 0 means cross margin; positive number means isolated margin.</param>
         /// <param name="riskLimit">Position risk limit.</param>
-        /// <param name="margin">Position margin.</param>
+        /// <param name="margin">Margin.</param>
         /// <param name="mode">Position mode, including: - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode.</param>
         /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0).</param>
         /// <param name="time">Timestamp.</param>
@@ -92,9 +92,9 @@ namespace Io.Gate.GateApi.Model
         public string MaintenanceRate { get; private set; }
 
         /// <summary>
-        /// Position margin
+        /// Margin
         /// </summary>
-        /// <value>Position margin</value>
+        /// <value>Margin</value>
         [DataMember(Name="margin")]
         public string Margin { get; set; }
 

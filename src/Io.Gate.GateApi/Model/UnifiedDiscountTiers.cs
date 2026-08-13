@@ -37,7 +37,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="discount">Discount.</param>
         /// <param name="lowerLimit">Lower limit.</param>
         /// <param name="upperLimit">Upper limit, + indicates positive infinity.</param>
-        /// <param name="leverage">Position leverage.</param>
+        /// <param name="leverage">Leverage multiplier.</param>
         public UnifiedDiscountTiers(string tier = default(string), string discount = default(string), string lowerLimit = default(string), string upperLimit = default(string), string leverage = default(string))
         {
             this.Tier = tier;
@@ -76,9 +76,9 @@ namespace Io.Gate.GateApi.Model
         public string UpperLimit { get; set; }
 
         /// <summary>
-        /// Position leverage
+        /// Leverage multiplier
         /// </summary>
-        /// <value>Position leverage</value>
+        /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage")]
         public string Leverage { get; set; }
 

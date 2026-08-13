@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class OtcBankSupplementChecklistResponseData :  IEquatable<OtcBankSupplementChecklistResponseData>, IValidatableObject
     {
         /// <summary>
-        /// personal or enterprise
+        /// &#x60;personal&#x60; or &#x60;enterprise&#x60;, matching the supplementary document submission type; &#x60;items[].description&#x60; describes the submission requirements for each item
         /// </summary>
-        /// <value>personal or enterprise</value>
+        /// <value>&#x60;personal&#x60; or &#x60;enterprise&#x60;, matching the supplementary document submission type; &#x60;items[].description&#x60; describes the submission requirements for each item</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UserTypeEnum
         {
@@ -52,9 +52,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// personal or enterprise
+        /// &#x60;personal&#x60; or &#x60;enterprise&#x60;, matching the supplementary document submission type; &#x60;items[].description&#x60; describes the submission requirements for each item
         /// </summary>
-        /// <value>personal or enterprise</value>
+        /// <value>&#x60;personal&#x60; or &#x60;enterprise&#x60;, matching the supplementary document submission type; &#x60;items[].description&#x60; describes the submission requirements for each item</value>
         [DataMember(Name="user_type")]
         public UserTypeEnum UserType { get; set; }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcBankSupplementChecklistResponseData" /> class.
         /// </summary>
-        /// <param name="userType">personal or enterprise (required).</param>
+        /// <param name="userType">&#x60;personal&#x60; or &#x60;enterprise&#x60;, matching the supplementary document submission type; &#x60;items[].description&#x60; describes the submission requirements for each item (required).</param>
         /// <param name="items">items (required).</param>
         public OtcBankSupplementChecklistResponseData(UserTypeEnum userType = default(UserTypeEnum), List<OtcBankSupplementChecklistItem> items = default(List<OtcBankSupplementChecklistItem>))
         {

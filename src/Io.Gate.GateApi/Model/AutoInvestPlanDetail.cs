@@ -49,7 +49,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="periodType">Cycle type（e.g., monthly） (required).</param>
         /// <param name="periodDay">Cycle day (required).</param>
         /// <param name="periodHour">CycleHours (required).</param>
-        /// <param name="portfolio">InvestmentPortfolio (required).</param>
+        /// <param name="portfolio">Portfolio (required).</param>
         /// <param name="nextTime">Next execution time (Unix timestamp) (required).</param>
         /// <param name="period">Executed periods (required).</param>
         /// <param name="fundSource">Fund source（spot/earn） (required).</param>
@@ -159,9 +159,9 @@ namespace Io.Gate.GateApi.Model
         public long PeriodHour { get; set; }
 
         /// <summary>
-        /// InvestmentPortfolio
+        /// Portfolio
         /// </summary>
-        /// <value>InvestmentPortfolio</value>
+        /// <value>Portfolio</value>
         [DataMember(Name="portfolio")]
         public List<AutoInvestPortfolioItem> Portfolio { get; set; }
 

@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// OtcBankSupplementChecklistItem
+    /// Supplementary document item
     /// </summary>
     [DataContract]
     public partial class OtcBankSupplementChecklistItem :  IEquatable<OtcBankSupplementChecklistItem>, IValidatableObject
@@ -38,44 +38,19 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcBankSupplementChecklistItem" /> class.
         /// </summary>
-        /// <param name="code">Material item code, corresponding to the top-level key of &#x60;relationship_proof&#x60; (required).</param>
-        /// <param name="zh">zh.</param>
-        /// <param name="en">en.</param>
-        /// <param name="required">Whether required (required).</param>
-        public OtcBankSupplementChecklistItem(string code = default(string), string zh = default(string), string en = default(string), bool required = default(bool))
+        /// <param name="description">Supplementary document submission description (required).</param>
+        public OtcBankSupplementChecklistItem(string description = default(string))
         {
-            // to ensure "code" is required (not null)
-            this.Code = code ?? throw new ArgumentNullException("code", "code is a required property for OtcBankSupplementChecklistItem and cannot be null");
-            this.Required = required;
-            this.Zh = zh;
-            this.En = en;
+            // to ensure "description" is required (not null)
+            this.Description = description ?? throw new ArgumentNullException("description", "description is a required property for OtcBankSupplementChecklistItem and cannot be null");
         }
 
         /// <summary>
-        /// Material item code, corresponding to the top-level key of &#x60;relationship_proof&#x60;
+        /// Supplementary document submission description
         /// </summary>
-        /// <value>Material item code, corresponding to the top-level key of &#x60;relationship_proof&#x60;</value>
-        [DataMember(Name="code")]
-        public string Code { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Zh
-        /// </summary>
-        [DataMember(Name="zh")]
-        public string Zh { get; set; }
-
-        /// <summary>
-        /// Gets or Sets En
-        /// </summary>
-        [DataMember(Name="en")]
-        public string En { get; set; }
-
-        /// <summary>
-        /// Whether required
-        /// </summary>
-        /// <value>Whether required</value>
-        [DataMember(Name="required")]
-        public bool Required { get; set; }
+        /// <value>Supplementary document submission description</value>
+        [DataMember(Name="description")]
+        public string Description { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -85,10 +60,7 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OtcBankSupplementChecklistItem {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Zh: ").Append(Zh).Append("\n");
-            sb.Append("  En: ").Append(En).Append("\n");
-            sb.Append("  Required: ").Append(Required).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,23 +96,9 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Zh == input.Zh ||
-                    (this.Zh != null &&
-                    this.Zh.Equals(input.Zh))
-                ) && 
-                (
-                    this.En == input.En ||
-                    (this.En != null &&
-                    this.En.Equals(input.En))
-                ) && 
-                (
-                    this.Required == input.Required ||
-                    this.Required.Equals(input.Required)
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 );
         }
 
@@ -153,13 +111,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Zh != null)
-                    hashCode = hashCode * 59 + this.Zh.GetHashCode();
-                if (this.En != null)
-                    hashCode = hashCode * 59 + this.En.GetHashCode();
-                hashCode = hashCode * 59 + this.Required.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

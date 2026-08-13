@@ -33,22 +33,33 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcStableCoinOrderRequest" /> class.
         /// </summary>
-        /// <param name="payCoin">Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page..</param>
-        /// <param name="getCoin">Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page..</param>
-        /// <param name="payAmount">User payment currency amount.</param>
-        /// <param name="getAmount">Amount of currency received by the user.</param>
-        /// <param name="side">Quote direction returned by the quote API (used for order validation).</param>
-        /// <param name="promotionCode">promotion code .</param>
-        /// <param name="quoteToken">Parameter returned by the quote API.</param>
+        [JsonConstructorAttribute]
+        protected OtcStableCoinOrderRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OtcStableCoinOrderRequest" /> class.
+        /// </summary>
+        /// <param name="payCoin">Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page. (required).</param>
+        /// <param name="getCoin">Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page. (required).</param>
+        /// <param name="payAmount">User payment currency amount (required).</param>
+        /// <param name="getAmount">Amount of currency received by the user (required).</param>
+        /// <param name="side">The side returned by the quote endpoint (used for order validation). For backward compatibility, &#x60;PAY&#x60;/&#x60;GET&#x60; are accepted; new integrations should use the value returned by the quote response. (required).</param>
+        /// <param name="promotionCode">Promotion code (optional).</param>
+        /// <param name="quoteToken">Parameter returned by the quote API (required).</param>
         public OtcStableCoinOrderRequest(string payCoin = default(string), string getCoin = default(string), string payAmount = default(string), string getAmount = default(string), string side = default(string), string promotionCode = default(string), string quoteToken = default(string))
         {
-            this.PayCoin = payCoin;
-            this.GetCoin = getCoin;
-            this.PayAmount = payAmount;
-            this.GetAmount = getAmount;
-            this.Side = side;
+            // to ensure "payCoin" is required (not null)
+            this.PayCoin = payCoin ?? throw new ArgumentNullException("payCoin", "payCoin is a required property for OtcStableCoinOrderRequest and cannot be null");
+            // to ensure "getCoin" is required (not null)
+            this.GetCoin = getCoin ?? throw new ArgumentNullException("getCoin", "getCoin is a required property for OtcStableCoinOrderRequest and cannot be null");
+            // to ensure "payAmount" is required (not null)
+            this.PayAmount = payAmount ?? throw new ArgumentNullException("payAmount", "payAmount is a required property for OtcStableCoinOrderRequest and cannot be null");
+            // to ensure "getAmount" is required (not null)
+            this.GetAmount = getAmount ?? throw new ArgumentNullException("getAmount", "getAmount is a required property for OtcStableCoinOrderRequest and cannot be null");
+            // to ensure "side" is required (not null)
+            this.Side = side ?? throw new ArgumentNullException("side", "side is a required property for OtcStableCoinOrderRequest and cannot be null");
+            // to ensure "quoteToken" is required (not null)
+            this.QuoteToken = quoteToken ?? throw new ArgumentNullException("quoteToken", "quoteToken is a required property for OtcStableCoinOrderRequest and cannot be null");
             this.PromotionCode = promotionCode;
-            this.QuoteToken = quoteToken;
         }
 
         /// <summary>
@@ -80,16 +91,16 @@ namespace Io.Gate.GateApi.Model
         public string GetAmount { get; set; }
 
         /// <summary>
-        /// Quote direction returned by the quote API (used for order validation)
+        /// The side returned by the quote endpoint (used for order validation). For backward compatibility, &#x60;PAY&#x60;/&#x60;GET&#x60; are accepted; new integrations should use the value returned by the quote response.
         /// </summary>
-        /// <value>Quote direction returned by the quote API (used for order validation)</value>
+        /// <value>The side returned by the quote endpoint (used for order validation). For backward compatibility, &#x60;PAY&#x60;/&#x60;GET&#x60; are accepted; new integrations should use the value returned by the quote response.</value>
         [DataMember(Name="side")]
         public string Side { get; set; }
 
         /// <summary>
-        /// promotion code 
+        /// Promotion code (optional)
         /// </summary>
-        /// <value>promotion code </value>
+        /// <value>Promotion code (optional)</value>
         [DataMember(Name="promotion_code")]
         public string PromotionCode { get; set; }
 

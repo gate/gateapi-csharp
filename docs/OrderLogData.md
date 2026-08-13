@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **Symbol** | **string** | Trading pair of the order | [optional] 
 **PriceType** | **string** | Trade type (market&#x3D;market price, trigger&#x3D;trigger price) | [optional] 
 **State** | **int** | Order status code (1&#x3D;placed, 2&#x3D;canceled, 3&#x3D;partially filled, 4&#x3D;filled, 5&#x3D;rejected) | [optional] 
-**Side** | **int** | Order side (1&#x3D;sell, 2&#x3D;buy) | [optional] 
-**Volume** | **string** | Order volume | [optional] 
+**Side** | **int** | Side (1&#x3D;sell, 2&#x3D;buy) | [optional] 
+**Volume** | **string** | Order quantity | [optional] 
 **Price** | **string** | Average fill price | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

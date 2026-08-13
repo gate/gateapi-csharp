@@ -31,6 +31,58 @@ namespace Io.Gate.GateApi.Model
     public partial class P2pAdsListItem :  IEquatable<P2pAdsListItem>, IValidatableObject
     {
         /// <summary>
+        /// Trading limit unit. 0: crypto quantity, 1: fiat amount
+        /// </summary>
+        /// <value>Trading limit unit. 0: crypto quantity, 1: fiat amount</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LimitBasisEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1
+
+        }
+
+        /// <summary>
+        /// Trading limit unit. 0: crypto quantity, 1: fiat amount
+        /// </summary>
+        /// <value>Trading limit unit. 0: crypto quantity, 1: fiat amount</value>
+        [DataMember(Name="limit_basis")]
+        public LimitBasisEnum? LimitBasis { get; set; }
+        /// <summary>
+        /// Trading limit unit label. crypto: crypto quantity, fiat: fiat amount
+        /// </summary>
+        /// <value>Trading limit unit label. crypto: crypto quantity, fiat: fiat amount</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LimitBasisTextEnum
+        {
+            /// <summary>
+            /// Enum value Crypto
+            /// </summary>
+            [EnumMember(Value = "crypto")]
+            Crypto = 1,
+
+            /// <summary>
+            /// Enum value Fiat
+            /// </summary>
+            [EnumMember(Value = "fiat")]
+            Fiat = 2
+
+        }
+
+        /// <summary>
+        /// Trading limit unit label. crypto: crypto quantity, fiat: fiat amount
+        /// </summary>
+        /// <value>Trading limit unit label. crypto: crypto quantity, fiat: fiat amount</value>
+        [DataMember(Name="limit_basis_text")]
+        public LimitBasisTextEnum? LimitBasisText { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="P2pAdsListItem" /> class.
         /// </summary>
         /// <param name="index">Serial number.</param>
@@ -38,18 +90,30 @@ namespace Io.Gate.GateApi.Model
         /// <param name="fiatUnit">Fiat currency.</param>
         /// <param name="advNo">Ad ID.</param>
         /// <param name="price">Price.</param>
+        /// <param name="surplusAmount">Remaining tradable crypto quantity.</param>
         /// <param name="maxSingleTransAmount">Maximum crypto size per trade..</param>
         /// <param name="minSingleTransAmount">Minimum crypto size per trade..</param>
+        /// <param name="fiatMinAmount">Minimum fiat amount per order.</param>
+        /// <param name="fiatMaxAmount">Maximum fiat amount per order.</param>
+        /// <param name="limitBasis">Trading limit unit. 0: crypto quantity, 1: fiat amount.</param>
+        /// <param name="limitBasisText">Trading limit unit label. crypto: crypto quantity, fiat: fiat amount.</param>
+        /// <param name="tradeMethods">Supported payment methods list.</param>
         /// <param name="nickName">Advertiser Nickname.</param>
-        public P2pAdsListItem(int index = default(int), string asset = default(string), string fiatUnit = default(string), int advNo = default(int), string price = default(string), string maxSingleTransAmount = default(string), string minSingleTransAmount = default(string), string nickName = default(string))
+        public P2pAdsListItem(int index = default(int), string asset = default(string), string fiatUnit = default(string), int advNo = default(int), string price = default(string), string surplusAmount = default(string), string maxSingleTransAmount = default(string), string minSingleTransAmount = default(string), string fiatMinAmount = default(string), string fiatMaxAmount = default(string), LimitBasisEnum? limitBasis = default(LimitBasisEnum?), LimitBasisTextEnum? limitBasisText = default(LimitBasisTextEnum?), List<P2pAdsListTradeMethod> tradeMethods = default(List<P2pAdsListTradeMethod>), string nickName = default(string))
         {
             this.Index = index;
             this.Asset = asset;
             this.FiatUnit = fiatUnit;
             this.AdvNo = advNo;
             this.Price = price;
+            this.SurplusAmount = surplusAmount;
             this.MaxSingleTransAmount = maxSingleTransAmount;
             this.MinSingleTransAmount = minSingleTransAmount;
+            this.FiatMinAmount = fiatMinAmount;
+            this.FiatMaxAmount = fiatMaxAmount;
+            this.LimitBasis = limitBasis;
+            this.LimitBasisText = limitBasisText;
+            this.TradeMethods = tradeMethods;
             this.NickName = nickName;
         }
 
@@ -89,6 +153,13 @@ namespace Io.Gate.GateApi.Model
         public string Price { get; set; }
 
         /// <summary>
+        /// Remaining tradable crypto quantity
+        /// </summary>
+        /// <value>Remaining tradable crypto quantity</value>
+        [DataMember(Name="surplus_amount")]
+        public string SurplusAmount { get; set; }
+
+        /// <summary>
         /// Maximum crypto size per trade.
         /// </summary>
         /// <value>Maximum crypto size per trade.</value>
@@ -101,6 +172,27 @@ namespace Io.Gate.GateApi.Model
         /// <value>Minimum crypto size per trade.</value>
         [DataMember(Name="min_single_trans_amount")]
         public string MinSingleTransAmount { get; set; }
+
+        /// <summary>
+        /// Minimum fiat amount per order
+        /// </summary>
+        /// <value>Minimum fiat amount per order</value>
+        [DataMember(Name="fiat_min_amount")]
+        public string FiatMinAmount { get; set; }
+
+        /// <summary>
+        /// Maximum fiat amount per order
+        /// </summary>
+        /// <value>Maximum fiat amount per order</value>
+        [DataMember(Name="fiat_max_amount")]
+        public string FiatMaxAmount { get; set; }
+
+        /// <summary>
+        /// Supported payment methods list
+        /// </summary>
+        /// <value>Supported payment methods list</value>
+        [DataMember(Name="trade_methods")]
+        public List<P2pAdsListTradeMethod> TradeMethods { get; set; }
 
         /// <summary>
         /// Advertiser Nickname
@@ -122,8 +214,14 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  FiatUnit: ").Append(FiatUnit).Append("\n");
             sb.Append("  AdvNo: ").Append(AdvNo).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
+            sb.Append("  SurplusAmount: ").Append(SurplusAmount).Append("\n");
             sb.Append("  MaxSingleTransAmount: ").Append(MaxSingleTransAmount).Append("\n");
             sb.Append("  MinSingleTransAmount: ").Append(MinSingleTransAmount).Append("\n");
+            sb.Append("  FiatMinAmount: ").Append(FiatMinAmount).Append("\n");
+            sb.Append("  FiatMaxAmount: ").Append(FiatMaxAmount).Append("\n");
+            sb.Append("  LimitBasis: ").Append(LimitBasis).Append("\n");
+            sb.Append("  LimitBasisText: ").Append(LimitBasisText).Append("\n");
+            sb.Append("  TradeMethods: ").Append(TradeMethods).Append("\n");
             sb.Append("  NickName: ").Append(NickName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -183,6 +281,11 @@ namespace Io.Gate.GateApi.Model
                     this.Price.Equals(input.Price))
                 ) && 
                 (
+                    this.SurplusAmount == input.SurplusAmount ||
+                    (this.SurplusAmount != null &&
+                    this.SurplusAmount.Equals(input.SurplusAmount))
+                ) && 
+                (
                     this.MaxSingleTransAmount == input.MaxSingleTransAmount ||
                     (this.MaxSingleTransAmount != null &&
                     this.MaxSingleTransAmount.Equals(input.MaxSingleTransAmount))
@@ -191,6 +294,30 @@ namespace Io.Gate.GateApi.Model
                     this.MinSingleTransAmount == input.MinSingleTransAmount ||
                     (this.MinSingleTransAmount != null &&
                     this.MinSingleTransAmount.Equals(input.MinSingleTransAmount))
+                ) && 
+                (
+                    this.FiatMinAmount == input.FiatMinAmount ||
+                    (this.FiatMinAmount != null &&
+                    this.FiatMinAmount.Equals(input.FiatMinAmount))
+                ) && 
+                (
+                    this.FiatMaxAmount == input.FiatMaxAmount ||
+                    (this.FiatMaxAmount != null &&
+                    this.FiatMaxAmount.Equals(input.FiatMaxAmount))
+                ) && 
+                (
+                    this.LimitBasis == input.LimitBasis ||
+                    this.LimitBasis.Equals(input.LimitBasis)
+                ) && 
+                (
+                    this.LimitBasisText == input.LimitBasisText ||
+                    this.LimitBasisText.Equals(input.LimitBasisText)
+                ) && 
+                (
+                    this.TradeMethods == input.TradeMethods ||
+                    this.TradeMethods != null &&
+                    input.TradeMethods != null &&
+                    this.TradeMethods.SequenceEqual(input.TradeMethods)
                 ) && 
                 (
                     this.NickName == input.NickName ||
@@ -216,10 +343,20 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.AdvNo.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
+                if (this.SurplusAmount != null)
+                    hashCode = hashCode * 59 + this.SurplusAmount.GetHashCode();
                 if (this.MaxSingleTransAmount != null)
                     hashCode = hashCode * 59 + this.MaxSingleTransAmount.GetHashCode();
                 if (this.MinSingleTransAmount != null)
                     hashCode = hashCode * 59 + this.MinSingleTransAmount.GetHashCode();
+                if (this.FiatMinAmount != null)
+                    hashCode = hashCode * 59 + this.FiatMinAmount.GetHashCode();
+                if (this.FiatMaxAmount != null)
+                    hashCode = hashCode * 59 + this.FiatMaxAmount.GetHashCode();
+                hashCode = hashCode * 59 + this.LimitBasis.GetHashCode();
+                hashCode = hashCode * 59 + this.LimitBasisText.GetHashCode();
+                if (this.TradeMethods != null)
+                    hashCode = hashCode * 59 + this.TradeMethods.GetHashCode();
                 if (this.NickName != null)
                     hashCode = hashCode * 59 + this.NickName.GetHashCode();
                 return hashCode;

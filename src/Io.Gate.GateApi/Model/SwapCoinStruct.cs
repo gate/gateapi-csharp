@@ -42,7 +42,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="amount">Amount.</param>
         /// <param name="exchangeRate">Exchange ratio.</param>
         /// <param name="exchangeAmount">Redemption Amount.</param>
-        /// <param name="updateStamp">UpdateTimestamp.</param>
+        /// <param name="updateStamp">Update timestamp.</param>
         /// <param name="createStamp">Transaction timestamp.</param>
         /// <param name="status">status 1-success.</param>
         /// <param name="protocolType">DEFI Protocol Type.</param>
@@ -131,9 +131,9 @@ namespace Io.Gate.GateApi.Model
         public string ExchangeAmount { get; set; }
 
         /// <summary>
-        /// UpdateTimestamp
+        /// Update timestamp
         /// </summary>
-        /// <value>UpdateTimestamp</value>
+        /// <value>Update timestamp</value>
         [DataMember(Name="updateStamp")]
         public int UpdateStamp { get; set; }
 

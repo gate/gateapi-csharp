@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **Name** | **string** | Currency name | [optional] 
 **Chain** | **string** | The main chain corresponding to the coin | [optional] 
 **Address** | **string** | Contract Address | [optional] 
-**AmountPrecision** | **int** | Amount scale | [optional] 
-**Precision** | **int** | Price scale | [optional] 
+**AmountPrecision** | **int** | Quantity precision | [optional] 
+**Precision** | **int** | Price precision | [optional] 
 **Status** | **int** | Currency Trading Status - &#x60;1&#x60; : Normal trading - &#x60;2&#x60; : Suspended trading - &#x60;3&#x60; : Delisted | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

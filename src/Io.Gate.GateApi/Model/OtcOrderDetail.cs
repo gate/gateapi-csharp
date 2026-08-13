@@ -41,21 +41,32 @@ namespace Io.Gate.GateApi.Model
         /// <param name="orderId">Order ID (required).</param>
         /// <param name="uid">User ID (required).</param>
         /// <param name="type">Order Type (required).</param>
-        /// <param name="fiatCurrency">Fiat type (required).</param>
+        /// <param name="fiatCurrency">Fiat currency (required).</param>
         /// <param name="fiatAmount">Fiat amount (required).</param>
-        /// <param name="cryptoCurrency">Stablecoin (required).</param>
-        /// <param name="cryptoAmount">Stablecoin amount (required).</param>
+        /// <param name="cryptoCurrency">Digital currency (required).</param>
+        /// <param name="cryptoAmount">Cryptocurrency amount (required).</param>
         /// <param name="rate">Exchange rate (required).</param>
-        /// <param name="transferRemark">Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code) (required).</param>
-        /// <param name="referenceCode">Unique bank transfer reference code for deposit buy orders (SGB deposit scenario; mutually exclusive with transfer_remark).</param>
+        /// <param name="bankAccountName">User payment/receiving name.</param>
+        /// <param name="bankName">User payment/receiving bank name.</param>
+        /// <param name="bankCountry">User payment/receiving bank country.</param>
+        /// <param name="bankAddress">User payment/receiving bank address.</param>
+        /// <param name="bankAccountNumberIban">User payment/receiving bank account number/IBAN.</param>
+        /// <param name="swiftCode">User payment/receiving bank SWIFT code.</param>
+        /// <param name="intermediateBankName">User payment/receiving intermediary bank name.</param>
+        /// <param name="intermediaryBankSwiftCode">User payment/receiving intermediary bank SWIFT code.</param>
+        /// <param name="gateBankAccountName">Gate beneficiary name, shown for BUY only.</param>
+        /// <param name="gateBankName">Gate beneficiary bank name, shown for BUY only.</param>
+        /// <param name="gateBankCountry">Gate beneficiary bank country, shown for BUY only.</param>
+        /// <param name="gateBankAddress">Gate beneficiary bank address, shown for BUY only.</param>
+        /// <param name="gateBankAccountNumberIban">Gate beneficiary bank account number/IBAN, shown for BUY only.</param>
+        /// <param name="gateSwiftCode">Gate beneficiary bank SWIFT code, shown for BUY only.</param>
+        /// <param name="gateIntermediaryBankName">Gate beneficiary intermediary bank name, shown for BUY only.</param>
+        /// <param name="gateIntermediaryBankSwiftCode">Gate beneficiary intermediary bank SWIFT code, shown for BUY only.</param>
+        /// <param name="gateTransferRemark">Transfer remark (mutually exclusive with &#x60;gate_reference_code&#x60;; empty when a BUY deposit order has a reference code), shown for BUY only.</param>
+        /// <param name="gateReferenceCode">Be sure to include the reference code when making the transfer so that your order can be processed promptly. (Mutually exclusive with &#x60;gate_transfer_remark&#x60;.).</param>
         /// <param name="status">Status (required).</param>
-        /// <param name="dbStatus">dbStatus (required).</param>
         /// <param name="createTime">Created time (required).</param>
-        /// <param name="memo">Cancellation or rejection reason (required).</param>
-        /// <param name="side">Quote direction (required).</param>
-        /// <param name="promotionCode">Promotion code (required).</param>
-        /// <param name="tradeNo">Trade number (required).</param>
-        public OtcOrderDetail(string orderId = default(string), string uid = default(string), string type = default(string), string fiatCurrency = default(string), string fiatAmount = default(string), string cryptoCurrency = default(string), string cryptoAmount = default(string), string rate = default(string), string transferRemark = default(string), string referenceCode = default(string), string status = default(string), string dbStatus = default(string), string createTime = default(string), string memo = default(string), string side = default(string), string promotionCode = default(string), string tradeNo = default(string))
+        public OtcOrderDetail(string orderId = default(string), string uid = default(string), string type = default(string), string fiatCurrency = default(string), string fiatAmount = default(string), string cryptoCurrency = default(string), string cryptoAmount = default(string), string rate = default(string), string bankAccountName = default(string), string bankName = default(string), string bankCountry = default(string), string bankAddress = default(string), string bankAccountNumberIban = default(string), string swiftCode = default(string), string intermediateBankName = default(string), string intermediaryBankSwiftCode = default(string), string gateBankAccountName = default(string), string gateBankName = default(string), string gateBankCountry = default(string), string gateBankAddress = default(string), string gateBankAccountNumberIban = default(string), string gateSwiftCode = default(string), string gateIntermediaryBankName = default(string), string gateIntermediaryBankSwiftCode = default(string), string gateTransferRemark = default(string), string gateReferenceCode = default(string), string status = default(string), string createTime = default(string))
         {
             // to ensure "orderId" is required (not null)
             this.OrderId = orderId ?? throw new ArgumentNullException("orderId", "orderId is a required property for OtcOrderDetail and cannot be null");
@@ -73,23 +84,28 @@ namespace Io.Gate.GateApi.Model
             this.CryptoAmount = cryptoAmount ?? throw new ArgumentNullException("cryptoAmount", "cryptoAmount is a required property for OtcOrderDetail and cannot be null");
             // to ensure "rate" is required (not null)
             this.Rate = rate ?? throw new ArgumentNullException("rate", "rate is a required property for OtcOrderDetail and cannot be null");
-            // to ensure "transferRemark" is required (not null)
-            this.TransferRemark = transferRemark ?? throw new ArgumentNullException("transferRemark", "transferRemark is a required property for OtcOrderDetail and cannot be null");
             // to ensure "status" is required (not null)
             this.Status = status ?? throw new ArgumentNullException("status", "status is a required property for OtcOrderDetail and cannot be null");
-            // to ensure "dbStatus" is required (not null)
-            this.DbStatus = dbStatus ?? throw new ArgumentNullException("dbStatus", "dbStatus is a required property for OtcOrderDetail and cannot be null");
             // to ensure "createTime" is required (not null)
             this.CreateTime = createTime ?? throw new ArgumentNullException("createTime", "createTime is a required property for OtcOrderDetail and cannot be null");
-            // to ensure "memo" is required (not null)
-            this.Memo = memo ?? throw new ArgumentNullException("memo", "memo is a required property for OtcOrderDetail and cannot be null");
-            // to ensure "side" is required (not null)
-            this.Side = side ?? throw new ArgumentNullException("side", "side is a required property for OtcOrderDetail and cannot be null");
-            // to ensure "promotionCode" is required (not null)
-            this.PromotionCode = promotionCode ?? throw new ArgumentNullException("promotionCode", "promotionCode is a required property for OtcOrderDetail and cannot be null");
-            // to ensure "tradeNo" is required (not null)
-            this.TradeNo = tradeNo ?? throw new ArgumentNullException("tradeNo", "tradeNo is a required property for OtcOrderDetail and cannot be null");
-            this.ReferenceCode = referenceCode;
+            this.BankAccountName = bankAccountName;
+            this.BankName = bankName;
+            this.BankCountry = bankCountry;
+            this.BankAddress = bankAddress;
+            this.BankAccountNumberIban = bankAccountNumberIban;
+            this.SwiftCode = swiftCode;
+            this.IntermediateBankName = intermediateBankName;
+            this.IntermediaryBankSwiftCode = intermediaryBankSwiftCode;
+            this.GateBankAccountName = gateBankAccountName;
+            this.GateBankName = gateBankName;
+            this.GateBankCountry = gateBankCountry;
+            this.GateBankAddress = gateBankAddress;
+            this.GateBankAccountNumberIban = gateBankAccountNumberIban;
+            this.GateSwiftCode = gateSwiftCode;
+            this.GateIntermediaryBankName = gateIntermediaryBankName;
+            this.GateIntermediaryBankSwiftCode = gateIntermediaryBankSwiftCode;
+            this.GateTransferRemark = gateTransferRemark;
+            this.GateReferenceCode = gateReferenceCode;
         }
 
         /// <summary>
@@ -114,9 +130,9 @@ namespace Io.Gate.GateApi.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// Fiat type
+        /// Fiat currency
         /// </summary>
-        /// <value>Fiat type</value>
+        /// <value>Fiat currency</value>
         [DataMember(Name="fiat_currency")]
         public string FiatCurrency { get; set; }
 
@@ -128,16 +144,16 @@ namespace Io.Gate.GateApi.Model
         public string FiatAmount { get; set; }
 
         /// <summary>
-        /// Stablecoin
+        /// Digital currency
         /// </summary>
-        /// <value>Stablecoin</value>
+        /// <value>Digital currency</value>
         [DataMember(Name="crypto_currency")]
         public string CryptoCurrency { get; set; }
 
         /// <summary>
-        /// Stablecoin amount
+        /// Cryptocurrency amount
         /// </summary>
-        /// <value>Stablecoin amount</value>
+        /// <value>Cryptocurrency amount</value>
         [DataMember(Name="crypto_amount")]
         public string CryptoAmount { get; set; }
 
@@ -149,18 +165,130 @@ namespace Io.Gate.GateApi.Model
         public string Rate { get; set; }
 
         /// <summary>
-        /// Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code)
+        /// User payment/receiving name
         /// </summary>
-        /// <value>Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code)</value>
-        [DataMember(Name="transfer_remark")]
-        public string TransferRemark { get; set; }
+        /// <value>User payment/receiving name</value>
+        [DataMember(Name="bank_account_name")]
+        public string BankAccountName { get; set; }
 
         /// <summary>
-        /// Unique bank transfer reference code for deposit buy orders (SGB deposit scenario; mutually exclusive with transfer_remark)
+        /// User payment/receiving bank name
         /// </summary>
-        /// <value>Unique bank transfer reference code for deposit buy orders (SGB deposit scenario; mutually exclusive with transfer_remark)</value>
-        [DataMember(Name="reference_code")]
-        public string ReferenceCode { get; set; }
+        /// <value>User payment/receiving bank name</value>
+        [DataMember(Name="bank_name")]
+        public string BankName { get; set; }
+
+        /// <summary>
+        /// User payment/receiving bank country
+        /// </summary>
+        /// <value>User payment/receiving bank country</value>
+        [DataMember(Name="bank_country")]
+        public string BankCountry { get; set; }
+
+        /// <summary>
+        /// User payment/receiving bank address
+        /// </summary>
+        /// <value>User payment/receiving bank address</value>
+        [DataMember(Name="bank_address")]
+        public string BankAddress { get; set; }
+
+        /// <summary>
+        /// User payment/receiving bank account number/IBAN
+        /// </summary>
+        /// <value>User payment/receiving bank account number/IBAN</value>
+        [DataMember(Name="bank_account_number_iban")]
+        public string BankAccountNumberIban { get; set; }
+
+        /// <summary>
+        /// User payment/receiving bank SWIFT code
+        /// </summary>
+        /// <value>User payment/receiving bank SWIFT code</value>
+        [DataMember(Name="swift_code")]
+        public string SwiftCode { get; set; }
+
+        /// <summary>
+        /// User payment/receiving intermediary bank name
+        /// </summary>
+        /// <value>User payment/receiving intermediary bank name</value>
+        [DataMember(Name="intermediate_bank_name")]
+        public string IntermediateBankName { get; set; }
+
+        /// <summary>
+        /// User payment/receiving intermediary bank SWIFT code
+        /// </summary>
+        /// <value>User payment/receiving intermediary bank SWIFT code</value>
+        [DataMember(Name="intermediary_bank_swift_code")]
+        public string IntermediaryBankSwiftCode { get; set; }
+
+        /// <summary>
+        /// Gate beneficiary name, shown for BUY only
+        /// </summary>
+        /// <value>Gate beneficiary name, shown for BUY only</value>
+        [DataMember(Name="gate_bank_account_name")]
+        public string GateBankAccountName { get; set; }
+
+        /// <summary>
+        /// Gate beneficiary bank name, shown for BUY only
+        /// </summary>
+        /// <value>Gate beneficiary bank name, shown for BUY only</value>
+        [DataMember(Name="gate_bank_name")]
+        public string GateBankName { get; set; }
+
+        /// <summary>
+        /// Gate beneficiary bank country, shown for BUY only
+        /// </summary>
+        /// <value>Gate beneficiary bank country, shown for BUY only</value>
+        [DataMember(Name="gate_bank_country")]
+        public string GateBankCountry { get; set; }
+
+        /// <summary>
+        /// Gate beneficiary bank address, shown for BUY only
+        /// </summary>
+        /// <value>Gate beneficiary bank address, shown for BUY only</value>
+        [DataMember(Name="gate_bank_address")]
+        public string GateBankAddress { get; set; }
+
+        /// <summary>
+        /// Gate beneficiary bank account number/IBAN, shown for BUY only
+        /// </summary>
+        /// <value>Gate beneficiary bank account number/IBAN, shown for BUY only</value>
+        [DataMember(Name="gate_bank_account_number_iban")]
+        public string GateBankAccountNumberIban { get; set; }
+
+        /// <summary>
+        /// Gate beneficiary bank SWIFT code, shown for BUY only
+        /// </summary>
+        /// <value>Gate beneficiary bank SWIFT code, shown for BUY only</value>
+        [DataMember(Name="gate_swift_code")]
+        public string GateSwiftCode { get; set; }
+
+        /// <summary>
+        /// Gate beneficiary intermediary bank name, shown for BUY only
+        /// </summary>
+        /// <value>Gate beneficiary intermediary bank name, shown for BUY only</value>
+        [DataMember(Name="gate_intermediary_bank_name")]
+        public string GateIntermediaryBankName { get; set; }
+
+        /// <summary>
+        /// Gate beneficiary intermediary bank SWIFT code, shown for BUY only
+        /// </summary>
+        /// <value>Gate beneficiary intermediary bank SWIFT code, shown for BUY only</value>
+        [DataMember(Name="gate_intermediary_bank_swift_code")]
+        public string GateIntermediaryBankSwiftCode { get; set; }
+
+        /// <summary>
+        /// Transfer remark (mutually exclusive with &#x60;gate_reference_code&#x60;; empty when a BUY deposit order has a reference code), shown for BUY only
+        /// </summary>
+        /// <value>Transfer remark (mutually exclusive with &#x60;gate_reference_code&#x60;; empty when a BUY deposit order has a reference code), shown for BUY only</value>
+        [DataMember(Name="gate_transfer_remark")]
+        public string GateTransferRemark { get; set; }
+
+        /// <summary>
+        /// Be sure to include the reference code when making the transfer so that your order can be processed promptly. (Mutually exclusive with &#x60;gate_transfer_remark&#x60;.)
+        /// </summary>
+        /// <value>Be sure to include the reference code when making the transfer so that your order can be processed promptly. (Mutually exclusive with &#x60;gate_transfer_remark&#x60;.)</value>
+        [DataMember(Name="gate_reference_code")]
+        public string GateReferenceCode { get; set; }
 
         /// <summary>
         /// Status
@@ -170,45 +298,11 @@ namespace Io.Gate.GateApi.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets DbStatus
-        /// </summary>
-        [DataMember(Name="db_status")]
-        public string DbStatus { get; set; }
-
-        /// <summary>
         /// Created time
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
         public string CreateTime { get; set; }
-
-        /// <summary>
-        /// Cancellation or rejection reason
-        /// </summary>
-        /// <value>Cancellation or rejection reason</value>
-        [DataMember(Name="memo")]
-        public string Memo { get; set; }
-
-        /// <summary>
-        /// Quote direction
-        /// </summary>
-        /// <value>Quote direction</value>
-        [DataMember(Name="side")]
-        public string Side { get; set; }
-
-        /// <summary>
-        /// Promotion code
-        /// </summary>
-        /// <value>Promotion code</value>
-        [DataMember(Name="promotion_code")]
-        public string PromotionCode { get; set; }
-
-        /// <summary>
-        /// Trade number
-        /// </summary>
-        /// <value>Trade number</value>
-        [DataMember(Name="trade_no")]
-        public string TradeNo { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -226,15 +320,26 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  CryptoCurrency: ").Append(CryptoCurrency).Append("\n");
             sb.Append("  CryptoAmount: ").Append(CryptoAmount).Append("\n");
             sb.Append("  Rate: ").Append(Rate).Append("\n");
-            sb.Append("  TransferRemark: ").Append(TransferRemark).Append("\n");
-            sb.Append("  ReferenceCode: ").Append(ReferenceCode).Append("\n");
+            sb.Append("  BankAccountName: ").Append(BankAccountName).Append("\n");
+            sb.Append("  BankName: ").Append(BankName).Append("\n");
+            sb.Append("  BankCountry: ").Append(BankCountry).Append("\n");
+            sb.Append("  BankAddress: ").Append(BankAddress).Append("\n");
+            sb.Append("  BankAccountNumberIban: ").Append(BankAccountNumberIban).Append("\n");
+            sb.Append("  SwiftCode: ").Append(SwiftCode).Append("\n");
+            sb.Append("  IntermediateBankName: ").Append(IntermediateBankName).Append("\n");
+            sb.Append("  IntermediaryBankSwiftCode: ").Append(IntermediaryBankSwiftCode).Append("\n");
+            sb.Append("  GateBankAccountName: ").Append(GateBankAccountName).Append("\n");
+            sb.Append("  GateBankName: ").Append(GateBankName).Append("\n");
+            sb.Append("  GateBankCountry: ").Append(GateBankCountry).Append("\n");
+            sb.Append("  GateBankAddress: ").Append(GateBankAddress).Append("\n");
+            sb.Append("  GateBankAccountNumberIban: ").Append(GateBankAccountNumberIban).Append("\n");
+            sb.Append("  GateSwiftCode: ").Append(GateSwiftCode).Append("\n");
+            sb.Append("  GateIntermediaryBankName: ").Append(GateIntermediaryBankName).Append("\n");
+            sb.Append("  GateIntermediaryBankSwiftCode: ").Append(GateIntermediaryBankSwiftCode).Append("\n");
+            sb.Append("  GateTransferRemark: ").Append(GateTransferRemark).Append("\n");
+            sb.Append("  GateReferenceCode: ").Append(GateReferenceCode).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  DbStatus: ").Append(DbStatus).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  Memo: ").Append(Memo).Append("\n");
-            sb.Append("  Side: ").Append(Side).Append("\n");
-            sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
-            sb.Append("  TradeNo: ").Append(TradeNo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -310,14 +415,94 @@ namespace Io.Gate.GateApi.Model
                     this.Rate.Equals(input.Rate))
                 ) && 
                 (
-                    this.TransferRemark == input.TransferRemark ||
-                    (this.TransferRemark != null &&
-                    this.TransferRemark.Equals(input.TransferRemark))
+                    this.BankAccountName == input.BankAccountName ||
+                    (this.BankAccountName != null &&
+                    this.BankAccountName.Equals(input.BankAccountName))
                 ) && 
                 (
-                    this.ReferenceCode == input.ReferenceCode ||
-                    (this.ReferenceCode != null &&
-                    this.ReferenceCode.Equals(input.ReferenceCode))
+                    this.BankName == input.BankName ||
+                    (this.BankName != null &&
+                    this.BankName.Equals(input.BankName))
+                ) && 
+                (
+                    this.BankCountry == input.BankCountry ||
+                    (this.BankCountry != null &&
+                    this.BankCountry.Equals(input.BankCountry))
+                ) && 
+                (
+                    this.BankAddress == input.BankAddress ||
+                    (this.BankAddress != null &&
+                    this.BankAddress.Equals(input.BankAddress))
+                ) && 
+                (
+                    this.BankAccountNumberIban == input.BankAccountNumberIban ||
+                    (this.BankAccountNumberIban != null &&
+                    this.BankAccountNumberIban.Equals(input.BankAccountNumberIban))
+                ) && 
+                (
+                    this.SwiftCode == input.SwiftCode ||
+                    (this.SwiftCode != null &&
+                    this.SwiftCode.Equals(input.SwiftCode))
+                ) && 
+                (
+                    this.IntermediateBankName == input.IntermediateBankName ||
+                    (this.IntermediateBankName != null &&
+                    this.IntermediateBankName.Equals(input.IntermediateBankName))
+                ) && 
+                (
+                    this.IntermediaryBankSwiftCode == input.IntermediaryBankSwiftCode ||
+                    (this.IntermediaryBankSwiftCode != null &&
+                    this.IntermediaryBankSwiftCode.Equals(input.IntermediaryBankSwiftCode))
+                ) && 
+                (
+                    this.GateBankAccountName == input.GateBankAccountName ||
+                    (this.GateBankAccountName != null &&
+                    this.GateBankAccountName.Equals(input.GateBankAccountName))
+                ) && 
+                (
+                    this.GateBankName == input.GateBankName ||
+                    (this.GateBankName != null &&
+                    this.GateBankName.Equals(input.GateBankName))
+                ) && 
+                (
+                    this.GateBankCountry == input.GateBankCountry ||
+                    (this.GateBankCountry != null &&
+                    this.GateBankCountry.Equals(input.GateBankCountry))
+                ) && 
+                (
+                    this.GateBankAddress == input.GateBankAddress ||
+                    (this.GateBankAddress != null &&
+                    this.GateBankAddress.Equals(input.GateBankAddress))
+                ) && 
+                (
+                    this.GateBankAccountNumberIban == input.GateBankAccountNumberIban ||
+                    (this.GateBankAccountNumberIban != null &&
+                    this.GateBankAccountNumberIban.Equals(input.GateBankAccountNumberIban))
+                ) && 
+                (
+                    this.GateSwiftCode == input.GateSwiftCode ||
+                    (this.GateSwiftCode != null &&
+                    this.GateSwiftCode.Equals(input.GateSwiftCode))
+                ) && 
+                (
+                    this.GateIntermediaryBankName == input.GateIntermediaryBankName ||
+                    (this.GateIntermediaryBankName != null &&
+                    this.GateIntermediaryBankName.Equals(input.GateIntermediaryBankName))
+                ) && 
+                (
+                    this.GateIntermediaryBankSwiftCode == input.GateIntermediaryBankSwiftCode ||
+                    (this.GateIntermediaryBankSwiftCode != null &&
+                    this.GateIntermediaryBankSwiftCode.Equals(input.GateIntermediaryBankSwiftCode))
+                ) && 
+                (
+                    this.GateTransferRemark == input.GateTransferRemark ||
+                    (this.GateTransferRemark != null &&
+                    this.GateTransferRemark.Equals(input.GateTransferRemark))
+                ) && 
+                (
+                    this.GateReferenceCode == input.GateReferenceCode ||
+                    (this.GateReferenceCode != null &&
+                    this.GateReferenceCode.Equals(input.GateReferenceCode))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -325,34 +510,9 @@ namespace Io.Gate.GateApi.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
-                    this.DbStatus == input.DbStatus ||
-                    (this.DbStatus != null &&
-                    this.DbStatus.Equals(input.DbStatus))
-                ) && 
-                (
                     this.CreateTime == input.CreateTime ||
                     (this.CreateTime != null &&
                     this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.Memo == input.Memo ||
-                    (this.Memo != null &&
-                    this.Memo.Equals(input.Memo))
-                ) && 
-                (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
-                ) && 
-                (
-                    this.PromotionCode == input.PromotionCode ||
-                    (this.PromotionCode != null &&
-                    this.PromotionCode.Equals(input.PromotionCode))
-                ) && 
-                (
-                    this.TradeNo == input.TradeNo ||
-                    (this.TradeNo != null &&
-                    this.TradeNo.Equals(input.TradeNo))
                 );
         }
 
@@ -381,24 +541,46 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.CryptoAmount.GetHashCode();
                 if (this.Rate != null)
                     hashCode = hashCode * 59 + this.Rate.GetHashCode();
-                if (this.TransferRemark != null)
-                    hashCode = hashCode * 59 + this.TransferRemark.GetHashCode();
-                if (this.ReferenceCode != null)
-                    hashCode = hashCode * 59 + this.ReferenceCode.GetHashCode();
+                if (this.BankAccountName != null)
+                    hashCode = hashCode * 59 + this.BankAccountName.GetHashCode();
+                if (this.BankName != null)
+                    hashCode = hashCode * 59 + this.BankName.GetHashCode();
+                if (this.BankCountry != null)
+                    hashCode = hashCode * 59 + this.BankCountry.GetHashCode();
+                if (this.BankAddress != null)
+                    hashCode = hashCode * 59 + this.BankAddress.GetHashCode();
+                if (this.BankAccountNumberIban != null)
+                    hashCode = hashCode * 59 + this.BankAccountNumberIban.GetHashCode();
+                if (this.SwiftCode != null)
+                    hashCode = hashCode * 59 + this.SwiftCode.GetHashCode();
+                if (this.IntermediateBankName != null)
+                    hashCode = hashCode * 59 + this.IntermediateBankName.GetHashCode();
+                if (this.IntermediaryBankSwiftCode != null)
+                    hashCode = hashCode * 59 + this.IntermediaryBankSwiftCode.GetHashCode();
+                if (this.GateBankAccountName != null)
+                    hashCode = hashCode * 59 + this.GateBankAccountName.GetHashCode();
+                if (this.GateBankName != null)
+                    hashCode = hashCode * 59 + this.GateBankName.GetHashCode();
+                if (this.GateBankCountry != null)
+                    hashCode = hashCode * 59 + this.GateBankCountry.GetHashCode();
+                if (this.GateBankAddress != null)
+                    hashCode = hashCode * 59 + this.GateBankAddress.GetHashCode();
+                if (this.GateBankAccountNumberIban != null)
+                    hashCode = hashCode * 59 + this.GateBankAccountNumberIban.GetHashCode();
+                if (this.GateSwiftCode != null)
+                    hashCode = hashCode * 59 + this.GateSwiftCode.GetHashCode();
+                if (this.GateIntermediaryBankName != null)
+                    hashCode = hashCode * 59 + this.GateIntermediaryBankName.GetHashCode();
+                if (this.GateIntermediaryBankSwiftCode != null)
+                    hashCode = hashCode * 59 + this.GateIntermediaryBankSwiftCode.GetHashCode();
+                if (this.GateTransferRemark != null)
+                    hashCode = hashCode * 59 + this.GateTransferRemark.GetHashCode();
+                if (this.GateReferenceCode != null)
+                    hashCode = hashCode * 59 + this.GateReferenceCode.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.DbStatus != null)
-                    hashCode = hashCode * 59 + this.DbStatus.GetHashCode();
                 if (this.CreateTime != null)
                     hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.Memo != null)
-                    hashCode = hashCode * 59 + this.Memo.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.PromotionCode != null)
-                    hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
-                if (this.TradeNo != null)
-                    hashCode = hashCode * 59 + this.TradeNo.GetHashCode();
                 return hashCode;
             }
         }

@@ -53,9 +53,9 @@ namespace Io.Gate.GateApi.Model
         public string Contract { get; private set; }
 
         /// <summary>
-        /// Position leverage
+        /// Leverage multiplier
         /// </summary>
-        /// <value>Position leverage</value>
+        /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage", EmitDefaultValue=false)]
         public string Leverage { get; private set; }
 
@@ -67,9 +67,9 @@ namespace Io.Gate.GateApi.Model
         public long Size { get; private set; }
 
         /// <summary>
-        /// Position margin
+        /// Margin
         /// </summary>
-        /// <value>Position margin</value>
+        /// <value>Margin</value>
         [DataMember(Name="margin", EmitDefaultValue=false)]
         public string Margin { get; private set; }
 

@@ -35,8 +35,8 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="t">Unix timestamp in seconds.</param>
         /// <param name="c">Close price.</param>
-        /// <param name="h">Highest price.</param>
-        /// <param name="l">Lowest price.</param>
+        /// <param name="h">High price.</param>
+        /// <param name="l">Low price.</param>
         /// <param name="o">Open price.</param>
         public FuturesPremiumIndex(double t = default(double), string c = default(string), string h = default(string), string l = default(string), string o = default(string))
         {
@@ -62,16 +62,16 @@ namespace Io.Gate.GateApi.Model
         public string C { get; set; }
 
         /// <summary>
-        /// Highest price
+        /// High price
         /// </summary>
-        /// <value>Highest price</value>
+        /// <value>High price</value>
         [DataMember(Name="h")]
         public string H { get; set; }
 
         /// <summary>
-        /// Lowest price
+        /// Low price
         /// </summary>
-        /// <value>Lowest price</value>
+        /// <value>Low price</value>
         [DataMember(Name="l")]
         public string L { get; set; }
 

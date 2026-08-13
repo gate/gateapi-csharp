@@ -371,9 +371,9 @@ namespace Io.Gate.GateApi.Model
         public string ErrorLabel { get; private set; }
 
         /// <summary>
-        /// leverage
+        /// Leverage
         /// </summary>
-        /// <value>leverage</value>
+        /// <value>Leverage</value>
         [DataMember(Name="leverage", EmitDefaultValue=false)]
         public string Leverage { get; private set; }
 

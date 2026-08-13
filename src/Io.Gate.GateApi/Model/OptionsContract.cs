@@ -48,8 +48,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="takerFeeRate">Taker fee rate.</param>
         /// <param name="orderPriceRound">Minimum order price increment.</param>
         /// <param name="markPriceRound">Minimum mark price increment.</param>
-        /// <param name="orderSizeMin">Minimum order size allowed by the contract.</param>
-        /// <param name="orderSizeMax">Maximum order size allowed by the contract.</param>
+        /// <param name="orderSizeMin">Minimum order quantity.</param>
+        /// <param name="orderSizeMax">Maximum order quantity.</param>
         /// <param name="orderPriceDeviate">Deprecated.</param>
         /// <param name="refDiscountRate">Trading fee discount for referred users.</param>
         /// <param name="refRebateRate">Commission rate for referrers.</param>
@@ -193,16 +193,16 @@ namespace Io.Gate.GateApi.Model
         public string MarkPriceRound { get; set; }
 
         /// <summary>
-        /// Minimum order size allowed by the contract
+        /// Minimum order quantity
         /// </summary>
-        /// <value>Minimum order size allowed by the contract</value>
+        /// <value>Minimum order quantity</value>
         [DataMember(Name="order_size_min")]
         public long OrderSizeMin { get; set; }
 
         /// <summary>
-        /// Maximum order size allowed by the contract
+        /// Maximum order quantity
         /// </summary>
-        /// <value>Maximum order size allowed by the contract</value>
+        /// <value>Maximum order quantity</value>
         [DataMember(Name="order_size_max")]
         public long OrderSizeMax { get; set; }
 

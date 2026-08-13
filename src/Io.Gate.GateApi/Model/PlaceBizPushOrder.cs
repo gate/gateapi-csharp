@@ -70,6 +70,56 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="type")]
         public TypeEnum Type { get; set; }
         /// <summary>
+        /// Trading limit unit. 0: by crypto quantity, 1: by fiat amount; defaults to 0 when not passed for a new ad. The limit unit of an existing ad cannot be changed when editing; a fiat-limit ad must keep passing 1 when edited
+        /// </summary>
+        /// <value>Trading limit unit. 0: by crypto quantity, 1: by fiat amount; defaults to 0 when not passed for a new ad. The limit unit of an existing ad cannot be changed when editing; a fiat-limit ad must keep passing 1 when edited</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LimitBasisEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1
+
+        }
+
+        /// <summary>
+        /// Trading limit unit. 0: by crypto quantity, 1: by fiat amount; defaults to 0 when not passed for a new ad. The limit unit of an existing ad cannot be changed when editing; a fiat-limit ad must keep passing 1 when edited
+        /// </summary>
+        /// <value>Trading limit unit. 0: by crypto quantity, 1: by fiat amount; defaults to 0 when not passed for a new ad. The limit unit of an existing ad cannot be changed when editing; a fiat-limit ad must keep passing 1 when edited</value>
+        [DataMember(Name="limitBasis")]
+        public LimitBasisEnum? LimitBasis { get; set; }
+        /// <summary>
+        /// Whether to restrict trading with Polymarket users. 0: no restriction, 1: restricted
+        /// </summary>
+        /// <value>Whether to restrict trading with Polymarket users. 0: no restriction, 1: restricted</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PolymarketLimitEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1
+
+        }
+
+        /// <summary>
+        /// Whether to restrict trading with Polymarket users. 0: no restriction, 1: restricted
+        /// </summary>
+        /// <value>Whether to restrict trading with Polymarket users. 0: no restriction, 1: restricted</value>
+        [DataMember(Name="polymarket_limit")]
+        public PolymarketLimitEnum? PolymarketLimit { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PlaceBizPushOrder" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -82,16 +132,20 @@ namespace Io.Gate.GateApi.Model
         /// <param name="type">Ad operation type. &#x60;0&#x60;: publish sell ad; &#x60;1&#x60;: publish buy ad; &#x60;2&#x60;: edit sell ad; &#x60;3&#x60;: edit buy ad. (required).</param>
         /// <param name="unitPrice">Per-unit price in fixed-price mode. (required).</param>
         /// <param name="number">Ad amount priced in &#x60;currencyType&#x60;. (required).</param>
-        /// <param name="payType">Payment types, comma-separated; from pay type list &#x60;pay_type&#x60;, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;. (required).</param>
-        /// <param name="payTypeJson">JSON map of payment type -&gt; user&#39;s payment method ID..</param>
+        /// <param name="payType">Payment types enabled for the ad, comma-separated; values can be obtained from &#x60;pay_type&#x60; in the payment method list, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;. &#x60;pay_type_json&#x60; uses the types in this field as keys to specify the corresponding payment accounts. (required).</param>
+        /// <param name="payTypeJson">JSON string of specific payment accounts corresponding to &#x60;payType&#x60;. Each key is a payment type listed in &#x60;payType&#x60;, and each value is the current user&#39;s payment method ID for that type. For example, when &#x60;payType&#x60; is &#x60;bank,swift&#x60;, this field can be {\&quot;bank\&quot;:\&quot;10001\&quot;,\&quot;swift\&quot;:\&quot;10002\&quot;}..</param>
         /// <param name="rateFixed">Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed..</param>
         /// <param name="oid">Pass ad ID when editing; omit or empty when publishing a new ad..</param>
-        /// <param name="minAmount">Minimum trade amount in &#x60;exchangeType&#x60;. (required).</param>
-        /// <param name="maxAmount">Maximum amount per trade in &#x60;exchangeType&#x60; fiat units. (required).</param>
+        /// <param name="minAmount">Minimum quantity per order, denominated by currencyType; required when limitBasis is not passed or is 0.</param>
+        /// <param name="maxAmount">Maximum quantity per order, denominated by currencyType; required when limitBasis is not passed or is 0.</param>
+        /// <param name="limitBasis">Trading limit unit. 0: by crypto quantity, 1: by fiat amount; defaults to 0 when not passed for a new ad. The limit unit of an existing ad cannot be changed when editing; a fiat-limit ad must keep passing 1 when edited.</param>
+        /// <param name="fiatMinAmount">Minimum amount per order, denominated by exchangeType; required when limitBasis is 1.</param>
+        /// <param name="fiatMaxAmount">Maximum amount per order, denominated by exchangeType; required when limitBasis is 1, and must not exceed the total fiat value of the ad quantity converted at the price.</param>
         /// <param name="tierLimit">Minimum counterparty VIP level; &#x60;0&#x60; means no requirement..</param>
         /// <param name="verifiedLimit">Minimum counterparty verification level; &#x60;0&#x60; means no limit..</param>
         /// <param name="regTimeLimit">Minimum counterparty account age in days; &#x60;0&#x60; means no limit..</param>
         /// <param name="advertisersLimit">Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes..</param>
+        /// <param name="polymarketLimit">Whether to restrict trading with Polymarket users. 0: no restriction, 1: restricted.</param>
         /// <param name="expireMin">Payment timeout in minutes..</param>
         /// <param name="tradeTips">Advertisement trade terms displayed to ordering users; goes through off-platform traffic diversion risk control on submission, and when hit, the advertisement is not saved and code 70305102 is returned.</param>
         /// <param name="autoReply">Auto reply content after order creation; goes through off-platform traffic diversion risk control on submission, and when hit, the advertisement is not saved and code 70305102 is returned.</param>
@@ -104,7 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="rateOffset">Absolute floating offset ratio, e.g. &#x60;0.5&#x60; means 0.5%..</param>
         /// <param name="floatTrend">Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown..</param>
         /// <param name="teamPaymentUid">Team payee UID; optional for non-team merchants..</param>
-        public PlaceBizPushOrder(string currencyType = default(string), string exchangeType = default(string), TypeEnum type = default(TypeEnum), string unitPrice = default(string), string number = default(string), string payType = default(string), string payTypeJson = default(string), string rateFixed = default(string), string oid = default(string), string minAmount = default(string), string maxAmount = default(string), string tierLimit = default(string), string verifiedLimit = default(string), string regTimeLimit = default(string), string advertisersLimit = default(string), string expireMin = default(string), string tradeTips = default(string), string autoReply = default(string), string minCompletedLimit = default(string), string maxCompletedLimit = default(string), string completedRateLimit = default(string), string userCountryLimit = default(string), string userOrderLimit = default(string), string rateReferenceId = default(string), string rateOffset = default(string), string floatTrend = default(string), string teamPaymentUid = default(string))
+        public PlaceBizPushOrder(string currencyType = default(string), string exchangeType = default(string), TypeEnum type = default(TypeEnum), string unitPrice = default(string), string number = default(string), string payType = default(string), string payTypeJson = default(string), string rateFixed = default(string), string oid = default(string), string minAmount = default(string), string maxAmount = default(string), LimitBasisEnum? limitBasis = default(LimitBasisEnum?), string fiatMinAmount = default(string), string fiatMaxAmount = default(string), string tierLimit = default(string), string verifiedLimit = default(string), string regTimeLimit = default(string), string advertisersLimit = default(string), PolymarketLimitEnum? polymarketLimit = default(PolymarketLimitEnum?), string expireMin = default(string), string tradeTips = default(string), string autoReply = default(string), string minCompletedLimit = default(string), string maxCompletedLimit = default(string), string completedRateLimit = default(string), string userCountryLimit = default(string), string userOrderLimit = default(string), string rateReferenceId = default(string), string rateOffset = default(string), string floatTrend = default(string), string teamPaymentUid = default(string))
         {
             // to ensure "currencyType" is required (not null)
             this.CurrencyType = currencyType ?? throw new ArgumentNullException("currencyType", "currencyType is a required property for PlaceBizPushOrder and cannot be null");
@@ -117,17 +171,19 @@ namespace Io.Gate.GateApi.Model
             this.Number = number ?? throw new ArgumentNullException("number", "number is a required property for PlaceBizPushOrder and cannot be null");
             // to ensure "payType" is required (not null)
             this.PayType = payType ?? throw new ArgumentNullException("payType", "payType is a required property for PlaceBizPushOrder and cannot be null");
-            // to ensure "minAmount" is required (not null)
-            this.MinAmount = minAmount ?? throw new ArgumentNullException("minAmount", "minAmount is a required property for PlaceBizPushOrder and cannot be null");
-            // to ensure "maxAmount" is required (not null)
-            this.MaxAmount = maxAmount ?? throw new ArgumentNullException("maxAmount", "maxAmount is a required property for PlaceBizPushOrder and cannot be null");
             this.PayTypeJson = payTypeJson;
             this.RateFixed = rateFixed;
             this.Oid = oid;
+            this.MinAmount = minAmount;
+            this.MaxAmount = maxAmount;
+            this.LimitBasis = limitBasis;
+            this.FiatMinAmount = fiatMinAmount;
+            this.FiatMaxAmount = fiatMaxAmount;
             this.TierLimit = tierLimit;
             this.VerifiedLimit = verifiedLimit;
             this.RegTimeLimit = regTimeLimit;
             this.AdvertisersLimit = advertisersLimit;
+            this.PolymarketLimit = polymarketLimit;
             this.ExpireMin = expireMin;
             this.TradeTips = tradeTips;
             this.AutoReply = autoReply;
@@ -171,16 +227,16 @@ namespace Io.Gate.GateApi.Model
         public string Number { get; set; }
 
         /// <summary>
-        /// Payment types, comma-separated; from pay type list &#x60;pay_type&#x60;, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.
+        /// Payment types enabled for the ad, comma-separated; values can be obtained from &#x60;pay_type&#x60; in the payment method list, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;. &#x60;pay_type_json&#x60; uses the types in this field as keys to specify the corresponding payment accounts.
         /// </summary>
-        /// <value>Payment types, comma-separated; from pay type list &#x60;pay_type&#x60;, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.</value>
+        /// <value>Payment types enabled for the ad, comma-separated; values can be obtained from &#x60;pay_type&#x60; in the payment method list, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;. &#x60;pay_type_json&#x60; uses the types in this field as keys to specify the corresponding payment accounts.</value>
         [DataMember(Name="payType")]
         public string PayType { get; set; }
 
         /// <summary>
-        /// JSON map of payment type -&gt; user&#39;s payment method ID.
+        /// JSON string of specific payment accounts corresponding to &#x60;payType&#x60;. Each key is a payment type listed in &#x60;payType&#x60;, and each value is the current user&#39;s payment method ID for that type. For example, when &#x60;payType&#x60; is &#x60;bank,swift&#x60;, this field can be {\&quot;bank\&quot;:\&quot;10001\&quot;,\&quot;swift\&quot;:\&quot;10002\&quot;}.
         /// </summary>
-        /// <value>JSON map of payment type -&gt; user&#39;s payment method ID.</value>
+        /// <value>JSON string of specific payment accounts corresponding to &#x60;payType&#x60;. Each key is a payment type listed in &#x60;payType&#x60;, and each value is the current user&#39;s payment method ID for that type. For example, when &#x60;payType&#x60; is &#x60;bank,swift&#x60;, this field can be {\&quot;bank\&quot;:\&quot;10001\&quot;,\&quot;swift\&quot;:\&quot;10002\&quot;}.</value>
         [DataMember(Name="pay_type_json")]
         public string PayTypeJson { get; set; }
 
@@ -199,18 +255,32 @@ namespace Io.Gate.GateApi.Model
         public string Oid { get; set; }
 
         /// <summary>
-        /// Minimum trade amount in &#x60;exchangeType&#x60;.
+        /// Minimum quantity per order, denominated by currencyType; required when limitBasis is not passed or is 0
         /// </summary>
-        /// <value>Minimum trade amount in &#x60;exchangeType&#x60;.</value>
+        /// <value>Minimum quantity per order, denominated by currencyType; required when limitBasis is not passed or is 0</value>
         [DataMember(Name="minAmount")]
         public string MinAmount { get; set; }
 
         /// <summary>
-        /// Maximum amount per trade in &#x60;exchangeType&#x60; fiat units.
+        /// Maximum quantity per order, denominated by currencyType; required when limitBasis is not passed or is 0
         /// </summary>
-        /// <value>Maximum amount per trade in &#x60;exchangeType&#x60; fiat units.</value>
+        /// <value>Maximum quantity per order, denominated by currencyType; required when limitBasis is not passed or is 0</value>
         [DataMember(Name="maxAmount")]
         public string MaxAmount { get; set; }
+
+        /// <summary>
+        /// Minimum amount per order, denominated by exchangeType; required when limitBasis is 1
+        /// </summary>
+        /// <value>Minimum amount per order, denominated by exchangeType; required when limitBasis is 1</value>
+        [DataMember(Name="fiatMinAmount")]
+        public string FiatMinAmount { get; set; }
+
+        /// <summary>
+        /// Maximum amount per order, denominated by exchangeType; required when limitBasis is 1, and must not exceed the total fiat value of the ad quantity converted at the price
+        /// </summary>
+        /// <value>Maximum amount per order, denominated by exchangeType; required when limitBasis is 1, and must not exceed the total fiat value of the ad quantity converted at the price</value>
+        [DataMember(Name="fiatMaxAmount")]
+        public string FiatMaxAmount { get; set; }
 
         /// <summary>
         /// Minimum counterparty VIP level; &#x60;0&#x60; means no requirement.
@@ -343,10 +413,14 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Oid: ").Append(Oid).Append("\n");
             sb.Append("  MinAmount: ").Append(MinAmount).Append("\n");
             sb.Append("  MaxAmount: ").Append(MaxAmount).Append("\n");
+            sb.Append("  LimitBasis: ").Append(LimitBasis).Append("\n");
+            sb.Append("  FiatMinAmount: ").Append(FiatMinAmount).Append("\n");
+            sb.Append("  FiatMaxAmount: ").Append(FiatMaxAmount).Append("\n");
             sb.Append("  TierLimit: ").Append(TierLimit).Append("\n");
             sb.Append("  VerifiedLimit: ").Append(VerifiedLimit).Append("\n");
             sb.Append("  RegTimeLimit: ").Append(RegTimeLimit).Append("\n");
             sb.Append("  AdvertisersLimit: ").Append(AdvertisersLimit).Append("\n");
+            sb.Append("  PolymarketLimit: ").Append(PolymarketLimit).Append("\n");
             sb.Append("  ExpireMin: ").Append(ExpireMin).Append("\n");
             sb.Append("  TradeTips: ").Append(TradeTips).Append("\n");
             sb.Append("  AutoReply: ").Append(AutoReply).Append("\n");
@@ -448,6 +522,20 @@ namespace Io.Gate.GateApi.Model
                     this.MaxAmount.Equals(input.MaxAmount))
                 ) && 
                 (
+                    this.LimitBasis == input.LimitBasis ||
+                    this.LimitBasis.Equals(input.LimitBasis)
+                ) && 
+                (
+                    this.FiatMinAmount == input.FiatMinAmount ||
+                    (this.FiatMinAmount != null &&
+                    this.FiatMinAmount.Equals(input.FiatMinAmount))
+                ) && 
+                (
+                    this.FiatMaxAmount == input.FiatMaxAmount ||
+                    (this.FiatMaxAmount != null &&
+                    this.FiatMaxAmount.Equals(input.FiatMaxAmount))
+                ) && 
+                (
                     this.TierLimit == input.TierLimit ||
                     (this.TierLimit != null &&
                     this.TierLimit.Equals(input.TierLimit))
@@ -466,6 +554,10 @@ namespace Io.Gate.GateApi.Model
                     this.AdvertisersLimit == input.AdvertisersLimit ||
                     (this.AdvertisersLimit != null &&
                     this.AdvertisersLimit.Equals(input.AdvertisersLimit))
+                ) && 
+                (
+                    this.PolymarketLimit == input.PolymarketLimit ||
+                    this.PolymarketLimit.Equals(input.PolymarketLimit)
                 ) && 
                 (
                     this.ExpireMin == input.ExpireMin ||
@@ -559,6 +651,11 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.MinAmount.GetHashCode();
                 if (this.MaxAmount != null)
                     hashCode = hashCode * 59 + this.MaxAmount.GetHashCode();
+                hashCode = hashCode * 59 + this.LimitBasis.GetHashCode();
+                if (this.FiatMinAmount != null)
+                    hashCode = hashCode * 59 + this.FiatMinAmount.GetHashCode();
+                if (this.FiatMaxAmount != null)
+                    hashCode = hashCode * 59 + this.FiatMaxAmount.GetHashCode();
                 if (this.TierLimit != null)
                     hashCode = hashCode * 59 + this.TierLimit.GetHashCode();
                 if (this.VerifiedLimit != null)
@@ -567,6 +664,7 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.RegTimeLimit.GetHashCode();
                 if (this.AdvertisersLimit != null)
                     hashCode = hashCode * 59 + this.AdvertisersLimit.GetHashCode();
+                hashCode = hashCode * 59 + this.PolymarketLimit.GetHashCode();
                 if (this.ExpireMin != null)
                     hashCode = hashCode * 59 + this.ExpireMin.GetHashCode();
                 if (this.TradeTips != null)

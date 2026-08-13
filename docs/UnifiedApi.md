@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**ListCurrencyDiscountTiers**](UnifiedApi.md#listcurrencydiscounttiers) | **GET** /unified/currency_discount_tiers | Query unified account tiered
 [**ListLoanMarginTiers**](UnifiedApi.md#listloanmargintiers) | **GET** /unified/loan_margin_tiers | Query unified account tiered loan margin
 [**CalculatePortfolioMargin**](UnifiedApi.md#calculateportfoliomargin) | **POST** /unified/portfolio_calculator | Portfolio margin calculator
+[**SetUserLeverage**](UnifiedApi.md#setuserleverage) | **POST** /unified/leverage/user_setting | Set leverage for all of the user&#39;s borrowed currencies
 [**GetUserLeverageCurrencyConfig**](UnifiedApi.md#getuserleveragecurrencyconfig) | **GET** /unified/leverage/user_currency_config | Maximum and minimum currency leverage that can be set
 [**GetUserLeverageCurrencySetting**](UnifiedApi.md#getuserleveragecurrencysetting) | **GET** /unified/leverage/user_currency_setting | Get user currency leverage
 [**SetUserLeverageCurrencySetting**](UnifiedApi.md#setuserleveragecurrencysetting) | **POST** /unified/leverage/user_currency_setting | Set loan currency leverage
@@ -1180,6 +1181,79 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Query successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setuserleverage"></a>
+# **SetUserLeverage**
+> List&lt;LeverageFailedCurrencies&gt; SetUserLeverage (UserLeverageSetting userLeverageSetting)
+
+Set leverage for all of the user's borrowed currencies
+
+Note the following: - Leverage cannot be changed for currencies with outstanding loans. - A leverage value above a currency's limit is capped at that limit. - Failures are not rolled back and affect only the currencies that failed. For example, if USDT has an outstanding loan, only the USDT leverage remains unchanged.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class SetUserLeverageExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new UnifiedApi(config);
+            var userLeverageSetting = new UserLeverageSetting(); // UserLeverageSetting | 
+
+            try
+            {
+                // Set leverage for all of the user's borrowed currencies
+                List<LeverageFailedCurrencies> result = apiInstance.SetUserLeverage(userLeverageSetting);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling UnifiedApi.SetUserLeverage: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userLeverageSetting** | [**UserLeverageSetting**](UserLeverageSetting.md)|  | 
+
+### Return type
+
+[**List&lt;LeverageFailedCurrencies&gt;**](LeverageFailedCurrencies.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Set successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

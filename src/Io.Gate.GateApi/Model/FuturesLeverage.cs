@@ -33,16 +33,16 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesLeverage" /> class.
         /// </summary>
-        /// <param name="lever">leverage.</param>
+        /// <param name="lever">Leverage.</param>
         public FuturesLeverage(string lever = default(string))
         {
             this.Lever = lever;
         }
 
         /// <summary>
-        /// leverage
+        /// Leverage
         /// </summary>
-        /// <value>leverage</value>
+        /// <value>Leverage</value>
         [DataMember(Name="Lever")]
         public string Lever { get; set; }
 

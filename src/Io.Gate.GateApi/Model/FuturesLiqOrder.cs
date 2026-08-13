@@ -81,9 +81,9 @@ namespace Io.Gate.GateApi.Model
         public string FillPrice { get; private set; }
 
         /// <summary>
-        /// System liquidation order maker size
+        /// Reserved field with no current business significance.
         /// </summary>
-        /// <value>System liquidation order maker size</value>
+        /// <value>Reserved field with no current business significance.</value>
         [DataMember(Name="left", EmitDefaultValue=false)]
         public string Left { get; private set; }
 

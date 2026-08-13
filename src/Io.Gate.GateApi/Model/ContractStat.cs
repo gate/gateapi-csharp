@@ -57,7 +57,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="topShortAccount">Number of top short accounts (large holders).</param>
         /// <param name="longUsers">Number of users holding long positions.</param>
         /// <param name="shortUsers">Number of users holding short positions.</param>
-        public ContractStat(long time = default(long), double lsrTaker = default(double), double lsrAccount = default(double), string longLiqSize = default(string), double longLiqAmount = default(double), double longLiqUsd = default(double), double longLiqUsdNew = default(double), string shortLiqSize = default(string), double shortLiqAmount = default(double), double shortLiqUsd = default(double), double shortLiqUsdNew = default(double), string openInterest = default(string), double openInterestUsd = default(double), double topLsrAccount = default(double), string topLsrSize = default(string), double markPrice = default(double), string topLongSize = default(string), string topShortSize = default(string), string longTakerSize = default(string), string shortTakerSize = default(string), long topLongAccount = default(long), long topShortAccount = default(long), string longUsers = default(string), string shortUsers = default(string))
+        public ContractStat(long time = default(long), double lsrTaker = default(double), double lsrAccount = default(double), string longLiqSize = default(string), double longLiqAmount = default(double), double longLiqUsd = default(double), double longLiqUsdNew = default(double), string shortLiqSize = default(string), double shortLiqAmount = default(double), double shortLiqUsd = default(double), double shortLiqUsdNew = default(double), string openInterest = default(string), double openInterestUsd = default(double), double topLsrAccount = default(double), string topLsrSize = default(string), double markPrice = default(double), string topLongSize = default(string), string topShortSize = default(string), string longTakerSize = default(string), string shortTakerSize = default(string), long topLongAccount = default(long), long topShortAccount = default(long), long longUsers = default(long), long shortUsers = default(long))
         {
             this.Time = time;
             this.LsrTaker = lsrTaker;
@@ -244,14 +244,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of users holding long positions</value>
         [DataMember(Name="long_users")]
-        public string LongUsers { get; set; }
+        public long LongUsers { get; set; }
 
         /// <summary>
         /// Number of users holding short positions
         /// </summary>
         /// <value>Number of users holding short positions</value>
         [DataMember(Name="short_users")]
-        public string ShortUsers { get; set; }
+        public long ShortUsers { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -417,13 +417,11 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.LongUsers == input.LongUsers ||
-                    (this.LongUsers != null &&
-                    this.LongUsers.Equals(input.LongUsers))
+                    this.LongUsers.Equals(input.LongUsers)
                 ) && 
                 (
                     this.ShortUsers == input.ShortUsers ||
-                    (this.ShortUsers != null &&
-                    this.ShortUsers.Equals(input.ShortUsers))
+                    this.ShortUsers.Equals(input.ShortUsers)
                 );
         }
 
@@ -466,10 +464,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.ShortTakerSize.GetHashCode();
                 hashCode = hashCode * 59 + this.TopLongAccount.GetHashCode();
                 hashCode = hashCode * 59 + this.TopShortAccount.GetHashCode();
-                if (this.LongUsers != null)
-                    hashCode = hashCode * 59 + this.LongUsers.GetHashCode();
-                if (this.ShortUsers != null)
-                    hashCode = hashCode * 59 + this.ShortUsers.GetHashCode();
+                hashCode = hashCode * 59 + this.LongUsers.GetHashCode();
+                hashCode = hashCode * 59 + this.ShortUsers.GetHashCode();
                 return hashCode;
             }
         }

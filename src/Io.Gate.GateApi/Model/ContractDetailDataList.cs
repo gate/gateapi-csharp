@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="settlementCurrency">Settle currency.</param>
         /// <param name="maxOrderVolume">Maximum Order Volume.</param>
         /// <param name="minOrderVolume">Minimum Order Volume.</param>
-        /// <param name="leverage">Position leverage.</param>
+        /// <param name="leverage">Leverage multiplier.</param>
         /// <param name="pricePrecision">Price precision (decimal places).</param>
         /// <param name="priceSlLevel">Stop Loss Price Level.</param>
         /// <param name="swapCostType">Swap Cost Type.</param>
@@ -121,9 +121,9 @@ namespace Io.Gate.GateApi.Model
         public string MinOrderVolume { get; set; }
 
         /// <summary>
-        /// Position leverage
+        /// Leverage multiplier
         /// </summary>
-        /// <value>Position leverage</value>
+        /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage")]
         public string Leverage { get; set; }
 

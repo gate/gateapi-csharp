@@ -262,27 +262,6 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of Dictionary&lt;string, SpotFee&gt;</returns>
         ApiResponse<Dictionary<string, SpotFee>> GetBatchSpotFeeWithHttpInfo (string currencyPairs);
         /// <summary>
-        /// List spot trading accounts
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
-        /// <returns>List&lt;SpotAccount&gt;</returns>
-        List<SpotAccount> ListSpotAccounts (string currency = default(string));
-
-        /// <summary>
-        /// List spot trading accounts
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
-        /// <returns>ApiResponse of List&lt;SpotAccount&gt;</returns>
-        ApiResponse<List<SpotAccount>> ListSpotAccountsWithHttpInfo (string currency = default(string));
-        /// <summary>
         /// Query spot account transaction history
         /// </summary>
         /// <remarks>
@@ -420,7 +399,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;Order&gt;</returns>
         ApiResponse<List<Order>> ListOrdersWithHttpInfo (string currencyPair, string status, int? page = default(int?), int? limit = default(int?), string account = default(string), long? from = default(long?), long? to = default(long?), string side = default(string));
         /// <summary>
-        /// Create an order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
@@ -432,7 +411,7 @@ namespace Io.Gate.GateApi.Api
         Order CreateOrder (Order order, string xGateExptime = default(string));
 
         /// <summary>
-        /// Create an order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
@@ -819,6 +798,119 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of SpotPriceTriggeredOrder</returns>
         ApiResponse<SpotPriceTriggeredOrder> CancelSpotPriceTriggeredOrderWithHttpInfo (string orderId);
+        /// <summary>
+        /// List Spot POV orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Order status. Defaults to open  - open: Active orders - finished: Finished orders</param>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <param name="side">Specify all bids or all asks, both included if not specified (optional)</param>
+        /// <param name="page">Page number, up to 100 (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>List&lt;SpotPovOrder&gt;</returns>
+        List<SpotPovOrder> ListSpotPovOrders (string status, string currencyPair = default(string), string side = default(string), int? page = default(int?), int? limit = default(int?));
+
+        /// <summary>
+        /// List Spot POV orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Order status. Defaults to open  - open: Active orders - finished: Finished orders</param>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <param name="side">Specify all bids or all asks, both included if not specified (optional)</param>
+        /// <param name="page">Page number, up to 100 (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>ApiResponse of List&lt;SpotPovOrder&gt;</returns>
+        ApiResponse<List<SpotPovOrder>> ListSpotPovOrdersWithHttpInfo (string status, string currencyPair = default(string), string side = default(string), int? page = default(int?), int? limit = default(int?));
+        /// <summary>
+        /// Create a Spot POV order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spotPovOrderCreator"></param>
+        /// <returns>SpotPovOrder</returns>
+        SpotPovOrder CreateSpotPovOrder (SpotPovOrderCreator spotPovOrderCreator);
+
+        /// <summary>
+        /// Create a Spot POV order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spotPovOrderCreator"></param>
+        /// <returns>ApiResponse of SpotPovOrder</returns>
+        ApiResponse<SpotPovOrder> CreateSpotPovOrderWithHttpInfo (SpotPovOrderCreator spotPovOrderCreator);
+        /// <summary>
+        /// Cancel Spot POV orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <returns>List&lt;SpotPovOrder&gt;</returns>
+        List<SpotPovOrder> CancelSpotPovOrders (string currencyPair = default(string));
+
+        /// <summary>
+        /// Cancel Spot POV orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <returns>ApiResponse of List&lt;SpotPovOrder&gt;</returns>
+        ApiResponse<List<SpotPovOrder>> CancelSpotPovOrdersWithHttpInfo (string currencyPair = default(string));
+        /// <summary>
+        /// Query Spot POV order details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>SpotPovOrder</returns>
+        SpotPovOrder GetSpotPovOrder (string orderId);
+
+        /// <summary>
+        /// Query Spot POV order details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>ApiResponse of SpotPovOrder</returns>
+        ApiResponse<SpotPovOrder> GetSpotPovOrderWithHttpInfo (string orderId);
+        /// <summary>
+        /// Cancel a Spot POV order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>SpotPovOrder</returns>
+        SpotPovOrder CancelSpotPovOrder (string orderId);
+
+        /// <summary>
+        /// Cancel a Spot POV order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>ApiResponse of SpotPovOrder</returns>
+        ApiResponse<SpotPovOrder> CancelSpotPovOrderWithHttpInfo (string orderId);
         #endregion Synchronous Operations
     }
 
@@ -1063,27 +1155,6 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (Dictionary&lt;string, SpotFee&gt;)</returns>
         Task<ApiResponse<Dictionary<string, SpotFee>>> GetBatchSpotFeeAsyncWithHttpInfo (string currencyPairs);
         /// <summary>
-        /// List spot trading accounts
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
-        /// <returns>Task of List&lt;SpotAccount&gt;</returns>
-        Task<List<SpotAccount>> ListSpotAccountsAsync (string currency = default(string));
-
-        /// <summary>
-        /// List spot trading accounts
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;SpotAccount&gt;)</returns>
-        Task<ApiResponse<List<SpotAccount>>> ListSpotAccountsAsyncWithHttpInfo (string currency = default(string));
-        /// <summary>
         /// Query spot account transaction history
         /// </summary>
         /// <remarks>
@@ -1221,7 +1292,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;Order&gt;)</returns>
         Task<ApiResponse<List<Order>>> ListOrdersAsyncWithHttpInfo (string currencyPair, string status, int? page = default(int?), int? limit = default(int?), string account = default(string), long? from = default(long?), long? to = default(long?), string side = default(string));
         /// <summary>
-        /// Create an order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
@@ -1233,7 +1304,7 @@ namespace Io.Gate.GateApi.Api
         Task<Order> CreateOrderAsync (Order order, string xGateExptime = default(string));
 
         /// <summary>
-        /// Create an order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
@@ -1620,6 +1691,119 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (SpotPriceTriggeredOrder)</returns>
         Task<ApiResponse<SpotPriceTriggeredOrder>> CancelSpotPriceTriggeredOrderAsyncWithHttpInfo (string orderId);
+        /// <summary>
+        /// List Spot POV orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Order status. Defaults to open  - open: Active orders - finished: Finished orders</param>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <param name="side">Specify all bids or all asks, both included if not specified (optional)</param>
+        /// <param name="page">Page number, up to 100 (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>Task of List&lt;SpotPovOrder&gt;</returns>
+        Task<List<SpotPovOrder>> ListSpotPovOrdersAsync (string status, string currencyPair = default(string), string side = default(string), int? page = default(int?), int? limit = default(int?));
+
+        /// <summary>
+        /// List Spot POV orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Order status. Defaults to open  - open: Active orders - finished: Finished orders</param>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <param name="side">Specify all bids or all asks, both included if not specified (optional)</param>
+        /// <param name="page">Page number, up to 100 (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>Task of ApiResponse (List&lt;SpotPovOrder&gt;)</returns>
+        Task<ApiResponse<List<SpotPovOrder>>> ListSpotPovOrdersAsyncWithHttpInfo (string status, string currencyPair = default(string), string side = default(string), int? page = default(int?), int? limit = default(int?));
+        /// <summary>
+        /// Create a Spot POV order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spotPovOrderCreator"></param>
+        /// <returns>Task of SpotPovOrder</returns>
+        Task<SpotPovOrder> CreateSpotPovOrderAsync (SpotPovOrderCreator spotPovOrderCreator);
+
+        /// <summary>
+        /// Create a Spot POV order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spotPovOrderCreator"></param>
+        /// <returns>Task of ApiResponse (SpotPovOrder)</returns>
+        Task<ApiResponse<SpotPovOrder>> CreateSpotPovOrderAsyncWithHttpInfo (SpotPovOrderCreator spotPovOrderCreator);
+        /// <summary>
+        /// Cancel Spot POV orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <returns>Task of List&lt;SpotPovOrder&gt;</returns>
+        Task<List<SpotPovOrder>> CancelSpotPovOrdersAsync (string currencyPair = default(string));
+
+        /// <summary>
+        /// Cancel Spot POV orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;SpotPovOrder&gt;)</returns>
+        Task<ApiResponse<List<SpotPovOrder>>> CancelSpotPovOrdersAsyncWithHttpInfo (string currencyPair = default(string));
+        /// <summary>
+        /// Query Spot POV order details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>Task of SpotPovOrder</returns>
+        Task<SpotPovOrder> GetSpotPovOrderAsync (string orderId);
+
+        /// <summary>
+        /// Query Spot POV order details
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>Task of ApiResponse (SpotPovOrder)</returns>
+        Task<ApiResponse<SpotPovOrder>> GetSpotPovOrderAsyncWithHttpInfo (string orderId);
+        /// <summary>
+        /// Cancel a Spot POV order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>Task of SpotPovOrder</returns>
+        Task<SpotPovOrder> CancelSpotPovOrderAsync (string orderId);
+
+        /// <summary>
+        /// Cancel a Spot POV order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>Task of ApiResponse (SpotPovOrder)</returns>
+        Task<ApiResponse<SpotPovOrder>> CancelSpotPovOrderAsyncWithHttpInfo (string orderId);
         #endregion Asynchronous Operations
     }
 
@@ -3015,121 +3199,6 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// List spot trading accounts 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
-        /// <returns>List&lt;SpotAccount&gt;</returns>
-        public List<SpotAccount> ListSpotAccounts (string currency = default(string))
-        {
-             ApiResponse<List<SpotAccount>> localVarResponse = ListSpotAccountsWithHttpInfo(currency);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// List spot trading accounts 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
-        /// <returns>ApiResponse of List&lt;SpotAccount&gt;</returns>
-        public ApiResponse<List<SpotAccount>> ListSpotAccountsWithHttpInfo (string currency = default(string))
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-                "application/json"
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (currency != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<SpotAccount>>("/spot/accounts", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListSpotAccounts", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// List spot trading accounts 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
-        /// <returns>Task of List&lt;SpotAccount&gt;</returns>
-        public async Task<List<SpotAccount>> ListSpotAccountsAsync (string currency = default(string))
-        {
-             Io.Gate.GateApi.Client.ApiResponse<List<SpotAccount>> localVarResponse = await ListSpotAccountsAsyncWithHttpInfo(currency);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// List spot trading accounts 
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;SpotAccount&gt;)</returns>
-        public async Task<ApiResponse<List<SpotAccount>>> ListSpotAccountsAsyncWithHttpInfo (string currency = default(string))
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-            if (currency != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
-            }
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<SpotAccount>>("/spot/accounts", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ListSpotAccounts", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
         /// Query spot account transaction history Record query time range cannot exceed 30 days.  When using limit&amp;page pagination to retrieve data, the maximum number of pages is 100,000, that is, limit * (page - 1) &lt;&#x3D; 100,000.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3909,7 +3978,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create an order Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
+        /// Create order Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="order"></param>
@@ -3922,7 +3991,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create an order Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
+        /// Create order Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="order"></param>
@@ -3973,7 +4042,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create an order Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
+        /// Create order Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="order"></param>
@@ -3987,7 +4056,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create an order Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
+        /// Create order Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the &#x60;account&#x60; field. Default is &#x60;spot&#x60;, which means using the spot account to place orders. If the user has a &#x60;unified&#x60; account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when &#x60;account&#x60; is set to &#x60;margin&#x60;), you can set &#x60;auto_borrow&#x60; to &#x60;true&#x60;. In case of insufficient account balance, the system will automatically execute &#x60;POST /margin/uni/loans&#x60; to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user&#39;s isolated margin account. Account automatic repayment settings can be queried and set through &#x60;/margin/auto_repay&#x60;.  When using unified account trading (i.e., when &#x60;account&#x60; is set to &#x60;unified&#x60;), &#x60;auto_borrow&#x60; can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the &#x60;auto_repay&#x60; setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; simultaneously.  Auto repayment will be triggered when the order ends, i.e., when &#x60;status&#x60; is &#x60;cancelled&#x60; or &#x60;closed&#x60;.  **Order Status**  The order status in pending orders is &#x60;open&#x60;, which remains &#x60;open&#x60; until all quantity is filled. If fully filled, the order ends and status becomes &#x60;closed&#x60;. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become &#x60;cancelled&#x60;.  **Iceberg Orders**  &#x60;iceberg&#x60; is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker&#39;s fee rate.  **Self-Trade Prevention**  Set &#x60;stp_act&#x60; to determine the self-trade prevention strategy to use
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="order"></param>
@@ -6150,6 +6219,639 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CancelSpotPriceTriggeredOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Spot POV orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Order status. Defaults to open  - open: Active orders - finished: Finished orders</param>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <param name="side">Specify all bids or all asks, both included if not specified (optional)</param>
+        /// <param name="page">Page number, up to 100 (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>List&lt;SpotPovOrder&gt;</returns>
+        public List<SpotPovOrder> ListSpotPovOrders (string status, string currencyPair = default(string), string side = default(string), int? page = default(int?), int? limit = default(int?))
+        {
+             ApiResponse<List<SpotPovOrder>> localVarResponse = ListSpotPovOrdersWithHttpInfo(status, currencyPair, side, page, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Spot POV orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Order status. Defaults to open  - open: Active orders - finished: Finished orders</param>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <param name="side">Specify all bids or all asks, both included if not specified (optional)</param>
+        /// <param name="page">Page number, up to 100 (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>ApiResponse of List&lt;SpotPovOrder&gt;</returns>
+        public ApiResponse<List<SpotPovOrder>> ListSpotPovOrdersWithHttpInfo (string status, string currencyPair = default(string), string side = default(string), int? page = default(int?), int? limit = default(int?))
+        {
+            // verify the required parameter 'status' is set
+            if (status == null)
+                throw new ApiException(400, "Missing required parameter 'status' when calling SpotApi->ListSpotPovOrders");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (currencyPair != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency_pair", currencyPair));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            if (side != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "side", side));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<SpotPovOrder>>("/spot/pov_orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListSpotPovOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Spot POV orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Order status. Defaults to open  - open: Active orders - finished: Finished orders</param>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <param name="side">Specify all bids or all asks, both included if not specified (optional)</param>
+        /// <param name="page">Page number, up to 100 (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>Task of List&lt;SpotPovOrder&gt;</returns>
+        public async Task<List<SpotPovOrder>> ListSpotPovOrdersAsync (string status, string currencyPair = default(string), string side = default(string), int? page = default(int?), int? limit = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<SpotPovOrder>> localVarResponse = await ListSpotPovOrdersAsyncWithHttpInfo(status, currencyPair, side, page, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List Spot POV orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="status">Order status. Defaults to open  - open: Active orders - finished: Finished orders</param>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <param name="side">Specify all bids or all asks, both included if not specified (optional)</param>
+        /// <param name="page">Page number, up to 100 (optional, default to 1)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>Task of ApiResponse (List&lt;SpotPovOrder&gt;)</returns>
+        public async Task<ApiResponse<List<SpotPovOrder>>> ListSpotPovOrdersAsyncWithHttpInfo (string status, string currencyPair = default(string), string side = default(string), int? page = default(int?), int? limit = default(int?))
+        {
+            // verify the required parameter 'status' is set
+            if (status == null)
+                throw new ApiException(400, "Missing required parameter 'status' when calling SpotApi->ListSpotPovOrders");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (currencyPair != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency_pair", currencyPair));
+            }
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            if (side != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "side", side));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<SpotPovOrder>>("/spot/pov_orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListSpotPovOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create a Spot POV order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spotPovOrderCreator"></param>
+        /// <returns>SpotPovOrder</returns>
+        public SpotPovOrder CreateSpotPovOrder (SpotPovOrderCreator spotPovOrderCreator)
+        {
+             ApiResponse<SpotPovOrder> localVarResponse = CreateSpotPovOrderWithHttpInfo(spotPovOrderCreator);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a Spot POV order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spotPovOrderCreator"></param>
+        /// <returns>ApiResponse of SpotPovOrder</returns>
+        public ApiResponse<SpotPovOrder> CreateSpotPovOrderWithHttpInfo (SpotPovOrderCreator spotPovOrderCreator)
+        {
+            // verify the required parameter 'spotPovOrderCreator' is set
+            if (spotPovOrderCreator == null)
+                throw new ApiException(400, "Missing required parameter 'spotPovOrderCreator' when calling SpotApi->CreateSpotPovOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = spotPovOrderCreator;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<SpotPovOrder>("/spot/pov_orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateSpotPovOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create a Spot POV order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spotPovOrderCreator"></param>
+        /// <returns>Task of SpotPovOrder</returns>
+        public async Task<SpotPovOrder> CreateSpotPovOrderAsync (SpotPovOrderCreator spotPovOrderCreator)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<SpotPovOrder> localVarResponse = await CreateSpotPovOrderAsyncWithHttpInfo(spotPovOrderCreator);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create a Spot POV order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spotPovOrderCreator"></param>
+        /// <returns>Task of ApiResponse (SpotPovOrder)</returns>
+        public async Task<ApiResponse<SpotPovOrder>> CreateSpotPovOrderAsyncWithHttpInfo (SpotPovOrderCreator spotPovOrderCreator)
+        {
+            // verify the required parameter 'spotPovOrderCreator' is set
+            if (spotPovOrderCreator == null)
+                throw new ApiException(400, "Missing required parameter 'spotPovOrderCreator' when calling SpotApi->CreateSpotPovOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = spotPovOrderCreator;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SpotPovOrder>("/spot/pov_orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateSpotPovOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Cancel Spot POV orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <returns>List&lt;SpotPovOrder&gt;</returns>
+        public List<SpotPovOrder> CancelSpotPovOrders (string currencyPair = default(string))
+        {
+             ApiResponse<List<SpotPovOrder>> localVarResponse = CancelSpotPovOrdersWithHttpInfo(currencyPair);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Cancel Spot POV orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <returns>ApiResponse of List&lt;SpotPovOrder&gt;</returns>
+        public ApiResponse<List<SpotPovOrder>> CancelSpotPovOrdersWithHttpInfo (string currencyPair = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (currencyPair != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency_pair", currencyPair));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<SpotPovOrder>>("/spot/pov_orders/cancel", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CancelSpotPovOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Cancel Spot POV orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <returns>Task of List&lt;SpotPovOrder&gt;</returns>
+        public async Task<List<SpotPovOrder>> CancelSpotPovOrdersAsync (string currencyPair = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<SpotPovOrder>> localVarResponse = await CancelSpotPovOrdersAsyncWithHttpInfo(currencyPair);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Cancel Spot POV orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;SpotPovOrder&gt;)</returns>
+        public async Task<ApiResponse<List<SpotPovOrder>>> CancelSpotPovOrdersAsyncWithHttpInfo (string currencyPair = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (currencyPair != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency_pair", currencyPair));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<SpotPovOrder>>("/spot/pov_orders/cancel", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CancelSpotPovOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Spot POV order details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>SpotPovOrder</returns>
+        public SpotPovOrder GetSpotPovOrder (string orderId)
+        {
+             ApiResponse<SpotPovOrder> localVarResponse = GetSpotPovOrderWithHttpInfo(orderId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query Spot POV order details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>ApiResponse of SpotPovOrder</returns>
+        public ApiResponse<SpotPovOrder> GetSpotPovOrderWithHttpInfo (string orderId)
+        {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling SpotApi->GetSpotPovOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SpotPovOrder>("/spot/pov_orders/{order_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetSpotPovOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query Spot POV order details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>Task of SpotPovOrder</returns>
+        public async Task<SpotPovOrder> GetSpotPovOrderAsync (string orderId)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<SpotPovOrder> localVarResponse = await GetSpotPovOrderAsyncWithHttpInfo(orderId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query Spot POV order details 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>Task of ApiResponse (SpotPovOrder)</returns>
+        public async Task<ApiResponse<SpotPovOrder>> GetSpotPovOrderAsyncWithHttpInfo (string orderId)
+        {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling SpotApi->GetSpotPovOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SpotPovOrder>("/spot/pov_orders/{order_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetSpotPovOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Cancel a Spot POV order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>SpotPovOrder</returns>
+        public SpotPovOrder CancelSpotPovOrder (string orderId)
+        {
+             ApiResponse<SpotPovOrder> localVarResponse = CancelSpotPovOrderWithHttpInfo(orderId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Cancel a Spot POV order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>ApiResponse of SpotPovOrder</returns>
+        public ApiResponse<SpotPovOrder> CancelSpotPovOrderWithHttpInfo (string orderId)
+        {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling SpotApi->CancelSpotPovOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<SpotPovOrder>("/spot/pov_orders/{order_id}/cancel", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CancelSpotPovOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Cancel a Spot POV order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>Task of SpotPovOrder</returns>
+        public async Task<SpotPovOrder> CancelSpotPovOrderAsync (string orderId)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<SpotPovOrder> localVarResponse = await CancelSpotPovOrderAsyncWithHttpInfo(orderId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Cancel a Spot POV order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field.</param>
+        /// <returns>Task of ApiResponse (SpotPovOrder)</returns>
+        public async Task<ApiResponse<SpotPovOrder>> CancelSpotPovOrderAsyncWithHttpInfo (string orderId)
+        {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling SpotApi->CancelSpotPovOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SpotPovOrder>("/spot/pov_orders/{order_id}/cancel", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CancelSpotPovOrder", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

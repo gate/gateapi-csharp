@@ -108,9 +108,9 @@ namespace Io.Gate.GateApi.Model
         /// <param name="interestRate">Interest rate parameter used in funding rate and premium-related calculations for perpetual contracts. Returned as a string decimal ratio (e.g. &#x60;0.0003&#x60;), same convention as &#x60;funding_rate&#x60; (ratio, not percent)..</param>
         /// <param name="riskLimitStep">Risk limit adjustment step (deprecated).</param>
         /// <param name="riskLimitMax">Maximum risk limit allowed by the contract (deprecated). It is recommended to use /futures/{settle}/risk_limit_tiers to query risk limits.</param>
-        /// <param name="orderSizeMin">Minimum order size allowed by the contract.</param>
+        /// <param name="orderSizeMin">Minimum order quantity.</param>
         /// <param name="enableDecimal">Whether decimal string type is supported for contract lot size. When this field is set to &#x60;true&#x60;, it indicates that the contract supports decimal lot sizes (i.e., the &#x60;size&#x60; field can use a decimal string type); when set to &#x60;false&#x60;, it indicates that the contract does not support decimal lot sizes (i.e., the &#x60;size&#x60; field can only use an integer type)..</param>
-        /// <param name="orderSizeMax">Maximum order size allowed by the contract.</param>
+        /// <param name="orderSizeMax">Maximum order quantity.</param>
         /// <param name="orderPriceDeviate">Maximum allowed deviation between order price and current mark price. The order price &#x60;order_price&#x60; must satisfy the following condition:      abs(order_price - mark_price) &lt;&#x3D; mark_price * order_price_deviate.</param>
         /// <param name="refDiscountRate">Trading fee discount for referred users.</param>
         /// <param name="refRebateRate">Commission rate for referrers.</param>
@@ -321,9 +321,9 @@ namespace Io.Gate.GateApi.Model
         public string RiskLimitMax { get; set; }
 
         /// <summary>
-        /// Minimum order size allowed by the contract
+        /// Minimum order quantity
         /// </summary>
-        /// <value>Minimum order size allowed by the contract</value>
+        /// <value>Minimum order quantity</value>
         [DataMember(Name="order_size_min")]
         public string OrderSizeMin { get; set; }
 
@@ -335,9 +335,9 @@ namespace Io.Gate.GateApi.Model
         public bool EnableDecimal { get; set; }
 
         /// <summary>
-        /// Maximum order size allowed by the contract
+        /// Maximum order quantity
         /// </summary>
-        /// <value>Maximum order size allowed by the contract</value>
+        /// <value>Maximum order quantity</value>
         [DataMember(Name="order_size_max")]
         public string OrderSizeMax { get; set; }
 

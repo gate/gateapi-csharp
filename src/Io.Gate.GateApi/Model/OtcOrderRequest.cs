@@ -39,14 +39,14 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="OtcOrderRequest" /> class.
         /// </summary>
         /// <param name="type">BUY for on-ramp, SELL for off-ramp (required).</param>
-        /// <param name="side">Quote direction returned by the quote API (used for order validation) (required).</param>
+        /// <param name="side">The side returned by the quote endpoint (used for order validation). For backward compatibility, &#x60;FIAT&#x60;/&#x60;CRYPTO&#x60; or &#x60;PAY&#x60;/&#x60;GET&#x60; are accepted; new integrations should use the value returned by the quote response. (required).</param>
         /// <param name="cryptoCurrency">Cryptocurrency (supported currencies can be queried from the OTC web fiat quote page) (required).</param>
         /// <param name="fiatCurrency">Fiat currency (supported currencies can be queried from the OTC web fiat quote page) (required).</param>
         /// <param name="cryptoAmount">Amount of cryptocurrency (required).</param>
         /// <param name="fiatAmount">Fiat amount (required).</param>
         /// <param name="promotionCode">Promotion code.</param>
         /// <param name="quoteToken">Parameter returned by the quote API (required).</param>
-        /// <param name="bankId">The bank card ID used for placing the order; select it from the list returned by &#x60;GET /otc/bank_list&#x60; (or &#x60;GET /otc/bank/list&#x60;); the default card has &#x60;is_default&#x3D;1&#x60; (required).</param>
+        /// <param name="bankId">Bank card ID used to place the order. Select one from the list returned by &#x60;GET /otc/bank/list&#x60;; the default card has &#x60;is_default&#x3D;1&#x60;. (required).</param>
         public OtcOrderRequest(string type = default(string), string side = default(string), string cryptoCurrency = default(string), string fiatCurrency = default(string), string cryptoAmount = default(string), string fiatAmount = default(string), string promotionCode = default(string), string quoteToken = default(string), string bankId = default(string))
         {
             // to ensure "type" is required (not null)
@@ -76,9 +76,9 @@ namespace Io.Gate.GateApi.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// Quote direction returned by the quote API (used for order validation)
+        /// The side returned by the quote endpoint (used for order validation). For backward compatibility, &#x60;FIAT&#x60;/&#x60;CRYPTO&#x60; or &#x60;PAY&#x60;/&#x60;GET&#x60; are accepted; new integrations should use the value returned by the quote response.
         /// </summary>
-        /// <value>Quote direction returned by the quote API (used for order validation)</value>
+        /// <value>The side returned by the quote endpoint (used for order validation). For backward compatibility, &#x60;FIAT&#x60;/&#x60;CRYPTO&#x60; or &#x60;PAY&#x60;/&#x60;GET&#x60; are accepted; new integrations should use the value returned by the quote response.</value>
         [DataMember(Name="side")]
         public string Side { get; set; }
 
@@ -125,9 +125,9 @@ namespace Io.Gate.GateApi.Model
         public string QuoteToken { get; set; }
 
         /// <summary>
-        /// The bank card ID used for placing the order; select it from the list returned by &#x60;GET /otc/bank_list&#x60; (or &#x60;GET /otc/bank/list&#x60;); the default card has &#x60;is_default&#x3D;1&#x60;
+        /// Bank card ID used to place the order. Select one from the list returned by &#x60;GET /otc/bank/list&#x60;; the default card has &#x60;is_default&#x3D;1&#x60;.
         /// </summary>
-        /// <value>The bank card ID used for placing the order; select it from the list returned by &#x60;GET /otc/bank_list&#x60; (or &#x60;GET /otc/bank/list&#x60;); the default card has &#x60;is_default&#x3D;1&#x60;</value>
+        /// <value>Bank card ID used to place the order. Select one from the list returned by &#x60;GET /otc/bank/list&#x60;; the default card has &#x60;is_default&#x3D;1&#x60;.</value>
         [DataMember(Name="bank_id")]
         public string BankId { get; set; }
 

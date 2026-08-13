@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="AutoInvestPlanRecordItem" /> class.
         /// </summary>
         /// <param name="id">Record ID (required).</param>
-        /// <param name="type">type (required).</param>
+        /// <param name="type">Type (required).</param>
         /// <param name="money">SourceCurrency (required).</param>
         /// <param name="userId">User ID (required).</param>
         /// <param name="planId">Plan ID (required).</param>
@@ -85,9 +85,9 @@ namespace Io.Gate.GateApi.Model
         public long Id { get; set; }
 
         /// <summary>
-        /// type
+        /// Type
         /// </summary>
-        /// <value>type</value>
+        /// <value>Type</value>
         [DataMember(Name="type")]
         public string Type { get; set; }
 

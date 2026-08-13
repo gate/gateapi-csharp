@@ -47,7 +47,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="remittanceLineNumber">remittanceLineNumber.</param>
         /// <param name="agentBankName">agentBankName.</param>
         /// <param name="agentBankSwift">agentBankSwift.</param>
-        /// <param name="documentationFile">开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准） (required).</param>
+        /// <param name="documentationFile">Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment) (required).</param>
         public OtcBankCreateMultipartRequest(string bankAccountName = default(string), string bankName = default(string), string bankCountry = default(string), string bankAddress = default(string), string iban = default(string), string swift = default(string), string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string), string documentationFile = default(string))
         {
             // to ensure "bankAccountName" is required (not null)
@@ -124,9 +124,9 @@ namespace Io.Gate.GateApi.Model
         public string AgentBankSwift { get; set; }
 
         /// <summary>
-        /// 开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）
+        /// Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)
         /// </summary>
-        /// <value>开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）</value>
+        /// <value>Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)</value>
         [DataMember(Name="documentation_file")]
         public string DocumentationFile { get; set; }
 

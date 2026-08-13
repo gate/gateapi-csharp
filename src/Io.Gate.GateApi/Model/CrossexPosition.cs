@@ -38,35 +38,41 @@ namespace Io.Gate.GateApi.Model
         /// <param name="symbol">Currency pair.</param>
         /// <param name="positionSide">Position Direction.</param>
         /// <param name="initialMargin">Initial Margin.</param>
+        /// <param name="isolatedMargin">Isolated margin. It is 0 in cross margin mode and applies only to isolated margin positions.</param>
+        /// <param name="marginMode">Margin mode (CROSS/ISOLATED).</param>
         /// <param name="maintenanceMargin">Maintenance margin.</param>
         /// <param name="positionQty">Position Quantity.</param>
         /// <param name="positionValue">Position Value.</param>
         /// <param name="upnl">Unrealized P&amp;L.</param>
         /// <param name="upnlRate">Unrealized P&amp;L Ratio.</param>
         /// <param name="entryPrice">Position Average Entry Price.</param>
+        /// <param name="liqPrice">Liquidation price. It is 0 in cross margin mode and applies only to isolated margin positions; 0 in isolated margin mode means the position will not be liquidated.</param>
         /// <param name="markPrice">Mark price.</param>
         /// <param name="leverage">Position Leverage.</param>
         /// <param name="maxLeverage">Maximum leverage.</param>
         /// <param name="riskLimit">Position risk limit.</param>
         /// <param name="fee">Position Fee.</param>
-        /// <param name="fundingFee">Position Funding Fee.</param>
+        /// <param name="fundingFee">Accumulated position funding fee. A positive value indicates a gain, while a negative value indicates a loss..</param>
         /// <param name="fundingTime">Position funding fee collection time (0 indicates it has not been collected yet).</param>
         /// <param name="createTime">Position Creation Time.</param>
         /// <param name="updateTime">Position Update Time.</param>
         /// <param name="closedPnl">Realized PnL.</param>
-        public CrossexPosition(string userId = default(string), string positionId = default(string), string symbol = default(string), string positionSide = default(string), string initialMargin = default(string), string maintenanceMargin = default(string), string positionQty = default(string), string positionValue = default(string), string upnl = default(string), string upnlRate = default(string), string entryPrice = default(string), string markPrice = default(string), string leverage = default(string), string maxLeverage = default(string), string riskLimit = default(string), string fee = default(string), string fundingFee = default(string), string fundingTime = default(string), string createTime = default(string), string updateTime = default(string), string closedPnl = default(string))
+        public CrossexPosition(string userId = default(string), string positionId = default(string), string symbol = default(string), string positionSide = default(string), string initialMargin = default(string), string isolatedMargin = default(string), string marginMode = default(string), string maintenanceMargin = default(string), string positionQty = default(string), string positionValue = default(string), string upnl = default(string), string upnlRate = default(string), string entryPrice = default(string), string liqPrice = default(string), string markPrice = default(string), string leverage = default(string), string maxLeverage = default(string), string riskLimit = default(string), string fee = default(string), string fundingFee = default(string), string fundingTime = default(string), string createTime = default(string), string updateTime = default(string), string closedPnl = default(string))
         {
             this.UserId = userId;
             this.PositionId = positionId;
             this.Symbol = symbol;
             this.PositionSide = positionSide;
             this.InitialMargin = initialMargin;
+            this.IsolatedMargin = isolatedMargin;
+            this.MarginMode = marginMode;
             this.MaintenanceMargin = maintenanceMargin;
             this.PositionQty = positionQty;
             this.PositionValue = positionValue;
             this.Upnl = upnl;
             this.UpnlRate = upnlRate;
             this.EntryPrice = entryPrice;
+            this.LiqPrice = liqPrice;
             this.MarkPrice = markPrice;
             this.Leverage = leverage;
             this.MaxLeverage = maxLeverage;
@@ -115,6 +121,20 @@ namespace Io.Gate.GateApi.Model
         public string InitialMargin { get; set; }
 
         /// <summary>
+        /// Isolated margin. It is 0 in cross margin mode and applies only to isolated margin positions
+        /// </summary>
+        /// <value>Isolated margin. It is 0 in cross margin mode and applies only to isolated margin positions</value>
+        [DataMember(Name="isolated_margin")]
+        public string IsolatedMargin { get; set; }
+
+        /// <summary>
+        /// Margin mode (CROSS/ISOLATED)
+        /// </summary>
+        /// <value>Margin mode (CROSS/ISOLATED)</value>
+        [DataMember(Name="margin_mode")]
+        public string MarginMode { get; set; }
+
+        /// <summary>
         /// Maintenance margin
         /// </summary>
         /// <value>Maintenance margin</value>
@@ -157,6 +177,13 @@ namespace Io.Gate.GateApi.Model
         public string EntryPrice { get; set; }
 
         /// <summary>
+        /// Liquidation price. It is 0 in cross margin mode and applies only to isolated margin positions; 0 in isolated margin mode means the position will not be liquidated
+        /// </summary>
+        /// <value>Liquidation price. It is 0 in cross margin mode and applies only to isolated margin positions; 0 in isolated margin mode means the position will not be liquidated</value>
+        [DataMember(Name="liq_price")]
+        public string LiqPrice { get; set; }
+
+        /// <summary>
         /// Mark price
         /// </summary>
         /// <value>Mark price</value>
@@ -192,9 +219,9 @@ namespace Io.Gate.GateApi.Model
         public string Fee { get; set; }
 
         /// <summary>
-        /// Position Funding Fee
+        /// Accumulated position funding fee. A positive value indicates a gain, while a negative value indicates a loss.
         /// </summary>
-        /// <value>Position Funding Fee</value>
+        /// <value>Accumulated position funding fee. A positive value indicates a gain, while a negative value indicates a loss.</value>
         [DataMember(Name="funding_fee")]
         public string FundingFee { get; set; }
 
@@ -239,12 +266,15 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
             sb.Append("  InitialMargin: ").Append(InitialMargin).Append("\n");
+            sb.Append("  IsolatedMargin: ").Append(IsolatedMargin).Append("\n");
+            sb.Append("  MarginMode: ").Append(MarginMode).Append("\n");
             sb.Append("  MaintenanceMargin: ").Append(MaintenanceMargin).Append("\n");
             sb.Append("  PositionQty: ").Append(PositionQty).Append("\n");
             sb.Append("  PositionValue: ").Append(PositionValue).Append("\n");
             sb.Append("  Upnl: ").Append(Upnl).Append("\n");
             sb.Append("  UpnlRate: ").Append(UpnlRate).Append("\n");
             sb.Append("  EntryPrice: ").Append(EntryPrice).Append("\n");
+            sb.Append("  LiqPrice: ").Append(LiqPrice).Append("\n");
             sb.Append("  MarkPrice: ").Append(MarkPrice).Append("\n");
             sb.Append("  Leverage: ").Append(Leverage).Append("\n");
             sb.Append("  MaxLeverage: ").Append(MaxLeverage).Append("\n");
@@ -315,6 +345,16 @@ namespace Io.Gate.GateApi.Model
                     this.InitialMargin.Equals(input.InitialMargin))
                 ) && 
                 (
+                    this.IsolatedMargin == input.IsolatedMargin ||
+                    (this.IsolatedMargin != null &&
+                    this.IsolatedMargin.Equals(input.IsolatedMargin))
+                ) && 
+                (
+                    this.MarginMode == input.MarginMode ||
+                    (this.MarginMode != null &&
+                    this.MarginMode.Equals(input.MarginMode))
+                ) && 
+                (
                     this.MaintenanceMargin == input.MaintenanceMargin ||
                     (this.MaintenanceMargin != null &&
                     this.MaintenanceMargin.Equals(input.MaintenanceMargin))
@@ -343,6 +383,11 @@ namespace Io.Gate.GateApi.Model
                     this.EntryPrice == input.EntryPrice ||
                     (this.EntryPrice != null &&
                     this.EntryPrice.Equals(input.EntryPrice))
+                ) && 
+                (
+                    this.LiqPrice == input.LiqPrice ||
+                    (this.LiqPrice != null &&
+                    this.LiqPrice.Equals(input.LiqPrice))
                 ) && 
                 (
                     this.MarkPrice == input.MarkPrice ||
@@ -415,6 +460,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
                 if (this.InitialMargin != null)
                     hashCode = hashCode * 59 + this.InitialMargin.GetHashCode();
+                if (this.IsolatedMargin != null)
+                    hashCode = hashCode * 59 + this.IsolatedMargin.GetHashCode();
+                if (this.MarginMode != null)
+                    hashCode = hashCode * 59 + this.MarginMode.GetHashCode();
                 if (this.MaintenanceMargin != null)
                     hashCode = hashCode * 59 + this.MaintenanceMargin.GetHashCode();
                 if (this.PositionQty != null)
@@ -427,6 +476,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.UpnlRate.GetHashCode();
                 if (this.EntryPrice != null)
                     hashCode = hashCode * 59 + this.EntryPrice.GetHashCode();
+                if (this.LiqPrice != null)
+                    hashCode = hashCode * 59 + this.LiqPrice.GetHashCode();
                 if (this.MarkPrice != null)
                     hashCode = hashCode * 59 + this.MarkPrice.GetHashCode();
                 if (this.Leverage != null)

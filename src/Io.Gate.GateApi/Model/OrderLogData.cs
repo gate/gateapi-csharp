@@ -58,9 +58,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="price_type")]
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
-        /// Order side (1&#x3D;sell, 2&#x3D;buy)
+        /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
-        /// <value>Order side (1&#x3D;sell, 2&#x3D;buy)</value>
+        /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SideEnum
         {
@@ -77,9 +77,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Order side (1&#x3D;sell, 2&#x3D;buy)
+        /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
-        /// <value>Order side (1&#x3D;sell, 2&#x3D;buy)</value>
+        /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [DataMember(Name="side")]
         public SideEnum? Side { get; set; }
         /// <summary>
@@ -90,8 +90,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="symbol">Trading pair of the order.</param>
         /// <param name="priceType">Trade type (market&#x3D;market price, trigger&#x3D;trigger price).</param>
         /// <param name="state">Order status code (1&#x3D;placed, 2&#x3D;canceled, 3&#x3D;partially filled, 4&#x3D;filled, 5&#x3D;rejected).</param>
-        /// <param name="side">Order side (1&#x3D;sell, 2&#x3D;buy).</param>
-        /// <param name="volume">Order volume.</param>
+        /// <param name="side">Side (1&#x3D;sell, 2&#x3D;buy).</param>
+        /// <param name="volume">Order quantity.</param>
         /// <param name="price">Average fill price.</param>
         public OrderLogData(int orderId = default(int), int logId = default(int), string symbol = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), int state = default(int), SideEnum? side = default(SideEnum?), string volume = default(string), string price = default(string))
         {
@@ -134,9 +134,9 @@ namespace Io.Gate.GateApi.Model
         public int State { get; set; }
 
         /// <summary>
-        /// Order volume
+        /// Order quantity
         /// </summary>
-        /// <value>Order volume</value>
+        /// <value>Order quantity</value>
         [DataMember(Name="volume")]
         public string Volume { get; set; }
 

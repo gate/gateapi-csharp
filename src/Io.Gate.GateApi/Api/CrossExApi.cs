@@ -73,7 +73,7 @@ namespace Io.Gate.GateApi.Api
         /// Query supported transfer currencies
         /// </summary>
         /// <remarks>
-        /// Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// &#x60;est_fee&#x60;: On-chain withdrawal fee. When a fund transfer involves an on-chain withdrawal, the exchange charges this fee. This value is for reference only; the actual fee charged by the exchange applies
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
@@ -84,7 +84,7 @@ namespace Io.Gate.GateApi.Api
         /// Query supported transfer currencies
         /// </summary>
         /// <remarks>
-        /// Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// &#x60;est_fee&#x60;: On-chain withdrawal fee. When a fund transfer involves an on-chain withdrawal, the exchange charges this fee. This value is for reference only; the actual fee charged by the exchange applies
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
@@ -143,7 +143,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of CrossexTransferResponse</returns>
         ApiResponse<CrossexTransferResponse> CreateCrossexTransferWithHttpInfo (CrossexTransferRequest crossexTransferRequest = default(CrossexTransferRequest));
         /// <summary>
-        /// Create an order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
@@ -154,7 +154,7 @@ namespace Io.Gate.GateApi.Api
         CrossexOrderActionResponse CreateCrossexOrder (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest));
 
         /// <summary>
-        /// Create an order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
@@ -163,6 +163,27 @@ namespace Io.Gate.GateApi.Api
         /// <param name="crossexOrderRequest"> (optional)</param>
         /// <returns>ApiResponse of CrossexOrderActionResponse</returns>
         ApiResponse<CrossexOrderActionResponse> CreateCrossexOrderWithHttpInfo (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest));
+        /// <summary>
+        /// Batch cancel orders
+        /// </summary>
+        /// <remarks>
+        /// Cancel multiple specified orders. Either order_id or text is required; if both are provided, order_id takes precedence. Rate limit: 100 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexBatchCancelOrderRequest"></param>
+        /// <returns>List&lt;CrossexBatchCancelOrderResponse&gt;</returns>
+        List<CrossexBatchCancelOrderResponse> CancelBatchCrossexOrders (List<CrossexBatchCancelOrderRequest> crossexBatchCancelOrderRequest);
+
+        /// <summary>
+        /// Batch cancel orders
+        /// </summary>
+        /// <remarks>
+        /// Cancel multiple specified orders. Either order_id or text is required; if both are provided, order_id takes precedence. Rate limit: 100 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexBatchCancelOrderRequest"></param>
+        /// <returns>ApiResponse of List&lt;CrossexBatchCancelOrderResponse&gt;</returns>
+        ApiResponse<List<CrossexBatchCancelOrderResponse>> CancelBatchCrossexOrdersWithHttpInfo (List<CrossexBatchCancelOrderRequest> crossexBatchCancelOrderRequest);
         /// <summary>
         /// Query order details
         /// </summary>
@@ -232,7 +253,7 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Inquiry
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per day
+        /// Rate limit: 100 requests per day For HYPERLIQUID, swaps between &#x60;HYPERLIQUID_USDC&#x60; and &#x60;CROSSEX_USDT&#x60; are supported. Flash Swap in isolated exchange mode is not currently supported for HYPERLIQUID
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertQuoteRequest"> (optional)</param>
@@ -243,7 +264,7 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Inquiry
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per day
+        /// Rate limit: 100 requests per day For HYPERLIQUID, swaps between &#x60;HYPERLIQUID_USDC&#x60; and &#x60;CROSSEX_USDT&#x60; are supported. Flash Swap in isolated exchange mode is not currently supported for HYPERLIQUID
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertQuoteRequest"> (optional)</param>
@@ -277,7 +298,7 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (optional)</param>
+        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (optional)</param>
         /// <returns>CrossexAccount</returns>
         CrossexAccount GetCrossexAccount (string exchangeType = default(string));
 
@@ -288,7 +309,7 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (optional)</param>
+        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (optional)</param>
         /// <returns>ApiResponse of CrossexAccount</returns>
         ApiResponse<CrossexAccount> GetCrossexAccountWithHttpInfo (string exchangeType = default(string));
         /// <summary>
@@ -400,7 +421,7 @@ namespace Io.Gate.GateApi.Api
         /// Full Close Position
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
+        /// Rate limit: 100 requests per day. Automatic position-closing rules. FUTURE and MARGIN positions are supported.  Before using this endpoint, ensure that the following prerequisite is met: - There are no open orders for the symbol in the current account. - Once the prerequisite is met, the system checks whether the position meets either of the following conditions: - Less than the minimum notional amount (minNotional) - Less than the minimum order size (minSize)  When either condition is met, the system automatically creates a closing order and immediately closes the entire position. This endpoint prevents positions that are too small to be submitted to an exchange from becoming stranded and ensures that small positions can be closed when they fall below the threshold.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexClosePositionRequest"> (optional)</param>
@@ -411,12 +432,75 @@ namespace Io.Gate.GateApi.Api
         /// Full Close Position
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
+        /// Rate limit: 100 requests per day. Automatic position-closing rules. FUTURE and MARGIN positions are supported.  Before using this endpoint, ensure that the following prerequisite is met: - There are no open orders for the symbol in the current account. - Once the prerequisite is met, the system checks whether the position meets either of the following conditions: - Less than the minimum notional amount (minNotional) - Less than the minimum order size (minSize)  When either condition is met, the system automatically creates a closing order and immediately closes the entire position. This endpoint prevents positions that are too small to be submitted to an exchange from becoming stranded and ensures that small positions can be closed when they fall below the threshold.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexClosePositionRequest"> (optional)</param>
         /// <returns>ApiResponse of CrossexOrderActionResponse</returns>
         ApiResponse<CrossexOrderActionResponse> CloseCrossexPositionWithHttpInfo (CrossexClosePositionRequest crossexClosePositionRequest = default(CrossexClosePositionRequest));
+        /// <summary>
+        /// Get futures position margin mode
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Futures trading pair</param>
+        /// <returns>CrossexMarginModeResponse</returns>
+        CrossexMarginModeResponse GetCrossexPositionsMarginMode (string symbol);
+
+        /// <summary>
+        /// Get futures position margin mode
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Futures trading pair</param>
+        /// <returns>ApiResponse of CrossexMarginModeResponse</returns>
+        ApiResponse<CrossexMarginModeResponse> GetCrossexPositionsMarginModeWithHttpInfo (string symbol);
+        /// <summary>
+        /// Update futures position margin mode
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 100 requests per 10 seconds. Only Hyperliquid futures trading pairs are supported. The margin mode cannot be changed while open orders or positions exist
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexMarginModeRequest"> (optional)</param>
+        /// <returns>CrossexMarginModeResponse</returns>
+        CrossexMarginModeResponse UpdateCrossexPositionsMarginMode (CrossexMarginModeRequest crossexMarginModeRequest = default(CrossexMarginModeRequest));
+
+        /// <summary>
+        /// Update futures position margin mode
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 100 requests per 10 seconds. Only Hyperliquid futures trading pairs are supported. The margin mode cannot be changed while open orders or positions exist
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexMarginModeRequest"> (optional)</param>
+        /// <returns>ApiResponse of CrossexMarginModeResponse</returns>
+        ApiResponse<CrossexMarginModeResponse> UpdateCrossexPositionsMarginModeWithHttpInfo (CrossexMarginModeRequest crossexMarginModeRequest = default(CrossexMarginModeRequest));
+        /// <summary>
+        /// Increase or decrease isolated margin
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 100 requests per 10 seconds. Only Hyperliquid isolated futures positions are supported. Positive values increase margin, while negative values decrease margin
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexIsolatedMarginRequest"> (optional)</param>
+        /// <returns>CrossexIsolatedMarginResponse</returns>
+        CrossexIsolatedMarginResponse UpdateCrossexPositionsMargin (CrossexIsolatedMarginRequest crossexIsolatedMarginRequest = default(CrossexIsolatedMarginRequest));
+
+        /// <summary>
+        /// Increase or decrease isolated margin
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 100 requests per 10 seconds. Only Hyperliquid isolated futures positions are supported. Positive values increase margin, while negative values decrease margin
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexIsolatedMarginRequest"> (optional)</param>
+        /// <returns>ApiResponse of CrossexIsolatedMarginResponse</returns>
+        ApiResponse<CrossexIsolatedMarginResponse> UpdateCrossexPositionsMarginWithHttpInfo (CrossexIsolatedMarginRequest crossexIsolatedMarginRequest = default(CrossexIsolatedMarginRequest));
         /// <summary>
         /// Query margin asset interest rates
         /// </summary>
@@ -513,8 +597,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>List&lt;CrossexAdlRank&gt;</returns>
-        List<CrossexAdlRank> ListCrossexAdlRank (string symbol);
+        /// <returns>CrossexAdlRank</returns>
+        CrossexAdlRank ListCrossexAdlRank (string symbol);
 
         /// <summary>
         /// Query ADL Position Reduction Ranking
@@ -524,8 +608,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>ApiResponse of List&lt;CrossexAdlRank&gt;</returns>
-        ApiResponse<List<CrossexAdlRank>> ListCrossexAdlRankWithHttpInfo (string symbol);
+        /// <returns>ApiResponse of CrossexAdlRank</returns>
+        ApiResponse<CrossexAdlRank> ListCrossexAdlRankWithHttpInfo (string symbol);
         /// <summary>
         /// Query All Current Open Orders
         /// </summary>
@@ -552,7 +636,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;CrossexOrder&gt;</returns>
         ApiResponse<List<CrossexOrder>> ListCrossexOpenOrdersWithHttpInfo (string symbol = default(string), string exchangeType = default(string), string businessType = default(string));
         /// <summary>
-        /// queryorderhistory
+        /// Query order history
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -568,7 +652,7 @@ namespace Io.Gate.GateApi.Api
         List<CrossexOrder> ListCrossexHistoryOrders (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?), string attributes = default(string));
 
         /// <summary>
-        /// queryorderhistory
+        /// Query order history
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -672,7 +756,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;CrossexMarginInterestRecord&gt;</returns>
         ApiResponse<List<CrossexMarginInterestRecord>> ListCrossexHistoryMarginInterestsWithHttpInfo (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string));
         /// <summary>
-        /// queryfilledhistory
+        /// Query filled history
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -687,7 +771,7 @@ namespace Io.Gate.GateApi.Api
         List<CrossexTrade> ListCrossexHistoryTrades (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
 
         /// <summary>
-        /// queryfilledhistory
+        /// Query filled history
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -739,7 +823,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID/DERIBIT (optional)</param>
         /// <returns>List&lt;CrossexCoinDiscountRate&gt;</returns>
         List<CrossexCoinDiscountRate> ListCrossexCoinDiscountRate (string coin = default(string), string exchangeType = default(string));
 
@@ -751,9 +835,51 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID/DERIBIT (optional)</param>
         /// <returns>ApiResponse of List&lt;CrossexCoinDiscountRate&gt;</returns>
         ApiResponse<List<CrossexCoinDiscountRate>> ListCrossexCoinDiscountRateWithHttpInfo (string coin = default(string), string exchangeType = default(string));
+        /// <summary>
+        /// Get exchange tickers
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 1 request per second - Margin trading pairs cannot be passed directly as parameters. For example, &#x60;GATE_MARGIN_BTC_USDT&#x60; is invalid.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>List&lt;InlineResponse2001&gt;</returns>
+        List<InlineResponse2001> ListCrossexMarketTickers (string symbols = default(string));
+
+        /// <summary>
+        /// Get exchange tickers
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 1 request per second - Margin trading pairs cannot be passed directly as parameters. For example, &#x60;GATE_MARGIN_BTC_USDT&#x60; is invalid.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse2001&gt;</returns>
+        ApiResponse<List<InlineResponse2001>> ListCrossexMarketTickersWithHttpInfo (string symbols = default(string));
+        /// <summary>
+        /// Get exchange futures funding rate information
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 1 request per second - For &#x60;Deribit&#x60;, &#x60;funding_rate&#x60; is the current real-time rate calculated over an 8-hour period.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>List&lt;InlineResponse2002&gt;</returns>
+        List<InlineResponse2002> ListCrossexMarketFundingInfo (string symbols = default(string));
+
+        /// <summary>
+        /// Get exchange futures funding rate information
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 1 request per second - For &#x60;Deribit&#x60;, &#x60;funding_rate&#x60; is the current real-time rate calculated over an 8-hour period.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse2002&gt;</returns>
+        ApiResponse<List<InlineResponse2002>> ListCrossexMarketFundingInfoWithHttpInfo (string symbols = default(string));
         #endregion Synchronous Operations
     }
 
@@ -809,7 +935,7 @@ namespace Io.Gate.GateApi.Api
         /// Query supported transfer currencies
         /// </summary>
         /// <remarks>
-        /// Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// &#x60;est_fee&#x60;: On-chain withdrawal fee. When a fund transfer involves an on-chain withdrawal, the exchange charges this fee. This value is for reference only; the actual fee charged by the exchange applies
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
@@ -820,7 +946,7 @@ namespace Io.Gate.GateApi.Api
         /// Query supported transfer currencies
         /// </summary>
         /// <remarks>
-        /// Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// &#x60;est_fee&#x60;: On-chain withdrawal fee. When a fund transfer involves an on-chain withdrawal, the exchange charges this fee. This value is for reference only; the actual fee charged by the exchange applies
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
@@ -879,7 +1005,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (CrossexTransferResponse)</returns>
         Task<ApiResponse<CrossexTransferResponse>> CreateCrossexTransferAsyncWithHttpInfo (CrossexTransferRequest crossexTransferRequest = default(CrossexTransferRequest));
         /// <summary>
-        /// Create an order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
@@ -890,7 +1016,7 @@ namespace Io.Gate.GateApi.Api
         Task<CrossexOrderActionResponse> CreateCrossexOrderAsync (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest));
 
         /// <summary>
-        /// Create an order
+        /// Create order
         /// </summary>
         /// <remarks>
         /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
@@ -899,6 +1025,27 @@ namespace Io.Gate.GateApi.Api
         /// <param name="crossexOrderRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (CrossexOrderActionResponse)</returns>
         Task<ApiResponse<CrossexOrderActionResponse>> CreateCrossexOrderAsyncWithHttpInfo (CrossexOrderRequest crossexOrderRequest = default(CrossexOrderRequest));
+        /// <summary>
+        /// Batch cancel orders
+        /// </summary>
+        /// <remarks>
+        /// Cancel multiple specified orders. Either order_id or text is required; if both are provided, order_id takes precedence. Rate limit: 100 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexBatchCancelOrderRequest"></param>
+        /// <returns>Task of List&lt;CrossexBatchCancelOrderResponse&gt;</returns>
+        Task<List<CrossexBatchCancelOrderResponse>> CancelBatchCrossexOrdersAsync (List<CrossexBatchCancelOrderRequest> crossexBatchCancelOrderRequest);
+
+        /// <summary>
+        /// Batch cancel orders
+        /// </summary>
+        /// <remarks>
+        /// Cancel multiple specified orders. Either order_id or text is required; if both are provided, order_id takes precedence. Rate limit: 100 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexBatchCancelOrderRequest"></param>
+        /// <returns>Task of ApiResponse (List&lt;CrossexBatchCancelOrderResponse&gt;)</returns>
+        Task<ApiResponse<List<CrossexBatchCancelOrderResponse>>> CancelBatchCrossexOrdersAsyncWithHttpInfo (List<CrossexBatchCancelOrderRequest> crossexBatchCancelOrderRequest);
         /// <summary>
         /// Query order details
         /// </summary>
@@ -968,7 +1115,7 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Inquiry
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per day
+        /// Rate limit: 100 requests per day For HYPERLIQUID, swaps between &#x60;HYPERLIQUID_USDC&#x60; and &#x60;CROSSEX_USDT&#x60; are supported. Flash Swap in isolated exchange mode is not currently supported for HYPERLIQUID
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertQuoteRequest"> (optional)</param>
@@ -979,7 +1126,7 @@ namespace Io.Gate.GateApi.Api
         /// Flash Swap Inquiry
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per day
+        /// Rate limit: 100 requests per day For HYPERLIQUID, swaps between &#x60;HYPERLIQUID_USDC&#x60; and &#x60;CROSSEX_USDT&#x60; are supported. Flash Swap in isolated exchange mode is not currently supported for HYPERLIQUID
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertQuoteRequest"> (optional)</param>
@@ -1013,7 +1160,7 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (optional)</param>
+        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (optional)</param>
         /// <returns>Task of CrossexAccount</returns>
         Task<CrossexAccount> GetCrossexAccountAsync (string exchangeType = default(string));
 
@@ -1024,7 +1171,7 @@ namespace Io.Gate.GateApi.Api
         /// Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (optional)</param>
+        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (optional)</param>
         /// <returns>Task of ApiResponse (CrossexAccount)</returns>
         Task<ApiResponse<CrossexAccount>> GetCrossexAccountAsyncWithHttpInfo (string exchangeType = default(string));
         /// <summary>
@@ -1136,7 +1283,7 @@ namespace Io.Gate.GateApi.Api
         /// Full Close Position
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
+        /// Rate limit: 100 requests per day. Automatic position-closing rules. FUTURE and MARGIN positions are supported.  Before using this endpoint, ensure that the following prerequisite is met: - There are no open orders for the symbol in the current account. - Once the prerequisite is met, the system checks whether the position meets either of the following conditions: - Less than the minimum notional amount (minNotional) - Less than the minimum order size (minSize)  When either condition is met, the system automatically creates a closing order and immediately closes the entire position. This endpoint prevents positions that are too small to be submitted to an exchange from becoming stranded and ensures that small positions can be closed when they fall below the threshold.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexClosePositionRequest"> (optional)</param>
@@ -1147,12 +1294,75 @@ namespace Io.Gate.GateApi.Api
         /// Full Close Position
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
+        /// Rate limit: 100 requests per day. Automatic position-closing rules. FUTURE and MARGIN positions are supported.  Before using this endpoint, ensure that the following prerequisite is met: - There are no open orders for the symbol in the current account. - Once the prerequisite is met, the system checks whether the position meets either of the following conditions: - Less than the minimum notional amount (minNotional) - Less than the minimum order size (minSize)  When either condition is met, the system automatically creates a closing order and immediately closes the entire position. This endpoint prevents positions that are too small to be submitted to an exchange from becoming stranded and ensures that small positions can be closed when they fall below the threshold.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexClosePositionRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (CrossexOrderActionResponse)</returns>
         Task<ApiResponse<CrossexOrderActionResponse>> CloseCrossexPositionAsyncWithHttpInfo (CrossexClosePositionRequest crossexClosePositionRequest = default(CrossexClosePositionRequest));
+        /// <summary>
+        /// Get futures position margin mode
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Futures trading pair</param>
+        /// <returns>Task of CrossexMarginModeResponse</returns>
+        Task<CrossexMarginModeResponse> GetCrossexPositionsMarginModeAsync (string symbol);
+
+        /// <summary>
+        /// Get futures position margin mode
+        /// </summary>
+        /// <remarks>
+        /// Rate Limit: 200 requests per 10 seconds
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Futures trading pair</param>
+        /// <returns>Task of ApiResponse (CrossexMarginModeResponse)</returns>
+        Task<ApiResponse<CrossexMarginModeResponse>> GetCrossexPositionsMarginModeAsyncWithHttpInfo (string symbol);
+        /// <summary>
+        /// Update futures position margin mode
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 100 requests per 10 seconds. Only Hyperliquid futures trading pairs are supported. The margin mode cannot be changed while open orders or positions exist
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexMarginModeRequest"> (optional)</param>
+        /// <returns>Task of CrossexMarginModeResponse</returns>
+        Task<CrossexMarginModeResponse> UpdateCrossexPositionsMarginModeAsync (CrossexMarginModeRequest crossexMarginModeRequest = default(CrossexMarginModeRequest));
+
+        /// <summary>
+        /// Update futures position margin mode
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 100 requests per 10 seconds. Only Hyperliquid futures trading pairs are supported. The margin mode cannot be changed while open orders or positions exist
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexMarginModeRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (CrossexMarginModeResponse)</returns>
+        Task<ApiResponse<CrossexMarginModeResponse>> UpdateCrossexPositionsMarginModeAsyncWithHttpInfo (CrossexMarginModeRequest crossexMarginModeRequest = default(CrossexMarginModeRequest));
+        /// <summary>
+        /// Increase or decrease isolated margin
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 100 requests per 10 seconds. Only Hyperliquid isolated futures positions are supported. Positive values increase margin, while negative values decrease margin
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexIsolatedMarginRequest"> (optional)</param>
+        /// <returns>Task of CrossexIsolatedMarginResponse</returns>
+        Task<CrossexIsolatedMarginResponse> UpdateCrossexPositionsMarginAsync (CrossexIsolatedMarginRequest crossexIsolatedMarginRequest = default(CrossexIsolatedMarginRequest));
+
+        /// <summary>
+        /// Increase or decrease isolated margin
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 100 requests per 10 seconds. Only Hyperliquid isolated futures positions are supported. Positive values increase margin, while negative values decrease margin
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexIsolatedMarginRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (CrossexIsolatedMarginResponse)</returns>
+        Task<ApiResponse<CrossexIsolatedMarginResponse>> UpdateCrossexPositionsMarginAsyncWithHttpInfo (CrossexIsolatedMarginRequest crossexIsolatedMarginRequest = default(CrossexIsolatedMarginRequest));
         /// <summary>
         /// Query margin asset interest rates
         /// </summary>
@@ -1249,8 +1459,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>Task of List&lt;CrossexAdlRank&gt;</returns>
-        Task<List<CrossexAdlRank>> ListCrossexAdlRankAsync (string symbol);
+        /// <returns>Task of CrossexAdlRank</returns>
+        Task<CrossexAdlRank> ListCrossexAdlRankAsync (string symbol);
 
         /// <summary>
         /// Query ADL Position Reduction Ranking
@@ -1260,8 +1470,8 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>Task of ApiResponse (List&lt;CrossexAdlRank&gt;)</returns>
-        Task<ApiResponse<List<CrossexAdlRank>>> ListCrossexAdlRankAsyncWithHttpInfo (string symbol);
+        /// <returns>Task of ApiResponse (CrossexAdlRank)</returns>
+        Task<ApiResponse<CrossexAdlRank>> ListCrossexAdlRankAsyncWithHttpInfo (string symbol);
         /// <summary>
         /// Query All Current Open Orders
         /// </summary>
@@ -1288,7 +1498,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;CrossexOrder&gt;)</returns>
         Task<ApiResponse<List<CrossexOrder>>> ListCrossexOpenOrdersAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string), string businessType = default(string));
         /// <summary>
-        /// queryorderhistory
+        /// Query order history
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -1304,7 +1514,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<CrossexOrder>> ListCrossexHistoryOrdersAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?), string attributes = default(string));
 
         /// <summary>
-        /// queryorderhistory
+        /// Query order history
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -1408,7 +1618,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;CrossexMarginInterestRecord&gt;)</returns>
         Task<ApiResponse<List<CrossexMarginInterestRecord>>> ListCrossexHistoryMarginInterestsAsyncWithHttpInfo (string symbol = default(string), int? from = default(int?), int? to = default(int?), int? page = default(int?), int? limit = default(int?), string exchangeType = default(string));
         /// <summary>
-        /// queryfilledhistory
+        /// Query filled history
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -1423,7 +1633,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<CrossexTrade>> ListCrossexHistoryTradesAsync (int? page = default(int?), int? limit = default(int?), string symbol = default(string), int? from = default(int?), int? to = default(int?));
 
         /// <summary>
-        /// queryfilledhistory
+        /// Query filled history
         /// </summary>
         /// <remarks>
         /// Rate Limit: 200 requests per 10 seconds
@@ -1475,7 +1685,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID/DERIBIT (optional)</param>
         /// <returns>Task of List&lt;CrossexCoinDiscountRate&gt;</returns>
         Task<List<CrossexCoinDiscountRate>> ListCrossexCoinDiscountRateAsync (string coin = default(string), string exchangeType = default(string));
 
@@ -1487,9 +1697,51 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID/DERIBIT (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;CrossexCoinDiscountRate&gt;)</returns>
         Task<ApiResponse<List<CrossexCoinDiscountRate>>> ListCrossexCoinDiscountRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string));
+        /// <summary>
+        /// Get exchange tickers
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 1 request per second - Margin trading pairs cannot be passed directly as parameters. For example, &#x60;GATE_MARGIN_BTC_USDT&#x60; is invalid.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse2001&gt;</returns>
+        Task<List<InlineResponse2001>> ListCrossexMarketTickersAsync (string symbols = default(string));
+
+        /// <summary>
+        /// Get exchange tickers
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 1 request per second - Margin trading pairs cannot be passed directly as parameters. For example, &#x60;GATE_MARGIN_BTC_USDT&#x60; is invalid.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse2001&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse2001>>> ListCrossexMarketTickersAsyncWithHttpInfo (string symbols = default(string));
+        /// <summary>
+        /// Get exchange futures funding rate information
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 1 request per second - For &#x60;Deribit&#x60;, &#x60;funding_rate&#x60; is the current real-time rate calculated over an 8-hour period.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse2002&gt;</returns>
+        Task<List<InlineResponse2002>> ListCrossexMarketFundingInfoAsync (string symbols = default(string));
+
+        /// <summary>
+        /// Get exchange futures funding rate information
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 1 request per second - For &#x60;Deribit&#x60;, &#x60;funding_rate&#x60; is the current real-time rate calculated over an 8-hour period.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse2002&gt;)</returns>
+        Task<ApiResponse<List<InlineResponse2002>>> ListCrossexMarketFundingInfoAsyncWithHttpInfo (string symbols = default(string));
         #endregion Asynchronous Operations
     }
 
@@ -1835,7 +2087,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query supported transfer currencies Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// Query supported transfer currencies &#x60;est_fee&#x60;: On-chain withdrawal fee. When a fund transfer involves an on-chain withdrawal, the exchange charges this fee. This value is for reference only; the actual fee charged by the exchange applies
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
@@ -1847,7 +2099,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query supported transfer currencies Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// Query supported transfer currencies &#x60;est_fee&#x60;: On-chain withdrawal fee. When a fund transfer involves an on-chain withdrawal, the exchange charges this fee. This value is for reference only; the actual fee charged by the exchange applies
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
@@ -1889,7 +2141,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query supported transfer currencies Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// Query supported transfer currencies &#x60;est_fee&#x60;: On-chain withdrawal fee. When a fund transfer involves an on-chain withdrawal, the exchange charges this fee. This value is for reference only; the actual fee charged by the exchange applies
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
@@ -1902,7 +2154,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query supported transfer currencies Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0 
+        /// Query supported transfer currencies &#x60;est_fee&#x60;: On-chain withdrawal fee. When a fund transfer involves an on-chain withdrawal, the exchange charges this fee. This value is for reference only; the actual fee charged by the exchange applies
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
@@ -2232,7 +2484,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create an order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Create order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -2244,7 +2496,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create an order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Create order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -2286,7 +2538,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create an order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Create order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -2299,7 +2551,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create an order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Create order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -2336,6 +2588,125 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateCrossexOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Batch cancel orders Cancel multiple specified orders. Either order_id or text is required; if both are provided, order_id takes precedence. Rate limit: 100 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexBatchCancelOrderRequest"></param>
+        /// <returns>List&lt;CrossexBatchCancelOrderResponse&gt;</returns>
+        public List<CrossexBatchCancelOrderResponse> CancelBatchCrossexOrders (List<CrossexBatchCancelOrderRequest> crossexBatchCancelOrderRequest)
+        {
+             ApiResponse<List<CrossexBatchCancelOrderResponse>> localVarResponse = CancelBatchCrossexOrdersWithHttpInfo(crossexBatchCancelOrderRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Batch cancel orders Cancel multiple specified orders. Either order_id or text is required; if both are provided, order_id takes precedence. Rate limit: 100 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexBatchCancelOrderRequest"></param>
+        /// <returns>ApiResponse of List&lt;CrossexBatchCancelOrderResponse&gt;</returns>
+        public ApiResponse<List<CrossexBatchCancelOrderResponse>> CancelBatchCrossexOrdersWithHttpInfo (List<CrossexBatchCancelOrderRequest> crossexBatchCancelOrderRequest)
+        {
+            // verify the required parameter 'crossexBatchCancelOrderRequest' is set
+            if (crossexBatchCancelOrderRequest == null)
+                throw new ApiException(400, "Missing required parameter 'crossexBatchCancelOrderRequest' when calling CrossExApi->CancelBatchCrossexOrders");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = crossexBatchCancelOrderRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<CrossexBatchCancelOrderResponse>>("/crossex/batch_cancel_orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CancelBatchCrossexOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Batch cancel orders Cancel multiple specified orders. Either order_id or text is required; if both are provided, order_id takes precedence. Rate limit: 100 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexBatchCancelOrderRequest"></param>
+        /// <returns>Task of List&lt;CrossexBatchCancelOrderResponse&gt;</returns>
+        public async Task<List<CrossexBatchCancelOrderResponse>> CancelBatchCrossexOrdersAsync (List<CrossexBatchCancelOrderRequest> crossexBatchCancelOrderRequest)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<CrossexBatchCancelOrderResponse>> localVarResponse = await CancelBatchCrossexOrdersAsyncWithHttpInfo(crossexBatchCancelOrderRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Batch cancel orders Cancel multiple specified orders. Either order_id or text is required; if both are provided, order_id takes precedence. Rate limit: 100 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexBatchCancelOrderRequest"></param>
+        /// <returns>Task of ApiResponse (List&lt;CrossexBatchCancelOrderResponse&gt;)</returns>
+        public async Task<ApiResponse<List<CrossexBatchCancelOrderResponse>>> CancelBatchCrossexOrdersAsyncWithHttpInfo (List<CrossexBatchCancelOrderRequest> crossexBatchCancelOrderRequest)
+        {
+            // verify the required parameter 'crossexBatchCancelOrderRequest' is set
+            if (crossexBatchCancelOrderRequest == null)
+                throw new ApiException(400, "Missing required parameter 'crossexBatchCancelOrderRequest' when calling CrossExApi->CancelBatchCrossexOrders");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = crossexBatchCancelOrderRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<CrossexBatchCancelOrderResponse>>("/crossex/batch_cancel_orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CancelBatchCrossexOrders", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -2702,7 +3073,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Flash Swap Inquiry Rate Limit: 100 requests per day
+        /// Flash Swap Inquiry Rate limit: 100 requests per day For HYPERLIQUID, swaps between &#x60;HYPERLIQUID_USDC&#x60; and &#x60;CROSSEX_USDT&#x60; are supported. Flash Swap in isolated exchange mode is not currently supported for HYPERLIQUID
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertQuoteRequest"> (optional)</param>
@@ -2714,7 +3085,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Flash Swap Inquiry Rate Limit: 100 requests per day
+        /// Flash Swap Inquiry Rate limit: 100 requests per day For HYPERLIQUID, swaps between &#x60;HYPERLIQUID_USDC&#x60; and &#x60;CROSSEX_USDT&#x60; are supported. Flash Swap in isolated exchange mode is not currently supported for HYPERLIQUID
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertQuoteRequest"> (optional)</param>
@@ -2756,7 +3127,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Flash Swap Inquiry Rate Limit: 100 requests per day
+        /// Flash Swap Inquiry Rate limit: 100 requests per day For HYPERLIQUID, swaps between &#x60;HYPERLIQUID_USDC&#x60; and &#x60;CROSSEX_USDT&#x60; are supported. Flash Swap in isolated exchange mode is not currently supported for HYPERLIQUID
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertQuoteRequest"> (optional)</param>
@@ -2769,7 +3140,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Flash Swap Inquiry Rate Limit: 100 requests per day
+        /// Flash Swap Inquiry Rate limit: 100 requests per day For HYPERLIQUID, swaps between &#x60;HYPERLIQUID_USDC&#x60; and &#x60;CROSSEX_USDT&#x60; are supported. Flash Swap in isolated exchange mode is not currently supported for HYPERLIQUID
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexConvertQuoteRequest"> (optional)</param>
@@ -2927,7 +3298,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Account Assets Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (optional)</param>
+        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (optional)</param>
         /// <returns>CrossexAccount</returns>
         public CrossexAccount GetCrossexAccount (string exchangeType = default(string))
         {
@@ -2939,7 +3310,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Account Assets Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (optional)</param>
+        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (optional)</param>
         /// <returns>ApiResponse of CrossexAccount</returns>
         public ApiResponse<CrossexAccount> GetCrossexAccountWithHttpInfo (string exchangeType = default(string))
         {
@@ -2983,7 +3354,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Account Assets Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (optional)</param>
+        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (optional)</param>
         /// <returns>Task of CrossexAccount</returns>
         public async Task<CrossexAccount> GetCrossexAccountAsync (string exchangeType = default(string))
         {
@@ -2996,7 +3367,7 @@ namespace Io.Gate.GateApi.Api
         /// Query Account Assets Rate Limit: 200 requests per 10 seconds If 100% ≤ initial_margin_rate &lt; 110%, transferring out the margin currency is prohibited. If initial_margin_rate &lt; 100%, the system will automatically cancel orders; only closing positions is allowed, not opening new ones. If maintenance_margin_rate ≤ 100%, the system will force liquidation.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (optional)</param>
+        /// <param name="exchangeType">Trading venue identifier. Omit in cross-exchange mode; required in isolated-per-venue mode (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (optional)</param>
         /// <returns>Task of ApiResponse (CrossexAccount)</returns>
         public async Task<ApiResponse<CrossexAccount>> GetCrossexAccountAsyncWithHttpInfo (string exchangeType = default(string))
         {
@@ -3602,7 +3973,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Full Close Position Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
+        /// Full Close Position Rate limit: 100 requests per day. Automatic position-closing rules. FUTURE and MARGIN positions are supported.  Before using this endpoint, ensure that the following prerequisite is met: - There are no open orders for the symbol in the current account. - Once the prerequisite is met, the system checks whether the position meets either of the following conditions: - Less than the minimum notional amount (minNotional) - Less than the minimum order size (minSize)  When either condition is met, the system automatically creates a closing order and immediately closes the entire position. This endpoint prevents positions that are too small to be submitted to an exchange from becoming stranded and ensures that small positions can be closed when they fall below the threshold.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexClosePositionRequest"> (optional)</param>
@@ -3614,7 +3985,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Full Close Position Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
+        /// Full Close Position Rate limit: 100 requests per day. Automatic position-closing rules. FUTURE and MARGIN positions are supported.  Before using this endpoint, ensure that the following prerequisite is met: - There are no open orders for the symbol in the current account. - Once the prerequisite is met, the system checks whether the position meets either of the following conditions: - Less than the minimum notional amount (minNotional) - Less than the minimum order size (minSize)  When either condition is met, the system automatically creates a closing order and immediately closes the entire position. This endpoint prevents positions that are too small to be submitted to an exchange from becoming stranded and ensures that small positions can be closed when they fall below the threshold.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexClosePositionRequest"> (optional)</param>
@@ -3656,7 +4027,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Full Close Position Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
+        /// Full Close Position Rate limit: 100 requests per day. Automatic position-closing rules. FUTURE and MARGIN positions are supported.  Before using this endpoint, ensure that the following prerequisite is met: - There are no open orders for the symbol in the current account. - Once the prerequisite is met, the system checks whether the position meets either of the following conditions: - Less than the minimum notional amount (minNotional) - Less than the minimum order size (minSize)  When either condition is met, the system automatically creates a closing order and immediately closes the entire position. This endpoint prevents positions that are too small to be submitted to an exchange from becoming stranded and ensures that small positions can be closed when they fall below the threshold.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexClosePositionRequest"> (optional)</param>
@@ -3669,7 +4040,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Full Close Position Rate Limit: 100 requests per day. Automatic close-out rules. Supports closing FUTURE or MARGIN positions.  Prerequisites before using this interface: - No pending orders for the symbol exist in the current account. - When the system detects the position meets any of the following limits while prerequisites are met: - Less than or equal to the minimum notional amount (minNotional) - Less than or equal to the minimum order quantity (minSize)  After meeting the conditions, the system will automatically generate a close-out order and immediately fully close the position. This interface is used to avoid issues where orders are too small to be placed on the exchange, ensuring small positions can be closed smoothly when reaching the threshold.
+        /// Full Close Position Rate limit: 100 requests per day. Automatic position-closing rules. FUTURE and MARGIN positions are supported.  Before using this endpoint, ensure that the following prerequisite is met: - There are no open orders for the symbol in the current account. - Once the prerequisite is met, the system checks whether the position meets either of the following conditions: - Less than the minimum notional amount (minNotional) - Less than the minimum order size (minSize)  When either condition is met, the system automatically creates a closing order and immediately closes the entire position. This endpoint prevents positions that are too small to be submitted to an exchange from becoming stranded and ensures that small positions can be closed when they fall below the threshold.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexClosePositionRequest"> (optional)</param>
@@ -3706,6 +4077,345 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CloseCrossexPosition", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get futures position margin mode Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Futures trading pair</param>
+        /// <returns>CrossexMarginModeResponse</returns>
+        public CrossexMarginModeResponse GetCrossexPositionsMarginMode (string symbol)
+        {
+             ApiResponse<CrossexMarginModeResponse> localVarResponse = GetCrossexPositionsMarginModeWithHttpInfo(symbol);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get futures position margin mode Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Futures trading pair</param>
+        /// <returns>ApiResponse of CrossexMarginModeResponse</returns>
+        public ApiResponse<CrossexMarginModeResponse> GetCrossexPositionsMarginModeWithHttpInfo (string symbol)
+        {
+            // verify the required parameter 'symbol' is set
+            if (symbol == null)
+                throw new ApiException(400, "Missing required parameter 'symbol' when calling CrossExApi->GetCrossexPositionsMarginMode");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<CrossexMarginModeResponse>("/crossex/positions/margin_mode", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCrossexPositionsMarginMode", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get futures position margin mode Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Futures trading pair</param>
+        /// <returns>Task of CrossexMarginModeResponse</returns>
+        public async Task<CrossexMarginModeResponse> GetCrossexPositionsMarginModeAsync (string symbol)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<CrossexMarginModeResponse> localVarResponse = await GetCrossexPositionsMarginModeAsyncWithHttpInfo(symbol);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get futures position margin mode Rate Limit: 200 requests per 10 seconds
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Futures trading pair</param>
+        /// <returns>Task of ApiResponse (CrossexMarginModeResponse)</returns>
+        public async Task<ApiResponse<CrossexMarginModeResponse>> GetCrossexPositionsMarginModeAsyncWithHttpInfo (string symbol)
+        {
+            // verify the required parameter 'symbol' is set
+            if (symbol == null)
+                throw new ApiException(400, "Missing required parameter 'symbol' when calling CrossExApi->GetCrossexPositionsMarginMode");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CrossexMarginModeResponse>("/crossex/positions/margin_mode", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetCrossexPositionsMarginMode", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update futures position margin mode Rate limit: 100 requests per 10 seconds. Only Hyperliquid futures trading pairs are supported. The margin mode cannot be changed while open orders or positions exist
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexMarginModeRequest"> (optional)</param>
+        /// <returns>CrossexMarginModeResponse</returns>
+        public CrossexMarginModeResponse UpdateCrossexPositionsMarginMode (CrossexMarginModeRequest crossexMarginModeRequest = default(CrossexMarginModeRequest))
+        {
+             ApiResponse<CrossexMarginModeResponse> localVarResponse = UpdateCrossexPositionsMarginModeWithHttpInfo(crossexMarginModeRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update futures position margin mode Rate limit: 100 requests per 10 seconds. Only Hyperliquid futures trading pairs are supported. The margin mode cannot be changed while open orders or positions exist
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexMarginModeRequest"> (optional)</param>
+        /// <returns>ApiResponse of CrossexMarginModeResponse</returns>
+        public ApiResponse<CrossexMarginModeResponse> UpdateCrossexPositionsMarginModeWithHttpInfo (CrossexMarginModeRequest crossexMarginModeRequest = default(CrossexMarginModeRequest))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = crossexMarginModeRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CrossexMarginModeResponse>("/crossex/positions/margin_mode", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateCrossexPositionsMarginMode", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update futures position margin mode Rate limit: 100 requests per 10 seconds. Only Hyperliquid futures trading pairs are supported. The margin mode cannot be changed while open orders or positions exist
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexMarginModeRequest"> (optional)</param>
+        /// <returns>Task of CrossexMarginModeResponse</returns>
+        public async Task<CrossexMarginModeResponse> UpdateCrossexPositionsMarginModeAsync (CrossexMarginModeRequest crossexMarginModeRequest = default(CrossexMarginModeRequest))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<CrossexMarginModeResponse> localVarResponse = await UpdateCrossexPositionsMarginModeAsyncWithHttpInfo(crossexMarginModeRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update futures position margin mode Rate limit: 100 requests per 10 seconds. Only Hyperliquid futures trading pairs are supported. The margin mode cannot be changed while open orders or positions exist
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexMarginModeRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (CrossexMarginModeResponse)</returns>
+        public async Task<ApiResponse<CrossexMarginModeResponse>> UpdateCrossexPositionsMarginModeAsyncWithHttpInfo (CrossexMarginModeRequest crossexMarginModeRequest = default(CrossexMarginModeRequest))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = crossexMarginModeRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CrossexMarginModeResponse>("/crossex/positions/margin_mode", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateCrossexPositionsMarginMode", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Increase or decrease isolated margin Rate limit: 100 requests per 10 seconds. Only Hyperliquid isolated futures positions are supported. Positive values increase margin, while negative values decrease margin
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexIsolatedMarginRequest"> (optional)</param>
+        /// <returns>CrossexIsolatedMarginResponse</returns>
+        public CrossexIsolatedMarginResponse UpdateCrossexPositionsMargin (CrossexIsolatedMarginRequest crossexIsolatedMarginRequest = default(CrossexIsolatedMarginRequest))
+        {
+             ApiResponse<CrossexIsolatedMarginResponse> localVarResponse = UpdateCrossexPositionsMarginWithHttpInfo(crossexIsolatedMarginRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Increase or decrease isolated margin Rate limit: 100 requests per 10 seconds. Only Hyperliquid isolated futures positions are supported. Positive values increase margin, while negative values decrease margin
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexIsolatedMarginRequest"> (optional)</param>
+        /// <returns>ApiResponse of CrossexIsolatedMarginResponse</returns>
+        public ApiResponse<CrossexIsolatedMarginResponse> UpdateCrossexPositionsMarginWithHttpInfo (CrossexIsolatedMarginRequest crossexIsolatedMarginRequest = default(CrossexIsolatedMarginRequest))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = crossexIsolatedMarginRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CrossexIsolatedMarginResponse>("/crossex/positions/margin", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateCrossexPositionsMargin", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Increase or decrease isolated margin Rate limit: 100 requests per 10 seconds. Only Hyperliquid isolated futures positions are supported. Positive values increase margin, while negative values decrease margin
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexIsolatedMarginRequest"> (optional)</param>
+        /// <returns>Task of CrossexIsolatedMarginResponse</returns>
+        public async Task<CrossexIsolatedMarginResponse> UpdateCrossexPositionsMarginAsync (CrossexIsolatedMarginRequest crossexIsolatedMarginRequest = default(CrossexIsolatedMarginRequest))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<CrossexIsolatedMarginResponse> localVarResponse = await UpdateCrossexPositionsMarginAsyncWithHttpInfo(crossexIsolatedMarginRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Increase or decrease isolated margin Rate limit: 100 requests per 10 seconds. Only Hyperliquid isolated futures positions are supported. Positive values increase margin, while negative values decrease margin
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="crossexIsolatedMarginRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (CrossexIsolatedMarginResponse)</returns>
+        public async Task<ApiResponse<CrossexIsolatedMarginResponse>> UpdateCrossexPositionsMarginAsyncWithHttpInfo (CrossexIsolatedMarginRequest crossexIsolatedMarginRequest = default(CrossexIsolatedMarginRequest))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = crossexIsolatedMarginRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CrossexIsolatedMarginResponse>("/crossex/positions/margin", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateCrossexPositionsMargin", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -4201,10 +4911,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>List&lt;CrossexAdlRank&gt;</returns>
-        public List<CrossexAdlRank> ListCrossexAdlRank (string symbol)
+        /// <returns>CrossexAdlRank</returns>
+        public CrossexAdlRank ListCrossexAdlRank (string symbol)
         {
-             ApiResponse<List<CrossexAdlRank>> localVarResponse = ListCrossexAdlRankWithHttpInfo(symbol);
+             ApiResponse<CrossexAdlRank> localVarResponse = ListCrossexAdlRankWithHttpInfo(symbol);
              return localVarResponse.Data;
         }
 
@@ -4213,8 +4923,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>ApiResponse of List&lt;CrossexAdlRank&gt;</returns>
-        public ApiResponse<List<CrossexAdlRank>> ListCrossexAdlRankWithHttpInfo (string symbol)
+        /// <returns>ApiResponse of CrossexAdlRank</returns>
+        public ApiResponse<CrossexAdlRank> ListCrossexAdlRankWithHttpInfo (string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
@@ -4242,7 +4952,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<CrossexAdlRank>>("/crossex/adl_rank", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<CrossexAdlRank>("/crossex/adl_rank", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -4258,10 +4968,10 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>Task of List&lt;CrossexAdlRank&gt;</returns>
-        public async Task<List<CrossexAdlRank>> ListCrossexAdlRankAsync (string symbol)
+        /// <returns>Task of CrossexAdlRank</returns>
+        public async Task<CrossexAdlRank> ListCrossexAdlRankAsync (string symbol)
         {
-             Io.Gate.GateApi.Client.ApiResponse<List<CrossexAdlRank>> localVarResponse = await ListCrossexAdlRankAsyncWithHttpInfo(symbol);
+             Io.Gate.GateApi.Client.ApiResponse<CrossexAdlRank> localVarResponse = await ListCrossexAdlRankAsyncWithHttpInfo(symbol);
              return localVarResponse.Data;
 
         }
@@ -4271,8 +4981,8 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">Trading Pair</param>
-        /// <returns>Task of ApiResponse (List&lt;CrossexAdlRank&gt;)</returns>
-        public async Task<ApiResponse<List<CrossexAdlRank>>> ListCrossexAdlRankAsyncWithHttpInfo (string symbol)
+        /// <returns>Task of ApiResponse (CrossexAdlRank)</returns>
+        public async Task<ApiResponse<CrossexAdlRank>> ListCrossexAdlRankAsyncWithHttpInfo (string symbol)
         {
             // verify the required parameter 'symbol' is set
             if (symbol == null)
@@ -4302,7 +5012,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<CrossexAdlRank>>("/crossex/adl_rank", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CrossexAdlRank>("/crossex/adl_rank", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -4453,7 +5163,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// queryorderhistory Rate Limit: 200 requests per 10 seconds
+        /// Query order history Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
@@ -4470,7 +5180,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// queryorderhistory Rate Limit: 200 requests per 10 seconds
+        /// Query order history Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
@@ -4539,7 +5249,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// queryorderhistory Rate Limit: 200 requests per 10 seconds
+        /// Query order history Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
@@ -4557,7 +5267,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// queryorderhistory Rate Limit: 200 requests per 10 seconds
+        /// Query order history Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
@@ -5129,7 +5839,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// Query filled history Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
@@ -5145,7 +5855,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// Query filled history Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
@@ -5209,7 +5919,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// Query filled history Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
@@ -5226,7 +5936,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// queryfilledhistory Rate Limit: 200 requests per 10 seconds
+        /// Query filled history Rate Limit: 200 requests per 10 seconds
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (optional)</param>
@@ -5471,7 +6181,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID/DERIBIT (optional)</param>
         /// <returns>List&lt;CrossexCoinDiscountRate&gt;</returns>
         public List<CrossexCoinDiscountRate> ListCrossexCoinDiscountRate (string coin = default(string), string exchangeType = default(string))
         {
@@ -5484,7 +6194,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID/DERIBIT (optional)</param>
         /// <returns>ApiResponse of List&lt;CrossexCoinDiscountRate&gt;</returns>
         public ApiResponse<List<CrossexCoinDiscountRate>> ListCrossexCoinDiscountRateWithHttpInfo (string coin = default(string), string exchangeType = default(string))
         {
@@ -5533,7 +6243,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID/DERIBIT (optional)</param>
         /// <returns>Task of List&lt;CrossexCoinDiscountRate&gt;</returns>
         public async Task<List<CrossexCoinDiscountRate>> ListCrossexCoinDiscountRateAsync (string coin = default(string), string exchangeType = default(string))
         {
@@ -5547,7 +6257,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coin">Query by specified currency name (optional)</param>
-        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID (optional)</param>
+        /// <param name="exchangeType">OKX/GATE/BINANCE/BYBIT/KRAKEN/HYPERLIQUID/DERIBIT (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;CrossexCoinDiscountRate&gt;)</returns>
         public async Task<ApiResponse<List<CrossexCoinDiscountRate>>> ListCrossexCoinDiscountRateAsyncWithHttpInfo (string coin = default(string), string exchangeType = default(string))
         {
@@ -5587,6 +6297,236 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListCrossexCoinDiscountRate", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get exchange tickers Rate limit: 1 request per second - Margin trading pairs cannot be passed directly as parameters. For example, &#x60;GATE_MARGIN_BTC_USDT&#x60; is invalid.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>List&lt;InlineResponse2001&gt;</returns>
+        public List<InlineResponse2001> ListCrossexMarketTickers (string symbols = default(string))
+        {
+             ApiResponse<List<InlineResponse2001>> localVarResponse = ListCrossexMarketTickersWithHttpInfo(symbols);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get exchange tickers Rate limit: 1 request per second - Margin trading pairs cannot be passed directly as parameters. For example, &#x60;GATE_MARGIN_BTC_USDT&#x60; is invalid.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse2001&gt;</returns>
+        public ApiResponse<List<InlineResponse2001>> ListCrossexMarketTickersWithHttpInfo (string symbols = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (symbols != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbols", symbols));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<InlineResponse2001>>("/crossex/market/tickers", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexMarketTickers", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get exchange tickers Rate limit: 1 request per second - Margin trading pairs cannot be passed directly as parameters. For example, &#x60;GATE_MARGIN_BTC_USDT&#x60; is invalid.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse2001&gt;</returns>
+        public async Task<List<InlineResponse2001>> ListCrossexMarketTickersAsync (string symbols = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse2001>> localVarResponse = await ListCrossexMarketTickersAsyncWithHttpInfo(symbols);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get exchange tickers Rate limit: 1 request per second - Margin trading pairs cannot be passed directly as parameters. For example, &#x60;GATE_MARGIN_BTC_USDT&#x60; is invalid.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse2001&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse2001>>> ListCrossexMarketTickersAsyncWithHttpInfo (string symbols = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (symbols != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbols", symbols));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse2001>>("/crossex/market/tickers", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexMarketTickers", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get exchange futures funding rate information Rate limit: 1 request per second - For &#x60;Deribit&#x60;, &#x60;funding_rate&#x60; is the current real-time rate calculated over an 8-hour period.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>List&lt;InlineResponse2002&gt;</returns>
+        public List<InlineResponse2002> ListCrossexMarketFundingInfo (string symbols = default(string))
+        {
+             ApiResponse<List<InlineResponse2002>> localVarResponse = ListCrossexMarketFundingInfoWithHttpInfo(symbols);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get exchange futures funding rate information Rate limit: 1 request per second - For &#x60;Deribit&#x60;, &#x60;funding_rate&#x60; is the current real-time rate calculated over an 8-hour period.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>ApiResponse of List&lt;InlineResponse2002&gt;</returns>
+        public ApiResponse<List<InlineResponse2002>> ListCrossexMarketFundingInfoWithHttpInfo (string symbols = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (symbols != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbols", symbols));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<InlineResponse2002>>("/crossex/market/funding_info", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexMarketFundingInfo", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get exchange futures funding rate information Rate limit: 1 request per second - For &#x60;Deribit&#x60;, &#x60;funding_rate&#x60; is the current real-time rate calculated over an 8-hour period.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>Task of List&lt;InlineResponse2002&gt;</returns>
+        public async Task<List<InlineResponse2002>> ListCrossexMarketFundingInfoAsync (string symbols = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<InlineResponse2002>> localVarResponse = await ListCrossexMarketFundingInfoAsyncWithHttpInfo(symbols);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get exchange futures funding rate information Rate limit: 1 request per second - For &#x60;Deribit&#x60;, &#x60;funding_rate&#x60; is the current real-time rate calculated over an 8-hour period.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">Trading Pair List, multiple separated by commas (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;InlineResponse2002&gt;)</returns>
+        public async Task<ApiResponse<List<InlineResponse2002>>> ListCrossexMarketFundingInfoAsyncWithHttpInfo (string symbols = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (symbols != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbols", symbols));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<InlineResponse2002>>("/crossex/market/funding_info", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexMarketFundingInfo", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

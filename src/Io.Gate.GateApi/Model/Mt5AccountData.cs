@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="Mt5AccountData" /> class.
         /// </summary>
         /// <param name="mt5Uid">MT5 userID.</param>
-        /// <param name="leverage">Position leverage.</param>
+        /// <param name="leverage">Leverage multiplier.</param>
         /// <param name="stopOutLevel">Liquidation margin ratio.</param>
         /// <param name="status">Account status (1&#x3D;not opened, 2&#x3D;pending review, 3&#x3D;active).</param>
         public Mt5AccountData(int mt5Uid = default(int), int leverage = default(int), string stopOutLevel = default(string), int status = default(int))
@@ -53,9 +53,9 @@ namespace Io.Gate.GateApi.Model
         public int Mt5Uid { get; set; }
 
         /// <summary>
-        /// Position leverage
+        /// Leverage multiplier
         /// </summary>
-        /// <value>Position leverage</value>
+        /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage")]
         public int Leverage { get; set; }
 

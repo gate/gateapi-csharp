@@ -495,7 +495,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>List&lt;Position&gt;</returns>
         List<Position> ListPositions (string settle, bool? holding = default(bool?), int? limit = default(int?), int? offset = default(int?));
@@ -509,7 +509,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
         ApiResponse<List<Position>> ListPositionsWithHttpInfo (string settle, bool? holding = default(bool?), int? limit = default(int?), int? offset = default(int?));
@@ -2368,7 +2368,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of List&lt;Position&gt;</returns>
         Task<List<Position>> ListPositionsAsync (string settle, bool? holding = default(bool?), int? limit = default(int?), int? offset = default(int?));
@@ -2382,7 +2382,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
         Task<ApiResponse<List<Position>>> ListPositionsAsyncWithHttpInfo (string settle, bool? holding = default(bool?), int? limit = default(int?), int? offset = default(int?));
@@ -6451,7 +6451,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>List&lt;Position&gt;</returns>
         public List<Position> ListPositions (string settle, bool? holding = default(bool?), int? limit = default(int?), int? offset = default(int?))
@@ -6466,7 +6466,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
         public ApiResponse<List<Position>> ListPositionsWithHttpInfo (string settle, bool? holding = default(bool?), int? limit = default(int?), int? offset = default(int?))
@@ -6526,7 +6526,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of List&lt;Position&gt;</returns>
         public async Task<List<Position>> ListPositionsAsync (string settle, bool? holding = default(bool?), int? limit = default(int?), int? offset = default(int?))
@@ -6542,7 +6542,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Settle currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
-        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
         public async Task<ApiResponse<List<Position>>> ListPositionsAsyncWithHttpInfo (string settle, bool? holding = default(bool?), int? limit = default(int?), int? offset = default(int?))

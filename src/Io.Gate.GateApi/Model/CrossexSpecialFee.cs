@@ -41,7 +41,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="symbol">Currency pair (required).</param>
         /// <param name="takerFeeRate">Taker fee rate (required).</param>
         /// <param name="makerFeeRate">Maker fee rate (required).</param>
-        public CrossexSpecialFee(string symbol = default(string), string takerFeeRate = default(string), string makerFeeRate = default(string))
+        /// <param name="rpiFeeRate">RPI order maker fee rate.</param>
+        public CrossexSpecialFee(string symbol = default(string), string takerFeeRate = default(string), string makerFeeRate = default(string), string rpiFeeRate = default(string))
         {
             // to ensure "symbol" is required (not null)
             this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for CrossexSpecialFee and cannot be null");
@@ -49,6 +50,7 @@ namespace Io.Gate.GateApi.Model
             this.TakerFeeRate = takerFeeRate ?? throw new ArgumentNullException("takerFeeRate", "takerFeeRate is a required property for CrossexSpecialFee and cannot be null");
             // to ensure "makerFeeRate" is required (not null)
             this.MakerFeeRate = makerFeeRate ?? throw new ArgumentNullException("makerFeeRate", "makerFeeRate is a required property for CrossexSpecialFee and cannot be null");
+            this.RpiFeeRate = rpiFeeRate;
         }
 
         /// <summary>
@@ -73,6 +75,13 @@ namespace Io.Gate.GateApi.Model
         public string MakerFeeRate { get; set; }
 
         /// <summary>
+        /// RPI order maker fee rate
+        /// </summary>
+        /// <value>RPI order maker fee rate</value>
+        [DataMember(Name="rpi_fee_rate")]
+        public string RpiFeeRate { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -83,6 +92,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  TakerFeeRate: ").Append(TakerFeeRate).Append("\n");
             sb.Append("  MakerFeeRate: ").Append(MakerFeeRate).Append("\n");
+            sb.Append("  RpiFeeRate: ").Append(RpiFeeRate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +141,11 @@ namespace Io.Gate.GateApi.Model
                     this.MakerFeeRate == input.MakerFeeRate ||
                     (this.MakerFeeRate != null &&
                     this.MakerFeeRate.Equals(input.MakerFeeRate))
+                ) && 
+                (
+                    this.RpiFeeRate == input.RpiFeeRate ||
+                    (this.RpiFeeRate != null &&
+                    this.RpiFeeRate.Equals(input.RpiFeeRate))
                 );
         }
 
@@ -149,6 +164,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.TakerFeeRate.GetHashCode();
                 if (this.MakerFeeRate != null)
                     hashCode = hashCode * 59 + this.MakerFeeRate.GetHashCode();
+                if (this.RpiFeeRate != null)
+                    hashCode = hashCode * 59 + this.RpiFeeRate.GetHashCode();
                 return hashCode;
             }
         }

@@ -37,21 +37,17 @@ namespace Io.Gate.GateApi.Model
         /// <param name="timestamp">Current timestamp.</param>
         /// <param name="orderId">orderId.</param>
         /// <param name="tradeNo">Trade number.</param>
-        /// <param name="type">Quote direction buy/sell/all.</param>
-        /// <param name="status">Order Status.</param>
-        /// <param name="dbStatus">dbStatus.</param>
-        /// <param name="fiatCurrency">Fiat type.</param>
+        /// <param name="type">BUY deposit / SELL withdrawal.</param>
+        /// <param name="status">Order status.</param>
+        /// <param name="fiatCurrency">Fiat currency.</param>
         /// <param name="fiatCurrencyInfo">fiatCurrencyInfo.</param>
         /// <param name="fiatAmount">Fiat amount.</param>
-        /// <param name="cryptoCurrency">Stablecoin.</param>
+        /// <param name="cryptoCurrency">Digital currency.</param>
         /// <param name="cryptoCurrencyInfo">cryptoCurrencyInfo.</param>
-        /// <param name="cryptoAmount">Stablecoin amount.</param>
+        /// <param name="cryptoAmount">Cryptocurrency amount.</param>
         /// <param name="rate">Exchange rate.</param>
-        /// <param name="transferRemark">Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code).</param>
-        /// <param name="referenceCode">Unique bank transfer reference code for deposit buy orders (SGB deposit scenario).</param>
-        /// <param name="gateBankAccountIban">Bank account.</param>
         /// <param name="promotionCode">Promotion code.</param>
-        public OtcOrderListItem(string time = default(string), int timestamp = default(int), string orderId = default(string), string tradeNo = default(string), string type = default(string), string status = default(string), string dbStatus = default(string), string fiatCurrency = default(string), OtcOrderListFiatCurrencyInfo fiatCurrencyInfo = default(OtcOrderListFiatCurrencyInfo), string fiatAmount = default(string), string cryptoCurrency = default(string), OtcOrderListCryptoCurrencyInfo cryptoCurrencyInfo = default(OtcOrderListCryptoCurrencyInfo), string cryptoAmount = default(string), string rate = default(string), string transferRemark = default(string), string referenceCode = default(string), string gateBankAccountIban = default(string), string promotionCode = default(string))
+        public OtcOrderListItem(string time = default(string), int timestamp = default(int), string orderId = default(string), string tradeNo = default(string), string type = default(string), string status = default(string), string fiatCurrency = default(string), OtcOrderListFiatCurrencyInfo fiatCurrencyInfo = default(OtcOrderListFiatCurrencyInfo), string fiatAmount = default(string), string cryptoCurrency = default(string), OtcOrderListCryptoCurrencyInfo cryptoCurrencyInfo = default(OtcOrderListCryptoCurrencyInfo), string cryptoAmount = default(string), string rate = default(string), string promotionCode = default(string))
         {
             this.Time = time;
             this.Timestamp = timestamp;
@@ -59,7 +55,6 @@ namespace Io.Gate.GateApi.Model
             this.TradeNo = tradeNo;
             this.Type = type;
             this.Status = status;
-            this.DbStatus = dbStatus;
             this.FiatCurrency = fiatCurrency;
             this.FiatCurrencyInfo = fiatCurrencyInfo;
             this.FiatAmount = fiatAmount;
@@ -67,9 +62,6 @@ namespace Io.Gate.GateApi.Model
             this.CryptoCurrencyInfo = cryptoCurrencyInfo;
             this.CryptoAmount = cryptoAmount;
             this.Rate = rate;
-            this.TransferRemark = transferRemark;
-            this.ReferenceCode = referenceCode;
-            this.GateBankAccountIban = gateBankAccountIban;
             this.PromotionCode = promotionCode;
         }
 
@@ -102,29 +94,23 @@ namespace Io.Gate.GateApi.Model
         public string TradeNo { get; set; }
 
         /// <summary>
-        /// Quote direction buy/sell/all
+        /// BUY deposit / SELL withdrawal
         /// </summary>
-        /// <value>Quote direction buy/sell/all</value>
+        /// <value>BUY deposit / SELL withdrawal</value>
         [DataMember(Name="type")]
         public string Type { get; set; }
 
         /// <summary>
-        /// Order Status
+        /// Order status
         /// </summary>
-        /// <value>Order Status</value>
+        /// <value>Order status</value>
         [DataMember(Name="status")]
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets DbStatus
+        /// Fiat currency
         /// </summary>
-        [DataMember(Name="db_status")]
-        public string DbStatus { get; set; }
-
-        /// <summary>
-        /// Fiat type
-        /// </summary>
-        /// <value>Fiat type</value>
+        /// <value>Fiat currency</value>
         [DataMember(Name="fiat_currency")]
         public string FiatCurrency { get; set; }
 
@@ -142,9 +128,9 @@ namespace Io.Gate.GateApi.Model
         public string FiatAmount { get; set; }
 
         /// <summary>
-        /// Stablecoin
+        /// Digital currency
         /// </summary>
-        /// <value>Stablecoin</value>
+        /// <value>Digital currency</value>
         [DataMember(Name="crypto_currency")]
         public string CryptoCurrency { get; set; }
 
@@ -155,9 +141,9 @@ namespace Io.Gate.GateApi.Model
         public OtcOrderListCryptoCurrencyInfo CryptoCurrencyInfo { get; set; }
 
         /// <summary>
-        /// Stablecoin amount
+        /// Cryptocurrency amount
         /// </summary>
-        /// <value>Stablecoin amount</value>
+        /// <value>Cryptocurrency amount</value>
         [DataMember(Name="crypto_amount")]
         public string CryptoAmount { get; set; }
 
@@ -167,27 +153,6 @@ namespace Io.Gate.GateApi.Model
         /// <value>Exchange rate</value>
         [DataMember(Name="rate")]
         public string Rate { get; set; }
-
-        /// <summary>
-        /// Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code)
-        /// </summary>
-        /// <value>Transfer remark (mutually exclusive with reference_code; empty string when the deposit buy order has a reference code)</value>
-        [DataMember(Name="transfer_remark")]
-        public string TransferRemark { get; set; }
-
-        /// <summary>
-        /// Unique bank transfer reference code for deposit buy orders (SGB deposit scenario)
-        /// </summary>
-        /// <value>Unique bank transfer reference code for deposit buy orders (SGB deposit scenario)</value>
-        [DataMember(Name="reference_code")]
-        public string ReferenceCode { get; set; }
-
-        /// <summary>
-        /// Bank account
-        /// </summary>
-        /// <value>Bank account</value>
-        [DataMember(Name="gate_bank_account_iban")]
-        public string GateBankAccountIban { get; set; }
 
         /// <summary>
         /// Promotion code
@@ -210,7 +175,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  TradeNo: ").Append(TradeNo).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  DbStatus: ").Append(DbStatus).Append("\n");
             sb.Append("  FiatCurrency: ").Append(FiatCurrency).Append("\n");
             sb.Append("  FiatCurrencyInfo: ").Append(FiatCurrencyInfo).Append("\n");
             sb.Append("  FiatAmount: ").Append(FiatAmount).Append("\n");
@@ -218,9 +182,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  CryptoCurrencyInfo: ").Append(CryptoCurrencyInfo).Append("\n");
             sb.Append("  CryptoAmount: ").Append(CryptoAmount).Append("\n");
             sb.Append("  Rate: ").Append(Rate).Append("\n");
-            sb.Append("  TransferRemark: ").Append(TransferRemark).Append("\n");
-            sb.Append("  ReferenceCode: ").Append(ReferenceCode).Append("\n");
-            sb.Append("  GateBankAccountIban: ").Append(GateBankAccountIban).Append("\n");
             sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -286,11 +247,6 @@ namespace Io.Gate.GateApi.Model
                     this.Status.Equals(input.Status))
                 ) && 
                 (
-                    this.DbStatus == input.DbStatus ||
-                    (this.DbStatus != null &&
-                    this.DbStatus.Equals(input.DbStatus))
-                ) && 
-                (
                     this.FiatCurrency == input.FiatCurrency ||
                     (this.FiatCurrency != null &&
                     this.FiatCurrency.Equals(input.FiatCurrency))
@@ -326,21 +282,6 @@ namespace Io.Gate.GateApi.Model
                     this.Rate.Equals(input.Rate))
                 ) && 
                 (
-                    this.TransferRemark == input.TransferRemark ||
-                    (this.TransferRemark != null &&
-                    this.TransferRemark.Equals(input.TransferRemark))
-                ) && 
-                (
-                    this.ReferenceCode == input.ReferenceCode ||
-                    (this.ReferenceCode != null &&
-                    this.ReferenceCode.Equals(input.ReferenceCode))
-                ) && 
-                (
-                    this.GateBankAccountIban == input.GateBankAccountIban ||
-                    (this.GateBankAccountIban != null &&
-                    this.GateBankAccountIban.Equals(input.GateBankAccountIban))
-                ) && 
-                (
                     this.PromotionCode == input.PromotionCode ||
                     (this.PromotionCode != null &&
                     this.PromotionCode.Equals(input.PromotionCode))
@@ -367,8 +308,6 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Status != null)
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.DbStatus != null)
-                    hashCode = hashCode * 59 + this.DbStatus.GetHashCode();
                 if (this.FiatCurrency != null)
                     hashCode = hashCode * 59 + this.FiatCurrency.GetHashCode();
                 if (this.FiatCurrencyInfo != null)
@@ -383,12 +322,6 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.CryptoAmount.GetHashCode();
                 if (this.Rate != null)
                     hashCode = hashCode * 59 + this.Rate.GetHashCode();
-                if (this.TransferRemark != null)
-                    hashCode = hashCode * 59 + this.TransferRemark.GetHashCode();
-                if (this.ReferenceCode != null)
-                    hashCode = hashCode * 59 + this.ReferenceCode.GetHashCode();
-                if (this.GateBankAccountIban != null)
-                    hashCode = hashCode * 59 + this.GateBankAccountIban.GetHashCode();
                 if (this.PromotionCode != null)
                     hashCode = hashCode * 59 + this.PromotionCode.GetHashCode();
                 return hashCode;

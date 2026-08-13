@@ -38,13 +38,13 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcQuoteRequest" /> class.
         /// </summary>
-        /// <param name="side">PAY/GET quote direction. PAY means user inputs pay amount, GET means user inputs get amount. If PAY, pay_amount is required. If GET, get_amount is required (required).</param>
-        /// <param name="payCoin">Currency the user pays. Supported currencies can be found on the OTC web quote page. (required).</param>
-        /// <param name="getCoin">Currency the user receives. Supported currencies can be found on the OTC web quote page. (required).</param>
+        /// <param name="side">PAY: specify the payment amount (&#x60;pay_amount&#x60; is required); GET: specify the receive amount (&#x60;get_amount&#x60; is required). (required).</param>
+        /// <param name="payCoin">Payment currency. Supported currencies are available on the OTC web quote page. (required).</param>
+        /// <param name="getCoin">Receive currency. Supported currencies are available on the OTC web quote page. (required).</param>
         /// <param name="payAmount">User payment currency amount.</param>
         /// <param name="getAmount">Amount of currency received by the user.</param>
         /// <param name="createQuoteToken">Create quote token: 0: quote preview only; 1: generate quote token for order placement..</param>
-        /// <param name="promotionCode">Promotion code (optional).</param>
+        /// <param name="promotionCode">Promotion code.</param>
         public OtcQuoteRequest(string side = default(string), string payCoin = default(string), string getCoin = default(string), string payAmount = default(string), string getAmount = default(string), string createQuoteToken = default(string), string promotionCode = default(string))
         {
             // to ensure "side" is required (not null)
@@ -60,23 +60,23 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// PAY/GET quote direction. PAY means user inputs pay amount, GET means user inputs get amount. If PAY, pay_amount is required. If GET, get_amount is required
+        /// PAY: specify the payment amount (&#x60;pay_amount&#x60; is required); GET: specify the receive amount (&#x60;get_amount&#x60; is required).
         /// </summary>
-        /// <value>PAY/GET quote direction. PAY means user inputs pay amount, GET means user inputs get amount. If PAY, pay_amount is required. If GET, get_amount is required</value>
+        /// <value>PAY: specify the payment amount (&#x60;pay_amount&#x60; is required); GET: specify the receive amount (&#x60;get_amount&#x60; is required).</value>
         [DataMember(Name="side")]
         public string Side { get; set; }
 
         /// <summary>
-        /// Currency the user pays. Supported currencies can be found on the OTC web quote page.
+        /// Payment currency. Supported currencies are available on the OTC web quote page.
         /// </summary>
-        /// <value>Currency the user pays. Supported currencies can be found on the OTC web quote page.</value>
+        /// <value>Payment currency. Supported currencies are available on the OTC web quote page.</value>
         [DataMember(Name="pay_coin")]
         public string PayCoin { get; set; }
 
         /// <summary>
-        /// Currency the user receives. Supported currencies can be found on the OTC web quote page.
+        /// Receive currency. Supported currencies are available on the OTC web quote page.
         /// </summary>
-        /// <value>Currency the user receives. Supported currencies can be found on the OTC web quote page.</value>
+        /// <value>Receive currency. Supported currencies are available on the OTC web quote page.</value>
         [DataMember(Name="get_coin")]
         public string GetCoin { get; set; }
 
@@ -102,9 +102,9 @@ namespace Io.Gate.GateApi.Model
         public string CreateQuoteToken { get; set; }
 
         /// <summary>
-        /// Promotion code (optional)
+        /// Promotion code
         /// </summary>
-        /// <value>Promotion code (optional)</value>
+        /// <value>Promotion code</value>
         [DataMember(Name="promotion_code")]
         public string PromotionCode { get; set; }
 

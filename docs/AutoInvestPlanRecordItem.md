@@ -8,7 +8,7 @@ Plan execution record item
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **long** | Record ID | 
-**Type** | **string** | type | 
+**Type** | **string** | Type | 
 **Money** | **string** | SourceCurrency | 
 **UserId** | **long** | User ID | 
 **PlanId** | **long** | Plan ID | 

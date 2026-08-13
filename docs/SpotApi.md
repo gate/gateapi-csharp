@@ -14,13 +14,12 @@ Method | HTTP request | Description
 [**ListCandlesticks**](SpotApi.md#listcandlesticks) | **GET** /spot/candlesticks | Market K-line chart
 [**GetFee**](SpotApi.md#getfee) | **GET** /spot/fee | Query account fee rates
 [**GetBatchSpotFee**](SpotApi.md#getbatchspotfee) | **GET** /spot/batch_fee | Batch query account fee rates
-[**ListSpotAccounts**](SpotApi.md#listspotaccounts) | **GET** /spot/accounts | List spot trading accounts
 [**ListSpotAccountBook**](SpotApi.md#listspotaccountbook) | **GET** /spot/account_book | Query spot account transaction history
 [**CreateBatchOrders**](SpotApi.md#createbatchorders) | **POST** /spot/batch_orders | Batch place orders
 [**ListAllOpenOrders**](SpotApi.md#listallopenorders) | **GET** /spot/open_orders | List all open orders
 [**CreateCrossLiquidateOrder**](SpotApi.md#createcrossliquidateorder) | **POST** /spot/cross_liquidate_orders | Close position when cross-currency is disabled
 [**ListOrders**](SpotApi.md#listorders) | **GET** /spot/orders | List orders
-[**CreateOrder**](SpotApi.md#createorder) | **POST** /spot/orders | Create an order
+[**CreateOrder**](SpotApi.md#createorder) | **POST** /spot/orders | Create order
 [**CancelOrders**](SpotApi.md#cancelorders) | **DELETE** /spot/orders | Cancel all &#x60;open&#x60; orders in specified currency pair
 [**CancelBatchOrders**](SpotApi.md#cancelbatchorders) | **POST** /spot/cancel_batch_orders | Cancel batch orders by specified ID list
 [**GetOrder**](SpotApi.md#getorder) | **GET** /spot/orders/{order_id} | Query single order details
@@ -36,6 +35,11 @@ Method | HTTP request | Description
 [**CancelSpotPriceTriggeredOrderList**](SpotApi.md#cancelspotpricetriggeredorderlist) | **DELETE** /spot/price_orders | Cancel all auto orders
 [**GetSpotPriceTriggeredOrder**](SpotApi.md#getspotpricetriggeredorder) | **GET** /spot/price_orders/{order_id} | Query single auto order details
 [**CancelSpotPriceTriggeredOrder**](SpotApi.md#cancelspotpricetriggeredorder) | **DELETE** /spot/price_orders/{order_id} | Cancel single auto order
+[**ListSpotPovOrders**](SpotApi.md#listspotpovorders) | **GET** /spot/pov_orders | List Spot POV orders
+[**CreateSpotPovOrder**](SpotApi.md#createspotpovorder) | **POST** /spot/pov_orders | Create a Spot POV order
+[**CancelSpotPovOrders**](SpotApi.md#cancelspotpovorders) | **POST** /spot/pov_orders/cancel | Cancel Spot POV orders
+[**GetSpotPovOrder**](SpotApi.md#getspotpovorder) | **GET** /spot/pov_orders/{order_id} | Query Spot POV order details
+[**CancelSpotPovOrder**](SpotApi.md#cancelspotpovorder) | **POST** /spot/pov_orders/{order_id}/cancel | Cancel a Spot POV order
 
 
 <a name="listcurrencies"></a>
@@ -764,77 +768,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="listspotaccounts"></a>
-# **ListSpotAccounts**
-> List&lt;SpotAccount&gt; ListSpotAccounts (string currency = null)
-
-List spot trading accounts
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Io.Gate.GateApi.Api;
-using Io.Gate.GateApi.Client;
-using Io.Gate.GateApi.Model;
-
-namespace Example
-{
-    public class ListSpotAccountsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.gateio.ws/api/v4";
-            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
-
-            var apiInstance = new SpotApi(config);
-            var currency = "BTC";  // string | Query by specified currency name (optional) 
-
-            try
-            {
-                // List spot trading accounts
-                List<SpotAccount> result = apiInstance.ListSpotAccounts(currency);
-                Debug.WriteLine(result);
-            }
-            catch (GateApiException e)
-            {
-                Debug.Print("Exception when calling SpotApi.ListSpotAccounts: " + e.Message);
-                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **currency** | **string**| Query by specified currency name | [optional] 
-
-### Return type
-
-[**List&lt;SpotAccount&gt;**](SpotAccount.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | List retrieved successfully |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listspotaccountbook"></a>
 # **ListSpotAccountBook**
 > List&lt;SpotAccountBook&gt; ListSpotAccountBook (string currency = null, long? from = null, long? to = null, int? page = null, int? limit = null, string type = null, string code = null)
@@ -1236,7 +1169,7 @@ Name | Type | Description  | Notes
 # **CreateOrder**
 > Order CreateOrder (Order order, string xGateExptime = null)
 
-Create an order
+Create order
 
 Supports spot, margin, leverage, and cross-margin leverage orders. Use different accounts through the `account` field. Default is `spot`, which means using the spot account to place orders. If the user has a `unified` account, the default is to place orders with the unified account.  When using leveraged account trading (i.e., when `account` is set to `margin`), you can set `auto_borrow` to `true`. In case of insufficient account balance, the system will automatically execute `POST /margin/uni/loans` to borrow the insufficient amount. Whether assets obtained after leveraged order execution are automatically used to repay borrowing orders of the isolated margin account depends on the automatic repayment settings of the user's isolated margin account. Account automatic repayment settings can be queried and set through `/margin/auto_repay`.  When using unified account trading (i.e., when `account` is set to `unified`), `auto_borrow` can also be enabled to realize automatic borrowing of insufficient amounts. However, unlike the isolated margin account, whether unified account orders are automatically repaid depends on the `auto_repay` setting when placing the order. This setting only applies to the current order, meaning only assets obtained after order execution will be used to repay borrowing orders of the cross-margin account. Unified account ordering currently supports enabling both `auto_borrow` and `auto_repay` simultaneously.  Auto repayment will be triggered when the order ends, i.e., when `status` is `cancelled` or `closed`.  **Order Status**  The order status in pending orders is `open`, which remains `open` until all quantity is filled. If fully filled, the order ends and status becomes `closed`. If the order is cancelled before all transactions are completed, regardless of partial fills, the status will become `cancelled`.  **Iceberg Orders**  `iceberg` is used to set the displayed quantity of iceberg orders and does not support complete hiding. Note that hidden portions are charged according to the taker's fee rate.  **Self-Trade Prevention**  Set `stp_act` to determine the self-trade prevention strategy to use
 
@@ -1264,7 +1197,7 @@ namespace Example
 
             try
             {
-                // Create an order
+                // Create order
                 Order result = apiInstance.CreateOrder(order, xGateExptime);
                 Debug.WriteLine(result);
             }
@@ -2441,6 +2374,369 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Auto order details |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listspotpovorders"></a>
+# **ListSpotPovOrders**
+> List&lt;SpotPovOrder&gt; ListSpotPovOrders (string status, string currencyPair = null, string side = null, int? page = null, int? limit = null)
+
+List Spot POV orders
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListSpotPovOrdersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SpotApi(config);
+            var status = "\"open\"";  // string | Order status. Defaults to open  - open: Active orders - finished: Finished orders (default to "open")
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
+            var side = "sell";  // string | Specify all bids or all asks, both included if not specified (optional) 
+            var page = 1;  // int? | Page number, up to 100 (optional)  (default to 1)
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+
+            try
+            {
+                // List Spot POV orders
+                List<SpotPovOrder> result = apiInstance.ListSpotPovOrders(status, currencyPair, side, page, limit);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SpotApi.ListSpotPovOrders: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **status** | **string**| Order status. Defaults to open  - open: Active orders - finished: Finished orders | [default to &quot;open&quot;]
+ **currencyPair** | **string**| Currency pair | [optional] 
+ **side** | **string**| Specify all bids or all asks, both included if not specified | [optional] 
+ **page** | **int?**| Page number, up to 100 | [optional] [default to 1]
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+
+### Return type
+
+[**List&lt;SpotPovOrder&gt;**](SpotPovOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createspotpovorder"></a>
+# **CreateSpotPovOrder**
+> SpotPovOrder CreateSpotPovOrder (SpotPovOrderCreator spotPovOrderCreator)
+
+Create a Spot POV order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateSpotPovOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SpotApi(config);
+            var spotPovOrderCreator = new SpotPovOrderCreator(); // SpotPovOrderCreator | 
+
+            try
+            {
+                // Create a Spot POV order
+                SpotPovOrder result = apiInstance.CreateSpotPovOrder(spotPovOrderCreator);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SpotApi.CreateSpotPovOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **spotPovOrderCreator** | [**SpotPovOrderCreator**](SpotPovOrderCreator.md)|  | 
+
+### Return type
+
+[**SpotPovOrder**](SpotPovOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Order created successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="cancelspotpovorders"></a>
+# **CancelSpotPovOrders**
+> List&lt;SpotPovOrder&gt; CancelSpotPovOrders (string currencyPair = null)
+
+Cancel Spot POV orders
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CancelSpotPovOrdersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SpotApi(config);
+            var currencyPair = "BTC_USDT";  // string | Currency pair (optional) 
+
+            try
+            {
+                // Cancel Spot POV orders
+                List<SpotPovOrder> result = apiInstance.CancelSpotPovOrders(currencyPair);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SpotApi.CancelSpotPovOrders: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyPair** | **string**| Currency pair | [optional] 
+
+### Return type
+
+[**List&lt;SpotPovOrder&gt;**](SpotPovOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Batch cancel request is received and processed. Success is determined based on the order list |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getspotpovorder"></a>
+# **GetSpotPovOrder**
+> SpotPovOrder GetSpotPovOrder (string orderId)
+
+Query Spot POV order details
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetSpotPovOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SpotApi(config);
+            var orderId = "12345";  // string | The order ID returned after successful creation, or the custom ID specified by the user in the `text` field.
+
+            try
+            {
+                // Query Spot POV order details
+                SpotPovOrder result = apiInstance.GetSpotPovOrder(orderId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SpotApi.GetSpotPovOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | **string**| The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field. | 
+
+### Return type
+
+[**SpotPovOrder**](SpotPovOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Detail retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="cancelspotpovorder"></a>
+# **CancelSpotPovOrder**
+> SpotPovOrder CancelSpotPovOrder (string orderId)
+
+Cancel a Spot POV order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CancelSpotPovOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SpotApi(config);
+            var orderId = "12345";  // string | The order ID returned after successful creation, or the custom ID specified by the user in the `text` field.
+
+            try
+            {
+                // Cancel a Spot POV order
+                SpotPovOrder result = apiInstance.CancelSpotPovOrder(orderId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SpotApi.CancelSpotPovOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | **string**| The order ID returned after successful creation, or the custom ID specified by the user in the &#x60;text&#x60; field. | 
+
+### Return type
+
+[**SpotPovOrder**](SpotPovOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Order cancelled |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

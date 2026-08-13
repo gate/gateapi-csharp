@@ -1396,7 +1396,7 @@ namespace Example
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Settle currency
             var holding = true;  // bool? | Return only real positions - true, return all - false (optional) 
-            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+            var limit = 100;  // int? | Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional) 
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
 
             try
@@ -1423,7 +1423,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Settle currency | 
  **holding** | **bool?**| Return only real positions - true, return all - false | [optional] 
- **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **limit** | **int?**| Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. | [optional] 
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type

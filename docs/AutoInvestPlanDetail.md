@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **PeriodType** | **string** | Cycle type（e.g., monthly） | 
 **PeriodDay** | **long** | Cycle day | 
 **PeriodHour** | **long** | CycleHours | 
-**Portfolio** | [**List&lt;AutoInvestPortfolioItem&gt;**](AutoInvestPortfolioItem.md) | InvestmentPortfolio | 
+**Portfolio** | [**List&lt;AutoInvestPortfolioItem&gt;**](AutoInvestPortfolioItem.md) | Portfolio | 
 **NextTime** | **long** | Next execution time (Unix timestamp) | 
 **Period** | **long** | Executed periods | 
 **FundSource** | **string** | Fund source（spot/earn） | 

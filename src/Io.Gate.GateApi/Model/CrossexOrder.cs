@@ -46,12 +46,12 @@ namespace Io.Gate.GateApi.Model
         /// <param name="side">Side (&#x60;BUY&#x60; buy / &#x60;SELL&#x60; sell). (required).</param>
         /// <param name="type">Order type (&#x60;LIMIT&#x60; limit / &#x60;MARKET&#x60; market). (required).</param>
         /// <param name="attribute">Order attributes (&#x60;COMMON&#x60; normal / &#x60;LIQ&#x60; liquidation takeover / &#x60;REDUCE&#x60; liquidation reduction / &#x60;ADL&#x60; auto-deleverage / &#x60;SETTLEMENT&#x60; delisting settlement). (required).</param>
-        /// <param name="exchangeType">Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;). (required).</param>
+        /// <param name="exchangeType">Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (required).</param>
         /// <param name="businessType">Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin). (required).</param>
         /// <param name="qty">Order quantity in the base currency. (required).</param>
         /// <param name="quoteQty">Order quantity in the quote currency. (required).</param>
         /// <param name="price">Order price. (required).</param>
-        /// <param name="timeInForce">Time in force (default &#x60;GTC&#x60;; enum: &#x60;GTC&#x60; / &#x60;IOC&#x60; / &#x60;FOK&#x60; / &#x60;POC&#x60;). (required).</param>
+        /// <param name="timeInForce">Time-in-force policy (default: GTC; allowed values: GTC, IOC, FOK, POC, and RPI) (required).</param>
         /// <param name="executedQty">Filled base amount. (required).</param>
         /// <param name="executedAmount">Filled quote amount. (required).</param>
         /// <param name="executedAvgPrice">Average Filled Price (required).</param>
@@ -183,9 +183,9 @@ namespace Io.Gate.GateApi.Model
         public string Attribute { get; set; }
 
         /// <summary>
-        /// Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;).
+        /// Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;).
         /// </summary>
-        /// <value>Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60;).</value>
+        /// <value>Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;).</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 
@@ -218,9 +218,9 @@ namespace Io.Gate.GateApi.Model
         public string Price { get; set; }
 
         /// <summary>
-        /// Time in force (default &#x60;GTC&#x60;; enum: &#x60;GTC&#x60; / &#x60;IOC&#x60; / &#x60;FOK&#x60; / &#x60;POC&#x60;).
+        /// Time-in-force policy (default: GTC; allowed values: GTC, IOC, FOK, POC, and RPI)
         /// </summary>
-        /// <value>Time in force (default &#x60;GTC&#x60;; enum: &#x60;GTC&#x60; / &#x60;IOC&#x60; / &#x60;FOK&#x60; / &#x60;POC&#x60;).</value>
+        /// <value>Time-in-force policy (default: GTC; allowed values: GTC, IOC, FOK, POC, and RPI)</value>
         [DataMember(Name="time_in_force")]
         public string TimeInForce { get; set; }
 

@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 Create stablecoin order
 
-Create stablecoin order
+Create a stablecoin order. All request body fields except `promotion_code` are required.
 
 ### Example
 ```csharp
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 Get user bank card list
 
-Retrieve the user's bank card list, used to select a bank card when placing an order. **Default card**: refer to the list item field `is_default` (1=default); there is no need to call the deprecated standalone \"default bank card\" endpoint. Corresponding Inner: `GET /bank_list` or `GET /bank/list`.
+List the user's bank cards for selecting a card when placing an order. **Default card**: use the `is_default` field in each list item (`1` indicates the default). The deprecated standalone default-bank-card endpoint is no longer required.
 
 ### Example
 ```csharp
@@ -342,7 +342,7 @@ namespace Example
             var bankAddress = "bankAddress_example";  // string | 
             var iban = "iban_example";  // string | 
             var swift = "swift_example";  // string | 
-            var documentationFile = "documentationFile_example";  // string | 开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准）
+            var documentationFile = "documentationFile_example";  // string | Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)
             var remittanceLineNumber = "remittanceLineNumber_example";  // string |  (optional) 
             var agentBankName = "agentBankName_example";  // string |  (optional) 
             var agentBankSwift = "agentBankSwift_example";  // string |  (optional) 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
  **bankAddress** | **string**|  | 
  **iban** | **string**|  | 
  **swift** | **string**|  | 
- **documentationFile** | **string**| 开户证明文件内容（multipart 文件字段，二进制/Base64；jpg/jpeg/png/pdf 等，单文件≤4MB 以现网为准） | 
+ **documentationFile** | **string**| Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment) | 
  **remittanceLineNumber** | **string**|  | [optional] 
  **agentBankName** | **string**|  | [optional] 
  **agentBankSwift** | **string**|  | [optional] 
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 Query the checklist of materials to supplement for a bank card
 
-**①** `bank_id` must be specified: after verifying that the card belongs to the current user and its status allows supplementation, returns the items to be supplemented and whether each sub-item is required, based on the user's **passed professional verification type** (personal/enterprise). Corresponding Inner: `GET /bank/bank_supplement_checklist`.
+**①** `bank_id` must be specified. After verifying that the card belongs to the current user and its status allows supplementary documents, the endpoint returns the required items based on the user's **approved advanced verification type** (personal/enterprise); each item's `description` states the submission requirements. Corresponding Inner endpoint: `GET /bank/bank_supplement_checklist`.
 
 ### Example
 ```csharp
@@ -791,7 +791,7 @@ Name | Type | Description  | Notes
 
 Mark fiat order as paid (deposit confirmation)
 
-Mark a fiat buy order as paid (deposit confirmation). **The user's payment receipt must be uploaded**: `payment_receipt_file_key` is required; file format jpg / jpeg / png / pdf, single file no larger than 4MB (jointly validated by the server and gateway). The compatible field name `payment_receipt` is subject to the gateway/production environment. For the persisted field, see `otc_trade_record.payment_receipt_file_key`. The Pay Inner path is `POST .../pay/order_set_paid` (orders are usually associated via `client_order_id`); this OpenAPI path maps to Inner `POST /order/paid` and still uses `order_id` as the primary key—if the gateway unifies it to the merchant order number, the gateway documentation prevails.
+Mark a fiat BUY order as paid (deposit confirmation). **A user payment receipt must be uploaded**: `payment_receipt_file_key` is required; supported formats are jpg/jpeg/png/pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatibility field name `payment_receipt` is subject to the gateway/live environment. The persisted field is `otc_trade_record.payment_receipt_file_key`. The Pay Inner path is `POST .../pay/order_set_paid` (commonly associated by `client_order_id`); the Inner path corresponding to this OpenAPI endpoint, `POST /order/paid`, still primarily uses `order_id`. If the gateway standardizes on the merchant order ID, follow the gateway documentation.
 
 ### Example
 ```csharp
@@ -963,7 +963,7 @@ namespace Example
             var cryptoCurrency = "cryptoCurrency_example";  // string | Digital currency (optional) 
             var startTime = "startTime_example";  // string | starttime   for example : 2025-09-09 (optional) 
             var endTime = "endTime_example";  // string | endtime  for example :2025-09-09 (optional) 
-            var status = "status_example";  // string | DONE: Completed CANCEL: Canceled PROCESSING: In Progress (optional) 
+            var status = "status_example";  // string | DONE: completed CANCEL: canceled PROCESSING: in progress DISBURSED: disbursed (optional) 
             var pn = "pn_example";  // string | Page number (optional) 
             var ps = "ps_example";  // string | Number of items per page (optional) 
 
@@ -994,7 +994,7 @@ Name | Type | Description  | Notes
  **cryptoCurrency** | **string**| Digital currency | [optional] 
  **startTime** | **string**| starttime   for example : 2025-09-09 | [optional] 
  **endTime** | **string**| endtime  for example :2025-09-09 | [optional] 
- **status** | **string**| DONE: Completed CANCEL: Canceled PROCESSING: In Progress | [optional] 
+ **status** | **string**| DONE: completed CANCEL: canceled PROCESSING: in progress DISBURSED: disbursed | [optional] 
  **pn** | **string**| Page number | [optional] 
  **ps** | **string**| Number of items per page | [optional] 
 
