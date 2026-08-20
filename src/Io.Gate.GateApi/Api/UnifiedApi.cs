@@ -31,7 +31,7 @@ namespace Io.Gate.GateApi.Api
         /// Get unified account information
         /// </summary>
         /// <remarks>
-        /// The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  For specific formulas, please refer to [Margin Formula](#margin-formula)
+        /// The assets of each currency in the account are assigned adjustment coefficients according to their liquidity and uniformly converted to USD to calculate the account&#39;s asset and position values.  For details, see [Margin Formula](https://www.gate.com/help/unified-account/risk_control_mechanism/33018).
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -43,7 +43,7 @@ namespace Io.Gate.GateApi.Api
         /// Get unified account information
         /// </summary>
         /// <remarks>
-        /// The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  For specific formulas, please refer to [Margin Formula](#margin-formula)
+        /// The assets of each currency in the account are assigned adjustment coefficients according to their liquidity and uniformly converted to USD to calculate the account&#39;s asset and position values.  For details, see [Margin Formula](https://www.gate.com/help/unified-account/risk_control_mechanism/33018).
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -625,7 +625,7 @@ namespace Io.Gate.GateApi.Api
         /// Get unified account information
         /// </summary>
         /// <remarks>
-        /// The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  For specific formulas, please refer to [Margin Formula](#margin-formula)
+        /// The assets of each currency in the account are assigned adjustment coefficients according to their liquidity and uniformly converted to USD to calculate the account&#39;s asset and position values.  For details, see [Margin Formula](https://www.gate.com/help/unified-account/risk_control_mechanism/33018).
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -637,7 +637,7 @@ namespace Io.Gate.GateApi.Api
         /// Get unified account information
         /// </summary>
         /// <remarks>
-        /// The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  For specific formulas, please refer to [Margin Formula](#margin-formula)
+        /// The assets of each currency in the account are assigned adjustment coefficients according to their liquidity and uniformly converted to USD to calculate the account&#39;s asset and position values.  For details, see [Margin Formula](https://www.gate.com/help/unified-account/risk_control_mechanism/33018).
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -1327,7 +1327,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get unified account information The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  For specific formulas, please refer to [Margin Formula](#margin-formula)
+        /// Get unified account information The assets of each currency in the account are assigned adjustment coefficients according to their liquidity and uniformly converted to USD to calculate the account&#39;s asset and position values.  For details, see [Margin Formula](https://www.gate.com/help/unified-account/risk_control_mechanism/33018).
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -1340,7 +1340,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get unified account information The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  For specific formulas, please refer to [Margin Formula](#margin-formula)
+        /// Get unified account information The assets of each currency in the account are assigned adjustment coefficients according to their liquidity and uniformly converted to USD to calculate the account&#39;s asset and position values.  For details, see [Margin Formula](https://www.gate.com/help/unified-account/risk_control_mechanism/33018).
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -1389,7 +1389,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get unified account information The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  For specific formulas, please refer to [Margin Formula](#margin-formula)
+        /// Get unified account information The assets of each currency in the account are assigned adjustment coefficients according to their liquidity and uniformly converted to USD to calculate the account&#39;s asset and position values.  For details, see [Margin Formula](https://www.gate.com/help/unified-account/risk_control_mechanism/33018).
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -1403,7 +1403,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get unified account information The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  For specific formulas, please refer to [Margin Formula](#margin-formula)
+        /// Get unified account information The assets of each currency in the account are assigned adjustment coefficients according to their liquidity and uniformly converted to USD to calculate the account&#39;s asset and position values.  For details, see [Margin Formula](https://www.gate.com/help/unified-account/risk_control_mechanism/33018).
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>

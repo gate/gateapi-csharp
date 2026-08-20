@@ -4,7 +4,6 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**P2pMerchantQuerySpotBalance**](P2pApi.md#p2pmerchantqueryspotbalance) | **GET** /spot/accounts | Query spot balance
 [**P2pMerchantAccountGetUserInfo**](P2pApi.md#p2pmerchantaccountgetuserinfo) | **POST** /p2p/merchant/account/get_user_info | Get account information
 [**P2pMerchantAccountGetCounterpartyUserInfo**](P2pApi.md#p2pmerchantaccountgetcounterpartyuserinfo) | **POST** /p2p/merchant/account/get_counterparty_user_info | Get counterparty information
 [**P2pMerchantAccountGetMyselfPayment**](P2pApi.md#p2pmerchantaccountgetmyselfpayment) | **POST** /p2p/merchant/account/get_myself_payment | Get payment method list
@@ -24,74 +23,6 @@ Method | HTTP request | Description
 [**P2pMerchantChatSendChatMessage**](P2pApi.md#p2pmerchantchatsendchatmessage) | **POST** /p2p/merchant/chat/send_chat_message | Send text message
 [**P2pMerchantChatUploadChatFile**](P2pApi.md#p2pmerchantchatuploadchatfile) | **POST** /p2p/merchant/chat/upload_chat_file | Upload chat file
 
-
-<a name="p2pmerchantqueryspotbalance"></a>
-# **P2pMerchantQuerySpotBalance**
-> void P2pMerchantQuerySpotBalance ()
-
-Query spot balance
-
-Use Spot API `GET /spot/accounts` to query spot account balance; this entry is for guidance only and does not define separate P2P Merchant request parameters or response body.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Io.Gate.GateApi.Api;
-using Io.Gate.GateApi.Client;
-using Io.Gate.GateApi.Model;
-
-namespace Example
-{
-    public class P2pMerchantQuerySpotBalanceExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.gateio.ws/api/v4";
-            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
-
-            var apiInstance = new P2pApi(config);
-
-            try
-            {
-                // Query spot balance
-                apiInstance.P2pMerchantQuerySpotBalance();
-            }
-            catch (GateApiException e)
-            {
-                Debug.Print("Exception when calling P2pApi.P2pMerchantQuerySpotBalance: " + e.Message);
-                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Refer to the Spot API &#x60;GET /spot/accounts&#x60; response definition. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="p2pmerchantaccountgetuserinfo"></a>
 # **P2pMerchantAccountGetUserInfo**

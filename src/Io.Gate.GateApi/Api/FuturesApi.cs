@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>List&lt;Contract&gt;</returns>
@@ -47,7 +47,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>ApiResponse of List&lt;Contract&gt;</returns>
@@ -59,7 +59,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>List&lt;Contract&gt;</returns>
@@ -72,7 +72,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>ApiResponse of List&lt;Contract&gt;</returns>
@@ -84,7 +84,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Contract</returns>
         Contract GetFuturesContract (string settle, string contract);
@@ -96,10 +96,31 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>ApiResponse of Contract</returns>
         ApiResponse<Contract> GetFuturesContractWithHttpInfo (string settle, string contract);
+        /// <summary>
+        /// List market-level ADL risk states
+        /// </summary>
+        /// <remarks>
+        /// List the current ADL risk states of all futures markets for the specified settlement currency
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <returns>FuturesADLRiskStates</returns>
+        FuturesADLRiskStates ListFuturesADLRiskStates (string settle);
+
+        /// <summary>
+        /// List market-level ADL risk states
+        /// </summary>
+        /// <remarks>
+        /// List the current ADL risk states of all futures markets for the specified settlement currency
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <returns>ApiResponse of FuturesADLRiskStates</returns>
+        ApiResponse<FuturesADLRiskStates> ListFuturesADLRiskStatesWithHttpInfo (string settle);
         /// <summary>
         /// Query futures market depth information
         /// </summary>
@@ -107,7 +128,7 @@ namespace Io.Gate.GateApi.Api
         /// Bids will be sorted by price from high to low, while asks sorted reversely
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
@@ -122,7 +143,7 @@ namespace Io.Gate.GateApi.Api
         /// Bids will be sorted by price from high to low, while asks sorted reversely
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
@@ -136,7 +157,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -153,7 +174,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -169,7 +190,7 @@ namespace Io.Gate.GateApi.Api
         /// Return specified contract candlesticks. If prefix &#x60;contract&#x60; with &#x60;mark_&#x60;, the contract&#39;s mark price candlesticks are returned; if prefix with &#x60;index_&#x60;, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying &#x60;from&#x60;, &#x60;to&#x60; and &#x60;interval&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -186,7 +207,7 @@ namespace Io.Gate.GateApi.Api
         /// Return specified contract candlesticks. If prefix &#x60;contract&#x60; with &#x60;mark_&#x60;, the contract&#39;s mark price candlesticks are returned; if prefix with &#x60;index_&#x60;, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying &#x60;from&#x60;, &#x60;to&#x60; and &#x60;interval&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -202,7 +223,7 @@ namespace Io.Gate.GateApi.Api
         /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -218,7 +239,7 @@ namespace Io.Gate.GateApi.Api
         /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -233,7 +254,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>List&lt;FuturesTicker&gt;</returns>
         List<FuturesTicker> ListFuturesTickers (string settle, string contract = default(string));
@@ -245,7 +266,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>ApiResponse of List&lt;FuturesTicker&gt;</returns>
         ApiResponse<List<FuturesTicker>> ListFuturesTickersWithHttpInfo (string settle, string contract = default(string));
@@ -256,7 +277,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
@@ -271,7 +292,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
@@ -285,7 +306,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchFundingRatesRequest"></param>
         /// <returns>List&lt;BatchFundingRatesResponse&gt;</returns>
         List<BatchFundingRatesResponse> ListBatchFuturesFundingRates (string settle, BatchFundingRatesRequest batchFundingRatesRequest);
@@ -297,7 +318,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchFundingRatesRequest"></param>
         /// <returns>ApiResponse of List&lt;BatchFundingRatesResponse&gt;</returns>
         ApiResponse<List<BatchFundingRatesResponse>> ListBatchFuturesFundingRatesWithHttpInfo (string settle, BatchFundingRatesRequest batchFundingRatesRequest);
@@ -308,7 +329,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <returns>List&lt;InsuranceRecord&gt;</returns>
         List<InsuranceRecord> ListFuturesInsuranceLedger (string settle, int? limit = default(int?));
@@ -320,7 +341,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <returns>ApiResponse of List&lt;InsuranceRecord&gt;</returns>
         ApiResponse<List<InsuranceRecord>> ListFuturesInsuranceLedgerWithHttpInfo (string settle, int? limit = default(int?));
@@ -331,7 +352,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp (optional)</param>
         /// <param name="interval"> (optional, default to &quot;5m&quot;)</param>
@@ -346,7 +367,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp (optional)</param>
         /// <param name="interval"> (optional, default to &quot;5m&quot;)</param>
@@ -360,7 +381,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="index">Index name</param>
         /// <returns>FuturesIndexConstituents</returns>
         FuturesIndexConstituents GetIndexConstituents (string settle, string index);
@@ -372,7 +393,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="index">Index name</param>
         /// <returns>ApiResponse of FuturesIndexConstituents</returns>
         ApiResponse<FuturesIndexConstituents> GetIndexConstituentsWithHttpInfo (string settle, string index);
@@ -383,7 +404,7 @@ namespace Io.Gate.GateApi.Api
         /// The time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for details
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -398,7 +419,7 @@ namespace Io.Gate.GateApi.Api
         /// The time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for details
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -412,7 +433,7 @@ namespace Io.Gate.GateApi.Api
         /// When the &#39;contract&#39; parameter is not passed, the default is to query the risk limits for the top 100 markets. &#39;Limit&#39; and &#39;offset&#39; correspond to pagination queries at the market level, not to the length of the returned array. This only takes effect when the contract parameter is empty.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -426,7 +447,7 @@ namespace Io.Gate.GateApi.Api
         /// When the &#39;contract&#39; parameter is not passed, the default is to query the risk limits for the top 100 markets. &#39;Limit&#39; and &#39;offset&#39; correspond to pagination queries at the market level, not to the length of the returned array. This only takes effect when the contract parameter is empty.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -439,7 +460,7 @@ namespace Io.Gate.GateApi.Api
         /// Query account information for classic future account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <returns>FuturesAccount</returns>
         FuturesAccount ListFuturesAccounts (string settle);
 
@@ -450,7 +471,7 @@ namespace Io.Gate.GateApi.Api
         /// Query account information for classic future account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <returns>ApiResponse of FuturesAccount</returns>
         ApiResponse<FuturesAccount> ListFuturesAccountsWithHttpInfo (string settle);
         /// <summary>
@@ -460,7 +481,7 @@ namespace Io.Gate.GateApi.Api
         /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -477,7 +498,7 @@ namespace Io.Gate.GateApi.Api
         /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -493,7 +514,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
         /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -507,7 +528,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
         /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -520,7 +541,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -536,7 +557,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -551,7 +572,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Position</returns>
         Position GetPosition (string settle, string contract);
@@ -563,7 +584,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>ApiResponse of Position</returns>
         ApiResponse<Position> GetPositionWithHttpInfo (string settle, string contract);
@@ -574,7 +595,7 @@ namespace Io.Gate.GateApi.Api
         /// Get Leverage Information for Specified Mode
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
         /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
@@ -588,7 +609,7 @@ namespace Io.Gate.GateApi.Api
         /// Get Leverage Information for Specified Mode
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
         /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
@@ -601,7 +622,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <returns>Position</returns>
@@ -614,7 +635,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <returns>ApiResponse of Position</returns>
@@ -626,7 +647,7 @@ namespace Io.Gate.GateApi.Api
         /// ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
         /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
@@ -641,7 +662,7 @@ namespace Io.Gate.GateApi.Api
         /// ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
         /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
@@ -655,7 +676,7 @@ namespace Io.Gate.GateApi.Api
         /// To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Position Leverage Multiple</param>
         /// <param name="marginMode">Margin Mode isolated/cross</param>
@@ -670,7 +691,7 @@ namespace Io.Gate.GateApi.Api
         /// To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Position Leverage Multiple</param>
         /// <param name="marginMode">Margin Mode isolated/cross</param>
@@ -684,7 +705,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPositionCrossMode"></param>
         /// <returns>Position</returns>
         Position UpdatePositionCrossMode (string settle, FuturesPositionCrossMode futuresPositionCrossMode);
@@ -696,7 +717,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPositionCrossMode"></param>
         /// <returns>ApiResponse of Position</returns>
         ApiResponse<Position> UpdatePositionCrossModeWithHttpInfo (string settle, FuturesPositionCrossMode futuresPositionCrossMode);
@@ -707,7 +728,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>List&lt;Position&gt;</returns>
         List<Position> UpdateDualCompPositionCrossMode (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest);
@@ -719,7 +740,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
         ApiResponse<List<Position>> UpdateDualCompPositionCrossModeWithHttpInfo (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest);
@@ -730,7 +751,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>Position</returns>
@@ -743,7 +764,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>ApiResponse of Position</returns>
@@ -755,7 +776,7 @@ namespace Io.Gate.GateApi.Api
         /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>FuturesAccount</returns>
         FuturesAccount SetDualMode (string settle, bool dualMode);
@@ -767,7 +788,7 @@ namespace Io.Gate.GateApi.Api
         /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>ApiResponse of FuturesAccount</returns>
         ApiResponse<FuturesAccount> SetDualModeWithHttpInfo (string settle, bool dualMode);
@@ -778,7 +799,7 @@ namespace Io.Gate.GateApi.Api
         /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
         /// <returns>FuturesAccount</returns>
         FuturesAccount SetPositionMode (string settle, string positionMode);
@@ -790,7 +811,7 @@ namespace Io.Gate.GateApi.Api
         /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
         /// <returns>ApiResponse of FuturesAccount</returns>
         ApiResponse<FuturesAccount> SetPositionModeWithHttpInfo (string settle, string positionMode);
@@ -801,7 +822,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>List&lt;Position&gt;</returns>
         List<Position> GetDualModePosition (string settle, string contract);
@@ -813,7 +834,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
         ApiResponse<List<Position>> GetDualModePositionWithHttpInfo (string settle, string contract);
@@ -824,7 +845,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <param name="dualSide">Long or short position</param>
@@ -838,7 +859,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <param name="dualSide">Long or short position</param>
@@ -851,7 +872,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">New position leverage</param>
         /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
@@ -865,7 +886,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">New position leverage</param>
         /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
@@ -878,7 +899,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>List&lt;Position&gt;</returns>
@@ -891,7 +912,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
@@ -903,7 +924,7 @@ namespace Io.Gate.GateApi.Api
         /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -919,7 +940,7 @@ namespace Io.Gate.GateApi.Api
         /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -934,7 +955,7 @@ namespace Io.Gate.GateApi.Api
         /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>FuturesOrder</returns>
@@ -947,7 +968,7 @@ namespace Io.Gate.GateApi.Api
         /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>ApiResponse of FuturesOrder</returns>
@@ -959,7 +980,7 @@ namespace Io.Gate.GateApi.Api
         /// Zero-fill orders cannot be retrieved 10 minutes after order cancellation
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -976,7 +997,7 @@ namespace Io.Gate.GateApi.Api
         /// Zero-fill orders cannot be retrieved 10 minutes after order cancellation
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -992,7 +1013,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -1008,7 +1029,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -1023,7 +1044,7 @@ namespace Io.Gate.GateApi.Api
         /// - Up to 10 orders per request - If any of the order&#39;s parameters are missing or in the wrong format, all of them will not be executed, and a http status 400 error will be returned directly - If the parameters are checked and passed, all are executed. Even if there is a business logic error in the middle (such as insufficient funds), it will not affect other execution orders - The returned result is in array format, and the order corresponds to the orders in the request body - In the returned result, the &#x60;succeeded&#x60; field of type bool indicates whether the execution was successful or not - If the execution is successful, the normal order content is included; if the execution fails, the &#x60;label&#x60; field is included to indicate the cause of the error - In the rate limiting, each order is counted individually
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>List&lt;BatchFuturesOrder&gt;</returns>
@@ -1036,7 +1057,7 @@ namespace Io.Gate.GateApi.Api
         /// - Up to 10 orders per request - If any of the order&#39;s parameters are missing or in the wrong format, all of them will not be executed, and a http status 400 error will be returned directly - If the parameters are checked and passed, all are executed. Even if there is a business logic error in the middle (such as insufficient funds), it will not affect other execution orders - The returned result is in array format, and the order corresponds to the orders in the request body - In the returned result, the &#x60;succeeded&#x60; field of type bool indicates whether the execution was successful or not - If the execution is successful, the normal order content is included; if the execution fails, the &#x60;label&#x60; field is included to indicate the cause of the error - In the rate limiting, each order is counted individually
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>ApiResponse of List&lt;BatchFuturesOrder&gt;</returns>
@@ -1048,7 +1069,7 @@ namespace Io.Gate.GateApi.Api
         /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <returns>FuturesOrder</returns>
         FuturesOrder GetFuturesOrder (string settle, string orderId);
@@ -1060,7 +1081,7 @@ namespace Io.Gate.GateApi.Api
         /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <returns>ApiResponse of FuturesOrder</returns>
         ApiResponse<FuturesOrder> GetFuturesOrderWithHttpInfo (string settle, string orderId);
@@ -1071,7 +1092,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="futuresOrderAmendment"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
@@ -1085,7 +1106,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="futuresOrderAmendment"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
@@ -1098,7 +1119,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -1112,7 +1133,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -1125,7 +1146,7 @@ namespace Io.Gate.GateApi.Api
         /// By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="order">Futures order ID, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -1141,7 +1162,7 @@ namespace Io.Gate.GateApi.Api
         /// By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="order">Futures order ID, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -1156,7 +1177,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -1173,7 +1194,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -1189,7 +1210,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1207,7 +1228,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1224,7 +1245,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1241,7 +1262,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1257,7 +1278,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1274,7 +1295,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -1290,7 +1311,7 @@ namespace Io.Gate.GateApi.Api
         /// Heartbeat detection for contract orders: When the user-set &#x60;timeout&#x60; time is reached, if neither the existing countdown is canceled nor a new countdown is set, the relevant contract orders will be automatically canceled. This API can be called repeatedly to or cancel the countdown. Usage example: Repeatedly call this API at 30-second intervals, setting the &#x60;timeout&#x60; to 30 (seconds) each time. If this API is not called again within 30 seconds, all open orders on your specified &#x60;market&#x60; will be automatically canceled. If the &#x60;timeout&#x60; is set to 0 within 30 seconds, the countdown timer will terminate, and the automatic order cancellation function will be disabled.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="countdownCancelAllFuturesTask"></param>
         /// <returns>TriggerTime</returns>
         TriggerTime CountdownCancelAllFutures (string settle, CountdownCancelAllFuturesTask countdownCancelAllFuturesTask);
@@ -1302,7 +1323,7 @@ namespace Io.Gate.GateApi.Api
         /// Heartbeat detection for contract orders: When the user-set &#x60;timeout&#x60; time is reached, if neither the existing countdown is canceled nor a new countdown is set, the relevant contract orders will be automatically canceled. This API can be called repeatedly to or cancel the countdown. Usage example: Repeatedly call this API at 30-second intervals, setting the &#x60;timeout&#x60; to 30 (seconds) each time. If this API is not called again within 30 seconds, all open orders on your specified &#x60;market&#x60; will be automatically canceled. If the &#x60;timeout&#x60; is set to 0 within 30 seconds, the countdown timer will terminate, and the automatic order cancellation function will be disabled.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="countdownCancelAllFuturesTask"></param>
         /// <returns>ApiResponse of TriggerTime</returns>
         ApiResponse<TriggerTime> CountdownCancelAllFuturesWithHttpInfo (string settle, CountdownCancelAllFuturesTask countdownCancelAllFuturesTask);
@@ -1313,7 +1334,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Dictionary&lt;string, FuturesFee&gt;</returns>
         Dictionary<string, FuturesFee> GetFuturesFee (string settle, string contract = default(string));
@@ -1325,7 +1346,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>ApiResponse of Dictionary&lt;string, FuturesFee&gt;</returns>
         ApiResponse<Dictionary<string, FuturesFee>> GetFuturesFeeWithHttpInfo (string settle, string contract = default(string));
@@ -1336,7 +1357,7 @@ namespace Io.Gate.GateApi.Api
         /// Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="requestBody"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>List&lt;FutureCancelOrderResult&gt;</returns>
@@ -1349,7 +1370,7 @@ namespace Io.Gate.GateApi.Api
         /// Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="requestBody"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>ApiResponse of List&lt;FutureCancelOrderResult&gt;</returns>
@@ -1361,7 +1382,7 @@ namespace Io.Gate.GateApi.Api
         /// Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchAmendOrderReq"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>List&lt;BatchFuturesOrder&gt;</returns>
@@ -1374,7 +1395,7 @@ namespace Io.Gate.GateApi.Api
         /// Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchAmendOrderReq"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>ApiResponse of List&lt;BatchFuturesOrder&gt;</returns>
@@ -1386,7 +1407,7 @@ namespace Io.Gate.GateApi.Api
         /// Just pass table_id
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="tableId">Risk limit table ID</param>
         /// <returns>List&lt;FuturesRiskLimitTier&gt;</returns>
         List<FuturesRiskLimitTier> GetFuturesRiskLimitTable (string settle, string tableId);
@@ -1398,7 +1419,7 @@ namespace Io.Gate.GateApi.Api
         /// Just pass table_id
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="tableId">Risk limit table ID</param>
         /// <returns>ApiResponse of List&lt;FuturesRiskLimitTier&gt;</returns>
         ApiResponse<List<FuturesRiskLimitTier>> GetFuturesRiskLimitTableWithHttpInfo (string settle, string tableId);
@@ -1409,7 +1430,7 @@ namespace Io.Gate.GateApi.Api
         /// Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresBBOOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>FuturesOrder</returns>
@@ -1422,7 +1443,7 @@ namespace Io.Gate.GateApi.Api
         /// Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresBBOOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>ApiResponse of FuturesOrder</returns>
@@ -1434,7 +1455,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createTrailOrder"></param>
         /// <returns>CreateTrailOrderResponse</returns>
         CreateTrailOrderResponse CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder);
@@ -1446,7 +1467,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createTrailOrder"></param>
         /// <returns>ApiResponse of CreateTrailOrderResponse</returns>
         ApiResponse<CreateTrailOrderResponse> CreateTrailOrderWithHttpInfo (string settle, CreateTrailOrder createTrailOrder);
@@ -1457,7 +1478,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopTrailOrder"></param>
         /// <returns>TrailOrderResponse</returns>
         TrailOrderResponse StopTrailOrder (string settle, StopTrailOrder stopTrailOrder);
@@ -1469,7 +1490,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopTrailOrder"></param>
         /// <returns>ApiResponse of TrailOrderResponse</returns>
         ApiResponse<TrailOrderResponse> StopTrailOrderWithHttpInfo (string settle, StopTrailOrder stopTrailOrder);
@@ -1480,7 +1501,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
         /// <returns>TrailOrderListResponse</returns>
         TrailOrderListResponse StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders);
@@ -1492,7 +1513,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
         /// <returns>ApiResponse of TrailOrderListResponse</returns>
         ApiResponse<TrailOrderListResponse> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
@@ -1503,7 +1524,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Contract name (optional)</param>
         /// <param name="isFinished">Whether historical order (optional)</param>
         /// <param name="startAt">Start time of time range (optional)</param>
@@ -1526,7 +1547,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Contract name (optional)</param>
         /// <param name="isFinished">Whether historical order (optional)</param>
         /// <param name="startAt">Start time of time range (optional)</param>
@@ -1548,7 +1569,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <returns>TrailOrderDetailResponse</returns>
         TrailOrderDetailResponse GetTrailOrderDetail (string settle, long id);
@@ -1560,7 +1581,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <returns>ApiResponse of TrailOrderDetailResponse</returns>
         ApiResponse<TrailOrderDetailResponse> GetTrailOrderDetailWithHttpInfo (string settle, long id);
@@ -1571,7 +1592,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateTrailOrder"></param>
         /// <returns>TrailOrderResponse</returns>
         TrailOrderResponse UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder);
@@ -1583,7 +1604,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateTrailOrder"></param>
         /// <returns>ApiResponse of TrailOrderResponse</returns>
         ApiResponse<TrailOrderResponse> UpdateTrailOrderWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder);
@@ -1594,7 +1615,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
@@ -1608,7 +1629,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
@@ -1621,7 +1642,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createChaseOrderReq"></param>
         /// <returns>CreateChaseOrderResp</returns>
         CreateChaseOrderResp CreateChaseOrder (string settle, CreateChaseOrderReq createChaseOrderReq);
@@ -1633,7 +1654,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createChaseOrderReq"></param>
         /// <returns>ApiResponse of CreateChaseOrderResp</returns>
         ApiResponse<CreateChaseOrderResp> CreateChaseOrderWithHttpInfo (string settle, CreateChaseOrderReq createChaseOrderReq);
@@ -1644,7 +1665,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopChaseOrderReq"></param>
         /// <returns>StopChaseOrderResp</returns>
         StopChaseOrderResp StopChaseOrder (string settle, StopChaseOrderReq stopChaseOrderReq);
@@ -1656,7 +1677,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopChaseOrderReq"></param>
         /// <returns>ApiResponse of StopChaseOrderResp</returns>
         ApiResponse<StopChaseOrderResp> StopChaseOrderWithHttpInfo (string settle, StopChaseOrderReq stopChaseOrderReq);
@@ -1667,7 +1688,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllChaseOrdersReq"></param>
         /// <returns>StopAllChaseOrdersResp</returns>
         StopAllChaseOrdersResp StopAllChaseOrders (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq);
@@ -1679,7 +1700,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllChaseOrdersReq"></param>
         /// <returns>ApiResponse of StopAllChaseOrdersResp</returns>
         ApiResponse<StopAllChaseOrdersResp> StopAllChaseOrdersWithHttpInfo (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq);
@@ -1690,7 +1711,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
@@ -1711,7 +1732,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
@@ -1731,7 +1752,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID, must be a non-zero positive integer</param>
         /// <returns>GetChaseOrderDetailResp</returns>
         GetChaseOrderDetailResp GetChaseOrderDetail (string settle, string id);
@@ -1743,7 +1764,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID, must be a non-zero positive integer</param>
         /// <returns>ApiResponse of GetChaseOrderDetailResp</returns>
         ApiResponse<GetChaseOrderDetailResp> GetChaseOrderDetailWithHttpInfo (string settle, string id);
@@ -1754,7 +1775,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -1769,7 +1790,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -1783,7 +1804,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
         TriggerOrderResponse CreatePriceTriggeredOrder (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
@@ -1795,7 +1816,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
         ApiResponse<TriggerOrderResponse> CreatePriceTriggeredOrderWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
@@ -1806,7 +1827,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>List&lt;FuturesPriceTriggeredOrder&gt;</returns>
         List<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderList (string settle, string contract = default(string));
@@ -1818,7 +1839,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>ApiResponse of List&lt;FuturesPriceTriggeredOrder&gt;</returns>
         ApiResponse<List<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderListWithHttpInfo (string settle, string contract = default(string));
@@ -1829,7 +1850,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
         FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, long orderId);
@@ -1841,7 +1862,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
         ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, long orderId);
@@ -1852,7 +1873,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
         FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, long orderId);
@@ -1864,7 +1885,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
         ApiResponse<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderWithHttpInfo (string settle, long orderId);
@@ -1875,7 +1896,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
         TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
@@ -1887,7 +1908,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
         ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
@@ -1907,7 +1928,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of List&lt;Contract&gt;</returns>
@@ -1920,7 +1941,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;Contract&gt;)</returns>
@@ -1932,7 +1953,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of List&lt;Contract&gt;</returns>
@@ -1945,7 +1966,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;Contract&gt;)</returns>
@@ -1957,7 +1978,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of Contract</returns>
         Task<Contract> GetFuturesContractAsync (string settle, string contract);
@@ -1969,10 +1990,31 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of ApiResponse (Contract)</returns>
         Task<ApiResponse<Contract>> GetFuturesContractAsyncWithHttpInfo (string settle, string contract);
+        /// <summary>
+        /// List market-level ADL risk states
+        /// </summary>
+        /// <remarks>
+        /// List the current ADL risk states of all futures markets for the specified settlement currency
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <returns>Task of FuturesADLRiskStates</returns>
+        Task<FuturesADLRiskStates> ListFuturesADLRiskStatesAsync (string settle);
+
+        /// <summary>
+        /// List market-level ADL risk states
+        /// </summary>
+        /// <remarks>
+        /// List the current ADL risk states of all futures markets for the specified settlement currency
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <returns>Task of ApiResponse (FuturesADLRiskStates)</returns>
+        Task<ApiResponse<FuturesADLRiskStates>> ListFuturesADLRiskStatesAsyncWithHttpInfo (string settle);
         /// <summary>
         /// Query futures market depth information
         /// </summary>
@@ -1980,7 +2022,7 @@ namespace Io.Gate.GateApi.Api
         /// Bids will be sorted by price from high to low, while asks sorted reversely
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
@@ -1995,7 +2037,7 @@ namespace Io.Gate.GateApi.Api
         /// Bids will be sorted by price from high to low, while asks sorted reversely
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
@@ -2009,7 +2051,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -2026,7 +2068,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -2042,7 +2084,7 @@ namespace Io.Gate.GateApi.Api
         /// Return specified contract candlesticks. If prefix &#x60;contract&#x60; with &#x60;mark_&#x60;, the contract&#39;s mark price candlesticks are returned; if prefix with &#x60;index_&#x60;, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying &#x60;from&#x60;, &#x60;to&#x60; and &#x60;interval&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -2059,7 +2101,7 @@ namespace Io.Gate.GateApi.Api
         /// Return specified contract candlesticks. If prefix &#x60;contract&#x60; with &#x60;mark_&#x60;, the contract&#39;s mark price candlesticks are returned; if prefix with &#x60;index_&#x60;, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying &#x60;from&#x60;, &#x60;to&#x60; and &#x60;interval&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -2075,7 +2117,7 @@ namespace Io.Gate.GateApi.Api
         /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -2091,7 +2133,7 @@ namespace Io.Gate.GateApi.Api
         /// K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -2106,7 +2148,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of List&lt;FuturesTicker&gt;</returns>
         Task<List<FuturesTicker>> ListFuturesTickersAsync (string settle, string contract = default(string));
@@ -2118,7 +2160,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesTicker&gt;)</returns>
         Task<ApiResponse<List<FuturesTicker>>> ListFuturesTickersAsyncWithHttpInfo (string settle, string contract = default(string));
@@ -2129,7 +2171,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
@@ -2144,7 +2186,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
@@ -2158,7 +2200,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchFundingRatesRequest"></param>
         /// <returns>Task of List&lt;BatchFundingRatesResponse&gt;</returns>
         Task<List<BatchFundingRatesResponse>> ListBatchFuturesFundingRatesAsync (string settle, BatchFundingRatesRequest batchFundingRatesRequest);
@@ -2170,7 +2212,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchFundingRatesRequest"></param>
         /// <returns>Task of ApiResponse (List&lt;BatchFundingRatesResponse&gt;)</returns>
         Task<ApiResponse<List<BatchFundingRatesResponse>>> ListBatchFuturesFundingRatesAsyncWithHttpInfo (string settle, BatchFundingRatesRequest batchFundingRatesRequest);
@@ -2181,7 +2223,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <returns>Task of List&lt;InsuranceRecord&gt;</returns>
         Task<List<InsuranceRecord>> ListFuturesInsuranceLedgerAsync (string settle, int? limit = default(int?));
@@ -2193,7 +2235,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <returns>Task of ApiResponse (List&lt;InsuranceRecord&gt;)</returns>
         Task<ApiResponse<List<InsuranceRecord>>> ListFuturesInsuranceLedgerAsyncWithHttpInfo (string settle, int? limit = default(int?));
@@ -2204,7 +2246,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp (optional)</param>
         /// <param name="interval"> (optional, default to &quot;5m&quot;)</param>
@@ -2219,7 +2261,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp (optional)</param>
         /// <param name="interval"> (optional, default to &quot;5m&quot;)</param>
@@ -2233,7 +2275,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="index">Index name</param>
         /// <returns>Task of FuturesIndexConstituents</returns>
         Task<FuturesIndexConstituents> GetIndexConstituentsAsync (string settle, string index);
@@ -2245,7 +2287,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="index">Index name</param>
         /// <returns>Task of ApiResponse (FuturesIndexConstituents)</returns>
         Task<ApiResponse<FuturesIndexConstituents>> GetIndexConstituentsAsyncWithHttpInfo (string settle, string index);
@@ -2256,7 +2298,7 @@ namespace Io.Gate.GateApi.Api
         /// The time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for details
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -2271,7 +2313,7 @@ namespace Io.Gate.GateApi.Api
         /// The time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for details
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -2285,7 +2327,7 @@ namespace Io.Gate.GateApi.Api
         /// When the &#39;contract&#39; parameter is not passed, the default is to query the risk limits for the top 100 markets. &#39;Limit&#39; and &#39;offset&#39; correspond to pagination queries at the market level, not to the length of the returned array. This only takes effect when the contract parameter is empty.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -2299,7 +2341,7 @@ namespace Io.Gate.GateApi.Api
         /// When the &#39;contract&#39; parameter is not passed, the default is to query the risk limits for the top 100 markets. &#39;Limit&#39; and &#39;offset&#39; correspond to pagination queries at the market level, not to the length of the returned array. This only takes effect when the contract parameter is empty.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -2312,7 +2354,7 @@ namespace Io.Gate.GateApi.Api
         /// Query account information for classic future account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <returns>Task of FuturesAccount</returns>
         Task<FuturesAccount> ListFuturesAccountsAsync (string settle);
 
@@ -2323,7 +2365,7 @@ namespace Io.Gate.GateApi.Api
         /// Query account information for classic future account and unified account
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <returns>Task of ApiResponse (FuturesAccount)</returns>
         Task<ApiResponse<FuturesAccount>> ListFuturesAccountsAsyncWithHttpInfo (string settle);
         /// <summary>
@@ -2333,7 +2375,7 @@ namespace Io.Gate.GateApi.Api
         /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -2350,7 +2392,7 @@ namespace Io.Gate.GateApi.Api
         /// If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -2366,7 +2408,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
         /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -2380,7 +2422,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
         /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -2393,7 +2435,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -2409,7 +2451,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -2424,7 +2466,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of Position</returns>
         Task<Position> GetPositionAsync (string settle, string contract);
@@ -2436,7 +2478,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of ApiResponse (Position)</returns>
         Task<ApiResponse<Position>> GetPositionAsyncWithHttpInfo (string settle, string contract);
@@ -2447,7 +2489,7 @@ namespace Io.Gate.GateApi.Api
         /// Get Leverage Information for Specified Mode
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
         /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
@@ -2461,7 +2503,7 @@ namespace Io.Gate.GateApi.Api
         /// Get Leverage Information for Specified Mode
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
         /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
@@ -2474,7 +2516,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <returns>Task of Position</returns>
@@ -2487,7 +2529,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <returns>Task of ApiResponse (Position)</returns>
@@ -2499,7 +2541,7 @@ namespace Io.Gate.GateApi.Api
         /// ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
         /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
@@ -2514,7 +2556,7 @@ namespace Io.Gate.GateApi.Api
         /// ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
         /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
@@ -2528,7 +2570,7 @@ namespace Io.Gate.GateApi.Api
         /// To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Position Leverage Multiple</param>
         /// <param name="marginMode">Margin Mode isolated/cross</param>
@@ -2543,7 +2585,7 @@ namespace Io.Gate.GateApi.Api
         /// To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Position Leverage Multiple</param>
         /// <param name="marginMode">Margin Mode isolated/cross</param>
@@ -2557,7 +2599,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPositionCrossMode"></param>
         /// <returns>Task of Position</returns>
         Task<Position> UpdatePositionCrossModeAsync (string settle, FuturesPositionCrossMode futuresPositionCrossMode);
@@ -2569,7 +2611,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPositionCrossMode"></param>
         /// <returns>Task of ApiResponse (Position)</returns>
         Task<ApiResponse<Position>> UpdatePositionCrossModeAsyncWithHttpInfo (string settle, FuturesPositionCrossMode futuresPositionCrossMode);
@@ -2580,7 +2622,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>Task of List&lt;Position&gt;</returns>
         Task<List<Position>> UpdateDualCompPositionCrossModeAsync (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest);
@@ -2592,7 +2634,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
         Task<ApiResponse<List<Position>>> UpdateDualCompPositionCrossModeAsyncWithHttpInfo (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest);
@@ -2603,7 +2645,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>Task of Position</returns>
@@ -2616,7 +2658,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>Task of ApiResponse (Position)</returns>
@@ -2628,7 +2670,7 @@ namespace Io.Gate.GateApi.Api
         /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>Task of FuturesAccount</returns>
         Task<FuturesAccount> SetDualModeAsync (string settle, bool dualMode);
@@ -2640,7 +2682,7 @@ namespace Io.Gate.GateApi.Api
         /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>Task of ApiResponse (FuturesAccount)</returns>
         Task<ApiResponse<FuturesAccount>> SetDualModeAsyncWithHttpInfo (string settle, bool dualMode);
@@ -2651,7 +2693,7 @@ namespace Io.Gate.GateApi.Api
         /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
         /// <returns>Task of FuturesAccount</returns>
         Task<FuturesAccount> SetPositionModeAsync (string settle, string positionMode);
@@ -2663,7 +2705,7 @@ namespace Io.Gate.GateApi.Api
         /// The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
         /// <returns>Task of ApiResponse (FuturesAccount)</returns>
         Task<ApiResponse<FuturesAccount>> SetPositionModeAsyncWithHttpInfo (string settle, string positionMode);
@@ -2674,7 +2716,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of List&lt;Position&gt;</returns>
         Task<List<Position>> GetDualModePositionAsync (string settle, string contract);
@@ -2686,7 +2728,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
         Task<ApiResponse<List<Position>>> GetDualModePositionAsyncWithHttpInfo (string settle, string contract);
@@ -2697,7 +2739,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <param name="dualSide">Long or short position</param>
@@ -2711,7 +2753,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <param name="dualSide">Long or short position</param>
@@ -2724,7 +2766,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">New position leverage</param>
         /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
@@ -2738,7 +2780,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">New position leverage</param>
         /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
@@ -2751,7 +2793,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>Task of List&lt;Position&gt;</returns>
@@ -2764,7 +2806,7 @@ namespace Io.Gate.GateApi.Api
         /// Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
@@ -2776,7 +2818,7 @@ namespace Io.Gate.GateApi.Api
         /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -2792,7 +2834,7 @@ namespace Io.Gate.GateApi.Api
         /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -2807,7 +2849,7 @@ namespace Io.Gate.GateApi.Api
         /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of FuturesOrder</returns>
@@ -2820,7 +2862,7 @@ namespace Io.Gate.GateApi.Api
         /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (FuturesOrder)</returns>
@@ -2832,7 +2874,7 @@ namespace Io.Gate.GateApi.Api
         /// Zero-fill orders cannot be retrieved 10 minutes after order cancellation
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -2849,7 +2891,7 @@ namespace Io.Gate.GateApi.Api
         /// Zero-fill orders cannot be retrieved 10 minutes after order cancellation
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -2865,7 +2907,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -2881,7 +2923,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -2896,7 +2938,7 @@ namespace Io.Gate.GateApi.Api
         /// - Up to 10 orders per request - If any of the order&#39;s parameters are missing or in the wrong format, all of them will not be executed, and a http status 400 error will be returned directly - If the parameters are checked and passed, all are executed. Even if there is a business logic error in the middle (such as insufficient funds), it will not affect other execution orders - The returned result is in array format, and the order corresponds to the orders in the request body - In the returned result, the &#x60;succeeded&#x60; field of type bool indicates whether the execution was successful or not - If the execution is successful, the normal order content is included; if the execution fails, the &#x60;label&#x60; field is included to indicate the cause of the error - In the rate limiting, each order is counted individually
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of List&lt;BatchFuturesOrder&gt;</returns>
@@ -2909,7 +2951,7 @@ namespace Io.Gate.GateApi.Api
         /// - Up to 10 orders per request - If any of the order&#39;s parameters are missing or in the wrong format, all of them will not be executed, and a http status 400 error will be returned directly - If the parameters are checked and passed, all are executed. Even if there is a business logic error in the middle (such as insufficient funds), it will not affect other execution orders - The returned result is in array format, and the order corresponds to the orders in the request body - In the returned result, the &#x60;succeeded&#x60; field of type bool indicates whether the execution was successful or not - If the execution is successful, the normal order content is included; if the execution fails, the &#x60;label&#x60; field is included to indicate the cause of the error - In the rate limiting, each order is counted individually
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;BatchFuturesOrder&gt;)</returns>
@@ -2921,7 +2963,7 @@ namespace Io.Gate.GateApi.Api
         /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <returns>Task of FuturesOrder</returns>
         Task<FuturesOrder> GetFuturesOrderAsync (string settle, string orderId);
@@ -2933,7 +2975,7 @@ namespace Io.Gate.GateApi.Api
         /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <returns>Task of ApiResponse (FuturesOrder)</returns>
         Task<ApiResponse<FuturesOrder>> GetFuturesOrderAsyncWithHttpInfo (string settle, string orderId);
@@ -2944,7 +2986,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="futuresOrderAmendment"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
@@ -2958,7 +3000,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="futuresOrderAmendment"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
@@ -2971,7 +3013,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -2985,7 +3027,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -2998,7 +3040,7 @@ namespace Io.Gate.GateApi.Api
         /// By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="order">Futures order ID, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -3014,7 +3056,7 @@ namespace Io.Gate.GateApi.Api
         /// By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="order">Futures order ID, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -3029,7 +3071,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -3046,7 +3088,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -3062,7 +3104,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -3080,7 +3122,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -3097,7 +3139,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -3114,7 +3156,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -3130,7 +3172,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -3147,7 +3189,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -3163,7 +3205,7 @@ namespace Io.Gate.GateApi.Api
         /// Heartbeat detection for contract orders: When the user-set &#x60;timeout&#x60; time is reached, if neither the existing countdown is canceled nor a new countdown is set, the relevant contract orders will be automatically canceled. This API can be called repeatedly to or cancel the countdown. Usage example: Repeatedly call this API at 30-second intervals, setting the &#x60;timeout&#x60; to 30 (seconds) each time. If this API is not called again within 30 seconds, all open orders on your specified &#x60;market&#x60; will be automatically canceled. If the &#x60;timeout&#x60; is set to 0 within 30 seconds, the countdown timer will terminate, and the automatic order cancellation function will be disabled.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="countdownCancelAllFuturesTask"></param>
         /// <returns>Task of TriggerTime</returns>
         Task<TriggerTime> CountdownCancelAllFuturesAsync (string settle, CountdownCancelAllFuturesTask countdownCancelAllFuturesTask);
@@ -3175,7 +3217,7 @@ namespace Io.Gate.GateApi.Api
         /// Heartbeat detection for contract orders: When the user-set &#x60;timeout&#x60; time is reached, if neither the existing countdown is canceled nor a new countdown is set, the relevant contract orders will be automatically canceled. This API can be called repeatedly to or cancel the countdown. Usage example: Repeatedly call this API at 30-second intervals, setting the &#x60;timeout&#x60; to 30 (seconds) each time. If this API is not called again within 30 seconds, all open orders on your specified &#x60;market&#x60; will be automatically canceled. If the &#x60;timeout&#x60; is set to 0 within 30 seconds, the countdown timer will terminate, and the automatic order cancellation function will be disabled.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="countdownCancelAllFuturesTask"></param>
         /// <returns>Task of ApiResponse (TriggerTime)</returns>
         Task<ApiResponse<TriggerTime>> CountdownCancelAllFuturesAsyncWithHttpInfo (string settle, CountdownCancelAllFuturesTask countdownCancelAllFuturesTask);
@@ -3186,7 +3228,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of Dictionary&lt;string, FuturesFee&gt;</returns>
         Task<Dictionary<string, FuturesFee>> GetFuturesFeeAsync (string settle, string contract = default(string));
@@ -3198,7 +3240,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of ApiResponse (Dictionary&lt;string, FuturesFee&gt;)</returns>
         Task<ApiResponse<Dictionary<string, FuturesFee>>> GetFuturesFeeAsyncWithHttpInfo (string settle, string contract = default(string));
@@ -3209,7 +3251,7 @@ namespace Io.Gate.GateApi.Api
         /// Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="requestBody"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of List&lt;FutureCancelOrderResult&gt;</returns>
@@ -3222,7 +3264,7 @@ namespace Io.Gate.GateApi.Api
         /// Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="requestBody"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;FutureCancelOrderResult&gt;)</returns>
@@ -3234,7 +3276,7 @@ namespace Io.Gate.GateApi.Api
         /// Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchAmendOrderReq"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of List&lt;BatchFuturesOrder&gt;</returns>
@@ -3247,7 +3289,7 @@ namespace Io.Gate.GateApi.Api
         /// Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchAmendOrderReq"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;BatchFuturesOrder&gt;)</returns>
@@ -3259,7 +3301,7 @@ namespace Io.Gate.GateApi.Api
         /// Just pass table_id
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="tableId">Risk limit table ID</param>
         /// <returns>Task of List&lt;FuturesRiskLimitTier&gt;</returns>
         Task<List<FuturesRiskLimitTier>> GetFuturesRiskLimitTableAsync (string settle, string tableId);
@@ -3271,7 +3313,7 @@ namespace Io.Gate.GateApi.Api
         /// Just pass table_id
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="tableId">Risk limit table ID</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesRiskLimitTier&gt;)</returns>
         Task<ApiResponse<List<FuturesRiskLimitTier>>> GetFuturesRiskLimitTableAsyncWithHttpInfo (string settle, string tableId);
@@ -3282,7 +3324,7 @@ namespace Io.Gate.GateApi.Api
         /// Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresBBOOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of FuturesOrder</returns>
@@ -3295,7 +3337,7 @@ namespace Io.Gate.GateApi.Api
         /// Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresBBOOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (FuturesOrder)</returns>
@@ -3307,7 +3349,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createTrailOrder"></param>
         /// <returns>Task of CreateTrailOrderResponse</returns>
         Task<CreateTrailOrderResponse> CreateTrailOrderAsync (string settle, CreateTrailOrder createTrailOrder);
@@ -3319,7 +3361,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createTrailOrder"></param>
         /// <returns>Task of ApiResponse (CreateTrailOrderResponse)</returns>
         Task<ApiResponse<CreateTrailOrderResponse>> CreateTrailOrderAsyncWithHttpInfo (string settle, CreateTrailOrder createTrailOrder);
@@ -3330,7 +3372,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopTrailOrder"></param>
         /// <returns>Task of TrailOrderResponse</returns>
         Task<TrailOrderResponse> StopTrailOrderAsync (string settle, StopTrailOrder stopTrailOrder);
@@ -3342,7 +3384,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopTrailOrder"></param>
         /// <returns>Task of ApiResponse (TrailOrderResponse)</returns>
         Task<ApiResponse<TrailOrderResponse>> StopTrailOrderAsyncWithHttpInfo (string settle, StopTrailOrder stopTrailOrder);
@@ -3353,7 +3395,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
         /// <returns>Task of TrailOrderListResponse</returns>
         Task<TrailOrderListResponse> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders);
@@ -3365,7 +3407,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
         /// <returns>Task of ApiResponse (TrailOrderListResponse)</returns>
         Task<ApiResponse<TrailOrderListResponse>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
@@ -3376,7 +3418,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Contract name (optional)</param>
         /// <param name="isFinished">Whether historical order (optional)</param>
         /// <param name="startAt">Start time of time range (optional)</param>
@@ -3399,7 +3441,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Contract name (optional)</param>
         /// <param name="isFinished">Whether historical order (optional)</param>
         /// <param name="startAt">Start time of time range (optional)</param>
@@ -3421,7 +3463,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <returns>Task of TrailOrderDetailResponse</returns>
         Task<TrailOrderDetailResponse> GetTrailOrderDetailAsync (string settle, long id);
@@ -3433,7 +3475,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <returns>Task of ApiResponse (TrailOrderDetailResponse)</returns>
         Task<ApiResponse<TrailOrderDetailResponse>> GetTrailOrderDetailAsyncWithHttpInfo (string settle, long id);
@@ -3444,7 +3486,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateTrailOrder"></param>
         /// <returns>Task of TrailOrderResponse</returns>
         Task<TrailOrderResponse> UpdateTrailOrderAsync (string settle, UpdateTrailOrder updateTrailOrder);
@@ -3456,7 +3498,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateTrailOrder"></param>
         /// <returns>Task of ApiResponse (TrailOrderResponse)</returns>
         Task<ApiResponse<TrailOrderResponse>> UpdateTrailOrderAsyncWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder);
@@ -3467,7 +3509,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
@@ -3481,7 +3523,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
@@ -3494,7 +3536,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createChaseOrderReq"></param>
         /// <returns>Task of CreateChaseOrderResp</returns>
         Task<CreateChaseOrderResp> CreateChaseOrderAsync (string settle, CreateChaseOrderReq createChaseOrderReq);
@@ -3506,7 +3548,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createChaseOrderReq"></param>
         /// <returns>Task of ApiResponse (CreateChaseOrderResp)</returns>
         Task<ApiResponse<CreateChaseOrderResp>> CreateChaseOrderAsyncWithHttpInfo (string settle, CreateChaseOrderReq createChaseOrderReq);
@@ -3517,7 +3559,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopChaseOrderReq"></param>
         /// <returns>Task of StopChaseOrderResp</returns>
         Task<StopChaseOrderResp> StopChaseOrderAsync (string settle, StopChaseOrderReq stopChaseOrderReq);
@@ -3529,7 +3571,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopChaseOrderReq"></param>
         /// <returns>Task of ApiResponse (StopChaseOrderResp)</returns>
         Task<ApiResponse<StopChaseOrderResp>> StopChaseOrderAsyncWithHttpInfo (string settle, StopChaseOrderReq stopChaseOrderReq);
@@ -3540,7 +3582,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllChaseOrdersReq"></param>
         /// <returns>Task of StopAllChaseOrdersResp</returns>
         Task<StopAllChaseOrdersResp> StopAllChaseOrdersAsync (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq);
@@ -3552,7 +3594,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllChaseOrdersReq"></param>
         /// <returns>Task of ApiResponse (StopAllChaseOrdersResp)</returns>
         Task<ApiResponse<StopAllChaseOrdersResp>> StopAllChaseOrdersAsyncWithHttpInfo (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq);
@@ -3563,7 +3605,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
@@ -3584,7 +3626,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
@@ -3604,7 +3646,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID, must be a non-zero positive integer</param>
         /// <returns>Task of GetChaseOrderDetailResp</returns>
         Task<GetChaseOrderDetailResp> GetChaseOrderDetailAsync (string settle, string id);
@@ -3616,7 +3658,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID, must be a non-zero positive integer</param>
         /// <returns>Task of ApiResponse (GetChaseOrderDetailResp)</returns>
         Task<ApiResponse<GetChaseOrderDetailResp>> GetChaseOrderDetailAsyncWithHttpInfo (string settle, string id);
@@ -3627,7 +3669,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -3642,7 +3684,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -3656,7 +3698,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
         Task<TriggerOrderResponse> CreatePriceTriggeredOrderAsync (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
@@ -3668,7 +3710,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
         Task<ApiResponse<TriggerOrderResponse>> CreatePriceTriggeredOrderAsyncWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder);
@@ -3679,7 +3721,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of List&lt;FuturesPriceTriggeredOrder&gt;</returns>
         Task<List<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderListAsync (string settle, string contract = default(string));
@@ -3691,7 +3733,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesPriceTriggeredOrder&gt;)</returns>
         Task<ApiResponse<List<FuturesPriceTriggeredOrder>>> CancelPriceTriggeredOrderListAsyncWithHttpInfo (string settle, string contract = default(string));
@@ -3702,7 +3744,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
         Task<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderAsync (string settle, long orderId);
@@ -3714,7 +3756,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
         Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId);
@@ -3725,7 +3767,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
         Task<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderAsync (string settle, long orderId);
@@ -3737,7 +3779,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
         Task<ApiResponse<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId);
@@ -3748,7 +3790,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
         Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
@@ -3760,7 +3802,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
         Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
@@ -3888,7 +3930,7 @@ namespace Io.Gate.GateApi.Api
         /// Query all futures contracts 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>List&lt;Contract&gt;</returns>
@@ -3902,7 +3944,7 @@ namespace Io.Gate.GateApi.Api
         /// Query all futures contracts 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>ApiResponse of List&lt;Contract&gt;</returns>
@@ -3955,7 +3997,7 @@ namespace Io.Gate.GateApi.Api
         /// Query all futures contracts 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of List&lt;Contract&gt;</returns>
@@ -3970,7 +4012,7 @@ namespace Io.Gate.GateApi.Api
         /// Query all futures contracts 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;Contract&gt;)</returns>
@@ -4025,7 +4067,7 @@ namespace Io.Gate.GateApi.Api
         /// Query all contract information (including delisted) 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>List&lt;Contract&gt;</returns>
@@ -4039,7 +4081,7 @@ namespace Io.Gate.GateApi.Api
         /// Query all contract information (including delisted) 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>ApiResponse of List&lt;Contract&gt;</returns>
@@ -4092,7 +4134,7 @@ namespace Io.Gate.GateApi.Api
         /// Query all contract information (including delisted) 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of List&lt;Contract&gt;</returns>
@@ -4107,7 +4149,7 @@ namespace Io.Gate.GateApi.Api
         /// Query all contract information (including delisted) 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;Contract&gt;)</returns>
@@ -4162,7 +4204,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single contract information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Contract</returns>
         public Contract GetFuturesContract (string settle, string contract)
@@ -4175,7 +4217,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single contract information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>ApiResponse of Contract</returns>
         public ApiResponse<Contract> GetFuturesContractWithHttpInfo (string settle, string contract)
@@ -4224,7 +4266,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single contract information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of Contract</returns>
         public async Task<Contract> GetFuturesContractAsync (string settle, string contract)
@@ -4238,7 +4280,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single contract information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of ApiResponse (Contract)</returns>
         public async Task<ApiResponse<Contract>> GetFuturesContractAsyncWithHttpInfo (string settle, string contract)
@@ -4286,10 +4328,123 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
+        /// List market-level ADL risk states List the current ADL risk states of all futures markets for the specified settlement currency
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <returns>FuturesADLRiskStates</returns>
+        public FuturesADLRiskStates ListFuturesADLRiskStates (string settle)
+        {
+             ApiResponse<FuturesADLRiskStates> localVarResponse = ListFuturesADLRiskStatesWithHttpInfo(settle);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List market-level ADL risk states List the current ADL risk states of all futures markets for the specified settlement currency
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <returns>ApiResponse of FuturesADLRiskStates</returns>
+        public ApiResponse<FuturesADLRiskStates> ListFuturesADLRiskStatesWithHttpInfo (string settle)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->ListFuturesADLRiskStates");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<FuturesADLRiskStates>("/futures/{settle}/adl_risk_states", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListFuturesADLRiskStates", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List market-level ADL risk states List the current ADL risk states of all futures markets for the specified settlement currency
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <returns>Task of FuturesADLRiskStates</returns>
+        public async Task<FuturesADLRiskStates> ListFuturesADLRiskStatesAsync (string settle)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FuturesADLRiskStates> localVarResponse = await ListFuturesADLRiskStatesAsyncWithHttpInfo(settle);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List market-level ADL risk states List the current ADL risk states of all futures markets for the specified settlement currency
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <returns>Task of ApiResponse (FuturesADLRiskStates)</returns>
+        public async Task<ApiResponse<FuturesADLRiskStates>> ListFuturesADLRiskStatesAsyncWithHttpInfo (string settle)
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->ListFuturesADLRiskStates");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FuturesADLRiskStates>("/futures/{settle}/adl_risk_states", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListFuturesADLRiskStates", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Query futures market depth information Bids will be sorted by price from high to low, while asks sorted reversely
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
@@ -4305,7 +4460,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures market depth information Bids will be sorted by price from high to low, while asks sorted reversely
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
@@ -4369,7 +4524,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures market depth information Bids will be sorted by price from high to low, while asks sorted reversely
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
@@ -4386,7 +4541,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures market depth information Bids will be sorted by price from high to low, while asks sorted reversely
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
         /// <param name="limit">Number of depth levels (optional, default to 10)</param>
@@ -4452,7 +4607,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market transaction records 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -4470,7 +4625,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market transaction records 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -4544,7 +4699,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market transaction records 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -4563,7 +4718,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market transaction records 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -4639,7 +4794,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market K-line chart Return specified contract candlesticks. If prefix &#x60;contract&#x60; with &#x60;mark_&#x60;, the contract&#39;s mark price candlesticks are returned; if prefix with &#x60;index_&#x60;, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying &#x60;from&#x60;, &#x60;to&#x60; and &#x60;interval&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -4657,7 +4812,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market K-line chart Return specified contract candlesticks. If prefix &#x60;contract&#x60; with &#x60;mark_&#x60;, the contract&#39;s mark price candlesticks are returned; if prefix with &#x60;index_&#x60;, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying &#x60;from&#x60;, &#x60;to&#x60; and &#x60;interval&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -4731,7 +4886,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market K-line chart Return specified contract candlesticks. If prefix &#x60;contract&#x60; with &#x60;mark_&#x60;, the contract&#39;s mark price candlesticks are returned; if prefix with &#x60;index_&#x60;, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying &#x60;from&#x60;, &#x60;to&#x60; and &#x60;interval&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -4750,7 +4905,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market K-line chart Return specified contract candlesticks. If prefix &#x60;contract&#x60; with &#x60;mark_&#x60;, the contract&#39;s mark price candlesticks are returned; if prefix with &#x60;index_&#x60;, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying &#x60;from&#x60;, &#x60;to&#x60; and &#x60;interval&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -4826,7 +4981,7 @@ namespace Io.Gate.GateApi.Api
         /// Premium Index K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -4843,7 +4998,7 @@ namespace Io.Gate.GateApi.Api
         /// Premium Index K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -4912,7 +5067,7 @@ namespace Io.Gate.GateApi.Api
         /// Premium Index K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -4930,7 +5085,7 @@ namespace Io.Gate.GateApi.Api
         /// Premium Index K-line chart K-line chart data returns a maximum of 1000 points per request. When specifying from, to, and interval, ensure the number of points is not excessive
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified (optional)</param>
         /// <param name="to">Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)</param>
@@ -5001,7 +5156,7 @@ namespace Io.Gate.GateApi.Api
         /// Get all futures trading statistics 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>List&lt;FuturesTicker&gt;</returns>
         public List<FuturesTicker> ListFuturesTickers (string settle, string contract = default(string))
@@ -5014,7 +5169,7 @@ namespace Io.Gate.GateApi.Api
         /// Get all futures trading statistics 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>ApiResponse of List&lt;FuturesTicker&gt;</returns>
         public ApiResponse<List<FuturesTicker>> ListFuturesTickersWithHttpInfo (string settle, string contract = default(string))
@@ -5062,7 +5217,7 @@ namespace Io.Gate.GateApi.Api
         /// Get all futures trading statistics 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of List&lt;FuturesTicker&gt;</returns>
         public async Task<List<FuturesTicker>> ListFuturesTickersAsync (string settle, string contract = default(string))
@@ -5076,7 +5231,7 @@ namespace Io.Gate.GateApi.Api
         /// Get all futures trading statistics 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesTicker&gt;)</returns>
         public async Task<ApiResponse<List<FuturesTicker>>> ListFuturesTickersAsyncWithHttpInfo (string settle, string contract = default(string))
@@ -5126,7 +5281,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market historical funding rate 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
@@ -5142,7 +5297,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market historical funding rate 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
@@ -5206,7 +5361,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market historical funding rate 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
@@ -5223,7 +5378,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market historical funding rate 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
@@ -5289,7 +5444,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch Query Historical Funding Rate Data for Perpetual Contracts 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchFundingRatesRequest"></param>
         /// <returns>List&lt;BatchFundingRatesResponse&gt;</returns>
         public List<BatchFundingRatesResponse> ListBatchFuturesFundingRates (string settle, BatchFundingRatesRequest batchFundingRatesRequest)
@@ -5302,7 +5457,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch Query Historical Funding Rate Data for Perpetual Contracts 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchFundingRatesRequest"></param>
         /// <returns>ApiResponse of List&lt;BatchFundingRatesResponse&gt;</returns>
         public ApiResponse<List<BatchFundingRatesResponse>> ListBatchFuturesFundingRatesWithHttpInfo (string settle, BatchFundingRatesRequest batchFundingRatesRequest)
@@ -5352,7 +5507,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch Query Historical Funding Rate Data for Perpetual Contracts 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchFundingRatesRequest"></param>
         /// <returns>Task of List&lt;BatchFundingRatesResponse&gt;</returns>
         public async Task<List<BatchFundingRatesResponse>> ListBatchFuturesFundingRatesAsync (string settle, BatchFundingRatesRequest batchFundingRatesRequest)
@@ -5366,7 +5521,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch Query Historical Funding Rate Data for Perpetual Contracts 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchFundingRatesRequest"></param>
         /// <returns>Task of ApiResponse (List&lt;BatchFundingRatesResponse&gt;)</returns>
         public async Task<ApiResponse<List<BatchFundingRatesResponse>>> ListBatchFuturesFundingRatesAsyncWithHttpInfo (string settle, BatchFundingRatesRequest batchFundingRatesRequest)
@@ -5418,7 +5573,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market insurance fund history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <returns>List&lt;InsuranceRecord&gt;</returns>
         public List<InsuranceRecord> ListFuturesInsuranceLedger (string settle, int? limit = default(int?))
@@ -5431,7 +5586,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market insurance fund history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <returns>ApiResponse of List&lt;InsuranceRecord&gt;</returns>
         public ApiResponse<List<InsuranceRecord>> ListFuturesInsuranceLedgerWithHttpInfo (string settle, int? limit = default(int?))
@@ -5479,7 +5634,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market insurance fund history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <returns>Task of List&lt;InsuranceRecord&gt;</returns>
         public async Task<List<InsuranceRecord>> ListFuturesInsuranceLedgerAsync (string settle, int? limit = default(int?))
@@ -5493,7 +5648,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures market insurance fund history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <returns>Task of ApiResponse (List&lt;InsuranceRecord&gt;)</returns>
         public async Task<ApiResponse<List<InsuranceRecord>>> ListFuturesInsuranceLedgerAsyncWithHttpInfo (string settle, int? limit = default(int?))
@@ -5543,7 +5698,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures statistics 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp (optional)</param>
         /// <param name="interval"> (optional, default to &quot;5m&quot;)</param>
@@ -5559,7 +5714,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures statistics 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp (optional)</param>
         /// <param name="interval"> (optional, default to &quot;5m&quot;)</param>
@@ -5623,7 +5778,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures statistics 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp (optional)</param>
         /// <param name="interval"> (optional, default to &quot;5m&quot;)</param>
@@ -5640,7 +5795,7 @@ namespace Io.Gate.GateApi.Api
         /// Futures statistics 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp (optional)</param>
         /// <param name="interval"> (optional, default to &quot;5m&quot;)</param>
@@ -5706,7 +5861,7 @@ namespace Io.Gate.GateApi.Api
         /// Query index constituents 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="index">Index name</param>
         /// <returns>FuturesIndexConstituents</returns>
         public FuturesIndexConstituents GetIndexConstituents (string settle, string index)
@@ -5719,7 +5874,7 @@ namespace Io.Gate.GateApi.Api
         /// Query index constituents 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="index">Index name</param>
         /// <returns>ApiResponse of FuturesIndexConstituents</returns>
         public ApiResponse<FuturesIndexConstituents> GetIndexConstituentsWithHttpInfo (string settle, string index)
@@ -5768,7 +5923,7 @@ namespace Io.Gate.GateApi.Api
         /// Query index constituents 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="index">Index name</param>
         /// <returns>Task of FuturesIndexConstituents</returns>
         public async Task<FuturesIndexConstituents> GetIndexConstituentsAsync (string settle, string index)
@@ -5782,7 +5937,7 @@ namespace Io.Gate.GateApi.Api
         /// Query index constituents 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="index">Index name</param>
         /// <returns>Task of ApiResponse (FuturesIndexConstituents)</returns>
         public async Task<ApiResponse<FuturesIndexConstituents>> GetIndexConstituentsAsyncWithHttpInfo (string settle, string index)
@@ -5833,7 +5988,7 @@ namespace Io.Gate.GateApi.Api
         /// Query liquidation order history The time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for details
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -5849,7 +6004,7 @@ namespace Io.Gate.GateApi.Api
         /// Query liquidation order history The time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for details
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -5912,7 +6067,7 @@ namespace Io.Gate.GateApi.Api
         /// Query liquidation order history The time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for details
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -5929,7 +6084,7 @@ namespace Io.Gate.GateApi.Api
         /// Query liquidation order history The time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for details
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -5994,7 +6149,7 @@ namespace Io.Gate.GateApi.Api
         /// Query risk limit tiers When the &#39;contract&#39; parameter is not passed, the default is to query the risk limits for the top 100 markets. &#39;Limit&#39; and &#39;offset&#39; correspond to pagination queries at the market level, not to the length of the returned array. This only takes effect when the contract parameter is empty.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6009,7 +6164,7 @@ namespace Io.Gate.GateApi.Api
         /// Query risk limit tiers When the &#39;contract&#39; parameter is not passed, the default is to query the risk limits for the top 100 markets. &#39;Limit&#39; and &#39;offset&#39; correspond to pagination queries at the market level, not to the length of the returned array. This only takes effect when the contract parameter is empty.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6067,7 +6222,7 @@ namespace Io.Gate.GateApi.Api
         /// Query risk limit tiers When the &#39;contract&#39; parameter is not passed, the default is to query the risk limits for the top 100 markets. &#39;Limit&#39; and &#39;offset&#39; correspond to pagination queries at the market level, not to the length of the returned array. This only takes effect when the contract parameter is empty.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6083,7 +6238,7 @@ namespace Io.Gate.GateApi.Api
         /// Query risk limit tiers When the &#39;contract&#39; parameter is not passed, the default is to query the risk limits for the top 100 markets. &#39;Limit&#39; and &#39;offset&#39; correspond to pagination queries at the market level, not to the length of the returned array. This only takes effect when the contract parameter is empty.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6143,7 +6298,7 @@ namespace Io.Gate.GateApi.Api
         /// Get futures account Query account information for classic future account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <returns>FuturesAccount</returns>
         public FuturesAccount ListFuturesAccounts (string settle)
         {
@@ -6155,7 +6310,7 @@ namespace Io.Gate.GateApi.Api
         /// Get futures account Query account information for classic future account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <returns>ApiResponse of FuturesAccount</returns>
         public ApiResponse<FuturesAccount> ListFuturesAccountsWithHttpInfo (string settle)
         {
@@ -6200,7 +6355,7 @@ namespace Io.Gate.GateApi.Api
         /// Get futures account Query account information for classic future account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <returns>Task of FuturesAccount</returns>
         public async Task<FuturesAccount> ListFuturesAccountsAsync (string settle)
         {
@@ -6213,7 +6368,7 @@ namespace Io.Gate.GateApi.Api
         /// Get futures account Query account information for classic future account and unified account
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <returns>Task of ApiResponse (FuturesAccount)</returns>
         public async Task<ApiResponse<FuturesAccount>> ListFuturesAccountsAsyncWithHttpInfo (string settle)
         {
@@ -6260,7 +6415,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6278,7 +6433,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6353,7 +6508,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6372,7 +6527,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures account change history If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6449,7 +6604,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user position list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
         /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6464,7 +6619,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user position list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
         /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6524,7 +6679,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user position list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
         /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6540,7 +6695,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user position list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="holding">Return only real positions - true, return all - false (optional)</param>
         /// <param name="limit">Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -6602,7 +6757,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s historical position information list by time 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -6619,7 +6774,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s historical position information list by time 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -6690,7 +6845,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s historical position information list by time 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -6708,7 +6863,7 @@ namespace Io.Gate.GateApi.Api
         /// Get user&#39;s historical position information list by time 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -6781,7 +6936,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Position</returns>
         public Position GetPosition (string settle, string contract)
@@ -6794,7 +6949,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>ApiResponse of Position</returns>
         public ApiResponse<Position> GetPositionWithHttpInfo (string settle, string contract)
@@ -6845,7 +7000,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of Position</returns>
         public async Task<Position> GetPositionAsync (string settle, string contract)
@@ -6859,7 +7014,7 @@ namespace Io.Gate.GateApi.Api
         /// Get single position information Get single position information from a contract. If you hold two postions in one contract market, please use this API: /futures/{settle}/dual_comp/positions/{contract}
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of ApiResponse (Position)</returns>
         public async Task<ApiResponse<Position>> GetPositionAsyncWithHttpInfo (string settle, string contract)
@@ -6912,7 +7067,7 @@ namespace Io.Gate.GateApi.Api
         /// Get Leverage Information for Specified Mode Get Leverage Information for Specified Mode
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
         /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
@@ -6927,7 +7082,7 @@ namespace Io.Gate.GateApi.Api
         /// Get Leverage Information for Specified Mode Get Leverage Information for Specified Mode
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
         /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
@@ -6990,7 +7145,7 @@ namespace Io.Gate.GateApi.Api
         /// Get Leverage Information for Specified Mode Get Leverage Information for Specified Mode
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
         /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
@@ -7006,7 +7161,7 @@ namespace Io.Gate.GateApi.Api
         /// Get Leverage Information for Specified Mode Get Leverage Information for Specified Mode
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="posMarginMode">Position Margin Mode, required for split position mode, values: isolated/cross.</param>
         /// <param name="dualSide">dual_long - Long, dual_short - Short</param>
@@ -7071,7 +7226,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <returns>Position</returns>
@@ -7085,7 +7240,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <returns>ApiResponse of Position</returns>
@@ -7142,7 +7297,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <returns>Task of Position</returns>
@@ -7157,7 +7312,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <returns>Task of ApiResponse (Position)</returns>
@@ -7216,7 +7371,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
         /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
@@ -7232,7 +7387,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
         /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
@@ -7299,7 +7454,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
         /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
@@ -7316,7 +7471,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage ⚠️ Position Mode Switching Rules:  - leverage ≠ 0: Isolated Margin Mode (Regardless of whether cross_leverage_limit is filled, this parameter will be ignored) - leverage &#x3D; 0: Cross Margin Mode (Use cross_leverage_limit to set the leverage multiple)  Examples: - Set isolated margin with 10x leverage: leverage&#x3D;10 - Set cross margin with 10x leverage: leverage&#x3D;0&amp;cross_leverage_limit&#x3D;10 - leverage&#x3D;5&amp;cross_leverage_limit&#x3D;10 → Result: Isolated margin with 5x leverage (cross_leverage_limit is ignored)  ⚠️ Warning: Incorrect settings may cause unexpected position mode switching, affecting risk management.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty.</param>
         /// <param name="crossLeverageLimit">Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. (optional)</param>
@@ -7385,7 +7540,7 @@ namespace Io.Gate.GateApi.Api
         /// Update Leverage for Specified Mode To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Position Leverage Multiple</param>
         /// <param name="marginMode">Margin Mode isolated/cross</param>
@@ -7401,7 +7556,7 @@ namespace Io.Gate.GateApi.Api
         /// Update Leverage for Specified Mode To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Position Leverage Multiple</param>
         /// <param name="marginMode">Margin Mode isolated/cross</param>
@@ -7469,7 +7624,7 @@ namespace Io.Gate.GateApi.Api
         /// Update Leverage for Specified Mode To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Position Leverage Multiple</param>
         /// <param name="marginMode">Margin Mode isolated/cross</param>
@@ -7486,7 +7641,7 @@ namespace Io.Gate.GateApi.Api
         /// Update Leverage for Specified Mode To simplify the complex logic of the leverage interface, added a new interface for modifying leverage
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">Position Leverage Multiple</param>
         /// <param name="marginMode">Margin Mode isolated/cross</param>
@@ -7556,7 +7711,7 @@ namespace Io.Gate.GateApi.Api
         /// Switch Position Margin Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPositionCrossMode"></param>
         /// <returns>Position</returns>
         public Position UpdatePositionCrossMode (string settle, FuturesPositionCrossMode futuresPositionCrossMode)
@@ -7569,7 +7724,7 @@ namespace Io.Gate.GateApi.Api
         /// Switch Position Margin Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPositionCrossMode"></param>
         /// <returns>ApiResponse of Position</returns>
         public ApiResponse<Position> UpdatePositionCrossModeWithHttpInfo (string settle, FuturesPositionCrossMode futuresPositionCrossMode)
@@ -7621,7 +7776,7 @@ namespace Io.Gate.GateApi.Api
         /// Switch Position Margin Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPositionCrossMode"></param>
         /// <returns>Task of Position</returns>
         public async Task<Position> UpdatePositionCrossModeAsync (string settle, FuturesPositionCrossMode futuresPositionCrossMode)
@@ -7635,7 +7790,7 @@ namespace Io.Gate.GateApi.Api
         /// Switch Position Margin Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPositionCrossMode"></param>
         /// <returns>Task of ApiResponse (Position)</returns>
         public async Task<ApiResponse<Position>> UpdatePositionCrossModeAsyncWithHttpInfo (string settle, FuturesPositionCrossMode futuresPositionCrossMode)
@@ -7689,7 +7844,7 @@ namespace Io.Gate.GateApi.Api
         /// Switch Between Cross and Isolated Margin Modes Under Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>List&lt;Position&gt;</returns>
         public List<Position> UpdateDualCompPositionCrossMode (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest)
@@ -7702,7 +7857,7 @@ namespace Io.Gate.GateApi.Api
         /// Switch Between Cross and Isolated Margin Modes Under Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
         public ApiResponse<List<Position>> UpdateDualCompPositionCrossModeWithHttpInfo (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest)
@@ -7754,7 +7909,7 @@ namespace Io.Gate.GateApi.Api
         /// Switch Between Cross and Isolated Margin Modes Under Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>Task of List&lt;Position&gt;</returns>
         public async Task<List<Position>> UpdateDualCompPositionCrossModeAsync (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest)
@@ -7768,7 +7923,7 @@ namespace Io.Gate.GateApi.Api
         /// Switch Between Cross and Isolated Margin Modes Under Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateDualCompPositionCrossModeRequest"></param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
         public async Task<ApiResponse<List<Position>>> UpdateDualCompPositionCrossModeAsyncWithHttpInfo (string settle, UpdateDualCompPositionCrossModeRequest updateDualCompPositionCrossModeRequest)
@@ -7822,7 +7977,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>Position</returns>
@@ -7836,7 +7991,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>ApiResponse of Position</returns>
@@ -7893,7 +8048,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>Task of Position</returns>
@@ -7908,7 +8063,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>Task of ApiResponse (Position)</returns>
@@ -7967,7 +8122,7 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>FuturesAccount</returns>
         public FuturesAccount SetDualMode (string settle, bool dualMode)
@@ -7980,7 +8135,7 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>ApiResponse of FuturesAccount</returns>
         public ApiResponse<FuturesAccount> SetDualModeWithHttpInfo (string settle, bool dualMode)
@@ -8027,7 +8182,7 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>Task of FuturesAccount</returns>
         public async Task<FuturesAccount> SetDualModeAsync (string settle, bool dualMode)
@@ -8041,7 +8196,7 @@ namespace Io.Gate.GateApi.Api
         /// Set position mode The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="dualMode">Whether to enable Hedge Mode</param>
         /// <returns>Task of ApiResponse (FuturesAccount)</returns>
         public async Task<ApiResponse<FuturesAccount>> SetDualModeAsyncWithHttpInfo (string settle, bool dualMode)
@@ -8090,7 +8245,7 @@ namespace Io.Gate.GateApi.Api
         /// Set Position Holding Mode, replacing the dual_mode interface The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
         /// <returns>FuturesAccount</returns>
         public FuturesAccount SetPositionMode (string settle, string positionMode)
@@ -8103,7 +8258,7 @@ namespace Io.Gate.GateApi.Api
         /// Set Position Holding Mode, replacing the dual_mode interface The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
         /// <returns>ApiResponse of FuturesAccount</returns>
         public ApiResponse<FuturesAccount> SetPositionModeWithHttpInfo (string settle, string positionMode)
@@ -8154,7 +8309,7 @@ namespace Io.Gate.GateApi.Api
         /// Set Position Holding Mode, replacing the dual_mode interface The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
         /// <returns>Task of FuturesAccount</returns>
         public async Task<FuturesAccount> SetPositionModeAsync (string settle, string positionMode)
@@ -8168,7 +8323,7 @@ namespace Io.Gate.GateApi.Api
         /// Set Position Holding Mode, replacing the dual_mode interface The prerequisite for changing mode is that all positions have no holdings and no pending orders
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="positionMode">Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively</param>
         /// <returns>Task of ApiResponse (FuturesAccount)</returns>
         public async Task<ApiResponse<FuturesAccount>> SetPositionModeAsyncWithHttpInfo (string settle, string positionMode)
@@ -8221,7 +8376,7 @@ namespace Io.Gate.GateApi.Api
         /// Get position information in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>List&lt;Position&gt;</returns>
         public List<Position> GetDualModePosition (string settle, string contract)
@@ -8234,7 +8389,7 @@ namespace Io.Gate.GateApi.Api
         /// Get position information in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
         public ApiResponse<List<Position>> GetDualModePositionWithHttpInfo (string settle, string contract)
@@ -8285,7 +8440,7 @@ namespace Io.Gate.GateApi.Api
         /// Get position information in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of List&lt;Position&gt;</returns>
         public async Task<List<Position>> GetDualModePositionAsync (string settle, string contract)
@@ -8299,7 +8454,7 @@ namespace Io.Gate.GateApi.Api
         /// Get position information in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
         public async Task<ApiResponse<List<Position>>> GetDualModePositionAsyncWithHttpInfo (string settle, string contract)
@@ -8352,7 +8507,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <param name="dualSide">Long or short position</param>
@@ -8367,7 +8522,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <param name="dualSide">Long or short position</param>
@@ -8430,7 +8585,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <param name="dualSide">Long or short position</param>
@@ -8446,7 +8601,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position margin in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="change">Margin change amount, positive number increases, negative number decreases</param>
         /// <param name="dualSide">Long or short position</param>
@@ -8511,7 +8666,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">New position leverage</param>
         /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
@@ -8526,7 +8681,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">New position leverage</param>
         /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
@@ -8588,7 +8743,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">New position leverage</param>
         /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
@@ -8604,7 +8759,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position leverage in Hedge Mode 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="leverage">New position leverage</param>
         /// <param name="crossLeverageLimit">Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) (optional)</param>
@@ -8668,7 +8823,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit in Hedge Mode Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>List&lt;Position&gt;</returns>
@@ -8682,7 +8837,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit in Hedge Mode Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>ApiResponse of List&lt;Position&gt;</returns>
@@ -8739,7 +8894,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit in Hedge Mode Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>Task of List&lt;Position&gt;</returns>
@@ -8754,7 +8909,7 @@ namespace Io.Gate.GateApi.Api
         /// Update position risk limit in Hedge Mode Under the new risk limit rules(https://www.gate.com/en/help/futures/futures-logic/22162), the position limit is related to the leverage you set; a lower leverage will result in a higher position limit. Please use the leverage adjustment api to adjust the position limit.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract</param>
         /// <param name="riskLimit">New risk limit value</param>
         /// <returns>Task of ApiResponse (List&lt;Position&gt;)</returns>
@@ -8813,7 +8968,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -8830,7 +8985,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -8901,7 +9056,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -8919,7 +9074,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -8992,7 +9147,7 @@ namespace Io.Gate.GateApi.Api
         /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>FuturesOrder</returns>
@@ -9006,7 +9161,7 @@ namespace Io.Gate.GateApi.Api
         /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>ApiResponse of FuturesOrder</returns>
@@ -9063,7 +9218,7 @@ namespace Io.Gate.GateApi.Api
         /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of FuturesOrder</returns>
@@ -9078,7 +9233,7 @@ namespace Io.Gate.GateApi.Api
         /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (FuturesOrder)</returns>
@@ -9137,7 +9292,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel all orders with &#39;open&#39; status Zero-fill orders cannot be retrieved 10 minutes after order cancellation
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -9155,7 +9310,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel all orders with &#39;open&#39; status Zero-fill orders cannot be retrieved 10 minutes after order cancellation
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -9230,7 +9385,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel all orders with &#39;open&#39; status Zero-fill orders cannot be retrieved 10 minutes after order cancellation
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -9249,7 +9404,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel all orders with &#39;open&#39; status Zero-fill orders cannot be retrieved 10 minutes after order cancellation
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="contract">Contract Identifier; if specified, only cancel pending orders related to this contract (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -9326,7 +9481,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list by time range 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -9343,7 +9498,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list by time range 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -9413,7 +9568,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list by time range 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -9431,7 +9586,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list by time range 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -9503,7 +9658,7 @@ namespace Io.Gate.GateApi.Api
         /// Place batch futures orders - Up to 10 orders per request - If any of the order&#39;s parameters are missing or in the wrong format, all of them will not be executed, and a http status 400 error will be returned directly - If the parameters are checked and passed, all are executed. Even if there is a business logic error in the middle (such as insufficient funds), it will not affect other execution orders - The returned result is in array format, and the order corresponds to the orders in the request body - In the returned result, the &#x60;succeeded&#x60; field of type bool indicates whether the execution was successful or not - If the execution is successful, the normal order content is included; if the execution fails, the &#x60;label&#x60; field is included to indicate the cause of the error - In the rate limiting, each order is counted individually
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>List&lt;BatchFuturesOrder&gt;</returns>
@@ -9517,7 +9672,7 @@ namespace Io.Gate.GateApi.Api
         /// Place batch futures orders - Up to 10 orders per request - If any of the order&#39;s parameters are missing or in the wrong format, all of them will not be executed, and a http status 400 error will be returned directly - If the parameters are checked and passed, all are executed. Even if there is a business logic error in the middle (such as insufficient funds), it will not affect other execution orders - The returned result is in array format, and the order corresponds to the orders in the request body - In the returned result, the &#x60;succeeded&#x60; field of type bool indicates whether the execution was successful or not - If the execution is successful, the normal order content is included; if the execution fails, the &#x60;label&#x60; field is included to indicate the cause of the error - In the rate limiting, each order is counted individually
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>ApiResponse of List&lt;BatchFuturesOrder&gt;</returns>
@@ -9574,7 +9729,7 @@ namespace Io.Gate.GateApi.Api
         /// Place batch futures orders - Up to 10 orders per request - If any of the order&#39;s parameters are missing or in the wrong format, all of them will not be executed, and a http status 400 error will be returned directly - If the parameters are checked and passed, all are executed. Even if there is a business logic error in the middle (such as insufficient funds), it will not affect other execution orders - The returned result is in array format, and the order corresponds to the orders in the request body - In the returned result, the &#x60;succeeded&#x60; field of type bool indicates whether the execution was successful or not - If the execution is successful, the normal order content is included; if the execution fails, the &#x60;label&#x60; field is included to indicate the cause of the error - In the rate limiting, each order is counted individually
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of List&lt;BatchFuturesOrder&gt;</returns>
@@ -9589,7 +9744,7 @@ namespace Io.Gate.GateApi.Api
         /// Place batch futures orders - Up to 10 orders per request - If any of the order&#39;s parameters are missing or in the wrong format, all of them will not be executed, and a http status 400 error will be returned directly - If the parameters are checked and passed, all are executed. Even if there is a business logic error in the middle (such as insufficient funds), it will not affect other execution orders - The returned result is in array format, and the order corresponds to the orders in the request body - In the returned result, the &#x60;succeeded&#x60; field of type bool indicates whether the execution was successful or not - If the execution is successful, the normal order content is included; if the execution fails, the &#x60;label&#x60; field is included to indicate the cause of the error - In the rate limiting, each order is counted individually
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;BatchFuturesOrder&gt;)</returns>
@@ -9648,7 +9803,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single order details - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <returns>FuturesOrder</returns>
         public FuturesOrder GetFuturesOrder (string settle, string orderId)
@@ -9661,7 +9816,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single order details - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <returns>ApiResponse of FuturesOrder</returns>
         public ApiResponse<FuturesOrder> GetFuturesOrderWithHttpInfo (string settle, string orderId)
@@ -9712,7 +9867,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single order details - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <returns>Task of FuturesOrder</returns>
         public async Task<FuturesOrder> GetFuturesOrderAsync (string settle, string orderId)
@@ -9726,7 +9881,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single order details - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <returns>Task of ApiResponse (FuturesOrder)</returns>
         public async Task<ApiResponse<FuturesOrder>> GetFuturesOrderAsyncWithHttpInfo (string settle, string orderId)
@@ -9779,7 +9934,7 @@ namespace Io.Gate.GateApi.Api
         /// Amend single order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="futuresOrderAmendment"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
@@ -9794,7 +9949,7 @@ namespace Io.Gate.GateApi.Api
         /// Amend single order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="futuresOrderAmendment"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
@@ -9857,7 +10012,7 @@ namespace Io.Gate.GateApi.Api
         /// Amend single order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="futuresOrderAmendment"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
@@ -9873,7 +10028,7 @@ namespace Io.Gate.GateApi.Api
         /// Amend single order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="futuresOrderAmendment"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
@@ -9938,7 +10093,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel single order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -9953,7 +10108,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel single order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -10014,7 +10169,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel single order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -10030,7 +10185,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel single order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely.</param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <param name="actionMode">Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) (optional)</param>
@@ -10093,7 +10248,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="order">Futures order ID, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -10110,7 +10265,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="order">Futures order ID, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -10180,7 +10335,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="order">Futures order ID, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -10198,7 +10353,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records By default, only supports querying data within 6 months. For older data, use &#x60;GET /futures/{settle}/my_trades_timerange&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="order">Futures order ID, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -10270,7 +10425,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records by time range 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -10288,7 +10443,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records by time range 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -10363,7 +10518,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records by time range 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -10382,7 +10537,7 @@ namespace Io.Gate.GateApi.Api
         /// Query personal trading records by time range 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
@@ -10459,7 +10614,7 @@ namespace Io.Gate.GateApi.Api
         /// Query position close history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10478,7 +10633,7 @@ namespace Io.Gate.GateApi.Api
         /// Query position close history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10558,7 +10713,7 @@ namespace Io.Gate.GateApi.Api
         /// Query position close history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10578,7 +10733,7 @@ namespace Io.Gate.GateApi.Api
         /// Query position close history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10660,7 +10815,7 @@ namespace Io.Gate.GateApi.Api
         /// Query liquidation history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10678,7 +10833,7 @@ namespace Io.Gate.GateApi.Api
         /// Query liquidation history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10753,7 +10908,7 @@ namespace Io.Gate.GateApi.Api
         /// Query liquidation history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10772,7 +10927,7 @@ namespace Io.Gate.GateApi.Api
         /// Query liquidation history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10849,7 +11004,7 @@ namespace Io.Gate.GateApi.Api
         /// Query ADL auto-deleveraging order information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10867,7 +11022,7 @@ namespace Io.Gate.GateApi.Api
         /// Query ADL auto-deleveraging order information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10942,7 +11097,7 @@ namespace Io.Gate.GateApi.Api
         /// Query ADL auto-deleveraging order information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -10961,7 +11116,7 @@ namespace Io.Gate.GateApi.Api
         /// Query ADL auto-deleveraging order information 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
@@ -11038,7 +11193,7 @@ namespace Io.Gate.GateApi.Api
         /// Countdown cancel orders Heartbeat detection for contract orders: When the user-set &#x60;timeout&#x60; time is reached, if neither the existing countdown is canceled nor a new countdown is set, the relevant contract orders will be automatically canceled. This API can be called repeatedly to or cancel the countdown. Usage example: Repeatedly call this API at 30-second intervals, setting the &#x60;timeout&#x60; to 30 (seconds) each time. If this API is not called again within 30 seconds, all open orders on your specified &#x60;market&#x60; will be automatically canceled. If the &#x60;timeout&#x60; is set to 0 within 30 seconds, the countdown timer will terminate, and the automatic order cancellation function will be disabled.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="countdownCancelAllFuturesTask"></param>
         /// <returns>TriggerTime</returns>
         public TriggerTime CountdownCancelAllFutures (string settle, CountdownCancelAllFuturesTask countdownCancelAllFuturesTask)
@@ -11051,7 +11206,7 @@ namespace Io.Gate.GateApi.Api
         /// Countdown cancel orders Heartbeat detection for contract orders: When the user-set &#x60;timeout&#x60; time is reached, if neither the existing countdown is canceled nor a new countdown is set, the relevant contract orders will be automatically canceled. This API can be called repeatedly to or cancel the countdown. Usage example: Repeatedly call this API at 30-second intervals, setting the &#x60;timeout&#x60; to 30 (seconds) each time. If this API is not called again within 30 seconds, all open orders on your specified &#x60;market&#x60; will be automatically canceled. If the &#x60;timeout&#x60; is set to 0 within 30 seconds, the countdown timer will terminate, and the automatic order cancellation function will be disabled.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="countdownCancelAllFuturesTask"></param>
         /// <returns>ApiResponse of TriggerTime</returns>
         public ApiResponse<TriggerTime> CountdownCancelAllFuturesWithHttpInfo (string settle, CountdownCancelAllFuturesTask countdownCancelAllFuturesTask)
@@ -11103,7 +11258,7 @@ namespace Io.Gate.GateApi.Api
         /// Countdown cancel orders Heartbeat detection for contract orders: When the user-set &#x60;timeout&#x60; time is reached, if neither the existing countdown is canceled nor a new countdown is set, the relevant contract orders will be automatically canceled. This API can be called repeatedly to or cancel the countdown. Usage example: Repeatedly call this API at 30-second intervals, setting the &#x60;timeout&#x60; to 30 (seconds) each time. If this API is not called again within 30 seconds, all open orders on your specified &#x60;market&#x60; will be automatically canceled. If the &#x60;timeout&#x60; is set to 0 within 30 seconds, the countdown timer will terminate, and the automatic order cancellation function will be disabled.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="countdownCancelAllFuturesTask"></param>
         /// <returns>Task of TriggerTime</returns>
         public async Task<TriggerTime> CountdownCancelAllFuturesAsync (string settle, CountdownCancelAllFuturesTask countdownCancelAllFuturesTask)
@@ -11117,7 +11272,7 @@ namespace Io.Gate.GateApi.Api
         /// Countdown cancel orders Heartbeat detection for contract orders: When the user-set &#x60;timeout&#x60; time is reached, if neither the existing countdown is canceled nor a new countdown is set, the relevant contract orders will be automatically canceled. This API can be called repeatedly to or cancel the countdown. Usage example: Repeatedly call this API at 30-second intervals, setting the &#x60;timeout&#x60; to 30 (seconds) each time. If this API is not called again within 30 seconds, all open orders on your specified &#x60;market&#x60; will be automatically canceled. If the &#x60;timeout&#x60; is set to 0 within 30 seconds, the countdown timer will terminate, and the automatic order cancellation function will be disabled.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="countdownCancelAllFuturesTask"></param>
         /// <returns>Task of ApiResponse (TriggerTime)</returns>
         public async Task<ApiResponse<TriggerTime>> CountdownCancelAllFuturesAsyncWithHttpInfo (string settle, CountdownCancelAllFuturesTask countdownCancelAllFuturesTask)
@@ -11171,7 +11326,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures market trading fee rates 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Dictionary&lt;string, FuturesFee&gt;</returns>
         public Dictionary<string, FuturesFee> GetFuturesFee (string settle, string contract = default(string))
@@ -11184,7 +11339,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures market trading fee rates 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>ApiResponse of Dictionary&lt;string, FuturesFee&gt;</returns>
         public ApiResponse<Dictionary<string, FuturesFee>> GetFuturesFeeWithHttpInfo (string settle, string contract = default(string))
@@ -11234,7 +11389,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures market trading fee rates 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of Dictionary&lt;string, FuturesFee&gt;</returns>
         public async Task<Dictionary<string, FuturesFee>> GetFuturesFeeAsync (string settle, string contract = default(string))
@@ -11248,7 +11403,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures market trading fee rates 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of ApiResponse (Dictionary&lt;string, FuturesFee&gt;)</returns>
         public async Task<ApiResponse<Dictionary<string, FuturesFee>>> GetFuturesFeeAsyncWithHttpInfo (string settle, string contract = default(string))
@@ -11300,7 +11455,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel batch orders by specified ID list Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="requestBody"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>List&lt;FutureCancelOrderResult&gt;</returns>
@@ -11314,7 +11469,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel batch orders by specified ID list Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="requestBody"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>ApiResponse of List&lt;FutureCancelOrderResult&gt;</returns>
@@ -11371,7 +11526,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel batch orders by specified ID list Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="requestBody"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of List&lt;FutureCancelOrderResult&gt;</returns>
@@ -11386,7 +11541,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel batch orders by specified ID list Multiple different order IDs can be specified. A maximum of 20 records can be cancelled in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="requestBody"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;FutureCancelOrderResult&gt;)</returns>
@@ -11445,7 +11600,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch modify orders by specified IDs Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchAmendOrderReq"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>List&lt;BatchFuturesOrder&gt;</returns>
@@ -11459,7 +11614,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch modify orders by specified IDs Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchAmendOrderReq"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>ApiResponse of List&lt;BatchFuturesOrder&gt;</returns>
@@ -11516,7 +11671,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch modify orders by specified IDs Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchAmendOrderReq"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of List&lt;BatchFuturesOrder&gt;</returns>
@@ -11531,7 +11686,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch modify orders by specified IDs Multiple different order IDs can be specified. A maximum of 10 orders can be modified in one request
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="batchAmendOrderReq"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;BatchFuturesOrder&gt;)</returns>
@@ -11590,7 +11745,7 @@ namespace Io.Gate.GateApi.Api
         /// Query risk limit table by table_id Just pass table_id
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="tableId">Risk limit table ID</param>
         /// <returns>List&lt;FuturesRiskLimitTier&gt;</returns>
         public List<FuturesRiskLimitTier> GetFuturesRiskLimitTable (string settle, string tableId)
@@ -11603,7 +11758,7 @@ namespace Io.Gate.GateApi.Api
         /// Query risk limit table by table_id Just pass table_id
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="tableId">Risk limit table ID</param>
         /// <returns>ApiResponse of List&lt;FuturesRiskLimitTier&gt;</returns>
         public ApiResponse<List<FuturesRiskLimitTier>> GetFuturesRiskLimitTableWithHttpInfo (string settle, string tableId)
@@ -11652,7 +11807,7 @@ namespace Io.Gate.GateApi.Api
         /// Query risk limit table by table_id Just pass table_id
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="tableId">Risk limit table ID</param>
         /// <returns>Task of List&lt;FuturesRiskLimitTier&gt;</returns>
         public async Task<List<FuturesRiskLimitTier>> GetFuturesRiskLimitTableAsync (string settle, string tableId)
@@ -11666,7 +11821,7 @@ namespace Io.Gate.GateApi.Api
         /// Query risk limit table by table_id Just pass table_id
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="tableId">Risk limit table ID</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesRiskLimitTier&gt;)</returns>
         public async Task<ApiResponse<List<FuturesRiskLimitTier>>> GetFuturesRiskLimitTableAsyncWithHttpInfo (string settle, string tableId)
@@ -11717,7 +11872,7 @@ namespace Io.Gate.GateApi.Api
         /// Level-based BBO Contract Order Placement Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresBBOOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>FuturesOrder</returns>
@@ -11731,7 +11886,7 @@ namespace Io.Gate.GateApi.Api
         /// Level-based BBO Contract Order Placement Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresBBOOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>ApiResponse of FuturesOrder</returns>
@@ -11788,7 +11943,7 @@ namespace Io.Gate.GateApi.Api
         /// Level-based BBO Contract Order Placement Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresBBOOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of FuturesOrder</returns>
@@ -11803,7 +11958,7 @@ namespace Io.Gate.GateApi.Api
         /// Level-based BBO Contract Order Placement Compared to the futures trading order placement interface (futures/{settle}/orders), it adds the &#x60;level&#x60; and &#x60;direction&#x60; parameters.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresBBOOrder"></param>
         /// <param name="xGateExptime">Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)</param>
         /// <returns>Task of ApiResponse (FuturesOrder)</returns>
@@ -11862,7 +12017,7 @@ namespace Io.Gate.GateApi.Api
         /// Create trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createTrailOrder"></param>
         /// <returns>CreateTrailOrderResponse</returns>
         public CreateTrailOrderResponse CreateTrailOrder (string settle, CreateTrailOrder createTrailOrder)
@@ -11875,7 +12030,7 @@ namespace Io.Gate.GateApi.Api
         /// Create trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createTrailOrder"></param>
         /// <returns>ApiResponse of CreateTrailOrderResponse</returns>
         public ApiResponse<CreateTrailOrderResponse> CreateTrailOrderWithHttpInfo (string settle, CreateTrailOrder createTrailOrder)
@@ -11927,7 +12082,7 @@ namespace Io.Gate.GateApi.Api
         /// Create trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createTrailOrder"></param>
         /// <returns>Task of CreateTrailOrderResponse</returns>
         public async Task<CreateTrailOrderResponse> CreateTrailOrderAsync (string settle, CreateTrailOrder createTrailOrder)
@@ -11941,7 +12096,7 @@ namespace Io.Gate.GateApi.Api
         /// Create trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createTrailOrder"></param>
         /// <returns>Task of ApiResponse (CreateTrailOrderResponse)</returns>
         public async Task<ApiResponse<CreateTrailOrderResponse>> CreateTrailOrderAsyncWithHttpInfo (string settle, CreateTrailOrder createTrailOrder)
@@ -11995,7 +12150,7 @@ namespace Io.Gate.GateApi.Api
         /// Terminate trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopTrailOrder"></param>
         /// <returns>TrailOrderResponse</returns>
         public TrailOrderResponse StopTrailOrder (string settle, StopTrailOrder stopTrailOrder)
@@ -12008,7 +12163,7 @@ namespace Io.Gate.GateApi.Api
         /// Terminate trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopTrailOrder"></param>
         /// <returns>ApiResponse of TrailOrderResponse</returns>
         public ApiResponse<TrailOrderResponse> StopTrailOrderWithHttpInfo (string settle, StopTrailOrder stopTrailOrder)
@@ -12060,7 +12215,7 @@ namespace Io.Gate.GateApi.Api
         /// Terminate trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopTrailOrder"></param>
         /// <returns>Task of TrailOrderResponse</returns>
         public async Task<TrailOrderResponse> StopTrailOrderAsync (string settle, StopTrailOrder stopTrailOrder)
@@ -12074,7 +12229,7 @@ namespace Io.Gate.GateApi.Api
         /// Terminate trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopTrailOrder"></param>
         /// <returns>Task of ApiResponse (TrailOrderResponse)</returns>
         public async Task<ApiResponse<TrailOrderResponse>> StopTrailOrderAsyncWithHttpInfo (string settle, StopTrailOrder stopTrailOrder)
@@ -12128,7 +12283,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch terminate trail orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
         /// <returns>TrailOrderListResponse</returns>
         public TrailOrderListResponse StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
@@ -12141,7 +12296,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch terminate trail orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
         /// <returns>ApiResponse of TrailOrderListResponse</returns>
         public ApiResponse<TrailOrderListResponse> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
@@ -12193,7 +12348,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch terminate trail orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
         /// <returns>Task of TrailOrderListResponse</returns>
         public async Task<TrailOrderListResponse> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders)
@@ -12207,7 +12362,7 @@ namespace Io.Gate.GateApi.Api
         /// Batch terminate trail orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
         /// <returns>Task of ApiResponse (TrailOrderListResponse)</returns>
         public async Task<ApiResponse<TrailOrderListResponse>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
@@ -12261,7 +12416,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Contract name (optional)</param>
         /// <param name="isFinished">Whether historical order (optional)</param>
         /// <param name="startAt">Start time of time range (optional)</param>
@@ -12285,7 +12440,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Contract name (optional)</param>
         /// <param name="isFinished">Whether historical order (optional)</param>
         /// <param name="startAt">Start time of time range (optional)</param>
@@ -12390,7 +12545,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Contract name (optional)</param>
         /// <param name="isFinished">Whether historical order (optional)</param>
         /// <param name="startAt">Start time of time range (optional)</param>
@@ -12415,7 +12570,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Contract name (optional)</param>
         /// <param name="isFinished">Whether historical order (optional)</param>
         /// <param name="startAt">Start time of time range (optional)</param>
@@ -12522,7 +12677,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order details 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <returns>TrailOrderDetailResponse</returns>
         public TrailOrderDetailResponse GetTrailOrderDetail (string settle, long id)
@@ -12535,7 +12690,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order details 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <returns>ApiResponse of TrailOrderDetailResponse</returns>
         public ApiResponse<TrailOrderDetailResponse> GetTrailOrderDetailWithHttpInfo (string settle, long id)
@@ -12582,7 +12737,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order details 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <returns>Task of TrailOrderDetailResponse</returns>
         public async Task<TrailOrderDetailResponse> GetTrailOrderDetailAsync (string settle, long id)
@@ -12596,7 +12751,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order details 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <returns>Task of ApiResponse (TrailOrderDetailResponse)</returns>
         public async Task<ApiResponse<TrailOrderDetailResponse>> GetTrailOrderDetailAsyncWithHttpInfo (string settle, long id)
@@ -12645,7 +12800,7 @@ namespace Io.Gate.GateApi.Api
         /// Update trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateTrailOrder"></param>
         /// <returns>TrailOrderResponse</returns>
         public TrailOrderResponse UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder)
@@ -12658,7 +12813,7 @@ namespace Io.Gate.GateApi.Api
         /// Update trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateTrailOrder"></param>
         /// <returns>ApiResponse of TrailOrderResponse</returns>
         public ApiResponse<TrailOrderResponse> UpdateTrailOrderWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder)
@@ -12710,7 +12865,7 @@ namespace Io.Gate.GateApi.Api
         /// Update trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateTrailOrder"></param>
         /// <returns>Task of TrailOrderResponse</returns>
         public async Task<TrailOrderResponse> UpdateTrailOrderAsync (string settle, UpdateTrailOrder updateTrailOrder)
@@ -12724,7 +12879,7 @@ namespace Io.Gate.GateApi.Api
         /// Update trail order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="updateTrailOrder"></param>
         /// <returns>Task of ApiResponse (TrailOrderResponse)</returns>
         public async Task<ApiResponse<TrailOrderResponse>> UpdateTrailOrderAsyncWithHttpInfo (string settle, UpdateTrailOrder updateTrailOrder)
@@ -12778,7 +12933,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order user modification records 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
@@ -12793,7 +12948,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order user modification records 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
@@ -12850,7 +13005,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order user modification records 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
@@ -12866,7 +13021,7 @@ namespace Io.Gate.GateApi.Api
         /// Get trail order user modification records 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID</param>
         /// <param name="pageNum">Page number, starting from 1 (optional, default to 1)</param>
         /// <param name="pageSize">Number of items per page (optional, default to 20)</param>
@@ -12925,7 +13080,7 @@ namespace Io.Gate.GateApi.Api
         /// Create a chase order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createChaseOrderReq"></param>
         /// <returns>CreateChaseOrderResp</returns>
         public CreateChaseOrderResp CreateChaseOrder (string settle, CreateChaseOrderReq createChaseOrderReq)
@@ -12938,7 +13093,7 @@ namespace Io.Gate.GateApi.Api
         /// Create a chase order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createChaseOrderReq"></param>
         /// <returns>ApiResponse of CreateChaseOrderResp</returns>
         public ApiResponse<CreateChaseOrderResp> CreateChaseOrderWithHttpInfo (string settle, CreateChaseOrderReq createChaseOrderReq)
@@ -12990,7 +13145,7 @@ namespace Io.Gate.GateApi.Api
         /// Create a chase order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createChaseOrderReq"></param>
         /// <returns>Task of CreateChaseOrderResp</returns>
         public async Task<CreateChaseOrderResp> CreateChaseOrderAsync (string settle, CreateChaseOrderReq createChaseOrderReq)
@@ -13004,7 +13159,7 @@ namespace Io.Gate.GateApi.Api
         /// Create a chase order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="createChaseOrderReq"></param>
         /// <returns>Task of ApiResponse (CreateChaseOrderResp)</returns>
         public async Task<ApiResponse<CreateChaseOrderResp>> CreateChaseOrderAsyncWithHttpInfo (string settle, CreateChaseOrderReq createChaseOrderReq)
@@ -13058,7 +13213,7 @@ namespace Io.Gate.GateApi.Api
         /// Stop a chase order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopChaseOrderReq"></param>
         /// <returns>StopChaseOrderResp</returns>
         public StopChaseOrderResp StopChaseOrder (string settle, StopChaseOrderReq stopChaseOrderReq)
@@ -13071,7 +13226,7 @@ namespace Io.Gate.GateApi.Api
         /// Stop a chase order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopChaseOrderReq"></param>
         /// <returns>ApiResponse of StopChaseOrderResp</returns>
         public ApiResponse<StopChaseOrderResp> StopChaseOrderWithHttpInfo (string settle, StopChaseOrderReq stopChaseOrderReq)
@@ -13123,7 +13278,7 @@ namespace Io.Gate.GateApi.Api
         /// Stop a chase order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopChaseOrderReq"></param>
         /// <returns>Task of StopChaseOrderResp</returns>
         public async Task<StopChaseOrderResp> StopChaseOrderAsync (string settle, StopChaseOrderReq stopChaseOrderReq)
@@ -13137,7 +13292,7 @@ namespace Io.Gate.GateApi.Api
         /// Stop a chase order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopChaseOrderReq"></param>
         /// <returns>Task of ApiResponse (StopChaseOrderResp)</returns>
         public async Task<ApiResponse<StopChaseOrderResp>> StopChaseOrderAsyncWithHttpInfo (string settle, StopChaseOrderReq stopChaseOrderReq)
@@ -13191,7 +13346,7 @@ namespace Io.Gate.GateApi.Api
         /// Stop chase orders in batch 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllChaseOrdersReq"></param>
         /// <returns>StopAllChaseOrdersResp</returns>
         public StopAllChaseOrdersResp StopAllChaseOrders (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq)
@@ -13204,7 +13359,7 @@ namespace Io.Gate.GateApi.Api
         /// Stop chase orders in batch 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllChaseOrdersReq"></param>
         /// <returns>ApiResponse of StopAllChaseOrdersResp</returns>
         public ApiResponse<StopAllChaseOrdersResp> StopAllChaseOrdersWithHttpInfo (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq)
@@ -13256,7 +13411,7 @@ namespace Io.Gate.GateApi.Api
         /// Stop chase orders in batch 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllChaseOrdersReq"></param>
         /// <returns>Task of StopAllChaseOrdersResp</returns>
         public async Task<StopAllChaseOrdersResp> StopAllChaseOrdersAsync (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq)
@@ -13270,7 +13425,7 @@ namespace Io.Gate.GateApi.Api
         /// Stop chase orders in batch 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllChaseOrdersReq"></param>
         /// <returns>Task of ApiResponse (StopAllChaseOrdersResp)</returns>
         public async Task<ApiResponse<StopAllChaseOrdersResp>> StopAllChaseOrdersAsyncWithHttpInfo (string settle, StopAllChaseOrdersReq stopAllChaseOrdersReq)
@@ -13324,7 +13479,7 @@ namespace Io.Gate.GateApi.Api
         /// List chase orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
@@ -13346,7 +13501,7 @@ namespace Io.Gate.GateApi.Api
         /// List chase orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
@@ -13438,7 +13593,7 @@ namespace Io.Gate.GateApi.Api
         /// List chase orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
@@ -13461,7 +13616,7 @@ namespace Io.Gate.GateApi.Api
         /// List chase orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
@@ -13555,7 +13710,7 @@ namespace Io.Gate.GateApi.Api
         /// Get chase order detail 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID, must be a non-zero positive integer</param>
         /// <returns>GetChaseOrderDetailResp</returns>
         public GetChaseOrderDetailResp GetChaseOrderDetail (string settle, string id)
@@ -13568,7 +13723,7 @@ namespace Io.Gate.GateApi.Api
         /// Get chase order detail 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID, must be a non-zero positive integer</param>
         /// <returns>ApiResponse of GetChaseOrderDetailResp</returns>
         public ApiResponse<GetChaseOrderDetailResp> GetChaseOrderDetailWithHttpInfo (string settle, string id)
@@ -13619,7 +13774,7 @@ namespace Io.Gate.GateApi.Api
         /// Get chase order detail 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID, must be a non-zero positive integer</param>
         /// <returns>Task of GetChaseOrderDetailResp</returns>
         public async Task<GetChaseOrderDetailResp> GetChaseOrderDetailAsync (string settle, string id)
@@ -13633,7 +13788,7 @@ namespace Io.Gate.GateApi.Api
         /// Get chase order detail 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="id">Order ID, must be a non-zero positive integer</param>
         /// <returns>Task of ApiResponse (GetChaseOrderDetailResp)</returns>
         public async Task<ApiResponse<GetChaseOrderDetailResp>> GetChaseOrderDetailAsyncWithHttpInfo (string settle, string id)
@@ -13686,7 +13841,7 @@ namespace Io.Gate.GateApi.Api
         /// Query auto order list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -13702,7 +13857,7 @@ namespace Io.Gate.GateApi.Api
         /// Query auto order list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -13768,7 +13923,7 @@ namespace Io.Gate.GateApi.Api
         /// Query auto order list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -13785,7 +13940,7 @@ namespace Io.Gate.GateApi.Api
         /// Query auto order list 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="status">Query order list based on status</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
@@ -13853,7 +14008,7 @@ namespace Io.Gate.GateApi.Api
         /// Create price-triggered order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
         public TriggerOrderResponse CreatePriceTriggeredOrder (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
@@ -13866,7 +14021,7 @@ namespace Io.Gate.GateApi.Api
         /// Create price-triggered order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
         public ApiResponse<TriggerOrderResponse> CreatePriceTriggeredOrderWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
@@ -13918,7 +14073,7 @@ namespace Io.Gate.GateApi.Api
         /// Create price-triggered order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
         public async Task<TriggerOrderResponse> CreatePriceTriggeredOrderAsync (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
@@ -13932,7 +14087,7 @@ namespace Io.Gate.GateApi.Api
         /// Create price-triggered order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresPriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
         public async Task<ApiResponse<TriggerOrderResponse>> CreatePriceTriggeredOrderAsyncWithHttpInfo (string settle, FuturesPriceTriggeredOrder futuresPriceTriggeredOrder)
@@ -13986,7 +14141,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel all auto orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>List&lt;FuturesPriceTriggeredOrder&gt;</returns>
         public List<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderList (string settle, string contract = default(string))
@@ -13999,7 +14154,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel all auto orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>ApiResponse of List&lt;FuturesPriceTriggeredOrder&gt;</returns>
         public ApiResponse<List<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderListWithHttpInfo (string settle, string contract = default(string))
@@ -14049,7 +14204,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel all auto orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of List&lt;FuturesPriceTriggeredOrder&gt;</returns>
         public async Task<List<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderListAsync (string settle, string contract = default(string))
@@ -14063,7 +14218,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel all auto orders 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="contract">Futures contract, return related data only if specified (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;FuturesPriceTriggeredOrder&gt;)</returns>
         public async Task<ApiResponse<List<FuturesPriceTriggeredOrder>>> CancelPriceTriggeredOrderListAsyncWithHttpInfo (string settle, string contract = default(string))
@@ -14115,7 +14270,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single auto order details 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
         public FuturesPriceTriggeredOrder GetPriceTriggeredOrder (string settle, long orderId)
@@ -14128,7 +14283,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single auto order details 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
         public ApiResponse<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderWithHttpInfo (string settle, long orderId)
@@ -14175,7 +14330,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single auto order details 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
         public async Task<FuturesPriceTriggeredOrder> GetPriceTriggeredOrderAsync (string settle, long orderId)
@@ -14189,7 +14344,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single auto order details 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
         public async Task<ApiResponse<FuturesPriceTriggeredOrder>> GetPriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId)
@@ -14238,7 +14393,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel single auto order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>FuturesPriceTriggeredOrder</returns>
         public FuturesPriceTriggeredOrder CancelPriceTriggeredOrder (string settle, long orderId)
@@ -14251,7 +14406,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel single auto order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>ApiResponse of FuturesPriceTriggeredOrder</returns>
         public ApiResponse<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderWithHttpInfo (string settle, long orderId)
@@ -14298,7 +14453,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel single auto order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of FuturesPriceTriggeredOrder</returns>
         public async Task<FuturesPriceTriggeredOrder> CancelPriceTriggeredOrderAsync (string settle, long orderId)
@@ -14312,7 +14467,7 @@ namespace Io.Gate.GateApi.Api
         /// Cancel single auto order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="orderId">ID returned when order is successfully created</param>
         /// <returns>Task of ApiResponse (FuturesPriceTriggeredOrder)</returns>
         public async Task<ApiResponse<FuturesPriceTriggeredOrder>> CancelPriceTriggeredOrderAsyncWithHttpInfo (string settle, long orderId)
@@ -14361,7 +14516,7 @@ namespace Io.Gate.GateApi.Api
         /// Modify a Single Auto Order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
         public TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
@@ -14374,7 +14529,7 @@ namespace Io.Gate.GateApi.Api
         /// Modify a Single Auto Order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
         public ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
@@ -14426,7 +14581,7 @@ namespace Io.Gate.GateApi.Api
         /// Modify a Single Auto Order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
         public async Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
@@ -14440,7 +14595,7 @@ namespace Io.Gate.GateApi.Api
         /// Modify a Single Auto Order 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="settle">Settle currency</param>
+        /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
         public async Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)

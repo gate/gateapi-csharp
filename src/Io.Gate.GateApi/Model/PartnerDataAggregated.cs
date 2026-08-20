@@ -102,7 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="tradeVolume">Trading volume as a string for precision. Up to 6 decimal places; trailing zeros removed. (required).</param>
         /// <param name="netFee">Net fee as a string for precision. Up to 6 decimal places; trailing zeros removed. (required).</param>
         /// <param name="customerCount">Customer count (invited users) (required).</param>
-        /// <param name="tradingUserCount">Transaction participant count​ (string format, consistent with online JSON serialization) only returns a specific value when business_type&#x3D;0(all), and returns nullfor other business types. (required).</param>
+        /// <param name="tradingUserCount">Transaction participant count (string format, consistent with online JSON serialization) only returns a specific value when business_type&#x3D;0(all), and returns nullfor other business types. (required).</param>
         /// <param name="timeRangeDesc">Time range description (required).</param>
         /// <param name="businessType">Business Type (required).</param>
         /// <param name="businessTypeDesc">Business type description; allowed values: All, Spot, Futures, Alpha, Web3, Perps (DEX), Exchange All, Web3 All, TradFi (required).</param>
@@ -153,9 +153,9 @@ namespace Io.Gate.GateApi.Model
         public int CustomerCount { get; set; }
 
         /// <summary>
-        /// Transaction participant count​ (string format, consistent with online JSON serialization) only returns a specific value when business_type&#x3D;0(all), and returns nullfor other business types.
+        /// Transaction participant count (string format, consistent with online JSON serialization) only returns a specific value when business_type&#x3D;0(all), and returns nullfor other business types.
         /// </summary>
-        /// <value>Transaction participant count​ (string format, consistent with online JSON serialization) only returns a specific value when business_type&#x3D;0(all), and returns nullfor other business types.</value>
+        /// <value>Transaction participant count (string format, consistent with online JSON serialization) only returns a specific value when business_type&#x3D;0(all), and returns nullfor other business types.</value>
         [DataMember(Name="trading_user_count")]
         public string TradingUserCount { get; set; }
 

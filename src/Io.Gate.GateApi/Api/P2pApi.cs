@@ -28,25 +28,6 @@ namespace Io.Gate.GateApi.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Query spot balance
-        /// </summary>
-        /// <remarks>
-        /// Use Spot API &#x60;GET /spot/accounts&#x60; to query spot account balance; this entry is for guidance only and does not define separate P2P Merchant request parameters or response body.
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns></returns>
-        void P2pMerchantQuerySpotBalance ();
-
-        /// <summary>
-        /// Query spot balance
-        /// </summary>
-        /// <remarks>
-        /// Use Spot API &#x60;GET /spot/accounts&#x60; to query spot account balance; this entry is for guidance only and does not define separate P2P Merchant request parameters or response body.
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> P2pMerchantQuerySpotBalanceWithHttpInfo ();
-        /// <summary>
         /// Get account information
         /// </summary>
         /// <remarks>
@@ -431,25 +412,6 @@ namespace Io.Gate.GateApi.Api
     public interface IP2pApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
-        /// <summary>
-        /// Query spot balance
-        /// </summary>
-        /// <remarks>
-        /// Use Spot API &#x60;GET /spot/accounts&#x60; to query spot account balance; this entry is for guidance only and does not define separate P2P Merchant request parameters or response body.
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of void</returns>
-        Task P2pMerchantQuerySpotBalanceAsync ();
-
-        /// <summary>
-        /// Query spot balance
-        /// </summary>
-        /// <remarks>
-        /// Use Spot API &#x60;GET /spot/accounts&#x60; to query spot account balance; this entry is for guidance only and does not define separate P2P Merchant request parameters or response body.
-        /// </remarks>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse</returns>
-        Task<ApiResponse<Object>> P2pMerchantQuerySpotBalanceAsyncWithHttpInfo ();
         /// <summary>
         /// Get account information
         /// </summary>
@@ -944,105 +906,6 @@ namespace Io.Gate.GateApi.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
-        }
-
-        /// <summary>
-        /// Query spot balance Use Spot API &#x60;GET /spot/accounts&#x60; to query spot account balance; this entry is for guidance only and does not define separate P2P Merchant request parameters or response body.
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns></returns>
-        public void P2pMerchantQuerySpotBalance ()
-        {
-             P2pMerchantQuerySpotBalanceWithHttpInfo();
-        }
-
-        /// <summary>
-        /// Query spot balance Use Spot API &#x60;GET /spot/accounts&#x60; to query spot account balance; this entry is for guidance only and does not define separate P2P Merchant request parameters or response body.
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> P2pMerchantQuerySpotBalanceWithHttpInfo ()
-        {
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            string[] _contentTypes = {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = {
-            };
-
-            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/spot/accounts", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantQuerySpotBalance", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Query spot balance Use Spot API &#x60;GET /spot/accounts&#x60; to query spot account balance; this entry is for guidance only and does not define separate P2P Merchant request parameters or response body.
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of void</returns>
-        public async Task P2pMerchantQuerySpotBalanceAsync ()
-        {
-             await P2pMerchantQuerySpotBalanceAsyncWithHttpInfo();
-
-        }
-
-        /// <summary>
-        /// Query spot balance Use Spot API &#x60;GET /spot/accounts&#x60; to query spot account balance; this entry is for guidance only and does not define separate P2P Merchant request parameters or response body.
-        /// </summary>
-        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse</returns>
-        public async Task<ApiResponse<Object>> P2pMerchantQuerySpotBalanceAsyncWithHttpInfo ()
-        {
-
-            RequestOptions localVarRequestOptions = new RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-            };
-
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-
-
-            // authentication (apiv4) required
-            localVarRequestOptions.RequireApiV4Auth = true;
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/spot/accounts", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("P2pMerchantQuerySpotBalance", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
         }
 
         /// <summary>

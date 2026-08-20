@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderPreviewV1Req" /> class.
         /// </summary>
-        /// <param name="from">Sell ​​side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal). (required).</param>
+        /// <param name="from">Sell side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal). (required).</param>
         /// <param name="to">Target side; each item is currency + **ratio** &#x60;ratio&#x60; (string decimal, such as &#x60;0.5&#x60;). Typical source: &#x60;GET /asset-swap/config&#x60; → &#x60;recommend_v2&#x60; &#x60;schemes[].name&#x60; / &#x60;schemes[].ratio&#x60; of the strategy under a certain group. (required).</param>
         public OrderPreviewV1Req(List<PreviewFromParam> from = default(List<PreviewFromParam>), List<PreviewToParam> to = default(List<PreviewToParam>))
         {
@@ -49,9 +49,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Sell ​​side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal).
+        /// Sell side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal).
         /// </summary>
-        /// <value>Sell ​​side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal).</value>
+        /// <value>Sell side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal).</value>
         [DataMember(Name="from")]
         public List<PreviewFromParam> From { get; set; }
 

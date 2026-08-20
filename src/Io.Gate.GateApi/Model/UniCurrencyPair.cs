@@ -33,9 +33,12 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UniCurrencyPair" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        public UniCurrencyPair()
+        /// <param name="status">Status  - enabled: Enabled - disabled: Disabled.</param>
+        /// <param name="delistedTime">Delisting Time.</param>
+        public UniCurrencyPair(string status = default(string), decimal delistedTime = default(decimal))
         {
+            this.Status = status;
+            this.DelistedTime = delistedTime;
         }
 
         /// <summary>
@@ -67,6 +70,20 @@ namespace Io.Gate.GateApi.Model
         public string Leverage { get; private set; }
 
         /// <summary>
+        /// Status  - enabled: Enabled - disabled: Disabled
+        /// </summary>
+        /// <value>Status  - enabled: Enabled - disabled: Disabled</value>
+        [DataMember(Name="status")]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Delisting Time
+        /// </summary>
+        /// <value>Delisting Time</value>
+        [DataMember(Name="delisted_time")]
+        public decimal DelistedTime { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -78,6 +95,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  BaseMinBorrowAmount: ").Append(BaseMinBorrowAmount).Append("\n");
             sb.Append("  QuoteMinBorrowAmount: ").Append(QuoteMinBorrowAmount).Append("\n");
             sb.Append("  Leverage: ").Append(Leverage).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  DelistedTime: ").Append(DelistedTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +150,15 @@ namespace Io.Gate.GateApi.Model
                     this.Leverage == input.Leverage ||
                     (this.Leverage != null &&
                     this.Leverage.Equals(input.Leverage))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.DelistedTime == input.DelistedTime ||
+                    this.DelistedTime.Equals(input.DelistedTime)
                 );
         }
 
@@ -151,6 +179,9 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.QuoteMinBorrowAmount.GetHashCode();
                 if (this.Leverage != null)
                     hashCode = hashCode * 59 + this.Leverage.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.DelistedTime.GetHashCode();
                 return hashCode;
             }
         }

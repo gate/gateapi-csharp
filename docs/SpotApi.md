@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**ListCandlesticks**](SpotApi.md#listcandlesticks) | **GET** /spot/candlesticks | Market K-line chart
 [**GetFee**](SpotApi.md#getfee) | **GET** /spot/fee | Query account fee rates
 [**GetBatchSpotFee**](SpotApi.md#getbatchspotfee) | **GET** /spot/batch_fee | Batch query account fee rates
+[**ListSpotAccounts**](SpotApi.md#listspotaccounts) | **GET** /spot/accounts | List spot trading accounts
 [**ListSpotAccountBook**](SpotApi.md#listspotaccountbook) | **GET** /spot/account_book | Query spot account transaction history
 [**CreateBatchOrders**](SpotApi.md#createbatchorders) | **POST** /spot/batch_orders | Batch place orders
 [**ListAllOpenOrders**](SpotApi.md#listallopenorders) | **GET** /spot/open_orders | List all open orders
@@ -37,9 +38,9 @@ Method | HTTP request | Description
 [**CancelSpotPriceTriggeredOrder**](SpotApi.md#cancelspotpricetriggeredorder) | **DELETE** /spot/price_orders/{order_id} | Cancel single auto order
 [**ListSpotPovOrders**](SpotApi.md#listspotpovorders) | **GET** /spot/pov_orders | List Spot POV orders
 [**CreateSpotPovOrder**](SpotApi.md#createspotpovorder) | **POST** /spot/pov_orders | Create a Spot POV order
-[**CancelSpotPovOrders**](SpotApi.md#cancelspotpovorders) | **POST** /spot/pov_orders/cancel | Cancel Spot POV orders
+[**CancelSpotPovOrders**](SpotApi.md#cancelspotpovorders) | **DELETE** /spot/pov_orders | Cancel Spot POV orders
 [**GetSpotPovOrder**](SpotApi.md#getspotpovorder) | **GET** /spot/pov_orders/{order_id} | Query Spot POV order details
-[**CancelSpotPovOrder**](SpotApi.md#cancelspotpovorder) | **POST** /spot/pov_orders/{order_id}/cancel | Cancel a Spot POV order
+[**CancelSpotPovOrder**](SpotApi.md#cancelspotpovorder) | **DELETE** /spot/pov_orders/{order_id} | Cancel a Spot POV order
 
 
 <a name="listcurrencies"></a>
@@ -765,6 +766,77 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Query successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listspotaccounts"></a>
+# **ListSpotAccounts**
+> List&lt;SpotAccount&gt; ListSpotAccounts (string currency = null)
+
+List spot trading accounts
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListSpotAccountsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new SpotApi(config);
+            var currency = "BTC";  // string | Query by specified currency name (optional) 
+
+            try
+            {
+                // List spot trading accounts
+                List<SpotAccount> result = apiInstance.ListSpotAccounts(currency);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SpotApi.ListSpotAccounts: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **string**| Query by specified currency name | [optional] 
+
+### Return type
+
+[**List&lt;SpotAccount&gt;**](SpotAccount.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

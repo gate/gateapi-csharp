@@ -38,7 +38,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderCreateV1Req" /> class.
         /// </summary>
-        /// <param name="from">Sell ​​side list, at least one item; each item is the currency and amount &#x60;amount&#x60; to be swapped out. (required).</param>
+        /// <param name="from">Sell side list, at least one item; each item is the currency and amount &#x60;amount&#x60; to be swapped out. (required).</param>
         /// <param name="to">Target side list, at least one item; each item is the target currency and **amount** &#x60;amount&#x60; (non-proportional). The structural semantics are different from &#x60;OrderPreviewV1Req.to&#x60; (&#x60;PreviewToParam&#x60;, including &#x60;ratio&#x60;), so do not mix them. (required).</param>
         public OrderCreateV1Req(List<CreateParam> from = default(List<CreateParam>), List<CreateParam> to = default(List<CreateParam>))
         {
@@ -49,9 +49,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Sell ​​side list, at least one item; each item is the currency and amount &#x60;amount&#x60; to be swapped out.
+        /// Sell side list, at least one item; each item is the currency and amount &#x60;amount&#x60; to be swapped out.
         /// </summary>
-        /// <value>Sell ​​side list, at least one item; each item is the currency and amount &#x60;amount&#x60; to be swapped out.</value>
+        /// <value>Sell side list, at least one item; each item is the currency and amount &#x60;amount&#x60; to be swapped out.</value>
         [DataMember(Name="from")]
         public List<CreateParam> From { get; set; }
 

@@ -7,7 +7,7 @@ Asset allocation optimization **preview** request. &#x60;from&#x60; is the selli
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**From** | [**List&lt;PreviewFromParam&gt;**](PreviewFromParam.md) | Sell ​​side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal). | 
+**From** | [**List&lt;PreviewFromParam&gt;**](PreviewFromParam.md) | Sell side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal). | 
 **To** | [**List&lt;PreviewToParam&gt;**](PreviewToParam.md) | Target side; each item is currency + **ratio** &#x60;ratio&#x60; (string decimal, such as &#x60;0.5&#x60;). Typical source: &#x60;GET /asset-swap/config&#x60; → &#x60;recommend_v2&#x60; &#x60;schemes[].name&#x60; / &#x60;schemes[].ratio&#x60; of the strategy under a certain group. | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

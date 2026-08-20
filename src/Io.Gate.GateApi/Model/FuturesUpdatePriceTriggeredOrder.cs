@@ -67,7 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesUpdatePriceTriggeredOrder" /> class.
         /// </summary>
-        /// <param name="settle">Settlement Currency (e.g., USDT, BTC).</param>
+        /// <param name="settle">Perpetual futures settlement currency, e.g. usdt, btc, usd1.</param>
         /// <param name="orderId">ID of the Pending Take-Profit/Stop-Loss Trigger Order (required).</param>
         /// <param name="size">Modified Contract Quantity. Full Close: 0; Partial Close: Positive/Negative values indicate direction (consistent with the creation interface logic)..</param>
         /// <param name="amount">Same as &#x60;size&#x60;; used for decimal contract size. When both &#x60;size&#x60; and &#x60;amount&#x60; are provided, &#x60;amount&#x60; takes precedence..</param>
@@ -90,9 +90,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Settlement Currency (e.g., USDT, BTC)
+        /// Perpetual futures settlement currency, e.g. usdt, btc, usd1
         /// </summary>
-        /// <value>Settlement Currency (e.g., USDT, BTC)</value>
+        /// <value>Perpetual futures settlement currency, e.g. usdt, btc, usd1</value>
         [DataMember(Name="settle")]
         public string Settle { get; set; }
 

@@ -7,7 +7,7 @@ Modify Price Order Details
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Settle** | **string** | Settlement Currency (e.g., USDT, BTC) | [optional] 
+**Settle** | **string** | Perpetual futures settlement currency, e.g. usdt, btc, usd1 | [optional] 
 **OrderId** | **long** | ID of the Pending Take-Profit/Stop-Loss Trigger Order | 
 **Size** | **long** | Modified Contract Quantity. Full Close: 0; Partial Close: Positive/Negative values indicate direction (consistent with the creation interface logic). | [optional] 
 **Amount** | **string** | Same as &#x60;size&#x60;; used for decimal contract size. When both &#x60;size&#x60; and &#x60;amount&#x60; are provided, &#x60;amount&#x60; takes precedence. | [optional] 

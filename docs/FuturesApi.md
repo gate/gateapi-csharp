@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**ListFuturesContracts**](FuturesApi.md#listfuturescontracts) | **GET** /futures/{settle}/contracts | Query all futures contracts
 [**ListFuturesContractsAll**](FuturesApi.md#listfuturescontractsall) | **GET** /futures/{settle}/contracts_all | Query all contract information (including delisted)
 [**GetFuturesContract**](FuturesApi.md#getfuturescontract) | **GET** /futures/{settle}/contracts/{contract} | Query single contract information
+[**ListFuturesADLRiskStates**](FuturesApi.md#listfuturesadlriskstates) | **GET** /futures/{settle}/adl_risk_states | List market-level ADL risk states
 [**ListFuturesOrderBook**](FuturesApi.md#listfuturesorderbook) | **GET** /futures/{settle}/order_book | Query futures market depth information
 [**ListFuturesTrades**](FuturesApi.md#listfuturestrades) | **GET** /futures/{settle}/trades | Futures market transaction records
 [**ListFuturesCandlesticks**](FuturesApi.md#listfuturescandlesticks) | **GET** /futures/{settle}/candlesticks | Futures market K-line chart
@@ -99,7 +100,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
 
@@ -125,7 +126,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
 
@@ -172,7 +173,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
 
@@ -198,7 +199,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
 
@@ -245,7 +246,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
 
             try
@@ -270,7 +271,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
 
 ### Return type
@@ -290,6 +291,77 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Contract information |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listfuturesadlriskstates"></a>
+# **ListFuturesADLRiskStates**
+> FuturesADLRiskStates ListFuturesADLRiskStates (string settle)
+
+List market-level ADL risk states
+
+List the current ADL risk states of all futures markets for the specified settlement currency
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListFuturesADLRiskStatesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Perpetual futures settlement currency
+
+            try
+            {
+                // List market-level ADL risk states
+                FuturesADLRiskStates result = apiInstance.ListFuturesADLRiskStates(settle);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.ListFuturesADLRiskStates: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Perpetual futures settlement currency | 
+
+### Return type
+
+[**FuturesADLRiskStates**](FuturesADLRiskStates.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -318,7 +390,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var interval = "\"0\"";  // string | Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional)  (default to "0")
             var limit = 10;  // int? | Number of depth levels (optional)  (default to 10)
@@ -346,7 +418,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **interval** | **string**| Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 | [optional] [default to &quot;0&quot;]
  **limit** | **int?**| Number of depth levels | [optional] [default to 10]
@@ -395,7 +467,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -425,7 +497,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
@@ -478,7 +550,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var from = 1546905600;  // long? | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional) 
             var to = 1546935600;  // long? | Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional) 
@@ -508,7 +580,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **from** | **long?**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
  **to** | **long?**| Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision | [optional] 
@@ -561,7 +633,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var from = 1546905600;  // long? | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional) 
             var to = 1546935600;  // long? | Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional) 
@@ -590,7 +662,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **from** | **long?**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
  **to** | **long?**| Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision | [optional] 
@@ -640,7 +712,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
 
             try
@@ -665,7 +737,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
 
 ### Return type
@@ -711,7 +783,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var from = 1547706332;  // long? | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional) 
@@ -739,7 +811,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **from** | **long?**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
@@ -788,7 +860,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var batchFundingRatesRequest = new BatchFundingRatesRequest(); // BatchFundingRatesRequest | 
 
             try
@@ -813,7 +885,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **batchFundingRatesRequest** | [**BatchFundingRatesRequest**](BatchFundingRatesRequest.md)|  | 
 
 ### Return type
@@ -859,7 +931,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
 
             try
@@ -884,7 +956,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
 
 ### Return type
@@ -930,7 +1002,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var from = 1604561000;  // long? | Start timestamp (optional) 
             var interval = "\"5m\"";  // string |  (optional)  (default to "5m")
@@ -958,7 +1030,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **from** | **long?**| Start timestamp | [optional] 
  **interval** | **string**|  | [optional] [default to &quot;5m&quot;]
@@ -1007,7 +1079,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var index = "BTC_USDT";  // string | Index name
 
             try
@@ -1032,7 +1104,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **index** | **string**| Index name | 
 
 ### Return type
@@ -1080,7 +1152,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var from = 1547706332;  // long? | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional) 
             var to = 1547706332;  // long? | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional) 
@@ -1108,7 +1180,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **from** | **long?**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **long?**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
@@ -1159,7 +1231,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -1186,7 +1258,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
@@ -1238,7 +1310,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
 
             try
             {
@@ -1262,7 +1334,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
 
 ### Return type
 
@@ -1311,7 +1383,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -1341,7 +1413,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
@@ -1394,7 +1466,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var holding = true;  // bool? | Return only real positions - true, return all - false (optional) 
             var limit = 100;  // int? | Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. (optional) 
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -1421,7 +1493,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **holding** | **bool?**| Return only real positions - true, return all - false | [optional] 
  **limit** | **int?**| Maximum number of positions returned. If omitted, all current positions are returned by default; if provided, the value must be within [1,100]. | [optional] 
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
@@ -1471,7 +1543,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var from = 1547706332;  // long? | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional) 
             var to = 1547706332;  // long? | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional) 
@@ -1500,7 +1572,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **from** | **long?**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **long?**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
@@ -1554,7 +1626,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
 
             try
@@ -1579,7 +1651,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
 
 ### Return type
@@ -1629,7 +1701,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var posMarginMode = "isolated";  // string | Position Margin Mode, required for split position mode, values: isolated/cross.
             var dualSide = "dual_long";  // string | dual_long - Long, dual_short - Short
@@ -1656,7 +1728,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **posMarginMode** | **string**| Position Margin Mode, required for split position mode, values: isolated/cross. | 
  **dualSide** | **string**| dual_long - Long, dual_short - Short | 
@@ -1708,7 +1780,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var change = "0.01";  // string | Margin change amount, positive number increases, negative number decreases
 
@@ -1734,7 +1806,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **change** | **string**| Margin change amount, positive number increases, negative number decreases | 
 
@@ -1785,7 +1857,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var leverage = "10";  // string | Set the leverage for isolated margin. When setting isolated margin leverage, the `cross_leverage_limit`  must be empty.
             var crossLeverageLimit = "10";  // string | Set the leverage for cross margin. When setting cross margin leverage, the `leverage` must be set to 0. (optional) 
@@ -1813,7 +1885,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **leverage** | **string**| Set the leverage for isolated margin. When setting isolated margin leverage, the &#x60;cross_leverage_limit&#x60;  must be empty. | 
  **crossLeverageLimit** | **string**| Set the leverage for cross margin. When setting cross margin leverage, the &#x60;leverage&#x60; must be set to 0. | [optional] 
@@ -1866,7 +1938,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var leverage = "10";  // string | Position Leverage Multiple
             var marginMode = "cross";  // string | Margin Mode isolated/cross
@@ -1894,7 +1966,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **leverage** | **string**| Position Leverage Multiple | 
  **marginMode** | **string**| Margin Mode isolated/cross | 
@@ -1945,7 +2017,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var futuresPositionCrossMode = new FuturesPositionCrossMode(); // FuturesPositionCrossMode | 
 
             try
@@ -1970,7 +2042,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **futuresPositionCrossMode** | [**FuturesPositionCrossMode**](FuturesPositionCrossMode.md)|  | 
 
 ### Return type
@@ -2018,7 +2090,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var updateDualCompPositionCrossModeRequest = new UpdateDualCompPositionCrossModeRequest(); // UpdateDualCompPositionCrossModeRequest | 
 
             try
@@ -2043,7 +2115,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **updateDualCompPositionCrossModeRequest** | [**UpdateDualCompPositionCrossModeRequest**](UpdateDualCompPositionCrossModeRequest.md)|  | 
 
 ### Return type
@@ -2093,7 +2165,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var riskLimit = "1000000";  // string | New risk limit value
 
@@ -2119,7 +2191,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **riskLimit** | **string**| New risk limit value | 
 
@@ -2170,7 +2242,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var dualMode = true;  // bool | Whether to enable Hedge Mode
 
             try
@@ -2195,7 +2267,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **dualMode** | **bool**| Whether to enable Hedge Mode | 
 
 ### Return type
@@ -2245,7 +2317,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var positionMode = "dual_plus";  // string | Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively
 
             try
@@ -2270,7 +2342,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **positionMode** | **string**| Optional Values: single, dual, dual_plus, representing Single Direction, Dual Direction, Split Position respectively | 
 
 ### Return type
@@ -2318,7 +2390,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
 
             try
@@ -2343,7 +2415,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
 
 ### Return type
@@ -2391,7 +2463,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var change = "0.01";  // string | Margin change amount, positive number increases, negative number decreases
             var dualSide = "dual_long";  // string | Long or short position
@@ -2418,7 +2490,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **change** | **string**| Margin change amount, positive number increases, negative number decreases | 
  **dualSide** | **string**| Long or short position | 
@@ -2468,7 +2540,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var leverage = "10";  // string | New position leverage
             var crossLeverageLimit = "10";  // string | Cross margin leverage (valid only when `leverage` is 0) (optional) 
@@ -2495,7 +2567,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **leverage** | **string**| New position leverage | 
  **crossLeverageLimit** | **string**| Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) | [optional] 
@@ -2547,7 +2619,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract
             var riskLimit = "1000000";  // string | New risk limit value
 
@@ -2573,7 +2645,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract | 
  **riskLimit** | **string**| New risk limit value | 
 
@@ -2624,7 +2696,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var status = "open";  // string | Query order list based on status
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
@@ -2653,7 +2725,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **status** | **string**| Query order list based on status | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
@@ -2707,7 +2779,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var futuresOrder = new FuturesOrder(); // FuturesOrder | 
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
 
@@ -2733,7 +2805,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **futuresOrder** | [**FuturesOrder**](FuturesOrder.md)|  | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
@@ -2784,7 +2856,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
             var contract = "BTC_USDT";  // string | Contract Identifier; if specified, only cancel pending orders related to this contract (optional) 
             var actionMode = "ACK";  // string | Processing Mode  When placing an order, different fields are returned based on the action_mode  - `ACK`: Asynchronous mode, returns only key order fields - `RESULT`: No clearing information - `FULL`: Full mode (default) (optional) 
@@ -2814,7 +2886,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
  **contract** | **string**| Contract Identifier; if specified, only cancel pending orders related to this contract | [optional] 
  **actionMode** | **string**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) | [optional] 
@@ -2867,7 +2939,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var from = 1547706332;  // long? | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional) 
             var to = 1547706332;  // long? | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional) 
@@ -2896,7 +2968,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **from** | **long?**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **long?**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
@@ -2950,7 +3022,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var futuresOrder = new List<FuturesOrder>(); // List<FuturesOrder> | 
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
 
@@ -2976,7 +3048,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **futuresOrder** | [**List&lt;FuturesOrder&gt;**](FuturesOrder.md)|  | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
@@ -3027,7 +3099,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var orderId = "12345";  // string | The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the `text` field). When using the custom `text` field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by `text`; continuing to use `text` returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by `text` indefinitely.
 
             try
@@ -3052,7 +3124,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **orderId** | **string**| The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely. | 
 
 ### Return type
@@ -3100,7 +3172,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var orderId = "12345";  // string | The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the `text` field). When using the custom `text` field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by `text`; continuing to use `text` returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by `text` indefinitely.
             var futuresOrderAmendment = new FuturesOrderAmendment(); // FuturesOrderAmendment | 
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
@@ -3127,7 +3199,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **orderId** | **string**| The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely. | 
  **futuresOrderAmendment** | [**FuturesOrderAmendment**](FuturesOrderAmendment.md)|  | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
@@ -3177,7 +3249,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var orderId = "12345";  // string | The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the `text` field). When using the custom `text` field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by `text`; continuing to use `text` returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by `text` indefinitely.
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
             var actionMode = "ACK";  // string | Processing Mode  When placing an order, different fields are returned based on the action_mode  - `ACK`: Asynchronous mode, returns only key order fields - `RESULT`: No clearing information - `FULL`: Full mode (default) (optional) 
@@ -3204,7 +3276,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **orderId** | **string**| The order ID returned when the order is created successfully, or the custom ID specified by the user when creating the order (i.e. the &#x60;text&#x60; field). When using the custom &#x60;text&#x60; field: 1. If the order was not filled and has been cancelled, after 60 seconds you cannot query the order by &#x60;text&#x60;; continuing to use &#x60;text&#x60; returns error ORDER_NOT_FOUND. 2. If the order was fully or partially filled, you can query the order by &#x60;text&#x60; indefinitely. | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
  **actionMode** | **string**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default) | [optional] 
@@ -3256,7 +3328,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var order = 12345;  // long? | Futures order ID, return related data only if specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
@@ -3285,7 +3357,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **order** | **long?**| Futures order ID, return related data only if specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
@@ -3337,7 +3409,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var from = 1547706332;  // long? | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional) 
             var to = 1547706332;  // long? | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional) 
@@ -3367,7 +3439,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **from** | **long?**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **long?**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
@@ -3420,7 +3492,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -3451,7 +3523,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
@@ -3505,7 +3577,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -3535,7 +3607,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
@@ -3588,7 +3660,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
@@ -3618,7 +3690,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
@@ -3673,7 +3745,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var countdownCancelAllFuturesTask = new CountdownCancelAllFuturesTask(); // CountdownCancelAllFuturesTask | 
 
             try
@@ -3698,7 +3770,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **countdownCancelAllFuturesTask** | [**CountdownCancelAllFuturesTask**](CountdownCancelAllFuturesTask.md)|  | 
 
 ### Return type
@@ -3746,7 +3818,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
 
             try
@@ -3771,7 +3843,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
 
 ### Return type
@@ -3821,7 +3893,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var requestBody = new List<string>(); // List<string> | 
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
 
@@ -3847,7 +3919,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **requestBody** | [**List&lt;string&gt;**](string.md)|  | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
@@ -3898,7 +3970,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var batchAmendOrderReq = new List<BatchAmendOrderReq>(); // List<BatchAmendOrderReq> | 
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
 
@@ -3924,7 +3996,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **batchAmendOrderReq** | [**List&lt;BatchAmendOrderReq&gt;**](BatchAmendOrderReq.md)|  | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
@@ -3973,7 +4045,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var tableId = "CYBER_USDT_20241122";  // string | Risk limit table ID
 
             try
@@ -3998,7 +4070,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **tableId** | **string**| Risk limit table ID | 
 
 ### Return type
@@ -4048,7 +4120,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var futuresBBOOrder = new FuturesBBOOrder(); // FuturesBBOOrder | 
             var xGateExptime = "1689560679123";  // string | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional) 
 
@@ -4074,7 +4146,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **futuresBBOOrder** | [**FuturesBBOOrder**](FuturesBBOOrder.md)|  | 
  **xGateExptime** | **string**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
@@ -4123,7 +4195,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var createTrailOrder = new CreateTrailOrder(); // CreateTrailOrder | 
 
             try
@@ -4148,7 +4220,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **createTrailOrder** | [**CreateTrailOrder**](CreateTrailOrder.md)|  | 
 
 ### Return type
@@ -4196,7 +4268,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var stopTrailOrder = new StopTrailOrder(); // StopTrailOrder | 
 
             try
@@ -4221,7 +4293,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **stopTrailOrder** | [**StopTrailOrder**](StopTrailOrder.md)|  | 
 
 ### Return type
@@ -4269,7 +4341,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var stopAllTrailOrders = new StopAllTrailOrders(); // StopAllTrailOrders | 
 
             try
@@ -4294,7 +4366,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **stopAllTrailOrders** | [**StopAllTrailOrders**](StopAllTrailOrders.md)|  | 
 
 ### Return type
@@ -4342,7 +4414,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "contract_example";  // string | Contract name (optional) 
             var isFinished = true;  // bool? | Whether historical order (optional) 
             var startAt = 56;  // long? | Start time of time range (optional) 
@@ -4378,7 +4450,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Contract name | [optional] 
  **isFinished** | **bool?**| Whether historical order | [optional] 
  **startAt** | **long?**| Start time of time range | [optional] 
@@ -4437,7 +4509,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var id = 56;  // long | Order ID
 
             try
@@ -4462,7 +4534,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **id** | **long**| Order ID | 
 
 ### Return type
@@ -4510,7 +4582,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var updateTrailOrder = new UpdateTrailOrder(); // UpdateTrailOrder | 
 
             try
@@ -4535,7 +4607,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **updateTrailOrder** | [**UpdateTrailOrder**](UpdateTrailOrder.md)|  | 
 
 ### Return type
@@ -4583,7 +4655,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var id = 56;  // long | Order ID
             var pageNum = 1;  // int? | Page number, starting from 1 (optional)  (default to 1)
             var pageSize = 20;  // int? | Number of items per page (optional)  (default to 20)
@@ -4610,7 +4682,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **id** | **long**| Order ID | 
  **pageNum** | **int?**| Page number, starting from 1 | [optional] [default to 1]
  **pageSize** | **int?**| Number of items per page | [optional] [default to 20]
@@ -4660,7 +4732,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var createChaseOrderReq = new CreateChaseOrderReq(); // CreateChaseOrderReq | 
 
             try
@@ -4685,7 +4757,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **createChaseOrderReq** | [**CreateChaseOrderReq**](CreateChaseOrderReq.md)|  | 
 
 ### Return type
@@ -4733,7 +4805,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var stopChaseOrderReq = new StopChaseOrderReq(); // StopChaseOrderReq | 
 
             try
@@ -4758,7 +4830,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **stopChaseOrderReq** | [**StopChaseOrderReq**](StopChaseOrderReq.md)|  | 
 
 ### Return type
@@ -4806,7 +4878,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var stopAllChaseOrdersReq = new StopAllChaseOrdersReq(); // StopAllChaseOrdersReq | 
 
             try
@@ -4831,7 +4903,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **stopAllChaseOrdersReq** | [**StopAllChaseOrdersReq**](StopAllChaseOrdersReq.md)|  | 
 
 ### Return type
@@ -4879,7 +4951,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var sortBy = 56;  // int | Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0
             var contract = "contract_example";  // string | Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional) 
             var isFinished = true;  // bool? | true to query finished orders, false to query in-progress orders (optional) 
@@ -4913,7 +4985,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **sortBy** | **int**| Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0 | 
  **contract** | **string**| Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase | [optional] 
  **isFinished** | **bool?**| true to query finished orders, false to query in-progress orders | [optional] 
@@ -4970,7 +5042,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var id = "id_example";  // string | Order ID, must be a non-zero positive integer
 
             try
@@ -4995,7 +5067,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **id** | **string**| Order ID, must be a non-zero positive integer | 
 
 ### Return type
@@ -5043,7 +5115,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var status = "status_example";  // string | Query order list based on status
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
@@ -5071,7 +5143,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **status** | **string**| Query order list based on status | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
@@ -5122,7 +5194,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var futuresPriceTriggeredOrder = new FuturesPriceTriggeredOrder(); // FuturesPriceTriggeredOrder | 
 
             try
@@ -5147,7 +5219,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **futuresPriceTriggeredOrder** | [**FuturesPriceTriggeredOrder**](FuturesPriceTriggeredOrder.md)|  | 
 
 ### Return type
@@ -5195,7 +5267,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var contract = "BTC_USDT";  // string | Futures contract, return related data only if specified (optional) 
 
             try
@@ -5220,7 +5292,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **contract** | **string**| Futures contract, return related data only if specified | [optional] 
 
 ### Return type
@@ -5268,7 +5340,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var orderId = 56;  // long | ID returned when order is successfully created
 
             try
@@ -5293,7 +5365,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **orderId** | **long**| ID returned when order is successfully created | 
 
 ### Return type
@@ -5341,7 +5413,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var orderId = 56;  // long | ID returned when order is successfully created
 
             try
@@ -5366,7 +5438,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **orderId** | **long**| ID returned when order is successfully created | 
 
 ### Return type
@@ -5414,7 +5486,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new FuturesApi(config);
-            var settle = "usdt";  // string | Settle currency
+            var settle = "usdt";  // string | Perpetual futures settlement currency
             var futuresUpdatePriceTriggeredOrder = new FuturesUpdatePriceTriggeredOrder(); // FuturesUpdatePriceTriggeredOrder | 
 
             try
@@ -5439,7 +5511,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **string**| Settle currency | 
+ **settle** | **string**| Perpetual futures settlement currency | 
  **futuresUpdatePriceTriggeredOrder** | [**FuturesUpdatePriceTriggeredOrder**](FuturesUpdatePriceTriggeredOrder.md)|  | 
 
 ### Return type

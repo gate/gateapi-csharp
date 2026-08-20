@@ -262,6 +262,27 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of Dictionary&lt;string, SpotFee&gt;</returns>
         ApiResponse<Dictionary<string, SpotFee>> GetBatchSpotFeeWithHttpInfo (string currencyPairs);
         /// <summary>
+        /// List spot trading accounts
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <returns>List&lt;SpotAccount&gt;</returns>
+        List<SpotAccount> ListSpotAccounts (string currency = default(string));
+
+        /// <summary>
+        /// List spot trading accounts
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <returns>ApiResponse of List&lt;SpotAccount&gt;</returns>
+        ApiResponse<List<SpotAccount>> ListSpotAccountsWithHttpInfo (string currency = default(string));
+        /// <summary>
         /// Query spot account transaction history
         /// </summary>
         /// <remarks>
@@ -1154,6 +1175,27 @@ namespace Io.Gate.GateApi.Api
         /// <param name="currencyPairs">Maximum 50 currency pairs per request</param>
         /// <returns>Task of ApiResponse (Dictionary&lt;string, SpotFee&gt;)</returns>
         Task<ApiResponse<Dictionary<string, SpotFee>>> GetBatchSpotFeeAsyncWithHttpInfo (string currencyPairs);
+        /// <summary>
+        /// List spot trading accounts
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <returns>Task of List&lt;SpotAccount&gt;</returns>
+        Task<List<SpotAccount>> ListSpotAccountsAsync (string currency = default(string));
+
+        /// <summary>
+        /// List spot trading accounts
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;SpotAccount&gt;)</returns>
+        Task<ApiResponse<List<SpotAccount>>> ListSpotAccountsAsyncWithHttpInfo (string currency = default(string));
         /// <summary>
         /// Query spot account transaction history
         /// </summary>
@@ -3192,6 +3234,121 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetBatchSpotFee", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List spot trading accounts 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <returns>List&lt;SpotAccount&gt;</returns>
+        public List<SpotAccount> ListSpotAccounts (string currency = default(string))
+        {
+             ApiResponse<List<SpotAccount>> localVarResponse = ListSpotAccountsWithHttpInfo(currency);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List spot trading accounts 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <returns>ApiResponse of List&lt;SpotAccount&gt;</returns>
+        public ApiResponse<List<SpotAccount>> ListSpotAccountsWithHttpInfo (string currency = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<SpotAccount>>("/spot/accounts", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListSpotAccounts", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List spot trading accounts 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <returns>Task of List&lt;SpotAccount&gt;</returns>
+        public async Task<List<SpotAccount>> ListSpotAccountsAsync (string currency = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<SpotAccount>> localVarResponse = await ListSpotAccountsAsyncWithHttpInfo(currency);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List spot trading accounts 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;SpotAccount&gt;)</returns>
+        public async Task<ApiResponse<List<SpotAccount>>> ListSpotAccountsAsyncWithHttpInfo (string currency = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (currency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency", currency));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<SpotAccount>>("/spot/accounts", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListSpotAccounts", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -6554,7 +6711,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<SpotPovOrder>>("/spot/pov_orders/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<List<SpotPovOrder>>("/spot/pov_orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -6613,7 +6770,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<SpotPovOrder>>("/spot/pov_orders/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<List<SpotPovOrder>>("/spot/pov_orders", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -6787,7 +6944,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<SpotPovOrder>("/spot/pov_orders/{order_id}/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<SpotPovOrder>("/spot/pov_orders/{order_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -6847,7 +7004,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<SpotPovOrder>("/spot/pov_orders/{order_id}/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<SpotPovOrder>("/spot/pov_orders/{order_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
