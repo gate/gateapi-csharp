@@ -77,6 +77,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="baseName">Base currency name.</param>
         /// <param name="quote">Quote currency.</param>
         /// <param name="quoteName">Quote currency name.</param>
+        /// <param name="tradeQuotes">Quote currencies supported by the unified market; null means that the market does not support unified quote currencies.</param>
         /// <param name="fee">Trading fee rate(deprecated).</param>
         /// <param name="minBaseAmount">Minimum amount of base currency to trade, &#x60;null&#x60; means no limit.</param>
         /// <param name="minQuoteAmount">Minimum amount of quote currency to trade, &#x60;null&#x60; means no limit.</param>
@@ -96,13 +97,14 @@ namespace Io.Gate.GateApi.Model
         /// <param name="slippage">Maximum supported slippage ratio for Spot Market Order Placement, calculated based on the latest market price at the time of order placement as the benchmark (Example: 0.03 means 3%).</param>
         /// <param name="marketOrderMaxStock">Maximum market order quantity. &#x60;null&#x60; or &#x60;0&#x60; means no limit.</param>
         /// <param name="marketOrderMaxMoney">Maximum market order amount. &#x60;null&#x60; or &#x60;0&#x60; means no limit.</param>
-        public CurrencyPair(string id = default(string), string _base = default(string), string baseName = default(string), string quote = default(string), string quoteName = default(string), string fee = default(string), string minBaseAmount = default(string), string minQuoteAmount = default(string), string maxBaseAmount = default(string), string maxQuoteAmount = default(string), int amountPrecision = default(int), int precision = default(int), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), long sellStart = default(long), long buyStart = default(long), long delistingTime = default(long), string type = default(string), string tradeUrl = default(string), bool stTag = default(bool), string upRate = default(string), string downRate = default(string), string slippage = default(string), string marketOrderMaxStock = default(string), string marketOrderMaxMoney = default(string))
+        public CurrencyPair(string id = default(string), string _base = default(string), string baseName = default(string), string quote = default(string), string quoteName = default(string), List<string> tradeQuotes = default(List<string>), string fee = default(string), string minBaseAmount = default(string), string minQuoteAmount = default(string), string maxBaseAmount = default(string), string maxQuoteAmount = default(string), int amountPrecision = default(int), int precision = default(int), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), long sellStart = default(long), long buyStart = default(long), long delistingTime = default(long), string type = default(string), string tradeUrl = default(string), bool stTag = default(bool), string upRate = default(string), string downRate = default(string), string slippage = default(string), string marketOrderMaxStock = default(string), string marketOrderMaxMoney = default(string))
         {
             this.Id = id;
             this.Base = _base;
             this.BaseName = baseName;
             this.Quote = quote;
             this.QuoteName = quoteName;
+            this.TradeQuotes = tradeQuotes;
             this.Fee = fee;
             this.MinBaseAmount = minBaseAmount;
             this.MinQuoteAmount = minQuoteAmount;
@@ -158,6 +160,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Quote currency name</value>
         [DataMember(Name="quote_name")]
         public string QuoteName { get; set; }
+
+        /// <summary>
+        /// Quote currencies supported by the unified market; null means that the market does not support unified quote currencies
+        /// </summary>
+        /// <value>Quote currencies supported by the unified market; null means that the market does not support unified quote currencies</value>
+        [DataMember(Name="trade_quotes")]
+        public List<string> TradeQuotes { get; set; }
 
         /// <summary>
         /// Trading fee rate(deprecated)
@@ -298,6 +307,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  BaseName: ").Append(BaseName).Append("\n");
             sb.Append("  Quote: ").Append(Quote).Append("\n");
             sb.Append("  QuoteName: ").Append(QuoteName).Append("\n");
+            sb.Append("  TradeQuotes: ").Append(TradeQuotes).Append("\n");
             sb.Append("  Fee: ").Append(Fee).Append("\n");
             sb.Append("  MinBaseAmount: ").Append(MinBaseAmount).Append("\n");
             sb.Append("  MinQuoteAmount: ").Append(MinQuoteAmount).Append("\n");
@@ -375,6 +385,12 @@ namespace Io.Gate.GateApi.Model
                     this.QuoteName == input.QuoteName ||
                     (this.QuoteName != null &&
                     this.QuoteName.Equals(input.QuoteName))
+                ) && 
+                (
+                    this.TradeQuotes == input.TradeQuotes ||
+                    this.TradeQuotes != null &&
+                    input.TradeQuotes != null &&
+                    this.TradeQuotes.SequenceEqual(input.TradeQuotes)
                 ) && 
                 (
                     this.Fee == input.Fee ||
@@ -485,6 +501,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Quote.GetHashCode();
                 if (this.QuoteName != null)
                     hashCode = hashCode * 59 + this.QuoteName.GetHashCode();
+                if (this.TradeQuotes != null)
+                    hashCode = hashCode * 59 + this.TradeQuotes.GetHashCode();
                 if (this.Fee != null)
                     hashCode = hashCode * 59 + this.Fee.GetHashCode();
                 if (this.MinBaseAmount != null)

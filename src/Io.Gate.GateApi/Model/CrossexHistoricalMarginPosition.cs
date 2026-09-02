@@ -52,7 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="liqFee">Liquidation Fee.</param>
         /// <param name="positionSide">Position Direction Before Close.</param>
         /// <param name="leverage">Leverage at Close.</param>
-        /// <param name="interest">Total Deducted Interest (required).</param>
+        /// <param name="interest">Accumulated position interest (required).</param>
         /// <param name="businessType">Position Business Type (required).</param>
         /// <param name="createTime">Created time.</param>
         /// <param name="updateTime">Update time.</param>
@@ -179,9 +179,9 @@ namespace Io.Gate.GateApi.Model
         public string Leverage { get; set; }
 
         /// <summary>
-        /// Total Deducted Interest
+        /// Accumulated position interest
         /// </summary>
-        /// <value>Total Deducted Interest</value>
+        /// <value>Accumulated position interest</value>
         [DataMember(Name="interest")]
         public string Interest { get; set; }
 

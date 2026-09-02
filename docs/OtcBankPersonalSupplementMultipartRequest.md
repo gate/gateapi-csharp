@@ -8,9 +8,10 @@ Personal supplement &#x60;multipart/form-data&#x60;. File field names are fixed:
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BankId** | **string** |  | 
-**IdDocumentFront** | **string** | ID document front-side file content (multipart file field, binary/Base64) | 
-**IdDocumentBack** | **string** | ID document back-side file content (multipart file field, binary/Base64) | 
-**AddressProof** | **string** | Proof-of-address file content (multipart file field, binary/Base64) | 
+**IdDocumentFront** | **string** | ID document front-side file content (multipart file field, binary/Base64) | [optional] 
+**IdDocumentBack** | **string** | ID document back-side file content (multipart file field, binary/Base64) | [optional] 
+**AddressProof** | **string** | Proof-of-address file content (multipart file field, binary/Base64) | [optional] 
+**RelationshipProof** | **string** | Optional. JSON string of relationship_proof. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

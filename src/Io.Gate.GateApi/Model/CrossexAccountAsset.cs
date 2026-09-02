@@ -43,13 +43,13 @@ namespace Io.Gate.GateApi.Model
         /// <param name="exchangeType">Exchange.</param>
         /// <param name="balance">Balance.</param>
         /// <param name="upnl">Unrealized P&amp;L.</param>
-        /// <param name="equity">Equity (only USDT has a value; other assets are 0).</param>
-        /// <param name="futuresInitialMargin">Futures initial margin (only USDT has a value; other assets are 0).</param>
-        /// <param name="futuresMaintenanceMargin">Futures maintenance margin (only USDT has a value; other assets are 0).</param>
-        /// <param name="borrowingInitialMargin">Margin trading initial margin (only USDT has a value; other assets are 0) (required).</param>
-        /// <param name="borrowingMaintenanceMargin">Margin trading maintenance margin (only USDT has a value; other assets are 0) (required).</param>
+        /// <param name="equity">Net margin equity for the currency.</param>
+        /// <param name="futuresInitialMargin">Currency-specific futures initial margin. This value is populated for futures settlement currencies (USDT/USDC/USD).</param>
+        /// <param name="futuresMaintenanceMargin">Currency-specific futures maintenance margin. This value is populated for futures settlement currencies (USDT/USDC/USD).</param>
+        /// <param name="borrowingInitialMargin">Currency-specific margin trading initial margin. This value is populated for margin or futures settlement currencies (USDT/USDC/USD) (required).</param>
+        /// <param name="borrowingMaintenanceMargin">Currency-specific margin trading maintenance margin. This value is populated for margin or futures settlement currencies (USDT/USDC/USD) (required).</param>
         /// <param name="availableBalance">Available Balance.</param>
-        /// <param name="liability">Liabilities (only meaningful in isolated exchange mode; always 0 in cross-exchange mode).</param>
+        /// <param name="liability">Liability for the currency. This value is populated only for USDT, USDC, or USD.</param>
         public CrossexAccountAsset(string userId = default(string), string coin = default(string), string exchangeType = default(string), string balance = default(string), string upnl = default(string), string equity = default(string), string futuresInitialMargin = default(string), string futuresMaintenanceMargin = default(string), string borrowingInitialMargin = default(string), string borrowingMaintenanceMargin = default(string), string availableBalance = default(string), string liability = default(string))
         {
             // to ensure "borrowingInitialMargin" is required (not null)
@@ -104,37 +104,37 @@ namespace Io.Gate.GateApi.Model
         public string Upnl { get; set; }
 
         /// <summary>
-        /// Equity (only USDT has a value; other assets are 0)
+        /// Net margin equity for the currency
         /// </summary>
-        /// <value>Equity (only USDT has a value; other assets are 0)</value>
+        /// <value>Net margin equity for the currency</value>
         [DataMember(Name="equity")]
         public string Equity { get; set; }
 
         /// <summary>
-        /// Futures initial margin (only USDT has a value; other assets are 0)
+        /// Currency-specific futures initial margin. This value is populated for futures settlement currencies (USDT/USDC/USD)
         /// </summary>
-        /// <value>Futures initial margin (only USDT has a value; other assets are 0)</value>
+        /// <value>Currency-specific futures initial margin. This value is populated for futures settlement currencies (USDT/USDC/USD)</value>
         [DataMember(Name="futures_initial_margin")]
         public string FuturesInitialMargin { get; set; }
 
         /// <summary>
-        /// Futures maintenance margin (only USDT has a value; other assets are 0)
+        /// Currency-specific futures maintenance margin. This value is populated for futures settlement currencies (USDT/USDC/USD)
         /// </summary>
-        /// <value>Futures maintenance margin (only USDT has a value; other assets are 0)</value>
+        /// <value>Currency-specific futures maintenance margin. This value is populated for futures settlement currencies (USDT/USDC/USD)</value>
         [DataMember(Name="futures_maintenance_margin")]
         public string FuturesMaintenanceMargin { get; set; }
 
         /// <summary>
-        /// Margin trading initial margin (only USDT has a value; other assets are 0)
+        /// Currency-specific margin trading initial margin. This value is populated for margin or futures settlement currencies (USDT/USDC/USD)
         /// </summary>
-        /// <value>Margin trading initial margin (only USDT has a value; other assets are 0)</value>
+        /// <value>Currency-specific margin trading initial margin. This value is populated for margin or futures settlement currencies (USDT/USDC/USD)</value>
         [DataMember(Name="borrowing_initial_margin")]
         public string BorrowingInitialMargin { get; set; }
 
         /// <summary>
-        /// Margin trading maintenance margin (only USDT has a value; other assets are 0)
+        /// Currency-specific margin trading maintenance margin. This value is populated for margin or futures settlement currencies (USDT/USDC/USD)
         /// </summary>
-        /// <value>Margin trading maintenance margin (only USDT has a value; other assets are 0)</value>
+        /// <value>Currency-specific margin trading maintenance margin. This value is populated for margin or futures settlement currencies (USDT/USDC/USD)</value>
         [DataMember(Name="borrowing_maintenance_margin")]
         public string BorrowingMaintenanceMargin { get; set; }
 
@@ -146,9 +146,9 @@ namespace Io.Gate.GateApi.Model
         public string AvailableBalance { get; set; }
 
         /// <summary>
-        /// Liabilities (only meaningful in isolated exchange mode; always 0 in cross-exchange mode)
+        /// Liability for the currency. This value is populated only for USDT, USDC, or USD
         /// </summary>
-        /// <value>Liabilities (only meaningful in isolated exchange mode; always 0 in cross-exchange mode)</value>
+        /// <value>Liability for the currency. This value is populated only for USDT, USDC, or USD</value>
         [DataMember(Name="liability")]
         public string Liability { get; set; }
 

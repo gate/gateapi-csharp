@@ -33,34 +33,27 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcBankEnterpriseSupplementMultipartRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected OtcBankEnterpriseSupplementMultipartRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OtcBankEnterpriseSupplementMultipartRequest" /> class.
-        /// </summary>
         /// <param name="uid">uid.</param>
         /// <param name="bankId">bankId (required).</param>
-        /// <param name="certificate">Business license / registration certificate file content (multipart file field, binary/Base64) (required).</param>
-        /// <param name="shareHolders">Register of shareholders file content (multipart file field, binary/Base64) (required).</param>
-        /// <param name="passport">Legal representative / shareholder passport file content (multipart file field, binary/Base64) (required).</param>
-        /// <param name="shareHoldingStructure">Ownership structure chart file content (multipart file field, binary/Base64) (required).</param>
+        /// <param name="certificate">Business license / registration certificate file content (multipart file field, binary/Base64).</param>
+        /// <param name="shareHolders">Register of shareholders file content (multipart file field, binary/Base64).</param>
+        /// <param name="passport">Legal representative / shareholder passport file content (multipart file field, binary/Base64).</param>
+        /// <param name="shareHoldingStructure">Ownership structure chart file content (multipart file field, binary/Base64).</param>
         /// <param name="fundsStatement">Proof-of-funds file content (multipart file field, binary/Base64, optional).</param>
         /// <param name="additional">Other supplementary material file content (multipart file field, binary/Base64, optional).</param>
-        public OtcBankEnterpriseSupplementMultipartRequest(string uid = default(string), string bankId = default(string), string certificate = default(string), string shareHolders = default(string), string passport = default(string), string shareHoldingStructure = default(string), string fundsStatement = default(string), string additional = default(string))
+        /// <param name="relationshipProof">Optional. JSON string of relationship_proof..</param>
+        public OtcBankEnterpriseSupplementMultipartRequest(string uid = default(string), string bankId = default(string), string certificate = default(string), string shareHolders = default(string), string passport = default(string), string shareHoldingStructure = default(string), string fundsStatement = default(string), string additional = default(string), string relationshipProof = default(string))
         {
             // to ensure "bankId" is required (not null)
             this.BankId = bankId ?? throw new ArgumentNullException("bankId", "bankId is a required property for OtcBankEnterpriseSupplementMultipartRequest and cannot be null");
-            // to ensure "certificate" is required (not null)
-            this.Certificate = certificate ?? throw new ArgumentNullException("certificate", "certificate is a required property for OtcBankEnterpriseSupplementMultipartRequest and cannot be null");
-            // to ensure "shareHolders" is required (not null)
-            this.ShareHolders = shareHolders ?? throw new ArgumentNullException("shareHolders", "shareHolders is a required property for OtcBankEnterpriseSupplementMultipartRequest and cannot be null");
-            // to ensure "passport" is required (not null)
-            this.Passport = passport ?? throw new ArgumentNullException("passport", "passport is a required property for OtcBankEnterpriseSupplementMultipartRequest and cannot be null");
-            // to ensure "shareHoldingStructure" is required (not null)
-            this.ShareHoldingStructure = shareHoldingStructure ?? throw new ArgumentNullException("shareHoldingStructure", "shareHoldingStructure is a required property for OtcBankEnterpriseSupplementMultipartRequest and cannot be null");
             this.Uid = uid;
+            this.Certificate = certificate;
+            this.ShareHolders = shareHolders;
+            this.Passport = passport;
+            this.ShareHoldingStructure = shareHoldingStructure;
             this.FundsStatement = fundsStatement;
             this.Additional = additional;
+            this.RelationshipProof = relationshipProof;
         }
 
         /// <summary>
@@ -118,6 +111,13 @@ namespace Io.Gate.GateApi.Model
         public string Additional { get; set; }
 
         /// <summary>
+        /// Optional. JSON string of relationship_proof.
+        /// </summary>
+        /// <value>Optional. JSON string of relationship_proof.</value>
+        [DataMember(Name="relationship_proof")]
+        public string RelationshipProof { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -133,6 +133,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  ShareHoldingStructure: ").Append(ShareHoldingStructure).Append("\n");
             sb.Append("  FundsStatement: ").Append(FundsStatement).Append("\n");
             sb.Append("  Additional: ").Append(Additional).Append("\n");
+            sb.Append("  RelationshipProof: ").Append(RelationshipProof).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -206,6 +207,11 @@ namespace Io.Gate.GateApi.Model
                     this.Additional == input.Additional ||
                     (this.Additional != null &&
                     this.Additional.Equals(input.Additional))
+                ) && 
+                (
+                    this.RelationshipProof == input.RelationshipProof ||
+                    (this.RelationshipProof != null &&
+                    this.RelationshipProof.Equals(input.RelationshipProof))
                 );
         }
 
@@ -234,6 +240,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.FundsStatement.GetHashCode();
                 if (this.Additional != null)
                     hashCode = hashCode * 59 + this.Additional.GetHashCode();
+                if (this.RelationshipProof != null)
+                    hashCode = hashCode * 59 + this.RelationshipProof.GetHashCode();
                 return hashCode;
             }
         }

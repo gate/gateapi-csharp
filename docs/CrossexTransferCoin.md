@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Coin** | **string** | Currency | 
-**MinTransAmount** | **decimal** | Minimum Transfer Quantity (including estimated fees) | 
+**MinTransAmount** | **decimal** | Minimum transfer amount (estimated fee included) | 
 **EstFee** | **decimal** | Estimated Fee | 
 **Precision** | **int** | Precision | 
 **IsDisabled** | **int** | If it is disabled. 0 means NOT being disabled | 

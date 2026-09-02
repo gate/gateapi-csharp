@@ -33,24 +33,18 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountRateLimit" /> class.
         /// </summary>
-        /// <param name="tier">Frequency limit level (For detailed frequency limit rules, see [Transaction ratio frequency limit](#rate-limit-based-on-fill-ratio)).</param>
         /// <param name="ratio">Fill rate.</param>
-        /// <param name="mainRatio">Total fill ratio of main account.</param>
-        /// <param name="updatedAt">Update time.</param>
-        public AccountRateLimit(string tier = default(string), string ratio = default(string), string mainRatio = default(string), string updatedAt = default(string))
+        public AccountRateLimit(string ratio = default(string))
         {
-            this.Tier = tier;
             this.Ratio = ratio;
-            this.MainRatio = mainRatio;
-            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>
         /// Frequency limit level (For detailed frequency limit rules, see [Transaction ratio frequency limit](#rate-limit-based-on-fill-ratio))
         /// </summary>
         /// <value>Frequency limit level (For detailed frequency limit rules, see [Transaction ratio frequency limit](#rate-limit-based-on-fill-ratio))</value>
-        [DataMember(Name="tier")]
-        public string Tier { get; set; }
+        [DataMember(Name="tier", EmitDefaultValue=false)]
+        public string Tier { get; private set; }
 
         /// <summary>
         /// Fill rate
@@ -63,15 +57,15 @@ namespace Io.Gate.GateApi.Model
         /// Total fill ratio of main account
         /// </summary>
         /// <value>Total fill ratio of main account</value>
-        [DataMember(Name="main_ratio")]
-        public string MainRatio { get; set; }
+        [DataMember(Name="main_ratio", EmitDefaultValue=false)]
+        public string MainRatio { get; private set; }
 
         /// <summary>
         /// Update time
         /// </summary>
         /// <value>Update time</value>
-        [DataMember(Name="updated_at")]
-        public string UpdatedAt { get; set; }
+        [DataMember(Name="updated_at", EmitDefaultValue=false)]
+        public string UpdatedAt { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object

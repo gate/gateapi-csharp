@@ -39,7 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="CrossexTransferCoin" /> class.
         /// </summary>
         /// <param name="coin">Currency (required).</param>
-        /// <param name="minTransAmount">Minimum Transfer Quantity (including estimated fees) (required).</param>
+        /// <param name="minTransAmount">Minimum transfer amount (estimated fee included) (required).</param>
         /// <param name="estFee">Estimated Fee (required).</param>
         /// <param name="precision">Precision (required).</param>
         /// <param name="isDisabled">If it is disabled. 0 means NOT being disabled (required).</param>
@@ -61,9 +61,9 @@ namespace Io.Gate.GateApi.Model
         public string Coin { get; set; }
 
         /// <summary>
-        /// Minimum Transfer Quantity (including estimated fees)
+        /// Minimum transfer amount (estimated fee included)
         /// </summary>
-        /// <value>Minimum Transfer Quantity (including estimated fees)</value>
+        /// <value>Minimum transfer amount (estimated fee included)</value>
         [DataMember(Name="min_trans_amount")]
         public decimal MinTransAmount { get; set; }
 

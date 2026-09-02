@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**GetOtcBankSupplementChecklist**](OTCApi.md#getotcbanksupplementchecklist) | **GET** /otc/bank/bank_supplement_checklist | Query the checklist of materials to supplement for a bank card
 [**SubmitOtcBankPersonalSupplement**](OTCApi.md#submitotcbankpersonalsupplement) | **POST** /otc/bank/personal/bank_supplement | Submit Bank Card Supplement Materials (Personal)
 [**SubmitOtcBankEnterpriseSupplement**](OTCApi.md#submitotcbankenterprisesupplement) | **POST** /otc/bank/enterprise/bank_supplement | Submit Bank Card Supplement Materials (Enterprise)
+[**CreateOtcUploadPreUpload**](OTCApi.md#createotcuploadpreupload) | **POST** /otc/upload/pre_upload | Pre-upload file (temporary bucket)
 [**MarkOtcOrderPaid**](OTCApi.md#markotcorderpaid) | **POST** /otc/order/paid | Mark fiat order as paid (deposit confirmation)
 [**CancelOtcOrder**](OTCApi.md#cancelotcorder) | **POST** /otc/order/cancel | Fiat order cancellation
 [**ListOtcOrders**](OTCApi.md#listotcorders) | **GET** /otc/order/list | Fiat order list
@@ -311,11 +312,11 @@ This endpoint does not need any parameter.
 
 <a name="createotcbank"></a>
 # **CreateOtcBank**
-> OtcBankCreateResponse CreateOtcBank (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string documentationFile, string remittanceLineNumber = null, string agentBankName = null, string agentBankSwift = null)
+> OtcBankCreateResponse CreateOtcBank (string bankAccountName, string bankName, string bankCountry, string bankAddress, string iban, string swift, string remittanceLineNumber = null, string agentBankName = null, string agentBankSwift = null, string documentationFile = null, string documentationFileKey = null, string fileType = null)
 
 Create bank card
 
-Bind a bank card. Under the Global entity, an account with a non-matching name may enter manual review (`status` pending) and require subsequent supplementary materials. Corresponding Inner: `POST /bank/create`. Fields and protocol are subject to the production form/gateway; in some environments `bank_account_name` is passed Base64-encoded, see the integration notes for details.
+Bind a bank card. Under the Global entity, non-same-name accounts may enter manual review (`status` pending) and require supplementary materials later. Corresponds to Inner: `POST /bank/create`. Fields and protocol follow the live form/gateway; `bank_account_name` may be Base64-encoded in some environments—see integration notes.  Account-opening proof supports two methods (choose one):  1. **Pre-upload (recommended)**: call `POST /otc/upload/pre_upload` (`scene=bank`) to obtain a temporary-bucket Policy and upload directly to S3, then pass `documentation_file_key` + `file_type` in this endpoint; 2. **Multipart direct upload**: pass the `documentation_file` file field; the server writes directly to the production bucket.  When using pre-upload, the server validates object existence and that the uid in the `file_key` path matches the caller; after validation, the object is moved to the production bucket and persisted. Cross-user references return `Invalid parameters file_key`; incomplete direct upload returns `Invalid parameters file not uploaded`.
 
 ### Example
 ```csharp
@@ -342,15 +343,17 @@ namespace Example
             var bankAddress = "bankAddress_example";  // string | 
             var iban = "iban_example";  // string | 
             var swift = "swift_example";  // string | 
-            var documentationFile = "documentationFile_example";  // string | Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)
             var remittanceLineNumber = "remittanceLineNumber_example";  // string |  (optional) 
             var agentBankName = "agentBankName_example";  // string |  (optional) 
             var agentBankSwift = "agentBankSwift_example";  // string |  (optional) 
+            var documentationFile = "documentationFile_example";  // string | Multipart direct upload; mutually exclusive with documentation_file_key (optional) 
+            var documentationFileKey = "documentationFileKey_example";  // string | Pre-upload mode; file_key returned by pre_upload (plaintext or base64 accepted) (optional) 
+            var fileType = "fileType_example";  // string | Required when using documentation_file_key; plaintext MIME or its base64 (optional) 
 
             try
             {
                 // Create bank card
-                OtcBankCreateResponse result = apiInstance.CreateOtcBank(bankAccountName, bankName, bankCountry, bankAddress, iban, swift, documentationFile, remittanceLineNumber, agentBankName, agentBankSwift);
+                OtcBankCreateResponse result = apiInstance.CreateOtcBank(bankAccountName, bankName, bankCountry, bankAddress, iban, swift, remittanceLineNumber, agentBankName, agentBankSwift, documentationFile, documentationFileKey, fileType);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -375,10 +378,12 @@ Name | Type | Description  | Notes
  **bankAddress** | **string**|  | 
  **iban** | **string**|  | 
  **swift** | **string**|  | 
- **documentationFile** | **string**| Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment) | 
  **remittanceLineNumber** | **string**|  | [optional] 
  **agentBankName** | **string**|  | [optional] 
  **agentBankSwift** | **string**|  | [optional] 
+ **documentationFile** | **string**| Multipart direct upload; mutually exclusive with documentation_file_key | [optional] 
+ **documentationFileKey** | **string**| Pre-upload mode; file_key returned by pre_upload (plaintext or base64 accepted) | [optional] 
+ **fileType** | **string**| Required when using documentation_file_key; plaintext MIME or its base64 | [optional] 
 
 ### Return type
 
@@ -621,11 +626,11 @@ Name | Type | Description  | Notes
 
 <a name="submitotcbankpersonalsupplement"></a>
 # **SubmitOtcBankPersonalSupplement**
-> OtcActionResponse SubmitOtcBankPersonalSupplement (string bankId, string idDocumentFront, string idDocumentBack, string addressProof)
+> OtcActionResponse SubmitOtcBankPersonalSupplement (string bankId, string idDocumentFront = null, string idDocumentBack = null, string addressProof = null, string relationshipProof = null)
 
 Submit Bank Card Supplement Materials (Personal)
 
-**Personal professional verification (type=1)** users submit non-same-person/supplementary materials. Must match `user_type=personal` returned by `GET /otc/bank/bank_supplement_checklist?bank_id=`, otherwise the request is rejected. **multipart/form-data** is recommended: each material item is a separate file field, with field names matching the checklist `code` (`id_document_front`, `id_document_back`, `address_proof`).
+**Personal professional verification (type=1)** users submit non-same-person/supplementary materials. Must match `user_type=personal` from `GET /otc/bank/bank_supplement_checklist?bank_id=`; otherwise rejected.  Two submission methods (can be mixed):  1. **Pre-upload (recommended)**: call `POST /otc/upload/pre_upload` (`scene=bank`) to upload to the temporary bucket, then fill file items by category in the `relationship_proof` JSON; pass **`key` as plaintext** object path (`base64_decode(pre_upload.file_key)`, e.g. `otc_temp/{uid}/bank/xxx.png`), and `file_type` as plaintext MIME; the server base64-encodes before persistence—do not pass base64 `file_key` directly; 2. **Multipart direct upload**: one file field per material item; field names match checklist `code` (`id_document_front`, `id_document_back`, `address_proof`).
 
 ### Example
 ```csharp
@@ -647,14 +652,15 @@ namespace Example
 
             var apiInstance = new OTCApi(config);
             var bankId = "bankId_example";  // string | 
-            var idDocumentFront = "idDocumentFront_example";  // string | ID document front-side file content (multipart file field, binary/Base64)
-            var idDocumentBack = "idDocumentBack_example";  // string | ID document back-side file content (multipart file field, binary/Base64)
-            var addressProof = "addressProof_example";  // string | Proof-of-address file content (multipart file field, binary/Base64)
+            var idDocumentFront = "idDocumentFront_example";  // string | ID document front-side file content (multipart file field, binary/Base64) (optional) 
+            var idDocumentBack = "idDocumentBack_example";  // string | ID document back-side file content (multipart file field, binary/Base64) (optional) 
+            var addressProof = "addressProof_example";  // string | Proof-of-address file content (multipart file field, binary/Base64) (optional) 
+            var relationshipProof = "relationshipProof_example";  // string | Optional. JSON string of relationship_proof. (optional) 
 
             try
             {
                 // Submit Bank Card Supplement Materials (Personal)
-                OtcActionResponse result = apiInstance.SubmitOtcBankPersonalSupplement(bankId, idDocumentFront, idDocumentBack, addressProof);
+                OtcActionResponse result = apiInstance.SubmitOtcBankPersonalSupplement(bankId, idDocumentFront, idDocumentBack, addressProof, relationshipProof);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -674,9 +680,10 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankId** | **string**|  | 
- **idDocumentFront** | **string**| ID document front-side file content (multipart file field, binary/Base64) | 
- **idDocumentBack** | **string**| ID document back-side file content (multipart file field, binary/Base64) | 
- **addressProof** | **string**| Proof-of-address file content (multipart file field, binary/Base64) | 
+ **idDocumentFront** | **string**| ID document front-side file content (multipart file field, binary/Base64) | [optional] 
+ **idDocumentBack** | **string**| ID document back-side file content (multipart file field, binary/Base64) | [optional] 
+ **addressProof** | **string**| Proof-of-address file content (multipart file field, binary/Base64) | [optional] 
+ **relationshipProof** | **string**| Optional. JSON string of relationship_proof. | [optional] 
 
 ### Return type
 
@@ -700,11 +707,11 @@ Name | Type | Description  | Notes
 
 <a name="submitotcbankenterprisesupplement"></a>
 # **SubmitOtcBankEnterpriseSupplement**
-> OtcActionResponse SubmitOtcBankEnterpriseSupplement (string bankId, string certificate, string shareHolders, string passport, string shareHoldingStructure, string uid = null, string fundsStatement = null, string additional = null)
+> OtcActionResponse SubmitOtcBankEnterpriseSupplement (string bankId, string uid = null, string certificate = null, string shareHolders = null, string passport = null, string shareHoldingStructure = null, string fundsStatement = null, string additional = null, string relationshipProof = null)
 
 Submit Bank Card Supplement Materials (Enterprise)
 
-**Enterprise professional verification (type=2)** users submit supplementary materials. Must match `user_type=enterprise` returned by the checklist. **multipart** file field names: `certificate`, `share_holders`, `passport`, `share_holding_structure`.
+**Enterprise professional verification (type=2)** users submit supplementary materials. Must match `user_type=enterprise` from the checklist.  Two submission methods (can be mixed):  1. **Pre-upload (recommended)**: call `POST /otc/upload/pre_upload` (`scene=bank`), fill file items by category in `relationship_proof`; pass **`key` as plaintext** object path (`base64_decode(pre_upload.file_key)`), and `file_type` as plaintext MIME; 2. **Multipart direct upload**: file field names `certificate`, `share_holders`, `passport`, `share_holding_structure`; optional `funds_statement`, `additional`.
 
 ### Example
 ```csharp
@@ -726,18 +733,19 @@ namespace Example
 
             var apiInstance = new OTCApi(config);
             var bankId = "bankId_example";  // string | 
-            var certificate = "certificate_example";  // string | Business license / registration certificate file content (multipart file field, binary/Base64)
-            var shareHolders = "shareHolders_example";  // string | Register of shareholders file content (multipart file field, binary/Base64)
-            var passport = "passport_example";  // string | Legal representative / shareholder passport file content (multipart file field, binary/Base64)
-            var shareHoldingStructure = "shareHoldingStructure_example";  // string | Ownership structure chart file content (multipart file field, binary/Base64)
             var uid = "uid_example";  // string |  (optional) 
+            var certificate = "certificate_example";  // string | Business license / registration certificate file content (multipart file field, binary/Base64) (optional) 
+            var shareHolders = "shareHolders_example";  // string | Register of shareholders file content (multipart file field, binary/Base64) (optional) 
+            var passport = "passport_example";  // string | Legal representative / shareholder passport file content (multipart file field, binary/Base64) (optional) 
+            var shareHoldingStructure = "shareHoldingStructure_example";  // string | Ownership structure chart file content (multipart file field, binary/Base64) (optional) 
             var fundsStatement = "fundsStatement_example";  // string | Proof-of-funds file content (multipart file field, binary/Base64, optional) (optional) 
             var additional = "additional_example";  // string | Other supplementary material file content (multipart file field, binary/Base64, optional) (optional) 
+            var relationshipProof = "relationshipProof_example";  // string | Optional. JSON string of relationship_proof. (optional) 
 
             try
             {
                 // Submit Bank Card Supplement Materials (Enterprise)
-                OtcActionResponse result = apiInstance.SubmitOtcBankEnterpriseSupplement(bankId, certificate, shareHolders, passport, shareHoldingStructure, uid, fundsStatement, additional);
+                OtcActionResponse result = apiInstance.SubmitOtcBankEnterpriseSupplement(bankId, uid, certificate, shareHolders, passport, shareHoldingStructure, fundsStatement, additional, relationshipProof);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -757,13 +765,14 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankId** | **string**|  | 
- **certificate** | **string**| Business license / registration certificate file content (multipart file field, binary/Base64) | 
- **shareHolders** | **string**| Register of shareholders file content (multipart file field, binary/Base64) | 
- **passport** | **string**| Legal representative / shareholder passport file content (multipart file field, binary/Base64) | 
- **shareHoldingStructure** | **string**| Ownership structure chart file content (multipart file field, binary/Base64) | 
  **uid** | **string**|  | [optional] 
+ **certificate** | **string**| Business license / registration certificate file content (multipart file field, binary/Base64) | [optional] 
+ **shareHolders** | **string**| Register of shareholders file content (multipart file field, binary/Base64) | [optional] 
+ **passport** | **string**| Legal representative / shareholder passport file content (multipart file field, binary/Base64) | [optional] 
+ **shareHoldingStructure** | **string**| Ownership structure chart file content (multipart file field, binary/Base64) | [optional] 
  **fundsStatement** | **string**| Proof-of-funds file content (multipart file field, binary/Base64, optional) | [optional] 
  **additional** | **string**| Other supplementary material file content (multipart file field, binary/Base64, optional) | [optional] 
+ **relationshipProof** | **string**| Optional. JSON string of relationship_proof. | [optional] 
 
 ### Return type
 
@@ -785,13 +794,86 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="createotcuploadpreupload"></a>
+# **CreateOtcUploadPreUpload**
+> OtcUploadPreUploadResponse CreateOtcUploadPreUpload (OtcUploadPreUploadRequest otcUploadPreUploadRequest)
+
+Pre-upload file (temporary bucket)
+
+After selecting a file, the client calls this endpoint first to obtain a temporary-bucket POST Policy and `file_key`; then upload directly to S3 using the returned `url` and `fields` (success HTTP 204); finally, in business submit endpoints (e.g. `POST /otc/order/paid`, `POST /otc/bank/create`), pass the **same base64 `file_key` unchanged** (do not decode). The server validates ownership and object existence, then moves to the production bucket and persists. Unsubmitted files remain in the temporary bucket and are reclaimed by lifecycle rules.  Corresponds to Inner: `POST /upload/pre_upload`.  **`content_type` must be sent as base64** (plaintext containing `/` may be blocked by the gateway). Only the following MIME types are supported:  | MIME | base64 | Extension | | - -- | - -- | - -- | | image/png | aW1hZ2UvcG5n | .png | | image/jpeg | aW1hZ2UvanBlZw== | .jpeg | | image/jpg | aW1hZ2UvanBn | .jpg | | application/pdf | YXBwbGljYXRpb24vcGRm | .pdf |  **`scene` mapping to downstream endpoints**:  | scene | Typical use | | - -- | - -- | | general | Fiat buy payment receipt (`payment_receipt_file_key` in `POST /otc/order/paid`) | | bank | Add card, bank card supplementary materials | | assessment | Professional verification materials | | credit | Credit limit increase materials |  **Credential validity**: response `expires_in` is **5400 seconds (90 minutes)**; `fields.Policy` `expiration` matches it. Complete the S3 direct upload within this window; after expiry, call this endpoint again for a new credential.  **File size**: the S3 POST Policy enforces `content-length-range` **1 byte ~ 10MB** (10485760 bytes). Uploads exceeding the limit are rejected by S3; all `scene` values share this limit.  **Direct S3 upload**: `url` is the upload address; send each key-value pair in `fields` unchanged as form-data; the `file` field must be last. Object path is generated as `otc_temp/{uid}/{scene}/{unique filename}`; uid is taken from the login session.  This endpoint returns `content type is required.` when `content_type` is missing. Ownership and object-existence checks for `file_key` are performed by the subsequent business submission endpoint.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class CreateOtcUploadPreUploadExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new OTCApi(config);
+            var otcUploadPreUploadRequest = new OtcUploadPreUploadRequest(); // OtcUploadPreUploadRequest | 
+
+            try
+            {
+                // Pre-upload file (temporary bucket)
+                OtcUploadPreUploadResponse result = apiInstance.CreateOtcUploadPreUpload(otcUploadPreUploadRequest);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling OTCApi.CreateOtcUploadPreUpload: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **otcUploadPreUploadRequest** | [**OtcUploadPreUploadRequest**](OtcUploadPreUploadRequest.md)|  | 
+
+### Return type
+
+[**OtcUploadPreUploadResponse**](OtcUploadPreUploadResponse.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Pre-upload credentials issued successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="markotcorderpaid"></a>
 # **MarkOtcOrderPaid**
 > OtcActionResponse MarkOtcOrderPaid (OtcMarkOrderPaidRequest otcMarkOrderPaidRequest)
 
 Mark fiat order as paid (deposit confirmation)
 
-Mark a fiat BUY order as paid (deposit confirmation). **A user payment receipt must be uploaded**: `payment_receipt_file_key` is required; supported formats are jpg/jpeg/png/pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatibility field name `payment_receipt` is subject to the gateway/live environment. The persisted field is `otc_trade_record.payment_receipt_file_key`. The Pay Inner path is `POST .../pay/order_set_paid` (commonly associated by `client_order_id`); the Inner path corresponding to this OpenAPI endpoint, `POST /order/paid`, still primarily uses `order_id`. If the gateway standardizes on the merchant order ID, follow the gateway documentation.
+Mark a fiat buy order as paid (deposit confirmation). **A user payment receipt must be uploaded**: `payment_receipt_file_key` is required; supported formats are jpg / jpeg / png / pdf, with a maximum size of 10 MB per file (validated jointly by the service and gateway). The compatible field name `payment_receipt` depends on the gateway and production contract. The persisted field is `otc_trade_record.payment_receipt_file_key`. The Pay Inner path is `POST .../pay/order_set_paid` (which commonly identifies orders by `client_order_id`); the Inner path corresponding to this OpenAPI operation, `POST /order/paid`, still primarily uses `order_id`. If the gateway standardizes on the merchant order ID, follow the gateway documentation.  **Recommended pre-upload flow**: first call `POST /otc/upload/pre_upload` (`scene=general`) and upload directly to the temporary bucket, then pass the returned **base64 `file_key` unchanged** (do not decode) to this endpoint. The service validates the uid and object existence before moving the object to the production bucket. A cross-user key returns `Invalid parameters file_key`; an object that has not been uploaded returns `Invalid parameters file not uploaded`. The legacy flow using a base64 key for an object uploaded directly to the production bucket remains supported.
 
 ### Example
 ```csharp

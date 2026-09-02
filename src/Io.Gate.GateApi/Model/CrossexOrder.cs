@@ -41,13 +41,13 @@ namespace Io.Gate.GateApi.Model
         /// <param name="userId">User ID (required).</param>
         /// <param name="orderId">Order ID (required).</param>
         /// <param name="text">Client-defined order ID. (required).</param>
-        /// <param name="state">Order status:  NEW: Validated and queued to be sent to the exchange.  OPEN: Resting on the exchange order book.  PARTIALLY_FILLED: Partially filled.  FILLED: Fully filled.  FAIL: CrossEx internal validation failed; see the &#x60;reason&#x60; field for details.  REJECT: Rejected by the exchange; see the &#x60;reason&#x60; field for details. (required).</param>
+        /// <param name="state">Order status: &#x60;NEW&#x60;: validated locally, pending submission to the exchange &#x60;OPEN&#x60;: resting on the exchange order book &#x60;PARTIALLY_FILLED&#x60;: partially filled &#x60;FILLED&#x60;: fully filled &#x60;FAIL&#x60;: CrossEx validation failed; see &#x60;reason&#x60; &#x60;REJECT&#x60;: rejected by the exchange; see &#x60;reason&#x60; &#x60;CANCELLED&#x60;: cancelled (required).</param>
         /// <param name="symbol">Unique trading pair identifiers, e.g. &#x60;BINANCE_SPOT_BTC_USDT&#x60;, &#x60;BINANCE_FUTURE_BTC_USDT&#x60;. (required).</param>
         /// <param name="side">Side (&#x60;BUY&#x60; buy / &#x60;SELL&#x60; sell). (required).</param>
         /// <param name="type">Order type (&#x60;LIMIT&#x60; limit / &#x60;MARKET&#x60; market). (required).</param>
         /// <param name="attribute">Order attributes (&#x60;COMMON&#x60; normal / &#x60;LIQ&#x60; liquidation takeover / &#x60;REDUCE&#x60; liquidation reduction / &#x60;ADL&#x60; auto-deleverage / &#x60;SETTLEMENT&#x60; delisting settlement). (required).</param>
         /// <param name="exchangeType">Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60;). (required).</param>
-        /// <param name="businessType">Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin). (required).</param>
+        /// <param name="businessType">Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin / &#x60;CONVERT&#x60; Flash Swap). (required).</param>
         /// <param name="qty">Order quantity in the base currency. (required).</param>
         /// <param name="quoteQty">Order quantity in the quote currency. (required).</param>
         /// <param name="price">Order price. (required).</param>
@@ -63,7 +63,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="lastExecutedQty">Base quantity of the latest fill. (required).</param>
         /// <param name="lastExecutedPrice">Price of the latest fill. (required).</param>
         /// <param name="lastExecutedAmount">Quote amount of the latest fill. (required).</param>
-        /// <param name="positionSide">Position side (&#x60;NONE&#x60; flat / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short). (required).</param>
+        /// <param name="positionSide">Position side (&#x60;NONE&#x60; one-way position / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short) (required).</param>
         /// <param name="createTime">Created time (required).</param>
         /// <param name="updateTime">Update time (required).</param>
         public CrossexOrder(string userId = default(string), string orderId = default(string), string text = default(string), string state = default(string), string symbol = default(string), string side = default(string), string type = default(string), string attribute = default(string), string exchangeType = default(string), string businessType = default(string), string qty = default(string), string quoteQty = default(string), string price = default(string), string timeInForce = default(string), string executedQty = default(string), string executedAmount = default(string), string executedAvgPrice = default(string), string feeCoin = default(string), string fee = default(string), string reduceOnly = default(string), string leverage = default(string), string reason = default(string), string lastExecutedQty = default(string), string lastExecutedPrice = default(string), string lastExecutedAmount = default(string), string positionSide = default(string), string createTime = default(string), string updateTime = default(string))
@@ -148,9 +148,9 @@ namespace Io.Gate.GateApi.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// Order status:  NEW: Validated and queued to be sent to the exchange.  OPEN: Resting on the exchange order book.  PARTIALLY_FILLED: Partially filled.  FILLED: Fully filled.  FAIL: CrossEx internal validation failed; see the &#x60;reason&#x60; field for details.  REJECT: Rejected by the exchange; see the &#x60;reason&#x60; field for details.
+        /// Order status: &#x60;NEW&#x60;: validated locally, pending submission to the exchange &#x60;OPEN&#x60;: resting on the exchange order book &#x60;PARTIALLY_FILLED&#x60;: partially filled &#x60;FILLED&#x60;: fully filled &#x60;FAIL&#x60;: CrossEx validation failed; see &#x60;reason&#x60; &#x60;REJECT&#x60;: rejected by the exchange; see &#x60;reason&#x60; &#x60;CANCELLED&#x60;: cancelled
         /// </summary>
-        /// <value>Order status:  NEW: Validated and queued to be sent to the exchange.  OPEN: Resting on the exchange order book.  PARTIALLY_FILLED: Partially filled.  FILLED: Fully filled.  FAIL: CrossEx internal validation failed; see the &#x60;reason&#x60; field for details.  REJECT: Rejected by the exchange; see the &#x60;reason&#x60; field for details.</value>
+        /// <value>Order status: &#x60;NEW&#x60;: validated locally, pending submission to the exchange &#x60;OPEN&#x60;: resting on the exchange order book &#x60;PARTIALLY_FILLED&#x60;: partially filled &#x60;FILLED&#x60;: fully filled &#x60;FAIL&#x60;: CrossEx validation failed; see &#x60;reason&#x60; &#x60;REJECT&#x60;: rejected by the exchange; see &#x60;reason&#x60; &#x60;CANCELLED&#x60;: cancelled</value>
         [DataMember(Name="state")]
         public string State { get; set; }
 
@@ -190,9 +190,9 @@ namespace Io.Gate.GateApi.Model
         public string ExchangeType { get; set; }
 
         /// <summary>
-        /// Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin).
+        /// Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin / &#x60;CONVERT&#x60; Flash Swap).
         /// </summary>
-        /// <value>Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin).</value>
+        /// <value>Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin / &#x60;CONVERT&#x60; Flash Swap).</value>
         [DataMember(Name="business_type")]
         public string BusinessType { get; set; }
 
@@ -302,9 +302,9 @@ namespace Io.Gate.GateApi.Model
         public string LastExecutedAmount { get; set; }
 
         /// <summary>
-        /// Position side (&#x60;NONE&#x60; flat / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short).
+        /// Position side (&#x60;NONE&#x60; one-way position / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short)
         /// </summary>
-        /// <value>Position side (&#x60;NONE&#x60; flat / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short).</value>
+        /// <value>Position side (&#x60;NONE&#x60; one-way position / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short)</value>
         [DataMember(Name="position_side")]
         public string PositionSide { get; set; }
 

@@ -40,12 +40,12 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="id">Account Change Record ID (required).</param>
         /// <param name="userId">User ID (required).</param>
-        /// <param name="businessId">Business ID. Its meaning varies by &#x60;statement_type&#x60;. &#x60;TRANSACTION&#x60;: order ID. &#x60;TRADING_FEE&#x60;: order ID. &#x60;LIQUIDATION_FEE&#x60;: liquidation order ID. &#x60;FUNDING_FEE&#x60;: position ID and funding fee settlement time. For other types, it is a system-generated processing ID with no business meaning. (required).</param>
-        /// <param name="statementType">Bill entry type. &#x60;TRANSACTION&#x60; trade &#x60;TRADING_FEE&#x60; fee &#x60;FUNDING_FEE&#x60; funding &#x60;LIQUIDATION_FEE&#x60; liquidation &#x60;TRANSFER_IN&#x60; deposit &#x60;TRANSFER_OUT&#x60; withdrawal &#x60;BANKRUPT_COMPENSATION&#x60; bankruptcy subsidy &#x60;AUTO_REPAY&#x60; margin auto-repay &#x60;INTEREST_ISOLATED&#x60; isolated-venue interest entry &#x60;ACCOUNT_MODE_CHANGE&#x60; account mode switch entry &#x60;KRAKEN_CONVERSION&#x60; conversion of other margin coins to cover a negative KRAKEN_USD balance &#x60;OTHER&#x60; other (required).</param>
+        /// <param name="businessId">Business ID. Its meaning varies by &#x60;statement_type&#x60;. TRANSACTION: order ID TRADING_FEE: order ID LIQUIDATION_FEE: liquidation order ID FUNDING_FEE: position ID and funding fee settlement time For other types, it is a system-generated processing ID with no business meaning (required).</param>
+        /// <param name="statementType">Account book entry type &#x60;TRANSACTION&#x60;: trade &#x60;TRADING_FEE&#x60;: trading fee &#x60;FUNDING_FEE&#x60;: futures funding fee &#x60;LIQUIDATION_FEE&#x60;: liquidation fee &#x60;TRANSFER_IN&#x60;: transfer in &#x60;TRANSFER_OUT&#x60;: transfer out &#x60;BANKRUPT_COMPENSATION&#x60;: bankruptcy compensation &#x60;AUTO_REPAY&#x60;: automatic repayment of margin position liabilities &#x60;INTEREST_ISOLATED&#x60;: interest entry &#x60;ACCOUNT_MODE_CHANGE&#x60;: balance change caused by an account mode switch &#x60;KRAKEN_CONVERSION&#x60;: conversion of other margin currencies to cover a negative KRAKEN_USD balance &#x60;OTHER&#x60;: other (required).</param>
         /// <param name="exchangeType">Exchange (required).</param>
         /// <param name="coin">Currency (required).</param>
         /// <param name="symbol">Trading Pair.</param>
-        /// <param name="change">Change amount (positive indicates transfer in; negative indicates transfer out) (required).</param>
+        /// <param name="change">Change amount (positive values indicate an increase; negative values indicate a decrease) (required).</param>
         /// <param name="balance">Balance after change (required).</param>
         /// <param name="createTime">Created time (required).</param>
         public CrossexAccountBookRecord(string id = default(string), string userId = default(string), string businessId = default(string), string statementType = default(string), string exchangeType = default(string), string coin = default(string), string symbol = default(string), string change = default(string), string balance = default(string), string createTime = default(string))
@@ -86,16 +86,16 @@ namespace Io.Gate.GateApi.Model
         public string UserId { get; set; }
 
         /// <summary>
-        /// Business ID. Its meaning varies by &#x60;statement_type&#x60;. &#x60;TRANSACTION&#x60;: order ID. &#x60;TRADING_FEE&#x60;: order ID. &#x60;LIQUIDATION_FEE&#x60;: liquidation order ID. &#x60;FUNDING_FEE&#x60;: position ID and funding fee settlement time. For other types, it is a system-generated processing ID with no business meaning.
+        /// Business ID. Its meaning varies by &#x60;statement_type&#x60;. TRANSACTION: order ID TRADING_FEE: order ID LIQUIDATION_FEE: liquidation order ID FUNDING_FEE: position ID and funding fee settlement time For other types, it is a system-generated processing ID with no business meaning
         /// </summary>
-        /// <value>Business ID. Its meaning varies by &#x60;statement_type&#x60;. &#x60;TRANSACTION&#x60;: order ID. &#x60;TRADING_FEE&#x60;: order ID. &#x60;LIQUIDATION_FEE&#x60;: liquidation order ID. &#x60;FUNDING_FEE&#x60;: position ID and funding fee settlement time. For other types, it is a system-generated processing ID with no business meaning.</value>
+        /// <value>Business ID. Its meaning varies by &#x60;statement_type&#x60;. TRANSACTION: order ID TRADING_FEE: order ID LIQUIDATION_FEE: liquidation order ID FUNDING_FEE: position ID and funding fee settlement time For other types, it is a system-generated processing ID with no business meaning</value>
         [DataMember(Name="business_id")]
         public string BusinessId { get; set; }
 
         /// <summary>
-        /// Bill entry type. &#x60;TRANSACTION&#x60; trade &#x60;TRADING_FEE&#x60; fee &#x60;FUNDING_FEE&#x60; funding &#x60;LIQUIDATION_FEE&#x60; liquidation &#x60;TRANSFER_IN&#x60; deposit &#x60;TRANSFER_OUT&#x60; withdrawal &#x60;BANKRUPT_COMPENSATION&#x60; bankruptcy subsidy &#x60;AUTO_REPAY&#x60; margin auto-repay &#x60;INTEREST_ISOLATED&#x60; isolated-venue interest entry &#x60;ACCOUNT_MODE_CHANGE&#x60; account mode switch entry &#x60;KRAKEN_CONVERSION&#x60; conversion of other margin coins to cover a negative KRAKEN_USD balance &#x60;OTHER&#x60; other
+        /// Account book entry type &#x60;TRANSACTION&#x60;: trade &#x60;TRADING_FEE&#x60;: trading fee &#x60;FUNDING_FEE&#x60;: futures funding fee &#x60;LIQUIDATION_FEE&#x60;: liquidation fee &#x60;TRANSFER_IN&#x60;: transfer in &#x60;TRANSFER_OUT&#x60;: transfer out &#x60;BANKRUPT_COMPENSATION&#x60;: bankruptcy compensation &#x60;AUTO_REPAY&#x60;: automatic repayment of margin position liabilities &#x60;INTEREST_ISOLATED&#x60;: interest entry &#x60;ACCOUNT_MODE_CHANGE&#x60;: balance change caused by an account mode switch &#x60;KRAKEN_CONVERSION&#x60;: conversion of other margin currencies to cover a negative KRAKEN_USD balance &#x60;OTHER&#x60;: other
         /// </summary>
-        /// <value>Bill entry type. &#x60;TRANSACTION&#x60; trade &#x60;TRADING_FEE&#x60; fee &#x60;FUNDING_FEE&#x60; funding &#x60;LIQUIDATION_FEE&#x60; liquidation &#x60;TRANSFER_IN&#x60; deposit &#x60;TRANSFER_OUT&#x60; withdrawal &#x60;BANKRUPT_COMPENSATION&#x60; bankruptcy subsidy &#x60;AUTO_REPAY&#x60; margin auto-repay &#x60;INTEREST_ISOLATED&#x60; isolated-venue interest entry &#x60;ACCOUNT_MODE_CHANGE&#x60; account mode switch entry &#x60;KRAKEN_CONVERSION&#x60; conversion of other margin coins to cover a negative KRAKEN_USD balance &#x60;OTHER&#x60; other</value>
+        /// <value>Account book entry type &#x60;TRANSACTION&#x60;: trade &#x60;TRADING_FEE&#x60;: trading fee &#x60;FUNDING_FEE&#x60;: futures funding fee &#x60;LIQUIDATION_FEE&#x60;: liquidation fee &#x60;TRANSFER_IN&#x60;: transfer in &#x60;TRANSFER_OUT&#x60;: transfer out &#x60;BANKRUPT_COMPENSATION&#x60;: bankruptcy compensation &#x60;AUTO_REPAY&#x60;: automatic repayment of margin position liabilities &#x60;INTEREST_ISOLATED&#x60;: interest entry &#x60;ACCOUNT_MODE_CHANGE&#x60;: balance change caused by an account mode switch &#x60;KRAKEN_CONVERSION&#x60;: conversion of other margin currencies to cover a negative KRAKEN_USD balance &#x60;OTHER&#x60;: other</value>
         [DataMember(Name="statement_type")]
         public string StatementType { get; set; }
 
@@ -121,9 +121,9 @@ namespace Io.Gate.GateApi.Model
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Change amount (positive indicates transfer in; negative indicates transfer out)
+        /// Change amount (positive values indicate an increase; negative values indicate a decrease)
         /// </summary>
-        /// <value>Change amount (positive indicates transfer in; negative indicates transfer out)</value>
+        /// <value>Change amount (positive values indicate an increase; negative values indicate a decrease)</value>
         [DataMember(Name="change")]
         public string Change { get; set; }
 

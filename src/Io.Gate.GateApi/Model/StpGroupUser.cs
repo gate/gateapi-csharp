@@ -34,13 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="StpGroupUser" /> class.
         /// </summary>
         /// <param name="userId">User ID.</param>
-        /// <param name="stpId">STP Group ID.</param>
-        /// <param name="createTime">Created time.</param>
-        public StpGroupUser(long userId = default(long), long stpId = default(long), long createTime = default(long))
+        public StpGroupUser(long userId = default(long))
         {
             this.UserId = userId;
-            this.StpId = stpId;
-            this.CreateTime = createTime;
         }
 
         /// <summary>
@@ -54,15 +50,15 @@ namespace Io.Gate.GateApi.Model
         /// STP Group ID
         /// </summary>
         /// <value>STP Group ID</value>
-        [DataMember(Name="stp_id")]
-        public long StpId { get; set; }
+        [DataMember(Name="stp_id", EmitDefaultValue=false)]
+        public long StpId { get; private set; }
 
         /// <summary>
         /// Created time
         /// </summary>
         /// <value>Created time</value>
-        [DataMember(Name="create_time")]
-        public long CreateTime { get; set; }
+        [DataMember(Name="create_time", EmitDefaultValue=false)]
+        public long CreateTime { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object

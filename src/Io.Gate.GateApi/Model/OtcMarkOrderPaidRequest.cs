@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="orderId">Order ID (required).</param>
         /// <param name="clientOrderId">Client order ID (used by some gateway/Inner Pay paths, optional).</param>
-        /// <param name="paymentReceiptFileKey">User payment receipt: **required**. Stored as a file_key. One file; jpg/jpeg/png/pdf; maximum 10 MB. (required).</param>
+        /// <param name="paymentReceiptFileKey">User payment receipt: **required**. Recommended: call &#x60;POST /otc/upload/pre_upload&#x60; (&#x60;scene&#x3D;general&#x60;) to upload to the temporary bucket, then pass the returned **base64 file_key unchanged** (do not decode); the server moves to the production bucket and persists. Still compatible with legacy production-bucket base64 keys. Single file; jpg/jpeg/png/pdf; ≤10MB. (required).</param>
         /// <param name="paymentReceipt">Alias compatible with &#x60;payment_receipt_file_key&#x60; (depends on the gateway&#39;s external field name).</param>
         public OtcMarkOrderPaidRequest(string orderId = default(string), string clientOrderId = default(string), string paymentReceiptFileKey = default(string), string paymentReceipt = default(string))
         {
@@ -67,9 +67,9 @@ namespace Io.Gate.GateApi.Model
         public string ClientOrderId { get; set; }
 
         /// <summary>
-        /// User payment receipt: **required**. Stored as a file_key. One file; jpg/jpeg/png/pdf; maximum 10 MB.
+        /// User payment receipt: **required**. Recommended: call &#x60;POST /otc/upload/pre_upload&#x60; (&#x60;scene&#x3D;general&#x60;) to upload to the temporary bucket, then pass the returned **base64 file_key unchanged** (do not decode); the server moves to the production bucket and persists. Still compatible with legacy production-bucket base64 keys. Single file; jpg/jpeg/png/pdf; ≤10MB.
         /// </summary>
-        /// <value>User payment receipt: **required**. Stored as a file_key. One file; jpg/jpeg/png/pdf; maximum 10 MB.</value>
+        /// <value>User payment receipt: **required**. Recommended: call &#x60;POST /otc/upload/pre_upload&#x60; (&#x60;scene&#x3D;general&#x60;) to upload to the temporary bucket, then pass the returned **base64 file_key unchanged** (do not decode); the server moves to the production bucket and persists. Still compatible with legacy production-bucket base64 keys. Single file; jpg/jpeg/png/pdf; ≤10MB.</value>
         [DataMember(Name="payment_receipt_file_key")]
         public string PaymentReceiptFileKey { get; set; }
 

@@ -202,7 +202,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="side">BUY, SELL (required).</param>
         /// <param name="type">Order type (default: &#x60;LIMIT&#x60;; supported types: &#x60;LIMIT&#x60;, &#x60;MARKET&#x60;) (default to TypeEnum.LIMIT).</param>
         /// <param name="timeInForce">Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, and &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: Retail Price Improvement (default to TimeInForceEnum.GTC).</param>
-        /// <param name="qty">Order quantity (required unless spot market buy).</param>
+        /// <param name="qty">Order quantity (required unless spot or margin market buy).</param>
         /// <param name="price">Limit Order Price (Required for Limit Orders).</param>
         /// <param name="quoteQty">Order quote quantity; required for spot and margin market buy orders.</param>
         /// <param name="reduceOnly">Reduce-only: &#x60;true&#x60; or &#x60;false&#x60;.</param>
@@ -237,9 +237,9 @@ namespace Io.Gate.GateApi.Model
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Order quantity (required unless spot market buy)
+        /// Order quantity (required unless spot or margin market buy)
         /// </summary>
-        /// <value>Order quantity (required unless spot market buy)</value>
+        /// <value>Order quantity (required unless spot or margin market buy)</value>
         [DataMember(Name="qty")]
         public string Qty { get; set; }
 

@@ -25,16 +25,11 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Inner create-bank-card &#x60;multipart/form-data&#x60;. Use the form field &#x60;documentation_file&#x60; to upload the account-opening proof.
+    /// Inner create-bank-card &#x60;multipart/form-data&#x60;. Account-opening proof file (choose one):  - **Pre-upload**: &#x60;documentation_file_key&#x60; + &#x60;file_type&#x60; (call &#x60;POST /otc/upload/pre_upload&#x60; first, &#x60;scene&#x3D;bank&#x60;); - **Multipart direct upload**: &#x60;documentation_file&#x60; file field.
     /// </summary>
     [DataContract]
     public partial class OtcBankCreateMultipartRequest :  IEquatable<OtcBankCreateMultipartRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OtcBankCreateMultipartRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected OtcBankCreateMultipartRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcBankCreateMultipartRequest" /> class.
         /// </summary>
@@ -47,8 +42,10 @@ namespace Io.Gate.GateApi.Model
         /// <param name="remittanceLineNumber">remittanceLineNumber.</param>
         /// <param name="agentBankName">agentBankName.</param>
         /// <param name="agentBankSwift">agentBankSwift.</param>
-        /// <param name="documentationFile">Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment) (required).</param>
-        public OtcBankCreateMultipartRequest(string bankAccountName = default(string), string bankName = default(string), string bankCountry = default(string), string bankAddress = default(string), string iban = default(string), string swift = default(string), string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string), string documentationFile = default(string))
+        /// <param name="documentationFile">Multipart direct upload; mutually exclusive with documentation_file_key.</param>
+        /// <param name="documentationFileKey">Pre-upload mode; file_key returned by pre_upload (plaintext or base64 accepted).</param>
+        /// <param name="fileType">Required when using documentation_file_key; plaintext MIME or its base64.</param>
+        public OtcBankCreateMultipartRequest(string bankAccountName = default(string), string bankName = default(string), string bankCountry = default(string), string bankAddress = default(string), string iban = default(string), string swift = default(string), string remittanceLineNumber = default(string), string agentBankName = default(string), string agentBankSwift = default(string), string documentationFile = default(string), string documentationFileKey = default(string), string fileType = default(string))
         {
             // to ensure "bankAccountName" is required (not null)
             this.BankAccountName = bankAccountName ?? throw new ArgumentNullException("bankAccountName", "bankAccountName is a required property for OtcBankCreateMultipartRequest and cannot be null");
@@ -62,11 +59,12 @@ namespace Io.Gate.GateApi.Model
             this.Iban = iban ?? throw new ArgumentNullException("iban", "iban is a required property for OtcBankCreateMultipartRequest and cannot be null");
             // to ensure "swift" is required (not null)
             this.Swift = swift ?? throw new ArgumentNullException("swift", "swift is a required property for OtcBankCreateMultipartRequest and cannot be null");
-            // to ensure "documentationFile" is required (not null)
-            this.DocumentationFile = documentationFile ?? throw new ArgumentNullException("documentationFile", "documentationFile is a required property for OtcBankCreateMultipartRequest and cannot be null");
             this.RemittanceLineNumber = remittanceLineNumber;
             this.AgentBankName = agentBankName;
             this.AgentBankSwift = agentBankSwift;
+            this.DocumentationFile = documentationFile;
+            this.DocumentationFileKey = documentationFileKey;
+            this.FileType = fileType;
         }
 
         /// <summary>
@@ -124,11 +122,25 @@ namespace Io.Gate.GateApi.Model
         public string AgentBankSwift { get; set; }
 
         /// <summary>
-        /// Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)
+        /// Multipart direct upload; mutually exclusive with documentation_file_key
         /// </summary>
-        /// <value>Account opening proof file content (multipart file field, binary/Base64; jpg/jpeg/png/pdf, etc.; maximum 10 MB per file, subject to the live environment)</value>
+        /// <value>Multipart direct upload; mutually exclusive with documentation_file_key</value>
         [DataMember(Name="documentation_file")]
         public string DocumentationFile { get; set; }
+
+        /// <summary>
+        /// Pre-upload mode; file_key returned by pre_upload (plaintext or base64 accepted)
+        /// </summary>
+        /// <value>Pre-upload mode; file_key returned by pre_upload (plaintext or base64 accepted)</value>
+        [DataMember(Name="documentation_file_key")]
+        public string DocumentationFileKey { get; set; }
+
+        /// <summary>
+        /// Required when using documentation_file_key; plaintext MIME or its base64
+        /// </summary>
+        /// <value>Required when using documentation_file_key; plaintext MIME or its base64</value>
+        [DataMember(Name="file_type")]
+        public string FileType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -148,6 +160,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  AgentBankName: ").Append(AgentBankName).Append("\n");
             sb.Append("  AgentBankSwift: ").Append(AgentBankSwift).Append("\n");
             sb.Append("  DocumentationFile: ").Append(DocumentationFile).Append("\n");
+            sb.Append("  DocumentationFileKey: ").Append(DocumentationFileKey).Append("\n");
+            sb.Append("  FileType: ").Append(FileType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -231,6 +245,16 @@ namespace Io.Gate.GateApi.Model
                     this.DocumentationFile == input.DocumentationFile ||
                     (this.DocumentationFile != null &&
                     this.DocumentationFile.Equals(input.DocumentationFile))
+                ) && 
+                (
+                    this.DocumentationFileKey == input.DocumentationFileKey ||
+                    (this.DocumentationFileKey != null &&
+                    this.DocumentationFileKey.Equals(input.DocumentationFileKey))
+                ) && 
+                (
+                    this.FileType == input.FileType ||
+                    (this.FileType != null &&
+                    this.FileType.Equals(input.FileType))
                 );
         }
 
@@ -263,6 +287,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.AgentBankSwift.GetHashCode();
                 if (this.DocumentationFile != null)
                     hashCode = hashCode * 59 + this.DocumentationFile.GetHashCode();
+                if (this.DocumentationFileKey != null)
+                    hashCode = hashCode * 59 + this.DocumentationFileKey.GetHashCode();
+                if (this.FileType != null)
+                    hashCode = hashCode * 59 + this.FileType.GetHashCode();
                 return hashCode;
             }
         }

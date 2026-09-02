@@ -55,10 +55,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="positionSide">Position Direction Before Close.</param>
         /// <param name="positionMode">Position Mode at Close.</param>
         /// <param name="leverage">Leverage at Close.</param>
+        /// <param name="marginMode">Margin mode (CROSS/ISOLATED).</param>
         /// <param name="businessType">Business Type (required).</param>
         /// <param name="createTime">Created time.</param>
         /// <param name="updateTime">Update time.</param>
-        public CrossexHistoricalPosition(string positionId = default(string), string userId = default(string), string symbol = default(string), string closedType = default(string), string closedPnl = default(string), string closedPnlRate = default(string), string openAvgPrice = default(string), string closedAvgPrice = default(string), string maxPositionQty = default(string), string closedQty = default(string), string closedValue = default(string), string fee = default(string), string liqFee = default(string), string fundingFee = default(string), string positionSide = default(string), string positionMode = default(string), string leverage = default(string), string businessType = default(string), string createTime = default(string), string updateTime = default(string))
+        public CrossexHistoricalPosition(string positionId = default(string), string userId = default(string), string symbol = default(string), string closedType = default(string), string closedPnl = default(string), string closedPnlRate = default(string), string openAvgPrice = default(string), string closedAvgPrice = default(string), string maxPositionQty = default(string), string closedQty = default(string), string closedValue = default(string), string fee = default(string), string liqFee = default(string), string fundingFee = default(string), string positionSide = default(string), string positionMode = default(string), string leverage = default(string), string marginMode = default(string), string businessType = default(string), string createTime = default(string), string updateTime = default(string))
         {
             // to ensure "businessType" is required (not null)
             this.BusinessType = businessType ?? throw new ArgumentNullException("businessType", "businessType is a required property for CrossexHistoricalPosition and cannot be null");
@@ -79,6 +80,7 @@ namespace Io.Gate.GateApi.Model
             this.PositionSide = positionSide;
             this.PositionMode = positionMode;
             this.Leverage = leverage;
+            this.MarginMode = marginMode;
             this.CreateTime = createTime;
             this.UpdateTime = updateTime;
         }
@@ -203,6 +205,13 @@ namespace Io.Gate.GateApi.Model
         public string Leverage { get; set; }
 
         /// <summary>
+        /// Margin mode (CROSS/ISOLATED)
+        /// </summary>
+        /// <value>Margin mode (CROSS/ISOLATED)</value>
+        [DataMember(Name="margin_mode")]
+        public string MarginMode { get; set; }
+
+        /// <summary>
         /// Business Type
         /// </summary>
         /// <value>Business Type</value>
@@ -248,6 +257,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
             sb.Append("  PositionMode: ").Append(PositionMode).Append("\n");
             sb.Append("  Leverage: ").Append(Leverage).Append("\n");
+            sb.Append("  MarginMode: ").Append(MarginMode).Append("\n");
             sb.Append("  BusinessType: ").Append(BusinessType).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
             sb.Append("  UpdateTime: ").Append(UpdateTime).Append("\n");
@@ -371,6 +381,11 @@ namespace Io.Gate.GateApi.Model
                     this.Leverage.Equals(input.Leverage))
                 ) && 
                 (
+                    this.MarginMode == input.MarginMode ||
+                    (this.MarginMode != null &&
+                    this.MarginMode.Equals(input.MarginMode))
+                ) && 
+                (
                     this.BusinessType == input.BusinessType ||
                     (this.BusinessType != null &&
                     this.BusinessType.Equals(input.BusinessType))
@@ -430,6 +445,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.PositionMode.GetHashCode();
                 if (this.Leverage != null)
                     hashCode = hashCode * 59 + this.Leverage.GetHashCode();
+                if (this.MarginMode != null)
+                    hashCode = hashCode * 59 + this.MarginMode.GetHashCode();
                 if (this.BusinessType != null)
                     hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
                 if (this.CreateTime != null)

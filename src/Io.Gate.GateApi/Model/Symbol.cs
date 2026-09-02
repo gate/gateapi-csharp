@@ -53,7 +53,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="liquidationFee">Liquidation Fee Rate (required).</param>
         /// <param name="delistTime">Millisecond timestamp; &#x60;0&#x60; means not delisted. (required).</param>
         /// <param name="supportRpi">Whether RPI order placement is supported (true if supported; false otherwise).</param>
-        public Symbol(string symbol = default(string), string exchangeType = default(string), string businessType = default(string), string state = default(string), string minSize = default(string), string minNotional = default(string), string lotSize = default(string), string tickSize = default(string), string maxNumOrders = default(string), string maxMarketSize = default(string), string maxLimitSize = default(string), string contractSize = default(string), string liquidationFee = default(string), string delistTime = default(string), string supportRpi = default(string))
+        /// <param name="supportCross">Whether cross-margin order placement is supported (true if supported; false otherwise).</param>
+        public Symbol(string symbol = default(string), string exchangeType = default(string), string businessType = default(string), string state = default(string), string minSize = default(string), string minNotional = default(string), string lotSize = default(string), string tickSize = default(string), string maxNumOrders = default(string), string maxMarketSize = default(string), string maxLimitSize = default(string), string contractSize = default(string), string liquidationFee = default(string), string delistTime = default(string), string supportRpi = default(string), string supportCross = default(string))
         {
             // to ensure "symbol" is required (not null)
             this._Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for Symbol and cannot be null");
@@ -84,6 +85,7 @@ namespace Io.Gate.GateApi.Model
             // to ensure "delistTime" is required (not null)
             this.DelistTime = delistTime ?? throw new ArgumentNullException("delistTime", "delistTime is a required property for Symbol and cannot be null");
             this.SupportRpi = supportRpi;
+            this.SupportCross = supportCross;
         }
 
         /// <summary>
@@ -192,6 +194,13 @@ namespace Io.Gate.GateApi.Model
         public string SupportRpi { get; set; }
 
         /// <summary>
+        /// Whether cross-margin order placement is supported (true if supported; false otherwise)
+        /// </summary>
+        /// <value>Whether cross-margin order placement is supported (true if supported; false otherwise)</value>
+        [DataMember(Name="support_cross")]
+        public string SupportCross { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -214,6 +223,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  LiquidationFee: ").Append(LiquidationFee).Append("\n");
             sb.Append("  DelistTime: ").Append(DelistTime).Append("\n");
             sb.Append("  SupportRpi: ").Append(SupportRpi).Append("\n");
+            sb.Append("  SupportCross: ").Append(SupportCross).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -322,6 +332,11 @@ namespace Io.Gate.GateApi.Model
                     this.SupportRpi == input.SupportRpi ||
                     (this.SupportRpi != null &&
                     this.SupportRpi.Equals(input.SupportRpi))
+                ) && 
+                (
+                    this.SupportCross == input.SupportCross ||
+                    (this.SupportCross != null &&
+                    this.SupportCross.Equals(input.SupportCross))
                 );
         }
 
@@ -364,6 +379,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.DelistTime.GetHashCode();
                 if (this.SupportRpi != null)
                     hashCode = hashCode * 59 + this.SupportRpi.GetHashCode();
+                if (this.SupportCross != null)
+                    hashCode = hashCode * 59 + this.SupportCross.GetHashCode();
                 return hashCode;
             }
         }

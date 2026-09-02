@@ -40,8 +40,8 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="userId">User ID (required).</param>
         /// <param name="symbol">Currency pair (required).</param>
-        /// <param name="crossexAdlRank">CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher) (required).</param>
-        /// <param name="exchangeAdlRank">Exchange raw information (BINANCE: 0-4, larger numbers rank higher; OKX: 0-5, larger numbers rank higher; GATE: 1-5, smaller numbers rank higher; Kraken: 20, 40, 80, 100, smaller numbers rank higher; BYBIT: 0-5, larger numbers rank higher) (required).</param>
+        /// <param name="crossexAdlRank">CrossEx ADL priority, with values from 1 to 5 Priority from highest to lowest: 5, 4, 3, 2, 1 (required).</param>
+        /// <param name="exchangeAdlRank">Raw exchange ADL rank. Priority order from highest to lowest by exchange: - BINANCE: 4, 3, 2, 1, 0 - OKX: 5, 4, 3, 2, 1, 0 - GATE: 1, 2, 3, 4, 5 - Kraken: 20, 40, 60, 80, 100 - BYBIT: 5, 4, 3, 2, 1, 0 (required).</param>
         public CrossexAdlRank(string userId = default(string), string symbol = default(string), string crossexAdlRank = default(string), string exchangeAdlRank = default(string))
         {
             // to ensure "userId" is required (not null)
@@ -69,16 +69,16 @@ namespace Io.Gate.GateApi.Model
         public string Symbol { get; set; }
 
         /// <summary>
-        /// CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher)
+        /// CrossEx ADL priority, with values from 1 to 5 Priority from highest to lowest: 5, 4, 3, 2, 1
         /// </summary>
-        /// <value>CROSSEX position-reduction indicator ranking (1–5, higher value ranks higher)</value>
+        /// <value>CrossEx ADL priority, with values from 1 to 5 Priority from highest to lowest: 5, 4, 3, 2, 1</value>
         [DataMember(Name="crossex_adl_rank")]
         public string _CrossexAdlRank { get; set; }
 
         /// <summary>
-        /// Exchange raw information (BINANCE: 0-4, larger numbers rank higher; OKX: 0-5, larger numbers rank higher; GATE: 1-5, smaller numbers rank higher; Kraken: 20, 40, 80, 100, smaller numbers rank higher; BYBIT: 0-5, larger numbers rank higher)
+        /// Raw exchange ADL rank. Priority order from highest to lowest by exchange: - BINANCE: 4, 3, 2, 1, 0 - OKX: 5, 4, 3, 2, 1, 0 - GATE: 1, 2, 3, 4, 5 - Kraken: 20, 40, 60, 80, 100 - BYBIT: 5, 4, 3, 2, 1, 0
         /// </summary>
-        /// <value>Exchange raw information (BINANCE: 0-4, larger numbers rank higher; OKX: 0-5, larger numbers rank higher; GATE: 1-5, smaller numbers rank higher; Kraken: 20, 40, 80, 100, smaller numbers rank higher; BYBIT: 0-5, larger numbers rank higher)</value>
+        /// <value>Raw exchange ADL rank. Priority order from highest to lowest by exchange: - BINANCE: 4, 3, 2, 1, 0 - OKX: 5, 4, 3, 2, 1, 0 - GATE: 1, 2, 3, 4, 5 - Kraken: 20, 40, 60, 80, 100 - BYBIT: 5, 4, 3, 2, 1, 0</value>
         [DataMember(Name="exchange_adl_rank")]
         public string ExchangeAdlRank { get; set; }
 

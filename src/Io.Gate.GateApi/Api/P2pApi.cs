@@ -31,7 +31,7 @@ namespace Io.Gate.GateApi.Api
         /// Get account information
         /// </summary>
         /// <remarks>
-        /// 
+        /// To query the spot account balance, use the Spot API &#x60;GET /spot/accounts&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>P2pMerchantUserInfoResponse</returns>
@@ -41,7 +41,7 @@ namespace Io.Gate.GateApi.Api
         /// Get account information
         /// </summary>
         /// <remarks>
-        /// 
+        /// To query the spot account balance, use the Spot API &#x60;GET /spot/accounts&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of P2pMerchantUserInfoResponse</returns>
@@ -416,7 +416,7 @@ namespace Io.Gate.GateApi.Api
         /// Get account information
         /// </summary>
         /// <remarks>
-        /// 
+        /// To query the spot account balance, use the Spot API &#x60;GET /spot/accounts&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of P2pMerchantUserInfoResponse</returns>
@@ -426,7 +426,7 @@ namespace Io.Gate.GateApi.Api
         /// Get account information
         /// </summary>
         /// <remarks>
-        /// 
+        /// To query the spot account balance, use the Spot API &#x60;GET /spot/accounts&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (P2pMerchantUserInfoResponse)</returns>
@@ -909,7 +909,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get account information 
+        /// Get account information To query the spot account balance, use the Spot API &#x60;GET /spot/accounts&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>P2pMerchantUserInfoResponse</returns>
@@ -920,7 +920,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get account information 
+        /// Get account information To query the spot account balance, use the Spot API &#x60;GET /spot/accounts&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of P2pMerchantUserInfoResponse</returns>
@@ -959,7 +959,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get account information 
+        /// Get account information To query the spot account balance, use the Spot API &#x60;GET /spot/accounts&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of P2pMerchantUserInfoResponse</returns>
@@ -971,7 +971,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get account information 
+        /// Get account information To query the spot account balance, use the Spot API &#x60;GET /spot/accounts&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (P2pMerchantUserInfoResponse)</returns>

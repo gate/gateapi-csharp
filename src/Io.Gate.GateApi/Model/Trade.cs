@@ -104,7 +104,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="sequenceId">Consecutive trade ID within a single market. Used to track and identify trades in the specific market.</param>
         /// <param name="text">Order&#39;s Custom Information. This field is not returned by public interfaces. The scenarios pm_liquidate, comb_margin_liquidate, and scm_liquidate represent full-account forced liquidation orders. liquidate represents isolated-account forced liquidation orders..</param>
         /// <param name="deal">Total Executed Value.</param>
-        public Trade(string id = default(string), string createTime = default(string), string createTimeMs = default(string), string currencyPair = default(string), SideEnum? side = default(SideEnum?), RoleEnum? role = default(RoleEnum?), string amount = default(string), string price = default(string), string orderId = default(string), string fee = default(string), string feeCurrency = default(string), string pointFee = default(string), string gtFee = default(string), string amendText = default(string), string sequenceId = default(string), string text = default(string), string deal = default(string))
+        /// <param name="tradeQuote">Actual quote currency used for the trade.</param>
+        public Trade(string id = default(string), string createTime = default(string), string createTimeMs = default(string), string currencyPair = default(string), SideEnum? side = default(SideEnum?), RoleEnum? role = default(RoleEnum?), string amount = default(string), string price = default(string), string orderId = default(string), string fee = default(string), string feeCurrency = default(string), string pointFee = default(string), string gtFee = default(string), string amendText = default(string), string sequenceId = default(string), string text = default(string), string deal = default(string), string tradeQuote = default(string))
         {
             this.Id = id;
             this.CreateTime = createTime;
@@ -123,6 +124,7 @@ namespace Io.Gate.GateApi.Model
             this.SequenceId = sequenceId;
             this.Text = text;
             this.Deal = deal;
+            this.TradeQuote = tradeQuote;
         }
 
         /// <summary>
@@ -231,6 +233,13 @@ namespace Io.Gate.GateApi.Model
         public string Deal { get; set; }
 
         /// <summary>
+        /// Actual quote currency used for the trade
+        /// </summary>
+        /// <value>Actual quote currency used for the trade</value>
+        [DataMember(Name="trade_quote")]
+        public string TradeQuote { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -255,6 +264,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  SequenceId: ").Append(SequenceId).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Deal: ").Append(Deal).Append("\n");
+            sb.Append("  TradeQuote: ").Append(TradeQuote).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -371,6 +381,11 @@ namespace Io.Gate.GateApi.Model
                     this.Deal == input.Deal ||
                     (this.Deal != null &&
                     this.Deal.Equals(input.Deal))
+                ) && 
+                (
+                    this.TradeQuote == input.TradeQuote ||
+                    (this.TradeQuote != null &&
+                    this.TradeQuote.Equals(input.TradeQuote))
                 );
         }
 
@@ -415,6 +430,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
                 if (this.Deal != null)
                     hashCode = hashCode * 59 + this.Deal.GetHashCode();
+                if (this.TradeQuote != null)
+                    hashCode = hashCode * 59 + this.TradeQuote.GetHashCode();
                 return hashCode;
             }
         }

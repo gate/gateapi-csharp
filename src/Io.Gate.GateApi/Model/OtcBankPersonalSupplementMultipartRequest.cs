@@ -33,25 +33,19 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcBankPersonalSupplementMultipartRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected OtcBankPersonalSupplementMultipartRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OtcBankPersonalSupplementMultipartRequest" /> class.
-        /// </summary>
         /// <param name="bankId">bankId (required).</param>
-        /// <param name="idDocumentFront">ID document front-side file content (multipart file field, binary/Base64) (required).</param>
-        /// <param name="idDocumentBack">ID document back-side file content (multipart file field, binary/Base64) (required).</param>
-        /// <param name="addressProof">Proof-of-address file content (multipart file field, binary/Base64) (required).</param>
-        public OtcBankPersonalSupplementMultipartRequest(string bankId = default(string), string idDocumentFront = default(string), string idDocumentBack = default(string), string addressProof = default(string))
+        /// <param name="idDocumentFront">ID document front-side file content (multipart file field, binary/Base64).</param>
+        /// <param name="idDocumentBack">ID document back-side file content (multipart file field, binary/Base64).</param>
+        /// <param name="addressProof">Proof-of-address file content (multipart file field, binary/Base64).</param>
+        /// <param name="relationshipProof">Optional. JSON string of relationship_proof..</param>
+        public OtcBankPersonalSupplementMultipartRequest(string bankId = default(string), string idDocumentFront = default(string), string idDocumentBack = default(string), string addressProof = default(string), string relationshipProof = default(string))
         {
             // to ensure "bankId" is required (not null)
             this.BankId = bankId ?? throw new ArgumentNullException("bankId", "bankId is a required property for OtcBankPersonalSupplementMultipartRequest and cannot be null");
-            // to ensure "idDocumentFront" is required (not null)
-            this.IdDocumentFront = idDocumentFront ?? throw new ArgumentNullException("idDocumentFront", "idDocumentFront is a required property for OtcBankPersonalSupplementMultipartRequest and cannot be null");
-            // to ensure "idDocumentBack" is required (not null)
-            this.IdDocumentBack = idDocumentBack ?? throw new ArgumentNullException("idDocumentBack", "idDocumentBack is a required property for OtcBankPersonalSupplementMultipartRequest and cannot be null");
-            // to ensure "addressProof" is required (not null)
-            this.AddressProof = addressProof ?? throw new ArgumentNullException("addressProof", "addressProof is a required property for OtcBankPersonalSupplementMultipartRequest and cannot be null");
+            this.IdDocumentFront = idDocumentFront;
+            this.IdDocumentBack = idDocumentBack;
+            this.AddressProof = addressProof;
+            this.RelationshipProof = relationshipProof;
         }
 
         /// <summary>
@@ -82,6 +76,13 @@ namespace Io.Gate.GateApi.Model
         public string AddressProof { get; set; }
 
         /// <summary>
+        /// Optional. JSON string of relationship_proof.
+        /// </summary>
+        /// <value>Optional. JSON string of relationship_proof.</value>
+        [DataMember(Name="relationship_proof")]
+        public string RelationshipProof { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +94,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  IdDocumentFront: ").Append(IdDocumentFront).Append("\n");
             sb.Append("  IdDocumentBack: ").Append(IdDocumentBack).Append("\n");
             sb.Append("  AddressProof: ").Append(AddressProof).Append("\n");
+            sb.Append("  RelationshipProof: ").Append(RelationshipProof).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -146,6 +148,11 @@ namespace Io.Gate.GateApi.Model
                     this.AddressProof == input.AddressProof ||
                     (this.AddressProof != null &&
                     this.AddressProof.Equals(input.AddressProof))
+                ) && 
+                (
+                    this.RelationshipProof == input.RelationshipProof ||
+                    (this.RelationshipProof != null &&
+                    this.RelationshipProof.Equals(input.RelationshipProof))
                 );
         }
 
@@ -166,6 +173,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.IdDocumentBack.GetHashCode();
                 if (this.AddressProof != null)
                     hashCode = hashCode * 59 + this.AddressProof.GetHashCode();
+                if (this.RelationshipProof != null)
+                    hashCode = hashCode * 59 + this.RelationshipProof.GetHashCode();
                 return hashCode;
             }
         }

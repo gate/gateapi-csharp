@@ -30,6 +30,8 @@ Method | HTTP request | Description
 
 Get account information
 
+To query the spot account balance, use the Spot API `GET /spot/accounts`.
+
 ### Example
 ```csharp
 using System.Collections.Generic;

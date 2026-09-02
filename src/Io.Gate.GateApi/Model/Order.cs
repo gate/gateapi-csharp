@@ -298,6 +298,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="text">User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  Besides user defined information, reserved contents are listed below, denoting how the order is created:  - 101: from android - 102: from IOS - 103: from IPAD - 104: from webapp - 3: from web - 2: from apiv2 - apiv4: from apiv4 pm_liquidate, comb_margin_liquidate, and scm_liquidate represent cross-margin liquidation orders liquidate represents isolated-margin liquidation orders.</param>
         /// <param name="currencyPair">Currency pair (required).</param>
+        /// <param name="tradeQuote">Actual quote currency used for the trade; can be specified only in a unified market.</param>
         /// <param name="type">Order Type   - limit : Limit Order - market : Market Order (default to TypeEnum.Limit).</param>
         /// <param name="account">Account type, spot - spot account, margin - leveraged account, unified - unified account (default to &quot;spot&quot;).</param>
         /// <param name="side">Buy or sell order (required).</param>
@@ -312,7 +313,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="slippage">Maximum supported slippage ratio for Spot Market Order Placement, calculated based on the latest market price at the time of order placement as the benchmark (Example: 0.03 means 3%).</param>
         /// <param name="stopProfit">stopProfit.</param>
         /// <param name="stopLoss">stopLoss.</param>
-        public Order(string text = default(string), string currencyPair = default(string), TypeEnum? type = TypeEnum.Limit, string account = "spot", SideEnum side = default(SideEnum), string amount = default(string), string price = default(string), TimeInForceEnum? timeInForce = TimeInForceEnum.Gtc, string iceberg = default(string), bool autoBorrow = default(bool), bool autoRepay = default(bool), StpActEnum? stpAct = default(StpActEnum?), string actionMode = default(string), string slippage = default(string), SpotOrderStopProfit stopProfit = default(SpotOrderStopProfit), SpotOrderStopLoss stopLoss = default(SpotOrderStopLoss))
+        public Order(string text = default(string), string currencyPair = default(string), string tradeQuote = default(string), TypeEnum? type = TypeEnum.Limit, string account = "spot", SideEnum side = default(SideEnum), string amount = default(string), string price = default(string), TimeInForceEnum? timeInForce = TimeInForceEnum.Gtc, string iceberg = default(string), bool autoBorrow = default(bool), bool autoRepay = default(bool), StpActEnum? stpAct = default(StpActEnum?), string actionMode = default(string), string slippage = default(string), SpotOrderStopProfit stopProfit = default(SpotOrderStopProfit), SpotOrderStopLoss stopLoss = default(SpotOrderStopLoss))
         {
             // to ensure "currencyPair" is required (not null)
             this.CurrencyPair = currencyPair ?? throw new ArgumentNullException("currencyPair", "currencyPair is a required property for Order and cannot be null");
@@ -320,6 +321,7 @@ namespace Io.Gate.GateApi.Model
             // to ensure "amount" is required (not null)
             this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for Order and cannot be null");
             this.Text = text;
+            this.TradeQuote = tradeQuote;
             this.Type = type;
             // use default value if no "account" provided
             this.Account = account ?? "spot";
@@ -390,6 +392,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
         public string CurrencyPair { get; set; }
+
+        /// <summary>
+        /// Actual quote currency used for the trade; can be specified only in a unified market
+        /// </summary>
+        /// <value>Actual quote currency used for the trade; can be specified only in a unified market</value>
+        [DataMember(Name="trade_quote")]
+        public string TradeQuote { get; set; }
 
         /// <summary>
         /// Account type, spot - spot account, margin - leveraged account, unified - unified account
@@ -581,6 +590,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  UpdateTimeMs: ").Append(UpdateTimeMs).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CurrencyPair: ").Append(CurrencyPair).Append("\n");
+            sb.Append("  TradeQuote: ").Append(TradeQuote).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Account: ").Append(Account).Append("\n");
             sb.Append("  Side: ").Append(Side).Append("\n");
@@ -686,6 +696,11 @@ namespace Io.Gate.GateApi.Model
                     this.CurrencyPair == input.CurrencyPair ||
                     (this.CurrencyPair != null &&
                     this.CurrencyPair.Equals(input.CurrencyPair))
+                ) && 
+                (
+                    this.TradeQuote == input.TradeQuote ||
+                    (this.TradeQuote != null &&
+                    this.TradeQuote.Equals(input.TradeQuote))
                 ) && 
                 (
                     this.Type == input.Type ||
@@ -854,6 +869,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.CurrencyPair != null)
                     hashCode = hashCode * 59 + this.CurrencyPair.GetHashCode();
+                if (this.TradeQuote != null)
+                    hashCode = hashCode * 59 + this.TradeQuote.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Account != null)
                     hashCode = hashCode * 59 + this.Account.GetHashCode();

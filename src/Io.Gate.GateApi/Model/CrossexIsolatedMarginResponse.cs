@@ -40,12 +40,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="symbol">Futures trading pair (required).</param>
         /// <param name="margin">Amount of isolated margin increased or decreased in this request (required).</param>
-        public CrossexIsolatedMarginResponse(string symbol = default(string), string margin = default(string))
+        /// <param name="positionSide">Position side (NONE/LONG/SHORT). Defaults to NONE for one-way positions if omitted.</param>
+        public CrossexIsolatedMarginResponse(string symbol = default(string), string margin = default(string), string positionSide = default(string))
         {
             // to ensure "symbol" is required (not null)
             this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for CrossexIsolatedMarginResponse and cannot be null");
             // to ensure "margin" is required (not null)
             this.Margin = margin ?? throw new ArgumentNullException("margin", "margin is a required property for CrossexIsolatedMarginResponse and cannot be null");
+            this.PositionSide = positionSide;
         }
 
         /// <summary>
@@ -63,6 +65,13 @@ namespace Io.Gate.GateApi.Model
         public string Margin { get; set; }
 
         /// <summary>
+        /// Position side (NONE/LONG/SHORT). Defaults to NONE for one-way positions if omitted
+        /// </summary>
+        /// <value>Position side (NONE/LONG/SHORT). Defaults to NONE for one-way positions if omitted</value>
+        [DataMember(Name="position_side")]
+        public string PositionSide { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -72,6 +81,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class CrossexIsolatedMarginResponse {\n");
             sb.Append("  Symbol: ").Append(Symbol).Append("\n");
             sb.Append("  Margin: ").Append(Margin).Append("\n");
+            sb.Append("  PositionSide: ").Append(PositionSide).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +125,11 @@ namespace Io.Gate.GateApi.Model
                     this.Margin == input.Margin ||
                     (this.Margin != null &&
                     this.Margin.Equals(input.Margin))
+                ) && 
+                (
+                    this.PositionSide == input.PositionSide ||
+                    (this.PositionSide != null &&
+                    this.PositionSide.Equals(input.PositionSide))
                 );
         }
 
@@ -131,6 +146,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Symbol.GetHashCode();
                 if (this.Margin != null)
                     hashCode = hashCode * 59 + this.Margin.GetHashCode();
+                if (this.PositionSide != null)
+                    hashCode = hashCode * 59 + this.PositionSide.GetHashCode();
                 return hashCode;
             }
         }

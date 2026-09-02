@@ -40,8 +40,8 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="symbol">Currency (required).</param>
         /// <param name="fundingRate">Funding rate (required).</param>
-        /// <param name="fundingInterval">Tier (required).</param>
-        /// <param name="fundingTime">Next funding time (required).</param>
+        /// <param name="fundingInterval">Funding interval (in seconds) (required).</param>
+        /// <param name="fundingTime">Next funding time (Unix timestamp in milliseconds) (required).</param>
         public InlineResponse2002(string symbol = default(string), string fundingRate = default(string), string fundingInterval = default(string), string fundingTime = default(string))
         {
             // to ensure "symbol" is required (not null)
@@ -69,16 +69,16 @@ namespace Io.Gate.GateApi.Model
         public string FundingRate { get; set; }
 
         /// <summary>
-        /// Tier
+        /// Funding interval (in seconds)
         /// </summary>
-        /// <value>Tier</value>
+        /// <value>Funding interval (in seconds)</value>
         [DataMember(Name="funding_interval")]
         public string FundingInterval { get; set; }
 
         /// <summary>
-        /// Next funding time
+        /// Next funding time (Unix timestamp in milliseconds)
         /// </summary>
-        /// <value>Next funding time</value>
+        /// <value>Next funding time (Unix timestamp in milliseconds)</value>
         [DataMember(Name="funding_time")]
         public string FundingTime { get; set; }
 

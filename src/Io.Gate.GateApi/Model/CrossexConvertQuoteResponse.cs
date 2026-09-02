@@ -44,7 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="toCoin">Asset Bought (required).</param>
         /// <param name="fromAmount">Amount to sell (required).</param>
         /// <param name="toAmount">Amount to buy (required).</param>
-        /// <param name="price">Price (required).</param>
+        /// <param name="price">Quoted price (required).</param>
         public CrossexConvertQuoteResponse(string quoteId = default(string), string validMs = default(string), string fromCoin = default(string), string toCoin = default(string), string fromAmount = default(string), string toAmount = default(string), string price = default(string))
         {
             // to ensure "quoteId" is required (not null)
@@ -106,9 +106,9 @@ namespace Io.Gate.GateApi.Model
         public string ToAmount { get; set; }
 
         /// <summary>
-        /// Price
+        /// Quoted price
         /// </summary>
-        /// <value>Price</value>
+        /// <value>Quoted price</value>
         [DataMember(Name="price")]
         public string Price { get; set; }
 
