@@ -183,6 +183,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
             var apiInstance = new CFDApi(config);
             var symbols = "AUDUSD,XAUUSD";  // string | List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required (optional) 
             var categoryCode = "forex-外汇,metal-金属,index-指数,commodity-大宗商品,stock-股票";  // string | List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required (optional) 
@@ -218,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
@@ -321,6 +323,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
             var apiInstance = new CFDApi(config);
             var symbols = "EURUSD,XAGUSD";  // string | Trading symbol code list (comma-separated, max 10 symbols)
 
@@ -354,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 

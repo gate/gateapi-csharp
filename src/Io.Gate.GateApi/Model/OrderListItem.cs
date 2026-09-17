@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class OrderListItem :  IEquatable<OrderListItem>, IValidatableObject
     {
         /// <summary>
-        /// Exchange, supports us, hk, and kr
+        /// Exchange, supports us, hk, kr, and jp
         /// </summary>
-        /// <value>Exchange, supports us, hk, and kr</value>
+        /// <value>Exchange, supports us, hk, kr, and jp</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExchangeEnum
         {
@@ -53,14 +53,20 @@ namespace Io.Gate.GateApi.Model
             /// Enum value Kr
             /// </summary>
             [EnumMember(Value = "kr")]
-            Kr = 3
+            Kr = 3,
+
+            /// <summary>
+            /// Enum value Jp
+            /// </summary>
+            [EnumMember(Value = "jp")]
+            Jp = 4
 
         }
 
         /// <summary>
-        /// Exchange, supports us, hk, and kr
+        /// Exchange, supports us, hk, kr, and jp
         /// </summary>
-        /// <value>Exchange, supports us, hk, and kr</value>
+        /// <value>Exchange, supports us, hk, kr, and jp</value>
         [DataMember(Name="exchange")]
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
@@ -200,7 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="orderId">Order ID.</param>
         /// <param name="symbol">Symbol.</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr.</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp.</param>
         /// <param name="quoteCurrency">Quote currency.</param>
         /// <param name="fxRate">Quote currency to USD exchange rate.</param>
         /// <param name="symbolDesc">Symbol description.</param>

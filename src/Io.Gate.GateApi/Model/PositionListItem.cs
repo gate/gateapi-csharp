@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class PositionListItem :  IEquatable<PositionListItem>, IValidatableObject
     {
         /// <summary>
-        /// Exchange, supports us, hk, and kr
+        /// Exchange, supports us, hk, kr, and jp
         /// </summary>
-        /// <value>Exchange, supports us, hk, and kr</value>
+        /// <value>Exchange, supports us, hk, kr, and jp</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExchangeEnum
         {
@@ -53,14 +53,20 @@ namespace Io.Gate.GateApi.Model
             /// Enum value Kr
             /// </summary>
             [EnumMember(Value = "kr")]
-            Kr = 3
+            Kr = 3,
+
+            /// <summary>
+            /// Enum value Jp
+            /// </summary>
+            [EnumMember(Value = "jp")]
+            Jp = 4
 
         }
 
         /// <summary>
-        /// Exchange, supports us, hk, and kr
+        /// Exchange, supports us, hk, kr, and jp
         /// </summary>
-        /// <value>Exchange, supports us, hk, and kr</value>
+        /// <value>Exchange, supports us, hk, kr, and jp</value>
         [DataMember(Name="exchange")]
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
@@ -112,12 +118,12 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="PositionListItem" /> class.
         /// </summary>
         /// <param name="symbol">Symbol.</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr.</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp.</param>
         /// <param name="quoteCurrency">Quote currency.</param>
         /// <param name="quoteCurrencyPrecision">Quote currency precision.</param>
         /// <param name="fxRate">Quote currency to USD exchange rate.</param>
         /// <param name="tradeStatus">Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session..</param>
-        /// <param name="symbolDesc">symbolDesc.</param>
+        /// <param name="symbolDesc">Symbol description.</param>
         /// <param name="positionPnl">Position P&amp;L.</param>
         /// <param name="todayPnl">Today&#39;s P&amp;L.</param>
         /// <param name="pnlRate">Yield.</param>
@@ -133,15 +139,15 @@ namespace Io.Gate.GateApi.Model
         /// <param name="dilutedCostPrice">Diluted cost price.</param>
         /// <param name="lastPrice">Latest price.</param>
         /// <param name="extendedLastPrice">Extended hours latest price.</param>
-        /// <param name="maxOrderVolume">maxOrderVolume.</param>
-        /// <param name="stepOrderVolume">stepOrderVolume.</param>
-        /// <param name="minOrderVolume">minOrderVolume.</param>
-        /// <param name="pricePrecision">pricePrecision.</param>
-        /// <param name="priceProtection">priceProtection.</param>
-        /// <param name="sellPriceProtection">sellPriceProtection.</param>
-        /// <param name="buyPriceProtection">buyPriceProtection.</param>
+        /// <param name="maxOrderVolume">Maximum order quantity.</param>
+        /// <param name="stepOrderVolume">Order step size.</param>
+        /// <param name="minOrderVolume">Minimum order quantity.</param>
+        /// <param name="pricePrecision">Price precision.</param>
+        /// <param name="priceProtection">Price protection range.</param>
+        /// <param name="sellPriceProtection">Sell price protection rate.</param>
+        /// <param name="buyPriceProtection">Buy price protection rate.</param>
         /// <param name="commissionRate">Fee Rate.</param>
-        /// <param name="slippageRate">slippageRate.</param>
+        /// <param name="slippageRate">Slippage.</param>
         public PositionListItem(string symbol = default(string), ExchangeEnum? exchange = default(ExchangeEnum?), string quoteCurrency = default(string), int quoteCurrencyPrecision = default(int), string fxRate = default(string), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), string symbolDesc = default(string), string positionPnl = default(string), string todayPnl = default(string), string pnlRate = default(string), string todaySellAmount = default(string), string todayBuyAmount = default(string), string todaySellVolume = default(string), string todayBuyVolume = default(string), string yesterdayVolume = default(string), string volume = default(string), string available = default(string), string transferOutPendingQty = default(string), string avgCostPrice = default(string), string dilutedCostPrice = default(string), string lastPrice = default(string), string extendedLastPrice = default(string), string maxOrderVolume = default(string), string stepOrderVolume = default(string), string minOrderVolume = default(string), int pricePrecision = default(int), string priceProtection = default(string), string sellPriceProtection = default(string), string buyPriceProtection = default(string), string commissionRate = default(string), string slippageRate = default(string))
         {
             this.Symbol = symbol;
@@ -206,8 +212,9 @@ namespace Io.Gate.GateApi.Model
         public string FxRate { get; set; }
 
         /// <summary>
-        /// Gets or Sets SymbolDesc
+        /// Symbol description
         /// </summary>
+        /// <value>Symbol description</value>
         [DataMember(Name="symbol_desc")]
         public string SymbolDesc { get; set; }
 
@@ -317,44 +324,51 @@ namespace Io.Gate.GateApi.Model
         public string ExtendedLastPrice { get; set; }
 
         /// <summary>
-        /// Gets or Sets MaxOrderVolume
+        /// Maximum order quantity
         /// </summary>
+        /// <value>Maximum order quantity</value>
         [DataMember(Name="max_order_volume")]
         public string MaxOrderVolume { get; set; }
 
         /// <summary>
-        /// Gets or Sets StepOrderVolume
+        /// Order step size
         /// </summary>
+        /// <value>Order step size</value>
         [DataMember(Name="step_order_volume")]
         public string StepOrderVolume { get; set; }
 
         /// <summary>
-        /// Gets or Sets MinOrderVolume
+        /// Minimum order quantity
         /// </summary>
+        /// <value>Minimum order quantity</value>
         [DataMember(Name="min_order_volume")]
         public string MinOrderVolume { get; set; }
 
         /// <summary>
-        /// Gets or Sets PricePrecision
+        /// Price precision
         /// </summary>
+        /// <value>Price precision</value>
         [DataMember(Name="price_precision")]
         public int PricePrecision { get; set; }
 
         /// <summary>
-        /// Gets or Sets PriceProtection
+        /// Price protection range
         /// </summary>
+        /// <value>Price protection range</value>
         [DataMember(Name="price_protection")]
         public string PriceProtection { get; set; }
 
         /// <summary>
-        /// Gets or Sets SellPriceProtection
+        /// Sell price protection rate
         /// </summary>
+        /// <value>Sell price protection rate</value>
         [DataMember(Name="sell_price_protection")]
         public string SellPriceProtection { get; set; }
 
         /// <summary>
-        /// Gets or Sets BuyPriceProtection
+        /// Buy price protection rate
         /// </summary>
+        /// <value>Buy price protection rate</value>
         [DataMember(Name="buy_price_protection")]
         public string BuyPriceProtection { get; set; }
 
@@ -366,8 +380,9 @@ namespace Io.Gate.GateApi.Model
         public string CommissionRate { get; set; }
 
         /// <summary>
-        /// Gets or Sets SlippageRate
+        /// Slippage
         /// </summary>
+        /// <value>Slippage</value>
         [DataMember(Name="slippage_rate")]
         public string SlippageRate { get; set; }
 

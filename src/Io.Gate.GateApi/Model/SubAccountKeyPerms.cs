@@ -33,7 +33,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SubAccountKeyPerms" /> class.
         /// </summary>
-        /// <param name="name">Permission function name (no value will be cleared) - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery contract - earn: earn - custody: custody - options: options - account: account information - loan: lending - margin: margin - unified: unified account - copy: copy trading.</param>
+        /// <param name="name">Permission function name (cleared if no value is provided) - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery contract - earn: earn - custody: custody - options: options - account: account information - loan: lending - margin: margin - unified: unified account - copy: copy trading - tradfi_spot: stocks.</param>
         /// <param name="readOnly">Read Only.</param>
         public SubAccountKeyPerms(string name = default(string), bool readOnly = default(bool))
         {
@@ -42,9 +42,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Permission function name (no value will be cleared) - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery contract - earn: earn - custody: custody - options: options - account: account information - loan: lending - margin: margin - unified: unified account - copy: copy trading
+        /// Permission function name (cleared if no value is provided) - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery contract - earn: earn - custody: custody - options: options - account: account information - loan: lending - margin: margin - unified: unified account - copy: copy trading - tradfi_spot: stocks
         /// </summary>
-        /// <value>Permission function name (no value will be cleared) - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery contract - earn: earn - custody: custody - options: options - account: account information - loan: lending - margin: margin - unified: unified account - copy: copy trading</value>
+        /// <value>Permission function name (cleared if no value is provided) - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery contract - earn: earn - custody: custody - options: options - account: account information - loan: lending - margin: margin - unified: unified account - copy: copy trading - tradfi_spot: stocks</value>
         [DataMember(Name="name")]
         public string Name { get; set; }
 

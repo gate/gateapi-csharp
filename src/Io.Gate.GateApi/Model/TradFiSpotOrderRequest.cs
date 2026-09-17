@@ -83,9 +83,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="price_type")]
         public PriceTypeEnum PriceType { get; set; }
         /// <summary>
-        /// Trading session. Limit orders support only All, while market orders support only Regular.
+        /// Trading session. Limit orders support only all, while market orders support only regular.
         /// </summary>
-        /// <value>Trading session. Limit orders support only All, while market orders support only Regular.</value>
+        /// <value>Trading session. Limit orders support only all, while market orders support only regular.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TradingSessionEnum
         {
@@ -104,9 +104,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Trading session. Limit orders support only All, while market orders support only Regular.
+        /// Trading session. Limit orders support only all, while market orders support only regular.
         /// </summary>
-        /// <value>Trading session. Limit orders support only All, while market orders support only Regular.</value>
+        /// <value>Trading session. Limit orders support only all, while market orders support only regular.</value>
         [DataMember(Name="trading_session")]
         public TradingSessionEnum TradingSession { get; set; }
         /// <summary>
@@ -142,7 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="symbol">Symbol (required).</param>
         /// <param name="side">Side (1&#x3D;sell, 2&#x3D;buy) (required).</param>
         /// <param name="priceType">Price type (market &#x3D; market order, limit &#x3D; limit order) (required).</param>
-        /// <param name="tradingSession">Trading session. Limit orders support only All, while market orders support only Regular. (required).</param>
+        /// <param name="tradingSession">Trading session. Limit orders support only all, while market orders support only regular. (required).</param>
         /// <param name="timeInForce">Time in force. - day: Day order. (required).</param>
         /// <param name="price">Order price, used for limit orders.</param>
         /// <param name="clientOrderId">Client-defined order ID.</param>

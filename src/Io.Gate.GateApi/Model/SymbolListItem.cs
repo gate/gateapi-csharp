@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class SymbolListItem :  IEquatable<SymbolListItem>, IValidatableObject
     {
         /// <summary>
-        /// Exchange, supports us, hk, and kr
+        /// Exchange, supports us, hk, kr, and jp
         /// </summary>
-        /// <value>Exchange, supports us, hk, and kr</value>
+        /// <value>Exchange, supports us, hk, kr, and jp</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExchangeEnum
         {
@@ -53,16 +53,118 @@ namespace Io.Gate.GateApi.Model
             /// Enum value Kr
             /// </summary>
             [EnumMember(Value = "kr")]
-            Kr = 3
+            Kr = 3,
+
+            /// <summary>
+            /// Enum value Jp
+            /// </summary>
+            [EnumMember(Value = "jp")]
+            Jp = 4
 
         }
 
         /// <summary>
-        /// Exchange, supports us, hk, and kr
+        /// Exchange, supports us, hk, kr, and jp
         /// </summary>
-        /// <value>Exchange, supports us, hk, and kr</value>
+        /// <value>Exchange, supports us, hk, kr, and jp</value>
         [DataMember(Name="exchange")]
         public ExchangeEnum? Exchange { get; set; }
+        /// <summary>
+        /// Symbol category. - CS: Common stock. - ETF: Exchange-traded funds. - ADRC, ADR: Depositary receipts for foreign companies listed in the U.S. - ETV: Exchange-traded products. - PFD: Preferred stock. - ETS: Exchange-traded securities. - ETN: Exchange-traded notes. - FUND: Funds.
+        /// </summary>
+        /// <value>Symbol category. - CS: Common stock. - ETF: Exchange-traded funds. - ADRC, ADR: Depositary receipts for foreign companies listed in the U.S. - ETV: Exchange-traded products. - PFD: Preferred stock. - ETS: Exchange-traded securities. - ETN: Exchange-traded notes. - FUND: Funds.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CategoryEnum
+        {
+            /// <summary>
+            /// Enum value CS
+            /// </summary>
+            [EnumMember(Value = "CS")]
+            CS = 1,
+
+            /// <summary>
+            /// Enum value ETF
+            /// </summary>
+            [EnumMember(Value = "ETF")]
+            ETF = 2,
+
+            /// <summary>
+            /// Enum value ADRC
+            /// </summary>
+            [EnumMember(Value = "ADRC")]
+            ADRC = 3,
+
+            /// <summary>
+            /// Enum value ADR
+            /// </summary>
+            [EnumMember(Value = "ADR")]
+            ADR = 4,
+
+            /// <summary>
+            /// Enum value ETV
+            /// </summary>
+            [EnumMember(Value = "ETV")]
+            ETV = 5,
+
+            /// <summary>
+            /// Enum value PFD
+            /// </summary>
+            [EnumMember(Value = "PFD")]
+            PFD = 6,
+
+            /// <summary>
+            /// Enum value ETS
+            /// </summary>
+            [EnumMember(Value = "ETS")]
+            ETS = 7,
+
+            /// <summary>
+            /// Enum value ETN
+            /// </summary>
+            [EnumMember(Value = "ETN")]
+            ETN = 8,
+
+            /// <summary>
+            /// Enum value FUND
+            /// </summary>
+            [EnumMember(Value = "FUND")]
+            FUND = 9
+
+        }
+
+        /// <summary>
+        /// Symbol category. - CS: Common stock. - ETF: Exchange-traded funds. - ADRC, ADR: Depositary receipts for foreign companies listed in the U.S. - ETV: Exchange-traded products. - PFD: Preferred stock. - ETS: Exchange-traded securities. - ETN: Exchange-traded notes. - FUND: Funds.
+        /// </summary>
+        /// <value>Symbol category. - CS: Common stock. - ETF: Exchange-traded funds. - ADRC, ADR: Depositary receipts for foreign companies listed in the U.S. - ETV: Exchange-traded products. - PFD: Preferred stock. - ETS: Exchange-traded securities. - ETN: Exchange-traded notes. - FUND: Funds.</value>
+        [DataMember(Name="category")]
+        public CategoryEnum? Category { get; set; }
+        /// <summary>
+        /// Asset type. - STOCK: Stock. - ETF: Exchange-traded fund.
+        /// </summary>
+        /// <value>Asset type. - STOCK: Stock. - ETF: Exchange-traded fund.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AssetTypeEnum
+        {
+            /// <summary>
+            /// Enum value STOCK
+            /// </summary>
+            [EnumMember(Value = "STOCK")]
+            STOCK = 1,
+
+            /// <summary>
+            /// Enum value ETF
+            /// </summary>
+            [EnumMember(Value = "ETF")]
+            ETF = 2
+
+        }
+
+        /// <summary>
+        /// Asset type. - STOCK: Stock. - ETF: Exchange-traded fund.
+        /// </summary>
+        /// <value>Asset type. - STOCK: Stock. - ETF: Exchange-traded fund.</value>
+        [DataMember(Name="asset_type")]
+        public AssetTypeEnum? AssetType { get; set; }
         /// <summary>
         /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session.
         /// </summary>
@@ -177,13 +279,14 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="SymbolListItem" /> class.
         /// </summary>
         /// <param name="symbol">Symbol.</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr.</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp.</param>
         /// <param name="exchangeDesc">Exchange description.</param>
         /// <param name="quoteCurrency">Quote currency.</param>
         /// <param name="quoteCurrencyPrecision">Quote currency precision.</param>
         /// <param name="fxRate">Quote currency to USD exchange rate.</param>
         /// <param name="symbolDesc">Symbol description.</param>
-        /// <param name="category">Category.</param>
+        /// <param name="category">Symbol category. - CS: Common stock. - ETF: Exchange-traded funds. - ADRC, ADR: Depositary receipts for foreign companies listed in the U.S. - ETV: Exchange-traded products. - PFD: Preferred stock. - ETS: Exchange-traded securities. - ETN: Exchange-traded notes. - FUND: Funds..</param>
+        /// <param name="assetType">Asset type. - STOCK: Stock. - ETF: Exchange-traded fund..</param>
         /// <param name="tradeStatus">Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session..</param>
         /// <param name="tradeMode">Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported..</param>
         /// <param name="orderFillTiming">Order fill timing (1&#x3D;immediate, 2&#x3D;after pre-market opens, 3&#x3D;after regular session opens).</param>
@@ -196,7 +299,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="sellPriceProtection">Sell price protection rate.</param>
         /// <param name="buyPriceProtection">Buy price protection rate.</param>
         /// <param name="symbolDescs">Multilingual symbol description.</param>
-        public SymbolListItem(string symbol = default(string), ExchangeEnum? exchange = default(ExchangeEnum?), string exchangeDesc = default(string), string quoteCurrency = default(string), int quoteCurrencyPrecision = default(int), string fxRate = default(string), string symbolDesc = default(string), string category = default(string), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), TradeModeEnum? tradeMode = default(TradeModeEnum?), OrderFillTimingEnum? orderFillTiming = default(OrderFillTimingEnum?), string iconLink = default(string), string quoteCurrencySymbol = default(string), int pricePrecision = default(int), int volumePrecision = default(int), bool isIpo = default(bool), string ipoPrice = default(string), string sellPriceProtection = default(string), string buyPriceProtection = default(string), List<I18nTxt> symbolDescs = default(List<I18nTxt>))
+        public SymbolListItem(string symbol = default(string), ExchangeEnum? exchange = default(ExchangeEnum?), string exchangeDesc = default(string), string quoteCurrency = default(string), int quoteCurrencyPrecision = default(int), string fxRate = default(string), string symbolDesc = default(string), CategoryEnum? category = default(CategoryEnum?), AssetTypeEnum? assetType = default(AssetTypeEnum?), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), TradeModeEnum? tradeMode = default(TradeModeEnum?), OrderFillTimingEnum? orderFillTiming = default(OrderFillTimingEnum?), string iconLink = default(string), string quoteCurrencySymbol = default(string), int pricePrecision = default(int), int volumePrecision = default(int), bool isIpo = default(bool), string ipoPrice = default(string), string sellPriceProtection = default(string), string buyPriceProtection = default(string), List<I18nTxt> symbolDescs = default(List<I18nTxt>))
         {
             this.Symbol = symbol;
             this.Exchange = exchange;
@@ -206,6 +309,7 @@ namespace Io.Gate.GateApi.Model
             this.FxRate = fxRate;
             this.SymbolDesc = symbolDesc;
             this.Category = category;
+            this.AssetType = assetType;
             this.TradeStatus = tradeStatus;
             this.TradeMode = tradeMode;
             this.OrderFillTiming = orderFillTiming;
@@ -261,13 +365,6 @@ namespace Io.Gate.GateApi.Model
         /// <value>Symbol description</value>
         [DataMember(Name="symbol_desc")]
         public string SymbolDesc { get; set; }
-
-        /// <summary>
-        /// Category
-        /// </summary>
-        /// <value>Category</value>
-        [DataMember(Name="category")]
-        public string Category { get; set; }
 
         /// <summary>
         /// Icon URL
@@ -348,6 +445,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  FxRate: ").Append(FxRate).Append("\n");
             sb.Append("  SymbolDesc: ").Append(SymbolDesc).Append("\n");
             sb.Append("  Category: ").Append(Category).Append("\n");
+            sb.Append("  AssetType: ").Append(AssetType).Append("\n");
             sb.Append("  TradeStatus: ").Append(TradeStatus).Append("\n");
             sb.Append("  TradeMode: ").Append(TradeMode).Append("\n");
             sb.Append("  OrderFillTiming: ").Append(OrderFillTiming).Append("\n");
@@ -429,8 +527,11 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
+                    this.Category.Equals(input.Category)
+                ) && 
+                (
+                    this.AssetType == input.AssetType ||
+                    this.AssetType.Equals(input.AssetType)
                 ) && 
                 (
                     this.TradeStatus == input.TradeStatus ||
@@ -510,8 +611,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.FxRate.GetHashCode();
                 if (this.SymbolDesc != null)
                     hashCode = hashCode * 59 + this.SymbolDesc.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
+                hashCode = hashCode * 59 + this.Category.GetHashCode();
+                hashCode = hashCode * 59 + this.AssetType.GetHashCode();
                 hashCode = hashCode * 59 + this.TradeStatus.GetHashCode();
                 hashCode = hashCode * 59 + this.TradeMode.GetHashCode();
                 hashCode = hashCode * 59 + this.OrderFillTiming.GetHashCode();

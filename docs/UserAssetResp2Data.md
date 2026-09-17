@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **PositionMarketValue** | **string** | Position market value | [optional] 
 **PositionPnl** | **string** | Position P&amp;L | [optional] 
 **TodayPnl** | **string** | Today&#39;s P&amp;L | [optional] 
+**OptionPositionMarketValue** | **string** | Option position market value | [optional] 
+**OptionPositionPnl** | **string** | Option position PnL | [optional] 
+**OptionTodayPnl** | **string** | Option today&#39;s PnL | [optional] 
 **UserExists** | **bool** | Whether the user has activated the service | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -38,9 +38,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CrossexConvertQuoteRequest" /> class.
         /// </summary>
-        /// <param name="exchangeType">Exchange type Currently supports only BINANCE, OKX, GATE, BYBIT, HYPERLIQUID, and KRAKEN (required).</param>
+        /// <param name="exchangeType">Exchange type Currently supports only BINANCE, OKX, GATE, BYBIT, HYPERLIQUID, KRAKEN, and LIGHTER (required).</param>
         /// <param name="fromCoin">Asset Sold (required).</param>
-        /// <param name="toCoin">Asset to receive OKX and GATE only support conversion to BTC, ETH, or USDT BYBIT and BINANCE only support conversion to USDT HYPERLIQUID only supports conversion to USDT or USDC KRAKEN only supports conversion to USDT (required).</param>
+        /// <param name="toCoin">Asset to receive OKX and GATE only support conversion to BTC, ETH, or USDT BYBIT and BINANCE only support conversion to USDT HYPERLIQUID only supports conversion to USDT or USDC KRAKEN only supports conversion to USDT LIGHTER only supports swaps between USDT and USDC (required).</param>
         /// <param name="fromAmount">Amount to sell (required).</param>
         public CrossexConvertQuoteRequest(string exchangeType = default(string), string fromCoin = default(string), string toCoin = default(string), string fromAmount = default(string))
         {
@@ -55,9 +55,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Exchange type Currently supports only BINANCE, OKX, GATE, BYBIT, HYPERLIQUID, and KRAKEN
+        /// Exchange type Currently supports only BINANCE, OKX, GATE, BYBIT, HYPERLIQUID, KRAKEN, and LIGHTER
         /// </summary>
-        /// <value>Exchange type Currently supports only BINANCE, OKX, GATE, BYBIT, HYPERLIQUID, and KRAKEN</value>
+        /// <value>Exchange type Currently supports only BINANCE, OKX, GATE, BYBIT, HYPERLIQUID, KRAKEN, and LIGHTER</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 
@@ -69,9 +69,9 @@ namespace Io.Gate.GateApi.Model
         public string FromCoin { get; set; }
 
         /// <summary>
-        /// Asset to receive OKX and GATE only support conversion to BTC, ETH, or USDT BYBIT and BINANCE only support conversion to USDT HYPERLIQUID only supports conversion to USDT or USDC KRAKEN only supports conversion to USDT
+        /// Asset to receive OKX and GATE only support conversion to BTC, ETH, or USDT BYBIT and BINANCE only support conversion to USDT HYPERLIQUID only supports conversion to USDT or USDC KRAKEN only supports conversion to USDT LIGHTER only supports swaps between USDT and USDC
         /// </summary>
-        /// <value>Asset to receive OKX and GATE only support conversion to BTC, ETH, or USDT BYBIT and BINANCE only support conversion to USDT HYPERLIQUID only supports conversion to USDT or USDC KRAKEN only supports conversion to USDT</value>
+        /// <value>Asset to receive OKX and GATE only support conversion to BTC, ETH, or USDT BYBIT and BINANCE only support conversion to USDT HYPERLIQUID only supports conversion to USDT or USDC KRAKEN only supports conversion to USDT LIGHTER only supports swaps between USDT and USDC</value>
         [DataMember(Name="to_coin")]
         public string ToCoin { get; set; }
 

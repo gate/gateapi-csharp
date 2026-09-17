@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class ExchangesDataList :  IEquatable<ExchangesDataList>, IValidatableObject
     {
         /// <summary>
-        /// Trading market, supports us, hk, and kr
+        /// Trading market, supports us, hk, kr, and jp
         /// </summary>
-        /// <value>Trading market, supports us, hk, and kr</value>
+        /// <value>Trading market, supports us, hk, kr, and jp</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExchangeEnum
         {
@@ -53,20 +53,26 @@ namespace Io.Gate.GateApi.Model
             /// Enum value Kr
             /// </summary>
             [EnumMember(Value = "kr")]
-            Kr = 3
+            Kr = 3,
+
+            /// <summary>
+            /// Enum value Jp
+            /// </summary>
+            [EnumMember(Value = "jp")]
+            Jp = 4
 
         }
 
         /// <summary>
-        /// Trading market, supports us, hk, and kr
+        /// Trading market, supports us, hk, kr, and jp
         /// </summary>
-        /// <value>Trading market, supports us, hk, and kr</value>
+        /// <value>Trading market, supports us, hk, kr, and jp</value>
         [DataMember(Name="exchange")]
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ExchangesDataList" /> class.
         /// </summary>
-        /// <param name="exchange">Trading market, supports us, hk, and kr.</param>
+        /// <param name="exchange">Trading market, supports us, hk, kr, and jp.</param>
         /// <param name="exchangeDesc">Market display name.</param>
         /// <param name="iconLink">Market icon.</param>
         /// <param name="supportTransfer">Whether stock transfer is supported.</param>

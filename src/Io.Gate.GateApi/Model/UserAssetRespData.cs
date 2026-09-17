@@ -39,8 +39,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="margin">Used margin.</param>
         /// <param name="marginFree">Available Margin.</param>
         /// <param name="unrealizedPnl">Unrealized PNL.</param>
-        /// <param name="mt5Uid">MT5 userID.</param>
-        public UserAssetRespData(string equity = default(string), string marginLevel = default(string), string balance = default(string), string margin = default(string), string marginFree = default(string), string unrealizedPnl = default(string), string mt5Uid = default(string))
+        public UserAssetRespData(string equity = default(string), string marginLevel = default(string), string balance = default(string), string margin = default(string), string marginFree = default(string), string unrealizedPnl = default(string))
         {
             this.Equity = equity;
             this.MarginLevel = marginLevel;
@@ -48,7 +47,6 @@ namespace Io.Gate.GateApi.Model
             this.Margin = margin;
             this.MarginFree = marginFree;
             this.UnrealizedPnl = unrealizedPnl;
-            this.Mt5Uid = mt5Uid;
         }
 
         /// <summary>
@@ -94,13 +92,6 @@ namespace Io.Gate.GateApi.Model
         public string UnrealizedPnl { get; set; }
 
         /// <summary>
-        /// MT5 userID
-        /// </summary>
-        /// <value>MT5 userID</value>
-        [DataMember(Name="mt5_uid")]
-        public string Mt5Uid { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -114,7 +105,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Margin: ").Append(Margin).Append("\n");
             sb.Append("  MarginFree: ").Append(MarginFree).Append("\n");
             sb.Append("  UnrealizedPnl: ").Append(UnrealizedPnl).Append("\n");
-            sb.Append("  Mt5Uid: ").Append(Mt5Uid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -178,11 +168,6 @@ namespace Io.Gate.GateApi.Model
                     this.UnrealizedPnl == input.UnrealizedPnl ||
                     (this.UnrealizedPnl != null &&
                     this.UnrealizedPnl.Equals(input.UnrealizedPnl))
-                ) && 
-                (
-                    this.Mt5Uid == input.Mt5Uid ||
-                    (this.Mt5Uid != null &&
-                    this.Mt5Uid.Equals(input.Mt5Uid))
                 );
         }
 
@@ -207,8 +192,6 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.MarginFree.GetHashCode();
                 if (this.UnrealizedPnl != null)
                     hashCode = hashCode * 59 + this.UnrealizedPnl.GetHashCode();
-                if (this.Mt5Uid != null)
-                    hashCode = hashCode * 59 + this.Mt5Uid.GetHashCode();
                 return hashCode;
             }
         }

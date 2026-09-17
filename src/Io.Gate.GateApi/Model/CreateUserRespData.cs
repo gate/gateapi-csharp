@@ -35,12 +35,10 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="status">Status (1&#x3D;not opened, 2&#x3D;pending review, 3&#x3D;opened).</param>
         /// <param name="leverage">Leverage.</param>
-        /// <param name="mt5Uid">mt5uid.</param>
-        public CreateUserRespData(int status = default(int), int leverage = default(int), string mt5Uid = default(string))
+        public CreateUserRespData(int status = default(int), int leverage = default(int))
         {
             this.Status = status;
             this.Leverage = leverage;
-            this.Mt5Uid = mt5Uid;
         }
 
         /// <summary>
@@ -58,13 +56,6 @@ namespace Io.Gate.GateApi.Model
         public int Leverage { get; set; }
 
         /// <summary>
-        /// mt5uid
-        /// </summary>
-        /// <value>mt5uid</value>
-        [DataMember(Name="mt5_uid")]
-        public string Mt5Uid { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -74,7 +65,6 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class CreateUserRespData {\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Leverage: ").Append(Leverage).Append("\n");
-            sb.Append("  Mt5Uid: ").Append(Mt5Uid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -116,11 +106,6 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.Leverage == input.Leverage ||
                     this.Leverage.Equals(input.Leverage)
-                ) && 
-                (
-                    this.Mt5Uid == input.Mt5Uid ||
-                    (this.Mt5Uid != null &&
-                    this.Mt5Uid.Equals(input.Mt5Uid))
                 );
         }
 
@@ -135,8 +120,6 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 hashCode = hashCode * 59 + this.Leverage.GetHashCode();
-                if (this.Mt5Uid != null)
-                    hashCode = hashCode * 59 + this.Mt5Uid.GetHashCode();
                 return hashCode;
             }
         }

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Total** | **long** |  | [optional] 
-**TotalPage** | **int** |  | [optional] 
+**Total** | **long** | Total quantity | [optional] 
+**TotalPage** | **int** | Total pages | [optional] 
 **List** | [**List&lt;SymbolDetailItem&gt;**](SymbolDetailItem.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

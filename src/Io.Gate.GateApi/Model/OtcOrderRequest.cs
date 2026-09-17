@@ -31,6 +31,45 @@ namespace Io.Gate.GateApi.Model
     public partial class OtcOrderRequest :  IEquatable<OtcOrderRequest>, IValidatableObject
     {
         /// <summary>
+        /// Name used for the remittance. Allowed values depend on the user type: Corporate users: YOU (remit in your company&#39;s name), GATE (remit in Gate&#39;s name), RECIPIENT (remit in the recipient&#39;s name); Individual users: GATE (remit in Gate&#39;s name), PERSON (remit in the user&#39;s own name).
+        /// </summary>
+        /// <value>Name used for the remittance. Allowed values depend on the user type: Corporate users: YOU (remit in your company&#39;s name), GATE (remit in Gate&#39;s name), RECIPIENT (remit in the recipient&#39;s name); Individual users: GATE (remit in Gate&#39;s name), PERSON (remit in the user&#39;s own name).</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ReceiveTypeEnum
+        {
+            /// <summary>
+            /// Enum value YOU
+            /// </summary>
+            [EnumMember(Value = "YOU")]
+            YOU = 1,
+
+            /// <summary>
+            /// Enum value GATE
+            /// </summary>
+            [EnumMember(Value = "GATE")]
+            GATE = 2,
+
+            /// <summary>
+            /// Enum value RECIPIENT
+            /// </summary>
+            [EnumMember(Value = "RECIPIENT")]
+            RECIPIENT = 3,
+
+            /// <summary>
+            /// Enum value PERSON
+            /// </summary>
+            [EnumMember(Value = "PERSON")]
+            PERSON = 4
+
+        }
+
+        /// <summary>
+        /// Name used for the remittance. Allowed values depend on the user type: Corporate users: YOU (remit in your company&#39;s name), GATE (remit in Gate&#39;s name), RECIPIENT (remit in the recipient&#39;s name); Individual users: GATE (remit in Gate&#39;s name), PERSON (remit in the user&#39;s own name).
+        /// </summary>
+        /// <value>Name used for the remittance. Allowed values depend on the user type: Corporate users: YOU (remit in your company&#39;s name), GATE (remit in Gate&#39;s name), RECIPIENT (remit in the recipient&#39;s name); Individual users: GATE (remit in Gate&#39;s name), PERSON (remit in the user&#39;s own name).</value>
+        [DataMember(Name="receive_type")]
+        public ReceiveTypeEnum? ReceiveType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="OtcOrderRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -47,7 +86,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="promotionCode">Promotion code.</param>
         /// <param name="quoteToken">Parameter returned by the quote API (required).</param>
         /// <param name="bankId">Bank card ID used to place the order. Select one from the list returned by &#x60;GET /otc/bank/list&#x60;; the default card has &#x60;is_default&#x3D;1&#x60;. (required).</param>
-        public OtcOrderRequest(string type = default(string), string side = default(string), string cryptoCurrency = default(string), string fiatCurrency = default(string), string cryptoAmount = default(string), string fiatAmount = default(string), string promotionCode = default(string), string quoteToken = default(string), string bankId = default(string))
+        /// <param name="receiveType">Name used for the remittance. Allowed values depend on the user type: Corporate users: YOU (remit in your company&#39;s name), GATE (remit in Gate&#39;s name), RECIPIENT (remit in the recipient&#39;s name); Individual users: GATE (remit in Gate&#39;s name), PERSON (remit in the user&#39;s own name)..</param>
+        public OtcOrderRequest(string type = default(string), string side = default(string), string cryptoCurrency = default(string), string fiatCurrency = default(string), string cryptoAmount = default(string), string fiatAmount = default(string), string promotionCode = default(string), string quoteToken = default(string), string bankId = default(string), ReceiveTypeEnum? receiveType = default(ReceiveTypeEnum?))
         {
             // to ensure "type" is required (not null)
             this.Type = type ?? throw new ArgumentNullException("type", "type is a required property for OtcOrderRequest and cannot be null");
@@ -66,6 +106,7 @@ namespace Io.Gate.GateApi.Model
             // to ensure "bankId" is required (not null)
             this.BankId = bankId ?? throw new ArgumentNullException("bankId", "bankId is a required property for OtcOrderRequest and cannot be null");
             this.PromotionCode = promotionCode;
+            this.ReceiveType = receiveType;
         }
 
         /// <summary>
@@ -148,6 +189,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  PromotionCode: ").Append(PromotionCode).Append("\n");
             sb.Append("  QuoteToken: ").Append(QuoteToken).Append("\n");
             sb.Append("  BankId: ").Append(BankId).Append("\n");
+            sb.Append("  ReceiveType: ").Append(ReceiveType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -226,6 +268,10 @@ namespace Io.Gate.GateApi.Model
                     this.BankId == input.BankId ||
                     (this.BankId != null &&
                     this.BankId.Equals(input.BankId))
+                ) && 
+                (
+                    this.ReceiveType == input.ReceiveType ||
+                    this.ReceiveType.Equals(input.ReceiveType)
                 );
         }
 
@@ -256,6 +302,7 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.QuoteToken.GetHashCode();
                 if (this.BankId != null)
                     hashCode = hashCode * 59 + this.BankId.GetHashCode();
+                hashCode = hashCode * 59 + this.ReceiveType.GetHashCode();
                 return hashCode;
             }
         }

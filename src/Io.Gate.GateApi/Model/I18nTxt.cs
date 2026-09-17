@@ -33,8 +33,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="I18nTxt" /> class.
         /// </summary>
-        /// <param name="lang">lang.</param>
-        /// <param name="value">value.</param>
+        /// <param name="lang">Language.</param>
+        /// <param name="value">Localized description.</param>
         public I18nTxt(string lang = default(string), string value = default(string))
         {
             this.Lang = lang;
@@ -42,14 +42,16 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Gets or Sets Lang
+        /// Language
         /// </summary>
+        /// <value>Language</value>
         [DataMember(Name="lang")]
         public string Lang { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Localized description
         /// </summary>
+        /// <value>Localized description</value>
         [DataMember(Name="value")]
         public string Value { get; set; }
 

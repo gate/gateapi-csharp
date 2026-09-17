@@ -33,24 +33,15 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Mt5AccountData" /> class.
         /// </summary>
-        /// <param name="mt5Uid">MT5 userID.</param>
         /// <param name="leverage">Leverage multiplier.</param>
         /// <param name="stopOutLevel">Liquidation margin ratio.</param>
         /// <param name="status">Account status (1&#x3D;not opened, 2&#x3D;pending review, 3&#x3D;active).</param>
-        public Mt5AccountData(int mt5Uid = default(int), int leverage = default(int), string stopOutLevel = default(string), int status = default(int))
+        public Mt5AccountData(int leverage = default(int), string stopOutLevel = default(string), int status = default(int))
         {
-            this.Mt5Uid = mt5Uid;
             this.Leverage = leverage;
             this.StopOutLevel = stopOutLevel;
             this.Status = status;
         }
-
-        /// <summary>
-        /// MT5 userID
-        /// </summary>
-        /// <value>MT5 userID</value>
-        [DataMember(Name="mt5_uid")]
-        public int Mt5Uid { get; set; }
 
         /// <summary>
         /// Leverage multiplier
@@ -81,7 +72,6 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Mt5AccountData {\n");
-            sb.Append("  Mt5Uid: ").Append(Mt5Uid).Append("\n");
             sb.Append("  Leverage: ").Append(Leverage).Append("\n");
             sb.Append("  StopOutLevel: ").Append(StopOutLevel).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -120,10 +110,6 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.Mt5Uid == input.Mt5Uid ||
-                    this.Mt5Uid.Equals(input.Mt5Uid)
-                ) && 
-                (
                     this.Leverage == input.Leverage ||
                     this.Leverage.Equals(input.Leverage)
                 ) && 
@@ -147,7 +133,6 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Mt5Uid.GetHashCode();
                 hashCode = hashCode * 59 + this.Leverage.GetHashCode();
                 if (this.StopOutLevel != null)
                     hashCode = hashCode * 59 + this.StopOutLevel.GetHashCode();

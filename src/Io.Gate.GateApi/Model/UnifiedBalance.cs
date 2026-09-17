@@ -44,7 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="spotInUse">The amount of spot hedging is valid in the combined margin mode, and is 0 in other margin modes such as single currency and cross-currency margin modes.</param>
         /// <param name="funding">Uniloan financial management amount, effective when turned on as a unified account margin switch.</param>
         /// <param name="fundingVersion">Funding version.</param>
-        /// <param name="crossBalance">Full margin balance is valid in single currency margin mode, and is 0 in other modes such as cross currency margin/combined margin mode.</param>
+        /// <param name="crossBalance">Full margin balance is available in both single-currency and multi-currency margin modes, and is 0 in portfolio margin mode. .</param>
         /// <param name="isoBalance">Futures isolated balance, effective in single-currency and multi-currency margin mode, 0 in portfolio margin mode.</param>
         /// <param name="im">Cross initial margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode.</param>
         /// <param name="mm">Cross maintenance margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode.</param>
@@ -157,9 +157,9 @@ namespace Io.Gate.GateApi.Model
         public string FundingVersion { get; set; }
 
         /// <summary>
-        /// Full margin balance is valid in single currency margin mode, and is 0 in other modes such as cross currency margin/combined margin mode
+        /// Full margin balance is available in both single-currency and multi-currency margin modes, and is 0 in portfolio margin mode. 
         /// </summary>
-        /// <value>Full margin balance is valid in single currency margin mode, and is 0 in other modes such as cross currency margin/combined margin mode</value>
+        /// <value>Full margin balance is available in both single-currency and multi-currency margin modes, and is 0 in portfolio margin mode. </value>
         [DataMember(Name="cross_balance")]
         public string CrossBalance { get; set; }
 

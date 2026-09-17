@@ -33,16 +33,16 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrder2Data" /> class.
         /// </summary>
-        /// <param name="id">Queue Task ID (not task ID).</param>
+        /// <param name="id">Queue Task ID (not order ID).</param>
         public CreateOrder2Data(string id = default(string))
         {
             this.Id = id;
         }
 
         /// <summary>
-        /// Queue Task ID (not task ID)
+        /// Queue Task ID (not order ID)
         /// </summary>
-        /// <value>Queue Task ID (not task ID)</value>
+        /// <value>Queue Task ID (not order ID)</value>
         [DataMember(Name="id")]
         public string Id { get; set; }
 

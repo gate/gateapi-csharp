@@ -33,8 +33,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SymbolDetailData" /> class.
         /// </summary>
-        /// <param name="total">total.</param>
-        /// <param name="totalPage">totalPage.</param>
+        /// <param name="total">Total quantity.</param>
+        /// <param name="totalPage">Total pages.</param>
         /// <param name="list">list.</param>
         public SymbolDetailData(long total = default(long), int totalPage = default(int), List<SymbolDetailItem> list = default(List<SymbolDetailItem>))
         {
@@ -44,14 +44,16 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Gets or Sets Total
+        /// Total quantity
         /// </summary>
+        /// <value>Total quantity</value>
         [DataMember(Name="total")]
         public long Total { get; set; }
 
         /// <summary>
-        /// Gets or Sets TotalPage
+        /// Total pages
         /// </summary>
+        /// <value>Total pages</value>
         [DataMember(Name="total_page")]
         public int TotalPage { get; set; }
 

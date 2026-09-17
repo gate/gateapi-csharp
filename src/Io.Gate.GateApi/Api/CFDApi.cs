@@ -1339,6 +1339,8 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "category_code", categoryCode));
             }
 
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<SymbolCommissions>("/tradfi/symbols/commissions", localVarRequestOptions, this.Configuration);
@@ -1401,6 +1403,8 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "category_code", categoryCode));
             }
 
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
 
@@ -1556,6 +1560,8 @@ namespace Io.Gate.GateApi.Api
 
             localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbols", symbols));
 
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<ContractDetail>("/tradfi/symbols/detail", localVarRequestOptions, this.Configuration);
@@ -1613,6 +1619,8 @@ namespace Io.Gate.GateApi.Api
 
             localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbols", symbols));
 
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
 

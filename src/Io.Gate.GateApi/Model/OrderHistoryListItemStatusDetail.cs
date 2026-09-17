@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// OrderHistoryListItemStatusDetail
+    /// Order status details
     /// </summary>
     [DataContract]
     public partial class OrderHistoryListItemStatusDetail :  IEquatable<OrderHistoryListItemStatusDetail>, IValidatableObject
@@ -33,8 +33,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderHistoryListItemStatusDetail" /> class.
         /// </summary>
-        /// <param name="title">title.</param>
-        /// <param name="message">message.</param>
+        /// <param name="title">Status title.</param>
+        /// <param name="message">Status message.</param>
         public OrderHistoryListItemStatusDetail(string title = default(string), string message = default(string))
         {
             this.Title = title;
@@ -42,14 +42,16 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Gets or Sets Title
+        /// Status title
         /// </summary>
+        /// <value>Status title</value>
         [DataMember(Name="title")]
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Status message
         /// </summary>
+        /// <value>Status message</value>
         [DataMember(Name="message")]
         public string Message { get; set; }
 

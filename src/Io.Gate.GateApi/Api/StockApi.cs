@@ -58,7 +58,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -73,7 +73,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -87,7 +87,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
         /// <returns>SymbolDetail</returns>
@@ -101,7 +101,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
         /// <returns>ApiResponse of SymbolDetail</returns>
@@ -275,7 +275,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pnlCalcType">PnL calculation cost type. Defaults to average cost price when omitted (1 &#x3D; average cost price, 2 &#x3D; diluted cost price) (optional)</param>
         /// <param name="pnlCalcPrice">PnL calculation price type. Defaults to intraday price when omitted (1 &#x3D; intraday price, 2 &#x3D; latest extended-hours price) (optional)</param>
         /// <param name="symbol">Symbol (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <returns>PositionList2</returns>
         PositionList2 QueryStockPositions (int? pnlCalcType = default(int?), int? pnlCalcPrice = default(int?), string symbol = default(string), string exchange = default(string));
 
@@ -289,7 +289,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pnlCalcType">PnL calculation cost type. Defaults to average cost price when omitted (1 &#x3D; average cost price, 2 &#x3D; diluted cost price) (optional)</param>
         /// <param name="pnlCalcPrice">PnL calculation price type. Defaults to intraday price when omitted (1 &#x3D; intraday price, 2 &#x3D; latest extended-hours price) (optional)</param>
         /// <param name="symbol">Symbol (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <returns>ApiResponse of PositionList2</returns>
         ApiResponse<PositionList2> QueryStockPositionsWithHttpInfo (int? pnlCalcType = default(int?), int? pnlCalcPrice = default(int?), string symbol = default(string), string exchange = default(string));
         /// <summary>
@@ -443,7 +443,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -458,7 +458,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -472,7 +472,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
         /// <returns>Task of SymbolDetail</returns>
@@ -486,7 +486,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
         /// <returns>Task of ApiResponse (SymbolDetail)</returns>
@@ -660,7 +660,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pnlCalcType">PnL calculation cost type. Defaults to average cost price when omitted (1 &#x3D; average cost price, 2 &#x3D; diluted cost price) (optional)</param>
         /// <param name="pnlCalcPrice">PnL calculation price type. Defaults to intraday price when omitted (1 &#x3D; intraday price, 2 &#x3D; latest extended-hours price) (optional)</param>
         /// <param name="symbol">Symbol (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <returns>Task of PositionList2</returns>
         Task<PositionList2> QueryStockPositionsAsync (int? pnlCalcType = default(int?), int? pnlCalcPrice = default(int?), string symbol = default(string), string exchange = default(string));
 
@@ -674,7 +674,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pnlCalcType">PnL calculation cost type. Defaults to average cost price when omitted (1 &#x3D; average cost price, 2 &#x3D; diluted cost price) (optional)</param>
         /// <param name="pnlCalcPrice">PnL calculation price type. Defaults to intraday price when omitted (1 &#x3D; intraday price, 2 &#x3D; latest extended-hours price) (optional)</param>
         /// <param name="symbol">Symbol (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <returns>Task of ApiResponse (PositionList2)</returns>
         Task<ApiResponse<PositionList2>> QueryStockPositionsAsyncWithHttpInfo (int? pnlCalcType = default(int?), int? pnlCalcPrice = default(int?), string symbol = default(string), string exchange = default(string));
         /// <summary>
@@ -1040,7 +1040,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -1056,7 +1056,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -1118,7 +1118,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -1135,7 +1135,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -1199,7 +1199,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
         /// <returns>SymbolDetail</returns>
@@ -1214,7 +1214,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
         /// <returns>ApiResponse of SymbolDetail</returns>
@@ -1271,7 +1271,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
         /// <returns>Task of SymbolDetail</returns>
@@ -1287,7 +1287,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
         /// <returns>Task of ApiResponse (SymbolDetail)</returns>
@@ -2219,7 +2219,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pnlCalcType">PnL calculation cost type. Defaults to average cost price when omitted (1 &#x3D; average cost price, 2 &#x3D; diluted cost price) (optional)</param>
         /// <param name="pnlCalcPrice">PnL calculation price type. Defaults to intraday price when omitted (1 &#x3D; intraday price, 2 &#x3D; latest extended-hours price) (optional)</param>
         /// <param name="symbol">Symbol (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <returns>PositionList2</returns>
         public PositionList2 QueryStockPositions (int? pnlCalcType = default(int?), int? pnlCalcPrice = default(int?), string symbol = default(string), string exchange = default(string))
         {
@@ -2234,7 +2234,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pnlCalcType">PnL calculation cost type. Defaults to average cost price when omitted (1 &#x3D; average cost price, 2 &#x3D; diluted cost price) (optional)</param>
         /// <param name="pnlCalcPrice">PnL calculation price type. Defaults to intraday price when omitted (1 &#x3D; intraday price, 2 &#x3D; latest extended-hours price) (optional)</param>
         /// <param name="symbol">Symbol (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <returns>ApiResponse of PositionList2</returns>
         public ApiResponse<PositionList2> QueryStockPositionsWithHttpInfo (int? pnlCalcType = default(int?), int? pnlCalcPrice = default(int?), string symbol = default(string), string exchange = default(string))
         {
@@ -2293,7 +2293,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pnlCalcType">PnL calculation cost type. Defaults to average cost price when omitted (1 &#x3D; average cost price, 2 &#x3D; diluted cost price) (optional)</param>
         /// <param name="pnlCalcPrice">PnL calculation price type. Defaults to intraday price when omitted (1 &#x3D; intraday price, 2 &#x3D; latest extended-hours price) (optional)</param>
         /// <param name="symbol">Symbol (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <returns>Task of PositionList2</returns>
         public async Task<PositionList2> QueryStockPositionsAsync (int? pnlCalcType = default(int?), int? pnlCalcPrice = default(int?), string symbol = default(string), string exchange = default(string))
         {
@@ -2309,7 +2309,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pnlCalcType">PnL calculation cost type. Defaults to average cost price when omitted (1 &#x3D; average cost price, 2 &#x3D; diluted cost price) (optional)</param>
         /// <param name="pnlCalcPrice">PnL calculation price type. Defaults to intraday price when omitted (1 &#x3D; intraday price, 2 &#x3D; latest extended-hours price) (optional)</param>
         /// <param name="symbol">Symbol (optional)</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr (optional)</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp (optional)</param>
         /// <returns>Task of ApiResponse (PositionList2)</returns>
         public async Task<ApiResponse<PositionList2>> QueryStockPositionsAsyncWithHttpInfo (int? pnlCalcType = default(int?), int? pnlCalcPrice = default(int?), string symbol = default(string), string exchange = default(string))
         {

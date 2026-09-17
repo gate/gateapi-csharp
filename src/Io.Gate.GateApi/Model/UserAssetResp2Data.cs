@@ -39,8 +39,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="positionMarketValue">Position market value.</param>
         /// <param name="positionPnl">Position P&amp;L.</param>
         /// <param name="todayPnl">Today&#39;s P&amp;L.</param>
+        /// <param name="optionPositionMarketValue">Option position market value.</param>
+        /// <param name="optionPositionPnl">Option position PnL.</param>
+        /// <param name="optionTodayPnl">Option today&#39;s PnL.</param>
         /// <param name="userExists">Whether the user has activated the service.</param>
-        public UserAssetResp2Data(string equity = default(string), string balance = default(string), string available = default(string), string positionMarketValue = default(string), string positionPnl = default(string), string todayPnl = default(string), bool userExists = default(bool))
+        public UserAssetResp2Data(string equity = default(string), string balance = default(string), string available = default(string), string positionMarketValue = default(string), string positionPnl = default(string), string todayPnl = default(string), string optionPositionMarketValue = default(string), string optionPositionPnl = default(string), string optionTodayPnl = default(string), bool userExists = default(bool))
         {
             this.Equity = equity;
             this.Balance = balance;
@@ -48,6 +51,9 @@ namespace Io.Gate.GateApi.Model
             this.PositionMarketValue = positionMarketValue;
             this.PositionPnl = positionPnl;
             this.TodayPnl = todayPnl;
+            this.OptionPositionMarketValue = optionPositionMarketValue;
+            this.OptionPositionPnl = optionPositionPnl;
+            this.OptionTodayPnl = optionTodayPnl;
             this.UserExists = userExists;
         }
 
@@ -94,6 +100,27 @@ namespace Io.Gate.GateApi.Model
         public string TodayPnl { get; set; }
 
         /// <summary>
+        /// Option position market value
+        /// </summary>
+        /// <value>Option position market value</value>
+        [DataMember(Name="option_position_market_value")]
+        public string OptionPositionMarketValue { get; set; }
+
+        /// <summary>
+        /// Option position PnL
+        /// </summary>
+        /// <value>Option position PnL</value>
+        [DataMember(Name="option_position_pnl")]
+        public string OptionPositionPnl { get; set; }
+
+        /// <summary>
+        /// Option today&#39;s PnL
+        /// </summary>
+        /// <value>Option today&#39;s PnL</value>
+        [DataMember(Name="option_today_pnl")]
+        public string OptionTodayPnl { get; set; }
+
+        /// <summary>
         /// Whether the user has activated the service
         /// </summary>
         /// <value>Whether the user has activated the service</value>
@@ -114,6 +141,9 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  PositionMarketValue: ").Append(PositionMarketValue).Append("\n");
             sb.Append("  PositionPnl: ").Append(PositionPnl).Append("\n");
             sb.Append("  TodayPnl: ").Append(TodayPnl).Append("\n");
+            sb.Append("  OptionPositionMarketValue: ").Append(OptionPositionMarketValue).Append("\n");
+            sb.Append("  OptionPositionPnl: ").Append(OptionPositionPnl).Append("\n");
+            sb.Append("  OptionTodayPnl: ").Append(OptionTodayPnl).Append("\n");
             sb.Append("  UserExists: ").Append(UserExists).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -180,6 +210,21 @@ namespace Io.Gate.GateApi.Model
                     this.TodayPnl.Equals(input.TodayPnl))
                 ) && 
                 (
+                    this.OptionPositionMarketValue == input.OptionPositionMarketValue ||
+                    (this.OptionPositionMarketValue != null &&
+                    this.OptionPositionMarketValue.Equals(input.OptionPositionMarketValue))
+                ) && 
+                (
+                    this.OptionPositionPnl == input.OptionPositionPnl ||
+                    (this.OptionPositionPnl != null &&
+                    this.OptionPositionPnl.Equals(input.OptionPositionPnl))
+                ) && 
+                (
+                    this.OptionTodayPnl == input.OptionTodayPnl ||
+                    (this.OptionTodayPnl != null &&
+                    this.OptionTodayPnl.Equals(input.OptionTodayPnl))
+                ) && 
+                (
                     this.UserExists == input.UserExists ||
                     this.UserExists.Equals(input.UserExists)
                 );
@@ -206,6 +251,12 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.PositionPnl.GetHashCode();
                 if (this.TodayPnl != null)
                     hashCode = hashCode * 59 + this.TodayPnl.GetHashCode();
+                if (this.OptionPositionMarketValue != null)
+                    hashCode = hashCode * 59 + this.OptionPositionMarketValue.GetHashCode();
+                if (this.OptionPositionPnl != null)
+                    hashCode = hashCode * 59 + this.OptionPositionPnl.GetHashCode();
+                if (this.OptionTodayPnl != null)
+                    hashCode = hashCode * 59 + this.OptionTodayPnl.GetHashCode();
                 hashCode = hashCode * 59 + this.UserExists.GetHashCode();
                 return hashCode;
             }

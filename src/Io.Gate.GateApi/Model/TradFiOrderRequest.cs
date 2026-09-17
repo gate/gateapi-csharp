@@ -93,11 +93,12 @@ namespace Io.Gate.GateApi.Model
         /// <param name="price">Order price (required).</param>
         /// <param name="priceType">Price type (trigger&#x3D;trigger price, market&#x3D;market price) (required).</param>
         /// <param name="side">Side (1&#x3D;sell, 2&#x3D;buy) (required).</param>
-        /// <param name="symbol">Trading symbol code (required).</param>
+        /// <param name="symbol">Base trading symbol code (required).</param>
         /// <param name="volume">Order quantity (required).</param>
         /// <param name="priceTp">Take profit price (optional).</param>
         /// <param name="priceSl">Stop loss price (optional).</param>
-        public TradFiOrderRequest(string price = default(string), PriceTypeEnum priceType = default(PriceTypeEnum), SideEnum side = default(SideEnum), string symbol = default(string), string volume = default(string), string priceTp = default(string), string priceSl = default(string))
+        /// <param name="leverage">Leverage multiplier (must be one of the leverage multipliers allowed for the symbol in the trading symbol details response).</param>
+        public TradFiOrderRequest(string price = default(string), PriceTypeEnum priceType = default(PriceTypeEnum), SideEnum side = default(SideEnum), string symbol = default(string), string volume = default(string), string priceTp = default(string), string priceSl = default(string), int leverage = default(int))
         {
             // to ensure "price" is required (not null)
             this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for TradFiOrderRequest and cannot be null");
@@ -109,6 +110,7 @@ namespace Io.Gate.GateApi.Model
             this.Volume = volume ?? throw new ArgumentNullException("volume", "volume is a required property for TradFiOrderRequest and cannot be null");
             this.PriceTp = priceTp;
             this.PriceSl = priceSl;
+            this.Leverage = leverage;
         }
 
         /// <summary>
@@ -119,9 +121,9 @@ namespace Io.Gate.GateApi.Model
         public string Price { get; set; }
 
         /// <summary>
-        /// Trading symbol code
+        /// Base trading symbol code
         /// </summary>
-        /// <value>Trading symbol code</value>
+        /// <value>Base trading symbol code</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 
@@ -147,6 +149,13 @@ namespace Io.Gate.GateApi.Model
         public string PriceSl { get; set; }
 
         /// <summary>
+        /// Leverage multiplier (must be one of the leverage multipliers allowed for the symbol in the trading symbol details response)
+        /// </summary>
+        /// <value>Leverage multiplier (must be one of the leverage multipliers allowed for the symbol in the trading symbol details response)</value>
+        [DataMember(Name="leverage")]
+        public int Leverage { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -161,6 +170,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Volume: ").Append(Volume).Append("\n");
             sb.Append("  PriceTp: ").Append(PriceTp).Append("\n");
             sb.Append("  PriceSl: ").Append(PriceSl).Append("\n");
+            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -227,6 +237,10 @@ namespace Io.Gate.GateApi.Model
                     this.PriceSl == input.PriceSl ||
                     (this.PriceSl != null &&
                     this.PriceSl.Equals(input.PriceSl))
+                ) && 
+                (
+                    this.Leverage == input.Leverage ||
+                    this.Leverage.Equals(input.Leverage)
                 );
         }
 
@@ -251,6 +265,7 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.PriceTp.GetHashCode();
                 if (this.PriceSl != null)
                     hashCode = hashCode * 59 + this.PriceSl.GetHashCode();
+                hashCode = hashCode * 59 + this.Leverage.GetHashCode();
                 return hashCode;
             }
         }

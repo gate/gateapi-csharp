@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class OrderHistoryListItem :  IEquatable<OrderHistoryListItem>, IValidatableObject
     {
         /// <summary>
-        /// Exchange, supports us, hk, and kr
+        /// Exchange, supports us, hk, kr, and jp
         /// </summary>
-        /// <value>Exchange, supports us, hk, and kr</value>
+        /// <value>Exchange, supports us, hk, kr, and jp</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExchangeEnum
         {
@@ -53,14 +53,20 @@ namespace Io.Gate.GateApi.Model
             /// Enum value Kr
             /// </summary>
             [EnumMember(Value = "kr")]
-            Kr = 3
+            Kr = 3,
+
+            /// <summary>
+            /// Enum value Jp
+            /// </summary>
+            [EnumMember(Value = "jp")]
+            Jp = 4
 
         }
 
         /// <summary>
-        /// Exchange, supports us, hk, and kr
+        /// Exchange, supports us, hk, kr, and jp
         /// </summary>
-        /// <value>Exchange, supports us, hk, and kr</value>
+        /// <value>Exchange, supports us, hk, kr, and jp</value>
         [DataMember(Name="exchange")]
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
@@ -139,12 +145,12 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderHistoryListItem" /> class.
         /// </summary>
-        /// <param name="orderId">orderId.</param>
-        /// <param name="symbol">symbol.</param>
-        /// <param name="exchange">Exchange, supports us, hk, and kr.</param>
-        /// <param name="quoteCurrency">quoteCurrency.</param>
+        /// <param name="orderId">Order ID.</param>
+        /// <param name="symbol">Symbol.</param>
+        /// <param name="exchange">Exchange, supports us, hk, kr, and jp.</param>
+        /// <param name="quoteCurrency">Quote currency.</param>
         /// <param name="fxRate">Quote currency to USD exchange rate.</param>
-        /// <param name="symbolDesc">symbolDesc.</param>
+        /// <param name="symbolDesc">Symbol description.</param>
         /// <param name="priceType">Price type (market &#x3D; market order, limit &#x3D; limit order).</param>
         /// <param name="status">Order status.</param>
         /// <param name="statusDesc">Order status description.</param>
@@ -152,13 +158,13 @@ namespace Io.Gate.GateApi.Model
         /// <param name="finishAs">Order completion reason.</param>
         /// <param name="side">Side (1&#x3D;sell, 2&#x3D;buy).</param>
         /// <param name="timeInForce">Time in force. - day: Day order..</param>
-        /// <param name="volume">volume.</param>
-        /// <param name="fillVolume">fillVolume.</param>
-        /// <param name="price">price.</param>
-        /// <param name="avgFillPrice">avgFillPrice.</param>
+        /// <param name="volume">Order quantity.</param>
+        /// <param name="fillVolume">Trading size.</param>
+        /// <param name="price">Order price.</param>
+        /// <param name="avgFillPrice">Average fill price.</param>
         /// <param name="commission">fee.</param>
-        /// <param name="timeSetup">timeSetup.</param>
-        /// <param name="timeDone">timeDone.</param>
+        /// <param name="timeSetup">Order creation time (Unix timestamp, seconds).</param>
+        /// <param name="timeDone">Order completion time (Unix timestamp in seconds).</param>
         public OrderHistoryListItem(string orderId = default(string), string symbol = default(string), ExchangeEnum? exchange = default(ExchangeEnum?), string quoteCurrency = default(string), string fxRate = default(string), string symbolDesc = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), int status = default(int), string statusDesc = default(string), OrderHistoryListItemStatusDetail statusDetail = default(OrderHistoryListItemStatusDetail), int finishAs = default(int), SideEnum? side = default(SideEnum?), TimeInForceEnum? timeInForce = default(TimeInForceEnum?), string volume = default(string), string fillVolume = default(string), string price = default(string), string avgFillPrice = default(string), string commission = default(string), long timeSetup = default(long), long timeDone = default(long))
         {
             this.OrderId = orderId;
@@ -184,20 +190,23 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Gets or Sets OrderId
+        /// Order ID
         /// </summary>
+        /// <value>Order ID</value>
         [DataMember(Name="order_id")]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Symbol
+        /// Symbol
         /// </summary>
+        /// <value>Symbol</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Gets or Sets QuoteCurrency
+        /// Quote currency
         /// </summary>
+        /// <value>Quote currency</value>
         [DataMember(Name="quote_currency")]
         public string QuoteCurrency { get; set; }
 
@@ -209,8 +218,9 @@ namespace Io.Gate.GateApi.Model
         public string FxRate { get; set; }
 
         /// <summary>
-        /// Gets or Sets SymbolDesc
+        /// Symbol description
         /// </summary>
+        /// <value>Symbol description</value>
         [DataMember(Name="symbol_desc")]
         public string SymbolDesc { get; set; }
 
@@ -242,26 +252,30 @@ namespace Io.Gate.GateApi.Model
         public int FinishAs { get; set; }
 
         /// <summary>
-        /// Gets or Sets Volume
+        /// Order quantity
         /// </summary>
+        /// <value>Order quantity</value>
         [DataMember(Name="volume")]
         public string Volume { get; set; }
 
         /// <summary>
-        /// Gets or Sets FillVolume
+        /// Trading size
         /// </summary>
+        /// <value>Trading size</value>
         [DataMember(Name="fill_volume")]
         public string FillVolume { get; set; }
 
         /// <summary>
-        /// Gets or Sets Price
+        /// Order price
         /// </summary>
+        /// <value>Order price</value>
         [DataMember(Name="price")]
         public string Price { get; set; }
 
         /// <summary>
-        /// Gets or Sets AvgFillPrice
+        /// Average fill price
         /// </summary>
+        /// <value>Average fill price</value>
         [DataMember(Name="avg_fill_price")]
         public string AvgFillPrice { get; set; }
 
@@ -273,14 +287,16 @@ namespace Io.Gate.GateApi.Model
         public string Commission { get; set; }
 
         /// <summary>
-        /// Gets or Sets TimeSetup
+        /// Order creation time (Unix timestamp, seconds)
         /// </summary>
+        /// <value>Order creation time (Unix timestamp, seconds)</value>
         [DataMember(Name="time_setup")]
         public long TimeSetup { get; set; }
 
         /// <summary>
-        /// Gets or Sets TimeDone
+        /// Order completion time (Unix timestamp in seconds)
         /// </summary>
+        /// <value>Order completion time (Unix timestamp in seconds)</value>
         [DataMember(Name="time_done")]
         public long TimeDone { get; set; }
 
