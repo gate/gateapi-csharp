@@ -107,7 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="symbolDisplay">Symbol display name.</param>
         /// <param name="type">Transaction type. - deposit: Funds transfer in. - withdraw: Funds transfer out. - fee: Trading fee. - dividend: Dividend payout. - sell: Stock sale credit. - buy: Stock purchase debit. - award: Airdrop reward. - stock_transfer_in: Stock transfer in. - stock_transfer_out: Stock transfer out..</param>
         /// <param name="typeDesc">Transaction type description.</param>
-        /// <param name="change">Change amount.</param>
+        /// <param name="change">Change amount. A positive value means a credit, and a negative value means a debit..</param>
         /// <param name="balance">Balance after change.</param>
         /// <param name="refId">Business idempotent ID.</param>
         /// <param name="time">Unix timestamp (seconds).</param>
@@ -157,9 +157,9 @@ namespace Io.Gate.GateApi.Model
         public string TypeDesc { get; set; }
 
         /// <summary>
-        /// Change amount
+        /// Change amount. A positive value means a credit, and a negative value means a debit.
         /// </summary>
-        /// <value>Change amount</value>
+        /// <value>Change amount. A positive value means a credit, and a negative value means a debit.</value>
         [DataMember(Name="change")]
         public string Change { get; set; }
 

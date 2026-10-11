@@ -97,6 +97,136 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="price_type")]
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
+        /// Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.
+        /// </summary>
+        /// <value>Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StatusEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1,
+
+            /// <summary>
+            /// Enum value NUMBER_2
+            /// </summary>
+            NUMBER_2 = 2,
+
+            /// <summary>
+            /// Enum value NUMBER_3
+            /// </summary>
+            NUMBER_3 = 3,
+
+            /// <summary>
+            /// Enum value NUMBER_4
+            /// </summary>
+            NUMBER_4 = 4,
+
+            /// <summary>
+            /// Enum value NUMBER_5
+            /// </summary>
+            NUMBER_5 = 5,
+
+            /// <summary>
+            /// Enum value NUMBER_6
+            /// </summary>
+            NUMBER_6 = 6,
+
+            /// <summary>
+            /// Enum value NUMBER_7
+            /// </summary>
+            NUMBER_7 = 7,
+
+            /// <summary>
+            /// Enum value NUMBER_8
+            /// </summary>
+            NUMBER_8 = 8
+
+        }
+
+        /// <summary>
+        /// Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.
+        /// </summary>
+        /// <value>Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.</value>
+        [DataMember(Name="status")]
+        public StatusEnum? Status { get; set; }
+        /// <summary>
+        /// Order completion reason. - 0: Unknown. - 1: No quote found. - 2: No match found. - 3: Trigger price exceeded. - 4: Order value exceeds the limit. - 5: Unknown rejection. - 6: Unknown cancellation. - 7: Canceled by user. - 8: Canceled after the order time in force expired. - 9: Trading is not supported in the current session. - 13: Canceled due to corporate action.
+        /// </summary>
+        /// <value>Order completion reason. - 0: Unknown. - 1: No quote found. - 2: No match found. - 3: Trigger price exceeded. - 4: Order value exceeds the limit. - 5: Unknown rejection. - 6: Unknown cancellation. - 7: Canceled by user. - 8: Canceled after the order time in force expired. - 9: Trading is not supported in the current session. - 13: Canceled due to corporate action.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum FinishAsEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1,
+
+            /// <summary>
+            /// Enum value NUMBER_2
+            /// </summary>
+            NUMBER_2 = 2,
+
+            /// <summary>
+            /// Enum value NUMBER_3
+            /// </summary>
+            NUMBER_3 = 3,
+
+            /// <summary>
+            /// Enum value NUMBER_4
+            /// </summary>
+            NUMBER_4 = 4,
+
+            /// <summary>
+            /// Enum value NUMBER_5
+            /// </summary>
+            NUMBER_5 = 5,
+
+            /// <summary>
+            /// Enum value NUMBER_6
+            /// </summary>
+            NUMBER_6 = 6,
+
+            /// <summary>
+            /// Enum value NUMBER_7
+            /// </summary>
+            NUMBER_7 = 7,
+
+            /// <summary>
+            /// Enum value NUMBER_8
+            /// </summary>
+            NUMBER_8 = 8,
+
+            /// <summary>
+            /// Enum value NUMBER_9
+            /// </summary>
+            NUMBER_9 = 9,
+
+            /// <summary>
+            /// Enum value NUMBER_13
+            /// </summary>
+            NUMBER_13 = 13
+
+        }
+
+        /// <summary>
+        /// Order completion reason. - 0: Unknown. - 1: No quote found. - 2: No match found. - 3: Trigger price exceeded. - 4: Order value exceeds the limit. - 5: Unknown rejection. - 6: Unknown cancellation. - 7: Canceled by user. - 8: Canceled after the order time in force expired. - 9: Trading is not supported in the current session. - 13: Canceled due to corporate action.
+        /// </summary>
+        /// <value>Order completion reason. - 0: Unknown. - 1: No quote found. - 2: No match found. - 3: Trigger price exceeded. - 4: Order value exceeds the limit. - 5: Unknown rejection. - 6: Unknown cancellation. - 7: Canceled by user. - 8: Canceled after the order time in force expired. - 9: Trading is not supported in the current session. - 13: Canceled due to corporate action.</value>
+        [DataMember(Name="finish_as")]
+        public FinishAsEnum? FinishAs { get; set; }
+        /// <summary>
         /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
@@ -152,10 +282,10 @@ namespace Io.Gate.GateApi.Model
         /// <param name="fxRate">Quote currency to USD exchange rate.</param>
         /// <param name="symbolDesc">Symbol description.</param>
         /// <param name="priceType">Price type (market &#x3D; market order, limit &#x3D; limit order).</param>
-        /// <param name="status">Order status.</param>
+        /// <param name="status">Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected..</param>
         /// <param name="statusDesc">Order status description.</param>
         /// <param name="statusDetail">statusDetail.</param>
-        /// <param name="finishAs">Order completion reason.</param>
+        /// <param name="finishAs">Order completion reason. - 0: Unknown. - 1: No quote found. - 2: No match found. - 3: Trigger price exceeded. - 4: Order value exceeds the limit. - 5: Unknown rejection. - 6: Unknown cancellation. - 7: Canceled by user. - 8: Canceled after the order time in force expired. - 9: Trading is not supported in the current session. - 13: Canceled due to corporate action..</param>
         /// <param name="side">Side (1&#x3D;sell, 2&#x3D;buy).</param>
         /// <param name="timeInForce">Time in force. - day: Day order..</param>
         /// <param name="volume">Order quantity.</param>
@@ -165,7 +295,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="commission">fee.</param>
         /// <param name="timeSetup">Order creation time (Unix timestamp, seconds).</param>
         /// <param name="timeDone">Order completion time (Unix timestamp in seconds).</param>
-        public OrderHistoryListItem(string orderId = default(string), string symbol = default(string), ExchangeEnum? exchange = default(ExchangeEnum?), string quoteCurrency = default(string), string fxRate = default(string), string symbolDesc = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), int status = default(int), string statusDesc = default(string), OrderHistoryListItemStatusDetail statusDetail = default(OrderHistoryListItemStatusDetail), int finishAs = default(int), SideEnum? side = default(SideEnum?), TimeInForceEnum? timeInForce = default(TimeInForceEnum?), string volume = default(string), string fillVolume = default(string), string price = default(string), string avgFillPrice = default(string), string commission = default(string), long timeSetup = default(long), long timeDone = default(long))
+        public OrderHistoryListItem(string orderId = default(string), string symbol = default(string), ExchangeEnum? exchange = default(ExchangeEnum?), string quoteCurrency = default(string), string fxRate = default(string), string symbolDesc = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), StatusEnum? status = default(StatusEnum?), string statusDesc = default(string), OrderHistoryListItemStatusDetail statusDetail = default(OrderHistoryListItemStatusDetail), FinishAsEnum? finishAs = default(FinishAsEnum?), SideEnum? side = default(SideEnum?), TimeInForceEnum? timeInForce = default(TimeInForceEnum?), string volume = default(string), string fillVolume = default(string), string price = default(string), string avgFillPrice = default(string), string commission = default(string), long timeSetup = default(long), long timeDone = default(long))
         {
             this.OrderId = orderId;
             this.Symbol = symbol;
@@ -225,13 +355,6 @@ namespace Io.Gate.GateApi.Model
         public string SymbolDesc { get; set; }
 
         /// <summary>
-        /// Order status
-        /// </summary>
-        /// <value>Order status</value>
-        [DataMember(Name="status")]
-        public int Status { get; set; }
-
-        /// <summary>
         /// Order status description
         /// </summary>
         /// <value>Order status description</value>
@@ -243,13 +366,6 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         [DataMember(Name="status_detail")]
         public OrderHistoryListItemStatusDetail StatusDetail { get; set; }
-
-        /// <summary>
-        /// Order completion reason
-        /// </summary>
-        /// <value>Order completion reason</value>
-        [DataMember(Name="finish_as")]
-        public int FinishAs { get; set; }
 
         /// <summary>
         /// Order quantity

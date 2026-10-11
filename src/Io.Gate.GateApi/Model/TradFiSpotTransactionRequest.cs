@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Transfer request parameters
+    /// Fund transfer request parameters. Transfer in means moving funds from the spot account to the stock account; transfer out means moving funds from the stock account to the spot account.
     /// </summary>
     [DataContract]
     public partial class TradFiSpotTransactionRequest :  IEquatable<TradFiSpotTransactionRequest>, IValidatableObject
@@ -52,9 +52,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="asset")]
         public AssetEnum Asset { get; set; }
         /// <summary>
-        /// Transaction type (deposit&#x3D;deposit, withdraw&#x3D;withdrawal)
+        /// Transaction type. deposit transfers funds from the spot account to the stock account; withdraw transfers funds from the stock account to the spot account.
         /// </summary>
-        /// <value>Transaction type (deposit&#x3D;deposit, withdraw&#x3D;withdrawal)</value>
+        /// <value>Transaction type. deposit transfers funds from the spot account to the stock account; withdraw transfers funds from the stock account to the spot account.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -73,9 +73,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Transaction type (deposit&#x3D;deposit, withdraw&#x3D;withdrawal)
+        /// Transaction type. deposit transfers funds from the spot account to the stock account; withdraw transfers funds from the stock account to the spot account.
         /// </summary>
-        /// <value>Transaction type (deposit&#x3D;deposit, withdraw&#x3D;withdrawal)</value>
+        /// <value>Transaction type. deposit transfers funds from the spot account to the stock account; withdraw transfers funds from the stock account to the spot account.</value>
         [DataMember(Name="type")]
         public TypeEnum Type { get; set; }
         /// <summary>
@@ -87,8 +87,8 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="TradFiSpotTransactionRequest" /> class.
         /// </summary>
         /// <param name="asset">Asset, USDT only (required).</param>
-        /// <param name="change">Change amount (required).</param>
-        /// <param name="type">Transaction type (deposit&#x3D;deposit, withdraw&#x3D;withdrawal) (required).</param>
+        /// <param name="change">Change amount, must be greater than 0 (required).</param>
+        /// <param name="type">Transaction type. deposit transfers funds from the spot account to the stock account; withdraw transfers funds from the stock account to the spot account. (required).</param>
         /// <param name="refId">Business idempotent ID (required).</param>
         public TradFiSpotTransactionRequest(AssetEnum asset = default(AssetEnum), string change = default(string), TypeEnum type = default(TypeEnum), string refId = default(string))
         {
@@ -101,9 +101,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Change amount
+        /// Change amount, must be greater than 0
         /// </summary>
-        /// <value>Change amount</value>
+        /// <value>Change amount, must be greater than 0</value>
         [DataMember(Name="change")]
         public string Change { get; set; }
 

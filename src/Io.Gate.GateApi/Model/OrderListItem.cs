@@ -115,9 +115,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="trade_status")]
         public TradeStatusEnum? TradeStatus { get; set; }
         /// <summary>
-        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported.
+        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).
         /// </summary>
-        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported.</value>
+        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TradeModeEnum
         {
@@ -139,14 +139,34 @@ namespace Io.Gate.GateApi.Model
             /// <summary>
             /// Enum value NUMBER_4
             /// </summary>
-            NUMBER_4 = 4
+            NUMBER_4 = 4,
+
+            /// <summary>
+            /// Enum value NUMBER_5
+            /// </summary>
+            NUMBER_5 = 5,
+
+            /// <summary>
+            /// Enum value NUMBER_6
+            /// </summary>
+            NUMBER_6 = 6,
+
+            /// <summary>
+            /// Enum value NUMBER_7
+            /// </summary>
+            NUMBER_7 = 7,
+
+            /// <summary>
+            /// Enum value NUMBER_8
+            /// </summary>
+            NUMBER_8 = 8
 
         }
 
         /// <summary>
-        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported.
+        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).
         /// </summary>
-        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported.</value>
+        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).</value>
         [DataMember(Name="trade_mode")]
         public TradeModeEnum? TradeMode { get; set; }
         /// <summary>
@@ -202,6 +222,66 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="side")]
         public SideEnum? Side { get; set; }
         /// <summary>
+        /// Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.
+        /// </summary>
+        /// <value>Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StatusEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1,
+
+            /// <summary>
+            /// Enum value NUMBER_2
+            /// </summary>
+            NUMBER_2 = 2,
+
+            /// <summary>
+            /// Enum value NUMBER_3
+            /// </summary>
+            NUMBER_3 = 3,
+
+            /// <summary>
+            /// Enum value NUMBER_4
+            /// </summary>
+            NUMBER_4 = 4,
+
+            /// <summary>
+            /// Enum value NUMBER_5
+            /// </summary>
+            NUMBER_5 = 5,
+
+            /// <summary>
+            /// Enum value NUMBER_6
+            /// </summary>
+            NUMBER_6 = 6,
+
+            /// <summary>
+            /// Enum value NUMBER_7
+            /// </summary>
+            NUMBER_7 = 7,
+
+            /// <summary>
+            /// Enum value NUMBER_8
+            /// </summary>
+            NUMBER_8 = 8
+
+        }
+
+        /// <summary>
+        /// Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.
+        /// </summary>
+        /// <value>Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.</value>
+        [DataMember(Name="status")]
+        public StatusEnum? Status { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="OrderListItem" /> class.
         /// </summary>
         /// <param name="orderId">Order ID.</param>
@@ -211,10 +291,10 @@ namespace Io.Gate.GateApi.Model
         /// <param name="fxRate">Quote currency to USD exchange rate.</param>
         /// <param name="symbolDesc">Symbol description.</param>
         /// <param name="tradeStatus">Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session..</param>
-        /// <param name="tradeMode">Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported..</param>
+        /// <param name="tradeMode">Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt)..</param>
         /// <param name="priceType">Price type (market &#x3D; market order, limit &#x3D; limit order).</param>
         /// <param name="side">Side (1&#x3D;sell, 2&#x3D;buy).</param>
-        /// <param name="status">Order status.</param>
+        /// <param name="status">Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected..</param>
         /// <param name="volume">Order quantity.</param>
         /// <param name="fillVolume">Trading size.</param>
         /// <param name="price">Order price.</param>
@@ -229,7 +309,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="buyPriceProtection">Buy price protection rate.</param>
         /// <param name="commissionRate">Fee Rate.</param>
         /// <param name="slippageRate">Slippage.</param>
-        public OrderListItem(string orderId = default(string), string symbol = default(string), ExchangeEnum? exchange = default(ExchangeEnum?), string quoteCurrency = default(string), string fxRate = default(string), string symbolDesc = default(string), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), TradeModeEnum? tradeMode = default(TradeModeEnum?), PriceTypeEnum? priceType = default(PriceTypeEnum?), SideEnum? side = default(SideEnum?), int status = default(int), string volume = default(string), string fillVolume = default(string), string price = default(string), long timeSetup = default(long), long timeUpdate = default(long), string maxOrderVolume = default(string), string stepOrderVolume = default(string), string minOrderVolume = default(string), int pricePrecision = default(int), string priceProtection = default(string), string sellPriceProtection = default(string), string buyPriceProtection = default(string), string commissionRate = default(string), string slippageRate = default(string))
+        public OrderListItem(string orderId = default(string), string symbol = default(string), ExchangeEnum? exchange = default(ExchangeEnum?), string quoteCurrency = default(string), string fxRate = default(string), string symbolDesc = default(string), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), TradeModeEnum? tradeMode = default(TradeModeEnum?), PriceTypeEnum? priceType = default(PriceTypeEnum?), SideEnum? side = default(SideEnum?), StatusEnum? status = default(StatusEnum?), string volume = default(string), string fillVolume = default(string), string price = default(string), long timeSetup = default(long), long timeUpdate = default(long), string maxOrderVolume = default(string), string stepOrderVolume = default(string), string minOrderVolume = default(string), int pricePrecision = default(int), string priceProtection = default(string), string sellPriceProtection = default(string), string buyPriceProtection = default(string), string commissionRate = default(string), string slippageRate = default(string))
         {
             this.OrderId = orderId;
             this.Symbol = symbol;
@@ -292,13 +372,6 @@ namespace Io.Gate.GateApi.Model
         /// <value>Symbol description</value>
         [DataMember(Name="symbol_desc")]
         public string SymbolDesc { get; set; }
-
-        /// <summary>
-        /// Order status
-        /// </summary>
-        /// <value>Order status</value>
-        [DataMember(Name="status")]
-        public int Status { get; set; }
 
         /// <summary>
         /// Order quantity

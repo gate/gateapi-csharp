@@ -211,9 +211,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="trade_status")]
         public TradeStatusEnum? TradeStatus { get; set; }
         /// <summary>
-        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported.
+        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).
         /// </summary>
-        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported.</value>
+        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TradeModeEnum
         {
@@ -235,14 +235,34 @@ namespace Io.Gate.GateApi.Model
             /// <summary>
             /// Enum value NUMBER_4
             /// </summary>
-            NUMBER_4 = 4
+            NUMBER_4 = 4,
+
+            /// <summary>
+            /// Enum value NUMBER_5
+            /// </summary>
+            NUMBER_5 = 5,
+
+            /// <summary>
+            /// Enum value NUMBER_6
+            /// </summary>
+            NUMBER_6 = 6,
+
+            /// <summary>
+            /// Enum value NUMBER_7
+            /// </summary>
+            NUMBER_7 = 7,
+
+            /// <summary>
+            /// Enum value NUMBER_8
+            /// </summary>
+            NUMBER_8 = 8
 
         }
 
         /// <summary>
-        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported.
+        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).
         /// </summary>
-        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported.</value>
+        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).</value>
         [DataMember(Name="trade_mode")]
         public TradeModeEnum? TradeMode { get; set; }
         /// <summary>
@@ -288,7 +308,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="category">Symbol category. - CS: Common stock. - ETF: Exchange-traded funds. - ADRC, ADR: Depositary receipts for foreign companies listed in the U.S. - ETV: Exchange-traded products. - PFD: Preferred stock. - ETS: Exchange-traded securities. - ETN: Exchange-traded notes. - FUND: Funds..</param>
         /// <param name="assetType">Asset type. - STOCK: Stock. - ETF: Exchange-traded fund..</param>
         /// <param name="tradeStatus">Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session..</param>
-        /// <param name="tradeMode">Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported..</param>
+        /// <param name="tradeMode">Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt)..</param>
         /// <param name="orderFillTiming">Order fill timing (1&#x3D;immediate, 2&#x3D;after pre-market opens, 3&#x3D;after regular session opens).</param>
         /// <param name="iconLink">Icon URL.</param>
         /// <param name="quoteCurrencySymbol">Quote currency symbol.</param>
