@@ -42,15 +42,15 @@ namespace Io.Gate.GateApi.Model
         /// <param name="ps">ps (required).</param>
         /// <param name="totalPn">totalPn (required).</param>
         /// <param name="count">count (required).</param>
-        /// <param name="list">list (required).</param>
-        public OtcOrderListResult(int pn = default(int), int ps = default(int), int totalPn = default(int), int count = default(int), List<OtcOrderListItem> list = default(List<OtcOrderListItem>))
+        /// <param name="lists">lists (required).</param>
+        public OtcOrderListResult(int pn = default(int), int ps = default(int), int totalPn = default(int), int count = default(int), List<OtcOrderListItem> lists = default(List<OtcOrderListItem>))
         {
             this.Pn = pn;
             this.Ps = ps;
             this.TotalPn = totalPn;
             this.Count = count;
-            // to ensure "list" is required (not null)
-            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for OtcOrderListResult and cannot be null");
+            // to ensure "lists" is required (not null)
+            this.Lists = lists ?? throw new ArgumentNullException("lists", "lists is a required property for OtcOrderListResult and cannot be null");
         }
 
         /// <summary>
@@ -78,10 +78,10 @@ namespace Io.Gate.GateApi.Model
         public int Count { get; set; }
 
         /// <summary>
-        /// Gets or Sets List
+        /// Gets or Sets Lists
         /// </summary>
-        [DataMember(Name="list")]
-        public List<OtcOrderListItem> List { get; set; }
+        [DataMember(Name="lists")]
+        public List<OtcOrderListItem> Lists { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -95,7 +95,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Ps: ").Append(Ps).Append("\n");
             sb.Append("  TotalPn: ").Append(TotalPn).Append("\n");
             sb.Append("  Count: ").Append(Count).Append("\n");
-            sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("  Lists: ").Append(Lists).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,10 +147,10 @@ namespace Io.Gate.GateApi.Model
                     this.Count.Equals(input.Count)
                 ) && 
                 (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
+                    this.Lists == input.Lists ||
+                    this.Lists != null &&
+                    input.Lists != null &&
+                    this.Lists.SequenceEqual(input.Lists)
                 );
         }
 
@@ -167,8 +167,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Ps.GetHashCode();
                 hashCode = hashCode * 59 + this.TotalPn.GetHashCode();
                 hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                if (this.Lists != null)
+                    hashCode = hashCode * 59 + this.Lists.GetHashCode();
                 return hashCode;
             }
         }

@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**GetCurrencyPair**](SpotApi.md#getcurrencypair) | **GET** /spot/currency_pairs/{currency_pair} | Query single currency pair details
 [**ListTickers**](SpotApi.md#listtickers) | **GET** /spot/tickers | Get currency pair ticker information
 [**ListOrderBook**](SpotApi.md#listorderbook) | **GET** /spot/order_book | Get market depth information
+[**ListSpotRpiOrderBook**](SpotApi.md#listspotrpiorderbook) | **GET** /spot/rpi_order_book | Get the RPI order book
 [**ListTrades**](SpotApi.md#listtrades) | **GET** /spot/trades | Query market transaction records
 [**ListCandlesticks**](SpotApi.md#listcandlesticks) | **GET** /spot/candlesticks | Market K-line chart
 [**GetFee**](SpotApi.md#getfee) | **GET** /spot/fee | Query account fee rates
@@ -425,6 +426,83 @@ namespace Example
             catch (GateApiException e)
             {
                 Debug.Print("Exception when calling SpotApi.ListOrderBook: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyPair** | **string**| Currency pair | 
+ **interval** | **string**| Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 | [optional] [default to &quot;0&quot;]
+ **limit** | **int?**| Number of depth levels | [optional] [default to 10]
+ **withId** | **bool?**| Return order book update ID | [optional] [default to false]
+
+### Return type
+
+[**OrderBook**](OrderBook.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Query successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listspotrpiorderbook"></a>
+# **ListSpotRpiOrderBook**
+> OrderBook ListSpotRpiOrderBook (string currencyPair, string interval = null, int? limit = null, bool? withId = null)
+
+Get the RPI order book
+
+Get the RPI order book, with bids sorted by descending price and asks by ascending price.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListSpotRpiOrderBookExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            var apiInstance = new SpotApi(config);
+            var currencyPair = "BTC_USDT";  // string | Currency pair
+            var interval = "\"0\"";  // string | Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional)  (default to "0")
+            var limit = 10;  // int? | Number of depth levels (optional)  (default to 10)
+            var withId = false;  // bool? | Return order book update ID (optional)  (default to false)
+
+            try
+            {
+                // Get the RPI order book
+                OrderBook result = apiInstance.ListSpotRpiOrderBook(currencyPair, interval, limit, withId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling SpotApi.ListSpotRpiOrderBook: " + e.Message);
                 Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);

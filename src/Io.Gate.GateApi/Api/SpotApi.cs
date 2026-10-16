@@ -158,6 +158,33 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of OrderBook</returns>
         ApiResponse<OrderBook> ListOrderBookWithHttpInfo (string currencyPair, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
         /// <summary>
+        /// Get the RPI order book
+        /// </summary>
+        /// <remarks>
+        /// Get the RPI order book, with bids sorted by descending price and asks by ascending price.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Return order book update ID (optional, default to false)</param>
+        /// <returns>OrderBook</returns>
+        OrderBook ListSpotRpiOrderBook (string currencyPair, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+
+        /// <summary>
+        /// Get the RPI order book
+        /// </summary>
+        /// <remarks>
+        /// Get the RPI order book, with bids sorted by descending price and asks by ascending price.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Return order book update ID (optional, default to false)</param>
+        /// <returns>ApiResponse of OrderBook</returns>
+        ApiResponse<OrderBook> ListSpotRpiOrderBookWithHttpInfo (string currencyPair, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+        /// <summary>
         /// Query market transaction records
         /// </summary>
         /// <remarks>
@@ -1073,6 +1100,33 @@ namespace Io.Gate.GateApi.Api
         /// <param name="withId">Return order book update ID (optional, default to false)</param>
         /// <returns>Task of ApiResponse (OrderBook)</returns>
         Task<ApiResponse<OrderBook>> ListOrderBookAsyncWithHttpInfo (string currencyPair, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+        /// <summary>
+        /// Get the RPI order book
+        /// </summary>
+        /// <remarks>
+        /// Get the RPI order book, with bids sorted by descending price and asks by ascending price.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Return order book update ID (optional, default to false)</param>
+        /// <returns>Task of OrderBook</returns>
+        Task<OrderBook> ListSpotRpiOrderBookAsync (string currencyPair, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+
+        /// <summary>
+        /// Get the RPI order book
+        /// </summary>
+        /// <remarks>
+        /// Get the RPI order book, with bids sorted by descending price and asks by ascending price.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Return order book update ID (optional, default to false)</param>
+        /// <returns>Task of ApiResponse (OrderBook)</returns>
+        Task<ApiResponse<OrderBook>> ListSpotRpiOrderBookAsyncWithHttpInfo (string currencyPair, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
         /// <summary>
         /// Query market transaction records
         /// </summary>
@@ -2660,6 +2714,155 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListOrderBook", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get the RPI order book Get the RPI order book, with bids sorted by descending price and asks by ascending price.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Return order book update ID (optional, default to false)</param>
+        /// <returns>OrderBook</returns>
+        public OrderBook ListSpotRpiOrderBook (string currencyPair, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        {
+             ApiResponse<OrderBook> localVarResponse = ListSpotRpiOrderBookWithHttpInfo(currencyPair, interval, limit, withId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the RPI order book Get the RPI order book, with bids sorted by descending price and asks by ascending price.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Return order book update ID (optional, default to false)</param>
+        /// <returns>ApiResponse of OrderBook</returns>
+        public ApiResponse<OrderBook> ListSpotRpiOrderBookWithHttpInfo (string currencyPair, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        {
+            // verify the required parameter 'currencyPair' is set
+            if (currencyPair == null)
+                throw new ApiException(400, "Missing required parameter 'currencyPair' when calling SpotApi->ListSpotRpiOrderBook");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency_pair", currencyPair));
+            if (interval != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "interval", interval));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (withId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "with_id", withId));
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<OrderBook>("/spot/rpi_order_book", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListSpotRpiOrderBook", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get the RPI order book Get the RPI order book, with bids sorted by descending price and asks by ascending price.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Return order book update ID (optional, default to false)</param>
+        /// <returns>Task of OrderBook</returns>
+        public async Task<OrderBook> ListSpotRpiOrderBookAsync (string currencyPair, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OrderBook> localVarResponse = await ListSpotRpiOrderBookAsyncWithHttpInfo(currencyPair, interval, limit, withId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the RPI order book Get the RPI order book, with bids sorted by descending price and asks by ascending price.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="currencyPair">Currency pair</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Return order book update ID (optional, default to false)</param>
+        /// <returns>Task of ApiResponse (OrderBook)</returns>
+        public async Task<ApiResponse<OrderBook>> ListSpotRpiOrderBookAsyncWithHttpInfo (string currencyPair, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        {
+            // verify the required parameter 'currencyPair' is set
+            if (currencyPair == null)
+                throw new ApiException(400, "Missing required parameter 'currencyPair' when calling SpotApi->ListSpotRpiOrderBook");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "currency_pair", currencyPair));
+            if (interval != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "interval", interval));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (withId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "with_id", withId));
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OrderBook>("/spot/rpi_order_book", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListSpotRpiOrderBook", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

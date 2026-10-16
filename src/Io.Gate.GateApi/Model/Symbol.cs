@@ -38,9 +38,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Symbol" /> class.
         /// </summary>
-        /// <param name="symbol">Unique trading pair identifier in the form ExchangeType_BusinessType_Base_Counter. (required).</param>
-        /// <param name="exchangeType">Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60; / &#x60;LIGHTER&#x60;). (required).</param>
-        /// <param name="businessType">Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin). (required).</param>
+        /// <param name="symbol">Unique trading pair identifier in the format ExchangeType_BusinessType_Base_Counter. Stocks and ETFs use the market as ExchangeType (US/HK/KR/JP) and STOCK or ETF as the business type, for example US_STOCK_AAPL_USDT, HK_STOCK_00700_USDT, or US_ETF_SPY_USDT. (required).</param>
+        /// <param name="exchangeType">Exchange type (BINANCE / OKX / GATE / BYBIT / KRAKEN / HYPERLIQUID / DERIBIT / LIGHTER). Stocks and ETFs return the listing market (US / HK / KR / JP) (required).</param>
+        /// <param name="businessType">Business type (SPOT: spot / FUTURE: futures / MARGIN: margin / STOCK: stocks / ETF: exchange-traded funds) (required).</param>
         /// <param name="state">Status (&#x60;live&#x60; running / &#x60;suspend&#x60; paused). (required).</param>
         /// <param name="minSize">Minimum order quantity (required).</param>
         /// <param name="minNotional">Minimum Order Value (required).</param>
@@ -54,7 +54,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="delistTime">Millisecond timestamp; &#x60;0&#x60; means not delisted. (required).</param>
         /// <param name="supportRpi">Whether RPI order placement is supported (true if supported; false otherwise).</param>
         /// <param name="supportCross">Whether cross-margin order placement is supported (true if supported; false otherwise).</param>
-        public Symbol(string symbol = default(string), string exchangeType = default(string), string businessType = default(string), string state = default(string), string minSize = default(string), string minNotional = default(string), string lotSize = default(string), string tickSize = default(string), string maxNumOrders = default(string), string maxMarketSize = default(string), string maxLimitSize = default(string), string contractSize = default(string), string liquidationFee = default(string), string delistTime = default(string), string supportRpi = default(string), string supportCross = default(string))
+        /// <param name="tag">Tag information. Hyperliquid returns DEX information, stocks and ETFs return the security description, and other businesses return an empty string (required).</param>
+        public Symbol(string symbol = default(string), string exchangeType = default(string), string businessType = default(string), string state = default(string), string minSize = default(string), string minNotional = default(string), string lotSize = default(string), string tickSize = default(string), string maxNumOrders = default(string), string maxMarketSize = default(string), string maxLimitSize = default(string), string contractSize = default(string), string liquidationFee = default(string), string delistTime = default(string), string supportRpi = default(string), string supportCross = default(string), string tag = default(string))
         {
             // to ensure "symbol" is required (not null)
             this._Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for Symbol and cannot be null");
@@ -84,28 +85,30 @@ namespace Io.Gate.GateApi.Model
             this.LiquidationFee = liquidationFee ?? throw new ArgumentNullException("liquidationFee", "liquidationFee is a required property for Symbol and cannot be null");
             // to ensure "delistTime" is required (not null)
             this.DelistTime = delistTime ?? throw new ArgumentNullException("delistTime", "delistTime is a required property for Symbol and cannot be null");
+            // to ensure "tag" is required (not null)
+            this.Tag = tag ?? throw new ArgumentNullException("tag", "tag is a required property for Symbol and cannot be null");
             this.SupportRpi = supportRpi;
             this.SupportCross = supportCross;
         }
 
         /// <summary>
-        /// Unique trading pair identifier in the form ExchangeType_BusinessType_Base_Counter.
+        /// Unique trading pair identifier in the format ExchangeType_BusinessType_Base_Counter. Stocks and ETFs use the market as ExchangeType (US/HK/KR/JP) and STOCK or ETF as the business type, for example US_STOCK_AAPL_USDT, HK_STOCK_00700_USDT, or US_ETF_SPY_USDT.
         /// </summary>
-        /// <value>Unique trading pair identifier in the form ExchangeType_BusinessType_Base_Counter.</value>
+        /// <value>Unique trading pair identifier in the format ExchangeType_BusinessType_Base_Counter. Stocks and ETFs use the market as ExchangeType (US/HK/KR/JP) and STOCK or ETF as the business type, for example US_STOCK_AAPL_USDT, HK_STOCK_00700_USDT, or US_ETF_SPY_USDT.</value>
         [DataMember(Name="symbol")]
         public string _Symbol { get; set; }
 
         /// <summary>
-        /// Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60; / &#x60;LIGHTER&#x60;).
+        /// Exchange type (BINANCE / OKX / GATE / BYBIT / KRAKEN / HYPERLIQUID / DERIBIT / LIGHTER). Stocks and ETFs return the listing market (US / HK / KR / JP)
         /// </summary>
-        /// <value>Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60; / &#x60;LIGHTER&#x60;).</value>
+        /// <value>Exchange type (BINANCE / OKX / GATE / BYBIT / KRAKEN / HYPERLIQUID / DERIBIT / LIGHTER). Stocks and ETFs return the listing market (US / HK / KR / JP)</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 
         /// <summary>
-        /// Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin).
+        /// Business type (SPOT: spot / FUTURE: futures / MARGIN: margin / STOCK: stocks / ETF: exchange-traded funds)
         /// </summary>
-        /// <value>Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin).</value>
+        /// <value>Business type (SPOT: spot / FUTURE: futures / MARGIN: margin / STOCK: stocks / ETF: exchange-traded funds)</value>
         [DataMember(Name="business_type")]
         public string BusinessType { get; set; }
 
@@ -201,6 +204,13 @@ namespace Io.Gate.GateApi.Model
         public string SupportCross { get; set; }
 
         /// <summary>
+        /// Tag information. Hyperliquid returns DEX information, stocks and ETFs return the security description, and other businesses return an empty string
+        /// </summary>
+        /// <value>Tag information. Hyperliquid returns DEX information, stocks and ETFs return the security description, and other businesses return an empty string</value>
+        [DataMember(Name="tag")]
+        public string Tag { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -224,6 +234,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  DelistTime: ").Append(DelistTime).Append("\n");
             sb.Append("  SupportRpi: ").Append(SupportRpi).Append("\n");
             sb.Append("  SupportCross: ").Append(SupportCross).Append("\n");
+            sb.Append("  Tag: ").Append(Tag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -337,6 +348,11 @@ namespace Io.Gate.GateApi.Model
                     this.SupportCross == input.SupportCross ||
                     (this.SupportCross != null &&
                     this.SupportCross.Equals(input.SupportCross))
+                ) && 
+                (
+                    this.Tag == input.Tag ||
+                    (this.Tag != null &&
+                    this.Tag.Equals(input.Tag))
                 );
         }
 
@@ -381,6 +397,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.SupportRpi.GetHashCode();
                 if (this.SupportCross != null)
                     hashCode = hashCode * 59 + this.SupportCross.GetHashCode();
+                if (this.Tag != null)
+                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 return hashCode;
             }
         }

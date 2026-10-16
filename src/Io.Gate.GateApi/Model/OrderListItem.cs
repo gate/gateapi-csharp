@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class OrderListItem :  IEquatable<OrderListItem>, IValidatableObject
     {
         /// <summary>
-        /// Exchange, supports us, hk, kr, and jp
+        /// Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
-        /// <value>Exchange, supports us, hk, kr, and jp</value>
+        /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExchangeEnum
         {
@@ -64,15 +64,15 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Exchange, supports us, hk, kr, and jp
+        /// Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
-        /// <value>Exchange, supports us, hk, kr, and jp</value>
+        /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [DataMember(Name="exchange")]
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
-        /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session.
+        /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.
         /// </summary>
-        /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session.</value>
+        /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TradeStatusEnum
         {
@@ -92,32 +92,20 @@ namespace Io.Gate.GateApi.Model
             /// Enum value Postmarket
             /// </summary>
             [EnumMember(Value = "post_market")]
-            Postmarket = 3,
-
-            /// <summary>
-            /// Enum value Closed
-            /// </summary>
-            [EnumMember(Value = "closed")]
-            Closed = 4,
-
-            /// <summary>
-            /// Enum value Gtlp
-            /// </summary>
-            [EnumMember(Value = "gt_lp")]
-            Gtlp = 5
+            Postmarket = 3
 
         }
 
         /// <summary>
-        /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session.
+        /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.
         /// </summary>
-        /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session.</value>
+        /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.</value>
         [DataMember(Name="trade_status")]
         public TradeStatusEnum? TradeStatus { get; set; }
         /// <summary>
-        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).
+        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: Trading suspended. - 6: Trading suspended. - 7: Trading suspended. - 8: Trading suspended.
         /// </summary>
-        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).</value>
+        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: Trading suspended. - 6: Trading suspended. - 7: Trading suspended. - 8: Trading suspended.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TradeModeEnum
         {
@@ -164,9 +152,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).
+        /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: Trading suspended. - 6: Trading suspended. - 7: Trading suspended. - 8: Trading suspended.
         /// </summary>
-        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt).</value>
+        /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: Trading suspended. - 6: Trading suspended. - 7: Trading suspended. - 8: Trading suspended.</value>
         [DataMember(Name="trade_mode")]
         public TradeModeEnum? TradeMode { get; set; }
         /// <summary>
@@ -286,12 +274,12 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="orderId">Order ID.</param>
         /// <param name="symbol">Symbol.</param>
-        /// <param name="exchange">Exchange, supports us, hk, kr, and jp.</param>
+        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks..</param>
         /// <param name="quoteCurrency">Quote currency.</param>
         /// <param name="fxRate">Quote currency to USD exchange rate.</param>
         /// <param name="symbolDesc">Symbol description.</param>
-        /// <param name="tradeStatus">Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session..</param>
-        /// <param name="tradeMode">Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: LP trading suspended (manual suspension). - 6: LP trading suspended (strategy exception). - 7: LP trading suspended (stock halt). - 8: LP trading suspended (stock circuit breaker halt)..</param>
+        /// <param name="tradeStatus">Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market..</param>
+        /// <param name="tradeMode">Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: Trading suspended. - 6: Trading suspended. - 7: Trading suspended. - 8: Trading suspended..</param>
         /// <param name="priceType">Price type (market &#x3D; market order, limit &#x3D; limit order).</param>
         /// <param name="side">Side (1&#x3D;sell, 2&#x3D;buy).</param>
         /// <param name="status">Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected..</param>

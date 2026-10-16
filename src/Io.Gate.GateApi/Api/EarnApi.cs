@@ -224,6 +224,204 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;DualProjectRecommend&gt;</returns>
         ApiResponse<List<DualProjectRecommend>> GetDualProjectRecommendWithHttpInfo (string mode = default(string), string coin = default(string), string type = default(string), string historyPids = default(string));
         /// <summary>
+        /// List stock dual investment products
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Product/plan ID. If provided, only the matching product is returned (optional)</param>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="quoteCurrency">Settlement currency. Default: USDT (optional, default to &quot;USDT&quot;)</param>
+        /// <param name="sort">Sort field enum: &#x60;apy&#x60; — highest APY first &#x60;short-period&#x60; — shortest tenor first &#x60;multiple&#x60; — highest premium first (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>List&lt;DualGetPlans&gt;</returns>
+        List<DualGetPlans> ListDualStockInvestmentPlans (string planId = default(string), string coin = default(string), string type = default(string), string quoteCurrency = default(string), string sort = default(string), int? page = default(int?), int? pageSize = default(int?));
+
+        /// <summary>
+        /// List stock dual investment products
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Product/plan ID. If provided, only the matching product is returned (optional)</param>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="quoteCurrency">Settlement currency. Default: USDT (optional, default to &quot;USDT&quot;)</param>
+        /// <param name="sort">Sort field enum: &#x60;apy&#x60; — highest APY first &#x60;short-period&#x60; — shortest tenor first &#x60;multiple&#x60; — highest premium first (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>ApiResponse of List&lt;DualGetPlans&gt;</returns>
+        ApiResponse<List<DualGetPlans>> ListDualStockInvestmentPlansWithHttpInfo (string planId = default(string), string coin = default(string), string type = default(string), string quoteCurrency = default(string), string sort = default(string), int? page = default(int?), int? pageSize = default(int?));
+        /// <summary>
+        /// Get recommendations for stock dual investment products
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low (optional)</param>
+        /// <param name="mode">Recommendation mode. Default: normal normal: Regular users senior: Experienced users (optional, default to normal)</param>
+        /// <param name="historyPids">Previously recommended project IDs, separated by commas (optional)</param>
+        /// <returns>List&lt;DualProjectRecommend&gt;</returns>
+        List<DualProjectRecommend> GetDualStockProjectRecommend (string coin = default(string), string type = default(string), string mode = default(string), string historyPids = default(string));
+
+        /// <summary>
+        /// Get recommendations for stock dual investment products
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low (optional)</param>
+        /// <param name="mode">Recommendation mode. Default: normal normal: Regular users senior: Experienced users (optional, default to normal)</param>
+        /// <param name="historyPids">Previously recommended project IDs, separated by commas (optional)</param>
+        /// <returns>ApiResponse of List&lt;DualProjectRecommend&gt;</returns>
+        ApiResponse<List<DualProjectRecommend>> GetDualStockProjectRecommendWithHttpInfo (string coin = default(string), string type = default(string), string mode = default(string), string historyPids = default(string));
+        /// <summary>
+        /// List stock dual investment orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Investment Token (optional)</param>
+        /// <param name="status">Filter by order status. Default: ALL HOLD: Current holdings REPAY: Historical holdings PROCESSING: Holding in progress SETTLEMENT_PROCESSING: Settlement in progress ALL: All orders (optional, default to &quot;ALL&quot;)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="from">Start of the time range, in Unix seconds (optional)</param>
+        /// <param name="to">End of the time range, in Unix seconds (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Number of records per page, up to 100. Defaults to 100 when omitted (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>List&lt;DualGetOrders&gt;</returns>
+        List<DualGetOrders> ListDualStockOrders (string coin = default(string), string status = default(string), string type = default(string), long? from = default(long?), long? to = default(long?), int? page = default(int?), int? pageSize = default(int?), int? limit = default(int?));
+
+        /// <summary>
+        /// List stock dual investment orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Investment Token (optional)</param>
+        /// <param name="status">Filter by order status. Default: ALL HOLD: Current holdings REPAY: Historical holdings PROCESSING: Holding in progress SETTLEMENT_PROCESSING: Settlement in progress ALL: All orders (optional, default to &quot;ALL&quot;)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="from">Start of the time range, in Unix seconds (optional)</param>
+        /// <param name="to">End of the time range, in Unix seconds (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Number of records per page, up to 100. Defaults to 100 when omitted (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>ApiResponse of List&lt;DualGetOrders&gt;</returns>
+        ApiResponse<List<DualGetOrders>> ListDualStockOrdersWithHttpInfo (string coin = default(string), string status = default(string), string type = default(string), long? from = default(long?), long? to = default(long?), int? page = default(int?), int? pageSize = default(int?), int? limit = default(int?));
+        /// <summary>
+        /// Place a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// For buy-low (put) products, optionally pass &#x60;hit_spot&#x60;, &#x60;hit_stock&#x60;, and &#x60;hit_simple&#x60; (&#x60;1&#x60; selects the corresponding funding account) to collect funds from the spot, stock, or Simple Earn accounts before subscribing.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="placeDualStockInvestmentOrderParams"></param>
+        /// <returns>PlaceDualInvestmentOrder</returns>
+        PlaceDualInvestmentOrder PlaceDualStockOrder (PlaceDualStockInvestmentOrderParams placeDualStockInvestmentOrderParams);
+
+        /// <summary>
+        /// Place a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// For buy-low (put) products, optionally pass &#x60;hit_spot&#x60;, &#x60;hit_stock&#x60;, and &#x60;hit_simple&#x60; (&#x60;1&#x60; selects the corresponding funding account) to collect funds from the spot, stock, or Simple Earn accounts before subscribing.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="placeDualStockInvestmentOrderParams"></param>
+        /// <returns>ApiResponse of PlaceDualInvestmentOrder</returns>
+        ApiResponse<PlaceDualInvestmentOrder> PlaceDualStockOrderWithHttpInfo (PlaceDualStockInvestmentOrderParams placeDualStockInvestmentOrderParams);
+        /// <summary>
+        /// Get stock dual investment asset statistics
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>DualGetBalance</returns>
+        DualGetBalance ListDualStockBalance ();
+
+        /// <summary>
+        /// Get stock dual investment asset statistics
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of DualGetBalance</returns>
+        ApiResponse<DualGetBalance> ListDualStockBalanceWithHttpInfo ();
+        /// <summary>
+        /// Preview stock dual investment redemption
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <returns>DualOrderRefundPreview</returns>
+        DualOrderRefundPreview GetDualStockOrderRefundPreview (string orderId);
+
+        /// <summary>
+        /// Preview stock dual investment redemption
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <returns>ApiResponse of DualOrderRefundPreview</returns>
+        ApiResponse<DualOrderRefundPreview> GetDualStockOrderRefundPreviewWithHttpInfo (string orderId);
+        /// <summary>
+        /// Redeem a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualOrderRefundParams"></param>
+        /// <returns></returns>
+        void PlaceDualStockOrderRefund (DualOrderRefundParams dualOrderRefundParams);
+
+        /// <summary>
+        /// Redeem a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualOrderRefundParams"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> PlaceDualStockOrderRefundWithHttpInfo (DualOrderRefundParams dualOrderRefundParams);
+        /// <summary>
+        /// Reinvest a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualModifyOrderReinvestParams"></param>
+        /// <returns></returns>
+        void ModifyDualStockOrderReinvest (DualModifyOrderReinvestParams dualModifyOrderReinvestParams);
+
+        /// <summary>
+        /// Reinvest a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualModifyOrderReinvestParams"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ModifyDualStockOrderReinvestWithHttpInfo (DualModifyOrderReinvestParams dualModifyOrderReinvestParams);
+        /// <summary>
         /// Staking coins
         /// </summary>
         /// <remarks>
@@ -948,6 +1146,204 @@ namespace Io.Gate.GateApi.Api
         /// <param name="historyPids">Comma-separated project IDs to exclude already recommended items (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;DualProjectRecommend&gt;)</returns>
         Task<ApiResponse<List<DualProjectRecommend>>> GetDualProjectRecommendAsyncWithHttpInfo (string mode = default(string), string coin = default(string), string type = default(string), string historyPids = default(string));
+        /// <summary>
+        /// List stock dual investment products
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Product/plan ID. If provided, only the matching product is returned (optional)</param>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="quoteCurrency">Settlement currency. Default: USDT (optional, default to &quot;USDT&quot;)</param>
+        /// <param name="sort">Sort field enum: &#x60;apy&#x60; — highest APY first &#x60;short-period&#x60; — shortest tenor first &#x60;multiple&#x60; — highest premium first (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of List&lt;DualGetPlans&gt;</returns>
+        Task<List<DualGetPlans>> ListDualStockInvestmentPlansAsync (string planId = default(string), string coin = default(string), string type = default(string), string quoteCurrency = default(string), string sort = default(string), int? page = default(int?), int? pageSize = default(int?));
+
+        /// <summary>
+        /// List stock dual investment products
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Product/plan ID. If provided, only the matching product is returned (optional)</param>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="quoteCurrency">Settlement currency. Default: USDT (optional, default to &quot;USDT&quot;)</param>
+        /// <param name="sort">Sort field enum: &#x60;apy&#x60; — highest APY first &#x60;short-period&#x60; — shortest tenor first &#x60;multiple&#x60; — highest premium first (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;DualGetPlans&gt;)</returns>
+        Task<ApiResponse<List<DualGetPlans>>> ListDualStockInvestmentPlansAsyncWithHttpInfo (string planId = default(string), string coin = default(string), string type = default(string), string quoteCurrency = default(string), string sort = default(string), int? page = default(int?), int? pageSize = default(int?));
+        /// <summary>
+        /// Get recommendations for stock dual investment products
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low (optional)</param>
+        /// <param name="mode">Recommendation mode. Default: normal normal: Regular users senior: Experienced users (optional, default to normal)</param>
+        /// <param name="historyPids">Previously recommended project IDs, separated by commas (optional)</param>
+        /// <returns>Task of List&lt;DualProjectRecommend&gt;</returns>
+        Task<List<DualProjectRecommend>> GetDualStockProjectRecommendAsync (string coin = default(string), string type = default(string), string mode = default(string), string historyPids = default(string));
+
+        /// <summary>
+        /// Get recommendations for stock dual investment products
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low (optional)</param>
+        /// <param name="mode">Recommendation mode. Default: normal normal: Regular users senior: Experienced users (optional, default to normal)</param>
+        /// <param name="historyPids">Previously recommended project IDs, separated by commas (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;DualProjectRecommend&gt;)</returns>
+        Task<ApiResponse<List<DualProjectRecommend>>> GetDualStockProjectRecommendAsyncWithHttpInfo (string coin = default(string), string type = default(string), string mode = default(string), string historyPids = default(string));
+        /// <summary>
+        /// List stock dual investment orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Investment Token (optional)</param>
+        /// <param name="status">Filter by order status. Default: ALL HOLD: Current holdings REPAY: Historical holdings PROCESSING: Holding in progress SETTLEMENT_PROCESSING: Settlement in progress ALL: All orders (optional, default to &quot;ALL&quot;)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="from">Start of the time range, in Unix seconds (optional)</param>
+        /// <param name="to">End of the time range, in Unix seconds (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Number of records per page, up to 100. Defaults to 100 when omitted (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>Task of List&lt;DualGetOrders&gt;</returns>
+        Task<List<DualGetOrders>> ListDualStockOrdersAsync (string coin = default(string), string status = default(string), string type = default(string), long? from = default(long?), long? to = default(long?), int? page = default(int?), int? pageSize = default(int?), int? limit = default(int?));
+
+        /// <summary>
+        /// List stock dual investment orders
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Investment Token (optional)</param>
+        /// <param name="status">Filter by order status. Default: ALL HOLD: Current holdings REPAY: Historical holdings PROCESSING: Holding in progress SETTLEMENT_PROCESSING: Settlement in progress ALL: All orders (optional, default to &quot;ALL&quot;)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="from">Start of the time range, in Unix seconds (optional)</param>
+        /// <param name="to">End of the time range, in Unix seconds (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Number of records per page, up to 100. Defaults to 100 when omitted (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>Task of ApiResponse (List&lt;DualGetOrders&gt;)</returns>
+        Task<ApiResponse<List<DualGetOrders>>> ListDualStockOrdersAsyncWithHttpInfo (string coin = default(string), string status = default(string), string type = default(string), long? from = default(long?), long? to = default(long?), int? page = default(int?), int? pageSize = default(int?), int? limit = default(int?));
+        /// <summary>
+        /// Place a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// For buy-low (put) products, optionally pass &#x60;hit_spot&#x60;, &#x60;hit_stock&#x60;, and &#x60;hit_simple&#x60; (&#x60;1&#x60; selects the corresponding funding account) to collect funds from the spot, stock, or Simple Earn accounts before subscribing.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="placeDualStockInvestmentOrderParams"></param>
+        /// <returns>Task of PlaceDualInvestmentOrder</returns>
+        Task<PlaceDualInvestmentOrder> PlaceDualStockOrderAsync (PlaceDualStockInvestmentOrderParams placeDualStockInvestmentOrderParams);
+
+        /// <summary>
+        /// Place a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// For buy-low (put) products, optionally pass &#x60;hit_spot&#x60;, &#x60;hit_stock&#x60;, and &#x60;hit_simple&#x60; (&#x60;1&#x60; selects the corresponding funding account) to collect funds from the spot, stock, or Simple Earn accounts before subscribing.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="placeDualStockInvestmentOrderParams"></param>
+        /// <returns>Task of ApiResponse (PlaceDualInvestmentOrder)</returns>
+        Task<ApiResponse<PlaceDualInvestmentOrder>> PlaceDualStockOrderAsyncWithHttpInfo (PlaceDualStockInvestmentOrderParams placeDualStockInvestmentOrderParams);
+        /// <summary>
+        /// Get stock dual investment asset statistics
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of DualGetBalance</returns>
+        Task<DualGetBalance> ListDualStockBalanceAsync ();
+
+        /// <summary>
+        /// Get stock dual investment asset statistics
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (DualGetBalance)</returns>
+        Task<ApiResponse<DualGetBalance>> ListDualStockBalanceAsyncWithHttpInfo ();
+        /// <summary>
+        /// Preview stock dual investment redemption
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <returns>Task of DualOrderRefundPreview</returns>
+        Task<DualOrderRefundPreview> GetDualStockOrderRefundPreviewAsync (string orderId);
+
+        /// <summary>
+        /// Preview stock dual investment redemption
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <returns>Task of ApiResponse (DualOrderRefundPreview)</returns>
+        Task<ApiResponse<DualOrderRefundPreview>> GetDualStockOrderRefundPreviewAsyncWithHttpInfo (string orderId);
+        /// <summary>
+        /// Redeem a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualOrderRefundParams"></param>
+        /// <returns>Task of void</returns>
+        Task PlaceDualStockOrderRefundAsync (DualOrderRefundParams dualOrderRefundParams);
+
+        /// <summary>
+        /// Redeem a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualOrderRefundParams"></param>
+        /// <returns>Task of ApiResponse</returns>
+        Task<ApiResponse<Object>> PlaceDualStockOrderRefundAsyncWithHttpInfo (DualOrderRefundParams dualOrderRefundParams);
+        /// <summary>
+        /// Reinvest a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualModifyOrderReinvestParams"></param>
+        /// <returns>Task of void</returns>
+        Task ModifyDualStockOrderReinvestAsync (DualModifyOrderReinvestParams dualModifyOrderReinvestParams);
+
+        /// <summary>
+        /// Reinvest a stock dual investment order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualModifyOrderReinvestParams"></param>
+        /// <returns>Task of ApiResponse</returns>
+        Task<ApiResponse<Object>> ModifyDualStockOrderReinvestAsyncWithHttpInfo (DualModifyOrderReinvestParams dualModifyOrderReinvestParams);
         /// <summary>
         /// Staking coins
         /// </summary>
@@ -2672,6 +3068,1104 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetDualProjectRecommend", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List stock dual investment products 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Product/plan ID. If provided, only the matching product is returned (optional)</param>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="quoteCurrency">Settlement currency. Default: USDT (optional, default to &quot;USDT&quot;)</param>
+        /// <param name="sort">Sort field enum: &#x60;apy&#x60; — highest APY first &#x60;short-period&#x60; — shortest tenor first &#x60;multiple&#x60; — highest premium first (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>List&lt;DualGetPlans&gt;</returns>
+        public List<DualGetPlans> ListDualStockInvestmentPlans (string planId = default(string), string coin = default(string), string type = default(string), string quoteCurrency = default(string), string sort = default(string), int? page = default(int?), int? pageSize = default(int?))
+        {
+             ApiResponse<List<DualGetPlans>> localVarResponse = ListDualStockInvestmentPlansWithHttpInfo(planId, coin, type, quoteCurrency, sort, page, pageSize);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List stock dual investment products 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Product/plan ID. If provided, only the matching product is returned (optional)</param>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="quoteCurrency">Settlement currency. Default: USDT (optional, default to &quot;USDT&quot;)</param>
+        /// <param name="sort">Sort field enum: &#x60;apy&#x60; — highest APY first &#x60;short-period&#x60; — shortest tenor first &#x60;multiple&#x60; — highest premium first (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>ApiResponse of List&lt;DualGetPlans&gt;</returns>
+        public ApiResponse<List<DualGetPlans>> ListDualStockInvestmentPlansWithHttpInfo (string planId = default(string), string coin = default(string), string type = default(string), string quoteCurrency = default(string), string sort = default(string), int? page = default(int?), int? pageSize = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (planId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "plan_id", planId));
+            }
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (quoteCurrency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "quote_currency", quoteCurrency));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<DualGetPlans>>("/earn/dual/stock/investment_plan", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListDualStockInvestmentPlans", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List stock dual investment products 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Product/plan ID. If provided, only the matching product is returned (optional)</param>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="quoteCurrency">Settlement currency. Default: USDT (optional, default to &quot;USDT&quot;)</param>
+        /// <param name="sort">Sort field enum: &#x60;apy&#x60; — highest APY first &#x60;short-period&#x60; — shortest tenor first &#x60;multiple&#x60; — highest premium first (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of List&lt;DualGetPlans&gt;</returns>
+        public async Task<List<DualGetPlans>> ListDualStockInvestmentPlansAsync (string planId = default(string), string coin = default(string), string type = default(string), string quoteCurrency = default(string), string sort = default(string), int? page = default(int?), int? pageSize = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<DualGetPlans>> localVarResponse = await ListDualStockInvestmentPlansAsyncWithHttpInfo(planId, coin, type, quoteCurrency, sort, page, pageSize);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List stock dual investment products 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="planId">Product/plan ID. If provided, only the matching product is returned (optional)</param>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="quoteCurrency">Settlement currency. Default: USDT (optional, default to &quot;USDT&quot;)</param>
+        /// <param name="sort">Sort field enum: &#x60;apy&#x60; — highest APY first &#x60;short-period&#x60; — shortest tenor first &#x60;multiple&#x60; — highest premium first (optional)</param>
+        /// <param name="page">page number (optional)</param>
+        /// <param name="pageSize">Items per page，Maximum 100 (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;DualGetPlans&gt;)</returns>
+        public async Task<ApiResponse<List<DualGetPlans>>> ListDualStockInvestmentPlansAsyncWithHttpInfo (string planId = default(string), string coin = default(string), string type = default(string), string quoteCurrency = default(string), string sort = default(string), int? page = default(int?), int? pageSize = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (planId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "plan_id", planId));
+            }
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (quoteCurrency != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "quote_currency", quoteCurrency));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<DualGetPlans>>("/earn/dual/stock/investment_plan", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListDualStockInvestmentPlans", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get recommendations for stock dual investment products 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low (optional)</param>
+        /// <param name="mode">Recommendation mode. Default: normal normal: Regular users senior: Experienced users (optional, default to normal)</param>
+        /// <param name="historyPids">Previously recommended project IDs, separated by commas (optional)</param>
+        /// <returns>List&lt;DualProjectRecommend&gt;</returns>
+        public List<DualProjectRecommend> GetDualStockProjectRecommend (string coin = default(string), string type = default(string), string mode = default(string), string historyPids = default(string))
+        {
+             ApiResponse<List<DualProjectRecommend>> localVarResponse = GetDualStockProjectRecommendWithHttpInfo(coin, type, mode, historyPids);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get recommendations for stock dual investment products 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low (optional)</param>
+        /// <param name="mode">Recommendation mode. Default: normal normal: Regular users senior: Experienced users (optional, default to normal)</param>
+        /// <param name="historyPids">Previously recommended project IDs, separated by commas (optional)</param>
+        /// <returns>ApiResponse of List&lt;DualProjectRecommend&gt;</returns>
+        public ApiResponse<List<DualProjectRecommend>> GetDualStockProjectRecommendWithHttpInfo (string coin = default(string), string type = default(string), string mode = default(string), string historyPids = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (mode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "mode", mode));
+            }
+            if (historyPids != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "history_pids", historyPids));
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<DualProjectRecommend>>("/earn/dual/stock/project-recommend", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDualStockProjectRecommend", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get recommendations for stock dual investment products 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low (optional)</param>
+        /// <param name="mode">Recommendation mode. Default: normal normal: Regular users senior: Experienced users (optional, default to normal)</param>
+        /// <param name="historyPids">Previously recommended project IDs, separated by commas (optional)</param>
+        /// <returns>Task of List&lt;DualProjectRecommend&gt;</returns>
+        public async Task<List<DualProjectRecommend>> GetDualStockProjectRecommendAsync (string coin = default(string), string type = default(string), string mode = default(string), string historyPids = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<DualProjectRecommend>> localVarResponse = await GetDualStockProjectRecommendAsyncWithHttpInfo(coin, type, mode, historyPids);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get recommendations for stock dual investment products 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Underlying currency (optional)</param>
+        /// <param name="type">&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low (optional)</param>
+        /// <param name="mode">Recommendation mode. Default: normal normal: Regular users senior: Experienced users (optional, default to normal)</param>
+        /// <param name="historyPids">Previously recommended project IDs, separated by commas (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;DualProjectRecommend&gt;)</returns>
+        public async Task<ApiResponse<List<DualProjectRecommend>>> GetDualStockProjectRecommendAsyncWithHttpInfo (string coin = default(string), string type = default(string), string mode = default(string), string historyPids = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (mode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "mode", mode));
+            }
+            if (historyPids != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "history_pids", historyPids));
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<DualProjectRecommend>>("/earn/dual/stock/project-recommend", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDualStockProjectRecommend", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List stock dual investment orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Investment Token (optional)</param>
+        /// <param name="status">Filter by order status. Default: ALL HOLD: Current holdings REPAY: Historical holdings PROCESSING: Holding in progress SETTLEMENT_PROCESSING: Settlement in progress ALL: All orders (optional, default to &quot;ALL&quot;)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="from">Start of the time range, in Unix seconds (optional)</param>
+        /// <param name="to">End of the time range, in Unix seconds (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Number of records per page, up to 100. Defaults to 100 when omitted (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>List&lt;DualGetOrders&gt;</returns>
+        public List<DualGetOrders> ListDualStockOrders (string coin = default(string), string status = default(string), string type = default(string), long? from = default(long?), long? to = default(long?), int? page = default(int?), int? pageSize = default(int?), int? limit = default(int?))
+        {
+             ApiResponse<List<DualGetOrders>> localVarResponse = ListDualStockOrdersWithHttpInfo(coin, status, type, from, to, page, pageSize, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List stock dual investment orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Investment Token (optional)</param>
+        /// <param name="status">Filter by order status. Default: ALL HOLD: Current holdings REPAY: Historical holdings PROCESSING: Holding in progress SETTLEMENT_PROCESSING: Settlement in progress ALL: All orders (optional, default to &quot;ALL&quot;)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="from">Start of the time range, in Unix seconds (optional)</param>
+        /// <param name="to">End of the time range, in Unix seconds (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Number of records per page, up to 100. Defaults to 100 when omitted (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>ApiResponse of List&lt;DualGetOrders&gt;</returns>
+        public ApiResponse<List<DualGetOrders>> ListDualStockOrdersWithHttpInfo (string coin = default(string), string status = default(string), string type = default(string), long? from = default(long?), long? to = default(long?), int? page = default(int?), int? pageSize = default(int?), int? limit = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<DualGetOrders>>("/earn/dual/stock/orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListDualStockOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List stock dual investment orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Investment Token (optional)</param>
+        /// <param name="status">Filter by order status. Default: ALL HOLD: Current holdings REPAY: Historical holdings PROCESSING: Holding in progress SETTLEMENT_PROCESSING: Settlement in progress ALL: All orders (optional, default to &quot;ALL&quot;)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="from">Start of the time range, in Unix seconds (optional)</param>
+        /// <param name="to">End of the time range, in Unix seconds (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Number of records per page, up to 100. Defaults to 100 when omitted (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>Task of List&lt;DualGetOrders&gt;</returns>
+        public async Task<List<DualGetOrders>> ListDualStockOrdersAsync (string coin = default(string), string status = default(string), string type = default(string), long? from = default(long?), long? to = default(long?), int? page = default(int?), int? pageSize = default(int?), int? limit = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<DualGetOrders>> localVarResponse = await ListDualStockOrdersAsyncWithHttpInfo(coin, status, type, from, to, page, pageSize, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List stock dual investment orders 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="coin">Investment Token (optional)</param>
+        /// <param name="status">Filter by order status. Default: ALL HOLD: Current holdings REPAY: Historical holdings PROCESSING: Holding in progress SETTLEMENT_PROCESSING: Settlement in progress ALL: All orders (optional, default to &quot;ALL&quot;)</param>
+        /// <param name="type">Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high (optional)</param>
+        /// <param name="from">Start of the time range, in Unix seconds (optional)</param>
+        /// <param name="to">End of the time range, in Unix seconds (optional)</param>
+        /// <param name="page">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Number of records per page, up to 100. Defaults to 100 when omitted (optional)</param>
+        /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
+        /// <returns>Task of ApiResponse (List&lt;DualGetOrders&gt;)</returns>
+        public async Task<ApiResponse<List<DualGetOrders>>> ListDualStockOrdersAsyncWithHttpInfo (string coin = default(string), string status = default(string), string type = default(string), long? from = default(long?), long? to = default(long?), int? page = default(int?), int? pageSize = default(int?), int? limit = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (coin != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "coin", coin));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "from", from));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "to", to));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<DualGetOrders>>("/earn/dual/stock/orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListDualStockOrders", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Place a stock dual investment order For buy-low (put) products, optionally pass &#x60;hit_spot&#x60;, &#x60;hit_stock&#x60;, and &#x60;hit_simple&#x60; (&#x60;1&#x60; selects the corresponding funding account) to collect funds from the spot, stock, or Simple Earn accounts before subscribing.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="placeDualStockInvestmentOrderParams"></param>
+        /// <returns>PlaceDualInvestmentOrder</returns>
+        public PlaceDualInvestmentOrder PlaceDualStockOrder (PlaceDualStockInvestmentOrderParams placeDualStockInvestmentOrderParams)
+        {
+             ApiResponse<PlaceDualInvestmentOrder> localVarResponse = PlaceDualStockOrderWithHttpInfo(placeDualStockInvestmentOrderParams);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Place a stock dual investment order For buy-low (put) products, optionally pass &#x60;hit_spot&#x60;, &#x60;hit_stock&#x60;, and &#x60;hit_simple&#x60; (&#x60;1&#x60; selects the corresponding funding account) to collect funds from the spot, stock, or Simple Earn accounts before subscribing.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="placeDualStockInvestmentOrderParams"></param>
+        /// <returns>ApiResponse of PlaceDualInvestmentOrder</returns>
+        public ApiResponse<PlaceDualInvestmentOrder> PlaceDualStockOrderWithHttpInfo (PlaceDualStockInvestmentOrderParams placeDualStockInvestmentOrderParams)
+        {
+            // verify the required parameter 'placeDualStockInvestmentOrderParams' is set
+            if (placeDualStockInvestmentOrderParams == null)
+                throw new ApiException(400, "Missing required parameter 'placeDualStockInvestmentOrderParams' when calling EarnApi->PlaceDualStockOrder");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = placeDualStockInvestmentOrderParams;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<PlaceDualInvestmentOrder>("/earn/dual/stock/orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PlaceDualStockOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Place a stock dual investment order For buy-low (put) products, optionally pass &#x60;hit_spot&#x60;, &#x60;hit_stock&#x60;, and &#x60;hit_simple&#x60; (&#x60;1&#x60; selects the corresponding funding account) to collect funds from the spot, stock, or Simple Earn accounts before subscribing.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="placeDualStockInvestmentOrderParams"></param>
+        /// <returns>Task of PlaceDualInvestmentOrder</returns>
+        public async Task<PlaceDualInvestmentOrder> PlaceDualStockOrderAsync (PlaceDualStockInvestmentOrderParams placeDualStockInvestmentOrderParams)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<PlaceDualInvestmentOrder> localVarResponse = await PlaceDualStockOrderAsyncWithHttpInfo(placeDualStockInvestmentOrderParams);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Place a stock dual investment order For buy-low (put) products, optionally pass &#x60;hit_spot&#x60;, &#x60;hit_stock&#x60;, and &#x60;hit_simple&#x60; (&#x60;1&#x60; selects the corresponding funding account) to collect funds from the spot, stock, or Simple Earn accounts before subscribing.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="placeDualStockInvestmentOrderParams"></param>
+        /// <returns>Task of ApiResponse (PlaceDualInvestmentOrder)</returns>
+        public async Task<ApiResponse<PlaceDualInvestmentOrder>> PlaceDualStockOrderAsyncWithHttpInfo (PlaceDualStockInvestmentOrderParams placeDualStockInvestmentOrderParams)
+        {
+            // verify the required parameter 'placeDualStockInvestmentOrderParams' is set
+            if (placeDualStockInvestmentOrderParams == null)
+                throw new ApiException(400, "Missing required parameter 'placeDualStockInvestmentOrderParams' when calling EarnApi->PlaceDualStockOrder");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = placeDualStockInvestmentOrderParams;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<PlaceDualInvestmentOrder>("/earn/dual/stock/orders", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PlaceDualStockOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get stock dual investment asset statistics 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>DualGetBalance</returns>
+        public DualGetBalance ListDualStockBalance ()
+        {
+             ApiResponse<DualGetBalance> localVarResponse = ListDualStockBalanceWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get stock dual investment asset statistics 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of DualGetBalance</returns>
+        public ApiResponse<DualGetBalance> ListDualStockBalanceWithHttpInfo ()
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<DualGetBalance>("/earn/dual/stock/balance", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListDualStockBalance", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get stock dual investment asset statistics 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of DualGetBalance</returns>
+        public async Task<DualGetBalance> ListDualStockBalanceAsync ()
+        {
+             Io.Gate.GateApi.Client.ApiResponse<DualGetBalance> localVarResponse = await ListDualStockBalanceAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get stock dual investment asset statistics 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (DualGetBalance)</returns>
+        public async Task<ApiResponse<DualGetBalance>> ListDualStockBalanceAsyncWithHttpInfo ()
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DualGetBalance>("/earn/dual/stock/balance", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListDualStockBalance", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Preview stock dual investment redemption 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <returns>DualOrderRefundPreview</returns>
+        public DualOrderRefundPreview GetDualStockOrderRefundPreview (string orderId)
+        {
+             ApiResponse<DualOrderRefundPreview> localVarResponse = GetDualStockOrderRefundPreviewWithHttpInfo(orderId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Preview stock dual investment redemption 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <returns>ApiResponse of DualOrderRefundPreview</returns>
+        public ApiResponse<DualOrderRefundPreview> GetDualStockOrderRefundPreviewWithHttpInfo (string orderId)
+        {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling EarnApi->GetDualStockOrderRefundPreview");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "order_id", orderId));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<DualOrderRefundPreview>("/earn/dual/stock/order-refund-preview", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDualStockOrderRefundPreview", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Preview stock dual investment redemption 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <returns>Task of DualOrderRefundPreview</returns>
+        public async Task<DualOrderRefundPreview> GetDualStockOrderRefundPreviewAsync (string orderId)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<DualOrderRefundPreview> localVarResponse = await GetDualStockOrderRefundPreviewAsyncWithHttpInfo(orderId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Preview stock dual investment redemption 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <returns>Task of ApiResponse (DualOrderRefundPreview)</returns>
+        public async Task<ApiResponse<DualOrderRefundPreview>> GetDualStockOrderRefundPreviewAsyncWithHttpInfo (string orderId)
+        {
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling EarnApi->GetDualStockOrderRefundPreview");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "order_id", orderId));
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DualOrderRefundPreview>("/earn/dual/stock/order-refund-preview", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDualStockOrderRefundPreview", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Redeem a stock dual investment order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualOrderRefundParams"></param>
+        /// <returns></returns>
+        public void PlaceDualStockOrderRefund (DualOrderRefundParams dualOrderRefundParams)
+        {
+             PlaceDualStockOrderRefundWithHttpInfo(dualOrderRefundParams);
+        }
+
+        /// <summary>
+        /// Redeem a stock dual investment order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualOrderRefundParams"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> PlaceDualStockOrderRefundWithHttpInfo (DualOrderRefundParams dualOrderRefundParams)
+        {
+            // verify the required parameter 'dualOrderRefundParams' is set
+            if (dualOrderRefundParams == null)
+                throw new ApiException(400, "Missing required parameter 'dualOrderRefundParams' when calling EarnApi->PlaceDualStockOrderRefund");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = dualOrderRefundParams;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/earn/dual/stock/order-refund", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PlaceDualStockOrderRefund", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Redeem a stock dual investment order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualOrderRefundParams"></param>
+        /// <returns>Task of void</returns>
+        public async Task PlaceDualStockOrderRefundAsync (DualOrderRefundParams dualOrderRefundParams)
+        {
+             await PlaceDualStockOrderRefundAsyncWithHttpInfo(dualOrderRefundParams);
+
+        }
+
+        /// <summary>
+        /// Redeem a stock dual investment order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualOrderRefundParams"></param>
+        /// <returns>Task of ApiResponse</returns>
+        public async Task<ApiResponse<Object>> PlaceDualStockOrderRefundAsyncWithHttpInfo (DualOrderRefundParams dualOrderRefundParams)
+        {
+            // verify the required parameter 'dualOrderRefundParams' is set
+            if (dualOrderRefundParams == null)
+                throw new ApiException(400, "Missing required parameter 'dualOrderRefundParams' when calling EarnApi->PlaceDualStockOrderRefund");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = dualOrderRefundParams;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/earn/dual/stock/order-refund", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PlaceDualStockOrderRefund", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Reinvest a stock dual investment order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualModifyOrderReinvestParams"></param>
+        /// <returns></returns>
+        public void ModifyDualStockOrderReinvest (DualModifyOrderReinvestParams dualModifyOrderReinvestParams)
+        {
+             ModifyDualStockOrderReinvestWithHttpInfo(dualModifyOrderReinvestParams);
+        }
+
+        /// <summary>
+        /// Reinvest a stock dual investment order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualModifyOrderReinvestParams"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> ModifyDualStockOrderReinvestWithHttpInfo (DualModifyOrderReinvestParams dualModifyOrderReinvestParams)
+        {
+            // verify the required parameter 'dualModifyOrderReinvestParams' is set
+            if (dualModifyOrderReinvestParams == null)
+                throw new ApiException(400, "Missing required parameter 'dualModifyOrderReinvestParams' when calling EarnApi->ModifyDualStockOrderReinvest");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = dualModifyOrderReinvestParams;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/earn/dual/stock/modify-order-reinvest", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ModifyDualStockOrderReinvest", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Reinvest a stock dual investment order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualModifyOrderReinvestParams"></param>
+        /// <returns>Task of void</returns>
+        public async Task ModifyDualStockOrderReinvestAsync (DualModifyOrderReinvestParams dualModifyOrderReinvestParams)
+        {
+             await ModifyDualStockOrderReinvestAsyncWithHttpInfo(dualModifyOrderReinvestParams);
+
+        }
+
+        /// <summary>
+        /// Reinvest a stock dual investment order 
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dualModifyOrderReinvestParams"></param>
+        /// <returns>Task of ApiResponse</returns>
+        public async Task<ApiResponse<Object>> ModifyDualStockOrderReinvestAsyncWithHttpInfo (DualModifyOrderReinvestParams dualModifyOrderReinvestParams)
+        {
+            // verify the required parameter 'dualModifyOrderReinvestParams' is set
+            if (dualModifyOrderReinvestParams == null)
+                throw new ApiException(400, "Missing required parameter 'dualModifyOrderReinvestParams' when calling EarnApi->ModifyDualStockOrderReinvest");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = dualModifyOrderReinvestParams;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/earn/dual/stock/modify-order-reinvest", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ModifyDualStockOrderReinvest", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

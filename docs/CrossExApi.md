@@ -29,6 +29,7 @@ Method | HTTP request | Description
 [**GetCrossexInterestRate**](CrossExApi.md#getcrossexinterestrate) | **GET** /crossex/interest_rate | Query margin asset interest rates
 [**GetCrossexFee**](CrossExApi.md#getcrossexfee) | **GET** /crossex/fee | Query User Fee Rates
 [**ListCrossexPositions**](CrossExApi.md#listcrossexpositions) | **GET** /crossex/positions | Query Contract Positions
+[**ListCrossexSecurityPositions**](CrossExApi.md#listcrossexsecuritypositions) | **GET** /crossex/security_positions | List security positions
 [**ListCrossexMarginPositions**](CrossExApi.md#listcrossexmarginpositions) | **GET** /crossex/margin_positions | Query Leveraged Positions
 [**ListCrossexAdlRank**](CrossExApi.md#listcrossexadlrank) | **GET** /crossex/adl_rank | Query ADL Position Reduction Ranking
 [**ListCrossexOpenOrders**](CrossExApi.md#listcrossexopenorders) | **GET** /crossex/open_orders | Query All Current Open Orders
@@ -49,7 +50,7 @@ Method | HTTP request | Description
 
 Query symbol information
 
-Query Trading Pair Information
+List trading pair information. Stock and ETF symbols use `{market}_{business_type}_{security_code}_USDT`, for example `US_STOCK_AAPL_USDT`, `HK_STOCK_00700_USDT`, or `US_ETF_SPY_USDT`.
 
 ### Example
 ```csharp
@@ -68,7 +69,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new CrossExApi(config);
-            var symbols = "symbols_example";  // string | List of trading pairs, comma-separated. Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional) 
+            var symbols = "symbols_example";  // string | Comma-separated list of trading pairs Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT,US_STOCK_AAPL_USDT (optional) 
 
             try
             {
@@ -92,7 +93,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbols** | **string**| List of trading pairs, comma-separated. Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT | [optional] 
+ **symbols** | **string**| Comma-separated list of trading pairs Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT,US_STOCK_AAPL_USDT | [optional] 
 
 ### Return type
 
@@ -418,7 +419,7 @@ Name | Type | Description  | Notes
 
 Create order
 
-Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+Rate limit: 100 requests per 10 seconds; each user may have up to 1,000 open orders. Stocks and ETFs have an additional per-user limit of one request per second and support only cross-exchange account mode and GTC. Stock and ETF orders must use qty; quote_qty is not supported. Stock and ETF order prices use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
 
 ### Example
 ```csharp
@@ -1857,6 +1858,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;CrossexPosition&gt;**](CrossexPosition.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-11-12 18:14+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt; Language: en Language-Team: en &lt;L@li.org&gt; Plural-Forms: nplurals&#x3D;2; plural&#x3D;(n !&#x3D;1) MIME-Version: 1.0 Content-Type: text/plain; charset&#x3D;utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listcrossexsecuritypositions"></a>
+# **ListCrossexSecurityPositions**
+> List&lt;CrossexSecurityPosition&gt; ListCrossexSecurityPositions (string symbol = null, string exchangeType = null)
+
+List security positions
+
+List stock and ETF positions. Rate limit: 200 requests per 10 seconds. Prices, position values, and unrealized profit and loss use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListCrossexSecurityPositionsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new CrossExApi(config);
+            var symbol = "US_STOCK_AAPL_USDT";  // string | Stock or ETF trading pair (optional) 
+            var exchangeType = "US";  // string | Stock market (US/HK/KR/JP) (optional) 
+
+            try
+            {
+                // List security positions
+                List<CrossexSecurityPosition> result = apiInstance.ListCrossexSecurityPositions(symbol, exchangeType);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling CrossExApi.ListCrossexSecurityPositions: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **string**| Stock or ETF trading pair | [optional] 
+ **exchangeType** | **string**| Stock market (US/HK/KR/JP) | [optional] 
+
+### Return type
+
+[**List&lt;CrossexSecurityPosition&gt;**](CrossexSecurityPosition.md)
 
 ### Authorization
 

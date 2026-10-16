@@ -350,7 +350,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="slippage">Maximum supported slippage ratio for Spot Market Order Placement, calculated based on the latest market price at the time of order placement as the benchmark (Example: 0.03 means 3%).</param>
         /// <param name="stopProfit">stopProfit.</param>
         /// <param name="stopLoss">stopLoss.</param>
-        public BatchOrder(string orderId = default(string), string amendText = default(string), string text = default(string), bool succeeded = default(bool), string label = default(string), string message = default(string), string currencyPair = default(string), TypeEnum? type = TypeEnum.Limit, AccountEnum? account = AccountEnum.Spot, SideEnum? side = default(SideEnum?), string amount = default(string), string price = default(string), TimeInForceEnum? timeInForce = TimeInForceEnum.Gtc, string iceberg = default(string), bool autoBorrow = default(bool), bool autoRepay = default(bool), StpActEnum? stpAct = default(StpActEnum?), string slippage = default(string), SpotOrderStopProfit stopProfit = default(SpotOrderStopProfit), SpotOrderStopLoss stopLoss = default(SpotOrderStopLoss))
+        public BatchOrder(string orderId = default(string), string amendText = default(string), string text = default(string), bool succeeded = default(bool), string label = default(string), string message = default(string), string currencyPair = default(string), TypeEnum? type = TypeEnum.Limit, AccountEnum? account = AccountEnum.Spot, SideEnum? side = default(SideEnum?), string amount = default(string), string price = default(string), TimeInForceEnum? timeInForce = TimeInForceEnum.Gtc, string iceberg = default(string), bool autoBorrow = default(bool), bool autoRepay = default(bool), StpActEnum? stpAct = default(StpActEnum?), string slippage = default(string), PatchSpotOrderStopProfit stopProfit = default(PatchSpotOrderStopProfit), PatchSpotOrderStopLoss stopLoss = default(PatchSpotOrderStopLoss))
         {
             this.OrderId = orderId;
             this.AmendText = amendText;
@@ -595,13 +595,13 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StopProfit
         /// </summary>
         [DataMember(Name="stop_profit")]
-        public SpotOrderStopProfit StopProfit { get; set; }
+        public PatchSpotOrderStopProfit StopProfit { get; set; }
 
         /// <summary>
         /// Gets or Sets StopLoss
         /// </summary>
         [DataMember(Name="stop_loss")]
-        public SpotOrderStopLoss StopLoss { get; set; }
+        public PatchSpotOrderStopLoss StopLoss { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

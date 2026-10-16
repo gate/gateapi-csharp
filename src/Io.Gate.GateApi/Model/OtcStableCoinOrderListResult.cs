@@ -42,15 +42,15 @@ namespace Io.Gate.GateApi.Model
         /// <param name="pageSize">pageSize (required).</param>
         /// <param name="pageNumber">pageNumber (required).</param>
         /// <param name="totalPage">totalPage (required).</param>
-        /// <param name="list">list (required).</param>
-        public OtcStableCoinOrderListResult(int total = default(int), int pageSize = default(int), int pageNumber = default(int), int totalPage = default(int), List<OtcStableCoinOrderListItem> list = default(List<OtcStableCoinOrderListItem>))
+        /// <param name="lists">lists (required).</param>
+        public OtcStableCoinOrderListResult(int total = default(int), int pageSize = default(int), int pageNumber = default(int), int totalPage = default(int), List<OtcStableCoinOrderListItem> lists = default(List<OtcStableCoinOrderListItem>))
         {
             this.Total = total;
             this.PageSize = pageSize;
             this.PageNumber = pageNumber;
             this.TotalPage = totalPage;
-            // to ensure "list" is required (not null)
-            this.List = list ?? throw new ArgumentNullException("list", "list is a required property for OtcStableCoinOrderListResult and cannot be null");
+            // to ensure "lists" is required (not null)
+            this.Lists = lists ?? throw new ArgumentNullException("lists", "lists is a required property for OtcStableCoinOrderListResult and cannot be null");
         }
 
         /// <summary>
@@ -78,10 +78,10 @@ namespace Io.Gate.GateApi.Model
         public int TotalPage { get; set; }
 
         /// <summary>
-        /// Gets or Sets List
+        /// Gets or Sets Lists
         /// </summary>
-        [DataMember(Name="list")]
-        public List<OtcStableCoinOrderListItem> List { get; set; }
+        [DataMember(Name="lists")]
+        public List<OtcStableCoinOrderListItem> Lists { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -95,7 +95,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  PageSize: ").Append(PageSize).Append("\n");
             sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("  TotalPage: ").Append(TotalPage).Append("\n");
-            sb.Append("  List: ").Append(List).Append("\n");
+            sb.Append("  Lists: ").Append(Lists).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,10 +147,10 @@ namespace Io.Gate.GateApi.Model
                     this.TotalPage.Equals(input.TotalPage)
                 ) && 
                 (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
+                    this.Lists == input.Lists ||
+                    this.Lists != null &&
+                    input.Lists != null &&
+                    this.Lists.SequenceEqual(input.Lists)
                 );
         }
 
@@ -167,8 +167,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.PageSize.GetHashCode();
                 hashCode = hashCode * 59 + this.PageNumber.GetHashCode();
                 hashCode = hashCode * 59 + this.TotalPage.GetHashCode();
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                if (this.Lists != null)
+                    hashCode = hashCode * 59 + this.Lists.GetHashCode();
                 return hashCode;
             }
         }

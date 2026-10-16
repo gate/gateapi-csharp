@@ -42,7 +42,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="businessType">Business Type.</param>
         /// <param name="side">Buy/Sell Direction.</param>
         /// <param name="qty">Trading size.</param>
-        /// <param name="price">Fill Price.</param>
+        /// <param name="price">Fill price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY).</param>
         /// <param name="fee">fee.</param>
         /// <param name="feeCoin">Fee currency.</param>
         /// <param name="feeRate">Fee Rate.</param>
@@ -137,9 +137,9 @@ namespace Io.Gate.GateApi.Model
         public string Qty { get; set; }
 
         /// <summary>
-        /// Fill Price
+        /// Fill price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)
         /// </summary>
-        /// <value>Fill Price</value>
+        /// <value>Fill price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="price")]
         public string Price { get; set; }
 

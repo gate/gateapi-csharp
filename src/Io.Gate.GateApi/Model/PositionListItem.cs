@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class PositionListItem :  IEquatable<PositionListItem>, IValidatableObject
     {
         /// <summary>
-        /// Exchange, supports us, hk, kr, and jp
+        /// Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
-        /// <value>Exchange, supports us, hk, kr, and jp</value>
+        /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExchangeEnum
         {
@@ -64,15 +64,15 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Exchange, supports us, hk, kr, and jp
+        /// Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
-        /// <value>Exchange, supports us, hk, kr, and jp</value>
+        /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [DataMember(Name="exchange")]
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
-        /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session.
+        /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.
         /// </summary>
-        /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session.</value>
+        /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TradeStatusEnum
         {
@@ -92,37 +92,25 @@ namespace Io.Gate.GateApi.Model
             /// Enum value Postmarket
             /// </summary>
             [EnumMember(Value = "post_market")]
-            Postmarket = 3,
-
-            /// <summary>
-            /// Enum value Closed
-            /// </summary>
-            [EnumMember(Value = "closed")]
-            Closed = 4,
-
-            /// <summary>
-            /// Enum value Gtlp
-            /// </summary>
-            [EnumMember(Value = "gt_lp")]
-            Gtlp = 5
+            Postmarket = 3
 
         }
 
         /// <summary>
-        /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session.
+        /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.
         /// </summary>
-        /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session.</value>
+        /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.</value>
         [DataMember(Name="trade_status")]
         public TradeStatusEnum? TradeStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PositionListItem" /> class.
         /// </summary>
         /// <param name="symbol">Symbol.</param>
-        /// <param name="exchange">Exchange, supports us, hk, kr, and jp.</param>
+        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks..</param>
         /// <param name="quoteCurrency">Quote currency.</param>
         /// <param name="quoteCurrencyPrecision">Quote currency precision.</param>
         /// <param name="fxRate">Quote currency to USD exchange rate.</param>
-        /// <param name="tradeStatus">Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market. - closed: Market closed. - gt_lp: GT LP session..</param>
+        /// <param name="tradeStatus">Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market..</param>
         /// <param name="symbolDesc">Symbol description.</param>
         /// <param name="positionPnl">Position P&amp;L.</param>
         /// <param name="todayPnl">Today&#39;s P&amp;L.</param>

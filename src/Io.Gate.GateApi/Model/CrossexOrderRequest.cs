@@ -85,9 +85,9 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="type")]
         public TypeEnum? Type { get; set; }
         /// <summary>
-        /// Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, and &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: Retail Price Improvement
+        /// Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: RPI Stocks and ETFs support only &#x60;GTC&#x60;
         /// </summary>
-        /// <value>Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, and &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: Retail Price Improvement</value>
+        /// <value>Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: RPI Stocks and ETFs support only &#x60;GTC&#x60;</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TimeInForceEnum
         {
@@ -124,9 +124,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, and &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: Retail Price Improvement
+        /// Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: RPI Stocks and ETFs support only &#x60;GTC&#x60;
         /// </summary>
-        /// <value>Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, and &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: Retail Price Improvement</value>
+        /// <value>Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: RPI Stocks and ETFs support only &#x60;GTC&#x60;</value>
         [DataMember(Name="time_in_force")]
         public TimeInForceEnum? TimeInForce { get; set; }
         /// <summary>
@@ -198,13 +198,13 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="CrossexOrderRequest" /> class.
         /// </summary>
         /// <param name="text">Client-defined Order ID, supports letters (a-z), numbers (0-9), symbols (-, _) only.</param>
-        /// <param name="symbol">Unique identifier &#x60;{Exchange}_{Business}_{Base}_{Counter}&#x60; Examples: To send a Binance spot order on &#x60;ADA/USDT&#x60;, use &#x60;BINANCE_SPOT_ADA_USDT&#x60;; For an ADA/USDT-margined USDT perpetual futures order on OKX, use &#x60;OKX_FUTURE_ADA_USDT&#x60;; For ADA/USDT margin trading on Gate, use &#x60;GATE_MARGIN_ADA_USDT&#x60;; For ADA/USDT spot trading on Bybit, use &#x60;BYBIT_SPOT_ADA_USDT&#x60;; For an ADA/USD futures order on Kraken, use &#x60;KRAKEN_FUTURE_ADA_USD&#x60;; For an ADA/USDC futures order on Hyperliquid, use &#x60;HYPERLIQUID_FUTURE_ADA_USDC&#x60;; For an ADA/USDC futures order on Deribit, use &#x60;DERIBIT_FUTURE_ADA_USDC&#x60;; For an ADA/USDC futures order on Lighter, use &#x60;LIGHTER_FUTURE_ADA_USDC&#x60;; Supports spot trades, USDT-margined perpetual futures, and spot margin templates. BYBIT and DERIBIT omit spot margin for now; Kraken, Hyperliquid, and Lighter omit dedicated spot/margin legs inside CrossEx. (required).</param>
+        /// <param name="symbol">Unique identifier Exchange_Business_Base_Counter Examples: To place a spot order for ADA/USDT on BINANCE, use &#x60;BINANCE_SPOT_ADA_USDT&#x60;; To place a USDT-margined perpetual futures order for ADA/USDT on OKX, use &#x60;OKX_FUTURE_ADA_USDT&#x60;; To place a spot margin order for ADA/USDT on GATE, use &#x60;GATE_MARGIN_ADA_USDT&#x60;; To place a spot order for ADA/USDT on BYBIT, use &#x60;BYBIT_SPOT_ADA_USDT&#x60;; To place a futures order for ADA/USD on KRAKEN, use &#x60;KRAKEN_FUTURE_ADA_USD&#x60;; To place a futures order for ADA/USDC on HYPERLIQUID, use &#x60;HYPERLIQUID_FUTURE_ADA_USDC&#x60;; To place a futures order for ADA/USDC on DERIBIT, use &#x60;DERIBIT_FUTURE_ADA_USDC&#x60;; To place a futures order for ADA/USDC on LIGHTER, use &#x60;LIGHTER_FUTURE_ADA_USDC&#x60;; To trade US stock AAPL, use &#x60;US_STOCK_AAPL_USDT&#x60;; To trade Hong Kong stock 00700, use &#x60;HK_STOCK_00700_USDT&#x60;; To trade US ETF SPY, use &#x60;US_ETF_SPY_USDT&#x60;; Spot, USDT-margined perpetual futures, spot margin, stock, and ETF orders are supported. BYBIT/DERIBIT do not currently support spot margin orders. KRAKEN, HYPERLIQUID, and LIGHTER do not currently support spot or margin orders. Stocks and ETFs support only cross-exchange account mode (required).</param>
         /// <param name="side">BUY, SELL (required).</param>
         /// <param name="type">Order type (default: &#x60;LIMIT&#x60;; supported types: &#x60;LIMIT&#x60;, &#x60;MARKET&#x60;) (default to TypeEnum.LIMIT).</param>
-        /// <param name="timeInForce">Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, and &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: Retail Price Improvement (default to TimeInForceEnum.GTC).</param>
-        /// <param name="qty">Order quantity (required unless spot or margin market buy).</param>
-        /// <param name="price">Limit Order Price (Required for Limit Orders).</param>
-        /// <param name="quoteQty">Order quote quantity; required for spot and margin market buy orders.</param>
+        /// <param name="timeInForce">Defaults to GTC. Supported values: &#x60;GTC&#x60;, &#x60;IOC&#x60;, &#x60;FOK&#x60;, &#x60;POC&#x60;, &#x60;RPI&#x60; &#x60;GTC&#x60;: GoodTillCancelled &#x60;IOC&#x60;: ImmediateOrCancelled &#x60;FOK&#x60;: FillOrKill &#x60;POC&#x60;: PendingOrCancelled or PostOnly &#x60;RPI&#x60;: RPI Stocks and ETFs support only &#x60;GTC&#x60; (default to TimeInForceEnum.GTC).</param>
+        /// <param name="qty">Order quantity (required except for spot and margin market buys; qty is required for stocks and ETFs).</param>
+        /// <param name="price">Limit order price (required for limit orders). Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY).</param>
+        /// <param name="quoteQty">Order quote quantity, required for spot and margin market buys. Stock and ETF orders do not support quote_qty.</param>
         /// <param name="reduceOnly">Reduce-only: &#x60;true&#x60; or &#x60;false&#x60;.</param>
         /// <param name="positionSide">Position side: &#x60;NONE&#x60;, &#x60;LONG&#x60;, &#x60;SHORT&#x60; Defaults to &#x60;NONE&#x60; (single position mode) if not specified.</param>
         public CrossexOrderRequest(string text = default(string), string symbol = default(string), SideEnum side = default(SideEnum), TypeEnum? type = TypeEnum.LIMIT, TimeInForceEnum? timeInForce = TimeInForceEnum.GTC, string qty = default(string), string price = default(string), string quoteQty = default(string), ReduceOnlyEnum? reduceOnly = default(ReduceOnlyEnum?), PositionSideEnum? positionSide = default(PositionSideEnum?))
@@ -230,30 +230,30 @@ namespace Io.Gate.GateApi.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// Unique identifier &#x60;{Exchange}_{Business}_{Base}_{Counter}&#x60; Examples: To send a Binance spot order on &#x60;ADA/USDT&#x60;, use &#x60;BINANCE_SPOT_ADA_USDT&#x60;; For an ADA/USDT-margined USDT perpetual futures order on OKX, use &#x60;OKX_FUTURE_ADA_USDT&#x60;; For ADA/USDT margin trading on Gate, use &#x60;GATE_MARGIN_ADA_USDT&#x60;; For ADA/USDT spot trading on Bybit, use &#x60;BYBIT_SPOT_ADA_USDT&#x60;; For an ADA/USD futures order on Kraken, use &#x60;KRAKEN_FUTURE_ADA_USD&#x60;; For an ADA/USDC futures order on Hyperliquid, use &#x60;HYPERLIQUID_FUTURE_ADA_USDC&#x60;; For an ADA/USDC futures order on Deribit, use &#x60;DERIBIT_FUTURE_ADA_USDC&#x60;; For an ADA/USDC futures order on Lighter, use &#x60;LIGHTER_FUTURE_ADA_USDC&#x60;; Supports spot trades, USDT-margined perpetual futures, and spot margin templates. BYBIT and DERIBIT omit spot margin for now; Kraken, Hyperliquid, and Lighter omit dedicated spot/margin legs inside CrossEx.
+        /// Unique identifier Exchange_Business_Base_Counter Examples: To place a spot order for ADA/USDT on BINANCE, use &#x60;BINANCE_SPOT_ADA_USDT&#x60;; To place a USDT-margined perpetual futures order for ADA/USDT on OKX, use &#x60;OKX_FUTURE_ADA_USDT&#x60;; To place a spot margin order for ADA/USDT on GATE, use &#x60;GATE_MARGIN_ADA_USDT&#x60;; To place a spot order for ADA/USDT on BYBIT, use &#x60;BYBIT_SPOT_ADA_USDT&#x60;; To place a futures order for ADA/USD on KRAKEN, use &#x60;KRAKEN_FUTURE_ADA_USD&#x60;; To place a futures order for ADA/USDC on HYPERLIQUID, use &#x60;HYPERLIQUID_FUTURE_ADA_USDC&#x60;; To place a futures order for ADA/USDC on DERIBIT, use &#x60;DERIBIT_FUTURE_ADA_USDC&#x60;; To place a futures order for ADA/USDC on LIGHTER, use &#x60;LIGHTER_FUTURE_ADA_USDC&#x60;; To trade US stock AAPL, use &#x60;US_STOCK_AAPL_USDT&#x60;; To trade Hong Kong stock 00700, use &#x60;HK_STOCK_00700_USDT&#x60;; To trade US ETF SPY, use &#x60;US_ETF_SPY_USDT&#x60;; Spot, USDT-margined perpetual futures, spot margin, stock, and ETF orders are supported. BYBIT/DERIBIT do not currently support spot margin orders. KRAKEN, HYPERLIQUID, and LIGHTER do not currently support spot or margin orders. Stocks and ETFs support only cross-exchange account mode
         /// </summary>
-        /// <value>Unique identifier &#x60;{Exchange}_{Business}_{Base}_{Counter}&#x60; Examples: To send a Binance spot order on &#x60;ADA/USDT&#x60;, use &#x60;BINANCE_SPOT_ADA_USDT&#x60;; For an ADA/USDT-margined USDT perpetual futures order on OKX, use &#x60;OKX_FUTURE_ADA_USDT&#x60;; For ADA/USDT margin trading on Gate, use &#x60;GATE_MARGIN_ADA_USDT&#x60;; For ADA/USDT spot trading on Bybit, use &#x60;BYBIT_SPOT_ADA_USDT&#x60;; For an ADA/USD futures order on Kraken, use &#x60;KRAKEN_FUTURE_ADA_USD&#x60;; For an ADA/USDC futures order on Hyperliquid, use &#x60;HYPERLIQUID_FUTURE_ADA_USDC&#x60;; For an ADA/USDC futures order on Deribit, use &#x60;DERIBIT_FUTURE_ADA_USDC&#x60;; For an ADA/USDC futures order on Lighter, use &#x60;LIGHTER_FUTURE_ADA_USDC&#x60;; Supports spot trades, USDT-margined perpetual futures, and spot margin templates. BYBIT and DERIBIT omit spot margin for now; Kraken, Hyperliquid, and Lighter omit dedicated spot/margin legs inside CrossEx.</value>
+        /// <value>Unique identifier Exchange_Business_Base_Counter Examples: To place a spot order for ADA/USDT on BINANCE, use &#x60;BINANCE_SPOT_ADA_USDT&#x60;; To place a USDT-margined perpetual futures order for ADA/USDT on OKX, use &#x60;OKX_FUTURE_ADA_USDT&#x60;; To place a spot margin order for ADA/USDT on GATE, use &#x60;GATE_MARGIN_ADA_USDT&#x60;; To place a spot order for ADA/USDT on BYBIT, use &#x60;BYBIT_SPOT_ADA_USDT&#x60;; To place a futures order for ADA/USD on KRAKEN, use &#x60;KRAKEN_FUTURE_ADA_USD&#x60;; To place a futures order for ADA/USDC on HYPERLIQUID, use &#x60;HYPERLIQUID_FUTURE_ADA_USDC&#x60;; To place a futures order for ADA/USDC on DERIBIT, use &#x60;DERIBIT_FUTURE_ADA_USDC&#x60;; To place a futures order for ADA/USDC on LIGHTER, use &#x60;LIGHTER_FUTURE_ADA_USDC&#x60;; To trade US stock AAPL, use &#x60;US_STOCK_AAPL_USDT&#x60;; To trade Hong Kong stock 00700, use &#x60;HK_STOCK_00700_USDT&#x60;; To trade US ETF SPY, use &#x60;US_ETF_SPY_USDT&#x60;; Spot, USDT-margined perpetual futures, spot margin, stock, and ETF orders are supported. BYBIT/DERIBIT do not currently support spot margin orders. KRAKEN, HYPERLIQUID, and LIGHTER do not currently support spot or margin orders. Stocks and ETFs support only cross-exchange account mode</value>
         [DataMember(Name="symbol")]
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Order quantity (required unless spot or margin market buy)
+        /// Order quantity (required except for spot and margin market buys; qty is required for stocks and ETFs)
         /// </summary>
-        /// <value>Order quantity (required unless spot or margin market buy)</value>
+        /// <value>Order quantity (required except for spot and margin market buys; qty is required for stocks and ETFs)</value>
         [DataMember(Name="qty")]
         public string Qty { get; set; }
 
         /// <summary>
-        /// Limit Order Price (Required for Limit Orders)
+        /// Limit order price (required for limit orders). Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)
         /// </summary>
-        /// <value>Limit Order Price (Required for Limit Orders)</value>
+        /// <value>Limit order price (required for limit orders). Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="price")]
         public string Price { get; set; }
 
         /// <summary>
-        /// Order quote quantity; required for spot and margin market buy orders
+        /// Order quote quantity, required for spot and margin market buys. Stock and ETF orders do not support quote_qty
         /// </summary>
-        /// <value>Order quote quantity; required for spot and margin market buy orders</value>
+        /// <value>Order quote quantity, required for spot and margin market buys. Stock and ETF orders do not support quote_qty</value>
         [DataMember(Name="quote_qty")]
         public string QuoteQty { get; set; }
 

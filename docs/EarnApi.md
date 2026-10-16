@@ -12,6 +12,14 @@ Method | HTTP request | Description
 [**PlaceDualOrderRefund**](EarnApi.md#placedualorderrefund) | **POST** /earn/dual/order-refund | Dual-currency order early redemption
 [**ModifyDualOrderReinvest**](EarnApi.md#modifydualorderreinvest) | **POST** /earn/dual/modify-order-reinvest | Modify dual-currency order reinvest
 [**GetDualProjectRecommend**](EarnApi.md#getdualprojectrecommend) | **GET** /earn/dual/project-recommend | Dual-currency recommended projects
+[**ListDualStockInvestmentPlans**](EarnApi.md#listdualstockinvestmentplans) | **GET** /earn/dual/stock/investment_plan | List stock dual investment products
+[**GetDualStockProjectRecommend**](EarnApi.md#getdualstockprojectrecommend) | **GET** /earn/dual/stock/project-recommend | Get recommendations for stock dual investment products
+[**ListDualStockOrders**](EarnApi.md#listdualstockorders) | **GET** /earn/dual/stock/orders | List stock dual investment orders
+[**PlaceDualStockOrder**](EarnApi.md#placedualstockorder) | **POST** /earn/dual/stock/orders | Place a stock dual investment order
+[**ListDualStockBalance**](EarnApi.md#listdualstockbalance) | **GET** /earn/dual/stock/balance | Get stock dual investment asset statistics
+[**GetDualStockOrderRefundPreview**](EarnApi.md#getdualstockorderrefundpreview) | **GET** /earn/dual/stock/order-refund-preview | Preview stock dual investment redemption
+[**PlaceDualStockOrderRefund**](EarnApi.md#placedualstockorderrefund) | **POST** /earn/dual/stock/order-refund | Redeem a stock dual investment order
+[**ModifyDualStockOrderReinvest**](EarnApi.md#modifydualstockorderreinvest) | **POST** /earn/dual/stock/modify-order-reinvest | Reinvest a stock dual investment order
 [**FindCoin**](EarnApi.md#findcoin) | **GET** /earn/staking/coins | Staking coins
 [**SwapStakingCoin**](EarnApi.md#swapstakingcoin) | **POST** /earn/staking/swap | On-chain token swap for earned coins
 [**OrderList**](EarnApi.md#orderlist) | **GET** /earn/staking/order_list | List of on-chain coin-earning orders
@@ -623,6 +631,598 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listdualstockinvestmentplans"></a>
+# **ListDualStockInvestmentPlans**
+> List&lt;DualGetPlans&gt; ListDualStockInvestmentPlans (string planId = null, string coin = null, string type = null, string quoteCurrency = null, string sort = null, int? page = null, int? pageSize = null)
+
+List stock dual investment products
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListDualStockInvestmentPlansExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            var apiInstance = new EarnApi(config);
+            var planId = "272";  // string | Product/plan ID. If provided, only the matching product is returned (optional) 
+            var coin = "BTC";  // string | Underlying currency (optional) 
+            var type = "call";  // string | Type enum: `put` — buy low; `call` — sell high (optional) 
+            var quoteCurrency = "\"USDT\"";  // string | Settlement currency. Default: USDT (optional)  (default to "USDT")
+            var sort = "sort_example";  // string | Sort field enum: `apy` — highest APY first `short-period` — shortest tenor first `multiple` — highest premium first (optional) 
+            var page = 1;  // int? | page number (optional) 
+            var pageSize = 100;  // int? | Items per page，Maximum 100 (optional) 
+
+            try
+            {
+                // List stock dual investment products
+                List<DualGetPlans> result = apiInstance.ListDualStockInvestmentPlans(planId, coin, type, quoteCurrency, sort, page, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListDualStockInvestmentPlans: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **planId** | **string**| Product/plan ID. If provided, only the matching product is returned | [optional] 
+ **coin** | **string**| Underlying currency | [optional] 
+ **type** | **string**| Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high | [optional] 
+ **quoteCurrency** | **string**| Settlement currency. Default: USDT | [optional] [default to &quot;USDT&quot;]
+ **sort** | **string**| Sort field enum: &#x60;apy&#x60; — highest APY first &#x60;short-period&#x60; — shortest tenor first &#x60;multiple&#x60; — highest premium first | [optional] 
+ **page** | **int?**| page number | [optional] 
+ **pageSize** | **int?**| Items per page，Maximum 100 | [optional] 
+
+### Return type
+
+[**List&lt;DualGetPlans&gt;**](DualGetPlans.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getdualstockprojectrecommend"></a>
+# **GetDualStockProjectRecommend**
+> List&lt;DualProjectRecommend&gt; GetDualStockProjectRecommend (string coin = null, string type = null, string mode = null, string historyPids = null)
+
+Get recommendations for stock dual investment products
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetDualStockProjectRecommendExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            var apiInstance = new EarnApi(config);
+            var coin = "BTC";  // string | Underlying currency (optional) 
+            var type = "call";  // string | `call`: sell high; `put`: buy low (optional) 
+            var mode = "normal";  // string | Recommendation mode. Default: normal normal: Regular users senior: Experienced users (optional)  (default to normal)
+            var historyPids = "1001,1002";  // string | Previously recommended project IDs, separated by commas (optional) 
+
+            try
+            {
+                // Get recommendations for stock dual investment products
+                List<DualProjectRecommend> result = apiInstance.GetDualStockProjectRecommend(coin, type, mode, historyPids);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.GetDualStockProjectRecommend: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **coin** | **string**| Underlying currency | [optional] 
+ **type** | **string**| &#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low | [optional] 
+ **mode** | **string**| Recommendation mode. Default: normal normal: Regular users senior: Experienced users | [optional] [default to normal]
+ **historyPids** | **string**| Previously recommended project IDs, separated by commas | [optional] 
+
+### Return type
+
+[**List&lt;DualProjectRecommend&gt;**](DualProjectRecommend.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listdualstockorders"></a>
+# **ListDualStockOrders**
+> List&lt;DualGetOrders&gt; ListDualStockOrders (string coin = null, string status = null, string type = null, long? from = null, long? to = null, int? page = null, int? pageSize = null, int? limit = null)
+
+List stock dual investment orders
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListDualStockOrdersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var coin = "BTC";  // string | Investment Token (optional) 
+            var status = "\"ALL\"";  // string | Filter by order status. Default: ALL HOLD: Current holdings REPAY: Historical holdings PROCESSING: Holding in progress SETTLEMENT_PROCESSING: Settlement in progress ALL: All orders (optional)  (default to "ALL")
+            var type = "put";  // string | Type enum: `put` — buy low; `call` — sell high (optional) 
+            var from = 1740727000;  // long? | Start of the time range, in Unix seconds (optional) 
+            var to = 1740729000;  // long? | End of the time range, in Unix seconds (optional) 
+            var page = 1;  // int? | Page number (optional)  (default to 1)
+            var pageSize = 100;  // int? | Number of records per page, up to 100. Defaults to 100 when omitted (optional) 
+            var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
+
+            try
+            {
+                // List stock dual investment orders
+                List<DualGetOrders> result = apiInstance.ListDualStockOrders(coin, status, type, from, to, page, pageSize, limit);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListDualStockOrders: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **coin** | **string**| Investment Token | [optional] 
+ **status** | **string**| Filter by order status. Default: ALL HOLD: Current holdings REPAY: Historical holdings PROCESSING: Holding in progress SETTLEMENT_PROCESSING: Settlement in progress ALL: All orders | [optional] [default to &quot;ALL&quot;]
+ **type** | **string**| Type enum: &#x60;put&#x60; — buy low; &#x60;call&#x60; — sell high | [optional] 
+ **from** | **long?**| Start of the time range, in Unix seconds | [optional] 
+ **to** | **long?**| End of the time range, in Unix seconds | [optional] 
+ **page** | **int?**| Page number | [optional] [default to 1]
+ **pageSize** | **int?**| Number of records per page, up to 100. Defaults to 100 when omitted | [optional] 
+ **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
+
+### Return type
+
+[**List&lt;DualGetOrders&gt;**](DualGetOrders.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="placedualstockorder"></a>
+# **PlaceDualStockOrder**
+> PlaceDualInvestmentOrder PlaceDualStockOrder (PlaceDualStockInvestmentOrderParams placeDualStockInvestmentOrderParams)
+
+Place a stock dual investment order
+
+For buy-low (put) products, optionally pass `hit_spot`, `hit_stock`, and `hit_simple` (`1` selects the corresponding funding account) to collect funds from the spot, stock, or Simple Earn accounts before subscribing.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class PlaceDualStockOrderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var placeDualStockInvestmentOrderParams = new PlaceDualStockInvestmentOrderParams(); // PlaceDualStockInvestmentOrderParams | 
+
+            try
+            {
+                // Place a stock dual investment order
+                PlaceDualInvestmentOrder result = apiInstance.PlaceDualStockOrder(placeDualStockInvestmentOrderParams);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.PlaceDualStockOrder: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **placeDualStockInvestmentOrderParams** | [**PlaceDualStockInvestmentOrderParams**](PlaceDualStockInvestmentOrderParams.md)|  | 
+
+### Return type
+
+[**PlaceDualInvestmentOrder**](PlaceDualInvestmentOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Order placed successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listdualstockbalance"></a>
+# **ListDualStockBalance**
+> DualGetBalance ListDualStockBalance ()
+
+Get stock dual investment asset statistics
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListDualStockBalanceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+
+            try
+            {
+                // Get stock dual investment asset statistics
+                DualGetBalance result = apiInstance.ListDualStockBalance();
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ListDualStockBalance: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DualGetBalance**](DualGetBalance.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getdualstockorderrefundpreview"></a>
+# **GetDualStockOrderRefundPreview**
+> DualOrderRefundPreview GetDualStockOrderRefundPreview (string orderId)
+
+Preview stock dual investment redemption
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class GetDualStockOrderRefundPreviewExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var orderId = "9497";  // string | Order ID
+
+            try
+            {
+                // Preview stock dual investment redemption
+                DualOrderRefundPreview result = apiInstance.GetDualStockOrderRefundPreview(orderId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.GetDualStockOrderRefundPreview: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | **string**| Order ID | 
+
+### Return type
+
+[**DualOrderRefundPreview**](DualOrderRefundPreview.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="placedualstockorderrefund"></a>
+# **PlaceDualStockOrderRefund**
+> void PlaceDualStockOrderRefund (DualOrderRefundParams dualOrderRefundParams)
+
+Redeem a stock dual investment order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class PlaceDualStockOrderRefundExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var dualOrderRefundParams = new DualOrderRefundParams(); // DualOrderRefundParams | 
+
+            try
+            {
+                // Redeem a stock dual investment order
+                apiInstance.PlaceDualStockOrderRefund(dualOrderRefundParams);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.PlaceDualStockOrderRefund: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dualOrderRefundParams** | [**DualOrderRefundParams**](DualOrderRefundParams.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Redemption successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="modifydualstockorderreinvest"></a>
+# **ModifyDualStockOrderReinvest**
+> void ModifyDualStockOrderReinvest (DualModifyOrderReinvestParams dualModifyOrderReinvestParams)
+
+Reinvest a stock dual investment order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ModifyDualStockOrderReinvestExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new EarnApi(config);
+            var dualModifyOrderReinvestParams = new DualModifyOrderReinvestParams(); // DualModifyOrderReinvestParams | 
+
+            try
+            {
+                // Reinvest a stock dual investment order
+                apiInstance.ModifyDualStockOrderReinvest(dualModifyOrderReinvestParams);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling EarnApi.ModifyDualStockOrderReinvest: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dualModifyOrderReinvestParams** | [**DualModifyOrderReinvestParams**](DualModifyOrderReinvestParams.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Updated successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

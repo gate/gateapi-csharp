@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class OrderHistoryListItem :  IEquatable<OrderHistoryListItem>, IValidatableObject
     {
         /// <summary>
-        /// Exchange, supports us, hk, kr, and jp
+        /// Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
-        /// <value>Exchange, supports us, hk, kr, and jp</value>
+        /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExchangeEnum
         {
@@ -64,9 +64,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Exchange, supports us, hk, kr, and jp
+        /// Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
-        /// <value>Exchange, supports us, hk, kr, and jp</value>
+        /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [DataMember(Name="exchange")]
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
@@ -277,7 +277,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="orderId">Order ID.</param>
         /// <param name="symbol">Symbol.</param>
-        /// <param name="exchange">Exchange, supports us, hk, kr, and jp.</param>
+        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks..</param>
         /// <param name="quoteCurrency">Quote currency.</param>
         /// <param name="fxRate">Quote currency to USD exchange rate.</param>
         /// <param name="symbolDesc">Symbol description.</param>

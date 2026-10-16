@@ -35,6 +35,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="id">Product ID.</param>
         /// <param name="instrumentName">Product Name.</param>
+        /// <param name="type">&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low.</param>
         /// <param name="investCurrency">Investment Token.</param>
         /// <param name="exerciseCurrency">Strike Token.</param>
         /// <param name="exercisePrice">Strike price.</param>
@@ -44,10 +45,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="startTime">Start Time.</param>
         /// <param name="endTime">End time.</param>
         /// <param name="status">Status:  &#x60;NOTSTARTED&#x60; - Not started &#x60;ONGOING&#x60; - In progress &#x60;ENDED&#x60; - Ended.</param>
-        public DualGetPlans(int id = default(int), string instrumentName = default(string), string investCurrency = default(string), string exerciseCurrency = default(string), double exercisePrice = default(double), int deliveryTime = default(int), string apyDisplay = default(string), string minAmount = default(string), int startTime = default(int), int endTime = default(int), string status = default(string))
+        public DualGetPlans(int id = default(int), string instrumentName = default(string), string type = default(string), string investCurrency = default(string), string exerciseCurrency = default(string), double exercisePrice = default(double), int deliveryTime = default(int), string apyDisplay = default(string), string minAmount = default(string), int startTime = default(int), int endTime = default(int), string status = default(string))
         {
             this.Id = id;
             this.InstrumentName = instrumentName;
+            this.Type = type;
             this.InvestCurrency = investCurrency;
             this.ExerciseCurrency = exerciseCurrency;
             this.ExercisePrice = exercisePrice;
@@ -72,6 +74,13 @@ namespace Io.Gate.GateApi.Model
         /// <value>Product Name</value>
         [DataMember(Name="instrument_name")]
         public string InstrumentName { get; set; }
+
+        /// <summary>
+        /// &#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low
+        /// </summary>
+        /// <value>&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low</value>
+        [DataMember(Name="type")]
+        public string Type { get; set; }
 
         /// <summary>
         /// Investment Token
@@ -146,6 +155,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class DualGetPlans {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  InstrumentName: ").Append(InstrumentName).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  InvestCurrency: ").Append(InvestCurrency).Append("\n");
             sb.Append("  ExerciseCurrency: ").Append(ExerciseCurrency).Append("\n");
             sb.Append("  ExercisePrice: ").Append(ExercisePrice).Append("\n");
@@ -197,6 +207,11 @@ namespace Io.Gate.GateApi.Model
                     this.InstrumentName == input.InstrumentName ||
                     (this.InstrumentName != null &&
                     this.InstrumentName.Equals(input.InstrumentName))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
                     this.InvestCurrency == input.InvestCurrency ||
@@ -253,6 +268,8 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.InstrumentName != null)
                     hashCode = hashCode * 59 + this.InstrumentName.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.InvestCurrency != null)
                     hashCode = hashCode * 59 + this.InvestCurrency.GetHashCode();
                 if (this.ExerciseCurrency != null)

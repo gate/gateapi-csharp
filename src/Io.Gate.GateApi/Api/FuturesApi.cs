@@ -151,6 +151,35 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of FuturesOrderBook</returns>
         ApiResponse<FuturesOrderBook> ListFuturesOrderBookWithHttpInfo (string settle, string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
         /// <summary>
+        /// Query futures RPI order book
+        /// </summary>
+        /// <remarks>
+        /// Bids will be sorted by price from high to low, while asks sorted reversely
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
+        /// <returns>FuturesOrderBook</returns>
+        FuturesOrderBook ListFuturesRPIOrderBook (string settle, string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+
+        /// <summary>
+        /// Query futures RPI order book
+        /// </summary>
+        /// <remarks>
+        /// Bids will be sorted by price from high to low, while asks sorted reversely
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
+        /// <returns>ApiResponse of FuturesOrderBook</returns>
+        ApiResponse<FuturesOrderBook> ListFuturesRPIOrderBookWithHttpInfo (string settle, string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+        /// <summary>
         /// Futures market transaction records
         /// </summary>
         /// <remarks>
@@ -1897,9 +1926,10 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
-        TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
 
         /// <summary>
         /// Modify a Single Auto Order
@@ -1909,9 +1939,10 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
-        ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
         #endregion Synchronous Operations
     }
 
@@ -2044,6 +2075,35 @@ namespace Io.Gate.GateApi.Api
         /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
         /// <returns>Task of ApiResponse (FuturesOrderBook)</returns>
         Task<ApiResponse<FuturesOrderBook>> ListFuturesOrderBookAsyncWithHttpInfo (string settle, string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+        /// <summary>
+        /// Query futures RPI order book
+        /// </summary>
+        /// <remarks>
+        /// Bids will be sorted by price from high to low, while asks sorted reversely
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
+        /// <returns>Task of FuturesOrderBook</returns>
+        Task<FuturesOrderBook> ListFuturesRPIOrderBookAsync (string settle, string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
+
+        /// <summary>
+        /// Query futures RPI order book
+        /// </summary>
+        /// <remarks>
+        /// Bids will be sorted by price from high to low, while asks sorted reversely
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
+        /// <returns>Task of ApiResponse (FuturesOrderBook)</returns>
+        Task<ApiResponse<FuturesOrderBook>> ListFuturesRPIOrderBookAsyncWithHttpInfo (string settle, string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?));
         /// <summary>
         /// Futures market transaction records
         /// </summary>
@@ -3791,9 +3851,10 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
-        Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
 
         /// <summary>
         /// Modify a Single Auto Order
@@ -3803,9 +3864,10 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
-        Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
+        Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder);
         #endregion Asynchronous Operations
     }
 
@@ -4597,6 +4659,169 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListFuturesOrderBook", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query futures RPI order book Bids will be sorted by price from high to low, while asks sorted reversely
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
+        /// <returns>FuturesOrderBook</returns>
+        public FuturesOrderBook ListFuturesRPIOrderBook (string settle, string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        {
+             ApiResponse<FuturesOrderBook> localVarResponse = ListFuturesRPIOrderBookWithHttpInfo(settle, contract, interval, limit, withId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query futures RPI order book Bids will be sorted by price from high to low, while asks sorted reversely
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
+        /// <returns>ApiResponse of FuturesOrderBook</returns>
+        public ApiResponse<FuturesOrderBook> ListFuturesRPIOrderBookWithHttpInfo (string settle, string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->ListFuturesRPIOrderBook");
+
+            // verify the required parameter 'contract' is set
+            if (contract == null)
+                throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->ListFuturesRPIOrderBook");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            if (interval != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "interval", interval));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (withId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "with_id", withId));
+            }
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<FuturesOrderBook>("/futures/{settle}/rpi_order_book", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListFuturesRPIOrderBook", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query futures RPI order book Bids will be sorted by price from high to low, while asks sorted reversely
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
+        /// <returns>Task of FuturesOrderBook</returns>
+        public async Task<FuturesOrderBook> ListFuturesRPIOrderBookAsync (string settle, string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FuturesOrderBook> localVarResponse = await ListFuturesRPIOrderBookAsyncWithHttpInfo(settle, contract, interval, limit, withId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query futures RPI order book Bids will be sorted by price from high to low, while asks sorted reversely
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="contract">Futures contract</param>
+        /// <param name="interval">Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional, default to &quot;0&quot;)</param>
+        /// <param name="limit">Number of depth levels (optional, default to 10)</param>
+        /// <param name="withId">Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional, default to false)</param>
+        /// <returns>Task of ApiResponse (FuturesOrderBook)</returns>
+        public async Task<ApiResponse<FuturesOrderBook>> ListFuturesRPIOrderBookAsyncWithHttpInfo (string settle, string contract, string interval = default(string), int? limit = default(int?), bool? withId = default(bool?))
+        {
+            // verify the required parameter 'settle' is set
+            if (settle == null)
+                throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->ListFuturesRPIOrderBook");
+
+            // verify the required parameter 'contract' is set
+            if (contract == null)
+                throw new ApiException(400, "Missing required parameter 'contract' when calling FuturesApi->ListFuturesRPIOrderBook");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "contract", contract));
+            if (interval != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "interval", interval));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (withId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "with_id", withId));
+            }
+
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FuturesOrderBook>("/futures/{settle}/rpi_order_book", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListFuturesRPIOrderBook", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -14517,11 +14742,12 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>TriggerOrderResponse</returns>
-        public TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
-             ApiResponse<TriggerOrderResponse> localVarResponse = UpdatePriceTriggeredOrderWithHttpInfo(settle, futuresUpdatePriceTriggeredOrder);
+             ApiResponse<TriggerOrderResponse> localVarResponse = UpdatePriceTriggeredOrderWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
              return localVarResponse.Data;
         }
 
@@ -14530,13 +14756,18 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>ApiResponse of TriggerOrderResponse</returns>
-        public ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public ApiResponse<TriggerOrderResponse> UpdatePriceTriggeredOrderWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
                 throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling FuturesApi->UpdatePriceTriggeredOrder");
 
             // verify the required parameter 'futuresUpdatePriceTriggeredOrder' is set
             if (futuresUpdatePriceTriggeredOrder == null)
@@ -14560,13 +14791,14 @@ namespace Io.Gate.GateApi.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
             localVarRequestOptions.Data = futuresUpdatePriceTriggeredOrder;
 
             // authentication (apiv4) required
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<TriggerOrderResponse>("/futures/{settle}/price_orders/amend", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<TriggerOrderResponse>("/futures/{settle}/price_orders/amend/{order_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -14582,11 +14814,12 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of TriggerOrderResponse</returns>
-        public async Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public async Task<TriggerOrderResponse> UpdatePriceTriggeredOrderAsync (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
-             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse> localVarResponse = await UpdatePriceTriggeredOrderAsyncWithHttpInfo(settle, futuresUpdatePriceTriggeredOrder);
+             Io.Gate.GateApi.Client.ApiResponse<TriggerOrderResponse> localVarResponse = await UpdatePriceTriggeredOrderAsyncWithHttpInfo(settle, orderId, futuresUpdatePriceTriggeredOrder);
              return localVarResponse.Data;
 
         }
@@ -14596,13 +14829,18 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
+        /// <param name="orderId">ID returned when order is successfully created</param>
         /// <param name="futuresUpdatePriceTriggeredOrder"></param>
         /// <returns>Task of ApiResponse (TriggerOrderResponse)</returns>
-        public async Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+        public async Task<ApiResponse<TriggerOrderResponse>> UpdatePriceTriggeredOrderAsyncWithHttpInfo (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
                 throw new ApiException(400, "Missing required parameter 'settle' when calling FuturesApi->UpdatePriceTriggeredOrder");
+
+            // verify the required parameter 'orderId' is set
+            if (orderId == null)
+                throw new ApiException(400, "Missing required parameter 'orderId' when calling FuturesApi->UpdatePriceTriggeredOrder");
 
             // verify the required parameter 'futuresUpdatePriceTriggeredOrder' is set
             if (futuresUpdatePriceTriggeredOrder == null)
@@ -14627,6 +14865,7 @@ namespace Io.Gate.GateApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
 
             localVarRequestOptions.PathParameters.Add("settle", ClientUtils.ParameterToString(settle)); // path parameter
+            localVarRequestOptions.PathParameters.Add("order_id", ClientUtils.ParameterToString(orderId)); // path parameter
             localVarRequestOptions.Data = futuresUpdatePriceTriggeredOrder;
 
             // authentication (apiv4) required
@@ -14634,7 +14873,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TriggerOrderResponse>("/futures/{settle}/price_orders/amend", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TriggerOrderResponse>("/futures/{settle}/price_orders/amend/{order_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

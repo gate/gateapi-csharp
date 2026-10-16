@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **PageSize** | **int** |  | 
 **PageNumber** | **int** |  | 
 **TotalPage** | **int** |  | 
-**List** | [**List&lt;OtcStableCoinOrderListItem&gt;**](OtcStableCoinOrderListItem.md) |  | 
+**Lists** | [**List&lt;OtcStableCoinOrderListItem&gt;**](OtcStableCoinOrderListItem.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

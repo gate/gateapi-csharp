@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class ExchangesDataList :  IEquatable<ExchangesDataList>, IValidatableObject
     {
         /// <summary>
-        /// Trading market, supports us, hk, kr, and jp
+        /// Trading market. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
-        /// <value>Trading market, supports us, hk, kr, and jp</value>
+        /// <value>Trading market. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExchangeEnum
         {
@@ -64,15 +64,15 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Trading market, supports us, hk, kr, and jp
+        /// Trading market. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
-        /// <value>Trading market, supports us, hk, kr, and jp</value>
+        /// <value>Trading market. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [DataMember(Name="exchange")]
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ExchangesDataList" /> class.
         /// </summary>
-        /// <param name="exchange">Trading market, supports us, hk, kr, and jp.</param>
+        /// <param name="exchange">Trading market. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks..</param>
         /// <param name="exchangeDesc">Market display name.</param>
         /// <param name="iconLink">Market icon.</param>
         /// <param name="supportTransfer">Whether stock transfer is supported.</param>

@@ -46,23 +46,23 @@ namespace Io.Gate.GateApi.Model
         /// <param name="side">Side (&#x60;BUY&#x60; buy / &#x60;SELL&#x60; sell). (required).</param>
         /// <param name="type">Order type (&#x60;LIMIT&#x60; limit / &#x60;MARKET&#x60; market). (required).</param>
         /// <param name="attribute">Order attributes (&#x60;COMMON&#x60; normal / &#x60;LIQ&#x60; liquidation takeover / &#x60;REDUCE&#x60; liquidation reduction / &#x60;ADL&#x60; auto-deleverage / &#x60;SETTLEMENT&#x60; delisting settlement). (required).</param>
-        /// <param name="exchangeType">Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60; / &#x60;LIGHTER&#x60;). (required).</param>
-        /// <param name="businessType">Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin / &#x60;CONVERT&#x60; Flash Swap). (required).</param>
+        /// <param name="exchangeType">Exchange type (BINANCE / OKX / GATE / BYBIT / KRAKEN / HYPERLIQUID / DERIBIT / LIGHTER). Stocks and ETFs return the listing market (US / HK / KR / JP) (required).</param>
+        /// <param name="businessType">Business type (SPOT: spot / FUTURE: futures / MARGIN: margin / CONVERT: flash swap / STOCK: stocks / ETF: exchange-traded funds) (required).</param>
         /// <param name="qty">Order quantity in the base currency. (required).</param>
         /// <param name="quoteQty">Order quantity in the quote currency. (required).</param>
-        /// <param name="price">Order price. (required).</param>
+        /// <param name="price">Order price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY) (required).</param>
         /// <param name="timeInForce">Time-in-force policy (default: GTC; allowed values: GTC, IOC, FOK, POC, and RPI) (required).</param>
         /// <param name="executedQty">Filled base amount. (required).</param>
-        /// <param name="executedAmount">Filled quote amount. (required).</param>
-        /// <param name="executedAvgPrice">Average Filled Price (required).</param>
+        /// <param name="executedAmount">Filled amount in the quote currency. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY) (required).</param>
+        /// <param name="executedAvgPrice">Average fill price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY) (required).</param>
         /// <param name="feeCoin">Fee currency (required).</param>
         /// <param name="fee">Fee amount. (required).</param>
         /// <param name="reduceOnly">Reduce-only order (&#x60;\&quot;true\&quot;&#x60; or &#x60;\&quot;false\&quot;&#x60;). (required).</param>
         /// <param name="leverage">Order leverage multiplier. (required).</param>
         /// <param name="reason">Failure reason description. (required).</param>
         /// <param name="lastExecutedQty">Base quantity of the latest fill. (required).</param>
-        /// <param name="lastExecutedPrice">Price of the latest fill. (required).</param>
-        /// <param name="lastExecutedAmount">Quote amount of the latest fill. (required).</param>
+        /// <param name="lastExecutedPrice">Price of the latest fill. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY) (required).</param>
+        /// <param name="lastExecutedAmount">Amount of the latest fill. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY) (required).</param>
         /// <param name="positionSide">Position side (&#x60;NONE&#x60; one-way position / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short) (required).</param>
         /// <param name="createTime">Created time (required).</param>
         /// <param name="updateTime">Update time (required).</param>
@@ -183,16 +183,16 @@ namespace Io.Gate.GateApi.Model
         public string Attribute { get; set; }
 
         /// <summary>
-        /// Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60; / &#x60;LIGHTER&#x60;).
+        /// Exchange type (BINANCE / OKX / GATE / BYBIT / KRAKEN / HYPERLIQUID / DERIBIT / LIGHTER). Stocks and ETFs return the listing market (US / HK / KR / JP)
         /// </summary>
-        /// <value>Venue bucket (&#x60;BINANCE&#x60; / &#x60;OKX&#x60; / &#x60;GATE&#x60; / &#x60;BYBIT&#x60; / &#x60;KRAKEN&#x60; / &#x60;HYPERLIQUID&#x60; / &#x60;DERIBIT&#x60; / &#x60;LIGHTER&#x60;).</value>
+        /// <value>Exchange type (BINANCE / OKX / GATE / BYBIT / KRAKEN / HYPERLIQUID / DERIBIT / LIGHTER). Stocks and ETFs return the listing market (US / HK / KR / JP)</value>
         [DataMember(Name="exchange_type")]
         public string ExchangeType { get; set; }
 
         /// <summary>
-        /// Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin / &#x60;CONVERT&#x60; Flash Swap).
+        /// Business type (SPOT: spot / FUTURE: futures / MARGIN: margin / CONVERT: flash swap / STOCK: stocks / ETF: exchange-traded funds)
         /// </summary>
-        /// <value>Business type (&#x60;SPOT&#x60; Spot / &#x60;FUTURE&#x60; Futures / &#x60;MARGIN&#x60; Margin / &#x60;CONVERT&#x60; Flash Swap).</value>
+        /// <value>Business type (SPOT: spot / FUTURE: futures / MARGIN: margin / CONVERT: flash swap / STOCK: stocks / ETF: exchange-traded funds)</value>
         [DataMember(Name="business_type")]
         public string BusinessType { get; set; }
 
@@ -211,9 +211,9 @@ namespace Io.Gate.GateApi.Model
         public string QuoteQty { get; set; }
 
         /// <summary>
-        /// Order price.
+        /// Order price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)
         /// </summary>
-        /// <value>Order price.</value>
+        /// <value>Order price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="price")]
         public string Price { get; set; }
 
@@ -232,16 +232,16 @@ namespace Io.Gate.GateApi.Model
         public string ExecutedQty { get; set; }
 
         /// <summary>
-        /// Filled quote amount.
+        /// Filled amount in the quote currency. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)
         /// </summary>
-        /// <value>Filled quote amount.</value>
+        /// <value>Filled amount in the quote currency. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="executed_amount")]
         public string ExecutedAmount { get; set; }
 
         /// <summary>
-        /// Average Filled Price
+        /// Average fill price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)
         /// </summary>
-        /// <value>Average Filled Price</value>
+        /// <value>Average fill price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="executed_avg_price")]
         public string ExecutedAvgPrice { get; set; }
 
@@ -288,16 +288,16 @@ namespace Io.Gate.GateApi.Model
         public string LastExecutedQty { get; set; }
 
         /// <summary>
-        /// Price of the latest fill.
+        /// Price of the latest fill. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)
         /// </summary>
-        /// <value>Price of the latest fill.</value>
+        /// <value>Price of the latest fill. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="last_executed_price")]
         public string LastExecutedPrice { get; set; }
 
         /// <summary>
-        /// Quote amount of the latest fill.
+        /// Amount of the latest fill. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)
         /// </summary>
-        /// <value>Quote amount of the latest fill.</value>
+        /// <value>Amount of the latest fill. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="last_executed_amount")]
         public string LastExecutedAmount { get; set; }
 

@@ -124,7 +124,7 @@ namespace Example
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new StockApi(config);
             var symbols = "AAPL,TSLA";  // string | Symbol list, multiple separated by commas (optional) 
-            var exchange = "us";  // string | Exchange, supports us, hk, kr, and jp (optional) 
+            var exchange = "us";  // string | Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional) 
             var withDescI18n = true;  // bool? | Whether to return multilingual symbol description (optional) 
             var page = 1;  // int? | Page number, defaults to 1 (optional) 
             var pageSize = 100;  // int? | Page size, defaults to 10, max 500; server caps at 500 (optional) 
@@ -152,7 +152,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbols** | **string**| Symbol list, multiple separated by commas | [optional] 
- **exchange** | **string**| Exchange, supports us, hk, kr, and jp | [optional] 
+ **exchange** | **string**| Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. | [optional] 
  **withDescI18n** | **bool?**| Whether to return multilingual symbol description | [optional] 
  **page** | **int?**| Page number, defaults to 1 | [optional] 
  **pageSize** | **int?**| Page size, defaults to 10, max 500; server caps at 500 | [optional] 
@@ -204,7 +204,7 @@ namespace Example
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new StockApi(config);
             var symbols = "AAPL,TSLA";  // string | Symbol list, multiple separated by commas (optional) 
-            var exchange = "us";  // string | Exchange, supports us, hk, kr, and jp (optional) 
+            var exchange = "us";  // string | Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional) 
             var page = 1;  // int? | Page number, defaults to 1 (optional) 
             var pageSize = 100;  // int? | Page size, defaults to 10, max 500; server caps at 500 (optional) 
 
@@ -231,7 +231,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbols** | **string**| Symbol list, multiple separated by commas | [optional] 
- **exchange** | **string**| Exchange, supports us, hk, kr, and jp | [optional] 
+ **exchange** | **string**| Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. | [optional] 
  **page** | **int?**| Page number, defaults to 1 | [optional] 
  **pageSize** | **int?**| Page size, defaults to 10, max 500; server caps at 500 | [optional] 
 
@@ -812,7 +812,7 @@ namespace Example
             var pnlCalcType = 1;  // int? | PnL calculation cost type. Defaults to average cost price when omitted (1 = average cost price, 2 = diluted cost price) (optional) 
             var pnlCalcPrice = 1;  // int? | PnL calculation price type. Defaults to intraday price when omitted (1 = intraday price, 2 = latest extended-hours price) (optional) 
             var symbol = "AAPL";  // string | Symbol (optional) 
-            var exchange = "us";  // string | Exchange, supports us, hk, kr, and jp (optional) 
+            var exchange = "us";  // string | Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional) 
 
             try
             {
@@ -839,7 +839,7 @@ Name | Type | Description  | Notes
  **pnlCalcType** | **int?**| PnL calculation cost type. Defaults to average cost price when omitted (1 &#x3D; average cost price, 2 &#x3D; diluted cost price) | [optional] 
  **pnlCalcPrice** | **int?**| PnL calculation price type. Defaults to intraday price when omitted (1 &#x3D; intraday price, 2 &#x3D; latest extended-hours price) | [optional] 
  **symbol** | **string**| Symbol | [optional] 
- **exchange** | **string**| Exchange, supports us, hk, kr, and jp | [optional] 
+ **exchange** | **string**| Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. | [optional] 
 
 ### Return type
 

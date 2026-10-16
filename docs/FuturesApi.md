@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetFuturesContract**](FuturesApi.md#getfuturescontract) | **GET** /futures/{settle}/contracts/{contract} | Query single contract information
 [**ListFuturesADLRiskStates**](FuturesApi.md#listfuturesadlriskstates) | **GET** /futures/{settle}/adl_risk_states | List market-level ADL risk states
 [**ListFuturesOrderBook**](FuturesApi.md#listfuturesorderbook) | **GET** /futures/{settle}/order_book | Query futures market depth information
+[**ListFuturesRPIOrderBook**](FuturesApi.md#listfuturesrpiorderbook) | **GET** /futures/{settle}/rpi_order_book | Query futures RPI order book
 [**ListFuturesTrades**](FuturesApi.md#listfuturestrades) | **GET** /futures/{settle}/trades | Futures market transaction records
 [**ListFuturesCandlesticks**](FuturesApi.md#listfuturescandlesticks) | **GET** /futures/{settle}/candlesticks | Futures market K-line chart
 [**ListFuturesPremiumIndex**](FuturesApi.md#listfuturespremiumindex) | **GET** /futures/{settle}/premium_index | Premium Index K-line chart
@@ -74,7 +75,7 @@ Method | HTTP request | Description
 [**CancelPriceTriggeredOrderList**](FuturesApi.md#cancelpricetriggeredorderlist) | **DELETE** /futures/{settle}/price_orders | Cancel all auto orders
 [**GetPriceTriggeredOrder**](FuturesApi.md#getpricetriggeredorder) | **GET** /futures/{settle}/price_orders/{order_id} | Query single auto order details
 [**CancelPriceTriggeredOrder**](FuturesApi.md#cancelpricetriggeredorder) | **DELETE** /futures/{settle}/price_orders/{order_id} | Cancel single auto order
-[**UpdatePriceTriggeredOrder**](FuturesApi.md#updatepricetriggeredorder) | **PUT** /futures/{settle}/price_orders/amend | Modify a Single Auto Order
+[**UpdatePriceTriggeredOrder**](FuturesApi.md#updatepricetriggeredorder) | **PUT** /futures/{settle}/price_orders/amend/{order_id} | Modify a Single Auto Order
 
 
 <a name="listfuturescontracts"></a>
@@ -405,6 +406,85 @@ namespace Example
             catch (GateApiException e)
             {
                 Debug.Print("Exception when calling FuturesApi.ListFuturesOrderBook: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **string**| Perpetual futures settlement currency | 
+ **contract** | **string**| Futures contract | 
+ **interval** | **string**| Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 | [optional] [default to &quot;0&quot;]
+ **limit** | **int?**| Number of depth levels | [optional] [default to 10]
+ **withId** | **bool?**| Whether to return depth update ID. This ID increments by 1 each time the depth changes | [optional] [default to false]
+
+### Return type
+
+[**FuturesOrderBook**](FuturesOrderBook.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Depth query successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listfuturesrpiorderbook"></a>
+# **ListFuturesRPIOrderBook**
+> FuturesOrderBook ListFuturesRPIOrderBook (string settle, string contract, string interval = null, int? limit = null, bool? withId = null)
+
+Query futures RPI order book
+
+Bids will be sorted by price from high to low, while asks sorted reversely
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListFuturesRPIOrderBookExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            var apiInstance = new FuturesApi(config);
+            var settle = "usdt";  // string | Perpetual futures settlement currency
+            var contract = "BTC_USDT";  // string | Futures contract
+            var interval = "\"0\"";  // string | Price precision for merged depth. 0 means no merging. If not specified, defaults to 0 (optional)  (default to "0")
+            var limit = 10;  // int? | Number of depth levels (optional)  (default to 10)
+            var withId = false;  // bool? | Whether to return depth update ID. This ID increments by 1 each time the depth changes (optional)  (default to false)
+
+            try
+            {
+                // Query futures RPI order book
+                FuturesOrderBook result = apiInstance.ListFuturesRPIOrderBook(settle, contract, interval, limit, withId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FuturesApi.ListFuturesRPIOrderBook: " + e.Message);
                 Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
@@ -5463,7 +5543,7 @@ Name | Type | Description  | Notes
 
 <a name="updatepricetriggeredorder"></a>
 # **UpdatePriceTriggeredOrder**
-> TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
+> TriggerOrderResponse UpdatePriceTriggeredOrder (string settle, string orderId, FuturesUpdatePriceTriggeredOrder futuresUpdatePriceTriggeredOrder)
 
 Modify a Single Auto Order
 
@@ -5487,12 +5567,13 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Perpetual futures settlement currency
+            var orderId = "2110911746238578688";  // string | ID returned when order is successfully created
             var futuresUpdatePriceTriggeredOrder = new FuturesUpdatePriceTriggeredOrder(); // FuturesUpdatePriceTriggeredOrder | 
 
             try
             {
                 // Modify a Single Auto Order
-                TriggerOrderResponse result = apiInstance.UpdatePriceTriggeredOrder(settle, futuresUpdatePriceTriggeredOrder);
+                TriggerOrderResponse result = apiInstance.UpdatePriceTriggeredOrder(settle, orderId, futuresUpdatePriceTriggeredOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -5512,6 +5593,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Perpetual futures settlement currency | 
+ **orderId** | **string**| ID returned when order is successfully created | 
  **futuresUpdatePriceTriggeredOrder** | [**FuturesUpdatePriceTriggeredOrder**](FuturesUpdatePriceTriggeredOrder.md)|  | 
 
 ### Return type

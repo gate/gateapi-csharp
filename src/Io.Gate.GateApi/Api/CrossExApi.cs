@@ -31,10 +31,10 @@ namespace Io.Gate.GateApi.Api
         /// Query symbol information
         /// </summary>
         /// <remarks>
-        /// Query Trading Pair Information
+        /// List trading pair information. Stock and ETF symbols use &#x60;{market}_{business_type}_{security_code}_USDT&#x60;, for example &#x60;US_STOCK_AAPL_USDT&#x60;, &#x60;HK_STOCK_00700_USDT&#x60;, or &#x60;US_ETF_SPY_USDT&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of trading pairs, comma-separated. Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">Comma-separated list of trading pairs Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT,US_STOCK_AAPL_USDT (optional)</param>
         /// <returns>List&lt;Symbol&gt;</returns>
         List<Symbol> ListCrossexRuleSymbols (string symbols = default(string));
 
@@ -42,10 +42,10 @@ namespace Io.Gate.GateApi.Api
         /// Query symbol information
         /// </summary>
         /// <remarks>
-        /// Query Trading Pair Information
+        /// List trading pair information. Stock and ETF symbols use &#x60;{market}_{business_type}_{security_code}_USDT&#x60;, for example &#x60;US_STOCK_AAPL_USDT&#x60;, &#x60;HK_STOCK_00700_USDT&#x60;, or &#x60;US_ETF_SPY_USDT&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of trading pairs, comma-separated. Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">Comma-separated list of trading pairs Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT,US_STOCK_AAPL_USDT (optional)</param>
         /// <returns>ApiResponse of List&lt;Symbol&gt;</returns>
         ApiResponse<List<Symbol>> ListCrossexRuleSymbolsWithHttpInfo (string symbols = default(string));
         /// <summary>
@@ -146,7 +146,7 @@ namespace Io.Gate.GateApi.Api
         /// Create order
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Rate limit: 100 requests per 10 seconds; each user may have up to 1,000 open orders. Stocks and ETFs have an additional per-user limit of one request per second and support only cross-exchange account mode and GTC. Stock and ETF orders must use qty; quote_qty is not supported. Stock and ETF order prices use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -157,7 +157,7 @@ namespace Io.Gate.GateApi.Api
         /// Create order
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Rate limit: 100 requests per 10 seconds; each user may have up to 1,000 open orders. Stocks and ETFs have an additional per-user limit of one request per second and support only cross-exchange account mode and GTC. Stock and ETF orders must use qty; quote_qty is not supported. Stock and ETF order prices use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -567,6 +567,29 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;CrossexPosition&gt;</returns>
         ApiResponse<List<CrossexPosition>> ListCrossexPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
         /// <summary>
+        /// List security positions
+        /// </summary>
+        /// <remarks>
+        /// List stock and ETF positions. Rate limit: 200 requests per 10 seconds. Prices, position values, and unrealized profit and loss use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Stock or ETF trading pair (optional)</param>
+        /// <param name="exchangeType">Stock market (US/HK/KR/JP) (optional)</param>
+        /// <returns>List&lt;CrossexSecurityPosition&gt;</returns>
+        List<CrossexSecurityPosition> ListCrossexSecurityPositions (string symbol = default(string), string exchangeType = default(string));
+
+        /// <summary>
+        /// List security positions
+        /// </summary>
+        /// <remarks>
+        /// List stock and ETF positions. Rate limit: 200 requests per 10 seconds. Prices, position values, and unrealized profit and loss use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Stock or ETF trading pair (optional)</param>
+        /// <param name="exchangeType">Stock market (US/HK/KR/JP) (optional)</param>
+        /// <returns>ApiResponse of List&lt;CrossexSecurityPosition&gt;</returns>
+        ApiResponse<List<CrossexSecurityPosition>> ListCrossexSecurityPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
+        /// <summary>
         /// Query Leveraged Positions
         /// </summary>
         /// <remarks>
@@ -893,10 +916,10 @@ namespace Io.Gate.GateApi.Api
         /// Query symbol information
         /// </summary>
         /// <remarks>
-        /// Query Trading Pair Information
+        /// List trading pair information. Stock and ETF symbols use &#x60;{market}_{business_type}_{security_code}_USDT&#x60;, for example &#x60;US_STOCK_AAPL_USDT&#x60;, &#x60;HK_STOCK_00700_USDT&#x60;, or &#x60;US_ETF_SPY_USDT&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of trading pairs, comma-separated. Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">Comma-separated list of trading pairs Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT,US_STOCK_AAPL_USDT (optional)</param>
         /// <returns>Task of List&lt;Symbol&gt;</returns>
         Task<List<Symbol>> ListCrossexRuleSymbolsAsync (string symbols = default(string));
 
@@ -904,10 +927,10 @@ namespace Io.Gate.GateApi.Api
         /// Query symbol information
         /// </summary>
         /// <remarks>
-        /// Query Trading Pair Information
+        /// List trading pair information. Stock and ETF symbols use &#x60;{market}_{business_type}_{security_code}_USDT&#x60;, for example &#x60;US_STOCK_AAPL_USDT&#x60;, &#x60;HK_STOCK_00700_USDT&#x60;, or &#x60;US_ETF_SPY_USDT&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of trading pairs, comma-separated. Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">Comma-separated list of trading pairs Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT,US_STOCK_AAPL_USDT (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Symbol&gt;)</returns>
         Task<ApiResponse<List<Symbol>>> ListCrossexRuleSymbolsAsyncWithHttpInfo (string symbols = default(string));
         /// <summary>
@@ -1008,7 +1031,7 @@ namespace Io.Gate.GateApi.Api
         /// Create order
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Rate limit: 100 requests per 10 seconds; each user may have up to 1,000 open orders. Stocks and ETFs have an additional per-user limit of one request per second and support only cross-exchange account mode and GTC. Stock and ETF orders must use qty; quote_qty is not supported. Stock and ETF order prices use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -1019,7 +1042,7 @@ namespace Io.Gate.GateApi.Api
         /// Create order
         /// </summary>
         /// <remarks>
-        /// Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Rate limit: 100 requests per 10 seconds; each user may have up to 1,000 open orders. Stocks and ETFs have an additional per-user limit of one request per second and support only cross-exchange account mode and GTC. Stock and ETF orders must use qty; quote_qty is not supported. Stock and ETF order prices use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -1428,6 +1451,29 @@ namespace Io.Gate.GateApi.Api
         /// <param name="exchangeType">Exchange (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;CrossexPosition&gt;)</returns>
         Task<ApiResponse<List<CrossexPosition>>> ListCrossexPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
+        /// <summary>
+        /// List security positions
+        /// </summary>
+        /// <remarks>
+        /// List stock and ETF positions. Rate limit: 200 requests per 10 seconds. Prices, position values, and unrealized profit and loss use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Stock or ETF trading pair (optional)</param>
+        /// <param name="exchangeType">Stock market (US/HK/KR/JP) (optional)</param>
+        /// <returns>Task of List&lt;CrossexSecurityPosition&gt;</returns>
+        Task<List<CrossexSecurityPosition>> ListCrossexSecurityPositionsAsync (string symbol = default(string), string exchangeType = default(string));
+
+        /// <summary>
+        /// List security positions
+        /// </summary>
+        /// <remarks>
+        /// List stock and ETF positions. Rate limit: 200 requests per 10 seconds. Prices, position values, and unrealized profit and loss use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Stock or ETF trading pair (optional)</param>
+        /// <param name="exchangeType">Stock market (US/HK/KR/JP) (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;CrossexSecurityPosition&gt;)</returns>
+        Task<ApiResponse<List<CrossexSecurityPosition>>> ListCrossexSecurityPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string));
         /// <summary>
         /// Query Leveraged Positions
         /// </summary>
@@ -1863,10 +1909,10 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query symbol information Query Trading Pair Information
+        /// Query symbol information List trading pair information. Stock and ETF symbols use &#x60;{market}_{business_type}_{security_code}_USDT&#x60;, for example &#x60;US_STOCK_AAPL_USDT&#x60;, &#x60;HK_STOCK_00700_USDT&#x60;, or &#x60;US_ETF_SPY_USDT&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of trading pairs, comma-separated. Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">Comma-separated list of trading pairs Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT,US_STOCK_AAPL_USDT (optional)</param>
         /// <returns>List&lt;Symbol&gt;</returns>
         public List<Symbol> ListCrossexRuleSymbols (string symbols = default(string))
         {
@@ -1875,10 +1921,10 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query symbol information Query Trading Pair Information
+        /// Query symbol information List trading pair information. Stock and ETF symbols use &#x60;{market}_{business_type}_{security_code}_USDT&#x60;, for example &#x60;US_STOCK_AAPL_USDT&#x60;, &#x60;HK_STOCK_00700_USDT&#x60;, or &#x60;US_ETF_SPY_USDT&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of trading pairs, comma-separated. Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">Comma-separated list of trading pairs Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT,US_STOCK_AAPL_USDT (optional)</param>
         /// <returns>ApiResponse of List&lt;Symbol&gt;</returns>
         public ApiResponse<List<Symbol>> ListCrossexRuleSymbolsWithHttpInfo (string symbols = default(string))
         {
@@ -1917,10 +1963,10 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query symbol information Query Trading Pair Information
+        /// Query symbol information List trading pair information. Stock and ETF symbols use &#x60;{market}_{business_type}_{security_code}_USDT&#x60;, for example &#x60;US_STOCK_AAPL_USDT&#x60;, &#x60;HK_STOCK_00700_USDT&#x60;, or &#x60;US_ETF_SPY_USDT&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of trading pairs, comma-separated. Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">Comma-separated list of trading pairs Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT,US_STOCK_AAPL_USDT (optional)</param>
         /// <returns>Task of List&lt;Symbol&gt;</returns>
         public async Task<List<Symbol>> ListCrossexRuleSymbolsAsync (string symbols = default(string))
         {
@@ -1930,10 +1976,10 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query symbol information Query Trading Pair Information
+        /// Query symbol information List trading pair information. Stock and ETF symbols use &#x60;{market}_{business_type}_{security_code}_USDT&#x60;, for example &#x60;US_STOCK_AAPL_USDT&#x60;, &#x60;HK_STOCK_00700_USDT&#x60;, or &#x60;US_ETF_SPY_USDT&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of trading pairs, comma-separated. Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT (optional)</param>
+        /// <param name="symbols">Comma-separated list of trading pairs Example: BINANCE_FUTURE_ADA_USDT,OKX_FUTURE_ADA_USDT,US_STOCK_AAPL_USDT (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Symbol&gt;)</returns>
         public async Task<ApiResponse<List<Symbol>>> ListCrossexRuleSymbolsAsyncWithHttpInfo (string symbols = default(string))
         {
@@ -2484,7 +2530,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Create order Rate limit: 100 requests per 10 seconds; each user may have up to 1,000 open orders. Stocks and ETFs have an additional per-user limit of one request per second and support only cross-exchange account mode and GTC. Stock and ETF orders must use qty; quote_qty is not supported. Stock and ETF order prices use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -2496,7 +2542,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Create order Rate limit: 100 requests per 10 seconds; each user may have up to 1,000 open orders. Stocks and ETFs have an additional per-user limit of one request per second and support only cross-exchange account mode and GTC. Stock and ETF orders must use qty; quote_qty is not supported. Stock and ETF order prices use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -2538,7 +2584,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Create order Rate limit: 100 requests per 10 seconds; each user may have up to 1,000 open orders. Stocks and ETFs have an additional per-user limit of one request per second and support only cross-exchange account mode and GTC. Stock and ETF orders must use qty; quote_qty is not supported. Stock and ETF order prices use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -2551,7 +2597,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Create order Rate Limit: 100 requests per 10 seconds, maximum 1,000 open orders per user
+        /// Create order Rate limit: 100 requests per 10 seconds; each user may have up to 1,000 open orders. Stocks and ETFs have an additional per-user limit of one request per second and support only cross-exchange account mode and GTC. Stock and ETF orders must use qty; quote_qty is not supported. Stock and ETF order prices use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="crossexOrderRequest"> (optional)</param>
@@ -4773,6 +4819,133 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListCrossexPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List security positions List stock and ETF positions. Rate limit: 200 requests per 10 seconds. Prices, position values, and unrealized profit and loss use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Stock or ETF trading pair (optional)</param>
+        /// <param name="exchangeType">Stock market (US/HK/KR/JP) (optional)</param>
+        /// <returns>List&lt;CrossexSecurityPosition&gt;</returns>
+        public List<CrossexSecurityPosition> ListCrossexSecurityPositions (string symbol = default(string), string exchangeType = default(string))
+        {
+             ApiResponse<List<CrossexSecurityPosition>> localVarResponse = ListCrossexSecurityPositionsWithHttpInfo(symbol, exchangeType);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List security positions List stock and ETF positions. Rate limit: 200 requests per 10 seconds. Prices, position values, and unrealized profit and loss use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Stock or ETF trading pair (optional)</param>
+        /// <param name="exchangeType">Stock market (US/HK/KR/JP) (optional)</param>
+        /// <returns>ApiResponse of List&lt;CrossexSecurityPosition&gt;</returns>
+        public ApiResponse<List<CrossexSecurityPosition>> ListCrossexSecurityPositionsWithHttpInfo (string symbol = default(string), string exchangeType = default(string))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (exchangeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<CrossexSecurityPosition>>("/crossex/security_positions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexSecurityPositions", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List security positions List stock and ETF positions. Rate limit: 200 requests per 10 seconds. Prices, position values, and unrealized profit and loss use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Stock or ETF trading pair (optional)</param>
+        /// <param name="exchangeType">Stock market (US/HK/KR/JP) (optional)</param>
+        /// <returns>Task of List&lt;CrossexSecurityPosition&gt;</returns>
+        public async Task<List<CrossexSecurityPosition>> ListCrossexSecurityPositionsAsync (string symbol = default(string), string exchangeType = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<List<CrossexSecurityPosition>> localVarResponse = await ListCrossexSecurityPositionsAsyncWithHttpInfo(symbol, exchangeType);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List security positions List stock and ETF positions. Rate limit: 200 requests per 10 seconds. Prices, position values, and unrealized profit and loss use the listing market currency: USD for US markets, HKD for Hong Kong, KRW for South Korea, and JPY for Japan.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbol">Stock or ETF trading pair (optional)</param>
+        /// <param name="exchangeType">Stock market (US/HK/KR/JP) (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;CrossexSecurityPosition&gt;)</returns>
+        public async Task<ApiResponse<List<CrossexSecurityPosition>>> ListCrossexSecurityPositionsAsyncWithHttpInfo (string symbol = default(string), string exchangeType = default(string))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (exchangeType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "exchange_type", exchangeType));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<CrossexSecurityPosition>>("/crossex/security_positions", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListCrossexSecurityPositions", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

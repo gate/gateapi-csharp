@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Ps** | **int** |  | 
 **TotalPn** | **int** |  | 
 **Count** | **int** |  | 
-**List** | [**List&lt;OtcOrderListItem&gt;**](OtcOrderListItem.md) |  | 
+**Lists** | [**List&lt;OtcOrderListItem&gt;**](OtcOrderListItem.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
