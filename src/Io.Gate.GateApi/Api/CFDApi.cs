@@ -316,7 +316,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">Order ID</param>
         /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>UpdateOrder</returns>
-        UpdateOrder UpdateOrder (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
+        UpdateOrder UpdateOrder (long orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
 
         /// <summary>
         /// Modify order
@@ -328,7 +328,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">Order ID</param>
         /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>ApiResponse of UpdateOrder</returns>
-        ApiResponse<UpdateOrder> UpdateOrderWithHttpInfo (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
+        ApiResponse<UpdateOrder> UpdateOrderWithHttpInfo (long orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
         /// <summary>
         /// Cancel order
         /// </summary>
@@ -338,7 +338,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
         /// <returns>Object</returns>
-        Object DeleteOrder (int orderId);
+        Object DeleteOrder (long orderId);
 
         /// <summary>
         /// Cancel order
@@ -349,7 +349,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> DeleteOrderWithHttpInfo (int orderId);
+        ApiResponse<Object> DeleteOrderWithHttpInfo (long orderId);
         /// <summary>
         /// Query historical order list
         /// </summary>
@@ -386,7 +386,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">log_id returned from the order placement API</param>
         /// <returns>OrderLog</returns>
-        OrderLog QueryOrderLog (int logId);
+        OrderLog QueryOrderLog (long logId);
 
         /// <summary>
         /// Get order details by log ID
@@ -397,7 +397,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">log_id returned from the order placement API</param>
         /// <returns>ApiResponse of OrderLog</returns>
-        ApiResponse<OrderLog> QueryOrderLogWithHttpInfo (int logId);
+        ApiResponse<OrderLog> QueryOrderLogWithHttpInfo (long logId);
         /// <summary>
         /// Query active position list
         /// </summary>
@@ -427,7 +427,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>UpdatePosition</returns>
-        UpdatePosition UpdatePosition (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
+        UpdatePosition UpdatePosition (long positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
 
         /// <summary>
         /// Modify position
@@ -439,7 +439,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>ApiResponse of UpdatePosition</returns>
-        ApiResponse<UpdatePosition> UpdatePositionWithHttpInfo (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
+        ApiResponse<UpdatePosition> UpdatePositionWithHttpInfo (long positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
         /// <summary>
         /// Close position
         /// </summary>
@@ -450,7 +450,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>DeletePosition</returns>
-        DeletePosition ClosePosition (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
+        DeletePosition ClosePosition (long positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
 
         /// <summary>
         /// Close position
@@ -462,7 +462,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>ApiResponse of DeletePosition</returns>
-        ApiResponse<DeletePosition> ClosePositionWithHttpInfo (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
+        ApiResponse<DeletePosition> ClosePositionWithHttpInfo (long positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
         /// <summary>
         /// Query historical position list
         /// </summary>
@@ -792,7 +792,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">Order ID</param>
         /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>Task of UpdateOrder</returns>
-        Task<UpdateOrder> UpdateOrderAsync (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
+        Task<UpdateOrder> UpdateOrderAsync (long orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
 
         /// <summary>
         /// Modify order
@@ -804,7 +804,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">Order ID</param>
         /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>Task of ApiResponse (UpdateOrder)</returns>
-        Task<ApiResponse<UpdateOrder>> UpdateOrderAsyncWithHttpInfo (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
+        Task<ApiResponse<UpdateOrder>> UpdateOrderAsyncWithHttpInfo (long orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest);
         /// <summary>
         /// Cancel order
         /// </summary>
@@ -814,7 +814,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
         /// <returns>Task of Object</returns>
-        Task<Object> DeleteOrderAsync (int orderId);
+        Task<Object> DeleteOrderAsync (long orderId);
 
         /// <summary>
         /// Cancel order
@@ -825,7 +825,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        Task<ApiResponse<Object>> DeleteOrderAsyncWithHttpInfo (int orderId);
+        Task<ApiResponse<Object>> DeleteOrderAsyncWithHttpInfo (long orderId);
         /// <summary>
         /// Query historical order list
         /// </summary>
@@ -862,7 +862,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">log_id returned from the order placement API</param>
         /// <returns>Task of OrderLog</returns>
-        Task<OrderLog> QueryOrderLogAsync (int logId);
+        Task<OrderLog> QueryOrderLogAsync (long logId);
 
         /// <summary>
         /// Get order details by log ID
@@ -873,7 +873,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">log_id returned from the order placement API</param>
         /// <returns>Task of ApiResponse (OrderLog)</returns>
-        Task<ApiResponse<OrderLog>> QueryOrderLogAsyncWithHttpInfo (int logId);
+        Task<ApiResponse<OrderLog>> QueryOrderLogAsyncWithHttpInfo (long logId);
         /// <summary>
         /// Query active position list
         /// </summary>
@@ -903,7 +903,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>Task of UpdatePosition</returns>
-        Task<UpdatePosition> UpdatePositionAsync (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
+        Task<UpdatePosition> UpdatePositionAsync (long positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
 
         /// <summary>
         /// Modify position
@@ -915,7 +915,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>Task of ApiResponse (UpdatePosition)</returns>
-        Task<ApiResponse<UpdatePosition>> UpdatePositionAsyncWithHttpInfo (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
+        Task<ApiResponse<UpdatePosition>> UpdatePositionAsyncWithHttpInfo (long positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest);
         /// <summary>
         /// Close position
         /// </summary>
@@ -926,7 +926,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>Task of DeletePosition</returns>
-        Task<DeletePosition> ClosePositionAsync (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
+        Task<DeletePosition> ClosePositionAsync (long positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
 
         /// <summary>
         /// Close position
@@ -938,7 +938,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>Task of ApiResponse (DeletePosition)</returns>
-        Task<ApiResponse<DeletePosition>> ClosePositionAsyncWithHttpInfo (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
+        Task<ApiResponse<DeletePosition>> ClosePositionAsyncWithHttpInfo (long positionId, TradFiClosePositionRequest tradFiClosePositionRequest);
         /// <summary>
         /// Query historical position list
         /// </summary>
@@ -2628,7 +2628,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">Order ID</param>
         /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>UpdateOrder</returns>
-        public UpdateOrder UpdateOrder (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
+        public UpdateOrder UpdateOrder (long orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
         {
              ApiResponse<UpdateOrder> localVarResponse = UpdateOrderWithHttpInfo(orderId, tradFiOrderUpdateRequest);
              return localVarResponse.Data;
@@ -2641,7 +2641,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">Order ID</param>
         /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>ApiResponse of UpdateOrder</returns>
-        public ApiResponse<UpdateOrder> UpdateOrderWithHttpInfo (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
+        public ApiResponse<UpdateOrder> UpdateOrderWithHttpInfo (long orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
         {
             // verify the required parameter 'tradFiOrderUpdateRequest' is set
             if (tradFiOrderUpdateRequest == null)
@@ -2689,7 +2689,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">Order ID</param>
         /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>Task of UpdateOrder</returns>
-        public async Task<UpdateOrder> UpdateOrderAsync (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
+        public async Task<UpdateOrder> UpdateOrderAsync (long orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
         {
              Io.Gate.GateApi.Client.ApiResponse<UpdateOrder> localVarResponse = await UpdateOrderAsyncWithHttpInfo(orderId, tradFiOrderUpdateRequest);
              return localVarResponse.Data;
@@ -2703,7 +2703,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="orderId">Order ID</param>
         /// <param name="tradFiOrderUpdateRequest"></param>
         /// <returns>Task of ApiResponse (UpdateOrder)</returns>
-        public async Task<ApiResponse<UpdateOrder>> UpdateOrderAsyncWithHttpInfo (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
+        public async Task<ApiResponse<UpdateOrder>> UpdateOrderAsyncWithHttpInfo (long orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
         {
             // verify the required parameter 'tradFiOrderUpdateRequest' is set
             if (tradFiOrderUpdateRequest == null)
@@ -2752,7 +2752,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
         /// <returns>Object</returns>
-        public Object DeleteOrder (int orderId)
+        public Object DeleteOrder (long orderId)
         {
              ApiResponse<Object> localVarResponse = DeleteOrderWithHttpInfo(orderId);
              return localVarResponse.Data;
@@ -2764,7 +2764,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse<Object> DeleteOrderWithHttpInfo (int orderId)
+        public ApiResponse<Object> DeleteOrderWithHttpInfo (long orderId)
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -2805,7 +2805,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
         /// <returns>Task of Object</returns>
-        public async Task<Object> DeleteOrderAsync (int orderId)
+        public async Task<Object> DeleteOrderAsync (long orderId)
         {
              Io.Gate.GateApi.Client.ApiResponse<Object> localVarResponse = await DeleteOrderAsyncWithHttpInfo(orderId);
              return localVarResponse.Data;
@@ -2818,7 +2818,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="orderId">Order ID</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async Task<ApiResponse<Object>> DeleteOrderAsyncWithHttpInfo (int orderId)
+        public async Task<ApiResponse<Object>> DeleteOrderAsyncWithHttpInfo (long orderId)
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3012,7 +3012,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">log_id returned from the order placement API</param>
         /// <returns>OrderLog</returns>
-        public OrderLog QueryOrderLog (int logId)
+        public OrderLog QueryOrderLog (long logId)
         {
              ApiResponse<OrderLog> localVarResponse = QueryOrderLogWithHttpInfo(logId);
              return localVarResponse.Data;
@@ -3024,7 +3024,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">log_id returned from the order placement API</param>
         /// <returns>ApiResponse of OrderLog</returns>
-        public ApiResponse<OrderLog> QueryOrderLogWithHttpInfo (int logId)
+        public ApiResponse<OrderLog> QueryOrderLogWithHttpInfo (long logId)
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -3065,7 +3065,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">log_id returned from the order placement API</param>
         /// <returns>Task of OrderLog</returns>
-        public async Task<OrderLog> QueryOrderLogAsync (int logId)
+        public async Task<OrderLog> QueryOrderLogAsync (long logId)
         {
              Io.Gate.GateApi.Client.ApiResponse<OrderLog> localVarResponse = await QueryOrderLogAsyncWithHttpInfo(logId);
              return localVarResponse.Data;
@@ -3078,7 +3078,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">log_id returned from the order placement API</param>
         /// <returns>Task of ApiResponse (OrderLog)</returns>
-        public async Task<ApiResponse<OrderLog>> QueryOrderLogAsyncWithHttpInfo (int logId)
+        public async Task<ApiResponse<OrderLog>> QueryOrderLogAsyncWithHttpInfo (long logId)
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -3225,7 +3225,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>UpdatePosition</returns>
-        public UpdatePosition UpdatePosition (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
+        public UpdatePosition UpdatePosition (long positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
         {
              ApiResponse<UpdatePosition> localVarResponse = UpdatePositionWithHttpInfo(positionId, tradFiPositionUpdateRequest);
              return localVarResponse.Data;
@@ -3238,7 +3238,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>ApiResponse of UpdatePosition</returns>
-        public ApiResponse<UpdatePosition> UpdatePositionWithHttpInfo (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
+        public ApiResponse<UpdatePosition> UpdatePositionWithHttpInfo (long positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
         {
             // verify the required parameter 'tradFiPositionUpdateRequest' is set
             if (tradFiPositionUpdateRequest == null)
@@ -3286,7 +3286,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>Task of UpdatePosition</returns>
-        public async Task<UpdatePosition> UpdatePositionAsync (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
+        public async Task<UpdatePosition> UpdatePositionAsync (long positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
         {
              Io.Gate.GateApi.Client.ApiResponse<UpdatePosition> localVarResponse = await UpdatePositionAsyncWithHttpInfo(positionId, tradFiPositionUpdateRequest);
              return localVarResponse.Data;
@@ -3300,7 +3300,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiPositionUpdateRequest"></param>
         /// <returns>Task of ApiResponse (UpdatePosition)</returns>
-        public async Task<ApiResponse<UpdatePosition>> UpdatePositionAsyncWithHttpInfo (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
+        public async Task<ApiResponse<UpdatePosition>> UpdatePositionAsyncWithHttpInfo (long positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
         {
             // verify the required parameter 'tradFiPositionUpdateRequest' is set
             if (tradFiPositionUpdateRequest == null)
@@ -3350,7 +3350,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>DeletePosition</returns>
-        public DeletePosition ClosePosition (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
+        public DeletePosition ClosePosition (long positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
         {
              ApiResponse<DeletePosition> localVarResponse = ClosePositionWithHttpInfo(positionId, tradFiClosePositionRequest);
              return localVarResponse.Data;
@@ -3363,7 +3363,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>ApiResponse of DeletePosition</returns>
-        public ApiResponse<DeletePosition> ClosePositionWithHttpInfo (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
+        public ApiResponse<DeletePosition> ClosePositionWithHttpInfo (long positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
         {
             // verify the required parameter 'tradFiClosePositionRequest' is set
             if (tradFiClosePositionRequest == null)
@@ -3411,7 +3411,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>Task of DeletePosition</returns>
-        public async Task<DeletePosition> ClosePositionAsync (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
+        public async Task<DeletePosition> ClosePositionAsync (long positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
         {
              Io.Gate.GateApi.Client.ApiResponse<DeletePosition> localVarResponse = await ClosePositionAsyncWithHttpInfo(positionId, tradFiClosePositionRequest);
              return localVarResponse.Data;
@@ -3425,7 +3425,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="positionId">Position ID</param>
         /// <param name="tradFiClosePositionRequest"></param>
         /// <returns>Task of ApiResponse (DeletePosition)</returns>
-        public async Task<ApiResponse<DeletePosition>> ClosePositionAsyncWithHttpInfo (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
+        public async Task<ApiResponse<DeletePosition>> ClosePositionAsyncWithHttpInfo (long positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
         {
             // verify the required parameter 'tradFiClosePositionRequest' is set
             if (tradFiClosePositionRequest == null)

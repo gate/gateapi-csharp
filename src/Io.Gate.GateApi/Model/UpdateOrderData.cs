@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="price">Current price.</param>
         /// <param name="priceTp">Current take profit price.</param>
         /// <param name="priceSl">Current stop loss price.</param>
-        public UpdateOrderData(int orderId = default(int), string symbol = default(string), string state = default(string), string volume = default(string), string price = default(string), string priceTp = default(string), string priceSl = default(string))
+        public UpdateOrderData(long orderId = default(long), string symbol = default(string), string state = default(string), string volume = default(string), string price = default(string), string priceTp = default(string), string priceSl = default(string))
         {
             this.OrderId = orderId;
             this.Symbol = symbol;
@@ -56,7 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
-        public int OrderId { get; set; }
+        public long OrderId { get; set; }
 
         /// <summary>
         /// Currency pair

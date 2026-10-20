@@ -953,7 +953,7 @@ Name | Type | Description  | Notes
 
 <a name="updateorder"></a>
 # **UpdateOrder**
-> UpdateOrder UpdateOrder (int orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
+> UpdateOrder UpdateOrder (long orderId, TradFiOrderUpdateRequest tradFiOrderUpdateRequest)
 
 Modify order
 
@@ -976,7 +976,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CFDApi(config);
-            var orderId = 1223;  // int | Order ID
+            var orderId = 1223;  // long | Order ID
             var tradFiOrderUpdateRequest = new TradFiOrderUpdateRequest(); // TradFiOrderUpdateRequest | 
 
             try
@@ -1001,7 +1001,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **int**| Order ID | 
+ **orderId** | **long**| Order ID | 
  **tradFiOrderUpdateRequest** | [**TradFiOrderUpdateRequest**](TradFiOrderUpdateRequest.md)|  | 
 
 ### Return type
@@ -1027,7 +1027,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteorder"></a>
 # **DeleteOrder**
-> Object DeleteOrder (int orderId)
+> Object DeleteOrder (long orderId)
 
 Cancel order
 
@@ -1050,7 +1050,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CFDApi(config);
-            var orderId = 1223;  // int | Order ID
+            var orderId = 1223;  // long | Order ID
 
             try
             {
@@ -1074,7 +1074,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **int**| Order ID | 
+ **orderId** | **long**| Order ID | 
 
 ### Return type
 
@@ -1177,7 +1177,7 @@ Name | Type | Description  | Notes
 
 <a name="queryorderlog"></a>
 # **QueryOrderLog**
-> OrderLog QueryOrderLog (int logId)
+> OrderLog QueryOrderLog (long logId)
 
 Get order details by log ID
 
@@ -1200,7 +1200,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CFDApi(config);
-            var logId = 1223;  // int | log_id returned from the order placement API
+            var logId = 1223;  // long | log_id returned from the order placement API
 
             try
             {
@@ -1224,7 +1224,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **logId** | **int**| log_id returned from the order placement API | 
+ **logId** | **long**| log_id returned from the order placement API | 
 
 ### Return type
 
@@ -1317,7 +1317,7 @@ This endpoint does not need any parameter.
 
 <a name="updateposition"></a>
 # **UpdatePosition**
-> UpdatePosition UpdatePosition (int positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
+> UpdatePosition UpdatePosition (long positionId, TradFiPositionUpdateRequest tradFiPositionUpdateRequest)
 
 Modify position
 
@@ -1340,7 +1340,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CFDApi(config);
-            var positionId = 1223;  // int | Position ID
+            var positionId = 1223;  // long | Position ID
             var tradFiPositionUpdateRequest = new TradFiPositionUpdateRequest(); // TradFiPositionUpdateRequest | 
 
             try
@@ -1365,7 +1365,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **positionId** | **int**| Position ID | 
+ **positionId** | **long**| Position ID | 
  **tradFiPositionUpdateRequest** | [**TradFiPositionUpdateRequest**](TradFiPositionUpdateRequest.md)|  | 
 
 ### Return type
@@ -1391,7 +1391,7 @@ Name | Type | Description  | Notes
 
 <a name="closeposition"></a>
 # **ClosePosition**
-> DeletePosition ClosePosition (int positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
+> DeletePosition ClosePosition (long positionId, TradFiClosePositionRequest tradFiClosePositionRequest)
 
 Close position
 
@@ -1414,7 +1414,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CFDApi(config);
-            var positionId = 1223;  // int | Position ID
+            var positionId = 1223;  // long | Position ID
             var tradFiClosePositionRequest = new TradFiClosePositionRequest(); // TradFiClosePositionRequest | 
 
             try
@@ -1439,7 +1439,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **positionId** | **int**| Position ID | 
+ **positionId** | **long**| Position ID | 
  **tradFiClosePositionRequest** | [**TradFiClosePositionRequest**](TradFiClosePositionRequest.md)|  | 
 
 ### Return type

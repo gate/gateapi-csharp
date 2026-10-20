@@ -7,8 +7,8 @@ Response data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OrderId** | **int** | Order ID | [optional] 
-**LogId** | **int** | logID | [optional] 
+**OrderId** | **long** | Order ID | [optional] 
+**LogId** | **long** | logID | [optional] 
 **Symbol** | **string** | Trading pair of the order | [optional] 
 **PriceType** | **string** | Trade type (market&#x3D;market price, trigger&#x3D;trigger price) | [optional] 
 **State** | **int** | Order status code (1&#x3D;placed, 2&#x3D;canceled, 3&#x3D;partially filled, 4&#x3D;filled, 5&#x3D;rejected) | [optional] 

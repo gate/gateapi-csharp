@@ -147,7 +147,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="priceSl">Stop loss price.</param>
         /// <param name="timeSetup">Order time (Unix timestamp in seconds).</param>
         /// <param name="timeDone">End time (Unix timestamp in seconds).</param>
-        public OrderHistoryListDataList(int orderId = default(int), string symbol = default(string), string symbolDesc = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), OrderOptTypeEnum? orderOptType = default(OrderOptTypeEnum?), int state = default(int), string stateDesc = default(string), SideEnum? side = default(SideEnum?), string volume = default(string), string fillVolume = default(string), string closePnl = default(string), string price = default(string), string triggerPrice = default(string), string priceTp = default(string), string priceSl = default(string), long timeSetup = default(long), long timeDone = default(long))
+        public OrderHistoryListDataList(long orderId = default(long), string symbol = default(string), string symbolDesc = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), OrderOptTypeEnum? orderOptType = default(OrderOptTypeEnum?), int state = default(int), string stateDesc = default(string), SideEnum? side = default(SideEnum?), string volume = default(string), string fillVolume = default(string), string closePnl = default(string), string price = default(string), string triggerPrice = default(string), string priceTp = default(string), string priceSl = default(string), long timeSetup = default(long), long timeDone = default(long))
         {
             this.OrderId = orderId;
             this.Symbol = symbol;
@@ -173,7 +173,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
-        public int OrderId { get; set; }
+        public long OrderId { get; set; }
 
         /// <summary>
         /// Currency pair

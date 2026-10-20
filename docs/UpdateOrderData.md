@@ -7,7 +7,7 @@ Response data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OrderId** | **int** | Order ID | [optional] 
+**OrderId** | **long** | Order ID | [optional] 
 **Symbol** | **string** | Currency pair | [optional] 
 **State** | **string** | Order status code | [optional] 
 **Volume** | **string** | Order quantity | [optional] 

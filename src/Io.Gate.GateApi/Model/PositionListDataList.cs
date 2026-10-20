@@ -42,7 +42,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="volume">Position size.</param>
         /// <param name="priceOpen">Average Opening Price.</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position).</param>
-        public PositionListDataList(int positionId = default(int), string symbol = default(string), string symbolDesc = default(string), string margin = default(string), string unrealizedPnl = default(string), string unrealizedPnlRate = default(string), string volume = default(string), string priceOpen = default(string), string positionDir = default(string))
+        public PositionListDataList(long positionId = default(long), string symbol = default(string), string symbolDesc = default(string), string margin = default(string), string unrealizedPnl = default(string), string unrealizedPnlRate = default(string), string volume = default(string), string priceOpen = default(string), string positionDir = default(string))
         {
             this.PositionId = positionId;
             this.Symbol = symbol;
@@ -60,7 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position ID</value>
         [DataMember(Name="position_id")]
-        public int PositionId { get; set; }
+        public long PositionId { get; set; }
 
         /// <summary>
         /// Trading market code

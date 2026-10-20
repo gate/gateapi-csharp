@@ -93,7 +93,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="side">Side (1&#x3D;sell, 2&#x3D;buy).</param>
         /// <param name="volume">Order quantity.</param>
         /// <param name="price">Average fill price.</param>
-        public OrderLogData(int orderId = default(int), int logId = default(int), string symbol = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), int state = default(int), SideEnum? side = default(SideEnum?), string volume = default(string), string price = default(string))
+        public OrderLogData(long orderId = default(long), long logId = default(long), string symbol = default(string), PriceTypeEnum? priceType = default(PriceTypeEnum?), int state = default(int), SideEnum? side = default(SideEnum?), string volume = default(string), string price = default(string))
         {
             this.OrderId = orderId;
             this.LogId = logId;
@@ -110,14 +110,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
-        public int OrderId { get; set; }
+        public long OrderId { get; set; }
 
         /// <summary>
         /// logID
         /// </summary>
         /// <value>logID</value>
         [DataMember(Name="log_id")]
-        public int LogId { get; set; }
+        public long LogId { get; set; }
 
         /// <summary>
         /// Trading pair of the order

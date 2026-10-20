@@ -7,7 +7,7 @@ Order detail
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OrderId** | **int** | Order ID | [optional] 
+**OrderId** | **long** | Order ID | [optional] 
 **Symbol** | **string** | Currency pair | [optional] 
 **SymbolDesc** | **string** | Symbol description | [optional] 
 **PriceType** | **string** | Trade type (market&#x3D;market price, trigger&#x3D;trigger price) | [optional] 
