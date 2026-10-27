@@ -35,28 +35,24 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         [DataMember(Name="strategy_type")]
         
-        public StrategyType StrategyType { get; set; }
+        public StrategyType? StrategyType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AIHubPortfolioStopData" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected AIHubPortfolioStopData() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AIHubPortfolioStopData" /> class.
-        /// </summary>
-        /// <param name="strategyId">strategyId (required).</param>
-        /// <param name="strategyType">strategyType (required).</param>
-        /// <param name="status">The current implementation returns &#x60;stopping&#x60; (required).</param>
-        /// <param name="resultMessage">resultMessage (required).</param>
-        public AIHubPortfolioStopData(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string status = default(string), string resultMessage = default(string))
+        /// <param name="strategyId">strategyId.</param>
+        /// <param name="strategyType">strategyType.</param>
+        /// <param name="status">Observed product lifecycle state, or unknown. Creation acceptance/starting is not running; stopping/finished alone does not prove funds settled..</param>
+        /// <param name="resultMessage">resultMessage.</param>
+        /// <param name="operationStatus">pending when the write result requires verification; rejected for a proven pre-effect refusal..</param>
+        /// <param name="recoveryRequired">recoveryRequired.</param>
+        public AIHubPortfolioStopData(string strategyId = default(string), StrategyType? strategyType = default(StrategyType?), string status = default(string), string resultMessage = default(string), string operationStatus = default(string), bool recoveryRequired = default(bool))
         {
-            // to ensure "strategyId" is required (not null)
-            this.StrategyId = strategyId ?? throw new ArgumentNullException("strategyId", "strategyId is a required property for AIHubPortfolioStopData and cannot be null");
+            this.StrategyId = strategyId;
             this.StrategyType = strategyType;
-            // to ensure "status" is required (not null)
-            this.Status = status ?? throw new ArgumentNullException("status", "status is a required property for AIHubPortfolioStopData and cannot be null");
-            // to ensure "resultMessage" is required (not null)
-            this.ResultMessage = resultMessage ?? throw new ArgumentNullException("resultMessage", "resultMessage is a required property for AIHubPortfolioStopData and cannot be null");
+            this.Status = status;
+            this.ResultMessage = resultMessage;
+            this.OperationStatus = operationStatus;
+            this.RecoveryRequired = recoveryRequired;
         }
 
         /// <summary>
@@ -67,9 +63,9 @@ namespace Io.Gate.GateApi.Model
         public string StrategyId { get; set; }
 
         /// <summary>
-        /// The current implementation returns &#x60;stopping&#x60;
+        /// Observed product lifecycle state, or unknown. Creation acceptance/starting is not running; stopping/finished alone does not prove funds settled.
         /// </summary>
-        /// <value>The current implementation returns &#x60;stopping&#x60;</value>
+        /// <value>Observed product lifecycle state, or unknown. Creation acceptance/starting is not running; stopping/finished alone does not prove funds settled.</value>
         [DataMember(Name="status")]
         
         public string Status { get; set; }
@@ -80,6 +76,21 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="result_message")]
         
         public string ResultMessage { get; set; }
+
+        /// <summary>
+        /// pending when the write result requires verification; rejected for a proven pre-effect refusal.
+        /// </summary>
+        /// <value>pending when the write result requires verification; rejected for a proven pre-effect refusal.</value>
+        [DataMember(Name="operation_status")]
+        
+        public string OperationStatus { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RecoveryRequired
+        /// </summary>
+        [DataMember(Name="recovery_required")]
+        
+        public bool RecoveryRequired { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -93,6 +104,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  StrategyType: ").Append(StrategyType).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  ResultMessage: ").Append(ResultMessage).Append("\n");
+            sb.Append("  OperationStatus: ").Append(OperationStatus).Append("\n");
+            sb.Append("  RecoveryRequired: ").Append(RecoveryRequired).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -145,6 +158,15 @@ namespace Io.Gate.GateApi.Model
                     this.ResultMessage == input.ResultMessage ||
                     (this.ResultMessage != null &&
                     this.ResultMessage.Equals(input.ResultMessage))
+                ) && 
+                (
+                    this.OperationStatus == input.OperationStatus ||
+                    (this.OperationStatus != null &&
+                    this.OperationStatus.Equals(input.OperationStatus))
+                ) && 
+                (
+                    this.RecoveryRequired == input.RecoveryRequired ||
+                    this.RecoveryRequired.Equals(input.RecoveryRequired)
                 );
         }
 
@@ -164,6 +186,9 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.ResultMessage != null)
                     hashCode = hashCode * 59 + this.ResultMessage.GetHashCode();
+                if (this.OperationStatus != null)
+                    hashCode = hashCode * 59 + this.OperationStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.RecoveryRequired.GetHashCode();
                 return hashCode;
             }
         }

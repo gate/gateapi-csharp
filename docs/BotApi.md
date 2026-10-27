@@ -14,15 +14,17 @@ Method | HTTP request | Description
 [**GetAIHubPortfolioRunning**](BotApi.md#getaihubportfoliorunning) | **GET** /bot/portfolio/running | Query the list of running policies
 [**GetAIHubPortfolioDetail**](BotApi.md#getaihubportfoliodetail) | **GET** /bot/portfolio/detail | Query order policy details
 [**PostAIHubPortfolioStop**](BotApi.md#postaihubportfoliostop) | **POST** /bot/portfolio/stop | Terminate a single running policy
+[**PostAIHubSmartPositionCreate**](BotApi.md#postaihubsmartpositioncreate) | **POST** /bot/smart-position/create | Create rebalance bot
+[**PostAIHubFuturesComboCreate**](BotApi.md#postaihubfuturescombocreate) | **POST** /bot/futures-combo/create | Create futures-combo bot
 
 
 <a name="getaihubstrategyrecommend"></a>
 # **GetAIHubStrategyRecommend**
-> AIHubDiscoverSuccessResponse GetAIHubStrategyRecommend (string market = null, string strategyType = null, string direction = null, string investAmount = null, string scene = null, string refreshRecommendationId = null, int? limit = null, string maxDrawdownLte = null, string backtestAprGte = null, string xGateServiceId = null, string xGateAppLang = null, string xRequestId = null, string xTraceId = null)
+> AIHubDiscoverSuccessResponse GetAIHubStrategyRecommend (string market = null, string strategyType = null, string direction = null, string investAmount = null, string scene = null, string refreshRecommendationId = null, int? limit = null, string maxDrawdownLte = null, string backtestAprGte = null, string xGateServiceId = null, string xGateAppLang = null, string xRequestId = null, string xTraceId = null, string excludeRecommendationId = null)
 
 Get AIHub strategy recommendations
 
-The only formal interface for the discover domain. Support scenarios: - `top1` - `bundle` - `filter` - `refresh` Constraints: - The active recommendation pool only contains `spot_grid`, `futures_grid`, `spot_martingale` - Can return but do not actively recommend `infinite_grid`, `margin_grid` - `contract_martingale`, `smart-position`, `spot-future-arbitrage` must not be returned - When `scene=filter` is used, only filtering by `market`, `backtest_apr_gte`, `max_drawdown_lte` is allowed - `scene=refresh` inherits the refresh context through `refresh_recommendation_id`; the official minimum format only requires `strategy_type|market` - If the upstream directly transmits the previous recommendation `recommendation_id`, the third paragraph `backtest_id` will currently be ignored.
+Six real official source types. Exact rebalance asset membership is filtered before ranking. contract_martingale and futures_combo are manual-only. Legacy APR/drawdown and ordinary two-segment refresh remain compatible. Exclusion binds one prior logical candidate before ranking; no alternative returns an empty list without relaxing constraints.
 
 ### Example
 ```csharp
@@ -46,21 +48,22 @@ namespace Example
             var market = "market_example";  // string | Trading pair, such as `BTC_USDT` (optional) 
             var strategyType = "strategyType_example";  // string | Recommended target policy type; `contract_martingale` not allowed (optional) 
             var direction = "direction_example";  // string | Market direction (optional) 
-            var investAmount = "investAmount_example";  // string | Investment amount, string transparent transmission (optional) 
+            var investAmount = "investAmount_example";  // string | Context only. No budget eligibility filter; reported unsupported when not consumed. (optional) 
             var scene = "scene_example";  // string | Recommended scenario; when empty, bot-service can automatically infer according to the implementation logic. (optional) 
             var refreshRecommendationId = "refreshRecommendationId_example";  // string | It is recommended to refresh the context. Used when `scene=refresh` is used; when `scene` is empty but the field exists, bot-service will also automatically determine as `refresh`. The official minimum format is `strategy_type|market`; if the `recommendation_id` of the previous recommendation is directly passed through, the third paragraph `backtest_id` will be ignored. (optional) 
-            var limit = 56;  // int? | Return quantity; when `scene=filter` is used, the actual results are up to 10 (optional) 
+            var limit = 56;  // int? | Actual maximum result count, 1–10; defaults to 10. (optional) 
             var maxDrawdownLte = "maxDrawdownLte_example";  // string | Maximum drawdown limit (optional) 
             var backtestAprGte = "backtestAprGte_example";  // string | Backtest annualized lower limit (optional) 
             var xGateServiceId = "xGateServiceId_example";  // string | Call source identifier; injected by APIv4 if necessary (optional) 
             var xGateAppLang = "xGateAppLang_example";  // string | Language context, such as `zh-CN` / `en-US` (optional) 
             var xRequestId = "xRequestId_example";  // string | Request link ID; caller can transmit transparently (optional) 
             var xTraceId = "xTraceId_example";  // string | trace header; can be generated uniformly by APIv4 (optional) 
+            var excludeRecommendationId = "excludeRecommendationId_example";  // string | Refresh-only previous returned identity: type|market|backtest_id, with an optional stable parameter discriminator for colliding source IDs. Ambiguous old identities are rejected; metric-only changes do not produce a new plan. (optional) 
 
             try
             {
                 // Get AIHub strategy recommendations
-                AIHubDiscoverSuccessResponse result = apiInstance.GetAIHubStrategyRecommend(market, strategyType, direction, investAmount, scene, refreshRecommendationId, limit, maxDrawdownLte, backtestAprGte, xGateServiceId, xGateAppLang, xRequestId, xTraceId);
+                AIHubDiscoverSuccessResponse result = apiInstance.GetAIHubStrategyRecommend(market, strategyType, direction, investAmount, scene, refreshRecommendationId, limit, maxDrawdownLte, backtestAprGte, xGateServiceId, xGateAppLang, xRequestId, xTraceId, excludeRecommendationId);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -82,16 +85,17 @@ Name | Type | Description  | Notes
  **market** | **string**| Trading pair, such as &#x60;BTC_USDT&#x60; | [optional] 
  **strategyType** | **string**| Recommended target policy type; &#x60;contract_martingale&#x60; not allowed | [optional] 
  **direction** | **string**| Market direction | [optional] 
- **investAmount** | **string**| Investment amount, string transparent transmission | [optional] 
+ **investAmount** | **string**| Context only. No budget eligibility filter; reported unsupported when not consumed. | [optional] 
  **scene** | **string**| Recommended scenario; when empty, bot-service can automatically infer according to the implementation logic. | [optional] 
  **refreshRecommendationId** | **string**| It is recommended to refresh the context. Used when &#x60;scene&#x3D;refresh&#x60; is used; when &#x60;scene&#x60; is empty but the field exists, bot-service will also automatically determine as &#x60;refresh&#x60;. The official minimum format is &#x60;strategy_type|market&#x60;; if the &#x60;recommendation_id&#x60; of the previous recommendation is directly passed through, the third paragraph &#x60;backtest_id&#x60; will be ignored. | [optional] 
- **limit** | **int?**| Return quantity; when &#x60;scene&#x3D;filter&#x60; is used, the actual results are up to 10 | [optional] 
+ **limit** | **int?**| Actual maximum result count, 1–10; defaults to 10. | [optional] 
  **maxDrawdownLte** | **string**| Maximum drawdown limit | [optional] 
  **backtestAprGte** | **string**| Backtest annualized lower limit | [optional] 
  **xGateServiceId** | **string**| Call source identifier; injected by APIv4 if necessary | [optional] 
  **xGateAppLang** | **string**| Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; | [optional] 
  **xRequestId** | **string**| Request link ID; caller can transmit transparently | [optional] 
  **xTraceId** | **string**| trace header; can be generated uniformly by APIv4 | [optional] 
+ **excludeRecommendationId** | **string**| Refresh-only previous returned identity: type|market|backtest_id, with an optional stable parameter discriminator for colliding source IDs. Ambiguous old identities are rejected; metric-only changes do not produce a new plan. | [optional] 
 
 ### Return type
 
@@ -833,6 +837,168 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AIHubPortfolioStopSuccessResponse**](AIHubPortfolioStopSuccessResponse.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Unified business response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="postaihubsmartpositioncreate"></a>
+# **PostAIHubSmartPositionCreate**
+> AIHubCreateSuccessResponse PostAIHubSmartPositionCreate (AIHubRebalanceCreateRequest aIHubRebalanceCreateRequest, string xGateServiceId = null, string xGateAppLang = null, string xRequestId = null, string xTraceId = null)
+
+Create rebalance bot
+
+Typed AIHub adapter; authenticated owner comes only from trusted gateway context.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class PostAIHubSmartPositionCreateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new BotApi(config);
+            var aIHubRebalanceCreateRequest = new AIHubRebalanceCreateRequest(); // AIHubRebalanceCreateRequest | 
+            var xGateServiceId = "xGateServiceId_example";  // string | Call source identifier; injected by APIv4 if necessary (optional) 
+            var xGateAppLang = "xGateAppLang_example";  // string | Language context, such as `zh-CN` / `en-US` (optional) 
+            var xRequestId = "xRequestId_example";  // string | Request link ID; caller can transmit transparently (optional) 
+            var xTraceId = "xTraceId_example";  // string | trace header; can be generated uniformly by APIv4 (optional) 
+
+            try
+            {
+                // Create rebalance bot
+                AIHubCreateSuccessResponse result = apiInstance.PostAIHubSmartPositionCreate(aIHubRebalanceCreateRequest, xGateServiceId, xGateAppLang, xRequestId, xTraceId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling BotApi.PostAIHubSmartPositionCreate: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aIHubRebalanceCreateRequest** | [**AIHubRebalanceCreateRequest**](AIHubRebalanceCreateRequest.md)|  | 
+ **xGateServiceId** | **string**| Call source identifier; injected by APIv4 if necessary | [optional] 
+ **xGateAppLang** | **string**| Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; | [optional] 
+ **xRequestId** | **string**| Request link ID; caller can transmit transparently | [optional] 
+ **xTraceId** | **string**| trace header; can be generated uniformly by APIv4 | [optional] 
+
+### Return type
+
+[**AIHubCreateSuccessResponse**](AIHubCreateSuccessResponse.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Unified business response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="postaihubfuturescombocreate"></a>
+# **PostAIHubFuturesComboCreate**
+> AIHubCreateSuccessResponse PostAIHubFuturesComboCreate (AIHubFuturesComboCreateRequest aIHubFuturesComboCreateRequest, string xGateServiceId = null, string xGateAppLang = null, string xRequestId = null, string xTraceId = null)
+
+Create futures-combo bot
+
+Typed AIHub adapter; authenticated owner comes only from trusted gateway context.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class PostAIHubFuturesComboCreateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new BotApi(config);
+            var aIHubFuturesComboCreateRequest = new AIHubFuturesComboCreateRequest(); // AIHubFuturesComboCreateRequest | 
+            var xGateServiceId = "xGateServiceId_example";  // string | Call source identifier; injected by APIv4 if necessary (optional) 
+            var xGateAppLang = "xGateAppLang_example";  // string | Language context, such as `zh-CN` / `en-US` (optional) 
+            var xRequestId = "xRequestId_example";  // string | Request link ID; caller can transmit transparently (optional) 
+            var xTraceId = "xTraceId_example";  // string | trace header; can be generated uniformly by APIv4 (optional) 
+
+            try
+            {
+                // Create futures-combo bot
+                AIHubCreateSuccessResponse result = apiInstance.PostAIHubFuturesComboCreate(aIHubFuturesComboCreateRequest, xGateServiceId, xGateAppLang, xRequestId, xTraceId);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling BotApi.PostAIHubFuturesComboCreate: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aIHubFuturesComboCreateRequest** | [**AIHubFuturesComboCreateRequest**](AIHubFuturesComboCreateRequest.md)|  | 
+ **xGateServiceId** | **string**| Call source identifier; injected by APIv4 if necessary | [optional] 
+ **xGateAppLang** | **string**| Language context, such as &#x60;zh-CN&#x60; / &#x60;en-US&#x60; | [optional] 
+ **xRequestId** | **string**| Request link ID; caller can transmit transparently | [optional] 
+ **xTraceId** | **string**| trace header; can be generated uniformly by APIv4 | [optional] 
+
+### Return type
+
+[**AIHubCreateSuccessResponse**](AIHubCreateSuccessResponse.md)
 
 ### Authorization
 

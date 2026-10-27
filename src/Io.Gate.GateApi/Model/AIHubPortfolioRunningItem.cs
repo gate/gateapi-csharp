@@ -47,13 +47,15 @@ namespace Io.Gate.GateApi.Model
         /// <param name="strategyId">strategyId (required).</param>
         /// <param name="strategyType">strategyType (required).</param>
         /// <param name="strategyName">strategyName (required).</param>
-        /// <param name="market">market (required).</param>
+        /// <param name="market">Single market, or empty string for a portfolio; use assets/markets for the latter. (required).</param>
         /// <param name="status">status (required).</param>
         /// <param name="pnl">pnl.</param>
         /// <param name="pnlRate">pnlRate.</param>
         /// <param name="investAmount">investAmount.</param>
         /// <param name="createdAt">Created time.</param>
-        public AIHubPortfolioRunningItem(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string strategyName = default(string), string market = default(string), string status = default(string), string pnl = default(string), string pnlRate = default(string), string investAmount = default(string), string createdAt = default(string))
+        /// <param name="assets">assets.</param>
+        /// <param name="markets">markets.</param>
+        public AIHubPortfolioRunningItem(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string strategyName = default(string), string market = default(string), string status = default(string), string pnl = default(string), string pnlRate = default(string), string investAmount = default(string), string createdAt = default(string), List<string> assets = default(List<string>), List<string> markets = default(List<string>))
         {
             // to ensure "strategyId" is required (not null)
             this.StrategyId = strategyId ?? throw new ArgumentNullException("strategyId", "strategyId is a required property for AIHubPortfolioRunningItem and cannot be null");
@@ -68,6 +70,8 @@ namespace Io.Gate.GateApi.Model
             this.PnlRate = pnlRate;
             this.InvestAmount = investAmount;
             this.CreatedAt = createdAt;
+            this.Assets = assets;
+            this.Markets = markets;
         }
 
         /// <summary>
@@ -85,8 +89,9 @@ namespace Io.Gate.GateApi.Model
         public string StrategyName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Market
+        /// Single market, or empty string for a portfolio; use assets/markets for the latter.
         /// </summary>
+        /// <value>Single market, or empty string for a portfolio; use assets/markets for the latter.</value>
         [DataMember(Name="market")]
         
         public string Market { get; set; }
@@ -128,6 +133,20 @@ namespace Io.Gate.GateApi.Model
         public string CreatedAt { get; set; }
 
         /// <summary>
+        /// Gets or Sets Assets
+        /// </summary>
+        [DataMember(Name="assets")]
+        
+        public List<string> Assets { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Markets
+        /// </summary>
+        [DataMember(Name="markets")]
+        
+        public List<string> Markets { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -144,6 +163,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  PnlRate: ").Append(PnlRate).Append("\n");
             sb.Append("  InvestAmount: ").Append(InvestAmount).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  Assets: ").Append(Assets).Append("\n");
+            sb.Append("  Markets: ").Append(Markets).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -221,6 +242,18 @@ namespace Io.Gate.GateApi.Model
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.Assets == input.Assets ||
+                    this.Assets != null &&
+                    input.Assets != null &&
+                    this.Assets.SequenceEqual(input.Assets)
+                ) && 
+                (
+                    this.Markets == input.Markets ||
+                    this.Markets != null &&
+                    input.Markets != null &&
+                    this.Markets.SequenceEqual(input.Markets)
                 );
         }
 
@@ -250,6 +283,10 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.InvestAmount.GetHashCode();
                 if (this.CreatedAt != null)
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.Assets != null)
+                    hashCode = hashCode * 59 + this.Assets.GetHashCode();
+                if (this.Markets != null)
+                    hashCode = hashCode * 59 + this.Markets.GetHashCode();
                 return hashCode;
             }
         }

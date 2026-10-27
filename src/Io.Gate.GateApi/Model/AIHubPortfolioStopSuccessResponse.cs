@@ -40,17 +40,17 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="code">code (required).</param>
         /// <param name="message">message (required).</param>
-        /// <param name="data">data (required).</param>
-        /// <param name="traceId">traceId (required).</param>
-        public AIHubPortfolioStopSuccessResponse(int code = default(int), string message = default(string), AIHubPortfolioStopData data = default(AIHubPortfolioStopData), string traceId = default(string))
+        /// <param name="data">data.</param>
+        /// <param name="traceId">traceId.</param>
+        /// <param name="label">Stable business error label when present. HTTP 200 can contain a non-200 business code; data may retain a real identity on failure..</param>
+        public AIHubPortfolioStopSuccessResponse(int code = default(int), string message = default(string), AIHubPortfolioStopData data = default(AIHubPortfolioStopData), string traceId = default(string), string label = default(string))
         {
             this.Code = code;
             // to ensure "message" is required (not null)
             this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for AIHubPortfolioStopSuccessResponse and cannot be null");
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for AIHubPortfolioStopSuccessResponse and cannot be null");
-            // to ensure "traceId" is required (not null)
-            this.TraceId = traceId ?? throw new ArgumentNullException("traceId", "traceId is a required property for AIHubPortfolioStopSuccessResponse and cannot be null");
+            this.Data = data;
+            this.TraceId = traceId;
+            this.Label = label;
         }
 
         /// <summary>
@@ -82,6 +82,14 @@ namespace Io.Gate.GateApi.Model
         public string TraceId { get; set; }
 
         /// <summary>
+        /// Stable business error label when present. HTTP 200 can contain a non-200 business code; data may retain a real identity on failure.
+        /// </summary>
+        /// <value>Stable business error label when present. HTTP 200 can contain a non-200 business code; data may retain a real identity on failure.</value>
+        [DataMember(Name="label")]
+        
+        public string Label { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +101,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  TraceId: ").Append(TraceId).Append("\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -145,6 +154,11 @@ namespace Io.Gate.GateApi.Model
                     this.TraceId == input.TraceId ||
                     (this.TraceId != null &&
                     this.TraceId.Equals(input.TraceId))
+                ) && 
+                (
+                    this.Label == input.Label ||
+                    (this.Label != null &&
+                    this.Label.Equals(input.Label))
                 );
         }
 
@@ -164,6 +178,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Data.GetHashCode();
                 if (this.TraceId != null)
                     hashCode = hashCode * 59 + this.TraceId.GetHashCode();
+                if (this.Label != null)
+                    hashCode = hashCode * 59 + this.Label.GetHashCode();
                 return hashCode;
             }
         }

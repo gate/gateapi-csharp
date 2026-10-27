@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// The request body to terminate a running policy.
+    /// Single owner-scoped stop. Existing six-type ID/type requests retain default exits. smart_position requires explicit mode, limit requires options; futures_combo uses fixed whole-portfolio close/settlement.
     /// </summary>
     [DataContract]
     public partial class AIHubPortfolioStopRequest :  IEquatable<AIHubPortfolioStopRequest>, IValidatableObject
@@ -37,6 +37,42 @@ namespace Io.Gate.GateApi.Model
         
         public StrategyType StrategyType { get; set; }
         /// <summary>
+        /// Required only for smart_position. Other types reject custom exit options.
+        /// </summary>
+        /// <value>Required only for smart_position. Other types reject custom exit options.</value>
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        
+        public enum StopModeEnum
+        {
+            /// <summary>
+            /// Enum value Market
+            /// </summary>
+            [EnumMember(Value = "market")]
+            Market = 1,
+
+            /// <summary>
+            /// Enum value Limit
+            /// </summary>
+            [EnumMember(Value = "limit")]
+            Limit = 2,
+
+            /// <summary>
+            /// Enum value Noclose
+            /// </summary>
+            [EnumMember(Value = "no_close")]
+            Noclose = 3
+
+        }
+
+        /// <summary>
+        /// Required only for smart_position. Other types reject custom exit options.
+        /// </summary>
+        /// <value>Required only for smart_position. Other types reject custom exit options.</value>
+        [DataMember(Name="stop_mode")]
+        
+        public StopModeEnum? StopMode { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="AIHubPortfolioStopRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -46,11 +82,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="strategyId">strategyId (required).</param>
         /// <param name="strategyType">strategyType (required).</param>
-        public AIHubPortfolioStopRequest(string strategyId = default(string), StrategyType strategyType = default(StrategyType))
+        /// <param name="stopMode">Required only for smart_position. Other types reject custom exit options..</param>
+        /// <param name="stopOptions">stopOptions.</param>
+        public AIHubPortfolioStopRequest(string strategyId = default(string), StrategyType strategyType = default(StrategyType), StopModeEnum? stopMode = default(StopModeEnum?), AIHubRebalanceStopOptions stopOptions = default(AIHubRebalanceStopOptions))
         {
             // to ensure "strategyId" is required (not null)
             this.StrategyId = strategyId ?? throw new ArgumentNullException("strategyId", "strategyId is a required property for AIHubPortfolioStopRequest and cannot be null");
             this.StrategyType = strategyType;
+            this.StopMode = stopMode;
+            this.StopOptions = stopOptions;
         }
 
         /// <summary>
@@ -59,6 +99,13 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="strategy_id")]
         
         public string StrategyId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StopOptions
+        /// </summary>
+        [DataMember(Name="stop_options")]
+        
+        public AIHubRebalanceStopOptions StopOptions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,6 +117,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class AIHubPortfolioStopRequest {\n");
             sb.Append("  StrategyId: ").Append(StrategyId).Append("\n");
             sb.Append("  StrategyType: ").Append(StrategyType).Append("\n");
+            sb.Append("  StopMode: ").Append(StopMode).Append("\n");
+            sb.Append("  StopOptions: ").Append(StopOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,6 +161,15 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.StrategyType == input.StrategyType ||
                     this.StrategyType.Equals(input.StrategyType)
+                ) && 
+                (
+                    this.StopMode == input.StopMode ||
+                    this.StopMode.Equals(input.StopMode)
+                ) && 
+                (
+                    this.StopOptions == input.StopOptions ||
+                    (this.StopOptions != null &&
+                    this.StopOptions.Equals(input.StopOptions))
                 );
         }
 
@@ -127,6 +185,9 @@ namespace Io.Gate.GateApi.Model
                 if (this.StrategyId != null)
                     hashCode = hashCode * 59 + this.StrategyId.GetHashCode();
                 hashCode = hashCode * 59 + this.StrategyType.GetHashCode();
+                hashCode = hashCode * 59 + this.StopMode.GetHashCode();
+                if (this.StopOptions != null)
+                    hashCode = hashCode * 59 + this.StopOptions.GetHashCode();
                 return hashCode;
             }
         }

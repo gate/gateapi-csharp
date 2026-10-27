@@ -67,7 +67,19 @@ namespace Io.Gate.GateApi.Model
         /// Enum value Contractmartingale
         /// </summary>
         [EnumMember(Value = "contract_martingale")]
-        Contractmartingale = 6
+        Contractmartingale = 6,
+
+        /// <summary>
+        /// Enum value Smartposition
+        /// </summary>
+        [EnumMember(Value = "smart_position")]
+        Smartposition = 7,
+
+        /// <summary>
+        /// Enum value Futurescombo
+        /// </summary>
+        [EnumMember(Value = "futures_combo")]
+        Futurescombo = 8
 
     }
 

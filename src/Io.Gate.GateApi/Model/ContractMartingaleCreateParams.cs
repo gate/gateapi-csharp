@@ -37,22 +37,52 @@ namespace Io.Gate.GateApi.Model
         
         public ContractMartingaleDirection Direction { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ContractMartingaleCreateParams" /> class.
+        /// Defines StopLossPriceType
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ContractMartingaleCreateParams() { }
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        
+        public enum StopLossPriceTypeEnum
+        {
+            /// <summary>
+            /// Enum value Last
+            /// </summary>
+            [EnumMember(Value = "last")]
+            Last = 1,
+
+            /// <summary>
+            /// Enum value Index
+            /// </summary>
+            [EnumMember(Value = "index")]
+            Index = 2,
+
+            /// <summary>
+            /// Enum value Mark
+            /// </summary>
+            [EnumMember(Value = "mark")]
+            Mark = 3
+
+        }
+
+        /// <summary>
+        /// Gets or Sets StopLossPriceType
+        /// </summary>
+        [DataMember(Name="stop_loss_price_type")]
+        
+        public StopLossPriceTypeEnum? StopLossPriceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContractMartingaleCreateParams" /> class.
         /// </summary>
-        /// <param name="investAmount">Margin allocated; the server converts it to initial contract size using live contract price, contract multiplier, and minimum lot size. (required).</param>
+        /// <param name="investAmount">Total strategy budget, not first-order margin. The server uses the complete existing ladder formula, owner fee and live contract facts, quantizes quantity down and rechecks before allocation. Minimum infeasible budget is rejected. (required).</param>
         /// <param name="priceDeviation">priceDeviation (required).</param>
-        /// <param name="maxOrders">maxOrders (required).</param>
+        /// <param name="maxOrders">Maximum additional entries, excluding the first; preserve this legacy meaning. (required).</param>
         /// <param name="takeProfitRatio">takeProfitRatio (required).</param>
         /// <param name="direction">direction (required).</param>
         /// <param name="leverage">leverage (required).</param>
-        /// <param name="stopLossPrice">Legacy field name. The AIHub &#x60;contract_martingale&#x60; creation path does not map this field today; follow contract martingale rules from the underlying API. MCP tooling must match bot-service behavior..</param>
+        /// <param name="stopLossPrice">Positive fixed stop price; requires explicit stop_loss_price_type. Missing both leaves the old no-fixed-stop request unchanged..</param>
         /// <param name="profitSharingRatio">profitSharingRatio.</param>
-        public ContractMartingaleCreateParams(string investAmount = default(string), string priceDeviation = default(string), int maxOrders = default(int), string takeProfitRatio = default(string), ContractMartingaleDirection direction = default(ContractMartingaleDirection), string leverage = default(string), string stopLossPrice = default(string), string profitSharingRatio = default(string))
+        /// <param name="stopLossPriceType">stopLossPriceType.</param>
+        public ContractMartingaleCreateParams(string investAmount = default(string), string priceDeviation = default(string), int maxOrders = default(int), string takeProfitRatio = default(string), ContractMartingaleDirection direction = default(ContractMartingaleDirection), string leverage = default(string), string stopLossPrice = default(string), string profitSharingRatio = default(string), StopLossPriceTypeEnum? stopLossPriceType = default(StopLossPriceTypeEnum?))
         {
             // to ensure "investAmount" is required (not null)
             this.InvestAmount = investAmount ?? throw new ArgumentNullException("investAmount", "investAmount is a required property for ContractMartingaleCreateParams and cannot be null");
@@ -66,12 +96,13 @@ namespace Io.Gate.GateApi.Model
             this.Leverage = leverage ?? throw new ArgumentNullException("leverage", "leverage is a required property for ContractMartingaleCreateParams and cannot be null");
             this.StopLossPrice = stopLossPrice;
             this.ProfitSharingRatio = profitSharingRatio;
+            this.StopLossPriceType = stopLossPriceType;
         }
 
         /// <summary>
-        /// Margin allocated; the server converts it to initial contract size using live contract price, contract multiplier, and minimum lot size.
+        /// Total strategy budget, not first-order margin. The server uses the complete existing ladder formula, owner fee and live contract facts, quantizes quantity down and rechecks before allocation. Minimum infeasible budget is rejected.
         /// </summary>
-        /// <value>Margin allocated; the server converts it to initial contract size using live contract price, contract multiplier, and minimum lot size.</value>
+        /// <value>Total strategy budget, not first-order margin. The server uses the complete existing ladder formula, owner fee and live contract facts, quantizes quantity down and rechecks before allocation. Minimum infeasible budget is rejected.</value>
         [DataMember(Name="invest_amount")]
         
         public string InvestAmount { get; set; }
@@ -84,8 +115,9 @@ namespace Io.Gate.GateApi.Model
         public string PriceDeviation { get; set; }
 
         /// <summary>
-        /// Gets or Sets MaxOrders
+        /// Maximum additional entries, excluding the first; preserve this legacy meaning.
         /// </summary>
+        /// <value>Maximum additional entries, excluding the first; preserve this legacy meaning.</value>
         [DataMember(Name="max_orders")]
         
         public int MaxOrders { get; set; }
@@ -105,9 +137,9 @@ namespace Io.Gate.GateApi.Model
         public string Leverage { get; set; }
 
         /// <summary>
-        /// Legacy field name. The AIHub &#x60;contract_martingale&#x60; creation path does not map this field today; follow contract martingale rules from the underlying API. MCP tooling must match bot-service behavior.
+        /// Positive fixed stop price; requires explicit stop_loss_price_type. Missing both leaves the old no-fixed-stop request unchanged.
         /// </summary>
-        /// <value>Legacy field name. The AIHub &#x60;contract_martingale&#x60; creation path does not map this field today; follow contract martingale rules from the underlying API. MCP tooling must match bot-service behavior.</value>
+        /// <value>Positive fixed stop price; requires explicit stop_loss_price_type. Missing both leaves the old no-fixed-stop request unchanged.</value>
         [DataMember(Name="stop_loss_price")]
         
         public string StopLossPrice { get; set; }
@@ -135,6 +167,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Leverage: ").Append(Leverage).Append("\n");
             sb.Append("  StopLossPrice: ").Append(StopLossPrice).Append("\n");
             sb.Append("  ProfitSharingRatio: ").Append(ProfitSharingRatio).Append("\n");
+            sb.Append("  StopLossPriceType: ").Append(StopLossPriceType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -206,6 +239,10 @@ namespace Io.Gate.GateApi.Model
                     this.ProfitSharingRatio == input.ProfitSharingRatio ||
                     (this.ProfitSharingRatio != null &&
                     this.ProfitSharingRatio.Equals(input.ProfitSharingRatio))
+                ) && 
+                (
+                    this.StopLossPriceType == input.StopLossPriceType ||
+                    this.StopLossPriceType.Equals(input.StopLossPriceType)
                 );
         }
 
@@ -232,6 +269,7 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.StopLossPrice.GetHashCode();
                 if (this.ProfitSharingRatio != null)
                     hashCode = hashCode * 59 + this.ProfitSharingRatio.GetHashCode();
+                hashCode = hashCode * 59 + this.StopLossPriceType.GetHashCode();
                 return hashCode;
             }
         }

@@ -7,14 +7,15 @@ The creation parameters of the contract Martin strategy.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InvestAmount** | **string** | Margin allocated; the server converts it to initial contract size using live contract price, contract multiplier, and minimum lot size. | 
+**InvestAmount** | **string** | Total strategy budget, not first-order margin. The server uses the complete existing ladder formula, owner fee and live contract facts, quantizes quantity down and rechecks before allocation. Minimum infeasible budget is rejected. | 
 **PriceDeviation** | **string** |  | 
-**MaxOrders** | **int** |  | 
+**MaxOrders** | **int** | Maximum additional entries, excluding the first; preserve this legacy meaning. | 
 **TakeProfitRatio** | **string** |  | 
 **Direction** | **ContractMartingaleDirection** |  | 
 **Leverage** | **string** |  | 
-**StopLossPrice** | **string** | Legacy field name. The AIHub &#x60;contract_martingale&#x60; creation path does not map this field today; follow contract martingale rules from the underlying API. MCP tooling must match bot-service behavior. | [optional] 
+**StopLossPrice** | **string** | Positive fixed stop price; requires explicit stop_loss_price_type. Missing both leaves the old no-fixed-stop request unchanged. | [optional] 
 **ProfitSharingRatio** | **string** |  | [optional] 
+**StopLossPriceType** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

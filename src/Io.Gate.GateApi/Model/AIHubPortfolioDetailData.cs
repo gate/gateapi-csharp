@@ -37,6 +37,46 @@ namespace Io.Gate.GateApi.Model
         
         public StrategyType StrategyType { get; set; }
         /// <summary>
+        /// Defines PositionsStatus
+        /// </summary>
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        
+        public enum PositionsStatusEnum
+        {
+            /// <summary>
+            /// Enum value Verified
+            /// </summary>
+            [EnumMember(Value = "verified")]
+            Verified = 1,
+
+            /// <summary>
+            /// Enum value Partial
+            /// </summary>
+            [EnumMember(Value = "partial")]
+            Partial = 2,
+
+            /// <summary>
+            /// Enum value Unverified
+            /// </summary>
+            [EnumMember(Value = "unverified")]
+            Unverified = 3,
+
+            /// <summary>
+            /// Enum value Historical
+            /// </summary>
+            [EnumMember(Value = "historical")]
+            Historical = 4
+
+        }
+
+        /// <summary>
+        /// Gets or Sets PositionsStatus
+        /// </summary>
+        [DataMember(Name="positions_status")]
+        
+        public PositionsStatusEnum? PositionsStatus { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="AIHubPortfolioDetailData" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -46,13 +86,19 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="strategyId">strategyId (required).</param>
         /// <param name="strategyType">strategyType (required).</param>
-        /// <param name="market">market (required).</param>
+        /// <param name="market">Single market, or empty string for a portfolio; use assets/markets for the latter. (required).</param>
         /// <param name="status">status (required).</param>
         /// <param name="baseInfo">baseInfo (required).</param>
         /// <param name="metrics">metrics (required).</param>
         /// <param name="position">position.</param>
         /// <param name="stopSupported">stopSupported (required).</param>
-        public AIHubPortfolioDetailData(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string market = default(string), string status = default(string), AIHubPortfolioBaseInfo baseInfo = default(AIHubPortfolioBaseInfo), AIHubPortfolioMetrics metrics = default(AIHubPortfolioMetrics), AIHubPortfolioPosition position = default(AIHubPortfolioPosition), bool stopSupported = default(bool))
+        /// <param name="assets">assets.</param>
+        /// <param name="markets">markets.</param>
+        /// <param name="positions">positions.</param>
+        /// <param name="positionsStatus">positionsStatus.</param>
+        /// <param name="configuration">Product-specific saved configuration. spot_martingale exposes AIHubSpotMartingaleConfiguration; absence is unverified. Runtime recovery internals are excluded..</param>
+        /// <param name="stopProgress">stopProgress.</param>
+        public AIHubPortfolioDetailData(string strategyId = default(string), StrategyType strategyType = default(StrategyType), string market = default(string), string status = default(string), AIHubPortfolioBaseInfo baseInfo = default(AIHubPortfolioBaseInfo), AIHubPortfolioMetrics metrics = default(AIHubPortfolioMetrics), AIHubPortfolioPosition position = default(AIHubPortfolioPosition), bool stopSupported = default(bool), List<string> assets = default(List<string>), List<string> markets = default(List<string>), List<AIHubPortfolioAssetPosition> positions = default(List<AIHubPortfolioAssetPosition>), PositionsStatusEnum? positionsStatus = default(PositionsStatusEnum?), Object configuration = default(Object), AIHubStopProgress stopProgress = default(AIHubStopProgress))
         {
             // to ensure "strategyId" is required (not null)
             this.StrategyId = strategyId ?? throw new ArgumentNullException("strategyId", "strategyId is a required property for AIHubPortfolioDetailData and cannot be null");
@@ -67,6 +113,12 @@ namespace Io.Gate.GateApi.Model
             this.Metrics = metrics ?? throw new ArgumentNullException("metrics", "metrics is a required property for AIHubPortfolioDetailData and cannot be null");
             this.StopSupported = stopSupported;
             this.Position = position;
+            this.Assets = assets;
+            this.Markets = markets;
+            this.Positions = positions;
+            this.PositionsStatus = positionsStatus;
+            this.Configuration = configuration;
+            this.StopProgress = stopProgress;
         }
 
         /// <summary>
@@ -77,8 +129,9 @@ namespace Io.Gate.GateApi.Model
         public string StrategyId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Market
+        /// Single market, or empty string for a portfolio; use assets/markets for the latter.
         /// </summary>
+        /// <value>Single market, or empty string for a portfolio; use assets/markets for the latter.</value>
         [DataMember(Name="market")]
         
         public string Market { get; set; }
@@ -119,6 +172,42 @@ namespace Io.Gate.GateApi.Model
         public bool StopSupported { get; set; }
 
         /// <summary>
+        /// Gets or Sets Assets
+        /// </summary>
+        [DataMember(Name="assets")]
+        
+        public List<string> Assets { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Markets
+        /// </summary>
+        [DataMember(Name="markets")]
+        
+        public List<string> Markets { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Positions
+        /// </summary>
+        [DataMember(Name="positions")]
+        
+        public List<AIHubPortfolioAssetPosition> Positions { get; set; }
+
+        /// <summary>
+        /// Product-specific saved configuration. spot_martingale exposes AIHubSpotMartingaleConfiguration; absence is unverified. Runtime recovery internals are excluded.
+        /// </summary>
+        /// <value>Product-specific saved configuration. spot_martingale exposes AIHubSpotMartingaleConfiguration; absence is unverified. Runtime recovery internals are excluded.</value>
+        [DataMember(Name="configuration")]
+        
+        public Object Configuration { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StopProgress
+        /// </summary>
+        [DataMember(Name="stop_progress")]
+        
+        public AIHubStopProgress StopProgress { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -134,6 +223,12 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Metrics: ").Append(Metrics).Append("\n");
             sb.Append("  Position: ").Append(Position).Append("\n");
             sb.Append("  StopSupported: ").Append(StopSupported).Append("\n");
+            sb.Append("  Assets: ").Append(Assets).Append("\n");
+            sb.Append("  Markets: ").Append(Markets).Append("\n");
+            sb.Append("  Positions: ").Append(Positions).Append("\n");
+            sb.Append("  PositionsStatus: ").Append(PositionsStatus).Append("\n");
+            sb.Append("  Configuration: ").Append(Configuration).Append("\n");
+            sb.Append("  StopProgress: ").Append(StopProgress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -205,6 +300,38 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.StopSupported == input.StopSupported ||
                     this.StopSupported.Equals(input.StopSupported)
+                ) && 
+                (
+                    this.Assets == input.Assets ||
+                    this.Assets != null &&
+                    input.Assets != null &&
+                    this.Assets.SequenceEqual(input.Assets)
+                ) && 
+                (
+                    this.Markets == input.Markets ||
+                    this.Markets != null &&
+                    input.Markets != null &&
+                    this.Markets.SequenceEqual(input.Markets)
+                ) && 
+                (
+                    this.Positions == input.Positions ||
+                    this.Positions != null &&
+                    input.Positions != null &&
+                    this.Positions.SequenceEqual(input.Positions)
+                ) && 
+                (
+                    this.PositionsStatus == input.PositionsStatus ||
+                    this.PositionsStatus.Equals(input.PositionsStatus)
+                ) && 
+                (
+                    this.Configuration == input.Configuration ||
+                    (this.Configuration != null &&
+                    this.Configuration.Equals(input.Configuration))
+                ) && 
+                (
+                    this.StopProgress == input.StopProgress ||
+                    (this.StopProgress != null &&
+                    this.StopProgress.Equals(input.StopProgress))
                 );
         }
 
@@ -231,6 +358,17 @@ namespace Io.Gate.GateApi.Model
                 if (this.Position != null)
                     hashCode = hashCode * 59 + this.Position.GetHashCode();
                 hashCode = hashCode * 59 + this.StopSupported.GetHashCode();
+                if (this.Assets != null)
+                    hashCode = hashCode * 59 + this.Assets.GetHashCode();
+                if (this.Markets != null)
+                    hashCode = hashCode * 59 + this.Markets.GetHashCode();
+                if (this.Positions != null)
+                    hashCode = hashCode * 59 + this.Positions.GetHashCode();
+                hashCode = hashCode * 59 + this.PositionsStatus.GetHashCode();
+                if (this.Configuration != null)
+                    hashCode = hashCode * 59 + this.Configuration.GetHashCode();
+                if (this.StopProgress != null)
+                    hashCode = hashCode * 59 + this.StopProgress.GetHashCode();
                 return hashCode;
             }
         }
