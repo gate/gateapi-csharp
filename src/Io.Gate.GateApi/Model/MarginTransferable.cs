@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency detail</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Max transferable amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>

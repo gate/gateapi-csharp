@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="tx_id")]
+        
         public long TxId { get; set; }
 
         /// <summary>

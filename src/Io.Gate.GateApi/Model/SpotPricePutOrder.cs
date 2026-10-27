@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Order type，default to &#x60;limit&#x60;  - limit : Limit Order - market : Market Order
         /// </summary>
         /// <value>Order type，default to &#x60;limit&#x60;  - limit : Limit Order - market : Market Order</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -56,12 +58,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order type，default to &#x60;limit&#x60;  - limit : Limit Order - market : Market Order</value>
         [DataMember(Name="type")]
+        
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Order side  - buy: buy side - sell: sell side
         /// </summary>
         /// <value>Order side  - buy: buy side - sell: sell side</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SideEnum
         {
             /// <summary>
@@ -83,12 +88,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order side  - buy: buy side - sell: sell side</value>
         [DataMember(Name="side")]
+        
         public SideEnum Side { get; set; }
         /// <summary>
         /// Trading account type. Unified account must be set to &#x60;unified&#x60;  - normal: spot trading - margin: margin trading - unified: unified account 
         /// </summary>
         /// <value>Trading account type. Unified account must be set to &#x60;unified&#x60;  - normal: spot trading - margin: margin trading - unified: unified account </value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum AccountEnum
         {
             /// <summary>
@@ -116,12 +124,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading account type. Unified account must be set to &#x60;unified&#x60;  - normal: spot trading - margin: margin trading - unified: unified account </value>
         [DataMember(Name="account")]
+        
         public AccountEnum Account { get; set; }
         /// <summary>
         /// time_in_force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only 
         /// </summary>
         /// <value>time_in_force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only </value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TimeInForceEnum
         {
             /// <summary>
@@ -143,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>time_in_force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only </value>
         [DataMember(Name="time_in_force")]
+        
         public TimeInForceEnum TimeInForce { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SpotPricePutOrder" /> class.
@@ -181,6 +193,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -188,6 +201,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading quantity, refers to the trading quantity of the trading currency, i.e., the currency that needs to be traded, for example, the quantity of BTC in BTC_USDT.</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -195,6 +209,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to borrow coins automatically</value>
         [DataMember(Name="auto_borrow")]
+        
         public bool AutoBorrow { get; set; }
 
         /// <summary>
@@ -202,6 +217,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to repay the loan automatically</value>
         [DataMember(Name="auto_repay")]
+        
         public bool AutoRepay { get; set; }
 
         /// <summary>
@@ -209,6 +225,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The source of the order, including: - web: Web - api: API call - app: Mobile app</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

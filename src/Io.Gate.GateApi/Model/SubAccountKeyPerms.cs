@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Permission function name (cleared if no value is provided) - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery contract - earn: earn - custody: custody - options: options - account: account information - loan: lending - margin: margin - unified: unified account - copy: copy trading - tradfi_spot: stocks</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Read Only</value>
         [DataMember(Name="read_only")]
+        
         public bool ReadOnly { get; set; }
 
         /// <summary>

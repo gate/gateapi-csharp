@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Business Type
         /// </summary>
         /// <value>Business Type</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum BusinessTypeEnum
         {
             /// <summary>
@@ -89,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business Type</value>
         [DataMember(Name="business_type")]
+        
         public BusinessTypeEnum BusinessType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerDataAggregated" /> class.
@@ -115,8 +116,8 @@ namespace Io.Gate.GateApi.Model
             // to ensure "netFee" is required (not null)
             this.NetFee = netFee ?? throw new ArgumentNullException("netFee", "netFee is a required property for PartnerDataAggregated and cannot be null");
             this.CustomerCount = customerCount;
-            // to ensure "tradingUserCount" is required (not null)
-            this.TradingUserCount = tradingUserCount ?? throw new ArgumentNullException("tradingUserCount", "tradingUserCount is a required property for PartnerDataAggregated and cannot be null");
+            // Presence and nullability are separate: this required member explicitly permits null.
+            this.TradingUserCount = tradingUserCount;
             // to ensure "timeRangeDesc" is required (not null)
             this.TimeRangeDesc = timeRangeDesc ?? throw new ArgumentNullException("timeRangeDesc", "timeRangeDesc is a required property for PartnerDataAggregated and cannot be null");
             this.BusinessType = businessType;
@@ -129,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Rebate amount as a string for precision. Up to 6 decimal places; trailing zeros removed.</value>
         [DataMember(Name="rebate_amount")]
+        
         public string RebateAmount { get; set; }
 
         /// <summary>
@@ -136,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading volume as a string for precision. Up to 6 decimal places; trailing zeros removed.</value>
         [DataMember(Name="trade_volume")]
+        
         public string TradeVolume { get; set; }
 
         /// <summary>
@@ -143,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Net fee as a string for precision. Up to 6 decimal places; trailing zeros removed.</value>
         [DataMember(Name="net_fee")]
+        
         public string NetFee { get; set; }
 
         /// <summary>
@@ -150,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Customer count (invited users)</value>
         [DataMember(Name="customer_count")]
+        
         public int CustomerCount { get; set; }
 
         /// <summary>
@@ -157,6 +162,10 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction participant count (string format, consistent with online JSON serialization) only returns a specific value when business_type&#x3D;0(all), and returns nullfor other business types.</value>
         [DataMember(Name="trading_user_count")]
+        
+        // Required nullable members must retain an explicit null in JSON.
+        [JsonProperty("trading_user_count", NullValueHandling = NullValueHandling.Include)]
+        
         public string TradingUserCount { get; set; }
 
         /// <summary>
@@ -164,6 +173,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Time range description</value>
         [DataMember(Name="time_range_desc")]
+        
         public string TimeRangeDesc { get; set; }
 
         /// <summary>
@@ -171,6 +181,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business type description; allowed values: All, Spot, Futures, Alpha, Web3, Perps (DEX), Exchange All, Web3 All, TradFi</value>
         [DataMember(Name="business_type_desc")]
+        
         public string BusinessTypeDesc { get; set; }
 
         /// <summary>

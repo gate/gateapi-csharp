@@ -68,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction Hash</value>
         [DataMember(Name="tx_hash")]
+        
         public string TxHash { get; set; }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy or sell orders - buy - sell</value>
         [DataMember(Name="side")]
+        
         public string Side { get; set; }
 
         /// <summary>
@@ -89,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount (USDT)</value>
         [DataMember(Name="usdt_amount")]
+        
         public string UsdtAmount { get; set; }
 
         /// <summary>
@@ -96,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Token</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -103,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Token amount</value>
         [DataMember(Name="currency_amount")]
+        
         public string CurrencyAmount { get; set; }
 
         /// <summary>
@@ -110,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -117,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading mode affects slippage selection - &#x60;speed&#x60; : Smart mode - &#x60;custom&#x60; : Custom mode, uses &#x60;slippage&#x60; parameter</value>
         [DataMember(Name="gas_mode")]
+        
         public string GasMode { get; set; }
 
         /// <summary>
@@ -124,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Blockchain</value>
         [DataMember(Name="chain")]
+        
         public string Chain { get; set; }
 
         /// <summary>
@@ -131,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Gas Fee (USDT-based)</value>
         [DataMember(Name="gas_fee")]
+        
         public string GasFee { get; set; }
 
         /// <summary>
@@ -138,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading Fee (USDT-based)</value>
         [DataMember(Name="transaction_fee")]
+        
         public string TransactionFee { get; set; }
 
         /// <summary>
@@ -145,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Failure reason (if applicable)</value>
         [DataMember(Name="failed_reason")]
+        
         public string FailedReason { get; set; }
 
         /// <summary>
@@ -152,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation timestamp</value>
         [DataMember(Name="create_time")]
+        
         public long CreateTime { get; set; }
 
         /// <summary>

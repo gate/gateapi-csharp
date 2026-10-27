@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyType
         /// </summary>
         [DataMember(Name="strategy_type")]
+        
         public StrategyType StrategyType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AIHubRecommendation" /> class.
@@ -71,36 +72,42 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets RecommendationId
         /// </summary>
         [DataMember(Name="recommendation_id")]
+        
         public string RecommendationId { get; set; }
 
         /// <summary>
         /// Gets or Sets Market
         /// </summary>
         [DataMember(Name="market")]
+        
         public string Market { get; set; }
 
         /// <summary>
         /// Gets or Sets StrategyName
         /// </summary>
         [DataMember(Name="strategy_name")]
+        
         public string StrategyName { get; set; }
 
         /// <summary>
         /// Gets or Sets BacktestApr
         /// </summary>
         [DataMember(Name="backtest_apr")]
+        
         public string BacktestApr { get; set; }
 
         /// <summary>
         /// Gets or Sets MaxDrawdown
         /// </summary>
         [DataMember(Name="max_drawdown")]
+        
         public string MaxDrawdown { get; set; }
 
         /// <summary>
         /// Gets or Sets Summary
         /// </summary>
         [DataMember(Name="summary")]
+        
         public string Summary { get; set; }
 
         /// <summary>
@@ -108,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Recommended-parameter preview as JSON text (string-encoded so clients deserialize it consistently). The value is a serialized JSON object whose structure varies by strategy type; callers or upper-layer models must parse it.</value>
         [DataMember(Name="strategy_params_preview")]
+        
         public string StrategyParamsPreview { get; set; }
 
         /// <summary>

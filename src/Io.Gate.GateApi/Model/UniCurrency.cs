@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
+        
         public string Currency { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The minimum lending amount, in the unit of the currency</value>
         [DataMember(Name="min_lend_amount", EmitDefaultValue=false)]
+        
         public string MinLendAmount { get; private set; }
 
         /// <summary>
@@ -57,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The total maximum lending amount, in USDT</value>
         [DataMember(Name="max_lend_amount", EmitDefaultValue=false)]
+        
         public string MaxLendAmount { get; private set; }
 
         /// <summary>
@@ -64,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum rate (Hourly)</value>
         [DataMember(Name="max_rate", EmitDefaultValue=false)]
+        
         public string MaxRate { get; private set; }
 
         /// <summary>
@@ -71,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum rate (Hourly)</value>
         [DataMember(Name="min_rate", EmitDefaultValue=false)]
+        
         public string MinRate { get; private set; }
 
         /// <summary>

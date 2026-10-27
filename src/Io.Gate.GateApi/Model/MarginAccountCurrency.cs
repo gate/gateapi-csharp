@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount available for margin trading, available &#x3D; margin + borrowed</value>
         [DataMember(Name="available")]
+        
         public string Available { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Frozen funds, such as amounts already placed in margin market for order trading</value>
         [DataMember(Name="locked")]
+        
         public string Locked { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrowed funds</value>
         [DataMember(Name="borrowed")]
+        
         public string Borrowed { get; set; }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unpaid interest</value>
         [DataMember(Name="interest")]
+        
         public string Interest { get; set; }
 
         /// <summary>

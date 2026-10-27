@@ -69,6 +69,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="pid")]
+        
         public int Pid { get; set; }
 
         /// <summary>
@@ -76,6 +77,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Staked and redeemed currencies</value>
         [DataMember(Name="coin")]
+        
         public string Coin { get; set; }
 
         /// <summary>
@@ -83,6 +85,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -90,6 +93,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Type 0-Staking 1-Redemption</value>
         [DataMember(Name="type")]
+        
         public int Type { get; set; }
 
         /// <summary>
@@ -97,6 +101,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status. 1 - success, 3 - delayed redemption in progress, 6 - redemption cancellation order</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -104,6 +109,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redemption credit time</value>
         [DataMember(Name="redeem_stamp")]
+        
         public int RedeemStamp { get; set; }
 
         /// <summary>
@@ -111,6 +117,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order time</value>
         [DataMember(Name="createStamp")]
+        
         public int CreateStamp { get; set; }
 
         /// <summary>
@@ -118,6 +125,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange rate</value>
         [DataMember(Name="exchange_amount")]
+        
         public string ExchangeAmount { get; set; }
 
         /// <summary>
@@ -125,6 +133,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>fee</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>

@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Time when user joined the system, Unix timestamp in seconds</value>
         [DataMember(Name="user_join_time")]
+        
         public long UserJoinTime { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Type (1-Sub-agent 2-Indirect direct customer 3-Direct direct customer)</value>
         [DataMember(Name="type")]
+        
         public long Type { get; set; }
 
         /// <summary>

@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Market</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>

@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell side list, at least one item; each item is the currency and amount &#x60;amount&#x60; to be swapped out.</value>
         [DataMember(Name="from")]
+        
         public List<CreateParam> From { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Target side list, at least one item; each item is the target currency and **amount** &#x60;amount&#x60; (non-proportional). The structural semantics are different from &#x60;OrderPreviewV1Req.to&#x60; (&#x60;PreviewToParam&#x60;, including &#x60;ratio&#x60;), so do not mix them.</value>
         [DataMember(Name="to")]
+        
         public List<CreateParam> To { get; set; }
 
         /// <summary>

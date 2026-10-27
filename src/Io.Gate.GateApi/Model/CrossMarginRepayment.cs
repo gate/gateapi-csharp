@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Loan record ID</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repayment time</value>
         [DataMember(Name="create_time")]
+        
         public long CreateTime { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Loan record ID</value>
         [DataMember(Name="loan_id")]
+        
         public string LoanId { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repaid principal</value>
         [DataMember(Name="principal")]
+        
         public string Principal { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repaid interest</value>
         [DataMember(Name="interest")]
+        
         public string Interest { get; set; }
 
         /// <summary>
@@ -96,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repayment type: none - no repayment type, manual_repay - manual repayment, auto_repay - automatic repayment after cancellation</value>
         [DataMember(Name="repayment_type", EmitDefaultValue=false)]
+        
         public string RepaymentType { get; private set; }
 
         /// <summary>

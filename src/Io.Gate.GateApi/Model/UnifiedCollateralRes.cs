@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the setting was successful</value>
         [DataMember(Name="is_success")]
+        
         public bool IsSuccess { get; set; }
 
         /// <summary>

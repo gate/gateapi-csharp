@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Transaction Type (deposit - transfer in, withdraw - transfer out)
         /// </summary>
         /// <value>Transaction Type (deposit - transfer in, withdraw - transfer out)</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction Type (deposit - transfer in, withdraw - transfer out)</value>
         [DataMember(Name="type")]
+        
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TradFiTransactionRequest" /> class.
@@ -82,6 +85,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Asset type, e.g., USDT, currently only USDT is supported</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -89,6 +93,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Change Quantity, supports up to two decimal places</value>
         [DataMember(Name="change")]
+        
         public string Change { get; set; }
 
         /// <summary>

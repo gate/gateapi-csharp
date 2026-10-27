@@ -55,6 +55,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures trading pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -62,6 +63,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount of isolated margin increased or decreased in this request</value>
         [DataMember(Name="margin")]
+        
         public string Margin { get; set; }
 
         /// <summary>
@@ -69,6 +71,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position side (NONE/LONG/SHORT). Defaults to NONE for one-way positions if omitted</value>
         [DataMember(Name="position_side")]
+        
         public string PositionSide { get; set; }
 
         /// <summary>

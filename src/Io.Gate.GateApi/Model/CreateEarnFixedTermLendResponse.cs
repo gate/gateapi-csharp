@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Return code, 0 means success</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
@@ -57,12 +58,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response message</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public CreateEarnFixedTermLendResponseData Data { get; set; }
 
         /// <summary>
@@ -70,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response timestamp (in seconds)</value>
         [DataMember(Name="timestamp")]
+        
         public int Timestamp { get; set; }
 
         /// <summary>

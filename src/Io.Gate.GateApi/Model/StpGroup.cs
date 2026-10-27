@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>STP Group ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public long Id { get; private set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>STP Group name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creator ID</value>
         [DataMember(Name="creator_id", EmitDefaultValue=false)]
+        
         public long CreatorId { get; private set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public long CreateTime { get; private set; }
 
         /// <summary>

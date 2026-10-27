@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="tx_id")]
+        
         public string TxId { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer status: PENDING - Processing, SUCCESS - Transfer successful, FAIL - Transfer failed, PARTIAL_SUCCESS - Partially successful (this status appears when transferring between sub-accounts)</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>

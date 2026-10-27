@@ -74,24 +74,28 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets AssetEvaluateRange
         /// </summary>
         [DataMember(Name="asset_evaluate_range")]
+        
         public List<int> AssetEvaluateRange { get; set; }
 
         /// <summary>
         /// Gets or Sets BannerReappearIntervalHours
         /// </summary>
         [DataMember(Name="banner_reappear_interval_hours")]
+        
         public int BannerReappearIntervalHours { get; set; }
 
         /// <summary>
         /// Gets or Sets ConvertCurrencies
         /// </summary>
         [DataMember(Name="convert_currencies")]
+        
         public List<string> ConvertCurrencies { get; set; }
 
         /// <summary>
         /// Gets or Sets ConvertCurrenciesV2
         /// </summary>
         [DataMember(Name="convert_currencies_v2")]
+        
         public List<ConvertCurrenciesV2Item> ConvertCurrenciesV2 { get; set; }
 
         /// <summary>
@@ -99,24 +103,28 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.</value>
         [DataMember(Name="default")]
+        
         public Dictionary<string, string> Default { get; set; }
 
         /// <summary>
         /// Gets or Sets MaxSelectCurrencies
         /// </summary>
         [DataMember(Name="max_select_currencies")]
+        
         public int MaxSelectCurrencies { get; set; }
 
         /// <summary>
         /// Gets or Sets MinEvaluateValue
         /// </summary>
         [DataMember(Name="min_evaluate_value")]
+        
         public string MinEvaluateValue { get; set; }
 
         /// <summary>
         /// Gets or Sets Recommend
         /// </summary>
         [DataMember(Name="recommend")]
+        
         public Recommend Recommend { get; set; }
 
         /// <summary>
@@ -124,12 +132,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mapping of strategy grouping keys to RecommendV2Strategy lists.</value>
         [DataMember(Name="recommend_v2")]
+        
         public Dictionary<string, List<RecommendV2Strategy>> RecommendV2 { get; set; }
 
         /// <summary>
         /// Gets or Sets TitleTips
         /// </summary>
         [DataMember(Name="title_tips")]
+        
         public string TitleTips { get; set; }
 
         /// <summary>

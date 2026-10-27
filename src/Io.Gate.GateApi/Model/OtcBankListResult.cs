@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank card list</value>
         [DataMember(Name="lists")]
+        
         public List<OtcBankListItem> Lists { get; set; }
 
         /// <summary>

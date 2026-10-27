@@ -66,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>taker fee rate</value>
         [DataMember(Name="taker_fee")]
+        
         public string TakerFee { get; set; }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>maker fee rate</value>
         [DataMember(Name="maker_fee")]
+        
         public string MakerFee { get; set; }
 
         /// <summary>
@@ -87,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>RPI MM maker fee rate</value>
         [DataMember(Name="rpi_maker_fee")]
+        
         public string RpiMakerFee { get; set; }
 
         /// <summary>
@@ -94,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether GT deduction discount is enabled</value>
         [DataMember(Name="gt_discount")]
+        
         public bool GtDiscount { get; set; }
 
         /// <summary>
@@ -101,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Taker fee rate if using GT deduction. It will be 0 if GT deduction is disabled</value>
         [DataMember(Name="gt_taker_fee")]
+        
         public string GtTakerFee { get; set; }
 
         /// <summary>
@@ -108,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maker fee rate with GT deduction. Returns 0 if GT deduction is disabled</value>
         [DataMember(Name="gt_maker_fee")]
+        
         public string GtMakerFee { get; set; }
 
         /// <summary>
@@ -115,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Loan fee rate of margin lending</value>
         [DataMember(Name="loan_fee")]
+        
         public string LoanFee { get; set; }
 
         /// <summary>
@@ -122,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Point card type: 0 - Original version, 1 - New version since 202009</value>
         [DataMember(Name="point_type")]
+        
         public string PointType { get; set; }
 
         /// <summary>
@@ -129,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -136,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deduction types for rates, 1 - GT deduction, 2 - Point card deduction, 3 - VIP rates</value>
         [DataMember(Name="debit_fee")]
+        
         public int DebitFee { get; set; }
 
         /// <summary>
@@ -143,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>RPI MM Level</value>
         [DataMember(Name="rpi_mm")]
+        
         public int RpiMm { get; set; }
 
         /// <summary>

@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Crypto asset; omit to skip asset filter.</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency; omit to skip fiat filter.</value>
         [DataMember(Name="fiat_unit")]
+        
         public string FiatUnit { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ad side: &#x60;buy&#x60; for buy-crypto ads, &#x60;sell&#x60; for sell-crypto ads; omit for all sides.</value>
         [DataMember(Name="trade_type")]
+        
         public string TradeType { get; set; }
 
         /// <summary>

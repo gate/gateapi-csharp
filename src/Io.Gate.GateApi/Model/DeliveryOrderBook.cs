@@ -59,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order Book ID. Increases by 1 on every order book change. Set &#x60;with_id&#x3D;true&#x60; to include this field in response</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response data generation timestamp</value>
         [DataMember(Name="current")]
+        
         public double Current { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order book changed timestamp</value>
         [DataMember(Name="update")]
+        
         public double Update { get; set; }
 
         /// <summary>
@@ -80,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ask Depth</value>
         [DataMember(Name="asks")]
+        
         public List<DeliveryOrderBookItem> Asks { get; set; }
 
         /// <summary>
@@ -87,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bid Depth</value>
         [DataMember(Name="bids")]
+        
         public List<DeliveryOrderBookItem> Bids { get; set; }
 
         /// <summary>

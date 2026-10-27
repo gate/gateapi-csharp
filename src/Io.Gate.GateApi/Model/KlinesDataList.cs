@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Open price</value>
         [DataMember(Name="o")]
+        
         public string O { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close price</value>
         [DataMember(Name="c")]
+        
         public string C { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>High price</value>
         [DataMember(Name="h")]
+        
         public string H { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Low price</value>
         [DataMember(Name="l")]
+        
         public string L { get; set; }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Timestamp (Unix seconds)</value>
         [DataMember(Name="t")]
+        
         public long T { get; set; }
 
         /// <summary>

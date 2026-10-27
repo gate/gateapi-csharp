@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Optional contract name</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Overridden by the path parameter</value>
         [DataMember(Name="settle")]
+        
         public string Settle { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Optional margin mode</value>
         [DataMember(Name="pos_margin_mode")]
+        
         public string PosMarginMode { get; set; }
 
         /// <summary>

@@ -6,30 +6,26 @@ how this SDK is used. However, you can modify this code directly to implement yo
 
 ## Build
 
-1. Clone this SDK project and run `dotnet build` in the cloned project to build the library.
-    
-    > default target framework is `netstandard2.0`, you can change it into local framework
-    > available, but [framework supported](../README.md#frameworks-supported) must be satisfied.
+The SDK library remains `netstandard2.0`; the console example uses .NET 6.
+From the generated SDK root, run:
 
-2. Create our demo project directory along side the SDK project like the following:
+```bash
+# Compile the adjacent SDK and the real example sources without executing trading code.
+dotnet build example/GateApiDemo.csproj
+```
 
-    ```bash
-    mkdir GateApiDemo && cd GateApiDemo
-    dotnet new console -lang C#
-    ```
-   
-3. Copy all the files in the example directory to `GateApiDemo` project created above.
-4. Edit the `GateApiDemo.csproj` file; change the `TargetFramework` to the target framework used 
-   in building the SDK; Change the `HintPath` to the path of SDK dll file generated in step 1
-5. Run `dotnet build` to build the demo application, which will probably be generated at 
-   `bin/Debug/<framework-used>/GateApiDemo.dll`
+The example project uses a project reference, so it follows this candidate SDK's
+API and dependency versions instead of an old copied DLL. Public examples share
+the SDK's Key/Secret initializer. The internal SDK deliberately refuses this
+public CLI credential flow; configure its existing trusted user-ID authentication
+inside a trusted service instead. A public API key is never used as a user ID.
 
 ## Run
 
 **READ THIS BEFORE YOU RUN ANYTHING**
 
 **This application is shown for demo only. It will try to use your input API key and secret to
-trade, lend and borrow, etc. Make sure you know exactly what it does before running it.**
+place/cancel orders and transfer collateral in the spot/futures commands. Make sure you know exactly what it does before running it.**
 
 > Examples shown below use `dotnet run` to run the application without explicit building.
 > You can change to `dotnet /path/to/your/demo/dll` after `dotnet build` to avoid building every time
@@ -48,3 +44,9 @@ dotnet run spot -k <YOUR_API_KEY> -s <YOUR_API_SECRET>
 # run margin demo
 dotnet run margin -k <YOUR_API_KEY> -s <YOUR_API_SECRET>
 ```
+
+The margin command is read-only and shows current MarginUni market, capacity,
+loan and balance queries. Legacy P2P lending/Loan endpoints were removed; this
+example does not replace them with an automatic borrowing or repayment workflow.
+Position/market lookup errors propagate before futures writes. Financial writes
+are never retried automatically; inspect history after any uncertain result.

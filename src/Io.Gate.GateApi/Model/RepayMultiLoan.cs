@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repay Currency Item</value>
         [DataMember(Name="repay_items")]
+        
         public List<MultiLoanRepayItem> RepayItems { get; set; }
 
         /// <summary>

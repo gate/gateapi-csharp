@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Timestamp when countdown ends, in milliseconds</value>
         [DataMember(Name="triggerTime")]
+        
         public long _TriggerTime { get; set; }
 
         /// <summary>

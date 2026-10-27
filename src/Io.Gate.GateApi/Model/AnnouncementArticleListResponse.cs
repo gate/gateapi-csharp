@@ -58,12 +58,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business status code</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public AnnouncementArticleListData Data { get; set; }
 
         /// <summary>
@@ -71,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response message</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
@@ -78,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response version</value>
         [DataMember(Name="version")]
+        
         public string Version { get; set; }
 
         /// <summary>

@@ -80,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -87,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -94,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -101,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Lock-up period (in days)</value>
         [DataMember(Name="lock_up_period")]
+        
         public int LockUpPeriod { get; set; }
 
         /// <summary>
@@ -108,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum earn amount</value>
         [DataMember(Name="min_lend_amount")]
+        
         public string MinLendAmount { get; set; }
 
         /// <summary>
@@ -115,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User maximum earn limit</value>
         [DataMember(Name="user_max_lend_amount")]
+        
         public string UserMaxLendAmount { get; set; }
 
         /// <summary>
@@ -122,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Platform earn limit</value>
         [DataMember(Name="total_lend_amount")]
+        
         public string TotalLendAmount { get; set; }
 
         /// <summary>
@@ -129,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Annual interest rate</value>
         [DataMember(Name="year_rate")]
+        
         public string YearRate { get; set; }
 
         /// <summary>
@@ -136,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product type: 1 for regular, 2 for VIP</value>
         [DataMember(Name="type")]
+        
         public int Type { get; set; }
 
         /// <summary>
@@ -143,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether early redemption is supported: 0 for not supported, 1 for supported</value>
         [DataMember(Name="pre_redeem")]
+        
         public int PreRedeem { get; set; }
 
         /// <summary>
@@ -150,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether auto-renewal is supported: 0 for not supported, 1 for supported</value>
         [DataMember(Name="reinvest")]
+        
         public int Reinvest { get; set; }
 
         /// <summary>
@@ -157,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether fixed-to-flexible conversion is supported: 0 for not supported, 1 for supported</value>
         [DataMember(Name="redeem_account")]
+        
         public int RedeemAccount { get; set; }
 
         /// <summary>
@@ -164,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum VIP level requirement, 0-16, 0 means no restriction</value>
         [DataMember(Name="min_vip")]
+        
         public int MinVip { get; set; }
 
         /// <summary>
@@ -171,6 +184,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum VIP level requirement (0-16), 0 means no restriction</value>
         [DataMember(Name="max_vip")]
+        
         public int MaxVip { get; set; }
 
         /// <summary>
@@ -178,6 +192,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product status: 1 for unlisted, 2 for listed, 3 for delisted</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -185,6 +200,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -192,6 +208,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User maximum earn amount</value>
         [DataMember(Name="user_max_lend_volume")]
+        
         public string UserMaxLendVolume { get; set; }
 
         /// <summary>
@@ -199,6 +216,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total amount the user has invested in earn products</value>
         [DataMember(Name="user_total_amount")]
+        
         public string UserTotalAmount { get; set; }
 
         /// <summary>
@@ -206,6 +224,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sale status: 1 for on sale, 2 for sold out</value>
         [DataMember(Name="sale_status")]
+        
         public int SaleStatus { get; set; }
 
         /// <summary>

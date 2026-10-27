@@ -68,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Record ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public string Id { get; private set; }
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Hash record of the withdrawal</value>
         [DataMember(Name="txid", EmitDefaultValue=false)]
+        
         public string Txid { get; private set; }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Block Number</value>
         [DataMember(Name="block_number", EmitDefaultValue=false)]
+        
         public string BlockNumber { get; private set; }
 
         /// <summary>
@@ -89,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Client order id, up to 32 length and can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.) </value>
         [DataMember(Name="withdraw_order_id")]
+        
         public string WithdrawOrderId { get; set; }
 
         /// <summary>
@@ -96,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Operation time</value>
         [DataMember(Name="timestamp", EmitDefaultValue=false)]
+        
         public string Timestamp { get; private set; }
 
         /// <summary>
@@ -103,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Token amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -110,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>fee</value>
         [DataMember(Name="fee", EmitDefaultValue=false)]
+        
         public string Fee { get; private set; }
 
         /// <summary>
@@ -117,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -124,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Withdrawal address</value>
         [DataMember(Name="address")]
+        
         public string Address { get; set; }
 
         /// <summary>
@@ -131,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business Type</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -138,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reason for withdrawal failure. Has a value when status &#x3D; CANCEL, empty for all other statuses</value>
         [DataMember(Name="fail_reason")]
+        
         public string FailReason { get; set; }
 
         /// <summary>
@@ -145,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Withdrawal final time, i.e.: withdrawal cancellation time or withdrawal success time When status &#x3D; CANCEL, corresponds to cancellation time When status &#x3D; DONE, it is the withdrawal success time</value>
         [DataMember(Name="timestamp2")]
+        
         public string Timestamp2 { get; set; }
 
         /// <summary>
@@ -152,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Additional remarks with regards to the withdrawal</value>
         [DataMember(Name="memo")]
+        
         public string Memo { get; set; }
 
         /// <summary>
@@ -159,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction Status  - BCODE: Deposit Code Operation - CANCEL: Cancelled - CANCELPEND: Withdrawal Cancellation Pending - DONE: Completed - EXTPEND: Sent and Waiting for Confirmation - FAIL: On-Chain Failure Pending Confirmation - FVERIFY: Facial Verification in Progress - LOCKED: Wallet-Side Order Locked - MANUAL: Pending Manual Review - REJECT: Rejected - REQUEST: Request in Progress - REVIEW: Under Review </value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public string Status { get; private set; }
 
         /// <summary>
@@ -166,6 +180,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Name of the chain used in withdrawals</value>
         [DataMember(Name="chain")]
+        
         public string Chain { get; set; }
 
         /// <summary>

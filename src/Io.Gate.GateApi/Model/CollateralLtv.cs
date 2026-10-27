@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial collateralization rate</value>
         [DataMember(Name="init_ltv")]
+        
         public string InitLtv { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Warning collateralization rate</value>
         [DataMember(Name="alert_ltv")]
+        
         public string AlertLtv { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation collateralization rate</value>
         [DataMember(Name="liquidate_ltv")]
+        
         public string LiquidateLtv { get; set; }
 
         /// <summary>

@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the close order is from liquidation</value>
         [DataMember(Name="is_liq")]
+        
         public bool IsLiq { get; set; }
 
         /// <summary>

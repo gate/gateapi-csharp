@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Blockchain name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>token address</value>
         [DataMember(Name="addr")]
+        
         public string Addr { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether currency&#39;s withdrawal is disabled</value>
         [DataMember(Name="withdraw_disabled")]
+        
         public bool WithdrawDisabled { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether currency&#39;s withdrawal is delayed</value>
         [DataMember(Name="withdraw_delayed")]
+        
         public bool WithdrawDelayed { get; set; }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether currency&#39;s deposit is disabled</value>
         [DataMember(Name="deposit_disabled")]
+        
         public bool DepositDisabled { get; set; }
 
         /// <summary>

@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Required Amount</value>
         [DataMember(Name="total_balance")]
+        
         public string TotalBalance { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Used Amount</value>
         [DataMember(Name="current_used")]
+        
         public string CurrentUsed { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount achieved (note: field name is spelled as achived)</value>
         [DataMember(Name="current_achived")]
+        
         public string CurrentAchived { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Progress unit (e.g., &#39;USDT&#39;)</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>

@@ -7,6 +7,8 @@ namespace GateApiDemo
     {
         public RunConfig()
         {
+            // The URL option is optional, so initialize its documented default even when omitted.
+            HostUsed = "https://api.gateio.ws/api/v4";
         }
 
         public RunConfig(string key, string secret, string url)

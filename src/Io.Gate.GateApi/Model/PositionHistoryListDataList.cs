@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Position Direction - Long: Long Position - Short: Short Position
         /// </summary>
         /// <value>Position Direction - Long: Long Position - Short: Short Position</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum PositionDirEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Direction - Long: Long Position - Short: Short Position</value>
         [DataMember(Name="position_dir")]
+        
         public PositionDirEnum PositionDir { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PositionHistoryListDataList" /> class.
@@ -118,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position ID</value>
         [DataMember(Name="position_id")]
+        
         public long PositionId { get; set; }
 
         /// <summary>
@@ -125,6 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Market / Trading symbol</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -132,6 +137,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized PnL</value>
         [DataMember(Name="realized_pnl")]
+        
         public string RealizedPnl { get; set; }
 
         /// <summary>
@@ -139,6 +145,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized return rate</value>
         [DataMember(Name="realized_pnl_rate")]
+        
         public string RealizedPnlRate { get; set; }
 
         /// <summary>
@@ -146,6 +153,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size / Maximum position size</value>
         [DataMember(Name="volume")]
+        
         public string Volume { get; set; }
 
         /// <summary>
@@ -153,6 +161,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close volume</value>
         [DataMember(Name="volume_closed")]
+        
         public string VolumeClosed { get; set; }
 
         /// <summary>
@@ -160,6 +169,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average Opening Price</value>
         [DataMember(Name="price_open")]
+        
         public string PriceOpen { get; set; }
 
         /// <summary>
@@ -167,6 +177,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Take profit price</value>
         [DataMember(Name="price_tp")]
+        
         public string PriceTp { get; set; }
 
         /// <summary>
@@ -174,6 +185,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stop loss price</value>
         [DataMember(Name="price_sl")]
+        
         public string PriceSl { get; set; }
 
         /// <summary>
@@ -181,6 +193,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Counterparty price</value>
         [DataMember(Name="counterparty_price")]
+        
         public string CounterpartyPrice { get; set; }
 
         /// <summary>
@@ -188,6 +201,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close price</value>
         [DataMember(Name="close_price")]
+        
         public string ClosePrice { get; set; }
 
         /// <summary>
@@ -195,6 +209,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Open time (timestamp in seconds)</value>
         [DataMember(Name="time_create")]
+        
         public string TimeCreate { get; set; }
 
         /// <summary>
@@ -202,6 +217,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close time (timestamp in seconds)</value>
         [DataMember(Name="time_close")]
+        
         public string TimeClose { get; set; }
 
         /// <summary>
@@ -209,18 +225,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Status - 1: Fully Closed - 2: Forced Liquidation</value>
         [DataMember(Name="position_status")]
+        
         public string PositionStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets CloseDetail
         /// </summary>
         [DataMember(Name="close_detail")]
+        
         public PositionHistoryListDataCloseDetail CloseDetail { get; set; }
 
         /// <summary>
         /// Gets or Sets RealizedPnlDetail
         /// </summary>
         [DataMember(Name="realized_pnl_detail")]
+        
         public PositionHistoryListDataRealizedPnlDetail RealizedPnlDetail { get; set; }
 
         /// <summary>

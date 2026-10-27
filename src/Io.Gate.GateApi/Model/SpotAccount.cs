@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency detail</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available amount</value>
         [DataMember(Name="available")]
+        
         public string Available { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Locked amount, used in trading</value>
         [DataMember(Name="locked")]
+        
         public string Locked { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Version number</value>
         [DataMember(Name="update_id")]
+        
         public long UpdateId { get; set; }
 
         /// <summary>

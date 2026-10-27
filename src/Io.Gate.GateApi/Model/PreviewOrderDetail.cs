@@ -55,18 +55,21 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Asset
         /// </summary>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets AmountShow
         /// </summary>
         [DataMember(Name="amount_show")]
+        
         public string AmountShow { get; set; }
 
         /// <summary>

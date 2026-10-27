@@ -49,6 +49,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Rewards Center task ID</value>
         [DataMember(Name="welfare_task_id")]
+        
         public long WelfareTaskId { get; set; }
 
         /// <summary>

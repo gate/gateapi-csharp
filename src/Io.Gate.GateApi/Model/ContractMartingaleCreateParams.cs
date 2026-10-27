@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Direction
         /// </summary>
         [DataMember(Name="direction")]
+        
         public ContractMartingaleDirection Direction { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContractMartingaleCreateParams" /> class.
@@ -72,30 +73,35 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin allocated; the server converts it to initial contract size using live contract price, contract multiplier, and minimum lot size.</value>
         [DataMember(Name="invest_amount")]
+        
         public string InvestAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets PriceDeviation
         /// </summary>
         [DataMember(Name="price_deviation")]
+        
         public string PriceDeviation { get; set; }
 
         /// <summary>
         /// Gets or Sets MaxOrders
         /// </summary>
         [DataMember(Name="max_orders")]
+        
         public int MaxOrders { get; set; }
 
         /// <summary>
         /// Gets or Sets TakeProfitRatio
         /// </summary>
         [DataMember(Name="take_profit_ratio")]
+        
         public string TakeProfitRatio { get; set; }
 
         /// <summary>
         /// Gets or Sets Leverage
         /// </summary>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
@@ -103,12 +109,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Legacy field name. The AIHub &#x60;contract_martingale&#x60; creation path does not map this field today; follow contract martingale rules from the underlying API. MCP tooling must match bot-service behavior.</value>
         [DataMember(Name="stop_loss_price")]
+        
         public string StopLossPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets ProfitSharingRatio
         /// </summary>
         [DataMember(Name="profit_sharing_ratio")]
+        
         public string ProfitSharingRatio { get; set; }
 
         /// <summary>

@@ -61,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity list</value>
         [DataMember(Name="list")]
+        
         public List<ListActivitiesResponseDataList> List { get; set; }
 
         /// <summary>
@@ -68,6 +69,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current page number</value>
         [DataMember(Name="page")]
+        
         public int Page { get; set; }
 
         /// <summary>
@@ -75,6 +77,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Items per page</value>
         [DataMember(Name="pageSize")]
+        
         public int PageSize { get; set; }
 
         /// <summary>
@@ -82,6 +85,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total pages</value>
         [DataMember(Name="pageCount")]
+        
         public int PageCount { get; set; }
 
         /// <summary>
@@ -89,6 +93,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Records</value>
         [DataMember(Name="totalCount")]
+        
         public int TotalCount { get; set; }
 
         /// <summary>
@@ -96,6 +101,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity Center page link</value>
         [DataMember(Name="url")]
+        
         public string Url { get; set; }
 
         /// <summary>

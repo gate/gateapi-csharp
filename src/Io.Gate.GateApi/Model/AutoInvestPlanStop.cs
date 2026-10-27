@@ -49,6 +49,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Plan ID</value>
         [DataMember(Name="plan_id")]
+        
         public long PlanId { get; set; }
 
         /// <summary>

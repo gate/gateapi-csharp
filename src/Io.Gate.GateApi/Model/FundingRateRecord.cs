@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unix timestamp in seconds</value>
         [DataMember(Name="t")]
+        
         public long T { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Funding rate</value>
         [DataMember(Name="r")]
+        
         public string R { get; set; }
 
         /// <summary>

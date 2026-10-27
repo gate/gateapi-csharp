@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Kline data list</value>
         [DataMember(Name="list")]
+        
         public List<KlinesDataList> List { get; set; }
 
         /// <summary>

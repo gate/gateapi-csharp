@@ -90,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest rate boost coupon record ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -97,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business Type</value>
         [DataMember(Name="business")]
+        
         public int Business { get; set; }
 
         /// <summary>
@@ -104,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -111,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -118,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Associated order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -125,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest rate boost coupon ID</value>
         [DataMember(Name="financial_rate_id")]
+        
         public int FinancialRateId { get; set; }
 
         /// <summary>
@@ -132,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum subscription amount for interest rate boost coupon</value>
         [DataMember(Name="buy_limit_low")]
+        
         public string BuyLimitLow { get; set; }
 
         /// <summary>
@@ -139,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum subscription amount for interest rate boost coupon</value>
         [DataMember(Name="buy_limit_high")]
+        
         public string BuyLimitHigh { get; set; }
 
         /// <summary>
@@ -146,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest rate boost days</value>
         [DataMember(Name="rate_day")]
+        
         public int RateDay { get; set; }
 
         /// <summary>
@@ -153,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest rate boost percentage</value>
         [DataMember(Name="rate_ratio")]
+        
         public string RateRatio { get; set; }
 
         /// <summary>
@@ -160,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Actual interest rate boost days</value>
         [DataMember(Name="coupon_days")]
+        
         public int CouponDays { get; set; }
 
         /// <summary>
@@ -167,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Principal for interest rate boost calculation</value>
         [DataMember(Name="coupon_principal")]
+        
         public string CouponPrincipal { get; set; }
 
         /// <summary>
@@ -174,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest rate boost APR</value>
         [DataMember(Name="coupon_year_rate")]
+        
         public string CouponYearRate { get; set; }
 
         /// <summary>
@@ -181,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest generated from rate boost</value>
         [DataMember(Name="coupon_interest")]
+        
         public string CouponInterest { get; set; }
 
         /// <summary>
@@ -188,6 +202,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status: 1 for active, 2 for settled</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -195,6 +210,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement time</value>
         [DataMember(Name="finish_time")]
+        
         public string FinishTime { get; set; }
 
         /// <summary>
@@ -202,6 +218,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>

@@ -49,6 +49,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public string Id { get; private set; }
 
         /// <summary>
@@ -56,6 +57,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair", EmitDefaultValue=false)]
+        
         public string CurrencyPair { get; private set; }
 
         /// <summary>
@@ -63,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy or sell order</value>
         [DataMember(Name="side", EmitDefaultValue=false)]
+        
         public string Side { get; private set; }
 
         /// <summary>
@@ -70,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade amount</value>
         [DataMember(Name="amount", EmitDefaultValue=false)]
+        
         public string Amount { get; private set; }
 
         /// <summary>
@@ -77,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Target participation rate as a percentage. Allowed values: 5, 10, 20, and 40</value>
         [DataMember(Name="participation_rate", EmitDefaultValue=false)]
+        
         public int ParticipationRate { get; private set; }
 
         /// <summary>
@@ -84,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Time to live. Valid values: 1h, 6h, 12h, 1d, 2d, 3d, 4d, 5d, 6d, and 7d</value>
         [DataMember(Name="ttl", EmitDefaultValue=false)]
+        
         public string Ttl { get; private set; }
 
         /// <summary>
@@ -91,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Limit price. If omitted, the market price is used</value>
         [DataMember(Name="limit_price", EmitDefaultValue=false)]
+        
         public string LimitPrice { get; private set; }
 
         /// <summary>
@@ -98,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trigger price. If omitted, the order is triggered immediately</value>
         [DataMember(Name="trigger_price", EmitDefaultValue=false)]
+        
         public string TriggerPrice { get; private set; }
 
         /// <summary>
@@ -105,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status  - CREATED: Created - CANCELING: Canceling - RUNNING: Running - COMPLETED: Completed - EXPIRED: Expired - TERMINATED: Terminated</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public string Status { get; private set; }
 
         /// <summary>
@@ -112,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order termination reason code</value>
         [DataMember(Name="terminated_as", EmitDefaultValue=false)]
+        
         public string TerminatedAs { get; private set; }
 
         /// <summary>
@@ -119,6 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order execution start time in milliseconds</value>
         [DataMember(Name="start_time_ms", EmitDefaultValue=false)]
+        
         public long StartTimeMs { get; private set; }
 
         /// <summary>
@@ -126,6 +137,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order execution end time in milliseconds</value>
         [DataMember(Name="end_time_ms", EmitDefaultValue=false)]
+        
         public long EndTimeMs { get; private set; }
 
         /// <summary>
@@ -133,6 +145,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order expiration time in milliseconds</value>
         [DataMember(Name="expire_time_ms", EmitDefaultValue=false)]
+        
         public long ExpireTimeMs { get; private set; }
 
         /// <summary>
@@ -140,6 +153,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation time of order (in milliseconds)</value>
         [DataMember(Name="create_time_ms", EmitDefaultValue=false)]
+        
         public long CreateTimeMs { get; private set; }
 
         /// <summary>
@@ -147,6 +161,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last modification time of order (in milliseconds)</value>
         [DataMember(Name="update_time_ms", EmitDefaultValue=false)]
+        
         public long UpdateTimeMs { get; private set; }
 
         /// <summary>
@@ -154,6 +169,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order custom information. Users can set custom ID with this field. Custom fields must meet the following conditions:  1. Must start with &#x60;t-&#x60; 2. Excluding &#x60;t-&#x60;, length cannot exceed 28 bytes 3. Can only contain numbers, letters, underscore(_), hyphen(-) or dot(.) </value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

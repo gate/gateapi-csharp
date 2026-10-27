@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
         /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ExchangeEnum
         {
             /// <summary>
@@ -68,12 +70,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [DataMember(Name="exchange")]
+        
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
         /// Price type (market &#x3D; market order, limit &#x3D; limit order)
         /// </summary>
         /// <value>Price type (market &#x3D; market order, limit &#x3D; limit order)</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -95,12 +100,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price type (market &#x3D; market order, limit &#x3D; limit order)</value>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
         /// Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.
         /// </summary>
         /// <value>Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StatusEnum
         {
             /// <summary>
@@ -155,12 +161,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status. - 0: Unknown. - 1: New order; the order has been validated and is waiting to be processed. - 2: Partially filled. - 3: Filled. - 4: Canceled. - 5: Order rejected. - 6: Cancellation rejected. - 7: Order update succeeded. - 8: Order update rejected.</value>
         [DataMember(Name="status")]
+        
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Order completion reason. - 0: Unknown. - 1: No quote found. - 2: No match found. - 3: Trigger price exceeded. - 4: Order value exceeds the limit. - 5: Unknown rejection. - 6: Unknown cancellation. - 7: Canceled by user. - 8: Canceled after the order time in force expired. - 9: Trading is not supported in the current session. - 13: Canceled due to corporate action.
         /// </summary>
         /// <value>Order completion reason. - 0: Unknown. - 1: No quote found. - 2: No match found. - 3: Trigger price exceeded. - 4: Order value exceeds the limit. - 5: Unknown rejection. - 6: Unknown cancellation. - 7: Canceled by user. - 8: Canceled after the order time in force expired. - 9: Trading is not supported in the current session. - 13: Canceled due to corporate action.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum FinishAsEnum
         {
             /// <summary>
@@ -225,12 +232,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order completion reason. - 0: Unknown. - 1: No quote found. - 2: No match found. - 3: Trigger price exceeded. - 4: Order value exceeds the limit. - 5: Unknown rejection. - 6: Unknown cancellation. - 7: Canceled by user. - 8: Canceled after the order time in force expired. - 9: Trading is not supported in the current session. - 13: Canceled due to corporate action.</value>
         [DataMember(Name="finish_as")]
+        
         public FinishAsEnum? FinishAs { get; set; }
         /// <summary>
         /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SideEnum
         {
             /// <summary>
@@ -250,12 +258,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [DataMember(Name="side")]
+        
         public SideEnum? Side { get; set; }
         /// <summary>
         /// Time in force. - day: Day order.
         /// </summary>
         /// <value>Time in force. - day: Day order.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TimeInForceEnum
         {
             /// <summary>
@@ -271,6 +282,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Time in force. - day: Day order.</value>
         [DataMember(Name="time_in_force")]
+        
         public TimeInForceEnum? TimeInForce { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderHistoryListItem" /> class.
@@ -324,6 +336,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -331,6 +344,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -338,6 +352,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency</value>
         [DataMember(Name="quote_currency")]
+        
         public string QuoteCurrency { get; set; }
 
         /// <summary>
@@ -345,6 +360,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency to USD exchange rate</value>
         [DataMember(Name="fx_rate")]
+        
         public string FxRate { get; set; }
 
         /// <summary>
@@ -352,6 +368,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol description</value>
         [DataMember(Name="symbol_desc")]
+        
         public string SymbolDesc { get; set; }
 
         /// <summary>
@@ -359,12 +376,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status description</value>
         [DataMember(Name="status_desc")]
+        
         public string StatusDesc { get; set; }
 
         /// <summary>
         /// Gets or Sets StatusDetail
         /// </summary>
         [DataMember(Name="status_detail")]
+        
         public OrderHistoryListItemStatusDetail StatusDetail { get; set; }
 
         /// <summary>
@@ -372,6 +391,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order quantity</value>
         [DataMember(Name="volume")]
+        
         public string Volume { get; set; }
 
         /// <summary>
@@ -379,6 +399,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading size</value>
         [DataMember(Name="fill_volume")]
+        
         public string FillVolume { get; set; }
 
         /// <summary>
@@ -386,6 +407,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -393,6 +415,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average fill price</value>
         [DataMember(Name="avg_fill_price")]
+        
         public string AvgFillPrice { get; set; }
 
         /// <summary>
@@ -400,6 +423,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>fee</value>
         [DataMember(Name="commission")]
+        
         public string Commission { get; set; }
 
         /// <summary>
@@ -407,6 +431,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order creation time (Unix timestamp, seconds)</value>
         [DataMember(Name="time_setup")]
+        
         public long TimeSetup { get; set; }
 
         /// <summary>
@@ -414,6 +439,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order completion time (Unix timestamp in seconds)</value>
         [DataMember(Name="time_done")]
+        
         public long TimeDone { get; set; }
 
         /// <summary>

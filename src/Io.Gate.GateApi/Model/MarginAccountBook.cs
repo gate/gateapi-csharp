@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Balance change record ID</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account change timestamp</value>
         [DataMember(Name="time")]
+        
         public string Time { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The timestamp of the change (in milliseconds)</value>
         [DataMember(Name="time_ms")]
+        
         public long TimeMs { get; set; }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency changed</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -86,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account trading pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -93,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount changed. Positive value means transferring in, while negative out</value>
         [DataMember(Name="change")]
+        
         public string Change { get; set; }
 
         /// <summary>
@@ -100,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Balance after change</value>
         [DataMember(Name="balance")]
+        
         public string Balance { get; set; }
 
         /// <summary>
@@ -107,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account book type. Please refer to [account book type](#accountbook-type) for more detail</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>

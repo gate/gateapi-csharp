@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>MinimumAmount</value>
         [DataMember(Name="min_amount")]
+        
         public string MinAmount { get; set; }
 
         /// <summary>

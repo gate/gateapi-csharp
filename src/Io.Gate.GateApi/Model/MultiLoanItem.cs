@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Latest price of the currency</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>

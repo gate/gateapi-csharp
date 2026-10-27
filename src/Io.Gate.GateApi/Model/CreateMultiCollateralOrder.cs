@@ -67,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>current - current rate, fixed - fixed rate, defaults to current if not specified</value>
         [DataMember(Name="order_type")]
+        
         public string OrderType { get; set; }
 
         /// <summary>
@@ -81,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed interest rate lending period: 7d - 7 days, 30d - 30 days. Required for fixed rate</value>
         [DataMember(Name="fixed_type")]
+        
         public string FixedType { get; set; }
 
         /// <summary>
@@ -88,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed interest rate, required for fixed rate</value>
         [DataMember(Name="fixed_rate")]
+        
         public string FixedRate { get; set; }
 
         /// <summary>
@@ -95,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed interest rate, auto-renewal</value>
         [DataMember(Name="auto_renew")]
+        
         public bool AutoRenew { get; set; }
 
         /// <summary>
@@ -102,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed interest rate, auto-repayment</value>
         [DataMember(Name="auto_repay")]
+        
         public bool AutoRepay { get; set; }
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrowed currency</value>
         [DataMember(Name="borrow_currency")]
+        
         public string BorrowCurrency { get; set; }
 
         /// <summary>
@@ -116,6 +123,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrowed amount</value>
         [DataMember(Name="borrow_amount")]
+        
         public string BorrowAmount { get; set; }
 
         /// <summary>
@@ -123,6 +131,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Collateral currency and amount</value>
         [DataMember(Name="collateral_currencies")]
+        
         public List<CollateralCurrency> CollateralCurrencies { get; set; }
 
         /// <summary>

@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Change time</value>
         [DataMember(Name="time")]
+        
         public double Time { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount changed (USDT)</value>
         [DataMember(Name="change")]
+        
         public string Change { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account total balance after change (USDT)</value>
         [DataMember(Name="balance")]
+        
         public string Balance { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Changing Type: - dnw: Deposit &amp; Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Remark</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

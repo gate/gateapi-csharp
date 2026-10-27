@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Action type
         /// </summary>
         /// <value>Action type</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ActionTypeEnum
         {
             /// <summary>
@@ -50,12 +52,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Action type</value>
         [DataMember(Name="action_type")]
+        
         public ActionTypeEnum? ActionType { get; set; }
         /// <summary>
         /// Whether it is the primary action. 0: no
         /// </summary>
         /// <value>Whether it is the primary action. 0: no</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum MainlyEnum
         {
             /// <summary>
@@ -70,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether it is the primary action. 0: no</value>
         [DataMember(Name="mainly")]
+        
         public MainlyEnum? Mainly { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pMerchantBooksPlaceBizPushOrderResponseDataRiskEventAction" /> class.
@@ -91,6 +95,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Action button text</value>
         [DataMember(Name="title")]
+        
         public string Title { get; set; }
 
         /// <summary>
@@ -98,6 +103,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Additional data of the action; empty object for the close action</value>
         [DataMember(Name="action_data")]
+        
         public Object ActionData { get; set; }
 
         /// <summary>

@@ -60,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initiator User ID</value>
         [DataMember(Name="push_uid")]
+        
         public long PushUid { get; set; }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Recipient User ID</value>
         [DataMember(Name="receive_uid")]
+        
         public long ReceiveUid { get; set; }
 
         /// <summary>
@@ -81,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -88,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -95,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public long CreateTime { get; set; }
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Withdrawal status:  - CREATING: Creating - PENDING: Waiting for recipient (Please contact the recipient to accept the transfer on Gate official website) - CANCELLING: Cancelling - CANCELLED: Cancelled - REFUSING: Refusing - REFUSED: Refused - RECEIVING: Receiving - RECEIVED: Success</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -109,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PENDING reason tips</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
@@ -116,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order Type</value>
         [DataMember(Name="transaction_type")]
+        
         public string TransactionType { get; set; }
 
         /// <summary>

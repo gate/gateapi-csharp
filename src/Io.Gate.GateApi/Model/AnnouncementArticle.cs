@@ -87,6 +87,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Announcement article ID.</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -94,6 +95,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Article title</value>
         [DataMember(Name="title")]
+        
         public string Title { get; set; }
 
         /// <summary>
@@ -101,6 +103,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Article summary</value>
         [DataMember(Name="brief")]
+        
         public string Brief { get; set; }
 
         /// <summary>
@@ -108,6 +111,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Article creation time, returned as a string.</value>
         [DataMember(Name="created")]
+        
         public string Created { get; set; }
 
         /// <summary>
@@ -115,6 +119,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Article update time, returned as a string.</value>
         [DataMember(Name="updated")]
+        
         public string Updated { get; set; }
 
         /// <summary>
@@ -122,6 +127,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Article publication time, returned as a string.</value>
         [DataMember(Name="release_time")]
+        
         public string ReleaseTime { get; set; }
 
         /// <summary>
@@ -129,6 +135,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>View count</value>
         [DataMember(Name="views")]
+        
         public int Views { get; set; }
 
         /// <summary>
@@ -136,6 +143,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Author</value>
         [DataMember(Name="author")]
+        
         public string Author { get; set; }
 
         /// <summary>
@@ -143,6 +151,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Article author ID.</value>
         [DataMember(Name="author_id")]
+        
         public int AuthorId { get; set; }
 
         /// <summary>
@@ -150,6 +159,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Article tags</value>
         [DataMember(Name="tags")]
+        
         public string Tags { get; set; }
 
         /// <summary>
@@ -157,6 +167,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Category to which the article belongs.</value>
         [DataMember(Name="cate")]
+        
         public string Cate { get; set; }
 
         /// <summary>
@@ -164,6 +175,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Pinned status indicator for the article.</value>
         [DataMember(Name="is_top")]
+        
         public int IsTop { get; set; }
 
         /// <summary>
@@ -171,6 +183,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ID of the category to which the article belongs.</value>
         [DataMember(Name="cate_id")]
+        
         public int CateId { get; set; }
 
         /// <summary>
@@ -178,6 +191,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Article source</value>
         [DataMember(Name="source")]
+        
         public string Source { get; set; }
 
         /// <summary>
@@ -185,6 +199,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Languages supported by the article, with the code and name of each language.</value>
         [DataMember(Name="content_lang_list")]
+        
         public List<AnnouncementArticleLanguage> ContentLangList { get; set; }
 
         /// <summary>

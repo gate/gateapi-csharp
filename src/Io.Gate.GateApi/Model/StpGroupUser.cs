@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>STP Group ID</value>
         [DataMember(Name="stp_id", EmitDefaultValue=false)]
+        
         public long StpId { get; private set; }
 
         /// <summary>
@@ -58,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public long CreateTime { get; private set; }
 
         /// <summary>

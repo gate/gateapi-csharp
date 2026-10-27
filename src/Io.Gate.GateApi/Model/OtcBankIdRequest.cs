@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank card ID</value>
         [DataMember(Name="bank_id")]
+        
         public string BankId { get; set; }
 
         /// <summary>

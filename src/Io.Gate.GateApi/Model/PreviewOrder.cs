@@ -58,24 +58,28 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets From
         /// </summary>
         [DataMember(Name="from")]
+        
         public List<PreviewOrderDetail> From { get; set; }
 
         /// <summary>
         /// Gets or Sets To
         /// </summary>
         [DataMember(Name="to")]
+        
         public List<PreviewOrderDetail> To { get; set; }
 
         /// <summary>
         /// Gets or Sets UsdtEvaluatedValue
         /// </summary>
         [DataMember(Name="usdt_evaluated_value")]
+        
         public string UsdtEvaluatedValue { get; set; }
 
         /// <summary>
         /// Gets or Sets UsdtEvaluatedValueShow
         /// </summary>
         [DataMember(Name="usdt_evaluated_value_show")]
+        
         public string UsdtEvaluatedValueShow { get; set; }
 
         /// <summary>

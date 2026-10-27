@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Index name</value>
         [DataMember(Name="index", EmitDefaultValue=false)]
+        
         public string Index { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Constituents</value>
         [DataMember(Name="constituents", EmitDefaultValue=false)]
+        
         public List<IndexConstituent> Constituents { get; private set; }
 
         /// <summary>

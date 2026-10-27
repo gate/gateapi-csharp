@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation time</value>
         [DataMember(Name="time", EmitDefaultValue=false)]
+        
         public long Time { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="contract", EmitDefaultValue=false)]
+        
         public string Contract { get; private set; }
 
         /// <summary>
@@ -57,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position leverage. Not returned in public endpoints</value>
         [DataMember(Name="leverage", EmitDefaultValue=false)]
+        
         public string Leverage { get; private set; }
 
         /// <summary>
@@ -64,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size</value>
         [DataMember(Name="size", EmitDefaultValue=false)]
+        
         public string Size { get; private set; }
 
         /// <summary>
@@ -71,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position margin. Not returned in public endpoints</value>
         [DataMember(Name="margin", EmitDefaultValue=false)]
+        
         public string Margin { get; private set; }
 
         /// <summary>
@@ -78,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average entry price. Not returned in public endpoints</value>
         [DataMember(Name="entry_price", EmitDefaultValue=false)]
+        
         public string EntryPrice { get; private set; }
 
         /// <summary>
@@ -85,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation price. Not returned in public endpoints</value>
         [DataMember(Name="liq_price", EmitDefaultValue=false)]
+        
         public string LiqPrice { get; private set; }
 
         /// <summary>
@@ -92,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mark price. Not returned in public endpoints</value>
         [DataMember(Name="mark_price", EmitDefaultValue=false)]
+        
         public string MarkPrice { get; private set; }
 
         /// <summary>
@@ -99,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation order ID. Not returned in public endpoints</value>
         [DataMember(Name="order_id", EmitDefaultValue=false)]
+        
         public long OrderId { get; private set; }
 
         /// <summary>
@@ -106,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation order price</value>
         [DataMember(Name="order_price", EmitDefaultValue=false)]
+        
         public string OrderPrice { get; private set; }
 
         /// <summary>
@@ -113,6 +123,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation order average taker price</value>
         [DataMember(Name="fill_price", EmitDefaultValue=false)]
+        
         public string FillPrice { get; private set; }
 
         /// <summary>
@@ -120,6 +131,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation order maker size</value>
         [DataMember(Name="left", EmitDefaultValue=false)]
+        
         public string Left { get; private set; }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Risk control display type. 1: off-platform traffic diversion risk; returned when a text message hits risk control
         /// </summary>
         /// <value>Risk control display type. 1: off-platform traffic diversion risk; returned when a text message hits risk control</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum RiskTypeEnum
         {
             /// <summary>
@@ -49,6 +49,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk control display type. 1: off-platform traffic diversion risk; returned when a text message hits risk control</value>
         [DataMember(Name="risk_type")]
+        
         public RiskTypeEnum? RiskType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pChatMessage" /> class.
@@ -88,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the current user is the seller. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_sell")]
+        
         public int IsSell { get; set; }
 
         /// <summary>
@@ -95,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Message type: &#x60;0&#x60; text; &#x60;1&#x60; file; &#x60;2&#x60; template; &#x60;3&#x60; order-share; &#x60;4&#x60; payment-share; &#x60;5&#x60; status update.</value>
         [DataMember(Name="msg_type")]
+        
         public int MsgType { get; set; }
 
         /// <summary>
@@ -102,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Message content; for file messages, usually URL or file key.</value>
         [DataMember(Name="msg")]
+        
         public string Msg { get; set; }
 
         /// <summary>
@@ -109,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Message sender username</value>
         [DataMember(Name="username")]
+        
         public string Username { get; set; }
 
         /// <summary>
@@ -116,12 +121,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Message timestamp</value>
         [DataMember(Name="timest")]
+        
         public int Timest { get; set; }
 
         /// <summary>
         /// Gets or Sets MsgObj
         /// </summary>
         [DataMember(Name="msg_obj")]
+        
         public P2pChatMessagePayload MsgObj { get; set; }
 
         /// <summary>
@@ -129,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sender&#39;s crypto UID; system messages may use &#x60;System&#x60; or an empty string.</value>
         [DataMember(Name="uid")]
+        
         public string Uid { get; set; }
 
         /// <summary>
@@ -136,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Display type: &#x60;1&#x60; file message; &#x60;2&#x60; system message.</value>
         [DataMember(Name="type")]
+        
         public int Type { get; set; }
 
         /// <summary>
@@ -143,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>File link</value>
         [DataMember(Name="pic")]
+        
         public string Pic { get; set; }
 
         /// <summary>
@@ -150,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>File key</value>
         [DataMember(Name="file_key")]
+        
         public string FileKey { get; set; }
 
         /// <summary>
@@ -157,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>File type: &#x60;image&#x60; for images, &#x60;video&#x60; for videos.</value>
         [DataMember(Name="file_type")]
+        
         public string FileType { get; set; }
 
         /// <summary>
@@ -164,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk control prompt message; returned only when risk_type&#x3D;1</value>
         [DataMember(Name="toast_msg")]
+        
         public string ToastMsg { get; set; }
 
         /// <summary>

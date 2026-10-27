@@ -59,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.</value>
         [DataMember(Name="balance")]
+        
         public Dictionary<string, string> Balance { get; set; }
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.</value>
         [DataMember(Name="btc_faith")]
+        
         public Dictionary<string, string> BtcFaith { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.</value>
         [DataMember(Name="conservative")]
+        
         public Dictionary<string, string> Conservative { get; set; }
 
         /// <summary>
@@ -80,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mapping of string keys to string values, corresponding to Go&#39;s map[string]string.</value>
         [DataMember(Name="gt_faith")]
+        
         public Dictionary<string, string> GtFaith { get; set; }
 
         /// <summary>

@@ -45,6 +45,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public TransactionListData Data { get; set; }
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Server timestamp (milliseconds)</value>
         [DataMember(Name="timestamp")]
+        
         public long Timestamp { get; set; }
 
         /// <summary>

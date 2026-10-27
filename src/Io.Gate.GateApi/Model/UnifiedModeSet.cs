@@ -52,12 +52,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unified account mode:  - &#x60;classic&#x60;: Classic account mode - &#x60;multi_currency&#x60;: Cross-currency margin mode - &#x60;portfolio&#x60;: Portfolio margin mode - &#x60;single_currency&#x60;: Single-currency margin mode</value>
         [DataMember(Name="mode")]
+        
         public string Mode { get; set; }
 
         /// <summary>
         /// Gets or Sets Settings
         /// </summary>
         [DataMember(Name="settings")]
+        
         public UnifiedSettings Settings { get; set; }
 
         /// <summary>

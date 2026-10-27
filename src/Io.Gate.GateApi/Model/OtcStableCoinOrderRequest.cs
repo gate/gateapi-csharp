@@ -67,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency paid by the user. Supported currencies can be queried from the OTC web stablecoin quote page.</value>
         [DataMember(Name="pay_coin")]
+        
         public string PayCoin { get; set; }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to be received by the user. Supported currencies can be queried from the OTC web stablecoin quote page.</value>
         [DataMember(Name="get_coin")]
+        
         public string GetCoin { get; set; }
 
         /// <summary>
@@ -81,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User payment currency amount</value>
         [DataMember(Name="pay_amount")]
+        
         public string PayAmount { get; set; }
 
         /// <summary>
@@ -88,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount of currency received by the user</value>
         [DataMember(Name="get_amount")]
+        
         public string GetAmount { get; set; }
 
         /// <summary>
@@ -95,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The side returned by the quote endpoint (used for order validation). For backward compatibility, &#x60;PAY&#x60;/&#x60;GET&#x60; are accepted; new integrations should use the value returned by the quote response.</value>
         [DataMember(Name="side")]
+        
         public string Side { get; set; }
 
         /// <summary>
@@ -102,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Promotion code (optional)</value>
         [DataMember(Name="promotion_code")]
+        
         public string PromotionCode { get; set; }
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Parameter returned by the quote API</value>
         [DataMember(Name="quote_token")]
+        
         public string QuoteToken { get; set; }
 
         /// <summary>

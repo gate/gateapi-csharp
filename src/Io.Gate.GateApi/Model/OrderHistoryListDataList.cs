@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Trade type (market&#x3D;market price, trigger&#x3D;trigger price)
         /// </summary>
         /// <value>Trade type (market&#x3D;market price, trigger&#x3D;trigger price)</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -56,12 +58,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade type (market&#x3D;market price, trigger&#x3D;trigger price)</value>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
         /// Order operation type (1&#x3D;sell, 2&#x3D;buy, 3&#x3D;close long, 4&#x3D;close short, 5&#x3D;force close long, 6&#x3D;force close short)
         /// </summary>
         /// <value>Order operation type (1&#x3D;sell, 2&#x3D;buy, 3&#x3D;close long, 4&#x3D;close short, 5&#x3D;force close long, 6&#x3D;force close short)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum OrderOptTypeEnum
         {
             /// <summary>
@@ -101,12 +104,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order operation type (1&#x3D;sell, 2&#x3D;buy, 3&#x3D;close long, 4&#x3D;close short, 5&#x3D;force close long, 6&#x3D;force close short)</value>
         [DataMember(Name="order_opt_type")]
+        
         public OrderOptTypeEnum? OrderOptType { get; set; }
         /// <summary>
         /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SideEnum
         {
             /// <summary>
@@ -126,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [DataMember(Name="side")]
+        
         public SideEnum? Side { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderHistoryListDataList" /> class.
@@ -173,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -180,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -187,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol description</value>
         [DataMember(Name="symbol_desc")]
+        
         public string SymbolDesc { get; set; }
 
         /// <summary>
@@ -194,6 +202,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status code</value>
         [DataMember(Name="state")]
+        
         public int State { get; set; }
 
         /// <summary>
@@ -201,6 +210,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status description</value>
         [DataMember(Name="state_desc")]
+        
         public string StateDesc { get; set; }
 
         /// <summary>
@@ -208,6 +218,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order quantity</value>
         [DataMember(Name="volume")]
+        
         public string Volume { get; set; }
 
         /// <summary>
@@ -215,6 +226,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading size</value>
         [DataMember(Name="fill_volume")]
+        
         public string FillVolume { get; set; }
 
         /// <summary>
@@ -222,6 +234,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close Position P&amp;L</value>
         [DataMember(Name="close_pnl")]
+        
         public string ClosePnl { get; set; }
 
         /// <summary>
@@ -229,6 +242,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average fill price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -236,6 +250,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trigger price</value>
         [DataMember(Name="trigger_price")]
+        
         public string TriggerPrice { get; set; }
 
         /// <summary>
@@ -243,6 +258,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Take profit price</value>
         [DataMember(Name="price_tp")]
+        
         public string PriceTp { get; set; }
 
         /// <summary>
@@ -250,6 +266,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stop loss price</value>
         [DataMember(Name="price_sl")]
+        
         public string PriceSl { get; set; }
 
         /// <summary>
@@ -257,6 +274,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order time (Unix timestamp in seconds)</value>
         [DataMember(Name="time_setup")]
+        
         public long TimeSetup { get; set; }
 
         /// <summary>
@@ -264,6 +282,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End time (Unix timestamp in seconds)</value>
         [DataMember(Name="time_done")]
+        
         public long TimeDone { get; set; }
 
         /// <summary>

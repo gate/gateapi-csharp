@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close Position P&amp;L</value>
         [DataMember(Name="closed_pnl")]
+        
         public string ClosedPnl { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Swap fee</value>
         [DataMember(Name="swap")]
+        
         public string Swap { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>fee</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>

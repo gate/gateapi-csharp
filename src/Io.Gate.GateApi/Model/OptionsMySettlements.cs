@@ -60,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement time</value>
         [DataMember(Name="time")]
+        
         public double Time { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Underlying</value>
         [DataMember(Name="underlying")]
+        
         public string Underlying { get; set; }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options contract name</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -81,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Strike price (quote currency)</value>
         [DataMember(Name="strike_price")]
+        
         public string StrikePrice { get; set; }
 
         /// <summary>
@@ -88,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement price (quote currency)</value>
         [DataMember(Name="settle_price")]
+        
         public string SettlePrice { get; set; }
 
         /// <summary>
@@ -95,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement size</value>
         [DataMember(Name="size")]
+        
         public long Size { get; set; }
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement profit (quote currency)</value>
         [DataMember(Name="settle_profit")]
+        
         public string SettleProfit { get; set; }
 
         /// <summary>
@@ -109,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement fee (quote currency)</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -116,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Accumulated profit and loss from opening positions, including premium, fees, settlement profit, etc. (quote currency)</value>
         [DataMember(Name="realised_pnl")]
+        
         public string RealisedPnl { get; set; }
 
         /// <summary>

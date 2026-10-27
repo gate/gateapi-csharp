@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Inquiry ID</value>
         [DataMember(Name="quote_id")]
+        
         public string QuoteId { get; set; }
 
         /// <summary>

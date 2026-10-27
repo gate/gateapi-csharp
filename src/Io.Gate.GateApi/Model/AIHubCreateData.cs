@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyType
         /// </summary>
         [DataMember(Name="strategy_type")]
+        
         public StrategyType StrategyType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AIHubCreateData" /> class.
@@ -64,12 +65,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyId
         /// </summary>
         [DataMember(Name="strategy_id")]
+        
         public string StrategyId { get; set; }
 
         /// <summary>
         /// Gets or Sets Market
         /// </summary>
         [DataMember(Name="market")]
+        
         public string Market { get; set; }
 
         /// <summary>
@@ -77,12 +80,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The initial state after successful creation, usually &#x60;running&#x60;</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets JumpUrl
         /// </summary>
         [DataMember(Name="jump_url")]
+        
         public string JumpUrl { get; set; }
 
         /// <summary>

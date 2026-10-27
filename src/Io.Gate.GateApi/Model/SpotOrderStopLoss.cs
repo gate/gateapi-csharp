@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stop loss trigger price When &#x60;side &#x3D;&#x3D; \&quot;buy\&quot;&#x60;, &#x60;trigger_price&#x60; must be less than &#x60;price&#x60; When &#x60;side &#x3D;&#x3D; \&quot;sell\&quot;&#x60;, &#x60;trigger_price&#x60; must be greater than &#x60;price&#x60;</value>
         [DataMember(Name="trigger_price")]
+        
         public string TriggerPrice { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stop-loss order price</value>
         [DataMember(Name="order_price")]
+        
         public string OrderPrice { get; set; }
 
         /// <summary>

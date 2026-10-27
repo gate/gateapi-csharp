@@ -54,18 +54,21 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Priority
         /// </summary>
         [DataMember(Name="priority")]
+        
         public int Priority { get; set; }
 
         /// <summary>
         /// Gets or Sets Schemes
         /// </summary>
         [DataMember(Name="schemes")]
+        
         public List<RecommendV2Scheme> Schemes { get; set; }
 
         /// <summary>

@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Base64 temporary object path; pass back **unchanged** on business submit—do not decode</value>
         [DataMember(Name="file_key")]
+        
         public string FileKey { get; set; }
 
         /// <summary>
@@ -65,12 +66,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>S3 direct upload URL</value>
         [DataMember(Name="url")]
+        
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets Fields
         /// </summary>
         [DataMember(Name="fields")]
+        
         public OtcUploadPreUploadPolicyFields Fields { get; set; }
 
         /// <summary>
@@ -78,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Policy validity period in seconds; currently 5400 (90 minutes); aligns with &#x60;expiration&#x60; in &#x60;fields.Policy&#x60;; call this endpoint again after expiry</value>
         [DataMember(Name="expires_in")]
+        
         public int ExpiresIn { get; set; }
 
         /// <summary>

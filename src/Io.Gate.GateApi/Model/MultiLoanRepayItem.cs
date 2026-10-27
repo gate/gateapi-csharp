@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repayment currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Size</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -67,6 +69,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repayment method, set to true for full repayment, false for partial repayment</value>
         [DataMember(Name="repaid_all")]
+        
         public bool RepaidAll { get; set; }
 
         /// <summary>

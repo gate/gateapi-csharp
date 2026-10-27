@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price</value>
         [DataMember(Name="p")]
+        
         public string P { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether it is the user&#39;s own order</value>
         [DataMember(Name="user_order")]
+        
         public bool UserOrder { get; set; }
 
         /// <summary>

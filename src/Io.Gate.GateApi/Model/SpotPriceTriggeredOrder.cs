@@ -55,12 +55,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Trigger
         /// </summary>
         [DataMember(Name="trigger")]
+        
         public SpotPriceTrigger Trigger { get; set; }
 
         /// <summary>
         /// Gets or Sets Put
         /// </summary>
         [DataMember(Name="put")]
+        
         public SpotPricePutOrder Put { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Auto order ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public long Id { get; private set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
+        
         public int User { get; private set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Market</value>
         [DataMember(Name="market")]
+        
         public string Market { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="ctime", EmitDefaultValue=false)]
+        
         public long Ctime { get; private set; }
 
         /// <summary>
@@ -96,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End time</value>
         [DataMember(Name="ftime", EmitDefaultValue=false)]
+        
         public long Ftime { get; private set; }
 
         /// <summary>
@@ -103,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ID of the order created after trigger</value>
         [DataMember(Name="fired_order_id", EmitDefaultValue=false)]
+        
         public long FiredOrderId { get; private set; }
 
         /// <summary>
@@ -110,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status  - open: Running - cancelled: Manually cancelled - finish: Successfully completed - failed: Failed to execute - expired: Expired</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public string Status { get; private set; }
 
         /// <summary>
@@ -117,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Additional description of how the order was completed</value>
         [DataMember(Name="reason", EmitDefaultValue=false)]
+        
         public string Reason { get; private set; }
 
         /// <summary>

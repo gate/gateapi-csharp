@@ -55,6 +55,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options contract name</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -62,6 +63,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order Price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -69,6 +71,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade amount</value>
         [DataMember(Name="size")]
+        
         public long Size { get; set; }
 
         /// <summary>

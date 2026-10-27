@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)
         /// </summary>
         /// <value>Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum CodeEnum
         {
             /// <summary>
@@ -69,6 +69,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response code. &#x60;0&#x60; &#x3D; success; &#x60;2002&#x60; &#x3D; user not logged in; &#x60;50105&#x60; &#x3D; parameter validation failed; &#x60;10001&#x60; &#x3D; coupon record does not exist or does not belong to current user; &#x60;10000&#x60; &#x3D; invalid parameter (e.g., task coupon missing coupon_info)</value>
         [DataMember(Name="code")]
+        
         public CodeEnum? Code { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetUserCouponDetailResponse" /> class.
@@ -90,18 +91,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error identifier code. Empty string on success, machine-readable error label on error</value>
         [DataMember(Name="label")]
+        
         public string Label { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public GetUserCouponDetailResponseData Data { get; set; }
 
         /// <summary>

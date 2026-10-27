@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>IP Whitelist</value>
         [DataMember(Name="ip_whitelist")]
+        
         public List<string> IpWhitelist { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading pair whitelist</value>
         [DataMember(Name="currency_pairs")]
+        
         public List<string> CurrencyPairs { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -75,12 +78,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User VIP level</value>
         [DataMember(Name="tier")]
+        
         public long Tier { get; set; }
 
         /// <summary>
         /// Gets or Sets Key
         /// </summary>
         [DataMember(Name="key")]
+        
         public AccountDetailKey Key { get; set; }
 
         /// <summary>
@@ -88,6 +93,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User role: 0 - Normal user 1 - Copy trading leader 2 - Copy trading follower 3 - Both leader and follower</value>
         [DataMember(Name="copy_trading_role")]
+        
         public int CopyTradingRole { get; set; }
 
         /// <summary>

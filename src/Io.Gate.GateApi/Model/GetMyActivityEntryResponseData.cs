@@ -65,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity entry icon URL (light mode)</value>
         [DataMember(Name="icon_url")]
+        
         public string IconUrl { get; set; }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity entry icon URL (dark mode)</value>
         [DataMember(Name="icon_url_dark")]
+        
         public string IconUrlDark { get; set; }
 
         /// <summary>
@@ -79,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Source type, e.g., activity for campaign</value>
         [DataMember(Name="source_type")]
+        
         public string SourceType { get; set; }
 
         /// <summary>
@@ -86,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity entry title</value>
         [DataMember(Name="title")]
+        
         public string Title { get; set; }
 
         /// <summary>
@@ -93,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redirect link type, e.g., h5 for H5 page</value>
         [DataMember(Name="url_type")]
+        
         public string UrlType { get; set; }
 
         /// <summary>
@@ -100,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity entry redirect URL</value>
         [DataMember(Name="url")]
+        
         public string Url { get; set; }
 
         /// <summary>

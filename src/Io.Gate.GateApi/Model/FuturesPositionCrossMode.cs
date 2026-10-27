@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross/isolated margin mode. ISOLATED - isolated margin, CROSS - cross margin</value>
         [DataMember(Name="mode")]
+        
         public string Mode { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures market</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>

@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account Type  mmr: maintenance margin rate account;inactive: market not activated</value>
         [DataMember(Name="account_type")]
+        
         public string AccountType { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User&#39;s current market leverage multiplier</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the account is locked</value>
         [DataMember(Name="locked")]
+        
         public bool Locked { get; set; }
 
         /// <summary>
@@ -86,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deprecated</value>
         [DataMember(Name="risk")]
+        
         public string Risk { get; set; }
 
         /// <summary>
@@ -93,18 +98,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current Maintenance Margin Rate of the account</value>
         [DataMember(Name="mmr")]
+        
         public string Mmr { get; set; }
 
         /// <summary>
         /// Gets or Sets Base
         /// </summary>
         [DataMember(Name="base")]
+        
         public MarginAccountCurrency Base { get; set; }
 
         /// <summary>
         /// Gets or Sets Quote
         /// </summary>
         [DataMember(Name="quote")]
+        
         public MarginAccountCurrency Quote { get; set; }
 
         /// <summary>

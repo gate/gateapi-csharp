@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>VIP level for the floating rate to be retrieved</value>
         [DataMember(Name="tier")]
+        
         public string Tier { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Floating rate corresponding to VIP level</value>
         [DataMember(Name="tier_up_rate")]
+        
         public string TierUpRate { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Historical interest rate information, one data point per hour, array size determined by page and limit parameters from the API request, sorted by time from recent to distant</value>
         [DataMember(Name="rates")]
+        
         public List<UnifiedHistoryLoanRateRates> Rates { get; set; }
 
         /// <summary>

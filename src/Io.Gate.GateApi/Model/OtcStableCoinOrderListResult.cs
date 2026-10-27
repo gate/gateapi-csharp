@@ -57,30 +57,35 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Total
         /// </summary>
         [DataMember(Name="total")]
+        
         public int Total { get; set; }
 
         /// <summary>
         /// Gets or Sets PageSize
         /// </summary>
         [DataMember(Name="page_size")]
+        
         public int PageSize { get; set; }
 
         /// <summary>
         /// Gets or Sets PageNumber
         /// </summary>
         [DataMember(Name="page_number")]
+        
         public int PageNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalPage
         /// </summary>
         [DataMember(Name="total_page")]
+        
         public int TotalPage { get; set; }
 
         /// <summary>
         /// Gets or Sets Lists
         /// </summary>
         [DataMember(Name="lists")]
+        
         public List<OtcStableCoinOrderListItem> Lists { get; set; }
 
         /// <summary>

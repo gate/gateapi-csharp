@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last configuration update time</value>
         [DataMember(Name="time")]
+        
         public double Time { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options contract name</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement profit per contract (quote currency)</value>
         [DataMember(Name="profit")]
+        
         public string Profit { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement fee per contract (quote currency)</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Strike price (quote currency)</value>
         [DataMember(Name="strike_price")]
+        
         public string StrikePrice { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement price (quote currency)</value>
         [DataMember(Name="settle_price")]
+        
         public string SettlePrice { get; set; }
 
         /// <summary>

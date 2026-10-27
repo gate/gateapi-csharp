@@ -65,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum risk limit value</value>
         [DataMember(Name="min_risk_limit_value")]
+        
         public string MinRiskLimitValue { get; set; }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum risk limit value</value>
         [DataMember(Name="max_risk_limit_value")]
+        
         public string MaxRiskLimitValue { get; set; }
 
         /// <summary>
@@ -79,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quick-calculation amount</value>
         [DataMember(Name="quick_cal_amount")]
+        
         public string QuickCalAmount { get; set; }
 
         /// <summary>
@@ -86,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum leverage</value>
         [DataMember(Name="leverage_max")]
+        
         public string LeverageMax { get; set; }
 
         /// <summary>
@@ -93,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maintenance margin rate</value>
         [DataMember(Name="maintenance_rate")]
+        
         public string MaintenanceRate { get; set; }
 
         /// <summary>
@@ -100,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Tier</value>
         [DataMember(Name="tier")]
+        
         public string Tier { get; set; }
 
         /// <summary>

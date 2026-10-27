@@ -63,6 +63,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyName
         /// </summary>
         [DataMember(Name="strategy_name")]
+        
         public string StrategyName { get; set; }
 
         /// <summary>
@@ -70,6 +71,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="created_at")]
+        
         public string CreatedAt { get; set; }
 
         /// <summary>
@@ -77,24 +79,28 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Runtime duration in seconds.</value>
         [DataMember(Name="running_duration")]
+        
         public long RunningDuration { get; set; }
 
         /// <summary>
         /// Gets or Sets InvestAmount
         /// </summary>
         [DataMember(Name="invest_amount")]
+        
         public string InvestAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalProfit
         /// </summary>
         [DataMember(Name="total_profit")]
+        
         public string TotalProfit { get; set; }
 
         /// <summary>
         /// Gets or Sets ProfitRate
         /// </summary>
         [DataMember(Name="profit_rate")]
+        
         public string ProfitRate { get; set; }
 
         /// <summary>

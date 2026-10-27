@@ -46,12 +46,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Server timestamp (milliseconds)</value>
         [DataMember(Name="timestamp")]
+        
         public long Timestamp { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public Object Data { get; set; }
 
         /// <summary>

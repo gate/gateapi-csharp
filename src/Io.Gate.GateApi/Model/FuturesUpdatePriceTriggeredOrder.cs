@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Reference price type. 0 - Latest trade price, 1 - Mark price, 2 - Index price
         /// </summary>
         /// <value>Reference price type. 0 - Latest trade price, 1 - Mark price, 2 - Index price</value>
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -58,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reference price type. 0 - Latest trade price, 1 - Mark price, 2 - Index price</value>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesUpdatePriceTriggeredOrder" /> class.
@@ -94,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Perpetual futures settlement currency, e.g. usdt, btc, usd1</value>
         [DataMember(Name="settle")]
+        
         public string Settle { get; set; }
 
         /// <summary>
@@ -101,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ID of the Pending Take-Profit/Stop-Loss Trigger Order</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -108,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Modified Contract Quantity. Full Close: 0; Partial Close: Positive/Negative values indicate direction (consistent with the creation interface logic).</value>
         [DataMember(Name="size")]
+        
         public long Size { get; set; }
 
         /// <summary>
@@ -115,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Same as &#x60;size&#x60;; used for decimal contract size. When both &#x60;size&#x60; and &#x60;amount&#x60; are provided, &#x60;amount&#x60; takes precedence.</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -122,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Represents the modified trading price. A value of 0 indicates a market order.</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -129,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Modified Trigger Price</value>
         [DataMember(Name="trigger_price")]
+        
         public string TriggerPrice { get; set; }
 
         /// <summary>
@@ -136,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>One-way Mode: auto_size is not required Hedge Mode partial closing (size≠0): auto_size is not required Hedge Mode full closing (size&#x3D;0): auto_size must be set, close_long for closing long positions, close_short for closing short positions</value>
         [DataMember(Name="auto_size")]
+        
         public string AutoSize { get; set; }
 
         /// <summary>
@@ -143,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>When fully closing a position in single-position mode, close must be set to true to execute the close operation. When partially closing a position in single-position mode or in dual-position mode, close can be left unset or set to false.</value>
         [DataMember(Name="close")]
+        
         public bool Close { get; set; }
 
         /// <summary>

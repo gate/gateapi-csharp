@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liability currencies</value>
         [DataMember(Name="debt_currencies")]
+        
         public List<UnifiedQuickRepayDebtItem> DebtCurrencies { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currencies available for repayment</value>
         [DataMember(Name="available_currencies")]
+        
         public List<UnifiedQuickRepayAvailableItem> AvailableCurrencies { get; set; }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Message content type when risk control is hit. 0: text
         /// </summary>
         /// <value>Message content type when risk control is hit. 0: text</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum MsgTypeEnum
         {
             /// <summary>
@@ -49,12 +49,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Message content type when risk control is hit. 0: text</value>
         [DataMember(Name="msg_type")]
+        
         public MsgTypeEnum? MsgType { get; set; }
         /// <summary>
         /// Risk control display type. 1: off-platform traffic diversion risk; returned only when risk control is hit
         /// </summary>
         /// <value>Risk control display type. 1: off-platform traffic diversion risk; returned only when risk control is hit</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum RiskTypeEnum
         {
             /// <summary>
@@ -69,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk control display type. 1: off-platform traffic diversion risk; returned only when risk control is hit</value>
         [DataMember(Name="risk_type")]
+        
         public RiskTypeEnum? RiskType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pSendChatMessageResult" /> class.
@@ -94,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Timestamp when message was successfully sent (current timestamp)</value>
         [DataMember(Name="SRVTM")]
+        
         public int SRVTM { get; set; }
 
         /// <summary>
@@ -101,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="txid")]
+        
         public int Txid { get; set; }
 
         /// <summary>
@@ -108,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Chat ID, formatted as both parties&#39; UIDs concatenated in ascending order</value>
         [DataMember(Name="conversation_id")]
+        
         public string ConversationId { get; set; }
 
         /// <summary>
@@ -115,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk control prompt message; returned only when risk_type&#x3D;1</value>
         [DataMember(Name="toast_msg")]
+        
         public string ToastMsg { get; set; }
 
         /// <summary>

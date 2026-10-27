@@ -57,6 +57,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="coin")]
+        
         public string Coin { get; set; }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>0 - Stake 1 - Redeem</value>
         [DataMember(Name="side")]
+        
         public int Side { get; set; }
 
         /// <summary>
@@ -71,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Size</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -78,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>DeFi-type Mining Protocol Identifier</value>
         [DataMember(Name="pid")]
+        
         public int Pid { get; set; }
 
         /// <summary>

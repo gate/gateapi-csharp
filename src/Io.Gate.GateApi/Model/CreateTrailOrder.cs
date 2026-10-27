@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Activation price type: 1-latest price, 2-index price, 3-mark price
         /// </summary>
         /// <value>Activation price type: 1-latest price, 2-index price, 3-mark price</value>
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -58,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation price type: 1-latest price, 2-index price, 3-mark price</value>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTrailOrder" /> class.
@@ -102,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract name</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -109,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading quantity in contracts, positive for buy, negative for sell</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -116,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation price, 0 means trigger immediately</value>
         [DataMember(Name="activation_price")]
+        
         public string ActivationPrice { get; set; }
 
         /// <summary>
@@ -123,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>true: activate when market price &gt;&#x3D; activation price, false: &lt;&#x3D; activation price</value>
         [DataMember(Name="is_gte")]
+        
         public bool IsGte { get; set; }
 
         /// <summary>
@@ -130,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Callback ratio or price distance, e.g., &#x60;0.1&#x60; or &#x60;0.1%&#x60;</value>
         [DataMember(Name="price_offset")]
+        
         public string PriceOffset { get; set; }
 
         /// <summary>
@@ -137,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether reduce only</value>
         [DataMember(Name="reduce_only")]
+        
         public bool ReduceOnly { get; set; }
 
         /// <summary>
@@ -144,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether bound to a position (if position_related &#x3D; true (position-related), then reduce_only must also be true)</value>
         [DataMember(Name="position_related")]
+        
         public bool PositionRelated { get; set; }
 
         /// <summary>
@@ -151,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order custom information, optional field. Used to identify the order source or set a user-defined ID.  If non-empty, it must meet one of the following rules:  1. Internal Reserved Fields (identifying order source): - &#x60;apiv4&#x60;: API call 2. User-defined Fields (setting custom ID): - Must start with &#x60;t-&#x60; - The content after &#x60;t-&#x60; must not exceed 28 bytes in length - Can only contain: numbers, letters, underscores (_), hyphens (-), or dots (.) - Examples: &#x60;t-my-order-001&#x60;, &#x60;t-trail_2024.01&#x60;  Note: User-defined fields must not conflict with internal reserved fields.</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -158,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position margin mode: isolated/cross</value>
         [DataMember(Name="pos_margin_mode")]
+        
         public string PosMarginMode { get; set; }
 
         /// <summary>
@@ -165,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position mode: single, dual, and dual_plus</value>
         [DataMember(Name="position_mode")]
+        
         public string PositionMode { get; set; }
 
         /// <summary>

@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Server current time(ms)</value>
         [DataMember(Name="server_time")]
+        
         public long ServerTime { get; set; }
 
         /// <summary>

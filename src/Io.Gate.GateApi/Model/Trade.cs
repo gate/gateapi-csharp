@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Buy or sell order
         /// </summary>
         /// <value>Buy or sell order</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SideEnum
         {
             /// <summary>
@@ -56,12 +58,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy or sell order</value>
         [DataMember(Name="side")]
+        
         public SideEnum? Side { get; set; }
         /// <summary>
         /// Trade role, not returned in public endpoints
         /// </summary>
         /// <value>Trade role, not returned in public endpoints</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum RoleEnum
         {
             /// <summary>
@@ -83,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade role, not returned in public endpoints</value>
         [DataMember(Name="role")]
+        
         public RoleEnum? Role { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Trade" /> class.
@@ -132,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill ID</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -139,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill Time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -146,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading time, with millisecond precision</value>
         [DataMember(Name="create_time_ms")]
+        
         public string CreateTimeMs { get; set; }
 
         /// <summary>
@@ -153,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -160,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -167,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -174,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Related order ID, not returned in public endpoints</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -181,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fee deducted, not returned in public endpoints</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -188,6 +202,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fee currency unit, not returned in public endpoints</value>
         [DataMember(Name="fee_currency")]
+        
         public string FeeCurrency { get; set; }
 
         /// <summary>
@@ -195,6 +210,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Points used to deduct fee, not returned in public endpoints</value>
         [DataMember(Name="point_fee")]
+        
         public string PointFee { get; set; }
 
         /// <summary>
@@ -202,6 +218,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>GT used to deduct fee, not returned in public endpoints</value>
         [DataMember(Name="gt_fee")]
+        
         public string GtFee { get; set; }
 
         /// <summary>
@@ -209,6 +226,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The custom data that the user remarked when amending the order</value>
         [DataMember(Name="amend_text")]
+        
         public string AmendText { get; set; }
 
         /// <summary>
@@ -216,6 +234,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Consecutive trade ID within a single market. Used to track and identify trades in the specific market</value>
         [DataMember(Name="sequence_id")]
+        
         public string SequenceId { get; set; }
 
         /// <summary>
@@ -223,6 +242,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order&#39;s Custom Information. This field is not returned by public interfaces. The scenarios pm_liquidate, comb_margin_liquidate, and scm_liquidate represent full-account forced liquidation orders. liquidate represents isolated-account forced liquidation orders.</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -230,6 +250,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Executed Value</value>
         [DataMember(Name="deal")]
+        
         public string Deal { get; set; }
 
         /// <summary>
@@ -237,6 +258,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Actual quote currency used for the trade</value>
         [DataMember(Name="trade_quote")]
+        
         public string TradeQuote { get; set; }
 
         /// <summary>

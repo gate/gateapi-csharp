@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response timestamp.</value>
         [DataMember(Name="timestamp")]
+        
         public decimal Timestamp { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Placeholder for request method.</value>
         [DataMember(Name="method")]
+        
         public string Method { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response code. 0 means success; 70305102 means the advertisement trade terms or auto reply hit off-platform traffic diversion risk control</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
@@ -75,12 +78,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response message</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public P2pMerchantBooksPlaceBizPushOrderResponseData Data { get; set; }
 
         /// <summary>
@@ -88,6 +93,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>API version.</value>
         [DataMember(Name="version")]
+        
         public string Version { get; set; }
 
         /// <summary>

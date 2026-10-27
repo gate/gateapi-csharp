@@ -57,6 +57,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response status code, 0 means success</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
@@ -64,12 +65,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>响应消息，成功时为 \&quot;success\&quot;</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public ListActivityTypesResponseData Data { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Server timestamp (milliseconds)</value>
         [DataMember(Name="timestamp")]
+        
         public long Timestamp { get; set; }
 
         /// <summary>

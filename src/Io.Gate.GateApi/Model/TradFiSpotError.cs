@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business error label</value>
         [DataMember(Name="label")]
+        
         public string Label { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error message</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error additional data</value>
         [DataMember(Name="data")]
+        
         public Object Data { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Server timestamp (milliseconds)</value>
         [DataMember(Name="timestamp")]
+        
         public long Timestamp { get; set; }
 
         /// <summary>

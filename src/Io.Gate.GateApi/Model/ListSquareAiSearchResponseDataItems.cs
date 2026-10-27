@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Post ID</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Post content</value>
         [DataMember(Name="content")]
+        
         public string Content { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>First image URL</value>
         [DataMember(Name="image")]
+        
         public string Image { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Author avatar</value>
         [DataMember(Name="avatar")]
+        
         public string Avatar { get; set; }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Author nickname</value>
         [DataMember(Name="nickname")]
+        
         public string Nickname { get; set; }
 
         /// <summary>
@@ -91,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Like count</value>
         [DataMember(Name="like_count")]
+        
         public long LikeCount { get; set; }
 
         /// <summary>
@@ -98,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>View count</value>
         [DataMember(Name="page_view")]
+        
         public long PageView { get; set; }
 
         /// <summary>

@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Preview result ID</value>
         [DataMember(Name="preview_id")]
+        
         public string PreviewId { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Name of the sold asset,  Refer to the interface Query the list of currencies supported for flash swap GET /flash_swap/currenciesto obtain</value>
         [DataMember(Name="sell_currency")]
+        
         public string SellCurrency { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to sell</value>
         [DataMember(Name="sell_amount")]
+        
         public string SellAmount { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Name of the purchased asset,  Refer to the interface Query the list of currencies supported for flash swap GET /flash_swap/currenciesto obtain</value>
         [DataMember(Name="buy_currency")]
+        
         public string BuyCurrency { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to buy</value>
         [DataMember(Name="buy_amount")]
+        
         public string BuyAmount { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>

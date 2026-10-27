@@ -65,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="coin")]
+        
         public string Coin { get; set; }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange</value>
         [DataMember(Name="exchange_type")]
+        
         public string ExchangeType { get; set; }
 
         /// <summary>
@@ -79,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Tier</value>
         [DataMember(Name="tier")]
+        
         public string Tier { get; set; }
 
         /// <summary>
@@ -86,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum value</value>
         [DataMember(Name="min_value")]
+        
         public string MinValue { get; set; }
 
         /// <summary>
@@ -93,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum value</value>
         [DataMember(Name="max_value")]
+        
         public string MaxValue { get; set; }
 
         /// <summary>
@@ -100,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Discount rate</value>
         [DataMember(Name="discount_rate")]
+        
         public string DiscountRate { get; set; }
 
         /// <summary>

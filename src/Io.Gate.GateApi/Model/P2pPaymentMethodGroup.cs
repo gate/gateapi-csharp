@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method type</value>
         [DataMember(Name="pay_type")]
+        
         public string PayType { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method name</value>
         [DataMember(Name="pay_name")]
+        
         public string PayName { get; set; }
 
         /// <summary>
@@ -64,12 +66,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User&#39;s currently bound payment method (primary key ID)</value>
         [DataMember(Name="ids")]
+        
         public List<int> Ids { get; set; }
 
         /// <summary>
         /// Gets or Sets List
         /// </summary>
         [DataMember(Name="list")]
+        
         public List<P2pPaymentMethodAccount> List { get; set; }
 
         /// <summary>

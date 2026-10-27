@@ -59,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public string UserId { get; set; }
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>CrossEx ADL priority, with values from 1 to 5 Priority from highest to lowest: 5, 4, 3, 2, 1</value>
         [DataMember(Name="crossex_adl_rank")]
+        
         public string _CrossexAdlRank { get; set; }
 
         /// <summary>
@@ -80,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Raw exchange ADL rank. Priority order from highest to lowest by exchange: - BINANCE: 4, 3, 2, 1, 0 - OKX: 5, 4, 3, 2, 1, 0 - GATE: 1, 2, 3, 4, 5 - Kraken: 20, 40, 60, 80, 100 - BYBIT: 5, 4, 3, 2, 1, 0</value>
         [DataMember(Name="exchange_adl_rank")]
+        
         public string ExchangeAdlRank { get; set; }
 
         /// <summary>

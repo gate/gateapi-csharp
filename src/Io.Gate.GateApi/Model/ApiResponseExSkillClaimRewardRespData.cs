@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to choose n prize pool tasks for m. When it is true, it only prompts a jump and does not actually issue prizes.</value>
         [DataMember(Name="has_m_n_task")]
+        
         public bool HasMNTask { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The full name of the card reward. It is an empty string when it is not a coupon reward or cannot be parsed.</value>
         [DataMember(Name="coupon_full_name")]
+        
         public string CouponFullName { get; set; }
 
         /// <summary>

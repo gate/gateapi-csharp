@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total maintenance margin, including only portfolio margin calculation results for positions in risk units, excluding borrowing margin. If borrowing exists, conventional borrowing margin requirements will still apply</value>
         [DataMember(Name="maintain_margin_total")]
+        
         public string MaintainMarginTotal { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total initial margin, calculated as the maximum of the following three combinations: position, position + positive delta orders, position + negative delta orders</value>
         [DataMember(Name="initial_margin_total")]
+        
         public string InitialMarginTotal { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Calculation time</value>
         [DataMember(Name="calculate_time")]
+        
         public long CalculateTime { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk unit</value>
         [DataMember(Name="risk_unit")]
+        
         public List<MockRiskUnit> RiskUnit { get; set; }
 
         /// <summary>

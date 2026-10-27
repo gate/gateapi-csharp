@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Deprecated. Currently, all statuses have been set to 2.  Borrow loan status, which includes:  - 1: failed to borrow - 2: borrowed but not repaid - 3: repayment complete
         /// </summary>
         /// <value>Deprecated. Currently, all statuses have been set to 2.  Borrow loan status, which includes:  - 1: failed to borrow - 2: borrowed but not repaid - 3: repayment complete</value>
+        
         public enum StatusEnum
         {
             /// <summary>
@@ -58,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deprecated. Currently, all statuses have been set to 2.  Borrow loan status, which includes:  - 1: failed to borrow - 2: borrowed but not repaid - 3: repayment complete</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CrossMarginLoan" /> class.
@@ -84,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Loan record ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public string Id { get; private set; }
 
         /// <summary>
@@ -91,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation timestamp, in milliseconds</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public long CreateTime { get; private set; }
 
         /// <summary>
@@ -98,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update timestamp, in milliseconds</value>
         [DataMember(Name="update_time", EmitDefaultValue=false)]
+        
         public long UpdateTime { get; private set; }
 
         /// <summary>
@@ -105,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -112,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrowed amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -119,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User defined custom ID</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -126,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repaid amount</value>
         [DataMember(Name="repaid", EmitDefaultValue=false)]
+        
         public string Repaid { get; private set; }
 
         /// <summary>
@@ -133,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repaid interest</value>
         [DataMember(Name="repaid_interest", EmitDefaultValue=false)]
+        
         public string RepaidInterest { get; private set; }
 
         /// <summary>
@@ -140,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unpaid interest</value>
         [DataMember(Name="unpaid_interest", EmitDefaultValue=false)]
+        
         public string UnpaidInterest { get; private set; }
 
         /// <summary>

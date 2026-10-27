@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyType
         /// </summary>
         [DataMember(Name="strategy_type")]
+        
         public StrategyType StrategyType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AIHubPortfolioStopData" /> class.
@@ -62,6 +63,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyId
         /// </summary>
         [DataMember(Name="strategy_id")]
+        
         public string StrategyId { get; set; }
 
         /// <summary>
@@ -69,12 +71,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The current implementation returns &#x60;stopping&#x60;</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets ResultMessage
         /// </summary>
         [DataMember(Name="result_message")]
+        
         public string ResultMessage { get; set; }
 
         /// <summary>

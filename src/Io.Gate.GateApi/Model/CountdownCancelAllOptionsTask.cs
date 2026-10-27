@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Countdown time in seconds At least 5 seconds, 0 means cancel countdown</value>
         [DataMember(Name="timeout")]
+        
         public int Timeout { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options contract name</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -67,6 +69,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Underlying</value>
         [DataMember(Name="underlying")]
+        
         public string Underlying { get; set; }
 
         /// <summary>

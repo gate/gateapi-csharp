@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mode: 1 - Classic mode, 2 - Legacy unified mode</value>
         [DataMember(Name="mode")]
+        
         public int Mode { get; set; }
 
         /// <summary>

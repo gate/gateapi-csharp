@@ -45,12 +45,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Symbol
         /// </summary>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
         /// Gets or Sets Tiers
         /// </summary>
         [DataMember(Name="tiers")]
+        
         public List<CrossexRiskLimitTier> Tiers { get; set; }
 
         /// <summary>

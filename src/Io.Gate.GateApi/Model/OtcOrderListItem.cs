@@ -70,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current time</value>
         [DataMember(Name="time")]
+        
         public string Time { get; set; }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current timestamp</value>
         [DataMember(Name="timestamp")]
+        
         public int Timestamp { get; set; }
 
         /// <summary>
@@ -84,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>orderId</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -91,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade number</value>
         [DataMember(Name="trade_no")]
+        
         public string TradeNo { get; set; }
 
         /// <summary>
@@ -98,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>BUY deposit / SELL withdrawal</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -105,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -112,12 +118,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency</value>
         [DataMember(Name="fiat_currency")]
+        
         public string FiatCurrency { get; set; }
 
         /// <summary>
         /// Gets or Sets FiatCurrencyInfo
         /// </summary>
         [DataMember(Name="fiat_currency_info")]
+        
         public OtcOrderListFiatCurrencyInfo FiatCurrencyInfo { get; set; }
 
         /// <summary>
@@ -125,6 +133,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat amount</value>
         [DataMember(Name="fiat_amount")]
+        
         public string FiatAmount { get; set; }
 
         /// <summary>
@@ -132,12 +141,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Digital currency</value>
         [DataMember(Name="crypto_currency")]
+        
         public string CryptoCurrency { get; set; }
 
         /// <summary>
         /// Gets or Sets CryptoCurrencyInfo
         /// </summary>
         [DataMember(Name="crypto_currency_info")]
+        
         public OtcOrderListCryptoCurrencyInfo CryptoCurrencyInfo { get; set; }
 
         /// <summary>
@@ -145,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cryptocurrency amount</value>
         [DataMember(Name="crypto_amount")]
+        
         public string CryptoAmount { get; set; }
 
         /// <summary>
@@ -152,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange rate</value>
         [DataMember(Name="rate")]
+        
         public string Rate { get; set; }
 
         /// <summary>
@@ -159,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Promotion code</value>
         [DataMember(Name="promotion_code")]
+        
         public string PromotionCode { get; set; }
 
         /// <summary>

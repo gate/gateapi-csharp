@@ -71,54 +71,63 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets BankAccountName
         /// </summary>
         [DataMember(Name="bank_account_name")]
+        
         public string BankAccountName { get; set; }
 
         /// <summary>
         /// Gets or Sets BankName
         /// </summary>
         [DataMember(Name="bank_name")]
+        
         public string BankName { get; set; }
 
         /// <summary>
         /// Gets or Sets BankCountry
         /// </summary>
         [DataMember(Name="bank_country")]
+        
         public string BankCountry { get; set; }
 
         /// <summary>
         /// Gets or Sets BankAddress
         /// </summary>
         [DataMember(Name="bank_address")]
+        
         public string BankAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets Iban
         /// </summary>
         [DataMember(Name="iban")]
+        
         public string Iban { get; set; }
 
         /// <summary>
         /// Gets or Sets Swift
         /// </summary>
         [DataMember(Name="swift")]
+        
         public string Swift { get; set; }
 
         /// <summary>
         /// Gets or Sets RemittanceLineNumber
         /// </summary>
         [DataMember(Name="remittance_line_number")]
+        
         public string RemittanceLineNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets AgentBankName
         /// </summary>
         [DataMember(Name="agent_bank_name")]
+        
         public string AgentBankName { get; set; }
 
         /// <summary>
         /// Gets or Sets AgentBankSwift
         /// </summary>
         [DataMember(Name="agent_bank_swift")]
+        
         public string AgentBankSwift { get; set; }
 
         /// <summary>
@@ -126,6 +135,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Multipart direct upload; mutually exclusive with documentation_file_key</value>
         [DataMember(Name="documentation_file")]
+        
         public string DocumentationFile { get; set; }
 
         /// <summary>
@@ -133,6 +143,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Pre-upload mode; file_key returned by pre_upload (plaintext or base64 accepted)</value>
         [DataMember(Name="documentation_file_key")]
+        
         public string DocumentationFileKey { get; set; }
 
         /// <summary>
@@ -140,6 +151,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Required when using documentation_file_key; plaintext MIME or its base64</value>
         [DataMember(Name="file_type")]
+        
         public string FileType { get; set; }
 
         /// <summary>

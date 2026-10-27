@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Hourly timestamp corresponding to this interest rate, in milliseconds</value>
         [DataMember(Name="time")]
+        
         public long Time { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Historical interest rate for this hour</value>
         [DataMember(Name="rate")]
+        
         public string Rate { get; set; }
 
         /// <summary>

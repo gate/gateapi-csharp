@@ -100,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Subscription record ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -107,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business type: 1 for regular, 2 for VIP</value>
         [DataMember(Name="business")]
+        
         public int Business { get; set; }
 
         /// <summary>
@@ -114,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -121,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -128,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -135,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="product_id")]
+        
         public int ProductId { get; set; }
 
         /// <summary>
@@ -142,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Lock-up period (in days)</value>
         [DataMember(Name="lock_up_period")]
+        
         public int LockUpPeriod { get; set; }
 
         /// <summary>
@@ -149,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Subscription principal</value>
         [DataMember(Name="principal")]
+        
         public string Principal { get; set; }
 
         /// <summary>
@@ -156,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Annual interest rate</value>
         [DataMember(Name="year_rate")]
+        
         public string YearRate { get; set; }
 
         /// <summary>
@@ -163,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product type: 1 for regular, 2 for VIP</value>
         [DataMember(Name="product_type")]
+        
         public int ProductType { get; set; }
 
         /// <summary>
@@ -170,6 +180,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Accrued interest</value>
         [DataMember(Name="interest")]
+        
         public string Interest { get; set; }
 
         /// <summary>
@@ -177,6 +188,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status: 1 for holding, 2 for redeemed, 3 for matured, 4 for settled</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -184,6 +196,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Auto-renewal status: 0 for disabled, 1 for enabled</value>
         [DataMember(Name="reinvest_status")]
+        
         public int ReinvestStatus { get; set; }
 
         /// <summary>
@@ -191,6 +204,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redemption payout account type: 1 for spot account</value>
         [DataMember(Name="redeem_account_type")]
+        
         public int RedeemAccountType { get; set; }
 
         /// <summary>
@@ -198,6 +212,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Original order ID, linked to previous order IDs in auto-renewal scenarios</value>
         [DataMember(Name="origin_order")]
+        
         public string OriginOrder { get; set; }
 
         /// <summary>
@@ -205,6 +220,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redemption type: 1 for early redemption, 2 for maturity redemption</value>
         [DataMember(Name="redeem_type")]
+        
         public int RedeemType { get; set; }
 
         /// <summary>
@@ -212,6 +228,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redemption time</value>
         [DataMember(Name="redeem_time")]
+        
         public string RedeemTime { get; set; }
 
         /// <summary>
@@ -219,6 +236,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Expiration time</value>
         [DataMember(Name="finish_time")]
+        
         public string FinishTime { get; set; }
 
         /// <summary>
@@ -226,6 +244,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -233,6 +252,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Annual interest rate percentage display value</value>
         [DataMember(Name="year_rate_perent")]
+        
         public string YearRatePerent { get; set; }
 
         /// <summary>
@@ -240,6 +260,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Comprehensive annualized yield percentage (including interest rate boost, rewards, etc.)</value>
         [DataMember(Name="total_year_rate_percent")]
+        
         public string TotalYearRatePercent { get; set; }
 
         /// <summary>
@@ -247,24 +268,28 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total earnings (including interest and bonus rewards)</value>
         [DataMember(Name="total_interest")]
+        
         public string TotalInterest { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductInfo
         /// </summary>
         [DataMember(Name="product_info")]
+        
         public FixedTermProductInfo ProductInfo { get; set; }
 
         /// <summary>
         /// Gets or Sets BonusInfo
         /// </summary>
         [DataMember(Name="bonus_info")]
+        
         public FixedTermBonusInfo BonusInfo { get; set; }
 
         /// <summary>
         /// Gets or Sets CouponInfo
         /// </summary>
         [DataMember(Name="coupon_info")]
+        
         public FixedTermCouponInfo CouponInfo { get; set; }
 
         /// <summary>
@@ -272,6 +297,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redemption timestamp (in seconds)</value>
         [DataMember(Name="redeem_at")]
+        
         public int RedeemAt { get; set; }
 
         /// <summary>
@@ -279,6 +305,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Expiration timestamp (in seconds)</value>
         [DataMember(Name="finish_at")]
+        
         public int FinishAt { get; set; }
 
         /// <summary>
@@ -286,6 +313,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation timestamp (in seconds)</value>
         [DataMember(Name="create_at")]
+        
         public int CreateAt { get; set; }
 
         /// <summary>
@@ -293,6 +321,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency icon URL</value>
         [DataMember(Name="icon")]
+        
         public string Icon { get; set; }
 
         /// <summary>

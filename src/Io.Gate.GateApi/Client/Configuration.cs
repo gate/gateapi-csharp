@@ -32,7 +32,7 @@ namespace Io.Gate.GateApi.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "7.106.161";
+        public const string Version = "7.106.164";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -57,9 +57,10 @@ namespace Io.Gate.GateApi.Client
                 try
                 {
                     var exception = JsonConvert.DeserializeObject<GateApiException>(response.RawContent);
-                    if (!string.IsNullOrWhiteSpace(exception.ErrorLabel))
+                    if (exception != null && !string.IsNullOrWhiteSpace(exception.ErrorLabel))
                     {
-                        return exception;
+                        // Keep the protocol status/body when adding Gate's typed label/message.
+                        return new GateApiException(status, response.RawContent, exception);
                     }
                 }
                 catch (Exception)
@@ -103,7 +104,7 @@ namespace Io.Gate.GateApi.Client
         [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
-            UserAgent = "OpenAPI-Generator/7.106.161/csharp";
+            UserAgent = "OpenAPI-Generator/7.106.164/csharp";
             BasePath = "https://api.gateio.ws/api/v4";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             // Set default X-Gate-Size-Decimal header for futures API
@@ -142,11 +143,8 @@ namespace Io.Gate.GateApi.Client
                 DefaultHeaders.Add("X-Gate-Size-Decimal", "1");
             }
 
-            if (string.IsNullOrWhiteSpace(apiV4Key) && string.IsNullOrWhiteSpace(apiV4Secret))
-            {
-                ApiV4Key = apiV4Key;
-                ApiV4Secret = apiV4Secret;
-            }
+            // Use the same credential initialization for constructors and subsequent updates.
+            SetGateApiV4KeyPair(apiV4Key, apiV4Secret);
         }
 
         #endregion Constructors
@@ -294,8 +292,8 @@ namespace Io.Gate.GateApi.Client
         {
             string report = "C# SDK (Io.Gate.GateApi) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
-            report += "    Version of the API: v4.106.161\n";
-            report += "    SDK Package Version: 7.106.161\n";
+            report += "    Version of the API: v4.106.164\n";
+            report += "    SDK Package Version: 7.106.164\n";
 
             return report;
         }

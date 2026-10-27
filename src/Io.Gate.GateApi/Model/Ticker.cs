@@ -76,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last trading price</value>
         [DataMember(Name="last")]
+        
         public string Last { get; set; }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Recent lowest ask</value>
         [DataMember(Name="lowest_ask")]
+        
         public string LowestAsk { get; set; }
 
         /// <summary>
@@ -97,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Latest seller&#39;s lowest price quantity; not available for batch queries; available for single queries, empty if no data</value>
         [DataMember(Name="lowest_size")]
+        
         public string LowestSize { get; set; }
 
         /// <summary>
@@ -104,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Recent highest bid</value>
         [DataMember(Name="highest_bid")]
+        
         public string HighestBid { get; set; }
 
         /// <summary>
@@ -111,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Latest buyer&#39;s highest price quantity; not available for batch queries; available for single queries, empty if no data</value>
         [DataMember(Name="highest_size")]
+        
         public string HighestSize { get; set; }
 
         /// <summary>
@@ -118,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24h price change percentage (negative for decrease, e.g., -7.45)</value>
         [DataMember(Name="change_percentage")]
+        
         public string ChangePercentage { get; set; }
 
         /// <summary>
@@ -125,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>UTC+0 timezone, 24h price change percentage, negative for decline (e.g., -7.45)</value>
         [DataMember(Name="change_utc0")]
+        
         public string ChangeUtc0 { get; set; }
 
         /// <summary>
@@ -132,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>UTC+8 timezone, 24h price change percentage, negative for decline (e.g., -7.45)</value>
         [DataMember(Name="change_utc8")]
+        
         public string ChangeUtc8 { get; set; }
 
         /// <summary>
@@ -139,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Base currency trading volume in the last 24h</value>
         [DataMember(Name="base_volume")]
+        
         public string BaseVolume { get; set; }
 
         /// <summary>
@@ -146,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency trading volume in the last 24h</value>
         [DataMember(Name="quote_volume")]
+        
         public string QuoteVolume { get; set; }
 
         /// <summary>
@@ -153,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24h High</value>
         [DataMember(Name="high_24h")]
+        
         public string High24h { get; set; }
 
         /// <summary>
@@ -160,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24h Low</value>
         [DataMember(Name="low_24h")]
+        
         public string Low24h { get; set; }
 
         /// <summary>
@@ -167,6 +180,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ETF net value</value>
         [DataMember(Name="etf_net_value")]
+        
         public string EtfNetValue { get; set; }
 
         /// <summary>
@@ -174,6 +188,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ETF net value at previous rebalancing point</value>
         [DataMember(Name="etf_pre_net_value")]
+        
         public string EtfPreNetValue { get; set; }
 
         /// <summary>
@@ -181,6 +196,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ETF previous rebalancing time</value>
         [DataMember(Name="etf_pre_timestamp")]
+        
         public long? EtfPreTimestamp { get; set; }
 
         /// <summary>
@@ -188,6 +204,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ETF current leverage</value>
         [DataMember(Name="etf_leverage")]
+        
         public string EtfLeverage { get; set; }
 
         /// <summary>

@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status code, 200 &#x3D; success</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status label</value>
         [DataMember(Name="label")]
+        
         public string Label { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status message</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
@@ -73,12 +76,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Request ID</value>
         [DataMember(Name="request_id")]
+        
         public string RequestId { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public ListLiveReplayResponseData Data { get; set; }
 
         /// <summary>

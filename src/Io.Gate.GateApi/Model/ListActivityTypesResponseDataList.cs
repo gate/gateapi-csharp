@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity type ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity type name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>

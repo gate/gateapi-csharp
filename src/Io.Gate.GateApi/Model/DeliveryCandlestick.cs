@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unix timestamp in seconds</value>
         [DataMember(Name="t")]
+        
         public double T { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>size volume (contract size). Only returned if &#x60;contract&#x60; is not prefixed</value>
         [DataMember(Name="v")]
+        
         public long V { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close price (quote currency)</value>
         [DataMember(Name="c")]
+        
         public string C { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Highest price (quote currency)</value>
         [DataMember(Name="h")]
+        
         public string H { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Lowest price (quote currency)</value>
         [DataMember(Name="l")]
+        
         public string L { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Open price (quote currency)</value>
         [DataMember(Name="o")]
+        
         public string O { get; set; }
 
         /// <summary>

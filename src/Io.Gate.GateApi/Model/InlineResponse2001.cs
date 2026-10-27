@@ -73,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading Pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -80,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last price</value>
         [DataMember(Name="last_price")]
+        
         public string LastPrice { get; set; }
 
         /// <summary>
@@ -87,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour opening price</value>
         [DataMember(Name="open_24h")]
+        
         public string Open24h { get; set; }
 
         /// <summary>
@@ -94,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24h Low</value>
         [DataMember(Name="low_24h")]
+        
         public string Low24h { get; set; }
 
         /// <summary>
@@ -101,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24h High</value>
         [DataMember(Name="high_24h")]
+        
         public string High24h { get; set; }
 
         /// <summary>
@@ -108,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour trading volume in base currency</value>
         [DataMember(Name="volume_24h_base")]
+        
         public string Volume24hBase { get; set; }
 
         /// <summary>
@@ -115,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour trading volume in quote currency</value>
         [DataMember(Name="volume_24h_quote")]
+        
         public string Volume24hQuote { get; set; }
 
         /// <summary>
@@ -122,6 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mark price</value>
         [DataMember(Name="mark_price")]
+        
         public string MarkPrice { get; set; }
 
         /// <summary>
@@ -129,6 +137,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Index price</value>
         [DataMember(Name="index_price")]
+        
         public string IndexPrice { get; set; }
 
         /// <summary>
@@ -136,6 +145,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Open interest</value>
         [DataMember(Name="open_interest")]
+        
         public string OpenInterest { get; set; }
 
         /// <summary>
@@ -143,6 +153,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Open interest (in quote currency)</value>
         [DataMember(Name="open_interest_quote")]
+        
         public string OpenInterestQuote { get; set; }
 
         /// <summary>
@@ -150,6 +161,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update timestamp</value>
         [DataMember(Name="timestamp")]
+        
         public string Timestamp { get; set; }
 
         /// <summary>

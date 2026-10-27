@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Target currency symbol; often corresponds to &#x60;recommend_v2.*[].schemes[].name&#x60; in config.</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The weight ratio of the target currency in the portfolio, **decimal string** (such as &#x60;0.2&#x60;, &#x60;0.5&#x60;). Often consistent with the &#x60;schemes[].ratio&#x60; of a strategy under &#x60;recommend_v2&#x60; of &#x60;GET /asset-swap/config&#x60;.</value>
         [DataMember(Name="ratio")]
+        
         public string Ratio { get; set; }
 
         /// <summary>

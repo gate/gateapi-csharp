@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Operation type: append - add collateral, redeem - withdraw collateral</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Collateral currency list</value>
         [DataMember(Name="collaterals")]
+        
         public List<CollateralCurrency> Collaterals { get; set; }
 
         /// <summary>

@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position information</value>
         [DataMember(Name="list")]
+        
         public List<PositionListDataList> List { get; set; }
 
         /// <summary>

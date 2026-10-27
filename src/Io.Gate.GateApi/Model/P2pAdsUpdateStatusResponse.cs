@@ -53,36 +53,42 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Timestamp
         /// </summary>
         [DataMember(Name="timestamp")]
+        
         public decimal Timestamp { get; set; }
 
         /// <summary>
         /// Gets or Sets Method
         /// </summary>
         [DataMember(Name="method")]
+        
         public string Method { get; set; }
 
         /// <summary>
         /// Gets or Sets Code
         /// </summary>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public P2pAdsUpdateStatusResult Data { get; set; }
 
         /// <summary>
         /// Gets or Sets Version
         /// </summary>
         [DataMember(Name="version")]
+        
         public string Version { get; set; }
 
         /// <summary>

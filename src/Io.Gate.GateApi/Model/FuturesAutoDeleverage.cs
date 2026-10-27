@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Automatic deleveraging time</value>
         [DataMember(Name="time", EmitDefaultValue=false)]
+        
         public long Time { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
+        
         public long User { get; private set; }
 
         /// <summary>
@@ -57,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID. Order IDs before 2023-02-20 are null</value>
         [DataMember(Name="order_id", EmitDefaultValue=false)]
+        
         public long OrderId { get; private set; }
 
         /// <summary>
@@ -64,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="contract", EmitDefaultValue=false)]
+        
         public string Contract { get; private set; }
 
         /// <summary>
@@ -71,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value> leverage for isolated margin. 0 means cross margin. For leverage of cross margin, please refer to &#x60;cross_leverage_limit&#x60;.</value>
         [DataMember(Name="leverage", EmitDefaultValue=false)]
+        
         public string Leverage { get; private set; }
 
         /// <summary>
@@ -78,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>leverage for cross margin</value>
         [DataMember(Name="cross_leverage_limit", EmitDefaultValue=false)]
+        
         public string CrossLeverageLimit { get; private set; }
 
         /// <summary>
@@ -85,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average entry price</value>
         [DataMember(Name="entry_price", EmitDefaultValue=false)]
+        
         public string EntryPrice { get; private set; }
 
         /// <summary>
@@ -92,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average fill price</value>
         [DataMember(Name="fill_price", EmitDefaultValue=false)]
+        
         public string FillPrice { get; private set; }
 
         /// <summary>
@@ -99,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading size</value>
         [DataMember(Name="trade_size", EmitDefaultValue=false)]
+        
         public string TradeSize { get; private set; }
 
         /// <summary>
@@ -106,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Positions after auto-deleveraging</value>
         [DataMember(Name="position_size", EmitDefaultValue=false)]
+        
         public string PositionSize { get; private set; }
 
         /// <summary>

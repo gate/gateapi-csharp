@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>VIP level</value>
         [DataMember(Name="vip_level")]
+        
         public int VipLevel { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maker fee rate for Japanese and Korean stocks</value>
         [DataMember(Name="maker_fee")]
+        
         public string MakerFee { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Taker fee rate for Japanese and Korean stocks</value>
         [DataMember(Name="taker_fee")]
+        
         public string TakerFee { get; set; }
 
         /// <summary>

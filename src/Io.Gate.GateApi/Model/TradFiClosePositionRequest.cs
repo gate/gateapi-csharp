@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Close Type Description: - 1: Partial Close (close_volume is required) - 2: Full Close (close_volume is not required)
         /// </summary>
         /// <value>Close Type Description: - 1: Partial Close (close_volume is required) - 2: Full Close (close_volume is not required)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum CloseTypeEnum
         {
             /// <summary>
@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close Type Description: - 1: Partial Close (close_volume is required) - 2: Full Close (close_volume is not required)</value>
         [DataMember(Name="close_type")]
+        
         public CloseTypeEnum CloseType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TradFiClosePositionRequest" /> class.
@@ -76,6 +77,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close Volume Description: - Required when close_type &#x3D; 1 - Ignored when close_type &#x3D; 2</value>
         [DataMember(Name="close_volume")]
+        
         public string CloseVolume { get; set; }
 
         /// <summary>

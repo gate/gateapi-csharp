@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position combination type &#x60;original_position&#x60; - Original position &#x60;long_delta_original_position&#x60; - Positive delta + Original position &#x60;short_delta_original_position&#x60; - Negative delta + Original position</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Results of 33 stress scenarios for MR1</value>
         [DataMember(Name="profit_loss_ranges")]
+        
         public List<ProfitLossRange> ProfitLossRanges { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>最大损失</value>
         [DataMember(Name="max_loss")]
+        
         public ProfitLossRange MaxLoss { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stress testing</value>
         [DataMember(Name="mr1")]
+        
         public string Mr1 { get; set; }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Basis spread risk</value>
         [DataMember(Name="mr2")]
+        
         public string Mr2 { get; set; }
 
         /// <summary>
@@ -91,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Volatility spread risk</value>
         [DataMember(Name="mr3")]
+        
         public string Mr3 { get; set; }
 
         /// <summary>
@@ -98,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Option short risk</value>
         [DataMember(Name="mr4")]
+        
         public string Mr4 { get; set; }
 
         /// <summary>

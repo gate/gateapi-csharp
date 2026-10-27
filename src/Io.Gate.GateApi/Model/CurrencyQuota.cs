@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency Index Price</value>
         [DataMember(Name="index_price")]
+        
         public string IndexPrice { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum borrowing/collateral limit for the currency</value>
         [DataMember(Name="min_quota")]
+        
         public string MinQuota { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Remaining currency limit for &#x60;borrow/collateral&#x60; (when input parameter &#x60;type&#x60; is &#x60;borrow&#x60;, represents current currency)</value>
         [DataMember(Name="left_quota")]
+        
         public string LeftQuota { get; set; }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Remaining currency limit converted to USDT (when input parameter &#x60;type&#x60; is &#x60;borrow&#x60;, represents current currency)</value>
         [DataMember(Name="left_quote_usdt")]
+        
         public string LeftQuoteUsdt { get; set; }
 
         /// <summary>
@@ -91,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Remaining &#x60;borrow/collateral&#x60; limit for fixed-term currency</value>
         [DataMember(Name="left_quota_fixed")]
+        
         public string LeftQuotaFixed { get; set; }
 
         /// <summary>
@@ -98,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Remaining currency limit for fixed-term currency converted to USDT</value>
         [DataMember(Name="left_quote_usdt_fixed")]
+        
         public string LeftQuoteUsdtFixed { get; set; }
 
         /// <summary>

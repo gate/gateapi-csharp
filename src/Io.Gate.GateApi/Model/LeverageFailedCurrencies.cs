@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency for which the update failed</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reason the leverage update failed</value>
         [DataMember(Name="reason")]
+        
         public string Reason { get; set; }
 
         /// <summary>

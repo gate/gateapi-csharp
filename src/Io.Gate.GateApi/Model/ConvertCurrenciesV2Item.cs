@@ -53,18 +53,21 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets IconUrl
         /// </summary>
         [DataMember(Name="icon_url")]
+        
         public string IconUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Priority
         /// </summary>
         [DataMember(Name="priority")]
+        
         public int Priority { get; set; }
 
         /// <summary>

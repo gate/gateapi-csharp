@@ -68,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Plaintext temporary object path, identical to base64_decode(file_key)</value>
         [DataMember(Name="key")]
+        
         public string Key { get; set; }
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Must match the decoded content_type from the pre-upload request</value>
         [DataMember(Name="Content-Type")]
+        
         public string ContentType { get; set; }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>AWS temporary credential and scope; submit them unchanged during direct upload</value>
         [DataMember(Name="X-Amz-Credential")]
+        
         public string XAmzCredential { get; set; }
 
         /// <summary>
@@ -89,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>AWS signing algorithm; submit it unchanged during direct upload</value>
         [DataMember(Name="X-Amz-Algorithm")]
+        
         public string XAmzAlgorithm { get; set; }
 
         /// <summary>
@@ -96,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>AWS signing timestamp; submit it unchanged during direct upload</value>
         [DataMember(Name="X-Amz-Date")]
+        
         public string XAmzDate { get; set; }
 
         /// <summary>
@@ -103,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Base64-encoded S3 POST Policy; submit it unchanged during direct upload</value>
         [DataMember(Name="Policy")]
+        
         public string Policy { get; set; }
 
         /// <summary>
@@ -110,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>S3 POST Policy signature; submit it unchanged during direct upload</value>
         [DataMember(Name="X-Amz-Signature")]
+        
         public string XAmzSignature { get; set; }
 
         /// <summary>

@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Page</value>
         [DataMember(Name="page")]
+        
         public int Page { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Items per page</value>
         [DataMember(Name="pageSize")]
+        
         public int PageSize { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total pages</value>
         [DataMember(Name="pageCount")]
+        
         public int PageCount { get; set; }
 
         /// <summary>
@@ -79,12 +82,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total entries</value>
         [DataMember(Name="totalCount")]
+        
         public int TotalCount { get; set; }
 
         /// <summary>
         /// Gets or Sets List
         /// </summary>
         [DataMember(Name="list")]
+        
         public List<AwardListStructList> List { get; set; }
 
         /// <summary>

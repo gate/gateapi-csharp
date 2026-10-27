@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Taker fee rate</value>
         [DataMember(Name="taker_fee_rate")]
+        
         public string TakerFeeRate { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maker fee rate</value>
         [DataMember(Name="maker_fee_rate")]
+        
         public string MakerFeeRate { get; set; }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>RPI order maker fee rate</value>
         [DataMember(Name="rpi_fee_rate")]
+        
         public string RpiFeeRate { get; set; }
 
         /// <summary>

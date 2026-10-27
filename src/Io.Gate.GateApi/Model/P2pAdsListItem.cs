@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Trading limit unit. 0: crypto quantity, 1: fiat amount
         /// </summary>
         /// <value>Trading limit unit. 0: crypto quantity, 1: fiat amount</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum LimitBasisEnum
         {
             /// <summary>
@@ -54,12 +54,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading limit unit. 0: crypto quantity, 1: fiat amount</value>
         [DataMember(Name="limit_basis")]
+        
         public LimitBasisEnum? LimitBasis { get; set; }
         /// <summary>
         /// Trading limit unit label. crypto: crypto quantity, fiat: fiat amount
         /// </summary>
         /// <value>Trading limit unit label. crypto: crypto quantity, fiat: fiat amount</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum LimitBasisTextEnum
         {
             /// <summary>
@@ -81,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading limit unit label. crypto: crypto quantity, fiat: fiat amount</value>
         [DataMember(Name="limit_basis_text")]
+        
         public LimitBasisTextEnum? LimitBasisText { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pAdsListItem" /> class.
@@ -122,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Serial number</value>
         [DataMember(Name="index")]
+        
         public int Index { get; set; }
 
         /// <summary>
@@ -129,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cryptocurrency</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -136,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency</value>
         [DataMember(Name="fiat_unit")]
+        
         public string FiatUnit { get; set; }
 
         /// <summary>
@@ -143,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ad ID</value>
         [DataMember(Name="adv_no")]
+        
         public int AdvNo { get; set; }
 
         /// <summary>
@@ -150,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -157,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Remaining tradable crypto quantity</value>
         [DataMember(Name="surplus_amount")]
+        
         public string SurplusAmount { get; set; }
 
         /// <summary>
@@ -164,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum crypto size per trade.</value>
         [DataMember(Name="max_single_trans_amount")]
+        
         public string MaxSingleTransAmount { get; set; }
 
         /// <summary>
@@ -171,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum crypto size per trade.</value>
         [DataMember(Name="min_single_trans_amount")]
+        
         public string MinSingleTransAmount { get; set; }
 
         /// <summary>
@@ -178,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum fiat amount per order</value>
         [DataMember(Name="fiat_min_amount")]
+        
         public string FiatMinAmount { get; set; }
 
         /// <summary>
@@ -185,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum fiat amount per order</value>
         [DataMember(Name="fiat_max_amount")]
+        
         public string FiatMaxAmount { get; set; }
 
         /// <summary>
@@ -192,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Supported payment methods list</value>
         [DataMember(Name="trade_methods")]
+        
         public List<P2pAdsListTradeMethod> TradeMethods { get; set; }
 
         /// <summary>
@@ -199,6 +214,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Advertiser Nickname</value>
         [DataMember(Name="nick_name")]
+        
         public string NickName { get; set; }
 
         /// <summary>

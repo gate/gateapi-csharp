@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>USDT futures switch. In cross-currency margin mode, can only be enabled and cannot be disabled</value>
         [DataMember(Name="usdt_futures")]
+        
         public bool UsdtFutures { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Spot hedging switch</value>
         [DataMember(Name="spot_hedge")]
+        
         public bool SpotHedge { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Earn switch, when mode is cross-currency margin mode, whether to use Earn funds as margin</value>
         [DataMember(Name="use_funding")]
+        
         public bool UseFunding { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options switch. In cross-currency margin mode, can only be enabled and cannot be disabled</value>
         [DataMember(Name="options")]
+        
         public bool Options { get; set; }
 
         /// <summary>

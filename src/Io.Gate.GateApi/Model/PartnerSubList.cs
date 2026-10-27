@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total</value>
         [DataMember(Name="total")]
+        
         public long Total { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Subordinate list</value>
         [DataMember(Name="list")]
+        
         public List<PartnerSub> List { get; set; }
 
         /// <summary>

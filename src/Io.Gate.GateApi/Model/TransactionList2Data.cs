@@ -47,12 +47,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Total
         /// </summary>
         [DataMember(Name="total")]
+        
         public long Total { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalPage
         /// </summary>
         [DataMember(Name="total_page")]
+        
         public long TotalPage { get; set; }
 
         /// <summary>
@@ -60,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction record list</value>
         [DataMember(Name="list")]
+        
         public List<TransactionItem> List { get; set; }
 
         /// <summary>

@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage. Values exceeding a currency&#39;s leverage limit are capped at that limit.</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>

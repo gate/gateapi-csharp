@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Order finish reason:  - filled: Fully filled - cancelled: User cancelled - liquidated: Cancelled due to liquidation - ioc: Not immediately fully filled due to IOC time-in-force setting - auto_deleveraged: Cancelled due to auto-deleveraging - reduce_only: Cancelled due to position increase while reduce-only is set - position_closed: Cancelled because the position was closed - reduce_out: Only reduce positions by excluding hard-to-fill orders - mmp_cancelled: Cancelled by MMP
         /// </summary>
         /// <value>Order finish reason:  - filled: Fully filled - cancelled: User cancelled - liquidated: Cancelled due to liquidation - ioc: Not immediately fully filled due to IOC time-in-force setting - auto_deleveraged: Cancelled due to auto-deleveraging - reduce_only: Cancelled due to position increase while reduce-only is set - position_closed: Cancelled because the position was closed - reduce_out: Only reduce positions by excluding hard-to-fill orders - mmp_cancelled: Cancelled by MMP</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum FinishAsEnum
         {
             /// <summary>
@@ -98,12 +100,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order finish reason:  - filled: Fully filled - cancelled: User cancelled - liquidated: Cancelled due to liquidation - ioc: Not immediately fully filled due to IOC time-in-force setting - auto_deleveraged: Cancelled due to auto-deleveraging - reduce_only: Cancelled due to position increase while reduce-only is set - position_closed: Cancelled because the position was closed - reduce_out: Only reduce positions by excluding hard-to-fill orders - mmp_cancelled: Cancelled by MMP</value>
         [DataMember(Name="finish_as", EmitDefaultValue=false)]
+        
         public FinishAsEnum? FinishAs { get; set; }
         /// <summary>
         /// Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed
         /// </summary>
         /// <value>Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StatusEnum
         {
             /// <summary>
@@ -125,12 +130,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Time in force strategy. Market orders currently only support IOC mode  - gtc: Good Till Cancelled - ioc: Immediate Or Cancelled, execute immediately or cancel, taker only - poc: Pending Or Cancelled, passive order, maker only
         /// </summary>
         /// <value>Time in force strategy. Market orders currently only support IOC mode  - gtc: Good Till Cancelled - ioc: Immediate Or Cancelled, execute immediately or cancel, taker only - poc: Pending Or Cancelled, passive order, maker only</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TifEnum
         {
             /// <summary>
@@ -158,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Time in force strategy. Market orders currently only support IOC mode  - gtc: Good Till Cancelled - ioc: Immediate Or Cancelled, execute immediately or cancel, taker only - poc: Pending Or Cancelled, passive order, maker only</value>
         [DataMember(Name="tif")]
+        
         public TifEnum? Tif { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionsOrder" /> class.
@@ -195,6 +204,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options order ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public long Id { get; private set; }
 
         /// <summary>
@@ -202,6 +212,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
+        
         public int User { get; private set; }
 
         /// <summary>
@@ -209,6 +220,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation time of order</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public double CreateTime { get; private set; }
 
         /// <summary>
@@ -216,6 +228,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order finished time. Not returned if order is open</value>
         [DataMember(Name="finish_time", EmitDefaultValue=false)]
+        
         public double FinishTime { get; private set; }
 
         /// <summary>
@@ -223,6 +236,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options identifier</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -230,6 +244,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Required. Trading quantity. Positive for buy, negative for sell. Set to 0 for close position orders.</value>
         [DataMember(Name="size")]
+        
         public long Size { get; set; }
 
         /// <summary>
@@ -237,6 +252,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Display size for iceberg orders. 0 for non-iceberg orders. Note that hidden portions are charged taker fees.</value>
         [DataMember(Name="iceberg")]
+        
         public long Iceberg { get; set; }
 
         /// <summary>
@@ -244,6 +260,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order price. Price of 0 with &#x60;tif&#x60; set as &#x60;ioc&#x60; represents market order (quote currency)</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -251,6 +268,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Set as &#x60;true&#x60; to close the position, with &#x60;size&#x60; set to 0</value>
         [DataMember(Name="close")]
+        
         public bool Close { get; set; }
 
         /// <summary>
@@ -258,6 +276,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Is the order to close position</value>
         [DataMember(Name="is_close", EmitDefaultValue=false)]
+        
         public bool IsClose { get; private set; }
 
         /// <summary>
@@ -265,6 +284,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Set as &#x60;true&#x60; to be reduce-only order</value>
         [DataMember(Name="reduce_only")]
+        
         public bool ReduceOnly { get; set; }
 
         /// <summary>
@@ -272,6 +292,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Is the order reduce-only</value>
         [DataMember(Name="is_reduce_only", EmitDefaultValue=false)]
+        
         public bool IsReduceOnly { get; private set; }
 
         /// <summary>
@@ -279,6 +300,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Is the order for liquidation</value>
         [DataMember(Name="is_liq", EmitDefaultValue=false)]
+        
         public bool IsLiq { get; private set; }
 
         /// <summary>
@@ -286,6 +308,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>When set to true, it is an MMP order</value>
         [DataMember(Name="mmp")]
+        
         public bool Mmp { get; set; }
 
         /// <summary>
@@ -293,6 +316,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether it is an MMP order. Corresponds to &#x60;mmp&#x60; in the request</value>
         [DataMember(Name="is_mmp", EmitDefaultValue=false)]
+        
         public bool IsMmp { get; private set; }
 
         /// <summary>
@@ -300,6 +324,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unfilled quantity</value>
         [DataMember(Name="left", EmitDefaultValue=false)]
+        
         public long Left { get; private set; }
 
         /// <summary>
@@ -307,6 +332,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill price</value>
         [DataMember(Name="fill_price", EmitDefaultValue=false)]
+        
         public string FillPrice { get; private set; }
 
         /// <summary>
@@ -314,6 +340,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.) Besides user defined information, reserved contents are listed below, denoting how the order is created:  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance </value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -321,6 +348,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Taker fee</value>
         [DataMember(Name="tkfr", EmitDefaultValue=false)]
+        
         public string Tkfr { get; private set; }
 
         /// <summary>
@@ -328,6 +356,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maker fee</value>
         [DataMember(Name="mkfr", EmitDefaultValue=false)]
+        
         public string Mkfr { get; private set; }
 
         /// <summary>
@@ -335,6 +364,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Referrer user ID</value>
         [DataMember(Name="refu", EmitDefaultValue=false)]
+        
         public int Refu { get; private set; }
 
         /// <summary>
@@ -342,6 +372,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Referrer rebate</value>
         [DataMember(Name="refr", EmitDefaultValue=false)]
+        
         public string Refr { get; private set; }
 
         /// <summary>

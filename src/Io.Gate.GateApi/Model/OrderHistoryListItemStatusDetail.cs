@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status title</value>
         [DataMember(Name="title")]
+        
         public string Title { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status message</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>

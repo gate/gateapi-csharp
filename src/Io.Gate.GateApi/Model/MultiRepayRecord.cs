@@ -66,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repayment record ID</value>
         [DataMember(Name="record_id")]
+        
         public long RecordId { get; set; }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial collateralization rate</value>
         [DataMember(Name="init_ltv")]
+        
         public string InitLtv { get; set; }
 
         /// <summary>
@@ -87,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ltv before the operation</value>
         [DataMember(Name="before_ltv")]
+        
         public string BeforeLtv { get; set; }
 
         /// <summary>
@@ -94,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ltv after the operation</value>
         [DataMember(Name="after_ltv")]
+        
         public string AfterLtv { get; set; }
 
         /// <summary>
@@ -101,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrowing time, timestamp in seconds</value>
         [DataMember(Name="borrow_time")]
+        
         public long BorrowTime { get; set; }
 
         /// <summary>
@@ -108,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repayment time, timestamp in seconds</value>
         [DataMember(Name="repay_time")]
+        
         public long RepayTime { get; set; }
 
         /// <summary>
@@ -115,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of borrowing information</value>
         [DataMember(Name="borrow_currencies")]
+        
         public List<RepayRecordCurrency> BorrowCurrencies { get; set; }
 
         /// <summary>
@@ -122,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of collateral information</value>
         [DataMember(Name="collateral_currencies")]
+        
         public List<RepayRecordCurrency> CollateralCurrencies { get; set; }
 
         /// <summary>
@@ -129,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repay Currency List</value>
         [DataMember(Name="repaid_currencies")]
+        
         public List<RepayRecordRepaidCurrency> RepaidCurrencies { get; set; }
 
         /// <summary>
@@ -136,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Interest List</value>
         [DataMember(Name="total_interest_list")]
+        
         public List<RepayRecordTotalInterest> TotalInterestList { get; set; }
 
         /// <summary>
@@ -143,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of remaining interest to be repaid</value>
         [DataMember(Name="left_repay_interest_list")]
+        
         public List<RepayRecordLeftInterest> LeftRepayInterestList { get; set; }
 
         /// <summary>

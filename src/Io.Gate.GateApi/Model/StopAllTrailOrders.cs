@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Associated position, if provided, only cancel orders associated with this position, 1-long, 2-short
         /// </summary>
         /// <value>Associated position, if provided, only cancel orders associated with this position, 1-long, 2-short</value>
+        
         public enum RelatedPositionEnum
         {
             /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Associated position, if provided, only cancel orders associated with this position, 1-long, 2-short</value>
         [DataMember(Name="related_position")]
+        
         public RelatedPositionEnum? RelatedPosition { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="StopAllTrailOrders" /> class.
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract name</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>

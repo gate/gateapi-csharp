@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom order information</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether cancellation succeeded</value>
         [DataMember(Name="succeeded")]
+        
         public bool Succeeded { get; set; }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error label when failed to cancel the order; emtpy if succeeded</value>
         [DataMember(Name="label")]
+        
         public string Label { get; set; }
 
         /// <summary>
@@ -91,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error description when cancellation fails, empty if successful</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
@@ -98,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Default is empty (deprecated)</value>
         [DataMember(Name="account")]
+        
         public string Account { get; set; }
 
         /// <summary>

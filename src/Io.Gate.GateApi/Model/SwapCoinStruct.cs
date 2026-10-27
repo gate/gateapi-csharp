@@ -72,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -79,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="pid")]
+        
         public int Pid { get; set; }
 
         /// <summary>
@@ -86,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="uid")]
+        
         public int Uid { get; set; }
 
         /// <summary>
@@ -93,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="coin")]
+        
         public string Coin { get; set; }
 
         /// <summary>
@@ -100,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Type 0-Staking 1-Redemption</value>
         [DataMember(Name="type")]
+        
         public int Type { get; set; }
 
         /// <summary>
@@ -107,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>SubType</value>
         [DataMember(Name="subtype")]
+        
         public string Subtype { get; set; }
 
         /// <summary>
@@ -114,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -121,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange ratio</value>
         [DataMember(Name="exchange_rate")]
+        
         public string ExchangeRate { get; set; }
 
         /// <summary>
@@ -128,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redemption Amount</value>
         [DataMember(Name="exchange_amount")]
+        
         public string ExchangeAmount { get; set; }
 
         /// <summary>
@@ -135,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update timestamp</value>
         [DataMember(Name="updateStamp")]
+        
         public int UpdateStamp { get; set; }
 
         /// <summary>
@@ -142,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction timestamp</value>
         [DataMember(Name="createStamp")]
+        
         public int CreateStamp { get; set; }
 
         /// <summary>
@@ -149,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>status 1-success</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -156,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>DEFI Protocol Type</value>
         [DataMember(Name="protocol_type")]
+        
         public int ProtocolType { get; set; }
 
         /// <summary>
@@ -163,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reference ID</value>
         [DataMember(Name="client_order_id")]
+        
         public string ClientOrderId { get; set; }
 
         /// <summary>
@@ -170,6 +184,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order Origin</value>
         [DataMember(Name="source")]
+        
         public string Source { get; set; }
 
         /// <summary>

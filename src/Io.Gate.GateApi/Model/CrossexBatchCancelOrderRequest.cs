@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID; either this field or text is required</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom ID specified by the user when creating the order; either this field or order_id is required</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

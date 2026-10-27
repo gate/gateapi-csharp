@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation time</value>
         [DataMember(Name="time", EmitDefaultValue=false)]
+        
         public long Time { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="contract", EmitDefaultValue=false)]
+        
         public string Contract { get; private set; }
 
         /// <summary>
@@ -57,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage", EmitDefaultValue=false)]
+        
         public string Leverage { get; private set; }
 
         /// <summary>
@@ -64,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size</value>
         [DataMember(Name="size", EmitDefaultValue=false)]
+        
         public long Size { get; private set; }
 
         /// <summary>
@@ -71,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin</value>
         [DataMember(Name="margin", EmitDefaultValue=false)]
+        
         public string Margin { get; private set; }
 
         /// <summary>
@@ -78,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average entry price</value>
         [DataMember(Name="entry_price", EmitDefaultValue=false)]
+        
         public string EntryPrice { get; private set; }
 
         /// <summary>
@@ -85,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settled price</value>
         [DataMember(Name="settle_price", EmitDefaultValue=false)]
+        
         public string SettlePrice { get; private set; }
 
         /// <summary>
@@ -92,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Profit</value>
         [DataMember(Name="profit", EmitDefaultValue=false)]
+        
         public string Profit { get; private set; }
 
         /// <summary>
@@ -99,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fee deducted</value>
         [DataMember(Name="fee", EmitDefaultValue=false)]
+        
         public string Fee { get; private set; }
 
         /// <summary>

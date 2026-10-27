@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy or sell orders - buy - sell</value>
         [DataMember(Name="side")]
+        
         public string Side { get; set; }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading mode affects slippage selection - &#x60;speed&#x60; : Smart mode - &#x60;custom&#x60; : Custom mode, uses &#x60;slippage&#x60; parameter</value>
         [DataMember(Name="gas_mode")]
+        
         public string GasMode { get; set; }
 
         /// <summary>
@@ -86,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation timestamp</value>
         [DataMember(Name="create_time")]
+        
         public long CreateTime { get; set; }
 
         /// <summary>
@@ -93,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade Quantity - &#x60;side&#x60; : &#x60;buy&#x60; refers to the quote currency, i.e., &#x60;USDT&#x60; - &#x60;side&#x60; : &#x60;sell&#x60; refers to the base currency</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -100,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Token contract address</value>
         [DataMember(Name="token_address")]
+        
         public string TokenAddress { get; set; }
 
         /// <summary>
@@ -107,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Blockchain name</value>
         [DataMember(Name="chain")]
+        
         public string Chain { get; set; }
 
         /// <summary>

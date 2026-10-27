@@ -110,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public string UserId { get; set; }
 
         /// <summary>
@@ -117,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leveraged Position ID</value>
         [DataMember(Name="position_id")]
+        
         public string PositionId { get; set; }
 
         /// <summary>
@@ -124,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading Pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -131,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Direction</value>
         [DataMember(Name="position_side")]
+        
         public string PositionSide { get; set; }
 
         /// <summary>
@@ -138,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial position margin</value>
         [DataMember(Name="initial_margin")]
+        
         public string InitialMargin { get; set; }
 
         /// <summary>
@@ -145,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position maintenance margin</value>
         [DataMember(Name="maintenance_margin")]
+        
         public string MaintenanceMargin { get; set; }
 
         /// <summary>
@@ -152,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Asset Quantity</value>
         [DataMember(Name="asset_qty")]
+        
         public string AssetQty { get; set; }
 
         /// <summary>
@@ -159,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Asset Currency</value>
         [DataMember(Name="asset_coin")]
+        
         public string AssetCoin { get; set; }
 
         /// <summary>
@@ -166,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Value</value>
         [DataMember(Name="position_value")]
+        
         public string PositionValue { get; set; }
 
         /// <summary>
@@ -173,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Debt Quantity</value>
         [DataMember(Name="liability")]
+        
         public string Liability { get; set; }
 
         /// <summary>
@@ -180,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Debt Currency</value>
         [DataMember(Name="liability_coin")]
+        
         public string LiabilityCoin { get; set; }
 
         /// <summary>
@@ -187,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deducted Interest</value>
         [DataMember(Name="interest")]
+        
         public string Interest { get; set; }
 
         /// <summary>
@@ -194,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Max Trade Size</value>
         [DataMember(Name="max_position_qty")]
+        
         public string MaxPositionQty { get; set; }
 
         /// <summary>
@@ -201,6 +214,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Cost Price (Average Opening Price)</value>
         [DataMember(Name="entry_price")]
+        
         public string EntryPrice { get; set; }
 
         /// <summary>
@@ -208,6 +222,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Index price</value>
         [DataMember(Name="index_price")]
+        
         public string IndexPrice { get; set; }
 
         /// <summary>
@@ -215,6 +230,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized P&amp;L</value>
         [DataMember(Name="upnl")]
+        
         public string Upnl { get; set; }
 
         /// <summary>
@@ -222,6 +238,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized P&amp;L Ratio</value>
         [DataMember(Name="upnl_rate")]
+        
         public string UpnlRate { get; set; }
 
         /// <summary>
@@ -229,6 +246,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Opening Leverage</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
@@ -236,6 +254,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum leverage</value>
         [DataMember(Name="max_leverage")]
+        
         public string MaxLeverage { get; set; }
 
         /// <summary>
@@ -243,6 +262,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -250,6 +270,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time</value>
         [DataMember(Name="update_time")]
+        
         public string UpdateTime { get; set; }
 
         /// <summary>

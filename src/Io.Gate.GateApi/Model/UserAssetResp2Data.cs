@@ -62,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account equity</value>
         [DataMember(Name="equity")]
+        
         public string Equity { get; set; }
 
         /// <summary>
@@ -69,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account Balance</value>
         [DataMember(Name="balance")]
+        
         public string Balance { get; set; }
 
         /// <summary>
@@ -76,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available Balance</value>
         [DataMember(Name="available")]
+        
         public string Available { get; set; }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position market value</value>
         [DataMember(Name="position_market_value")]
+        
         public string PositionMarketValue { get; set; }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position P&amp;L</value>
         [DataMember(Name="position_pnl")]
+        
         public string PositionPnl { get; set; }
 
         /// <summary>
@@ -97,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Today&#39;s P&amp;L</value>
         [DataMember(Name="today_pnl")]
+        
         public string TodayPnl { get; set; }
 
         /// <summary>
@@ -104,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Option position market value</value>
         [DataMember(Name="option_position_market_value")]
+        
         public string OptionPositionMarketValue { get; set; }
 
         /// <summary>
@@ -111,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Option position PnL</value>
         [DataMember(Name="option_position_pnl")]
+        
         public string OptionPositionPnl { get; set; }
 
         /// <summary>
@@ -118,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Option today&#39;s PnL</value>
         [DataMember(Name="option_today_pnl")]
+        
         public string OptionTodayPnl { get; set; }
 
         /// <summary>
@@ -125,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the user has activated the service</value>
         [DataMember(Name="user_exists")]
+        
         public bool UserExists { get; set; }
 
         /// <summary>

@@ -70,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Strategy category</value>
         [DataMember(Name="category")]
+        
         public int Category { get; set; }
 
         /// <summary>
@@ -84,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -91,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Investment Token</value>
         [DataMember(Name="invest_currency")]
+        
         public string InvestCurrency { get; set; }
 
         /// <summary>
@@ -98,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Strike Token</value>
         [DataMember(Name="exercise_currency")]
+        
         public string ExerciseCurrency { get; set; }
 
         /// <summary>
@@ -105,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Annual Yield</value>
         [DataMember(Name="apy_display")]
+        
         public string ApyDisplay { get; set; }
 
         /// <summary>
@@ -112,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Strike price</value>
         [DataMember(Name="exercise_price")]
+        
         public string ExercisePrice { get; set; }
 
         /// <summary>
@@ -119,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement time</value>
         [DataMember(Name="delivery_timest")]
+        
         public long DeliveryTimest { get; set; }
 
         /// <summary>
@@ -126,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum investment amount</value>
         [DataMember(Name="min_amount")]
+        
         public string MinAmount { get; set; }
 
         /// <summary>
@@ -133,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum investment amount</value>
         [DataMember(Name="max_amount")]
+        
         public string MaxAmount { get; set; }
 
         /// <summary>
@@ -140,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum Units</value>
         [DataMember(Name="min_copies")]
+        
         public long MinCopies { get; set; }
 
         /// <summary>
@@ -147,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum Units</value>
         [DataMember(Name="max_copies")]
+        
         public long MaxCopies { get; set; }
 
         /// <summary>
@@ -154,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Lock-up days</value>
         [DataMember(Name="invest_days")]
+        
         public long InvestDays { get; set; }
 
         /// <summary>
@@ -161,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Lock-up hours</value>
         [DataMember(Name="invest_hours")]
+        
         public string InvestHours { get; set; }
 
         /// <summary>

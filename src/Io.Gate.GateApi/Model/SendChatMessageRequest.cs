@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Message type: &#x60;0&#x60; text; &#x60;1&#x60; file (image or video); defaults to &#x60;0&#x60;.
         /// </summary>
         /// <value>Message type: &#x60;0&#x60; text; &#x60;1&#x60; file (image or video); defaults to &#x60;0&#x60;.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Message type: &#x60;0&#x60; text; &#x60;1&#x60; file (image or video); defaults to &#x60;0&#x60;.</value>
         [DataMember(Name="type")]
+        
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SendChatMessageRequest" /> class.
@@ -79,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="txid")]
+        
         public int Txid { get; set; }
 
         /// <summary>
@@ -86,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Message content. When type&#x3D;0, pass text up to 500 characters, which goes through off-platform traffic diversion risk control; when hit, the response contains risk_type&#x3D;1 and toast_msg. When type&#x3D;1, pass the file_key returned by upload_chat_file</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>

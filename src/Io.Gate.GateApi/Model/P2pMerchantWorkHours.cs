@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Merchant&#39;s current working status. 0: normal resting, 1: normal working, 2: custom resting, 3: custom working
         /// </summary>
         /// <value>Merchant&#39;s current working status. 0: normal resting, 1: normal working, 2: custom resting, 3: custom working</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum WorkStatusEnum
         {
             /// <summary>
@@ -64,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Merchant&#39;s current working status. 0: normal resting, 1: normal working, 2: custom resting, 3: custom working</value>
         [DataMember(Name="work_status")]
+        
         public WorkStatusEnum? WorkStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pMerchantWorkHours" /> class.

@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Streamer ID</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Streamer nickname</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Streamer avatar URL</value>
         [DataMember(Name="avatar")]
+        
         public string Avatar { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Follower count</value>
         [DataMember(Name="fans")]
+        
         public int Fans { get; set; }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Streamer level</value>
         [DataMember(Name="tier")]
+        
         public int Tier { get; set; }
 
         /// <summary>

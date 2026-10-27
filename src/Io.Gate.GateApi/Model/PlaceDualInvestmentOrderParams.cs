@@ -55,6 +55,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="plan_id")]
+        
         public string PlanId { get; set; }
 
         /// <summary>
@@ -62,6 +63,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Subscription amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -69,6 +71,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order custom information. Users can set custom ID with this field. Custom fields must meet the following conditions:  1. Must start with &#x60;t-&#x60; 2. Excluding &#x60;t-&#x60;, length cannot exceed 28 bytes 3. Can only contain numbers, letters, underscore(_), hyphen(-) or dot(.) </value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

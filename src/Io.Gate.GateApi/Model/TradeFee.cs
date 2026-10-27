@@ -74,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -81,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>spot taker fee rate</value>
         [DataMember(Name="taker_fee")]
+        
         public string TakerFee { get; set; }
 
         /// <summary>
@@ -88,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>spot maker fee rate</value>
         [DataMember(Name="maker_fee")]
+        
         public string MakerFee { get; set; }
 
         /// <summary>
@@ -95,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>spot RPI MM maker fee rate</value>
         [DataMember(Name="rpi_maker_fee")]
+        
         public string RpiMakerFee { get; set; }
 
         /// <summary>
@@ -102,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether GT deduction discount is enabled</value>
         [DataMember(Name="gt_discount")]
+        
         public bool GtDiscount { get; set; }
 
         /// <summary>
@@ -109,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Taker fee rate if using GT deduction. It will be 0 if GT deduction is disabled</value>
         [DataMember(Name="gt_taker_fee")]
+        
         public string GtTakerFee { get; set; }
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maker fee rate with GT deduction. Returns 0 if GT deduction is disabled</value>
         [DataMember(Name="gt_maker_fee")]
+        
         public string GtMakerFee { get; set; }
 
         /// <summary>
@@ -123,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Loan fee rate of margin lending</value>
         [DataMember(Name="loan_fee")]
+        
         public string LoanFee { get; set; }
 
         /// <summary>
@@ -130,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Point card type: 0 - Original version, 1 - New version since 202009</value>
         [DataMember(Name="point_type")]
+        
         public string PointType { get; set; }
 
         /// <summary>
@@ -137,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Perpetual contract taker fee rate</value>
         [DataMember(Name="futures_taker_fee")]
+        
         public string FuturesTakerFee { get; set; }
 
         /// <summary>
@@ -144,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Perpetual contract maker fee rate</value>
         [DataMember(Name="futures_maker_fee")]
+        
         public string FuturesMakerFee { get; set; }
 
         /// <summary>
@@ -151,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>contract RPI MM maker fee rate</value>
         [DataMember(Name="futures_rpi_maker_fee")]
+        
         public string FuturesRpiMakerFee { get; set; }
 
         /// <summary>
@@ -158,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Delivery contract taker fee rate</value>
         [DataMember(Name="delivery_taker_fee")]
+        
         public string DeliveryTakerFee { get; set; }
 
         /// <summary>
@@ -165,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Delivery contract maker fee rate</value>
         [DataMember(Name="delivery_maker_fee")]
+        
         public string DeliveryMakerFee { get; set; }
 
         /// <summary>
@@ -172,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deduction types for rates, 1 - GT deduction, 2 - Point card deduction, 3 - VIP rates</value>
         [DataMember(Name="debit_fee")]
+        
         public int DebitFee { get; set; }
 
         /// <summary>
@@ -179,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>RPI MM Level</value>
         [DataMember(Name="rpi_mm")]
+        
         public int RpiMm { get; set; }
 
         /// <summary>

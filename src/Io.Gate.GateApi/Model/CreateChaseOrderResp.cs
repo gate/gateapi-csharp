@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ID of the newly created order</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>

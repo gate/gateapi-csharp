@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="contract", EmitDefaultValue=false)]
+        
         public string Contract { get; private set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size</value>
         [DataMember(Name="size", EmitDefaultValue=false)]
+        
         public string Size { get; private set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position leverage. 0 means cross margin; positive number means isolated margin</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position risk limit</value>
         [DataMember(Name="risk_limit")]
+        
         public string RiskLimit { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>the maximum permissible leverage given to the current positon value: the higher positon value, the lower maximum permissible leverage</value>
         [DataMember(Name="leverage_max", EmitDefaultValue=false)]
+        
         public string LeverageMax { get; private set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The maintenance margin rate of the first tier of risk limit sheet</value>
         [DataMember(Name="maintenance_rate", EmitDefaultValue=false)]
+        
         public string MaintenanceRate { get; private set; }
 
         /// <summary>
@@ -96,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin</value>
         [DataMember(Name="margin")]
+        
         public string Margin { get; set; }
 
         /// <summary>
@@ -103,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation price</value>
         [DataMember(Name="liq_price", EmitDefaultValue=false)]
+        
         public string LiqPrice { get; private set; }
 
         /// <summary>
@@ -110,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized PnL</value>
         [DataMember(Name="realised_pnl", EmitDefaultValue=false)]
+        
         public string RealisedPnl { get; private set; }
 
         /// <summary>
@@ -117,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total realized PnL from closed positions</value>
         [DataMember(Name="history_pnl", EmitDefaultValue=false)]
+        
         public string HistoryPnl { get; private set; }
 
         /// <summary>
@@ -124,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PNL of last position close</value>
         [DataMember(Name="last_close_pnl", EmitDefaultValue=false)]
+        
         public string LastClosePnl { get; private set; }
 
         /// <summary>
@@ -131,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized POINT PNL</value>
         [DataMember(Name="realised_point", EmitDefaultValue=false)]
+        
         public string RealisedPoint { get; private set; }
 
         /// <summary>
@@ -138,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>History realized POINT PNL</value>
         [DataMember(Name="history_point", EmitDefaultValue=false)]
+        
         public string HistoryPoint { get; private set; }
 
         /// <summary>
@@ -145,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position mode, including: - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode</value>
         [DataMember(Name="mode")]
+        
         public string Mode { get; set; }
 
         /// <summary>
@@ -152,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin leverage (valid only when &#x60;leverage&#x60; is 0)</value>
         [DataMember(Name="cross_leverage_limit")]
+        
         public string CrossLeverageLimit { get; set; }
 
         /// <summary>
@@ -159,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Entry price</value>
         [DataMember(Name="entry_price", EmitDefaultValue=false)]
+        
         public string EntryPrice { get; private set; }
 
         /// <summary>
@@ -166,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Timestamp</value>
         [DataMember(Name="time")]
+        
         public long Time { get; set; }
 
         /// <summary>

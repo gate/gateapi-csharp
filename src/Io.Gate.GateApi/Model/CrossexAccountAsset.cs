@@ -73,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public string UserId { get; set; }
 
         /// <summary>
@@ -80,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="coin")]
+        
         public string Coin { get; set; }
 
         /// <summary>
@@ -87,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange</value>
         [DataMember(Name="exchange_type")]
+        
         public string ExchangeType { get; set; }
 
         /// <summary>
@@ -94,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Balance</value>
         [DataMember(Name="balance")]
+        
         public string Balance { get; set; }
 
         /// <summary>
@@ -101,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized P&amp;L</value>
         [DataMember(Name="upnl")]
+        
         public string Upnl { get; set; }
 
         /// <summary>
@@ -108,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Net margin equity for the currency</value>
         [DataMember(Name="equity")]
+        
         public string Equity { get; set; }
 
         /// <summary>
@@ -115,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency-specific futures initial margin. This value is populated for futures settlement currencies (USDT/USDC/USD)</value>
         [DataMember(Name="futures_initial_margin")]
+        
         public string FuturesInitialMargin { get; set; }
 
         /// <summary>
@@ -122,6 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency-specific futures maintenance margin. This value is populated for futures settlement currencies (USDT/USDC/USD)</value>
         [DataMember(Name="futures_maintenance_margin")]
+        
         public string FuturesMaintenanceMargin { get; set; }
 
         /// <summary>
@@ -129,6 +137,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency-specific margin trading initial margin. This value is populated for margin or futures settlement currencies (USDT/USDC/USD)</value>
         [DataMember(Name="borrowing_initial_margin")]
+        
         public string BorrowingInitialMargin { get; set; }
 
         /// <summary>
@@ -136,6 +145,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency-specific margin trading maintenance margin. This value is populated for margin or futures settlement currencies (USDT/USDC/USD)</value>
         [DataMember(Name="borrowing_maintenance_margin")]
+        
         public string BorrowingMaintenanceMargin { get; set; }
 
         /// <summary>
@@ -143,6 +153,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available Balance</value>
         [DataMember(Name="available_balance")]
+        
         public string AvailableBalance { get; set; }
 
         /// <summary>
@@ -150,6 +161,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liability for the currency. This value is populated only for USDT, USDC, or USD</value>
         [DataMember(Name="liability")]
+        
         public string Liability { get; set; }
 
         /// <summary>

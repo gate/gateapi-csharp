@@ -84,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross available balance, deducted futures isolated margin occupation and frozen amount (futures isolated occupation, i.e. futures isolated balance), effective in single-currency/multi-currency/portfolio margin mode.</value>
         [DataMember(Name="available")]
+        
         public string Available { get; set; }
 
         /// <summary>
@@ -91,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Frozen amount, effective in single-currency/multi-currency/portfolio margin mode</value>
         [DataMember(Name="freeze")]
+        
         public string Freeze { get; set; }
 
         /// <summary>
@@ -98,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrowed amount, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode</value>
         [DataMember(Name="borrowed")]
+        
         public string Borrowed { get; set; }
 
         /// <summary>
@@ -105,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Negative balance borrowing, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode</value>
         [DataMember(Name="negative_liab")]
+        
         public string NegativeLiab { get; set; }
 
         /// <summary>
@@ -112,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract opening position borrowing currency (abandoned, to be offline field)</value>
         [DataMember(Name="futures_pos_liab")]
+        
         public string FuturesPosLiab { get; set; }
 
         /// <summary>
@@ -119,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency equity amount (cross), effective in single-currency/multi-currency/portfolio margin mode</value>
         [DataMember(Name="equity")]
+        
         public string Equity { get; set; }
 
         /// <summary>
@@ -126,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total frozen (deprecated, to be removed)</value>
         [DataMember(Name="total_freeze")]
+        
         public string TotalFreeze { get; set; }
 
         /// <summary>
@@ -133,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total borrowed amount, valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode</value>
         [DataMember(Name="total_liab")]
+        
         public string TotalLiab { get; set; }
 
         /// <summary>
@@ -140,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The amount of spot hedging is valid in the combined margin mode, and is 0 in other margin modes such as single currency and cross-currency margin modes</value>
         [DataMember(Name="spot_in_use")]
+        
         public string SpotInUse { get; set; }
 
         /// <summary>
@@ -147,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Uniloan financial management amount, effective when turned on as a unified account margin switch</value>
         [DataMember(Name="funding")]
+        
         public string Funding { get; set; }
 
         /// <summary>
@@ -154,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Funding version</value>
         [DataMember(Name="funding_version")]
+        
         public string FundingVersion { get; set; }
 
         /// <summary>
@@ -161,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Full margin balance is available in both single-currency and multi-currency margin modes, and is 0 in portfolio margin mode. </value>
         [DataMember(Name="cross_balance")]
+        
         public string CrossBalance { get; set; }
 
         /// <summary>
@@ -168,6 +180,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures isolated balance, effective in single-currency and multi-currency margin mode, 0 in portfolio margin mode</value>
         [DataMember(Name="iso_balance")]
+        
         public string IsoBalance { get; set; }
 
         /// <summary>
@@ -175,6 +188,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross initial margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="im")]
+        
         public string Im { get; set; }
 
         /// <summary>
@@ -182,6 +196,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross maintenance margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="mm")]
+        
         public string Mm { get; set; }
 
         /// <summary>
@@ -189,6 +204,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross initial margin rate, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="imr")]
+        
         public string Imr { get; set; }
 
         /// <summary>
@@ -196,6 +212,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross maintenance margin rate, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="mmr")]
+        
         public string Mmr { get; set; }
 
         /// <summary>
@@ -203,6 +220,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin balance, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="margin_balance")]
+        
         public string MarginBalance { get; set; }
 
         /// <summary>
@@ -210,6 +228,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross available margin, only effective for USDT in single-currency margin mode, 0 in multi-currency/portfolio margin mode</value>
         [DataMember(Name="available_margin")]
+        
         public string AvailableMargin { get; set; }
 
         /// <summary>
@@ -217,6 +236,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency enabled as margin: true - Enabled, false - Disabled</value>
         [DataMember(Name="enabled_collateral")]
+        
         public bool EnabledCollateral { get; set; }
 
         /// <summary>
@@ -224,6 +244,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Balance version number</value>
         [DataMember(Name="balance_version")]
+        
         public decimal BalanceVersion { get; set; }
 
         /// <summary>

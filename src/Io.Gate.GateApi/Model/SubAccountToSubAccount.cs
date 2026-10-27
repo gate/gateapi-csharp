@@ -67,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer from account (deprecated, use &#x60;sub_account_from_type&#x60; and &#x60;sub_account_to_type&#x60; instead)</value>
         [DataMember(Name="sub_account_type")]
+        
         public string SubAccountType { get; set; }
 
         /// <summary>
@@ -81,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer from the user id of the sub-account</value>
         [DataMember(Name="sub_account_from")]
+        
         public string SubAccountFrom { get; set; }
 
         /// <summary>
@@ -88,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Source sub-account trading account: spot - spot account, futures - perpetual contract account, delivery - delivery contract account</value>
         [DataMember(Name="sub_account_from_type")]
+        
         public string SubAccountFromType { get; set; }
 
         /// <summary>
@@ -95,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer to the user id of the sub-account</value>
         [DataMember(Name="sub_account_to")]
+        
         public string SubAccountTo { get; set; }
 
         /// <summary>
@@ -102,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Target sub-account trading account: spot - spot account, futures - perpetual contract account, delivery - delivery contract account</value>
         [DataMember(Name="sub_account_to_type")]
+        
         public string SubAccountToType { get; set; }
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer Amount, supports up to 8 decimal places, must be greater than 0</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>

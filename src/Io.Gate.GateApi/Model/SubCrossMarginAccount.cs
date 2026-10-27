@@ -74,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin account user ID. 0 means this sub-account has not yet opened a cross margin account</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -81,12 +82,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the account is locked</value>
         [DataMember(Name="locked")]
+        
         public bool Locked { get; set; }
 
         /// <summary>
         /// Gets or Sets Balances
         /// </summary>
         [DataMember(Name="balances")]
+        
         public Dictionary<string, CrossMarginBalance> Balances { get; set; }
 
         /// <summary>
@@ -94,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total account value in USDT, i.e., the sum of all currencies&#39; &#x60;(available+freeze)*price*discount&#x60;</value>
         [DataMember(Name="total")]
+        
         public string Total { get; set; }
 
         /// <summary>
@@ -101,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total borrowed value in USDT, i.e., the sum of all currencies&#39; &#x60;borrowed*price*discount&#x60;</value>
         [DataMember(Name="borrowed")]
+        
         public string Borrowed { get; set; }
 
         /// <summary>
@@ -108,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total borrowed value in USDT * leverage factor</value>
         [DataMember(Name="borrowed_net")]
+        
         public string BorrowedNet { get; set; }
 
         /// <summary>
@@ -115,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total net assets in USDT</value>
         [DataMember(Name="net")]
+        
         public string Net { get; set; }
 
         /// <summary>
@@ -122,6 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
@@ -129,6 +137,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total unpaid interest in USDT, i.e., the sum of all currencies&#39; &#x60;interest*price*discount&#x60;</value>
         [DataMember(Name="interest")]
+        
         public string Interest { get; set; }
 
         /// <summary>
@@ -136,6 +145,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk rate. When it falls below 110%, liquidation will be triggered. Calculation formula: &#x60;total / (borrowed+interest)&#x60;</value>
         [DataMember(Name="risk")]
+        
         public string Risk { get; set; }
 
         /// <summary>
@@ -143,6 +153,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total initial margin</value>
         [DataMember(Name="total_initial_margin")]
+        
         public string TotalInitialMargin { get; set; }
 
         /// <summary>
@@ -150,6 +161,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total margin balance</value>
         [DataMember(Name="total_margin_balance")]
+        
         public string TotalMarginBalance { get; set; }
 
         /// <summary>
@@ -157,6 +169,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total maintenance margin</value>
         [DataMember(Name="total_maintenance_margin")]
+        
         public string TotalMaintenanceMargin { get; set; }
 
         /// <summary>
@@ -164,6 +177,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total initial margin rate</value>
         [DataMember(Name="total_initial_margin_rate")]
+        
         public string TotalInitialMarginRate { get; set; }
 
         /// <summary>
@@ -171,6 +185,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total maintenance margin rate</value>
         [DataMember(Name="total_maintenance_margin_rate")]
+        
         public string TotalMaintenanceMarginRate { get; set; }
 
         /// <summary>
@@ -178,6 +193,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total available margin</value>
         [DataMember(Name="total_available_margin")]
+        
         public string TotalAvailableMargin { get; set; }
 
         /// <summary>

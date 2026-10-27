@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="tx_id")]
+        
         public string TxId { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User-defined Order ID</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

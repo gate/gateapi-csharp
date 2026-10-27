@@ -69,54 +69,63 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
         /// Gets or Sets UserId
         /// </summary>
         [DataMember(Name="user_id")]
+        
         public int UserId { get; set; }
 
         /// <summary>
         /// Gets or Sets From
         /// </summary>
         [DataMember(Name="from")]
+        
         public List<CreateOrderDetail> From { get; set; }
 
         /// <summary>
         /// Gets or Sets To
         /// </summary>
         [DataMember(Name="to")]
+        
         public List<CreateOrderDetail> To { get; set; }
 
         /// <summary>
         /// Gets or Sets Source
         /// </summary>
         [DataMember(Name="source")]
+        
         public string Source { get; set; }
 
         /// <summary>
         /// Gets or Sets AppId
         /// </summary>
         [DataMember(Name="app_id")]
+        
         public string AppId { get; set; }
 
         /// <summary>
         /// Gets or Sets ClientReqId
         /// </summary>
         [DataMember(Name="client_req_id")]
+        
         public string ClientReqId { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
         /// Gets or Sets CreateTime
         /// </summary>
         [DataMember(Name="create_time")]
+        
         public long CreateTime { get; set; }
 
         /// <summary>

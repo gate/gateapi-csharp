@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options contract name. Currently supports all options contract markets.</value>
         [DataMember(Name="options_name")]
+        
         public string OptionsName { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial order quantity, not involved in actual calculation</value>
         [DataMember(Name="size")]
+        
         public string Size { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unfilled contract quantity, involved in actual calculation</value>
         [DataMember(Name="left")]
+        
         public string Left { get; set; }
 
         /// <summary>

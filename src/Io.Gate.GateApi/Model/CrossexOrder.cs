@@ -131,6 +131,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public string UserId { get; set; }
 
         /// <summary>
@@ -138,6 +139,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -145,6 +147,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Client-defined order ID.</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -152,6 +155,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status: &#x60;NEW&#x60;: validated locally, pending submission to the exchange &#x60;OPEN&#x60;: resting on the exchange order book &#x60;PARTIALLY_FILLED&#x60;: partially filled &#x60;FILLED&#x60;: fully filled &#x60;FAIL&#x60;: CrossEx validation failed; see &#x60;reason&#x60; &#x60;REJECT&#x60;: rejected by the exchange; see &#x60;reason&#x60; &#x60;CANCELLED&#x60;: cancelled</value>
         [DataMember(Name="state")]
+        
         public string State { get; set; }
 
         /// <summary>
@@ -159,6 +163,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unique trading pair identifiers, e.g. &#x60;BINANCE_SPOT_BTC_USDT&#x60;, &#x60;BINANCE_FUTURE_BTC_USDT&#x60;.</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -166,6 +171,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Side (&#x60;BUY&#x60; buy / &#x60;SELL&#x60; sell).</value>
         [DataMember(Name="side")]
+        
         public string Side { get; set; }
 
         /// <summary>
@@ -173,6 +179,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order type (&#x60;LIMIT&#x60; limit / &#x60;MARKET&#x60; market).</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -180,6 +187,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order attributes (&#x60;COMMON&#x60; normal / &#x60;LIQ&#x60; liquidation takeover / &#x60;REDUCE&#x60; liquidation reduction / &#x60;ADL&#x60; auto-deleverage / &#x60;SETTLEMENT&#x60; delisting settlement).</value>
         [DataMember(Name="attribute")]
+        
         public string Attribute { get; set; }
 
         /// <summary>
@@ -187,6 +195,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange type (BINANCE / OKX / GATE / BYBIT / KRAKEN / HYPERLIQUID / DERIBIT / LIGHTER). Stocks and ETFs return the listing market (US / HK / KR / JP)</value>
         [DataMember(Name="exchange_type")]
+        
         public string ExchangeType { get; set; }
 
         /// <summary>
@@ -194,6 +203,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business type (SPOT: spot / FUTURE: futures / MARGIN: margin / CONVERT: flash swap / STOCK: stocks / ETF: exchange-traded funds)</value>
         [DataMember(Name="business_type")]
+        
         public string BusinessType { get; set; }
 
         /// <summary>
@@ -201,6 +211,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order quantity in the base currency.</value>
         [DataMember(Name="qty")]
+        
         public string Qty { get; set; }
 
         /// <summary>
@@ -208,6 +219,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order quantity in the quote currency.</value>
         [DataMember(Name="quote_qty")]
+        
         public string QuoteQty { get; set; }
 
         /// <summary>
@@ -215,6 +227,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -222,6 +235,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Time-in-force policy (default: GTC; allowed values: GTC, IOC, FOK, POC, and RPI)</value>
         [DataMember(Name="time_in_force")]
+        
         public string TimeInForce { get; set; }
 
         /// <summary>
@@ -229,6 +243,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Filled base amount.</value>
         [DataMember(Name="executed_qty")]
+        
         public string ExecutedQty { get; set; }
 
         /// <summary>
@@ -236,6 +251,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Filled amount in the quote currency. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="executed_amount")]
+        
         public string ExecutedAmount { get; set; }
 
         /// <summary>
@@ -243,6 +259,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average fill price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="executed_avg_price")]
+        
         public string ExecutedAvgPrice { get; set; }
 
         /// <summary>
@@ -250,6 +267,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fee currency</value>
         [DataMember(Name="fee_coin")]
+        
         public string FeeCoin { get; set; }
 
         /// <summary>
@@ -257,6 +275,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fee amount.</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -264,6 +283,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reduce-only order (&#x60;\&quot;true\&quot;&#x60; or &#x60;\&quot;false\&quot;&#x60;).</value>
         [DataMember(Name="reduce_only")]
+        
         public string ReduceOnly { get; set; }
 
         /// <summary>
@@ -271,6 +291,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order leverage multiplier.</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
@@ -278,6 +299,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Failure reason description.</value>
         [DataMember(Name="reason")]
+        
         public string Reason { get; set; }
 
         /// <summary>
@@ -285,6 +307,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Base quantity of the latest fill.</value>
         [DataMember(Name="last_executed_qty")]
+        
         public string LastExecutedQty { get; set; }
 
         /// <summary>
@@ -292,6 +315,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price of the latest fill. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="last_executed_price")]
+        
         public string LastExecutedPrice { get; set; }
 
         /// <summary>
@@ -299,6 +323,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount of the latest fill. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="last_executed_amount")]
+        
         public string LastExecutedAmount { get; set; }
 
         /// <summary>
@@ -306,6 +331,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position side (&#x60;NONE&#x60; one-way position / &#x60;LONG&#x60; long / &#x60;SHORT&#x60; short)</value>
         [DataMember(Name="position_side")]
+        
         public string PositionSide { get; set; }
 
         /// <summary>
@@ -313,6 +339,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -320,6 +347,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time</value>
         [DataMember(Name="update_time")]
+        
         public string UpdateTime { get; set; }
 
         /// <summary>

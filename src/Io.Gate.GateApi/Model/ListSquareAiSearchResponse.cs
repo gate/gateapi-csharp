@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status code, 0 &#x3D; success</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error identifier code. Empty string on success, machine-readable error label on error</value>
         [DataMember(Name="label")]
+        
         public string Label { get; set; }
 
         /// <summary>
@@ -64,12 +66,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status message</value>
         [DataMember(Name="msg")]
+        
         public string Msg { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public ListSquareAiSearchResponseData Data { get; set; }
 
         /// <summary>

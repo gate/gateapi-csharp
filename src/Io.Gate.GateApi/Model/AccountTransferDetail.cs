@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Transfer status:  - &#x60;pending&#x60;: Processing - &#x60;success&#x60;: Successful - &#x60;fail&#x60;: Failed
         /// </summary>
         /// <value>Transfer status:  - &#x60;pending&#x60;: Processing - &#x60;success&#x60;: Successful - &#x60;fail&#x60;: Failed</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StatusEnum
         {
             /// <summary>
@@ -62,12 +64,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer status:  - &#x60;pending&#x60;: Processing - &#x60;success&#x60;: Successful - &#x60;fail&#x60;: Failed</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Source account type:  - &#x60;spot&#x60;: Spot account - &#x60;margin&#x60;: Margin account - &#x60;futures&#x60;: Perpetual futures account - &#x60;delivery&#x60;: Delivery futures account - &#x60;options&#x60;: Options account - &#x60;unknown&#x60;: Unrecognized account type
         /// </summary>
         /// <value>Source account type:  - &#x60;spot&#x60;: Spot account - &#x60;margin&#x60;: Margin account - &#x60;futures&#x60;: Perpetual futures account - &#x60;delivery&#x60;: Delivery futures account - &#x60;options&#x60;: Options account - &#x60;unknown&#x60;: Unrecognized account type</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum FromAccountEnum
         {
             /// <summary>
@@ -113,12 +118,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Source account type:  - &#x60;spot&#x60;: Spot account - &#x60;margin&#x60;: Margin account - &#x60;futures&#x60;: Perpetual futures account - &#x60;delivery&#x60;: Delivery futures account - &#x60;options&#x60;: Options account - &#x60;unknown&#x60;: Unrecognized account type</value>
         [DataMember(Name="from_account", EmitDefaultValue=false)]
+        
         public FromAccountEnum FromAccount { get; set; }
         /// <summary>
         /// Destination account type:  - &#x60;spot&#x60;: Spot account - &#x60;margin&#x60;: Margin account - &#x60;futures&#x60;: Perpetual futures account - &#x60;delivery&#x60;: Delivery futures account - &#x60;options&#x60;: Options account - &#x60;unknown&#x60;: Unrecognized account type
         /// </summary>
         /// <value>Destination account type:  - &#x60;spot&#x60;: Spot account - &#x60;margin&#x60;: Margin account - &#x60;futures&#x60;: Perpetual futures account - &#x60;delivery&#x60;: Delivery futures account - &#x60;options&#x60;: Options account - &#x60;unknown&#x60;: Unrecognized account type</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ToAccountEnum
         {
             /// <summary>
@@ -164,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Destination account type:  - &#x60;spot&#x60;: Spot account - &#x60;margin&#x60;: Margin account - &#x60;futures&#x60;: Perpetual futures account - &#x60;delivery&#x60;: Delivery futures account - &#x60;options&#x60;: Options account - &#x60;unknown&#x60;: Unrecognized account type</value>
         [DataMember(Name="to_account", EmitDefaultValue=false)]
+        
         public ToAccountEnum ToAccount { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountTransferDetail" /> class.
@@ -178,6 +187,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer transaction ID</value>
         [DataMember(Name="tx_id", EmitDefaultValue=false)]
+        
         public string TxId { get; private set; }
 
         /// <summary>
@@ -185,6 +195,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer currency</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
+        
         public string Currency { get; private set; }
 
         /// <summary>
@@ -192,6 +203,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer amount</value>
         [DataMember(Name="amount", EmitDefaultValue=false)]
+        
         public string Amount { get; private set; }
 
         /// <summary>
@@ -199,6 +211,10 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement currency for futures, delivery, and options transfers; otherwise, null</value>
         [DataMember(Name="settle", EmitDefaultValue=false)]
+        
+        // Required nullable members must retain an explicit null in JSON.
+        [JsonProperty("settle", NullValueHandling = NullValueHandling.Include)]
+        
         public string Settle { get; private set; }
 
         /// <summary>
@@ -206,6 +222,10 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair for margin transfers; otherwise, null</value>
         [DataMember(Name="currency_pair", EmitDefaultValue=false)]
+        
+        // Required nullable members must retain an explicit null in JSON.
+        [JsonProperty("currency_pair", NullValueHandling = NullValueHandling.Include)]
+        
         public string CurrencyPair { get; private set; }
 
         /// <summary>

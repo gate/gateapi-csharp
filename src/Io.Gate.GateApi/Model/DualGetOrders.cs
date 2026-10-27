@@ -74,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -81,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="plan_id")]
+        
         public int PlanId { get; set; }
 
         /// <summary>
@@ -88,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Investment Quantity</value>
         [DataMember(Name="invest_amount")]
+        
         public string InvestAmount { get; set; }
 
         /// <summary>
@@ -95,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement Quantity</value>
         [DataMember(Name="settlement_amount")]
+        
         public string SettlementAmount { get; set; }
 
         /// <summary>
@@ -102,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public int CreateTime { get; set; }
 
         /// <summary>
@@ -109,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Completed Time</value>
         [DataMember(Name="complete_time")]
+        
         public int CompleteTime { get; set; }
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status:  &#x60;INIT&#x60;-Created &#x60;SETTLEMENT_SUCCESS&#x60;-Settlement Success &#x60;SETTLEMENT_PROCESSING&#x60;-Settlement Processing &#x60;CANCELED&#x60;-Canceled &#x60;FAILED&#x60;-Failed</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -123,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Investment Token</value>
         [DataMember(Name="invest_currency")]
+        
         public string InvestCurrency { get; set; }
 
         /// <summary>
@@ -130,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Strike Token</value>
         [DataMember(Name="exercise_currency")]
+        
         public string ExerciseCurrency { get; set; }
 
         /// <summary>
@@ -137,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Strike price</value>
         [DataMember(Name="exercise_price")]
+        
         public string ExercisePrice { get; set; }
 
         /// <summary>
@@ -144,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement price</value>
         [DataMember(Name="settlement_price")]
+        
         public string SettlementPrice { get; set; }
 
         /// <summary>
@@ -151,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement currency</value>
         [DataMember(Name="settlement_currency")]
+        
         public string SettlementCurrency { get; set; }
 
         /// <summary>
@@ -158,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Annual Yield</value>
         [DataMember(Name="apy_display")]
+        
         public string ApyDisplay { get; set; }
 
         /// <summary>
@@ -165,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement Annual Yield</value>
         [DataMember(Name="apy_settlement")]
+        
         public string ApySettlement { get; set; }
 
         /// <summary>
@@ -172,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement time</value>
         [DataMember(Name="delivery_time")]
+        
         public int DeliveryTime { get; set; }
 
         /// <summary>
@@ -179,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom order information</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

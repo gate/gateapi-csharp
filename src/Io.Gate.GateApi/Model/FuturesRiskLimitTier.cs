@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Tier</value>
         [DataMember(Name="tier")]
+        
         public int Tier { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position risk limit</value>
         [DataMember(Name="risk_limit")]
+        
         public string RiskLimit { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial margin rate</value>
         [DataMember(Name="initial_rate")]
+        
         public string InitialRate { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The maintenance margin rate of the first tier of risk limit sheet</value>
         [DataMember(Name="maintenance_rate")]
+        
         public string MaintenanceRate { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum leverage</value>
         [DataMember(Name="leverage_max")]
+        
         public string LeverageMax { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maintenance margin quick calculation deduction amount</value>
         [DataMember(Name="deduction")]
+        
         public string Deduction { get; set; }
 
         /// <summary>

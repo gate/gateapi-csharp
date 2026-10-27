@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures trading pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin mode (CROSS/ISOLATED)</value>
         [DataMember(Name="margin_mode")]
+        
         public string MarginMode { get; set; }
 
         /// <summary>

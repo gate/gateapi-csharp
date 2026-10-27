@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Name used for the remittance. Allowed values depend on the user type: Corporate users: YOU (remit in your company&#39;s name), GATE (remit in Gate&#39;s name), RECIPIENT (remit in the recipient&#39;s name); Individual users: GATE (remit in Gate&#39;s name), PERSON (remit in the user&#39;s own name).
         /// </summary>
         /// <value>Name used for the remittance. Allowed values depend on the user type: Corporate users: YOU (remit in your company&#39;s name), GATE (remit in Gate&#39;s name), RECIPIENT (remit in the recipient&#39;s name); Individual users: GATE (remit in Gate&#39;s name), PERSON (remit in the user&#39;s own name).</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ReceiveTypeEnum
         {
             /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Name used for the remittance. Allowed values depend on the user type: Corporate users: YOU (remit in your company&#39;s name), GATE (remit in Gate&#39;s name), RECIPIENT (remit in the recipient&#39;s name); Individual users: GATE (remit in Gate&#39;s name), PERSON (remit in the user&#39;s own name).</value>
         [DataMember(Name="receive_type")]
+        
         public ReceiveTypeEnum? ReceiveType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcOrderRequest" /> class.
@@ -114,6 +117,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>BUY for on-ramp, SELL for off-ramp</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -121,6 +125,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The side returned by the quote endpoint (used for order validation). For backward compatibility, &#x60;FIAT&#x60;/&#x60;CRYPTO&#x60; or &#x60;PAY&#x60;/&#x60;GET&#x60; are accepted; new integrations should use the value returned by the quote response.</value>
         [DataMember(Name="side")]
+        
         public string Side { get; set; }
 
         /// <summary>
@@ -128,6 +133,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cryptocurrency (supported currencies can be queried from the OTC web fiat quote page)</value>
         [DataMember(Name="crypto_currency")]
+        
         public string CryptoCurrency { get; set; }
 
         /// <summary>
@@ -135,6 +141,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency (supported currencies can be queried from the OTC web fiat quote page)</value>
         [DataMember(Name="fiat_currency")]
+        
         public string FiatCurrency { get; set; }
 
         /// <summary>
@@ -142,6 +149,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount of cryptocurrency</value>
         [DataMember(Name="crypto_amount")]
+        
         public string CryptoAmount { get; set; }
 
         /// <summary>
@@ -149,6 +157,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat amount</value>
         [DataMember(Name="fiat_amount")]
+        
         public string FiatAmount { get; set; }
 
         /// <summary>
@@ -156,6 +165,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Promotion code</value>
         [DataMember(Name="promotion_code")]
+        
         public string PromotionCode { get; set; }
 
         /// <summary>
@@ -163,6 +173,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Parameter returned by the quote API</value>
         [DataMember(Name="quote_token")]
+        
         public string QuoteToken { get; set; }
 
         /// <summary>
@@ -170,6 +181,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank card ID used to place the order. Select one from the list returned by &#x60;GET /otc/bank/list&#x60;; the default card has &#x60;is_default&#x3D;1&#x60;.</value>
         [DataMember(Name="bank_id")]
+        
         public string BankId { get; set; }
 
         /// <summary>

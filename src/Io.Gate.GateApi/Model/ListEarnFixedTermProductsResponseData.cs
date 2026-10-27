@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product list</value>
         [DataMember(Name="list")]
+        
         public List<FixedTermProduct> List { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Records</value>
         [DataMember(Name="total")]
+        
         public int Total { get; set; }
 
         /// <summary>

@@ -70,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ratio</value>
         [DataMember(Name="ratio")]
+        
         public string Ratio { get; set; }
 
         /// <summary>
@@ -84,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Accumulated investment</value>
         [DataMember(Name="cum_invest")]
+        
         public string CumInvest { get; set; }
 
         /// <summary>
@@ -91,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>AccumulatedPosition</value>
         [DataMember(Name="cum_hold")]
+        
         public string CumHold { get; set; }
 
         /// <summary>
@@ -98,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Accumulated redemption</value>
         [DataMember(Name="cum_redeem")]
+        
         public string CumRedeem { get; set; }
 
         /// <summary>
@@ -105,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average Cost Price</value>
         [DataMember(Name="avg_price")]
+        
         public string AvgPrice { get; set; }
 
         /// <summary>
@@ -112,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redemption status</value>
         [DataMember(Name="redeem_status")]
+        
         public long RedeemStatus { get; set; }
 
         /// <summary>
@@ -119,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>LendingQuantity</value>
         [DataMember(Name="lend_amount")]
+        
         public string LendAmount { get; set; }
 
         /// <summary>

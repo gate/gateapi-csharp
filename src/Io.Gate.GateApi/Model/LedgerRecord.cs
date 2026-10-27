@@ -66,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Record ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public string Id { get; private set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Hash record of the withdrawal</value>
         [DataMember(Name="txid", EmitDefaultValue=false)]
+        
         public string Txid { get; private set; }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User-defined order number for withdrawal. Default is empty. When not empty, the specified user-defined order number record will be queried</value>
         [DataMember(Name="withdraw_order_id")]
+        
         public string WithdrawOrderId { get; set; }
 
         /// <summary>
@@ -87,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Operation time</value>
         [DataMember(Name="timestamp", EmitDefaultValue=false)]
+        
         public string Timestamp { get; private set; }
 
         /// <summary>
@@ -94,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Token amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -101,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -108,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Withdrawal address. Required for withdrawals</value>
         [DataMember(Name="address")]
+        
         public string Address { get; set; }
 
         /// <summary>
@@ -115,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Additional remarks with regards to the withdrawal</value>
         [DataMember(Name="memo")]
+        
         public string Memo { get; set; }
 
         /// <summary>
@@ -122,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Withdrawal record ID starts with &#39;w&#39;, such as: w1879219868. When withdraw_id is not empty, only this specific withdrawal record will be queried, and time-based querying will be disabled</value>
         [DataMember(Name="withdraw_id")]
+        
         public string WithdrawId { get; set; }
 
         /// <summary>
@@ -129,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Withdrawal record currency type, empty by default. Supports users to query withdrawal records in main area and innovation area on demand. Valid values: SPOT, PILOT  SPOT: Main area PILOT: Innovation area</value>
         [DataMember(Name="asset_class")]
+        
         public string AssetClass { get; set; }
 
         /// <summary>
@@ -136,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction status  - DONE: Completed - CANCEL: Cancelled - REQUEST: Requesting - MANUAL: Pending manual review - BCODE: GateCode operation - EXTPEND: Sent, waiting for confirmation - FAIL: Failed on chain, waiting for confirmation - INVALID: Invalid order - VERIFY: Verifying - PROCES: Processing - PEND: Processing - DMOVE: Pending manual review - REVIEW: Under review</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public string Status { get; private set; }
 
         /// <summary>
@@ -143,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Name of the chain used in withdrawals</value>
         [DataMember(Name="chain")]
+        
         public string Chain { get; set; }
 
         /// <summary>

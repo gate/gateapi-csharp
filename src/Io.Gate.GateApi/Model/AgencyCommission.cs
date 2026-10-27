@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Commission time (Unix timestamp in seconds)</value>
         [DataMember(Name="commission_time")]
+        
         public long CommissionTime { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Group name</value>
         [DataMember(Name="group_name")]
+        
         public string GroupName { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Commission amount</value>
         [DataMember(Name="commission_amount")]
+        
         public string CommissionAmount { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Commission Asset</value>
         [DataMember(Name="commission_asset")]
+        
         public string CommissionAsset { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Commission source: SPOT - Spot commission, FUTURES - Futures commission</value>
         [DataMember(Name="source")]
+        
         public string Source { get; set; }
 
         /// <summary>

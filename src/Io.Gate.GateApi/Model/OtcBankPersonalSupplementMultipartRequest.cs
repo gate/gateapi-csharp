@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets BankId
         /// </summary>
         [DataMember(Name="bank_id")]
+        
         public string BankId { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ID document front-side file content (multipart file field, binary/Base64)</value>
         [DataMember(Name="id_document_front")]
+        
         public string IdDocumentFront { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ID document back-side file content (multipart file field, binary/Base64)</value>
         [DataMember(Name="id_document_back")]
+        
         public string IdDocumentBack { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Proof-of-address file content (multipart file field, binary/Base64)</value>
         [DataMember(Name="address_proof")]
+        
         public string AddressProof { get; set; }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Optional. JSON string of relationship_proof.</value>
         [DataMember(Name="relationship_proof")]
+        
         public string RelationshipProof { get; set; }
 
         /// <summary>

@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Cycle type, e.g. WEEKLY, QUARTERLY
         /// </summary>
         /// <value>Cycle type, e.g. WEEKLY, QUARTERLY</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum CycleEnum
         {
             /// <summary>
@@ -68,12 +70,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cycle type, e.g. WEEKLY, QUARTERLY</value>
         [DataMember(Name="cycle")]
+        
         public CycleEnum? Cycle { get; set; }
         /// <summary>
         /// Contract type: inverse - inverse contract, direct - direct contract
         /// </summary>
         /// <value>Contract type: inverse - inverse contract, direct - direct contract</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -95,12 +100,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract type: inverse - inverse contract, direct - direct contract</value>
         [DataMember(Name="type")]
+        
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Deprecated
         /// </summary>
         /// <value>Deprecated</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum MarkTypeEnum
         {
             /// <summary>
@@ -122,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deprecated</value>
         [DataMember(Name="mark_type")]
+        
         public MarkTypeEnum? MarkType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryContract" /> class.
@@ -211,6 +220,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -218,6 +228,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Underlying</value>
         [DataMember(Name="underlying")]
+        
         public string Underlying { get; set; }
 
         /// <summary>
@@ -225,6 +236,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The contract multiplier indicates how many units of the underlying asset the face value of one contract represents.</value>
         [DataMember(Name="quanto_multiplier")]
+        
         public string QuantoMultiplier { get; set; }
 
         /// <summary>
@@ -232,6 +244,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum leverage</value>
         [DataMember(Name="leverage_min")]
+        
         public string LeverageMin { get; set; }
 
         /// <summary>
@@ -239,6 +252,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum leverage</value>
         [DataMember(Name="leverage_max")]
+        
         public string LeverageMax { get; set; }
 
         /// <summary>
@@ -246,6 +260,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The maintenance margin rate of the first tier of risk limit sheet</value>
         [DataMember(Name="maintenance_rate")]
+        
         public string MaintenanceRate { get; set; }
 
         /// <summary>
@@ -253,6 +268,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current mark price</value>
         [DataMember(Name="mark_price")]
+        
         public string MarkPrice { get; set; }
 
         /// <summary>
@@ -260,6 +276,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current index price</value>
         [DataMember(Name="index_price")]
+        
         public string IndexPrice { get; set; }
 
         /// <summary>
@@ -267,6 +284,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last trading price</value>
         [DataMember(Name="last_price")]
+        
         public string LastPrice { get; set; }
 
         /// <summary>
@@ -274,6 +292,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maker fee rate, negative values indicate rebates</value>
         [DataMember(Name="maker_fee_rate")]
+        
         public string MakerFeeRate { get; set; }
 
         /// <summary>
@@ -281,6 +300,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Taker fee rate</value>
         [DataMember(Name="taker_fee_rate")]
+        
         public string TakerFeeRate { get; set; }
 
         /// <summary>
@@ -288,6 +308,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum order price increment</value>
         [DataMember(Name="order_price_round")]
+        
         public string OrderPriceRound { get; set; }
 
         /// <summary>
@@ -295,6 +316,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum mark price increment</value>
         [DataMember(Name="mark_price_round")]
+        
         public string MarkPriceRound { get; set; }
 
         /// <summary>
@@ -302,6 +324,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fair basis rate</value>
         [DataMember(Name="basis_rate")]
+        
         public string BasisRate { get; set; }
 
         /// <summary>
@@ -309,6 +332,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fair basis value</value>
         [DataMember(Name="basis_value")]
+        
         public string BasisValue { get; set; }
 
         /// <summary>
@@ -316,6 +340,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Funding used for calculating impact bid, ask price</value>
         [DataMember(Name="basis_impact_value")]
+        
         public string BasisImpactValue { get; set; }
 
         /// <summary>
@@ -323,6 +348,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settle price</value>
         [DataMember(Name="settle_price")]
+        
         public string SettlePrice { get; set; }
 
         /// <summary>
@@ -330,6 +356,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settle price update interval</value>
         [DataMember(Name="settle_price_interval")]
+        
         public int SettlePriceInterval { get; set; }
 
         /// <summary>
@@ -337,6 +364,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settle price update duration in seconds</value>
         [DataMember(Name="settle_price_duration")]
+        
         public int SettlePriceDuration { get; set; }
 
         /// <summary>
@@ -344,6 +372,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract expiry timestamp</value>
         [DataMember(Name="expire_time")]
+        
         public long ExpireTime { get; set; }
 
         /// <summary>
@@ -351,6 +380,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk limit base</value>
         [DataMember(Name="risk_limit_base")]
+        
         public string RiskLimitBase { get; set; }
 
         /// <summary>
@@ -358,6 +388,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Step of adjusting risk limit</value>
         [DataMember(Name="risk_limit_step")]
+        
         public string RiskLimitStep { get; set; }
 
         /// <summary>
@@ -365,6 +396,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum risk limit the contract allowed</value>
         [DataMember(Name="risk_limit_max")]
+        
         public string RiskLimitMax { get; set; }
 
         /// <summary>
@@ -372,6 +404,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum order quantity</value>
         [DataMember(Name="order_size_min")]
+        
         public long OrderSizeMin { get; set; }
 
         /// <summary>
@@ -379,6 +412,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum order quantity</value>
         [DataMember(Name="order_size_max")]
+        
         public long OrderSizeMax { get; set; }
 
         /// <summary>
@@ -386,6 +420,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum allowed deviation between order price and current mark price. The order price &#x60;order_price&#x60; must satisfy the following condition:      abs(order_price - mark_price) &lt;&#x3D; mark_price * order_price_deviate</value>
         [DataMember(Name="order_price_deviate")]
+        
         public string OrderPriceDeviate { get; set; }
 
         /// <summary>
@@ -393,6 +428,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading fee discount for referred users</value>
         [DataMember(Name="ref_discount_rate")]
+        
         public string RefDiscountRate { get; set; }
 
         /// <summary>
@@ -400,6 +436,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Commission rate for referrers</value>
         [DataMember(Name="ref_rebate_rate")]
+        
         public string RefRebateRate { get; set; }
 
         /// <summary>
@@ -407,6 +444,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Orderbook update ID</value>
         [DataMember(Name="orderbook_id")]
+        
         public long OrderbookId { get; set; }
 
         /// <summary>
@@ -414,6 +452,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current trade ID</value>
         [DataMember(Name="trade_id")]
+        
         public long TradeId { get; set; }
 
         /// <summary>
@@ -421,6 +460,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Historical cumulative trading volume</value>
         [DataMember(Name="trade_size")]
+        
         public long TradeSize { get; set; }
 
         /// <summary>
@@ -428,6 +468,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current total long position size</value>
         [DataMember(Name="position_size")]
+        
         public long PositionSize { get; set; }
 
         /// <summary>
@@ -435,6 +476,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last configuration update time</value>
         [DataMember(Name="config_change_time")]
+        
         public double ConfigChangeTime { get; set; }
 
         /// <summary>
@@ -442,6 +484,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract is delisting</value>
         [DataMember(Name="in_delisting")]
+        
         public bool InDelisting { get; set; }
 
         /// <summary>
@@ -449,6 +492,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum number of pending orders</value>
         [DataMember(Name="orders_limit")]
+        
         public int OrdersLimit { get; set; }
 
         /// <summary>

@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account equity</value>
         [DataMember(Name="equity")]
+        
         public string Equity { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin level (percentage)</value>
         [DataMember(Name="margin_level")]
+        
         public string MarginLevel { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account Balance</value>
         [DataMember(Name="balance")]
+        
         public string Balance { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Used margin</value>
         [DataMember(Name="margin")]
+        
         public string Margin { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available Margin</value>
         [DataMember(Name="margin_free")]
+        
         public string MarginFree { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized PNL</value>
         [DataMember(Name="unrealized_pnl")]
+        
         public string UnrealizedPnl { get; set; }
 
         /// <summary>

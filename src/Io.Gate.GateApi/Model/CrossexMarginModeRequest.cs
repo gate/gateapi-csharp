@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Margin mode (CROSS/ISOLATED)
         /// </summary>
         /// <value>Margin mode (CROSS/ISOLATED)</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum MarginModeEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin mode (CROSS/ISOLATED)</value>
         [DataMember(Name="margin_mode")]
+        
         public MarginModeEnum MarginMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CrossexMarginModeRequest" /> class.
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Hyperliquid futures trading pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>

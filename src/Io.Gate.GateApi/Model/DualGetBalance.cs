@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User Assets in USDT Equivalent</value>
         [DataMember(Name="user_asset_usdt")]
+        
         public string UserAssetUsdt { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User Assets in BTC Equivalent</value>
         [DataMember(Name="user_asset_btc")]
+        
         public string UserAssetBtc { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total User Interest in USDT Equivalent</value>
         [DataMember(Name="user_total_interest_usdt")]
+        
         public string UserTotalInterestUsdt { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total User Interest in BTC Equivalent</value>
         [DataMember(Name="user_total_interest_btc")]
+        
         public string UserTotalInterestBtc { get; set; }
 
         /// <summary>

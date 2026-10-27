@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency symbol</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The main chain corresponding to the coin</value>
         [DataMember(Name="chain")]
+        
         public string Chain { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract Address</value>
         [DataMember(Name="address")]
+        
         public string Address { get; set; }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quantity precision</value>
         [DataMember(Name="amount_precision")]
+        
         public int AmountPrecision { get; set; }
 
         /// <summary>
@@ -91,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price precision</value>
         [DataMember(Name="precision")]
+        
         public int Precision { get; set; }
 
         /// <summary>
@@ -98,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency Trading Status - &#x60;1&#x60; : Normal trading - &#x60;2&#x60; : Suspended trading - &#x60;3&#x60; : Delisted</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>

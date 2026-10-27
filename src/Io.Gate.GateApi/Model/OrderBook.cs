@@ -59,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order book ID, which is updated whenever the order book is changed. Valid only when &#x60;with_id&#x60; is set to &#x60;true&#x60;</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The timestamp of the response data being generated (in milliseconds)</value>
         [DataMember(Name="current")]
+        
         public long Current { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The timestamp of when the orderbook last changed (in milliseconds)</value>
         [DataMember(Name="update")]
+        
         public long Update { get; set; }
 
         /// <summary>
@@ -80,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ask Depth</value>
         [DataMember(Name="asks")]
+        
         public List<List<string>> Asks { get; set; }
 
         /// <summary>
@@ -87,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bid Depth</value>
         [DataMember(Name="bids")]
+        
         public List<List<string>> Bids { get; set; }
 
         /// <summary>

@@ -62,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -69,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom ID specified by the user when creating the order</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -76,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the request was accepted, as the string true or false</value>
         [DataMember(Name="accepted")]
+        
         public string Accepted { get; set; }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error label when the request is not accepted; empty on success</value>
         [DataMember(Name="label")]
+        
         public string Label { get; set; }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error message when the request is not accepted; empty on success</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>

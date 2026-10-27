@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Trigger Strategy   - 0: Price trigger, triggered when price meets conditions  - 1: Price spread trigger, i.e. the difference between the latest price specified in &#x60;price_type&#x60; and the second-last price Currently only supports 0 (latest transaction price)
         /// </summary>
         /// <value>Trigger Strategy   - 0: Price trigger, triggered when price meets conditions  - 1: Price spread trigger, i.e. the difference between the latest price specified in &#x60;price_type&#x60; and the second-last price Currently only supports 0 (latest transaction price)</value>
+        
         public enum StrategyTypeEnum
         {
             /// <summary>
@@ -53,11 +54,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trigger Strategy   - 0: Price trigger, triggered when price meets conditions  - 1: Price spread trigger, i.e. the difference between the latest price specified in &#x60;price_type&#x60; and the second-last price Currently only supports 0 (latest transaction price)</value>
         [DataMember(Name="strategy_type")]
+        
         public StrategyTypeEnum? StrategyType { get; set; }
         /// <summary>
         /// Reference price type. 0 - Latest trade price, 1 - Mark price, 2 - Index price
         /// </summary>
         /// <value>Reference price type. 0 - Latest trade price, 1 - Mark price, 2 - Index price</value>
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -82,11 +85,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reference price type. 0 - Latest trade price, 1 - Mark price, 2 - Index price</value>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
         /// Price Condition Type  - 1: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is greater than or equal to &#x60;Trigger.Price&#x60;, while Trigger.Price must &gt; last_price - 2: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is less than or equal to &#x60;Trigger.Price&#x60;, and Trigger.Price must &lt; last_price
         /// </summary>
         /// <value>Price Condition Type  - 1: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is greater than or equal to &#x60;Trigger.Price&#x60;, while Trigger.Price must &gt; last_price - 2: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is less than or equal to &#x60;Trigger.Price&#x60;, and Trigger.Price must &lt; last_price</value>
+        
         public enum RuleEnum
         {
             /// <summary>
@@ -106,6 +111,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price Condition Type  - 1: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is greater than or equal to &#x60;Trigger.Price&#x60;, while Trigger.Price must &gt; last_price - 2: Trigger when the price calculated based on &#x60;strategy_type&#x60; and &#x60;price_type&#x60; is less than or equal to &#x60;Trigger.Price&#x60;, and Trigger.Price must &lt; last_price</value>
         [DataMember(Name="rule")]
+        
         public RuleEnum Rule { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesPriceTrigger" /> class.
@@ -135,6 +141,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price value for price trigger, or spread value for spread trigger</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -142,6 +149,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum wait time for trigger condition (in seconds). Order will be cancelled if timeout</value>
         [DataMember(Name="expiration")]
+        
         public int Expiration { get; set; }
 
         /// <summary>

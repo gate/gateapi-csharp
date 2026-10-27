@@ -59,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to sell</value>
         [DataMember(Name="sell_asset")]
+        
         public string SellAsset { get; set; }
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell amount</value>
         [DataMember(Name="sell_amount")]
+        
         public string SellAmount { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to buy</value>
         [DataMember(Name="buy_asset")]
+        
         public string BuyAsset { get; set; }
 
         /// <summary>
@@ -80,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy amount</value>
         [DataMember(Name="buy_amount")]
+        
         public string BuyAmount { get; set; }
 
         /// <summary>

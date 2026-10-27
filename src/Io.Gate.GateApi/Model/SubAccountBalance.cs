@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="uid")]
+        
         public string Uid { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available balances of currencies</value>
         [DataMember(Name="available")]
+        
         public Dictionary<string, string> Available { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Locked amount by currency</value>
         [DataMember(Name="locking")]
+        
         public Dictionary<string, string> Locking { get; set; }
 
         /// <summary>

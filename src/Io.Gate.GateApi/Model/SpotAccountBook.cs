@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Balance change record ID</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The timestamp of the change (in milliseconds)</value>
         [DataMember(Name="time")]
+        
         public long Time { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency changed</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount changed. Positive value means transferring in, while negative out</value>
         [DataMember(Name="change")]
+        
         public string Change { get; set; }
 
         /// <summary>
@@ -86,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Balance after change</value>
         [DataMember(Name="balance")]
+        
         public string Balance { get; set; }
 
         /// <summary>
@@ -93,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account change type; deprecated (see &#x60;code&#x60; for account change type encoding)</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -100,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account change code, see [Asset Record Code] (Asset Record Code)</value>
         [DataMember(Name="code")]
+        
         public string Code { get; set; }
 
         /// <summary>
@@ -107,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Additional information</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

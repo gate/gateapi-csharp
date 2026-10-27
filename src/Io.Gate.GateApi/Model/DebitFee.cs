@@ -49,6 +49,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether GT fee deduction is enabled</value>
         [DataMember(Name="enabled")]
+        
         public bool Enabled { get; set; }
 
         /// <summary>

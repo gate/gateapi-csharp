@@ -49,6 +49,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Order
         /// </summary>
         [DataMember(Name="order")]
+        
         public CreateOrder Order { get; set; }
 
         /// <summary>

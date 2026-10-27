@@ -78,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public string UserId { get; set; }
 
         /// <summary>
@@ -85,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>filledrecordsID</value>
         [DataMember(Name="transaction_id")]
+        
         public string TransactionId { get; set; }
 
         /// <summary>
@@ -92,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -99,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User Order ID</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -106,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -113,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange</value>
         [DataMember(Name="exchange_type")]
+        
         public string ExchangeType { get; set; }
 
         /// <summary>
@@ -120,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business Type</value>
         [DataMember(Name="business_type")]
+        
         public string BusinessType { get; set; }
 
         /// <summary>
@@ -127,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy/Sell Direction</value>
         [DataMember(Name="side")]
+        
         public string Side { get; set; }
 
         /// <summary>
@@ -134,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading size</value>
         [DataMember(Name="qty")]
+        
         public string Qty { get; set; }
 
         /// <summary>
@@ -141,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill price. Stocks and ETFs use the listing market currency (USD/HKD/KRW/JPY)</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -148,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>fee</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -155,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fee currency</value>
         [DataMember(Name="fee_coin")]
+        
         public string FeeCoin { get; set; }
 
         /// <summary>
@@ -162,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fee Rate</value>
         [DataMember(Name="fee_rate")]
+        
         public string FeeRate { get; set; }
 
         /// <summary>
@@ -169,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Filled Role</value>
         [DataMember(Name="match_role")]
+        
         public string MatchRole { get; set; }
 
         /// <summary>
@@ -176,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized P&amp;L</value>
         [DataMember(Name="rpnl")]
+        
         public string Rpnl { get; set; }
 
         /// <summary>
@@ -183,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Mode</value>
         [DataMember(Name="position_mode")]
+        
         public string PositionMode { get; set; }
 
         /// <summary>
@@ -190,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Direction</value>
         [DataMember(Name="position_side")]
+        
         public string PositionSide { get; set; }
 
         /// <summary>
@@ -197,6 +214,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>

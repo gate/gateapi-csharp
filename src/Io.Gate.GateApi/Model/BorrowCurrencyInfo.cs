@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency Index Price</value>
         [DataMember(Name="index_price")]
+        
         public string IndexPrice { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Outstanding principal</value>
         [DataMember(Name="left_repay_principal")]
+        
         public string LeftRepayPrincipal { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Outstanding interest</value>
         [DataMember(Name="left_repay_interest")]
+        
         public string LeftRepayInterest { get; set; }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Remaining total outstanding value converted to USDT</value>
         [DataMember(Name="left_repay_usdt")]
+        
         public string LeftRepayUsdt { get; set; }
 
         /// <summary>

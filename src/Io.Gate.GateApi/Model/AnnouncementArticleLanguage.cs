@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Language code, for example \&quot;cn\&quot;.</value>
         [DataMember(Name="code")]
+        
         public string Code { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Language name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>

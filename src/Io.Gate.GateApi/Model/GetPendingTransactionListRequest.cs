@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Order tab: &#x60;pending&#x60; in progress (&#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;TEMP&#x60;); &#x60;dispute&#x60; in dispute; default &#x60;pending&#x60;.
         /// </summary>
         /// <value>Order tab: &#x60;pending&#x60; in progress (&#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;TEMP&#x60;); &#x60;dispute&#x60; in dispute; default &#x60;pending&#x60;.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum OrderTabEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order tab: &#x60;pending&#x60; in progress (&#x60;OPEN&#x60;, &#x60;PAID&#x60;, &#x60;LOCKED&#x60;, &#x60;TEMP&#x60;); &#x60;dispute&#x60; in dispute; default &#x60;pending&#x60;.</value>
         [DataMember(Name="order_tab")]
+        
         public OrderTabEnum? OrderTab { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetPendingTransactionListRequest" /> class.
@@ -92,6 +95,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cryptocurrency symbol.</value>
         [DataMember(Name="crypto_currency")]
+        
         public string CryptoCurrency { get; set; }
 
         /// <summary>
@@ -99,6 +103,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency</value>
         [DataMember(Name="fiat_currency")]
+        
         public string FiatCurrency { get; set; }
 
         /// <summary>
@@ -106,6 +111,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order side filter: &#x60;buy&#x60; buy orders; &#x60;sell&#x60; sell orders; empty: all.</value>
         [DataMember(Name="select_type")]
+        
         public string SelectType { get; set; }
 
         /// <summary>
@@ -113,6 +119,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status filter. &#x60;open&#x60; unpaid (&#x60;OPEN&#x60;); &#x60;paid&#x60; paid (&#x60;PAID&#x60;); &#x60;locked&#x60; locked (&#x60;LOCKED&#x60;); &#x60;dispute&#x60; in dispute; empty or omitted uses the default range for &#x60;order_tab&#x60;.</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -120,6 +127,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="txid")]
+        
         public int Txid { get; set; }
 
         /// <summary>
@@ -127,6 +135,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Start timestamp, default is 00:00 89 days ago</value>
         [DataMember(Name="start_time")]
+        
         public int StartTime { get; set; }
 
         /// <summary>
@@ -134,6 +143,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End timestamp, default is 23:59:59 today</value>
         [DataMember(Name="end_time")]
+        
         public int EndTime { get; set; }
 
         /// <summary>

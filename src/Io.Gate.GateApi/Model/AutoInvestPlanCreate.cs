@@ -73,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Plan name。Length: 0-50 characters</value>
         [DataMember(Name="plan_name")]
+        
         public string PlanName { get; set; }
 
         /// <summary>
@@ -80,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Plan description</value>
         [DataMember(Name="plan_des")]
+        
         public string PlanDes { get; set; }
 
         /// <summary>
@@ -87,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Pricing currency，SupportUSDT，BTC</value>
         [DataMember(Name="plan_money")]
+        
         public string PlanMoney { get; set; }
 
         /// <summary>
@@ -94,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Per PeriodAuto InvestAmount，Must &gt; 0，and not exceedThePricing currencyConfigurationSingleMaximumAmount</value>
         [DataMember(Name="plan_amount")]
+        
         public string PlanAmount { get; set; }
 
         /// <summary>
@@ -101,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Enum: daily, weekly, biweekly, monthly, hourly, 4-hourly</value>
         [DataMember(Name="plan_period_type")]
+        
         public string PlanPeriodType { get; set; }
 
         /// <summary>
@@ -108,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cycle day. For monthly: day of month (1-30); For weekly/biweekly: day of week (1-7, 1&#x3D;Monday); For daily/hourly/4-hourly: ignored</value>
         [DataMember(Name="plan_period_day")]
+        
         public long PlanPeriodDay { get; set; }
 
         /// <summary>
@@ -115,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Execution hourAuto Invest 0-23</value>
         [DataMember(Name="plan_period_hour")]
+        
         public long PlanPeriodHour { get; set; }
 
         /// <summary>
@@ -122,6 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Investment portfolio, asset cannot be repeated; Sum of all items&#39; ratios must be 100</value>
         [DataMember(Name="items")]
+        
         public List<AutoInvestPlanCreateItems> Items { get; set; }
 
         /// <summary>
@@ -129,6 +137,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fund source: spot or earn, default: spot</value>
         [DataMember(Name="fund_source")]
+        
         public string FundSource { get; set; }
 
         /// <summary>
@@ -136,6 +145,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fund flow direction: auto_invest or earn, default: auto_invest</value>
         [DataMember(Name="fund_flow")]
+        
         public string FundFlow { get; set; }
 
         /// <summary>
@@ -143,6 +153,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>0 Normal creation, 1 QuickInvestment</value>
         [DataMember(Name="type")]
+        
         public long Type { get; set; }
 
         /// <summary>

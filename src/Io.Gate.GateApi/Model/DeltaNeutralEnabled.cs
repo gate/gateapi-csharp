@@ -49,6 +49,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to enable the account Delta-neutral strategy mode</value>
         [DataMember(Name="enabled")]
+        
         public bool Enabled { get; set; }
 
         /// <summary>

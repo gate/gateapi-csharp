@@ -111,24 +111,28 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets User
         /// </summary>
         [DataMember(Name="user")]
+        
         public string User { get; set; }
 
         /// <summary>
         /// Gets or Sets Contract
         /// </summary>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
         /// Gets or Sets Settle
         /// </summary>
         [DataMember(Name="settle")]
+        
         public string Settle { get; set; }
 
         /// <summary>
@@ -136,36 +140,42 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total size in contracts; positive for buy, negative for sell</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets PriceLimit
         /// </summary>
         [DataMember(Name="price_limit")]
+        
         public string PriceLimit { get; set; }
 
         /// <summary>
         /// Gets or Sets ReduceOnly
         /// </summary>
         [DataMember(Name="reduce_only")]
+        
         public bool ReduceOnly { get; set; }
 
         /// <summary>
         /// Gets or Sets Text
         /// </summary>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
         /// Gets or Sets CreateTime
         /// </summary>
         [DataMember(Name="create_time")]
+        
         public long CreateTime { get; set; }
 
         /// <summary>
         /// Gets or Sets FinishTime
         /// </summary>
         [DataMember(Name="finish_time")]
+        
         public long FinishTime { get; set; }
 
         /// <summary>
@@ -173,6 +183,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Raw status enum</value>
         [DataMember(Name="original_status")]
+        
         public int OriginalStatus { get; set; }
 
         /// <summary>
@@ -180,84 +191,98 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Simplified status, e.g. open / finished</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Reason
         /// </summary>
         [DataMember(Name="reason")]
+        
         public string Reason { get; set; }
 
         /// <summary>
         /// Gets or Sets FillAmount
         /// </summary>
         [DataMember(Name="fill_amount")]
+        
         public string FillAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets AverageFillPrice
         /// </summary>
         [DataMember(Name="average_fill_price")]
+        
         public string AverageFillPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets SuborderId
         /// </summary>
         [DataMember(Name="suborder_id")]
+        
         public string SuborderId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDualMode
         /// </summary>
         [DataMember(Name="is_dual_mode")]
+        
         public bool IsDualMode { get; set; }
 
         /// <summary>
         /// Gets or Sets SideLabel
         /// </summary>
         [DataMember(Name="side_label")]
+        
         public string SideLabel { get; set; }
 
         /// <summary>
         /// Gets or Sets PositionSideOutput
         /// </summary>
         [DataMember(Name="position_side_output")]
+        
         public string PositionSideOutput { get; set; }
 
         /// <summary>
         /// Gets or Sets ChasePrice
         /// </summary>
         [DataMember(Name="chase_price")]
+        
         public string ChasePrice { get; set; }
 
         /// <summary>
         /// Gets or Sets IntervalSec
         /// </summary>
         [DataMember(Name="interval_sec")]
+        
         public int IntervalSec { get; set; }
 
         /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
         [DataMember(Name="updated_at")]
+        
         public long UpdatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets SuborderPrice
         /// </summary>
         [DataMember(Name="suborder_price")]
+        
         public string SuborderPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets SuborderOngoing
         /// </summary>
         [DataMember(Name="suborder_ongoing")]
+        
         public bool SuborderOngoing { get; set; }
 
         /// <summary>
         /// Gets or Sets SuborderFinishAs
         /// </summary>
         [DataMember(Name="suborder_finish_as")]
+        
         public string SuborderFinishAs { get; set; }
 
         /// <summary>
@@ -265,24 +290,28 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PriceType enum: 1 latest, 2 index, 3 mark</value>
         [DataMember(Name="price_type")]
+        
         public int PriceType { get; set; }
 
         /// <summary>
         /// Gets or Sets PriceGapType
         /// </summary>
         [DataMember(Name="price_gap_type")]
+        
         public string PriceGapType { get; set; }
 
         /// <summary>
         /// Gets or Sets PriceGapValue
         /// </summary>
         [DataMember(Name="price_gap_value")]
+        
         public string PriceGapValue { get; set; }
 
         /// <summary>
         /// Gets or Sets StatusCode
         /// </summary>
         [DataMember(Name="status_code")]
+        
         public string StatusCode { get; set; }
 
         /// <summary>
@@ -290,36 +319,42 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation time (seconds.microseconds)</value>
         [DataMember(Name="create_time_precise")]
+        
         public string CreateTimePrecise { get; set; }
 
         /// <summary>
         /// Gets or Sets FinishTimePrecise
         /// </summary>
         [DataMember(Name="finish_time_precise")]
+        
         public string FinishTimePrecise { get; set; }
 
         /// <summary>
         /// Gets or Sets PosMarginMode
         /// </summary>
         [DataMember(Name="pos_margin_mode")]
+        
         public string PosMarginMode { get; set; }
 
         /// <summary>
         /// Gets or Sets PositionMode
         /// </summary>
         [DataMember(Name="position_mode")]
+        
         public string PositionMode { get; set; }
 
         /// <summary>
         /// Gets or Sets Leverage
         /// </summary>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
         /// Gets or Sets ErrorLabel
         /// </summary>
         [DataMember(Name="error_label")]
+        
         public string ErrorLabel { get; set; }
 
         /// <summary>

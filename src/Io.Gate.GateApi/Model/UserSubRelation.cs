@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Subordinate relationship list</value>
         [DataMember(Name="list")]
+        
         public List<UserSub> List { get; set; }
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
+        
         public string Currency { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair", EmitDefaultValue=false)]
+        
         public string CurrencyPair { get; private set; }
 
         /// <summary>
@@ -57,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Actual Rate</value>
         [DataMember(Name="actual_rate", EmitDefaultValue=false)]
+        
         public string ActualRate { get; private set; }
 
         /// <summary>
@@ -64,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest</value>
         [DataMember(Name="interest", EmitDefaultValue=false)]
+        
         public string Interest { get; private set; }
 
         /// <summary>
@@ -71,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status: 0 - fail, 1 - success</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public int Status { get; private set; }
 
         /// <summary>
@@ -78,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Loan Type margin: margin borrowing</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
+        
         public string Type { get; private set; }
 
         /// <summary>
@@ -85,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public long CreateTime { get; private set; }
 
         /// <summary>

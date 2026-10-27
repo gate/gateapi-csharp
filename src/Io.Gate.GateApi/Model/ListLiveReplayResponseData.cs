@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Live stream/replay list</value>
         [DataMember(Name="list")]
+        
         public List<ListLiveReplayResponseDataList> List { get; set; }
 
         /// <summary>

@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Plan ID</value>
         [DataMember(Name="plan_id")]
+        
         public long PlanId { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fund source Spotspot or Flexible Savingsearn，Default spot</value>
         [DataMember(Name="fund_source")]
+        
         public string FundSource { get; set; }
 
         /// <summary>
@@ -67,6 +69,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fund Flow Direction Spotauto_invest or Flexible Savingsearn，Default auto_invest</value>
         [DataMember(Name="fund_flow")]
+        
         public string FundFlow { get; set; }
 
         /// <summary>

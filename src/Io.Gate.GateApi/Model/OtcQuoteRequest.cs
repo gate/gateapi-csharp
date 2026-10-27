@@ -64,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PAY: specify the payment amount (&#x60;pay_amount&#x60; is required); GET: specify the receive amount (&#x60;get_amount&#x60; is required).</value>
         [DataMember(Name="side")]
+        
         public string Side { get; set; }
 
         /// <summary>
@@ -71,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment currency. Supported currencies are available on the OTC web quote page.</value>
         [DataMember(Name="pay_coin")]
+        
         public string PayCoin { get; set; }
 
         /// <summary>
@@ -78,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Receive currency. Supported currencies are available on the OTC web quote page.</value>
         [DataMember(Name="get_coin")]
+        
         public string GetCoin { get; set; }
 
         /// <summary>
@@ -85,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User payment currency amount</value>
         [DataMember(Name="pay_amount")]
+        
         public string PayAmount { get; set; }
 
         /// <summary>
@@ -92,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount of currency received by the user</value>
         [DataMember(Name="get_amount")]
+        
         public string GetAmount { get; set; }
 
         /// <summary>
@@ -99,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Create quote token: 0: quote preview only; 1: generate quote token for order placement.</value>
         [DataMember(Name="create_quote_token")]
+        
         public string CreateQuoteToken { get; set; }
 
         /// <summary>
@@ -106,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Promotion code</value>
         [DataMember(Name="promotion_code")]
+        
         public string PromotionCode { get; set; }
 
         /// <summary>

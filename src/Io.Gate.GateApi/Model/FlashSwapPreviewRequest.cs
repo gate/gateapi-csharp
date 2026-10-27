@@ -57,6 +57,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The name of the asset being sold, as obtained from the \&quot;GET /flash_swap/currency_pairs\&quot; API, which retrieves a list of supported flash swap currency pairs</value>
         [DataMember(Name="sell_currency")]
+        
         public string SellCurrency { get; set; }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to sell. It is required to choose one parameter between &#x60;sell_amount&#x60; and &#x60;buy_amount&#x60;</value>
         [DataMember(Name="sell_amount")]
+        
         public string SellAmount { get; set; }
 
         /// <summary>
@@ -71,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The name of the asset being purchased, as obtained from the \&quot;GET /flash_swap/currency_pairs\&quot; API, which provides a list of supported flash swap currency pairs</value>
         [DataMember(Name="buy_currency")]
+        
         public string BuyCurrency { get; set; }
 
         /// <summary>
@@ -78,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to buy. It is required to choose one parameter between &#x60;sell_amount&#x60; and &#x60;buy_amount&#x60;</value>
         [DataMember(Name="buy_amount")]
+        
         public string BuyAmount { get; set; }
 
         /// <summary>

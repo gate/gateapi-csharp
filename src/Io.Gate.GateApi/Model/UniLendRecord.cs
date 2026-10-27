@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
+        
         public string Currency { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current Amount</value>
         [DataMember(Name="amount", EmitDefaultValue=false)]
+        
         public string Amount { get; private set; }
 
         /// <summary>
@@ -57,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Previous Available Amount</value>
         [DataMember(Name="last_wallet_amount", EmitDefaultValue=false)]
+        
         public string LastWalletAmount { get; private set; }
 
         /// <summary>
@@ -64,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Previous Lent Amount</value>
         [DataMember(Name="last_lent_amount", EmitDefaultValue=false)]
+        
         public string LastLentAmount { get; private set; }
 
         /// <summary>
@@ -71,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Previous Frozen Amount</value>
         [DataMember(Name="last_frozen_amount", EmitDefaultValue=false)]
+        
         public string LastFrozenAmount { get; private set; }
 
         /// <summary>
@@ -78,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Record Type: lend - Lend, redeem - Redeem</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
+        
         public string Type { get; private set; }
 
         /// <summary>
@@ -85,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public long CreateTime { get; private set; }
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets ChangeLog
         /// </summary>
         [DataMember(Name="change_log")]
+        
         public List<TrailChangeLog> ChangeLog { get; set; }
 
         /// <summary>

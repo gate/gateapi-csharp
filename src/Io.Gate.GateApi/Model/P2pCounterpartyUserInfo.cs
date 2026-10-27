@@ -80,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User registration time (formatted string)</value>
         [DataMember(Name="user_timest")]
+        
         public string UserTimest { get; set; }
 
         /// <summary>
@@ -87,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether email is verified. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="email_verified")]
+        
         public string EmailVerified { get; set; }
 
         /// <summary>
@@ -94,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether KYC is completed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="verified")]
+        
         public string Verified { get; set; }
 
         /// <summary>
@@ -101,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether a phone number is bound. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="has_phone")]
+        
         public string HasPhone { get; set; }
 
         /// <summary>
@@ -108,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Username</value>
         [DataMember(Name="user_name")]
+        
         public string UserName { get; set; }
 
         /// <summary>
@@ -115,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User note information</value>
         [DataMember(Name="user_note")]
+        
         public string UserNote { get; set; }
 
         /// <summary>
@@ -122,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total completed orders</value>
         [DataMember(Name="complete_transactions")]
+        
         public string CompleteTransactions { get; set; }
 
         /// <summary>
@@ -129,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of completed buy orders</value>
         [DataMember(Name="paid_transactions")]
+        
         public string PaidTransactions { get; set; }
 
         /// <summary>
@@ -136,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of completed sell orders</value>
         [DataMember(Name="accepted_transactions")]
+        
         public string AcceptedTransactions { get; set; }
 
         /// <summary>
@@ -143,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average time to confirm receipt</value>
         [DataMember(Name="transactions_used_time")]
+        
         public string TransactionsUsedTime { get; set; }
 
         /// <summary>
@@ -150,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cancellation time in last 30 days</value>
         [DataMember(Name="cancelled_used_time_month")]
+        
         public string CancelledUsedTimeMonth { get; set; }
 
         /// <summary>
@@ -157,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of completed orders in last 30 days</value>
         [DataMember(Name="complete_transactions_month")]
+        
         public string CompleteTransactionsMonth { get; set; }
 
         /// <summary>
@@ -164,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Completion rate in last 30 days</value>
         [DataMember(Name="complete_rate_month")]
+        
         public decimal CompleteRateMonth { get; set; }
 
         /// <summary>
@@ -171,6 +184,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether you follow this user. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_follow")]
+        
         public int IsFollow { get; set; }
 
         /// <summary>
@@ -178,6 +192,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether you have traded with this user before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="have_traded")]
+        
         public int HaveTraded { get; set; }
 
         /// <summary>
@@ -185,6 +200,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Encrypted UID</value>
         [DataMember(Name="biz_uid")]
+        
         public string BizUid { get; set; }
 
         /// <summary>
@@ -192,6 +208,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Registration days</value>
         [DataMember(Name="registration_days")]
+        
         public int RegistrationDays { get; set; }
 
         /// <summary>
@@ -199,6 +216,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Days since first trade</value>
         [DataMember(Name="first_trade_days")]
+        
         public int FirstTradeDays { get; set; }
 
         /// <summary>
@@ -206,6 +224,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Single user or composite user</value>
         [DataMember(Name="trade_versatile")]
+        
         public bool TradeVersatile { get; set; }
 
         /// <summary>

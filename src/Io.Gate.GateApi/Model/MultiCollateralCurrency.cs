@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of supported borrowing currencies</value>
         [DataMember(Name="loan_currencies")]
+        
         public List<MultiLoanItem> LoanCurrencies { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of supported collateral currencies</value>
         [DataMember(Name="collateral_currencies")]
+        
         public List<MultiCollateralItem> CollateralCurrencies { get; set; }
 
         /// <summary>

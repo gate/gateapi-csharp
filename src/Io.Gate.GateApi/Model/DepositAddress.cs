@@ -57,6 +57,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency detail</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deposit address</value>
         [DataMember(Name="address")]
+        
         public string Address { get; set; }
 
         /// <summary>
@@ -71,12 +73,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum Deposit Amount</value>
         [DataMember(Name="min_deposit_amount")]
+        
         public string MinDepositAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets MultichainAddresses
         /// </summary>
         [DataMember(Name="multichain_addresses")]
+        
         public List<MultiChainAddressItem> MultichainAddresses { get; set; }
 
         /// <summary>

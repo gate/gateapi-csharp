@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency Index Price</value>
         [DataMember(Name="index_price")]
+        
         public string IndexPrice { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest amount before repayment</value>
         [DataMember(Name="before_amount")]
+        
         public string BeforeAmount { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Converted value of interest before repayment in USDT</value>
         [DataMember(Name="before_amount_usdt")]
+        
         public string BeforeAmountUsdt { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest amount after repayment</value>
         [DataMember(Name="after_amount")]
+        
         public string AfterAmount { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Converted value of interest after repayment in USDT</value>
         [DataMember(Name="after_amount_usdt")]
+        
         public string AfterAmountUsdt { get; set; }
 
         /// <summary>

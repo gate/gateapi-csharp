@@ -65,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Plan ID</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Per PeriodAuto InvestAmount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -79,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency</value>
         [DataMember(Name="money")]
+        
         public string Money { get; set; }
 
         /// <summary>
@@ -86,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Next execution time</value>
         [DataMember(Name="next_time")]
+        
         public long NextTime { get; set; }
 
         /// <summary>
@@ -93,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cycle type</value>
         [DataMember(Name="period_type")]
+        
         public string PeriodType { get; set; }
 
         /// <summary>
@@ -100,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cycle day</value>
         [DataMember(Name="period_day")]
+        
         public long PeriodDay { get; set; }
 
         /// <summary>
@@ -107,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>CycleHours</value>
         [DataMember(Name="period_hour")]
+        
         public long PeriodHour { get; set; }
 
         /// <summary>
@@ -114,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fund Flow Direction</value>
         [DataMember(Name="fund_flow")]
+        
         public string FundFlow { get; set; }
 
         /// <summary>
@@ -121,6 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fund source</value>
         [DataMember(Name="fund_source")]
+        
         public string FundSource { get; set; }
 
         /// <summary>

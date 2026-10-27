@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Array of Contract Names</value>
         [DataMember(Name="contracts")]
+        
         public List<string> Contracts { get; set; }
 
         /// <summary>

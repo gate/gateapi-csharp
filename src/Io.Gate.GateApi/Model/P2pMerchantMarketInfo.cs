@@ -45,12 +45,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Market
         /// </summary>
         [DataMember(Name="market")]
+        
         public string Market { get; set; }
 
         /// <summary>

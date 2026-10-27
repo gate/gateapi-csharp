@@ -100,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -107,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity type ID</value>
         [DataMember(Name="type_id")]
+        
         public int TypeId { get; set; }
 
         /// <summary>
@@ -114,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity type name</value>
         [DataMember(Name="type_name")]
+        
         public string TypeName { get; set; }
 
         /// <summary>
@@ -121,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity name</value>
         [DataMember(Name="competition_name")]
+        
         public string CompetitionName { get; set; }
 
         /// <summary>
@@ -128,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity start time (Unix timestamp, in seconds)</value>
         [DataMember(Name="start_at")]
+        
         public int StartAt { get; set; }
 
         /// <summary>
@@ -135,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity end time (Unix timestamp, in seconds)</value>
         [DataMember(Name="end_at")]
+        
         public int EndAt { get; set; }
 
         /// <summary>
@@ -142,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity image URL (light mode)</value>
         [DataMember(Name="img")]
+        
         public string Img { get; set; }
 
         /// <summary>
@@ -149,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity image URL (dark mode)</value>
         [DataMember(Name="img_dark")]
+        
         public string ImgDark { get; set; }
 
         /// <summary>
@@ -156,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity redirect link</value>
         [DataMember(Name="url")]
+        
         public string Url { get; set; }
 
         /// <summary>
@@ -163,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Popularity score</value>
         [DataMember(Name="hot")]
+        
         public int Hot { get; set; }
 
         /// <summary>
@@ -170,6 +180,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Main title first line</value>
         [DataMember(Name="master_one_line")]
+        
         public string MasterOneLine { get; set; }
 
         /// <summary>
@@ -177,6 +188,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Main title second line</value>
         [DataMember(Name="master_two_line")]
+        
         public string MasterTwoLine { get; set; }
 
         /// <summary>
@@ -184,6 +196,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Subtitle first line</value>
         [DataMember(Name="slave_one_line")]
+        
         public string SlaveOneLine { get; set; }
 
         /// <summary>
@@ -191,6 +204,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Subtitle second line</value>
         [DataMember(Name="slave_two_line")]
+        
         public string SlaveTwoLine { get; set; }
 
         /// <summary>
@@ -198,6 +212,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity title</value>
         [DataMember(Name="competition_title")]
+        
         public string CompetitionTitle { get; set; }
 
         /// <summary>
@@ -205,6 +220,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Pin ID, 0 means not pinned</value>
         [DataMember(Name="top_id")]
+        
         public int TopId { get; set; }
 
         /// <summary>
@@ -212,6 +228,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Parent activity ID, 0 means no parent activity</value>
         [DataMember(Name="parent_id")]
+        
         public int ParentId { get; set; }
 
         /// <summary>
@@ -219,6 +236,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>New activity image URL (light mode)</value>
         [DataMember(Name="new_img")]
+        
         public string NewImg { get; set; }
 
         /// <summary>
@@ -226,6 +244,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>New activity image URL (dark mode)</value>
         [DataMember(Name="new_img_dark")]
+        
         public string NewImgDark { get; set; }
 
         /// <summary>
@@ -233,6 +252,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity tag list</value>
         [DataMember(Name="tag")]
+        
         public List<string> Tag { get; set; }
 
         /// <summary>

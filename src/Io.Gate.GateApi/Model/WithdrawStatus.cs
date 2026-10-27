@@ -66,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency Chinese name</value>
         [DataMember(Name="name_cn")]
+        
         public string NameCn { get; set; }
 
         /// <summary>
@@ -87,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deposit fee</value>
         [DataMember(Name="deposit")]
+        
         public string Deposit { get; set; }
 
         /// <summary>
@@ -94,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Withdrawal fee rate percentage</value>
         [DataMember(Name="withdraw_percent")]
+        
         public string WithdrawPercent { get; set; }
 
         /// <summary>
@@ -101,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed withdrawal fee</value>
         [DataMember(Name="withdraw_fix")]
+        
         public string WithdrawFix { get; set; }
 
         /// <summary>
@@ -108,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Daily allowed withdrawal amount</value>
         [DataMember(Name="withdraw_day_limit")]
+        
         public string WithdrawDayLimit { get; set; }
 
         /// <summary>
@@ -115,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum withdrawal amount</value>
         [DataMember(Name="withdraw_amount_mini")]
+        
         public string WithdrawAmountMini { get; set; }
 
         /// <summary>
@@ -122,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Daily withdrawal amount left</value>
         [DataMember(Name="withdraw_day_limit_remain")]
+        
         public string WithdrawDayLimitRemain { get; set; }
 
         /// <summary>
@@ -129,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum amount for each withdrawal</value>
         [DataMember(Name="withdraw_eachtime_limit")]
+        
         public string WithdrawEachtimeLimit { get; set; }
 
         /// <summary>
@@ -136,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed withdrawal fee on multiple chains</value>
         [DataMember(Name="withdraw_fix_on_chains")]
+        
         public Dictionary<string, string> WithdrawFixOnChains { get; set; }
 
         /// <summary>
@@ -143,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Percentage withdrawal fee on multiple chains</value>
         [DataMember(Name="withdraw_percent_on_chains")]
+        
         public Dictionary<string, string> WithdrawPercentOnChains { get; set; }
 
         /// <summary>

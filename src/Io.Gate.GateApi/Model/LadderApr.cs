@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Annualized interest rate</value>
         [DataMember(Name="apr")]
+        
         public string Apr { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Range lower limit</value>
         [DataMember(Name="left")]
+        
         public string Left { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Range upper limit</value>
         [DataMember(Name="right")]
+        
         public string Right { get; set; }
 
         /// <summary>

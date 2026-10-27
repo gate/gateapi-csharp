@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current leverage ratio</value>
         [DataMember(Name="current_leverage")]
+        
         public string CurrentLeverage { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum adjustable leverage ratio</value>
         [DataMember(Name="min_leverage")]
+        
         public string MinLeverage { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum adjustable leverage ratio</value>
         [DataMember(Name="max_leverage")]
+        
         public string MaxLeverage { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current liabilities</value>
         [DataMember(Name="debit")]
+        
         public string Debit { get; set; }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available Margin</value>
         [DataMember(Name="available_margin")]
+        
         public string AvailableMargin { get; set; }
 
         /// <summary>
@@ -91,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum borrowable amount at current leverage</value>
         [DataMember(Name="borrowable")]
+        
         public string Borrowable { get; set; }
 
         /// <summary>
@@ -98,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum borrowable from margin and maximum borrowable from Earn, whichever is smaller</value>
         [DataMember(Name="except_leverage_borrowable")]
+        
         public string ExceptLeverageBorrowable { get; set; }
 
         /// <summary>

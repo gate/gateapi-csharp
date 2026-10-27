@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method type</value>
         [DataMember(Name="pay_type")]
+        
         public string PayType { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method name</value>
         [DataMember(Name="pay_name")]
+        
         public string PayName { get; set; }
 
         /// <summary>

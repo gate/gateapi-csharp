@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Reward type: 1 &#x3D; points, 2 &#x3D; regular coupon, 3 &#x3D; VIP coupon
         /// </summary>
         /// <value>Reward type: 1 &#x3D; points, 2 &#x3D; regular coupon, 3 &#x3D; VIP coupon</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum PrizeTypeEnum
         {
             /// <summary>
@@ -59,12 +59,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reward type: 1 &#x3D; points, 2 &#x3D; regular coupon, 3 &#x3D; VIP coupon</value>
         [DataMember(Name="prize_type")]
+        
         public PrizeTypeEnum? PrizeType { get; set; }
         /// <summary>
         /// Task status: 0&#x3D;Not claimed (typically a download task waiting to be claimed) 1&#x3D;Received/in progress 2&#x3D;Completed and waiting to be claimed 3&#x3D;Rewards in progress 4&#x3D;Completed/settled 5&#x3D;Expired
         /// </summary>
         /// <value>Task status: 0&#x3D;Not claimed (typically a download task waiting to be claimed) 1&#x3D;Received/in progress 2&#x3D;Completed and waiting to be claimed 3&#x3D;Rewards in progress 4&#x3D;Completed/settled 5&#x3D;Expired</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StatusEnum
         {
             /// <summary>
@@ -104,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Task status: 0&#x3D;Not claimed (typically a download task waiting to be claimed) 1&#x3D;Received/in progress 2&#x3D;Completed and waiting to be claimed 3&#x3D;Rewards in progress 4&#x3D;Completed/settled 5&#x3D;Expired</value>
         [DataMember(Name="status")]
+        
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseExSkillGetBeginnerTaskListRespDataTasks" /> class.
@@ -140,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Rewards Center task ID</value>
         [DataMember(Name="welfare_task_id")]
+        
         public long WelfareTaskId { get; set; }
 
         /// <summary>
@@ -147,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Task center task ID (fixed at 0 for registration tasks)</value>
         [DataMember(Name="task_center_id")]
+        
         public long TaskCenterId { get; set; }
 
         /// <summary>
@@ -154,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Task type: 1&#x3D;KYC secondary certification 2&#x3D;Spot 3&#x3D;Contract 4&#x3D;Invitation 5&#x3D;Quantification 6&#x3D;Yu Bibao 7&#x3D;startup 8&#x3D;First deposit 10&#x3D;Registration task 11&#x3D;Guide task 23&#x3D;Download task</value>
         [DataMember(Name="task_type")]
+        
         public int TaskType { get; set; }
 
         /// <summary>
@@ -161,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Task name</value>
         [DataMember(Name="task_name")]
+        
         public string TaskName { get; set; }
 
         /// <summary>
@@ -168,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Task description, may contain &lt;span&gt; highlight tags</value>
         [DataMember(Name="task_desc")]
+        
         public string TaskDesc { get; set; }
 
         /// <summary>
@@ -175,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reward value</value>
         [DataMember(Name="reward_num")]
+        
         public string RewardNum { get; set; }
 
         /// <summary>
@@ -182,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reward unit (e.g., USDT, BTC)</value>
         [DataMember(Name="reward_unit")]
+        
         public string RewardUnit { get; set; }
 
         /// <summary>

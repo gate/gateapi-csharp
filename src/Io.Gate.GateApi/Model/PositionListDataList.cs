@@ -60,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position ID</value>
         [DataMember(Name="position_id")]
+        
         public long PositionId { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading market code</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Market description</value>
         [DataMember(Name="symbol_desc")]
+        
         public string SymbolDesc { get; set; }
 
         /// <summary>
@@ -81,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Used margin</value>
         [DataMember(Name="margin")]
+        
         public string Margin { get; set; }
 
         /// <summary>
@@ -88,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized PNL</value>
         [DataMember(Name="unrealized_pnl")]
+        
         public string UnrealizedPnl { get; set; }
 
         /// <summary>
@@ -95,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized return rate</value>
         [DataMember(Name="unrealized_pnl_rate")]
+        
         public string UnrealizedPnlRate { get; set; }
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size</value>
         [DataMember(Name="volume")]
+        
         public string Volume { get; set; }
 
         /// <summary>
@@ -109,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average Opening Price</value>
         [DataMember(Name="price_open")]
+        
         public string PriceOpen { get; set; }
 
         /// <summary>
@@ -116,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position direction (Long&#x3D;long position, Short&#x3D;short position)</value>
         [DataMember(Name="position_dir")]
+        
         public string PositionDir { get; set; }
 
         /// <summary>

@@ -55,6 +55,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Recipient UID</value>
         [DataMember(Name="receive_uid")]
+        
         public long ReceiveUid { get; set; }
 
         /// <summary>
@@ -62,6 +63,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -69,6 +71,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>

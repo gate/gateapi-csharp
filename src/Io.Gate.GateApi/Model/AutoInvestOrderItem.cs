@@ -88,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -95,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Type</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -102,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Size</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -109,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Plan ID</value>
         [DataMember(Name="plan_id")]
+        
         public long PlanId { get; set; }
 
         /// <summary>
@@ -116,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>direction</value>
         [DataMember(Name="side")]
+        
         public long Side { get; set; }
 
         /// <summary>
@@ -123,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -130,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Record ID</value>
         [DataMember(Name="record_id")]
+        
         public long RecordId { get; set; }
 
         /// <summary>
@@ -137,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>TotalAmount</value>
         [DataMember(Name="total_money")]
+        
         public string TotalMoney { get; set; }
 
         /// <summary>
@@ -144,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="market")]
+        
         public string Market { get; set; }
 
         /// <summary>
@@ -151,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -158,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation time (Unix timestamp)</value>
         [DataMember(Name="create_time")]
+        
         public long CreateTime { get; set; }
 
         /// <summary>
@@ -165,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total</value>
         [DataMember(Name="total")]
+        
         public string Total { get; set; }
 
         /// <summary>
@@ -172,6 +184,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fund Flow Direction</value>
         [DataMember(Name="fund_flow")]
+        
         public string FundFlow { get; set; }
 
         /// <summary>
@@ -179,6 +192,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error code</value>
         [DataMember(Name="error_code")]
+        
         public long ErrorCode { get; set; }
 
         /// <summary>
@@ -186,6 +200,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error message</value>
         [DataMember(Name="error_msg")]
+        
         public string ErrorMsg { get; set; }
 
         /// <summary>
@@ -193,6 +208,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status</value>
         [DataMember(Name="status")]
+        
         public long Status { get; set; }
 
         /// <summary>

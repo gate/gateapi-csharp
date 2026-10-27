@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair, &#x60;BTC_USDT&#x60; represents selling &#x60;BTC&#x60; and buying &#x60;USDT&#x60;</value>
         [DataMember(Name="currency_pair", EmitDefaultValue=false)]
+        
         public string CurrencyPair { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to sell</value>
         [DataMember(Name="sell_currency", EmitDefaultValue=false)]
+        
         public string SellCurrency { get; private set; }
 
         /// <summary>
@@ -57,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to buy</value>
         [DataMember(Name="buy_currency", EmitDefaultValue=false)]
+        
         public string BuyCurrency { get; private set; }
 
         /// <summary>
@@ -64,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum sell quantity</value>
         [DataMember(Name="sell_min_amount", EmitDefaultValue=false)]
+        
         public string SellMinAmount { get; private set; }
 
         /// <summary>
@@ -71,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum sell quantity</value>
         [DataMember(Name="sell_max_amount", EmitDefaultValue=false)]
+        
         public string SellMaxAmount { get; private set; }
 
         /// <summary>
@@ -78,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum buy quantity</value>
         [DataMember(Name="buy_min_amount", EmitDefaultValue=false)]
+        
         public string BuyMinAmount { get; private set; }
 
         /// <summary>
@@ -85,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum buy quantity</value>
         [DataMember(Name="buy_max_amount", EmitDefaultValue=false)]
+        
         public string BuyMaxAmount { get; private set; }
 
         /// <summary>

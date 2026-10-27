@@ -59,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange type Currently supports only BINANCE, OKX, GATE, BYBIT, HYPERLIQUID, KRAKEN, and LIGHTER</value>
         [DataMember(Name="exchange_type")]
+        
         public string ExchangeType { get; set; }
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Asset Sold</value>
         [DataMember(Name="from_coin")]
+        
         public string FromCoin { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Asset to receive OKX and GATE only support conversion to BTC, ETH, or USDT BYBIT and BINANCE only support conversion to USDT HYPERLIQUID only supports conversion to USDT or USDC KRAKEN only supports conversion to USDT LIGHTER only supports swaps between USDT and USDC</value>
         [DataMember(Name="to_coin")]
+        
         public string ToCoin { get; set; }
 
         /// <summary>
@@ -80,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to sell</value>
         [DataMember(Name="from_amount")]
+        
         public string FromAmount { get; set; }
 
         /// <summary>

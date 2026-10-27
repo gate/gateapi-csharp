@@ -62,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="product_id")]
+        
         public int ProductId { get; set; }
 
         /// <summary>
@@ -69,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Subscription amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -76,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Annual interest rate</value>
         [DataMember(Name="year_rate")]
+        
         public string YearRate { get; set; }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Auto-renewal status: 0 for disabled, 1 for enabled</value>
         [DataMember(Name="reinvest_status")]
+        
         public int ReinvestStatus { get; set; }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redemption payout account type: 1 for spot account</value>
         [DataMember(Name="redeem_account_type")]
+        
         public int RedeemAccountType { get; set; }
 
         /// <summary>
@@ -97,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest rate boost coupon ID, 0 means not used</value>
         [DataMember(Name="financial_rate_id")]
+        
         public int FinancialRateId { get; set; }
 
         /// <summary>
@@ -104,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-business type</value>
         [DataMember(Name="sub_business")]
+        
         public int SubBusiness { get; set; }
 
         /// <summary>

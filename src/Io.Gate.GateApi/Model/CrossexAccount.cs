@@ -86,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public string UserId { get; set; }
 
         /// <summary>
@@ -93,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available Margin</value>
         [DataMember(Name="available_margin")]
+        
         public string AvailableMargin { get; set; }
 
         /// <summary>
@@ -100,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>marginbalance</value>
         [DataMember(Name="margin_balance")]
+        
         public string MarginBalance { get; set; }
 
         /// <summary>
@@ -107,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial Margin</value>
         [DataMember(Name="initial_margin")]
+        
         public string InitialMargin { get; set; }
 
         /// <summary>
@@ -114,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maintenance margin</value>
         [DataMember(Name="maintenance_margin")]
+        
         public string MaintenanceMargin { get; set; }
 
         /// <summary>
@@ -121,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial margin rate</value>
         [DataMember(Name="initial_margin_rate")]
+        
         public string InitialMarginRate { get; set; }
 
         /// <summary>
@@ -128,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maintenance margin rate</value>
         [DataMember(Name="maintenance_margin_rate")]
+        
         public string MaintenanceMarginRate { get; set; }
 
         /// <summary>
@@ -135,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract Position Mode</value>
         [DataMember(Name="position_mode")]
+        
         public string PositionMode { get; set; }
 
         /// <summary>
@@ -142,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account limit</value>
         [DataMember(Name="account_limit")]
+        
         public string AccountLimit { get; set; }
 
         /// <summary>
@@ -149,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -156,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time</value>
         [DataMember(Name="update_time")]
+        
         public string UpdateTime { get; set; }
 
         /// <summary>
@@ -163,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account Mode. CROSS_EXCHANGE: Cross-Exchange Mode; ISOLATED_EXCHANGE: Split-Exchange Mode</value>
         [DataMember(Name="account_mode")]
+        
         public string AccountMode { get; set; }
 
         /// <summary>
@@ -170,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange Type. When account_mode is CROSS_EXCHANGE, it must be CROSSEX; otherwise, it is another exchange.</value>
         [DataMember(Name="exchange_type")]
+        
         public string ExchangeType { get; set; }
 
         /// <summary>
@@ -177,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Asset list: grouped by exchange and currency, returning per-account balances, margin, and PnL details</value>
         [DataMember(Name="assets")]
+        
         public List<CrossexAccountAsset> Assets { get; set; }
 
         /// <summary>

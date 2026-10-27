@@ -59,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Funding rate</value>
         [DataMember(Name="funding_rate")]
+        
         public string FundingRate { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Funding interval (in seconds)</value>
         [DataMember(Name="funding_interval")]
+        
         public string FundingInterval { get; set; }
 
         /// <summary>
@@ -80,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Next funding time (Unix timestamp in milliseconds)</value>
         [DataMember(Name="funding_time")]
+        
         public string FundingTime { get; set; }
 
         /// <summary>

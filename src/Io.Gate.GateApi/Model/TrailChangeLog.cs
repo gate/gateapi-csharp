@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Activation price type: 0-unknown, 1-latest price, 2-index price, 3-mark price
         /// </summary>
         /// <value>Activation price type: 0-unknown, 1-latest price, 2-index price, 3-mark price</value>
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation price type: 0-unknown, 1-latest price, 2-index price, 3-mark price</value>
         [DataMember(Name="price_type", EmitDefaultValue=false)]
+        
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TrailChangeLog" /> class.
@@ -77,6 +79,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
+        
         public long UpdatedAt { get; private set; }
 
         /// <summary>
@@ -84,6 +87,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading quantity in contracts, positive for buy, negative for sell</value>
         [DataMember(Name="amount", EmitDefaultValue=false)]
+        
         public string Amount { get; private set; }
 
         /// <summary>
@@ -91,6 +95,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>true: activate when market price &gt;&#x3D; activation price, false: &lt;&#x3D; activation price</value>
         [DataMember(Name="is_gte", EmitDefaultValue=false)]
+        
         public bool IsGte { get; private set; }
 
         /// <summary>
@@ -98,6 +103,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation price, 0 means trigger immediately</value>
         [DataMember(Name="activation_price", EmitDefaultValue=false)]
+        
         public string ActivationPrice { get; private set; }
 
         /// <summary>
@@ -105,6 +111,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Callback ratio or price distance, e.g., &#x60;0.1&#x60; or &#x60;0.1%&#x60;</value>
         [DataMember(Name="price_offset", EmitDefaultValue=false)]
+        
         public string PriceOffset { get; private set; }
 
         /// <summary>
@@ -112,6 +119,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>true - order creation, false - order modification</value>
         [DataMember(Name="is_create", EmitDefaultValue=false)]
+        
         public bool IsCreate { get; private set; }
 
         /// <summary>

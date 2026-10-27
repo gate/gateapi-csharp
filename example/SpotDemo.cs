@@ -22,9 +22,7 @@ namespace GateApiDemo
             const string currencyPair = "GT_USDT";
             string currency = currencyPair.Split('_')[1];
 
-            // Setting basePath is optional. It defaults to https://api.gateio.ws/api/v4
-            Configuration config = new Configuration {BasePath = _runConfig.HostUsed};
-            config.SetGateApiV4KeyPair(_runConfig.ApiKey, _runConfig.ApiSecret);
+            Configuration config = ExampleAuth.Create(_runConfig);
             SpotApi spotApi = new SpotApi(config);
 
             CurrencyPair pair = spotApi.GetCurrencyPair(currencyPair);
@@ -36,12 +34,16 @@ namespace GateApiDemo
             string lastPrice = tickers[0].Last;
             Debug.Assert(lastPrice != null);
 
-            decimal orderAmount = Convert.ToDecimal(minAmount) * 2;
+            decimal orderAmount = decimal.Parse(minAmount, CultureInfo.InvariantCulture) * 2;
             List<SpotAccount> accounts = spotApi.ListSpotAccounts(currency);
             Debug.Assert(accounts.Count == 1);
-            decimal available = Convert.ToDecimal(accounts[0].Available);
+            decimal available = decimal.Parse(accounts[0].Available, CultureInfo.InvariantCulture);
             Console.WriteLine("Account available: {0} {1}", available, currency);
-            if (available.CompareTo(orderAmount) < 0)
+            // Quote balance must cover base amount times quote price.
+            decimal price = decimal.Parse(lastPrice, CultureInfo.InvariantCulture);
+            if (orderAmount <= 0 || price <= 0 || available < 0)
+                throw new InvalidOperationException("Invalid market amount, price or available balance");
+            if (available.CompareTo(orderAmount * price) < 0)
             {
                 Console.Error.WriteLine("Account balance not enough");
                 return;
@@ -49,7 +51,7 @@ namespace GateApiDemo
 
             Order order = new Order(currencyPair: currencyPair, amount: orderAmount.ToString(CultureInfo.InvariantCulture), price: lastPrice)
             {
-                Account = Order.AccountEnum.Spot,
+                Account = "spot",
                 Side = Order.SideEnum.Buy,
             };
             Console.WriteLine("place a spot {0} order in {1} with amount {2} and price {3}", order.Side,

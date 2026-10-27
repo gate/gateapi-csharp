@@ -74,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>High price</value>
         [DataMember(Name="highest_price")]
+        
         public string HighestPrice { get; set; }
 
         /// <summary>
@@ -81,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Low price</value>
         [DataMember(Name="lowest_price")]
+        
         public string LowestPrice { get; set; }
 
         /// <summary>
@@ -88,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price change percentage (multiplied by 100)</value>
         [DataMember(Name="price_change")]
+        
         public string PriceChange { get; set; }
 
         /// <summary>
@@ -95,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price change amount</value>
         [DataMember(Name="price_change_amount")]
+        
         public string PriceChangeAmount { get; set; }
 
         /// <summary>
@@ -102,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Today&#39;s open price</value>
         [DataMember(Name="today_open_price")]
+        
         public string TodayOpenPrice { get; set; }
 
         /// <summary>
@@ -109,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Previous close price</value>
         [DataMember(Name="last_today_close_price")]
+        
         public string LastTodayClosePrice { get; set; }
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last trading price</value>
         [DataMember(Name="last_price")]
+        
         public string LastPrice { get; set; }
 
         /// <summary>
@@ -123,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bid price</value>
         [DataMember(Name="bid_price")]
+        
         public string BidPrice { get; set; }
 
         /// <summary>
@@ -130,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ask price</value>
         [DataMember(Name="ask_price")]
+        
         public string AskPrice { get; set; }
 
         /// <summary>
@@ -137,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Is favorited</value>
         [DataMember(Name="favorite")]
+        
         public bool Favorite { get; set; }
 
         /// <summary>
@@ -144,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading status (open&#x3D;tradable, closed&#x3D;non-tradable)</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -151,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close time (Unix timestamp in seconds)</value>
         [DataMember(Name="close_time")]
+        
         public long CloseTime { get; set; }
 
         /// <summary>
@@ -158,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Open time (Unix timestamp in seconds)</value>
         [DataMember(Name="open_time")]
+        
         public long OpenTime { get; set; }
 
         /// <summary>
@@ -165,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Next open time (0 means none)</value>
         [DataMember(Name="next_open_time")]
+        
         public long NextOpenTime { get; set; }
 
         /// <summary>
@@ -172,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading mode code</value>
         [DataMember(Name="trade_mode")]
+        
         public string TradeMode { get; set; }
 
         /// <summary>
@@ -179,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Category name</value>
         [DataMember(Name="category_name")]
+        
         public string CategoryName { get; set; }
 
         /// <summary>

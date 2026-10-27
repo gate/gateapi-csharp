@@ -69,6 +69,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cryptocurrency symbol.</value>
         [DataMember(Name="crypto_currency")]
+        
         public string CryptoCurrency { get; set; }
 
         /// <summary>
@@ -76,6 +77,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency</value>
         [DataMember(Name="fiat_currency")]
+        
         public string FiatCurrency { get; set; }
 
         /// <summary>
@@ -83,6 +85,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order side filter: &#x60;buy&#x60; buy orders; &#x60;sell&#x60; sell orders; empty: all.</value>
         [DataMember(Name="select_type")]
+        
         public string SelectType { get; set; }
 
         /// <summary>
@@ -90,6 +93,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status filter. &#x60;closed&#x60;: filled (&#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;); &#x60;cancel&#x60;: canceled (&#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;); &#x60;locked&#x60;: locked (&#x60;LOCKED&#x60;); &#x60;open&#x60;: unpaid (&#x60;OPEN&#x60;); &#x60;paid&#x60;: paid (&#x60;PAID&#x60;); &#x60;completed&#x60;: finished or canceled (&#x60;CANCEL&#x60;, &#x60;BECANCEL&#x60;, &#x60;SCLOSED&#x60;, &#x60;SCANCEL&#x60;, &#x60;ACCEPT&#x60;, &#x60;BCLOSED&#x60;); Empty or omitted uses the endpoint default range.</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -97,6 +101,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="txid")]
+        
         public int Txid { get; set; }
 
         /// <summary>
@@ -104,6 +109,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Start timestamp, default is 00:00 89 days ago</value>
         [DataMember(Name="start_time")]
+        
         public int StartTime { get; set; }
 
         /// <summary>
@@ -111,6 +117,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End timestamp, default is 23:59:59 today</value>
         [DataMember(Name="end_time")]
+        
         public int EndTime { get; set; }
 
         /// <summary>
@@ -118,6 +125,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to flag dispute status in the response. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="query_dispute")]
+        
         public int QueryDispute { get; set; }
 
         /// <summary>
@@ -125,6 +133,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Page number starting at 1; values below 1 are treated as 1.</value>
         [DataMember(Name="page")]
+        
         public int Page { get; set; }
 
         /// <summary>
@@ -132,6 +141,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Orders per page; default 10, max 200.</value>
         [DataMember(Name="per_page")]
+        
         public int PerPage { get; set; }
 
         /// <summary>

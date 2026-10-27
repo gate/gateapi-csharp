@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Price trigger condition  - &#x60;&gt;&#x3D;&#x60;: triggered when market price is greater than or equal to &#x60;price&#x60; - &#x60;&lt;&#x3D;&#x60;: triggered when market price is less than or equal to &#x60;price&#x60; 
         /// </summary>
         /// <value>Price trigger condition  - &#x60;&gt;&#x3D;&#x60;: triggered when market price is greater than or equal to &#x60;price&#x60; - &#x60;&lt;&#x3D;&#x60;: triggered when market price is less than or equal to &#x60;price&#x60; </value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum RuleEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price trigger condition  - &#x60;&gt;&#x3D;&#x60;: triggered when market price is greater than or equal to &#x60;price&#x60; - &#x60;&lt;&#x3D;&#x60;: triggered when market price is less than or equal to &#x60;price&#x60; </value>
         [DataMember(Name="rule")]
+        
         public RuleEnum Rule { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SpotPriceTrigger" /> class.
@@ -81,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trigger price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -88,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum wait time for trigger condition (in seconds). Order will be cancelled if timeout</value>
         [DataMember(Name="expiration")]
+        
         public int Expiration { get; set; }
 
         /// <summary>

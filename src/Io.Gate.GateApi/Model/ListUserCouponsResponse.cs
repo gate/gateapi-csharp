@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed
         /// </summary>
         /// <value>Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum CodeEnum
         {
             /// <summary>
@@ -59,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response Code. &#x60;0&#x60; &#x3D; Success; &#x60;2002&#x60; &#x3D; User not logged in; &#x60;50105&#x60; &#x3D; Input parameter validation failed</value>
         [DataMember(Name="code")]
+        
         public CodeEnum? Code { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ListUserCouponsResponse" /> class.
@@ -80,18 +81,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error identifier code. Empty string on success, machine-readable error label on error</value>
         [DataMember(Name="label")]
+        
         public string Label { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public ListUserCouponsResponseData Data { get; set; }
 
         /// <summary>

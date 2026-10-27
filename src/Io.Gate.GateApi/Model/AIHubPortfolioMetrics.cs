@@ -67,78 +67,91 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets GridProfit
         /// </summary>
         [DataMember(Name="grid_profit")]
+        
         public string GridProfit { get; set; }
 
         /// <summary>
         /// Gets or Sets FloatingPnl
         /// </summary>
         [DataMember(Name="floating_pnl")]
+        
         public string FloatingPnl { get; set; }
 
         /// <summary>
         /// Gets or Sets ArbitrageCount
         /// </summary>
         [DataMember(Name="arbitrage_count")]
+        
         public long ArbitrageCount { get; set; }
 
         /// <summary>
         /// Gets or Sets PriceRange
         /// </summary>
         [DataMember(Name="price_range")]
+        
         public string PriceRange { get; set; }
 
         /// <summary>
         /// Gets or Sets GridCount
         /// </summary>
         [DataMember(Name="grid_count")]
+        
         public long GridCount { get; set; }
 
         /// <summary>
         /// Gets or Sets EstimatedLiquidationPrice
         /// </summary>
         [DataMember(Name="estimated_liquidation_price")]
+        
         public string EstimatedLiquidationPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets PriceFloor
         /// </summary>
         [DataMember(Name="price_floor")]
+        
         public string PriceFloor { get; set; }
 
         /// <summary>
         /// Gets or Sets GridProfitRate
         /// </summary>
         [DataMember(Name="grid_profit_rate")]
+        
         public string GridProfitRate { get; set; }
 
         /// <summary>
         /// Gets or Sets RealizedPnl
         /// </summary>
         [DataMember(Name="realized_pnl")]
+        
         public string RealizedPnl { get; set; }
 
         /// <summary>
         /// Gets or Sets FinishedRounds
         /// </summary>
         [DataMember(Name="finished_rounds")]
+        
         public long FinishedRounds { get; set; }
 
         /// <summary>
         /// Gets or Sets AvgCost
         /// </summary>
         [DataMember(Name="avg_cost")]
+        
         public string AvgCost { get; set; }
 
         /// <summary>
         /// Gets or Sets TakeProfitPrice
         /// </summary>
         [DataMember(Name="take_profit_price")]
+        
         public string TakeProfitPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets MaintenanceMarginRatio
         /// </summary>
         [DataMember(Name="maintenance_margin_ratio")]
+        
         public string MaintenanceMarginRatio { get; set; }
 
         /// <summary>

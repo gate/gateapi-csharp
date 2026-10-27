@@ -62,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Preview result ID</value>
         [DataMember(Name="preview_id")]
+        
         public string PreviewId { get; set; }
 
         /// <summary>
@@ -69,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Name of the asset to be sold, obtained from the interface GET /flash_swap/currency_pairs: Query the list of all trading pairs supporting flash swap</value>
         [DataMember(Name="sell_currency")]
+        
         public string SellCurrency { get; set; }
 
         /// <summary>
@@ -76,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to sell (based on the preview result)</value>
         [DataMember(Name="sell_amount")]
+        
         public string SellAmount { get; set; }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Name of the asset to be bought, obtained from the interface GET /flash_swap/currency_pairs: Query the list of all trading pairs supporting flash swap</value>
         [DataMember(Name="buy_currency")]
+        
         public string BuyCurrency { get; set; }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to buy (based on the preview result)</value>
         [DataMember(Name="buy_amount")]
+        
         public string BuyAmount { get; set; }
 
         /// <summary>

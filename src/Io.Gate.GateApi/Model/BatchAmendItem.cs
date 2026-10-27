@@ -67,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The order ID returned upon successful creation or the custom ID specified by the user during creation (i.e., the &#39;text&#39; field)</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -81,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Default spot, unified account and warehouse-by-store leverage account</value>
         [DataMember(Name="account")]
+        
         public string Account { get; set; }
 
         /// <summary>
@@ -88,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading Quantity. Only one of &#x60;amount&#x60; or &#x60;price&#x60; can be specified</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -95,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading Price. Only one of &#x60;amount&#x60; or &#x60;price&#x60; can be specified</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -102,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom info during order amendment</value>
         [DataMember(Name="amend_text")]
+        
         public string AmendText { get; set; }
 
         /// <summary>
@@ -109,18 +115,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Processing Mode: When placing an order, different fields are returned based on action_mode. This field is only valid during the request and is not included in the response result ACK: Asynchronous mode, only returns key order fields RESULT: No clearing information FULL: Full mode (default)</value>
         [DataMember(Name="action_mode")]
+        
         public string ActionMode { get; set; }
 
         /// <summary>
         /// Gets or Sets StopProfit
         /// </summary>
         [DataMember(Name="stop_profit")]
+        
         public SpotOrderStopProfit StopProfit { get; set; }
 
         /// <summary>
         /// Gets or Sets StopLoss
         /// </summary>
         [DataMember(Name="stop_loss")]
+        
         public SpotOrderStopLoss StopLoss { get; set; }
 
         /// <summary>

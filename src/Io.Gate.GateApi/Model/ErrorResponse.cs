@@ -57,6 +57,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error code</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error message</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
@@ -71,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Empty object</value>
         [DataMember(Name="data")]
+        
         public Object Data { get; set; }
 
         /// <summary>
@@ -78,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unix timestamp</value>
         [DataMember(Name="timestamp")]
+        
         public long Timestamp { get; set; }
 
         /// <summary>

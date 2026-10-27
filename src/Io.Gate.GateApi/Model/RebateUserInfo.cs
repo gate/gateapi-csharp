@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>My inviter&#39;s UID</value>
         [DataMember(Name="invite_uid")]
+        
         public long InviteUid { get; set; }
 
         /// <summary>

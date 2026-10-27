@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bid orders</value>
         [DataMember(Name="bids")]
+        
         public List<OrderBookPrice> Bids { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ask orders</value>
         [DataMember(Name="asks")]
+        
         public List<OrderBookPrice> Asks { get; set; }
 
         /// <summary>

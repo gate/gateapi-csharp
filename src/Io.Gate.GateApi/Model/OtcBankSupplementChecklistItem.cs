@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Supplementary document submission description</value>
         [DataMember(Name="description")]
+        
         public string Description { get; set; }
 
         /// <summary>

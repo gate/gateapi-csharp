@@ -55,6 +55,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error code</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
@@ -62,6 +63,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error message</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
@@ -69,6 +71,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Additional information</value>
         [DataMember(Name="extra")]
+        
         public Object Extra { get; set; }
 
         /// <summary>

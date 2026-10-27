@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction ID</value>
         [DataMember(Name="tran_id")]
+        
         public long TranId { get; set; }
 
         /// <summary>

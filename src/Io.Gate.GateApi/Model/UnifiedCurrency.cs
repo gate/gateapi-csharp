@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency precision</value>
         [DataMember(Name="prec")]
+        
         public string Prec { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum borrowable limit, in currency units</value>
         [DataMember(Name="min_borrow_amount")]
+        
         public string MinBorrowAmount { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User&#39;s maximum borrowable limit, in USDT</value>
         [DataMember(Name="user_max_borrow_amount")]
+        
         public string UserMaxBorrowAmount { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Platform&#39;s maximum borrowable limit, in USDT</value>
         [DataMember(Name="total_max_borrow_amount")]
+        
         public string TotalMaxBorrowAmount { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Lending status  - &#x60;disable&#x60; : Lending prohibited  - &#x60;enable&#x60; : Lending supported</value>
         [DataMember(Name="loan_status")]
+        
         public string LoanStatus { get; set; }
 
         /// <summary>

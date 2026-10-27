@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange</value>
         [DataMember(Name="exchange")]
+        
         public string Exchange { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol list</value>
         [DataMember(Name="symbols")]
+        
         public List<string> Symbols { get; set; }
 
         /// <summary>

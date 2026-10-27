@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity type list</value>
         [DataMember(Name="list")]
+        
         public List<ListActivityTypesResponseDataList> List { get; set; }
 
         /// <summary>

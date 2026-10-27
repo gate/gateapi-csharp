@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation time</value>
         [DataMember(Name="time", EmitDefaultValue=false)]
+        
         public long Time { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="contract", EmitDefaultValue=false)]
+        
         public string Contract { get; private set; }
 
         /// <summary>
@@ -57,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User position size</value>
         [DataMember(Name="size", EmitDefaultValue=false)]
+        
         public string Size { get; private set; }
 
         /// <summary>
@@ -64,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of forced liquidation orders</value>
         [DataMember(Name="order_size", EmitDefaultValue=false)]
+        
         public string OrderSize { get; private set; }
 
         /// <summary>
@@ -71,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation order price</value>
         [DataMember(Name="order_price", EmitDefaultValue=false)]
+        
         public string OrderPrice { get; private set; }
 
         /// <summary>
@@ -78,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation order average taker price</value>
         [DataMember(Name="fill_price", EmitDefaultValue=false)]
+        
         public string FillPrice { get; private set; }
 
         /// <summary>
@@ -85,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reserved field with no current business significance.</value>
         [DataMember(Name="left", EmitDefaultValue=false)]
+        
         public string Left { get; private set; }
 
         /// <summary>

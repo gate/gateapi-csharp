@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Trading limit unit. 0: crypto quantity, 1: fiat amount
         /// </summary>
         /// <value>Trading limit unit. 0: crypto quantity, 1: fiat amount</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum LimitBasisEnum
         {
             /// <summary>
@@ -54,12 +54,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading limit unit. 0: crypto quantity, 1: fiat amount</value>
         [DataMember(Name="limit_basis")]
+        
         public LimitBasisEnum? LimitBasis { get; set; }
         /// <summary>
         /// Trading limit unit label. crypto: crypto quantity, fiat: fiat amount
         /// </summary>
         /// <value>Trading limit unit label. crypto: crypto quantity, fiat: fiat amount</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum LimitBasisTextEnum
         {
             /// <summary>
@@ -81,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading limit unit label. crypto: crypto quantity, fiat: fiat amount</value>
         [DataMember(Name="limit_basis_text")]
+        
         public LimitBasisTextEnum? LimitBasisText { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pAdDetail" /> class.
@@ -178,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Advertisement price.</value>
         [DataMember(Name="rate")]
+        
         public string Rate { get; set; }
 
         /// <summary>
@@ -185,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ad side: &#x60;buy&#x60; buy-crypto ad; &#x60;sell&#x60; sell-crypto ad.</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -192,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Remaining crypto amount on the ad.</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -199,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum quantity per order, denominated by currency_type</value>
         [DataMember(Name="min_amount")]
+        
         public string MinAmount { get; set; }
 
         /// <summary>
@@ -206,6 +214,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum quantity per order, denominated by currency_type</value>
         [DataMember(Name="max_amount")]
+        
         public string MaxAmount { get; set; }
 
         /// <summary>
@@ -213,6 +222,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum trade amount in &#x60;want_type&#x60;.</value>
         [DataMember(Name="fiat_min_amount")]
+        
         public string FiatMinAmount { get; set; }
 
         /// <summary>
@@ -220,6 +230,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum trade amount priced in &#x60;want_type&#x60;.</value>
         [DataMember(Name="fiat_max_amount")]
+        
         public string FiatMaxAmount { get; set; }
 
         /// <summary>
@@ -227,6 +238,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat amount</value>
         [DataMember(Name="total")]
+        
         public string Total { get; set; }
 
         /// <summary>
@@ -234,6 +246,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether Alipay is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="pay_ali")]
+        
         public int PayAli { get; set; }
 
         /// <summary>
@@ -241,6 +254,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether bank transfer is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="pay_bank")]
+        
         public int PayBank { get; set; }
 
         /// <summary>
@@ -248,6 +262,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether PayPal is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="pay_paypal")]
+        
         public int PayPaypal { get; set; }
 
         /// <summary>
@@ -255,6 +270,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether WeChat Pay is supported. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="pay_wechat")]
+        
         public int PayWechat { get; set; }
 
         /// <summary>
@@ -262,6 +278,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method ID list</value>
         [DataMember(Name="pay_type_num")]
+        
         public string PayTypeNum { get; set; }
 
         /// <summary>
@@ -269,6 +286,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>JSON map of payment type -&gt; payment method ID.</value>
         [DataMember(Name="pay_type_json")]
+        
         public string PayTypeJson { get; set; }
 
         /// <summary>
@@ -276,6 +294,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Locked amount</value>
         [DataMember(Name="locked_amount")]
+        
         public string LockedAmount { get; set; }
 
         /// <summary>
@@ -283,6 +302,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="orderid")]
+        
         public int Orderid { get; set; }
 
         /// <summary>
@@ -290,6 +310,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="timestamp")]
+        
         public int Timestamp { get; set; }
 
         /// <summary>
@@ -297,6 +318,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cryptocurrency symbol.</value>
         [DataMember(Name="currency_type")]
+        
         public string CurrencyType { get; set; }
 
         /// <summary>
@@ -304,6 +326,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat type</value>
         [DataMember(Name="want_type")]
+        
         public string WantType { get; set; }
 
         /// <summary>
@@ -311,6 +334,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Hidden price</value>
         [DataMember(Name="hide_rate")]
+        
         public string HideRate { get; set; }
 
         /// <summary>
@@ -318,6 +342,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading terms</value>
         [DataMember(Name="trade_tips")]
+        
         public string TradeTips { get; set; }
 
         /// <summary>
@@ -325,6 +350,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Auto reply</value>
         [DataMember(Name="auto_reply")]
+        
         public string AutoReply { get; set; }
 
         /// <summary>
@@ -332,6 +358,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Floating reference: &#x60;1&#x60; platform; &#x60;2&#x60; Gate; &#x60;3&#x60; spot; &#x60;&lt;&#x3D; 0&#x60; means fixed price.</value>
         [DataMember(Name="rate_ref_id")]
+        
         public int RateRefId { get; set; }
 
         /// <summary>
@@ -339,6 +366,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Floating ratio (absolute value)</value>
         [DataMember(Name="rate_offset")]
+        
         public decimal RateOffset { get; set; }
 
         /// <summary>
@@ -346,6 +374,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ad status: &#x60;OPEN&#x60; listed; &#x60;OFFLIN&#x60; delisted; &#x60;CLOSED&#x60; closed; &#x60;CANCEL&#x60; canceled.</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -353,6 +382,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price type: &#x60;0&#x60; floating; &#x60;1&#x60; fixed.</value>
         [DataMember(Name="rate_fixed")]
+        
         public int RateFixed { get; set; }
 
         /// <summary>
@@ -360,6 +390,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Floating direction: &#x60;0&#x60; markup; &#x60;1&#x60; markdown.</value>
         [DataMember(Name="float_trend")]
+        
         public int FloatTrend { get; set; }
 
         /// <summary>
@@ -367,6 +398,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Timeout (minutes)</value>
         [DataMember(Name="expire_min")]
+        
         public int ExpireMin { get; set; }
 
         /// <summary>
@@ -374,6 +406,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Tier limit</value>
         [DataMember(Name="tier_limit")]
+        
         public int TierLimit { get; set; }
 
         /// <summary>
@@ -381,6 +414,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Registration time limit</value>
         [DataMember(Name="reg_time_limit")]
+        
         public int RegTimeLimit { get; set; }
 
         /// <summary>
@@ -388,6 +422,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether trading with the advertiser is restricted. &#x60;0&#x60;: no; &#x60;1&#x60;: yes.</value>
         [DataMember(Name="advertisers_limit")]
+        
         public int AdvertisersLimit { get; set; }
 
         /// <summary>
@@ -395,6 +430,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to restrict trading with Polymarket users. 0: no restriction, 1: restricted</value>
         [DataMember(Name="polymarket_limit")]
+        
         public int PolymarketLimit { get; set; }
 
         /// <summary>
@@ -402,6 +438,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum limit of completed orders</value>
         [DataMember(Name="min_completed_limit")]
+        
         public int MinCompletedLimit { get; set; }
 
         /// <summary>
@@ -409,6 +446,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum limit of completed orders</value>
         [DataMember(Name="max_completed_limit")]
+        
         public int MaxCompletedLimit { get; set; }
 
         /// <summary>
@@ -416,6 +454,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order count limit</value>
         [DataMember(Name="user_orders_limit")]
+        
         public int UserOrdersLimit { get; set; }
 
         /// <summary>
@@ -423,6 +462,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>30-day completion rate limit</value>
         [DataMember(Name="completed_rate_limit")]
+        
         public decimal CompletedRateLimit { get; set; }
 
         /// <summary>
@@ -430,6 +470,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Restricted nationality (Chinese)</value>
         [DataMember(Name="limit_country_cn")]
+        
         public string LimitCountryCn { get; set; }
 
         /// <summary>
@@ -437,6 +478,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Restricted nationality (English)</value>
         [DataMember(Name="limit_country_en")]
+        
         public string LimitCountryEn { get; set; }
 
         /// <summary>
@@ -444,6 +486,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether auto-delegation is enabled. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_hedge")]
+        
         public int IsHedge { get; set; }
 
         /// <summary>
@@ -451,6 +494,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible.</value>
         [DataMember(Name="hide_payment")]
+        
         public int HidePayment { get; set; }
 
         /// <summary>

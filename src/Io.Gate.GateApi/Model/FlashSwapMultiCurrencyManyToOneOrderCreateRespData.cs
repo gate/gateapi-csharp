@@ -57,6 +57,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order list</value>
         [DataMember(Name="orders")]
+        
         public List<FlashSwapMultiCurrencyOrder> Orders { get; set; }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account Mode</value>
         [DataMember(Name="account_mode")]
+        
         public int AccountMode { get; set; }
 
         /// <summary>
@@ -71,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange timestamp (in milliseconds)</value>
         [DataMember(Name="exchange_time_ms")]
+        
         public long ExchangeTimeMs { get; set; }
 
         /// <summary>
@@ -78,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total amount received</value>
         [DataMember(Name="total_acquire_amount")]
+        
         public string TotalAcquireAmount { get; set; }
 
         /// <summary>

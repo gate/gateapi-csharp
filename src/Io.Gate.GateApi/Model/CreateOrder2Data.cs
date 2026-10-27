@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Queue Task ID (not order ID)</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>

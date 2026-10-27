@@ -78,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Video ID</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -85,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Live stream ID</value>
         [DataMember(Name="stream_id")]
+        
         public string StreamId { get; set; }
 
         /// <summary>
@@ -92,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Video Title</value>
         [DataMember(Name="title")]
+        
         public string Title { get; set; }
 
         /// <summary>
@@ -99,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Author avatar URL</value>
         [DataMember(Name="avatar")]
+        
         public string Avatar { get; set; }
 
         /// <summary>
@@ -106,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Author nickname</value>
         [DataMember(Name="nick")]
+        
         public string Nick { get; set; }
 
         /// <summary>
@@ -113,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Author English nickname</value>
         [DataMember(Name="nick_en")]
+        
         public string NickEn { get; set; }
 
         /// <summary>
@@ -120,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cover image URL</value>
         [DataMember(Name="cover")]
+        
         public string Cover { get; set; }
 
         /// <summary>
@@ -127,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Viewer count</value>
         [DataMember(Name="watched")]
+        
         public int Watched { get; set; }
 
         /// <summary>
@@ -134,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether subscription is required</value>
         [DataMember(Name="subscription_required")]
+        
         public bool SubscriptionRequired { get; set; }
 
         /// <summary>
@@ -141,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the current user has subscribed</value>
         [DataMember(Name="has_subscribed")]
+        
         public bool HasSubscribed { get; set; }
 
         /// <summary>
@@ -148,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Video duration (in seconds)</value>
         [DataMember(Name="duration")]
+        
         public int Duration { get; set; }
 
         /// <summary>
@@ -155,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sort weight</value>
         [DataMember(Name="weight")]
+        
         public int Weight { get; set; }
 
         /// <summary>
@@ -162,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Square user ID</value>
         [DataMember(Name="moments_uid")]
+        
         public string MomentsUid { get; set; }
 
         /// <summary>
@@ -169,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Session ID</value>
         [DataMember(Name="session_id")]
+        
         public string SessionId { get; set; }
 
         /// <summary>
@@ -176,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End time format</value>
         [DataMember(Name="ended_at_format")]
+        
         public string EndedAtFormat { get; set; }
 
         /// <summary>
@@ -183,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End time type</value>
         [DataMember(Name="ended_at_type")]
+        
         public int EndedAtType { get; set; }
 
         /// <summary>
@@ -190,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Author level</value>
         [DataMember(Name="tier")]
+        
         public int Tier { get; set; }
 
         /// <summary>
@@ -197,6 +214,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Tag</value>
         [DataMember(Name="tag")]
+        
         public string Tag { get; set; }
 
         /// <summary>

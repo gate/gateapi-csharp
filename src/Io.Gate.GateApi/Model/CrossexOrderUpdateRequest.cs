@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>modify amount</value>
         [DataMember(Name="qty")]
+        
         public string Qty { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>modify price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>

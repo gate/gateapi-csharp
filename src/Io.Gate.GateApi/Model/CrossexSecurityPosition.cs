@@ -71,6 +71,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public string UserId { get; set; }
 
         /// <summary>
@@ -78,6 +79,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stock or ETF trading pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -85,6 +87,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Latest price in the listing market currency</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -92,6 +95,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position cost price in the listing market currency</value>
         [DataMember(Name="entry_price")]
+        
         public string EntryPrice { get; set; }
 
         /// <summary>
@@ -99,6 +103,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Diluted cost price in the listing market currency</value>
         [DataMember(Name="diluted_cost_price")]
+        
         public string DilutedCostPrice { get; set; }
 
         /// <summary>
@@ -106,6 +111,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized profit and loss in the listing market currency</value>
         [DataMember(Name="upnl")]
+        
         public string Upnl { get; set; }
 
         /// <summary>
@@ -113,6 +119,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size</value>
         [DataMember(Name="position_qty")]
+        
         public string PositionQty { get; set; }
 
         /// <summary>
@@ -120,6 +127,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position value in the listing market currency</value>
         [DataMember(Name="position_value")]
+        
         public string PositionValue { get; set; }
 
         /// <summary>

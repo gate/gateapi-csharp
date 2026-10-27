@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell side; each item is the currency + the swap amount &#x60;amount&#x60; (string decimal).</value>
         [DataMember(Name="from")]
+        
         public List<PreviewFromParam> From { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Target side; each item is currency + **ratio** &#x60;ratio&#x60; (string decimal, such as &#x60;0.5&#x60;). Typical source: &#x60;GET /asset-swap/config&#x60; → &#x60;recommend_v2&#x60; &#x60;schemes[].name&#x60; / &#x60;schemes[].ratio&#x60; of the strategy under a certain group.</value>
         [DataMember(Name="to")]
+        
         public List<PreviewToParam> To { get; set; }
 
         /// <summary>

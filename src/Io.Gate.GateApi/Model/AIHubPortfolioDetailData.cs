@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyType
         /// </summary>
         [DataMember(Name="strategy_type")]
+        
         public StrategyType StrategyType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AIHubPortfolioDetailData" /> class.
@@ -72,42 +73,49 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyId
         /// </summary>
         [DataMember(Name="strategy_id")]
+        
         public string StrategyId { get; set; }
 
         /// <summary>
         /// Gets or Sets Market
         /// </summary>
         [DataMember(Name="market")]
+        
         public string Market { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets BaseInfo
         /// </summary>
         [DataMember(Name="base_info")]
+        
         public AIHubPortfolioBaseInfo BaseInfo { get; set; }
 
         /// <summary>
         /// Gets or Sets Metrics
         /// </summary>
         [DataMember(Name="metrics")]
+        
         public AIHubPortfolioMetrics Metrics { get; set; }
 
         /// <summary>
         /// Gets or Sets Position
         /// </summary>
         [DataMember(Name="position")]
+        
         public AIHubPortfolioPosition Position { get; set; }
 
         /// <summary>
         /// Gets or Sets StopSupported
         /// </summary>
         [DataMember(Name="stop_supported")]
+        
         public bool StopSupported { get; set; }
 
         /// <summary>

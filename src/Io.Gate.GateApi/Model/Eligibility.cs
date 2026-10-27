@@ -33,7 +33,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Defines BlockReasonCodes
         /// </summary>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum BlockReasonCodesEnum
         {
             /// <summary>
@@ -86,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of ineligibility reason codes</value>
         [DataMember(Name="block_reason_codes")]
+        
         public List<BlockReasonCodesEnum> BlockReasonCodes { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Eligibility" /> class.
@@ -112,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether eligible for application</value>
         [DataMember(Name="eligible")]
+        
         public bool Eligible { get; set; }
 
         /// <summary>
@@ -119,6 +123,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of ineligibility reason descriptions</value>
         [DataMember(Name="block_reasons")]
+        
         public List<string> BlockReasons { get; set; }
 
         /// <summary>

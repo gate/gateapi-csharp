@@ -67,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote ID returned by the preview endpoint</value>
         [DataMember(Name="quote_id")]
+        
         public string QuoteId { get; set; }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Hedge type</value>
         [DataMember(Name="hedge_type")]
+        
         public int HedgeType { get; set; }
 
         /// <summary>
@@ -81,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to sell</value>
         [DataMember(Name="sell_asset")]
+        
         public string SellAsset { get; set; }
 
         /// <summary>
@@ -88,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell amount</value>
         [DataMember(Name="sell_amount")]
+        
         public string SellAmount { get; set; }
 
         /// <summary>
@@ -95,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to buy</value>
         [DataMember(Name="buy_asset")]
+        
         public string BuyAsset { get; set; }
 
         /// <summary>
@@ -102,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy amount</value>
         [DataMember(Name="buy_amount")]
+        
         public string BuyAmount { get; set; }
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Client request ID for idempotency check</value>
         [DataMember(Name="client_req_id")]
+        
         public string ClientReqId { get; set; }
 
         /// <summary>
@@ -116,6 +123,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Request timestamp (in milliseconds)</value>
         [DataMember(Name="request_time_ms")]
+        
         public long RequestTimeMs { get; set; }
 
         /// <summary>

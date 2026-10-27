@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Trading market. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
         /// <value>Trading market. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ExchangeEnum
         {
             /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading market. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [DataMember(Name="exchange")]
+        
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ExchangesDataList" /> class.
@@ -89,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Market display name</value>
         [DataMember(Name="exchange_desc")]
+        
         public string ExchangeDesc { get; set; }
 
         /// <summary>
@@ -96,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Market icon</value>
         [DataMember(Name="icon_link")]
+        
         public string IconLink { get; set; }
 
         /// <summary>
@@ -103,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether stock transfer is supported</value>
         [DataMember(Name="support_transfer")]
+        
         public bool SupportTransfer { get; set; }
 
         /// <summary>

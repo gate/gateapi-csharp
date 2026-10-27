@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public Eligibility Data { get; set; }
 
         /// <summary>

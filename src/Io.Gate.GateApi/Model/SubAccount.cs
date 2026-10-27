@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Remark</value>
         [DataMember(Name="remark")]
+        
         public string Remark { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-account login name: Only letters, numbers and underscores are supported, cannot contain other invalid characters</value>
         [DataMember(Name="login_name")]
+        
         public string LoginName { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The sub-account&#39;s password. (Default: the same as main account&#39;s password)</value>
         [DataMember(Name="password")]
+        
         public string Password { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The sub-account&#39;s email address. (Default: the same as main account&#39;s email address)</value>
         [DataMember(Name="email")]
+        
         public string Email { get; set; }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-account status: 1-normal, 2-locked</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
+        
         public int State { get; private set; }
 
         /// <summary>
@@ -91,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-account type: 1-Regular sub-account, 3-Cross margin sub-account</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
+        
         public int Type { get; private set; }
 
         /// <summary>
@@ -98,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-account user ID</value>
         [DataMember(Name="user_id", EmitDefaultValue=false)]
+        
         public long UserId { get; private set; }
 
         /// <summary>
@@ -105,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public long CreateTime { get; private set; }
 
         /// <summary>

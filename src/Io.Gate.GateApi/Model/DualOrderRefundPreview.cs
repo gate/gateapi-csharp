@@ -74,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order creation timestamp</value>
         [DataMember(Name="create_timest")]
+        
         public long CreateTimest { get; set; }
 
         /// <summary>
@@ -81,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order delivery timestamp</value>
         [DataMember(Name="delivery_timest")]
+        
         public long DeliveryTimest { get; set; }
 
         /// <summary>
@@ -88,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Strike price</value>
         [DataMember(Name="exercise_price")]
+        
         public string ExercisePrice { get; set; }
 
         /// <summary>
@@ -95,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Investment amount</value>
         [DataMember(Name="invest_amount")]
+        
         public string InvestAmount { get; set; }
 
         /// <summary>
@@ -102,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Investment Token</value>
         [DataMember(Name="invest_currency")]
+        
         public string InvestCurrency { get; set; }
 
         /// <summary>
@@ -109,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order name identifier</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -123,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Request ID used for actual redemption</value>
         [DataMember(Name="req_id")]
+        
         public string ReqId { get; set; }
 
         /// <summary>
@@ -130,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Refund fee</value>
         [DataMember(Name="refund_service_charge")]
+        
         public long RefundServiceCharge { get; set; }
 
         /// <summary>
@@ -137,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement price</value>
         [DataMember(Name="settle_price")]
+        
         public string SettlePrice { get; set; }
 
         /// <summary>
@@ -144,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement amount</value>
         [DataMember(Name="settlement_amount")]
+        
         public string SettlementAmount { get; set; }
 
         /// <summary>
@@ -151,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement currency</value>
         [DataMember(Name="settlement_currency")]
+        
         public string SettlementCurrency { get; set; }
 
         /// <summary>
@@ -158,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement interest</value>
         [DataMember(Name="settlement_interest")]
+        
         public string SettlementInterest { get; set; }
 
         /// <summary>
@@ -165,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement principal</value>
         [DataMember(Name="settlement_principle")]
+        
         public string SettlementPrinciple { get; set; }
 
         /// <summary>
@@ -172,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -179,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redemption time</value>
         [DataMember(Name="money_back_timest")]
+        
         public long MoneyBackTimest { get; set; }
 
         /// <summary>

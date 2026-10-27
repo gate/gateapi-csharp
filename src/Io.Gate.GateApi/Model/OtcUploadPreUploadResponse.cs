@@ -57,6 +57,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>0 success; 10010400 parameter error</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
@@ -64,12 +65,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response message</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public OtcUploadPreUploadData Data { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Response timestamp (in seconds)</value>
         [DataMember(Name="timestamp")]
+        
         public int Timestamp { get; set; }
 
         /// <summary>

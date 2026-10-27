@@ -41,7 +41,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="ipWhitelist">IP Whitelist.</param>
         /// <param name="perms">perms.</param>
         /// <param name="key">key.</param>
-        public AccountKeyInfo(int state = default(int), int mode = default(int), List<string> name = default(List<string>), List<string> currencyPairs = default(List<string>), long userId = default(long), List<string> ipWhitelist = default(List<string>), List<AccountKeyInfoPerms> perms = default(List<AccountKeyInfoPerms>), AccountDetailKey key = default(AccountDetailKey))
+        public AccountKeyInfo(int state = default(int), int mode = default(int), string name = default(string), List<string> currencyPairs = default(List<string>), long userId = default(long), List<string> ipWhitelist = default(List<string>), List<AccountKeyInfoPerms> perms = default(List<AccountKeyInfoPerms>), AccountDetailKey key = default(AccountDetailKey))
         {
             this.State = state;
             this.Mode = mode;
@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>API key status: 1 - Normal, 2 - Locked, 3 - Frozen (can only be modified, default is 1 when creating)API Key Status: 1 - Normal, 2 - Locked, 3 - Frozen (can only be modified; default is 1 upon creation)</value>
         [DataMember(Name="state")]
+        
         public int State { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User mode: 1 - Classic mode, 2 - Legacy unified mode (can only be specified when creating, cannot be modified)</value>
         [DataMember(Name="mode")]
+        
         public int Mode { get; set; }
 
         /// <summary>
@@ -72,13 +74,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>API Key Remark</value>
         [DataMember(Name="name")]
-        public List<string> Name { get; set; }
+        
+        public string Name { get; set; }
 
         /// <summary>
         /// Trading Pair Whitelist, Maximum 30 Pairs
         /// </summary>
         /// <value>Trading Pair Whitelist, Maximum 30 Pairs</value>
         [DataMember(Name="currency_pairs")]
+        
         public List<string> CurrencyPairs { get; set; }
 
         /// <summary>
@@ -86,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -93,18 +98,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>IP Whitelist</value>
         [DataMember(Name="ip_whitelist")]
+        
         public List<string> IpWhitelist { get; set; }
 
         /// <summary>
         /// Gets or Sets Perms
         /// </summary>
         [DataMember(Name="perms")]
+        
         public List<AccountKeyInfoPerms> Perms { get; set; }
 
         /// <summary>
         /// Gets or Sets Key
         /// </summary>
         [DataMember(Name="key")]
+        
         public AccountDetailKey Key { get; set; }
 
         /// <summary>
@@ -112,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
+        
         public string CreatedAt { get; private set; }
 
         /// <summary>
@@ -119,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last Update Time</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
+        
         public string UpdatedAt { get; private set; }
 
         /// <summary>
@@ -126,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last Access Time</value>
         [DataMember(Name="last_access", EmitDefaultValue=false)]
+        
         public string LastAccess { get; private set; }
 
         /// <summary>
@@ -191,9 +202,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.Name == input.Name ||
-                    this.Name != null &&
-                    input.Name != null &&
-                    this.Name.SequenceEqual(input.Name)
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
                     this.CurrencyPairs == input.CurrencyPairs ||

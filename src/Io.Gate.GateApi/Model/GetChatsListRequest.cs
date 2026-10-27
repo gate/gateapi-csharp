@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID; omit or &#x60;0&#x60; to return the latest order with chat for the user.</value>
         [DataMember(Name="txid")]
+        
         public int Txid { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Timestamp of the last received message for backward incremental fetch; omit on first load.</value>
         [DataMember(Name="lastreceived")]
+        
         public int Lastreceived { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Timestamp of first received message for paging backward; omit on first load.</value>
         [DataMember(Name="firstreceived")]
+        
         public int Firstreceived { get; set; }
 
         /// <summary>

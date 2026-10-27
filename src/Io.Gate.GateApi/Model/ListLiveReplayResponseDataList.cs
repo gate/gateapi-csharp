@@ -48,18 +48,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Content type: streaming &#x3D; live broadcast, video &#x3D; replay video</value>
         [DataMember(Name="content_type")]
+        
         public string ContentType { get; set; }
 
         /// <summary>
         /// Gets or Sets Live
         /// </summary>
         [DataMember(Name="live")]
+        
         public ListLiveReplayResponseDataLive Live { get; set; }
 
         /// <summary>
         /// Gets or Sets Video
         /// </summary>
         [DataMember(Name="video")]
+        
         public ListLiveReplayResponseDataVideo Video { get; set; }
 
         /// <summary>

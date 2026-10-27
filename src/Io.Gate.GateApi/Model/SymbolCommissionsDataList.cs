@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Category code</value>
         [DataMember(Name="category_code")]
+        
         public string CategoryCode { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading symbol code</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Commission rate per lot</value>
         [DataMember(Name="fee_per_lot")]
+        
         public string FeePerLot { get; set; }
 
         /// <summary>

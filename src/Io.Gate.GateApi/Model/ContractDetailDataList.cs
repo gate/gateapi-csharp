@@ -76,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading symbol code</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading symbol description</value>
         [DataMember(Name="symbol_desc")]
+        
         public string SymbolDesc { get; set; }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Category name</value>
         [DataMember(Name="category_name")]
+        
         public string CategoryName { get; set; }
 
         /// <summary>
@@ -97,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract Volume</value>
         [DataMember(Name="contract_volume")]
+        
         public string ContractVolume { get; set; }
 
         /// <summary>
@@ -104,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settle currency</value>
         [DataMember(Name="settlement_currency")]
+        
         public string SettlementCurrency { get; set; }
 
         /// <summary>
@@ -111,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum Order Volume</value>
         [DataMember(Name="max_order_volume")]
+        
         public string MaxOrderVolume { get; set; }
 
         /// <summary>
@@ -118,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum Order Volume</value>
         [DataMember(Name="min_order_volume")]
+        
         public string MinOrderVolume { get; set; }
 
         /// <summary>
@@ -125,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
@@ -132,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price precision (decimal places)</value>
         [DataMember(Name="price_precision")]
+        
         public int PricePrecision { get; set; }
 
         /// <summary>
@@ -139,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stop Loss Price Level</value>
         [DataMember(Name="price_sl_level")]
+        
         public string PriceSlLevel { get; set; }
 
         /// <summary>
@@ -146,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Swap Cost Type</value>
         [DataMember(Name="swap_cost_type")]
+        
         public string SwapCostType { get; set; }
 
         /// <summary>
@@ -153,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy Swap Cost Rate</value>
         [DataMember(Name="buy_swap_cost_rate")]
+        
         public string BuySwapCostRate { get; set; }
 
         /// <summary>
@@ -160,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell Swap Cost Rate</value>
         [DataMember(Name="sell_swap_cost_rate")]
+        
         public string SellSwapCostRate { get; set; }
 
         /// <summary>
@@ -167,6 +180,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>3-Day Swap Cost</value>
         [DataMember(Name="swap_cost_3day")]
+        
         public string SwapCost3day { get; set; }
 
         /// <summary>
@@ -174,6 +188,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading Timezone</value>
         [DataMember(Name="trade_timezone")]
+        
         public string TradeTimezone { get; set; }
 
         /// <summary>
@@ -181,6 +196,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading mode code (0&#x3D;disabled, 1&#x3D;long only, 2&#x3D;short only, 3&#x3D;close only, 4&#x3D;full trading access)</value>
         [DataMember(Name="trade_mode")]
+        
         public string TradeMode { get; set; }
 
         /// <summary>
@@ -188,6 +204,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol icon URL</value>
         [DataMember(Name="icon_link")]
+        
         public string IconLink { get; set; }
 
         /// <summary>

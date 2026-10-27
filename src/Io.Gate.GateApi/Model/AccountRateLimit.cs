@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Frequency limit level (For detailed frequency limit rules, see [Transaction ratio frequency limit](#rate-limit-based-on-fill-ratio))</value>
         [DataMember(Name="tier", EmitDefaultValue=false)]
+        
         public string Tier { get; private set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill rate</value>
         [DataMember(Name="ratio")]
+        
         public string Ratio { get; set; }
 
         /// <summary>
@@ -58,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total fill ratio of main account</value>
         [DataMember(Name="main_ratio", EmitDefaultValue=false)]
+        
         public string MainRatio { get; private set; }
 
         /// <summary>
@@ -65,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
+        
         public string UpdatedAt { get; private set; }
 
         /// <summary>

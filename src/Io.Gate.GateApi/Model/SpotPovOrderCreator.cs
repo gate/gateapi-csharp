@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Buy or sell order
         /// </summary>
         /// <value>Buy or sell order</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SideEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy or sell order</value>
         [DataMember(Name="side")]
+        
         public SideEnum Side { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SpotPovOrderCreator" /> class.
@@ -93,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -100,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -107,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Target participation rate as a percentage. Valid values: 5, 10, 20, and 40</value>
         [DataMember(Name="participation_rate")]
+        
         public int ParticipationRate { get; set; }
 
         /// <summary>
@@ -114,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Time to live. Valid values: 1h, 6h, 12h, 1d, 2d, 3d, 4d, 5d, 6d, and 7d</value>
         [DataMember(Name="ttl")]
+        
         public string Ttl { get; set; }
 
         /// <summary>
@@ -121,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Limit price. If omitted, the market price is used</value>
         [DataMember(Name="limit_price")]
+        
         public string LimitPrice { get; set; }
 
         /// <summary>
@@ -128,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trigger price. If omitted, the order is triggered immediately</value>
         [DataMember(Name="trigger_price")]
+        
         public string TriggerPrice { get; set; }
 
         /// <summary>
@@ -135,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order custom information. Users can set custom ID with this field. Custom fields must meet the following conditions:  1. Must start with &#x60;t-&#x60; 2. Excluding &#x60;t-&#x60;, length cannot exceed 28 bytes 3. Can only contain numbers, letters, underscore(_), hyphen(-) or dot(.) </value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

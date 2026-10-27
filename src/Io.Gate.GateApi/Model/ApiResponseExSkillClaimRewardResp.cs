@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business error code, 0 means success</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error identifier code. Empty string on success, machine-readable error label on error</value>
         [DataMember(Name="label")]
+        
         public string Label { get; set; }
 
         /// <summary>
@@ -66,12 +68,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error description</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public ApiResponseExSkillClaimRewardRespData Data { get; set; }
 
         /// <summary>
@@ -79,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Server timestamp (milliseconds)</value>
         [DataMember(Name="timestamp")]
+        
         public long Timestamp { get; set; }
 
         /// <summary>

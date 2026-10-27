@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>File key</value>
         [DataMember(Name="file_key")]
+        
         public string FileKey { get; set; }
 
         /// <summary>

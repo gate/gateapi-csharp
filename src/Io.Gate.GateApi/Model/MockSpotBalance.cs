@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency equity, where equity &#x3D; balance - borrowed, represents the net delta exposure of your spot positions</value>
         [DataMember(Name="equity")]
+        
         public string Equity { get; set; }
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Orders
         /// </summary>
         [DataMember(Name="orders")]
+        
         public List<ChaseOrder> Orders { get; set; }
 
         /// <summary>

@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public long Id { get; private set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Type: &#x60;borrow&#x60; - borrow, &#x60;repay&#x60; - repay</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
+        
         public string Type { get; private set; }
 
         /// <summary>
@@ -58,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repayment type: none - No repayment type, manual_repay - Manual repayment, auto_repay - Automatic repayment, cancel_auto_repay - Automatic repayment after order cancellation, different_currencies_repayment - Cross-currency repayment</value>
         [DataMember(Name="repayment_type", EmitDefaultValue=false)]
+        
         public string RepaymentType { get; private set; }
 
         /// <summary>
@@ -65,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrowing type, returned when querying loan records: manual_borrow - Manual borrowing, auto_borrow - Automatic borrowing</value>
         [DataMember(Name="borrow_type")]
+        
         public string BorrowType { get; set; }
 
         /// <summary>
@@ -72,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair", EmitDefaultValue=false)]
+        
         public string CurrencyPair { get; private set; }
 
         /// <summary>
@@ -79,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
+        
         public string Currency { get; private set; }
 
         /// <summary>
@@ -86,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrow or repayment amount</value>
         [DataMember(Name="amount", EmitDefaultValue=false)]
+        
         public string Amount { get; private set; }
 
         /// <summary>
@@ -93,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public long CreateTime { get; private set; }
 
         /// <summary>

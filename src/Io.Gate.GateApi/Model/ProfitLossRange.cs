@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Percentage change in price</value>
         [DataMember(Name="price_percentage")]
+        
         public string PricePercentage { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Percentage change in implied volatility</value>
         [DataMember(Name="implied_volatility_percentage")]
+        
         public string ImpliedVolatilityPercentage { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PnL</value>
         [DataMember(Name="profit_loss")]
+        
         public string ProfitLoss { get; set; }
 
         /// <summary>

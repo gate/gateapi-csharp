@@ -67,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Article title to use when querying announcements.</value>
         [DataMember(Name="title_query")]
+        
         public string TitleQuery { get; set; }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Page number. Optional. Pass as a string, for example \&quot;1\&quot;.</value>
         [DataMember(Name="page")]
+        
         public string Page { get; set; }
 
         /// <summary>
@@ -81,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of articles to return per page. Optional. Pass as a string, for example \&quot;5\&quot;.</value>
         [DataMember(Name="size")]
+        
         public string Size { get; set; }
 
         /// <summary>
@@ -88,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Article tags</value>
         [DataMember(Name="tags")]
+        
         public string Tags { get; set; }
 
         /// <summary>
@@ -95,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Query announcements from the last N days, with N passed as a string. For example, on the 10th, pass \&quot;10\&quot; to query announcements from the 1st through the 10th.</value>
         [DataMember(Name="timer")]
+        
         public string Timer { get; set; }
 
         /// <summary>
@@ -102,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Announcement category name.</value>
         [DataMember(Name="cate_name")]
+        
         public string CateName { get; set; }
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Category level, passed as a string: \&quot;1\&quot; or \&quot;2\&quot;.</value>
         [DataMember(Name="cate_level")]
+        
         public string CateLevel { get; set; }
 
         /// <summary>
@@ -116,6 +123,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Subsite ID, passed as a string: \&quot;0\&quot; for the main site or \&quot;177\&quot; for the Turkey site. Defaults to \&quot;0\&quot;.</value>
         [DataMember(Name="sub_website_id")]
+        
         public string SubWebsiteId { get; set; }
 
         /// <summary>
@@ -123,6 +131,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to include pinned articles: 1 to include them or 0 to exclude them. Defaults to 1.</value>
         [DataMember(Name="pinned")]
+        
         public int Pinned { get; set; }
 
         /// <summary>
@@ -130,6 +139,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Query announcement articles updated after this timestamp.</value>
         [DataMember(Name="update_after")]
+        
         public int UpdateAfter { get; set; }
 
         /// <summary>
@@ -137,6 +147,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Language code, for example \&quot;cn\&quot;.</value>
         [DataMember(Name="lang")]
+        
         public string Lang { get; set; }
 
         /// <summary>
@@ -144,6 +155,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to exclude articles with empty content in the current language: 0 to keep them or 1 to exclude them. Defaults to 1.</value>
         [DataMember(Name="filter_empty_content")]
+        
         public int FilterEmptyContent { get; set; }
 
         /// <summary>

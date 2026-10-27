@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage</value>
         [DataMember(Name="Lever")]
+        
         public string Lever { get; set; }
 
         /// <summary>

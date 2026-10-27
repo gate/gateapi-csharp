@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed interest rate for 7-day lending period</value>
         [DataMember(Name="rate_7d")]
+        
         public string Rate7d { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed interest rate for 30-day lending period</value>
         [DataMember(Name="rate_30d")]
+        
         public string Rate30d { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time, timestamp in seconds</value>
         [DataMember(Name="update_time")]
+        
         public long UpdateTime { get; set; }
 
         /// <summary>

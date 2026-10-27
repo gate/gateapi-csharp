@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Close type (1&#x3D;partial close, 2&#x3D;close all)
         /// </summary>
         /// <value>Close type (1&#x3D;partial close, 2&#x3D;close all)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum CloseTypeEnum
         {
             /// <summary>
@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close type (1&#x3D;partial close, 2&#x3D;close all)</value>
         [DataMember(Name="close_type")]
+        
         public CloseTypeEnum CloseType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TradFiSpotClosePositionRequest" /> class.
@@ -79,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -86,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close quantity; required for partial close</value>
         [DataMember(Name="close_volume")]
+        
         public string CloseVolume { get; set; }
 
         /// <summary>

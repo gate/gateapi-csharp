@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets OdTime
         /// </summary>
         [DataMember(Name="od_time")]
+        
         public int OdTime { get; set; }
 
         /// <summary>

@@ -66,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product Name</value>
         [DataMember(Name="instrument_name")]
+        
         public string InstrumentName { get; set; }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>&#x60;call&#x60;: sell high; &#x60;put&#x60;: buy low</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -87,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Investment Token</value>
         [DataMember(Name="invest_currency")]
+        
         public string InvestCurrency { get; set; }
 
         /// <summary>
@@ -94,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Strike Token</value>
         [DataMember(Name="exercise_currency")]
+        
         public string ExerciseCurrency { get; set; }
 
         /// <summary>
@@ -101,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Strike price</value>
         [DataMember(Name="exercise_price")]
+        
         public double ExercisePrice { get; set; }
 
         /// <summary>
@@ -108,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement time</value>
         [DataMember(Name="delivery_time")]
+        
         public int DeliveryTime { get; set; }
 
         /// <summary>
@@ -115,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Annual Yield</value>
         [DataMember(Name="apy_display")]
+        
         public string ApyDisplay { get; set; }
 
         /// <summary>
@@ -122,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum investment amount</value>
         [DataMember(Name="min_amount")]
+        
         public string MinAmount { get; set; }
 
         /// <summary>
@@ -129,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Start Time</value>
         [DataMember(Name="start_time")]
+        
         public int StartTime { get; set; }
 
         /// <summary>
@@ -136,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End time</value>
         [DataMember(Name="end_time")]
+        
         public int EndTime { get; set; }
 
         /// <summary>
@@ -143,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status:  &#x60;NOTSTARTED&#x60; - Not started &#x60;ONGOING&#x60; - In progress &#x60;ENDED&#x60; - Ended</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>

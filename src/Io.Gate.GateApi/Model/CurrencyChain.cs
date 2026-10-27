@@ -60,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Chain name</value>
         [DataMember(Name="chain")]
+        
         public string Chain { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Chain name in Chinese</value>
         [DataMember(Name="name_cn")]
+        
         public string NameCn { get; set; }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Chain name in English</value>
         [DataMember(Name="name_en")]
+        
         public string NameEn { get; set; }
 
         /// <summary>
@@ -81,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Smart contract address for the currency; if no address is available, it will be an empty string</value>
         [DataMember(Name="contract_address")]
+        
         public string ContractAddress { get; set; }
 
         /// <summary>
@@ -88,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>If it is disabled. 0 means NOT being disabled</value>
         [DataMember(Name="is_disabled")]
+        
         public int IsDisabled { get; set; }
 
         /// <summary>
@@ -95,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Is deposit disabled. 0 means not disabled</value>
         [DataMember(Name="is_deposit_disabled")]
+        
         public int IsDepositDisabled { get; set; }
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Is withdrawal disabled. 0 means not disabled</value>
         [DataMember(Name="is_withdraw_disabled")]
+        
         public int IsWithdrawDisabled { get; set; }
 
         /// <summary>
@@ -109,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Withdrawal precision</value>
         [DataMember(Name="decimal")]
+        
         public string Decimal { get; set; }
 
         /// <summary>
@@ -116,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to Include Tag</value>
         [DataMember(Name="is_tag")]
+        
         public int IsTag { get; set; }
 
         /// <summary>

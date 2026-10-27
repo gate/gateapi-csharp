@@ -55,24 +55,28 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items")]
+        
         public List<AIHubPortfolioRunningItem> Items { get; set; }
 
         /// <summary>
         /// Gets or Sets Page
         /// </summary>
         [DataMember(Name="page")]
+        
         public int Page { get; set; }
 
         /// <summary>
         /// Gets or Sets PageSize
         /// </summary>
         [DataMember(Name="page_size")]
+        
         public int PageSize { get; set; }
 
         /// <summary>
         /// Gets or Sets Total
         /// </summary>
         [DataMember(Name="total")]
+        
         public int Total { get; set; }
 
         /// <summary>

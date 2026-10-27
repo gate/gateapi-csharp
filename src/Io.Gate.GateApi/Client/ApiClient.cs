@@ -17,6 +17,8 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 using System.Security.Cryptography;
@@ -45,7 +47,8 @@ namespace Io.Gate.GateApi.Client
             {
                 NamingStrategy = new CamelCaseNamingStrategy
                 {
-                    OverrideSpecifiedNames = true
+                    // Explicit DataMember wire names must survive even when they contain uppercase letters.
+                    OverrideSpecifiedNames = false
                 }
             }
         };
@@ -116,7 +119,19 @@ namespace Io.Gate.GateApi.Client
                 return DateTime.Parse(response.Content,  null, System.Globalization.DateTimeStyles.RoundtripKind);
             }
 
-            if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
+            if (type == typeof(String))
+            {
+                // JSON strings include protocol quotes/escapes; plain-text endpoints retain their raw body.
+                var mediaType = (response.ContentType ?? "").Split(';')[0].Trim();
+                if (String.Equals(mediaType, "application/json", StringComparison.OrdinalIgnoreCase)
+                    || mediaType.EndsWith("+json", StringComparison.OrdinalIgnoreCase))
+                {
+                    return JsonConvert.DeserializeObject<string>(response.Content, _serializerSettings);
+                }
+                return response.Content;
+            }
+
+            if (type.Name.StartsWith("System.Nullable")) // return primitive type
             {
                 return Convert.ChangeType(response.Content, type);
             }
@@ -339,20 +354,24 @@ namespace Io.Gate.GateApi.Client
                     request.AddCookie(cookie.Name, cookie.Value);
                 }
             }
-
-            if (options.RequireApiV4Auth)
+            // RestSharp normally serializes form bodies after OnBeforeRequest. Freeze the
+            // final MIME body here so public HMAC signs exactly the bytes sent on both paths.
+            request.OnBeforeRequest = http =>
             {
-                request.OnBeforeRequest = http =>
+                PrepareFormBody(http);
+                if (options.RequireApiV4Auth)
                 {
                     http.Headers.Add(new HttpHeader{Name = "KEY", Value = configuration.ApiV4Key});
                     long timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
                     http.Headers.Add(new HttpHeader{Name = "Timestamp", Value = timestamp.ToString()});
                     using (SHA512 sha512Hash = SHA512.Create())
                     {
-                        var sourceBytes = Encoding.UTF8.GetBytes(http.RequestBody ?? "");
+                        var sourceBytes = http.RequestBodyBytes ?? Encoding.UTF8.GetBytes(http.RequestBody ?? "");
                         var hashBytes = sha512Hash.ComputeHash(sourceBytes);
                         var bodyHash = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
                         var queryString = string.IsNullOrEmpty(http.Url.Query) ? "" : http.Url.Query.Substring(1);
+                        // APIv4 signs decoded query bytes; the actual transport URL remains escaped.
+                        queryString = Uri.UnescapeDataString(queryString.Replace("+", " "));
                         var signatureString = $"{request.Method}\n{http.Url.AbsolutePath}\n{queryString}\n{bodyHash}\n{timestamp}";
 
                         using (HMACSHA512 hmac = new HMACSHA512(Encoding.UTF8.GetBytes(configuration.ApiV4Secret)))
@@ -364,10 +383,51 @@ namespace Io.Gate.GateApi.Client
                             });
                         }
                     }
-                };
-            }
+                }
+            };
 
             return request;
+        }
+
+        /// <summary>
+        /// Materialize multipart once through the framework MIME encoder. RestSharp's late
+        /// streaming encoder otherwise changes the body after authentication has run.
+        /// </summary>
+        private static void PrepareFormBody(IHttp http)
+        {
+            var contentType = http.Headers.FirstOrDefault(header =>
+                string.Equals(header.Name, "Content-Type", StringComparison.OrdinalIgnoreCase));
+            var multipart = http.AlwaysMultipartFormData || http.Files.Count > 0 ||
+                (contentType != null && contentType.Value.StartsWith("multipart/form-data", StringComparison.OrdinalIgnoreCase));
+            if (!multipart) return;
+
+            using (var content = new MultipartFormDataContent())
+            {
+                foreach (var parameter in http.Parameters)
+                {
+                    content.Add(new StringContent(parameter.Value ?? "", Encoding.UTF8), parameter.Name);
+                }
+                foreach (var file in http.Files)
+                {
+                    using (var stream = new MemoryStream())
+                    {
+                        file.Writer(stream);
+                        var part = new ByteArrayContent(stream.ToArray());
+                        part.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType ?? "application/octet-stream");
+                        content.Add(part, file.Name, file.FileName ?? "no_file_name_provided");
+                    }
+                }
+                // This only encodes the already materialized form/file values,
+                // not a blocking network call. Dispose releases every content part afterwards.
+                http.RequestBodyBytes = content.ReadAsByteArrayAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+                http.RequestContentType = content.Headers.ContentType.ToString();
+            }
+            http.RequestBody = null;
+            http.Parameters.Clear();
+            http.Files.Clear();
+            http.AlwaysMultipartFormData = false;
+            if (contentType != null) contentType.Value = http.RequestContentType;
+            else http.Headers.Add(new HttpHeader {Name = "Content-Type", Value = http.RequestContentType});
         }
 
         private ApiResponse<T> ToApiResponse<T>(IRestResponse<T> response)

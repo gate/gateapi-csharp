@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id", EmitDefaultValue=false)]
+        
         public long UserId { get; private set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mode: 1 - classic 2 - portfolio account</value>
         [DataMember(Name="mode")]
+        
         public int Mode { get; set; }
 
         /// <summary>
@@ -64,12 +66,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>API Key Name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Perms
         /// </summary>
         [DataMember(Name="perms")]
+        
         public List<SubAccountKeyPerms> Perms { get; set; }
 
         /// <summary>
@@ -77,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>IP whitelist (list will be cleared if no value is passed)</value>
         [DataMember(Name="ip_whitelist")]
+        
         public List<string> IpWhitelist { get; set; }
 
         /// <summary>
@@ -84,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>API Key</value>
         [DataMember(Name="key", EmitDefaultValue=false)]
+        
         public string Key { get; private set; }
 
         /// <summary>
@@ -91,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status: 1-Normal 2-Frozen 3-Locked</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
+        
         public int State { get; private set; }
 
         /// <summary>
@@ -98,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
+        
         public long CreatedAt { get; private set; }
 
         /// <summary>
@@ -105,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last Update Time</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
+        
         public long UpdatedAt { get; private set; }
 
         /// <summary>
@@ -112,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last Access Time</value>
         [DataMember(Name="last_access", EmitDefaultValue=false)]
+        
         public long LastAccess { get; private set; }
 
         /// <summary>

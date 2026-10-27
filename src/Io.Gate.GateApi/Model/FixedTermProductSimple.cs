@@ -64,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -71,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -78,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Lock-up period (in days)</value>
         [DataMember(Name="lock_up_period")]
+        
         public int LockUpPeriod { get; set; }
 
         /// <summary>
@@ -85,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Annual interest rate</value>
         [DataMember(Name="year_rate")]
+        
         public string YearRate { get; set; }
 
         /// <summary>
@@ -92,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product type: 1 for regular, 2 for VIP</value>
         [DataMember(Name="type")]
+        
         public int Type { get; set; }
 
         /// <summary>
@@ -99,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether early redemption is supported: 0 for not supported, 1 for supported</value>
         [DataMember(Name="pre_redeem")]
+        
         public int PreRedeem { get; set; }
 
         /// <summary>
@@ -106,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether auto-renewal is supported: 0 for not supported, 1 for supported</value>
         [DataMember(Name="reinvest")]
+        
         public int Reinvest { get; set; }
 
         /// <summary>
@@ -113,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether fixed-to-flexible conversion is supported: 0 for not supported, 1 for supported</value>
         [DataMember(Name="simple_earn")]
+        
         public int SimpleEarn { get; set; }
 
         /// <summary>
@@ -120,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum VIP level requirement, 0 means no restriction</value>
         [DataMember(Name="min_vip")]
+        
         public int MinVip { get; set; }
 
         /// <summary>
@@ -127,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum VIP level requirement, 0 means no restriction</value>
         [DataMember(Name="max_vip")]
+        
         public int MaxVip { get; set; }
 
         /// <summary>
@@ -134,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sale status: 1 for on sale, 2 for sold out</value>
         [DataMember(Name="sale_status")]
+        
         public int SaleStatus { get; set; }
 
         /// <summary>

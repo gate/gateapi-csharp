@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="coin")]
+        
         public string Coin { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum transfer amount (estimated fee included)</value>
         [DataMember(Name="min_trans_amount")]
+        
         public decimal MinTransAmount { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Estimated Fee</value>
         [DataMember(Name="est_fee")]
+        
         public decimal EstFee { get; set; }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Precision</value>
         [DataMember(Name="precision")]
+        
         public int Precision { get; set; }
 
         /// <summary>
@@ -86,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>If it is disabled. 0 means NOT being disabled</value>
         [DataMember(Name="is_disabled")]
+        
         public int IsDisabled { get; set; }
 
         /// <summary>

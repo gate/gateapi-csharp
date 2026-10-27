@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Operation type: lend - Lend, redeem - Redeem
         /// </summary>
         /// <value>Operation type: lend - Lend, redeem - Redeem</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Operation type: lend - Lend, redeem - Redeem</value>
         [DataMember(Name="type")]
+        
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateUniLend" /> class.
@@ -84,6 +87,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -91,6 +95,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to deposit into lending pool</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -98,6 +103,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum interest rate. If set too high, lending may fail and no interest will be earned. Required for lending operations. </value>
         [DataMember(Name="min_rate")]
+        
         public string MinRate { get; set; }
 
         /// <summary>

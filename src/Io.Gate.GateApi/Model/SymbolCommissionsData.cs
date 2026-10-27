@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of symbol commission rates</value>
         [DataMember(Name="list")]
+        
         public List<SymbolCommissionsDataList> List { get; set; }
 
         /// <summary>

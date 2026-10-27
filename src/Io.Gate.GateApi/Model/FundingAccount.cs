@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available assets to lend, which is identical to spot account &#x60;available&#x60;</value>
         [DataMember(Name="available")]
+        
         public string Available { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Locked amount. i.e. amount in &#x60;open&#x60; loans</value>
         [DataMember(Name="locked")]
+        
         public string Locked { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Outstanding loan amount yet to be repaid</value>
         [DataMember(Name="lent")]
+        
         public string Lent { get; set; }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount used for lending. total_lent &#x3D; lent + locked</value>
         [DataMember(Name="total_lent")]
+        
         public string TotalLent { get; set; }
 
         /// <summary>

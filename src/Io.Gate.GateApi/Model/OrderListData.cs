@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order list</value>
         [DataMember(Name="list")]
+        
         public List<OrderListDataList> List { get; set; }
 
         /// <summary>

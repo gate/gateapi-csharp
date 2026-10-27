@@ -66,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer timestamp</value>
         [DataMember(Name="timest", EmitDefaultValue=false)]
+        
         public string Timest { get; private set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Main account user ID</value>
         [DataMember(Name="uid", EmitDefaultValue=false)]
+        
         public string Uid { get; private set; }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub account user ID</value>
         [DataMember(Name="sub_account")]
+        
         public string SubAccount { get; set; }
 
         /// <summary>
@@ -87,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Target sub-account trading account: spot - spot account, futures - perpetual contract account, delivery - delivery contract account, options - options account</value>
         [DataMember(Name="sub_account_type")]
+        
         public string SubAccountType { get; set; }
 
         /// <summary>
@@ -94,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -101,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer Amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -108,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer direction: to - transfer into sub-account, from - transfer out from sub-account</value>
         [DataMember(Name="direction")]
+        
         public string Direction { get; set; }
 
         /// <summary>
@@ -115,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Source of the transfer operation</value>
         [DataMember(Name="source", EmitDefaultValue=false)]
+        
         public string Source { get; private set; }
 
         /// <summary>
@@ -122,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Customer-defined ID to prevent duplicate transfers. Can be a combination of letters (case-sensitive), numbers, hyphens &#39;-&#39;, and underscores &#39;_&#39;. Can be pure letters or pure numbers with length between 1-64 characters</value>
         [DataMember(Name="client_order_id")]
+        
         public string ClientOrderId { get; set; }
 
         /// <summary>
@@ -129,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-account transfer record status, currently only &#39;success&#39;</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>

@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// **Base64** of the file MIME type, required. Only image/png, image/jpeg, image/jpg, and application/pdf are supported.
         /// </summary>
         /// <value>**Base64** of the file MIME type, required. Only image/png, image/jpeg, image/jpg, and application/pdf are supported.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ContentTypeEnum
         {
             /// <summary>
@@ -68,12 +70,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>**Base64** of the file MIME type, required. Only image/png, image/jpeg, image/jpg, and application/pdf are supported.</value>
         [DataMember(Name="content_type")]
+        
         public ContentTypeEnum ContentType { get; set; }
         /// <summary>
         /// Business scene, optional, defaults to general; determines temporary path and production directory after relocation
         /// </summary>
         /// <value>Business scene, optional, defaults to general; determines temporary path and production directory after relocation</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SceneEnum
         {
             /// <summary>
@@ -107,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business scene, optional, defaults to general; determines temporary path and production directory after relocation</value>
         [DataMember(Name="scene")]
+        
         public SceneEnum? Scene { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcUploadPreUploadRequest" /> class.

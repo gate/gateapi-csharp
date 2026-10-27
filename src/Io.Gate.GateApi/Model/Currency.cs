@@ -68,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency symbol</value>
         [DataMember(Name="currency")]
+        
         public string _Currency { get; set; }
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether currency is de-listed</value>
         [DataMember(Name="delisted")]
+        
         public bool Delisted { get; set; }
 
         /// <summary>
@@ -89,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether currency&#39;s withdrawal is disabled (deprecated)</value>
         [DataMember(Name="withdraw_disabled")]
+        
         public bool WithdrawDisabled { get; set; }
 
         /// <summary>
@@ -96,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether currency&#39;s withdrawal is delayed (deprecated)</value>
         [DataMember(Name="withdraw_delayed")]
+        
         public bool WithdrawDelayed { get; set; }
 
         /// <summary>
@@ -103,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether currency&#39;s deposit is disabled (deprecated)</value>
         [DataMember(Name="deposit_disabled")]
+        
         public bool DepositDisabled { get; set; }
 
         /// <summary>
@@ -110,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether currency&#39;s trading is disabled</value>
         [DataMember(Name="trade_disabled")]
+        
         public bool TradeDisabled { get; set; }
 
         /// <summary>
@@ -117,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed fee rate. Only for fixed rate currencies, not valid for normal currencies</value>
         [DataMember(Name="fixed_rate")]
+        
         public string FixedRate { get; set; }
 
         /// <summary>
@@ -124,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The main chain corresponding to the coin</value>
         [DataMember(Name="chain")]
+        
         public string Chain { get; set; }
 
         /// <summary>
@@ -131,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>All links corresponding to coins</value>
         [DataMember(Name="chains")]
+        
         public List<SpotCurrencyChain> Chains { get; set; }
 
         /// <summary>
@@ -138,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total supply</value>
         [DataMember(Name="total_supply")]
+        
         public string TotalSupply { get; set; }
 
         /// <summary>
@@ -145,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Market cap</value>
         [DataMember(Name="market_cap")]
+        
         public string MarketCap { get; set; }
 
         /// <summary>
@@ -152,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency categories - stocks: Stocks - metals: Metals - indices: Indices - forex: Forex - commodities: Commodities</value>
         [DataMember(Name="category")]
+        
         public List<string> Category { get; set; }
 
         /// <summary>

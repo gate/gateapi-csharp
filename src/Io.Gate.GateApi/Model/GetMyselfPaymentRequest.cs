@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency; omit to return all available payment methods.</value>
         [DataMember(Name="fiat")]
+        
         public string Fiat { get; set; }
 
         /// <summary>

@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Currency
         /// </summary>
         /// <value>Currency</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum CurrencyEnum
         {
             /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency")]
+        
         public CurrencyEnum? Currency { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountBalance" /> class.
@@ -89,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account total balance amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -96,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealised_pnl, this field will only appear in futures, options, delivery, and total accounts</value>
         [DataMember(Name="unrealised_pnl")]
+        
         public string UnrealisedPnl { get; set; }
 
         /// <summary>
@@ -103,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total borrowed amount, this field will only appear in margin and cross_margin accounts</value>
         [DataMember(Name="borrowed")]
+        
         public string Borrowed { get; set; }
 
         /// <summary>

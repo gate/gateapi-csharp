@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Working status. 0: resting, 1: working, 2: using custom working hours
         /// </summary>
         /// <value>Working status. 0: resting, 1: working, 2: using custom working hours</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum WorkStatusEnum
         {
             /// <summary>
@@ -59,12 +59,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Working status. 0: resting, 1: working, 2: using custom working hours</value>
         [DataMember(Name="work_status")]
+        
         public WorkStatusEnum WorkStatus { get; set; }
         /// <summary>
         /// Custom working cycle; required when work_status is 2
         /// </summary>
         /// <value>Custom working cycle; required when work_status is 2</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum CycleTypeEnum
         {
             /// <summary>
@@ -86,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom working cycle; required when work_status is 2</value>
         [DataMember(Name="cycle_type")]
+        
         public CycleTypeEnum? CycleType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SetMerchantWorkHoursRequest" /> class.
@@ -116,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Weekly working days, comma-separated values 1-7 for Monday to Sunday; required when work_status is 2 and cycle_type is Weekly</value>
         [DataMember(Name="day_of_week")]
+        
         public string DayOfWeek { get; set; }
 
         /// <summary>
@@ -123,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>UTC timezone offset, ranging from -12 to +14; required when work_status is 2</value>
         [DataMember(Name="time_zone")]
+        
         public string TimeZone { get; set; }
 
         /// <summary>
@@ -130,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom working start time in HH:mm format; required when work_status is 2 and must not be later than end_time</value>
         [DataMember(Name="start_time")]
+        
         public string StartTime { get; set; }
 
         /// <summary>
@@ -137,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom working end time in HH:mm format; required when work_status is 2 and must not be earlier than start_time</value>
         [DataMember(Name="end_time")]
+        
         public string EndTime { get; set; }
 
         /// <summary>

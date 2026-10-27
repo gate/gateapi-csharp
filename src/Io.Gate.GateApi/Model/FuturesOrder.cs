@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// How the order was finished:  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set - position_closed: cancelled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention
         /// </summary>
         /// <value>How the order was finished:  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set - position_closed: cancelled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum FinishAsEnum
         {
             /// <summary>
@@ -98,12 +100,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>How the order was finished:  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set - position_closed: cancelled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention</value>
         [DataMember(Name="finish_as", EmitDefaultValue=false)]
+        
         public FinishAsEnum? FinishAs { get; set; }
         /// <summary>
         /// Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed
         /// </summary>
         /// <value>Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StatusEnum
         {
             /// <summary>
@@ -125,12 +130,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none
         /// </summary>
         /// <value>Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TifEnum
         {
             /// <summary>
@@ -164,12 +172,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none</value>
         [DataMember(Name="tif")]
+        
         public TifEnum? Tif { get; set; }
         /// <summary>
         /// Set side to close dual-mode position. &#x60;close_long&#x60; closes the long side; while &#x60;close_short&#x60; the short one. Note &#x60;size&#x60; also needs to be set to 0
         /// </summary>
         /// <value>Set side to close dual-mode position. &#x60;close_long&#x60; closes the long side; while &#x60;close_short&#x60; the short one. Note &#x60;size&#x60; also needs to be set to 0</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum AutoSizeEnum
         {
             /// <summary>
@@ -191,12 +202,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Set side to close dual-mode position. &#x60;close_long&#x60; closes the long side; while &#x60;close_short&#x60; the short one. Note &#x60;size&#x60; also needs to be set to 0</value>
         [DataMember(Name="auto_size")]
+        
         public AutoSizeEnum? AutoSize { get; set; }
         /// <summary>
         /// Self-Trading Prevention Action. Users can use this field to set self-trade prevention strategies  1. After users join the &#x60;STP Group&#x60;, they can pass &#x60;stp_act&#x60; to limit the user&#39;s self-trade prevention strategy. If &#x60;stp_act&#x60; is not passed, the default is &#x60;cn&#x60; strategy. 2. When the user does not join the &#x60;STP group&#x60;, an error will be returned when passing the &#x60;stp_act&#x60; parameter. 3. If the user did not use &#x60;stp_act&#x60; when placing the order, &#x60;stp_act&#x60; will return &#39;-&#39;  - cn: Cancel newest, cancel new orders and keep old ones - co: Cancel oldest, cancel old orders and keep new ones - cb: Cancel both, both old and new orders will be cancelled
         /// </summary>
         /// <value>Self-Trading Prevention Action. Users can use this field to set self-trade prevention strategies  1. After users join the &#x60;STP Group&#x60;, they can pass &#x60;stp_act&#x60; to limit the user&#39;s self-trade prevention strategy. If &#x60;stp_act&#x60; is not passed, the default is &#x60;cn&#x60; strategy. 2. When the user does not join the &#x60;STP group&#x60;, an error will be returned when passing the &#x60;stp_act&#x60; parameter. 3. If the user did not use &#x60;stp_act&#x60; when placing the order, &#x60;stp_act&#x60; will return &#39;-&#39;  - cn: Cancel newest, cancel new orders and keep old ones - co: Cancel oldest, cancel old orders and keep new ones - cb: Cancel both, both old and new orders will be cancelled</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StpActEnum
         {
             /// <summary>
@@ -230,6 +244,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Self-Trading Prevention Action. Users can use this field to set self-trade prevention strategies  1. After users join the &#x60;STP Group&#x60;, they can pass &#x60;stp_act&#x60; to limit the user&#39;s self-trade prevention strategy. If &#x60;stp_act&#x60; is not passed, the default is &#x60;cn&#x60; strategy. 2. When the user does not join the &#x60;STP group&#x60;, an error will be returned when passing the &#x60;stp_act&#x60; parameter. 3. If the user did not use &#x60;stp_act&#x60; when placing the order, &#x60;stp_act&#x60; will return &#39;-&#39;  - cn: Cancel newest, cancel new orders and keep old ones - co: Cancel oldest, cancel old orders and keep new ones - cb: Cancel both, both old and new orders will be cancelled</value>
         [DataMember(Name="stp_act")]
+        
         public StpActEnum? StpAct { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesOrder" /> class.
@@ -287,6 +302,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures order ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public long Id { get; private set; }
 
         /// <summary>
@@ -294,6 +310,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
+        
         public int User { get; private set; }
 
         /// <summary>
@@ -301,6 +318,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation time of order</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public double CreateTime { get; private set; }
 
         /// <summary>
@@ -308,6 +326,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>OrderUpdateTime</value>
         [DataMember(Name="update_time", EmitDefaultValue=false)]
+        
         public double UpdateTime { get; private set; }
 
         /// <summary>
@@ -315,6 +334,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order finished time. Not returned if order is open</value>
         [DataMember(Name="finish_time", EmitDefaultValue=false)]
+        
         public double FinishTime { get; private set; }
 
         /// <summary>
@@ -322,6 +342,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -329,6 +350,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Required. Trading quantity. Positive for buy, negative for sell. Set to 0 for close position orders.</value>
         [DataMember(Name="size")]
+        
         public string Size { get; set; }
 
         /// <summary>
@@ -336,6 +358,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Display size for iceberg orders. 0 for non-iceberg orders. Note that hidden portions are charged taker fees.</value>
         [DataMember(Name="iceberg")]
+        
         public string Iceberg { get; set; }
 
         /// <summary>
@@ -343,6 +366,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Required. Order Price; a price of 0 with &#x60;tif&#x60; as &#x60;ioc&#x60; represents a market order.</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -350,6 +374,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Set as &#x60;true&#x60; to close the position, with &#x60;size&#x60; set to 0</value>
         [DataMember(Name="close")]
+        
         public bool Close { get; set; }
 
         /// <summary>
@@ -357,6 +382,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Is the order to close position</value>
         [DataMember(Name="is_close", EmitDefaultValue=false)]
+        
         public bool IsClose { get; private set; }
 
         /// <summary>
@@ -364,6 +390,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Set as &#x60;true&#x60; to be reduce-only order</value>
         [DataMember(Name="reduce_only")]
+        
         public bool ReduceOnly { get; set; }
 
         /// <summary>
@@ -371,6 +398,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Is the order reduce-only</value>
         [DataMember(Name="is_reduce_only", EmitDefaultValue=false)]
+        
         public bool IsReduceOnly { get; private set; }
 
         /// <summary>
@@ -378,6 +406,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Is the order for liquidation</value>
         [DataMember(Name="is_liq", EmitDefaultValue=false)]
+        
         public bool IsLiq { get; private set; }
 
         /// <summary>
@@ -385,6 +414,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unfilled quantity</value>
         [DataMember(Name="left", EmitDefaultValue=false)]
+        
         public string Left { get; private set; }
 
         /// <summary>
@@ -392,6 +422,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill price</value>
         [DataMember(Name="fill_price", EmitDefaultValue=false)]
+        
         public string FillPrice { get; private set; }
 
         /// <summary>
@@ -399,6 +430,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom order information. If not empty, must follow the rules below:  1. Prefixed with &#x60;t-&#x60; 2. No longer than 28 bytes without &#x60;t-&#x60; prefix 3. Can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  In addition to user-defined information, the following are internal reserved fields that identify the order source:  - web: Web - api: API call - app: Mobile app - auto_deleveraging: Automatic deleveraging - liquidation: Forced liquidation of positions under the old classic mode - liq-xxx: a. Forced liquidation of positions under the new classic mode, including isolated margin, one-way cross margin, and non-hedged positions under two-way cross margin. b. Forced liquidation of isolated positions under the unified account single-currency margin mode - hedge-liq-xxx: Forced liquidation of hedged positions under the new classic mode two-way cross margin, i.e., simultaneously closing long and short positions - pm_liquidate: Forced liquidation under unified account multi-currency margin mode - comb_margin_liquidate: Forced liquidation under unified account portfolio margin mode - scm_liquidate: Forced liquidation of positions under unified account single-currency margin mode - insurance: Insurance - clear: Contract delisting withdrawal</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -406,6 +438,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Taker fee</value>
         [DataMember(Name="tkfr", EmitDefaultValue=false)]
+        
         public string Tkfr { get; private set; }
 
         /// <summary>
@@ -413,6 +446,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maker fee</value>
         [DataMember(Name="mkfr", EmitDefaultValue=false)]
+        
         public string Mkfr { get; private set; }
 
         /// <summary>
@@ -420,6 +454,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Referrer user ID</value>
         [DataMember(Name="refu", EmitDefaultValue=false)]
+        
         public int Refu { get; private set; }
 
         /// <summary>
@@ -427,6 +462,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Orders between users in the same &#x60;stp_id&#x60; group are not allowed to be self-traded  1. If the &#x60;stp_id&#x60; of two orders being matched is non-zero and equal, they will not be executed. Instead, the corresponding strategy will be executed based on the &#x60;stp_act&#x60; of the taker. 2. &#x60;stp_id&#x60; returns &#x60;0&#x60; by default for orders that have not been set for &#x60;STP group&#x60;</value>
         [DataMember(Name="stp_id", EmitDefaultValue=false)]
+        
         public int StpId { get; private set; }
 
         /// <summary>
@@ -434,6 +470,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The custom data that the user remarked when amending the order</value>
         [DataMember(Name="amend_text", EmitDefaultValue=false)]
+        
         public string AmendText { get; private set; }
 
         /// <summary>
@@ -441,6 +478,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position ID</value>
         [DataMember(Name="pid")]
+        
         public long Pid { get; set; }
 
         /// <summary>
@@ -448,6 +486,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom maximum slippage rate for market orders. If not provided, the default contract settings will be used</value>
         [DataMember(Name="market_order_slip_ratio")]
+        
         public string MarketOrderSlipRatio { get; set; }
 
         /// <summary>
@@ -455,6 +494,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Margin Mode isolated - Isolated Margin, cross - Cross Margin, only passed in simple split position mode</value>
         [DataMember(Name="pos_margin_mode")]
+        
         public string PosMarginMode { get; set; }
 
         /// <summary>
@@ -462,6 +502,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Processing Mode  When placing an order, different fields are returned based on the action_mode  - &#x60;ACK&#x60;: Asynchronous mode, returns only key order fields - &#x60;RESULT&#x60;: No clearing information - &#x60;FULL&#x60;: Full mode (default)</value>
         [DataMember(Name="action_mode")]
+        
         public string ActionMode { get; set; }
 
         /// <summary>
@@ -469,6 +510,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Take profit price</value>
         [DataMember(Name="tpsl_tp_trigger_price")]
+        
         public string TpslTpTriggerPrice { get; set; }
 
         /// <summary>
@@ -476,6 +518,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stop loss price</value>
         [DataMember(Name="tpsl_sl_trigger_price")]
+        
         public string TpslSlTriggerPrice { get; set; }
 
         /// <summary>
@@ -483,6 +526,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Take profit BBO type</value>
         [DataMember(Name="tpsl_tp_bbo_type")]
+        
         public string TpslTpBboType { get; set; }
 
         /// <summary>
@@ -490,6 +534,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stop loss BBO type</value>
         [DataMember(Name="tpsl_sl_bbo_type")]
+        
         public string TpslSlBboType { get; set; }
 
         /// <summary>

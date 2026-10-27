@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency code</value>
         [DataMember(Name="key")]
+        
         public string Key { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="value")]
+        
         public string Value { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency icon URL</value>
         [DataMember(Name="asset_icon_url")]
+        
         public string AssetIconUrl { get; set; }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sort</value>
         [DataMember(Name="sort")]
+        
         public long Sort { get; set; }
 
         /// <summary>

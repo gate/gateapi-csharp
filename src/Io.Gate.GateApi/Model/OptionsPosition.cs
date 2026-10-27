@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
+        
         public int User { get; private set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Underlying</value>
         [DataMember(Name="underlying", EmitDefaultValue=false)]
+        
         public string Underlying { get; private set; }
 
         /// <summary>
@@ -58,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The forward futures price corresponding to the delivery date</value>
         [DataMember(Name="underlying_price", EmitDefaultValue=false)]
+        
         public string UnderlyingPrice { get; private set; }
 
         /// <summary>
@@ -65,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options contract name</value>
         [DataMember(Name="contract", EmitDefaultValue=false)]
+        
         public string Contract { get; private set; }
 
         /// <summary>
@@ -72,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size (contract quantity)</value>
         [DataMember(Name="size", EmitDefaultValue=false)]
+        
         public long Size { get; private set; }
 
         /// <summary>
@@ -79,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Entry size (quote currency)</value>
         [DataMember(Name="entry_price", EmitDefaultValue=false)]
+        
         public string EntryPrice { get; private set; }
 
         /// <summary>
@@ -86,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current mark price (quote currency)</value>
         [DataMember(Name="mark_price", EmitDefaultValue=false)]
+        
         public string MarkPrice { get; private set; }
 
         /// <summary>
@@ -93,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Implied volatility</value>
         [DataMember(Name="mark_iv", EmitDefaultValue=false)]
+        
         public string MarkIv { get; private set; }
 
         /// <summary>
@@ -100,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized PnL</value>
         [DataMember(Name="realised_pnl", EmitDefaultValue=false)]
+        
         public string RealisedPnl { get; private set; }
 
         /// <summary>
@@ -107,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only.</value>
         [DataMember(Name="unrealised_pnl", EmitDefaultValue=false)]
+        
         public string UnrealisedPnl { get; private set; }
 
         /// <summary>
@@ -114,12 +124,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current pending order quantity</value>
         [DataMember(Name="pending_orders", EmitDefaultValue=false)]
+        
         public int PendingOrders { get; private set; }
 
         /// <summary>
         /// Gets or Sets CloseOrder
         /// </summary>
         [DataMember(Name="close_order")]
+        
         public OptionsPositionCloseOrder CloseOrder { get; set; }
 
         /// <summary>
@@ -127,6 +139,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Greek letter delta</value>
         [DataMember(Name="delta", EmitDefaultValue=false)]
+        
         public string Delta { get; private set; }
 
         /// <summary>
@@ -134,6 +147,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Greek letter gamma</value>
         [DataMember(Name="gamma", EmitDefaultValue=false)]
+        
         public string Gamma { get; private set; }
 
         /// <summary>
@@ -141,6 +155,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Greek letter vega</value>
         [DataMember(Name="vega", EmitDefaultValue=false)]
+        
         public string Vega { get; private set; }
 
         /// <summary>
@@ -148,6 +163,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Greek letter theta</value>
         [DataMember(Name="theta", EmitDefaultValue=false)]
+        
         public string Theta { get; private set; }
 
         /// <summary>

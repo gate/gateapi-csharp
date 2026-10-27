@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// &#x60;personal&#x60; or &#x60;enterprise&#x60;, matching the supplementary document submission type; &#x60;items[].description&#x60; describes the submission requirements for each item
         /// </summary>
         /// <value>&#x60;personal&#x60; or &#x60;enterprise&#x60;, matching the supplementary document submission type; &#x60;items[].description&#x60; describes the submission requirements for each item</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum UserTypeEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>&#x60;personal&#x60; or &#x60;enterprise&#x60;, matching the supplementary document submission type; &#x60;items[].description&#x60; describes the submission requirements for each item</value>
         [DataMember(Name="user_type")]
+        
         public UserTypeEnum UserType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OtcBankSupplementChecklistResponseData" /> class.
@@ -78,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items")]
+        
         public List<OtcBankSupplementChecklistItem> Items { get; set; }
 
         /// <summary>

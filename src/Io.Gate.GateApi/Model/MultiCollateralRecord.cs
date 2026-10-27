@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Collateral record ID</value>
         [DataMember(Name="record_id")]
+        
         public long RecordId { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Collateral ratio before adjustment</value>
         [DataMember(Name="before_ltv")]
+        
         public string BeforeLtv { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Collateral ratio before adjustment</value>
         [DataMember(Name="after_ltv")]
+        
         public string AfterLtv { get; set; }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Operation time, timestamp in seconds</value>
         [DataMember(Name="operate_time")]
+        
         public long OperateTime { get; set; }
 
         /// <summary>
@@ -91,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrowing Currency List</value>
         [DataMember(Name="borrow_currencies")]
+        
         public List<MultiCollateralRecordCurrency> BorrowCurrencies { get; set; }
 
         /// <summary>
@@ -98,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Collateral Currency List</value>
         [DataMember(Name="collateral_currencies")]
+        
         public List<MultiCollateralRecordCurrency> CollateralCurrencies { get; set; }
 
         /// <summary>

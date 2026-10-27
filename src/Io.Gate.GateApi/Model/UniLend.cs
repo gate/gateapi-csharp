@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
+        
         public string Currency { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current amount</value>
         [DataMember(Name="current_amount", EmitDefaultValue=false)]
+        
         public string CurrentAmount { get; private set; }
 
         /// <summary>
@@ -57,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Lending Amount</value>
         [DataMember(Name="amount", EmitDefaultValue=false)]
+        
         public string Amount { get; private set; }
 
         /// <summary>
@@ -64,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Lent Amount</value>
         [DataMember(Name="lent_amount", EmitDefaultValue=false)]
+        
         public string LentAmount { get; private set; }
 
         /// <summary>
@@ -71,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Pending Redemption Amount</value>
         [DataMember(Name="frozen_amount", EmitDefaultValue=false)]
+        
         public string FrozenAmount { get; private set; }
 
         /// <summary>
@@ -78,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum interest rate</value>
         [DataMember(Name="min_rate", EmitDefaultValue=false)]
+        
         public string MinRate { get; private set; }
 
         /// <summary>
@@ -85,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment</value>
         [DataMember(Name="interest_status", EmitDefaultValue=false)]
+        
         public string InterestStatus { get; private set; }
 
         /// <summary>
@@ -92,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Non-reinvested Amount</value>
         [DataMember(Name="reinvest_left_amount", EmitDefaultValue=false)]
+        
         public string ReinvestLeftAmount { get; private set; }
 
         /// <summary>
@@ -99,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Lending Order Creation Time</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public long CreateTime { get; private set; }
 
         /// <summary>
@@ -106,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Lending Order Last Update Time</value>
         [DataMember(Name="update_time", EmitDefaultValue=false)]
+        
         public long UpdateTime { get; private set; }
 
         /// <summary>

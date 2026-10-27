@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repayment currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency Index Price</value>
         [DataMember(Name="index_price")]
+        
         public string IndexPrice { get; set; }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repayment amount</value>
         [DataMember(Name="repaid_amount")]
+        
         public string RepaidAmount { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Principal</value>
         [DataMember(Name="repaid_principal")]
+        
         public string RepaidPrincipal { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest</value>
         [DataMember(Name="repaid_interest")]
+        
         public string RepaidInterest { get; set; }
 
         /// <summary>
@@ -89,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repayment amount converted to USDT</value>
         [DataMember(Name="repaid_amount_usdt")]
+        
         public string RepaidAmountUsdt { get; set; }
 
         /// <summary>

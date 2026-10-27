@@ -85,6 +85,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -92,6 +93,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public int UserId { get; set; }
 
         /// <summary>
@@ -99,6 +101,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Request source</value>
         [DataMember(Name="source")]
+        
         public string Source { get; set; }
 
         /// <summary>
@@ -106,6 +109,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Application ID</value>
         [DataMember(Name="app_id")]
+        
         public string AppId { get; set; }
 
         /// <summary>
@@ -113,6 +117,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Client request ID</value>
         [DataMember(Name="client_req_id")]
+        
         public string ClientReqId { get; set; }
 
         /// <summary>
@@ -120,6 +125,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to sell</value>
         [DataMember(Name="sell_asset")]
+        
         public string SellAsset { get; set; }
 
         /// <summary>
@@ -127,6 +133,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell amount</value>
         [DataMember(Name="sell_amount")]
+        
         public string SellAmount { get; set; }
 
         /// <summary>
@@ -134,6 +141,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell amount display value</value>
         [DataMember(Name="sell_amount_show")]
+        
         public string SellAmountShow { get; set; }
 
         /// <summary>
@@ -141,6 +149,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to buy</value>
         [DataMember(Name="buy_asset")]
+        
         public string BuyAsset { get; set; }
 
         /// <summary>
@@ -148,6 +157,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy amount</value>
         [DataMember(Name="buy_amount")]
+        
         public string BuyAmount { get; set; }
 
         /// <summary>
@@ -155,6 +165,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy amount display value</value>
         [DataMember(Name="buy_amount_show")]
+        
         public string BuyAmountShow { get; set; }
 
         /// <summary>
@@ -162,6 +173,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -169,6 +181,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -176,6 +189,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote ID</value>
         [DataMember(Name="quote_id")]
+        
         public string QuoteId { get; set; }
 
         /// <summary>
@@ -183,6 +197,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Failure error code, 0 means success</value>
         [DataMember(Name="failed_code")]
+        
         public int FailedCode { get; set; }
 
         /// <summary>
@@ -190,6 +205,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Failure Reason</value>
         [DataMember(Name="failed_reason")]
+        
         public string FailedReason { get; set; }
 
         /// <summary>
@@ -197,6 +213,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -204,6 +221,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation timestamp (in milliseconds)</value>
         [DataMember(Name="create_time_ms")]
+        
         public long CreateTimeMs { get; set; }
 
         /// <summary>
@@ -211,6 +229,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account Mode</value>
         [DataMember(Name="account_mode")]
+        
         public int AccountMode { get; set; }
 
         /// <summary>

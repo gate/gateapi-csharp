@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Web Help Link</value>
         [DataMember(Name="web")]
+        
         public string Web { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>App Help Link</value>
         [DataMember(Name="app")]
+        
         public string App { get; set; }
 
         /// <summary>

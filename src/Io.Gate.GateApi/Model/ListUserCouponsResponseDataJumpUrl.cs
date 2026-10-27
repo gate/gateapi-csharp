@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Web Redirect Link</value>
         [DataMember(Name="web")]
+        
         public string Web { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>App Redirect Link</value>
         [DataMember(Name="app")]
+        
         public string App { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mini Program Redirect Link (empty string for most types)</value>
         [DataMember(Name="mini_app")]
+        
         public string MiniApp { get; set; }
 
         /// <summary>

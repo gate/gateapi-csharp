@@ -51,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="txid")]
+        
         public int Txid { get; set; }
 
         /// <summary>
@@ -58,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Channel tag: omit or empty for normal P2P; use &#x60;web3&#x60; for Web3 orders.</value>
         [DataMember(Name="channel")]
+        
         public string Channel { get; set; }
 
         /// <summary>

@@ -45,6 +45,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Currency
         /// </summary>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Estimated Annualized Rate, e.g., &#x60;est_rate&#x60;: &#x60;0.8014&#x60; represents an annualized rate of 80.14%</value>
         [DataMember(Name="est_rate")]
+        
         public string EstRate { get; set; }
 
         /// <summary>

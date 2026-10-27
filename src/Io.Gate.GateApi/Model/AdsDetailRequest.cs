@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Advertisement ID.</value>
         [DataMember(Name="adv_no")]
+        
         public string AdvNo { get; set; }
 
         /// <summary>

@@ -53,12 +53,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency, optional: USDT or BTC</value>
         [DataMember(Name="money")]
+        
         public string Money { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name="items")]
+        
         public List<AutoInvestMinInvestAmountItems> Items { get; set; }
 
         /// <summary>

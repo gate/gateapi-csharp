@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Coupon status. Regular coupon: NOT_ACTIVE (pending activation), ACTIVATED (activated), TO_BE_USED (to be used), EXPIRED (expired), RECYCLED (recycled), INVALID (invalidated), USED (used), UNKNOWN (unknown), LOCKED (locked, P2P only). Task coupon: TASK_START (task not started), TASK_WAIT (task in progress), TASK_DONE (task completed, processing), TASK_EXPIRED (task not completed, expired), TASK_NOT_STARTED_EXPIRED (not started, expired), TASK_RECEIVE_SUCCESS (reward claimed successfully), TASK_RECEIVE_FAIL (reward claim failed)
         /// </summary>
         /// <value>Coupon status. Regular coupon: NOT_ACTIVE (pending activation), ACTIVATED (activated), TO_BE_USED (to be used), EXPIRED (expired), RECYCLED (recycled), INVALID (invalidated), USED (used), UNKNOWN (unknown), LOCKED (locked, P2P only). Task coupon: TASK_START (task not started), TASK_WAIT (task in progress), TASK_DONE (task completed, processing), TASK_EXPIRED (task not completed, expired), TASK_NOT_STARTED_EXPIRED (not started, expired), TASK_RECEIVE_SUCCESS (reward claimed successfully), TASK_RECEIVE_FAIL (reward claim failed)</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StatusEnum
         {
             /// <summary>
@@ -140,12 +142,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Coupon status. Regular coupon: NOT_ACTIVE (pending activation), ACTIVATED (activated), TO_BE_USED (to be used), EXPIRED (expired), RECYCLED (recycled), INVALID (invalidated), USED (used), UNKNOWN (unknown), LOCKED (locked, P2P only). Task coupon: TASK_START (task not started), TASK_WAIT (task in progress), TASK_DONE (task completed, processing), TASK_EXPIRED (task not completed, expired), TASK_NOT_STARTED_EXPIRED (not started, expired), TASK_RECEIVE_SUCCESS (reward claimed successfully), TASK_RECEIVE_FAIL (reward claim failed)</value>
         [DataMember(Name="status")]
+        
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Whether it is a task coupon. &#x60;0&#x60; &#x3D; regular coupon; &#x60;1&#x60; &#x3D; task coupon
         /// </summary>
         /// <value>Whether it is a task coupon. &#x60;0&#x60; &#x3D; regular coupon; &#x60;1&#x60; &#x3D; task coupon</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum IsTaskCouponEnum
         {
             /// <summary>
@@ -165,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether it is a task coupon. &#x60;0&#x60; &#x3D; regular coupon; &#x60;1&#x60; &#x3D; task coupon</value>
         [DataMember(Name="is_task_coupon")]
+        
         public IsTaskCouponEnum? IsTaskCoupon { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetUserCouponDetailResponseData" /> class.
@@ -196,7 +200,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="taskExpireAt">Task validity expiration timestamp (Unix). Task coupon: claim validity deadline (0 means unlimited); regular coupon: fixed at 0.</param>
         /// <param name="taskCompletedAt">Task completion timestamp (Unix). Task coupon: task completion time (0 means not completed); regular coupon (from_task&#x3D;true): completion time of the source task.</param>
         /// <param name="extra">[Detail endpoint only] Coupon detail attributes organized by display blocks. The frontend renders them as separate sections. Point card type always returns empty array []. Other types return a 2D array composed of blocks: block 1 &#x3D; coupon name/source/status, block 2 &#x3D; coupon core attributes, block 3 &#x3D; time information. Each item contains: type (display type: string/timestamp/day/hour/status/btn), key (label text, i18n translated), value (string or integer, timestamp type is Unix timestamp).</param>
-        public GetUserCouponDetailResponseData(int id = default(int), int detailsId = default(int), string couponType = default(string), string name = default(string), string amount = default(string), string originAmount = default(string), string currency = default(string), string ruleNew = default(string), StatusEnum? status = default(StatusEnum?), ListUserCouponsResponseDataJumpUrl jumpUrl = default(ListUserCouponsResponseDataJumpUrl), ListUserCouponsResponseDataHelpUrl helpUrl = default(ListUserCouponsResponseDataHelpUrl), int expireTime = default(int), int expireTimeOrderBy = default(int), int expireSecond = default(int), bool hasUsageHistory = default(bool), bool hasProgress = default(bool), ListUserCouponsResponseDataProgressConfig progressConfig = default(ListUserCouponsResponseDataProgressConfig), Object activationInfo = default(Object), IsTaskCouponEnum? isTaskCoupon = default(IsTaskCouponEnum?), bool upgradeToast = default(bool), bool fromTask = default(bool), string taskTitle = default(string), string taskDesc = default(string), int taskStartAt = default(int), int taskExpireAt = default(int), int taskCompletedAt = default(int), List<List<Object>> extra = default(List<List<Object>>))
+        public GetUserCouponDetailResponseData(int id = default(int), int detailsId = default(int), string couponType = default(string), string name = default(string), string amount = default(string), string originAmount = default(string), string currency = default(string), string ruleNew = default(string), StatusEnum? status = default(StatusEnum?), ListUserCouponsResponseDataJumpUrl jumpUrl = default(ListUserCouponsResponseDataJumpUrl), ListUserCouponsResponseDataHelpUrl helpUrl = default(ListUserCouponsResponseDataHelpUrl), int expireTime = default(int), int expireTimeOrderBy = default(int), int expireSecond = default(int), bool hasUsageHistory = default(bool), bool hasProgress = default(bool), ListUserCouponsResponseDataProgressConfig progressConfig = default(ListUserCouponsResponseDataProgressConfig), Object activationInfo = default(Object), IsTaskCouponEnum? isTaskCoupon = default(IsTaskCouponEnum?), bool upgradeToast = default(bool), bool fromTask = default(bool), string taskTitle = default(string), string taskDesc = default(string), int taskStartAt = default(int), int taskExpireAt = default(int), int taskCompletedAt = default(int), List<List<CouponDetailExtraItem>> extra = default(List<List<CouponDetailExtraItem>>))
         {
             this.Id = id;
             this.DetailsId = detailsId;
@@ -232,6 +236,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Coupon distribution record ID (coupon_send_issuing_log.id)</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -239,6 +244,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User coupon detail table primary key (separate table per type). This field is 0 for task coupons</value>
         [DataMember(Name="details_id")]
+        
         public int DetailsId { get; set; }
 
         /// <summary>
@@ -246,6 +252,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Coupon type, enum values same as the &#x60;coupon_type&#x60; parameter</value>
         [DataMember(Name="coupon_type")]
+        
         public string CouponType { get; set; }
 
         /// <summary>
@@ -253,6 +260,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Coupon display name (i18n translated)</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -260,6 +268,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Coupon denomination (formatted string with thousand separators). Meaning by type: point card &#x3D; balance, interest rate boost coupon &#x3D; rate percentage (e.g., &#39;5%&#39;), VIP trial card &#x3D; VIP level number, position voucher &#x3D; face value x leverage, others &#x3D; face value</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -267,6 +276,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Original denomination (string with trailing zeros removed). Only returned for point card type, other types do not have this field</value>
         [DataMember(Name="origin_amount")]
+        
         public string OriginAmount { get; set; }
 
         /// <summary>
@@ -274,6 +284,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Denomination unit. Point card &#x3D; &#39;POINT&#39;, interest rate boost coupon &#x3D; &#39;APR&#39;, VIP trial card &#x3D; &#39;VIP&#39;, Alpha cash coupon &#x3D; base currency, others &#x3D; uppercase currency symbol (e.g., &#39;USDT&#39;/&#39;GT&#39;)</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -281,18 +292,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Coupon usage rule text (i18n translated). Only has value in the detail endpoint, fixed as empty string in the list endpoint</value>
         [DataMember(Name="rule_new")]
+        
         public string RuleNew { get; set; }
 
         /// <summary>
         /// Gets or Sets JumpUrl
         /// </summary>
         [DataMember(Name="jump_url")]
+        
         public ListUserCouponsResponseDataJumpUrl JumpUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets HelpUrl
         /// </summary>
         [DataMember(Name="help_url")]
+        
         public ListUserCouponsResponseDataHelpUrl HelpUrl { get; set; }
 
         /// <summary>
@@ -300,6 +314,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Expiration time (Unix timestamp). Some types replace this with actual expiration time after activation/use. Point card type returns 0. Rules by type: cash&#x3D;not_received_expired_timest; contract_bonus&#x3D;uses expired_timest after activation/use; contract_bonus_new&#x3D;always uses expired_timest; position_voucher/tradfi_position_voucher&#x3D;uses expire_time after use; robot_bonus&#x3D;not_received_expired_timest; commission_rebate&#x3D;uses use_deadline after use; crypto_loan_interest&#x3D;not_using_expired_timest; copy_trading&#x3D;not_using_expired_timest; alpha_voucher&#x3D;not_received_expired_timest; etf_voucher&#x3D;not_using_expired_timest</value>
         [DataMember(Name="expire_time")]
+        
         public int ExpireTime { get; set; }
 
         /// <summary>
@@ -307,6 +322,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sorting expiration time (from the original expiration time of the distribution record, unaffected by activation)</value>
         [DataMember(Name="expire_time_order_by")]
+        
         public int ExpireTimeOrderBy { get; set; }
 
         /// <summary>
@@ -314,6 +330,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Seconds remaining until expiration, returns 0 if expired or point card type</value>
         [DataMember(Name="expire_second")]
+        
         public int ExpireSecond { get; set; }
 
         /// <summary>
@@ -321,6 +338,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether there is a usage history. Fixed as true for point card type, determined by type for others</value>
         [DataMember(Name="has_usage_history")]
+        
         public bool HasUsageHistory { get; set; }
 
         /// <summary>
@@ -328,12 +346,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to display a progress bar. Only true for commission_rebate, interest_voucher, and qualifying task coupons</value>
         [DataMember(Name="has_progress")]
+        
         public bool HasProgress { get; set; }
 
         /// <summary>
         /// Gets or Sets ProgressConfig
         /// </summary>
         [DataMember(Name="progress_config")]
+        
         public ListUserCouponsResponseDataProgressConfig ProgressConfig { get; set; }
 
         /// <summary>
@@ -341,6 +361,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Type-specific activation information. Types without specific fields return empty object {}. Fields by type: interest_voucher&#x3D;{supported_pairs (applicable trading pairs), transaction_type}; contract_bonus_new&#x3D;{received_expired_hour (valid hours after activation)}; contract_bonus&#x3D;{check_unified_account_mode, received_expired_days (valid days after activation), abtest}; commission_rebate&#x3D;{market (spot/margin/futures/alpha/etf/tradfi), market_name (market display name)}; robot_bonus&#x3D;{designated_bots (ENABLED &#x3D; designated strategies only / DISABLED &#x3D; unrestricted)}; position_voucher&#x3D;{symbols (applicable trading pairs, empty &#x3D; unrestricted), leverage, need_user_funds (0 &#x3D; no user funds required / 1 &#x3D; user funds required), user_funds_amount, position_bonus (original face value)}; tradfi_position_voucher&#x3D;{symbols, leverage, position_bonus}; etf_voucher&#x3D;{currency_markets (ETF market list, comma-separated), amount (original face value)}</value>
         [DataMember(Name="activation_info")]
+        
         public Object ActivationInfo { get; set; }
 
         /// <summary>
@@ -348,6 +369,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to prompt the user to upgrade the App (true when the app version is too old to support the coupon)</value>
         [DataMember(Name="upgrade_toast")]
+        
         public bool UpgradeToast { get; set; }
 
         /// <summary>
@@ -355,6 +377,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>[Detail endpoint only] Whether this regular coupon was obtained by completing a task (a sub-coupon automatically issued after task completion). Regular coupons may be true, task coupons are always false</value>
         [DataMember(Name="from_task")]
+        
         public bool FromTask { get; set; }
 
         /// <summary>
@@ -362,6 +385,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Task title. Task coupons have value; regular coupons return empty string (but task_title is not assigned when from_task&#x3D;true)</value>
         [DataMember(Name="task_title")]
+        
         public string TaskTitle { get; set; }
 
         /// <summary>
@@ -369,6 +393,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Task description. Task coupons have value; regular coupons return empty string</value>
         [DataMember(Name="task_desc")]
+        
         public string TaskDesc { get; set; }
 
         /// <summary>
@@ -376,6 +401,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Task start timestamp (Unix). Task coupon: has value when in TASK_EXPIRED status, otherwise 0; regular coupon (from_task&#x3D;true): start time of the source task</value>
         [DataMember(Name="task_start_at")]
+        
         public int TaskStartAt { get; set; }
 
         /// <summary>
@@ -383,6 +409,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Task validity expiration timestamp (Unix). Task coupon: claim validity deadline (0 means unlimited); regular coupon: fixed at 0</value>
         [DataMember(Name="task_expire_at")]
+        
         public int TaskExpireAt { get; set; }
 
         /// <summary>
@@ -390,6 +417,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Task completion timestamp (Unix). Task coupon: task completion time (0 means not completed); regular coupon (from_task&#x3D;true): completion time of the source task</value>
         [DataMember(Name="task_completed_at")]
+        
         public int TaskCompletedAt { get; set; }
 
         /// <summary>
@@ -397,7 +425,8 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>[Detail endpoint only] Coupon detail attributes organized by display blocks. The frontend renders them as separate sections. Point card type always returns empty array []. Other types return a 2D array composed of blocks: block 1 &#x3D; coupon name/source/status, block 2 &#x3D; coupon core attributes, block 3 &#x3D; time information. Each item contains: type (display type: string/timestamp/day/hour/status/btn), key (label text, i18n translated), value (string or integer, timestamp type is Unix timestamp)</value>
         [DataMember(Name="extra")]
-        public List<List<Object>> Extra { get; set; }
+        
+        public List<List<CouponDetailExtraItem>> Extra { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

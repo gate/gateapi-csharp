@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Lists
         /// </summary>
         [DataMember(Name="lists")]
+        
         public List<P2pMyAd> Lists { get; set; }
 
         /// <summary>

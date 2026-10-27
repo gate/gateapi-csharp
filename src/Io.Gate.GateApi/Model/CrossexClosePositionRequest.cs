@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading Pair 1. Supports leveraged trading pairs, e.g., BINANCE_MARGIN_SOL_USDT 2. Supports contract trading pairs, e.g., OKX_FUTURE_ETH_USDT</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Direction 1. For leveraged positions, this parameter must be passed 2. For contract positions, pass selectively based on your contract holding method</value>
         [DataMember(Name="position_side")]
+        
         public string PositionSide { get; set; }
 
         /// <summary>

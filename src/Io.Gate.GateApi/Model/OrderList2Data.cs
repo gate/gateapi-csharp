@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Query active order list</value>
         [DataMember(Name="list")]
+        
         public List<OrderListItem> List { get; set; }
 
         /// <summary>

@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// File MIME type: supports &#x60;image/jpeg&#x60;, &#x60;image/jpg&#x60;, &#x60;image/png&#x60;, &#x60;video/mp4&#x60;.
         /// </summary>
         /// <value>File MIME type: supports &#x60;image/jpeg&#x60;, &#x60;image/jpg&#x60;, &#x60;image/png&#x60;, &#x60;video/mp4&#x60;.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ImageContentTypeEnum
         {
             /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>File MIME type: supports &#x60;image/jpeg&#x60;, &#x60;image/jpg&#x60;, &#x60;image/png&#x60;, &#x60;video/mp4&#x60;.</value>
         [DataMember(Name="image_content_type")]
+        
         public ImageContentTypeEnum ImageContentType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadChatFile" /> class.
@@ -91,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Base64 file content; max 20 MB.</value>
         [DataMember(Name="base64_img")]
+        
         public string Base64Img { get; set; }
 
         /// <summary>

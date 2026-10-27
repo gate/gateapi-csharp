@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Underlying</value>
         [DataMember(Name="underlying")]
+        
         public string Underlying { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Time window (milliseconds), between 1-5000, 0 means disable MMP</value>
         [DataMember(Name="window", EmitDefaultValue=false)]
+        
         public int Window { get; private set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Freeze duration (milliseconds), 0 means always frozen, need to call reset API to unfreeze</value>
         [DataMember(Name="frozen_period", EmitDefaultValue=false)]
+        
         public int FrozenPeriod { get; private set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading volume upper limit (positive number, up to 2 decimal places)</value>
         [DataMember(Name="qty_limit", EmitDefaultValue=false)]
+        
         public string QtyLimit { get; private set; }
 
         /// <summary>
@@ -78,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Upper limit of net delta value (positive number, up to 2 decimal places)</value>
         [DataMember(Name="delta_limit", EmitDefaultValue=false)]
+        
         public string DeltaLimit { get; private set; }
 
         /// <summary>
@@ -85,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trigger freeze time (milliseconds), 0 means no freeze is triggered</value>
         [DataMember(Name="trigger_time_ms", EmitDefaultValue=false)]
+        
         public long TriggerTimeMs { get; private set; }
 
         /// <summary>
@@ -92,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unfreeze time (milliseconds). If the freeze duration is not configured, there will be no unfreeze time after the freeze is triggered</value>
         [DataMember(Name="frozen_until_ms", EmitDefaultValue=false)]
+        
         public long FrozenUntilMs { get; private set; }
 
         /// <summary>

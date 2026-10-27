@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Flash swap order ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public long Id { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation time of order (in milliseconds)</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public long CreateTime { get; private set; }
 
         /// <summary>
@@ -57,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id", EmitDefaultValue=false)]
+        
         public long UserId { get; private set; }
 
         /// <summary>
@@ -64,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to sell</value>
         [DataMember(Name="sell_currency", EmitDefaultValue=false)]
+        
         public string SellCurrency { get; private set; }
 
         /// <summary>
@@ -71,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to sell</value>
         [DataMember(Name="sell_amount", EmitDefaultValue=false)]
+        
         public string SellAmount { get; private set; }
 
         /// <summary>
@@ -78,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to buy</value>
         [DataMember(Name="buy_currency", EmitDefaultValue=false)]
+        
         public string BuyCurrency { get; private set; }
 
         /// <summary>
@@ -85,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to buy</value>
         [DataMember(Name="buy_amount", EmitDefaultValue=false)]
+        
         public string BuyAmount { get; private set; }
 
         /// <summary>
@@ -92,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price</value>
         [DataMember(Name="price", EmitDefaultValue=false)]
+        
         public string Price { get; private set; }
 
         /// <summary>
@@ -99,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Flash swap order status  &#x60;1&#x60; - success &#x60;2&#x60; - failure</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public int Status { get; private set; }
 
         /// <summary>

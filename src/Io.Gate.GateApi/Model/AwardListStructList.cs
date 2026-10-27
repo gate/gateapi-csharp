@@ -71,6 +71,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="pid")]
+        
         public int Pid { get; set; }
 
         /// <summary>
@@ -78,6 +79,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Collateral currency</value>
         [DataMember(Name="mortgage_coin")]
+        
         public string MortgageCoin { get; set; }
 
         /// <summary>
@@ -85,6 +87,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -92,6 +95,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reward currency</value>
         [DataMember(Name="reward_coin")]
+        
         public string RewardCoin { get; set; }
 
         /// <summary>
@@ -99,6 +103,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest amount</value>
         [DataMember(Name="interest")]
+        
         public string Interest { get; set; }
 
         /// <summary>
@@ -106,6 +111,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>fee</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -113,6 +119,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status. 4 - success</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -120,6 +127,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Date</value>
         [DataMember(Name="bonus_date")]
+        
         public string BonusDate { get; set; }
 
         /// <summary>
@@ -127,6 +135,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Scheduled distribution timestamp</value>
         [DataMember(Name="should_bonus_stamp")]
+        
         public int ShouldBonusStamp { get; set; }
 
         /// <summary>

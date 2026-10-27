@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Trading Type
         /// </summary>
         /// <value>Trading Type</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading Type</value>
         [DataMember(Name="type")]
+        
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionListDataList" /> class.
@@ -93,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Asset Type</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -100,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction Type Description</value>
         [DataMember(Name="type_desc")]
+        
         public string TypeDesc { get; set; }
 
         /// <summary>
@@ -107,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Change amount</value>
         [DataMember(Name="change")]
+        
         public string Change { get; set; }
 
         /// <summary>
@@ -114,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current Balance</value>
         [DataMember(Name="balance")]
+        
         public string Balance { get; set; }
 
         /// <summary>
@@ -121,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Occurrence Time (Second-level Timestamp)</value>
         [DataMember(Name="time")]
+        
         public long Time { get; set; }
 
         /// <summary>

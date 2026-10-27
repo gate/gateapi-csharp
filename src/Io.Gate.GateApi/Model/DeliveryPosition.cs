@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode
         /// </summary>
         /// <value>Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ModeEnum
         {
             /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position mode, including:  - &#x60;single&#x60;: One-way Mode - &#x60;dual_long&#x60;: Long position in Hedge Mode - &#x60;dual_short&#x60;: Short position in Hedge Mode</value>
         [DataMember(Name="mode")]
+        
         public ModeEnum? Mode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryPosition" /> class.
@@ -89,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
+        
         public long User { get; private set; }
 
         /// <summary>
@@ -96,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="contract", EmitDefaultValue=false)]
+        
         public string Contract { get; private set; }
 
         /// <summary>
@@ -103,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size</value>
         [DataMember(Name="size", EmitDefaultValue=false)]
+        
         public long Size { get; private set; }
 
         /// <summary>
@@ -110,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position leverage. 0 means cross margin; positive number means isolated margin</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
@@ -117,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position risk limit</value>
         [DataMember(Name="risk_limit")]
+        
         public string RiskLimit { get; set; }
 
         /// <summary>
@@ -124,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum leverage under current risk limit</value>
         [DataMember(Name="leverage_max", EmitDefaultValue=false)]
+        
         public string LeverageMax { get; private set; }
 
         /// <summary>
@@ -131,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The maintenance margin rate of the first tier of risk limit sheet</value>
         [DataMember(Name="maintenance_rate", EmitDefaultValue=false)]
+        
         public string MaintenanceRate { get; private set; }
 
         /// <summary>
@@ -138,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position value calculated in settlement currency</value>
         [DataMember(Name="value", EmitDefaultValue=false)]
+        
         public string Value { get; private set; }
 
         /// <summary>
@@ -145,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin</value>
         [DataMember(Name="margin")]
+        
         public string Margin { get; set; }
 
         /// <summary>
@@ -152,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Entry price</value>
         [DataMember(Name="entry_price", EmitDefaultValue=false)]
+        
         public string EntryPrice { get; private set; }
 
         /// <summary>
@@ -159,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation price</value>
         [DataMember(Name="liq_price", EmitDefaultValue=false)]
+        
         public string LiqPrice { get; private set; }
 
         /// <summary>
@@ -166,6 +180,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current mark price</value>
         [DataMember(Name="mark_price", EmitDefaultValue=false)]
+        
         public string MarkPrice { get; private set; }
 
         /// <summary>
@@ -173,6 +188,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The initial margin occupied by the position, applicable to the portfolio margin account</value>
         [DataMember(Name="initial_margin", EmitDefaultValue=false)]
+        
         public string InitialMargin { get; private set; }
 
         /// <summary>
@@ -180,6 +196,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maintenance margin required for the position, applicable to portfolio margin account</value>
         [DataMember(Name="maintenance_margin", EmitDefaultValue=false)]
+        
         public string MaintenanceMargin { get; private set; }
 
         /// <summary>
@@ -187,6 +204,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized PNL</value>
         [DataMember(Name="unrealised_pnl", EmitDefaultValue=false)]
+        
         public string UnrealisedPnl { get; private set; }
 
         /// <summary>
@@ -194,6 +212,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized PnL</value>
         [DataMember(Name="realised_pnl", EmitDefaultValue=false)]
+        
         public string RealisedPnl { get; private set; }
 
         /// <summary>
@@ -201,6 +220,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized PNL - Position P/L</value>
         [DataMember(Name="pnl_pnl", EmitDefaultValue=false)]
+        
         public string PnlPnl { get; private set; }
 
         /// <summary>
@@ -208,6 +228,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized PNL - Funding Fees</value>
         [DataMember(Name="pnl_fund", EmitDefaultValue=false)]
+        
         public string PnlFund { get; private set; }
 
         /// <summary>
@@ -215,6 +236,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized PNL - Transaction Fees</value>
         [DataMember(Name="pnl_fee", EmitDefaultValue=false)]
+        
         public string PnlFee { get; private set; }
 
         /// <summary>
@@ -222,6 +244,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total realized PnL from closed positions</value>
         [DataMember(Name="history_pnl", EmitDefaultValue=false)]
+        
         public string HistoryPnl { get; private set; }
 
         /// <summary>
@@ -229,6 +252,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PNL of last position close</value>
         [DataMember(Name="last_close_pnl", EmitDefaultValue=false)]
+        
         public string LastClosePnl { get; private set; }
 
         /// <summary>
@@ -236,6 +260,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized POINT PNL</value>
         [DataMember(Name="realised_point", EmitDefaultValue=false)]
+        
         public string RealisedPoint { get; private set; }
 
         /// <summary>
@@ -243,6 +268,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>History realized POINT PNL</value>
         [DataMember(Name="history_point", EmitDefaultValue=false)]
+        
         public string HistoryPoint { get; private set; }
 
         /// <summary>
@@ -250,6 +276,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ranking of auto deleveraging, a total of 1-5 grades, &#x60;1&#x60; is the highest, &#x60;5&#x60; is the lowest, and &#x60;6&#x60; is the special case when there is no position held or in liquidation</value>
         [DataMember(Name="adl_ranking", EmitDefaultValue=false)]
+        
         public int AdlRanking { get; private set; }
 
         /// <summary>
@@ -257,12 +284,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current pending order quantity</value>
         [DataMember(Name="pending_orders", EmitDefaultValue=false)]
+        
         public int PendingOrders { get; private set; }
 
         /// <summary>
         /// Gets or Sets CloseOrder
         /// </summary>
         [DataMember(Name="close_order")]
+        
         public PositionCloseOrder CloseOrder { get; set; }
 
         /// <summary>
@@ -270,6 +299,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin leverage (valid only when &#x60;leverage&#x60; is 0)</value>
         [DataMember(Name="cross_leverage_limit")]
+        
         public string CrossLeverageLimit { get; set; }
 
         /// <summary>
@@ -277,6 +307,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last update time</value>
         [DataMember(Name="update_time", EmitDefaultValue=false)]
+        
         public long UpdateTime { get; private set; }
 
         /// <summary>
@@ -284,6 +315,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update ID. The value increments by 1 each time the position is updated</value>
         [DataMember(Name="update_id", EmitDefaultValue=false)]
+        
         public long UpdateId { get; private set; }
 
         /// <summary>
@@ -291,6 +323,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>First Open Time</value>
         [DataMember(Name="open_time")]
+        
         public long OpenTime { get; set; }
 
         /// <summary>
@@ -298,6 +331,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk limit table ID</value>
         [DataMember(Name="risk_limit_table", EmitDefaultValue=false)]
+        
         public string RiskLimitTable { get; private set; }
 
         /// <summary>
@@ -305,6 +339,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average maintenance margin rate</value>
         [DataMember(Name="average_maintenance_rate", EmitDefaultValue=false)]
+        
         public string AverageMaintenanceRate { get; private set; }
 
         /// <summary>

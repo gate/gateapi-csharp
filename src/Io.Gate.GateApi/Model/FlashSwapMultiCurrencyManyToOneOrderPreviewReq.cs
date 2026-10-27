@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Multi-currency exchange preview parameter list</value>
         [DataMember(Name="params")]
+        
         public List<FlashSwapMultiCurrencyPreviewParam> Params { get; set; }
 
         /// <summary>

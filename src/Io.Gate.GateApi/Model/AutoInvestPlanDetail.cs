@@ -86,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Plan ID</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -93,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PlanVersion</value>
         [DataMember(Name="version")]
+        
         public long Version { get; set; }
 
         /// <summary>
@@ -100,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Plan name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -107,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation time (Unix timestamp)</value>
         [DataMember(Name="create_time")]
+        
         public long CreateTime { get; set; }
 
         /// <summary>
@@ -114,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time (Unix timestamp)</value>
         [DataMember(Name="update_time")]
+        
         public long UpdateTime { get; set; }
 
         /// <summary>
@@ -121,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -128,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote Currency</value>
         [DataMember(Name="money")]
+        
         public string Money { get; set; }
 
         /// <summary>
@@ -135,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Per PeriodInvestment amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -142,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cycle type（e.g., monthly）</value>
         [DataMember(Name="period_type")]
+        
         public string PeriodType { get; set; }
 
         /// <summary>
@@ -149,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cycle day</value>
         [DataMember(Name="period_day")]
+        
         public long PeriodDay { get; set; }
 
         /// <summary>
@@ -156,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>CycleHours</value>
         [DataMember(Name="period_hour")]
+        
         public long PeriodHour { get; set; }
 
         /// <summary>
@@ -163,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Portfolio</value>
         [DataMember(Name="portfolio")]
+        
         public List<AutoInvestPortfolioItem> Portfolio { get; set; }
 
         /// <summary>
@@ -170,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Next execution time (Unix timestamp)</value>
         [DataMember(Name="next_time")]
+        
         public long NextTime { get; set; }
 
         /// <summary>
@@ -177,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Executed periods</value>
         [DataMember(Name="period")]
+        
         public long Period { get; set; }
 
         /// <summary>
@@ -184,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fund source（spot/earn）</value>
         [DataMember(Name="fund_source")]
+        
         public string FundSource { get; set; }
 
         /// <summary>
@@ -191,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fund flow direction (auto_invest/earn)</value>
         [DataMember(Name="fund_flow")]
+        
         public string FundFlow { get; set; }
 
         /// <summary>

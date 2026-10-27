@@ -56,24 +56,28 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Code
         /// </summary>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public OtcBankSupplementChecklistResponseData Data { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
         [DataMember(Name="timestamp")]
+        
         public int Timestamp { get; set; }
 
         /// <summary>

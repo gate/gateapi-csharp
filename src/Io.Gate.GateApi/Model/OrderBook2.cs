@@ -45,12 +45,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public OrderBook2Data Data { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
         [DataMember(Name="timestamp")]
+        
         public long Timestamp { get; set; }
 
         /// <summary>

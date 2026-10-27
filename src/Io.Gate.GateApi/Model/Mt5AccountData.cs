@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage")]
+        
         public int Leverage { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation margin ratio</value>
         [DataMember(Name="stop_out_level")]
+        
         public string StopOutLevel { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account status (1&#x3D;not opened, 2&#x3D;pending review, 3&#x3D;active)</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>

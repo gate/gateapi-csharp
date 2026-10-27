@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Loan Type margin: margin borrowing
         /// </summary>
         /// <value>Loan Type margin: margin borrowing</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Loan Type margin: margin borrowing</value>
         [DataMember(Name="type")]
+        
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateUniLoan" /> class.
@@ -87,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -94,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrow or repayment amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -101,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Full repayment. For repayment operations only. When &#x60;true&#x60;, overrides &#x60;amount&#x60; and repays the full amount</value>
         [DataMember(Name="repaid_all")]
+        
         public bool RepaidAll { get; set; }
 
         /// <summary>
@@ -108,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>

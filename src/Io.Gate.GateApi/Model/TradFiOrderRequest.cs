@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Price type (trigger&#x3D;trigger price, market&#x3D;market price)
         /// </summary>
         /// <value>Price type (trigger&#x3D;trigger price, market&#x3D;market price)</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -56,12 +58,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price type (trigger&#x3D;trigger price, market&#x3D;market price)</value>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum PriceType { get; set; }
         /// <summary>
         /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SideEnum
         {
             /// <summary>
@@ -81,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [DataMember(Name="side")]
+        
         public SideEnum Side { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TradFiOrderRequest" /> class.
@@ -118,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -125,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Base trading symbol code</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -132,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order quantity</value>
         [DataMember(Name="volume")]
+        
         public string Volume { get; set; }
 
         /// <summary>
@@ -139,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Take profit price (optional)</value>
         [DataMember(Name="price_tp")]
+        
         public string PriceTp { get; set; }
 
         /// <summary>
@@ -146,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stop loss price (optional)</value>
         [DataMember(Name="price_sl")]
+        
         public string PriceSl { get; set; }
 
         /// <summary>
@@ -153,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage multiplier (must be one of the leverage multipliers allowed for the symbol in the trading symbol details response)</value>
         [DataMember(Name="leverage")]
+        
         public int Leverage { get; set; }
 
         /// <summary>

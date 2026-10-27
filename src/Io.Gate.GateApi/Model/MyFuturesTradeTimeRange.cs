@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Trade role. taker - taker, maker - maker
         /// </summary>
         /// <value>Trade role. taker - taker, maker - maker</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum RoleEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade role. taker - taker, maker - maker</value>
         [DataMember(Name="role")]
+        
         public RoleEnum? Role { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="MyFuturesTradeTimeRange" /> class.
@@ -91,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill ID</value>
         [DataMember(Name="trade_id")]
+        
         public string TradeId { get; set; }
 
         /// <summary>
@@ -98,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill Time</value>
         [DataMember(Name="create_time")]
+        
         public double CreateTime { get; set; }
 
         /// <summary>
@@ -105,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -112,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Related order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -119,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading size</value>
         [DataMember(Name="size")]
+        
         public string Size { get; set; }
 
         /// <summary>
@@ -126,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of closed positions:  close_size&#x3D;0 &amp;&amp; size＞0 Open long position close_size&#x3D;0 &amp;&amp; size＜0 Open short position close_size&gt;0 &amp;&amp; size&gt;0 &amp;&amp; size &lt;&#x3D; close_size Close short position close_size&gt;0 &amp;&amp; size&gt;0 &amp;&amp; size &gt; close_size Close short position and open long position close_size&lt;0 &amp;&amp; size&lt;0 &amp;&amp; size &gt;&#x3D; close_size Close long position close_size&lt;0 &amp;&amp; size&lt;0 &amp;&amp; size &lt; close_size Close long position and open short position</value>
         [DataMember(Name="close_size")]
+        
         public string CloseSize { get; set; }
 
         /// <summary>
@@ -133,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill Price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -140,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order custom information</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -147,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade fee</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -154,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Points used to deduct trade fee</value>
         [DataMember(Name="point_fee")]
+        
         public string PointFee { get; set; }
 
         /// <summary>

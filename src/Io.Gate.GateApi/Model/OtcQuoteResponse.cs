@@ -56,18 +56,21 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Code
         /// </summary>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data")]
+        
         public OtcQuoteResult Data { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Server Unix timestamp in seconds</value>
         [DataMember(Name="timestamp")]
+        
         public int Timestamp { get; set; }
 
         /// <summary>

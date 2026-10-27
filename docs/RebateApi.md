@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="agencytransactionhistory"></a>
 # **AgencyTransactionHistory**
-> List&lt;AgencyTransactionHistory&gt; AgencyTransactionHistory (string currencyPair = null, long? userId = null, long? from = null, long? to = null, int? limit = null, int? offset = null)
+> AgencyTransactionHistory AgencyTransactionHistory (string currencyPair = null, long? userId = null, long? from = null, long? to = null, int? limit = null, int? offset = null)
 
 Broker obtains transaction history of recommended users
 
@@ -55,7 +55,7 @@ namespace Example
             try
             {
                 // Broker obtains transaction history of recommended users
-                List<AgencyTransactionHistory> result = apiInstance.AgencyTransactionHistory(currencyPair, userId, from, to, limit, offset);
+                AgencyTransactionHistory result = apiInstance.AgencyTransactionHistory(currencyPair, userId, from, to, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;AgencyTransactionHistory&gt;**](AgencyTransactionHistory.md)
+[**AgencyTransactionHistory**](AgencyTransactionHistory.md)
 
 ### Authorization
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 <a name="agencycommissionshistory"></a>
 # **AgencyCommissionsHistory**
-> List&lt;AgencyCommissionHistory&gt; AgencyCommissionsHistory (string currency = null, int? commissionType = null, long? userId = null, long? from = null, long? to = null, int? limit = null, int? offset = null)
+> AgencyCommissionHistory AgencyCommissionsHistory (string currency = null, int? commissionType = null, long? userId = null, long? from = null, long? to = null, int? limit = null, int? offset = null)
 
 Broker obtains rebate history of recommended users
 
@@ -139,7 +139,7 @@ namespace Example
             try
             {
                 // Broker obtains rebate history of recommended users
-                List<AgencyCommissionHistory> result = apiInstance.AgencyCommissionsHistory(currency, commissionType, userId, from, to, limit, offset);
+                AgencyCommissionHistory result = apiInstance.AgencyCommissionsHistory(currency, commissionType, userId, from, to, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;AgencyCommissionHistory&gt;**](AgencyCommissionHistory.md)
+[**AgencyCommissionHistory**](AgencyCommissionHistory.md)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 <a name="rebatebrokercommissionhistory"></a>
 # **RebateBrokerCommissionHistory**
-> List&lt;BrokerCommission&gt; RebateBrokerCommissionHistory (int? limit = null, int? offset = null, long? userId = null, long? from = null, long? to = null)
+> BrokerCommission RebateBrokerCommissionHistory (int? limit = null, int? offset = null, long? userId = null, long? from = null, long? to = null)
 
 Broker obtains user's rebate records
 
@@ -465,7 +465,7 @@ namespace Example
             try
             {
                 // Broker obtains user's rebate records
-                List<BrokerCommission> result = apiInstance.RebateBrokerCommissionHistory(limit, offset, userId, from, to);
+                BrokerCommission result = apiInstance.RebateBrokerCommissionHistory(limit, offset, userId, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;BrokerCommission&gt;**](BrokerCommission.md)
+[**BrokerCommission**](BrokerCommission.md)
 
 ### Authorization
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 <a name="rebatebrokertransactionhistory"></a>
 # **RebateBrokerTransactionHistory**
-> List&lt;BrokerTransactionHistory&gt; RebateBrokerTransactionHistory (int? limit = null, int? offset = null, long? userId = null, long? from = null, long? to = null)
+> BrokerTransactionHistory RebateBrokerTransactionHistory (int? limit = null, int? offset = null, long? userId = null, long? from = null, long? to = null)
 
 Broker obtains user's trading history
 
@@ -546,7 +546,7 @@ namespace Example
             try
             {
                 // Broker obtains user's trading history
-                List<BrokerTransactionHistory> result = apiInstance.RebateBrokerTransactionHistory(limit, offset, userId, from, to);
+                BrokerTransactionHistory result = apiInstance.RebateBrokerTransactionHistory(limit, offset, userId, from, to);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -573,7 +573,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;BrokerTransactionHistory&gt;**](BrokerTransactionHistory.md)
+[**BrokerTransactionHistory**](BrokerTransactionHistory.md)
 
 ### Authorization
 
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 <a name="rebateuserinfo"></a>
 # **RebateUserInfo**
-> List&lt;RebateUserInfo&gt; RebateUserInfo ()
+> RebateUserInfo RebateUserInfo ()
 
 User obtains rebate information
 
@@ -620,7 +620,7 @@ namespace Example
             try
             {
                 // User obtains rebate information
-                List<RebateUserInfo> result = apiInstance.RebateUserInfo();
+                RebateUserInfo result = apiInstance.RebateUserInfo();
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -640,7 +640,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;RebateUserInfo&gt;**](RebateUserInfo.md)
+[**RebateUserInfo**](RebateUserInfo.md)
 
 ### Authorization
 

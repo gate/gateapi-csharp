@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Trade role. taker - taker, maker - maker
         /// </summary>
         /// <value>Trade role. taker - taker, maker - maker</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum RoleEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade role. taker - taker, maker - maker</value>
         [DataMember(Name="role")]
+        
         public RoleEnum? Role { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionsMyTrade" /> class.
@@ -85,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill ID</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -92,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fill Time</value>
         [DataMember(Name="create_time")]
+        
         public double CreateTime { get; set; }
 
         /// <summary>
@@ -99,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options contract name</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -106,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Related order ID</value>
         [DataMember(Name="order_id")]
+        
         public int OrderId { get; set; }
 
         /// <summary>
@@ -113,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading size</value>
         [DataMember(Name="size")]
+        
         public long Size { get; set; }
 
         /// <summary>
@@ -120,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade price (quote currency)</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -127,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The forward futures price corresponding to the delivery date</value>
         [DataMember(Name="underlying_price")]
+        
         public string UnderlyingPrice { get; set; }
 
         /// <summary>

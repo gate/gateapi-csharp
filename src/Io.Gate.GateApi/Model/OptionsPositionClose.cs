@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Position side  - &#x60;long&#x60;: Long position - &#x60;short&#x60;: Short position
         /// </summary>
         /// <value>Position side  - &#x60;long&#x60;: Long position - &#x60;short&#x60;: Short position</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SideEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position side  - &#x60;long&#x60;: Long position - &#x60;short&#x60;: Short position</value>
         [DataMember(Name="side", EmitDefaultValue=false)]
+        
         public SideEnum? Side { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionsPositionClose" /> class.
@@ -70,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position close time</value>
         [DataMember(Name="time", EmitDefaultValue=false)]
+        
         public double Time { get; private set; }
 
         /// <summary>
@@ -77,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options contract name</value>
         [DataMember(Name="contract", EmitDefaultValue=false)]
+        
         public string Contract { get; private set; }
 
         /// <summary>
@@ -84,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PnL</value>
         [DataMember(Name="pnl", EmitDefaultValue=false)]
+        
         public string Pnl { get; private set; }
 
         /// <summary>
@@ -91,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Source of close order. See &#x60;order.text&#x60; field for specific values</value>
         [DataMember(Name="text", EmitDefaultValue=false)]
+        
         public string Text { get; private set; }
 
         /// <summary>
@@ -98,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement size</value>
         [DataMember(Name="settle_size", EmitDefaultValue=false)]
+        
         public string SettleSize { get; private set; }
 
         /// <summary>

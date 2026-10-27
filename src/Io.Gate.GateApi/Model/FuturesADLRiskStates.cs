@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settle currency</value>
         [DataMember(Name="settle")]
+        
         public string Settle { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mapping of futures markets to ADL risk states</value>
         [DataMember(Name="states")]
+        
         public Dictionary<string, FuturesADLRiskState> States { get; set; }
 
         /// <summary>

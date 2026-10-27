@@ -76,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Client Custom ID</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Source account for this operation (&#x60;from&#x60;) (&#x60;CROSSEX_BINANCE&#x60;, &#x60;CROSSEX_OKX&#x60;, &#x60;CROSSEX_GATE&#x60;, &#x60;CROSSEX_BYBIT&#x60;, &#x60;CROSSEX_KRAKEN&#x60;, &#x60;CROSSEX_HYPERLIQUID&#x60;, &#x60;CROSSEX_DERIBIT&#x60;, &#x60;CROSSEX_LIGHTER&#x60;, &#x60;CROSSEX&#x60;, &#x60;SPOT&#x60;).</value>
         [DataMember(Name="from_account_type")]
+        
         public string FromAccountType { get; set; }
 
         /// <summary>
@@ -97,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Destination account for this operation (&#x60;to&#x60;) (&#x60;CROSSEX_BINANCE&#x60;, &#x60;CROSSEX_OKX&#x60;, &#x60;CROSSEX_GATE&#x60;, &#x60;CROSSEX_BYBIT&#x60;, &#x60;CROSSEX_KRAKEN&#x60;, &#x60;CROSSEX_HYPERLIQUID&#x60;, &#x60;CROSSEX_DERIBIT&#x60;, &#x60;CROSSEX_LIGHTER&#x60;, &#x60;CROSSEX&#x60;, &#x60;SPOT&#x60;).</value>
         [DataMember(Name="to_account_type")]
+        
         public string ToAccountType { get; set; }
 
         /// <summary>
@@ -104,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="coin")]
+        
         public string Coin { get; set; }
 
         /// <summary>
@@ -111,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer amount, the amount requested for the transfer</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -118,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Actual credited amount (has a value when status &#x3D; SUCCESS; empty for other statuses)</value>
         [DataMember(Name="actual_receive")]
+        
         public string ActualReceive { get; set; }
 
         /// <summary>
@@ -125,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer Status - &#x60;FAIL&#x60;: Failed - &#x60;SUCCESS&#x60;: Successful - &#x60;PENDING&#x60;: Transfer in Progress</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -132,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Failure reason (has a value when status &#x3D; FAIL; empty for other statuses)</value>
         [DataMember(Name="fail_reason")]
+        
         public string FailReason { get; set; }
 
         /// <summary>
@@ -139,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation time of order</value>
         [DataMember(Name="create_time")]
+        
         public int CreateTime { get; set; }
 
         /// <summary>
@@ -146,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>OrderUpdateTime</value>
         [DataMember(Name="update_time")]
+        
         public int UpdateTime { get; set; }
 
         /// <summary>

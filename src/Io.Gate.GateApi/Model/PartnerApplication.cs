@@ -106,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Application record ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -113,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="uid")]
+        
         public int Uid { get; set; }
 
         /// <summary>
@@ -120,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Language code</value>
         [DataMember(Name="language")]
+        
         public string Language { get; set; }
 
         /// <summary>
@@ -127,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Country ID</value>
         [DataMember(Name="country_id")]
+        
         public int CountryId { get; set; }
 
         /// <summary>
@@ -134,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>First name</value>
         [DataMember(Name="firstname")]
+        
         public string Firstname { get; set; }
 
         /// <summary>
@@ -141,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last name</value>
         [DataMember(Name="lastname")]
+        
         public string Lastname { get; set; }
 
         /// <summary>
@@ -148,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Email address</value>
         [DataMember(Name="email")]
+        
         public string Email { get; set; }
 
         /// <summary>
@@ -155,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Joined user ID</value>
         [DataMember(Name="join_uid")]
+        
         public int JoinUid { get; set; }
 
         /// <summary>
@@ -162,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Joined country ID</value>
         [DataMember(Name="join_country_id")]
+        
         public int JoinCountryId { get; set; }
 
         /// <summary>
@@ -169,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Identity description</value>
         [DataMember(Name="identity_comment")]
+        
         public string IdentityComment { get; set; }
 
         /// <summary>
@@ -176,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Promotion channels, separated by |</value>
         [DataMember(Name="promotion_channels")]
+        
         public string PromotionChannels { get; set; }
 
         /// <summary>
@@ -183,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contact details (JSON string)</value>
         [DataMember(Name="contact_details")]
+        
         public string ContactDetails { get; set; }
 
         /// <summary>
@@ -190,6 +202,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Learn more</value>
         [DataMember(Name="know_details")]
+        
         public string KnowDetails { get; set; }
 
         /// <summary>
@@ -197,6 +210,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Question language</value>
         [DataMember(Name="question_lang")]
+        
         public string QuestionLang { get; set; }
 
         /// <summary>
@@ -204,6 +218,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_timest")]
+        
         public DateTime CreateTimest { get; set; }
 
         /// <summary>
@@ -211,6 +226,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time</value>
         [DataMember(Name="update_timest")]
+        
         public DateTime UpdateTimest { get; set; }
 
         /// <summary>
@@ -218,6 +234,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Application type</value>
         [DataMember(Name="apply_type")]
+        
         public int ApplyType { get; set; }
 
         /// <summary>
@@ -225,6 +242,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Review status (0 - pending, 1 - approved, 2 - rejected)</value>
         [DataMember(Name="audit_status")]
+        
         public int AuditStatus { get; set; }
 
         /// <summary>
@@ -232,6 +250,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Edit count</value>
         [DataMember(Name="edit_counts")]
+        
         public int EditCounts { get; set; }
 
         /// <summary>
@@ -239,6 +258,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Proof image path</value>
         [DataMember(Name="proof_images")]
+        
         public string ProofImages { get; set; }
 
         /// <summary>
@@ -246,6 +266,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Proof video path</value>
         [DataMember(Name="proof_videos")]
+        
         public string ProofVideos { get; set; }
 
         /// <summary>
@@ -253,6 +274,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Proof link</value>
         [DataMember(Name="proof_url")]
+        
         public string ProofUrl { get; set; }
 
         /// <summary>
@@ -260,6 +282,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Review reason code</value>
         [DataMember(Name="audit_reason")]
+        
         public int AuditReason { get; set; }
 
         /// <summary>
@@ -267,6 +290,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Channel type</value>
         [DataMember(Name="channel_type")]
+        
         public int ChannelType { get; set; }
 
         /// <summary>
@@ -274,6 +298,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Region</value>
         [DataMember(Name="region")]
+        
         public string Region { get; set; }
 
         /// <summary>
@@ -281,6 +306,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Phone number</value>
         [DataMember(Name="phone")]
+        
         public string Phone { get; set; }
 
         /// <summary>
@@ -288,12 +314,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Telegram account</value>
         [DataMember(Name="telegram")]
+        
         public string Telegram { get; set; }
 
         /// <summary>
         /// Gets or Sets OtherContact
         /// </summary>
         [DataMember(Name="other_contact")]
+        
         public OtherContact OtherContact { get; set; }
 
         /// <summary>
@@ -301,6 +329,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of proof image URLs</value>
         [DataMember(Name="proof_images_url_list")]
+        
         public List<string> ProofImagesUrlList { get; set; }
 
         /// <summary>
@@ -308,6 +337,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>List of proof video URLs</value>
         [DataMember(Name="proof_videos_url_list")]
+        
         public List<string> ProofVideosUrlList { get; set; }
 
         /// <summary>
@@ -315,6 +345,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Application message</value>
         [DataMember(Name="apply_msg")]
+        
         public string ApplyMsg { get; set; }
 
         /// <summary>
@@ -322,6 +353,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redirect URL</value>
         [DataMember(Name="jump_url")]
+        
         public string JumpUrl { get; set; }
 
         /// <summary>

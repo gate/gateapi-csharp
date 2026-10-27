@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product list</value>
         [DataMember(Name="list")]
+        
         public List<FixedTermProductSimple> List { get; set; }
 
         /// <summary>

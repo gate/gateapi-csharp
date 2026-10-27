@@ -60,30 +60,35 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets List
         /// </summary>
         [DataMember(Name="list")]
+        
         public List<EvaluateItem> List { get; set; }
 
         /// <summary>
         /// Gets or Sets Total
         /// </summary>
         [DataMember(Name="total")]
+        
         public int Total { get; set; }
 
         /// <summary>
         /// Gets or Sets Cursor
         /// </summary>
         [DataMember(Name="cursor")]
+        
         public string Cursor { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalAvailable
         /// </summary>
         [DataMember(Name="total_available")]
+        
         public string TotalAvailable { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalAvailableShow
         /// </summary>
         [DataMember(Name="total_available_show")]
+        
         public string TotalAvailableShow { get; set; }
 
         /// <summary>

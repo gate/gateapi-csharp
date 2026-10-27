@@ -138,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the current user is the seller. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_sell")]
+        
         public int IsSell { get; set; }
 
         /// <summary>
@@ -145,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="txid")]
+        
         public int Txid { get; set; }
 
         /// <summary>
@@ -152,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="orderid")]
+        
         public int Orderid { get; set; }
 
         /// <summary>
@@ -159,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order creation timestamp</value>
         [DataMember(Name="timest")]
+        
         public int Timest { get; set; }
 
         /// <summary>
@@ -166,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment deadline</value>
         [DataMember(Name="last_pay_time")]
+        
         public int LastPayTime { get; set; }
 
         /// <summary>
@@ -173,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Seconds left to pay; &#x60;&lt;&#x3D; 0&#x60; means overdue.</value>
         [DataMember(Name="remain_pay_time")]
+        
         public int RemainPayTime { get; set; }
 
         /// <summary>
@@ -180,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cryptocurrency symbol.</value>
         [DataMember(Name="currency_type")]
+        
         public string CurrencyType { get; set; }
 
         /// <summary>
@@ -187,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency</value>
         [DataMember(Name="want_type")]
+        
         public string WantType { get; set; }
 
         /// <summary>
@@ -194,6 +202,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency symbol</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -201,6 +210,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order price in &#x60;want_type&#x60; units.</value>
         [DataMember(Name="rate")]
+        
         public string Rate { get; set; }
 
         /// <summary>
@@ -208,6 +218,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order size in cryptocurrency.</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -215,6 +226,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total fiat amount of the order.</value>
         [DataMember(Name="total")]
+        
         public string Total { get; set; }
 
         /// <summary>
@@ -222,6 +234,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Display status: &#x60;unpay&#x60; unpaid; &#x60;hide_payment&#x60; unpaid with payment info hidden; &#x60;paid&#x60; buyer paid; &#x60;unconfirmed&#x60; awaiting seller confirmation; &#x60;locked&#x60; locked; &#x60;finished&#x60; done; &#x60;cancel&#x60; canceled; &#x60;expired&#x60; expired; &#x60;bclosed&#x60; arbitration filled; &#x60;sclosed&#x60; arbitration canceled.</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -229,6 +242,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cancel reason ID; empty string means none. Examples: &#x60;1&#x60; no longer want to buy; &#x60;2&#x60; cannot reach seller; &#x60;3&#x60; will not pay; &#x60;4&#x60; seller did not provide a real account; &#x60;6&#x60; price/amount mismatch; &#x60;9&#x60; other; &#x60;10&#x60; seller cannot release and refund issued; &#x60;11&#x60; terms not met; &#x60;12&#x60; seller payout account risk-controlled.</value>
         [DataMember(Name="reason_id")]
+        
         public string ReasonId { get; set; }
 
         /// <summary>
@@ -236,6 +250,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cancel reason description.</value>
         [DataMember(Name="reason_desc")]
+        
         public string ReasonDesc { get; set; }
 
         /// <summary>
@@ -243,6 +258,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cancellation time</value>
         [DataMember(Name="cancel_time")]
+        
         public string CancelTime { get; set; }
 
         /// <summary>
@@ -250,6 +266,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether a dispute is active. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="in_appeal")]
+        
         public int InAppeal { get; set; }
 
         /// <summary>
@@ -257,6 +274,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Earliest timestamp when a dispute may be opened.</value>
         [DataMember(Name="dispute_time")]
+        
         public int DisputeTime { get; set; }
 
         /// <summary>
@@ -264,6 +282,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether cancellation is allowed. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="cancelable")]
+        
         public int Cancelable { get; set; }
 
         /// <summary>
@@ -271,6 +290,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible.</value>
         [DataMember(Name="hide_payment")]
+        
         public int HidePayment { get; set; }
 
         /// <summary>
@@ -278,6 +298,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading terms</value>
         [DataMember(Name="trade_tips")]
+        
         public string TradeTips { get; set; }
 
         /// <summary>
@@ -285,6 +306,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to show bank transfer details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.</value>
         [DataMember(Name="show_bank")]
+        
         public string ShowBank { get; set; }
 
         /// <summary>
@@ -292,6 +314,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank name</value>
         [DataMember(Name="bankname")]
+        
         public string Bankname { get; set; }
 
         /// <summary>
@@ -299,6 +322,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank branch name</value>
         [DataMember(Name="bankbranch")]
+        
         public string Bankbranch { get; set; }
 
         /// <summary>
@@ -306,6 +330,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank account or masked account.</value>
         [DataMember(Name="bankid")]
+        
         public string Bankid { get; set; }
 
         /// <summary>
@@ -313,6 +338,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank cardholder name</value>
         [DataMember(Name="bank_holder_realname")]
+        
         public string BankHolderRealname { get; set; }
 
         /// <summary>
@@ -320,6 +346,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to show Alipay details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.</value>
         [DataMember(Name="show_ali")]
+        
         public string ShowAli { get; set; }
 
         /// <summary>
@@ -327,6 +354,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Alipay account name</value>
         [DataMember(Name="aliname")]
+        
         public string Aliname { get; set; }
 
         /// <summary>
@@ -334,6 +362,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether an Alipay QR exists. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="is_alicode")]
+        
         public int IsAlicode { get; set; }
 
         /// <summary>
@@ -341,6 +370,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to show WeChat details. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.</value>
         [DataMember(Name="show_wechat")]
+        
         public string ShowWechat { get; set; }
 
         /// <summary>
@@ -348,6 +378,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>WeChat account name</value>
         [DataMember(Name="wename")]
+        
         public string Wename { get; set; }
 
         /// <summary>
@@ -355,6 +386,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to show other payment methods. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.</value>
         [DataMember(Name="show_others")]
+        
         public string ShowOthers { get; set; }
 
         /// <summary>
@@ -362,6 +394,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Other payment methods</value>
         [DataMember(Name="pay_others")]
+        
         public List<P2pTransactionDetailPayOthers> PayOthers { get; set; }
 
         /// <summary>
@@ -369,6 +402,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Selected payment type for this order, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.</value>
         [DataMember(Name="sel_paytype")]
+        
         public string SelPaytype { get; set; }
 
         /// <summary>
@@ -376,6 +410,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Counterparty crypto UID.</value>
         [DataMember(Name="its_uid")]
+        
         public string ItsUid { get; set; }
 
         /// <summary>
@@ -383,6 +418,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Counterparty nickname</value>
         [DataMember(Name="its_nickname")]
+        
         public string ItsNickname { get; set; }
 
         /// <summary>
@@ -390,6 +426,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Counterparty real name or verified display name.</value>
         [DataMember(Name="its_realname")]
+        
         public string ItsRealname { get; set; }
 
         /// <summary>
@@ -397,6 +434,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether you traded with the counterparty before. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="have_traded")]
+        
         public int HaveTraded { get; set; }
 
         /// <summary>
@@ -404,6 +442,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the dispute can be withdrawn. &#x60;1&#x60;: allowed; &#x60;0&#x60;: not allowed.</value>
         [DataMember(Name="appeal_allow_cancel")]
+        
         public int AppealAllowCancel { get; set; }
 
         /// <summary>
@@ -411,6 +450,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Dispute outcome or in-dispute notice text.</value>
         [DataMember(Name="appeal_verdict_has_open")]
+        
         public string AppealVerdictHasOpen { get; set; }
 
         /// <summary>
@@ -418,6 +458,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unread chat message count.</value>
         [DataMember(Name="im_unread")]
+        
         public int ImUnread { get; set; }
 
         /// <summary>
@@ -425,6 +466,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment voucher</value>
         [DataMember(Name="payment_voucher_url")]
+        
         public List<string> PaymentVoucherUrl { get; set; }
 
         /// <summary>
@@ -432,6 +474,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Timestamp when the buyer confirmed payment.</value>
         [DataMember(Name="timest_paid")]
+        
         public int TimestPaid { get; set; }
 
         /// <summary>
@@ -439,6 +482,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current user&#39;s real name or verified display name.</value>
         [DataMember(Name="own_realname")]
+        
         public string OwnRealname { get; set; }
 
         /// <summary>
@@ -446,6 +490,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order type: &#x60;1&#x60; standard; &#x60;2&#x60; partner; &#x60;3&#x60; flash swap; &#x60;4&#x60; Web3.</value>
         [DataMember(Name="order_type")]
+        
         public int OrderType { get; set; }
 
         /// <summary>
@@ -453,6 +498,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to show confirm-receipt during dispute. &#x60;1&#x60;: show; &#x60;0&#x60;: hide.</value>
         [DataMember(Name="is_show_receive")]
+        
         public int IsShowReceive { get; set; }
 
         /// <summary>
@@ -460,6 +506,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to display seller contact information</value>
         [DataMember(Name="show_seller_contact_info")]
+        
         public bool ShowSellerContactInfo { get; set; }
 
         /// <summary>
@@ -467,6 +514,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Supported payment method types for the order, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.</value>
         [DataMember(Name="supported_pay_types")]
+        
         public List<string> SupportedPayTypes { get; set; }
 
         /// <summary>

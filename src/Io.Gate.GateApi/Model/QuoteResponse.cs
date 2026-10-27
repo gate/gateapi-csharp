@@ -62,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote ID for order placement, valid for 1 minute</value>
         [DataMember(Name="quote_id")]
+        
         public string QuoteId { get; set; }
 
         /// <summary>
@@ -69,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum order size</value>
         [DataMember(Name="min_amount")]
+        
         public string MinAmount { get; set; }
 
         /// <summary>
@@ -76,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum order size</value>
         [DataMember(Name="max_amount")]
+        
         public string MaxAmount { get; set; }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Token Price (USDT-based)</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Slippage</value>
         [DataMember(Name="slippage")]
+        
         public string Slippage { get; set; }
 
         /// <summary>
@@ -97,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Estimated Gas Fee (USDT-based)</value>
         [DataMember(Name="estimate_gas_fee_amount_usdt")]
+        
         public string EstimateGasFeeAmountUsdt { get; set; }
 
         /// <summary>
@@ -104,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading fee</value>
         [DataMember(Name="order_fee")]
+        
         public string OrderFee { get; set; }
 
         /// <summary>
@@ -111,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum received amount</value>
         [DataMember(Name="target_token_min_amount")]
+        
         public string TargetTokenMinAmount { get; set; }
 
         /// <summary>
@@ -118,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum received amount</value>
         [DataMember(Name="target_token_max_amount")]
+        
         public string TargetTokenMaxAmount { get; set; }
 
         /// <summary>
@@ -125,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Failure Type - &#x60;0&#x60; : Success - &#x60;1&#x60; : Exceeds maximum value - &#x60;2&#x60; : Below minimum value</value>
         [DataMember(Name="error_type")]
+        
         public int ErrorType { get; set; }
 
         /// <summary>

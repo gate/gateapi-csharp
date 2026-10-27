@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Trade type (market&#x3D;market price, trigger&#x3D;trigger price)
         /// </summary>
         /// <value>Trade type (market&#x3D;market price, trigger&#x3D;trigger price)</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -56,12 +58,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trade type (market&#x3D;market price, trigger&#x3D;trigger price)</value>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
         /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SideEnum
         {
             /// <summary>
@@ -81,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [DataMember(Name="side")]
+        
         public SideEnum? Side { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderLogData" /> class.
@@ -110,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -117,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>logID</value>
         [DataMember(Name="log_id")]
+        
         public long LogId { get; set; }
 
         /// <summary>
@@ -124,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading pair of the order</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -131,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status code (1&#x3D;placed, 2&#x3D;canceled, 3&#x3D;partially filled, 4&#x3D;filled, 5&#x3D;rejected)</value>
         [DataMember(Name="state")]
+        
         public int State { get; set; }
 
         /// <summary>
@@ -138,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order quantity</value>
         [DataMember(Name="volume")]
+        
         public string Volume { get; set; }
 
         /// <summary>
@@ -145,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average fill price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>

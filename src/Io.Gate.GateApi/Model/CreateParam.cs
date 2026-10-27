@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency symbol, consistent with &#x60;GET /asset-swap/asset/list&#x60; and business support scope.</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The quantity of this currency on this side, **decimal string** (non-scientific notation). &#x60;from&#x60; represents the selling quantity, and &#x60;to&#x60; represents the target side quantity. Different from preview interface &#x60;to[].ratio&#x60;.</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>

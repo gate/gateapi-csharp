@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -55,12 +56,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total number of open orders for this trading pair on the current page</value>
         [DataMember(Name="total")]
+        
         public int Total { get; set; }
 
         /// <summary>
         /// Gets or Sets Orders
         /// </summary>
         [DataMember(Name="orders")]
+        
         public List<Order> Orders { get; set; }
 
         /// <summary>

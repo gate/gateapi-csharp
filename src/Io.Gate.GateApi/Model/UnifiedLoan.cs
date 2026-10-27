@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Type: &#x60;borrow&#x60; - borrow, &#x60;repay&#x60; - repay
         /// </summary>
         /// <value>Type: &#x60;borrow&#x60; - borrow, &#x60;repay&#x60; - repay</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Type: &#x60;borrow&#x60; - borrow, &#x60;repay&#x60; - repay</value>
         [DataMember(Name="type")]
+        
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UnifiedLoan" /> class.
@@ -86,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -93,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrow or repayment amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -100,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Full repayment, only used for repayment operations. When set to &#x60;true&#x60;, overrides &#x60;amount&#x60; and directly repays the full amount</value>
         [DataMember(Name="repaid_all")]
+        
         public bool RepaidAll { get; set; }
 
         /// <summary>
@@ -107,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User defined custom ID</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

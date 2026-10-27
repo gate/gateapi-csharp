@@ -86,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>useruID</value>
         [DataMember(Name="uid")]
+        
         public int Uid { get; set; }
 
         /// <summary>
@@ -93,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User&#39;s currently bound payment method (primary key ID)</value>
         [DataMember(Name="bankid")]
+        
         public string Bankid { get; set; }
 
         /// <summary>
@@ -100,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cardholder UID</value>
         [DataMember(Name="nickname")]
+        
         public int Nickname { get; set; }
 
         /// <summary>
@@ -107,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank name</value>
         [DataMember(Name="bankname")]
+        
         public string Bankname { get; set; }
 
         /// <summary>
@@ -114,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank branch name</value>
         [DataMember(Name="bankbranch")]
+        
         public string Bankbranch { get; set; }
 
         /// <summary>
@@ -121,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank city</value>
         [DataMember(Name="bankcity")]
+        
         public string Bankcity { get; set; }
 
         /// <summary>
@@ -128,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank province</value>
         [DataMember(Name="bankprov")]
+        
         public string Bankprov { get; set; }
 
         /// <summary>
@@ -135,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank card number or masked card number.</value>
         [DataMember(Name="bankaddr")]
+        
         public string Bankaddr { get; set; }
 
         /// <summary>
@@ -142,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank note</value>
         [DataMember(Name="bankdesc")]
+        
         public string Bankdesc { get; set; }
 
         /// <summary>
@@ -149,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cardholder UID</value>
         [DataMember(Name="hold_uid")]
+        
         public int HoldUid { get; set; }
 
         /// <summary>
@@ -156,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cardholder name</value>
         [DataMember(Name="hold_username")]
+        
         public string HoldUsername { get; set; }
 
         /// <summary>
@@ -163,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User verified display name.</value>
         [DataMember(Name="real_name")]
+        
         public string RealName { get; set; }
 
         /// <summary>
@@ -170,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User&#39;s currently bound payment method (primary key ID)</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -177,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method description</value>
         [DataMember(Name="account_des")]
+        
         public string AccountDes { get; set; }
 
         /// <summary>
@@ -184,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method type</value>
         [DataMember(Name="pay_type")]
+        
         public string PayType { get; set; }
 
         /// <summary>
@@ -191,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method file link</value>
         [DataMember(Name="file")]
+        
         public string File { get; set; }
 
         /// <summary>
@@ -198,6 +214,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method file key</value>
         [DataMember(Name="file_key")]
+        
         public string FileKey { get; set; }
 
         /// <summary>
@@ -205,6 +222,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment account or masked payment account.</value>
         [DataMember(Name="account")]
+        
         public string Account { get; set; }
 
         /// <summary>
@@ -212,6 +230,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method note</value>
         [DataMember(Name="memo")]
+        
         public string Memo { get; set; }
 
         /// <summary>
@@ -219,6 +238,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method code</value>
         [DataMember(Name="code")]
+        
         public string Code { get; set; }
 
         /// <summary>
@@ -226,6 +246,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method additional note</value>
         [DataMember(Name="memo_ext")]
+        
         public string MemoExt { get; set; }
 
         /// <summary>
@@ -233,6 +254,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method transaction information</value>
         [DataMember(Name="trade_tips")]
+        
         public string TradeTips { get; set; }
 
         /// <summary>

@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Spot</value>
         [DataMember(Name="spot_balances")]
+        
         public List<MockSpotBalance> SpotBalances { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Spot orders</value>
         [DataMember(Name="spot_orders")]
+        
         public List<MockSpotOrder> SpotOrders { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures positions</value>
         [DataMember(Name="futures_positions")]
+        
         public List<MockFuturesPosition> FuturesPositions { get; set; }
 
         /// <summary>
@@ -77,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures order</value>
         [DataMember(Name="futures_orders")]
+        
         public List<MockFuturesOrder> FuturesOrders { get; set; }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Options positions</value>
         [DataMember(Name="options_positions")]
+        
         public List<MockOptionsPosition> OptionsPositions { get; set; }
 
         /// <summary>
@@ -91,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Option orders</value>
         [DataMember(Name="options_orders")]
+        
         public List<MockOptionsOrder> OptionsOrders { get; set; }
 
         /// <summary>
@@ -98,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to enable spot hedging</value>
         [DataMember(Name="spot_hedge")]
+        
         public bool SpotHedge { get; set; }
 
         /// <summary>

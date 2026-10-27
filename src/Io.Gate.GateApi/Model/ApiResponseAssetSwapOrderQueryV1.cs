@@ -48,8 +48,8 @@ namespace Io.Gate.GateApi.Model
             this.Code = code;
             // to ensure "message" is required (not null)
             this.Message = message ?? throw new ArgumentNullException("message", "message is a required property for ApiResponseAssetSwapOrderQueryV1 and cannot be null");
-            // to ensure "data" is required (not null)
-            this.Data = data ?? throw new ArgumentNullException("data", "data is a required property for ApiResponseAssetSwapOrderQueryV1 and cannot be null");
+            // Presence and nullability are separate: this required member explicitly permits null.
+            this.Data = data;
             this.Timestamp = timestamp;
             this.Label = label;
         }
@@ -59,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business error code, 0 means success</value>
         [DataMember(Name="code")]
+        
         public int Code { get; set; }
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error identification code, empty string on success</value>
         [DataMember(Name="label")]
+        
         public string Label { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Description information</value>
         [DataMember(Name="message")]
+        
         public string Message { get; set; }
 
         /// <summary>
@@ -80,6 +83,10 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order details on success, null on failure</value>
         [DataMember(Name="data")]
+        
+        // Required nullable members must retain an explicit null in JSON.
+        [JsonProperty("data", NullValueHandling = NullValueHandling.Include)]
+        
         public CreateOrder Data { get; set; }
 
         /// <summary>
@@ -87,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Server timestamp (milliseconds)</value>
         [DataMember(Name="timestamp")]
+        
         public long Timestamp { get; set; }
 
         /// <summary>

@@ -90,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position ID</value>
         [DataMember(Name="position_id")]
+        
         public string PositionId { get; set; }
 
         /// <summary>
@@ -97,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public string UserId { get; set; }
 
         /// <summary>
@@ -104,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -111,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position close type (PARTIAL_CLOSED: partially closed; COMPLETE_CLOSED: fully closed)</value>
         [DataMember(Name="closed_type")]
+        
         public string ClosedType { get; set; }
 
         /// <summary>
@@ -118,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close Position P&amp;L</value>
         [DataMember(Name="closed_pnl")]
+        
         public string ClosedPnl { get; set; }
 
         /// <summary>
@@ -125,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close Position P&amp;L Ratio</value>
         [DataMember(Name="closed_pnl_rate")]
+        
         public string ClosedPnlRate { get; set; }
 
         /// <summary>
@@ -132,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average Opening Price</value>
         [DataMember(Name="open_avg_price")]
+        
         public string OpenAvgPrice { get; set; }
 
         /// <summary>
@@ -139,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Average Close Price</value>
         [DataMember(Name="closed_avg_price")]
+        
         public string ClosedAvgPrice { get; set; }
 
         /// <summary>
@@ -146,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Max Trade Size</value>
         [DataMember(Name="max_position_qty")]
+        
         public string MaxPositionQty { get; set; }
 
         /// <summary>
@@ -153,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close Position Quantity</value>
         [DataMember(Name="closed_qty")]
+        
         public string ClosedQty { get; set; }
 
         /// <summary>
@@ -160,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close Position Value</value>
         [DataMember(Name="closed_value")]
+        
         public string ClosedValue { get; set; }
 
         /// <summary>
@@ -167,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Accumulated Fees</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -174,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation Fee</value>
         [DataMember(Name="liq_fee")]
+        
         public string LiqFee { get; set; }
 
         /// <summary>
@@ -181,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Funding Fee</value>
         [DataMember(Name="funding_fee")]
+        
         public string FundingFee { get; set; }
 
         /// <summary>
@@ -188,6 +202,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Direction Before Close</value>
         [DataMember(Name="position_side")]
+        
         public string PositionSide { get; set; }
 
         /// <summary>
@@ -195,6 +210,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Mode at Close</value>
         [DataMember(Name="position_mode")]
+        
         public string PositionMode { get; set; }
 
         /// <summary>
@@ -202,6 +218,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage at Close</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
@@ -209,6 +226,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin mode (CROSS/ISOLATED)</value>
         [DataMember(Name="margin_mode")]
+        
         public string MarginMode { get; set; }
 
         /// <summary>
@@ -216,6 +234,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business Type</value>
         [DataMember(Name="business_type")]
+        
         public string BusinessType { get; set; }
 
         /// <summary>
@@ -223,6 +242,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -230,6 +250,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time</value>
         [DataMember(Name="update_time")]
+        
         public string UpdateTime { get; set; }
 
         /// <summary>

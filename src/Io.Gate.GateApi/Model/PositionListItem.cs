@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
         /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ExchangeEnum
         {
             /// <summary>
@@ -68,12 +70,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [DataMember(Name="exchange")]
+        
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
         /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.
         /// </summary>
         /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TradeStatusEnum
         {
             /// <summary>
@@ -101,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.</value>
         [DataMember(Name="trade_status")]
+        
         public TradeStatusEnum? TradeStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PositionListItem" /> class.
@@ -176,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -183,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency</value>
         [DataMember(Name="quote_currency")]
+        
         public string QuoteCurrency { get; set; }
 
         /// <summary>
@@ -190,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency precision</value>
         [DataMember(Name="quote_currency_precision")]
+        
         public int QuoteCurrencyPrecision { get; set; }
 
         /// <summary>
@@ -197,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency to USD exchange rate</value>
         [DataMember(Name="fx_rate")]
+        
         public string FxRate { get; set; }
 
         /// <summary>
@@ -204,6 +214,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol description</value>
         [DataMember(Name="symbol_desc")]
+        
         public string SymbolDesc { get; set; }
 
         /// <summary>
@@ -211,6 +222,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position P&amp;L</value>
         [DataMember(Name="position_pnl")]
+        
         public string PositionPnl { get; set; }
 
         /// <summary>
@@ -218,6 +230,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Today&#39;s P&amp;L</value>
         [DataMember(Name="today_pnl")]
+        
         public string TodayPnl { get; set; }
 
         /// <summary>
@@ -225,6 +238,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Yield</value>
         [DataMember(Name="pnl_rate")]
+        
         public string PnlRate { get; set; }
 
         /// <summary>
@@ -232,6 +246,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Today&#39;s sales amount</value>
         [DataMember(Name="today_sell_amount")]
+        
         public string TodaySellAmount { get; set; }
 
         /// <summary>
@@ -239,6 +254,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Today&#39;s purchase amount</value>
         [DataMember(Name="today_buy_amount")]
+        
         public string TodayBuyAmount { get; set; }
 
         /// <summary>
@@ -246,6 +262,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Today&#39;s sell volume</value>
         [DataMember(Name="today_sell_volume")]
+        
         public string TodaySellVolume { get; set; }
 
         /// <summary>
@@ -253,6 +270,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Today&#39;s buy volume</value>
         [DataMember(Name="today_buy_volume")]
+        
         public string TodayBuyVolume { get; set; }
 
         /// <summary>
@@ -260,6 +278,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Previous close position quantity</value>
         [DataMember(Name="yesterday_volume")]
+        
         public string YesterdayVolume { get; set; }
 
         /// <summary>
@@ -267,6 +286,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position quantity</value>
         [DataMember(Name="volume")]
+        
         public string Volume { get; set; }
 
         /// <summary>
@@ -274,6 +294,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available position quantity</value>
         [DataMember(Name="available")]
+        
         public string Available { get; set; }
 
         /// <summary>
@@ -281,6 +302,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stock transfer in progress quantity</value>
         [DataMember(Name="transfer_out_pending_qty")]
+        
         public string TransferOutPendingQty { get; set; }
 
         /// <summary>
@@ -288,6 +310,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cost price</value>
         [DataMember(Name="avg_cost_price")]
+        
         public string AvgCostPrice { get; set; }
 
         /// <summary>
@@ -295,6 +318,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Diluted cost price</value>
         [DataMember(Name="diluted_cost_price")]
+        
         public string DilutedCostPrice { get; set; }
 
         /// <summary>
@@ -302,6 +326,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Latest price</value>
         [DataMember(Name="last_price")]
+        
         public string LastPrice { get; set; }
 
         /// <summary>
@@ -309,6 +334,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Extended hours latest price</value>
         [DataMember(Name="extended_last_price")]
+        
         public string ExtendedLastPrice { get; set; }
 
         /// <summary>
@@ -316,6 +342,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum order quantity</value>
         [DataMember(Name="max_order_volume")]
+        
         public string MaxOrderVolume { get; set; }
 
         /// <summary>
@@ -323,6 +350,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order step size</value>
         [DataMember(Name="step_order_volume")]
+        
         public string StepOrderVolume { get; set; }
 
         /// <summary>
@@ -330,6 +358,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum order quantity</value>
         [DataMember(Name="min_order_volume")]
+        
         public string MinOrderVolume { get; set; }
 
         /// <summary>
@@ -337,6 +366,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price precision</value>
         [DataMember(Name="price_precision")]
+        
         public int PricePrecision { get; set; }
 
         /// <summary>
@@ -344,6 +374,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price protection range</value>
         [DataMember(Name="price_protection")]
+        
         public string PriceProtection { get; set; }
 
         /// <summary>
@@ -351,6 +382,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell price protection rate</value>
         [DataMember(Name="sell_price_protection")]
+        
         public string SellPriceProtection { get; set; }
 
         /// <summary>
@@ -358,6 +390,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy price protection rate</value>
         [DataMember(Name="buy_price_protection")]
+        
         public string BuyPriceProtection { get; set; }
 
         /// <summary>
@@ -365,6 +398,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fee Rate</value>
         [DataMember(Name="commission_rate")]
+        
         public string CommissionRate { get; set; }
 
         /// <summary>
@@ -372,6 +406,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Slippage</value>
         [DataMember(Name="slippage_rate")]
+        
         public string SlippageRate { get; set; }
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
+        
         public string Currency { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment</value>
         [DataMember(Name="interest_status", EmitDefaultValue=false)]
+        
         public string InterestStatus { get; private set; }
 
         /// <summary>

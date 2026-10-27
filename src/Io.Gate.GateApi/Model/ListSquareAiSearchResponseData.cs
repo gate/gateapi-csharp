@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total number of results</value>
         [DataMember(Name="total")]
+        
         public int Total { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Search result list</value>
         [DataMember(Name="items")]
+        
         public List<ListSquareAiSearchResponseDataItems> Items { get; set; }
 
         /// <summary>

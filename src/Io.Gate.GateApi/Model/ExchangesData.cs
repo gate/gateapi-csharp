@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets List
         /// </summary>
         [DataMember(Name="list")]
+        
         public List<ExchangesDataList> List { get; set; }
 
         /// <summary>

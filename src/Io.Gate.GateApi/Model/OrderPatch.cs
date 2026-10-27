@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Specify query account</value>
         [DataMember(Name="account")]
+        
         public string Account { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading quantity. Either &#x60;amount&#x60; or &#x60;price&#x60; must be specified</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading price. Either &#x60;amount&#x60; or &#x60;price&#x60; must be specified</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -86,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom info during order amendment</value>
         [DataMember(Name="amend_text")]
+        
         public string AmendText { get; set; }
 
         /// <summary>
@@ -93,18 +98,21 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Processing Mode: When placing an order, different fields are returned based on action_mode. This field is only valid during the request and is not included in the response result ACK: Asynchronous mode, only returns key order fields RESULT: No clearing information FULL: Full mode (default)</value>
         [DataMember(Name="action_mode")]
+        
         public string ActionMode { get; set; }
 
         /// <summary>
         /// Gets or Sets StopProfit
         /// </summary>
         [DataMember(Name="stop_profit")]
+        
         public SpotOrderStopProfit StopProfit { get; set; }
 
         /// <summary>
         /// Gets or Sets StopLoss
         /// </summary>
         [DataMember(Name="stop_loss")]
+        
         public SpotOrderStopLoss StopLoss { get; set; }
 
         /// <summary>

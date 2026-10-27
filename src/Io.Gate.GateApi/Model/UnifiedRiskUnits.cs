@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Spot hedging status: true - enabled, false - disabled</value>
         [DataMember(Name="spot_hedge")]
+        
         public bool SpotHedge { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk unit</value>
         [DataMember(Name="risk_units")]
+        
         public List<RiskUnits> RiskUnits { get; set; }
 
         /// <summary>

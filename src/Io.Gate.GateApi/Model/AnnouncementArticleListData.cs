@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Announcement article list</value>
         [DataMember(Name="list")]
+        
         public List<AnnouncementArticle> List { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total number of announcement articles.</value>
         [DataMember(Name="total")]
+        
         public int Total { get; set; }
 
         /// <summary>

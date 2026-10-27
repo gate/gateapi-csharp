@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Getting started task list (registration tasks come first, guidance tasks follow; when conditions are met, an additional download task to be collected will be returned)</value>
         [DataMember(Name="tasks")]
+        
         public List<ApiResponseExSkillGetBeginnerTaskListRespDataTasks> Tasks { get; set; }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Scene
         /// </summary>
         [DataMember(Name="scene")]
+        
         public DiscoverScene Scene { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AIHubDiscoverData" /> class.
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Recommendations
         /// </summary>
         [DataMember(Name="recommendations")]
+        
         public List<AIHubRecommendation> Recommendations { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Filter conditions not supported in this issue</value>
         [DataMember(Name="unsupported_filters")]
+        
         public List<string> UnsupportedFilters { get; set; }
 
         /// <summary>

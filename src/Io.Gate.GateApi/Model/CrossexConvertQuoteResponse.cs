@@ -68,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote ID</value>
         [DataMember(Name="quote_id")]
+        
         public string QuoteId { get; set; }
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Valid time (milliseconds timestamp)</value>
         [DataMember(Name="valid_ms")]
+        
         public string ValidMs { get; set; }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Asset Sold</value>
         [DataMember(Name="from_coin")]
+        
         public string FromCoin { get; set; }
 
         /// <summary>
@@ -89,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Asset Bought</value>
         [DataMember(Name="to_coin")]
+        
         public string ToCoin { get; set; }
 
         /// <summary>
@@ -96,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to sell</value>
         [DataMember(Name="from_amount")]
+        
         public string FromAmount { get; set; }
 
         /// <summary>
@@ -103,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount to buy</value>
         [DataMember(Name="to_amount")]
+        
         public string ToAmount { get; set; }
 
         /// <summary>
@@ -110,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quoted price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>

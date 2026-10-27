@@ -51,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank card primary key in otc_rds.</value>
         [DataMember(Name="bank_id")]
+        
         public int BankId { get; set; }
 
         /// <summary>
@@ -58,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Review status (e.g., pending review).</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>

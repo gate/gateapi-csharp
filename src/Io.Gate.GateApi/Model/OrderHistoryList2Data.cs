@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total quantity</value>
         [DataMember(Name="total")]
+        
         public long Total { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total pages</value>
         [DataMember(Name="total_page")]
+        
         public int TotalPage { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Query historical order list</value>
         [DataMember(Name="list")]
+        
         public List<OrderHistoryListItem> List { get; set; }
 
         /// <summary>

@@ -60,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Record ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public string Id { get; private set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Hash record of the withdrawal</value>
         [DataMember(Name="txid", EmitDefaultValue=false)]
+        
         public string Txid { get; private set; }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Operation time</value>
         [DataMember(Name="timestamp", EmitDefaultValue=false)]
+        
         public string Timestamp { get; private set; }
 
         /// <summary>
@@ -81,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Token amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -88,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -95,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Withdrawal address. Required for withdrawals</value>
         [DataMember(Name="address")]
+        
         public string Address { get; set; }
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Additional remarks with regards to the withdrawal</value>
         [DataMember(Name="memo")]
+        
         public string Memo { get; set; }
 
         /// <summary>
@@ -109,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction Status  - BLOCKED: Deposit Blocked - DEP_CREDITED: Deposit Credited, Withdrawal Pending Unlock - DONE: Funds Credited to Spot Account - INVALID: Invalid Transaction - MANUAL: Manual Review Required - PEND: Processing - REVIEW: Under Compliance Review - TRACK: Tracking Block Confirmations, Pending Spot Account Credit</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public string Status { get; private set; }
 
         /// <summary>
@@ -116,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Blocked deposit refund status. This field is returned only when the deposit record has a blocked deposit refund record with a non-empty refund status. Not returned when there is no refund record or the refund status is empty - REFUNDING: Refund in progress - REFUNDED: Refund completed - REFUND_FAILED: Refund failed - REJECTED: Refund rejected</value>
         [DataMember(Name="refund_status", EmitDefaultValue=false)]
+        
         public string RefundStatus { get; private set; }
 
         /// <summary>
@@ -123,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Name of the chain used in withdrawals</value>
         [DataMember(Name="chain")]
+        
         public string Chain { get; set; }
 
         /// <summary>

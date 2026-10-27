@@ -90,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public string UserId { get; set; }
 
         /// <summary>
@@ -97,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position ID</value>
         [DataMember(Name="position_id")]
+        
         public string PositionId { get; set; }
 
         /// <summary>
@@ -104,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -111,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Direction</value>
         [DataMember(Name="position_side")]
+        
         public string PositionSide { get; set; }
 
         /// <summary>
@@ -118,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial Margin</value>
         [DataMember(Name="initial_margin")]
+        
         public string InitialMargin { get; set; }
 
         /// <summary>
@@ -125,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Isolated margin. It is 0 in cross margin mode and applies only to isolated margin positions</value>
         [DataMember(Name="isolated_margin")]
+        
         public string IsolatedMargin { get; set; }
 
         /// <summary>
@@ -132,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin mode (CROSS/ISOLATED)</value>
         [DataMember(Name="margin_mode")]
+        
         public string MarginMode { get; set; }
 
         /// <summary>
@@ -139,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maintenance margin</value>
         [DataMember(Name="maintenance_margin")]
+        
         public string MaintenanceMargin { get; set; }
 
         /// <summary>
@@ -146,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Quantity</value>
         [DataMember(Name="position_qty")]
+        
         public string PositionQty { get; set; }
 
         /// <summary>
@@ -153,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Value</value>
         [DataMember(Name="position_value")]
+        
         public string PositionValue { get; set; }
 
         /// <summary>
@@ -160,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized P&amp;L</value>
         [DataMember(Name="upnl")]
+        
         public string Upnl { get; set; }
 
         /// <summary>
@@ -167,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized P&amp;L Ratio</value>
         [DataMember(Name="upnl_rate")]
+        
         public string UpnlRate { get; set; }
 
         /// <summary>
@@ -174,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Average Entry Price</value>
         [DataMember(Name="entry_price")]
+        
         public string EntryPrice { get; set; }
 
         /// <summary>
@@ -181,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation price. It is 0 in cross margin mode and applies only to isolated margin positions; 0 in isolated margin mode means the position will not be liquidated</value>
         [DataMember(Name="liq_price")]
+        
         public string LiqPrice { get; set; }
 
         /// <summary>
@@ -188,6 +202,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mark price</value>
         [DataMember(Name="mark_price")]
+        
         public string MarkPrice { get; set; }
 
         /// <summary>
@@ -195,6 +210,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Leverage</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>
@@ -202,6 +218,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum leverage</value>
         [DataMember(Name="max_leverage")]
+        
         public string MaxLeverage { get; set; }
 
         /// <summary>
@@ -209,6 +226,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position risk limit</value>
         [DataMember(Name="risk_limit")]
+        
         public string RiskLimit { get; set; }
 
         /// <summary>
@@ -216,6 +234,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Fee</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -223,6 +242,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Accumulated position funding fee. A positive value indicates a gain, while a negative value indicates a loss.</value>
         [DataMember(Name="funding_fee")]
+        
         public string FundingFee { get; set; }
 
         /// <summary>
@@ -230,6 +250,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position funding fee collection time (0 indicates it has not been collected yet)</value>
         [DataMember(Name="funding_time")]
+        
         public string FundingTime { get; set; }
 
         /// <summary>
@@ -237,6 +258,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Creation Time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -244,6 +266,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position Update Time</value>
         [DataMember(Name="update_time")]
+        
         public string UpdateTime { get; set; }
 
         /// <summary>
@@ -251,6 +274,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Realized PnL</value>
         [DataMember(Name="closed_pnl")]
+        
         public string ClosedPnl { get; set; }
 
         /// <summary>

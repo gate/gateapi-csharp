@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to be converted</value>
         [DataMember(Name="currency")]
+        
         public List<string> Currency { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to convert all</value>
         [DataMember(Name="is_all")]
+        
         public bool IsAll { get; set; }
 
         /// <summary>

@@ -52,12 +52,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Icon
         /// </summary>
         [DataMember(Name="icon")]
+        
         public string Icon { get; set; }
 
         /// <summary>

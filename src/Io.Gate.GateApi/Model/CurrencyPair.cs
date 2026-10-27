@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Trading status  - untradable: cannot be traded - buyable: can be bought - sellable: can be sold - tradable: can be bought and sold
         /// </summary>
         /// <value>Trading status  - untradable: cannot be traded - buyable: can be bought - sellable: can be sold - tradable: can be bought and sold</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TradeStatusEnum
         {
             /// <summary>
@@ -68,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading status  - untradable: cannot be traded - buyable: can be bought - sellable: can be sold - tradable: can be bought and sold</value>
         [DataMember(Name="trade_status")]
+        
         public TradeStatusEnum? TradeStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CurrencyPair" /> class.
@@ -131,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -138,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Base currency</value>
         [DataMember(Name="base")]
+        
         public string Base { get; set; }
 
         /// <summary>
@@ -145,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Base currency name</value>
         [DataMember(Name="base_name")]
+        
         public string BaseName { get; set; }
 
         /// <summary>
@@ -152,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency</value>
         [DataMember(Name="quote")]
+        
         public string Quote { get; set; }
 
         /// <summary>
@@ -159,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency name</value>
         [DataMember(Name="quote_name")]
+        
         public string QuoteName { get; set; }
 
         /// <summary>
@@ -166,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currencies supported by the unified market; null means that the market does not support unified quote currencies</value>
         [DataMember(Name="trade_quotes")]
+        
         public List<string> TradeQuotes { get; set; }
 
         /// <summary>
@@ -173,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading fee rate(deprecated)</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -180,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum amount of base currency to trade, &#x60;null&#x60; means no limit</value>
         [DataMember(Name="min_base_amount")]
+        
         public string MinBaseAmount { get; set; }
 
         /// <summary>
@@ -187,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum amount of quote currency to trade, &#x60;null&#x60; means no limit</value>
         [DataMember(Name="min_quote_amount")]
+        
         public string MinQuoteAmount { get; set; }
 
         /// <summary>
@@ -194,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum amount of base currency to trade, &#x60;null&#x60; means no limit</value>
         [DataMember(Name="max_base_amount")]
+        
         public string MaxBaseAmount { get; set; }
 
         /// <summary>
@@ -201,6 +214,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum amount of quote currency to trade, &#x60;null&#x60; means no limit</value>
         [DataMember(Name="max_quote_amount")]
+        
         public string MaxQuoteAmount { get; set; }
 
         /// <summary>
@@ -208,6 +222,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quantity precision</value>
         [DataMember(Name="amount_precision")]
+        
         public int AmountPrecision { get; set; }
 
         /// <summary>
@@ -215,6 +230,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price precision</value>
         [DataMember(Name="precision")]
+        
         public int Precision { get; set; }
 
         /// <summary>
@@ -222,6 +238,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell start unix timestamp in seconds</value>
         [DataMember(Name="sell_start")]
+        
         public long SellStart { get; set; }
 
         /// <summary>
@@ -229,6 +246,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy start unix timestamp in seconds</value>
         [DataMember(Name="buy_start")]
+        
         public long BuyStart { get; set; }
 
         /// <summary>
@@ -236,6 +254,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Expected time to remove the shelves, Unix timestamp in seconds</value>
         [DataMember(Name="delisting_time")]
+        
         public long DelistingTime { get; set; }
 
         /// <summary>
@@ -243,6 +262,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading pair type, normal: normal, premarket: pre-market</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -250,6 +270,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction link</value>
         [DataMember(Name="trade_url")]
+        
         public string TradeUrl { get; set; }
 
         /// <summary>
@@ -257,6 +278,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the trading pair is in ST risk assessment, false - No, true - Yes</value>
         [DataMember(Name="st_tag")]
+        
         public bool StTag { get; set; }
 
         /// <summary>
@@ -264,6 +286,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum Quote Rise Percentage</value>
         [DataMember(Name="up_rate")]
+        
         public string UpRate { get; set; }
 
         /// <summary>
@@ -271,6 +294,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum Quote Decline Percentage</value>
         [DataMember(Name="down_rate")]
+        
         public string DownRate { get; set; }
 
         /// <summary>
@@ -278,6 +302,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum supported slippage ratio for Spot Market Order Placement, calculated based on the latest market price at the time of order placement as the benchmark (Example: 0.03 means 3%)</value>
         [DataMember(Name="slippage")]
+        
         public string Slippage { get; set; }
 
         /// <summary>
@@ -285,6 +310,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum market order quantity. &#x60;null&#x60; or &#x60;0&#x60; means no limit</value>
         [DataMember(Name="market_order_max_stock")]
+        
         public string MarketOrderMaxStock { get; set; }
 
         /// <summary>
@@ -292,6 +318,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum market order amount. &#x60;null&#x60; or &#x60;0&#x60; means no limit</value>
         [DataMember(Name="market_order_max_money")]
+        
         public string MarketOrderMaxMoney { get; set; }
 
         /// <summary>

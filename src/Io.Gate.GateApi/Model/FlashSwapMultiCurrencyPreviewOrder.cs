@@ -74,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote ID</value>
         [DataMember(Name="quote_id")]
+        
         public string QuoteId { get; set; }
 
         /// <summary>
@@ -81,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Hedge type</value>
         [DataMember(Name="hedge_type")]
+        
         public int HedgeType { get; set; }
 
         /// <summary>
@@ -88,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to sell</value>
         [DataMember(Name="sell_asset")]
+        
         public string SellAsset { get; set; }
 
         /// <summary>
@@ -95,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell amount</value>
         [DataMember(Name="sell_amount")]
+        
         public string SellAmount { get; set; }
 
         /// <summary>
@@ -102,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell amount display value</value>
         [DataMember(Name="sell_amount_show")]
+        
         public string SellAmountShow { get; set; }
 
         /// <summary>
@@ -109,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency to buy</value>
         [DataMember(Name="buy_asset")]
+        
         public string BuyAsset { get; set; }
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy amount</value>
         [DataMember(Name="buy_amount")]
+        
         public string BuyAmount { get; set; }
 
         /// <summary>
@@ -123,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy amount display value</value>
         [DataMember(Name="buy_amount_show")]
+        
         public string BuyAmountShow { get; set; }
 
         /// <summary>
@@ -130,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange price</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -137,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Spread percentage</value>
         [DataMember(Name="price_diff")]
+        
         public string PriceDiff { get; set; }
 
         /// <summary>
@@ -144,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reverse price</value>
         [DataMember(Name="reverse_price")]
+        
         public string ReversePrice { get; set; }
 
         /// <summary>
@@ -151,12 +162,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote expiration timestamp (in seconds)</value>
         [DataMember(Name="valid_timestamp")]
+        
         public long ValidTimestamp { get; set; }
 
         /// <summary>
         /// Gets or Sets Error
         /// </summary>
         [DataMember(Name="error")]
+        
         public ErrCodeMsg Error { get; set; }
 
         /// <summary>

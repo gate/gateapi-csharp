@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.
         /// </summary>
         /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ExchangeEnum
         {
             /// <summary>
@@ -68,12 +70,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks.</value>
         [DataMember(Name="exchange")]
+        
         public ExchangeEnum? Exchange { get; set; }
         /// <summary>
         /// Symbol category. - CS: Common stock. - ETF: Exchange-traded funds. - ADRC, ADR: Depositary receipts for foreign companies listed in the U.S. - ETV: Exchange-traded products. - PFD: Preferred stock. - ETS: Exchange-traded securities. - ETN: Exchange-traded notes. - FUND: Funds.
         /// </summary>
         /// <value>Symbol category. - CS: Common stock. - ETF: Exchange-traded funds. - ADRC, ADR: Depositary receipts for foreign companies listed in the U.S. - ETV: Exchange-traded products. - PFD: Preferred stock. - ETS: Exchange-traded securities. - ETN: Exchange-traded notes. - FUND: Funds.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum CategoryEnum
         {
             /// <summary>
@@ -137,12 +142,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol category. - CS: Common stock. - ETF: Exchange-traded funds. - ADRC, ADR: Depositary receipts for foreign companies listed in the U.S. - ETV: Exchange-traded products. - PFD: Preferred stock. - ETS: Exchange-traded securities. - ETN: Exchange-traded notes. - FUND: Funds.</value>
         [DataMember(Name="category")]
+        
         public CategoryEnum? Category { get; set; }
         /// <summary>
         /// Asset type. - STOCK: Stock. - ETF: Exchange-traded fund.
         /// </summary>
         /// <value>Asset type. - STOCK: Stock. - ETF: Exchange-traded fund.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum AssetTypeEnum
         {
             /// <summary>
@@ -164,12 +172,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Asset type. - STOCK: Stock. - ETF: Exchange-traded fund.</value>
         [DataMember(Name="asset_type")]
+        
         public AssetTypeEnum? AssetType { get; set; }
         /// <summary>
         /// Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.
         /// </summary>
         /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TradeStatusEnum
         {
             /// <summary>
@@ -197,12 +208,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading status. - pre_market: Pre-market. - open: Regular trading session. - post_market: Post-market.</value>
         [DataMember(Name="trade_status")]
+        
         public TradeStatusEnum? TradeStatus { get; set; }
         /// <summary>
         /// Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: Trading suspended. - 6: Trading suspended. - 7: Trading suspended. - 8: Trading suspended.
         /// </summary>
         /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: Trading suspended. - 6: Trading suspended. - 7: Trading suspended. - 8: Trading suspended.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TradeModeEnum
         {
             /// <summary>
@@ -252,12 +264,13 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current session trading mode. - 0: Trading disabled. - 1: Buy only. - 2: Sell only. - 4: Buy and sell supported. - 5: Trading suspended. - 6: Trading suspended. - 7: Trading suspended. - 8: Trading suspended.</value>
         [DataMember(Name="trade_mode")]
+        
         public TradeModeEnum? TradeMode { get; set; }
         /// <summary>
         /// Order fill timing (1&#x3D;immediate, 2&#x3D;after pre-market opens, 3&#x3D;after regular session opens)
         /// </summary>
         /// <value>Order fill timing (1&#x3D;immediate, 2&#x3D;after pre-market opens, 3&#x3D;after regular session opens)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum OrderFillTimingEnum
         {
             /// <summary>
@@ -282,6 +295,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order fill timing (1&#x3D;immediate, 2&#x3D;after pre-market opens, 3&#x3D;after regular session opens)</value>
         [DataMember(Name="order_fill_timing")]
+        
         public OrderFillTimingEnum? OrderFillTiming { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SymbolListItem" /> class.
@@ -337,6 +351,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -344,6 +359,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange description</value>
         [DataMember(Name="exchange_desc")]
+        
         public string ExchangeDesc { get; set; }
 
         /// <summary>
@@ -351,6 +367,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency</value>
         [DataMember(Name="quote_currency")]
+        
         public string QuoteCurrency { get; set; }
 
         /// <summary>
@@ -358,6 +375,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency precision</value>
         [DataMember(Name="quote_currency_precision")]
+        
         public int QuoteCurrencyPrecision { get; set; }
 
         /// <summary>
@@ -365,6 +383,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency to USD exchange rate</value>
         [DataMember(Name="fx_rate")]
+        
         public string FxRate { get; set; }
 
         /// <summary>
@@ -372,6 +391,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol description</value>
         [DataMember(Name="symbol_desc")]
+        
         public string SymbolDesc { get; set; }
 
         /// <summary>
@@ -379,6 +399,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Icon URL</value>
         [DataMember(Name="icon_link")]
+        
         public string IconLink { get; set; }
 
         /// <summary>
@@ -386,6 +407,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote currency symbol</value>
         [DataMember(Name="quote_currency_symbol")]
+        
         public string QuoteCurrencySymbol { get; set; }
 
         /// <summary>
@@ -393,6 +415,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price precision</value>
         [DataMember(Name="price_precision")]
+        
         public int PricePrecision { get; set; }
 
         /// <summary>
@@ -400,6 +423,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quantity precision</value>
         [DataMember(Name="volume_precision")]
+        
         public int VolumePrecision { get; set; }
 
         /// <summary>
@@ -407,6 +431,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether it is an IPO symbol</value>
         [DataMember(Name="is_ipo")]
+        
         public bool IsIpo { get; set; }
 
         /// <summary>
@@ -414,6 +439,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>IPO price</value>
         [DataMember(Name="ipo_price")]
+        
         public string IpoPrice { get; set; }
 
         /// <summary>
@@ -421,6 +447,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sell price protection rate</value>
         [DataMember(Name="sell_price_protection")]
+        
         public string SellPriceProtection { get; set; }
 
         /// <summary>
@@ -428,6 +455,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buy price protection rate</value>
         [DataMember(Name="buy_price_protection")]
+        
         public string BuyPriceProtection { get; set; }
 
         /// <summary>
@@ -435,6 +463,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Multilingual symbol description</value>
         [DataMember(Name="symbol_descs")]
+        
         public List<I18nTxt> SymbolDescs { get; set; }
 
         /// <summary>

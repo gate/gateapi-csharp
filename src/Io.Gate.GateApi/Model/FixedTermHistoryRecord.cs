@@ -81,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Record ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -88,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -95,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -102,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -109,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unique time identifier (date)</value>
         [DataMember(Name="uniq_time")]
+        
         public string UniqTime { get; set; }
 
         /// <summary>
@@ -116,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reward campaign ID</value>
         [DataMember(Name="bonus_id")]
+        
         public int BonusId { get; set; }
 
         /// <summary>
@@ -123,6 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product ID</value>
         [DataMember(Name="product_id")]
+        
         public int ProductId { get; set; }
 
         /// <summary>
@@ -130,6 +137,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reward currency</value>
         [DataMember(Name="bonus_asset")]
+        
         public string BonusAsset { get; set; }
 
         /// <summary>
@@ -137,6 +145,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total principal</value>
         [DataMember(Name="total_principal")]
+        
         public string TotalPrincipal { get; set; }
 
         /// <summary>
@@ -144,6 +153,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -151,6 +161,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency price</value>
         [DataMember(Name="asset_price")]
+        
         public string AssetPrice { get; set; }
 
         /// <summary>
@@ -158,6 +169,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -165,6 +177,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Detail description</value>
         [DataMember(Name="detail")]
+        
         public string Detail { get; set; }
 
         /// <summary>
@@ -172,6 +185,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -179,6 +193,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation timestamp (in seconds)</value>
         [DataMember(Name="create_at")]
+        
         public int CreateAt { get; set; }
 
         /// <summary>
@@ -186,6 +201,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Term</value>
         [DataMember(Name="lock_up_period")]
+        
         public int LockUpPeriod { get; set; }
 
         /// <summary>

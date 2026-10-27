@@ -70,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>current - current, fixed - fixed</value>
         [DataMember(Name="order_type")]
+        
         public string OrderType { get; set; }
 
         /// <summary>
@@ -84,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed interest rate loan periods: 7d - 7 days, 30d - 30 days</value>
         [DataMember(Name="fixed_type")]
+        
         public string FixedType { get; set; }
 
         /// <summary>
@@ -91,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed interest rate</value>
         [DataMember(Name="fixed_rate")]
+        
         public string FixedRate { get; set; }
 
         /// <summary>
@@ -98,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Expiration time, timestamp, unit in seconds</value>
         [DataMember(Name="expire_time")]
+        
         public long ExpireTime { get; set; }
 
         /// <summary>
@@ -105,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed interest rate, auto-renewal</value>
         [DataMember(Name="auto_renew")]
+        
         public bool AutoRenew { get; set; }
 
         /// <summary>
@@ -112,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fixed interest rate, auto-repayment</value>
         [DataMember(Name="auto_repay")]
+        
         public bool AutoRepay { get; set; }
 
         /// <summary>
@@ -119,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Current collateralization rate</value>
         [DataMember(Name="current_ltv")]
+        
         public string CurrentLtv { get; set; }
 
         /// <summary>
@@ -126,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status: - initial: Initial state after placing the order - collateral_deducted: Collateral deduction successful - collateral_returning: Loan failed - Collateral return pending - lent: Loan successful - repaying: Repayment in progress - liquidating: Liquidation in progress - finished: Order completed - closed_liquidated: Liquidation and repayment completed</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -133,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrowing time, timestamp in seconds</value>
         [DataMember(Name="borrow_time")]
+        
         public long BorrowTime { get; set; }
 
         /// <summary>
@@ -140,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total outstanding value converted to USDT</value>
         [DataMember(Name="total_left_repay_usdt")]
+        
         public string TotalLeftRepayUsdt { get; set; }
 
         /// <summary>
@@ -147,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total collateral value converted to USDT</value>
         [DataMember(Name="total_left_collateral_usdt")]
+        
         public string TotalLeftCollateralUsdt { get; set; }
 
         /// <summary>
@@ -154,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Borrowing Currency List</value>
         [DataMember(Name="borrow_currencies")]
+        
         public List<BorrowCurrencyInfo> BorrowCurrencies { get; set; }
 
         /// <summary>
@@ -161,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Collateral Currency List</value>
         [DataMember(Name="collateral_currencies")]
+        
         public List<CollateralCurrencyInfo> CollateralCurrencies { get; set; }
 
         /// <summary>

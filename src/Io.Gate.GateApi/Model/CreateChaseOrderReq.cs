@@ -76,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract name; server-side converted to uppercase</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settle currency, overridden by the path parameter and converted to lowercase</value>
         [DataMember(Name="settle")]
+        
         public string Settle { get; set; }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total order size in contracts, decimal string. Positive for buy, negative for sell. Cannot be 0</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -97,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>最高追逐价，合法十进制字符串；未设置限价时请传 \&quot;0\&quot;</value>
         [DataMember(Name="price_limit")]
+        
         public string PriceLimit { get; set; }
 
         /// <summary>
@@ -104,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum chasing distance from the best price, mutually exclusive with price_limit</value>
         [DataMember(Name="offset_limit")]
+        
         public string OffsetLimit { get; set; }
 
         /// <summary>
@@ -111,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether reduce only</value>
         [DataMember(Name="reduce_only")]
+        
         public bool ReduceOnly { get; set; }
 
         /// <summary>
@@ -118,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Optional custom tag</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -125,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether dual-position mode is enabled</value>
         [DataMember(Name="is_dual_mode")]
+        
         public bool IsDualMode { get; set; }
 
         /// <summary>
@@ -132,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price type: 1 best bid/ask, 2 distance from best bid/ask</value>
         [DataMember(Name="price_type")]
+        
         public long PriceType { get; set; }
 
         /// <summary>
@@ -139,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Used when price_type &#x3D;&#x3D; 2: 1 absolute price gap, 2 percentage</value>
         [DataMember(Name="price_gap_type")]
+        
         public long PriceGapType { get; set; }
 
         /// <summary>
@@ -146,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price gap value paired with price_gap_type</value>
         [DataMember(Name="price_gap_value")]
+        
         public string PriceGapValue { get; set; }
 
         /// <summary>
@@ -153,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position margin mode, e.g. isolated or cross</value>
         [DataMember(Name="pos_margin_mode")]
+        
         public string PosMarginMode { get; set; }
 
         /// <summary>
@@ -160,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position mode (e.g. single, dual, dual_plus)</value>
         [DataMember(Name="position_mode")]
+        
         public string PositionMode { get; set; }
 
         /// <summary>

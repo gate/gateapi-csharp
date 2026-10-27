@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Preview order list</value>
         [DataMember(Name="orders")]
+        
         public List<FlashSwapMultiCurrencyPreviewOrder> Orders { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total amount received</value>
         [DataMember(Name="total_acquire_amount")]
+        
         public string TotalAcquireAmount { get; set; }
 
         /// <summary>

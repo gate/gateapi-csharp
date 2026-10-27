@@ -80,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public string UserId { get; set; }
 
         /// <summary>
@@ -87,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading Pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -94,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest Deduction ID</value>
         [DataMember(Name="interest_id")]
+        
         public string InterestId { get; set; }
 
         /// <summary>
@@ -101,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Debt Source ID, can be Order ID or Position ID</value>
         [DataMember(Name="liability_id")]
+        
         public string LiabilityId { get; set; }
 
         /// <summary>
@@ -108,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Debt Quantity</value>
         [DataMember(Name="liability")]
+        
         public string Liability { get; set; }
 
         /// <summary>
@@ -115,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Debt Currency</value>
         [DataMember(Name="liability_coin")]
+        
         public string LiabilityCoin { get; set; }
 
         /// <summary>
@@ -122,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest</value>
         [DataMember(Name="interest")]
+        
         public string Interest { get; set; }
 
         /// <summary>
@@ -129,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>interest rate</value>
         [DataMember(Name="interest_rate")]
+        
         public string InterestRate { get; set; }
 
         /// <summary>
@@ -136,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Interest deduction type &#x60;PERIODIC_POSITION&#x60;: hourly interest charged on positions &#x60;PERIODIC_OPEN_ORDER&#x60;: hourly interest charged on open orders &#x60;IMMEDIATE_OPEN_ORDER&#x60;: interest charged when an order is placed &#x60;PERIODIC_ISOLATED&#x60;: hourly interest charged on liabilities</value>
         [DataMember(Name="interest_type")]
+        
         public string InterestType { get; set; }
 
         /// <summary>
@@ -143,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -150,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange</value>
         [DataMember(Name="exchange_type")]
+        
         public string ExchangeType { get; set; }
 
         /// <summary>

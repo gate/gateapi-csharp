@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Change types:  - dnw: Deposit and withdrawal - pnl: Profit and loss from position reduction - fee: Trading fees - refr: Referrer rebates - fund: Funding fees - point_dnw: Point card deposit and withdrawal - point_fee: Point card trading fees - point_refr: Point card referrer rebates - bonus_offset: Trial fund deduction - dividend: Dividend payout
         /// </summary>
         /// <value>Change types:  - dnw: Deposit and withdrawal - pnl: Profit and loss from position reduction - fee: Trading fees - refr: Referrer rebates - fund: Funding fees - point_dnw: Point card deposit and withdrawal - point_fee: Point card trading fees - point_refr: Point card referrer rebates - bonus_offset: Trial fund deduction - dividend: Dividend payout</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -104,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Change types:  - dnw: Deposit and withdrawal - pnl: Profit and loss from position reduction - fee: Trading fees - refr: Referrer rebates - fund: Funding fees - point_dnw: Point card deposit and withdrawal - point_fee: Point card trading fees - point_refr: Point card referrer rebates - bonus_offset: Trial fund deduction - dividend: Dividend payout</value>
         [DataMember(Name="type")]
+        
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesAccountBook" /> class.
@@ -133,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Change time</value>
         [DataMember(Name="time")]
+        
         public double Time { get; set; }
 
         /// <summary>
@@ -140,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Change amount</value>
         [DataMember(Name="change")]
+        
         public string Change { get; set; }
 
         /// <summary>
@@ -147,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Balance after change</value>
         [DataMember(Name="balance")]
+        
         public string Balance { get; set; }
 
         /// <summary>
@@ -154,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Comment</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -161,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract, the field is only available for data after 2023-10-30</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -168,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>trade id</value>
         [DataMember(Name="trade_id")]
+        
         public string TradeId { get; set; }
 
         /// <summary>
@@ -175,6 +184,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account change record ID</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>

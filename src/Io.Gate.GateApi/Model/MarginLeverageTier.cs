@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum borrowing limit. Determined by the leverage you set; the lower the leverage, the larger the borrowing limit.</value>
         [DataMember(Name="upper_limit")]
+        
         public string UpperLimit { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maintenance margin rate.Under tiered margin requirements(https://www.gate.com/en/help/trade/margin-trading/42357), the maintenance margin rate is a composite value.</value>
         [DataMember(Name="mmr")]
+        
         public string Mmr { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>the maximum permissible leverage given to the current debt level; the higher the debt level, the lower the maximum leverage.</value>
         [DataMember(Name="leverage")]
+        
         public string Leverage { get; set; }
 
         /// <summary>

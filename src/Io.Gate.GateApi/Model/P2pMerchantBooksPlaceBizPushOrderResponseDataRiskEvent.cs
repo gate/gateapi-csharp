@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Prompt display type
         /// </summary>
         /// <value>Prompt display type</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -50,12 +52,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Prompt display type</value>
         [DataMember(Name="type")]
+        
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Advertisement content field that hit risk control
         /// </summary>
         /// <value>Advertisement content field that hit risk control</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum ContentRiskTypeEnum
         {
             /// <summary>
@@ -83,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Advertisement content field that hit risk control</value>
         [DataMember(Name="content_risk_type")]
+        
         public ContentRiskTypeEnum? ContentRiskType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="P2pMerchantBooksPlaceBizPushOrderResponseDataRiskEvent" /> class.
@@ -110,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk control prompt title</value>
         [DataMember(Name="title")]
+        
         public string Title { get; set; }
 
         /// <summary>
@@ -117,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk control prompt message generated based on the field that hit risk control</value>
         [DataMember(Name="msg")]
+        
         public string Msg { get; set; }
 
         /// <summary>
@@ -124,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available actions; advertisement content risk control only returns the close action</value>
         [DataMember(Name="action")]
+        
         public List<P2pMerchantBooksPlaceBizPushOrderResponseDataRiskEventAction> Action { get; set; }
 
         /// <summary>
@@ -131,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Prompt message returned when the trade terms hit risk control</value>
         [DataMember(Name="trade_tips")]
+        
         public string TradeTips { get; set; }
 
         /// <summary>
@@ -138,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Prompt message returned when the auto reply hits risk control</value>
         [DataMember(Name="auto_reply")]
+        
         public string AutoReply { get; set; }
 
         /// <summary>

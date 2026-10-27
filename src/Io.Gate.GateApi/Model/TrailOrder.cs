@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Activation price type: 0-unknown, 1-latest price, 2-index price, 3-mark price
         /// </summary>
         /// <value>Activation price type: 0-unknown, 1-latest price, 2-index price, 3-mark price</value>
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -63,12 +64,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation price type: 0-unknown, 1-latest price, 2-index price, 3-mark price</value>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
         /// Simplified order status: open/finished
         /// </summary>
         /// <value>Simplified order status: open/finished</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StatusEnum
         {
             /// <summary>
@@ -90,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Simplified order status: open/finished</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TrailOrder" /> class.
@@ -123,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public long Id { get; private set; }
 
         /// <summary>
@@ -130,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id", EmitDefaultValue=false)]
+        
         public long UserId { get; private set; }
 
         /// <summary>
@@ -137,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
+        
         public long User { get; private set; }
 
         /// <summary>
@@ -144,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract name</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -151,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settle currency</value>
         [DataMember(Name="settle")]
+        
         public string Settle { get; set; }
 
         /// <summary>
@@ -158,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading quantity in contracts, positive for buy, negative for sell</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -165,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>true: activate when market price &gt;&#x3D; activation price, false: &lt;&#x3D; activation price</value>
         [DataMember(Name="is_gte")]
+        
         public bool IsGte { get; set; }
 
         /// <summary>
@@ -172,6 +184,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation price, 0 means trigger immediately</value>
         [DataMember(Name="activation_price")]
+        
         public string ActivationPrice { get; set; }
 
         /// <summary>
@@ -179,6 +192,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Callback ratio or price distance, e.g., &#x60;0.1&#x60; or &#x60;0.1%&#x60;</value>
         [DataMember(Name="price_offset")]
+        
         public string PriceOffset { get; set; }
 
         /// <summary>
@@ -186,6 +200,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom field</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>
@@ -193,6 +208,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reduce Position Only</value>
         [DataMember(Name="reduce_only")]
+        
         public bool ReduceOnly { get; set; }
 
         /// <summary>
@@ -200,6 +216,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether bound to position</value>
         [DataMember(Name="position_related")]
+        
         public bool PositionRelated { get; set; }
 
         /// <summary>
@@ -207,6 +224,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
+        
         public long CreatedAt { get; private set; }
 
         /// <summary>
@@ -214,6 +232,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation time</value>
         [DataMember(Name="activated_at", EmitDefaultValue=false)]
+        
         public long ActivatedAt { get; private set; }
 
         /// <summary>
@@ -221,6 +240,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End time</value>
         [DataMember(Name="finished_at", EmitDefaultValue=false)]
+        
         public long FinishedAt { get; private set; }
 
         /// <summary>
@@ -228,6 +248,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public long CreateTime { get; private set; }
 
         /// <summary>
@@ -235,6 +256,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation time</value>
         [DataMember(Name="active_time", EmitDefaultValue=false)]
+        
         public long ActiveTime { get; private set; }
 
         /// <summary>
@@ -242,6 +264,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End time</value>
         [DataMember(Name="finish_time", EmitDefaultValue=false)]
+        
         public long FinishTime { get; private set; }
 
         /// <summary>
@@ -249,6 +272,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End reason</value>
         [DataMember(Name="reason", EmitDefaultValue=false)]
+        
         public string Reason { get; private set; }
 
         /// <summary>
@@ -256,6 +280,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-order text field</value>
         [DataMember(Name="suborder_text", EmitDefaultValue=false)]
+        
         public string SuborderText { get; private set; }
 
         /// <summary>
@@ -263,6 +288,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether dual position mode when creating order</value>
         [DataMember(Name="is_dual_mode", EmitDefaultValue=false)]
+        
         public bool IsDualMode { get; private set; }
 
         /// <summary>
@@ -270,6 +296,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trigger price</value>
         [DataMember(Name="trigger_price", EmitDefaultValue=false)]
+        
         public string TriggerPrice { get; private set; }
 
         /// <summary>
@@ -277,6 +304,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-order ID</value>
         [DataMember(Name="suborder_id", EmitDefaultValue=false)]
+        
         public long SuborderId { get; private set; }
 
         /// <summary>
@@ -284,6 +312,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order direction label: long/short/open long/open short/close long/close short</value>
         [DataMember(Name="side_label", EmitDefaultValue=false)]
+        
         public string SideLabel { get; private set; }
 
         /// <summary>
@@ -291,6 +320,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status</value>
         [DataMember(Name="original_status", EmitDefaultValue=false)]
+        
         public int OriginalStatus { get; private set; }
 
         /// <summary>
@@ -298,6 +328,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Same as side_label, client requires consistency with other order types</value>
         [DataMember(Name="position_side_output", EmitDefaultValue=false)]
+        
         public string PositionSideOutput { get; private set; }
 
         /// <summary>
@@ -305,6 +336,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
+        
         public long UpdatedAt { get; private set; }
 
         /// <summary>
@@ -312,6 +344,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Extremum price</value>
         [DataMember(Name="extremum_price", EmitDefaultValue=false)]
+        
         public string ExtremumPrice { get; private set; }
 
         /// <summary>
@@ -319,6 +352,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status code value</value>
         [DataMember(Name="status_code", EmitDefaultValue=false)]
+        
         public string StatusCode { get; private set; }
 
         /// <summary>
@@ -326,6 +360,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation time (high precision, seconds.microseconds format)</value>
         [DataMember(Name="created_at_precise", EmitDefaultValue=false)]
+        
         public string CreatedAtPrecise { get; private set; }
 
         /// <summary>
@@ -333,6 +368,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End time (high precision, seconds.microseconds format)</value>
         [DataMember(Name="finished_at_precise", EmitDefaultValue=false)]
+        
         public string FinishedAtPrecise { get; private set; }
 
         /// <summary>
@@ -340,6 +376,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation time (high precision, seconds.microseconds format)</value>
         [DataMember(Name="activated_at_precise", EmitDefaultValue=false)]
+        
         public string ActivatedAtPrecise { get; private set; }
 
         /// <summary>
@@ -347,6 +384,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status internationalization label (translated status text)</value>
         [DataMember(Name="status_label", EmitDefaultValue=false)]
+        
         public string StatusLabel { get; private set; }
 
         /// <summary>
@@ -354,6 +392,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position margin mode: isolated/cross</value>
         [DataMember(Name="pos_margin_mode", EmitDefaultValue=false)]
+        
         public string PosMarginMode { get; private set; }
 
         /// <summary>
@@ -361,6 +400,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position mode: single, dual, and dual_plus</value>
         [DataMember(Name="position_mode", EmitDefaultValue=false)]
+        
         public string PositionMode { get; private set; }
 
         /// <summary>
@@ -368,6 +408,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Error label</value>
         [DataMember(Name="error_label", EmitDefaultValue=false)]
+        
         public string ErrorLabel { get; private set; }
 
         /// <summary>
@@ -375,6 +416,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage</value>
         [DataMember(Name="leverage", EmitDefaultValue=false)]
+        
         public string Leverage { get; private set; }
 
         /// <summary>

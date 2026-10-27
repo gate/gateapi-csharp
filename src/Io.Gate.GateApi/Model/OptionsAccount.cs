@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// This field indicates the margin mode used by the unified account:  - 0: Classic Spot Margin Mode - 1: Cross-Currency Margin Mode - 2: Portfolio Margin Mode - 3: Single-Currency Margin Mode
         /// </summary>
         /// <value>This field indicates the margin mode used by the unified account:  - 0: Classic Spot Margin Mode - 1: Cross-Currency Margin Mode - 2: Portfolio Margin Mode - 3: Single-Currency Margin Mode</value>
+        
         public enum MarginModeEnum
         {
             /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>This field indicates the margin mode used by the unified account:  - 0: Classic Spot Margin Mode - 1: Cross-Currency Margin Mode - 2: Portfolio Margin Mode - 3: Single-Currency Margin Mode</value>
         [DataMember(Name="margin_mode")]
+        
         public MarginModeEnum? MarginMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionsAccount" /> class.
@@ -114,6 +116,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user")]
+        
         public long User { get; set; }
 
         /// <summary>
@@ -121,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account balance, invalid for unified account</value>
         [DataMember(Name="total")]
+        
         public string Total { get; set; }
 
         /// <summary>
@@ -128,6 +132,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position value, long position value is positive, short position value is negative</value>
         [DataMember(Name="position_value")]
+        
         public string PositionValue { get; set; }
 
         /// <summary>
@@ -135,6 +140,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Account equity &#x3D; balance + option position value, invalid for unified account</value>
         [DataMember(Name="equity")]
+        
         public string Equity { get; set; }
 
         /// <summary>
@@ -142,6 +148,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>If the account is allowed to short</value>
         [DataMember(Name="short_enabled")]
+        
         public bool ShortEnabled { get; set; }
 
         /// <summary>
@@ -149,6 +156,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to enable MMP</value>
         [DataMember(Name="mmp_enabled")]
+        
         public bool MmpEnabled { get; set; }
 
         /// <summary>
@@ -156,6 +164,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the account is in a liquidation state</value>
         [DataMember(Name="liq_triggered")]
+        
         public bool LiqTriggered { get; set; }
 
         /// <summary>
@@ -163,6 +172,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only.</value>
         [DataMember(Name="unrealised_pnl")]
+        
         public string UnrealisedPnl { get; set; }
 
         /// <summary>
@@ -170,6 +180,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial position margin</value>
         [DataMember(Name="init_margin")]
+        
         public string InitMargin { get; set; }
 
         /// <summary>
@@ -177,6 +188,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position maintenance margin</value>
         [DataMember(Name="maint_margin")]
+        
         public string MaintMargin { get; set; }
 
         /// <summary>
@@ -184,6 +196,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order margin of unfinished orders</value>
         [DataMember(Name="order_margin")]
+        
         public string OrderMargin { get; set; }
 
         /// <summary>
@@ -191,6 +204,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin for outstanding sell orders</value>
         [DataMember(Name="ask_order_margin")]
+        
         public string AskOrderMargin { get; set; }
 
         /// <summary>
@@ -198,6 +212,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin for outstanding buy orders</value>
         [DataMember(Name="bid_order_margin")]
+        
         public string BidOrderMargin { get; set; }
 
         /// <summary>
@@ -205,6 +220,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available balance to transfer out or trade</value>
         [DataMember(Name="available")]
+        
         public string Available { get; set; }
 
         /// <summary>
@@ -212,6 +228,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Point card amount</value>
         [DataMember(Name="point")]
+        
         public string Point { get; set; }
 
         /// <summary>
@@ -219,6 +236,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -226,6 +244,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum number of outstanding orders</value>
         [DataMember(Name="orders_limit")]
+        
         public int OrdersLimit { get; set; }
 
         /// <summary>
@@ -233,6 +252,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Notional value upper limit, including the nominal value of positions and outstanding orders</value>
         [DataMember(Name="position_notional_limit")]
+        
         public long PositionNotionalLimit { get; set; }
 
         /// <summary>

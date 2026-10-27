@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available balance</value>
         [DataMember(Name="available_balance")]
+        
         public string AvailableBalance { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Estimated as BTC</value>
         [DataMember(Name="estimated_as_btc")]
+        
         public string EstimatedAsBtc { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Estimated conversion to GT</value>
         [DataMember(Name="convertible_to_gt")]
+        
         public string ConvertibleToGt { get; set; }
 
         /// <summary>

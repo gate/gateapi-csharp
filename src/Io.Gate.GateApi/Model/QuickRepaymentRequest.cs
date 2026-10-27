@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liability currencies</value>
         [DataMember(Name="debt_currencies")]
+        
         public List<string> DebtCurrencies { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currencies to repay with</value>
         [DataMember(Name="available_currencies")]
+        
         public List<string> AvailableCurrencies { get; set; }
 
         /// <summary>

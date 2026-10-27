@@ -62,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Flash swap target currency</value>
         [DataMember(Name="convert_type")]
+        
         public string ConvertType { get; set; }
 
         /// <summary>
@@ -69,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Flash swap order status</value>
         [DataMember(Name="convert_status")]
+        
         public string ConvertStatus { get; set; }
 
         /// <summary>
@@ -76,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Expected price when placing order</value>
         [DataMember(Name="pre_rate")]
+        
         public string PreRate { get; set; }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Execution price</value>
         [DataMember(Name="rate")]
+        
         public string Rate { get; set; }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Expected fiat price when placing order</value>
         [DataMember(Name="pre_fiat_rate")]
+        
         public string PreFiatRate { get; set; }
 
         /// <summary>
@@ -97,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat price at execution</value>
         [DataMember(Name="fiat_rate")]
+        
         public string FiatRate { get; set; }
 
         /// <summary>
@@ -104,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Size</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -111,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Swap Amount</value>
         [DataMember(Name="convert_amount")]
+        
         public string ConvertAmount { get; set; }
 
         /// <summary>
@@ -118,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Slippage calculation: slippage &#x3D; (expected price when placing order - real-time price during auto swap) / expected price when placing order</value>
         [DataMember(Name="slippage")]
+        
         public string Slippage { get; set; }
 
         /// <summary>
@@ -125,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Flash swap order display status</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>

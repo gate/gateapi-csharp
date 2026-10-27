@@ -33,6 +33,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Defines PriceType
         /// </summary>
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -51,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets PriceType
         /// </summary>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum PriceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SpotGridCreateParams" /> class.
@@ -92,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Amount of investment</value>
         [DataMember(Name="money")]
+        
         public string Money { get; set; }
 
         /// <summary>
@@ -99,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Range lower limit</value>
         [DataMember(Name="low_price")]
+        
         public string LowPrice { get; set; }
 
         /// <summary>
@@ -106,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Range upper limit</value>
         [DataMember(Name="high_price")]
+        
         public string HighPrice { get; set; }
 
         /// <summary>
@@ -113,36 +118,42 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of grids</value>
         [DataMember(Name="grid_num")]
+        
         public int GridNum { get; set; }
 
         /// <summary>
         /// Gets or Sets TriggerPrice
         /// </summary>
         [DataMember(Name="trigger_price")]
+        
         public string TriggerPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets StopProfit
         /// </summary>
         [DataMember(Name="stop_profit")]
+        
         public string StopProfit { get; set; }
 
         /// <summary>
         /// Gets or Sets StopLoss
         /// </summary>
         [DataMember(Name="stop_loss")]
+        
         public string StopLoss { get; set; }
 
         /// <summary>
         /// Gets or Sets ProfitSharingRatio
         /// </summary>
         [DataMember(Name="profit_sharing_ratio")]
+        
         public string ProfitSharingRatio { get; set; }
 
         /// <summary>
         /// Gets or Sets IsUseBase
         /// </summary>
         [DataMember(Name="is_use_base")]
+        
         public bool IsUseBase { get; set; }
 
         /// <summary>

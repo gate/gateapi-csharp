@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Transaction type. - deposit: Funds transfer in. - withdraw: Funds transfer out. - fee: Trading fee. - dividend: Dividend payout. - sell: Stock sale credit. - buy: Stock purchase debit. - award: Airdrop reward. - stock_transfer_in: Stock transfer in. - stock_transfer_out: Stock transfer out.
         /// </summary>
         /// <value>Transaction type. - deposit: Funds transfer in. - withdraw: Funds transfer out. - fee: Trading fee. - dividend: Dividend payout. - sell: Stock sale credit. - buy: Stock purchase debit. - award: Airdrop reward. - stock_transfer_in: Stock transfer in. - stock_transfer_out: Stock transfer out.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -98,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction type. - deposit: Funds transfer in. - withdraw: Funds transfer out. - fee: Trading fee. - dividend: Dividend payout. - sell: Stock sale credit. - buy: Stock purchase debit. - award: Airdrop reward. - stock_transfer_in: Stock transfer in. - stock_transfer_out: Stock transfer out.</value>
         [DataMember(Name="type")]
+        
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionItem" /> class.
@@ -133,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Asset</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -140,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -147,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol display name</value>
         [DataMember(Name="symbol_display")]
+        
         public string SymbolDisplay { get; set; }
 
         /// <summary>
@@ -154,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction type description</value>
         [DataMember(Name="type_desc")]
+        
         public string TypeDesc { get; set; }
 
         /// <summary>
@@ -161,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Change amount. A positive value means a credit, and a negative value means a debit.</value>
         [DataMember(Name="change")]
+        
         public string Change { get; set; }
 
         /// <summary>
@@ -168,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Balance after change</value>
         [DataMember(Name="balance")]
+        
         public string Balance { get; set; }
 
         /// <summary>
@@ -175,6 +184,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business idempotent ID</value>
         [DataMember(Name="ref_id")]
+        
         public string RefId { get; set; }
 
         /// <summary>
@@ -182,6 +192,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unix timestamp (seconds)</value>
         [DataMember(Name="time")]
+        
         public long Time { get; set; }
 
         /// <summary>
@@ -189,6 +200,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unit display text</value>
         [DataMember(Name="unit_text")]
+        
         public string UnitText { get; set; }
 
         /// <summary>
@@ -196,6 +208,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business details</value>
         [DataMember(Name="detail")]
+        
         public Dictionary<string, Object> Detail { get; set; }
 
         /// <summary>

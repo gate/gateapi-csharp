@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="uid")]
+        
         public long Uid { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User&#39;s system affiliation (partner/referral). Empty means not belonging to any system</value>
         [DataMember(Name="belong")]
+        
         public string Belong { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Type (0-Not in system 1-Direct subordinate agent 2-Indirect subordinate agent 3-Direct direct customer 4-Indirect direct customer 5-Regular user)</value>
         [DataMember(Name="type")]
+        
         public long Type { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Inviter user ID</value>
         [DataMember(Name="ref_uid")]
+        
         public long RefUid { get; set; }
 
         /// <summary>

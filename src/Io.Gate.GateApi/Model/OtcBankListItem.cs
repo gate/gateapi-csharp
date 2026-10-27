@@ -78,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank card ID (used when placing an order; the synonymous &#x60;bank_id&#x60; field has been consolidated into &#x60;id&#x60;)</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -85,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank account name</value>
         [DataMember(Name="bank_account_name")]
+        
         public string BankAccountName { get; set; }
 
         /// <summary>
@@ -92,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank name</value>
         [DataMember(Name="bank_name")]
+        
         public string BankName { get; set; }
 
         /// <summary>
@@ -99,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank country</value>
         [DataMember(Name="bank_country")]
+        
         public string BankCountry { get; set; }
 
         /// <summary>
@@ -106,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bank address</value>
         [DataMember(Name="bank_address")]
+        
         public string BankAddress { get; set; }
 
         /// <summary>
@@ -113,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>IBAN number</value>
         [DataMember(Name="iban")]
+        
         public string Iban { get; set; }
 
         /// <summary>
@@ -120,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>SWIFT code</value>
         [DataMember(Name="swift")]
+        
         public string Swift { get; set; }
 
         /// <summary>
@@ -127,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Remittance routing number</value>
         [DataMember(Name="remittance_line_number")]
+        
         public string RemittanceLineNumber { get; set; }
 
         /// <summary>
@@ -134,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Correspondent bank name</value>
         [DataMember(Name="agent_bank_name")]
+        
         public string AgentBankName { get; set; }
 
         /// <summary>
@@ -141,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Correspondent bank SWIFT code</value>
         [DataMember(Name="agent_bank_swift")]
+        
         public string AgentBankSwift { get; set; }
 
         /// <summary>
@@ -148,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Submission time</value>
         [DataMember(Name="submit_time")]
+        
         public string SubmitTime { get; set; }
 
         /// <summary>
@@ -155,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Update time</value>
         [DataMember(Name="update_time")]
+        
         public string UpdateTime { get; set; }
 
         /// <summary>
@@ -162,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -169,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether it is the default bank card. 1 - Yes, 0 - No</value>
         [DataMember(Name="is_default")]
+        
         public int IsDefault { get; set; }
 
         /// <summary>

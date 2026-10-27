@@ -113,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -120,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="uid")]
+        
         public string Uid { get; set; }
 
         /// <summary>
@@ -127,6 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order Type</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -134,6 +137,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency</value>
         [DataMember(Name="fiat_currency")]
+        
         public string FiatCurrency { get; set; }
 
         /// <summary>
@@ -141,6 +145,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat amount</value>
         [DataMember(Name="fiat_amount")]
+        
         public string FiatAmount { get; set; }
 
         /// <summary>
@@ -148,6 +153,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Digital currency</value>
         [DataMember(Name="crypto_currency")]
+        
         public string CryptoCurrency { get; set; }
 
         /// <summary>
@@ -155,6 +161,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cryptocurrency amount</value>
         [DataMember(Name="crypto_amount")]
+        
         public string CryptoAmount { get; set; }
 
         /// <summary>
@@ -162,6 +169,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange rate</value>
         [DataMember(Name="rate")]
+        
         public string Rate { get; set; }
 
         /// <summary>
@@ -169,6 +177,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User payment/receiving name</value>
         [DataMember(Name="bank_account_name")]
+        
         public string BankAccountName { get; set; }
 
         /// <summary>
@@ -176,6 +185,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User payment/receiving bank name</value>
         [DataMember(Name="bank_name")]
+        
         public string BankName { get; set; }
 
         /// <summary>
@@ -183,6 +193,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User payment/receiving bank country</value>
         [DataMember(Name="bank_country")]
+        
         public string BankCountry { get; set; }
 
         /// <summary>
@@ -190,6 +201,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User payment/receiving bank address</value>
         [DataMember(Name="bank_address")]
+        
         public string BankAddress { get; set; }
 
         /// <summary>
@@ -197,6 +209,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User payment/receiving bank account number/IBAN</value>
         [DataMember(Name="bank_account_number_iban")]
+        
         public string BankAccountNumberIban { get; set; }
 
         /// <summary>
@@ -204,6 +217,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User payment/receiving bank SWIFT code</value>
         [DataMember(Name="swift_code")]
+        
         public string SwiftCode { get; set; }
 
         /// <summary>
@@ -211,6 +225,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User payment/receiving intermediary bank name</value>
         [DataMember(Name="intermediate_bank_name")]
+        
         public string IntermediateBankName { get; set; }
 
         /// <summary>
@@ -218,6 +233,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User payment/receiving intermediary bank SWIFT code</value>
         [DataMember(Name="intermediary_bank_swift_code")]
+        
         public string IntermediaryBankSwiftCode { get; set; }
 
         /// <summary>
@@ -225,6 +241,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Gate beneficiary name, shown for BUY only</value>
         [DataMember(Name="gate_bank_account_name")]
+        
         public string GateBankAccountName { get; set; }
 
         /// <summary>
@@ -232,6 +249,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Gate beneficiary bank name, shown for BUY only</value>
         [DataMember(Name="gate_bank_name")]
+        
         public string GateBankName { get; set; }
 
         /// <summary>
@@ -239,6 +257,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Gate beneficiary bank country, shown for BUY only</value>
         [DataMember(Name="gate_bank_country")]
+        
         public string GateBankCountry { get; set; }
 
         /// <summary>
@@ -246,6 +265,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Gate beneficiary bank address, shown for BUY only</value>
         [DataMember(Name="gate_bank_address")]
+        
         public string GateBankAddress { get; set; }
 
         /// <summary>
@@ -253,6 +273,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Gate beneficiary bank account number/IBAN, shown for BUY only</value>
         [DataMember(Name="gate_bank_account_number_iban")]
+        
         public string GateBankAccountNumberIban { get; set; }
 
         /// <summary>
@@ -260,6 +281,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Gate beneficiary bank SWIFT code, shown for BUY only</value>
         [DataMember(Name="gate_swift_code")]
+        
         public string GateSwiftCode { get; set; }
 
         /// <summary>
@@ -267,6 +289,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Gate beneficiary intermediary bank name, shown for BUY only</value>
         [DataMember(Name="gate_intermediary_bank_name")]
+        
         public string GateIntermediaryBankName { get; set; }
 
         /// <summary>
@@ -274,6 +297,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Gate beneficiary intermediary bank SWIFT code, shown for BUY only</value>
         [DataMember(Name="gate_intermediary_bank_swift_code")]
+        
         public string GateIntermediaryBankSwiftCode { get; set; }
 
         /// <summary>
@@ -281,6 +305,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transfer remark (mutually exclusive with &#x60;gate_reference_code&#x60;; empty when a BUY deposit order has a reference code), shown for BUY only</value>
         [DataMember(Name="gate_transfer_remark")]
+        
         public string GateTransferRemark { get; set; }
 
         /// <summary>
@@ -288,6 +313,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Be sure to include the reference code when making the transfer so that your order can be processed promptly. (Mutually exclusive with &#x60;gate_transfer_remark&#x60;.)</value>
         [DataMember(Name="gate_reference_code")]
+        
         public string GateReferenceCode { get; set; }
 
         /// <summary>
@@ -295,6 +321,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -302,6 +329,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>

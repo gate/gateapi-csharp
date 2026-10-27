@@ -45,12 +45,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Time
         /// </summary>
         [DataMember(Name="time")]
+        
         public long Time { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
         [DataMember(Name="value")]
+        
         public string Value { get; set; }
 
         /// <summary>

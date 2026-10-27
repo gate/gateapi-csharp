@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Position side (NONE/LONG/SHORT). Defaults to NONE for one-way positions if omitted
         /// </summary>
         /// <value>Position side (NONE/LONG/SHORT). Defaults to NONE for one-way positions if omitted</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum PositionSideEnum
         {
             /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position side (NONE/LONG/SHORT). Defaults to NONE for one-way positions if omitted</value>
         [DataMember(Name="position_side")]
+        
         public PositionSideEnum? PositionSide { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CrossexIsolatedMarginRequest" /> class.
@@ -88,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Hyperliquid futures trading pair</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -95,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin adjustment amount. Positive values increase margin, while negative values decrease margin. Values with more than two decimal places are truncated to two decimal places</value>
         [DataMember(Name="margin")]
+        
         public string Margin { get; set; }
 
         /// <summary>

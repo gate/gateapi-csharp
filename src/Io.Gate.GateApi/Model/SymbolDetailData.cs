@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total quantity</value>
         [DataMember(Name="total")]
+        
         public long Total { get; set; }
 
         /// <summary>
@@ -55,12 +56,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total pages</value>
         [DataMember(Name="total_page")]
+        
         public int TotalPage { get; set; }
 
         /// <summary>
         /// Gets or Sets List
         /// </summary>
         [DataMember(Name="list")]
+        
         public List<SymbolDetailItem> List { get; set; }
 
         /// <summary>

@@ -8,6 +8,7 @@
  */
 
 
+using System;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -54,6 +55,18 @@ namespace Io.Gate.GateApi.Client
             this.ErrorLabel = label;
             this._errorMessage = message;
             this._errorDetail = detail;
+        }
+
+        /// <summary>
+        /// Preserve HTTP metadata while copying a deserialized Gate error.
+        /// </summary>
+        public GateApiException(int errorCode, object errorContent, GateApiException error)
+            : base(errorCode, error == null ? null : error.ErrorMessage, errorContent)
+        {
+            if (error == null) throw new ArgumentNullException(nameof(error));
+            ErrorLabel = error.ErrorLabel;
+            _errorMessage = error._errorMessage;
+            _errorDetail = error._errorDetail;
         }
 
         /// <summary>

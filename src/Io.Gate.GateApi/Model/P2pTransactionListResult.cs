@@ -49,6 +49,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets List
         /// </summary>
         [DataMember(Name="list")]
+        
         public List<P2pTransactionListItem> List { get; set; }
 
         /// <summary>
@@ -56,6 +57,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Countdown time</value>
         [DataMember(Name="trans_time")]
+        
         public List<P2pTransactionTimeMarker> TransTime { get; set; }
 
         /// <summary>
@@ -63,6 +65,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of orders</value>
         [DataMember(Name="count")]
+        
         public int Count { get; set; }
 
         /// <summary>
@@ -70,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Export count</value>
         [DataMember(Name="exported_num")]
+        
         public int ExportedNum { get; set; }
 
         /// <summary>

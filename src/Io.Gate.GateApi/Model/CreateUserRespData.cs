@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status (1&#x3D;not opened, 2&#x3D;pending review, 3&#x3D;opened)</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage</value>
         [DataMember(Name="leverage")]
+        
         public int Leverage { get; set; }
 
         /// <summary>

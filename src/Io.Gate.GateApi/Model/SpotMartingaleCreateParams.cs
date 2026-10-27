@@ -63,6 +63,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets InvestAmount
         /// </summary>
         [DataMember(Name="invest_amount")]
+        
         public string InvestAmount { get; set; }
 
         /// <summary>
@@ -70,12 +71,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Add-position deviation ratio as a decimal string (e.g. a 2% drop is &#x60;0.02&#x60;).</value>
         [DataMember(Name="price_deviation")]
+        
         public string PriceDeviation { get; set; }
 
         /// <summary>
         /// Gets or Sets MaxOrders
         /// </summary>
         [DataMember(Name="max_orders")]
+        
         public int MaxOrders { get; set; }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Take-profit ratio per round as a decimal string.</value>
         [DataMember(Name="take_profit_ratio")]
+        
         public string TakeProfitRatio { get; set; }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stop-loss ratio per round as a decimal string; optional; aligned with app &#x60;stop_loss_per_cycle&#x60;.</value>
         [DataMember(Name="stop_loss_per_cycle")]
+        
         public string StopLossPerCycle { get; set; }
 
         /// <summary>
@@ -97,12 +102,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trigger price; optional.</value>
         [DataMember(Name="trigger_price")]
+        
         public string TriggerPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets ProfitSharingRatio
         /// </summary>
         [DataMember(Name="profit_sharing_ratio")]
+        
         public string ProfitSharingRatio { get; set; }
 
         /// <summary>

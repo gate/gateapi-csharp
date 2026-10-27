@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="uid")]
+        
         public string Uid { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>账户余额信息</value>
         [DataMember(Name="available")]
+        
         public SubCrossMarginAccount Available { get; set; }
 
         /// <summary>

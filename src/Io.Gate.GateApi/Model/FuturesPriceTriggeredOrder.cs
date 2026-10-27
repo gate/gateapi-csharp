@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Order status  - &#x60;open&#x60;: Active - &#x60;finished&#x60;: Finished - &#x60;inactive&#x60;: Inactive, only applies to order take-profit/stop-loss - &#x60;invalid&#x60;: Invalid, only applies to order take-profit/stop-loss
         /// </summary>
         /// <value>Order status  - &#x60;open&#x60;: Active - &#x60;finished&#x60;: Finished - &#x60;inactive&#x60;: Inactive, only applies to order take-profit/stop-loss - &#x60;invalid&#x60;: Invalid, only applies to order take-profit/stop-loss</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StatusEnum
         {
             /// <summary>
@@ -68,12 +70,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order status  - &#x60;open&#x60;: Active - &#x60;finished&#x60;: Finished - &#x60;inactive&#x60;: Inactive, only applies to order take-profit/stop-loss - &#x60;invalid&#x60;: Invalid, only applies to order take-profit/stop-loss</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
+        
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Finish status: cancelled - Cancelled; succeeded - Succeeded; failed - Failed; expired - Expired
         /// </summary>
         /// <value>Finish status: cancelled - Cancelled; succeeded - Succeeded; failed - Failed; expired - Expired</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum FinishAsEnum
         {
             /// <summary>
@@ -107,12 +112,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Finish status: cancelled - Cancelled; succeeded - Succeeded; failed - Failed; expired - Expired</value>
         [DataMember(Name="finish_as", EmitDefaultValue=false)]
+        
         public FinishAsEnum? FinishAs { get; set; }
         /// <summary>
         /// Position margin mode: &#x60;isolated&#x60; (isolated margin) or &#x60;cross&#x60; (cross margin). Returned by the server in simple split-position mode; when writing, use only the values below.
         /// </summary>
         /// <value>Position margin mode: &#x60;isolated&#x60; (isolated margin) or &#x60;cross&#x60; (cross margin). Returned by the server in simple split-position mode; when writing, use only the values below.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum PosMarginModeEnum
         {
             /// <summary>
@@ -134,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position margin mode: &#x60;isolated&#x60; (isolated margin) or &#x60;cross&#x60; (cross margin). Returned by the server in simple split-position mode; when writing, use only the values below.</value>
         [DataMember(Name="pos_margin_mode")]
+        
         public PosMarginModeEnum? PosMarginMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesPriceTriggeredOrder" /> class.
@@ -161,12 +170,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Initial
         /// </summary>
         [DataMember(Name="initial")]
+        
         public FuturesInitialOrder Initial { get; set; }
 
         /// <summary>
         /// Gets or Sets Trigger
         /// </summary>
         [DataMember(Name="trigger")]
+        
         public FuturesPriceTrigger Trigger { get; set; }
 
         /// <summary>
@@ -174,6 +185,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Auto order ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
+        
         public long Id { get; private set; }
 
         /// <summary>
@@ -181,6 +193,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>String form of the auto order ID; the same order as numeric &#x60;id&#x60;, as the decimal string of &#x60;id&#x60; to avoid int64 precision loss in JavaScript and similar environments. Prefer this field to display the order ID or when a string unique identifier is needed; one-to-one with &#x60;id&#x60;. Same meaning as the field of the same name in futures price-trigger REST APIs and in &#x60;futures.orders&#x60; / &#x60;futures.autoorders&#x60; WebSocket pushes.</value>
         [DataMember(Name="id_string", EmitDefaultValue=false)]
+        
         public string IdString { get; private set; }
 
         /// <summary>
@@ -188,6 +201,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
+        
         public int User { get; private set; }
 
         /// <summary>
@@ -195,6 +209,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
+        
         public double CreateTime { get; private set; }
 
         /// <summary>
@@ -202,6 +217,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>End time</value>
         [DataMember(Name="finish_time", EmitDefaultValue=false)]
+        
         public double FinishTime { get; private set; }
 
         /// <summary>
@@ -209,6 +225,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>ID of the order created after trigger</value>
         [DataMember(Name="trade_id", EmitDefaultValue=false)]
+        
         public long TradeId { get; private set; }
 
         /// <summary>
@@ -216,6 +233,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Additional description of how the order was completed</value>
         [DataMember(Name="reason", EmitDefaultValue=false)]
+        
         public string Reason { get; private set; }
 
         /// <summary>
@@ -223,6 +241,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Types of take-profit and stop-loss orders, including:  - &#x60;close-long-order&#x60;: Order take-profit/stop-loss, close long position - &#x60;close-short-order&#x60;: Order take-profit/stop-loss, close short position - &#x60;close-long-position&#x60;: Position take-profit/stop-loss, used to close all long positions - &#x60;close-short-position&#x60;: Position take-profit/stop-loss, used to close all short positions - &#x60;plan-close-long-position&#x60;: Position plan take-profit/stop-loss, used to close all or partial long positions - &#x60;plan-close-short-position&#x60;: Position plan take-profit/stop-loss, used to close all or partial short positions  The two types of order take-profit/stop-loss are read-only and cannot be passed in requests</value>
         [DataMember(Name="order_type")]
+        
         public string OrderType { get; set; }
 
         /// <summary>
@@ -230,6 +249,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Corresponding order ID for order take-profit/stop-loss orders</value>
         [DataMember(Name="me_order_id", EmitDefaultValue=false)]
+        
         public long MeOrderId { get; private set; }
 
         /// <summary>

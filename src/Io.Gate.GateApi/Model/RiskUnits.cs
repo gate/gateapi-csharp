@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk unit flag</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Spot hedging occupied amount</value>
         [DataMember(Name="spot_in_use")]
+        
         public string SpotInUse { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maintenance margin for risk unit</value>
         [DataMember(Name="maintain_margin")]
+        
         public string MaintainMargin { get; set; }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial margin for risk unit</value>
         [DataMember(Name="initial_margin")]
+        
         public string InitialMargin { get; set; }
 
         /// <summary>
@@ -86,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Delta of risk unit</value>
         [DataMember(Name="delta")]
+        
         public string Delta { get; set; }
 
         /// <summary>
@@ -93,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Gamma of risk unit</value>
         [DataMember(Name="gamma")]
+        
         public string Gamma { get; set; }
 
         /// <summary>
@@ -100,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Theta of risk unit</value>
         [DataMember(Name="theta")]
+        
         public string Theta { get; set; }
 
         /// <summary>
@@ -107,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Vega of risk unit</value>
         [DataMember(Name="vega")]
+        
         public string Vega { get; set; }
 
         /// <summary>

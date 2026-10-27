@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public long OrderId { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>&#x60;0&#x60; — off; &#x60;1&#x60; — on</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Effective duration in seconds; default 1 day (86400)</value>
         [DataMember(Name="effective_time_duration")]
+        
         public long EffectiveTimeDuration { get; set; }
 
         /// <summary>

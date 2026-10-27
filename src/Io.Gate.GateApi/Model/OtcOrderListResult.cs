@@ -57,30 +57,35 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Pn
         /// </summary>
         [DataMember(Name="pn")]
+        
         public int Pn { get; set; }
 
         /// <summary>
         /// Gets or Sets Ps
         /// </summary>
         [DataMember(Name="ps")]
+        
         public int Ps { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalPn
         /// </summary>
         [DataMember(Name="total_pn")]
+        
         public int TotalPn { get; set; }
 
         /// <summary>
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count")]
+        
         public int Count { get; set; }
 
         /// <summary>
         /// Gets or Sets Lists
         /// </summary>
         [DataMember(Name="lists")]
+        
         public List<OtcOrderListItem> Lists { get; set; }
 
         /// <summary>

@@ -46,12 +46,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Risk control sub-code; 0 for advertisement content traffic diversion risk control</value>
         [DataMember(Name="risk_code")]
+        
         public int RiskCode { get; set; }
 
         /// <summary>
         /// Gets or Sets RiskEvent
         /// </summary>
         [DataMember(Name="risk_event")]
+        
         public P2pMerchantBooksPlaceBizPushOrderResponseDataRiskEvent RiskEvent { get; set; }
 
         /// <summary>

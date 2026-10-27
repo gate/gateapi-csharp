@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Asset, USDT only
         /// </summary>
         /// <value>Asset, USDT only</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum AssetEnum
         {
             /// <summary>
@@ -50,12 +52,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Asset, USDT only</value>
         [DataMember(Name="asset")]
+        
         public AssetEnum Asset { get; set; }
         /// <summary>
         /// Transaction type. deposit transfers funds from the spot account to the stock account; withdraw transfers funds from the stock account to the spot account.
         /// </summary>
         /// <value>Transaction type. deposit transfers funds from the spot account to the stock account; withdraw transfers funds from the stock account to the spot account.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TypeEnum
         {
             /// <summary>
@@ -77,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction type. deposit transfers funds from the spot account to the stock account; withdraw transfers funds from the stock account to the spot account.</value>
         [DataMember(Name="type")]
+        
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TradFiSpotTransactionRequest" /> class.
@@ -105,6 +111,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Change amount, must be greater than 0</value>
         [DataMember(Name="change")]
+        
         public string Change { get; set; }
 
         /// <summary>
@@ -112,6 +119,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business idempotent ID</value>
         [DataMember(Name="ref_id")]
+        
         public string RefId { get; set; }
 
         /// <summary>

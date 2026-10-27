@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID, if ID is specified, text is not needed</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Custom text, if ID is not specified, terminate based on user_id and text</value>
         [DataMember(Name="text")]
+        
         public string Text { get; set; }
 
         /// <summary>

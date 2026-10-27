@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-broker user ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-broker original commission rate</value>
         [DataMember(Name="original_commission_rate")]
+        
         public string OriginalCommissionRate { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-broker relative commission rate</value>
         [DataMember(Name="relative_commission_rate")]
+        
         public string RelativeCommissionRate { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Sub-broker actual commission rate</value>
         [DataMember(Name="commission_rate")]
+        
         public string CommissionRate { get; set; }
 
         /// <summary>

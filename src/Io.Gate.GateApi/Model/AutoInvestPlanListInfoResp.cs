@@ -58,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>page number</value>
         [DataMember(Name="page")]
+        
         public long Page { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Items per page</value>
         [DataMember(Name="page_size")]
+        
         public long PageSize { get; set; }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total pages</value>
         [DataMember(Name="page_count")]
+        
         public long PageCount { get; set; }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total entries</value>
         [DataMember(Name="total_count")]
+        
         public long TotalCount { get; set; }
 
         /// <summary>
@@ -86,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PlanList</value>
         [DataMember(Name="list")]
+        
         public List<AutoInvestPlanDetail> List { get; set; }
 
         /// <summary>

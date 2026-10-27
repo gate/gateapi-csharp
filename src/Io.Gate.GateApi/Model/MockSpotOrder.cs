@@ -61,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Market</value>
         [DataMember(Name="currency_pairs")]
+        
         public string CurrencyPairs { get; set; }
 
         /// <summary>
@@ -68,6 +69,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price</value>
         [DataMember(Name="order_price")]
+        
         public string OrderPrice { get; set; }
 
         /// <summary>
@@ -75,6 +77,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial order quantity for spot trading pairs, not involved in actual calculation.</value>
         [DataMember(Name="count")]
+        
         public string Count { get; set; }
 
         /// <summary>
@@ -82,6 +85,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unfilled quantity, involved in actual calculation</value>
         [DataMember(Name="left")]
+        
         public string Left { get; set; }
 
         /// <summary>
@@ -89,6 +93,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order type, sell - sell order, buy - buy order</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>

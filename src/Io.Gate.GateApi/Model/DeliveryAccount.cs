@@ -94,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Balance, only applicable to classic contract account.The balance is the sum of all historical fund flows, including historical transfers in and out, closing settlements, and transaction fee expenses, but does not include upl of positions.total &#x3D; SUM(history_dnw, history_pnl, history_fee, history_refr, history_fund)</value>
         [DataMember(Name="total")]
+        
         public string Total { get; set; }
 
         /// <summary>
@@ -101,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unrealized PNL</value>
         [DataMember(Name="unrealised_pnl")]
+        
         public string UnrealisedPnl { get; set; }
 
         /// <summary>
@@ -108,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deprecated</value>
         [DataMember(Name="position_margin")]
+        
         public string PositionMargin { get; set; }
 
         /// <summary>
@@ -115,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>initial margin of all open orders</value>
         [DataMember(Name="order_margin")]
+        
         public string OrderMargin { get; set; }
 
         /// <summary>
@@ -122,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Available amount for transfer or trading, which includes credit limits under the unified account (includes experience funds; experience funds cannot be transferred, so when transferring, the transfer amount must deduct experience funds)</value>
         [DataMember(Name="available")]
+        
         public string Available { get; set; }
 
         /// <summary>
@@ -129,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Point card amount</value>
         [DataMember(Name="point")]
+        
         public string Point { get; set; }
 
         /// <summary>
@@ -136,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement currency</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -143,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether Hedge Mode is enabled</value>
         [DataMember(Name="in_dual_mode")]
+        
         public bool InDualMode { get; set; }
 
         /// <summary>
@@ -150,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether portfolio margin account mode is enabled</value>
         [DataMember(Name="enable_credit")]
+        
         public bool EnableCredit { get; set; }
 
         /// <summary>
@@ -157,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Initial margin occupied by positions, applicable to unified account mode</value>
         [DataMember(Name="position_initial_margin")]
+        
         public string PositionInitialMargin { get; set; }
 
         /// <summary>
@@ -164,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maintenance margin occupied by positions, applicable to new classic account margin mode and unified account mode</value>
         [DataMember(Name="maintenance_margin")]
+        
         public string MaintenanceMargin { get; set; }
 
         /// <summary>
@@ -171,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Bonus</value>
         [DataMember(Name="bonus")]
+        
         public string Bonus { get; set; }
 
         /// <summary>
@@ -178,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deprecated</value>
         [DataMember(Name="enable_evolved_classic")]
+        
         public bool EnableEvolvedClassic { get; set; }
 
         /// <summary>
@@ -185,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin order margin, applicable to new classic account margin mode</value>
         [DataMember(Name="cross_order_margin")]
+        
         public string CrossOrderMargin { get; set; }
 
         /// <summary>
@@ -192,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin initial margin, applicable to new classic account margin mode</value>
         [DataMember(Name="cross_initial_margin")]
+        
         public string CrossInitialMargin { get; set; }
 
         /// <summary>
@@ -199,6 +214,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin maintenance margin, applicable to new classic account margin mode</value>
         [DataMember(Name="cross_maintenance_margin")]
+        
         public string CrossMaintenanceMargin { get; set; }
 
         /// <summary>
@@ -206,6 +222,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin unrealized P&amp;L, applicable to new classic account margin mode</value>
         [DataMember(Name="cross_unrealised_pnl")]
+        
         public string CrossUnrealisedPnl { get; set; }
 
         /// <summary>
@@ -213,6 +230,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin available balance, applicable to new classic account margin mode</value>
         [DataMember(Name="cross_available")]
+        
         public string CrossAvailable { get; set; }
 
         /// <summary>
@@ -220,6 +238,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin balance, applicable to new classic account margin mode</value>
         [DataMember(Name="cross_margin_balance")]
+        
         public string CrossMarginBalance { get; set; }
 
         /// <summary>
@@ -227,6 +246,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin maintenance margin rate, applicable to new classic account margin mode</value>
         [DataMember(Name="cross_mmr")]
+        
         public string CrossMmr { get; set; }
 
         /// <summary>
@@ -234,6 +254,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cross margin initial margin rate, applicable to new classic account margin mode</value>
         [DataMember(Name="cross_imr")]
+        
         public string CrossImr { get; set; }
 
         /// <summary>
@@ -241,6 +262,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Isolated position margin, applicable to new classic account margin mode</value>
         [DataMember(Name="isolated_position_margin")]
+        
         public string IsolatedPositionMargin { get; set; }
 
         /// <summary>
@@ -248,6 +270,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deprecated</value>
         [DataMember(Name="enable_new_dual_mode")]
+        
         public bool EnableNewDualMode { get; set; }
 
         /// <summary>
@@ -255,6 +278,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Margin mode of the account 0: classic future account or Classic Spot Margin Mode of unified account; 1:  Multi-Currency Margin Mode; 2:  Portoforlio Margin Mode; 3:  Single-Currency Margin Mode</value>
         [DataMember(Name="margin_mode")]
+        
         public int MarginMode { get; set; }
 
         /// <summary>
@@ -262,12 +286,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether to enable tiered maintenance margin calculation</value>
         [DataMember(Name="enable_tiered_mm")]
+        
         public bool EnableTieredMm { get; set; }
 
         /// <summary>
         /// Gets or Sets History
         /// </summary>
         [DataMember(Name="history")]
+        
         public DeliveryAccountHistory History { get; set; }
 
         /// <summary>

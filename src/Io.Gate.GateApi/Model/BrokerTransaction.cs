@@ -62,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction Time. (unix timestamp)</value>
         [DataMember(Name="transaction_time")]
+        
         public long TransactionTime { get; set; }
 
         /// <summary>
@@ -69,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User ID</value>
         [DataMember(Name="user_id")]
+        
         public long UserId { get; set; }
 
         /// <summary>
@@ -76,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Group name</value>
         [DataMember(Name="group_name")]
+        
         public string GroupName { get; set; }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fee amount (USDT)</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair")]
+        
         public string CurrencyPair { get; set; }
 
         /// <summary>
@@ -97,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Transaction amount</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -104,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fee currency</value>
         [DataMember(Name="fee_asset")]
+        
         public string FeeAsset { get; set; }
 
         /// <summary>
@@ -111,12 +118,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Commission transaction type: Spot, Futures, Options, Alpha、TradFi</value>
         [DataMember(Name="source")]
+        
         public string Source { get; set; }
 
         /// <summary>
         /// Gets or Sets SubBrokerInfo
         /// </summary>
         [DataMember(Name="sub_broker_info")]
+        
         public BrokerCommissionSubBrokerInfo SubBrokerInfo { get; set; }
 
         /// <summary>
@@ -124,6 +133,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Alpha contract address</value>
         [DataMember(Name="alpha_contract_addr")]
+        
         public string AlphaContractAddr { get; set; }
 
         /// <summary>

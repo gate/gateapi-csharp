@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Side (1&#x3D;sell, 2&#x3D;buy)
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SideEnum
         {
             /// <summary>
@@ -54,12 +54,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Side (1&#x3D;sell, 2&#x3D;buy)</value>
         [DataMember(Name="side")]
+        
         public SideEnum Side { get; set; }
         /// <summary>
         /// Price type (market &#x3D; market order, limit &#x3D; limit order)
         /// </summary>
         /// <value>Price type (market &#x3D; market order, limit &#x3D; limit order)</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -81,12 +84,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price type (market &#x3D; market order, limit &#x3D; limit order)</value>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum PriceType { get; set; }
         /// <summary>
         /// Trading session. Limit orders support only all, while market orders support only regular.
         /// </summary>
         /// <value>Trading session. Limit orders support only all, while market orders support only regular.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TradingSessionEnum
         {
             /// <summary>
@@ -108,12 +114,15 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading session. Limit orders support only all, while market orders support only regular.</value>
         [DataMember(Name="trading_session")]
+        
         public TradingSessionEnum TradingSession { get; set; }
         /// <summary>
         /// Time in force. - day: Day order.
         /// </summary>
         /// <value>Time in force. - day: Day order.</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum TimeInForceEnum
         {
             /// <summary>
@@ -129,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Time in force. - day: Day order.</value>
         [DataMember(Name="time_in_force")]
+        
         public TimeInForceEnum TimeInForce { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TradFiSpotOrderRequest" /> class.
@@ -165,6 +175,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order quantity</value>
         [DataMember(Name="volume")]
+        
         public string Volume { get; set; }
 
         /// <summary>
@@ -172,6 +183,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -179,6 +191,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order price, used for limit orders</value>
         [DataMember(Name="price")]
+        
         public string Price { get; set; }
 
         /// <summary>
@@ -186,6 +199,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Client-defined order ID</value>
         [DataMember(Name="client_order_id")]
+        
         public string ClientOrderId { get; set; }
 
         /// <summary>

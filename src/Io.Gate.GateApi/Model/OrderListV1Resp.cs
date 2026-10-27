@@ -51,12 +51,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Orders
         /// </summary>
         [DataMember(Name="orders")]
+        
         public List<CreateOrder> Orders { get; set; }
 
         /// <summary>
         /// Gets or Sets Total
         /// </summary>
         [DataMember(Name="total")]
+        
         public int Total { get; set; }
 
         /// <summary>

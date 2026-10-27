@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Activation price type, not provided or 0 means no modification, 1-latest price, 2-index price, 3-mark price
         /// </summary>
         /// <value>Activation price type, not provided or 0 means no modification, 1-latest price, 2-index price, 3-mark price</value>
+        
         public enum PriceTypeEnum
         {
             /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation price type, not provided or 0 means no modification, 1-latest price, 2-index price, 3-mark price</value>
         [DataMember(Name="price_type")]
+        
         public PriceTypeEnum? PriceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateTrailOrder" /> class.
@@ -93,6 +95,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="id")]
+        
         public long Id { get; set; }
 
         /// <summary>
@@ -100,6 +103,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total trading quantity in contracts, positive for buy, negative for sell, 0 means no modification</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -107,6 +111,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activation price, 0 means trigger immediately, empty means no modification</value>
         [DataMember(Name="activation_price")]
+        
         public string ActivationPrice { get; set; }
 
         /// <summary>
@@ -114,6 +119,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>true: activate when market price &gt;&#x3D; activation price, false: &lt;&#x3D; activation price, empty means no modification</value>
         [DataMember(Name="is_gte_str")]
+        
         public string IsGteStr { get; set; }
 
         /// <summary>
@@ -121,6 +127,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Callback ratio or price distance, e.g., &#x60;0.1&#x60; or &#x60;0.1%&#x60;; empty means no modification</value>
         [DataMember(Name="price_offset")]
+        
         public string PriceOffset { get; set; }
 
         /// <summary>

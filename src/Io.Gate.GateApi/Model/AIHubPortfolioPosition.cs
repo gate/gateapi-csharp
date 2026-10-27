@@ -53,36 +53,42 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets EntryPrice
         /// </summary>
         [DataMember(Name="entry_price")]
+        
         public string EntryPrice { get; set; }
 
         /// <summary>
         /// Gets or Sets QuoteAmount
         /// </summary>
         [DataMember(Name="quote_amount")]
+        
         public string QuoteAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets PositionValue
         /// </summary>
         [DataMember(Name="position_value")]
+        
         public string PositionValue { get; set; }
 
         /// <summary>
         /// Gets or Sets Margin
         /// </summary>
         [DataMember(Name="margin")]
+        
         public string Margin { get; set; }
 
         /// <summary>
         /// Gets or Sets Side
         /// </summary>
         [DataMember(Name="side")]
+        
         public string Side { get; set; }
 
         /// <summary>

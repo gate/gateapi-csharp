@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency pair</value>
         [DataMember(Name="currency_pair", EmitDefaultValue=false)]
+        
         public string CurrencyPair { get; private set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum borrow amount of base currency</value>
         [DataMember(Name="base_min_borrow_amount", EmitDefaultValue=false)]
+        
         public string BaseMinBorrowAmount { get; private set; }
 
         /// <summary>
@@ -60,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum borrow amount of quote currency</value>
         [DataMember(Name="quote_min_borrow_amount", EmitDefaultValue=false)]
+        
         public string QuoteMinBorrowAmount { get; private set; }
 
         /// <summary>
@@ -67,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Leverage multiplier</value>
         [DataMember(Name="leverage", EmitDefaultValue=false)]
+        
         public string Leverage { get; private set; }
 
         /// <summary>
@@ -74,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status  - enabled: Enabled - disabled: Disabled</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -81,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Delisting Time</value>
         [DataMember(Name="delisted_time")]
+        
         public decimal DelistedTime { get; set; }
 
         /// <summary>

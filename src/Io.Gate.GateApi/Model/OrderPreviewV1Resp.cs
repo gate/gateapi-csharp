@@ -52,12 +52,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Order
         /// </summary>
         [DataMember(Name="order")]
+        
         public PreviewOrder Order { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionFee
         /// </summary>
         [DataMember(Name="transaction_fee")]
+        
         public string TransactionFee { get; set; }
 
         /// <summary>

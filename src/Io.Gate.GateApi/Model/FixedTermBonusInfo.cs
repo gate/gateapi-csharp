@@ -80,6 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity ID</value>
         [DataMember(Name="id")]
+        
         public int Id { get; set; }
 
         /// <summary>
@@ -87,6 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Associated product ID</value>
         [DataMember(Name="product_id")]
+        
         public int ProductId { get; set; }
 
         /// <summary>
@@ -94,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product currency</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -101,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reward currency</value>
         [DataMember(Name="bonus_asset")]
+        
         public string BonusAsset { get; set; }
 
         /// <summary>
@@ -108,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>KYC level restrictions, comma-separated</value>
         [DataMember(Name="kyc_limit")]
+        
         public string KycLimit { get; set; }
 
         /// <summary>
@@ -115,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Tiered annual interest rate</value>
         [DataMember(Name="ladder_apr")]
+        
         public List<LadderApr> LadderApr { get; set; }
 
         /// <summary>
@@ -122,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total reward amount</value>
         [DataMember(Name="total_bonus_amount")]
+        
         public string TotalBonusAmount { get; set; }
 
         /// <summary>
@@ -129,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum reward per user</value>
         [DataMember(Name="user_total_bonus_amount")]
+        
         public string UserTotalBonusAmount { get; set; }
 
         /// <summary>
@@ -136,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity status: 1 for unlisted, 2 for listed, 3 for delisted</value>
         [DataMember(Name="status")]
+        
         public int Status { get; set; }
 
         /// <summary>
@@ -143,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity start time</value>
         [DataMember(Name="start_time")]
+        
         public string StartTime { get; set; }
 
         /// <summary>
@@ -150,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity end time</value>
         [DataMember(Name="end_time")]
+        
         public string EndTime { get; set; }
 
         /// <summary>
@@ -157,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="create_time")]
+        
         public string CreateTime { get; set; }
 
         /// <summary>
@@ -164,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity start timestamp (in seconds)</value>
         [DataMember(Name="start_at")]
+        
         public int StartAt { get; set; }
 
         /// <summary>
@@ -171,6 +184,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Activity end timestamp (in seconds)</value>
         [DataMember(Name="end_at")]
+        
         public int EndAt { get; set; }
 
         /// <summary>
@@ -178,6 +192,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total rewards distributed</value>
         [DataMember(Name="total_issued_amount")]
+        
         public string TotalIssuedAmount { get; set; }
 
         /// <summary>
@@ -185,6 +200,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total rewards distributed to the user</value>
         [DataMember(Name="user_total_issued_amount")]
+        
         public string UserTotalIssuedAmount { get; set; }
 
         /// <summary>
@@ -192,6 +208,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reward currency price (denominated in USDT)</value>
         [DataMember(Name="bonus_asset_price")]
+        
         public string BonusAssetPrice { get; set; }
 
         /// <summary>
@@ -199,6 +216,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product currency price (denominated in USDT)</value>
         [DataMember(Name="product_asset_price")]
+        
         public string ProductAssetPrice { get; set; }
 
         /// <summary>
@@ -206,6 +224,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Product base annual interest rate</value>
         [DataMember(Name="product_year_rate")]
+        
         public string ProductYearRate { get; set; }
 
         /// <summary>

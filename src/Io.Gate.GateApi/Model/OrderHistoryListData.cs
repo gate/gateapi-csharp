@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Historical order list</value>
         [DataMember(Name="list")]
+        
         public List<OrderHistoryListDataList> List { get; set; }
 
         /// <summary>

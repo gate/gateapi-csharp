@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Investment currency, e.g., BTC; Must be enabled and market exists; Cannot be repeated within the same plan</value>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The proportion of this currency in the portfolio，The sum of all items&#39; ratios must be 100</value>
         [DataMember(Name="ratio")]
+        
         public string Ratio { get; set; }
 
         /// <summary>

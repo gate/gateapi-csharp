@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Ad status. &#x60;1&#x60;: listed; &#x60;3&#x60;: delisted; &#x60;4&#x60;: closed.
         /// </summary>
         /// <value>Ad status. &#x60;1&#x60;: listed; &#x60;3&#x60;: delisted; &#x60;4&#x60;: closed.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum AdvStatusEnum
         {
             /// <summary>
@@ -59,6 +59,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ad status. &#x60;1&#x60;: listed; &#x60;3&#x60;: delisted; &#x60;4&#x60;: closed.</value>
         [DataMember(Name="adv_status")]
+        
         public AdvStatusEnum AdvStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AdsUpdateStatus" /> class.
@@ -81,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Advertisement ID.</value>
         [DataMember(Name="adv_no")]
+        
         public int AdvNo { get; set; }
 
         /// <summary>

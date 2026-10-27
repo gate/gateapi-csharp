@@ -33,7 +33,9 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Defines StrategyType
         /// </summary>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StrategyTypeEnum
         {
             /// <summary>
@@ -48,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyType
         /// </summary>
         [DataMember(Name="strategy_type")]
+        
         public StrategyTypeEnum StrategyType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContractMartingaleCreateRequest" /> class.
@@ -73,12 +76,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Market
         /// </summary>
         [DataMember(Name="market")]
+        
         public string Market { get; set; }
 
         /// <summary>
         /// Gets or Sets CreateParams
         /// </summary>
         [DataMember(Name="create_params")]
+        
         public ContractMartingaleCreateParams CreateParams { get; set; }
 
         /// <summary>

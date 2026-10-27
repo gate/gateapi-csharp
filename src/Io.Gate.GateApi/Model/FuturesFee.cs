@@ -43,6 +43,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Taker fee</value>
         [DataMember(Name="taker_fee", EmitDefaultValue=false)]
+        
         public string TakerFee { get; private set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>maker fee</value>
         [DataMember(Name="maker_fee", EmitDefaultValue=false)]
+        
         public string MakerFee { get; private set; }
 
         /// <summary>

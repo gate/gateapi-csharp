@@ -66,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Live ID</value>
         [DataMember(Name="id")]
+        
         public string Id { get; set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Anchor User ID</value>
         [DataMember(Name="uid")]
+        
         public string Uid { get; set; }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Chat group ID</value>
         [DataMember(Name="chat_group_id")]
+        
         public string ChatGroupId { get; set; }
 
         /// <summary>
@@ -87,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Live room name</value>
         [DataMember(Name="name")]
+        
         public string Name { get; set; }
 
         /// <summary>
@@ -94,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cover image URL</value>
         [DataMember(Name="cover")]
+        
         public string Cover { get; set; }
 
         /// <summary>
@@ -101,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Broadcast start time (Unix timestamp string)</value>
         [DataMember(Name="started_at")]
+        
         public string StartedAt { get; set; }
 
         /// <summary>
@@ -108,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether subscription is required</value>
         [DataMember(Name="subscription_required")]
+        
         public bool SubscriptionRequired { get; set; }
 
         /// <summary>
@@ -115,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Popularity weight</value>
         [DataMember(Name="hot_weight")]
+        
         public int HotWeight { get; set; }
 
         /// <summary>
@@ -122,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Live stream type</value>
         [DataMember(Name="live_type")]
+        
         public int LiveType { get; set; }
 
         /// <summary>
@@ -129,12 +138,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Session ID</value>
         [DataMember(Name="session_id")]
+        
         public string SessionId { get; set; }
 
         /// <summary>
         /// Gets or Sets Host
         /// </summary>
         [DataMember(Name="host")]
+        
         public ListLiveReplayResponseDataLiveHost Host { get; set; }
 
         /// <summary>
@@ -142,6 +153,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Live stream status (e.g., streaming)</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>

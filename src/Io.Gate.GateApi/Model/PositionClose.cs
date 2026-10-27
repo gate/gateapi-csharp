@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Position side  - &#x60;long&#x60;: Long position - &#x60;short&#x60;: Short position
         /// </summary>
         /// <value>Position side  - &#x60;long&#x60;: Long position - &#x60;short&#x60;: Short position</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum SideEnum
         {
             /// <summary>
@@ -56,6 +58,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position side  - &#x60;long&#x60;: Long position - &#x60;short&#x60;: Short position</value>
         [DataMember(Name="side", EmitDefaultValue=false)]
+        
         public SideEnum? Side { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PositionClose" /> class.
@@ -70,6 +73,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position close time</value>
         [DataMember(Name="time", EmitDefaultValue=false)]
+        
         public double Time { get; private set; }
 
         /// <summary>
@@ -77,6 +81,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="contract", EmitDefaultValue=false)]
+        
         public string Contract { get; private set; }
 
         /// <summary>
@@ -84,6 +89,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PnL</value>
         [DataMember(Name="pnl", EmitDefaultValue=false)]
+        
         public string Pnl { get; private set; }
 
         /// <summary>
@@ -91,6 +97,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PNL - Position P/L</value>
         [DataMember(Name="pnl_pnl", EmitDefaultValue=false)]
+        
         public string PnlPnl { get; private set; }
 
         /// <summary>
@@ -98,6 +105,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PNL - Funding Fees</value>
         [DataMember(Name="pnl_fund", EmitDefaultValue=false)]
+        
         public string PnlFund { get; private set; }
 
         /// <summary>
@@ -105,6 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>PNL - Transaction Fees</value>
         [DataMember(Name="pnl_fee", EmitDefaultValue=false)]
+        
         public string PnlFee { get; private set; }
 
         /// <summary>
@@ -112,6 +121,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Source of close order. See &#x60;order.text&#x60; field for specific values</value>
         [DataMember(Name="text", EmitDefaultValue=false)]
+        
         public string Text { get; private set; }
 
         /// <summary>
@@ -119,6 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Max Trade Size</value>
         [DataMember(Name="max_size", EmitDefaultValue=false)]
+        
         public string MaxSize { get; private set; }
 
         /// <summary>
@@ -126,6 +137,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cumulative closed position volume</value>
         [DataMember(Name="accum_size", EmitDefaultValue=false)]
+        
         public string AccumSize { get; private set; }
 
         /// <summary>
@@ -133,6 +145,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>First Open Time</value>
         [DataMember(Name="first_open_time", EmitDefaultValue=false)]
+        
         public long FirstOpenTime { get; private set; }
 
         /// <summary>
@@ -140,6 +153,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>When side is &#39;long&#39;, it indicates the opening average price; when side is &#39;short&#39;, it indicates the closing average price</value>
         [DataMember(Name="long_price", EmitDefaultValue=false)]
+        
         public string LongPrice { get; private set; }
 
         /// <summary>
@@ -147,6 +161,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>When side is &#39;long&#39;, it indicates the closing average price; when side is &#39;short&#39;, it indicates the opening average price</value>
         [DataMember(Name="short_price", EmitDefaultValue=false)]
+        
         public string ShortPrice { get; private set; }
 
         /// <summary>

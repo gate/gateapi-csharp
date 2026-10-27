@@ -50,6 +50,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Counterparty crypto UID from order list or detail field &#x60;its_uid&#x60;.</value>
         [DataMember(Name="biz_uid")]
+        
         public string BizUid { get; set; }
 
         /// <summary>

@@ -60,12 +60,14 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Uid
         /// </summary>
         [DataMember(Name="uid")]
+        
         public string Uid { get; set; }
 
         /// <summary>
         /// Gets or Sets BankId
         /// </summary>
         [DataMember(Name="bank_id")]
+        
         public string BankId { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business license / registration certificate file content (multipart file field, binary/Base64)</value>
         [DataMember(Name="certificate")]
+        
         public string Certificate { get; set; }
 
         /// <summary>
@@ -80,6 +83,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Register of shareholders file content (multipart file field, binary/Base64)</value>
         [DataMember(Name="share_holders")]
+        
         public string ShareHolders { get; set; }
 
         /// <summary>
@@ -87,6 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Legal representative / shareholder passport file content (multipart file field, binary/Base64)</value>
         [DataMember(Name="passport")]
+        
         public string Passport { get; set; }
 
         /// <summary>
@@ -94,6 +99,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Ownership structure chart file content (multipart file field, binary/Base64)</value>
         [DataMember(Name="share_holding_structure")]
+        
         public string ShareHoldingStructure { get; set; }
 
         /// <summary>
@@ -101,6 +107,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Proof-of-funds file content (multipart file field, binary/Base64, optional)</value>
         [DataMember(Name="funds_statement")]
+        
         public string FundsStatement { get; set; }
 
         /// <summary>
@@ -108,6 +115,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Other supplementary material file content (multipart file field, binary/Base64, optional)</value>
         [DataMember(Name="additional")]
+        
         public string Additional { get; set; }
 
         /// <summary>
@@ -115,6 +123,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Optional. JSON string of relationship_proof.</value>
         [DataMember(Name="relationship_proof")]
+        
         public string RelationshipProof { get; set; }
 
         /// <summary>

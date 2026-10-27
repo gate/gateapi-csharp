@@ -44,6 +44,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading symbol list</value>
         [DataMember(Name="list")]
+        
         public List<SymbolsDataList> List { get; set; }
 
         /// <summary>

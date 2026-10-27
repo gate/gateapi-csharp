@@ -90,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order side from current user&#39;s view. &#x60;1&#x60;: buy; &#x60;0&#x60;: sell.</value>
         [DataMember(Name="type_buy")]
+        
         public int TypeBuy { get; set; }
 
         /// <summary>
@@ -97,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Creation time of order</value>
         [DataMember(Name="timest")]
+        
         public string Timest { get; set; }
 
         /// <summary>
@@ -104,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order expiration time</value>
         [DataMember(Name="timest_expire")]
+        
         public string TimestExpire { get; set; }
 
         /// <summary>
@@ -111,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order creation timestamp</value>
         [DataMember(Name="timestamp")]
+        
         public int Timestamp { get; set; }
 
         /// <summary>
@@ -118,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order price in fiat currency.</value>
         [DataMember(Name="rate")]
+        
         public string Rate { get; set; }
 
         /// <summary>
@@ -125,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order size in cryptocurrency.</value>
         [DataMember(Name="amount")]
+        
         public string Amount { get; set; }
 
         /// <summary>
@@ -132,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total fiat amount of the order.</value>
         [DataMember(Name="total")]
+        
         public string Total { get; set; }
 
         /// <summary>
@@ -139,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="txid")]
+        
         public int Txid { get; set; }
 
         /// <summary>
@@ -146,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Display status: &#x60;unpay&#x60; awaiting payment; &#x60;paid&#x60; buyer paid; &#x60;unconfirmed&#x60; awaiting seller confirmation; &#x60;locked&#x60; locked; &#x60;finished&#x60; completed; &#x60;cancel&#x60; canceled; &#x60;expired&#x60; expired; &#x60;bclosed&#x60; arbitration filled; &#x60;sclosed&#x60; arbitration canceled.</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -153,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Counterparty real name or verified display name.</value>
         [DataMember(Name="its_realname")]
+        
         public string ItsRealname { get; set; }
 
         /// <summary>
@@ -160,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Counterparty crypto UID.</value>
         [DataMember(Name="its_uid")]
+        
         public string ItsUid { get; set; }
 
         /// <summary>
@@ -167,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Counterparty nickname</value>
         [DataMember(Name="its_nick")]
+        
         public string ItsNick { get; set; }
 
         /// <summary>
@@ -174,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Seller real name or verified display name.</value>
         [DataMember(Name="seller_realname")]
+        
         public string SellerRealname { get; set; }
 
         /// <summary>
@@ -181,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Buyer real name or verified display name.</value>
         [DataMember(Name="buyer_realname")]
+        
         public string BuyerRealname { get; set; }
 
         /// <summary>
@@ -188,6 +202,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether the order can be canceled. &#x60;1&#x60;: yes; &#x60;0&#x60;: no.</value>
         [DataMember(Name="cancelable")]
+        
         public int Cancelable { get; set; }
 
         /// <summary>
@@ -195,6 +210,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Cryptocurrency symbol.</value>
         [DataMember(Name="currency_type")]
+        
         public string CurrencyType { get; set; }
 
         /// <summary>
@@ -202,6 +218,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Fiat currency</value>
         [DataMember(Name="want_type")]
+        
         public string WantType { get; set; }
 
         /// <summary>
@@ -209,6 +226,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether payment methods are hidden. &#x60;1&#x60;: hidden; &#x60;0&#x60;: visible.</value>
         [DataMember(Name="hide_payment")]
+        
         public int HidePayment { get; set; }
 
         /// <summary>
@@ -216,6 +234,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Selected payment type for this order, e.g. &#x60;bank&#x60;, &#x60;alipay&#x60;, &#x60;wechat&#x60;, &#x60;paypal&#x60;, &#x60;swift&#x60;, &#x60;wu&#x60;.</value>
         [DataMember(Name="sel_paytype")]
+        
         public string SelPaytype { get; set; }
 
         /// <summary>
@@ -223,6 +242,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Other payment method details; may appear on historical orders.</value>
         [DataMember(Name="pay_others")]
+        
         public List<P2pTransactionListResultPayOthers> PayOthers { get; set; }
 
         /// <summary>
@@ -230,6 +250,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Countdown seconds for the current order.</value>
         [DataMember(Name="cd_time")]
+        
         public int CdTime { get; set; }
 
         /// <summary>
@@ -237,6 +258,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order type: &#x60;1&#x60; standard; &#x60;2&#x60; partner; &#x60;3&#x60; flash swap; &#x60;4&#x60; Web3.</value>
         [DataMember(Name="order_type")]
+        
         public int OrderType { get; set; }
 
         /// <summary>
@@ -244,12 +266,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order tags</value>
         [DataMember(Name="order_tag")]
+        
         public List<string> OrderTag { get; set; }
 
         /// <summary>
         /// Gets or Sets ConvertInfo
         /// </summary>
         [DataMember(Name="convert_info")]
+        
         public P2pTransactionConvertInfo ConvertInfo { get; set; }
 
         /// <summary>

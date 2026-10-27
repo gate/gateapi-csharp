@@ -48,6 +48,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Category ID</value>
         [DataMember(Name="category_id")]
+        
         public int CategoryId { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether it is a custom category, generally no need to pay attention</value>
         [DataMember(Name="is_favorite")]
+        
         public bool IsFavorite { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Category name</value>
         [DataMember(Name="category_name")]
+        
         public string CategoryName { get; set; }
 
         /// <summary>

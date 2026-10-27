@@ -34,6 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyType
         /// </summary>
         [DataMember(Name="strategy_type")]
+        
         public StrategyType StrategyType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AIHubPortfolioRunningItem" /> class.
@@ -73,42 +74,49 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets StrategyId
         /// </summary>
         [DataMember(Name="strategy_id")]
+        
         public string StrategyId { get; set; }
 
         /// <summary>
         /// Gets or Sets StrategyName
         /// </summary>
         [DataMember(Name="strategy_name")]
+        
         public string StrategyName { get; set; }
 
         /// <summary>
         /// Gets or Sets Market
         /// </summary>
         [DataMember(Name="market")]
+        
         public string Market { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Pnl
         /// </summary>
         [DataMember(Name="pnl")]
+        
         public string Pnl { get; set; }
 
         /// <summary>
         /// Gets or Sets PnlRate
         /// </summary>
         [DataMember(Name="pnl_rate")]
+        
         public string PnlRate { get; set; }
 
         /// <summary>
         /// Gets or Sets InvestAmount
         /// </summary>
         [DataMember(Name="invest_amount")]
+        
         public string InvestAmount { get; set; }
 
         /// <summary>
@@ -116,6 +124,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Created time</value>
         [DataMember(Name="created_at")]
+        
         public string CreatedAt { get; set; }
 
         /// <summary>

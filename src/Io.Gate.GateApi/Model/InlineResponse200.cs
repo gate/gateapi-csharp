@@ -68,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange</value>
         [DataMember(Name="exchange_type")]
+        
         public string ExchangeType { get; set; }
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>spotMakerfee rate</value>
         [DataMember(Name="spot_maker_fee")]
+        
         public string SpotMakerFee { get; set; }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>spotTakerfee rate</value>
         [DataMember(Name="spot_taker_fee")]
+        
         public string SpotTakerFee { get; set; }
 
         /// <summary>
@@ -89,6 +92,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Spot RPI order maker fee rate</value>
         [DataMember(Name="spot_rpi_maker_fee")]
+        
         public string SpotRpiMakerFee { get; set; }
 
         /// <summary>
@@ -96,6 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>contractMakerfee rate</value>
         [DataMember(Name="future_maker_fee")]
+        
         public string FutureMakerFee { get; set; }
 
         /// <summary>
@@ -103,6 +108,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>contractTakerfee rate</value>
         [DataMember(Name="future_taker_fee")]
+        
         public string FutureTakerFee { get; set; }
 
         /// <summary>
@@ -110,12 +116,14 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures RPI order maker fee rate</value>
         [DataMember(Name="future_rpi_maker_fee")]
+        
         public string FutureRpiMakerFee { get; set; }
 
         /// <summary>
         /// Gets or Sets SpecialFeeList
         /// </summary>
         [DataMember(Name="special_fee_list")]
+        
         public List<CrossexSpecialFee> SpecialFeeList { get; set; }
 
         /// <summary>

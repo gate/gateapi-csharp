@@ -34,7 +34,9 @@ namespace Io.Gate.GateApi.Model
         /// Market ADL risk state
         /// </summary>
         /// <value>Market ADL risk state</value>
+        
         [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum StateEnum
         {
             /// <summary>
@@ -62,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Market ADL risk state</value>
         [DataMember(Name="state")]
+        
         public StateEnum State { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FuturesADLRiskState" /> class.
@@ -84,6 +87,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>State calculation time, as a Unix timestamp in milliseconds</value>
         [DataMember(Name="calculated_at_ms")]
+        
         public long CalculatedAtMs { get; set; }
 
         /// <summary>

@@ -67,42 +67,49 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets Asset
         /// </summary>
         [DataMember(Name="asset")]
+        
         public string Asset { get; set; }
 
         /// <summary>
         /// Gets or Sets AssetFullName
         /// </summary>
         [DataMember(Name="asset_full_name")]
+        
         public string AssetFullName { get; set; }
 
         /// <summary>
         /// Gets or Sets AssetIconUrl
         /// </summary>
         [DataMember(Name="asset_icon_url")]
+        
         public string AssetIconUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Available
         /// </summary>
         [DataMember(Name="available")]
+        
         public string Available { get; set; }
 
         /// <summary>
         /// Gets or Sets AvailableShow
         /// </summary>
         [DataMember(Name="available_show")]
+        
         public string AvailableShow { get; set; }
 
         /// <summary>
         /// Gets or Sets EvaluateUsdt
         /// </summary>
         [DataMember(Name="evaluate_usdt")]
+        
         public string EvaluateUsdt { get; set; }
 
         /// <summary>
         /// Gets or Sets EvaluateUsdtShow
         /// </summary>
         [DataMember(Name="evaluate_usdt_show")]
+        
         public string EvaluateUsdtShow { get; set; }
 
         /// <summary>

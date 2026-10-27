@@ -45,6 +45,7 @@ namespace Io.Gate.GateApi.Model
         /// Gets or Sets List
         /// </summary>
         [DataMember(Name="list")]
+        
         public List<FixedTermHistoryRecord> List { get; set; }
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total Records</value>
         [DataMember(Name="total")]
+        
         public int Total { get; set; }
 
         /// <summary>

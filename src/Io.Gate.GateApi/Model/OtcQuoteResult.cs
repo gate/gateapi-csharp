@@ -86,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>BUY (on-ramp) or SELL (off-ramp)</value>
         [DataMember(Name="type")]
+        
         public string Type { get; set; }
 
         /// <summary>
@@ -93,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment currency</value>
         [DataMember(Name="pay_coin")]
+        
         public string PayCoin { get; set; }
 
         /// <summary>
@@ -100,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency</value>
         [DataMember(Name="get_coin")]
+        
         public string GetCoin { get; set; }
 
         /// <summary>
@@ -107,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment amount</value>
         [DataMember(Name="pay_amount")]
+        
         public string PayAmount { get; set; }
 
         /// <summary>
@@ -114,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Redemption Amount</value>
         [DataMember(Name="get_amount")]
+        
         public string GetAmount { get; set; }
 
         /// <summary>
@@ -121,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange rate</value>
         [DataMember(Name="rate")]
+        
         public string Rate { get; set; }
 
         /// <summary>
@@ -128,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Reciprocal of the exchange rate</value>
         [DataMember(Name="rate_reci")]
+        
         public string RateReci { get; set; }
 
         /// <summary>
@@ -135,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Promotion code</value>
         [DataMember(Name="promotion_code")]
+        
         public string PromotionCode { get; set; }
 
         /// <summary>
@@ -142,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote method</value>
         [DataMember(Name="side")]
+        
         public string Side { get; set; }
 
         /// <summary>
@@ -149,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order type: FIAT (fiat) / STABLE (stablecoin)</value>
         [DataMember(Name="order_type")]
+        
         public string OrderType { get; set; }
 
         /// <summary>
@@ -156,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote token required when placing an order</value>
         [DataMember(Name="quote_token")]
+        
         public string QuoteToken { get; set; }
 
         /// <summary>
@@ -163,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote validity period (seconds)</value>
         [DataMember(Name="validity_period")]
+        
         public string ValidityPeriod { get; set; }
 
         /// <summary>
@@ -170,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote refresh limit</value>
         [DataMember(Name="refresh_limit")]
+        
         public int RefreshLimit { get; set; }
 
         /// <summary>
@@ -177,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quote refresh limit message</value>
         [DataMember(Name="refresh_limit_msg")]
+        
         public string RefreshLimitMsg { get; set; }
 
         /// <summary>

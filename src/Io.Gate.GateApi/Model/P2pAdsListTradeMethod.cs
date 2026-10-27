@@ -52,6 +52,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method color icon URL</value>
         [DataMember(Name="icon_url_color")]
+        
         public string IconUrlColor { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method identifier</value>
         [DataMember(Name="identifier")]
+        
         public string Identifier { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method ID</value>
         [DataMember(Name="pay_id")]
+        
         public string PayId { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method type</value>
         [DataMember(Name="pay_type")]
+        
         public string PayType { get; set; }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Payment method name</value>
         [DataMember(Name="trade_method_name")]
+        
         public string TradeMethodName { get; set; }
 
         /// <summary>

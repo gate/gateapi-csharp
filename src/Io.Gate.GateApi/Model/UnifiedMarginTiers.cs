@@ -46,6 +46,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency name</value>
         [DataMember(Name="currency")]
+        
         public string Currency { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Tiered margin</value>
         [DataMember(Name="margin_tiers")]
+        
         public List<MarginTiers> MarginTiers { get; set; }
 
         /// <summary>

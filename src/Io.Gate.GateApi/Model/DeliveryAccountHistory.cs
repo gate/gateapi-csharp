@@ -62,6 +62,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>total amount of deposit and withdraw</value>
         [DataMember(Name="dnw")]
+        
         public string Dnw { get; set; }
 
         /// <summary>
@@ -69,6 +70,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>total amount of trading profit and loss</value>
         [DataMember(Name="pnl")]
+        
         public string Pnl { get; set; }
 
         /// <summary>
@@ -76,6 +78,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>total amount of fee</value>
         [DataMember(Name="fee")]
+        
         public string Fee { get; set; }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>total amount of referrer rebates</value>
         [DataMember(Name="refr")]
+        
         public string Refr { get; set; }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>total amount of funding costs</value>
         [DataMember(Name="fund")]
+        
         public string Fund { get; set; }
 
         /// <summary>
@@ -97,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>total amount of point deposit and withdraw</value>
         [DataMember(Name="point_dnw")]
+        
         public string PointDnw { get; set; }
 
         /// <summary>
@@ -104,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>total amount of point fee</value>
         [DataMember(Name="point_fee")]
+        
         public string PointFee { get; set; }
 
         /// <summary>
@@ -111,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>total amount of referrer rebates of point fee</value>
         [DataMember(Name="point_refr")]
+        
         public string PointRefr { get; set; }
 
         /// <summary>
@@ -118,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>total amount of perpetual contract bonus transfer</value>
         [DataMember(Name="bonus_dnw")]
+        
         public string BonusDnw { get; set; }
 
         /// <summary>
@@ -125,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>total amount of perpetual contract bonus deduction</value>
         [DataMember(Name="bonus_offset")]
+        
         public string BonusOffset { get; set; }
 
         /// <summary>

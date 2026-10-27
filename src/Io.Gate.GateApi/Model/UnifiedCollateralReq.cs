@@ -34,7 +34,7 @@ namespace Io.Gate.GateApi.Model
         /// User-set collateral mode: 0(all)-All currencies as collateral, 1(custom)-Custom currencies as collateral. When collateral_type is 0(all), enable_list and disable_list parameters are invalid
         /// </summary>
         /// <value>User-set collateral mode: 0(all)-All currencies as collateral, 1(custom)-Custom currencies as collateral. When collateral_type is 0(all), enable_list and disable_list parameters are invalid</value>
-        [JsonConverter(typeof(StringEnumConverter))]
+        
         public enum CollateralTypeEnum
         {
             /// <summary>
@@ -54,6 +54,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>User-set collateral mode: 0(all)-All currencies as collateral, 1(custom)-Custom currencies as collateral. When collateral_type is 0(all), enable_list and disable_list parameters are invalid</value>
         [DataMember(Name="collateral_type")]
+        
         public CollateralTypeEnum? CollateralType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UnifiedCollateralReq" /> class.
@@ -73,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currency list, where collateral_type&#x3D;1(custom) indicates the addition logic</value>
         [DataMember(Name="enable_list")]
+        
         public List<string> EnableList { get; set; }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Disable list, indicating the disable logic</value>
         [DataMember(Name="disable_list")]
+        
         public List<string> DisableList { get; set; }
 
         /// <summary>

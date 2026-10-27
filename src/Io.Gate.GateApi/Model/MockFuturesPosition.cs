@@ -53,6 +53,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Perpetual contract name. Only USDT perpetual contracts for underlying currencies with active options trading are supported.</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Position size, measured in contract quantity</value>
         [DataMember(Name="size")]
+        
         public string Size { get; set; }
 
         /// <summary>

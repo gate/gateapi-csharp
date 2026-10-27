@@ -90,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Stat timestamp</value>
         [DataMember(Name="time")]
+        
         public long Time { get; set; }
 
         /// <summary>
@@ -97,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Long/short taker ratio</value>
         [DataMember(Name="lsr_taker")]
+        
         public double LsrTaker { get; set; }
 
         /// <summary>
@@ -104,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Long/short position user ratio</value>
         [DataMember(Name="lsr_account")]
+        
         public double LsrAccount { get; set; }
 
         /// <summary>
@@ -111,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Long liquidation size (contracts)</value>
         [DataMember(Name="long_liq_size")]
+        
         public string LongLiqSize { get; set; }
 
         /// <summary>
@@ -118,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Long liquidation amount (base currency)</value>
         [DataMember(Name="long_liq_amount")]
+        
         public double LongLiqAmount { get; set; }
 
         /// <summary>
@@ -125,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Long liquidation volume (quote currency)</value>
         [DataMember(Name="long_liq_usd")]
+        
         public double LongLiqUsd { get; set; }
 
         /// <summary>
@@ -132,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Long liquidations in quote currency; USDT settlement: long_liq_size × multiplier × mark price</value>
         [DataMember(Name="long_liq_usd_new")]
+        
         public double LongLiqUsdNew { get; set; }
 
         /// <summary>
@@ -139,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Short liquidation size (contracts)</value>
         [DataMember(Name="short_liq_size")]
+        
         public string ShortLiqSize { get; set; }
 
         /// <summary>
@@ -146,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Short liquidation amount (base currency)</value>
         [DataMember(Name="short_liq_amount")]
+        
         public double ShortLiqAmount { get; set; }
 
         /// <summary>
@@ -153,6 +162,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Short liquidation volume (quote currency)</value>
         [DataMember(Name="short_liq_usd")]
+        
         public double ShortLiqUsd { get; set; }
 
         /// <summary>
@@ -160,6 +170,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Short liquidations in quote currency; USDT settlement: short_liq_size × multiplier × mark price</value>
         [DataMember(Name="short_liq_usd_new")]
+        
         public double ShortLiqUsdNew { get; set; }
 
         /// <summary>
@@ -167,6 +178,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total open interest size (contracts)</value>
         [DataMember(Name="open_interest")]
+        
         public string OpenInterest { get; set; }
 
         /// <summary>
@@ -174,6 +186,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Total open interest volume (quote currency)</value>
         [DataMember(Name="open_interest_usd")]
+        
         public double OpenInterestUsd { get; set; }
 
         /// <summary>
@@ -181,6 +194,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Top trader long/short account ratio</value>
         [DataMember(Name="top_lsr_account")]
+        
         public double TopLsrAccount { get; set; }
 
         /// <summary>
@@ -188,6 +202,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Top trader long/short position ratio</value>
         [DataMember(Name="top_lsr_size")]
+        
         public string TopLsrSize { get; set; }
 
         /// <summary>
@@ -195,6 +210,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Mark price</value>
         [DataMember(Name="mark_price")]
+        
         public double MarkPrice { get; set; }
 
         /// <summary>
@@ -202,6 +218,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Top long open interest (contracts)</value>
         [DataMember(Name="top_long_size")]
+        
         public string TopLongSize { get; set; }
 
         /// <summary>
@@ -209,6 +226,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Top short open interest (contracts)</value>
         [DataMember(Name="top_short_size")]
+        
         public string TopShortSize { get; set; }
 
         /// <summary>
@@ -216,6 +234,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Long taker trade volume (contracts)</value>
         [DataMember(Name="long_taker_size")]
+        
         public string LongTakerSize { get; set; }
 
         /// <summary>
@@ -223,6 +242,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Short taker trade volume (contracts)</value>
         [DataMember(Name="short_taker_size")]
+        
         public string ShortTakerSize { get; set; }
 
         /// <summary>
@@ -230,6 +250,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of top long accounts (large holders)</value>
         [DataMember(Name="top_long_account")]
+        
         public long TopLongAccount { get; set; }
 
         /// <summary>
@@ -237,6 +258,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of top short accounts (large holders)</value>
         [DataMember(Name="top_short_account")]
+        
         public long TopShortAccount { get; set; }
 
         /// <summary>
@@ -244,6 +266,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of users holding long positions</value>
         [DataMember(Name="long_users")]
+        
         public long LongUsers { get; set; }
 
         /// <summary>
@@ -251,6 +274,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Number of users holding short positions</value>
         [DataMember(Name="short_users")]
+        
         public long ShortUsers { get; set; }
 
         /// <summary>

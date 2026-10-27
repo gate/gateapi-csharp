@@ -66,6 +66,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading symbol code</value>
         [DataMember(Name="symbol")]
+        
         public string Symbol { get; set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading symbol description</value>
         [DataMember(Name="symbol_desc")]
+        
         public string SymbolDesc { get; set; }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Category ID</value>
         [DataMember(Name="category_id")]
+        
         public int CategoryId { get; set; }
 
         /// <summary>
@@ -87,6 +90,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading status (open&#x3D;tradable, closed&#x3D;non-tradable)</value>
         [DataMember(Name="status")]
+        
         public string Status { get; set; }
 
         /// <summary>
@@ -94,6 +98,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Trading mode code (0&#x3D;disabled, 1&#x3D;long only, 2&#x3D;short only, 3&#x3D;close only, 4&#x3D;full trading access)</value>
         [DataMember(Name="trade_mode")]
+        
         public string TradeMode { get; set; }
 
         /// <summary>
@@ -101,6 +106,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Symbol icon URL</value>
         [DataMember(Name="icon_link")]
+        
         public string IconLink { get; set; }
 
         /// <summary>
@@ -108,6 +114,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Close time (Unix timestamp in seconds)</value>
         [DataMember(Name="close_time")]
+        
         public long CloseTime { get; set; }
 
         /// <summary>
@@ -115,6 +122,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Open time (Unix timestamp in seconds)</value>
         [DataMember(Name="open_time")]
+        
         public long OpenTime { get; set; }
 
         /// <summary>
@@ -122,6 +130,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Next open time (Unix timestamp in seconds, 0 means none)</value>
         [DataMember(Name="next_open_time")]
+        
         public long NextOpenTime { get; set; }
 
         /// <summary>
@@ -129,6 +138,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement currency</value>
         [DataMember(Name="settlement_currency")]
+        
         public string SettlementCurrency { get; set; }
 
         /// <summary>
@@ -136,6 +146,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Settlement currency symbol</value>
         [DataMember(Name="settlement_currency_symbol")]
+        
         public string SettlementCurrencySymbol { get; set; }
 
         /// <summary>
@@ -143,6 +154,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price precision (decimal places)</value>
         [DataMember(Name="price_precision")]
+        
         public int PricePrecision { get; set; }
 
         /// <summary>

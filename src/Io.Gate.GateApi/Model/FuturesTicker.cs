@@ -94,6 +94,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Futures contract</value>
         [DataMember(Name="contract")]
+        
         public string Contract { get; set; }
 
         /// <summary>
@@ -101,6 +102,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Last trading price</value>
         [DataMember(Name="last")]
+        
         public string Last { get; set; }
 
         /// <summary>
@@ -108,6 +110,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price change percentage. Negative values indicate price decrease, e.g. -7.45</value>
         [DataMember(Name="change_percentage")]
+        
         public string ChangePercentage { get; set; }
 
         /// <summary>
@@ -115,6 +118,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract total size</value>
         [DataMember(Name="total_size")]
+        
         public string TotalSize { get; set; }
 
         /// <summary>
@@ -122,6 +126,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour lowest price</value>
         [DataMember(Name="low_24h")]
+        
         public string Low24h { get; set; }
 
         /// <summary>
@@ -129,6 +134,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour highest price</value>
         [DataMember(Name="high_24h")]
+        
         public string High24h { get; set; }
 
         /// <summary>
@@ -136,6 +142,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour trading volume</value>
         [DataMember(Name="volume_24h")]
+        
         public string Volume24h { get; set; }
 
         /// <summary>
@@ -143,6 +150,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour trading volume in BTC (deprecated, use &#x60;volume_24h_base&#x60;, &#x60;volume_24h_quote&#x60;, &#x60;volume_24h_settle&#x60; instead)</value>
         [DataMember(Name="volume_24h_btc")]
+        
         public string Volume24hBtc { get; set; }
 
         /// <summary>
@@ -150,6 +158,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour trading volume in USD (deprecated, use &#x60;volume_24h_base&#x60;, &#x60;volume_24h_quote&#x60;, &#x60;volume_24h_settle&#x60; instead)</value>
         [DataMember(Name="volume_24h_usd")]
+        
         public string Volume24hUsd { get; set; }
 
         /// <summary>
@@ -157,6 +166,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour trading volume in base currency</value>
         [DataMember(Name="volume_24h_base")]
+        
         public string Volume24hBase { get; set; }
 
         /// <summary>
@@ -164,6 +174,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour trading volume in quote currency</value>
         [DataMember(Name="volume_24h_quote")]
+        
         public string Volume24hQuote { get; set; }
 
         /// <summary>
@@ -171,6 +182,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24-hour trading volume in settle currency</value>
         [DataMember(Name="volume_24h_settle")]
+        
         public string Volume24hSettle { get; set; }
 
         /// <summary>
@@ -178,6 +190,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Recent mark price</value>
         [DataMember(Name="mark_price")]
+        
         public string MarkPrice { get; set; }
 
         /// <summary>
@@ -185,6 +198,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Funding rate</value>
         [DataMember(Name="funding_rate")]
+        
         public string FundingRate { get; set; }
 
         /// <summary>
@@ -192,6 +206,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Indicative Funding rate in next period. (deprecated. use &#x60;funding_rate&#x60;)</value>
         [DataMember(Name="funding_rate_indicative")]
+        
         public string FundingRateIndicative { get; set; }
 
         /// <summary>
@@ -199,6 +214,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Index price</value>
         [DataMember(Name="index_price")]
+        
         public string IndexPrice { get; set; }
 
         /// <summary>
@@ -206,6 +222,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Deprecated</value>
         [DataMember(Name="quanto_base_rate")]
+        
         public string QuantoBaseRate { get; set; }
 
         /// <summary>
@@ -213,6 +230,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Recent lowest ask</value>
         [DataMember(Name="lowest_ask")]
+        
         public string LowestAsk { get; set; }
 
         /// <summary>
@@ -220,6 +238,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The latest seller&#39;s lowest price order quantity</value>
         [DataMember(Name="lowest_size")]
+        
         public string LowestSize { get; set; }
 
         /// <summary>
@@ -227,6 +246,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Recent highest bid</value>
         [DataMember(Name="highest_bid")]
+        
         public string HighestBid { get; set; }
 
         /// <summary>
@@ -234,6 +254,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>The latest buyer&#39;s highest price order volume</value>
         [DataMember(Name="highest_size")]
+        
         public string HighestSize { get; set; }
 
         /// <summary>
@@ -241,6 +262,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Percentage change at utc0. Negative values indicate a drop, e.g., -7.45%</value>
         [DataMember(Name="change_utc0")]
+        
         public string ChangeUtc0 { get; set; }
 
         /// <summary>
@@ -248,6 +270,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Percentage change at utc8. Negative values indicate a drop, e.g., -7.45%</value>
         [DataMember(Name="change_utc8")]
+        
         public string ChangeUtc8 { get; set; }
 
         /// <summary>
@@ -255,6 +278,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>24h change amount. Negative values indicate a drop, e.g., -7.45</value>
         [DataMember(Name="change_price")]
+        
         public string ChangePrice { get; set; }
 
         /// <summary>
@@ -262,6 +286,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Change amount at utc0. Negative values indicate a drop, e.g., -7.45</value>
         [DataMember(Name="change_utc0_price")]
+        
         public string ChangeUtc0Price { get; set; }
 
         /// <summary>
@@ -269,6 +294,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Change amount at utc8. Negative values indicate a drop, e.g., -7.45</value>
         [DataMember(Name="change_utc8_price")]
+        
         public string ChangeUtc8Price { get; set; }
 
         /// <summary>

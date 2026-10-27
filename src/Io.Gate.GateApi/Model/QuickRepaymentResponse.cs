@@ -56,6 +56,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Order ID</value>
         [DataMember(Name="order_id")]
+        
         public string OrderId { get; set; }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Repaid currency details</value>
         [DataMember(Name="repaid_infos")]
+        
         public List<UnifiedQuickRepayRepaidInfo> RepaidInfos { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Currencies used for repayment</value>
         [DataMember(Name="used_infos")]
+        
         public List<UnifiedQuickRepayUsedInfo> UsedInfos { get; set; }
 
         /// <summary>

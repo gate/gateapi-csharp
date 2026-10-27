@@ -1,27 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  <!-- Build the adjacent candidate SDK and inherit its governed dependencies. -->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
-    <Reference Include="Io.Gate.GateApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\gate-csharp\src\Io.Gate.GateApi\bin\Debug\netstandard2.0\Io.Gate.GateApi.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="1.5.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-    <PackageReference Include="RestSharp" Version="106.10.1" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+    <ProjectReference Include="../src/Io.Gate.GateApi/Io.Gate.GateApi.csproj" />
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
   </ItemGroup>
-
 </Project>

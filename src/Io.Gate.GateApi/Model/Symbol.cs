@@ -96,6 +96,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Unique trading pair identifier in the format ExchangeType_BusinessType_Base_Counter. Stocks and ETFs use the market as ExchangeType (US/HK/KR/JP) and STOCK or ETF as the business type, for example US_STOCK_AAPL_USDT, HK_STOCK_00700_USDT, or US_ETF_SPY_USDT.</value>
         [DataMember(Name="symbol")]
+        
         public string _Symbol { get; set; }
 
         /// <summary>
@@ -103,6 +104,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Exchange type (BINANCE / OKX / GATE / BYBIT / KRAKEN / HYPERLIQUID / DERIBIT / LIGHTER). Stocks and ETFs return the listing market (US / HK / KR / JP)</value>
         [DataMember(Name="exchange_type")]
+        
         public string ExchangeType { get; set; }
 
         /// <summary>
@@ -110,6 +112,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Business type (SPOT: spot / FUTURE: futures / MARGIN: margin / STOCK: stocks / ETF: exchange-traded funds)</value>
         [DataMember(Name="business_type")]
+        
         public string BusinessType { get; set; }
 
         /// <summary>
@@ -117,6 +120,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Status (&#x60;live&#x60; running / &#x60;suspend&#x60; paused).</value>
         [DataMember(Name="state")]
+        
         public string State { get; set; }
 
         /// <summary>
@@ -124,6 +128,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum order quantity</value>
         [DataMember(Name="min_size")]
+        
         public string MinSize { get; set; }
 
         /// <summary>
@@ -131,6 +136,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Minimum Order Value</value>
         [DataMember(Name="min_notional")]
+        
         public string MinNotional { get; set; }
 
         /// <summary>
@@ -138,6 +144,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Quantity Step</value>
         [DataMember(Name="lot_size")]
+        
         public string LotSize { get; set; }
 
         /// <summary>
@@ -145,6 +152,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Price Step</value>
         [DataMember(Name="tick_size")]
+        
         public string TickSize { get; set; }
 
         /// <summary>
@@ -152,6 +160,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>maximumopen orderamount</value>
         [DataMember(Name="max_num_orders")]
+        
         public string MaxNumOrders { get; set; }
 
         /// <summary>
@@ -159,6 +168,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum Market Order Quantity</value>
         [DataMember(Name="max_market_size")]
+        
         public string MaxMarketSize { get; set; }
 
         /// <summary>
@@ -166,6 +176,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Maximum order quantity for limit orders.</value>
         [DataMember(Name="max_limit_size")]
+        
         public string MaxLimitSize { get; set; }
 
         /// <summary>
@@ -173,6 +184,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Contract multiplier (deprecated; quantity is used uniformly)</value>
         [DataMember(Name="contract_size")]
+        
         public string ContractSize { get; set; }
 
         /// <summary>
@@ -180,6 +192,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Liquidation Fee Rate</value>
         [DataMember(Name="liquidation_fee")]
+        
         public string LiquidationFee { get; set; }
 
         /// <summary>
@@ -187,6 +200,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Millisecond timestamp; &#x60;0&#x60; means not delisted.</value>
         [DataMember(Name="delist_time")]
+        
         public string DelistTime { get; set; }
 
         /// <summary>
@@ -194,6 +208,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether RPI order placement is supported (true if supported; false otherwise)</value>
         [DataMember(Name="support_rpi")]
+        
         public string SupportRpi { get; set; }
 
         /// <summary>
@@ -201,6 +216,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Whether cross-margin order placement is supported (true if supported; false otherwise)</value>
         [DataMember(Name="support_cross")]
+        
         public string SupportCross { get; set; }
 
         /// <summary>
@@ -208,6 +224,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <value>Tag information. Hyperliquid returns DEX information, stocks and ETFs return the security description, and other businesses return an empty string</value>
         [DataMember(Name="tag")]
+        
         public string Tag { get; set; }
 
         /// <summary>
