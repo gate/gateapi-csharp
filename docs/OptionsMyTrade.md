@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Id** | **long** | Fill ID | [optional] 
 **CreateTime** | **double** | Fill Time | [optional] 
 **Contract** | **string** | Options contract name | [optional] 
-**OrderId** | **int** | Related order ID | [optional] 
+**OrderId** | **long** | Related order ID | [optional] 
 **Size** | **long** | Trading size | [optional] 
 **Price** | **string** | Trade price (quote currency) | [optional] 
 **UnderlyingPrice** | **string** | The forward futures price corresponding to the delivery date | [optional] 

@@ -71,7 +71,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="price">Trade price (quote currency).</param>
         /// <param name="underlyingPrice">The forward futures price corresponding to the delivery date.</param>
         /// <param name="role">Trade role. taker - taker, maker - maker.</param>
-        public OptionsMyTrade(long id = default(long), double createTime = default(double), string contract = default(string), int orderId = default(int), long size = default(long), string price = default(string), string underlyingPrice = default(string), RoleEnum? role = default(RoleEnum?))
+        public OptionsMyTrade(long id = default(long), double createTime = default(double), string contract = default(string), long orderId = default(long), long size = default(long), string price = default(string), string underlyingPrice = default(string), RoleEnum? role = default(RoleEnum?))
         {
             this.Id = id;
             this.CreateTime = createTime;
@@ -113,7 +113,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>Related order ID</value>
         [DataMember(Name="order_id")]
         
-        public int OrderId { get; set; }
+        public long OrderId { get; set; }
 
         /// <summary>
         /// Trading size

@@ -88,7 +88,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="currency">Settlement currency.</param>
         /// <param name="ordersLimit">Maximum number of outstanding orders.</param>
         /// <param name="positionNotionalLimit">Notional value upper limit, including the nominal value of positions and outstanding orders.</param>
-        public OptionsAccount(long user = default(long), string total = default(string), string positionValue = default(string), string equity = default(string), bool shortEnabled = default(bool), bool mmpEnabled = default(bool), bool liqTriggered = default(bool), MarginModeEnum? marginMode = default(MarginModeEnum?), string unrealisedPnl = default(string), string initMargin = default(string), string maintMargin = default(string), string orderMargin = default(string), string askOrderMargin = default(string), string bidOrderMargin = default(string), string available = default(string), string point = default(string), string currency = default(string), int ordersLimit = default(int), long positionNotionalLimit = default(long))
+        public OptionsAccount(long user = default(long), string total = default(string), string positionValue = default(string), string equity = default(string), bool shortEnabled = default(bool), bool mmpEnabled = default(bool), bool liqTriggered = default(bool), MarginModeEnum? marginMode = default(MarginModeEnum?), string unrealisedPnl = default(string), string initMargin = default(string), string maintMargin = default(string), string orderMargin = default(string), string askOrderMargin = default(string), string bidOrderMargin = default(string), string available = default(string), string point = default(string), string currency = default(string), int ordersLimit = default(int), string positionNotionalLimit = default(string))
         {
             this.User = user;
             this.Total = total;
@@ -253,7 +253,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>Notional value upper limit, including the nominal value of positions and outstanding orders</value>
         [DataMember(Name="position_notional_limit")]
         
-        public long PositionNotionalLimit { get; set; }
+        public string PositionNotionalLimit { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -402,7 +402,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.PositionNotionalLimit == input.PositionNotionalLimit ||
-                    this.PositionNotionalLimit.Equals(input.PositionNotionalLimit)
+                    (this.PositionNotionalLimit != null &&
+                    this.PositionNotionalLimit.Equals(input.PositionNotionalLimit))
                 );
         }
 
@@ -445,7 +446,8 @@ namespace Io.Gate.GateApi.Model
                 if (this.Currency != null)
                     hashCode = hashCode * 59 + this.Currency.GetHashCode();
                 hashCode = hashCode * 59 + this.OrdersLimit.GetHashCode();
-                hashCode = hashCode * 59 + this.PositionNotionalLimit.GetHashCode();
+                if (this.PositionNotionalLimit != null)
+                    hashCode = hashCode * 59 + this.PositionNotionalLimit.GetHashCode();
                 return hashCode;
             }
         }
