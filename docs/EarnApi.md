@@ -2377,7 +2377,7 @@ Name | Type | Description  | Notes
 
 <a name="listearnfixedtermproducts"></a>
 # **ListEarnFixedTermProducts**
-> ListEarnFixedTermProductsResponse ListEarnFixedTermProducts (int page, int limit, string asset = null, int? type = null)
+> ListEarnFixedTermProductsResponse ListEarnFixedTermProducts (int page, int limit, string asset = null, int? type = null, int? status = null, string showStatus = null)
 
 Get product list
 
@@ -2404,11 +2404,13 @@ namespace Example
             var limit = 100;  // int | Page size
             var asset = "USDT";  // string | Currency (optional) 
             var type = 1;  // int? | Product type: 1 for regular, 2 for VIP (optional) 
+            var status = 2;  // int? | Product status filter. Pass 2 for products available for subscription. (optional) 
+            var showStatus = "2";  // string | Visibility status filter. Pass \"2\" for visible products. (optional) 
 
             try
             {
                 // Get product list
-                ListEarnFixedTermProductsResponse result = apiInstance.ListEarnFixedTermProducts(page, limit, asset, type);
+                ListEarnFixedTermProductsResponse result = apiInstance.ListEarnFixedTermProducts(page, limit, asset, type, status, showStatus);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -2431,6 +2433,8 @@ Name | Type | Description  | Notes
  **limit** | **int**| Page size | 
  **asset** | **string**| Currency | [optional] 
  **type** | **int?**| Product type: 1 for regular, 2 for VIP | [optional] 
+ **status** | **int?**| Product status filter. Pass 2 for products available for subscription. | [optional] 
+ **showStatus** | **string**| Visibility status filter. Pass \&quot;2\&quot; for visible products. | [optional] 
 
 ### Return type
 

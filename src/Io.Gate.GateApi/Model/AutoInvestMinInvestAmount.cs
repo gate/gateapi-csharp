@@ -31,6 +31,32 @@ namespace Io.Gate.GateApi.Model
     public partial class AutoInvestMinInvestAmount :  IEquatable<AutoInvestMinInvestAmount>, IValidatableObject
     {
         /// <summary>
+        /// Asset type: 1 for cryptocurrency, 2 for TradFi stocks; must be provided explicitly
+        /// </summary>
+        /// <value>Asset type: 1 for cryptocurrency, 2 for TradFi stocks; must be provided explicitly</value>
+        
+        public enum AssetTypeEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1,
+
+            /// <summary>
+            /// Enum value NUMBER_2
+            /// </summary>
+            NUMBER_2 = 2
+
+        }
+
+        /// <summary>
+        /// Asset type: 1 for cryptocurrency, 2 for TradFi stocks; must be provided explicitly
+        /// </summary>
+        /// <value>Asset type: 1 for cryptocurrency, 2 for TradFi stocks; must be provided explicitly</value>
+        [DataMember(Name="asset_type")]
+        
+        public AssetTypeEnum AssetType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="AutoInvestMinInvestAmount" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -39,11 +65,13 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="AutoInvestMinInvestAmount" /> class.
         /// </summary>
         /// <param name="money">Currency, optional: USDT or BTC (required).</param>
+        /// <param name="assetType">Asset type: 1 for cryptocurrency, 2 for TradFi stocks; must be provided explicitly (required).</param>
         /// <param name="items">items (required).</param>
-        public AutoInvestMinInvestAmount(string money = default(string), List<AutoInvestMinInvestAmountItems> items = default(List<AutoInvestMinInvestAmountItems>))
+        public AutoInvestMinInvestAmount(string money = default(string), AssetTypeEnum assetType = default(AssetTypeEnum), List<AutoInvestMinInvestAmountItems> items = default(List<AutoInvestMinInvestAmountItems>))
         {
             // to ensure "money" is required (not null)
             this.Money = money ?? throw new ArgumentNullException("money", "money is a required property for AutoInvestMinInvestAmount and cannot be null");
+            this.AssetType = assetType;
             // to ensure "items" is required (not null)
             this.Items = items ?? throw new ArgumentNullException("items", "items is a required property for AutoInvestMinInvestAmount and cannot be null");
         }
@@ -72,6 +100,7 @@ namespace Io.Gate.GateApi.Model
             var sb = new StringBuilder();
             sb.Append("class AutoInvestMinInvestAmount {\n");
             sb.Append("  Money: ").Append(Money).Append("\n");
+            sb.Append("  AssetType: ").Append(AssetType).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -113,6 +142,10 @@ namespace Io.Gate.GateApi.Model
                     this.Money.Equals(input.Money))
                 ) && 
                 (
+                    this.AssetType == input.AssetType ||
+                    this.AssetType.Equals(input.AssetType)
+                ) && 
+                (
                     this.Items == input.Items ||
                     this.Items != null &&
                     input.Items != null &&
@@ -131,6 +164,7 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 if (this.Money != null)
                     hashCode = hashCode * 59 + this.Money.GetHashCode();
+                hashCode = hashCode * 59 + this.AssetType.GetHashCode();
                 if (this.Items != null)
                     hashCode = hashCode * 59 + this.Items.GetHashCode();
                 return hashCode;

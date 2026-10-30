@@ -786,8 +786,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <param name="status">Product status filter. Pass 2 for products available for subscription. (optional)</param>
+        /// <param name="showStatus">Visibility status filter. Pass \&quot;2\&quot; for visible products. (optional)</param>
         /// <returns>ListEarnFixedTermProductsResponse</returns>
-        ListEarnFixedTermProductsResponse ListEarnFixedTermProducts (int page, int limit, string asset = default(string), int? type = default(int?));
+        ListEarnFixedTermProductsResponse ListEarnFixedTermProducts (int page, int limit, string asset = default(string), int? type = default(int?), int? status = default(int?), string showStatus = default(string));
 
         /// <summary>
         /// Get product list
@@ -800,8 +802,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <param name="status">Product status filter. Pass 2 for products available for subscription. (optional)</param>
+        /// <param name="showStatus">Visibility status filter. Pass \&quot;2\&quot; for visible products. (optional)</param>
         /// <returns>ApiResponse of ListEarnFixedTermProductsResponse</returns>
-        ApiResponse<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?));
+        ApiResponse<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?), int? status = default(int?), string showStatus = default(string));
         /// <summary>
         /// Get product list by single currency
         /// </summary>
@@ -1709,8 +1713,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <param name="status">Product status filter. Pass 2 for products available for subscription. (optional)</param>
+        /// <param name="showStatus">Visibility status filter. Pass \&quot;2\&quot; for visible products. (optional)</param>
         /// <returns>Task of ListEarnFixedTermProductsResponse</returns>
-        Task<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsAsync (int page, int limit, string asset = default(string), int? type = default(int?));
+        Task<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsAsync (int page, int limit, string asset = default(string), int? type = default(int?), int? status = default(int?), string showStatus = default(string));
 
         /// <summary>
         /// Get product list
@@ -1723,8 +1729,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <param name="status">Product status filter. Pass 2 for products available for subscription. (optional)</param>
+        /// <param name="showStatus">Visibility status filter. Pass \&quot;2\&quot; for visible products. (optional)</param>
         /// <returns>Task of ApiResponse (ListEarnFixedTermProductsResponse)</returns>
-        Task<ApiResponse<ListEarnFixedTermProductsResponse>> ListEarnFixedTermProductsAsyncWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?));
+        Task<ApiResponse<ListEarnFixedTermProductsResponse>> ListEarnFixedTermProductsAsyncWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?), int? status = default(int?), string showStatus = default(string));
         /// <summary>
         /// Get product list by single currency
         /// </summary>
@@ -6118,10 +6126,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <param name="status">Product status filter. Pass 2 for products available for subscription. (optional)</param>
+        /// <param name="showStatus">Visibility status filter. Pass \&quot;2\&quot; for visible products. (optional)</param>
         /// <returns>ListEarnFixedTermProductsResponse</returns>
-        public ListEarnFixedTermProductsResponse ListEarnFixedTermProducts (int page, int limit, string asset = default(string), int? type = default(int?))
+        public ListEarnFixedTermProductsResponse ListEarnFixedTermProducts (int page, int limit, string asset = default(string), int? type = default(int?), int? status = default(int?), string showStatus = default(string))
         {
-             ApiResponse<ListEarnFixedTermProductsResponse> localVarResponse = ListEarnFixedTermProductsWithHttpInfo(page, limit, asset, type);
+             ApiResponse<ListEarnFixedTermProductsResponse> localVarResponse = ListEarnFixedTermProductsWithHttpInfo(page, limit, asset, type, status, showStatus);
              return localVarResponse.Data;
         }
 
@@ -6133,8 +6143,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <param name="status">Product status filter. Pass 2 for products available for subscription. (optional)</param>
+        /// <param name="showStatus">Visibility status filter. Pass \&quot;2\&quot; for visible products. (optional)</param>
         /// <returns>ApiResponse of ListEarnFixedTermProductsResponse</returns>
-        public ApiResponse<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?))
+        public ApiResponse<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?), int? status = default(int?), string showStatus = default(string))
         {
             RequestOptions localVarRequestOptions = new RequestOptions();
 
@@ -6160,6 +6172,14 @@ namespace Io.Gate.GateApi.Api
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
             }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (showStatus != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "show_status", showStatus));
+            }
             localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
             localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));
 
@@ -6184,10 +6204,12 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <param name="status">Product status filter. Pass 2 for products available for subscription. (optional)</param>
+        /// <param name="showStatus">Visibility status filter. Pass \&quot;2\&quot; for visible products. (optional)</param>
         /// <returns>Task of ListEarnFixedTermProductsResponse</returns>
-        public async Task<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsAsync (int page, int limit, string asset = default(string), int? type = default(int?))
+        public async Task<ListEarnFixedTermProductsResponse> ListEarnFixedTermProductsAsync (int page, int limit, string asset = default(string), int? type = default(int?), int? status = default(int?), string showStatus = default(string))
         {
-             Io.Gate.GateApi.Client.ApiResponse<ListEarnFixedTermProductsResponse> localVarResponse = await ListEarnFixedTermProductsAsyncWithHttpInfo(page, limit, asset, type);
+             Io.Gate.GateApi.Client.ApiResponse<ListEarnFixedTermProductsResponse> localVarResponse = await ListEarnFixedTermProductsAsyncWithHttpInfo(page, limit, asset, type, status, showStatus);
              return localVarResponse.Data;
 
         }
@@ -6200,8 +6222,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="limit">Page size</param>
         /// <param name="asset">Currency (optional)</param>
         /// <param name="type">Product type: 1 for regular, 2 for VIP (optional)</param>
+        /// <param name="status">Product status filter. Pass 2 for products available for subscription. (optional)</param>
+        /// <param name="showStatus">Visibility status filter. Pass \&quot;2\&quot; for visible products. (optional)</param>
         /// <returns>Task of ApiResponse (ListEarnFixedTermProductsResponse)</returns>
-        public async Task<ApiResponse<ListEarnFixedTermProductsResponse>> ListEarnFixedTermProductsAsyncWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?))
+        public async Task<ApiResponse<ListEarnFixedTermProductsResponse>> ListEarnFixedTermProductsAsyncWithHttpInfo (int page, int limit, string asset = default(string), int? type = default(int?), int? status = default(int?), string showStatus = default(string))
         {
 
             RequestOptions localVarRequestOptions = new RequestOptions();
@@ -6227,6 +6251,14 @@ namespace Io.Gate.GateApi.Api
             if (type != null)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (showStatus != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "show_status", showStatus));
             }
             localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
             localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "limit", limit));

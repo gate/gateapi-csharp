@@ -331,7 +331,8 @@ namespace Io.Gate.GateApi.Model
         /// <param name="slippage">Maximum supported slippage ratio for Spot Market Order Placement, calculated based on the latest market price at the time of order placement as the benchmark (Example: 0.03 means 3%).</param>
         /// <param name="stopProfit">stopProfit.</param>
         /// <param name="stopLoss">stopLoss.</param>
-        public Order(string text = default(string), string currencyPair = default(string), string tradeQuote = default(string), TypeEnum? type = TypeEnum.Limit, string account = "spot", SideEnum side = default(SideEnum), string amount = default(string), string price = default(string), TimeInForceEnum? timeInForce = TimeInForceEnum.Gtc, string iceberg = default(string), bool autoBorrow = default(bool), bool autoRepay = default(bool), StpActEnum? stpAct = default(StpActEnum?), string actionMode = default(string), string slippage = default(string), SpotOrderStopProfit stopProfit = default(SpotOrderStopProfit), SpotOrderStopLoss stopLoss = default(SpotOrderStopLoss))
+        /// <param name="useEarn">Redeem Simple Earn funds when placing an order.</param>
+        public Order(string text = default(string), string currencyPair = default(string), string tradeQuote = default(string), TypeEnum? type = TypeEnum.Limit, string account = "spot", SideEnum side = default(SideEnum), string amount = default(string), string price = default(string), TimeInForceEnum? timeInForce = TimeInForceEnum.Gtc, string iceberg = default(string), bool autoBorrow = default(bool), bool autoRepay = default(bool), StpActEnum? stpAct = default(StpActEnum?), string actionMode = default(string), string slippage = default(string), SpotOrderStopProfit stopProfit = default(SpotOrderStopProfit), SpotOrderStopLoss stopLoss = default(SpotOrderStopLoss), bool? useEarn = default(bool?))
         {
             // to ensure "currencyPair" is required (not null)
             this.CurrencyPair = currencyPair ?? throw new ArgumentNullException("currencyPair", "currencyPair is a required property for Order and cannot be null");
@@ -353,6 +354,7 @@ namespace Io.Gate.GateApi.Model
             this.Slippage = slippage;
             this.StopProfit = stopProfit;
             this.StopLoss = stopLoss;
+            this.UseEarn = useEarn;
         }
 
         /// <summary>
@@ -626,6 +628,14 @@ namespace Io.Gate.GateApi.Model
         public SpotOrderStopLoss StopLoss { get; set; }
 
         /// <summary>
+        /// Redeem Simple Earn funds when placing an order
+        /// </summary>
+        /// <value>Redeem Simple Earn funds when placing an order</value>
+        [DataMember(Name="use_earn")]
+        
+        public bool? UseEarn { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -673,6 +683,7 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Slippage: ").Append(Slippage).Append("\n");
             sb.Append("  StopProfit: ").Append(StopProfit).Append("\n");
             sb.Append("  StopLoss: ").Append(StopLoss).Append("\n");
+            sb.Append("  UseEarn: ").Append(UseEarn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -894,6 +905,11 @@ namespace Io.Gate.GateApi.Model
                     this.StopLoss == input.StopLoss ||
                     (this.StopLoss != null &&
                     this.StopLoss.Equals(input.StopLoss))
+                ) && 
+                (
+                    this.UseEarn == input.UseEarn ||
+                    (this.UseEarn != null &&
+                    this.UseEarn.Equals(input.UseEarn))
                 );
         }
 
@@ -974,6 +990,8 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.StopProfit.GetHashCode();
                 if (this.StopLoss != null)
                     hashCode = hashCode * 59 + this.StopLoss.GetHashCode();
+                if (this.UseEarn != null)
+                    hashCode = hashCode * 59 + this.UseEarn.GetHashCode();
                 return hashCode;
             }
         }
