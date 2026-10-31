@@ -35,7 +35,7 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="id">Order ID.</param>
         /// <param name="time">Operation timestamp.</param>
-        /// <param name="currency">Currency name.</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS..</param>
         /// <param name="change">Change amount.</param>
         /// <param name="balance">Balance after change.</param>
         public AccountBookResponse(long id = default(long), long time = default(long), string currency = default(string), string change = default(string), string balance = default(string))
@@ -64,9 +64,9 @@ namespace Io.Gate.GateApi.Model
         public long Time { get; set; }
 
         /// <summary>
-        /// Currency name
+        /// Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS.
         /// </summary>
-        /// <value>Currency name</value>
+        /// <value>Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS.</value>
         [DataMember(Name="currency")]
         
         public string Currency { get; set; }

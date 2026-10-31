@@ -101,7 +101,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Trading symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="side">Buy or sell orders - buy - sell (optional)</param>
         /// <param name="status">Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed (optional)</param>
         /// <param name="from">Start time for order query (optional)</param>
@@ -118,7 +118,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Trading symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="side">Buy or sell orders - buy - sell (optional)</param>
         /// <param name="status">Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed (optional)</param>
         /// <param name="from">Start time for order query (optional)</param>
@@ -176,7 +176,7 @@ namespace Io.Gate.GateApi.Api
         /// When currency is provided, query and return specified currency information; when currency is not provided, return paginated currency list
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query currency information by currency symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>List&lt;AlphaCurrency&gt;</returns>
@@ -189,7 +189,7 @@ namespace Io.Gate.GateApi.Api
         /// When currency is provided, query and return specified currency information; when currency is not provided, return paginated currency list
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query currency information by currency symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>ApiResponse of List&lt;AlphaCurrency&gt;</returns>
@@ -201,7 +201,7 @@ namespace Io.Gate.GateApi.Api
         /// When currency is provided, returns ticker information for the specified currency. When currency is not provided, returns paginated ticker list
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>List&lt;AlphaTicker&gt;</returns>
@@ -214,7 +214,7 @@ namespace Io.Gate.GateApi.Api
         /// When currency is provided, returns ticker information for the specified currency. When currency is not provided, returns paginated ticker list
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>ApiResponse of List&lt;AlphaTicker&gt;</returns>
@@ -329,7 +329,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Trading symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="side">Buy or sell orders - buy - sell (optional)</param>
         /// <param name="status">Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed (optional)</param>
         /// <param name="from">Start time for order query (optional)</param>
@@ -346,7 +346,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Trading symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="side">Buy or sell orders - buy - sell (optional)</param>
         /// <param name="status">Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed (optional)</param>
         /// <param name="from">Start time for order query (optional)</param>
@@ -404,7 +404,7 @@ namespace Io.Gate.GateApi.Api
         /// When currency is provided, query and return specified currency information; when currency is not provided, return paginated currency list
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query currency information by currency symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>Task of List&lt;AlphaCurrency&gt;</returns>
@@ -417,7 +417,7 @@ namespace Io.Gate.GateApi.Api
         /// When currency is provided, query and return specified currency information; when currency is not provided, return paginated currency list
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query currency information by currency symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>Task of ApiResponse (List&lt;AlphaCurrency&gt;)</returns>
@@ -429,7 +429,7 @@ namespace Io.Gate.GateApi.Api
         /// When currency is provided, returns ticker information for the specified currency. When currency is not provided, returns paginated ticker list
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>Task of List&lt;AlphaTicker&gt;</returns>
@@ -442,7 +442,7 @@ namespace Io.Gate.GateApi.Api
         /// When currency is provided, returns ticker information for the specified currency. When currency is not provided, returns paginated ticker list
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>Task of ApiResponse (List&lt;AlphaTicker&gt;)</returns>
@@ -965,7 +965,7 @@ namespace Io.Gate.GateApi.Api
         /// Alpha Order List API 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Trading symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="side">Buy or sell orders - buy - sell (optional)</param>
         /// <param name="status">Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed (optional)</param>
         /// <param name="from">Start time for order query (optional)</param>
@@ -983,7 +983,7 @@ namespace Io.Gate.GateApi.Api
         /// Alpha Order List API 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Trading symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="side">Buy or sell orders - buy - sell (optional)</param>
         /// <param name="status">Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed (optional)</param>
         /// <param name="from">Start time for order query (optional)</param>
@@ -1057,7 +1057,7 @@ namespace Io.Gate.GateApi.Api
         /// Alpha Order List API 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Trading symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="side">Buy or sell orders - buy - sell (optional)</param>
         /// <param name="status">Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed (optional)</param>
         /// <param name="from">Start time for order query (optional)</param>
@@ -1076,7 +1076,7 @@ namespace Io.Gate.GateApi.Api
         /// Alpha Order List API 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Trading symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="side">Buy or sell orders - buy - sell (optional)</param>
         /// <param name="status">Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed (optional)</param>
         /// <param name="from">Start time for order query (optional)</param>
@@ -1388,7 +1388,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency information When currency is provided, query and return specified currency information; when currency is not provided, return paginated currency list
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query currency information by currency symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>List&lt;AlphaCurrency&gt;</returns>
@@ -1402,7 +1402,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency information When currency is provided, query and return specified currency information; when currency is not provided, return paginated currency list
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query currency information by currency symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>ApiResponse of List&lt;AlphaCurrency&gt;</returns>
@@ -1454,7 +1454,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency information When currency is provided, query and return specified currency information; when currency is not provided, return paginated currency list
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query currency information by currency symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>Task of List&lt;AlphaCurrency&gt;</returns>
@@ -1469,7 +1469,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency information When currency is provided, query and return specified currency information; when currency is not provided, return paginated currency list
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query currency information by currency symbol (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>Task of ApiResponse (List&lt;AlphaCurrency&gt;)</returns>
@@ -1523,7 +1523,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency ticker When currency is provided, returns ticker information for the specified currency. When currency is not provided, returns paginated ticker list
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>List&lt;AlphaTicker&gt;</returns>
@@ -1537,7 +1537,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency ticker When currency is provided, returns ticker information for the specified currency. When currency is not provided, returns paginated ticker list
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>ApiResponse of List&lt;AlphaTicker&gt;</returns>
@@ -1589,7 +1589,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency ticker When currency is provided, returns ticker information for the specified currency. When currency is not provided, returns paginated ticker list
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>Task of List&lt;AlphaTicker&gt;</returns>
@@ -1604,7 +1604,7 @@ namespace Io.Gate.GateApi.Api
         /// Query currency ticker When currency is provided, returns ticker information for the specified currency. When currency is not provided, returns paginated ticker list
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Query by specified currency name (optional)</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional)</param>
         /// <param name="limit">Maximum number of records returned in a single list (optional, default to 100)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <returns>Task of ApiResponse (List&lt;AlphaTicker&gt;)</returns>

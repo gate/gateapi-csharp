@@ -33,7 +33,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountsResponse" /> class.
         /// </summary>
-        /// <param name="currency">Currency name.</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS..</param>
         /// <param name="available">Available Balance.</param>
         /// <param name="locked">Locked balance.</param>
         /// <param name="tokenAddress">Token address.</param>
@@ -48,9 +48,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Currency name
+        /// Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS.
         /// </summary>
-        /// <value>Currency name</value>
+        /// <value>Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS.</value>
         [DataMember(Name="currency")]
         
         public string Currency { get; set; }

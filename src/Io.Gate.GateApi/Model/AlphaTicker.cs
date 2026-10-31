@@ -33,7 +33,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AlphaTicker" /> class.
         /// </summary>
-        /// <param name="currency">Currency symbol.</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS..</param>
         /// <param name="last">Last trading price.</param>
         /// <param name="change">24h price change percentage (negative for decrease, e.g., -7.45).</param>
         /// <param name="volume">24h Trading Volume (USDT).</param>
@@ -48,9 +48,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Currency symbol
+        /// Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS.
         /// </summary>
-        /// <value>Currency symbol</value>
+        /// <value>Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS.</value>
         [DataMember(Name="currency")]
         
         public string Currency { get; set; }

@@ -261,7 +261,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new AlphaApi(config);
-            var currency = "memeboxsst";  // string | Trading symbol (optional) 
+            var currency = "memeboxsst";  // string | Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional) 
             var side = "buy";  // string | Buy or sell orders - buy - sell (optional) 
             var status = 2;  // int? | Order Status - `0` : All - `1` : Processing - `2` : Successful - `3` : Failed - `4` : Cancelled - `5` : Buy order placed but transfer not completed - `6` : Order cancelled but transfer not completed (optional) 
             var from = 1627706330;  // long? | Start time for order query (optional) 
@@ -291,7 +291,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Trading symbol | [optional] 
+ **currency** | **string**| Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. | [optional] 
  **side** | **string**| Buy or sell orders - buy - sell | [optional] 
  **status** | **int?**| Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed | [optional] 
  **from** | **long?**| Start time for order query | [optional] 
@@ -488,7 +488,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new AlphaApi(config);
-            var currency = "memeboxtrump";  // string | Query currency information by currency symbol (optional) 
+            var currency = "memeboxtrump";  // string | Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var page = 1;  // int? | Page number (optional)  (default to 1)
 
@@ -514,7 +514,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Query currency information by currency symbol | [optional] 
+ **currency** | **string**| Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **page** | **int?**| Page number | [optional] [default to 1]
 
@@ -563,7 +563,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new AlphaApi(config);
-            var currency = "memeboxtrump";  // string | Query by specified currency name (optional) 
+            var currency = "memeboxtrump";  // string | Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. (optional) 
             var limit = 100;  // int? | Maximum number of records returned in a single list (optional)  (default to 100)
             var page = 1;  // int? | Page number (optional)  (default to 1)
 
@@ -589,7 +589,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Query by specified currency name | [optional] 
+ **currency** | **string**| Alpha currency ID, for example USDS02b5a8dd2f59a098, not the display symbol USDS. First call GET /alpha/currencies without currency, match the token by name, chain and address, and use the returned currency field. Paginate with page and limit. | [optional] 
  **limit** | **int?**| Maximum number of records returned in a single list | [optional] [default to 100]
  **page** | **int?**| Page number | [optional] [default to 1]
 

@@ -37,7 +37,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="txHash">Transaction Hash.</param>
         /// <param name="side">Buy or sell orders - buy - sell.</param>
         /// <param name="usdtAmount">Amount (USDT).</param>
-        /// <param name="currency">Token.</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS..</param>
         /// <param name="currencyAmount">Token amount.</param>
         /// <param name="status">Order Status - &#x60;0&#x60; : All - &#x60;1&#x60; : Processing - &#x60;2&#x60; : Successful - &#x60;3&#x60; : Failed - &#x60;4&#x60; : Cancelled - &#x60;5&#x60; : Buy order placed but transfer not completed - &#x60;6&#x60; : Order cancelled but transfer not completed.</param>
         /// <param name="gasMode">Trading mode affects slippage selection - &#x60;speed&#x60; : Smart mode - &#x60;custom&#x60; : Custom mode, uses &#x60;slippage&#x60; parameter.</param>
@@ -96,9 +96,9 @@ namespace Io.Gate.GateApi.Model
         public string UsdtAmount { get; set; }
 
         /// <summary>
-        /// Token
+        /// Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS.
         /// </summary>
-        /// <value>Token</value>
+        /// <value>Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS.</value>
         [DataMember(Name="currency")]
         
         public string Currency { get; set; }

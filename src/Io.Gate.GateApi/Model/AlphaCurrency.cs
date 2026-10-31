@@ -33,8 +33,8 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AlphaCurrency" /> class.
         /// </summary>
-        /// <param name="currency">Currency symbol.</param>
-        /// <param name="name">Currency name.</param>
+        /// <param name="currency">Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS..</param>
+        /// <param name="name">Display name or symbol, for example USDS; it cannot replace the currency field as the Alpha currency ID..</param>
         /// <param name="chain">The main chain corresponding to the coin.</param>
         /// <param name="address">Contract Address.</param>
         /// <param name="amountPrecision">Quantity precision.</param>
@@ -52,17 +52,17 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Currency symbol
+        /// Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS.
         /// </summary>
-        /// <value>Currency symbol</value>
+        /// <value>Alpha currency ID, for example USDS02b5a8dd2f59a098; use it as the currency parameter in Alpha APIs, not the display symbol USDS.</value>
         [DataMember(Name="currency")]
         
         public string Currency { get; set; }
 
         /// <summary>
-        /// Currency name
+        /// Display name or symbol, for example USDS; it cannot replace the currency field as the Alpha currency ID.
         /// </summary>
-        /// <value>Currency name</value>
+        /// <value>Display name or symbol, for example USDS; it cannot replace the currency field as the Alpha currency ID.</value>
         [DataMember(Name="name")]
         
         public string Name { get; set; }
