@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class CreateTrailOrder :  IEquatable<CreateTrailOrder>, IValidatableObject
     {
         /// <summary>
-        /// Activation price type: 1-latest price, 2-index price, 3-mark price
+        /// Activation price type, required: 1-latest price, 2-index price, 3-mark price. The caller must specify it explicitly.
         /// </summary>
-        /// <value>Activation price type: 1-latest price, 2-index price, 3-mark price</value>
+        /// <value>Activation price type, required: 1-latest price, 2-index price, 3-mark price. The caller must specify it explicitly.</value>
         
         public enum PriceTypeEnum
         {
@@ -55,12 +55,12 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Activation price type: 1-latest price, 2-index price, 3-mark price
+        /// Activation price type, required: 1-latest price, 2-index price, 3-mark price. The caller must specify it explicitly.
         /// </summary>
-        /// <value>Activation price type: 1-latest price, 2-index price, 3-mark price</value>
+        /// <value>Activation price type, required: 1-latest price, 2-index price, 3-mark price. The caller must specify it explicitly.</value>
         [DataMember(Name="price_type")]
         
-        public PriceTypeEnum? PriceType { get; set; }
+        public PriceTypeEnum PriceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTrailOrder" /> class.
         /// </summary>
@@ -73,23 +73,23 @@ namespace Io.Gate.GateApi.Model
         /// <param name="amount">Trading quantity in contracts, positive for buy, negative for sell (required).</param>
         /// <param name="activationPrice">Activation price, 0 means trigger immediately (default to &quot;0&quot;).</param>
         /// <param name="isGte">true: activate when market price &gt;&#x3D; activation price, false: &lt;&#x3D; activation price.</param>
-        /// <param name="priceType">Activation price type: 1-latest price, 2-index price, 3-mark price.</param>
+        /// <param name="priceType">Activation price type, required: 1-latest price, 2-index price, 3-mark price. The caller must specify it explicitly. (required).</param>
         /// <param name="priceOffset">Callback ratio or price distance, e.g., &#x60;0.1&#x60; or &#x60;0.1%&#x60;.</param>
         /// <param name="reduceOnly">Whether reduce only (default to false).</param>
         /// <param name="positionRelated">Whether bound to a position (if position_related &#x3D; true (position-related), then reduce_only must also be true) (default to false).</param>
         /// <param name="text">Order custom information, optional field. Used to identify the order source or set a user-defined ID.  If non-empty, it must meet one of the following rules:  1. Internal Reserved Fields (identifying order source): - &#x60;apiv4&#x60;: API call 2. User-defined Fields (setting custom ID): - Must start with &#x60;t-&#x60; - The content after &#x60;t-&#x60; must not exceed 28 bytes in length - Can only contain: numbers, letters, underscores (_), hyphens (-), or dots (.) - Examples: &#x60;t-my-order-001&#x60;, &#x60;t-trail_2024.01&#x60;  Note: User-defined fields must not conflict with internal reserved fields. (default to &quot;apiv4&quot;).</param>
         /// <param name="posMarginMode">Position margin mode: isolated/cross.</param>
         /// <param name="positionMode">Position mode: single, dual, and dual_plus.</param>
-        public CreateTrailOrder(string contract = default(string), string amount = default(string), string activationPrice = "0", bool isGte = default(bool), PriceTypeEnum? priceType = default(PriceTypeEnum?), string priceOffset = default(string), bool reduceOnly = false, bool positionRelated = false, string text = "apiv4", string posMarginMode = default(string), string positionMode = default(string))
+        public CreateTrailOrder(string contract = default(string), string amount = default(string), string activationPrice = "0", bool isGte = default(bool), PriceTypeEnum priceType = default(PriceTypeEnum), string priceOffset = default(string), bool reduceOnly = false, bool positionRelated = false, string text = "apiv4", string posMarginMode = default(string), string positionMode = default(string))
         {
             // to ensure "contract" is required (not null)
             this.Contract = contract ?? throw new ArgumentNullException("contract", "contract is a required property for CreateTrailOrder and cannot be null");
             // to ensure "amount" is required (not null)
             this.Amount = amount ?? throw new ArgumentNullException("amount", "amount is a required property for CreateTrailOrder and cannot be null");
+            this.PriceType = priceType;
             // use default value if no "activationPrice" provided
             this.ActivationPrice = activationPrice ?? "0";
             this.IsGte = isGte;
-            this.PriceType = priceType;
             this.PriceOffset = priceOffset;
             this.ReduceOnly = reduceOnly;
             this.PositionRelated = positionRelated;

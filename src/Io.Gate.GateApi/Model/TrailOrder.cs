@@ -129,7 +129,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>Order ID</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         
-        public long Id { get; private set; }
+        public string Id { get; private set; }
 
         /// <summary>
         /// User ID
@@ -137,7 +137,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>User ID</value>
         [DataMember(Name="user_id", EmitDefaultValue=false)]
         
-        public long UserId { get; private set; }
+        public string UserId { get; private set; }
 
         /// <summary>
         /// User ID
@@ -145,7 +145,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>User ID</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
         
-        public long User { get; private set; }
+        public string User { get; private set; }
 
         /// <summary>
         /// Contract name
@@ -225,7 +225,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>Created time</value>
         [DataMember(Name="created_at", EmitDefaultValue=false)]
         
-        public long CreatedAt { get; private set; }
+        public string CreatedAt { get; private set; }
 
         /// <summary>
         /// Activation time
@@ -233,7 +233,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>Activation time</value>
         [DataMember(Name="activated_at", EmitDefaultValue=false)]
         
-        public long ActivatedAt { get; private set; }
+        public string ActivatedAt { get; private set; }
 
         /// <summary>
         /// End time
@@ -241,7 +241,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>End time</value>
         [DataMember(Name="finished_at", EmitDefaultValue=false)]
         
-        public long FinishedAt { get; private set; }
+        public string FinishedAt { get; private set; }
 
         /// <summary>
         /// Created time
@@ -249,7 +249,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>Created time</value>
         [DataMember(Name="create_time", EmitDefaultValue=false)]
         
-        public long CreateTime { get; private set; }
+        public string CreateTime { get; private set; }
 
         /// <summary>
         /// Activation time
@@ -257,7 +257,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>Activation time</value>
         [DataMember(Name="active_time", EmitDefaultValue=false)]
         
-        public long ActiveTime { get; private set; }
+        public string ActiveTime { get; private set; }
 
         /// <summary>
         /// End time
@@ -265,7 +265,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>End time</value>
         [DataMember(Name="finish_time", EmitDefaultValue=false)]
         
-        public long FinishTime { get; private set; }
+        public string FinishTime { get; private set; }
 
         /// <summary>
         /// End reason
@@ -305,7 +305,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>Child order ID.</value>
         [DataMember(Name="suborder_id", EmitDefaultValue=false)]
         
-        public long SuborderId { get; private set; }
+        public string SuborderId { get; private set; }
 
         /// <summary>
         /// Order direction label: long/short/open long/open short/close long/close short
@@ -337,7 +337,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>Update time</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         
-        public long UpdatedAt { get; private set; }
+        public string UpdatedAt { get; private set; }
 
         /// <summary>
         /// Extremum price
@@ -502,15 +502,18 @@ namespace Io.Gate.GateApi.Model
             return 
                 (
                     this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
                     this.UserId == input.UserId ||
-                    this.UserId.Equals(input.UserId)
+                    (this.UserId != null &&
+                    this.UserId.Equals(input.UserId))
                 ) && 
                 (
                     this.User == input.User ||
-                    this.User.Equals(input.User)
+                    (this.User != null &&
+                    this.User.Equals(input.User))
                 ) && 
                 (
                     this.Contract == input.Contract ||
@@ -560,27 +563,33 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.CreatedAt == input.CreatedAt ||
-                    this.CreatedAt.Equals(input.CreatedAt)
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
                 ) && 
                 (
                     this.ActivatedAt == input.ActivatedAt ||
-                    this.ActivatedAt.Equals(input.ActivatedAt)
+                    (this.ActivatedAt != null &&
+                    this.ActivatedAt.Equals(input.ActivatedAt))
                 ) && 
                 (
                     this.FinishedAt == input.FinishedAt ||
-                    this.FinishedAt.Equals(input.FinishedAt)
+                    (this.FinishedAt != null &&
+                    this.FinishedAt.Equals(input.FinishedAt))
                 ) && 
                 (
                     this.CreateTime == input.CreateTime ||
-                    this.CreateTime.Equals(input.CreateTime)
+                    (this.CreateTime != null &&
+                    this.CreateTime.Equals(input.CreateTime))
                 ) && 
                 (
                     this.ActiveTime == input.ActiveTime ||
-                    this.ActiveTime.Equals(input.ActiveTime)
+                    (this.ActiveTime != null &&
+                    this.ActiveTime.Equals(input.ActiveTime))
                 ) && 
                 (
                     this.FinishTime == input.FinishTime ||
-                    this.FinishTime.Equals(input.FinishTime)
+                    (this.FinishTime != null &&
+                    this.FinishTime.Equals(input.FinishTime))
                 ) && 
                 (
                     this.Reason == input.Reason ||
@@ -603,7 +612,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.SuborderId == input.SuborderId ||
-                    this.SuborderId.Equals(input.SuborderId)
+                    (this.SuborderId != null &&
+                    this.SuborderId.Equals(input.SuborderId))
                 ) && 
                 (
                     this.SideLabel == input.SideLabel ||
@@ -625,7 +635,8 @@ namespace Io.Gate.GateApi.Model
                 ) && 
                 (
                     this.UpdatedAt == input.UpdatedAt ||
-                    this.UpdatedAt.Equals(input.UpdatedAt)
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
                     this.ExtremumPrice == input.ExtremumPrice ||
@@ -688,9 +699,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Id.GetHashCode();
-                hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.UserId != null)
+                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.User != null)
+                    hashCode = hashCode * 59 + this.User.GetHashCode();
                 if (this.Contract != null)
                     hashCode = hashCode * 59 + this.Contract.GetHashCode();
                 if (this.Settle != null)
@@ -707,12 +721,18 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
                 hashCode = hashCode * 59 + this.ReduceOnly.GetHashCode();
                 hashCode = hashCode * 59 + this.PositionRelated.GetHashCode();
-                hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                hashCode = hashCode * 59 + this.ActivatedAt.GetHashCode();
-                hashCode = hashCode * 59 + this.FinishedAt.GetHashCode();
-                hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                hashCode = hashCode * 59 + this.ActiveTime.GetHashCode();
-                hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
+                if (this.CreatedAt != null)
+                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.ActivatedAt != null)
+                    hashCode = hashCode * 59 + this.ActivatedAt.GetHashCode();
+                if (this.FinishedAt != null)
+                    hashCode = hashCode * 59 + this.FinishedAt.GetHashCode();
+                if (this.CreateTime != null)
+                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.ActiveTime != null)
+                    hashCode = hashCode * 59 + this.ActiveTime.GetHashCode();
+                if (this.FinishTime != null)
+                    hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
                 if (this.Reason != null)
                     hashCode = hashCode * 59 + this.Reason.GetHashCode();
                 if (this.SuborderText != null)
@@ -720,14 +740,16 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.IsDualMode.GetHashCode();
                 if (this.TriggerPrice != null)
                     hashCode = hashCode * 59 + this.TriggerPrice.GetHashCode();
-                hashCode = hashCode * 59 + this.SuborderId.GetHashCode();
+                if (this.SuborderId != null)
+                    hashCode = hashCode * 59 + this.SuborderId.GetHashCode();
                 if (this.SideLabel != null)
                     hashCode = hashCode * 59 + this.SideLabel.GetHashCode();
                 hashCode = hashCode * 59 + this.OriginalStatus.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.PositionSideOutput != null)
                     hashCode = hashCode * 59 + this.PositionSideOutput.GetHashCode();
-                hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.UpdatedAt != null)
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.ExtremumPrice != null)
                     hashCode = hashCode * 59 + this.ExtremumPrice.GetHashCode();
                 if (this.StatusCode != null)
