@@ -14544,7 +14544,10 @@ namespace Io.Gate.GateApi.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetPriceTriggeredOrder", localVarResponse);
+                Exception _exception = this.ExceptionFactory == Io.Gate.GateApi.Client.Configuration.DefaultExceptionFactory
+                    ? Io.Gate.GateApi.Client.Configuration.CreateException("GetPriceTriggeredOrder", localVarResponse
+                        , 205
+                        ) : this.ExceptionFactory("GetPriceTriggeredOrder", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -14607,7 +14610,10 @@ namespace Io.Gate.GateApi.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetPriceTriggeredOrder", localVarResponse);
+                Exception _exception = this.ExceptionFactory == Io.Gate.GateApi.Client.Configuration.DefaultExceptionFactory
+                    ? Io.Gate.GateApi.Client.Configuration.CreateException("GetPriceTriggeredOrder", localVarResponse
+                        , 205
+                        ) : this.ExceptionFactory("GetPriceTriggeredOrder", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

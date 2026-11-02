@@ -32,7 +32,7 @@ namespace Io.Gate.GateApi.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "7.106.174";
+        public const string Version = "7.106.176";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -49,9 +49,14 @@ namespace Io.Gate.GateApi.Client
         /// Default creation of exceptions for a given method name and response object
         /// </summary>
         public static readonly ExceptionFactory DefaultExceptionFactory = (methodName, response) =>
+            CreateException(methodName, response);
+
+        // Additional statuses are passed by generated operations, not global
+        // configuration. Unmarked operations keep their existing HTTP behavior.
+        internal static Exception CreateException(string methodName, IApiResponse response, params int[] errorStatuses)
         {
             var status = (int)response.StatusCode;
-            if (status >= 400)
+            if (status >= 400 || (errorStatuses != null && Array.IndexOf(errorStatuses, status) >= 0))
             {
                 // try to deserialize into GateApiException
                 try
@@ -79,7 +84,7 @@ namespace Io.Gate.GateApi.Client
                     response.ErrorText);
             }
             return null;
-        };
+        }
 
         #endregion Static Members
 
@@ -104,7 +109,7 @@ namespace Io.Gate.GateApi.Client
         [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
-            UserAgent = "OpenAPI-Generator/7.106.174/csharp";
+            UserAgent = "OpenAPI-Generator/7.106.176/csharp";
             BasePath = "https://api.gateio.ws/api/v4";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             // Set default X-Gate-Size-Decimal header for futures API
@@ -292,8 +297,8 @@ namespace Io.Gate.GateApi.Client
         {
             string report = "C# SDK (Io.Gate.GateApi) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
-            report += "    Version of the API: v4.106.174\n";
-            report += "    SDK Package Version: 7.106.174\n";
+            report += "    Version of the API: v4.106.176\n";
+            report += "    SDK Package Version: 7.106.176\n";
 
             return report;
         }
