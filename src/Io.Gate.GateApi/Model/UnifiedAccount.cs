@@ -36,7 +36,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="mode">Unified account mode: - classic: Classic account mode - multi_currency: Multi-currency margin mode - portfolio: Portfolio margin mode - single_currency: Single-currency margin mode.</param>
         /// <param name="userId">User ID.</param>
         /// <param name="refreshTime">Last refresh time.</param>
-        /// <param name="locked">Whether the account is locked, valid in cross-currency margin/combined margin mode, false in other modes such as single-currency margin mode.</param>
+        /// <param name="locked">Whether the account is locked. Applicable in multi-currency margin and portfolio margin modes; false in other modes, such as single-currency margin mode..</param>
         /// <param name="balances">balances.</param>
         /// <param name="total">Total account assets converted to USD, i.e. the sum of &#x60;(available + freeze) * price&#x60; in all currencies (deprecated, to be removed, replaced by unified_account_total).</param>
         /// <param name="borrowed">Total borrowed amount converted to USD, i.e. the sum of &#x60;borrowed * price&#x60; of all currencies (excluding point cards), valid in cross-currency margin/combined margin mode, 0 in other modes such as single-currency margin mode.</param>
@@ -104,9 +104,9 @@ namespace Io.Gate.GateApi.Model
         public long RefreshTime { get; set; }
 
         /// <summary>
-        /// Whether the account is locked, valid in cross-currency margin/combined margin mode, false in other modes such as single-currency margin mode
+        /// Whether the account is locked. Applicable in multi-currency margin and portfolio margin modes; false in other modes, such as single-currency margin mode.
         /// </summary>
-        /// <value>Whether the account is locked, valid in cross-currency margin/combined margin mode, false in other modes such as single-currency margin mode</value>
+        /// <value>Whether the account is locked. Applicable in multi-currency margin and portfolio margin modes; false in other modes, such as single-currency margin mode.</value>
         [DataMember(Name="locked")]
         
         public bool Locked { get; set; }

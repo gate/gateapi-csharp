@@ -103,9 +103,9 @@ namespace Io.Gate.GateApi.Model
         
         public FinishAsEnum? FinishAs { get; set; }
         /// <summary>
-        /// Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed
+        /// Order status:  - &#x60;open&#x60;: pending - &#x60;finished&#x60;: the order has ended
         /// </summary>
-        /// <value>Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed</value>
+        /// <value>Order status:  - &#x60;open&#x60;: pending - &#x60;finished&#x60;: the order has ended</value>
         
         [JsonConverter(typeof(StringEnumConverter))]
         
@@ -126,9 +126,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed
+        /// Order status:  - &#x60;open&#x60;: pending - &#x60;finished&#x60;: the order has ended
         /// </summary>
-        /// <value>Order status  - &#x60;open&#x60;: Pending - &#x60;finished&#x60;: Completed</value>
+        /// <value>Order status:  - &#x60;open&#x60;: pending - &#x60;finished&#x60;: the order has ended</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         
         public StatusEnum? Status { get; set; }
@@ -255,7 +255,7 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="FuturesOrder" /> class.
         /// </summary>
         /// <param name="contract">Futures contract (required).</param>
-        /// <param name="size">Required. Trading quantity. Positive for buy, negative for sell. Set to 0 for close position orders. (required).</param>
+        /// <param name="size">Required. Order size in contracts: positive to buy and negative to sell. Set to 0 for a closing order. (required).</param>
         /// <param name="iceberg">Display size for iceberg orders. 0 for non-iceberg orders. Note that hidden portions are charged taker fees..</param>
         /// <param name="price">Required. Order Price; a price of 0 with &#x60;tif&#x60; as &#x60;ioc&#x60; represents a market order. (required).</param>
         /// <param name="close">Set as &#x60;true&#x60; to close the position, with &#x60;size&#x60; set to 0 (default to false).</param>
@@ -346,9 +346,9 @@ namespace Io.Gate.GateApi.Model
         public string Contract { get; set; }
 
         /// <summary>
-        /// Required. Trading quantity. Positive for buy, negative for sell. Set to 0 for close position orders.
+        /// Required. Order size in contracts: positive to buy and negative to sell. Set to 0 for a closing order.
         /// </summary>
-        /// <value>Required. Trading quantity. Positive for buy, negative for sell. Set to 0 for close position orders.</value>
+        /// <value>Required. Order size in contracts: positive to buy and negative to sell. Set to 0 for a closing order.</value>
         [DataMember(Name="size")]
         
         public string Size { get; set; }
@@ -434,17 +434,17 @@ namespace Io.Gate.GateApi.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// Taker fee
+        /// Taker fee rate.
         /// </summary>
-        /// <value>Taker fee</value>
+        /// <value>Taker fee rate.</value>
         [DataMember(Name="tkfr", EmitDefaultValue=false)]
         
         public string Tkfr { get; private set; }
 
         /// <summary>
-        /// Maker fee
+        /// Maker fee rate.
         /// </summary>
-        /// <value>Maker fee</value>
+        /// <value>Maker fee rate.</value>
         [DataMember(Name="mkfr", EmitDefaultValue=false)]
         
         public string Mkfr { get; private set; }

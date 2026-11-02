@@ -91,7 +91,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="tradeStatus">Trading status  - untradable: cannot be traded - buyable: can be bought - sellable: can be sold - tradable: can be bought and sold.</param>
         /// <param name="sellStart">Sell start unix timestamp in seconds.</param>
         /// <param name="buyStart">Buy start unix timestamp in seconds.</param>
-        /// <param name="delistingTime">Expected time to remove the shelves, Unix timestamp in seconds.</param>
+        /// <param name="delistingTime">Expected delisting time as a Unix timestamp in seconds..</param>
         /// <param name="type">Trading pair type, normal: normal, premarket: pre-market.</param>
         /// <param name="tradeUrl">Transaction link.</param>
         /// <param name="stTag">Whether the trading pair is in ST risk assessment, false - No, true - Yes.</param>
@@ -250,9 +250,9 @@ namespace Io.Gate.GateApi.Model
         public long BuyStart { get; set; }
 
         /// <summary>
-        /// Expected time to remove the shelves, Unix timestamp in seconds
+        /// Expected delisting time as a Unix timestamp in seconds.
         /// </summary>
-        /// <value>Expected time to remove the shelves, Unix timestamp in seconds</value>
+        /// <value>Expected delisting time as a Unix timestamp in seconds.</value>
         [DataMember(Name="delisting_time")]
         
         public long DelistingTime { get; set; }

@@ -58,7 +58,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional)</param>
+        /// <param name="exchange">Trading market code. - us: US stocks. - hk: Hong Kong stocks. - kr: South Korean stocks. - jp: Japanese stocks. (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -73,7 +73,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional)</param>
+        /// <param name="exchange">Trading market code. - us: US stocks. - hk: Hong Kong stocks. - kr: South Korean stocks. - jp: Japanese stocks. (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -443,7 +443,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional)</param>
+        /// <param name="exchange">Trading market code. - us: US stocks. - hk: Hong Kong stocks. - kr: South Korean stocks. - jp: Japanese stocks. (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -458,7 +458,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional)</param>
+        /// <param name="exchange">Trading market code. - us: US stocks. - hk: Hong Kong stocks. - kr: South Korean stocks. - jp: Japanese stocks. (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -1040,7 +1040,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional)</param>
+        /// <param name="exchange">Trading market code. - us: US stocks. - hk: Hong Kong stocks. - kr: South Korean stocks. - jp: Japanese stocks. (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -1056,7 +1056,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional)</param>
+        /// <param name="exchange">Trading market code. - us: US stocks. - hk: Hong Kong stocks. - kr: South Korean stocks. - jp: Japanese stocks. (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -1118,7 +1118,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional)</param>
+        /// <param name="exchange">Trading market code. - us: US stocks. - hk: Hong Kong stocks. - kr: South Korean stocks. - jp: Japanese stocks. (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>
@@ -1135,7 +1135,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbols">Symbol list, multiple separated by commas (optional)</param>
-        /// <param name="exchange">Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional)</param>
+        /// <param name="exchange">Trading market code. - us: US stocks. - hk: Hong Kong stocks. - kr: South Korean stocks. - jp: Japanese stocks. (optional)</param>
         /// <param name="withDescI18n">Whether to return multilingual symbol description (optional)</param>
         /// <param name="page">Page number, defaults to 1 (optional)</param>
         /// <param name="pageSize">Page size, defaults to 10, max 500; server caps at 500 (optional)</param>

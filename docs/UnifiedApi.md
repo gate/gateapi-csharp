@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**ListUnifiedAccounts**](UnifiedApi.md#listunifiedaccounts) | **GET** /unified/accounts | Get unified account information
 [**GetUnifiedBorrowable**](UnifiedApi.md#getunifiedborrowable) | **GET** /unified/borrowable | Query maximum borrowable amount for unified account
 [**GetUnifiedTransferable**](UnifiedApi.md#getunifiedtransferable) | **GET** /unified/transferable | Query maximum transferable amount for unified account
-[**GetUnifiedTransferables**](UnifiedApi.md#getunifiedtransferables) | **GET** /unified/transferables | Batch query maximum transferable amount for unified accounts. Each currency shows the maximum value. After user withdrawal, the transferable amount for all currencies will change
+[**GetUnifiedTransferables**](UnifiedApi.md#getunifiedtransferables) | **GET** /unified/transferables | Get maximum transferable amounts for multiple unified-account currencies
 [**GetUnifiedBorrowableList**](UnifiedApi.md#getunifiedborrowablelist) | **GET** /unified/batch_borrowable | Batch query unified account maximum borrowable amount
 [**ListUnifiedLoans**](UnifiedApi.md#listunifiedloans) | **GET** /unified/loans | Query loans
 [**CreateUnifiedLoan**](UnifiedApi.md#createunifiedloan) | **POST** /unified/loans | Borrow or repay
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**GetUnifiedMode**](UnifiedApi.md#getunifiedmode) | **GET** /unified/unified_mode | Query mode of the unified account
 [**SetUnifiedMode**](UnifiedApi.md#setunifiedmode) | **PUT** /unified/unified_mode | Set unified account mode
 [**GetUnifiedEstimateRate**](UnifiedApi.md#getunifiedestimaterate) | **GET** /unified/estimate_rate | Query unified account estimated interest rate
-[**ListCurrencyDiscountTiers**](UnifiedApi.md#listcurrencydiscounttiers) | **GET** /unified/currency_discount_tiers | Query unified account tiered
+[**ListCurrencyDiscountTiers**](UnifiedApi.md#listcurrencydiscounttiers) | **GET** /unified/currency_discount_tiers | Get currency margin discount tiers for unified accounts
 [**ListLoanMarginTiers**](UnifiedApi.md#listloanmargintiers) | **GET** /unified/loan_margin_tiers | Query unified account tiered loan margin
 [**CalculatePortfolioMargin**](UnifiedApi.md#calculateportfoliomargin) | **POST** /unified/portfolio_calculator | Portfolio margin calculator
 [**SetUserLeverage**](UnifiedApi.md#setuserleverage) | **POST** /unified/leverage/user_setting | Set leverage for all of the user&#39;s borrowed currencies
@@ -254,7 +254,9 @@ Name | Type | Description  | Notes
 # **GetUnifiedTransferables**
 > List&lt;TransferablesResult&gt; GetUnifiedTransferables (string currencies)
 
-Batch query maximum transferable amount for unified accounts. Each currency shows the maximum value. After user withdrawal, the transferable amount for all currencies will change
+Get maximum transferable amounts for multiple unified-account currencies
+
+Each currency’s value is its maximum transferable amount. After a user withdrawal, the transferable amounts for all currencies will change.
 
 ### Example
 ```csharp
@@ -279,7 +281,7 @@ namespace Example
 
             try
             {
-                // Batch query maximum transferable amount for unified accounts. Each currency shows the maximum value. After user withdrawal, the transferable amount for all currencies will change
+                // Get maximum transferable amounts for multiple unified-account currencies
                 List<TransferablesResult> result = apiInstance.GetUnifiedTransferables(currencies);
                 Debug.WriteLine(result);
             }
@@ -844,7 +846,7 @@ This endpoint does not need any parameter.
 
 Set unified account mode
 
-Each account mode switch only requires passing the corresponding account mode parameter, and also supports turning on or off the configuration switches under the corresponding account mode during the switch. - When enabling the classic account mode, mode=classic ```  PUT /unified/unified_mode  {  \"mode\": \"classic\"  } ``` - When enabling the cross-currency margin \"multi_currency\",  \"settings\": {  \"usdt_futures\": true  }  } ``` - When enabling the portfolio margin mode, mode=portfolio ```  PUT /unified/unified_mode  {  \"mode\": \"portfolio\",  \"settings\": {  \"spot_hedge\": true  }  } ``` - When enabling the single-currency margin mode, mode=single_currency ```  PUT /unified/unified_mode  {  \"mode\": \"single_currency\"  } ```
+Each account mode switch only requires passing the corresponding account mode parameter, and also supports turning on or off the configuration switches under the corresponding account mode during the switch. - When enabling the classic account mode, mode=classic ```  PUT /unified/unified_mode  {  \"mode\": \"classic\"  } ``` - When enabling the cross-currency margin mode, mode=multi_currency ```  PUT /unified/unified_mode  {  \"mode\": \"multi_currency\",  \"settings\": {  \"usdt_futures\": true  }  } ``` - When enabling the portfolio margin mode, mode=portfolio ```  PUT /unified/unified_mode  {  \"mode\": \"portfolio\",  \"settings\": {  \"spot_hedge\": true  }  } ``` - When enabling the single-currency margin mode, mode=single_currency ```  PUT /unified/unified_mode  {  \"mode\": \"single_currency\"  } ```
 
 ### Example
 ```csharp
@@ -987,7 +989,7 @@ Name | Type | Description  | Notes
 # **ListCurrencyDiscountTiers**
 > List&lt;UnifiedDiscount&gt; ListCurrencyDiscountTiers ()
 
-Query unified account tiered
+Get currency margin discount tiers for unified accounts
 
 ### Example
 ```csharp
@@ -1009,7 +1011,7 @@ namespace Example
 
             try
             {
-                // Query unified account tiered
+                // Get currency margin discount tiers for unified accounts
                 List<UnifiedDiscount> result = apiInstance.ListCurrencyDiscountTiers();
                 Debug.WriteLine(result);
             }

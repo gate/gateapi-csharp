@@ -42,7 +42,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="side">Buy or sell orders - buy - sell (required).</param>
         /// <param name="amount">Trade Quantity - &#x60;side&#x60; : &#x60;buy&#x60; refers to the quote currency, i.e., &#x60;USDT&#x60; - &#x60;side&#x60; : &#x60;sell&#x60; refers to the base currency (required).</param>
         /// <param name="gasMode">Trading mode affects slippage selection - &#x60;speed&#x60; : Smart mode - &#x60;custom&#x60; : Custom mode, uses &#x60;slippage&#x60; parameter (required).</param>
-        /// <param name="slippage">Slippage tolerance (10 means 10% tolerance).</param>
+        /// <param name="slippage">Slippage percentage: \&quot;10\&quot; means 10%..</param>
         /// <param name="quoteId">Quote ID returned from quotation API (required).</param>
         public PlaceOrderRequest(string currency = default(string), string side = default(string), string amount = default(string), string gasMode = default(string), string slippage = default(string), string quoteId = default(string))
         {
@@ -92,9 +92,9 @@ namespace Io.Gate.GateApi.Model
         public string GasMode { get; set; }
 
         /// <summary>
-        /// Slippage tolerance (10 means 10% tolerance)
+        /// Slippage percentage: \&quot;10\&quot; means 10%.
         /// </summary>
-        /// <value>Slippage tolerance (10 means 10% tolerance)</value>
+        /// <value>Slippage percentage: \&quot;10\&quot; means 10%.</value>
         [DataMember(Name="slippage")]
         
         public string Slippage { get; set; }

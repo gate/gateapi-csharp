@@ -22,7 +22,7 @@ Method | HTTP request | Description
 [**CreateCrossLiquidateOrder**](SpotApi.md#createcrossliquidateorder) | **POST** /spot/cross_liquidate_orders | Close position when cross-currency is disabled
 [**ListOrders**](SpotApi.md#listorders) | **GET** /spot/orders | List orders
 [**CreateOrder**](SpotApi.md#createorder) | **POST** /spot/orders | Create order
-[**CancelOrders**](SpotApi.md#cancelorders) | **DELETE** /spot/orders | Cancel all &#x60;open&#x60; orders in specified currency pair
+[**CancelOrders**](SpotApi.md#cancelorders) | **DELETE** /spot/orders | Cancel &#x60;open&#x60; orders in bulk, optionally filtered by currency pair
 [**CancelBatchOrders**](SpotApi.md#cancelbatchorders) | **POST** /spot/cancel_batch_orders | Cancel batch orders by specified ID list
 [**GetOrder**](SpotApi.md#getorder) | **GET** /spot/orders/{order_id} | Query single order details
 [**CancelOrder**](SpotApi.md#cancelorder) | **DELETE** /spot/orders/{order_id} | Cancel single order
@@ -38,7 +38,7 @@ Method | HTTP request | Description
 [**GetSpotPriceTriggeredOrder**](SpotApi.md#getspotpricetriggeredorder) | **GET** /spot/price_orders/{order_id} | Query single auto order details
 [**CancelSpotPriceTriggeredOrder**](SpotApi.md#cancelspotpricetriggeredorder) | **DELETE** /spot/price_orders/{order_id} | Cancel single auto order
 [**ListSpotPovOrders**](SpotApi.md#listspotpovorders) | **GET** /spot/pov_orders | List Spot POV orders
-[**CreateSpotPovOrder**](SpotApi.md#createspotpovorder) | **POST** /spot/pov_orders | Create a Spot POV order
+[**CreateSpotPovOrder**](SpotApi.md#createspotpovorder) | **POST** /spot/pov_orders | Create a spot percentage-of-volume (POV) strategy order
 [**CancelSpotPovOrders**](SpotApi.md#cancelspotpovorders) | **DELETE** /spot/pov_orders | Cancel Spot POV orders
 [**GetSpotPovOrder**](SpotApi.md#getspotpovorder) | **GET** /spot/pov_orders/{order_id} | Query Spot POV order details
 [**CancelSpotPovOrder**](SpotApi.md#cancelspotpovorder) | **DELETE** /spot/pov_orders/{order_id} | Cancel a Spot POV order
@@ -50,7 +50,7 @@ Method | HTTP request | Description
 
 Query all currency information
 
-When a currency corresponds to multiple chains, you can query the information of multiple chains through the `chains` field, such as the charging and recharge status, identification, etc. of the chain
+When a currency is associated with multiple blockchains, use `chains` to view information about each chain, such as deposit and withdrawal status and chain identifiers.
 
 ### Example
 ```csharp
@@ -1386,7 +1386,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Order created |  -  |
+| **201** | Order created. The execution result depends on the time-in-force policy specified when placing the order. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1394,7 +1394,7 @@ Name | Type | Description  | Notes
 # **CancelOrders**
 > List&lt;OrderCancel&gt; CancelOrders (string currencyPair = null, string side = null, string account = null, string tradeQuote = null, string actionMode = null, string xGateExptime = null)
 
-Cancel all `open` orders in specified currency pair
+Cancel `open` orders in bulk, optionally filtered by currency pair
 
 When the `account` parameter is not specified, all pending orders including spot, unified account, and isolated margin will be cancelled. When `currency_pair` is not specified, all trading pair pending orders will be cancelled. You can specify a particular account to cancel all pending orders under that account
 
@@ -1426,7 +1426,7 @@ namespace Example
 
             try
             {
-                // Cancel all `open` orders in specified currency pair
+                // Cancel `open` orders in bulk, optionally filtered by currency pair
                 List<OrderCancel> result = apiInstance.CancelOrders(currencyPair, side, account, tradeQuote, actionMode, xGateExptime);
                 Debug.WriteLine(result);
             }
@@ -1712,7 +1712,7 @@ Name | Type | Description  | Notes
 
 Amend single order
 
-Modify orders in spot, unified account and isolated margin account by default.  Currently both request body and query support currency_pair and account parameters, but request body has higher priority.  currency_pair must be filled in one of the request body or query parameters.  About rate limit: Order modification and order creation share the same rate limit rules.  About matching priority: Only reducing the quantity does not affect the matching priority. Modifying the price or increasing the quantity will adjust the priority to the end of the new price level.  Note: Modifying the quantity to be less than the filled quantity will trigger a cancellation and isolated margin account by default.  Currently both request body and query support currency_pair and account parameters, but request body has higher priority.  currency_pair must be filled in one of the request body or query parameters.  About rate limit: Order modification and order creation share the same rate limit rules.  About matching priority: Only reducing the quantity does not affect the matching priority. Modifying the price or increasing the quantity will adjust the priority to the end of the new price level.  Note: Modifying the quantity to be less than the filled quantity will trigger a cancellation operation.
+By default, amend orders for spot, unified, and isolated-margin accounts.  Both the request body and query parameters support `currency_pair` and `account`; the request body has higher precedence.  Provide `currency_pair` in either the request body or the query parameters, choosing one location.  Amendments and order creation share rate limits.  Reducing quantity alone preserves matching priority. Changing the price or increasing the quantity places the order at the end of the new price level.  A new quantity below the filled quantity triggers cancellation.
 
 ### Example
 ```csharp
@@ -1943,7 +1943,7 @@ No authorization required
 
 Countdown cancel orders
 
-Spot order heartbeat detection. If there is no \"cancel existing countdown\" or \"set new countdown\" when the user-set `timeout` time is reached, the related `spot pending orders` will be automatically cancelled. This interface can be called repeatedly to set a new countdown or cancel the countdown. Usage example: Repeat this interface at 30s intervals, setting the countdown `timeout` to `30 (seconds)` each time. If this interface is not called again within 30 seconds, all pending orders on the `market` you specified will be automatically cancelled. If no `market` is specified, all market cancelled. If the `timeout` is set to 0 within 30 seconds, the countdown timer will be terminated and the automatic order cancellation function will be cancelled.
+Spot order heartbeat detection. If there is no \"cancel existing countdown\" or \"set new countdown\" when the user-set `timeout` time is reached, the related `spot pending orders` will be automatically cancelled. This interface can be called repeatedly to set a new countdown or cancel the countdown. Usage example: Repeat this interface at 30s intervals, setting the countdown `timeout` to `30 (seconds)` each time. If this interface is not called again within 30 seconds, all open orders for the `currency_pair` you specified will be automatically cancelled. If no `currency_pair` is specified, open orders for all currency pairs are cancelled automatically. If the `timeout` is set to 0 within 30 seconds, the countdown timer will be terminated and the automatic order cancellation function will be cancelled.
 
 ### Example
 ```csharp
@@ -2612,7 +2612,9 @@ Name | Type | Description  | Notes
 # **CreateSpotPovOrder**
 > SpotPovOrder CreateSpotPovOrder (SpotPovOrderCreator spotPovOrderCreator)
 
-Create a Spot POV order
+Create a spot percentage-of-volume (POV) strategy order
+
+participation_rate specifies the target participation rate, and ttl specifies the validity period. The response contains the order id, which can be used with GET /spot/pov_orders/{order_id} to query details.
 
 ### Example
 ```csharp
@@ -2637,7 +2639,7 @@ namespace Example
 
             try
             {
-                // Create a Spot POV order
+                // Create a spot percentage-of-volume (POV) strategy order
                 SpotPovOrder result = apiInstance.CreateSpotPovOrder(spotPovOrderCreator);
                 Debug.WriteLine(result);
             }

@@ -5,7 +5,7 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ListCurrencyChains**](WalletApi.md#listcurrencychains) | **GET** /wallet/currency_chains | Query chains supported for specified currency
-[**GetDepositAddress**](WalletApi.md#getdepositaddress) | **GET** /wallet/deposit_address | Generate currency deposit address
+[**GetDepositAddress**](WalletApi.md#getdepositaddress) | **GET** /wallet/deposit_address | Get a currency deposit address
 [**ListWithdrawals**](WalletApi.md#listwithdrawals) | **GET** /wallet/withdrawals | Get withdrawal records
 [**ListDeposits**](WalletApi.md#listdeposits) | **GET** /wallet/deposits | Get deposit records
 [**GetTransfer**](WalletApi.md#gettransfer) | **GET** /wallet/transfers | Get trading account transfer
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**TransferWithSubAccount**](WalletApi.md#transferwithsubaccount) | **POST** /wallet/sub_account_transfers | Transfer between main and sub accounts
 [**SubAccountToSubAccount**](WalletApi.md#subaccounttosubaccount) | **POST** /wallet/sub_account_to_sub_account | Transfer between sub-accounts
 [**GetTransferOrderStatus**](WalletApi.md#gettransferorderstatus) | **GET** /wallet/order_status | Main-Sub Account Transfer Status Query
-[**ListWithdrawStatus**](WalletApi.md#listwithdrawstatus) | **GET** /wallet/withdraw_status | Query withdrawal status
+[**ListWithdrawStatus**](WalletApi.md#listwithdrawstatus) | **GET** /wallet/withdraw_status | Get currency withdrawal fees and limits, optionally filtered by currency.
 [**ListSubAccountBalances**](WalletApi.md#listsubaccountbalances) | **GET** /wallet/sub_account_balances | Query sub-account balance information
 [**ListSubAccountMarginBalances**](WalletApi.md#listsubaccountmarginbalances) | **GET** /wallet/sub_account_margin_balances | Query sub-account isolated margin account balance information
 [**ListSubAccountFuturesBalances**](WalletApi.md#listsubaccountfuturesbalances) | **GET** /wallet/sub_account_futures_balances | Query sub-account perpetual futures account balance information
@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**GetTotalBalance**](WalletApi.md#gettotalbalance) | **GET** /wallet/total_balance | Query personal account totals
 [**ListSmallBalance**](WalletApi.md#listsmallbalance) | **GET** /wallet/small_balance | Get list of convertible small balance currencies
 [**ConvertSmallBalance**](WalletApi.md#convertsmallbalance) | **POST** /wallet/small_balance | Convert small balance currency
-[**ListSmallBalanceHistory**](WalletApi.md#listsmallbalancehistory) | **GET** /wallet/small_balance_history | Get convertible small balance currency history
+[**ListSmallBalanceHistory**](WalletApi.md#listsmallbalancehistory) | **GET** /wallet/small_balance_history | Get small-balance conversion history
 [**ListPushOrders**](WalletApi.md#listpushorders) | **GET** /wallet/push | Get UID transfer history
 [**GetLowCapExchangeList**](WalletApi.md#getlowcapexchangelist) | **GET** /wallet/getLowCapExchangeList | Retrieve the list of low-liquidity or low-cap tokens
 
@@ -104,7 +104,7 @@ No authorization required
 # **GetDepositAddress**
 > DepositAddress GetDepositAddress (string currency)
 
-Generate currency deposit address
+Get a currency deposit address
 
 ### Example
 ```csharp
@@ -129,7 +129,7 @@ namespace Example
 
             try
             {
-                // Generate currency deposit address
+                // Get a currency deposit address
                 DepositAddress result = apiInstance.GetDepositAddress(currency);
                 Debug.WriteLine(result);
             }
@@ -791,7 +791,7 @@ Name | Type | Description  | Notes
 # **ListWithdrawStatus**
 > List&lt;WithdrawStatus&gt; ListWithdrawStatus (string currency = null)
 
-Query withdrawal status
+Get currency withdrawal fees and limits, optionally filtered by currency.
 
 API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
 
@@ -818,7 +818,7 @@ namespace Example
 
             try
             {
-                // Query withdrawal status
+                // Get currency withdrawal fees and limits, optionally filtered by currency.
                 List<WithdrawStatus> result = apiInstance.ListWithdrawStatus(currency);
                 Debug.WriteLine(result);
             }
@@ -1516,7 +1516,7 @@ void (empty response body)
 # **ListSmallBalanceHistory**
 > List&lt;SmallBalanceHistory&gt; ListSmallBalanceHistory (string currency = null, int? page = null, int? limit = null)
 
-Get convertible small balance currency history
+Get small-balance conversion history
 
 ### Example
 ```csharp
@@ -1537,13 +1537,13 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new WalletApi(config);
-            var currency = "currency_example";  // string | Currency to convert (optional) 
+            var currency = "currency_example";  // string | Filter by conversion currency. (optional) 
             var page = 1;  // int? | Page number (optional)  (default to 1)
             var limit = 100;  // int? | Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional)  (default to 100)
 
             try
             {
-                // Get convertible small balance currency history
+                // Get small-balance conversion history
                 List<SmallBalanceHistory> result = apiInstance.ListSmallBalanceHistory(currency, page, limit);
                 Debug.WriteLine(result);
             }
@@ -1563,7 +1563,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **string**| Currency to convert | [optional] 
+ **currency** | **string**| Filter by conversion currency. | [optional] 
  **page** | **int?**| Page number | [optional] [default to 1]
  **limit** | **int?**| Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 | [optional] [default to 100]
 

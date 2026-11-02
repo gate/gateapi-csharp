@@ -276,9 +276,9 @@ namespace Io.Gate.GateApi.Model
         public string Reason { get; private set; }
 
         /// <summary>
-        /// Sub-order text field
+        /// The child order&#39;s text field.
         /// </summary>
-        /// <value>Sub-order text field</value>
+        /// <value>The child order&#39;s text field.</value>
         [DataMember(Name="suborder_text", EmitDefaultValue=false)]
         
         public string SuborderText { get; private set; }
@@ -300,9 +300,9 @@ namespace Io.Gate.GateApi.Model
         public string TriggerPrice { get; private set; }
 
         /// <summary>
-        /// Sub-order ID
+        /// Child order ID.
         /// </summary>
-        /// <value>Sub-order ID</value>
+        /// <value>Child order ID.</value>
         [DataMember(Name="suborder_id", EmitDefaultValue=false)]
         
         public long SuborderId { get; private set; }

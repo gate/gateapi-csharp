@@ -22,7 +22,7 @@ Method | HTTP request | Description
 [**UpdateCrossexPositionsLeverage**](CrossExApi.md#updatecrossexpositionsleverage) | **POST** /crossex/positions/leverage | Modify Contract Trading Pair Leverage Multiplier
 [**GetCrossexMarginPositionsLeverage**](CrossExApi.md#getcrossexmarginpositionsleverage) | **GET** /crossex/margin_positions/leverage | Query Leveraged Trading Pair Leverage Multiplier
 [**UpdateCrossexMarginPositionsLeverage**](CrossExApi.md#updatecrossexmarginpositionsleverage) | **POST** /crossex/margin_positions/leverage | Modify Leveraged Trading Pair Leverage Multiplier
-[**CloseCrossexPosition**](CrossExApi.md#closecrossexposition) | **POST** /crossex/position | Full Close Position
+[**CloseCrossexPosition**](CrossExApi.md#closecrossexposition) | **POST** /crossex/position | Close a position in full.
 [**GetCrossexPositionsMarginMode**](CrossExApi.md#getcrossexpositionsmarginmode) | **GET** /crossex/positions/margin_mode | Get futures position margin mode
 [**UpdateCrossexPositionsMarginMode**](CrossExApi.md#updatecrossexpositionsmarginmode) | **POST** /crossex/positions/margin_mode | Update futures position margin mode
 [**UpdateCrossexPositionsMargin**](CrossExApi.md#updatecrossexpositionsmargin) | **POST** /crossex/positions/margin | Increase or decrease isolated margin
@@ -1368,7 +1368,7 @@ Name | Type | Description  | Notes
 # **CloseCrossexPosition**
 > CrossexOrderActionResponse CloseCrossexPosition (CrossexClosePositionRequest crossexClosePositionRequest = null)
 
-Full Close Position
+Close a position in full.
 
 Rate limit: 100 requests per day. Automatic position-closing rules. FUTURE and MARGIN positions are supported.  Before using this endpoint, ensure that the following prerequisite is met: - There are no open orders for the symbol in the current account. - Once the prerequisite is met, the system checks whether the position meets either of the following conditions: - Less than the minimum notional amount (minNotional) - Less than the minimum order size (minSize)  When either condition is met, the system automatically creates a closing order and immediately closes the entire position. This endpoint prevents positions that are too small to be submitted to an exchange from becoming stranded and ensures that small positions can be closed when they fall below the threshold.
 
@@ -1395,7 +1395,7 @@ namespace Example
 
             try
             {
-                // Full Close Position
+                // Close a position in full.
                 CrossexOrderActionResponse result = apiInstance.CloseCrossexPosition(crossexClosePositionRequest);
                 Debug.WriteLine(result);
             }

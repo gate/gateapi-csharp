@@ -393,9 +393,9 @@ namespace Io.Gate.GateApi.Model
         public string AverageMaintenanceRate { get; private set; }
 
         /// <summary>
-        /// Sub-account position ID
+        /// Split-position ID.
         /// </summary>
-        /// <value>Sub-account position ID</value>
+        /// <value>Split-position ID.</value>
         [DataMember(Name="pid", EmitDefaultValue=false)]
         
         public long Pid { get; private set; }

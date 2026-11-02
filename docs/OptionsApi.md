@@ -32,7 +32,7 @@ Method | HTTP request | Description
 [**ListMyOptionsTrades**](OptionsApi.md#listmyoptionstrades) | **GET** /options/my_trades | Query personal trading records
 [**GetOptionsMMP**](OptionsApi.md#getoptionsmmp) | **GET** /options/mmp | MMP Query.
 [**SetOptionsMMP**](OptionsApi.md#setoptionsmmp) | **POST** /options/mmp | MMP Settings
-[**ResetOptionsMMP**](OptionsApi.md#resetoptionsmmp) | **POST** /options/mmp/reset | MMP Reset
+[**ResetOptionsMMP**](OptionsApi.md#resetoptionsmmp) | **POST** /options/mmp/reset | Reset MMP for the specified underlying.
 
 
 <a name="listoptionsunderlyings"></a>
@@ -2097,7 +2097,7 @@ Name | Type | Description  | Notes
 # **ResetOptionsMMP**
 > OptionsMMP ResetOptionsMMP (OptionsMMPReset optionsMMPReset)
 
-MMP Reset
+Reset MMP for the specified underlying.
 
 ### Example
 ```csharp
@@ -2122,7 +2122,7 @@ namespace Example
 
             try
             {
-                // MMP Reset
+                // Reset MMP for the specified underlying.
                 OptionsMMP result = apiInstance.ResetOptionsMMP(optionsMMPReset);
                 Debug.WriteLine(result);
             }

@@ -25,7 +25,7 @@ using OpenAPIDateConverter = Io.Gate.GateApi.Client.OpenAPIDateConverter;
 namespace Io.Gate.GateApi.Model
 {
     /// <summary>
-    /// Update auto invest plan request
+    /// Request to update an auto-invest plan. The current model contains plan_id, fund_source, and fund_flow.
     /// </summary>
     [DataContract]
     public partial class AutoInvestPlanUpdate :  IEquatable<AutoInvestPlanUpdate>, IValidatableObject

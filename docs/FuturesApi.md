@@ -2755,7 +2755,7 @@ Name | Type | Description  | Notes
 
 Query futures order list
 
-- Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use `GET /futures/{settle}/orders_timerange`.
+- Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use `GET /futures/{settle}/orders_timerange`.
 
 ### Example
 ```csharp
@@ -2838,7 +2838,7 @@ Name | Type | Description  | Notes
 
 Place futures order
 
-- When placing an order, the number of contracts is specified `size`, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface `quanto_multiplier` - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting `reduce_only` to `true` can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set `size` to 0 and `close` to `true` - In dual warehouse mode,   - Reduce position: reduce_only=true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size=0, set the direction of closing position according to auto_size, and set `reduce_only` to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set `stp_act` to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter `stp_act`
+- When placing an order, the number of contracts is specified `size`, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface `quanto_multiplier` - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting `reduce_only` to `true` can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set `size` to 0 and `close` to `true` - In hedge mode:   - Reduce a position: with `reduce_only=true`, a positive `size` reduces the short position and a negative `size` reduces the long position.   - Increase a position: with `reduce_only=false`, a positive `size` increases the long position and a negative `size` increases the short position.   - Close a position: set `size=0`, select the closing side with `auto_size`, and set `reduce_only=true`.   - `reduce_only` ensures position reduction only and prevents increasing the position. - Set `stp_act` to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter `stp_act`
 
 ### Example
 ```csharp
@@ -3158,7 +3158,7 @@ Name | Type | Description  | Notes
 
 Query single order details
 
-- Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
+- Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported. 
 
 ### Example
 ```csharp
@@ -3578,7 +3578,7 @@ namespace Example
             var offset = 0;  // int? | List offset, starting from 0 (optional)  (default to 0)
             var from = 1547706332;  // long? | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional) 
             var to = 1547706332;  // long? | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional) 
-            var side = "short";  // string | Query side. long or shot (optional) 
+            var side = "short";  // string | Direction filter: long or short. (optional) 
             var pnl = "profit";  // string | Query profit or loss (optional) 
 
             try
@@ -3609,7 +3609,7 @@ Name | Type | Description  | Notes
  **offset** | **int?**| List offset, starting from 0 | [optional] [default to 0]
  **from** | **long?**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **long?**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
- **side** | **string**| Query side. long or shot | [optional] 
+ **side** | **string**| Direction filter: long or short. | [optional] 
  **pnl** | **string**| Query profit or loss | [optional] 
 
 ### Return type
@@ -4471,7 +4471,7 @@ Name | Type | Description  | Notes
 
 <a name="gettrailorders"></a>
 # **GetTrailOrders**
-> TrailOrderListResponse GetTrailOrders (string settle, string contract = null, bool? isFinished = null, long? startAt = null, long? endAt = null, int? pageNum = null, int? pageSize = null, int? sortBy = null, bool? hideCancel = null, int? relatedPosition = null, bool? sortByTrigger = null, int? reduceOnly = null, int? side = null)
+> TrailOrderListResponseEnvelope GetTrailOrders (string settle, string contract = null, bool? isFinished = null, long? startAt = null, long? endAt = null, int? pageNum = null, int? pageSize = null, int? sortBy = null, bool? hideCancel = null, int? relatedPosition = null, bool? sortByTrigger = null, int? reduceOnly = null, int? side = null)
 
 Get trail order list
 
@@ -4511,7 +4511,7 @@ namespace Example
             try
             {
                 // Get trail order list
-                TrailOrderListResponse result = apiInstance.GetTrailOrders(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
+                TrailOrderListResponseEnvelope result = apiInstance.GetTrailOrders(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4546,7 +4546,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TrailOrderListResponse**](TrailOrderListResponse.md)
+[**TrailOrderListResponseEnvelope**](TrailOrderListResponseEnvelope.md)
 
 ### Authorization
 
@@ -5032,7 +5032,7 @@ namespace Example
 
             var apiInstance = new FuturesApi(config);
             var settle = "usdt";  // string | Perpetual futures settlement currency
-            var sortBy = 56;  // int | Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0
+            var sortBy = 56;  // int | Sort field: 1 for creation time; 2 for finish time. 0 is not accepted.
             var contract = "contract_example";  // string | Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional) 
             var isFinished = true;  // bool? | true to query finished orders, false to query in-progress orders (optional) 
             var startAt = 56;  // long? | Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional) 
@@ -5066,7 +5066,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **string**| Perpetual futures settlement currency | 
- **sortBy** | **int**| Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0 | 
+ **sortBy** | **int**| Sort field: 1 for creation time; 2 for finish time. 0 is not accepted. | 
  **contract** | **string**| Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase | [optional] 
  **isFinished** | **bool?**| true to query finished orders, false to query in-progress orders | [optional] 
  **startAt** | **long?**| Lower time bound for the history list, paired with end_at. Required when is_finished is true | [optional] 
@@ -5465,6 +5465,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Auto order details |  -  |
+| **205** | Business error response when the price-triggered order does not exist (HTTP 205). |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

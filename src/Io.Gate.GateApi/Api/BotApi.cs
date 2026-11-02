@@ -249,7 +249,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of AIHubCreateSuccessResponse</returns>
         ApiResponse<AIHubCreateSuccessResponse> PostAIHubContractMartingaleCreateWithHttpInfo (ContractMartingaleCreateRequest contractMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// Query the list of running policies
+        /// List running strategies.
         /// </summary>
         /// <remarks>
         /// Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
@@ -267,7 +267,7 @@ namespace Io.Gate.GateApi.Api
         AIHubPortfolioRunningSuccessResponse GetAIHubPortfolioRunning (string strategyType = default(string), string market = default(string), int? page = default(int?), int? pageSize = default(int?), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// Query the list of running policies
+        /// List running strategies.
         /// </summary>
         /// <remarks>
         /// Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
@@ -632,7 +632,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (AIHubCreateSuccessResponse)</returns>
         Task<ApiResponse<AIHubCreateSuccessResponse>> PostAIHubContractMartingaleCreateAsyncWithHttpInfo (ContractMartingaleCreateRequest contractMartingaleCreateRequest, string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
         /// <summary>
-        /// Query the list of running policies
+        /// List running strategies.
         /// </summary>
         /// <remarks>
         /// Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
@@ -650,7 +650,7 @@ namespace Io.Gate.GateApi.Api
         Task<AIHubPortfolioRunningSuccessResponse> GetAIHubPortfolioRunningAsync (string strategyType = default(string), string market = default(string), int? page = default(int?), int? pageSize = default(int?), string xGateServiceId = default(string), string xGateAppLang = default(string), string xRequestId = default(string), string xTraceId = default(string));
 
         /// <summary>
-        /// Query the list of running policies
+        /// List running strategies.
         /// </summary>
         /// <remarks>
         /// Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
@@ -2178,7 +2178,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query the list of running policies Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
+        /// List running strategies. Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="strategyType">Filter by policy type (optional)</param>
@@ -2197,7 +2197,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query the list of running policies Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
+        /// List running strategies. Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="strategyType">Filter by policy type (optional)</param>
@@ -2276,7 +2276,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query the list of running policies Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
+        /// List running strategies. Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="strategyType">Filter by policy type (optional)</param>
@@ -2296,7 +2296,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query the list of running policies Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
+        /// List running strategies. Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="strategyType">Filter by policy type (optional)</param>

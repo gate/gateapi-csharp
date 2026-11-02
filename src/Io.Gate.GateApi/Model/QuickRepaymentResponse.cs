@@ -39,8 +39,8 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="QuickRepaymentResponse" /> class.
         /// </summary>
         /// <param name="orderId">Order ID (required).</param>
-        /// <param name="repaidInfos">Repaid currency details (required).</param>
-        /// <param name="usedInfos">Currencies used for repayment (required).</param>
+        /// <param name="repaidInfos">Repayment currency details: currency is the currency name, repaid is the amount repaid, and left is the remaining liability amount. (required).</param>
+        /// <param name="usedInfos">Details of currencies used for repayment: currency is the currency name, and used is the amount exchanged. (required).</param>
         public QuickRepaymentResponse(string orderId = default(string), List<UnifiedQuickRepayRepaidInfo> repaidInfos = default(List<UnifiedQuickRepayRepaidInfo>), List<UnifiedQuickRepayUsedInfo> usedInfos = default(List<UnifiedQuickRepayUsedInfo>))
         {
             // to ensure "orderId" is required (not null)
@@ -60,17 +60,17 @@ namespace Io.Gate.GateApi.Model
         public string OrderId { get; set; }
 
         /// <summary>
-        /// Repaid currency details
+        /// Repayment currency details: currency is the currency name, repaid is the amount repaid, and left is the remaining liability amount.
         /// </summary>
-        /// <value>Repaid currency details</value>
+        /// <value>Repayment currency details: currency is the currency name, repaid is the amount repaid, and left is the remaining liability amount.</value>
         [DataMember(Name="repaid_infos")]
         
         public List<UnifiedQuickRepayRepaidInfo> RepaidInfos { get; set; }
 
         /// <summary>
-        /// Currencies used for repayment
+        /// Details of currencies used for repayment: currency is the currency name, and used is the amount exchanged.
         /// </summary>
-        /// <value>Currencies used for repayment</value>
+        /// <value>Details of currencies used for repayment: currency is the currency name, and used is the amount exchanged.</value>
         [DataMember(Name="used_infos")]
         
         public List<UnifiedQuickRepayUsedInfo> UsedInfos { get; set; }

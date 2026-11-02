@@ -40,7 +40,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="investCurrency">Investment Token.</param>
         /// <param name="name">Order name identifier.</param>
         /// <param name="orderId">Order ID.</param>
-        /// <param name="reqId">Request ID used for actual redemption.</param>
+        /// <param name="reqId">Request ID used for redemption, returned by GET /earn/dual/order-refund-preview. The request to POST /earn/dual/order-refund requires order_id and req_id..</param>
         /// <param name="refundServiceCharge">Refund fee.</param>
         /// <param name="settlePrice">Settlement price.</param>
         /// <param name="settlementAmount">Settlement amount.</param>
@@ -126,9 +126,9 @@ namespace Io.Gate.GateApi.Model
         public long OrderId { get; set; }
 
         /// <summary>
-        /// Request ID used for actual redemption
+        /// Request ID used for redemption, returned by GET /earn/dual/order-refund-preview. The request to POST /earn/dual/order-refund requires order_id and req_id.
         /// </summary>
-        /// <value>Request ID used for actual redemption</value>
+        /// <value>Request ID used for redemption, returned by GET /earn/dual/order-refund-preview. The request to POST /earn/dual/order-refund requires order_id and req_id.</value>
         [DataMember(Name="req_id")]
         
         public string ReqId { get; set; }

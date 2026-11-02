@@ -72,7 +72,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required (optional)</param>
+        /// <param name="symbols">Comma-separated instrument symbols. Provide at least one of symbols and category_code. (optional)</param>
         /// <param name="categoryCode">List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required (optional)</param>
         /// <returns>SymbolCommissions</returns>
         SymbolCommissions QuerySymbolCommissions (string symbols = default(string), string categoryCode = default(string));
@@ -84,7 +84,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required (optional)</param>
+        /// <param name="symbols">Comma-separated instrument symbols. Provide at least one of symbols and category_code. (optional)</param>
         /// <param name="categoryCode">List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required (optional)</param>
         /// <returns>ApiResponse of SymbolCommissions</returns>
         ApiResponse<SymbolCommissions> QuerySymbolCommissionsWithHttpInfo (string symbols = default(string), string categoryCode = default(string));
@@ -472,7 +472,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
         /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
-        /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
+        /// <param name="beginTime">Start time as a Unix timestamp in seconds. The earliest supported start time is one month ago. (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
@@ -488,7 +488,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
         /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
-        /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
+        /// <param name="beginTime">Start time as a Unix timestamp in seconds. The earliest supported start time is one month ago. (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
@@ -548,7 +548,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required (optional)</param>
+        /// <param name="symbols">Comma-separated instrument symbols. Provide at least one of symbols and category_code. (optional)</param>
         /// <param name="categoryCode">List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required (optional)</param>
         /// <returns>Task of SymbolCommissions</returns>
         Task<SymbolCommissions> QuerySymbolCommissionsAsync (string symbols = default(string), string categoryCode = default(string));
@@ -560,7 +560,7 @@ namespace Io.Gate.GateApi.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required (optional)</param>
+        /// <param name="symbols">Comma-separated instrument symbols. Provide at least one of symbols and category_code. (optional)</param>
         /// <param name="categoryCode">List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required (optional)</param>
         /// <returns>Task of ApiResponse (SymbolCommissions)</returns>
         Task<ApiResponse<SymbolCommissions>> QuerySymbolCommissionsAsyncWithHttpInfo (string symbols = default(string), string categoryCode = default(string));
@@ -948,7 +948,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
         /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
-        /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
+        /// <param name="beginTime">Start time as a Unix timestamp in seconds. The earliest supported start time is one month ago. (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
@@ -964,7 +964,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
         /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
-        /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
+        /// <param name="beginTime">Start time as a Unix timestamp in seconds. The earliest supported start time is one month ago. (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
@@ -1296,7 +1296,7 @@ namespace Io.Gate.GateApi.Api
         /// Query symbol commission rates 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required (optional)</param>
+        /// <param name="symbols">Comma-separated instrument symbols. Provide at least one of symbols and category_code. (optional)</param>
         /// <param name="categoryCode">List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required (optional)</param>
         /// <returns>SymbolCommissions</returns>
         public SymbolCommissions QuerySymbolCommissions (string symbols = default(string), string categoryCode = default(string))
@@ -1309,7 +1309,7 @@ namespace Io.Gate.GateApi.Api
         /// Query symbol commission rates 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required (optional)</param>
+        /// <param name="symbols">Comma-separated instrument symbols. Provide at least one of symbols and category_code. (optional)</param>
         /// <param name="categoryCode">List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required (optional)</param>
         /// <returns>ApiResponse of SymbolCommissions</returns>
         public ApiResponse<SymbolCommissions> QuerySymbolCommissionsWithHttpInfo (string symbols = default(string), string categoryCode = default(string))
@@ -1358,7 +1358,7 @@ namespace Io.Gate.GateApi.Api
         /// Query symbol commission rates 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required (optional)</param>
+        /// <param name="symbols">Comma-separated instrument symbols. Provide at least one of symbols and category_code. (optional)</param>
         /// <param name="categoryCode">List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required (optional)</param>
         /// <returns>Task of SymbolCommissions</returns>
         public async Task<SymbolCommissions> QuerySymbolCommissionsAsync (string symbols = default(string), string categoryCode = default(string))
@@ -1372,7 +1372,7 @@ namespace Io.Gate.GateApi.Api
         /// Query symbol commission rates 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="symbols">List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required (optional)</param>
+        /// <param name="symbols">Comma-separated instrument symbols. Provide at least one of symbols and category_code. (optional)</param>
         /// <param name="categoryCode">List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required (optional)</param>
         /// <returns>Task of ApiResponse (SymbolCommissions)</returns>
         public async Task<ApiResponse<SymbolCommissions>> QuerySymbolCommissionsAsyncWithHttpInfo (string symbols = default(string), string categoryCode = default(string))
@@ -3474,7 +3474,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
         /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
-        /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
+        /// <param name="beginTime">Start time as a Unix timestamp in seconds. The earliest supported start time is one month ago. (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
@@ -3491,7 +3491,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
         /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
-        /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
+        /// <param name="beginTime">Start time as a Unix timestamp in seconds. The earliest supported start time is one month ago. (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
@@ -3560,7 +3560,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
         /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
-        /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
+        /// <param name="beginTime">Start time as a Unix timestamp in seconds. The earliest supported start time is one month ago. (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>
@@ -3578,7 +3578,7 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number; defaults to 1 if omitted. (optional)</param>
         /// <param name="pageSize">Page size; defaults to 10 if omitted. Maximum 100. (optional)</param>
-        /// <param name="beginTime">Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional)</param>
+        /// <param name="beginTime">Start time as a Unix timestamp in seconds. The earliest supported start time is one month ago. (optional)</param>
         /// <param name="endTime">End time (timestamp in seconds) (optional)</param>
         /// <param name="symbol">Trading symbol (e.g., EURUSD) (optional)</param>
         /// <param name="positionDir">Position direction (Long&#x3D;long position, Short&#x3D;short position) (optional)</param>

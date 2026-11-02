@@ -950,7 +950,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list
         /// </summary>
         /// <remarks>
-        /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
+        /// - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -966,7 +966,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list
         /// </summary>
         /// <remarks>
-        /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
+        /// - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -981,7 +981,7 @@ namespace Io.Gate.GateApi.Api
         /// Place futures order
         /// </summary>
         /// <remarks>
-        /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
+        /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In hedge mode:   - Reduce a position: with &#x60;reduce_only&#x3D;true&#x60;, a positive &#x60;size&#x60; reduces the short position and a negative &#x60;size&#x60; reduces the long position.   - Increase a position: with &#x60;reduce_only&#x3D;false&#x60;, a positive &#x60;size&#x60; increases the long position and a negative &#x60;size&#x60; increases the short position.   - Close a position: set &#x60;size&#x3D;0&#x60;, select the closing side with &#x60;auto_size&#x60;, and set &#x60;reduce_only&#x3D;true&#x60;.   - &#x60;reduce_only&#x60; ensures position reduction only and prevents increasing the position. - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -994,7 +994,7 @@ namespace Io.Gate.GateApi.Api
         /// Place futures order
         /// </summary>
         /// <remarks>
-        /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
+        /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In hedge mode:   - Reduce a position: with &#x60;reduce_only&#x3D;true&#x60;, a positive &#x60;size&#x60; reduces the short position and a negative &#x60;size&#x60; reduces the long position.   - Increase a position: with &#x60;reduce_only&#x3D;false&#x60;, a positive &#x60;size&#x60; increases the long position and a negative &#x60;size&#x60; increases the short position.   - Close a position: set &#x60;size&#x3D;0&#x60;, select the closing side with &#x60;auto_size&#x60;, and set &#x60;reduce_only&#x3D;true&#x60;.   - &#x60;reduce_only&#x60; ensures position reduction only and prevents increasing the position. - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -1095,7 +1095,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single order details
         /// </summary>
         /// <remarks>
-        /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
+        /// - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported. 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -1107,7 +1107,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single order details
         /// </summary>
         /// <remarks>
-        /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
+        /// - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported. 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -1245,7 +1245,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <param name="side">Query side. long or shot (optional)</param>
+        /// <param name="side">Direction filter: long or short. (optional)</param>
         /// <param name="pnl">Query profit or loss (optional)</param>
         /// <returns>List&lt;PositionClose&gt;</returns>
         List<PositionClose> ListPositionClose (string settle, string contract = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?), string side = default(string), string pnl = default(string));
@@ -1263,7 +1263,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <param name="side">Query side. long or shot (optional)</param>
+        /// <param name="side">Direction filter: long or short. (optional)</param>
         /// <param name="pnl">Query profit or loss (optional)</param>
         /// <returns>ApiResponse of List&lt;PositionClose&gt;</returns>
         ApiResponse<List<PositionClose>> ListPositionCloseWithHttpInfo (string settle, string contract = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?), string side = default(string), string pnl = default(string));
@@ -1566,8 +1566,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>TrailOrderListResponse</returns>
-        TrailOrderListResponse GetTrailOrders (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <returns>TrailOrderListResponseEnvelope</returns>
+        TrailOrderListResponseEnvelope GetTrailOrders (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
 
         /// <summary>
         /// Get trail order list
@@ -1589,8 +1589,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>ApiResponse of TrailOrderListResponse</returns>
-        ApiResponse<TrailOrderListResponse> GetTrailOrdersWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <returns>ApiResponse of TrailOrderListResponseEnvelope</returns>
+        ApiResponse<TrailOrderListResponseEnvelope> GetTrailOrdersWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
         /// <summary>
         /// Get trail order details
         /// </summary>
@@ -1741,7 +1741,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
-        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="sortBy">Sort field: 1 for creation time; 2 for finish time. 0 is not accepted.</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
         /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
@@ -1762,7 +1762,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
-        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="sortBy">Sort field: 1 for creation time; 2 for finish time. 0 is not accepted.</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
         /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
@@ -2875,7 +2875,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list
         /// </summary>
         /// <remarks>
-        /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
+        /// - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -2891,7 +2891,7 @@ namespace Io.Gate.GateApi.Api
         /// Query futures order list
         /// </summary>
         /// <remarks>
-        /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
+        /// - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -2906,7 +2906,7 @@ namespace Io.Gate.GateApi.Api
         /// Place futures order
         /// </summary>
         /// <remarks>
-        /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
+        /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In hedge mode:   - Reduce a position: with &#x60;reduce_only&#x3D;true&#x60;, a positive &#x60;size&#x60; reduces the short position and a negative &#x60;size&#x60; reduces the long position.   - Increase a position: with &#x60;reduce_only&#x3D;false&#x60;, a positive &#x60;size&#x60; increases the long position and a negative &#x60;size&#x60; increases the short position.   - Close a position: set &#x60;size&#x3D;0&#x60;, select the closing side with &#x60;auto_size&#x60;, and set &#x60;reduce_only&#x3D;true&#x60;.   - &#x60;reduce_only&#x60; ensures position reduction only and prevents increasing the position. - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -2919,7 +2919,7 @@ namespace Io.Gate.GateApi.Api
         /// Place futures order
         /// </summary>
         /// <remarks>
-        /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
+        /// - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In hedge mode:   - Reduce a position: with &#x60;reduce_only&#x3D;true&#x60;, a positive &#x60;size&#x60; reduces the short position and a negative &#x60;size&#x60; reduces the long position.   - Increase a position: with &#x60;reduce_only&#x3D;false&#x60;, a positive &#x60;size&#x60; increases the long position and a negative &#x60;size&#x60; increases the short position.   - Close a position: set &#x60;size&#x3D;0&#x60;, select the closing side with &#x60;auto_size&#x60;, and set &#x60;reduce_only&#x3D;true&#x60;.   - &#x60;reduce_only&#x60; ensures position reduction only and prevents increasing the position. - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -3020,7 +3020,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single order details
         /// </summary>
         /// <remarks>
-        /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
+        /// - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported. 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -3032,7 +3032,7 @@ namespace Io.Gate.GateApi.Api
         /// Query single order details
         /// </summary>
         /// <remarks>
-        /// - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
+        /// - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported. 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -3170,7 +3170,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <param name="side">Query side. long or shot (optional)</param>
+        /// <param name="side">Direction filter: long or short. (optional)</param>
         /// <param name="pnl">Query profit or loss (optional)</param>
         /// <returns>Task of List&lt;PositionClose&gt;</returns>
         Task<List<PositionClose>> ListPositionCloseAsync (string settle, string contract = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?), string side = default(string), string pnl = default(string));
@@ -3188,7 +3188,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <param name="side">Query side. long or shot (optional)</param>
+        /// <param name="side">Direction filter: long or short. (optional)</param>
         /// <param name="pnl">Query profit or loss (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;PositionClose&gt;)</returns>
         Task<ApiResponse<List<PositionClose>>> ListPositionCloseAsyncWithHttpInfo (string settle, string contract = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?), string side = default(string), string pnl = default(string));
@@ -3491,8 +3491,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>Task of TrailOrderListResponse</returns>
-        Task<TrailOrderListResponse> GetTrailOrdersAsync (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <returns>Task of TrailOrderListResponseEnvelope</returns>
+        Task<TrailOrderListResponseEnvelope> GetTrailOrdersAsync (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
 
         /// <summary>
         /// Get trail order list
@@ -3514,8 +3514,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>Task of ApiResponse (TrailOrderListResponse)</returns>
-        Task<ApiResponse<TrailOrderListResponse>> GetTrailOrdersAsyncWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
+        /// <returns>Task of ApiResponse (TrailOrderListResponseEnvelope)</returns>
+        Task<ApiResponse<TrailOrderListResponseEnvelope>> GetTrailOrdersAsyncWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?));
         /// <summary>
         /// Get trail order details
         /// </summary>
@@ -3666,7 +3666,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
-        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="sortBy">Sort field: 1 for creation time; 2 for finish time. 0 is not accepted.</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
         /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
@@ -3687,7 +3687,7 @@ namespace Io.Gate.GateApi.Api
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
-        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="sortBy">Sort field: 1 for creation time; 2 for finish time. 0 is not accepted.</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
         /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
@@ -9190,7 +9190,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query futures order list - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
+        /// Query futures order list - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -9207,7 +9207,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query futures order list - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
+        /// Query futures order list - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -9278,7 +9278,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query futures order list - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
+        /// Query futures order list - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -9296,7 +9296,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query futures order list - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
+        /// Query futures order list - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use &#x60;GET /futures/{settle}/orders_timerange&#x60;.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -9369,7 +9369,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
+        /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In hedge mode:   - Reduce a position: with &#x60;reduce_only&#x3D;true&#x60;, a positive &#x60;size&#x60; reduces the short position and a negative &#x60;size&#x60; reduces the long position.   - Increase a position: with &#x60;reduce_only&#x3D;false&#x60;, a positive &#x60;size&#x60; increases the long position and a negative &#x60;size&#x60; increases the short position.   - Close a position: set &#x60;size&#x3D;0&#x60;, select the closing side with &#x60;auto_size&#x60;, and set &#x60;reduce_only&#x3D;true&#x60;.   - &#x60;reduce_only&#x60; ensures position reduction only and prevents increasing the position. - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -9383,7 +9383,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
+        /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In hedge mode:   - Reduce a position: with &#x60;reduce_only&#x3D;true&#x60;, a positive &#x60;size&#x60; reduces the short position and a negative &#x60;size&#x60; reduces the long position.   - Increase a position: with &#x60;reduce_only&#x3D;false&#x60;, a positive &#x60;size&#x60; increases the long position and a negative &#x60;size&#x60; increases the short position.   - Close a position: set &#x60;size&#x3D;0&#x60;, select the closing side with &#x60;auto_size&#x60;, and set &#x60;reduce_only&#x3D;true&#x60;.   - &#x60;reduce_only&#x60; ensures position reduction only and prevents increasing the position. - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -9440,7 +9440,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
+        /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In hedge mode:   - Reduce a position: with &#x60;reduce_only&#x3D;true&#x60;, a positive &#x60;size&#x60; reduces the short position and a negative &#x60;size&#x60; reduces the long position.   - Increase a position: with &#x60;reduce_only&#x3D;false&#x60;, a positive &#x60;size&#x60; increases the long position and a negative &#x60;size&#x60; increases the short position.   - Close a position: set &#x60;size&#x3D;0&#x60;, select the closing side with &#x60;auto_size&#x60;, and set &#x60;reduce_only&#x3D;true&#x60;.   - &#x60;reduce_only&#x60; ensures position reduction only and prevents increasing the position. - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -9455,7 +9455,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In dual warehouse mode,   - Reduce position: reduce_only&#x3D;true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size&#x3D;0, set the direction of closing position according to auto_size, and set &#x60;reduce_only&#x60; to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
+        /// Place futures order - When placing an order, the number of contracts is specified &#x60;size&#x60;, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface &#x60;quanto_multiplier&#x60; - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting &#x60;reduce_only&#x60; to &#x60;true&#x60; can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set &#x60;size&#x60; to 0 and &#x60;close&#x60; to &#x60;true&#x60; - In hedge mode:   - Reduce a position: with &#x60;reduce_only&#x3D;true&#x60;, a positive &#x60;size&#x60; reduces the short position and a negative &#x60;size&#x60; reduces the long position.   - Increase a position: with &#x60;reduce_only&#x3D;false&#x60;, a positive &#x60;size&#x60; increases the long position and a negative &#x60;size&#x60; increases the short position.   - Close a position: set &#x60;size&#x3D;0&#x60;, select the closing side with &#x60;auto_size&#x60;, and set &#x60;reduce_only&#x3D;true&#x60;.   - &#x60;reduce_only&#x60; ensures position reduction only and prevents increasing the position. - Set &#x60;stp_act&#x60; to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter &#x60;stp_act&#x60;
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -10025,7 +10025,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query single order details - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
+        /// Query single order details - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported. 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -10038,7 +10038,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query single order details - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
+        /// Query single order details - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported. 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -10089,7 +10089,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query single order details - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
+        /// Query single order details - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported. 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -10103,7 +10103,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query single order details - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
+        /// Query single order details - Cancelled orders with no fills are no longer retrievable through this endpoint 10 minutes after cancellation. - Historical orders, by default, only data within the past 6 months is supported. 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
@@ -10845,7 +10845,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <param name="side">Query side. long or shot (optional)</param>
+        /// <param name="side">Direction filter: long or short. (optional)</param>
         /// <param name="pnl">Query profit or loss (optional)</param>
         /// <returns>List&lt;PositionClose&gt;</returns>
         public List<PositionClose> ListPositionClose (string settle, string contract = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?), string side = default(string), string pnl = default(string))
@@ -10864,7 +10864,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <param name="side">Query side. long or shot (optional)</param>
+        /// <param name="side">Direction filter: long or short. (optional)</param>
         /// <param name="pnl">Query profit or loss (optional)</param>
         /// <returns>ApiResponse of List&lt;PositionClose&gt;</returns>
         public ApiResponse<List<PositionClose>> ListPositionCloseWithHttpInfo (string settle, string contract = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?), string side = default(string), string pnl = default(string))
@@ -10944,7 +10944,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <param name="side">Query side. long or shot (optional)</param>
+        /// <param name="side">Direction filter: long or short. (optional)</param>
         /// <param name="pnl">Query profit or loss (optional)</param>
         /// <returns>Task of List&lt;PositionClose&gt;</returns>
         public async Task<List<PositionClose>> ListPositionCloseAsync (string settle, string contract = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?), string side = default(string), string pnl = default(string))
@@ -10964,7 +10964,7 @@ namespace Io.Gate.GateApi.Api
         /// <param name="offset">List offset, starting from 0 (optional, default to 0)</param>
         /// <param name="from">Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)</param>
         /// <param name="to">Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)</param>
-        /// <param name="side">Query side. long or shot (optional)</param>
+        /// <param name="side">Direction filter: long or short. (optional)</param>
         /// <param name="pnl">Query profit or loss (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;PositionClose&gt;)</returns>
         public async Task<ApiResponse<List<PositionClose>>> ListPositionCloseAsyncWithHttpInfo (string settle, string contract = default(string), int? limit = default(int?), int? offset = default(int?), long? from = default(long?), long? to = default(long?), string side = default(string), string pnl = default(string))
@@ -12654,10 +12654,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>TrailOrderListResponse</returns>
-        public TrailOrderListResponse GetTrailOrders (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        /// <returns>TrailOrderListResponseEnvelope</returns>
+        public TrailOrderListResponseEnvelope GetTrailOrders (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
         {
-             ApiResponse<TrailOrderListResponse> localVarResponse = GetTrailOrdersWithHttpInfo(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
+             ApiResponse<TrailOrderListResponseEnvelope> localVarResponse = GetTrailOrdersWithHttpInfo(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
              return localVarResponse.Data;
         }
 
@@ -12678,8 +12678,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>ApiResponse of TrailOrderListResponse</returns>
-        public ApiResponse<TrailOrderListResponse> GetTrailOrdersWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        /// <returns>ApiResponse of TrailOrderListResponseEnvelope</returns>
+        public ApiResponse<TrailOrderListResponseEnvelope> GetTrailOrdersWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12755,7 +12755,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<TrailOrderListResponse>("/futures/{settle}/autoorder/v1/trail/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrailOrderListResponseEnvelope>("/futures/{settle}/autoorder/v1/trail/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -12783,10 +12783,10 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>Task of TrailOrderListResponse</returns>
-        public async Task<TrailOrderListResponse> GetTrailOrdersAsync (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        /// <returns>Task of TrailOrderListResponseEnvelope</returns>
+        public async Task<TrailOrderListResponseEnvelope> GetTrailOrdersAsync (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
         {
-             Io.Gate.GateApi.Client.ApiResponse<TrailOrderListResponse> localVarResponse = await GetTrailOrdersAsyncWithHttpInfo(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
+             Io.Gate.GateApi.Client.ApiResponse<TrailOrderListResponseEnvelope> localVarResponse = await GetTrailOrdersAsyncWithHttpInfo(settle, contract, isFinished, startAt, endAt, pageNum, pageSize, sortBy, hideCancel, relatedPosition, sortByTrigger, reduceOnly, side);
              return localVarResponse.Data;
 
         }
@@ -12808,8 +12808,8 @@ namespace Io.Gate.GateApi.Api
         /// <param name="sortByTrigger">Sort by trigger price and activation price, easy to trigger or activate first, only for current orders associated with positions (optional, default to false)</param>
         /// <param name="reduceOnly">Whether reduce only, 1-yes, 2-no (optional)</param>
         /// <param name="side">Direction, 1-long position, 2-short position (optional)</param>
-        /// <returns>Task of ApiResponse (TrailOrderListResponse)</returns>
-        public async Task<ApiResponse<TrailOrderListResponse>> GetTrailOrdersAsyncWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
+        /// <returns>Task of ApiResponse (TrailOrderListResponseEnvelope)</returns>
+        public async Task<ApiResponse<TrailOrderListResponseEnvelope>> GetTrailOrdersAsyncWithHttpInfo (string settle, string contract = default(string), bool? isFinished = default(bool?), long? startAt = default(long?), long? endAt = default(long?), int? pageNum = default(int?), int? pageSize = default(int?), int? sortBy = default(int?), bool? hideCancel = default(bool?), int? relatedPosition = default(int?), bool? sortByTrigger = default(bool?), int? reduceOnly = default(int?), int? side = default(int?))
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12887,7 +12887,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TrailOrderListResponse>("/futures/{settle}/autoorder/v1/trail/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrailOrderListResponseEnvelope>("/futures/{settle}/autoorder/v1/trail/list", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -13705,7 +13705,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
-        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="sortBy">Sort field: 1 for creation time; 2 for finish time. 0 is not accepted.</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
         /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
@@ -13727,7 +13727,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
-        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="sortBy">Sort field: 1 for creation time; 2 for finish time. 0 is not accepted.</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
         /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
@@ -13819,7 +13819,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
-        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="sortBy">Sort field: 1 for creation time; 2 for finish time. 0 is not accepted.</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
         /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>
@@ -13842,7 +13842,7 @@ namespace Io.Gate.GateApi.Api
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
-        /// <param name="sortBy">Sort field: 1 ORDER_SORT_CREATED_AT, 2 ORDER_SORT_FINISHED_AT; cannot be 0</param>
+        /// <param name="sortBy">Sort field: 1 for creation time; 2 for finish time. 0 is not accepted.</param>
         /// <param name="contract">Optional. When non-empty, must be a valid contract (validated against the market cache for the path settle); server-side converted to uppercase (optional)</param>
         /// <param name="isFinished">true to query finished orders, false to query in-progress orders (optional)</param>
         /// <param name="startAt">Lower time bound for the history list, paired with end_at. Required when is_finished is true (optional)</param>

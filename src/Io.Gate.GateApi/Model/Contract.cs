@@ -128,11 +128,11 @@ namespace Io.Gate.GateApi.Model
         /// <param name="inDelisting">&#x60;in_delisting&#x3D;true&#x60; and position_size&gt;0 indicates the contract is in delisting transition period &#x60;in_delisting&#x3D;true&#x60; and position_size&#x3D;0 indicates the contract is delisted.</param>
         /// <param name="ordersLimit">Maximum number of pending orders.</param>
         /// <param name="enableBonus">Whether bonus is enabled.</param>
-        /// <param name="enableCredit">Whether portfolio margin account is enabled.</param>
+        /// <param name="enableCredit">Whether this contract supports unified accounts..</param>
         /// <param name="createTime">Created time of the contract.</param>
         /// <param name="fundingCapRatio">Deprecated.</param>
         /// <param name="status">Contract status types include: prelaunch (pre-launch), trading (active), delisting (delisting), delisted (delisted), circuit_breaker (circuit breaker).</param>
-        /// <param name="launchTime">Contract expiry timestamp.</param>
+        /// <param name="launchTime">Contract trading start time..</param>
         /// <param name="delistingTime">Timestamp when contract enters reduce-only state.</param>
         /// <param name="delistedTime">Contract delisting time.</param>
         /// <param name="marketOrderSlipRatio">The maximum slippage allowed for market orders, with the slippage rate calculated based on the latest market price.</param>
@@ -458,9 +458,9 @@ namespace Io.Gate.GateApi.Model
         public bool EnableBonus { get; set; }
 
         /// <summary>
-        /// Whether portfolio margin account is enabled
+        /// Whether this contract supports unified accounts.
         /// </summary>
-        /// <value>Whether portfolio margin account is enabled</value>
+        /// <value>Whether this contract supports unified accounts.</value>
         [DataMember(Name="enable_credit")]
         
         public bool EnableCredit { get; set; }
@@ -490,9 +490,9 @@ namespace Io.Gate.GateApi.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// Contract expiry timestamp
+        /// Contract trading start time.
         /// </summary>
-        /// <value>Contract expiry timestamp</value>
+        /// <value>Contract trading start time.</value>
         [DataMember(Name="launch_time")]
         
         public long LaunchTime { get; set; }

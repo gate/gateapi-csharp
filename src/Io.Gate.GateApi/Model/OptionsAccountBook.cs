@@ -36,7 +36,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="time">Change time.</param>
         /// <param name="change">Amount changed (USDT).</param>
         /// <param name="balance">Account total balance after change (USDT).</param>
-        /// <param name="type">Changing Type: - dnw: Deposit &amp; Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate.</param>
+        /// <param name="type">Changing Type: - dnw: Deposit &amp; Withdraw - prem: Trading premium - fee: Trading fee - set: settlement - refr: Referrer rebate - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate.</param>
         /// <param name="text">Remark.</param>
         public OptionsAccountBook(double time = default(double), string change = default(string), string balance = default(string), string type = default(string), string text = default(string))
         {
@@ -72,9 +72,9 @@ namespace Io.Gate.GateApi.Model
         public string Balance { get; set; }
 
         /// <summary>
-        /// Changing Type: - dnw: Deposit &amp; Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate
+        /// Changing Type: - dnw: Deposit &amp; Withdraw - prem: Trading premium - fee: Trading fee - set: settlement - refr: Referrer rebate - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate
         /// </summary>
-        /// <value>Changing Type: - dnw: Deposit &amp; Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate</value>
+        /// <value>Changing Type: - dnw: Deposit &amp; Withdraw - prem: Trading premium - fee: Trading fee - set: settlement - refr: Referrer rebate - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate</value>
         [DataMember(Name="type")]
         
         public string Type { get; set; }

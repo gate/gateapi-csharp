@@ -124,7 +124,7 @@ namespace Example
             config.BasePath = "https://api.gateio.ws/api/v4";
             var apiInstance = new StockApi(config);
             var symbols = "AAPL,TSLA";  // string | Symbol list, multiple separated by commas (optional) 
-            var exchange = "us";  // string | Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. (optional) 
+            var exchange = "us";  // string | Trading market code. - us: US stocks. - hk: Hong Kong stocks. - kr: South Korean stocks. - jp: Japanese stocks. (optional) 
             var withDescI18n = true;  // bool? | Whether to return multilingual symbol description (optional) 
             var page = 1;  // int? | Page number, defaults to 1 (optional) 
             var pageSize = 100;  // int? | Page size, defaults to 10, max 500; server caps at 500 (optional) 
@@ -152,7 +152,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbols** | **string**| Symbol list, multiple separated by commas | [optional] 
- **exchange** | **string**| Exchange. - us: US stocks. - hk: Hong Kong stocks. - kr: Korean stocks. - jp: Japanese stocks. | [optional] 
+ **exchange** | **string**| Trading market code. - us: US stocks. - hk: Hong Kong stocks. - kr: South Korean stocks. - jp: Japanese stocks. | [optional] 
  **withDescI18n** | **bool?**| Whether to return multilingual symbol description | [optional] 
  **page** | **int?**| Page number, defaults to 1 | [optional] 
  **pageSize** | **int?**| Page size, defaults to 10, max 500; server caps at 500 | [optional] 

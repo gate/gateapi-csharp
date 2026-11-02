@@ -706,7 +706,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of OptionsMMP</returns>
         ApiResponse<OptionsMMP> SetOptionsMMPWithHttpInfo (OptionsMMP optionsMMP);
         /// <summary>
-        /// MMP Reset
+        /// Reset MMP for the specified underlying.
         /// </summary>
         /// <remarks>
         /// 
@@ -717,7 +717,7 @@ namespace Io.Gate.GateApi.Api
         OptionsMMP ResetOptionsMMP (OptionsMMPReset optionsMMPReset);
 
         /// <summary>
-        /// MMP Reset
+        /// Reset MMP for the specified underlying.
         /// </summary>
         /// <remarks>
         /// 
@@ -1414,7 +1414,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (OptionsMMP)</returns>
         Task<ApiResponse<OptionsMMP>> SetOptionsMMPAsyncWithHttpInfo (OptionsMMP optionsMMP);
         /// <summary>
-        /// MMP Reset
+        /// Reset MMP for the specified underlying.
         /// </summary>
         /// <remarks>
         /// 
@@ -1425,7 +1425,7 @@ namespace Io.Gate.GateApi.Api
         Task<OptionsMMP> ResetOptionsMMPAsync (OptionsMMPReset optionsMMPReset);
 
         /// <summary>
-        /// MMP Reset
+        /// Reset MMP for the specified underlying.
         /// </summary>
         /// <remarks>
         /// 
@@ -5291,7 +5291,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// MMP Reset 
+        /// Reset MMP for the specified underlying. 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="optionsMMPReset"></param>
@@ -5303,7 +5303,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// MMP Reset 
+        /// Reset MMP for the specified underlying. 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="optionsMMPReset"></param>
@@ -5349,7 +5349,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// MMP Reset 
+        /// Reset MMP for the specified underlying. 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="optionsMMPReset"></param>
@@ -5362,7 +5362,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// MMP Reset 
+        /// Reset MMP for the specified underlying. 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="optionsMMPReset"></param>

@@ -34,8 +34,8 @@ namespace Io.Gate.GateApi.Model
         /// Initializes a new instance of the <see cref="P2pTransactionDetail" /> class.
         /// </summary>
         /// <param name="isSell">Whether the current user is the seller. &#x60;1&#x60;: yes; &#x60;0&#x60;: no..</param>
-        /// <param name="txid">Order ID.</param>
-        /// <param name="orderid">Order ID.</param>
+        /// <param name="txid">Order ID (txid)..</param>
+        /// <param name="orderid">ID of the posted order (orderid)..</param>
         /// <param name="timest">Order creation timestamp.</param>
         /// <param name="lastPayTime">Payment deadline.</param>
         /// <param name="remainPayTime">Seconds left to pay; &#x60;&lt;&#x3D; 0&#x60; means overdue..</param>
@@ -142,17 +142,17 @@ namespace Io.Gate.GateApi.Model
         public int IsSell { get; set; }
 
         /// <summary>
-        /// Order ID
+        /// Order ID (txid).
         /// </summary>
-        /// <value>Order ID</value>
+        /// <value>Order ID (txid).</value>
         [DataMember(Name="txid")]
         
         public int Txid { get; set; }
 
         /// <summary>
-        /// Order ID
+        /// ID of the posted order (orderid).
         /// </summary>
-        /// <value>Order ID</value>
+        /// <value>ID of the posted order (orderid).</value>
         [DataMember(Name="orderid")]
         
         public int Orderid { get; set; }

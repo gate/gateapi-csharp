@@ -33,7 +33,7 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SubAccountKey" /> class.
         /// </summary>
-        /// <param name="mode">Mode: 1 - classic 2 - portfolio account.</param>
+        /// <param name="mode">Account mode: 1 for a classic account; 2 for a unified account..</param>
         /// <param name="name">API Key Name.</param>
         /// <param name="perms">perms.</param>
         /// <param name="ipWhitelist">IP whitelist (list will be cleared if no value is passed).</param>
@@ -54,9 +54,9 @@ namespace Io.Gate.GateApi.Model
         public long UserId { get; private set; }
 
         /// <summary>
-        /// Mode: 1 - classic 2 - portfolio account
+        /// Account mode: 1 for a classic account; 2 for a unified account.
         /// </summary>
-        /// <value>Mode: 1 - classic 2 - portfolio account</value>
+        /// <value>Account mode: 1 for a classic account; 2 for a unified account.</value>
         [DataMember(Name="mode")]
         
         public int Mode { get; set; }

@@ -35,9 +35,9 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="chain">Name of the chain.</param>
         /// <param name="address">Deposit address.</param>
-        /// <param name="paymentId">Notes that some currencies required(e.g., Tag, Memo) when depositing.</param>
+        /// <param name="paymentId">A memo required when depositing certain currencies, such as a Tag or Memo..</param>
         /// <param name="paymentName">Note type, &#x60;Tag&#x60; or &#x60;Memo&#x60;.</param>
-        /// <param name="obtainFailed">The obtain failed status- 0: address successfully obtained- 1: failed to obtain address.</param>
+        /// <param name="obtainFailed">Whether address retrieval failed: 0 means success; 1 means failure and retrieval may need to be retried..</param>
         /// <param name="minConfirms">Minimum Confirmation Count.</param>
         public MultiChainAddressItem(string chain = default(string), string address = default(string), string paymentId = default(string), string paymentName = default(string), int obtainFailed = default(int), int minConfirms = default(int))
         {
@@ -66,9 +66,9 @@ namespace Io.Gate.GateApi.Model
         public string Address { get; set; }
 
         /// <summary>
-        /// Notes that some currencies required(e.g., Tag, Memo) when depositing
+        /// A memo required when depositing certain currencies, such as a Tag or Memo.
         /// </summary>
-        /// <value>Notes that some currencies required(e.g., Tag, Memo) when depositing</value>
+        /// <value>A memo required when depositing certain currencies, such as a Tag or Memo.</value>
         [DataMember(Name="payment_id")]
         
         public string PaymentId { get; set; }
@@ -82,9 +82,9 @@ namespace Io.Gate.GateApi.Model
         public string PaymentName { get; set; }
 
         /// <summary>
-        /// The obtain failed status- 0: address successfully obtained- 1: failed to obtain address
+        /// Whether address retrieval failed: 0 means success; 1 means failure and retrieval may need to be retried.
         /// </summary>
-        /// <value>The obtain failed status- 0: address successfully obtained- 1: failed to obtain address</value>
+        /// <value>Whether address retrieval failed: 0 means success; 1 means failure and retrieval may need to be retried.</value>
         [DataMember(Name="obtain_failed")]
         
         public int ObtainFailed { get; set; }

@@ -42,7 +42,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="tradeDisabled">Whether currency&#39;s trading is disabled.</param>
         /// <param name="fixedRate">Fixed fee rate. Only for fixed rate currencies, not valid for normal currencies.</param>
         /// <param name="chain">The main chain corresponding to the coin.</param>
-        /// <param name="chains">All links corresponding to coins.</param>
+        /// <param name="chains">All blockchains associated with this currency..</param>
         /// <param name="totalSupply">Total supply.</param>
         /// <param name="marketCap">Market cap.</param>
         /// <param name="category">Currency categories - stocks: Stocks - metals: Metals - indices: Indices - forex: Forex - commodities: Commodities.</param>
@@ -136,9 +136,9 @@ namespace Io.Gate.GateApi.Model
         public string Chain { get; set; }
 
         /// <summary>
-        /// All links corresponding to coins
+        /// All blockchains associated with this currency.
         /// </summary>
-        /// <value>All links corresponding to coins</value>
+        /// <value>All blockchains associated with this currency.</value>
         [DataMember(Name="chains")]
         
         public List<SpotCurrencyChain> Chains { get; set; }

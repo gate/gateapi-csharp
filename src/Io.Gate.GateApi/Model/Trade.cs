@@ -100,7 +100,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="side">Buy or sell order.</param>
         /// <param name="role">Trade role, not returned in public endpoints.</param>
         /// <param name="amount">Trade amount.</param>
-        /// <param name="price">Order price.</param>
+        /// <param name="price">Trade price..</param>
         /// <param name="orderId">Related order ID, not returned in public endpoints.</param>
         /// <param name="fee">Fee deducted, not returned in public endpoints.</param>
         /// <param name="feeCurrency">Fee currency unit, not returned in public endpoints.</param>
@@ -174,9 +174,9 @@ namespace Io.Gate.GateApi.Model
         public string Amount { get; set; }
 
         /// <summary>
-        /// Order price
+        /// Trade price.
         /// </summary>
-        /// <value>Order price</value>
+        /// <value>Trade price.</value>
         [DataMember(Name="price")]
         
         public string Price { get; set; }

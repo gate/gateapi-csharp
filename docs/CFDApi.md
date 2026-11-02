@@ -186,7 +186,7 @@ namespace Example
             config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
 
             var apiInstance = new CFDApi(config);
-            var symbols = "AUDUSD,XAUUSD";  // string | List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required (optional) 
+            var symbols = "AUDUSD,XAUUSD";  // string | Comma-separated instrument symbols. Provide at least one of symbols and category_code. (optional) 
             var categoryCode = "forex-外汇,metal-金属,index-指数,commodity-大宗商品,stock-股票";  // string | List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required (optional) 
 
             try
@@ -211,7 +211,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbols** | **string**| List of symbol codes (multiple codes separated by commas). At least one of symbol and category_code is required | [optional] 
+ **symbols** | **string**| Comma-separated instrument symbols. Provide at least one of symbols and category_code. | [optional] 
  **categoryCode** | **string**| List of category codes (multiple codes separated by commas). When provided together with symbols, filters symbols by category. At least one of symbol and category_code is required | [optional] 
 
 ### Return type
@@ -1490,7 +1490,7 @@ namespace Example
             var apiInstance = new CFDApi(config);
             var page = 1;  // long? | Page number; defaults to 1 if omitted. (optional) 
             var pageSize = 10;  // long? | Page size; defaults to 10 if omitted. Maximum 100. (optional) 
-            var beginTime = 56;  // long? | Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago (optional) 
+            var beginTime = 56;  // long? | Start time as a Unix timestamp in seconds. The earliest supported start time is one month ago. (optional) 
             var endTime = 56;  // long? | End time (timestamp in seconds) (optional) 
             var symbol = "symbol_example";  // string | Trading symbol (e.g., EURUSD) (optional) 
             var positionDir = "positionDir_example";  // string | Position direction (Long=long position, Short=short position) (optional) 
@@ -1519,7 +1519,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**| Page number; defaults to 1 if omitted. | [optional] 
  **pageSize** | **long?**| Page size; defaults to 10 if omitted. Maximum 100. | [optional] 
- **beginTime** | **long?**| Start Time (Unix Timestamp, seconds). The earliest queryable time is one month ago | [optional] 
+ **beginTime** | **long?**| Start time as a Unix timestamp in seconds. The earliest supported start time is one month ago. | [optional] 
  **endTime** | **long?**| End time (timestamp in seconds) | [optional] 
  **symbol** | **string**| Trading symbol (e.g., EURUSD) | [optional] 
  **positionDir** | **string**| Position direction (Long&#x3D;long position, Short&#x3D;short position) | [optional] 

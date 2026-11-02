@@ -77,7 +77,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="mmpEnabled">Whether to enable MMP.</param>
         /// <param name="liqTriggered">Whether the account is in a liquidation state.</param>
         /// <param name="marginMode">This field indicates the margin mode used by the unified account:  - 0: Classic Spot Margin Mode - 1: Cross-Currency Margin Mode - 2: Portfolio Margin Mode - 3: Single-Currency Margin Mode.</param>
-        /// <param name="unrealisedPnl">Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only..</param>
+        /// <param name="unrealisedPnl">Unrealized PnL, for reference only. Position unrealized PnL &#x3D; (mark price - average entry price) × position quantity. Position quantity is measured in currency units, negative for shorts and positive for longs..</param>
         /// <param name="initMargin">Initial position margin.</param>
         /// <param name="maintMargin">Position maintenance margin.</param>
         /// <param name="orderMargin">Order margin of unfinished orders.</param>
@@ -168,9 +168,9 @@ namespace Io.Gate.GateApi.Model
         public bool LiqTriggered { get; set; }
 
         /// <summary>
-        /// Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only.
+        /// Unrealized PnL, for reference only. Position unrealized PnL &#x3D; (mark price - average entry price) × position quantity. Position quantity is measured in currency units, negative for shorts and positive for longs.
         /// </summary>
-        /// <value>Unrealised PnL &#x3D; (mark price - entry price) * position size. For long postion, size is positive; for short positon, size is negative.This value is for reference only.</value>
+        /// <value>Unrealized PnL, for reference only. Position unrealized PnL &#x3D; (mark price - average entry price) × position quantity. Position quantity is measured in currency units, negative for shorts and positive for longs.</value>
         [DataMember(Name="unrealised_pnl")]
         
         public string UnrealisedPnl { get; set; }

@@ -49,7 +49,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of List&lt;CurrencyChain&gt;</returns>
         ApiResponse<List<CurrencyChain>> ListCurrencyChainsWithHttpInfo (string currency);
         /// <summary>
-        /// Generate currency deposit address
+        /// Get a currency deposit address
         /// </summary>
         /// <remarks>
         /// 
@@ -60,7 +60,7 @@ namespace Io.Gate.GateApi.Api
         DepositAddress GetDepositAddress (string currency);
 
         /// <summary>
-        /// Generate currency deposit address
+        /// Get a currency deposit address
         /// </summary>
         /// <remarks>
         /// 
@@ -270,7 +270,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of TransferOrderStatus</returns>
         ApiResponse<TransferOrderStatus> GetTransferOrderStatusWithHttpInfo (string clientOrderId = default(string), string txId = default(string));
         /// <summary>
-        /// Query withdrawal status
+        /// Get currency withdrawal fees and limits, optionally filtered by currency.
         /// </summary>
         /// <remarks>
         /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
@@ -281,7 +281,7 @@ namespace Io.Gate.GateApi.Api
         List<WithdrawStatus> ListWithdrawStatus (string currency = default(string));
 
         /// <summary>
-        /// Query withdrawal status
+        /// Get currency withdrawal fees and limits, optionally filtered by currency.
         /// </summary>
         /// <remarks>
         /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
@@ -494,26 +494,26 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ConvertSmallBalanceWithHttpInfo (ConvertSmallBalance convertSmallBalance);
         /// <summary>
-        /// Get convertible small balance currency history
+        /// Get small-balance conversion history
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency to convert (optional)</param>
+        /// <param name="currency">Filter by conversion currency. (optional)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional, default to 100)</param>
         /// <returns>List&lt;SmallBalanceHistory&gt;</returns>
         List<SmallBalanceHistory> ListSmallBalanceHistory (string currency = default(string), int? page = default(int?), int? limit = default(int?));
 
         /// <summary>
-        /// Get convertible small balance currency history
+        /// Get small-balance conversion history
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency to convert (optional)</param>
+        /// <param name="currency">Filter by conversion currency. (optional)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional, default to 100)</param>
         /// <returns>ApiResponse of List&lt;SmallBalanceHistory&gt;</returns>
@@ -599,7 +599,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (List&lt;CurrencyChain&gt;)</returns>
         Task<ApiResponse<List<CurrencyChain>>> ListCurrencyChainsAsyncWithHttpInfo (string currency);
         /// <summary>
-        /// Generate currency deposit address
+        /// Get a currency deposit address
         /// </summary>
         /// <remarks>
         /// 
@@ -610,7 +610,7 @@ namespace Io.Gate.GateApi.Api
         Task<DepositAddress> GetDepositAddressAsync (string currency);
 
         /// <summary>
-        /// Generate currency deposit address
+        /// Get a currency deposit address
         /// </summary>
         /// <remarks>
         /// 
@@ -820,7 +820,7 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (TransferOrderStatus)</returns>
         Task<ApiResponse<TransferOrderStatus>> GetTransferOrderStatusAsyncWithHttpInfo (string clientOrderId = default(string), string txId = default(string));
         /// <summary>
-        /// Query withdrawal status
+        /// Get currency withdrawal fees and limits, optionally filtered by currency.
         /// </summary>
         /// <remarks>
         /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
@@ -831,7 +831,7 @@ namespace Io.Gate.GateApi.Api
         Task<List<WithdrawStatus>> ListWithdrawStatusAsync (string currency = default(string));
 
         /// <summary>
-        /// Query withdrawal status
+        /// Get currency withdrawal fees and limits, optionally filtered by currency.
         /// </summary>
         /// <remarks>
         /// API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
@@ -1044,26 +1044,26 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse</returns>
         Task<ApiResponse<Object>> ConvertSmallBalanceAsyncWithHttpInfo (ConvertSmallBalance convertSmallBalance);
         /// <summary>
-        /// Get convertible small balance currency history
+        /// Get small-balance conversion history
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency to convert (optional)</param>
+        /// <param name="currency">Filter by conversion currency. (optional)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional, default to 100)</param>
         /// <returns>Task of List&lt;SmallBalanceHistory&gt;</returns>
         Task<List<SmallBalanceHistory>> ListSmallBalanceHistoryAsync (string currency = default(string), int? page = default(int?), int? limit = default(int?));
 
         /// <summary>
-        /// Get convertible small balance currency history
+        /// Get small-balance conversion history
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency to convert (optional)</param>
+        /// <param name="currency">Filter by conversion currency. (optional)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional, default to 100)</param>
         /// <returns>Task of ApiResponse (List&lt;SmallBalanceHistory&gt;)</returns>
@@ -1352,7 +1352,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Generate currency deposit address 
+        /// Get a currency deposit address 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -1364,7 +1364,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Generate currency deposit address 
+        /// Get a currency deposit address 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -1409,7 +1409,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Generate currency deposit address 
+        /// Get a currency deposit address 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -1422,7 +1422,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Generate currency deposit address 
+        /// Get a currency deposit address 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Currency name</param>
@@ -2595,7 +2595,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query withdrawal status API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
+        /// Get currency withdrawal fees and limits, optionally filtered by currency. API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -2607,7 +2607,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query withdrawal status API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
+        /// Get currency withdrawal fees and limits, optionally filtered by currency. API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -2651,7 +2651,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query withdrawal status API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
+        /// Get currency withdrawal fees and limits, optionally filtered by currency. API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -2664,7 +2664,7 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Query withdrawal status API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
+        /// Get currency withdrawal fees and limits, optionally filtered by currency. API operations are not supported for tokens with low liquidity or extremely low value. Please use the Web or App interface to query and process.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="currency">Query by specified currency name (optional)</param>
@@ -3829,10 +3829,10 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get convertible small balance currency history 
+        /// Get small-balance conversion history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency to convert (optional)</param>
+        /// <param name="currency">Filter by conversion currency. (optional)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional, default to 100)</param>
         /// <returns>List&lt;SmallBalanceHistory&gt;</returns>
@@ -3843,10 +3843,10 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get convertible small balance currency history 
+        /// Get small-balance conversion history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency to convert (optional)</param>
+        /// <param name="currency">Filter by conversion currency. (optional)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional, default to 100)</param>
         /// <returns>ApiResponse of List&lt;SmallBalanceHistory&gt;</returns>
@@ -3897,10 +3897,10 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get convertible small balance currency history 
+        /// Get small-balance conversion history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency to convert (optional)</param>
+        /// <param name="currency">Filter by conversion currency. (optional)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional, default to 100)</param>
         /// <returns>Task of List&lt;SmallBalanceHistory&gt;</returns>
@@ -3912,10 +3912,10 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
-        /// Get convertible small balance currency history 
+        /// Get small-balance conversion history 
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="currency">Currency to convert (optional)</param>
+        /// <param name="currency">Filter by conversion currency. (optional)</param>
         /// <param name="page">Page number (optional, default to 1)</param>
         /// <param name="limit">Maximum number of items returned. Default: 100, minimum: 1, maximum: 100 (optional, default to 100)</param>
         /// <returns>Task of ApiResponse (List&lt;SmallBalanceHistory&gt;)</returns>

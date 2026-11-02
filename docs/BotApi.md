@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**PostAIHubFuturesGridCreate**](BotApi.md#postaihubfuturesgridcreate) | **POST** /bot/futures-grid/create | Create a contract grid
 [**PostAIHubSpotMartingaleCreate**](BotApi.md#postaihubspotmartingalecreate) | **POST** /bot/spot-martingale/create | Create Spot Martin
 [**PostAIHubContractMartingaleCreate**](BotApi.md#postaihubcontractmartingalecreate) | **POST** /bot/contract-martingale/create | Create contract martin
-[**GetAIHubPortfolioRunning**](BotApi.md#getaihubportfoliorunning) | **GET** /bot/portfolio/running | Query the list of running policies
+[**GetAIHubPortfolioRunning**](BotApi.md#getaihubportfoliorunning) | **GET** /bot/portfolio/running | List running strategies.
 [**GetAIHubPortfolioDetail**](BotApi.md#getaihubportfoliodetail) | **GET** /bot/portfolio/detail | Query order policy details
 [**PostAIHubPortfolioStop**](BotApi.md#postaihubportfoliostop) | **POST** /bot/portfolio/stop | Terminate a single running policy
 [**PostAIHubSmartPositionCreate**](BotApi.md#postaihubsmartpositioncreate) | **POST** /bot/smart-position/create | Create rebalance bot
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 # **GetAIHubPortfolioRunning**
 > AIHubPortfolioRunningSuccessResponse GetAIHubPortfolioRunning (string strategyType = null, string market = null, int? page = null, int? pageSize = null, string xGateServiceId = null, string xGateAppLang = null, string xRequestId = null, string xTraceId = null)
 
-Query the list of running policies
+List running strategies.
 
 Query the list of AIHub strategies currently running by the user, and support filtering by strategy type, trading pair and paging conditions.
 
@@ -641,7 +641,7 @@ namespace Example
 
             try
             {
-                // Query the list of running policies
+                // List running strategies.
                 AIHubPortfolioRunningSuccessResponse result = apiInstance.GetAIHubPortfolioRunning(strategyType, market, page, pageSize, xGateServiceId, xGateAppLang, xRequestId, xTraceId);
                 Debug.WriteLine(result);
             }

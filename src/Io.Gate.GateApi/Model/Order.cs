@@ -31,9 +31,9 @@ namespace Io.Gate.GateApi.Model
     public partial class Order :  IEquatable<Order>, IValidatableObject
     {
         /// <summary>
-        /// Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: closed order - &#x60;cancelled&#x60;: cancelled
+        /// Order status:  - &#x60;open&#x60;: pending - &#x60;closed&#x60;: ended - &#x60;cancelled&#x60;: cancelled
         /// </summary>
-        /// <value>Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: closed order - &#x60;cancelled&#x60;: cancelled</value>
+        /// <value>Order status:  - &#x60;open&#x60;: pending - &#x60;closed&#x60;: ended - &#x60;cancelled&#x60;: cancelled</value>
         
         [JsonConverter(typeof(StringEnumConverter))]
         
@@ -60,9 +60,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: closed order - &#x60;cancelled&#x60;: cancelled
+        /// Order status:  - &#x60;open&#x60;: pending - &#x60;closed&#x60;: ended - &#x60;cancelled&#x60;: cancelled
         /// </summary>
-        /// <value>Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: closed order - &#x60;cancelled&#x60;: cancelled</value>
+        /// <value>Order status:  - &#x60;open&#x60;: pending - &#x60;closed&#x60;: ended - &#x60;cancelled&#x60;: cancelled</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         
         public StatusEnum? Status { get; set; }
@@ -127,9 +127,9 @@ namespace Io.Gate.GateApi.Model
         
         public SideEnum Side { get; set; }
         /// <summary>
-        /// Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none Only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported when &#x60;type&#x60;&#x3D;&#x60;market&#x60;
+        /// Time in force:  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, immediate execution or cancellation, taker-only - poc: PendingOrCancelled, post-only, maker-only - fok: FillOrKill, fill in full or cancel in full  For &#x60;type&#x3D;market&#x60;, only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported.
         /// </summary>
-        /// <value>Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none Only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported when &#x60;type&#x60;&#x3D;&#x60;market&#x60;</value>
+        /// <value>Time in force:  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, immediate execution or cancellation, taker-only - poc: PendingOrCancelled, post-only, maker-only - fok: FillOrKill, fill in full or cancel in full  For &#x60;type&#x3D;market&#x60;, only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported.</value>
         
         [JsonConverter(typeof(StringEnumConverter))]
         
@@ -162,9 +162,9 @@ namespace Io.Gate.GateApi.Model
         }
 
         /// <summary>
-        /// Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none Only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported when &#x60;type&#x60;&#x3D;&#x60;market&#x60;
+        /// Time in force:  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, immediate execution or cancellation, taker-only - poc: PendingOrCancelled, post-only, maker-only - fok: FillOrKill, fill in full or cancel in full  For &#x60;type&#x3D;market&#x60;, only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported.
         /// </summary>
-        /// <value>Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none Only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported when &#x60;type&#x60;&#x3D;&#x60;market&#x60;</value>
+        /// <value>Time in force:  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, immediate execution or cancellation, taker-only - poc: PendingOrCancelled, post-only, maker-only - fok: FillOrKill, fill in full or cancel in full  For &#x60;type&#x3D;market&#x60;, only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported.</value>
         [DataMember(Name="time_in_force")]
         
         public TimeInForceEnum? TimeInForce { get; set; }
@@ -320,10 +320,10 @@ namespace Io.Gate.GateApi.Model
         /// <param name="type">Order Type   - limit : Limit Order - market : Market Order (default to TypeEnum.Limit).</param>
         /// <param name="account">Account type, spot - spot account, margin - leveraged account, unified - unified account (default to &quot;spot&quot;).</param>
         /// <param name="side">Buy or sell order (required).</param>
-        /// <param name="amount">Trade amount When &#x60;type&#x60; is &#x60;limit&#x60;, this is the base currency to trade (the currency being bought or sold), e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60;. When &#x60;type&#x60; is &#x60;market&#x60;, the meaning depends on the side: - &#x60;side&#x60;: &#x60;buy&#x60; refers to the quote currency, e.g. &#x60;USDT&#x60; in &#x60;BTC_USDT&#x60; - &#x60;side&#x60;: &#x60;sell&#x60; refers to the base currency, e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60; (required).</param>
+        /// <param name="amount">Order amount.  - &#x60;type&#x3D;limit&#x60;: measured in the base currency. - &#x60;type&#x3D;market&#x60;: &#x60;side&#x3D;buy&#x60; uses the quote currency; &#x60;side&#x3D;sell&#x60; uses the base currency.  For &#x60;BTC_USDT&#x60;, the base currency is &#x60;BTC&#x60; and the quote currency is &#x60;USDT&#x60;. (required).</param>
         /// <param name="price">Trading price, required when &#x60;type&#x60;&#x3D;&#x60;limit&#x60;.</param>
-        /// <param name="timeInForce">Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none Only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported when &#x60;type&#x60;&#x3D;&#x60;market&#x60; (default to TimeInForceEnum.Gtc).</param>
-        /// <param name="iceberg">Amount to display for the iceberg order. Null or 0 for normal orders. Hiding all amount is not supported.</param>
+        /// <param name="timeInForce">Time in force:  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, immediate execution or cancellation, taker-only - poc: PendingOrCancelled, post-only, maker-only - fok: FillOrKill, fill in full or cancel in full  For &#x60;type&#x3D;market&#x60;, only &#x60;ioc&#x60; and &#x60;fok&#x60; are supported. (default to TimeInForceEnum.Gtc).</param>
+        /// <param name="iceberg">Displayed amount of an iceberg order. Omit this field or pass \&quot;0\&quot; for a regular order. Fully hidden orders are not supported..</param>
         /// <param name="autoBorrow">Used in margin or cross margin trading to allow automatic loan of insufficient amount if balance is not enough.</param>
         /// <param name="autoRepay">Enable or disable automatic repayment for automatic borrow loan generated by cross margin order. Default is disabled. Note that:  1. This field is only effective for cross margin orders. Margin account does not support setting auto repayment for orders. 2. &#x60;auto_borrow&#x60; and &#x60;auto_repay&#x60; can be both set to true in one order.</param>
         /// <param name="stpAct">Self-Trading Prevention Action. Users can use this field to set self-trade prevention strategies  1. After users join the &#x60;STP Group&#x60;, they can pass &#x60;stp_act&#x60; to limit the user&#39;s self-trade prevention strategy. If &#x60;stp_act&#x60; is not passed, the default is &#x60;cn&#x60; strategy. 2. When the user does not join the &#x60;STP group&#x60;, an error will be returned when passing the &#x60;stp_act&#x60; parameter. 3. If the user did not use &#x60;stp_act&#x60; when placing the order, &#x60;stp_act&#x60; will return &#39;-&#39;  - cn: Cancel newest, cancel new orders and keep old ones - co: Cancel oldest, cancel old orders and keep new ones - cb: Cancel both, both old and new orders will be cancelled.</param>
@@ -438,9 +438,9 @@ namespace Io.Gate.GateApi.Model
         public string Account { get; set; }
 
         /// <summary>
-        /// Trade amount When &#x60;type&#x60; is &#x60;limit&#x60;, this is the base currency to trade (the currency being bought or sold), e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60;. When &#x60;type&#x60; is &#x60;market&#x60;, the meaning depends on the side: - &#x60;side&#x60;: &#x60;buy&#x60; refers to the quote currency, e.g. &#x60;USDT&#x60; in &#x60;BTC_USDT&#x60; - &#x60;side&#x60;: &#x60;sell&#x60; refers to the base currency, e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60;
+        /// Order amount.  - &#x60;type&#x3D;limit&#x60;: measured in the base currency. - &#x60;type&#x3D;market&#x60;: &#x60;side&#x3D;buy&#x60; uses the quote currency; &#x60;side&#x3D;sell&#x60; uses the base currency.  For &#x60;BTC_USDT&#x60;, the base currency is &#x60;BTC&#x60; and the quote currency is &#x60;USDT&#x60;.
         /// </summary>
-        /// <value>Trade amount When &#x60;type&#x60; is &#x60;limit&#x60;, this is the base currency to trade (the currency being bought or sold), e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60;. When &#x60;type&#x60; is &#x60;market&#x60;, the meaning depends on the side: - &#x60;side&#x60;: &#x60;buy&#x60; refers to the quote currency, e.g. &#x60;USDT&#x60; in &#x60;BTC_USDT&#x60; - &#x60;side&#x60;: &#x60;sell&#x60; refers to the base currency, e.g. &#x60;BTC&#x60; in &#x60;BTC_USDT&#x60;</value>
+        /// <value>Order amount.  - &#x60;type&#x3D;limit&#x60;: measured in the base currency. - &#x60;type&#x3D;market&#x60;: &#x60;side&#x3D;buy&#x60; uses the quote currency; &#x60;side&#x3D;sell&#x60; uses the base currency.  For &#x60;BTC_USDT&#x60;, the base currency is &#x60;BTC&#x60; and the quote currency is &#x60;USDT&#x60;.</value>
         [DataMember(Name="amount")]
         
         public string Amount { get; set; }
@@ -454,9 +454,9 @@ namespace Io.Gate.GateApi.Model
         public string Price { get; set; }
 
         /// <summary>
-        /// Amount to display for the iceberg order. Null or 0 for normal orders. Hiding all amount is not supported
+        /// Displayed amount of an iceberg order. Omit this field or pass \&quot;0\&quot; for a regular order. Fully hidden orders are not supported.
         /// </summary>
-        /// <value>Amount to display for the iceberg order. Null or 0 for normal orders. Hiding all amount is not supported</value>
+        /// <value>Displayed amount of an iceberg order. Omit this field or pass \&quot;0\&quot; for a regular order. Fully hidden orders are not supported.</value>
         [DataMember(Name="iceberg")]
         
         public string Iceberg { get; set; }
