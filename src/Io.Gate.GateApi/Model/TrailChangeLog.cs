@@ -80,7 +80,7 @@ namespace Io.Gate.GateApi.Model
         /// <value>Update time</value>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         
-        public long UpdatedAt { get; private set; }
+        public string UpdatedAt { get; private set; }
 
         /// <summary>
         /// Trading quantity in contracts, positive for buy, negative for sell
@@ -173,7 +173,8 @@ namespace Io.Gate.GateApi.Model
             return 
                 (
                     this.UpdatedAt == input.UpdatedAt ||
-                    this.UpdatedAt.Equals(input.UpdatedAt)
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
                     this.Amount == input.Amount ||
@@ -213,7 +214,8 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.UpdatedAt != null)
+                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.Amount != null)
                     hashCode = hashCode * 59 + this.Amount.GetHashCode();
                 hashCode = hashCode * 59 + this.IsGte.GetHashCode();

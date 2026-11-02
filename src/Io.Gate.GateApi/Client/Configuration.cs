@@ -32,7 +32,7 @@ namespace Io.Gate.GateApi.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "7.106.177";
+        public const string Version = "7.106.178";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -109,7 +109,7 @@ namespace Io.Gate.GateApi.Client
         [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
-            UserAgent = "OpenAPI-Generator/7.106.177/csharp";
+            UserAgent = "OpenAPI-Generator/7.106.178/csharp";
             BasePath = "https://api.gateio.ws/api/v4";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             // Set default X-Gate-Size-Decimal header for futures API
@@ -297,8 +297,8 @@ namespace Io.Gate.GateApi.Client
         {
             string report = "C# SDK (Io.Gate.GateApi) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
-            report += "    Version of the API: v4.106.177\n";
-            report += "    SDK Package Version: 7.106.177\n";
+            report += "    Version of the API: v4.106.178\n";
+            report += "    SDK Package Version: 7.106.178\n";
 
             return report;
         }

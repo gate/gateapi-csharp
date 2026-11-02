@@ -33,18 +33,48 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TrailOrderChangeLogResponse" /> class.
         /// </summary>
-        /// <param name="changeLog">changeLog.</param>
-        public TrailOrderChangeLogResponse(List<TrailChangeLog> changeLog = default(List<TrailChangeLog>))
+        /// <param name="code">Status code, 0 means success.</param>
+        /// <param name="message">Response message.</param>
+        /// <param name="data">data.</param>
+        /// <param name="timestamp">Response timestamp (milliseconds).</param>
+        public TrailOrderChangeLogResponse(int code = default(int), string message = default(string), TrailOrderChangeLogData data = default(TrailOrderChangeLogData), long timestamp = default(long))
         {
-            this.ChangeLog = changeLog;
+            this.Code = code;
+            this.Message = message;
+            this.Data = data;
+            this.Timestamp = timestamp;
         }
 
         /// <summary>
-        /// Gets or Sets ChangeLog
+        /// Status code, 0 means success
         /// </summary>
-        [DataMember(Name="change_log")]
+        /// <value>Status code, 0 means success</value>
+        [DataMember(Name="code")]
         
-        public List<TrailChangeLog> ChangeLog { get; set; }
+        public int Code { get; set; }
+
+        /// <summary>
+        /// Response message
+        /// </summary>
+        /// <value>Response message</value>
+        [DataMember(Name="message")]
+        
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Data
+        /// </summary>
+        [DataMember(Name="data")]
+        
+        public TrailOrderChangeLogData Data { get; set; }
+
+        /// <summary>
+        /// Response timestamp (milliseconds)
+        /// </summary>
+        /// <value>Response timestamp (milliseconds)</value>
+        [DataMember(Name="timestamp")]
+        
+        public long Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +84,10 @@ namespace Io.Gate.GateApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class TrailOrderChangeLogResponse {\n");
-            sb.Append("  ChangeLog: ").Append(ChangeLog).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,10 +123,22 @@ namespace Io.Gate.GateApi.Model
 
             return 
                 (
-                    this.ChangeLog == input.ChangeLog ||
-                    this.ChangeLog != null &&
-                    input.ChangeLog != null &&
-                    this.ChangeLog.SequenceEqual(input.ChangeLog)
+                    this.Code == input.Code ||
+                    this.Code.Equals(input.Code)
+                ) && 
+                (
+                    this.Message == input.Message ||
+                    (this.Message != null &&
+                    this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Timestamp == input.Timestamp ||
+                    this.Timestamp.Equals(input.Timestamp)
                 );
         }
 
@@ -106,8 +151,12 @@ namespace Io.Gate.GateApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ChangeLog != null)
-                    hashCode = hashCode * 59 + this.ChangeLog.GetHashCode();
+                hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Message != null)
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }

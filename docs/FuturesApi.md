@@ -4325,7 +4325,7 @@ Name | Type | Description  | Notes
 
 <a name="stoptrailorder"></a>
 # **StopTrailOrder**
-> TrailOrderResponse StopTrailOrder (string settle, StopTrailOrder stopTrailOrder)
+> TrailOrderDetailResponse StopTrailOrder (string settle, StopTrailOrder stopTrailOrder)
 
 Terminate trail order
 
@@ -4354,7 +4354,7 @@ namespace Example
             try
             {
                 // Terminate trail order
-                TrailOrderResponse result = apiInstance.StopTrailOrder(settle, stopTrailOrder);
+                TrailOrderDetailResponse result = apiInstance.StopTrailOrder(settle, stopTrailOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4378,7 +4378,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TrailOrderResponse**](TrailOrderResponse.md)
+[**TrailOrderDetailResponse**](TrailOrderDetailResponse.md)
 
 ### Authorization
 
@@ -4639,7 +4639,7 @@ Name | Type | Description  | Notes
 
 <a name="updatetrailorder"></a>
 # **UpdateTrailOrder**
-> TrailOrderResponse UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder)
+> TrailOrderDetailResponse UpdateTrailOrder (string settle, UpdateTrailOrder updateTrailOrder)
 
 Update trail order
 
@@ -4668,7 +4668,7 @@ namespace Example
             try
             {
                 // Update trail order
-                TrailOrderResponse result = apiInstance.UpdateTrailOrder(settle, updateTrailOrder);
+                TrailOrderDetailResponse result = apiInstance.UpdateTrailOrder(settle, updateTrailOrder);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4692,7 +4692,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TrailOrderResponse**](TrailOrderResponse.md)
+[**TrailOrderDetailResponse**](TrailOrderDetailResponse.md)
 
 ### Authorization
 
