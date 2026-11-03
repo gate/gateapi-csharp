@@ -4398,7 +4398,7 @@ Name | Type | Description  | Notes
 
 <a name="stopalltrailorders"></a>
 # **StopAllTrailOrders**
-> TrailOrderListResponse StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
+> TrailOrderListResponseEnvelope StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
 
 Batch terminate trail orders
 
@@ -4427,7 +4427,7 @@ namespace Example
             try
             {
                 // Batch terminate trail orders
-                TrailOrderListResponse result = apiInstance.StopAllTrailOrders(settle, stopAllTrailOrders);
+                TrailOrderListResponseEnvelope result = apiInstance.StopAllTrailOrders(settle, stopAllTrailOrders);
                 Debug.WriteLine(result);
             }
             catch (GateApiException e)
@@ -4451,7 +4451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TrailOrderListResponse**](TrailOrderListResponse.md)
+[**TrailOrderListResponseEnvelope**](TrailOrderListResponseEnvelope.md)
 
 ### Authorization
 

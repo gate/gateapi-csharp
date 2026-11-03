@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Code** | **int** | Status code, 0 means success | [optional] 
 **Message** | **string** | Response message | [optional] 
 **Data** | [**TrailOrderListResponse**](TrailOrderListResponse.md) |  | [optional] 
-**Timestamp** | **long** | Response timestamp in microseconds. | [optional] 
+**Timestamp** | **long** | Response timestamp (milliseconds) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

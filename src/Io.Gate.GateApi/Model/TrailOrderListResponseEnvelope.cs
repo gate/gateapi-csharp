@@ -36,7 +36,7 @@ namespace Io.Gate.GateApi.Model
         /// <param name="code">Status code, 0 means success.</param>
         /// <param name="message">Response message.</param>
         /// <param name="data">data.</param>
-        /// <param name="timestamp">Response timestamp in microseconds..</param>
+        /// <param name="timestamp">Response timestamp (milliseconds).</param>
         public TrailOrderListResponseEnvelope(int code = default(int), string message = default(string), TrailOrderListResponse data = default(TrailOrderListResponse), long timestamp = default(long))
         {
             this.Code = code;
@@ -69,9 +69,9 @@ namespace Io.Gate.GateApi.Model
         public TrailOrderListResponse Data { get; set; }
 
         /// <summary>
-        /// Response timestamp in microseconds.
+        /// Response timestamp (milliseconds)
         /// </summary>
-        /// <value>Response timestamp in microseconds.</value>
+        /// <value>Response timestamp (milliseconds)</value>
         [DataMember(Name="timestamp")]
         
         public long Timestamp { get; set; }

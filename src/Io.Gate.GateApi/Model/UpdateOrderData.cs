@@ -33,22 +33,33 @@ namespace Io.Gate.GateApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateOrderData" /> class.
         /// </summary>
-        /// <param name="orderId">Order ID.</param>
-        /// <param name="symbol">Currency pair.</param>
-        /// <param name="state">Order status code.</param>
-        /// <param name="volume">Order quantity.</param>
-        /// <param name="price">Current price.</param>
-        /// <param name="priceTp">Current take profit price.</param>
-        /// <param name="priceSl">Current stop loss price.</param>
+        [JsonConstructorAttribute]
+        protected UpdateOrderData() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateOrderData" /> class.
+        /// </summary>
+        /// <param name="orderId">Order ID (required).</param>
+        /// <param name="symbol">Currency pair (required).</param>
+        /// <param name="state">Order status code (required).</param>
+        /// <param name="volume">Order quantity (required).</param>
+        /// <param name="price">Current price (required).</param>
+        /// <param name="priceTp">Current take profit price (required).</param>
+        /// <param name="priceSl">Current stop loss price (required).</param>
         public UpdateOrderData(long orderId = default(long), string symbol = default(string), string state = default(string), string volume = default(string), string price = default(string), string priceTp = default(string), string priceSl = default(string))
         {
             this.OrderId = orderId;
-            this.Symbol = symbol;
-            this.State = state;
-            this.Volume = volume;
-            this.Price = price;
-            this.PriceTp = priceTp;
-            this.PriceSl = priceSl;
+            // to ensure "symbol" is required (not null)
+            this.Symbol = symbol ?? throw new ArgumentNullException("symbol", "symbol is a required property for UpdateOrderData and cannot be null");
+            // to ensure "state" is required (not null)
+            this.State = state ?? throw new ArgumentNullException("state", "state is a required property for UpdateOrderData and cannot be null");
+            // to ensure "volume" is required (not null)
+            this.Volume = volume ?? throw new ArgumentNullException("volume", "volume is a required property for UpdateOrderData and cannot be null");
+            // to ensure "price" is required (not null)
+            this.Price = price ?? throw new ArgumentNullException("price", "price is a required property for UpdateOrderData and cannot be null");
+            // to ensure "priceTp" is required (not null)
+            this.PriceTp = priceTp ?? throw new ArgumentNullException("priceTp", "priceTp is a required property for UpdateOrderData and cannot be null");
+            // to ensure "priceSl" is required (not null)
+            this.PriceSl = priceSl ?? throw new ArgumentNullException("priceSl", "priceSl is a required property for UpdateOrderData and cannot be null");
         }
 
         /// <summary>

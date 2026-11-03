@@ -1532,8 +1532,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>TrailOrderListResponse</returns>
-        TrailOrderListResponse StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders);
+        /// <returns>TrailOrderListResponseEnvelope</returns>
+        TrailOrderListResponseEnvelope StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders);
 
         /// <summary>
         /// Batch terminate trail orders
@@ -1544,8 +1544,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>ApiResponse of TrailOrderListResponse</returns>
-        ApiResponse<TrailOrderListResponse> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
+        /// <returns>ApiResponse of TrailOrderListResponseEnvelope</returns>
+        ApiResponse<TrailOrderListResponseEnvelope> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
         /// <summary>
         /// Get trail order list
         /// </summary>
@@ -3457,8 +3457,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>Task of TrailOrderListResponse</returns>
-        Task<TrailOrderListResponse> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders);
+        /// <returns>Task of TrailOrderListResponseEnvelope</returns>
+        Task<TrailOrderListResponseEnvelope> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders);
 
         /// <summary>
         /// Batch terminate trail orders
@@ -3469,8 +3469,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>Task of ApiResponse (TrailOrderListResponse)</returns>
-        Task<ApiResponse<TrailOrderListResponse>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
+        /// <returns>Task of ApiResponse (TrailOrderListResponseEnvelope)</returns>
+        Task<ApiResponse<TrailOrderListResponseEnvelope>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders);
         /// <summary>
         /// Get trail order list
         /// </summary>
@@ -12510,10 +12510,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>TrailOrderListResponse</returns>
-        public TrailOrderListResponse StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
+        /// <returns>TrailOrderListResponseEnvelope</returns>
+        public TrailOrderListResponseEnvelope StopAllTrailOrders (string settle, StopAllTrailOrders stopAllTrailOrders)
         {
-             ApiResponse<TrailOrderListResponse> localVarResponse = StopAllTrailOrdersWithHttpInfo(settle, stopAllTrailOrders);
+             ApiResponse<TrailOrderListResponseEnvelope> localVarResponse = StopAllTrailOrdersWithHttpInfo(settle, stopAllTrailOrders);
              return localVarResponse.Data;
         }
 
@@ -12523,8 +12523,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>ApiResponse of TrailOrderListResponse</returns>
-        public ApiResponse<TrailOrderListResponse> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
+        /// <returns>ApiResponse of TrailOrderListResponseEnvelope</returns>
+        public ApiResponse<TrailOrderListResponseEnvelope> StopAllTrailOrdersWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12558,7 +12558,7 @@ namespace Io.Gate.GateApi.Api
             localVarRequestOptions.RequireApiV4Auth = true;
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TrailOrderListResponse>("/futures/{settle}/autoorder/v1/trail/stop_all", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TrailOrderListResponseEnvelope>("/futures/{settle}/autoorder/v1/trail/stop_all", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -12575,10 +12575,10 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>Task of TrailOrderListResponse</returns>
-        public async Task<TrailOrderListResponse> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders)
+        /// <returns>Task of TrailOrderListResponseEnvelope</returns>
+        public async Task<TrailOrderListResponseEnvelope> StopAllTrailOrdersAsync (string settle, StopAllTrailOrders stopAllTrailOrders)
         {
-             Io.Gate.GateApi.Client.ApiResponse<TrailOrderListResponse> localVarResponse = await StopAllTrailOrdersAsyncWithHttpInfo(settle, stopAllTrailOrders);
+             Io.Gate.GateApi.Client.ApiResponse<TrailOrderListResponseEnvelope> localVarResponse = await StopAllTrailOrdersAsyncWithHttpInfo(settle, stopAllTrailOrders);
              return localVarResponse.Data;
 
         }
@@ -12589,8 +12589,8 @@ namespace Io.Gate.GateApi.Api
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="settle">Perpetual futures settlement currency</param>
         /// <param name="stopAllTrailOrders"></param>
-        /// <returns>Task of ApiResponse (TrailOrderListResponse)</returns>
-        public async Task<ApiResponse<TrailOrderListResponse>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
+        /// <returns>Task of ApiResponse (TrailOrderListResponseEnvelope)</returns>
+        public async Task<ApiResponse<TrailOrderListResponseEnvelope>> StopAllTrailOrdersAsyncWithHttpInfo (string settle, StopAllTrailOrders stopAllTrailOrders)
         {
             // verify the required parameter 'settle' is set
             if (settle == null)
@@ -12626,7 +12626,7 @@ namespace Io.Gate.GateApi.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TrailOrderListResponse>("/futures/{settle}/autoorder/v1/trail/stop_all", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TrailOrderListResponseEnvelope>("/futures/{settle}/autoorder/v1/trail/stop_all", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
