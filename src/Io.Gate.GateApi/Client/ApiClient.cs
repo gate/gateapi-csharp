@@ -139,7 +139,7 @@ namespace Io.Gate.GateApi.Client
             // at this point, it must be a model (json)
             try
             {
-                return JsonConvert.DeserializeObject(response.Content, type, _serializerSettings);
+                return ExactJsonNumbers.Deserialize(response.Content, type, _serializerSettings);
             }
             catch (Exception e)
             {

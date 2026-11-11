@@ -147,6 +147,31 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of FlashSwapOrderPreview</returns>
         ApiResponse<FlashSwapOrderPreview> PreviewFlashSwapOrderWithHttpInfo (FlashSwapPreviewRequest flashSwapPreviewRequest);
         /// <summary>
+        /// List Flash Swap currency pairs
+        /// </summary>
+        /// <remarks>
+        /// List available Flash Swap currency pairs and buy/sell amount limits for the specified currency and trading side
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetName">Currency name</param>
+        /// <param name="side">Trading side - &#x60;1&#x60;: Sell - &#x60;2&#x60;: Buy</param>
+        /// <param name="xGateRegion">User region (optional)</param>
+        /// <returns>FlashSwapV1CurrencyPairListResp</returns>
+        FlashSwapV1CurrencyPairListResp ListFlashSwapCurrencyPairV1 (string assetName, int side, string xGateRegion = default(string));
+
+        /// <summary>
+        /// List Flash Swap currency pairs
+        /// </summary>
+        /// <remarks>
+        /// List available Flash Swap currency pairs and buy/sell amount limits for the specified currency and trading side
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetName">Currency name</param>
+        /// <param name="side">Trading side - &#x60;1&#x60;: Sell - &#x60;2&#x60;: Buy</param>
+        /// <param name="xGateRegion">User region (optional)</param>
+        /// <returns>ApiResponse of FlashSwapV1CurrencyPairListResp</returns>
+        ApiResponse<FlashSwapV1CurrencyPairListResp> ListFlashSwapCurrencyPairV1WithHttpInfo (string assetName, int side, string xGateRegion = default(string));
+        /// <summary>
         /// Flash Swap - Multi-currency exchange - Place order (many-to-one)
         /// </summary>
         /// <remarks>
@@ -406,6 +431,31 @@ namespace Io.Gate.GateApi.Api
         /// <param name="flashSwapPreviewRequest"></param>
         /// <returns>Task of ApiResponse (FlashSwapOrderPreview)</returns>
         Task<ApiResponse<FlashSwapOrderPreview>> PreviewFlashSwapOrderAsyncWithHttpInfo (FlashSwapPreviewRequest flashSwapPreviewRequest);
+        /// <summary>
+        /// List Flash Swap currency pairs
+        /// </summary>
+        /// <remarks>
+        /// List available Flash Swap currency pairs and buy/sell amount limits for the specified currency and trading side
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetName">Currency name</param>
+        /// <param name="side">Trading side - &#x60;1&#x60;: Sell - &#x60;2&#x60;: Buy</param>
+        /// <param name="xGateRegion">User region (optional)</param>
+        /// <returns>Task of FlashSwapV1CurrencyPairListResp</returns>
+        Task<FlashSwapV1CurrencyPairListResp> ListFlashSwapCurrencyPairV1Async (string assetName, int side, string xGateRegion = default(string));
+
+        /// <summary>
+        /// List Flash Swap currency pairs
+        /// </summary>
+        /// <remarks>
+        /// List available Flash Swap currency pairs and buy/sell amount limits for the specified currency and trading side
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetName">Currency name</param>
+        /// <param name="side">Trading side - &#x60;1&#x60;: Sell - &#x60;2&#x60;: Buy</param>
+        /// <param name="xGateRegion">User region (optional)</param>
+        /// <returns>Task of ApiResponse (FlashSwapV1CurrencyPairListResp)</returns>
+        Task<ApiResponse<FlashSwapV1CurrencyPairListResp>> ListFlashSwapCurrencyPairV1AsyncWithHttpInfo (string assetName, int side, string xGateRegion = default(string));
         /// <summary>
         /// Flash Swap - Multi-currency exchange - Place order (many-to-one)
         /// </summary>
@@ -1309,6 +1359,141 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PreviewFlashSwapOrder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Flash Swap currency pairs List available Flash Swap currency pairs and buy/sell amount limits for the specified currency and trading side
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetName">Currency name</param>
+        /// <param name="side">Trading side - &#x60;1&#x60;: Sell - &#x60;2&#x60;: Buy</param>
+        /// <param name="xGateRegion">User region (optional)</param>
+        /// <returns>FlashSwapV1CurrencyPairListResp</returns>
+        public FlashSwapV1CurrencyPairListResp ListFlashSwapCurrencyPairV1 (string assetName, int side, string xGateRegion = default(string))
+        {
+             ApiResponse<FlashSwapV1CurrencyPairListResp> localVarResponse = ListFlashSwapCurrencyPairV1WithHttpInfo(assetName, side, xGateRegion);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Flash Swap currency pairs List available Flash Swap currency pairs and buy/sell amount limits for the specified currency and trading side
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetName">Currency name</param>
+        /// <param name="side">Trading side - &#x60;1&#x60;: Sell - &#x60;2&#x60;: Buy</param>
+        /// <param name="xGateRegion">User region (optional)</param>
+        /// <returns>ApiResponse of FlashSwapV1CurrencyPairListResp</returns>
+        public ApiResponse<FlashSwapV1CurrencyPairListResp> ListFlashSwapCurrencyPairV1WithHttpInfo (string assetName, int side, string xGateRegion = default(string))
+        {
+            // verify the required parameter 'assetName' is set
+            if (assetName == null)
+                throw new ApiException(400, "Missing required parameter 'assetName' when calling FlashSwapApi->ListFlashSwapCurrencyPairV1");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "asset_name", assetName));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "side", side));
+            if (xGateRegion != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Gate-Region", ClientUtils.ParameterToString(xGateRegion)); // header parameter
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<FlashSwapV1CurrencyPairListResp>("/flash-swap/v1/currency-pair", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListFlashSwapCurrencyPairV1", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Flash Swap currency pairs List available Flash Swap currency pairs and buy/sell amount limits for the specified currency and trading side
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetName">Currency name</param>
+        /// <param name="side">Trading side - &#x60;1&#x60;: Sell - &#x60;2&#x60;: Buy</param>
+        /// <param name="xGateRegion">User region (optional)</param>
+        /// <returns>Task of FlashSwapV1CurrencyPairListResp</returns>
+        public async Task<FlashSwapV1CurrencyPairListResp> ListFlashSwapCurrencyPairV1Async (string assetName, int side, string xGateRegion = default(string))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<FlashSwapV1CurrencyPairListResp> localVarResponse = await ListFlashSwapCurrencyPairV1AsyncWithHttpInfo(assetName, side, xGateRegion);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List Flash Swap currency pairs List available Flash Swap currency pairs and buy/sell amount limits for the specified currency and trading side
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetName">Currency name</param>
+        /// <param name="side">Trading side - &#x60;1&#x60;: Sell - &#x60;2&#x60;: Buy</param>
+        /// <param name="xGateRegion">User region (optional)</param>
+        /// <returns>Task of ApiResponse (FlashSwapV1CurrencyPairListResp)</returns>
+        public async Task<ApiResponse<FlashSwapV1CurrencyPairListResp>> ListFlashSwapCurrencyPairV1AsyncWithHttpInfo (string assetName, int side, string xGateRegion = default(string))
+        {
+            // verify the required parameter 'assetName' is set
+            if (assetName == null)
+                throw new ApiException(400, "Missing required parameter 'assetName' when calling FlashSwapApi->ListFlashSwapCurrencyPairV1");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "asset_name", assetName));
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "side", side));
+            if (xGateRegion != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Gate-Region", ClientUtils.ParameterToString(xGateRegion)); // header parameter
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FlashSwapV1CurrencyPairListResp>("/flash-swap/v1/currency-pair", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListFlashSwapCurrencyPairV1", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

@@ -330,12 +330,44 @@ namespace Io.Gate.GateApi.Model
         public double CreateTime { get; private set; }
 
         /// <summary>
+        /// Order creation time as a Unix timestamp in microseconds; omitted when unavailable
+        /// </summary>
+        /// <value>Order creation time as a Unix timestamp in microseconds; omitted when unavailable</value>
+        [DataMember(Name="create_time_us", EmitDefaultValue=false)]
+        
+        public long CreateTimeUs { get; private set; }
+
+        /// <summary>
+        /// OrderUpdateTime
+        /// </summary>
+        /// <value>OrderUpdateTime</value>
+        [DataMember(Name="update_time", EmitDefaultValue=false)]
+        
+        public double UpdateTime { get; private set; }
+
+        /// <summary>
+        /// Order update time as a Unix timestamp in microseconds; omitted when unavailable
+        /// </summary>
+        /// <value>Order update time as a Unix timestamp in microseconds; omitted when unavailable</value>
+        [DataMember(Name="update_time_us", EmitDefaultValue=false)]
+        
+        public long UpdateTimeUs { get; private set; }
+
+        /// <summary>
         /// Order finished time. Not returned if order is open
         /// </summary>
         /// <value>Order finished time. Not returned if order is open</value>
         [DataMember(Name="finish_time", EmitDefaultValue=false)]
         
         public double FinishTime { get; private set; }
+
+        /// <summary>
+        /// Order finish time as a Unix timestamp in microseconds; omitted if the order has not finished or the timestamp is unavailable
+        /// </summary>
+        /// <value>Order finish time as a Unix timestamp in microseconds; omitted if the order has not finished or the timestamp is unavailable</value>
+        [DataMember(Name="finish_time_us", EmitDefaultValue=false)]
+        
+        public long FinishTimeUs { get; private set; }
 
         /// <summary>
         /// Futures contract
@@ -487,7 +519,11 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  CreateTimeUs: ").Append(CreateTimeUs).Append("\n");
+            sb.Append("  UpdateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  UpdateTimeUs: ").Append(UpdateTimeUs).Append("\n");
             sb.Append("  FinishTime: ").Append(FinishTime).Append("\n");
+            sb.Append("  FinishTimeUs: ").Append(FinishTimeUs).Append("\n");
             sb.Append("  FinishAs: ").Append(FinishAs).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Contract: ").Append(Contract).Append("\n");
@@ -571,8 +607,24 @@ namespace Io.Gate.GateApi.Model
                     this.CreateTime.Equals(input.CreateTime)
                 ) && 
                 (
+                    this.CreateTimeUs == input.CreateTimeUs ||
+                    this.CreateTimeUs.Equals(input.CreateTimeUs)
+                ) && 
+                (
+                    this.UpdateTime == input.UpdateTime ||
+                    this.UpdateTime.Equals(input.UpdateTime)
+                ) && 
+                (
+                    this.UpdateTimeUs == input.UpdateTimeUs ||
+                    this.UpdateTimeUs.Equals(input.UpdateTimeUs)
+                ) && 
+                (
                     this.FinishTime == input.FinishTime ||
                     this.FinishTime.Equals(input.FinishTime)
+                ) && 
+                (
+                    this.FinishTimeUs == input.FinishTimeUs ||
+                    this.FinishTimeUs.Equals(input.FinishTimeUs)
                 ) && 
                 (
                     this.FinishAs == input.FinishAs ||
@@ -691,7 +743,11 @@ namespace Io.Gate.GateApi.Model
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
                 hashCode = hashCode * 59 + this.User.GetHashCode();
                 hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.CreateTimeUs.GetHashCode();
+                hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.UpdateTimeUs.GetHashCode();
                 hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
+                hashCode = hashCode * 59 + this.FinishTimeUs.GetHashCode();
                 hashCode = hashCode * 59 + this.FinishAs.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Contract != null)

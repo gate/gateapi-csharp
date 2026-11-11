@@ -40,10 +40,12 @@ namespace Io.Gate.GateApi.Model
         /// </summary>
         /// <param name="id">Order Book ID. Increases by 1 on every order book change. Set &#x60;with_id&#x3D;true&#x60; to include this field in response.</param>
         /// <param name="current">Response data generation timestamp.</param>
+        /// <param name="currentUs">Response data timestamp in microseconds; omitted when unavailable.</param>
         /// <param name="update">Order book changed timestamp.</param>
+        /// <param name="updateUs">Order book update timestamp in microseconds; omitted when unavailable.</param>
         /// <param name="asks">Ask Depth (required).</param>
         /// <param name="bids">Bid Depth (required).</param>
-        public FuturesOrderBook(long id = default(long), double current = default(double), double update = default(double), List<FuturesOrderBookItem> asks = default(List<FuturesOrderBookItem>), List<FuturesOrderBookItem> bids = default(List<FuturesOrderBookItem>))
+        public FuturesOrderBook(long id = default(long), double current = default(double), long currentUs = default(long), double update = default(double), long updateUs = default(long), List<FuturesOrderBookItem> asks = default(List<FuturesOrderBookItem>), List<FuturesOrderBookItem> bids = default(List<FuturesOrderBookItem>))
         {
             // to ensure "asks" is required (not null)
             this.Asks = asks ?? throw new ArgumentNullException("asks", "asks is a required property for FuturesOrderBook and cannot be null");
@@ -51,7 +53,9 @@ namespace Io.Gate.GateApi.Model
             this.Bids = bids ?? throw new ArgumentNullException("bids", "bids is a required property for FuturesOrderBook and cannot be null");
             this.Id = id;
             this.Current = current;
+            this.CurrentUs = currentUs;
             this.Update = update;
+            this.UpdateUs = updateUs;
         }
 
         /// <summary>
@@ -71,12 +75,28 @@ namespace Io.Gate.GateApi.Model
         public double Current { get; set; }
 
         /// <summary>
+        /// Response data timestamp in microseconds; omitted when unavailable
+        /// </summary>
+        /// <value>Response data timestamp in microseconds; omitted when unavailable</value>
+        [DataMember(Name="current_us")]
+        
+        public long CurrentUs { get; set; }
+
+        /// <summary>
         /// Order book changed timestamp
         /// </summary>
         /// <value>Order book changed timestamp</value>
         [DataMember(Name="update")]
         
         public double Update { get; set; }
+
+        /// <summary>
+        /// Order book update timestamp in microseconds; omitted when unavailable
+        /// </summary>
+        /// <value>Order book update timestamp in microseconds; omitted when unavailable</value>
+        [DataMember(Name="update_us")]
+        
+        public long UpdateUs { get; set; }
 
         /// <summary>
         /// Ask Depth
@@ -104,7 +124,9 @@ namespace Io.Gate.GateApi.Model
             sb.Append("class FuturesOrderBook {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Current: ").Append(Current).Append("\n");
+            sb.Append("  CurrentUs: ").Append(CurrentUs).Append("\n");
             sb.Append("  Update: ").Append(Update).Append("\n");
+            sb.Append("  UpdateUs: ").Append(UpdateUs).Append("\n");
             sb.Append("  Asks: ").Append(Asks).Append("\n");
             sb.Append("  Bids: ").Append(Bids).Append("\n");
             sb.Append("}\n");
@@ -150,8 +172,16 @@ namespace Io.Gate.GateApi.Model
                     this.Current.Equals(input.Current)
                 ) && 
                 (
+                    this.CurrentUs == input.CurrentUs ||
+                    this.CurrentUs.Equals(input.CurrentUs)
+                ) && 
+                (
                     this.Update == input.Update ||
                     this.Update.Equals(input.Update)
+                ) && 
+                (
+                    this.UpdateUs == input.UpdateUs ||
+                    this.UpdateUs.Equals(input.UpdateUs)
                 ) && 
                 (
                     this.Asks == input.Asks ||
@@ -178,7 +208,9 @@ namespace Io.Gate.GateApi.Model
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Id.GetHashCode();
                 hashCode = hashCode * 59 + this.Current.GetHashCode();
+                hashCode = hashCode * 59 + this.CurrentUs.GetHashCode();
                 hashCode = hashCode * 59 + this.Update.GetHashCode();
+                hashCode = hashCode * 59 + this.UpdateUs.GetHashCode();
                 if (this.Asks != null)
                     hashCode = hashCode * 59 + this.Asks.GetHashCode();
                 if (this.Bids != null)

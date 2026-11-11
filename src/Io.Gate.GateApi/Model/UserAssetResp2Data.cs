@@ -36,6 +36,13 @@ namespace Io.Gate.GateApi.Model
         /// <param name="equity">Account equity.</param>
         /// <param name="balance">Account Balance.</param>
         /// <param name="available">Available Balance.</param>
+        /// <param name="loanAmount">Loan amount. Non-negative: the absolute value of the original available balance when it is negative, otherwise 0..</param>
+        /// <param name="buyPower">Buying power.</param>
+        /// <param name="leverage">Leverage.</param>
+        /// <param name="leaveLiquidity">Excess liquidity.</param>
+        /// <param name="leaveLiquidityRate">Excess liquidity ratio.</param>
+        /// <param name="aee">Available Excess Equity (AEE).</param>
+        /// <param name="optionsMargin">Options margin.</param>
         /// <param name="positionMarketValue">Position market value.</param>
         /// <param name="positionPnl">Position P&amp;L.</param>
         /// <param name="todayPnl">Today&#39;s P&amp;L.</param>
@@ -43,11 +50,20 @@ namespace Io.Gate.GateApi.Model
         /// <param name="optionPositionPnl">Option position PnL.</param>
         /// <param name="optionTodayPnl">Option today&#39;s PnL.</param>
         /// <param name="userExists">Whether the user has activated the service.</param>
-        public UserAssetResp2Data(string equity = default(string), string balance = default(string), string available = default(string), string positionMarketValue = default(string), string positionPnl = default(string), string todayPnl = default(string), string optionPositionMarketValue = default(string), string optionPositionPnl = default(string), string optionTodayPnl = default(string), bool userExists = default(bool))
+        /// <param name="marginEnabled">Whether margin financing is enabled.</param>
+        /// <param name="longBorrowingRate">Annual margin financing interest rate. An empty string indicates that no valid rate is currently available..</param>
+        public UserAssetResp2Data(string equity = default(string), string balance = default(string), string available = default(string), string loanAmount = default(string), string buyPower = default(string), string leverage = default(string), string leaveLiquidity = default(string), string leaveLiquidityRate = default(string), string aee = default(string), string optionsMargin = default(string), string positionMarketValue = default(string), string positionPnl = default(string), string todayPnl = default(string), string optionPositionMarketValue = default(string), string optionPositionPnl = default(string), string optionTodayPnl = default(string), bool userExists = default(bool), bool marginEnabled = default(bool), string longBorrowingRate = default(string))
         {
             this.Equity = equity;
             this.Balance = balance;
             this.Available = available;
+            this.LoanAmount = loanAmount;
+            this.BuyPower = buyPower;
+            this.Leverage = leverage;
+            this.LeaveLiquidity = leaveLiquidity;
+            this.LeaveLiquidityRate = leaveLiquidityRate;
+            this.Aee = aee;
+            this.OptionsMargin = optionsMargin;
             this.PositionMarketValue = positionMarketValue;
             this.PositionPnl = positionPnl;
             this.TodayPnl = todayPnl;
@@ -55,6 +71,8 @@ namespace Io.Gate.GateApi.Model
             this.OptionPositionPnl = optionPositionPnl;
             this.OptionTodayPnl = optionTodayPnl;
             this.UserExists = userExists;
+            this.MarginEnabled = marginEnabled;
+            this.LongBorrowingRate = longBorrowingRate;
         }
 
         /// <summary>
@@ -80,6 +98,62 @@ namespace Io.Gate.GateApi.Model
         [DataMember(Name="available")]
         
         public string Available { get; set; }
+
+        /// <summary>
+        /// Loan amount. Non-negative: the absolute value of the original available balance when it is negative, otherwise 0.
+        /// </summary>
+        /// <value>Loan amount. Non-negative: the absolute value of the original available balance when it is negative, otherwise 0.</value>
+        [DataMember(Name="loan_amount")]
+        
+        public string LoanAmount { get; set; }
+
+        /// <summary>
+        /// Buying power
+        /// </summary>
+        /// <value>Buying power</value>
+        [DataMember(Name="buy_power")]
+        
+        public string BuyPower { get; set; }
+
+        /// <summary>
+        /// Leverage
+        /// </summary>
+        /// <value>Leverage</value>
+        [DataMember(Name="leverage")]
+        
+        public string Leverage { get; set; }
+
+        /// <summary>
+        /// Excess liquidity
+        /// </summary>
+        /// <value>Excess liquidity</value>
+        [DataMember(Name="leave_liquidity")]
+        
+        public string LeaveLiquidity { get; set; }
+
+        /// <summary>
+        /// Excess liquidity ratio
+        /// </summary>
+        /// <value>Excess liquidity ratio</value>
+        [DataMember(Name="leave_liquidity_rate")]
+        
+        public string LeaveLiquidityRate { get; set; }
+
+        /// <summary>
+        /// Available Excess Equity (AEE)
+        /// </summary>
+        /// <value>Available Excess Equity (AEE)</value>
+        [DataMember(Name="aee")]
+        
+        public string Aee { get; set; }
+
+        /// <summary>
+        /// Options margin
+        /// </summary>
+        /// <value>Options margin</value>
+        [DataMember(Name="options_margin")]
+        
+        public string OptionsMargin { get; set; }
 
         /// <summary>
         /// Position market value
@@ -138,6 +212,22 @@ namespace Io.Gate.GateApi.Model
         public bool UserExists { get; set; }
 
         /// <summary>
+        /// Whether margin financing is enabled
+        /// </summary>
+        /// <value>Whether margin financing is enabled</value>
+        [DataMember(Name="margin_enabled")]
+        
+        public bool MarginEnabled { get; set; }
+
+        /// <summary>
+        /// Annual margin financing interest rate. An empty string indicates that no valid rate is currently available.
+        /// </summary>
+        /// <value>Annual margin financing interest rate. An empty string indicates that no valid rate is currently available.</value>
+        [DataMember(Name="long_borrowing_rate")]
+        
+        public string LongBorrowingRate { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -148,6 +238,13 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  Equity: ").Append(Equity).Append("\n");
             sb.Append("  Balance: ").Append(Balance).Append("\n");
             sb.Append("  Available: ").Append(Available).Append("\n");
+            sb.Append("  LoanAmount: ").Append(LoanAmount).Append("\n");
+            sb.Append("  BuyPower: ").Append(BuyPower).Append("\n");
+            sb.Append("  Leverage: ").Append(Leverage).Append("\n");
+            sb.Append("  LeaveLiquidity: ").Append(LeaveLiquidity).Append("\n");
+            sb.Append("  LeaveLiquidityRate: ").Append(LeaveLiquidityRate).Append("\n");
+            sb.Append("  Aee: ").Append(Aee).Append("\n");
+            sb.Append("  OptionsMargin: ").Append(OptionsMargin).Append("\n");
             sb.Append("  PositionMarketValue: ").Append(PositionMarketValue).Append("\n");
             sb.Append("  PositionPnl: ").Append(PositionPnl).Append("\n");
             sb.Append("  TodayPnl: ").Append(TodayPnl).Append("\n");
@@ -155,6 +252,8 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  OptionPositionPnl: ").Append(OptionPositionPnl).Append("\n");
             sb.Append("  OptionTodayPnl: ").Append(OptionTodayPnl).Append("\n");
             sb.Append("  UserExists: ").Append(UserExists).Append("\n");
+            sb.Append("  MarginEnabled: ").Append(MarginEnabled).Append("\n");
+            sb.Append("  LongBorrowingRate: ").Append(LongBorrowingRate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -205,6 +304,41 @@ namespace Io.Gate.GateApi.Model
                     this.Available.Equals(input.Available))
                 ) && 
                 (
+                    this.LoanAmount == input.LoanAmount ||
+                    (this.LoanAmount != null &&
+                    this.LoanAmount.Equals(input.LoanAmount))
+                ) && 
+                (
+                    this.BuyPower == input.BuyPower ||
+                    (this.BuyPower != null &&
+                    this.BuyPower.Equals(input.BuyPower))
+                ) && 
+                (
+                    this.Leverage == input.Leverage ||
+                    (this.Leverage != null &&
+                    this.Leverage.Equals(input.Leverage))
+                ) && 
+                (
+                    this.LeaveLiquidity == input.LeaveLiquidity ||
+                    (this.LeaveLiquidity != null &&
+                    this.LeaveLiquidity.Equals(input.LeaveLiquidity))
+                ) && 
+                (
+                    this.LeaveLiquidityRate == input.LeaveLiquidityRate ||
+                    (this.LeaveLiquidityRate != null &&
+                    this.LeaveLiquidityRate.Equals(input.LeaveLiquidityRate))
+                ) && 
+                (
+                    this.Aee == input.Aee ||
+                    (this.Aee != null &&
+                    this.Aee.Equals(input.Aee))
+                ) && 
+                (
+                    this.OptionsMargin == input.OptionsMargin ||
+                    (this.OptionsMargin != null &&
+                    this.OptionsMargin.Equals(input.OptionsMargin))
+                ) && 
+                (
                     this.PositionMarketValue == input.PositionMarketValue ||
                     (this.PositionMarketValue != null &&
                     this.PositionMarketValue.Equals(input.PositionMarketValue))
@@ -237,6 +371,15 @@ namespace Io.Gate.GateApi.Model
                 (
                     this.UserExists == input.UserExists ||
                     this.UserExists.Equals(input.UserExists)
+                ) && 
+                (
+                    this.MarginEnabled == input.MarginEnabled ||
+                    this.MarginEnabled.Equals(input.MarginEnabled)
+                ) && 
+                (
+                    this.LongBorrowingRate == input.LongBorrowingRate ||
+                    (this.LongBorrowingRate != null &&
+                    this.LongBorrowingRate.Equals(input.LongBorrowingRate))
                 );
         }
 
@@ -255,6 +398,20 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.Balance.GetHashCode();
                 if (this.Available != null)
                     hashCode = hashCode * 59 + this.Available.GetHashCode();
+                if (this.LoanAmount != null)
+                    hashCode = hashCode * 59 + this.LoanAmount.GetHashCode();
+                if (this.BuyPower != null)
+                    hashCode = hashCode * 59 + this.BuyPower.GetHashCode();
+                if (this.Leverage != null)
+                    hashCode = hashCode * 59 + this.Leverage.GetHashCode();
+                if (this.LeaveLiquidity != null)
+                    hashCode = hashCode * 59 + this.LeaveLiquidity.GetHashCode();
+                if (this.LeaveLiquidityRate != null)
+                    hashCode = hashCode * 59 + this.LeaveLiquidityRate.GetHashCode();
+                if (this.Aee != null)
+                    hashCode = hashCode * 59 + this.Aee.GetHashCode();
+                if (this.OptionsMargin != null)
+                    hashCode = hashCode * 59 + this.OptionsMargin.GetHashCode();
                 if (this.PositionMarketValue != null)
                     hashCode = hashCode * 59 + this.PositionMarketValue.GetHashCode();
                 if (this.PositionPnl != null)
@@ -268,6 +425,9 @@ namespace Io.Gate.GateApi.Model
                 if (this.OptionTodayPnl != null)
                     hashCode = hashCode * 59 + this.OptionTodayPnl.GetHashCode();
                 hashCode = hashCode * 59 + this.UserExists.GetHashCode();
+                hashCode = hashCode * 59 + this.MarginEnabled.GetHashCode();
+                if (this.LongBorrowingRate != null)
+                    hashCode = hashCode * 59 + this.LongBorrowingRate.GetHashCode();
                 return hashCode;
             }
         }

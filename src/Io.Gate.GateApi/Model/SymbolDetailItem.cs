@@ -298,6 +298,42 @@ namespace Io.Gate.GateApi.Model
         
         public OrderFillTimingEnum? OrderFillTiming { get; set; }
         /// <summary>
+        /// Margin trading mode. - 0: Neither margin financing nor securities borrowing is supported. - 1: Margin financing is supported. - 2: Securities borrowing is supported. - 3: Both margin financing and securities borrowing are supported.
+        /// </summary>
+        /// <value>Margin trading mode. - 0: Neither margin financing nor securities borrowing is supported. - 1: Margin financing is supported. - 2: Securities borrowing is supported. - 3: Both margin financing and securities borrowing are supported.</value>
+        
+        public enum MarginModeEnum
+        {
+            /// <summary>
+            /// Enum value NUMBER_0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum value NUMBER_1
+            /// </summary>
+            NUMBER_1 = 1,
+
+            /// <summary>
+            /// Enum value NUMBER_2
+            /// </summary>
+            NUMBER_2 = 2,
+
+            /// <summary>
+            /// Enum value NUMBER_3
+            /// </summary>
+            NUMBER_3 = 3
+
+        }
+
+        /// <summary>
+        /// Margin trading mode. - 0: Neither margin financing nor securities borrowing is supported. - 1: Margin financing is supported. - 2: Securities borrowing is supported. - 3: Both margin financing and securities borrowing are supported.
+        /// </summary>
+        /// <value>Margin trading mode. - 0: Neither margin financing nor securities borrowing is supported. - 1: Margin financing is supported. - 2: Securities borrowing is supported. - 3: Both margin financing and securities borrowing are supported.</value>
+        [DataMember(Name="margin_mode")]
+        
+        public MarginModeEnum? MarginMode { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="SymbolDetailItem" /> class.
         /// </summary>
         /// <param name="symbol">Symbol.</param>
@@ -327,7 +363,14 @@ namespace Io.Gate.GateApi.Model
         /// <param name="orderFillTiming">Order fill timing (1&#x3D;immediate, 2&#x3D;after pre-market opens, 3&#x3D;after regular session opens).</param>
         /// <param name="symbolDescs">Multilingual symbol description.</param>
         /// <param name="iconLink">Icon URL.</param>
-        public SymbolDetailItem(string symbol = default(string), ExchangeEnum? exchange = default(ExchangeEnum?), string exchangeDesc = default(string), string quoteCurrency = default(string), int quoteCurrencyPrecision = default(int), string fxRate = default(string), string symbolDesc = default(string), CategoryEnum? category = default(CategoryEnum?), AssetTypeEnum? assetType = default(AssetTypeEnum?), string settlementCurrency = default(string), string maxOrderVolume = default(string), string stepOrderVolume = default(string), string minOrderVolume = default(string), int pricePrecision = default(int), int volumePrecision = default(int), bool isIpo = default(bool), string ipoPrice = default(string), string priceProtection = default(string), string sellPriceProtection = default(string), string buyPriceProtection = default(string), string slippageRate = default(string), string commissionRate = default(string), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), TradeModeEnum? tradeMode = default(TradeModeEnum?), OrderFillTimingEnum? orderFillTiming = default(OrderFillTimingEnum?), List<SymbolDetailItemSymbolDescs> symbolDescs = default(List<SymbolDetailItemSymbolDescs>), string iconLink = default(string))
+        /// <param name="marginMode">Margin trading mode. - 0: Neither margin financing nor securities borrowing is supported. - 1: Margin financing is supported. - 2: Securities borrowing is supported. - 3: Both margin financing and securities borrowing are supported..</param>
+        /// <param name="longIm">Initial margin ratio for long positions.</param>
+        /// <param name="longMm">Maintenance margin ratio for long positions.</param>
+        /// <param name="shortIm">Initial margin ratio for short positions.</param>
+        /// <param name="shortMm">Maintenance margin ratio for short positions.</param>
+        /// <param name="longBorrowingRate">Annual margin financing interest rate. An empty string indicates that no valid rate is currently available..</param>
+        /// <param name="shortBorrowingRate">Annual securities borrowing interest rate. An empty string indicates that no valid rate is currently available..</param>
+        public SymbolDetailItem(string symbol = default(string), ExchangeEnum? exchange = default(ExchangeEnum?), string exchangeDesc = default(string), string quoteCurrency = default(string), int quoteCurrencyPrecision = default(int), string fxRate = default(string), string symbolDesc = default(string), CategoryEnum? category = default(CategoryEnum?), AssetTypeEnum? assetType = default(AssetTypeEnum?), string settlementCurrency = default(string), string maxOrderVolume = default(string), string stepOrderVolume = default(string), string minOrderVolume = default(string), int pricePrecision = default(int), int volumePrecision = default(int), bool isIpo = default(bool), string ipoPrice = default(string), string priceProtection = default(string), string sellPriceProtection = default(string), string buyPriceProtection = default(string), string slippageRate = default(string), string commissionRate = default(string), TradeStatusEnum? tradeStatus = default(TradeStatusEnum?), TradeModeEnum? tradeMode = default(TradeModeEnum?), OrderFillTimingEnum? orderFillTiming = default(OrderFillTimingEnum?), List<SymbolDetailItemSymbolDescs> symbolDescs = default(List<SymbolDetailItemSymbolDescs>), string iconLink = default(string), MarginModeEnum? marginMode = default(MarginModeEnum?), string longIm = default(string), string longMm = default(string), string shortIm = default(string), string shortMm = default(string), string longBorrowingRate = default(string), string shortBorrowingRate = default(string))
         {
             this.Symbol = symbol;
             this.Exchange = exchange;
@@ -356,6 +399,13 @@ namespace Io.Gate.GateApi.Model
             this.OrderFillTiming = orderFillTiming;
             this.SymbolDescs = symbolDescs;
             this.IconLink = iconLink;
+            this.MarginMode = marginMode;
+            this.LongIm = longIm;
+            this.LongMm = longMm;
+            this.ShortIm = shortIm;
+            this.ShortMm = shortMm;
+            this.LongBorrowingRate = longBorrowingRate;
+            this.ShortBorrowingRate = shortBorrowingRate;
         }
 
         /// <summary>
@@ -527,6 +577,54 @@ namespace Io.Gate.GateApi.Model
         public string IconLink { get; set; }
 
         /// <summary>
+        /// Initial margin ratio for long positions
+        /// </summary>
+        /// <value>Initial margin ratio for long positions</value>
+        [DataMember(Name="long_im")]
+        
+        public string LongIm { get; set; }
+
+        /// <summary>
+        /// Maintenance margin ratio for long positions
+        /// </summary>
+        /// <value>Maintenance margin ratio for long positions</value>
+        [DataMember(Name="long_mm")]
+        
+        public string LongMm { get; set; }
+
+        /// <summary>
+        /// Initial margin ratio for short positions
+        /// </summary>
+        /// <value>Initial margin ratio for short positions</value>
+        [DataMember(Name="short_im")]
+        
+        public string ShortIm { get; set; }
+
+        /// <summary>
+        /// Maintenance margin ratio for short positions
+        /// </summary>
+        /// <value>Maintenance margin ratio for short positions</value>
+        [DataMember(Name="short_mm")]
+        
+        public string ShortMm { get; set; }
+
+        /// <summary>
+        /// Annual margin financing interest rate. An empty string indicates that no valid rate is currently available.
+        /// </summary>
+        /// <value>Annual margin financing interest rate. An empty string indicates that no valid rate is currently available.</value>
+        [DataMember(Name="long_borrowing_rate")]
+        
+        public string LongBorrowingRate { get; set; }
+
+        /// <summary>
+        /// Annual securities borrowing interest rate. An empty string indicates that no valid rate is currently available.
+        /// </summary>
+        /// <value>Annual securities borrowing interest rate. An empty string indicates that no valid rate is currently available.</value>
+        [DataMember(Name="short_borrowing_rate")]
+        
+        public string ShortBorrowingRate { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -561,6 +659,13 @@ namespace Io.Gate.GateApi.Model
             sb.Append("  OrderFillTiming: ").Append(OrderFillTiming).Append("\n");
             sb.Append("  SymbolDescs: ").Append(SymbolDescs).Append("\n");
             sb.Append("  IconLink: ").Append(IconLink).Append("\n");
+            sb.Append("  MarginMode: ").Append(MarginMode).Append("\n");
+            sb.Append("  LongIm: ").Append(LongIm).Append("\n");
+            sb.Append("  LongMm: ").Append(LongMm).Append("\n");
+            sb.Append("  ShortIm: ").Append(ShortIm).Append("\n");
+            sb.Append("  ShortMm: ").Append(ShortMm).Append("\n");
+            sb.Append("  LongBorrowingRate: ").Append(LongBorrowingRate).Append("\n");
+            sb.Append("  ShortBorrowingRate: ").Append(ShortBorrowingRate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -720,6 +825,40 @@ namespace Io.Gate.GateApi.Model
                     this.IconLink == input.IconLink ||
                     (this.IconLink != null &&
                     this.IconLink.Equals(input.IconLink))
+                ) && 
+                (
+                    this.MarginMode == input.MarginMode ||
+                    this.MarginMode.Equals(input.MarginMode)
+                ) && 
+                (
+                    this.LongIm == input.LongIm ||
+                    (this.LongIm != null &&
+                    this.LongIm.Equals(input.LongIm))
+                ) && 
+                (
+                    this.LongMm == input.LongMm ||
+                    (this.LongMm != null &&
+                    this.LongMm.Equals(input.LongMm))
+                ) && 
+                (
+                    this.ShortIm == input.ShortIm ||
+                    (this.ShortIm != null &&
+                    this.ShortIm.Equals(input.ShortIm))
+                ) && 
+                (
+                    this.ShortMm == input.ShortMm ||
+                    (this.ShortMm != null &&
+                    this.ShortMm.Equals(input.ShortMm))
+                ) && 
+                (
+                    this.LongBorrowingRate == input.LongBorrowingRate ||
+                    (this.LongBorrowingRate != null &&
+                    this.LongBorrowingRate.Equals(input.LongBorrowingRate))
+                ) && 
+                (
+                    this.ShortBorrowingRate == input.ShortBorrowingRate ||
+                    (this.ShortBorrowingRate != null &&
+                    this.ShortBorrowingRate.Equals(input.ShortBorrowingRate))
                 );
         }
 
@@ -776,6 +915,19 @@ namespace Io.Gate.GateApi.Model
                     hashCode = hashCode * 59 + this.SymbolDescs.GetHashCode();
                 if (this.IconLink != null)
                     hashCode = hashCode * 59 + this.IconLink.GetHashCode();
+                hashCode = hashCode * 59 + this.MarginMode.GetHashCode();
+                if (this.LongIm != null)
+                    hashCode = hashCode * 59 + this.LongIm.GetHashCode();
+                if (this.LongMm != null)
+                    hashCode = hashCode * 59 + this.LongMm.GetHashCode();
+                if (this.ShortIm != null)
+                    hashCode = hashCode * 59 + this.ShortIm.GetHashCode();
+                if (this.ShortMm != null)
+                    hashCode = hashCode * 59 + this.ShortMm.GetHashCode();
+                if (this.LongBorrowingRate != null)
+                    hashCode = hashCode * 59 + this.LongBorrowingRate.GetHashCode();
+                if (this.ShortBorrowingRate != null)
+                    hashCode = hashCode * 59 + this.ShortBorrowingRate.GetHashCode();
                 return hashCode;
             }
         }

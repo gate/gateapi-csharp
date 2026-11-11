@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**CreateFlashSwapOrder**](FlashSwapApi.md#createflashswaporder) | **POST** /flash_swap/orders | Create a flash swap order
 [**GetFlashSwapOrder**](FlashSwapApi.md#getflashswaporder) | **GET** /flash_swap/orders/{order_id} | Query single flash swap order
 [**PreviewFlashSwapOrder**](FlashSwapApi.md#previewflashswaporder) | **POST** /flash_swap/orders/preview | Flash swap order preview
+[**ListFlashSwapCurrencyPairV1**](FlashSwapApi.md#listflashswapcurrencypairv1) | **GET** /flash-swap/v1/currency-pair | List Flash Swap currency pairs
 [**CreateFlashSwapMultiCurrencyManyToOneOrder**](FlashSwapApi.md#createflashswapmulticurrencymanytooneorder) | **POST** /flash_swap/multi-currency/many-to-one/order/create | Flash Swap - Multi-currency exchange - Place order (many-to-one)
 [**PreviewFlashSwapMultiCurrencyManyToOneOrder**](FlashSwapApi.md#previewflashswapmulticurrencymanytooneorder) | **POST** /flash_swap/multi-currency/many-to-one/order/preview | Flash Swap - Multi-currency exchange - Preview (many-to-one)
 [**CreateFlashSwapOrderV1**](FlashSwapApi.md#createflashswaporderv1) | **POST** /flash_swap/order/create | Flash Swap - Place order (one-to-one)
@@ -385,6 +386,85 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Flash swap order preview successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listflashswapcurrencypairv1"></a>
+# **ListFlashSwapCurrencyPairV1**
+> FlashSwapV1CurrencyPairListResp ListFlashSwapCurrencyPairV1 (string assetName, int side, string xGateRegion = null)
+
+List Flash Swap currency pairs
+
+List available Flash Swap currency pairs and buy/sell amount limits for the specified currency and trading side
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class ListFlashSwapCurrencyPairV1Example
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new FlashSwapApi(config);
+            var assetName = "BTC";  // string | Currency name
+            var side = 1;  // int | Trading side - `1`: Sell - `2`: Buy
+            var xGateRegion = "xGateRegion_example";  // string | User region (optional) 
+
+            try
+            {
+                // List Flash Swap currency pairs
+                FlashSwapV1CurrencyPairListResp result = apiInstance.ListFlashSwapCurrencyPairV1(assetName, side, xGateRegion);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling FlashSwapApi.ListFlashSwapCurrencyPairV1: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assetName** | **string**| Currency name | 
+ **side** | **int**| Trading side - &#x60;1&#x60;: Sell - &#x60;2&#x60;: Buy | 
+ **xGateRegion** | **string**| User region | [optional] 
+
+### Return type
+
+[**FlashSwapV1CurrencyPairListResp**](FlashSwapV1CurrencyPairListResp.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Invalid parameters |  -  |
+| **404** | Record does not exist |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

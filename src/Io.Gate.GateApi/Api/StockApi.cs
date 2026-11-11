@@ -51,6 +51,27 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of UserAssetResp2</returns>
         ApiResponse<UserAssetResp2> QueryStockUserAssetsWithHttpInfo (int? pnlCalcType = default(int?), int? pnlCalcPrice = default(int?));
         /// <summary>
+        /// Set margin financing availability
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Enable or disable margin financing for the user.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradFiSpotSetMarginFeatureRequest"></param>
+        /// <returns>SetMarginFeature</returns>
+        SetMarginFeature SetStockMarginFeature (TradFiSpotSetMarginFeatureRequest tradFiSpotSetMarginFeatureRequest);
+
+        /// <summary>
+        /// Set margin financing availability
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Enable or disable margin financing for the user.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradFiSpotSetMarginFeatureRequest"></param>
+        /// <returns>ApiResponse of SetMarginFeature</returns>
+        ApiResponse<SetMarginFeature> SetStockMarginFeatureWithHttpInfo (TradFiSpotSetMarginFeatureRequest tradFiSpotSetMarginFeatureRequest);
+        /// <summary>
         /// Query symbol list
         /// </summary>
         /// <remarks>
@@ -222,6 +243,31 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of OrderHistoryList2</returns>
         ApiResponse<OrderHistoryList2> QueryStockOrderHistoryWithHttpInfo (string symbol = default(string), string orderIds = default(string), int? beginTime = default(int?), int? endTime = default(int?), int? side = default(int?), int? page = default(int?), int? pageSize = default(int?));
         /// <summary>
+        /// Query order trade records
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Query the current user&#39;s trade records by order ID. &#x60;price&#x60;, &#x60;value&#x60;, and &#x60;fee&#x60; are denominated in the instrument trading currency (for example, USD for US stocks, HKD for Hong Kong stocks, JPY for Japanese stocks, and KRW for Korean stocks). &#x60;role&#x60; returns &#x60;maker&#x60; or &#x60;taker&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>OrderDealList</returns>
+        OrderDealList QueryStockOrderDeals (long orderId, int? page = default(int?), int? pageSize = default(int?));
+
+        /// <summary>
+        /// Query order trade records
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Query the current user&#39;s trade records by order ID. &#x60;price&#x60;, &#x60;value&#x60;, and &#x60;fee&#x60; are denominated in the instrument trading currency (for example, USD for US stocks, HKD for Hong Kong stocks, JPY for Japanese stocks, and KRW for Korean stocks). &#x60;role&#x60; returns &#x60;maker&#x60; or &#x60;taker&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>ApiResponse of OrderDealList</returns>
+        ApiResponse<OrderDealList> QueryStockOrderDealsWithHttpInfo (long orderId, int? page = default(int?), int? pageSize = default(int?));
+        /// <summary>
         /// Modify order
         /// </summary>
         /// <remarks>
@@ -366,6 +412,45 @@ namespace Io.Gate.GateApi.Api
         /// <returns>ApiResponse of CreateTransaction2</returns>
         ApiResponse<CreateTransaction2> CreateStockTransactionWithHttpInfo (TradFiSpotTransactionRequest tradFiSpotTransactionRequest);
         /// <summary>
+        /// Query user balance records
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Query the current user&#39;s raw balance records. User scope is derived from the request headers; a query parameter &#x60;user_id&#x60; is not supported. - &#x60;type&#x60; and &#x60;business&#x60; support multiple comma-separated values. - &#x60;begin_time&#x60; and &#x60;end_time&#x60; filter record creation time in seconds. When both are provided, &#x60;end_time&#x60; must be greater than &#x60;begin_time&#x60;. - Results are always sorted by primary key &#x60;id&#x60;; &#x60;sort_direction&#x60; accepts &#x60;asc&#x60; or &#x60;desc&#x60;. The default is &#x60;id desc&#x60;. With &#x60;start_id&#x60; and no &#x60;sort_direction&#x60;, the order is &#x60;id asc&#x60;, and only records with &#x60;id &gt; start_id&#x60; are returned for incremental retrieval. - &#x60;detail&#x60; is omitted by default and returned only when &#x60;include_detail&#x3D;true&#x60;. - &#x60;stock_change&#x60; is parsed from &#x60;detail.amount&#x60; for stock quantity records; &#x60;balance&#x60; is a cash balance snapshot, not a stock position balance.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Record types, separated by commas (optional)</param>
+        /// <param name="business">Business identifiers, separated by commas (optional)</param>
+        /// <param name="symbol">Symbol (optional)</param>
+        /// <param name="beginTime">Start time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="endTime">End time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="startId">Starting primary key ID for incremental queries. Only records with a greater id are returned. (optional)</param>
+        /// <param name="sortDirection">Sort direction by primary key id. - asc: Ascending. - desc: Descending. When omitted, defaults to desc without start_id, or asc with start_id. (optional)</param>
+        /// <param name="includeDetail">Whether to return the raw detail field; defaults to false when omitted (optional)</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>BalanceRecordList</returns>
+        BalanceRecordList QueryStockBalanceRecords (string type = default(string), string business = default(string), string symbol = default(string), long? beginTime = default(long?), long? endTime = default(long?), long? startId = default(long?), string sortDirection = default(string), bool? includeDetail = default(bool?), int? page = default(int?), int? pageSize = default(int?));
+
+        /// <summary>
+        /// Query user balance records
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Query the current user&#39;s raw balance records. User scope is derived from the request headers; a query parameter &#x60;user_id&#x60; is not supported. - &#x60;type&#x60; and &#x60;business&#x60; support multiple comma-separated values. - &#x60;begin_time&#x60; and &#x60;end_time&#x60; filter record creation time in seconds. When both are provided, &#x60;end_time&#x60; must be greater than &#x60;begin_time&#x60;. - Results are always sorted by primary key &#x60;id&#x60;; &#x60;sort_direction&#x60; accepts &#x60;asc&#x60; or &#x60;desc&#x60;. The default is &#x60;id desc&#x60;. With &#x60;start_id&#x60; and no &#x60;sort_direction&#x60;, the order is &#x60;id asc&#x60;, and only records with &#x60;id &gt; start_id&#x60; are returned for incremental retrieval. - &#x60;detail&#x60; is omitted by default and returned only when &#x60;include_detail&#x3D;true&#x60;. - &#x60;stock_change&#x60; is parsed from &#x60;detail.amount&#x60; for stock quantity records; &#x60;balance&#x60; is a cash balance snapshot, not a stock position balance.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Record types, separated by commas (optional)</param>
+        /// <param name="business">Business identifiers, separated by commas (optional)</param>
+        /// <param name="symbol">Symbol (optional)</param>
+        /// <param name="beginTime">Start time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="endTime">End time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="startId">Starting primary key ID for incremental queries. Only records with a greater id are returned. (optional)</param>
+        /// <param name="sortDirection">Sort direction by primary key id. - asc: Ascending. - desc: Descending. When omitted, defaults to desc without start_id, or asc with start_id. (optional)</param>
+        /// <param name="includeDetail">Whether to return the raw detail field; defaults to false when omitted (optional)</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>ApiResponse of BalanceRecordList</returns>
+        ApiResponse<BalanceRecordList> QueryStockBalanceRecordsWithHttpInfo (string type = default(string), string business = default(string), string symbol = default(string), long? beginTime = default(long?), long? endTime = default(long?), long? startId = default(long?), string sortDirection = default(string), bool? includeDetail = default(bool?), int? page = default(int?), int? pageSize = default(int?));
+        /// <summary>
         /// Query supported exchanges
         /// </summary>
         /// <remarks>
@@ -435,6 +520,27 @@ namespace Io.Gate.GateApi.Api
         /// <param name="pnlCalcPrice">PnL calculation price type. Defaults to intraday price when omitted (1 &#x3D; intraday price, 2 &#x3D; latest extended-hours price) (optional)</param>
         /// <returns>Task of ApiResponse (UserAssetResp2)</returns>
         Task<ApiResponse<UserAssetResp2>> QueryStockUserAssetsAsyncWithHttpInfo (int? pnlCalcType = default(int?), int? pnlCalcPrice = default(int?));
+        /// <summary>
+        /// Set margin financing availability
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Enable or disable margin financing for the user.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradFiSpotSetMarginFeatureRequest"></param>
+        /// <returns>Task of SetMarginFeature</returns>
+        Task<SetMarginFeature> SetStockMarginFeatureAsync (TradFiSpotSetMarginFeatureRequest tradFiSpotSetMarginFeatureRequest);
+
+        /// <summary>
+        /// Set margin financing availability
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Enable or disable margin financing for the user.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradFiSpotSetMarginFeatureRequest"></param>
+        /// <returns>Task of ApiResponse (SetMarginFeature)</returns>
+        Task<ApiResponse<SetMarginFeature>> SetStockMarginFeatureAsyncWithHttpInfo (TradFiSpotSetMarginFeatureRequest tradFiSpotSetMarginFeatureRequest);
         /// <summary>
         /// Query symbol list
         /// </summary>
@@ -607,6 +713,31 @@ namespace Io.Gate.GateApi.Api
         /// <returns>Task of ApiResponse (OrderHistoryList2)</returns>
         Task<ApiResponse<OrderHistoryList2>> QueryStockOrderHistoryAsyncWithHttpInfo (string symbol = default(string), string orderIds = default(string), int? beginTime = default(int?), int? endTime = default(int?), int? side = default(int?), int? page = default(int?), int? pageSize = default(int?));
         /// <summary>
+        /// Query order trade records
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Query the current user&#39;s trade records by order ID. &#x60;price&#x60;, &#x60;value&#x60;, and &#x60;fee&#x60; are denominated in the instrument trading currency (for example, USD for US stocks, HKD for Hong Kong stocks, JPY for Japanese stocks, and KRW for Korean stocks). &#x60;role&#x60; returns &#x60;maker&#x60; or &#x60;taker&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>Task of OrderDealList</returns>
+        Task<OrderDealList> QueryStockOrderDealsAsync (long orderId, int? page = default(int?), int? pageSize = default(int?));
+
+        /// <summary>
+        /// Query order trade records
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Query the current user&#39;s trade records by order ID. &#x60;price&#x60;, &#x60;value&#x60;, and &#x60;fee&#x60; are denominated in the instrument trading currency (for example, USD for US stocks, HKD for Hong Kong stocks, JPY for Japanese stocks, and KRW for Korean stocks). &#x60;role&#x60; returns &#x60;maker&#x60; or &#x60;taker&#x60;.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>Task of ApiResponse (OrderDealList)</returns>
+        Task<ApiResponse<OrderDealList>> QueryStockOrderDealsAsyncWithHttpInfo (long orderId, int? page = default(int?), int? pageSize = default(int?));
+        /// <summary>
         /// Modify order
         /// </summary>
         /// <remarks>
@@ -750,6 +881,45 @@ namespace Io.Gate.GateApi.Api
         /// <param name="tradFiSpotTransactionRequest"></param>
         /// <returns>Task of ApiResponse (CreateTransaction2)</returns>
         Task<ApiResponse<CreateTransaction2>> CreateStockTransactionAsyncWithHttpInfo (TradFiSpotTransactionRequest tradFiSpotTransactionRequest);
+        /// <summary>
+        /// Query user balance records
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Query the current user&#39;s raw balance records. User scope is derived from the request headers; a query parameter &#x60;user_id&#x60; is not supported. - &#x60;type&#x60; and &#x60;business&#x60; support multiple comma-separated values. - &#x60;begin_time&#x60; and &#x60;end_time&#x60; filter record creation time in seconds. When both are provided, &#x60;end_time&#x60; must be greater than &#x60;begin_time&#x60;. - Results are always sorted by primary key &#x60;id&#x60;; &#x60;sort_direction&#x60; accepts &#x60;asc&#x60; or &#x60;desc&#x60;. The default is &#x60;id desc&#x60;. With &#x60;start_id&#x60; and no &#x60;sort_direction&#x60;, the order is &#x60;id asc&#x60;, and only records with &#x60;id &gt; start_id&#x60; are returned for incremental retrieval. - &#x60;detail&#x60; is omitted by default and returned only when &#x60;include_detail&#x3D;true&#x60;. - &#x60;stock_change&#x60; is parsed from &#x60;detail.amount&#x60; for stock quantity records; &#x60;balance&#x60; is a cash balance snapshot, not a stock position balance.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Record types, separated by commas (optional)</param>
+        /// <param name="business">Business identifiers, separated by commas (optional)</param>
+        /// <param name="symbol">Symbol (optional)</param>
+        /// <param name="beginTime">Start time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="endTime">End time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="startId">Starting primary key ID for incremental queries. Only records with a greater id are returned. (optional)</param>
+        /// <param name="sortDirection">Sort direction by primary key id. - asc: Ascending. - desc: Descending. When omitted, defaults to desc without start_id, or asc with start_id. (optional)</param>
+        /// <param name="includeDetail">Whether to return the raw detail field; defaults to false when omitted (optional)</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>Task of BalanceRecordList</returns>
+        Task<BalanceRecordList> QueryStockBalanceRecordsAsync (string type = default(string), string business = default(string), string symbol = default(string), long? beginTime = default(long?), long? endTime = default(long?), long? startId = default(long?), string sortDirection = default(string), bool? includeDetail = default(bool?), int? page = default(int?), int? pageSize = default(int?));
+
+        /// <summary>
+        /// Query user balance records
+        /// </summary>
+        /// <remarks>
+        /// Rate limit: 5 requests per second. Query the current user&#39;s raw balance records. User scope is derived from the request headers; a query parameter &#x60;user_id&#x60; is not supported. - &#x60;type&#x60; and &#x60;business&#x60; support multiple comma-separated values. - &#x60;begin_time&#x60; and &#x60;end_time&#x60; filter record creation time in seconds. When both are provided, &#x60;end_time&#x60; must be greater than &#x60;begin_time&#x60;. - Results are always sorted by primary key &#x60;id&#x60;; &#x60;sort_direction&#x60; accepts &#x60;asc&#x60; or &#x60;desc&#x60;. The default is &#x60;id desc&#x60;. With &#x60;start_id&#x60; and no &#x60;sort_direction&#x60;, the order is &#x60;id asc&#x60;, and only records with &#x60;id &gt; start_id&#x60; are returned for incremental retrieval. - &#x60;detail&#x60; is omitted by default and returned only when &#x60;include_detail&#x3D;true&#x60;. - &#x60;stock_change&#x60; is parsed from &#x60;detail.amount&#x60; for stock quantity records; &#x60;balance&#x60; is a cash balance snapshot, not a stock position balance.
+        /// </remarks>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Record types, separated by commas (optional)</param>
+        /// <param name="business">Business identifiers, separated by commas (optional)</param>
+        /// <param name="symbol">Symbol (optional)</param>
+        /// <param name="beginTime">Start time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="endTime">End time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="startId">Starting primary key ID for incremental queries. Only records with a greater id are returned. (optional)</param>
+        /// <param name="sortDirection">Sort direction by primary key id. - asc: Ascending. - desc: Descending. When omitted, defaults to desc without start_id, or asc with start_id. (optional)</param>
+        /// <param name="includeDetail">Whether to return the raw detail field; defaults to false when omitted (optional)</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>Task of ApiResponse (BalanceRecordList)</returns>
+        Task<ApiResponse<BalanceRecordList>> QueryStockBalanceRecordsAsyncWithHttpInfo (string type = default(string), string business = default(string), string symbol = default(string), long? beginTime = default(long?), long? endTime = default(long?), long? startId = default(long?), string sortDirection = default(string), bool? includeDetail = default(bool?), int? page = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Query supported exchanges
         /// </summary>
@@ -1029,6 +1199,125 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("QueryStockUserAssets", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set margin financing availability Rate limit: 5 requests per second. Enable or disable margin financing for the user.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradFiSpotSetMarginFeatureRequest"></param>
+        /// <returns>SetMarginFeature</returns>
+        public SetMarginFeature SetStockMarginFeature (TradFiSpotSetMarginFeatureRequest tradFiSpotSetMarginFeatureRequest)
+        {
+             ApiResponse<SetMarginFeature> localVarResponse = SetStockMarginFeatureWithHttpInfo(tradFiSpotSetMarginFeatureRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set margin financing availability Rate limit: 5 requests per second. Enable or disable margin financing for the user.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradFiSpotSetMarginFeatureRequest"></param>
+        /// <returns>ApiResponse of SetMarginFeature</returns>
+        public ApiResponse<SetMarginFeature> SetStockMarginFeatureWithHttpInfo (TradFiSpotSetMarginFeatureRequest tradFiSpotSetMarginFeatureRequest)
+        {
+            // verify the required parameter 'tradFiSpotSetMarginFeatureRequest' is set
+            if (tradFiSpotSetMarginFeatureRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiSpotSetMarginFeatureRequest' when calling StockApi->SetStockMarginFeature");
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = tradFiSpotSetMarginFeatureRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<SetMarginFeature>("/stock/users/margin-feature", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetStockMarginFeature", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set margin financing availability Rate limit: 5 requests per second. Enable or disable margin financing for the user.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradFiSpotSetMarginFeatureRequest"></param>
+        /// <returns>Task of SetMarginFeature</returns>
+        public async Task<SetMarginFeature> SetStockMarginFeatureAsync (TradFiSpotSetMarginFeatureRequest tradFiSpotSetMarginFeatureRequest)
+        {
+             Io.Gate.GateApi.Client.ApiResponse<SetMarginFeature> localVarResponse = await SetStockMarginFeatureAsyncWithHttpInfo(tradFiSpotSetMarginFeatureRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Set margin financing availability Rate limit: 5 requests per second. Enable or disable margin financing for the user.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradFiSpotSetMarginFeatureRequest"></param>
+        /// <returns>Task of ApiResponse (SetMarginFeature)</returns>
+        public async Task<ApiResponse<SetMarginFeature>> SetStockMarginFeatureAsyncWithHttpInfo (TradFiSpotSetMarginFeatureRequest tradFiSpotSetMarginFeatureRequest)
+        {
+            // verify the required parameter 'tradFiSpotSetMarginFeatureRequest' is set
+            if (tradFiSpotSetMarginFeatureRequest == null)
+                throw new ApiException(400, "Missing required parameter 'tradFiSpotSetMarginFeatureRequest' when calling StockApi->SetStockMarginFeature");
+
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.Data = tradFiSpotSetMarginFeatureRequest;
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<SetMarginFeature>("/stock/users/margin-feature", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetStockMarginFeature", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1979,6 +2268,139 @@ namespace Io.Gate.GateApi.Api
         }
 
         /// <summary>
+        /// Query order trade records Rate limit: 5 requests per second. Query the current user&#39;s trade records by order ID. &#x60;price&#x60;, &#x60;value&#x60;, and &#x60;fee&#x60; are denominated in the instrument trading currency (for example, USD for US stocks, HKD for Hong Kong stocks, JPY for Japanese stocks, and KRW for Korean stocks). &#x60;role&#x60; returns &#x60;maker&#x60; or &#x60;taker&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>OrderDealList</returns>
+        public OrderDealList QueryStockOrderDeals (long orderId, int? page = default(int?), int? pageSize = default(int?))
+        {
+             ApiResponse<OrderDealList> localVarResponse = QueryStockOrderDealsWithHttpInfo(orderId, page, pageSize);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query order trade records Rate limit: 5 requests per second. Query the current user&#39;s trade records by order ID. &#x60;price&#x60;, &#x60;value&#x60;, and &#x60;fee&#x60; are denominated in the instrument trading currency (for example, USD for US stocks, HKD for Hong Kong stocks, JPY for Japanese stocks, and KRW for Korean stocks). &#x60;role&#x60; returns &#x60;maker&#x60; or &#x60;taker&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>ApiResponse of OrderDealList</returns>
+        public ApiResponse<OrderDealList> QueryStockOrderDealsWithHttpInfo (long orderId, int? page = default(int?), int? pageSize = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "order_id", orderId));
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<OrderDealList>("/stock/orders/deals", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("QueryStockOrderDeals", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query order trade records Rate limit: 5 requests per second. Query the current user&#39;s trade records by order ID. &#x60;price&#x60;, &#x60;value&#x60;, and &#x60;fee&#x60; are denominated in the instrument trading currency (for example, USD for US stocks, HKD for Hong Kong stocks, JPY for Japanese stocks, and KRW for Korean stocks). &#x60;role&#x60; returns &#x60;maker&#x60; or &#x60;taker&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>Task of OrderDealList</returns>
+        public async Task<OrderDealList> QueryStockOrderDealsAsync (long orderId, int? page = default(int?), int? pageSize = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<OrderDealList> localVarResponse = await QueryStockOrderDealsAsyncWithHttpInfo(orderId, page, pageSize);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query order trade records Rate limit: 5 requests per second. Query the current user&#39;s trade records by order ID. &#x60;price&#x60;, &#x60;value&#x60;, and &#x60;fee&#x60; are denominated in the instrument trading currency (for example, USD for US stocks, HKD for Hong Kong stocks, JPY for Japanese stocks, and KRW for Korean stocks). &#x60;role&#x60; returns &#x60;maker&#x60; or &#x60;taker&#x60;.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderId">Order ID</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>Task of ApiResponse (OrderDealList)</returns>
+        public async Task<ApiResponse<OrderDealList>> QueryStockOrderDealsAsyncWithHttpInfo (long orderId, int? page = default(int?), int? pageSize = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "order_id", orderId));
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<OrderDealList>("/stock/orders/deals", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("QueryStockOrderDeals", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Modify order Rate limit: 5 qps.
         /// </summary>
         /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2770,6 +3192,229 @@ namespace Io.Gate.GateApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateStockTransaction", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query user balance records Rate limit: 5 requests per second. Query the current user&#39;s raw balance records. User scope is derived from the request headers; a query parameter &#x60;user_id&#x60; is not supported. - &#x60;type&#x60; and &#x60;business&#x60; support multiple comma-separated values. - &#x60;begin_time&#x60; and &#x60;end_time&#x60; filter record creation time in seconds. When both are provided, &#x60;end_time&#x60; must be greater than &#x60;begin_time&#x60;. - Results are always sorted by primary key &#x60;id&#x60;; &#x60;sort_direction&#x60; accepts &#x60;asc&#x60; or &#x60;desc&#x60;. The default is &#x60;id desc&#x60;. With &#x60;start_id&#x60; and no &#x60;sort_direction&#x60;, the order is &#x60;id asc&#x60;, and only records with &#x60;id &gt; start_id&#x60; are returned for incremental retrieval. - &#x60;detail&#x60; is omitted by default and returned only when &#x60;include_detail&#x3D;true&#x60;. - &#x60;stock_change&#x60; is parsed from &#x60;detail.amount&#x60; for stock quantity records; &#x60;balance&#x60; is a cash balance snapshot, not a stock position balance.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Record types, separated by commas (optional)</param>
+        /// <param name="business">Business identifiers, separated by commas (optional)</param>
+        /// <param name="symbol">Symbol (optional)</param>
+        /// <param name="beginTime">Start time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="endTime">End time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="startId">Starting primary key ID for incremental queries. Only records with a greater id are returned. (optional)</param>
+        /// <param name="sortDirection">Sort direction by primary key id. - asc: Ascending. - desc: Descending. When omitted, defaults to desc without start_id, or asc with start_id. (optional)</param>
+        /// <param name="includeDetail">Whether to return the raw detail field; defaults to false when omitted (optional)</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>BalanceRecordList</returns>
+        public BalanceRecordList QueryStockBalanceRecords (string type = default(string), string business = default(string), string symbol = default(string), long? beginTime = default(long?), long? endTime = default(long?), long? startId = default(long?), string sortDirection = default(string), bool? includeDetail = default(bool?), int? page = default(int?), int? pageSize = default(int?))
+        {
+             ApiResponse<BalanceRecordList> localVarResponse = QueryStockBalanceRecordsWithHttpInfo(type, business, symbol, beginTime, endTime, startId, sortDirection, includeDetail, page, pageSize);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query user balance records Rate limit: 5 requests per second. Query the current user&#39;s raw balance records. User scope is derived from the request headers; a query parameter &#x60;user_id&#x60; is not supported. - &#x60;type&#x60; and &#x60;business&#x60; support multiple comma-separated values. - &#x60;begin_time&#x60; and &#x60;end_time&#x60; filter record creation time in seconds. When both are provided, &#x60;end_time&#x60; must be greater than &#x60;begin_time&#x60;. - Results are always sorted by primary key &#x60;id&#x60;; &#x60;sort_direction&#x60; accepts &#x60;asc&#x60; or &#x60;desc&#x60;. The default is &#x60;id desc&#x60;. With &#x60;start_id&#x60; and no &#x60;sort_direction&#x60;, the order is &#x60;id asc&#x60;, and only records with &#x60;id &gt; start_id&#x60; are returned for incremental retrieval. - &#x60;detail&#x60; is omitted by default and returned only when &#x60;include_detail&#x3D;true&#x60;. - &#x60;stock_change&#x60; is parsed from &#x60;detail.amount&#x60; for stock quantity records; &#x60;balance&#x60; is a cash balance snapshot, not a stock position balance.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Record types, separated by commas (optional)</param>
+        /// <param name="business">Business identifiers, separated by commas (optional)</param>
+        /// <param name="symbol">Symbol (optional)</param>
+        /// <param name="beginTime">Start time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="endTime">End time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="startId">Starting primary key ID for incremental queries. Only records with a greater id are returned. (optional)</param>
+        /// <param name="sortDirection">Sort direction by primary key id. - asc: Ascending. - desc: Descending. When omitted, defaults to desc without start_id, or asc with start_id. (optional)</param>
+        /// <param name="includeDetail">Whether to return the raw detail field; defaults to false when omitted (optional)</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>ApiResponse of BalanceRecordList</returns>
+        public ApiResponse<BalanceRecordList> QueryStockBalanceRecordsWithHttpInfo (string type = default(string), string business = default(string), string symbol = default(string), long? beginTime = default(long?), long? endTime = default(long?), long? startId = default(long?), string sortDirection = default(string), bool? includeDetail = default(bool?), int? page = default(int?), int? pageSize = default(int?))
+        {
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            string[] _contentTypes = {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = {
+                "application/json"
+            };
+
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (business != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "business", business));
+            }
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (beginTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "begin_time", beginTime));
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_time", endTime));
+            }
+            if (startId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_id", startId));
+            }
+            if (sortDirection != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sort_direction", sortDirection));
+            }
+            if (includeDetail != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "include_detail", includeDetail));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<BalanceRecordList>("/stock/users/balance-records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("QueryStockBalanceRecords", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Query user balance records Rate limit: 5 requests per second. Query the current user&#39;s raw balance records. User scope is derived from the request headers; a query parameter &#x60;user_id&#x60; is not supported. - &#x60;type&#x60; and &#x60;business&#x60; support multiple comma-separated values. - &#x60;begin_time&#x60; and &#x60;end_time&#x60; filter record creation time in seconds. When both are provided, &#x60;end_time&#x60; must be greater than &#x60;begin_time&#x60;. - Results are always sorted by primary key &#x60;id&#x60;; &#x60;sort_direction&#x60; accepts &#x60;asc&#x60; or &#x60;desc&#x60;. The default is &#x60;id desc&#x60;. With &#x60;start_id&#x60; and no &#x60;sort_direction&#x60;, the order is &#x60;id asc&#x60;, and only records with &#x60;id &gt; start_id&#x60; are returned for incremental retrieval. - &#x60;detail&#x60; is omitted by default and returned only when &#x60;include_detail&#x3D;true&#x60;. - &#x60;stock_change&#x60; is parsed from &#x60;detail.amount&#x60; for stock quantity records; &#x60;balance&#x60; is a cash balance snapshot, not a stock position balance.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Record types, separated by commas (optional)</param>
+        /// <param name="business">Business identifiers, separated by commas (optional)</param>
+        /// <param name="symbol">Symbol (optional)</param>
+        /// <param name="beginTime">Start time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="endTime">End time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="startId">Starting primary key ID for incremental queries. Only records with a greater id are returned. (optional)</param>
+        /// <param name="sortDirection">Sort direction by primary key id. - asc: Ascending. - desc: Descending. When omitted, defaults to desc without start_id, or asc with start_id. (optional)</param>
+        /// <param name="includeDetail">Whether to return the raw detail field; defaults to false when omitted (optional)</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>Task of BalanceRecordList</returns>
+        public async Task<BalanceRecordList> QueryStockBalanceRecordsAsync (string type = default(string), string business = default(string), string symbol = default(string), long? beginTime = default(long?), long? endTime = default(long?), long? startId = default(long?), string sortDirection = default(string), bool? includeDetail = default(bool?), int? page = default(int?), int? pageSize = default(int?))
+        {
+             Io.Gate.GateApi.Client.ApiResponse<BalanceRecordList> localVarResponse = await QueryStockBalanceRecordsAsyncWithHttpInfo(type, business, symbol, beginTime, endTime, startId, sortDirection, includeDetail, page, pageSize);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query user balance records Rate limit: 5 requests per second. Query the current user&#39;s raw balance records. User scope is derived from the request headers; a query parameter &#x60;user_id&#x60; is not supported. - &#x60;type&#x60; and &#x60;business&#x60; support multiple comma-separated values. - &#x60;begin_time&#x60; and &#x60;end_time&#x60; filter record creation time in seconds. When both are provided, &#x60;end_time&#x60; must be greater than &#x60;begin_time&#x60;. - Results are always sorted by primary key &#x60;id&#x60;; &#x60;sort_direction&#x60; accepts &#x60;asc&#x60; or &#x60;desc&#x60;. The default is &#x60;id desc&#x60;. With &#x60;start_id&#x60; and no &#x60;sort_direction&#x60;, the order is &#x60;id asc&#x60;, and only records with &#x60;id &gt; start_id&#x60; are returned for incremental retrieval. - &#x60;detail&#x60; is omitted by default and returned only when &#x60;include_detail&#x3D;true&#x60;. - &#x60;stock_change&#x60; is parsed from &#x60;detail.amount&#x60; for stock quantity records; &#x60;balance&#x60; is a cash balance snapshot, not a stock position balance.
+        /// </summary>
+        /// <exception cref="Io.Gate.GateApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Record types, separated by commas (optional)</param>
+        /// <param name="business">Business identifiers, separated by commas (optional)</param>
+        /// <param name="symbol">Symbol (optional)</param>
+        /// <param name="beginTime">Start time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="endTime">End time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional)</param>
+        /// <param name="startId">Starting primary key ID for incremental queries. Only records with a greater id are returned. (optional)</param>
+        /// <param name="sortDirection">Sort direction by primary key id. - asc: Ascending. - desc: Descending. When omitted, defaults to desc without start_id, or asc with start_id. (optional)</param>
+        /// <param name="includeDetail">Whether to return the raw detail field; defaults to false when omitted (optional)</param>
+        /// <param name="page">Page number, defaults to 1 (optional)</param>
+        /// <param name="pageSize">Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional)</param>
+        /// <returns>Task of ApiResponse (BalanceRecordList)</returns>
+        public async Task<ApiResponse<BalanceRecordList>> QueryStockBalanceRecordsAsyncWithHttpInfo (string type = default(string), string business = default(string), string symbol = default(string), long? beginTime = default(long?), long? endTime = default(long?), long? startId = default(long?), string sortDirection = default(string), bool? includeDetail = default(bool?), int? page = default(int?), int? pageSize = default(int?))
+        {
+
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (business != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "business", business));
+            }
+            if (symbol != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "symbol", symbol));
+            }
+            if (beginTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "begin_time", beginTime));
+            }
+            if (endTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "end_time", endTime));
+            }
+            if (startId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "start_id", startId));
+            }
+            if (sortDirection != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "sort_direction", sortDirection));
+            }
+            if (includeDetail != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "include_detail", includeDetail));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            // authentication (apiv4) required
+            localVarRequestOptions.RequireApiV4Auth = true;
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<BalanceRecordList>("/stock/users/balance-records", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("QueryStockBalanceRecords", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

@@ -5,6 +5,7 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**QueryStockUserAssets**](StockApi.md#querystockuserassets) | **GET** /stock/users/assets | Query user assets
+[**SetStockMarginFeature**](StockApi.md#setstockmarginfeature) | **PUT** /stock/users/margin-feature | Set margin financing availability
 [**QueryStockSymbols**](StockApi.md#querystocksymbols) | **GET** /stock/symbols | Query symbol list
 [**QueryStockSymbolDetail**](StockApi.md#querystocksymboldetail) | **GET** /stock/symbols/detail | Query symbol details
 [**QueryStockOrderBook**](StockApi.md#querystockorderbook) | **GET** /stock/market/{symbol}/orderbook | Query market order book
@@ -12,12 +13,14 @@ Method | HTTP request | Description
 [**CreateStockOrder**](StockApi.md#createstockorder) | **POST** /stock/orders | Create order
 [**DeleteAllStockOrders**](StockApi.md#deleteallstockorders) | **DELETE** /stock/orders | Cancel all open orders
 [**QueryStockOrderHistory**](StockApi.md#querystockorderhistory) | **GET** /stock/orders/history | Query historical order list
+[**QueryStockOrderDeals**](StockApi.md#querystockorderdeals) | **GET** /stock/orders/deals | Query order trade records
 [**UpdateStockOrder**](StockApi.md#updatestockorder) | **PUT** /stock/orders/{order_id} | Modify order
 [**DeleteStockOrder**](StockApi.md#deletestockorder) | **DELETE** /stock/orders/{order_id} | Cancel order
 [**QueryStockPositions**](StockApi.md#querystockpositions) | **GET** /stock/positions | Query current position list
 [**CloseStockPosition**](StockApi.md#closestockposition) | **POST** /stock/positions/close | Close position
 [**QueryStockTransactions**](StockApi.md#querystocktransactions) | **GET** /stock/transactions | Query transaction records
 [**CreateStockTransaction**](StockApi.md#createstocktransaction) | **POST** /stock/transactions | Fund transfer
+[**QueryStockBalanceRecords**](StockApi.md#querystockbalancerecords) | **GET** /stock/users/balance-records | Query user balance records
 [**QueryStockExchanges**](StockApi.md#querystockexchanges) | **GET** /stock/exchanges | Query supported exchanges
 [**QueryStockFeeRate**](StockApi.md#querystockfeerate) | **GET** /stock/fee-rate | Query fee rates for Japanese and Korean stocks
 
@@ -88,6 +91,80 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Request success |  -  |
+| **400** | Request failed |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setstockmarginfeature"></a>
+# **SetStockMarginFeature**
+> SetMarginFeature SetStockMarginFeature (TradFiSpotSetMarginFeatureRequest tradFiSpotSetMarginFeatureRequest)
+
+Set margin financing availability
+
+Rate limit: 5 requests per second. Enable or disable margin financing for the user.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class SetStockMarginFeatureExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new StockApi(config);
+            var tradFiSpotSetMarginFeatureRequest = new TradFiSpotSetMarginFeatureRequest(); // TradFiSpotSetMarginFeatureRequest | 
+
+            try
+            {
+                // Set margin financing availability
+                SetMarginFeature result = apiInstance.SetStockMarginFeature(tradFiSpotSetMarginFeatureRequest);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling StockApi.SetStockMarginFeature: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tradFiSpotSetMarginFeatureRequest** | [**TradFiSpotSetMarginFeatureRequest**](TradFiSpotSetMarginFeatureRequest.md)|  | 
+
+### Return type
+
+[**SetMarginFeature**](SetMarginFeature.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -632,6 +709,84 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="querystockorderdeals"></a>
+# **QueryStockOrderDeals**
+> OrderDealList QueryStockOrderDeals (long orderId, int? page = null, int? pageSize = null)
+
+Query order trade records
+
+Rate limit: 5 requests per second. Query the current user's trade records by order ID. `price`, `value`, and `fee` are denominated in the instrument trading currency (for example, USD for US stocks, HKD for Hong Kong stocks, JPY for Japanese stocks, and KRW for Korean stocks). `role` returns `maker` or `taker`.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class QueryStockOrderDealsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new StockApi(config);
+            var orderId = 123456;  // long | Order ID
+            var page = 1;  // int? | Page number, defaults to 1 (optional) 
+            var pageSize = 20;  // int? | Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional) 
+
+            try
+            {
+                // Query order trade records
+                OrderDealList result = apiInstance.QueryStockOrderDeals(orderId, page, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling StockApi.QueryStockOrderDeals: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orderId** | **long**| Order ID | 
+ **page** | **int?**| Page number, defaults to 1 | [optional] 
+ **pageSize** | **int?**| Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. | [optional] 
+
+### Return type
+
+[**OrderDealList**](OrderDealList.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Request success |  -  |
+| **400** | Request failed |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updatestockorder"></a>
 # **UpdateStockOrder**
 > UpdateOrder2 UpdateStockOrder (long orderId, TradFiSpotOrderUpdateRequest tradFiSpotOrderUpdateRequest)
@@ -1084,6 +1239,98 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Request success |  -  |
+| **400** | Request failed |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="querystockbalancerecords"></a>
+# **QueryStockBalanceRecords**
+> BalanceRecordList QueryStockBalanceRecords (string type = null, string business = null, string symbol = null, long? beginTime = null, long? endTime = null, long? startId = null, string sortDirection = null, bool? includeDetail = null, int? page = null, int? pageSize = null)
+
+Query user balance records
+
+Rate limit: 5 requests per second. Query the current user's raw balance records. User scope is derived from the request headers; a query parameter `user_id` is not supported. - `type` and `business` support multiple comma-separated values. - `begin_time` and `end_time` filter record creation time in seconds. When both are provided, `end_time` must be greater than `begin_time`. - Results are always sorted by primary key `id`; `sort_direction` accepts `asc` or `desc`. The default is `id desc`. With `start_id` and no `sort_direction`, the order is `id asc`, and only records with `id > start_id` are returned for incremental retrieval. - `detail` is omitted by default and returned only when `include_detail=true`. - `stock_change` is parsed from `detail.amount` for stock quantity records; `balance` is a cash balance snapshot, not a stock position balance.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Gate.GateApi.Api;
+using Io.Gate.GateApi.Client;
+using Io.Gate.GateApi.Model;
+
+namespace Example
+{
+    public class QueryStockBalanceRecordsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gateio.ws/api/v4";
+            config.SetGateApiV4KeyPair("YOUR_API_KEY", "YOUR_API_SECRET");
+
+            var apiInstance = new StockApi(config);
+            var type = "deposit,fee";  // string | Record types, separated by commas (optional) 
+            var business = "transfer,trade";  // string | Business identifiers, separated by commas (optional) 
+            var symbol = "AAPL";  // string | Symbol (optional) 
+            var beginTime = 1769378400;  // long? | Start time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional) 
+            var endTime = 1769464800;  // long? | End time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. (optional) 
+            var startId = 1000;  // long? | Starting primary key ID for incremental queries. Only records with a greater id are returned. (optional) 
+            var sortDirection = "desc";  // string | Sort direction by primary key id. - asc: Ascending. - desc: Descending. When omitted, defaults to desc without start_id, or asc with start_id. (optional) 
+            var includeDetail = false;  // bool? | Whether to return the raw detail field; defaults to false when omitted (optional) 
+            var page = 1;  // int? | Page number, defaults to 1 (optional) 
+            var pageSize = 20;  // int? | Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. (optional) 
+
+            try
+            {
+                // Query user balance records
+                BalanceRecordList result = apiInstance.QueryStockBalanceRecords(type, business, symbol, beginTime, endTime, startId, sortDirection, includeDetail, page, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (GateApiException e)
+            {
+                Debug.Print("Exception when calling StockApi.QueryStockBalanceRecords: " + e.Message);
+                Debug.Print("Exception label: {0}, message: {1}", e.ErrorLabel, e.ErrorMessage);
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **string**| Record types, separated by commas | [optional] 
+ **business** | **string**| Business identifiers, separated by commas | [optional] 
+ **symbol** | **string**| Symbol | [optional] 
+ **beginTime** | **long?**| Start time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. | [optional] 
+ **endTime** | **long?**| End time (Unix timestamp in seconds). When both begin_time and end_time are provided, end_time must be greater than begin_time. | [optional] 
+ **startId** | **long?**| Starting primary key ID for incremental queries. Only records with a greater id are returned. | [optional] 
+ **sortDirection** | **string**| Sort direction by primary key id. - asc: Ascending. - desc: Descending. When omitted, defaults to desc without start_id, or asc with start_id. | [optional] 
+ **includeDetail** | **bool?**| Whether to return the raw detail field; defaults to false when omitted | [optional] 
+ **page** | **int?**| Page number, defaults to 1 | [optional] 
+ **pageSize** | **int?**| Records per page. Defaults to 10, maximum 100. The server caps values greater than 100 at 100. | [optional] 
+
+### Return type
+
+[**BalanceRecordList**](BalanceRecordList.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
